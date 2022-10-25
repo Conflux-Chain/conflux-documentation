@@ -1,5 +1,7 @@
 # Running a Light Node
 
+> Note: Currently, [eSpace](../learn/conflux-basics/spaces.md) (EVM full-compatible space) RPC methods are not supported on the Conflux Light Node.
+
 ## Overview
 **Node version: `conflux-rust v2.1.0`**.
 
