@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from '@docusaurus/Link';
 import cx from 'clsx';
 
 const DocCatalogFackData = [
@@ -30,7 +31,7 @@ const DocCatalogFackData = [
 const CatalogueItem = ({ url, text, preview }) => {
   return (
     <li>
-      <a href={url} className='text-[#4C7BEF] text-sm font-medium underline'>{text}</a>
+      <Link to={url} className='text-[#4C7BEF] text-sm font-medium underline'>{text}</Link>
       <p className='text-sm font-normal mb-6'>{preview}</p>
     </li>
   )
