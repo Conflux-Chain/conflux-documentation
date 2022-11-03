@@ -17,8 +17,8 @@ const Home = () => {
       title={`Hello from ${siteConfig.title}`}
       description="Description will go into a meta tag in <head />"
     >
-      <main className='bg-[#DAE5FA] flex flex-col items-center justify-center pb-24' >
-        <div className=' bg-gradient-to-b from-[#B3C7EE] to-[#DAE5FA] w-full flex justify-center'>
+      <main className='bg-[#DAE5FA] dark:bg-[#1B2F59] flex flex-col items-center justify-center pb-24' >
+        <div className=' bg-gradient-to-b from-[#B3C7EE] dark:from-[#0C1831] to-[#DAE5FA] dark:to-[#1B2F59] w-full flex justify-center'>
           <div className='max-w-[1920px] px-20 grid gird-cols-1 lg:grid-cols-3 lg:gap-12 items-center'>
             <div className='flex flex-col span-cols-1 order-2 lg:order-1'>
               <h1 className="hero__title">Conflux</h1>

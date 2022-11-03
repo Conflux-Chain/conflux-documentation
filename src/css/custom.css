@@ -8,27 +8,58 @@
  * work well for content-centric websites.
  */
 
+a{
+  color:var(--ifm-link-color);
+}
+
+button{
+  border:solid 1px var(--ifm-color-primary);
+  padding: 3px 7px;
+  border-radius: 4px;
+}
+
+.sidebarItemLink_node_modules-\@docusaurus-theme-classic-lib-theme-BlogSidebar-Desktop-styles-module{
+  padding:7px 0 7px 16px;
+}
+
+.sidebarItemLinkActive_node_modules-\@docusaurus-theme-classic-lib-theme-BlogSidebar-Desktop-styles-module{
+  background-color: var(--ifm-hover-overlay);
+}
+
+.footer--dark{
+  --ifm-footer-background-color:#152748;
+}
+
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
+  --ifm-color-primary: #4C78ef;
+  --ifm-color-primary-dark: #2f62ec;
+  --ifm-color-primary-darker: #2157eb;
+  --ifm-color-primary-darkest: #1244ca;
+  --ifm-color-primary-light: #698ef2;
+  --ifm-color-primary-lighter: #7799f3;
+  --ifm-color-primary-lightest: #a3b9f7;
   --ifm-code-font-size: 95%;
+  --ifm-color-success-dark:#4C7BEF;
+  --ifm-color-success-contrast-foreground:#4C7BEF;
+  --ifm-color-success-contrast-background: #E6EDFD;
+  --ifm-hover-overlay:#F6F9FF;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
+  --ifm-alert-background-color:#152748;
+  --ifm-color-primary: #4C7BEF;
+  --ifm-color-primary-dark: #2f62ec;
+  --ifm-color-primary-darker: #2157eb;
+  --ifm-color-primary-darkest: #1244ca;
+  --ifm-color-primary-light: #698ef2;
+  --ifm-color-primary-lighter: #7799f3;
+  --ifm-color-primary-lightest: #a3b9f7;
+  --ifm-color-success-dark:#4C7BEF;
+  --ifm-color-success-contrast-foreground:#4C7BEF!important;
+  --ifm-color-success-contrast-background: #152748!important;
+  --ifm-hover-overlay:#152748!important;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }

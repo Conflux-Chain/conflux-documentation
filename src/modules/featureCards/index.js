@@ -43,7 +43,7 @@ const FeatureCards = ({ wrapperClassName }) => {
   return (
     <div className={cx('max-w-[1920px] px-20 grid grid-cols-1 md:grid-cols-3 md:gap-8', wrapperClassName)}>
       {FeatureList.map((feature) => {
-        return <Card key={feature.title} {...feature} className='w-10/12 md:w-full mb-20' />
+        return <Card key={feature.title} {...feature} className='w-10/12 mx-auto lg:mx-0 md:w-full mb-20' />
       })}
     </div>
   )
