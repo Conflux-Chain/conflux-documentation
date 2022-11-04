@@ -23,7 +23,7 @@ const Home = () => {
               <h1 className="hero__title">CONFLUX</h1>
               <h1 className="hero__title">DEVELOPER</h1>
               <h1 className="hero__title">PORTAL</h1>
-              <p className="hero__subtitle text-[#737A88] font-normal mt-6">{siteConfig.tagline}</p>
+              <p className="hero__subtitle text-[#737A88] dark:text-[#A2A8B6] font-normal mt-6">{siteConfig.tagline}</p>
             </div>
             <CFX role='img' className='lg:col-span-3 w-10/12 h-auto order-1 lg:order-2' />
           </div>

@@ -134,7 +134,13 @@ const config = {
             ],
           },
         ],
-        copyright: `<img src='img/footerLogo.svg' />Copyright © ${new Date().getFullYear()} ConfluxNetwork, Inc.`,
+        logo:{
+          alt: 'Conflux Copyright Logo',
+          src:'img/footer_logo.svg',
+          width:32,
+          height:16,
+        },
+        copyright: `Copyright © ${new Date().getFullYear()} ConfluxNetwork, Inc.`,
       },
       prism: {
         theme: lightCodeTheme,

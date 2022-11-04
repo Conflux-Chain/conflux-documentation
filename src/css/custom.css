@@ -10,6 +10,7 @@
 
 html{
   font-family:'Poppins';
+  color:var(--ifm-color-primary-font);
 }
 
 @font-face {
@@ -44,8 +45,20 @@ html{
   font-display: auto;
 }
 
+h1{
+  @apply text-5xl 
+}
+
+h2{
+  @apply text-3xl 
+}
+
 a{
   color:var(--ifm-link-color);
+}
+
+article a{
+  @apply underline
 }
 
 button{
@@ -77,12 +90,16 @@ img{
 }
 
 .footer__copyright{
+  margin-left: 12px;
+}
+
+.footer__bottom{
   display: flex;
   align-items: center;
 }
 
-.footer__copyright img{
-  margin-right: 12px;
+.footer__logo{
+  margin-top:0.5rem;
 }
 
 .plugin-pages.plugin-id-default:not(.docs-wrapper):not(.blog-wrapper) .navbar--fixed-top{
@@ -100,11 +117,13 @@ img{
   --ifm-color-primary-light: #698ef2;
   --ifm-color-primary-lighter: #7799f3;
   --ifm-color-primary-lightest: rgba(179, 199, 238, 0);
+  --ifm-color-primary-font:#152748;
   --ifm-code-font-size: 95%;
+  --ifm-hover-overlay:#F6F9FF;
+  --ifm-heading-color:#0C1831;
   --ifm-color-success-dark:#4C7BEF;
   --ifm-color-success-contrast-foreground:#4C7BEF;
   --ifm-color-success-contrast-background: #E6EDFD;
-  --ifm-hover-overlay:#F6F9FF;
   --ifm-bg-ingradient:linear-gradient(181.9deg, var(--ifm-color-primary-darkest) 1.6%, var(--ifm-color-primary-lightest) 98.06%);
   --ifm-git-bg-url:url(@site/static/img/VectorgitHub.svg);
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
@@ -120,6 +139,8 @@ img{
   --ifm-color-primary-light: #698ef2;
   --ifm-color-primary-lighter: #7799f3;
   --ifm-color-primary-lightest: #0C1831;
+  --ifm-color-primary-font:#CACED8;
+  --ifm-heading-color:#E7EAF1;
   --ifm-color-success-dark:#4C7BEF;
   --ifm-color-success-contrast-foreground:#4C7BEF!important;
   --ifm-color-success-contrast-background: #152748!important;
