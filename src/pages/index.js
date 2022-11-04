@@ -14,8 +14,8 @@ const Home = () => {
 
   return (
     <Layout
-      title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />"
+      title={`${siteConfig.title}`}
+      description="Conflux docs"
     >
       <main className='bg-[#DAE5FA] dark:bg-[#1B2F59] flex flex-col items-center justify-center pb-24' >
         <div className=' bg-gradient-to-b from-[#B3C7EE] dark:from-[#0C1831] to-[#DAE5FA] dark:to-[#1B2F59] w-full flex justify-center'>
