@@ -54,6 +54,16 @@ button{
   border-radius: 4px;
 }
 
+img{
+  @apply pointer-events-none
+}
+
+.header-github-link{
+  background:var(--ifm-git-bg-url) no-repeat;
+  height: 1.5rem;
+  margin-right: 20px;
+}
+
 .sidebarItemLink_node_modules-\@docusaurus-theme-classic-lib-theme-BlogSidebar-Desktop-styles-module{
   padding:7px 0 7px 16px;
 }
@@ -66,6 +76,15 @@ button{
   --ifm-footer-background-color:#152748;
 }
 
+.footer__copyright{
+  display: flex;
+  align-items: center;
+}
+
+.footer__copyright img{
+  margin-right: 12px;
+}
+
 .plugin-pages.plugin-id-default:not(.docs-wrapper):not(.blog-wrapper) .navbar--fixed-top{
   position: relative;
   background-color: transparent;
@@ -76,16 +95,18 @@ button{
 :root {
   --ifm-color-primary: #4C78ef;
   --ifm-color-primary-dark: #2f62ec;
-  --ifm-color-primary-darker: #2157eb;
-  --ifm-color-primary-darkest: #1244ca;
+  --ifm-color-primary-darker: rgba(202, 206, 216, 0.24);
+  --ifm-color-primary-darkest: #DAE5FA;
   --ifm-color-primary-light: #698ef2;
   --ifm-color-primary-lighter: #7799f3;
-  --ifm-color-primary-lightest: #a3b9f7;
+  --ifm-color-primary-lightest: rgba(179, 199, 238, 0);
   --ifm-code-font-size: 95%;
   --ifm-color-success-dark:#4C7BEF;
   --ifm-color-success-contrast-foreground:#4C7BEF;
   --ifm-color-success-contrast-background: #E6EDFD;
   --ifm-hover-overlay:#F6F9FF;
+  --ifm-bg-ingradient:linear-gradient(181.9deg, var(--ifm-color-primary-darkest) 1.6%, var(--ifm-color-primary-lightest) 98.06%);
+  --ifm-git-bg-url:url(@site/static/img/VectorgitHub.svg);
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 }
 
@@ -93,15 +114,17 @@ button{
 [data-theme='dark'] {
   --ifm-alert-background-color:#152748;
   --ifm-color-primary: #4C7BEF;
-  --ifm-color-primary-dark: #2f62ec;
-  --ifm-color-primary-darker: #2157eb;
-  --ifm-color-primary-darkest: #1244ca;
+  --ifm-color-primary-dark: rgba(10, 19, 39, 0.24);
+  --ifm-color-primary-darker: rgba(10, 19, 39, 0.24);
+  --ifm-color-primary-darkest: #1B2F59;
   --ifm-color-primary-light: #698ef2;
   --ifm-color-primary-lighter: #7799f3;
-  --ifm-color-primary-lightest: #a3b9f7;
+  --ifm-color-primary-lightest: #0C1831;
   --ifm-color-success-dark:#4C7BEF;
   --ifm-color-success-contrast-foreground:#4C7BEF!important;
   --ifm-color-success-contrast-background: #152748!important;
   --ifm-hover-overlay:#152748!important;
+  --ifm-bg-ingradient:linear-gradient(181.9deg, var(--ifm-color-primary-darkest) 0%, var(--ifm-color-primary-lightest) 100%);
+  --ifm-git-bg-url:url(@site/static/img/GitHubDark.svg);
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }

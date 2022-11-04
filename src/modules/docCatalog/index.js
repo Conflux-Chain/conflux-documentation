@@ -32,7 +32,7 @@ const CatalogueItem = ({ url, text, preview }) => {
   return (
     <li>
       <Link to={url} className='text-[#4C7BEF] text-sm font-medium underline'>{text}</Link>
-      <p className='text-sm font-normal mb-6'>{preview}</p>
+      <p className='text-sm font-normal mb-6 dark:text-[#CACED8]'>{preview}</p>
     </li>
   )
 }

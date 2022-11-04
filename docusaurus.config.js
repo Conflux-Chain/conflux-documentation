@@ -84,9 +84,10 @@ const config = {
           },
           { to: '/blog', label: 'Blog', position: 'left' },
           {
-            to: 'https://github.com/facebook/docusaurus',
-            label: 'GitHub',
+            href: 'https://github.com/facebook/docusaurus',
             position: 'right',
+            className: 'header-github-link',
+            'aria-label': 'GitHub repository',
           },
         ],
       },
@@ -133,7 +134,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} ConfluxNetwork, Inc.`,
+        copyright: `<img src='img/footerLogo.svg' />Copyright © ${new Date().getFullYear()} ConfluxNetwork, Inc.`,
       },
       prism: {
         theme: lightCodeTheme,

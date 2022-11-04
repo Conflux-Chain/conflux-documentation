@@ -8,7 +8,7 @@ import CFXREACT from '@site/static/img/cfx_react.jpg';
 const FeatureList = [
   {
     title: 'Easy to Use',
-    Image: () => <img src={CFXBOX} alt='CFX box' className='w-full' />,
+    Image: () => <img src={CFXBOX} alt='CFX box' className='w-full pointer-events-none' />,
     description: (
       <>
         Docusaurus was designed from the ground up to be easily installed and
@@ -18,7 +18,7 @@ const FeatureList = [
   },
   {
     title: 'Focus on What Matters',
-    Image: () => <img src={CFXSREEN} alt='CFX Screen' className='w-full' />,
+    Image: () => <img src={CFXSREEN} alt='CFX Screen' className='w-full pointer-events-none' />,
     description: (
       <>
         Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
@@ -29,7 +29,7 @@ const FeatureList = [
   {
     title: 'Powered by React',
     // Svg: require('@site/static/img/cfx_react.svg').default,
-    Image: () => <img src={CFXREACT} alt='CFX React' className='w-full' />,
+    Image: () => <img src={CFXREACT} alt='CFX React' className='w-full pointer-events-none' />,
     description: (
       <>
         Extend or customize your website layout by reusing React. Docusaurus can

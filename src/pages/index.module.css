@@ -7,6 +7,10 @@
   position: relative;
 }
 
+.gradientBg::dark{
+  background:linear-gradient(180deg, #1B2F59 0%, #0C1831 100%);
+}
+
 .gradientBg::before {
   content: '';
   position: absolute;
@@ -14,7 +18,7 @@
   top: -60px;
   width: 100%;
   height: calc(115% + 60px);
-  background: linear-gradient(181.9deg, #DAE5FA 1.6%, rgba(179, 199, 238, 0) 98.06%);;
+  background: var(--ifm-bg-ingradient);
 }
 
 .heroBanner {

@@ -4,13 +4,13 @@ import styles from './styles.module.css';
 
 const Card = ({ Image, title, description, className }) => {
   return (
-    <div className={cx("flex flex-col items-center rounded-[58px] bg-white dark:bg-[#152748] overflow-hidden drop-shadow-[0px_4px_12px_rgba(202,206,216,0.24)]", className)}>
-      <div className="w-full">
+    <div className={cx("flex flex-col items-center rounded-[58px] bg-white dark:bg-[#152748] overflow-hidden drop-shadow-[0px_4px_12px_var(--ifm-color-primary-darker)]", className)}>
+      <div className="w-full pointer-events-none">
         {Image()}
       </div>
       <div className="px-8 pb-8 pt-4">
         <h3>{title}</h3>
-        <p className='text-[#737A88] text-sm'>{description}</p>
+        <p className='text-[#737A88] dark:text-[#A2A8B6] text-sm mt-1'>{description}</p>
       </div>
     </div>
   );
