@@ -66,6 +66,12 @@ button{
   --ifm-footer-background-color:#152748;
 }
 
+.plugin-pages.plugin-id-default:not(.docs-wrapper):not(.blog-wrapper) .navbar--fixed-top{
+  position: relative;
+  background-color: transparent;
+  box-shadow: none;
+}
+
 /* You can override the default Infima variables here. */
 :root {
   --ifm-color-primary: #4C78ef;
