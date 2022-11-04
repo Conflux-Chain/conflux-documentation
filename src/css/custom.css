@@ -8,6 +8,42 @@
  * work well for content-centric websites.
  */
 
+html{
+  font-family:'Poppins';
+}
+
+@font-face {
+  font-family:'Poppins';
+  src:url('@site/static/fonts/Poppins-Regular.woff2') format('woff2');
+  font-style: normal;
+  font-weight: normal;
+  font-display: auto;
+}
+
+@font-face {
+  font-family:'Poppins';
+  src:url('@site/static/fonts/Poppins-SemiBold.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 600;
+  font-display: auto;
+}
+
+@font-face {
+  font-family:'Poppins';
+  src:url('@site/static/fonts/Poppins-Bold.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 700;
+  font-display: auto;
+}
+
+@font-face {
+  font-family:'Poppins';
+  src:url('@site/static/fonts/Poppins-ExtraBold.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 800;
+  font-display: auto;
+}
+
 a{
   color:var(--ifm-link-color);
 }
