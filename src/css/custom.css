@@ -108,6 +108,10 @@ img{
   box-shadow: none;
 }
 
+.breadcrumbs__link{
+  vertical-align: middle;
+}
+
 /* You can override the default Infima variables here. */
 :root {
   --ifm-color-primary: #4C78ef;
