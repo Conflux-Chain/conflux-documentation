@@ -10,7 +10,7 @@ Are you a new user of Conflux blockchain? Or are you a developer planning to dev
 
 ## Faucet Dapp
 
-We have developed a [Faucet Dapp](http://faucet.confluxnetwork.org/), which not only can be used to claim `CFX` but also tokens, currently includes `FC`, `cUSDT`.
+We have developed a [Faucet Dapp](https://faucet.confluxnetwork.org/), which not only can be used to claim `CFX` but also tokens, currently includes `FC`, `cUSDT`.
 <!-- 
 ![image.png](/img/portal/Dapp-faucet.png)
 -->
