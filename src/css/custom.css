@@ -77,6 +77,18 @@ img{
   margin-right: 20px;
 }
 
+/* .blog-wrapper{
+  @apply max-w-[1920px] mx-auto
+}
+
+.container{
+  margin:0 0;
+} */
+
+.docs-wrapper{
+  @apply max-w-[1920px] mx-auto
+}
+
 .sidebarItemLink_node_modules-\@docusaurus-theme-classic-lib-theme-BlogSidebar-Desktop-styles-module{
   padding:7px 0 7px 16px;
 }
@@ -100,6 +112,14 @@ img{
 
 .footer__logo{
   margin-top:0.5rem;
+}
+
+.navbar{
+  @apply flex justify-center
+}
+
+.navbar__inner{
+  @apply max-w-[1920px] 
 }
 
 .plugin-pages.plugin-id-default:not(.docs-wrapper):not(.blog-wrapper) .navbar--fixed-top{

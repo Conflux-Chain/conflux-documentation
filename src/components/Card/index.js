@@ -4,7 +4,7 @@ import styles from './styles.module.css';
 
 const Card = ({ Image, title, description, className }) => {
   return (
-    <div className={cx("flex flex-col items-center rounded-[58px] bg-white dark:bg-[#152748] overflow-hidden drop-shadow-[0px_4px_12px_var(--ifm-color-primary-darker)]", className)}>
+    <div className={cx("flex flex-col items-center rounded-[58px] bg-white dark:bg-[#152748] overflow-hidden drop-shadow-[0px_4px_12px_var(--ifm-color-primary-darker)] w-11/12", className)}>
       <div className="w-full pointer-events-none">
         {Image()}
       </div>
