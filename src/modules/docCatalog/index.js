@@ -40,7 +40,7 @@ const CatalogueItem = ({ url, text, preview }) => {
 const Catalogue = ({ catalogue, items }) => {
   return (
     <li key={catalogue} className='mt-[88px]'>
-      <div className='text-xl font-medium mb-9'>{catalogue}</div>
+      <div className='text-[20px] font-medium mb-9'>{catalogue}</div>
       <ul>
         {items.map(item => { return <CatalogueItem key={item.text} url={item.url} text={item.text} preview={item.preview} /> })}
       </ul>
