@@ -1,8 +1,8 @@
 ---
-sidebar_position: 14
+sidebar_position: 1
 ---
 
-# Spaces
+# What are Spaces?
 
 ## The Concept of Space
 In Conflux v2.0 (Hydra) upgrade, a new space called ```eSpace``` is introduced by [CIP-90](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-90.md). It is an ```independent space (or chain)``` which is compatible with Ethereum ```interface```, including ```RPC``` and ```EVM```. The original chain will be called ```CoreSpace``` and remain unchanged and unaffected.
