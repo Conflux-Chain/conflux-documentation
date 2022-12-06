@@ -4,17 +4,17 @@ In the Hydra hardfork (v2.0) Conflux introduced serveral big upgrades through 8 
 
 Through [CIP-43](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-43.md) Hydra has introduced a PoS system to improve the finality of the whole Network. CFX holders can stake their CFX to PoS to protect high-value transactions and also earn CFX rewards of participating the PoS. For detail information about PoS check:
 
-* [PoS Overview](./PoS-overview.md)
-* [Why PoS](./why-PoS.md)
-* [PoS FAQs](./PoS-faq.md)
+* PoS Overview
+* Why PoS
+* PoS FAQs
 
 ### Conflux eSpace
 
-The CIP-90 has introduced a new fully EVM-compatible space. The new space is called eSpace, and the current space is called Core Space. The eSpace follows the same rule as EVM and supports eth rpc like eth_getBalance, so the tools (web3.js, ethers.js, hardhat, truffle and so on) from ethereum ecosystem can be used on Conflux directly. Check [eSpace documentation](/conflux-doc/docs/EVM-Space/intro_of_evm_space) for more info.
+The CIP-90 has introduced a new fully EVM-compatible space. The new space is called eSpace, and the current space is called Core Space. The eSpace follows the same rule as EVM and supports eth rpc like eth_getBalance, so the tools (web3.js, ethers.js, hardhat, truffle and so on) from ethereum ecosystem can be used on Conflux directly. Check eSpace documentation for more info.
 
 ### New Added InternalContracts
 
-Hydra hardfork has intoduced three [new InternalContracts](./internal-contract.md):
+Hydra hardfork has intoduced three new InternalContracts:
 
 * `ConfluxContext` (CIP-64)
 * `PoSRegister` (CIP-43)
@@ -24,7 +24,7 @@ Hydra hardfork has intoduced three [new InternalContracts](./internal-contract.m
 
 #### cfx namespace RPC change
 
-* New added methods: [`cfx_getPoSRewardByEpoch`](/conflux-doc/docs/json_rpc#cfx_getposrewardbyepoch), [`cfx_openedMethodGroups`](/conflux-doc/docs/json_rpc#cfx_openedmethodgroups), [`cfx_getPoSEconomics`](/conflux-doc/docs/json_rpc#cfx_getposeconomics).
+* New added methods: `cfx_getPoSRewardByEpoch`, `cfx_openedMethodGroups`, `cfx_getPoSEconomics`.
 * New added EpochNumber tag: `latest_finalized` indicating latest finalized (by PoS) epoch.
 * `cfx_getStatus` reponse have two new field: `latestFinalized`, `ethereumSpaceChainId`
 * Block header new added field: `posReference` which is the latest pos blockHash when the PoW block is mined.
@@ -41,16 +41,16 @@ custom: ["0x12"]
 
 #### trace RPC breaking change
 
-* `trace` RPC methods have some [big changes](/conflux-doc/docs/RPCs/trace_rpc#v20-trace-breaking-change)
+* `trace` RPC methods have some big changes
 
 #### New added namespace
 
-* [`txpool`](/conflux-doc/docs/RPCs/txpool_rpc)
-* [`pos`](/conflux-doc/docs/RPCs/pos_rpc)
+* `txpool`
+* `pos`
 
 #### eSpace eth RPC
 
-The eSpace has introduced the `eth` namespace RPC, check the [RPC compatibility doc](/conflux-doc/docs/EVM-Space/evm_space_rpc_compatibility) for details
+The eSpace has introduced the `eth` namespace RPC, check the RPC compatibility doc for details
 
 ### Conflux-rust config file
 
