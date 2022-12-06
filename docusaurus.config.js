@@ -7,7 +7,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Conflux Docs',
-  tagline: 'Dinosaurs are cool',
+  tagline: 'Conflux Documentation Portal',
   url: 'https://your-docusaurus-test-site.com',
   baseUrl: '/',
   onBrokenLinks: 'throw',
@@ -16,7 +16,7 @@ const config = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'facebook', // Usually your GitHub org/user name.
+  organizationName: 'conflux', // Usually your GitHub org/user name.
   projectName: 'docusaurus', // Usually your repo name.
 
   // Even if you don't use internalization, you can use this field to set useful
@@ -59,19 +59,32 @@ const config = {
       navbar: {
         title: 'Conflux Docs',
         logo: {
-          alt: 'My Site Logo',
+          alt: 'Conflux Logo',
           src: 'img/logo.svg',
         },
         items: [
           {
-            type: 'doc',
-            docId: 'intro',
             position: 'left',
-            label: 'Tutorial',
+            label: 'Learn',
+            to: '/docs/category/learn',
           },
-          {to: '/blog', label: 'Blog', position: 'left'},
           {
-            href: 'https://github.com/facebook/docusaurus',
+            position: 'left',
+            label: 'Mine',
+            to: '/docs/category/mine',
+          },
+          {
+            position: 'left',
+            label: 'Stake',
+            to: '/docs/category/stake',
+          },
+          {
+            position: 'left',
+            label: 'Build',
+            to: '/docs/category/build',
+          },
+          {
+            href: 'https://github.com/Conflux-Chain/conflux-documentation',
             label: 'GitHub',
             position: 'right',
           },
@@ -84,9 +97,22 @@ const config = {
             title: 'Docs',
             items: [
               {
-                label: 'Tutorial',
-                to: '/docs/intro',
+                label: 'Learn',
+                to: '/docs/category/learn',
               },
+              {
+                label: 'Mine',
+                to: '/docs/category/learn',
+              },
+              {
+                label: 'Stake',
+                to: '/docs/category/learn',
+              },
+              {
+                label: 'Build',
+                to: '/docs/category/learn',
+              },
+
             ],
           },
           {
@@ -110,17 +136,21 @@ const config = {
             title: 'More',
             items: [
               {
-                label: 'Blog',
-                to: '/blog',
+                label: 'Contribute',
+                to: '/docs/category/contribute',
+              },
+              {
+                label: 'Get Involved',
+                to: '/docs/category/get-involved',
               },
               {
                 label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
+                href: 'https://github.com/documentation/docusaurus',
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Conflux Network. Built with Docusaurus.`,
       },
       prism: {
         theme: lightCodeTheme,
