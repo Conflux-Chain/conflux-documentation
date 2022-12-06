@@ -1,23 +1,13 @@
----
-title: Using Ledger on Core
-id: using_ledger_on_core
-custom_edit_url: https://github.com/Conflux-Chain/conflux-developer-site/edit/master/docs/sdks-and-tools/en/using-ledger-on-core.md
-keywords:
-  - Ledger
-  - Fluent
-  - Conflux Core
-  - Hardware wallet
----
 
 ## Introduction
 
-[Conflux](https://confluxnetwork.org) is a high performance distributed ledger based on the [Tree-Graph](/) concensus protocol.
-Conflux supports the Conflux native token [CFX](/introduction/en/conflux_basics), and numerous other crypto assets including [CRC20](https://confluxscan.io/tokens/crc20) and [NFT](https://confluxscan.io/tokens/crc721) tokens.
+[Conflux](https://confluxnetwork.org) is a high performance distributed ledger based on the Tree-Graph concensus protocol.
+Conflux supports the Conflux native token CFX, and numerous other crypto assets including [CRC20](https://confluxscan.io/tokens/crc20) and [NFT](https://confluxscan.io/tokens/crc721) tokens.
 You can now use your **Ledger Nano S** or **Ledger Nano X** hardware wallet to securely store your assets on Conflux.
 In this guide, we will show you how to install the Conflux app on your Ledger device, how to import your accounts into Fluent, and how to transfer assets on Conflux.
 
 :::note
-This guide is for Conflux Core. If you would like to use your Ledger device with the EVM-compatible Conflux eSpace, click [here](/guides/en/using_ledger_on_espace).
+This guide is for Conflux Core. If you would like to use your Ledger device with the EVM-compatible Conflux eSpace, click [here]().
 :::
 
 ## Before You Start
