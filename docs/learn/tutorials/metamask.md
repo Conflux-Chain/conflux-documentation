@@ -1,7 +1,6 @@
 ---
 title: MetaMask
 id: user_metamask_interact_evmspace
-custom_edit_url: https://github.com/Conflux-Chain/conflux-developer-site/edit/master/docs/guides/en/use-metamask-to-interact-evmspace.md
 keywords:
   - MetaMask
   - EVMSpace
@@ -61,7 +60,7 @@ For the eSpace **testnet**, please use the following configuration values:
 --->
 
 :::note
-All the Conflux eSpace RPC endpoint URLs and chain IDs can be found on our [Networks](/conflux-doc/docs/EVM-Space/evm_space_networks) page.
+All the Conflux eSpace RPC endpoint URLs and chain IDs can be found on our Networks page.
 :::
 
 Click `Save`, and you should see `Conflux eSpace` is now the network selected in MetaMask.
