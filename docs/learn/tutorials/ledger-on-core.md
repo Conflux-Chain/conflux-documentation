@@ -7,7 +7,7 @@ You can now use your **Ledger Nano S** or **Ledger Nano X** hardware wallet to s
 In this guide, we will show you how to install the Conflux app on your Ledger device, how to import your accounts into Fluent, and how to transfer assets on Conflux.
 
 :::note
-This guide is for Conflux Core. If you would like to use your Ledger device with the EVM-compatible Conflux eSpace, click [here]().
+This guide is for Conflux Core. If you would like to use your Ledger device with the EVM-compatible Conflux eSpace, click here.
 :::
 
 ## Before You Start
