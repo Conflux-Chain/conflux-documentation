@@ -25,20 +25,20 @@ To construct a transaction, first, you need to prepare the various fields of the
 ### Basic fields
 `from`, `to`, `value` are basic fields of a transaction that correspond to the `originating account`, `destination account`, and `amount` of the transaction, respectively.
 
-`from` is fairly easy to determine. You can simply select an external account (non-contract account) address with CFX balance. If the destination account of the transaction is a contract that is [sponsored](/conflux-rust/internal_contract/internal_contract#sponsorwhitelistcontrol-contract), the initiating account does not even require a CFX balance. The balance of the account can be queried through the RPC [`cfx_getBalance`](/conflux-doc/docs/json_rpc#cfx_getbalance) RPC method.
+`from` is fairly easy to determine. You can simply select an external account (non-contract account) address with CFX balance. If the destination account of the transaction is a contract that is sponsored, the initiating account does not even require a CFX balance. The balance of the account can be queried through the RPC `cfx_getBalance` RPC method.
 
 `to` is the destination account of the transaction: if you just want to initiate a CFX transfer, then `to` can be directly set as the CFX destination account; if you need to change the contract status, `to` needs to be set as the contract address; if you are deploying a new contract, `to` is left blank.
 
 `value` represents the CFX transfer amount of a transaction, and it needs to set an integer with the unit of Drip.
 
 ### nonce
-`nonce` is the number of transactions sent by an account. In other words, it is the execution sequence number of transactions sent by an account. It can be queried through the RPC method [`cfx_getNextNonce`](/conflux-doc/docs/json_rpc#cfx_getnextnonce). It has the following characteristics:
+`nonce` is the number of transactions sent by an account. In other words, it is the execution sequence number of transactions sent by an account. It can be queried through the RPC method `cfx_getNextNonce`. It has the following characteristics:
 
 1. The execution of transactions on the blockchain is in the order of nonce from small to large.
 2. The initial value of nonce is 0, and the nonce will be increased by 1 for every transaction execution.
 3. The nonce cannot be reused.
 4. Nonce cannot be skipped: Assume that the current nonce of an account is n. If the nonce of the transaction is m such that m > n, then the transaction will not be executed until all transactions with nonce < m have been executed.
-5. After the transaction is sent through the [`cfx_sendRawTransaction`](/conflux-doc/docs/json_rpc#cfx_sendrawtransaction) method, it will not be executed immediately. You need to wait for the miner to pack it first. After being packed, it will be executed after a delay of 5 Epochs. After the transaction is executed, the nonce of the account will increase by one.
+5. After the transaction is sent through the `cfx_sendRawTransaction` method, it will not be executed immediately. You need to wait for the miner to pack it first. After being packed, it will be executed after a delay of 5 Epochs. After the transaction is executed, the nonce of the account will increase by one.
 
 Setting the nonce correctly is the key to a smooth transaction execution. Many developers will encounter the situation when the transaction is sent successfully but the execution result (receipt) does not exist. (This suggests that the transaction has not been executed. In most cases, this is due to inadvertently skipping a nonce. A skipped nonce will cause the transaction to be stuck in the transaction pool while awaiting for the previous transaction to be executed.
 
@@ -48,13 +48,13 @@ When using the SDK to construct a transaction, the nonce does not need to be set
 After the transactions are sent to the network, they are packaged and executed by miners. Miners will charge a service fee for packaging transactions. This provides incentives for miners to participate in mining and keep the network running. 
 In the Conflux network, transaction fees are paid in CFX. Fees are specified by the transaction initiator through the `gas` and `gasPrice` fields of the transaction.
 
-The `gas` field is used to specify the upper limit of the maximum amount of gas that can be paid when a transaction is executed. This can be understood as the `limit` of the gas that can be consumed by the transaction execution, that is, `gasLimit`. When a miner executes a transaction, many instructions are executed internally, and different instructions consume different amounts of gas. If the total amount of gas consumed by the transaction exceeds the `gasLimit` specified by the transaction,  the execution of the transaction will fail. Regular CFX transfer transactions consume `21000` gas. If interacting with a contract, the gas consumption will depend on the complexity of the contract's corresponding bytecode, which can be estimated using the [`cfx_estimateGasAndCollateral`](/conflux-doc/docs/json_rpc#cfx_estimategasandcollateral) method. This method will return two gas-related fields:  gasUsed and `gasLimit`. The gasUsed is the actual amount of gas consumed by the transaction execution at the time of estimation. The `gasLimit` is the `gas` value set by transaction sending recommendation (slightly larger than `gasUsed`) to avoid transaction failure caused by inaccurate (smaller) estimation. Only 25% of the exceeding actual gas (compared to the `gasLimit` value) will be returned. Therefore it is important to set the transaction `gasLimit` appropriately.
+The `gas` field is used to specify the upper limit of the maximum amount of gas that can be paid when a transaction is executed. This can be understood as the `limit` of the gas that can be consumed by the transaction execution, that is, `gasLimit`. When a miner executes a transaction, many instructions are executed internally, and different instructions consume different amounts of gas. If the total amount of gas consumed by the transaction exceeds the `gasLimit` specified by the transaction,  the execution of the transaction will fail. Regular CFX transfer transactions consume `21000` gas. If interacting with a contract, the gas consumption will depend on the complexity of the contract's corresponding bytecode, which can be estimated using the `cfx_estimateGasAndCollateral` method. This method will return two gas-related fields:  gasUsed and `gasLimit`. The gasUsed is the actual amount of gas consumed by the transaction execution at the time of estimation. The `gasLimit` is the `gas` value set by transaction sending recommendation (slightly larger than `gasUsed`) to avoid transaction failure caused by inaccurate (smaller) estimation. Only 25% of the exceeding actual gas (compared to the `gasLimit` value) will be returned. Therefore it is important to set the transaction `gasLimit` appropriately.
 
 To help miners estimate their revenue with reasonable accuracy, at most 25% of the overall `gas` provided will be refunded. In other words, **the sender needs to pay at least 75% of the gas costs, even if the actual transaction execution consumed much less gas**. Therefore it is important to set the transaction gas limit appropriately.
 
 `gasPrice` is the amount of CFX that the transaction initiator is willing to pay per gas. The unit is Drip. Thus, the calculation of the upfront gas fee charged for transaction execution is gas * gasPrice. As mentioned before, up to 25% of this fee can be refunded to the sender.
 
-Miners will pack transactions with higher payouts first. If the network is congested, you can speed up the packing of transactions by increasing the `gasPrice` value. If the transaction is stuck for some reason, or if you want to speed up the packing of the transaction, try raising `gasPrice` and resending the transaction with the same nonce. Fullnode provides an RPC method [`cfx_gasPrice`](/conflux-doc/docs/json_rpc#cfx_gasprice) that returns a reasonable `gasPrice` value based on the current network conditions.
+Miners will pack transactions with higher payouts first. If the network is congested, you can speed up the packing of transactions by increasing the `gasPrice` value. If the transaction is stuck for some reason, or if you want to speed up the packing of the transaction, try raising `gasPrice` and resending the transaction with the same nonce. Fullnode provides an RPC method `cfx_gasPrice` that returns a reasonable `gasPrice` value based on the current network conditions.
 
 In addition to transaction fees, in the Conflux network, if new storage space is occupied during the transaction's execution, some CFX are pledged for that space occupation. The annualized %4 interest generated by the pledged CFX will be paid to the miners to subsidize their storage costs. If the occupied space is released, the pledged CFX will be released and returned to the sender of the transaction. For every 1KB of new space taken, 1 CFX is pledged. The `storageLimit` field is used to specify the upper limit of the space (in bytes) occupied by a transaction execution. If the transaction tries to occupy more storage than allowed by the storageLimit field, the transaction fails and no CFX is pledged.
 
@@ -72,9 +72,9 @@ The data field of the transaction can be left blank or set to a hex-encoded byte
 Smart contracts are usually written in high-level contract development languages (Solidity, vyper). You can use a compiler to obtain bytecode and abi. SDK will provide abi encoding methods for the encoding of the contract method call (encoding the method name and parameters).
 
 ### Other
-`chainId` is used to identify a chain. The current chainId of the Conflux Tethys network is `1029`, while that of the Conflux testnet is `1`. The chainId is included in the transaction mainly to prevent transaction replay attacks.  This field usually does not need to be filled manually. SDK will automatically obtain the current RPC chainId through the [`cfx_getStatus`](/conflux-doc/docs/json_rpc#cfx_getstatus) method.
+`chainId` is used to identify a chain. The current chainId of the Conflux Tethys network is `1029`, while that of the Conflux testnet is `1`. The chainId is included in the transaction mainly to prevent transaction replay attacks.  This field usually does not need to be filled manually. SDK will automatically obtain the current RPC chainId through the `cfx_getStatus` method.
 
-`epochHeight` is used to specify the target Epoch range for a transaction. Transactions will only be executed in the range of [Te − 100000, Te + 100000]. If the Epoch of the current chain exceeds that range, the transaction will be discarded. SDK also sets this field to the current Epoch obtained by the [`cfx_epochNumber`](/conflux-doc/docs/json_rpc#cfx_epochnumber) method automatically.
+`epochHeight` is used to specify the target Epoch range for a transaction. Transactions will only be executed in the range of [Te − 100000, Te + 100000]. If the Epoch of the current chain exceeds that range, the transaction will be discarded. SDK also sets this field to the current Epoch obtained by the `cfx_epochNumber` method automatically.
 
 
 ## Transaction encoding and signature
@@ -90,7 +90,7 @@ The specific steps are as follows (take js-conflux-sdk as an example):
 6. Finally, convert the encoded buffer in the previous step into a hex string, and then, you will get a rawTransaction that can be sent directly.
 
 ## How to check transaction details and status
-After the transaction is successfully sent, it will first be placed in the transaction pool. When the packaging conditions are met, the transaction will be packaged by the miner into the latest block. At this time, you can query the information and status of the transaction through [`cfx_getTransactionByHash`](/conflux-doc/docs/json_rpc#cfx_gettransactionbyhash).
+After the transaction is successfully sent, it will first be placed in the transaction pool. When the packaging conditions are met, the transaction will be packaged by the miner into the latest block. At this time, you can query the information and status of the transaction through `cfx_getTransactionByHash`
 The `status` field of the returned result indicates the execution status of the transaction:
 
 * `null`: not executed
@@ -127,7 +127,7 @@ The `status` field of the returned result indicates the execution status of the 
 
 The transaction will not be executed immediately after it's packaged, and the transaction's `status` is `null` at that point. After a delay of 4 Epochs, the status of the transaction would change to `0x0`, `0x1`, or `0x2`. (`0x0` for success, `0x1` for failure, and `0x2` for skip.)
 
-You can also get the transaction execution receipt through [`cfx_getTransactionReceipt`](/conflux-doc/docs/json_rpc#cfx_gettransactionreceipt). This can only be obtained after the transaction has been executed, otherwise, it will return `null`. The receipt contains a field `outcomeStatus` which can also be used to determine whether the transaction is executed successfully: `0x0` indicates success, others indicate failure.
+You can also get the transaction execution receipt through `cfx_getTransactionReceipt`. This can only be obtained after the transaction has been executed, otherwise, it will return `null`. The receipt contains a field `outcomeStatus` which can also be used to determine whether the transaction is executed successfully: `0x0` indicates success, others indicate failure.
 
 ```json
 {
@@ -161,7 +161,7 @@ In the blockchain, a block can be reverted after being executed. Accordingly, a 
 There are two ways to determine whether a transaction (block) is confirmed in Conflux:
 
 1. If the latest `confirmed epochNumber` of the network is greater than the epochNumber of the transaction, the transaction is confirmed. By calling `cfx_epochNumber` method and passing `latest_confirmed` parameter, you can obtain the latest confirmed `epochNumber`. epochNumber of the transaction is in its receipt. 
-2. You can obtain a block's confirmation risk value by calling the method [`cfx_getConfirmationRiskByHash`](/conflux-doc/docs/json_rpc#cfx_getconfirmationriskbyhash). If *risk/MAX_UINT256 is less than 1e-8*, the block is confirmed and will not be reverted. The block hash of the transaction can be obtained through `cfx_getTransactionByHash`.
+2. You can obtain a block's confirmation risk value by calling the method `cfx_getConfirmationRiskByHash`. If *risk/MAX_UINT256 is less than 1e-8*, the block is confirmed and will not be reverted. The block hash of the transaction can be obtained through `cfx_getTransactionByHash`.
 
 In Conflux, usually, a block can be confirmed after 50 epochs (within one minute). If the transaction involves a large amount, you might need to wait for more epochs according to the situation.
 
