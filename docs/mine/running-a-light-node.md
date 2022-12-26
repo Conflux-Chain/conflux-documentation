@@ -1,6 +1,6 @@
 # Running a Light Node
 
-> Note: Currently, [eSpace](../learn/conflux-basics/spaces.md) (EVM full-compatible space) RPC methods are not supported on the Conflux Light Node.
+> Note: Currently, eSpace (EVM full-compatible space) RPC methods are not supported on the Conflux Light Node.
 
 ## Overview
 **Node version: `conflux-rust v2.1.0`**.
@@ -21,7 +21,7 @@ node_type = "light"
 
 > Alternatively Light nodes can be enabled using the `--light` command line flag:
 
-Start by downloading the latest release from the [conflux-rust](https://github.com/Conflux-Chain/conflux-rust/) repository or by building from source code following [this guide](./compiling-the-conflux-client). Then, you can simply run the node using these commands:
+Start by downloading the latest release from the [conflux-rust](https://github.com/Conflux-Chain/conflux-rust/) repository or by building from source code following this guide. Then, you can simply run the node using these commands:
 
 ```bash
 > cd run
@@ -36,7 +36,7 @@ Catch-up mode: false
 
 ## Interacting with a light node
 
-Similarly to full and archive nodes, you can interact with a light node through an `HTTP`, `TCP`, or `WebSocket` connection. By default local HTTP queries are enabled through `port 12539`. For details, please refer to the [JSON-RPC documentation](../build/apis/JSON-RPC).
+Similarly to full and archive nodes, you can interact with a light node through an `HTTP`, `TCP`, or `WebSocket` connection. By default local HTTP queries are enabled through `port 12539`. For details, please refer to the JSON-RPC documentation.
 
 ### RPC queries
 Light nodes support most Conflux RPC APIs and support for the rest is also [on the way](https://github.com/Conflux-Chain/conflux-rust/issues/1461). As light nodes need to query their peers to fulfill RPC requests, the overall latency is slightly larger. (It is significantly larger for `cfx_getLogs`.)
