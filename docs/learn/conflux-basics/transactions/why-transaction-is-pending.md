@@ -43,7 +43,6 @@ This kind of error means that the sent transaction used the wrong nonce. Normall
 
 In this case, we need to resend the transaction with the correct nonce. It should be noted that the pending transaction will be automatically executed after all previous transactions are executed (and the balance is sufficient).
 
-
 ### Ready to pack
 
 This situation is quite special, which means that the transaction itself has reached the conditions that can be packaged, but because the entire network is relatively congested or for other reasons, it has not been packaged.
