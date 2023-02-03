@@ -11,7 +11,7 @@ Because today’s blockchain systems may have problems such as low throughput an
 ![](/img/why-tx-pending/tx-pending.png)
 -->
 
-## How to determine the reason for a pending transaction
+## How to find out the reason for a pending transaction
 
 If the pending transaction is successfully inserted into the transaction pool of the node used by Scan, the transaction can be searched by hash on Scan, and the status of the transaction can be seen as `Pending` on the transaction details page. 
 
