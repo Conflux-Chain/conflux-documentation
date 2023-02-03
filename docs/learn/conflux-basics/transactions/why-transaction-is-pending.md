@@ -58,5 +58,3 @@ If the transaction is in this state for a long time, the gasPrice of the transac
 The speed to package and execute a transaction is mainly affected by the gasPrice of the transaction. The higher the gasPrice, the faster it is packaged by miners, so it is very important to set the gasPrice correctly.
 
 You can use the `cfx_gasPrice` RPC method of fullnode to get a suggested gasPrice value. This method will give a recommended value based on the gas usage of a certain number of the latest blocks and the gasPrice of the transactions in it.
-
-The current (2021-12-21) network recommended gasPrice is `1M to 1G` drip.
