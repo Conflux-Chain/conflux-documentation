@@ -43,7 +43,6 @@ This kind of error means that the sent transaction used the wrong nonce. Normall
 
 In this case, we need to resend the transaction with the correct nonce. It should be noted that the pending transaction will be automatically executed after all previous transactions are executed (and the balance is sufficient).
 
-On the Conflux network, if the sender of a transaction does not have enough balance to pay the amount of a transaction + handling fee, the transaction can also be successfully sent to the transaction pool, but it will be in the pending state and will not be packaged for execution. In this case, you only need to transfer enough CFX to the account.
 
 ### Ready to pack
 
