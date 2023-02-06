@@ -29,7 +29,20 @@ For miners who participate in mining, a certain amount of CFX for each block min
 2. a fee for all transactions in the block
 3. 4% annualized return on all stored collateral 
 
-Finally, CFX will be used for the decentralized governance of the Conflux network. Users who meet certain criteria can initiate a vote, and CFX holders can participate in the vote through staking and locking CFX. For further details, please refer to the [Economics white paper](https://confluxnetwork.org/files/Conflux_Economic_Paper_20201230.pdf). 
+Finally, CFX will be used for the [decentralized governance of the Conflux Network](https://confluxhub.io/governance/dashboard). Users who meet certain criteria can initiate a vote, and CFX holders can participate in the vote through staking and locking CFX. For further details, please refer to the [Economics white paper](https://confluxnetwork.org/files/Conflux_Economic_Paper_20201230.pdf). 
+
+By integrating parameter update and the on-chain DAO voting, we can have a regular parameter update mechanism without hardfork. An account can distribute his voting power to different options of the same parameter. For any parameter, the total votes for its options should not exceed the account's current total voting power. The `ParameterControl` internal contract manages the on-chain voting mechanisms, allowing to vote on the following parameters:
+
+1. PoW base block reward.
+2. PoS base reward interest rate.
+
+And the options of each parameters are:
+
+0. Remain unchanged.
+1. Increase by 100%.
+2. Decrease by 50%.
+
+At the end of a voting period (counted as block numbers), the new parameter values will be computed. After the parameters are updated in the storage, the values get reset to 0 for the votes in the next period. An event is also emitted for each successful vote. For each account, the latest votes and the version for these votes will also be stored as storage entries in the contract ParamsControl. The vote period is set to 2 months and is based on the block number, so every period is 2 * 60 * 60 * 24 * 30 * 2 = 10,368,000 blocks.
 
 For more information on the genesis creation, distribution, and release of CFX, please refer to the [Economics white paper](https://confluxnetwork.org/files/Conflux_Economic_Paper_20201230.pdf) or [The Role of the CFX token in the Conflux Network](https://medium.com/conflux-network/the-role-of-the-cfx-token-in-the-conflux-network-5a56c2b43bb0). 
 
