@@ -5,7 +5,7 @@ keywords:
   - transaction
 ---
 
-Sending transactions is one of the most frequent operations in the blockchain world. The transactions go through multiple stages from the time they are constructed to the time they are finally confirmed on the chain. A good understanding of the stages of a transaction will help users and developers better identify problems with sending transactions and ultimately ensure that transactions are successfully confirmed.
+Sending transactions is one of the most frequent operations in the blockchain world. Transactions go through several stages from the time they are constructed to the time they are finally cofirmed on the chain. A good understanding of the stages of a transaction will help users and developers better identify problems with sending transactions and ultimately ensure that transactions are successfully confirmed.
 
 Transactions go through the following stages from construction to confirmation.
 
@@ -22,7 +22,7 @@ Transactions go through the following stages from construction to confirmation.
 -->
 ## Detailed Explanation of the Transaction Stages
 
-### Preparing transactions & sending the account‘s private key and address
+### Preparing the account‘s private key and address
 
 All transactions sent need to be signed with a private key in order to be accepted and successfully executed by the blockchain. Therefore, before sending a transaction, you need to prepare the private key of the sender, which can be used to derive the address of the account.
 
@@ -70,8 +70,6 @@ The raw transaction is sent to the nodes via the full node's cfx_sendRawTransact
 5. set epochHeight more than 100,000 away from the current value
 6. Other: the transaction pool is full
 
-Note that this method does not check whether the sender's balance is sufficient to pay the transaction and the processing fee, and the transaction can be sent successfully even if the sender's account balance is insufficient.
-
 If the check passes, the transaction will be put into the node's transaction pool and the hash of the transaction will be returned.
 
 At this point, the transaction can be retrieved through the RPC method cfx_getTransactionByHash, but since the transaction has yet been packaged, fields related to the block information (blockHash) and the execution result (contractCreated, status, transactionIndex) of the transaction are empty.
@@ -83,10 +81,9 @@ Since the transaction has not been executed, the receipt for the transaction has
 Transactions in the transaction pool may have three states.
 
 1. nonce skipping
-2. insufficient balance for transaction
-3. ready to pack
+2. ready to pack
 
-Transactions in the first two states will be considered as pending in the pool and will not become ready to pack until all the nonces before this transaction nonce have been executed, or until the balance is sufficient.
+Transactions in the first two states will be considered as pending in the pool and will not become ready to pack until all the nonces before this transaction nonce have been executed.
 
 Transactions that fulfill the packing condition will be packed into blocks by miners in roughly the order of gasPrice, from highest to lowest.
 
@@ -117,7 +114,7 @@ You can use the cfx_epochNumber method and pass the latest_confirmed parameter, 
 
 ### Transaction finalized because of PoS chain
 
-From v1.2.0, Conflux has introduced a PoS finality mechanism to prevent 51% attacks, so that blocks will not be reverted in case of low hashing power.
+Conflux introduces a PoS finality mechanism to prevent 51% attacks, so that blocks will not be reverted in case of low hashing power.
 
 By introducing a separate PoS chain to finalize the PoW blocks, the state of all the blocks that are voted as finalized will reach finality.
 
@@ -136,8 +133,7 @@ If the error message returned is "txpool is full", you can wait for a moment and
 After the transaction is successfully sent, but the transaction does not show as successfully executed on Conflux Scan, then the transaction is probably pending in the transaction pool. There are three possible cases:
 
 1. The transaction does not use a continuous nonce: the nonce of the transaction needs to be set correctly
-2. The balance of the sending account is insufficient: transfer to the sending account to get enough balance for the transaction
-3. The network is congested: If the network is congested, miners will pack the transactions roughly in order of gasPrice from highest to lowest. You can speed up transaction execution by increasing the gasPrice of the transaction
+2. The network is congested: If the network is congested, miners will pack the transactions roughly in order of gasPrice from highest to lowest. You can speed up transaction execution by increasing the gasPrice of the transaction
 
 You can use the cfx_getAccountPendingTransactions method to get the user's current Pending transactions and the reason for them.
 
