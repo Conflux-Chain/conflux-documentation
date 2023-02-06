@@ -12,7 +12,7 @@ keywords:
 For the purpose of this guide, we will assume you are already familiar with MetaMask and have it installed.
 If you need help getting started with MetaMask itself, [check out their documentation](https://metamask.io/faqs.html).
 
-In this tutorial we will walk through connecting MetaMask to the Conflux eSpace Testnet , deploying a simple ERC-20 contract using [Remix], and transferring the new token using MetaMask.
+In this tutorial we will walk through connecting MetaMask to the Conflux eSpace Testnet , deploying a simple ERC-20 contract using [Remix](https://remix.ethereum.org), and transferring the new token using MetaMask.
 
 :::note
 Screenshots in this tutorial are taken from the MetaMask browser extension version 10.8.1.
@@ -64,7 +64,7 @@ All the Conflux eSpace RPC endpoint URLs and chain IDs can be found on our Netwo
 :::
 
 Click `Save`, and you should see `Conflux eSpace` is now the network selected in MetaMask.
-To see MetaMask in action, we will connect it to [Remix] and perform some transactions.
+To see MetaMask in action, we will connect it to Remix and perform some transactions.
 The rest of this guide will assume your MetaMask is connected to `Conflux eSpace (Testnet)`.
 
 ## Deploying an ERC-20 Token using Remix
