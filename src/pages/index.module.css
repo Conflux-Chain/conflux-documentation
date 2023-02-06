@@ -3,6 +3,24 @@
  * and scoped locally.
  */
 
+.gradientBg {
+  position: relative;
+}
+
+.gradientBg::dark{
+  background:linear-gradient(180deg, #1B2F59 0%, #0C1831 100%);
+}
+
+.gradientBg::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: -60px;
+  width: 100%;
+  height: calc(115% + 60px);
+  background: var(--ifm-bg-ingradient);
+}
+
 .heroBanner {
   padding: 4rem 0;
   text-align: center;

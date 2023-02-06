@@ -1,41 +1,41 @@
 import React from 'react';
-import clsx from 'clsx';
-import Link from '@docusaurus/Link';
+import cx from 'clsx';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
-import HomepageFeatures from '@site/src/components/HomepageFeatures';
-
+import DocCatalog from '@site/src/modules/docCatalog';
+import FeatureCards from '@site/src/modules/featureCards';
+import CFX from '@site/static/img/conflux.svg';
 import styles from './index.module.css';
 
-function HomepageHeader() {
-  const {siteConfig} = useDocusaurusContext();
-  return (
-    <header className={clsx('hero hero--primary', styles.heroBanner)}>
-      <div className="container">
-        <h1 className="hero__title">{siteConfig.title}</h1>
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
-        <div className={styles.buttons}>
-          <Link
-            className="button button--secondary button--lg"
-            to="/docs/intro">
-            Docusaurus Tutorial - 5min ⏱️
-          </Link>
-        </div>
-      </div>
-    </header>
-  );
-}
 
-export default function Home() {
-  const {siteConfig} = useDocusaurusContext();
+const Home = () => {
+  const { siteConfig } = useDocusaurusContext();
+
   return (
     <Layout
-      title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
-      <HomepageHeader />
-      <main>
-        <HomepageFeatures />
+      title={`${siteConfig.title}`}
+      description=""
+    >
+      <main className='bg-[#F6F9FF] dark:bg-[#0C1831] flex flex-col items-center justify-center pb-24' >
+        <div className={cx('w-full flex justify-center', styles.gradientBg)}>
+          <div className='max-w-[1920px] w-full px-[76px] flex flex-col lg:flex-row lg:justify-between items-center z-10'>
+            <div className='flex flex-col lg:w-[37.5%] order-2 lg:order-1 font-bold'>
+              <h1 className="text-[68px]">CONFLUX</h1>
+              <h1 className="text-[68px]">DEVELOPER</h1>
+              <h1 className="text-[68px]">PORTAL</h1>
+              <p className="hero__subtitle text-[#737A88] text-[24px] dark:text-[#A2A8B6] font-normal mt-6">{siteConfig.tagline}</p>
+            </div>
+            <CFX role='img' className='w-10/12 lg:w-[58.3%] h-auto order-1 lg:order-2' />
+          </div>
+        </div>
+        <FeatureCards wrapperClassName='mt-20 lg:mt-0 xl:-translate-y-14 xl:-translate-y-12 z-10' />
+        <div className='px-[78px] w-full max-w-[1920px]'>
+          <div className='text-[32px] font-semibold'>Explore the documentation</div>
+          <DocCatalog />
+        </div>
       </main>
     </Layout>
   );
 }
+
+export default Home;

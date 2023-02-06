@@ -1,30 +1,180 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /**
  * Any CSS included here will be global. The classic template
  * bundles Infima by default. Infima is a CSS framework designed to
  * work well for content-centric websites.
  */
 
+html{
+  font-family:'Poppins';
+  color:var(--ifm-color-primary-font);
+}
+
+@font-face {
+  font-family:'Poppins';
+  src:url('@site/static/fonts/Poppins-Regular.woff2') format('woff2');
+  font-style: normal;
+  font-weight: normal;
+  font-display: auto;
+}
+
+@font-face {
+  font-family:'Poppins';
+  src:url('@site/static/fonts/Poppins-SemiBold.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 600;
+  font-display: auto;
+}
+
+@font-face {
+  font-family:'Poppins';
+  src:url('@site/static/fonts/Poppins-Bold.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 700;
+  font-display: auto;
+}
+
+@font-face {
+  font-family:'Poppins';
+  src:url('@site/static/fonts/Poppins-ExtraBold.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 800;
+  font-display: auto;
+}
+
+h1{
+  @apply text-5xl 
+}
+
+h2{
+  @apply text-3xl 
+}
+
+a{
+  color:var(--ifm-link-color);
+}
+
+article a{
+  @apply underline
+}
+
+button{
+  border:solid 1px var(--ifm-color-primary);
+  padding: 3px 7px;
+  border-radius: 4px;
+}
+
+img{
+  @apply pointer-events-none
+}
+
+.header-github-link{
+  background:var(--ifm-git-bg-url) no-repeat;
+  height: 1.5rem;
+  margin-right: 20px;
+}
+
+/* .blog-wrapper{
+  @apply max-w-[1920px] mx-auto
+}
+
+.container{
+  margin:0 0;
+} */
+
+.docs-wrapper{
+  @apply max-w-[1920px] mx-auto
+}
+
+.sidebarItemLink_node_modules-\@docusaurus-theme-classic-lib-theme-BlogSidebar-Desktop-styles-module{
+  padding:7px 0 7px 16px;
+}
+
+.sidebarItemLinkActive_node_modules-\@docusaurus-theme-classic-lib-theme-BlogSidebar-Desktop-styles-module{
+  background-color: var(--ifm-hover-overlay);
+}
+
+.footer{
+  padding: 32px 60px;
+}
+
+.footer--dark{
+  --ifm-footer-background-color:#152748;
+}
+
+.footer__copyright{
+  margin-left: 12px;
+}
+
+.footer__bottom{
+  display: flex;
+  align-items: center;
+}
+
+.footer__logo{
+  margin-top:0.5rem;
+}
+
+.navbar{
+  @apply flex justify-center
+}
+
+.navbar__inner{
+  @apply max-w-[1920px] px-[60px]
+}
+
+.plugin-pages.plugin-id-default:not(.docs-wrapper):not(.blog-wrapper) .navbar--fixed-top{
+  position: relative;
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.breadcrumbs__link{
+  vertical-align: middle;
+}
+
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
+  --ifm-color-primary: #4C78ef;
+  --ifm-color-primary-dark: #2f62ec;
+  --ifm-color-primary-darker: rgba(202, 206, 216, 0.24);
+  --ifm-color-primary-darkest: #DAE5FA;
+  --ifm-color-primary-light: #698ef2;
+  --ifm-color-primary-lighter: #7799f3;
+  --ifm-color-primary-lightest: rgba(179, 199, 238, 0);
+  --ifm-color-primary-font:#152748;
   --ifm-code-font-size: 95%;
+  --ifm-container-width-xl: 1920px;
+  --ifm-hover-overlay:#F6F9FF;
+  --ifm-heading-color:#0C1831;
+  --ifm-color-success-dark:#4C7BEF;
+  --ifm-color-success-contrast-foreground:#4C7BEF;
+  --ifm-color-success-contrast-background: #E6EDFD;
+  --ifm-bg-ingradient:linear-gradient(181.9deg, var(--ifm-color-primary-darkest) 1.6%, var(--ifm-color-primary-lightest) 98.06%);
+  --ifm-git-bg-url:url(@site/static/img/VectorgitHub.svg);
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
+  --ifm-alert-background-color:#152748;
+  --ifm-color-primary: #4C7BEF;
+  --ifm-color-primary-dark: rgba(10, 19, 39, 0.24);
+  --ifm-color-primary-darker: rgba(10, 19, 39, 0.24);
+  --ifm-color-primary-darkest: #1B2F59;
+  --ifm-color-primary-light: #698ef2;
+  --ifm-color-primary-lighter: #7799f3;
+  --ifm-color-primary-lightest: #0C1831;
+  --ifm-color-primary-font:#CACED8;
+  --ifm-heading-color:#E7EAF1;
+  --ifm-color-success-dark:#4C7BEF;
+  --ifm-color-success-contrast-foreground:#4C7BEF!important;
+  --ifm-color-success-contrast-background: #152748!important;
+  --ifm-hover-overlay:#152748!important;
+  --ifm-bg-ingradient:linear-gradient(181.9deg, var(--ifm-color-primary-darkest) 0%, var(--ifm-color-primary-lightest) 100%);
+  --ifm-git-bg-url:url(@site/static/img/GitHubDark.svg);
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
