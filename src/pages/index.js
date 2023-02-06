@@ -4,7 +4,7 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import DocCatalog from '@site/src/modules/docCatalog';
 import FeatureCards from '@site/src/modules/featureCards';
-import CFX from '@site/static/img/Conflux.svg';
+import CFX from '@site/static/img/conflux.svg';
 import styles from './index.module.css';
 
 
