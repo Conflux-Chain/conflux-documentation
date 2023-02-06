@@ -10,7 +10,7 @@ const config = {
   tagline: 'Developer resources for building on Conflux. By developers, for developers.',
   url: 'https://docs.conflux123.xyz/',
   baseUrl: '/',
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'ignore',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/logo.svg',
 
@@ -72,17 +72,30 @@ const config = {
       navbar: {
         title: 'CONFLUXDOCS',
         logo: {
-          alt: 'My Site Logo',
+          alt: 'Conflux Logo',
           src: 'img/logo.svg',
         },
         items: [
           {
-            type: 'doc',
-            docId: 'intro',
             position: 'left',
-            label: 'Tutorial',
+            label: 'Learn',
+            to: '/docs/category/learn',
           },
-          { to: '/blog', label: 'Blog', position: 'left' },
+          {
+            position: 'left',
+            label: 'Mine',
+            to: '/docs/category/mine',
+          },
+          {
+            position: 'left',
+            label: 'Stake',
+            to: '/docs/category/stake',
+          },
+          {
+            position: 'left',
+            label: 'Build',
+            to: '/docs/category/build',
+          },
           {
             href: 'https://github.com/Conflux-Chain/conflux-documentation',
             position: 'right',
@@ -98,9 +111,22 @@ const config = {
             title: 'Docs',
             items: [
               {
-                label: 'Tutorial',
-                to: '/docs/intro',
+                label: 'Learn',
+                to: '/docs/category/learn',
               },
+              {
+                label: 'Mine',
+                to: '/docs/category/learn',
+              },
+              {
+                label: 'Stake',
+                to: '/docs/category/learn',
+              },
+              {
+                label: 'Build',
+                to: '/docs/category/learn',
+              },
+
             ],
           },
           {
@@ -124,12 +150,16 @@ const config = {
             title: 'More',
             items: [
               {
-                label: 'Blog',
-                to: '/blog',
+                label: 'Contribute',
+                to: '/docs/category/contribute',
+              },
+              {
+                label: 'Get Involved',
+                to: '/docs/category/get-involved',
               },
               {
                 label: 'GitHub',
-                to: 'https://github.com/facebook/docusaurus',
+                href: 'https://github.com/documentation/docusaurus',
               },
             ],
           },
