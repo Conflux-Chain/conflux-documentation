@@ -94,7 +94,7 @@ async function main() {
     from: account.address,
     to: RECEIVER,
     value: Drip.fromCFX(0.1),
-    gasPrice: '0x1',
+    gasPrice: 1000000000,
   };
 
   try {
@@ -109,7 +109,8 @@ main();
 ```
 
 ### Other SDKs
-While it has not been tested, light nodes are expected to work with the [Java](https://github.com/Conflux-Chain/java-conflux-sdk) and [Go](https://github.com/Conflux-Chain/go-conflux-sdk) SDKs as well.
+
+While it has not been tested, light nodes are expected to work with the [Java](https://github.com/Conflux-Chain/java-conflux-sdk), [Python](https://github.com/Conflux-Chain/python-conflux-sdk) and [Go](https://github.com/Conflux-Chain/go-conflux-sdk) SDKs as well.
 
 ## Troubleshooting
 ### Why do I get an error when calling a contract method?#
@@ -150,7 +151,7 @@ You will get a similar error. This is because for contract transactions, `js-con
 ```js
 conflux.InternalContract('AdminControl').setAdmin('cfx:type.contract:acc7uawf5ubtnmezvhu9dhc6sghea0403y2dgpyfjp', 'cfx:type.user:aarc9abycue0hhzgyrr53m6cxedgccrmmyybjgh4xg').sendTransaction({
   from: account,
-  gas: '0x1111',
+  gas: 1000000000,
   storageLimit: '0x0',
   gasPrice: '0x1',
 }).executed();
