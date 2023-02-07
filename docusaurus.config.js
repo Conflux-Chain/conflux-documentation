@@ -78,6 +78,21 @@ const config = {
         items: [
           {
             position: 'left',
+            label: 'General',
+            to: '/docs/category/general',
+          },
+          {
+            position: 'left',
+            label: 'Core',
+            to: '/docs/category/core',
+          },
+          {
+            position: 'left',
+            label: 'eSpace',
+            to: '/docs/category/espace',
+          },
+          {
+            position: 'left',
             label: 'Learn',
             to: '/docs/category/learn',
           },
