@@ -1,4 +1,4 @@
 ---
 sidebar_position: 6
-title: Oracles
+title: common rpc errors
 ---
