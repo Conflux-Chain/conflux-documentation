@@ -19,4 +19,3 @@ This paper has been published at https://arxiv.org/. In it, we present a new con
 
 ## [Technical Presentation](https://confluxnetwork.org/files/Conflux_Technical_Presentation_20200309.pdf)
 This is a technical presentation about Conflux's main ideas and architecture, you can find how it's designed, and how Conflux achieves safety against double spending attacks and robustness against liveness attacks.
-
