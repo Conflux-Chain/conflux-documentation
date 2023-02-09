@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-title: Proof-Of-Work
+title: PoW Overview
 ---
 
 hello

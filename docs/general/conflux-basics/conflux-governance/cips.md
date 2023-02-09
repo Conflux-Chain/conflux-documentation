@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-title: Papers
+title: CIPs
 ---
 
 # CIPs
