@@ -1,6 +1,8 @@
 ---
 sidebar_position: 8
 title: Accounts
+keywords:
+    - to modify # this should be an article for both espace and core space
 ---
 
 # Accounts
