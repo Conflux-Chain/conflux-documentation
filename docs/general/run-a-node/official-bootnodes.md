@@ -1,6 +1,6 @@
 ---
 sidebar_position: 8
-title: Accounts
+title: Official Bootnodes
 ---
 
 hello
