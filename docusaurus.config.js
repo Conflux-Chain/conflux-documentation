@@ -92,26 +92,6 @@ const config = {
             to: '/docs/category/espace',
           },
           {
-            position: 'left',
-            label: 'Learn',
-            to: '/docs/category/learn',
-          },
-          {
-            position: 'left',
-            label: 'Mine',
-            to: '/docs/category/mine',
-          },
-          {
-            position: 'left',
-            label: 'Stake',
-            to: '/docs/category/stake',
-          },
-          {
-            position: 'left',
-            label: 'Build',
-            to: '/docs/category/build',
-          },
-          {
             href: 'https://github.com/Conflux-Chain/conflux-documentation',
             position: 'right',
             className: 'header-github-link',
