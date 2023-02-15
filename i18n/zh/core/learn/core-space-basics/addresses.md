@@ -1,13 +1,13 @@
 ---
 sidebar_position: 1
-title: Addresses
+title: 地址
 ---
 
-# Addresses
+# 地址
 
-## Overview
+## 概览
 
-Each Conflux [account](https://hackmd.io/@thegaram/rymwcvajq) is identified by its address. When sending tokens to someone or interacting with a smart contract, you will need to know their address. You can also share your address with other people so that you can receive token transfers.
+每个Conflux [帐户](https://hackmd.io/@thegaram/rymwcvajq) 由其地址标识。 向某人发送代币或与智能合约交互时，您需要知道他们的地址。 You can also share your address with other people so that you can receive token transfers.
 
 The address of an account is derived from its [private key](https://hackmd.io/@thegaram/rymwcvajq):
 
