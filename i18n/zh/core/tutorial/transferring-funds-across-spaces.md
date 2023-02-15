@@ -5,7 +5,7 @@ title: Transferring Funds Across Spaces
 
 # Transferring Funds Across Spaces
 
-## Overview
+## 概览
 
 Since the Hydra hard fork in 2022, Conflux has two spaces: Core Space and eSpace. Both spaces use CFX as their native token and they run on the same blockchain. For more details, please refer to the [documentation](https://hackmd.io/@thegaram/S15_VAwh5) or to [this article](https://medium.com/conflux-network/conflux-espace-a-high-level-overview-cdca29bc422a).
 
