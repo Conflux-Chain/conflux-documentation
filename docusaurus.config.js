@@ -92,6 +92,10 @@ const config = {
             to: '/docs/category/espace',
           },
           {
+            type: 'localeDropdown',
+            position: 'right',
+          },
+          {
             href: 'https://github.com/Conflux-Chain/conflux-documentation',
             position: 'right',
             className: 'header-github-link',
