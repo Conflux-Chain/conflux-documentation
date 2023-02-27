@@ -84,7 +84,7 @@ const config = {
           {
             position: 'left',
             label: 'Core',
-            to: '/docs/category/core',
+            to: '/docs/core',
           },
           {
             position: 'left',
