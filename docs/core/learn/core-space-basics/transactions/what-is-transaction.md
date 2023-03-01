@@ -7,7 +7,7 @@ keywords:
   - to modify # the trailing "failure" part should be moved to another place
 ---
 
-The act of sending a transaction is the only method of storing or modifying data on the blockchain. This includes both the transfer of CFX and the modification of contract states. The process of sending a transaction consists of three steps: constructing the transaction, signing it, and finally transmitting it. Most programming languages have an [SDK](https://developer.confluxnetwork.org/sdks-and-tools/en/conflux_sdks) with a convenient method that can be used for this purpose. However, if you are looking for a deeper understanding of the underlying mechanics or if you are experiencing problems when sending transactions, this article may help.
+The act of sending a transaction is the only method of storing or modifying data on the blockchain. This includes both the transfer of CFX and the modification of contract states. The process of sending a transaction consists of three steps: constructing the transaction, signing it, and finally transmitting it. Most programming languages have an [SDK](../../../build/sdks-and-tools/sdks.md) with a convenient method that can be used for this purpose. However, if you are looking for a deeper understanding of the underlying mechanics or if you are experiencing problems when sending transactions, this article may help.
 
 ## Transaction Fields
 

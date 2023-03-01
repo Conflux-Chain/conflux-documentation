@@ -32,13 +32,13 @@ For miners who participate in PoW, a certain amount of CFX is rewarded for each 
 2. a fee for all transactions in the block
 3. 4% annualized return on all stored collateral 
 
-The PoS consensus generates interest in each block and distributes them to those who participate the PoS. Refer to [PoS overview](https://developer.confluxnetwork.org/v2-hardfork/pos_overview) for more information. The interest can also be updated by on-chain DAO voting.
+The PoS consensus generates interest in each block and distributes them to those who participate the PoS. Refer to [PoS overview](../../general/conflux-basics/consensus-mechanisms/proof-of-stake/pos_overview.md) for more information. The interest can also be updated by on-chain DAO voting.
 
 ### CFX usage
 
 CFX is used to pay transaction fees and to store collateral. Transactions are packaged and executed by miners. In order to incentivize miners to keep participating in the bookkeeping and provide sufficient security for the network, each transaction is charged a (gas) fee calculated as gasPrice * max(gasLimit * 3/4, gasUsed), which is paid by CFX. In addition, if the execution of a transaction takes up new storage space, a portion of the CFX is pledged for the use of the storage space (the pledged CFX can be released under certain condition).
 
-Conflux is also used for staking. Through staking and locking CFX, Users can participate in [PoS](https://developer.confluxnetwork.org/v2-hardfork/pos_overview) or voting, including [onchain-dao voting](https://confluxhub.io/governance/vote/onchain-dao-voting), which can determine PoW base block reward and PoS base reward interest rate.
+Conflux is also used for staking. Through staking and locking CFX, Users can participate in [PoS](../../general/conflux-basics/consensus-mechanisms/proof-of-stake/pos_overview.md) or voting, including [onchain-dao voting](https://confluxhub.io/governance/vote/onchain-dao-voting), which can determine PoW base block reward and PoS base reward interest rate.
 
 ### Related Articles
 

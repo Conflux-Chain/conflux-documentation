@@ -1,6 +1,8 @@
 ---
 sidebar_position: 7
 title: Spaces
+keywords: 
+    - to polish
 ---
 
 # Spaces
@@ -25,7 +27,7 @@ eSpace is very easy to use for ethereum developers and users, just like BSC, Pol
 CoreSpace and eSpace are two logically independent spaces with their own transactions, account status, and contracts.
 
 - To interact with CoreSpace use Conflux-compatible wallet (Fluent), SDK (*-conflux-SDK), and development tools (chainIDE, conflux-truffle).
-- To interaction with eSpace directly use the existing tools and products from the Ethereum ecosystem, such as Metamask, truffle, hardhat, ethers.js, etc. (by simply setting the RPC network of the tool to [Conflux eSpace RPC](https://developer.confluxnetwork.org/conflux-doc/docs/EVM-Space/evm_space_networks/)).
+- To interact with eSpace directly use the existing tools and products from the Ethereum ecosystem, such as Metamask, truffle, hardhat, ethers.js, etc. (by simply setting the RPC network of the tool to [Conflux eSpace RPC](../../espace/learn/network-endpoints.md)).
 
 In terms of the underlying data storage, both Spaces reuse the same ledger (chain). A block may contain transactions from both Spaces, and they are only differentiated by the transaction type when transactions are executed. Each will only impact the account status in its own Space.
 
@@ -51,7 +53,7 @@ Conflux SDKs provide methods to calculate the base32 mirror address.
 Note: Do not directly use the hex address that is resulted from decoding the base32 address as the ```eSpace mirror address``` or ```eSpace address```. This operation is wrong and will lead to loss of assets.
 
 ## Internal Contract CrossSpaceCall
-CrossSpaceCall is an internal contract located in ```CoreSpace``` with hex40 format address ```0x08880000000000000000000000000000000000000006```. The specific interface of the contract can be found in its [interface documentation](https://developer.confluxnetwork.org/conflux-rust/internal_contract/internal_contract/#crossspacecall).
+CrossSpaceCall is an internal contract located in ```CoreSpace``` with hex40 format address ```0x08880000000000000000000000000000000000000006```. The specific interface of the contract can be found in its [interface documentation](../../core/learn/core-space-basics/internal-contracts/crossSpaceCall.md).
 
 The internal contract CrossSpaceCall provides several functions.
 
@@ -71,6 +73,7 @@ Conflux CoreSpace is a native space that supports ```contract sponsorship``` and
 If you want to deploy an Ethereum project to take advantage of Conflux's high performance and low cost in order to reduce user costs, you can choose eSpace. The project can be deployed directly without any modification. If you are a skilled Ethereum engineer, you can also choose eSpace directly and use the tools and SDKs that you are familiar with to get started quickly.
 
 ## Reference
+
 - [CIP-90](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-90.md).
-- [RPC Compatibility](https://developer.confluxnetwork.org/conflux-doc/docs/EVM-Space/evm_space_rpc_compatibility/).
-- [EVM Compatibility](https://developer.confluxnetwork.org/conflux-doc/docs/EVM-Space/evm_space_vm_compatibility/).
+- [Espace RPC Compatibility](../../espace/build/compatibility/rpc-compatibility.md).
+- [Espace EVM Compatibility](../../espace/build/compatibility/evm-compatibility.md).

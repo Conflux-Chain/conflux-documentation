@@ -35,7 +35,7 @@ In this tab, you can see the total number of pending transactions of this user a
 ![](/img/why-tx-pending/scan-pending-tx-list.jpeg)
 -->
 
-This page uses the RPC method [`cfx_getAccountPendingTransactions`](http://developer.confluxnetwork.org/conflux-doc/docs/json_rpc/#cfx_getaccountpendingtransactions) to obtain the current pending transaction information of an account.
+This page uses the RPC method [`cfx_getAccountPendingTransactions`](../../build/../../build/json-rpc/cfx-namespace.md#cfx_getaccountpendingtransactions) to obtain the current pending transaction information of an account.
 
 ### Wrong nonce
 
