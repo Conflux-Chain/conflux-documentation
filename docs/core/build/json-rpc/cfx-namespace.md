@@ -2,7 +2,6 @@
 id: json_rpc
 sidebar_position: 1
 title: cfx Namespace
-custom_edit_url: https://github.com/Conflux-Chain/conflux-doc/edit/master/docs/json-rpc.md
 keywords:
   - conflux
   - json-rpc

@@ -2,7 +2,6 @@
 id: pos_rpc
 sidebar_position: 3
 title: pos Namespace
-custom_edit_url: https://github.com/Conflux-Chain/conflux-doc/edit/master/docs/RPCs/pos-rpc.md
 keywords:
   - pos-rpc
 ---

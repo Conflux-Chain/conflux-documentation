@@ -2,7 +2,6 @@
 id: common_rpc_error
 sidebar_position: 6
 title: Common RPC errors
-custom_edit_url: https://github.com/Conflux-Chain/conflux-doc/edit/master/docs/RPCs/common-rpc-error.md
 keywords:
   - rpc
   - error

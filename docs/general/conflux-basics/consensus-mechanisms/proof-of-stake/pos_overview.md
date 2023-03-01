@@ -1,7 +1,6 @@
 ---
 id: pos_overview
 title: PoS Overview
-custom_edit_url: https://github.com/Conflux-Chain/conflux-developer-site/edit/master/docs/v2-hardfork/PoS-overview.md
 keywords:
   - pos
   - overview
