@@ -1,6 +1,14 @@
 ---
 sidebar_position: 2
-title: Consensus Mechanisms
+title: Consensus
+keywords:
+    - to enrich
 ---
 
-overview
+Learn about Conflux's PoW-PoS consensus
+
+```mdx-code-block
+import DocCardList from '@theme/DocCardList';
+
+<DocCardList />
+```

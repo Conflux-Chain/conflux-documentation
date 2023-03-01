@@ -1,6 +1,6 @@
 ---
-sidebar_position: 2
-title: CIPs
+sidebar_position: 1
+title: Overview
 ---
 
 hello

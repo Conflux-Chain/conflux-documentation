@@ -1,5 +1,6 @@
 ---
 title: Transactions
+sidebar_position: 8.5
 keywords:
   - transaction
   - to modify # This file is expected to include common parts of espace and core space transactions. Currently this file is migrated from "transaction stages". In the future, this article should focus more on the transaction basics, e.g. what is a transaction, etc. Ref https://ethereum.org/zh/developers/docs/transactions/
