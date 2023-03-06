@@ -11,9 +11,9 @@ You may want to run Conflux on a single node chain to develop and test smart con
 
 In order to run a single node Conflux chain for development, you can follow the following steps:
 
-1. Get executable Conflux binary file (use precompiled binary or build from the latest source code). You can refer to the document [Installation](https://conflux-chain.github.io/conflux-doc/install/).
+1. Get executable Conflux binary file (use precompiled binary or build from the latest source code). You can refer to the document [Downloading](./downloading-conflux-client.md).
 
-2. Create a directory and prepare a configuration file ```development.toml```. You can copy the ```hydra.toml``` provided in the directory and start from there following the guide [Getting Started](https://conflux-chain.github.io/conflux-doc/get_started/).
+2. Create a directory and prepare a configuration file ```development.toml```. You can copy the ```hydra.toml``` provided in the directory and start from there following the guide [Configuration Files](./configuration-files.md).
 
 3. Set the ```bootnodes``` parameter in the configuration file to empty (or comment the setting line).
 
@@ -37,9 +37,9 @@ You need the IP address, the port number, and the node id of the bootnode for ot
 
 ## A Simple Instruction
 
-1. Get executable Conflux binary file (use precompiled binary or build from the latest source code). You can refer to the document [Installation](https://conflux-chain.github.io/conflux-doc/install/).
+1. Get executable Conflux binary file (use precompiled binary or build from the latest source code). You can refer to the document [Downloading](./downloading-conflux-client.md).
 
-2. Create a directory and prepare a configuration file ```bootnode.toml``` for the bootnode (the default port is 32323 if not set). You can refer to [Getting Started](https://conflux-chain.github.io/conflux-doc/get_started/).
+2. Create a directory and prepare a configuration file ```bootnode.toml``` for the bootnode (the default port is 32323 if not set). You can refer to [Configuration Files](./configuration-files.md).
 
 ```bash
 Ensure that `bootnode.toml` does not contain the `bootnode` entry, and the

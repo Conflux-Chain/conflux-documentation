@@ -100,7 +100,6 @@ After the transaction has been approved, it is now signed and sent to the Conflu
 
 ## Next Steps
 
-You can learn more about Conflux at [confluxnetwork.org](https://confluxnetwork.org) or at the [Conflux Developer Portal](http://developer.confluxnetwork.org). You can check transaction and account details on [Conflux Scan](https://confluxscan.io).
+You can learn more about Conflux at [confluxnetwork.org](https://confluxnetwork.org). You can check transaction and account details on [Conflux Scan](https://confluxscan.io).
 
 If you encounter any issues, find us on [Discord](https://discord.com/invite/aCZkf2C) or [Telegram](https://t.me/Conflux_English), we are happy to help.
-s
