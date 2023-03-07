@@ -16,7 +16,7 @@ Conflux has two types of accounts.
 - External accounts (private key accounts) - are controlled by the holder of the private key
 - Smart Contracts - are the ones deployed in the network and controlled by the contract codes
 
-Note: There is a special type of smart contract in the Conflux network - [the internal contracts](https://developer.confluxnetwork.org/conflux-rust/internal_contract/internal_contract/). They are created automatically when the network is started or upgraded, but not by deploying contract codes. There are currently 6 internal contracts.
+Note: There is a special type of smart contract in the Conflux network - [the internal contracts](../../core/learn/admin.md). They are created automatically when the network is started or upgraded, but not by deploying contract codes. There are currently 6 internal contracts.
 
 ## Similarities of Accounts
 

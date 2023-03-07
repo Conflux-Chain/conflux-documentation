@@ -2,7 +2,6 @@
 id: send_tx_error
 sidebar_position: 7
 title: cfx_sendRawTransaction errors
-custom_edit_url: https://github.com/Conflux-Chain/conflux-doc/edit/master/docs/RPCs/send-tx-error.md
 keywords:
   - rpc
   - error

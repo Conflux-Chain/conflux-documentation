@@ -2,7 +2,6 @@
 id: trace_rpc
 sidebar_position: 5
 title: trace Namespace
-custom_edit_url: https://github.com/Conflux-Chain/conflux-doc/edit/master/docs/RPCs/trace-rpc.md
 keywords:
   - trace-rpc
 ---
