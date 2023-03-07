@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkconflux_docs=self.webpackChunkconflux_docs||[]).push([[4292],{2147:e=>{e.exports=JSON.parse('{"title":"General","description":"5 minutes to learn the most important Docusaurus concepts.","slug":"/category/general","permalink":"/docs/category/general","navigation":{"next":{"title":"Conflux Basics","permalink":"/docs/category/conflux-basics"}}}')}}]);
