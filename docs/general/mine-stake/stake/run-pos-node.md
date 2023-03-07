@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-title: Run A PoS Node
+title: Run a PoS Node
 ---
 
 hello

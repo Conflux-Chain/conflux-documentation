@@ -79,7 +79,7 @@ const config = {
           {
             position: 'left',
             label: 'General',
-            to: '/docs/category/general',
+            to: '/docs/general',
           },
           {
             position: 'left',

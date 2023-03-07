@@ -1,8 +1,8 @@
 {
-  "label": "Mine & Stake",
+  "label": "Mining & Staking",
   "position": 3,
   "link": {
     "type": "generated-index",
-    "description": "5 minutes to learn the most important Docusaurus concepts."
+    "description": "Tutorials for PoW and PoS miners. The higher hashrates and staking proportion will make Conflux safer."
   }
 }
