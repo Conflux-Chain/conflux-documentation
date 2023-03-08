@@ -27,7 +27,7 @@ eSpace is very easy to use for ethereum developers and users, just like BSC, Pol
 CoreSpace and eSpace are two logically independent spaces with their own transactions, account status, and contracts.
 
 - To interact with CoreSpace use Conflux-compatible wallet (Fluent), SDK (*-conflux-SDK), and development tools (chainIDE, conflux-truffle).
-- To interact with eSpace directly use the existing tools and products from the Ethereum ecosystem, such as Metamask, truffle, hardhat, ethers.js, etc. (by simply setting the RPC network of the tool to [Conflux eSpace RPC](../../espace/learn/network-endpoints.md)).
+- To interact with eSpace directly use the existing tools and products from the Ethereum ecosystem, such as Metamask, truffle, hardhat, ethers.js, etc. (by simply setting the RPC network of the tool to [Conflux eSpace RPC](../../espace/build/network-endpoints.md)).
 
 In terms of the underlying data storage, both Spaces reuse the same ledger (chain). A block may contain transactions from both Spaces, and they are only differentiated by the transaction type when transactions are executed. Each will only impact the account status in its own Space.
 

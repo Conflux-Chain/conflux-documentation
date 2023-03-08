@@ -26,7 +26,7 @@ If you want to open the http or websocket RPC, you need to enable it by setting 
 
 We have both unit tests written in Rust and integration tests written in python. After you make some modifications to the code, you can run these tests to see if the system still runs correctly.
 
-First, you need to install the dependencies as instructed in [Install Test Dependencies](install.md#install-test-dependencies).
+First, you need to install the dependencies as instructed in [Install Test Dependencies](./compiling-conflux-client.md#install-test-dependencies).
 
 Then you can run the tests as follows
 
