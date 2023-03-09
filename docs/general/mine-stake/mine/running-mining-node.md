@@ -5,12 +5,11 @@ title: Running a Mining Node
 
 ## Conflux Network PoW - GPU Mining Instruction
 
-
-|  Network | Conflux Hydra |
-| Version  | v2.2.1-fixpos        | 
-| Graphics  | Card Type	NVIDIA GPU      |  
-| Graphics Memory	 | *** 8G or more ***    |  
-| Install NVIDIA Drivers|[Download](https://www.nvidia.cn/Download/index.aspx?lang=cn) | 
+Network: Conflux Hydra
+Version: v2.2.1-fixpos
+Graphics: Card Type	NVIDIA GPU 
+Graphics Memory: *** 8G or more ***  
+Install NVIDIA Drivers: [Download](https://www.nvidia.cn/Download/index.aspx?lang=cn)
 
 ## Downloading the latest version
 For downloading the latest version of the software, please refer to: https://github.com/Conflux-Chain/conflux-rust/releases
