@@ -1,9 +1,9 @@
 ---
 sidebar_position: 1
 title: Addresses
+keywords:
+    - to modify # how EOA/contract address is computed is needed; the address usage in core space vm should be illustrated
 ---
-
-# Addresses
 
 ## Overview
 
