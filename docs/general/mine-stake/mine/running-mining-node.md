@@ -3,22 +3,18 @@ sidebar_position: 1
 title: Running a Mining Node
 ---
 
-## Conflux Tethys GPU Mining Instruction (v1.1.7)
+## Conflux Network PoW - GPU Mining Instruction
 
 
-|  Network  Conflux Tethys    |
-| ---------------------- | ----------- |
-| Version  | v1.1.7   |  |
+|  Network | Conflux Hydra |
+| Version  | v2.2.1-fixpos        | 
 | Graphics  | Card Type	NVIDIA GPU      |  
 | Graphics Memory	 | *** 8G or more ***    |  
-| Install NVIDIA Drivers|[Download](https://www.nvidia.cn/Download/index.aspx?lang=cn)`173` | 
+| Install NVIDIA Drivers|[Download](https://www.nvidia.cn/Download/index.aspx?lang=cn) | 
 
-## The content of v1.1.7 upgrade
-For details of the v1.1.7 upgrade content, please refer to: https://github.com/Conflux-Chain/conflux-rust/releases `655`
+## Downloading the latest version
+For downloading the latest version of the software, please refer to: https://github.com/Conflux-Chain/conflux-rust/releases
 
-:::note
-**Trace data is not compatible with earlier versions of v1.1.1, and the old data may be incorrect. If you use to run the routine executive_trace = true, please clear the data and resynchronize the chain.**
-:::
 
 ## Windows Testing Instruction
 Notes:
@@ -28,36 +24,47 @@ Notes:
 
 ## Run Files
 
-1. ** cfxmine.win.zip: mining program:** [Click to see Conflux PoW mining algorithm](https://github.com/Conflux-Chain/open-cfxmine/releases) `660`
-2. ** conflux_v1.1.7.zip: Fullnode program:** [Click to see fullnode program](https://github.com/Conflux-Chain/conflux-rust/releases) `655` 
+1. ** cfxmine.win.zip: mining program:** [Click to see Conflux PoW mining algorithm](https://github.com/Conflux-Chain/open-cfxmine/releases)
+2. ** conflux_v2.2.1-fixpos.zip: Fullnode program:** [Click to see fullnode program](https://github.com/Conflux-Chain/conflux-rust/releases) 
 
 ## Prepare to Run conflux
-- Create a directory: conflux
-- Unzip the download package to the directory respectively
+1. Create a directory named “conflux”
+2. Extract the download package to the directory
+3. Download the pos_config package and move the decompressed folder to the run directory
 
-The directory structure is:
+:warning: The directory structure should look like this:
 
 ```
 conflux
 └── run
+    └── pos_config
     └── conflux.exe
-    └── tethys.toml
-└── cfxmine.exe
+    └── conflux.pdb
+    └── hydra.toml
+    └── log.yaml
+    └── clear_state.bat
+    └── clear_state.sh
+    └── libcrypto-1_1-x64.dll
+    └── libssl-1_1-x64.dll
+    └── start.bat
+    └── start.sh
+    └── throttling.toml
 ```
+
+Note: the previous tethys.toml has changed to hydra.toml.
+
 
 ## Configuration Instructions
 
-Open the run/tethys.toml file with a text editor and configure mining related parameters:
-
-```bash
-mining_author="Personal wallet address"
-```
+If you only run the PoS node, no modification is required here;
+If you plan to run the GPU mining software, you need to edit hydra.toml file in order to set up the configuration.
 
 ```
-Notice: The wallet address configuration needs to remove the prefix: #
+# mining_author="cfx:xxxxxxxxxx..."
 ```
 
-Both new and old formats are acceptable.
+Please change the “cfx:xxxx…” to your own wallet address, and then delete “#” before “mining_author…”
+
 
 ## Run GPU Mining Program
 
@@ -67,7 +74,7 @@ Conflux GPU Mining Program **cfxmine** needs to run with the Conflux node progra
 
 ```bash
 cd conflux\run
-conflux --config tethys.toml --full 2>stderr.txt
+conflux --config hydra.toml --full 2>stderr.txt
 ```
 
 Then you can start mining.
@@ -85,37 +92,47 @@ Note: The GPU command line is executed after the fullnode synchronization is com
 
 **Run Files**
 
-- **cfxmine.linux.gz:** [Mining ProgramClick to see Conflux PoW Mining Algorithm](https://github.com/Conflux-Chain/open-cfxmine/releases) `660`
-- **conflux_linux_v1.1.7:** [Fullnode ProgramClick to see fullnode Program] (https://github.com/Conflux-Chain/conflux-rust/releases)`655`
+- **cfxmine.linux.gz:** [Mining ProgramClick to see Conflux PoW Mining Algorithm](https://github.com/Conflux-Chain/open-cfxmine/releases)
+- **conflux_linux_v2.2.1-fixpos:** [Fullnode ProgramClick to see fullnode Program] (https://github.com/Conflux-Chain/conflux-rust/releases)
 - （Differences from the previous version: the default.toml in the mainnet release will be renamed as tethys.toml, and in the testnet it will be testnet.toml.）
 
 ## Prepare to Run conflux
 
-- Create a directory: conflux
-- Unzip the download package to the directory respectively
+1. Create a directory named “conflux”
+2. Extract the download package to the directory
+3. Download the pos_config package and move the decompressed folder to the run directory
 
-The directory structure is:
+:warning: The directory structure should look like this:
 
 ```
 conflux
 └── run
-    └── conflux
-    └── tethys.toml
-└── cfxmine
+    └── pos_config
+    └── conflux.exe
+    └── conflux.pdb
+    └── hydra.toml
+    └── log.yaml
+    └── clear_state.bat
+    └── clear_state.sh
+    └── libcrypto-1_1-x64.dll
+    └── libssl-1_1-x64.dll
+    └── start.bat
+    └── start.sh
+    └── throttling.toml
 ```
+
+Note: the previous tethys.toml has changed to hydra.toml.
 
 ## Configuration Instructions
 
-Open the `run/tethys.toml` file with a text editor and configure mining related parameters:
+Open the `run/hydra.toml` file with a text editor and configure mining related parameters:
 
-```js
-mining_author="Personal wallet address"
 ```
-```
-Notice: The wallet address configuration needs to remove the prefix: #
+# mining_author="cfx:xxxxxxxxxx..."
 ```
 
-Both new and old formats are acceptable.
+Please change the “cfx:xxxx…” to your own wallet address, and then delete “#” before “mining_author…”
+
 
 ## Run GPU Mining Program
 
@@ -125,7 +142,7 @@ Conflux GPU Mining Program **cfxmine** needs to run with the Conflux node progra
 
 ```bash
 cd conflux/run
-./conflux --config tethys.toml --full 2>stderr.txt
+./conflux --config hydra.toml --full 2>stderr.txt
 ```
 
 Then you can start mining.
