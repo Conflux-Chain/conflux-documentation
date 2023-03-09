@@ -1,95 +1,90 @@
 ---
 sidebar_position: 8
 title: Accounts
-keywords:
-    - to modify # this should be an article for both espace and core space
 ---
 
-# Accounts
+## Overview
 
-```Account``` is a very important object entity in the Conflux network. It is used to store CFX (every account has its CFX balance) and send Conflux transactions. Accounts and account balances are stored in a huge table in the Conflux VM, and they are part of the full state of the Conflux ledger.
+Accounts in Conflux can be compared to "bank accounts", as they store CFX. Users can create and manage their accounts, deposit CFX, and send transactions. The account address is a unique string that identifies an account and is used to retrieve account information from the Conflux VM's huge table, which stores the account content and balance. 
 
-## Types of Accounts
+:::note
 
-Conflux has two types of accounts.
+The account implementation, including the account content and address computing rule is slight different in [core space](../../core/learn/core-space-basics/accounts.md) and [espace](../../espace/learn/accounts.md).
 
-- External accounts (private key accounts) - are controlled by the holder of the private key
-- Smart Contracts - are the ones deployed in the network and controlled by the contract codes
+:::
 
-Note: There is a special type of smart contract in the Conflux network - [the internal contracts](../../core/learn/admin.md). They are created automatically when the network is started or upgraded, but not by deploying contract codes. There are currently 6 internal contracts.
+## Address
 
-## Similarities of Accounts
+Account addresses, like bank account numbers, identify accounts and can be examined on [ConfluxScan](https://confluxscan.io). However, the address format differs between [core space](../../core/learn/core-space-basics/addresses.md) and espace. Core space uses the CIP-37 encoding scheme, while espace uses the same format as Ethereum.
 
-- Both of them can accept, hold, and send CFX and tokens
+Here are examples showing the address format in the 2 spaces:
+
+``` 
+// espace address
+0x1e97870f263700f46aa00d967821199b9bc5a120
+// Core Space Mainnet address
+cfx:aatktb2te25ub7dmyag3p8bbdgr31vrbeackztm2rj
+// Core Space Testnet address
+cfxtest:aatktb2te25ub7dmyag3p8bbdgr31vrbeajcg9pwkc
+```
+
+## Account Types
+
+There are two account types, the externally-owned account (EOA) and the contract account. The EOA is controlled by anyone with the private keys of the account, while the contract account is a smart contract deployed on the network, controlled by its code.
+
+### External Accounts and Public-private Key Pairs
+
+EOAs consist of a cryptographic pair of keys: a public and a private key. The private key, which is a 64 hexadecimal character string, is used to sign transactions and grants custody over the funds associated with the account. Public-key cryptography ensures that a transaction is not forged and that the sender can prove the authenticity of the transaction request. This protects against malicious actors broadcasting fake transactions.
+
+Here is an example of private key:
+
+```
+c5eca1e5de819725cf7c6764f4bba7eea95549a40275b21eaff91554c59bef90
+``` 
+
+The public key is calculated from the private key by the [Elliptic Curve Cryptography Algorithm](https://en.wikipedia.org/wiki/Elliptic_Curve_Digital_Signature_Algorithm):
+
+```
+0xa82d8039606ea598798ae1c995e2dbad90561d67ffa9555f96e0bc3dbc38c32aa1ede8ab17a137b8515b94b158b49a746c77abc432c2677cb0a6d3240be98872
+```
+
+An EOA's address is then computed from its public key:
+
+```
+// espace address, encoded in EIP-55 checksum format
+0x7058Ce27AF14B05943B879E530Df642867dFcf57
+// core space mainnet address (encoded in CIP-37 format)
+cfx:aajfvxvhz6mna0md1b68mpg9puygt18tm6nynadnf6
+```
+
+### Smart Contract Accounts
+
+[Smart contracts](./contracts.md) also have addresses, and users can interact with them by sending transactions. The contract address is determined when the contract is deployed, and the computation rule differs between core space and espace.
+
+## Comparations of Different Account Types
+
+### Similarities
+
+- Both of them can accept, hold, and send CFX.
 - Both of them can interact with smart contracts in the network
 
-## Differences of Accounts
+### Differences
 
-### External Accounts
+#### External Accounts
 
 - Creating external accounts does not have costs, such as CFX or other resources
 - They can send transactions to others
 - Transactions between external accounts can only be CFX or token transactions
 
-### Smart Contracts
+#### Smart Contracts
 
 - Creating smart contracts does have costs, as it uses the network's storage and computational resources
 - Transactions can only be sent to other contracts as a response to a received transaction
 - Transactions sent from external accounts to contract accounts can trigger the smart contract's codes to perform many different operations, such as token transfers, creating new contracts, etc.
 
-## External Accounts and Public-private Key Pairs
+## Related Topics
 
-When you want to create an external account, you can use a wallet, like FluentWallet, or any language library, where essentially both of them generate a random private key.
-
-A private key contains 64 hexadecimal characters and can be encrypted using a password.
-
-```
-fffffffffffffffffffffffffffffffebaaedce6af48a03bbfd25e8cd036415f
-``` 
-The public key is calculated from the private key by the [Elliptic Curve Cryptography Algorithm](https://en.wikipedia.org/wiki/Elliptic_Curve_Digital_Signature_Algorithm). Then, Keccak-256 hashing is performed on the public key, and the Conflux address is yielded by encoding the last 20 bytes (the first 4 bit will be set to 0001) of the result with base 32 formats.
-
-```js
-// Mainnet address
-cfx:aatktb2te25ub7dmyag3p8bbdgr31vrbeackztm2rj
-// Testnet address
-cfxtest:aatktb2te25ub7dmyag3p8bbdgr31vrbeajcg9pwkc
-```
-
-The public key can be calculated from the private key, but the private key cannot be calculated from the public key. The private key has to be kept safe by the user.
-
-## Smart Contract Account
-
-Smart contracts also have base32 encoded addresses
-
-```
-cfx:acf2rcsh8payyxpg6xj7b0ztswwh81ute60tsw35j7
-```
-
-This address is determined when the contract is deployed and is calculated by the deployed transaction's ```sender address```, ```nonce```, and the smart contract's code.
-
-Note: The addresses of internal contracts are special - they are assigned by the network itself.
-
-## Details of Accounts
-
-The global state of Conflux is composed of individual account states, each of which is an address-state pair (key pair).
-
-A Conflux account state includes five parts:
-
-- ```Basic state``` is the basic state of the account.
-- ```Storage state``` is a key/value database or storage space that can be used to store custom states or data of smart contracts.
-- ```Code information``` is the code information of the smart contract account. It includes the contract codes and the ```address``` of the account that paid the fee for the storage space occupied by the codes.
-- ```Staking deposit list``` is the list of Staking operations of the accounts (it will be removed in the next Hardfork).
-- ```Staking vote lock list``` is the list of lock operations performed by the account to participate in DAO voting.
-
-The basic status of the account consists of eight fields as follows:
-
-- ```Nonce``` is a counter to keep track of the number of transactions sent by an account. It is also used to ensure that each transaction can only be executed once. For contract accounts, this value indicates the number of ```contracts created by this contract```.
-- ```Balance``` is the number of CFX of the address in Drip. Drip is the smallest unit of CFX, where 1CFX=1018 Drip.
-- ```CodeHash``` is the hash of the code of the contract account. The user can reference the contract code, the code cannot be modified after the contract is created. The code will be executed when the contract receives a message call. For external accounts, codeHash is a hash of an empty string.
-- ```StakingBalance``` is the balance of the staked amount. Similarly, the unit is Drip.
-- ```Admin``` is the administrator address of the ```contract account``` recorded in the AdminControl internal contract. In default, the contract administrator is set to the account which deployed this contract when it is created. The administrator can destroy the contract it manages through the internal contract AdminControl, or give the administrator role to another account. The administrator address of an external account is itself.
-- ```SponsorInfo``` is the information of the contract sponsor. It contains ```sponsor for gas```, ```sponsor for collateral```, ```sponsor gas limit```, ```sponsor balance for gas```, and ```sponsor balance for collateral```.
-- ```StorageCollateral``` is the amount of Drip staked to use the storage spaces.
-- ```AccumulatedInterestReturn``` is the amount of cumulative reward of the account from Staking. The unit of it is Drip. Starting with Conflux 2.0, users must also participate in PoS in order to receive the reward.
-
-For more details about accounts, please refer to the ```Accounts``` section in [Conflux Protocol Specification](https://www.confluxnetwork.org/files/Conflux_Protocol_Specification.pdf).
+- [Ethereum Accounts](https://ethereum.org/en/developers/docs/accounts/)
+- [Core space accounts](../../core/learn/core-space-basics/accounts.md)
+- [espace accounts](../../espace/learn/accounts.md)
+- [Core space addresses](../../core/learn/core-space-basics/addresses.md)
