@@ -9,9 +9,9 @@ Conflux introduced the Collateral for storage (CFS) mechanism as a pricing metho
 
 In the Conflux network, each storage entry occupies a space of 64B (B is Bytes, byte), which is also the size of the key/value pair in the world state. It should be noted that the key in the blockchain is generally 256bits long and the value It is also 256bits long (each is 32B long, and the total is 64B long). The deposit required for storage is proportional to the minimum multiple of 64B that can cover all stored items. For each storage entry, the last account that writes to the entry is called the owner of the storage entry. If a storage item is written during the execution of contract C, and a guarantor provides guarantee for it, then C is regarded as the writer of the item and accordingly becomes the owner of the item (see section 7.1 for details). In the world state, during the entire life cycle of a storage item, the owner of the item must lock a fixed amount of CFX as a storage deposit for the storage space. Specifically, for each storage entry with a size of 64B, its owner will be locked by 1/16CFX. For occupying `1KB` space, you will pay `1CFX` as a deposit, and the corresponding formula is as follows:
 
-<!---  
-![](/img/storage-formula.png)
--->
+
+![Locale Dropdown](./img/storage-formula-635173b54f6e13ba21a689cc691d4ecd.png)
+
 
 When account α becomes the owner of a stored entry (whether it is created or modified), α should immediately lock 1/16 CFX for the entry. If α has enough balance, then the required deposit will be automatically locked, otherwise if α does not have enough balance, the operation will fail and α cannot create or modify the entry.
 
