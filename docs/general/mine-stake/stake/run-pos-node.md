@@ -35,11 +35,9 @@ wget https://github.com/conflux-fans/archive-tool
 tar xvzf <archive-node-snapshot>.tar.gz conflux-rust/run 
 ```
 
-5. Download the PoS configuration file:
+5. Download the latest PoS configuration file:
 
-```
-wget https://github.com/Conflux-Chain/conflux-rust/releases/download/v2.0.0-fix/pos_config-hydra.tgz 
-```
+https://github.com/Conflux-Chain/conflux-rust/releases/tag/v2.2.1-fixpos
 
 :::note
 Check https://github.com/Conflux-Chain/conflux-rust/releases for the latest version.
