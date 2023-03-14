@@ -268,9 +268,9 @@ Finally, in Interface/src/pages/components/Header/index.js, add an Option corres
 
 One-Click PoS Pool is a an application that enables users without code experience to run a PoS pool in an easy way.
 PoS one click uses docker technology and consists in 3 parts:
-1 - Node part, this part use bash script to run a Conflux PoS node
-2 - PosPool website and contract, in this part, it provide a stake website which allow user to stake their CFX token, and an automatically script to deploy the website, contract and verify the contract.
-3 - Admin website, a .net core web application, which only allow admin to login, admin can login to monitor the pool status, adjust pool name/performance fee, withdraw profit, it also allow admin to upgrade node and contract by just click a few buttons.
+1. Node part, this part use bash script to run a Conflux PoS node
+2. PosPool website and contract, in this part, it provide a stake website which allow user to stake their CFX token, and an automatically script to deploy the website, contract and verify the contract.
+3. Admin website, a .net core web application, which only allow admin to login, admin can login to monitor the pool status, adjust pool name/performance fee, withdraw profit, it also allow admin to upgrade node and contract by just click a few buttons.
 
 [Github Repo](https://bitbucket.org/abc-cfxpool/posoneclick/src/main/)
 
