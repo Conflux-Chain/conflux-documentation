@@ -53,7 +53,7 @@ CFX voting website: [https://www.confluxhub.io/](https://www.confluxhub.io/)
 
 ![https://forum.conflux.fun/uploads/default/optimized/2X/9/9c254079c90208f9b694db70d7ecadafda3f4b85_2_541x500.jpeg](https://forum.conflux.fun/uploads/default/optimized/2X/9/9c254079c90208f9b694db70d7ecadafda3f4b85_2_541x500.jpeg)
 
-**Caution**
+### Caution
 
 - Once a lock has been applied, subsequent locking can only be done [by increasing the number of tickets] or [by extending the time].
 - You cannot reduce the last commit time or the number of cfx, so you can only increase the number of votes by locking them for a longer period.(If I have locked for 1 year, I cannot change /reduce the lock period)
