@@ -3,7 +3,11 @@ sidebar_position: 1.5
 title: Accounts
 ---
 
-This page is created to provide information for "account" in core space.
+:::note
+
+This page is created to provide information for CORE SPACE ACCOUNTS. Refer to [General-Accounts](../../../general/conflux-basics/accounts.md) for the overall introduction of the concept of ACCOUNTS.
+
+:::
 
 ## Account Address
 
@@ -35,7 +39,7 @@ curl --data '{"jsonrpc":"2.0","method":"cfx_getAccount","params":["cfx:type.cont
 }
 ```
 
-### Illustraction
+### Illustration
 
 The global state of Conflux is composed of individual account states, each of which is an address-state pair (key pair).
 
