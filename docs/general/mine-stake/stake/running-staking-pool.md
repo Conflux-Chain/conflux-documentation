@@ -14,7 +14,7 @@ The POS Pool operator needs to have the infrastructure to run the following:
 
 ## Reference Architecture 
 
-<img alt="PoS-Reference Architecture" src={./img/PoSReferenceArchitecture.png} />
+![Architecture](./img/PoSReferenceArchitecture.png)
 
 Please note this configuration guide is to do the technical setup of the PoS Pool staking environment. 
 
