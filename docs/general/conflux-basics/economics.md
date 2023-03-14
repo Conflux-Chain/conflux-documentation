@@ -99,7 +99,7 @@ Now that the network is fully operational, its incentivizing mechanisms are prim
 
 Economic incentivizing mechanisms currently operate on the Conflux Network as follows:
 
-**#1: Conflux users are incentivized to [stake their CFX tokens](https://governance.confluxnetwork.org/en/) with interest payments.** 
+**#1: Conflux users are incentivized to [stake their CFX tokens](https://confluxhub.io/governance/dashboard) with interest payments.** 
 Staking plays an important role in securing the Conflux Network. Therefore, users who stake CFX receive interest payments at a [fixed, annualized rate of roughly 4%](https://medium.com/conflux-network/conflux-economic-model-staking-collateral-for-storage-on-conflux-network-cb4c8c150e3#:~:text=On%20Conflux%20Network%2C%20users%20can,approximately%2063%2C072%2C000%20blocks%20per%20year.). These payments are added to the user’s holdings at the time the tokens are “un-staked” (i.e., when the tokens are converted back to a liquid state).
 
 Staking rewards are generated from the issuance of additional CFX tokens. When users do not stake their tokens, their interest payments go to Conflux’s public fund. Therefore, these interest payments implicitly shift value from those who do not stake to those who do.
