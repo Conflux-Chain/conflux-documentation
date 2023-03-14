@@ -8,7 +8,7 @@ keywords:
 
 In the Conflux v2.0 (Hydra) upgrade, a new feature called Spaces was introduced through **[CIP-90](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-90.md)**. Spaces is an abstract concept that is used to distinguish Conflux-format transactions from Ethereum-format transactions. Spaces is a way to virtually create a sub-chain of the original Conflux network, known as **`eSpace`**.
 
-CoreSpace refers to the original Conflux network, while eSpace is the virtualized Ethereum chain running on top of the CoreSpace network. The two spaces are logically independent of each other and do not affect each other.
+Core Space refers to the original Conflux network, while eSpace is the virtualized Ethereum chain running on top of the Core Space network. The two spaces are logically independent of each other and do not affect each other.
 
 In other words, we can think of Spaces as a virtualization technology from operating system concepts, where eSpace is a virtualized Ethereum chain running on the original Conflux network.
 
@@ -22,17 +22,17 @@ eSpace is very easy to use for Ethereum developers and users, just like BSC, Pol
 
 ## **The Relationship Between the Two Spaces**
 
-CoreSpace and eSpace are two logically independent spaces with their own transactions, account status, and contracts. They share the same ledger (chain) for underlying data storage. A block may contain transactions from both Spaces, and they are only differentiated by the transaction type when transactions are executed. Each will only impact the account status in its own Space.
+Core Space and eSpace are two logically independent spaces with their own transactions, account status, and contracts. They share the same ledger (chain) for underlying data storage. A block may contain transactions from both Spaces, and they are only differentiated by the transaction type when transactions are executed. Each will only impact the account status in its own Space.
 
-To interact with CoreSpace, use Conflux-compatible wallet (Fluent), SDK (*-conflux-SDK), and development tools (chainIDE, conflux-truffle). To interact with eSpace directly, use the existing tools and products from the Ethereum ecosystem, such as Metamask, Truffle, Hardhat, Ethers.js, etc. (by simply setting the RPC network of the tool to **[Conflux eSpace RPC](../../espace/build/network-endpoints.md)**.
+To interact with Core Space, use Conflux-compatible wallet (Fluent), SDK (*-conflux-SDK), and development tools (chainIDE, conflux-truffle). To interact with eSpace directly, use the existing tools and products from the Ethereum ecosystem, such as Metamask, Truffle, Hardhat, Ethers.js, etc. (by simply setting the RPC network of the tool to **[Conflux eSpace RPC](../../espace/build/network-endpoints.md)**.
 
 ## **How to Communicate Between Spaces**
 
-Since the newly introduced eSpace chain has not introduced any new tokens, CFX is still used as the native token in eSpace to pay transaction fees. However, CFX can be easily transferred between the two spaces using the internal contract **`CrossSpaceCall`**. This contract enables cross-space transfers of CFX, as well as the deployment of contracts from CoreSpace to eSpace and the calling of eSpace contract methods in CoreSpace. This makes it easy to interact between the two spaces and leverage the unique features of each space to build powerful decentralized applications.
+Since the newly introduced eSpace chain has not introduced any new tokens, CFX is still used as the native token in eSpace to pay transaction fees. However, CFX can be easily transferred between the two spaces using the internal contract **`CrossSpaceCall`**. This contract enables cross-space transfers of CFX, as well as the deployment of contracts from Core Space to eSpace and the calling of eSpace contract methods in Core Space. This makes it easy to interact between the two spaces and leverage the unique features of each space to build powerful decentralized applications.
 
 ## **Mirror Address**
 
-Each account in CoreSpace has a corresponding account in eSpace, which we call the **`Mirror Address`**. However, eSpace accounts do not have the corresponding account in CoreSpace. The mirror address from CoreSpace to eSpace is calculated by fixed steps:
+Each account in Core Space has a corresponding account in eSpace, which we call the **`Mirror Address`**. However, eSpace accounts do not have the corresponding account in Core Space. The mirror address from Core Space to eSpace is calculated by fixed steps:
 
 1. Decode the original Base32 address to get the address payload with the Buffer format.
 2. Hash the payload by Keccak and take the last 20 bytes.
@@ -53,13 +53,13 @@ Note: Do not directly use the hex address that is resulted from decoding the bas
 
 ## **Internal Contract CrossSpaceCall**
 
-CrossSpaceCall is an internal contract located in **`CoreSpace`** with hex40 format address **`0x08880000000000000000000000000000000000000006`**. The specific interface of the contract can be found in its **[interface documentation](../../core/learn/core-space-basics/internal-contracts/crossSpaceCall.md)**.
+CrossSpaceCall is an internal contract located in **`Core Space`** with hex40 format address **`0x08880000000000000000000000000000000000000006`**. The specific interface of the contract can be found in its **[interface documentation](../../core/learn/core-space-basics/internal-contracts/crossSpaceCall.md)**.
 
 The internal contract CrossSpaceCall provides several functions.
 
 1. It enables the cross-space transfers of CFX.
-2. It enables deploy contracts to eSpace from CoreSpace.
-3. It enables eSpace contract methods to be called in CoreSpace.
+2. It enables deploy contracts to eSpace from Core Space.
+3. It enables eSpace contract methods to be called in Core Space.
 
 The cross-space transfers of CFX are synchronous and can be done within one transaction. It is simpler, safer, and faster compared to cross-chain transfers.
 
@@ -73,9 +73,9 @@ Communicating between spaces is a critical aspect of using Conflux Network Space
 2. Another method is to use the built-in event system. If a contract in one space generates an event, a contract in another space can listen to the event by setting the address of the listening contract in the event data.
 3. An advanced method is to use **`On-chain Message Passing`** to exchange messages between spaces.
 
-## **How To Choose**
+## **Which To Choose**
 
-Conflux CoreSpace is a native space that supports **`contract sponsorship`** and **`has more network capacity (higher TPS)`**, but requires unique Base32 addresses, RPC, SDK, etc. Therefore, if you want to develop a brand new project, you can choose the CoreSpace and the users of the project can interact with the project by paying no gas fee.
+Conflux Core Space is a native space that supports **`contract sponsorship`** and **`has more network capacity (higher TPS)`**, but requires unique Base32 addresses, RPC, SDK, etc. Therefore, if you want to develop a brand new project, you can choose the Core Space and the users of the project can interact with the project by paying no gas fee.
 
 If you want to deploy an Ethereum project to take advantage of Conflux's high performance and low cost in order to reduce user costs, you can choose eSpace. The project can be deployed directly without any modification. If you are a skilled Ethereum engineer, you can also choose eSpace directly and use the tools and SDKs that you are familiar with to get started quickly.
 
