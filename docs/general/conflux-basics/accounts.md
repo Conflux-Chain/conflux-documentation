@@ -1,6 +1,6 @@
 ---
 sidebar_position: 8
-title: Accounts
+title: Accounts and Addresses
 ---
 
 ## Overview
