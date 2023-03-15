@@ -4,10 +4,13 @@ title: Economics
 ---
 # **A Scalable Economic Model**
 Conflux's economic model encourages participation and growth of the network while supporting technological stability. A well-designed economic model is essential for a decentralized system to operate efficiently. Blockchain technology establishes trust and encourages efficient relationships among cooperators, accelerating the transfer of value.
+
 ## **Conflux Economic Model Overview**
 ### Key Elements
 **1. Value System:** Public blockchain systems require tokens to serve as a measurable unit with economic value. Tokens clarify asset ownership and are a transaction medium for value interaction. Tokens are also connected to storage resources and can be distributed as long-term incentives.
+
 **2. Governance Rules:** Governance rules involve the distribution and use of tokens, as well as their economic impact under different conditions. Tokens can be distributed to users as interest or to miners as block rewards. Tokens can also be exchanged into fiat currencies or other digital currencies.
+
 **3. Community Collaboration:** Blockchain systems should be "open to everyone and beneficial to all participants." All users have the right to enter the system without barriers, become a shareholder, contribute to the construction of the system, and benefit from their efforts.
 
 ### Key Participants
