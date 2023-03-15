@@ -7,6 +7,7 @@ Conflux's economic model encourages participation and growth of the network whil
 
 ## **Conflux Economic Model Overview**
 ### Key Elements
+
 **1. Value System:** Public blockchain systems require tokens to serve as a measurable unit with economic value. Tokens clarify asset ownership and are a transaction medium for value interaction. Tokens are also connected to storage resources and can be distributed as long-term incentives.
 
 **2. Governance Rules:** Governance rules involve the distribution and use of tokens, as well as their economic impact under different conditions. Tokens can be distributed to users as interest or to miners as block rewards. Tokens can also be exchanged into fiat currencies or other digital currencies.
@@ -15,13 +16,18 @@ Conflux's economic model encourages participation and growth of the network whil
 
 ### Key Participants
 Participants in the Conflux Network ecosystem include three groups:
-1) ***Direct builders**:* *Conflux Foundation* and the *founding team* responsible for developing the underlying technology of the Conflux public chain and the Conflux Network operations;
+
+1) ***Direct builders**:* *Conflux Foundation* and the *founding team* responsible for developing the underlying technology of the Conflux public chain and the Conflux Network operations; 
+
 2) ***System maintainers***: *Miners* and *Stakers* maintaining the normal operation and security of the whole Conflux Network system;
+
 3) ***Ecosystem contributors***: *Community Users* who continuously generate value for the Conflux Network ecosystem.
 
 ### Development Phases
 Conflux Network will choose different incentive patterns during different development phases to ensure a stable shift from the initial phase to the operational phase.
+
 - **Initial phase**: the *direct builders* and the *ecosystem contributors* are incentivized to resolve the cold start problem of the system;
+
 - **Operational phase**: *system maintainers* are incentivized to promote continuous system upgrading; self-adaptive configuration of Conflux system resources is promoted through the marketization of system resources.
 
 ## **Incentives Mechanism**
