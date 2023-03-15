@@ -27,50 +27,7 @@ To interact with Core Space, use Conflux-compatible wallet (Fluent), SDK (*-conf
 
 ## **How to Communicate Between Spaces**
 
-Since the newly introduced eSpace chain has not introduced any new tokens, CFX is still used as the native token in eSpace to pay transaction fees. However, CFX can be easily transferred between the two spaces using the internal contract **`CrossSpaceCall`**. This contract enables cross-space transfers of CFX, as well as the deployment of contracts from Core Space to eSpace and the calling of eSpace contract methods in Core Space. This makes it easy to interact between the two spaces and leverage the unique features of each space to build powerful decentralized applications.
-
-## **Mirror Address**
-
-Each account in Core Space has a corresponding account in eSpace, which we call the **`Mirror Address`**. However, eSpace accounts do not have the corresponding account in Core Space. The mirror address from Core Space to eSpace is calculated by fixed steps:
-
-1. Decode the original Base32 address to get the address payload with the Buffer format.
-2. Hash the payload by Keccak and take the last 20 bytes.
-3. The mirror address is the result of the previous step in hex encoding.
-
-Conflux SDKs provide methods to calculate the base32 mirror address.
-
-```
-jsCopy code
-// js-conflux-sdk example
-> const { address } = require('js-conflux-sdk')
-> address.cfxMappedEVMSpaceAddress('cfx:aamgvyzht7h1zxdghb9ee9w26wrz8rd3gj837392dp')
-'0x62954816cE133B41Ab888e1b68b62549DE2f32e0'
-
-```
-
-Note: Do not directly use the hex address that is resulted from decoding the base32 address as the **`eSpace mirror address`** or **`eSpace address`**. This operation is wrong and will lead to loss of assets.
-
-## **Internal Contract CrossSpaceCall**
-
-CrossSpaceCall is an internal contract located in **`Core Space`** with hex40 format address **`0x08880000000000000000000000000000000000000006`**. The specific interface of the contract can be found in its **[interface documentation](../../core/learn/core-space-basics/internal-contracts/crossSpaceCall.md)**.
-
-The internal contract CrossSpaceCall provides several functions.
-
-1. It enables the cross-space transfers of CFX.
-2. It enables deploy contracts to eSpace from Core Space.
-3. It enables eSpace contract methods to be called in Core Space.
-
-The cross-space transfers of CFX are synchronous and can be done within one transaction. It is simpler, safer, and faster compared to cross-chain transfers.
-
-**[ConfluxHub CrossSpace app](https://confluxhub.io/espace-bridge/cross-space)** is a CFX, ERC20 cross-space transfer application based on this internal contract, which is very user-friendly.
-
-## **How To Communicate Between Spaces**
-
-Communicating between spaces is a critical aspect of using Conflux Network Spaces. The following are some recommended methods:
-
-1. The most straightforward method is to use the built-in **`CrossSpaceCall`** contract to transfer CFX and call contracts between spaces.
-2. Another method is to use the built-in event system. If a contract in one space generates an event, a contract in another space can listen to the event by setting the address of the listening contract in the event data.
-3. An advanced method is to use **`On-chain Message Passing`** to exchange messages between spaces.
+To communicate between Conflux Core Space and eSpace, the **`CrossSpaceCall`** contract can be used to transfer CFX and deploy contracts from Core Space to eSpace, as well as call eSpace contract methods in Core Space. Each account in Core Space has a corresponding **mirror address** in eSpace, calculated by decoding the original Base32 address and hashing it with Keccak. The internal contract provides synchronous cross-space transfers of CFX, making it simple, safe, and fast. The built-in event system and On-chain Message Passing can also be used for communication between spaces.
 
 ## **Which To Choose**
 
