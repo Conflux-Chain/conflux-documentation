@@ -3,140 +3,52 @@ title: Transactions
 sidebar_position: 8.5
 keywords:
   - transaction
-  - to modify # This file is expected to include common parts of espace and core space transactions. Currently this file is migrated from "transaction stages". In the future, this article should focus more on the transaction basics, e.g. what is a transaction, etc. Ref https://ethereum.org/zh/developers/docs/transactions/
 ---
 
-Sending transactions is one of the most frequent operations in the blockchain world. Transactions go through several stages from the time they are constructed to the time they are finally cofirmed on the chain. A good understanding of the stages of a transaction will help users and developers better identify problems with sending transactions and ultimately ensure that transactions are successfully confirmed.
+:::info
 
-Transactions go through the following stages from construction to confirmation.
+This section introduces transaction concepts from a high level. For more details on core space transactions, please refer to [core space transactions](../../core/learn/core-space-basics/transactions/what-is-transaction.md). For espace transactions, you may find it helpful to refer to [Ethereum transactions](https://ethereum.org/developers/docs/transactions/) as they are almost exactly same in format and functionality.
 
-1. Preparing the private key and address of the sender (from) of the transaction
-2. Preparing the metadata of the transaction, assemble it, then sign it and encode it -> RawTransaction
-3. Sending RawTransaction to fullnode via cfx_sendRawTransaction RPC method -> transaction is put into transaction pool
-4. The transaction is packed into a block by a miner -> Minded in Block
-5. Deferring 5 epochs -> Executed
-6. Waiting for about 50 epochs -> Confirmed
-7. Waiting to be referenced by PoS chain -> Finalized
+:::
 
-<!---
-![image|347x500](/img/transaction/transaction-stages.png) 
--->
-## Detailed Explanation of the Transaction Stages
+## Concept of Transaction
 
-### Preparing the account‘s private key and address
+A transaction is a single instruction composed by an external actor with a Conflux account, and this instruction is cryptographically signed using the sender account’s private key. A transaction can involve a simple transfer of CFX (the native currency of Conflux), a transfer of tokens (such as ERC20 or ERC721), a deployment of a new smart contract, or an execution of a function on an existing smart contract. Transactions are the only way to store or update data on the blockchain.
 
-All transactions sent need to be signed with a private key in order to be accepted and successfully executed by the blockchain. Therefore, before sending a transaction, you need to prepare the private key of the sender, which can be used to derive the address of the account.
+## Transaction Fields
 
-In addition, a certain CFX fee is required to send a transaction, so the sender's account needs to have some CFX in order to send the transaction successfully. The CFX of the testnet can be obtained through the faucet.
+Generally speaking, a transaction contains:
 
-There is one situation in the Conflux network that does not require the sender to pay the transaction fee.
+- Who send the transaction: A `from` field in an unsigned transaction or the transaction signature fields indicating the signer. This tells the network who is responsible for initiating the transaction and who will pay for the fees.
+- What this transaction will do, including:
+  - Who will be the transaction receiver or which smart contract to interact with(`to` field). This specifies the destination address of the transaction, which can be either user account or a smart contract that can execute some logic or empty to create a contract.
+  - How much native token will be send(`value` field). This indicates how much CFX (the native token of Conflux) will be transferred from the sender to the receiver. If the receiver is a smart contract, this value can also be used as an input parameter for its logic.
+  - How to interact with a smart contract(`data` field). This contains additional information for calling a smart contract function or deploying a new smart contract. It can encode the name and arguments of the function to be invoked or the bytecode of the new contract to be created.
+- Transaction fee information, including:
+  - Field(s) indicating base transaction fee (`gas` in both spaces, and extra `storageLimit` field in core space). These fields is determine according to how much computational resources are required to execute the transaction and (in core space) how much storage space are occupied by its effects.
+  - Field indicating how much "tip" sender is willing to pay to miner(`gasPrice` field). This field allows senders to adjust their priority in getting their transactions packed by miners. A higher `gasPrice` means a higher chance of being included in a block sooner.
+- Field indicating when or where the transaction is "valid" (`chainId`, `nonce` in both spaces, and `epochHeight` in core space). `chainId` prevents a transaction being executed on another chain and `nonce` field ensures the sent transactions are executed in the expected order. `epochHeight` field sets an expiration time for the transaction based on the epoch number (a concept similar to "block number" in Conflux). A transaction can only be executed within an epoch range associated with `epochHeight`.
 
-1. The recipient of the transaction is a contract, and
-2. Someone has sponsored the gas and storage of the contract, and
-3. The address of the sender of the transaction is on the contract's gas whitelist (the whitelist can be fully opened so that everyone can be sponsored), and
-4. The gas fee for the transaction is less than the maximum amount of gas sponsorship set by the contract sponsor
+:::info
 
-To learn more details about Conflux sponsorship, you can refer to the introduction of the SponsorWhitelistControl in the built-in contract.
+Transaction fields are slightly different between [spaces](./spaces.md). Core space transactions follow the definition of [Conflux Protocol](https://www.confluxnetwork.org/files/Conflux_Protocol_Specification.pdf). Espace transactions follow the [EIP-155](https://eips.ethereum.org/EIPS/eip-155) specification.
 
-### Prepare the transaction metadata, sign, and encode it
+:::
 
-After preparing the private key for the sending account, you need to construct the transaction. The first step in constructing the transaction is to determine the meta information of the transaction according to the transaction details, including:
+## Transaction Lifecycle
 
-* to: the recipient of the transaction
-* nonce: the sequence number of the transaction
-* value: the transaction amount, valued in Drip
-* data: transaction data
-* chainId: the chain ID of the transaction execution
-* epochHeight: the height that the transaction execution targets
-* gas: maximum gas amount
-* gasPrice: the gas price
-* storageLimit: storage staking limit
+Transactions go through several stages from the time they are constructed to the time they are finally confirmed on the chain. A good understanding of these stages will help users and developers better identify problems with sending transactions and ultimately ensure that transactions are successfully confirmed.
 
-If you want to know the meaning of each keyword of the transaction and how to specify it, please refer to [Conflux Transaction Explanation](http://developer.confluxnetwork.org/sending-tx/en/transaction_explain/?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2MzkzNjIyNTAsImciOiJrM3RkMzl3UmNydHZZNnlUIiwiaWF0IjoxNjM5MzYxOTUwLCJ1c2VySWQiOjUzMDEyMDA1fQ.OGlihO7cyqo_5UqcFlB8BGugCywJ_Sb3g95r2IwO4Gs)
+The following are the main stages of a transaction from construction to confirmation.
 
-After the meta-information is prepared, they need to be encoded in a fixed order by RLP encoding and generate the hash. Then the transaction signature is obtained from the secp256k1 signing operation by using the private key.
-
-Finally, the meta information and signature are combined for RLP encoding and converted to hex format to get the raw transaction (RawTransaction) that can be sent to the Conflux nodes.
-
-Usually, the wallet and SDK will automatically assemble, sign, and encode the transactions without manual processing.
-
-### Send RawTransaction to the node transaction pool
-
-The raw transaction is sent to the nodes via the full node's cfx_sendRawTransaction RPC method. The node will first check the transaction. If there is a problem with the constructed transaction, it will fail. Possible failures are:
-
-1. set nonce incorrectly (reuse it or set a too large value)
-2. set a too large value to gas, generally more than 1500w
-3. created wrong signature
-4. used a wrong chainId
-5. set epochHeight more than 100,000 away from the current value
-6. Other: the transaction pool is full
-
-If the check passes, the transaction will be put into the node's transaction pool and the hash of the transaction will be returned.
-
-At this point, the transaction can be retrieved through the RPC method cfx_getTransactionByHash, but since the transaction has yet been packaged, fields related to the block information (blockHash) and the execution result (contractCreated, status, transactionIndex) of the transaction are empty.
-
-Since the transaction has not been executed, the receipt for the transaction has not been generated.
-
-### Packing transactions by miners
-
-Transactions in the transaction pool may have three states.
-
-1. nonce skipping
-2. ready to pack
-
-Transactions in the first two states will be considered as pending in the pool and will not become ready to pack until all the nonces before this transaction nonce have been executed.
-
-Transactions that fulfill the packing condition will be packed into blocks by miners in roughly the order of gasPrice, from highest to lowest.
-
-### Delay block execution
-
-The Conflux network has a block execution delaying mechanism, which means that after a block is packed, it will not be executed immediately, but be delayed by 5 Epochs before it is executed. The essence of block execution is that all transactions in the block are executed.
-
-The transaction information, obtained by the cfx_getTransactionByHash method after the transaction execution, contains the blockHash, status, and other keywords.
-
-At this point, you can also get the receipt of the transaction via the cfx_getTransactionReceipt method.
-
-The execution of a transaction won't be always successful. The status of the transaction can be determined by the status field of the transaction or the outcomeStatus field of the receipt.
-
-* 0 - execution succeeded
-* 1 - execution failed
-* 2 or null - the transaction is not executed and is skipped
-
-### Confirm the transaction after a certain number of Epochs
-
-That a transaction is executed does not mean that the status of the transaction will not change anymore. Due to the chain structure of blockchain, the blockchain may fork or shift the main chain due to the arrival or creation of new blocks, which may revert certain transactions.
-
-Usually, after the transaction blocks are packaged, the transaction cannot be finally confirmed until a certain number of new blocks are generated.
-
-In the Conflux network, you can compare the epochNumber in the transaction receipt with the latest confirmed epochNumber. If the latest confirmed epochNumber is larger, then the transaction is confirmed.
-
-You can use the cfx_epochNumber method and pass the latest_confirmed parameter, to get the latest confirmed EpochNumber
-
-
-### Transaction finalized because of PoS chain
-
-Conflux introduces a PoS finality mechanism to prevent 51% attacks, so that blocks will not be reverted in case of low hashing power.
-
-By introducing a separate PoS chain to finalize the PoW blocks, the state of all the blocks that are voted as finalized will reach finality.
-
-Starting from v1.2.0, a new tag latest_finalized will be introduced. You can use this tag to request the cfx_epochNumber method to get the latest epochNumber that has been finalized.
+1. **Transaction construction**: This is the stage where users or developers create a transaction with all the necessary fields and parameters and get it signed. The transaction object can be created using various tools or libraries, such as Fluent Wallet, Conflux SDK, etc. The transaction will be encoded into a hex string as "rawTransaction" before it is sent. 
+2. **Broadcast**: This is the stage where users or developers send their signed transaction to a Conflux node via RPC or WebSocket. The node will validate the transaction and broadcast it to other nodes in the network if it passes the validation. The node will also return a transaction hash (a unique identifier) to the sender for tracking purposes.
+3. **Packed into a block -> Mined**: This is the stage where miners select transactions from their mempool (a pool of pending transactions) and include them in their blocks. Miners will prioritize transactions with higher `gasPrice`. Once a block containing a transaction is mined, it will be propagated to other nodes in the network.
+4. **Deferring 5 epochs -> Executed**: This is the stage where transactions are executed by nodes after being deferred for 5 epochs (about 5 seconds). This means that nodes will run the logic of the transactions and update their state accordingly. The execution results of each transaction will be recorded in a receipt, which contains information such as status (success or failure), gas used, logs and events emitted by smart contracts and can be retrieved using transaction hash.
+5. **Waiting for about 50 epochs -> Confirmed**: This is the stage where transactions are confirmed by nodes after being executed for about 50 epochs (about 50 seconds). A transaction is executed does not mean that the status of the transaction will not change anymore. Due to the structure of blockchain, the blockchain may fork or shift the main chain due to the arrival or creation of new blocks, which may revert certain transactions. A confirmed transaction means that it has been included in a "deep" enough block and has a extremely low probability of being reverted.
+6. **Waiting for PoS chain Finalization -> Finalized**: This is the final stage where transactions are finalized by nodes after being referenced by Conflux's [PoS chain](./consensus-mechanisms/proof-of-stake/pos_overview.md). Conflux's PoS chain periodically refers a stable PoW block to provide finality for transactions. A finalized transaction means that it has zero probability of being reverted unless the attacker possesses more than 67% of the CFX staked in PoS.
 
 ## FAQ
-
-### Why is the transaction failed to send?
-
-If a transaction failed by calling the cfx_sendRawTransaction method, it is likely that there is a problem with the transaction construction and the meta-information of the transaction needs to be adjusted.
-
-If the error message returned is "txpool is full", you can wait for a moment and try to resend the transaction with a slightly higher gasPrice.
-
-### Why has the transaction not been executed on the chain?
-
-After the transaction is successfully sent, but the transaction does not show as successfully executed on Conflux Scan, then the transaction is probably pending in the transaction pool. There are three possible cases:
-
-1. The transaction does not use a continuous nonce: the nonce of the transaction needs to be set correctly
-2. The network is congested: If the network is congested, miners will pack the transactions roughly in order of gasPrice from highest to lowest. You can speed up transaction execution by increasing the gasPrice of the transaction
-
-You can use the cfx_getAccountPendingTransactions method to get the user's current Pending transactions and the reason for them.
 
 ### Can a transaction be canceled or replaced?
 
@@ -144,6 +56,3 @@ If a transaction has not been packed into a block and is in the transaction pool
 
 Transactions cannot be canceled but can be replaced with a transaction of value 0. This is a way to reach the same result as canceling the transaction.
 
-### How to speed up a transaction?
-
-If you want to speed up the execution of a transaction, you can increase the gasPrice of the transaction and resend it.
