@@ -1,8 +1,6 @@
 ---
-sidebar_position: 2
-title: Common Errors
+title: Core Transaction Errors
 ---
-# Common Error
 
 When sending a transaction via method ``cfx_sendRawTransaction``, if the transaction is not constructed correctly, the sending will fail. Some of the common errors are:
 
@@ -30,7 +28,7 @@ The following are the RPC errors returned by the ``cfx_sendRawTransaction`` meth
 {
     "jsonrpc": "2.0",
     "id": "15922956697249514502",
-    "error": {
+    "error":
         "code": -32602,
         "message": "Invalid parameters: tx",
         "data": "\"Transaction 0x4a2cfa73267139d965ab86d41f2af16db09e62ff92a5abffd7f8e743f36f327c is discarded due to a too stale nonce\""
@@ -229,7 +227,7 @@ In this case, you can wait for a while to resend the transaction and increase th
     "id": "15922956697249514502",
     "error": {
         "code": -32077,
-        "message": "Request rejected due to still in the catch up mode,
+        "message": "Request rejected due to still in the catch up mode"
         "data": null
     }
 }
@@ -251,3 +249,14 @@ Wait for the node data to sync to the latest before sending
 }
 ```
 
+### Execution failure
+
+Execution failure is usually due to an error that occurred during the execution process of the contract, which then caused the transaction failure. Such errors are mostly caused by contract execution failures or errors returned when estimating gas cost through the estimate interface.
+You can check the specific reason for the transaction failure in the `txExecErrorMsg` under receipt:
+
+1. `VmError(OutOfGas)` The transaction specified gas fee is not enough
+2. `VmError(ExceedStorageLimit)` The transaction specified upper-limit storage is not enough
+3. `NotEnoughCash` Insufficient user balance
+4. `Vm reverted, Reason provided by the contract: xxxx` The contract execution failed with details provided. 
+5. `VmError(BadInstruction xxxx)` Contract deployment failed
+6. `Vm reverted, xxxx` The contract execution failed with no details provided.
