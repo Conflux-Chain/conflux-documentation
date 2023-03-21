@@ -7,7 +7,7 @@ keywords:
 
 :::info
 
-This section introduces transaction concepts from a high level. For more details on core space transactions, please refer to [core space transactions](../../core/learn/core-space-basics/transactions/what-is-transaction.md). For espace transactions, you may find it helpful to refer to [Ethereum transactions](https://ethereum.org/developers/docs/transactions/) as they are almost exactly same in format and functionality.
+This section introduces transaction concepts from a high level. For more details on core space transactions, please refer to [core space transactions](../../core/learn/core-space-basics/core-transactions.md). For espace transactions, you may find it helpful to refer to [Ethereum transactions](https://ethereum.org/developers/docs/transactions/) as they are almost exactly same in format and functionality.
 
 :::
 
@@ -47,12 +47,3 @@ The following are the main stages of a transaction from construction to confirma
 4. **Deferring 5 epochs -> Executed**: This is the stage where transactions are executed by nodes after being deferred for 5 epochs (about 5 seconds). This means that nodes will run the logic of the transactions and update their state accordingly. The execution results of each transaction will be recorded in a receipt, which contains information such as status (success or failure), gas used, logs and events emitted by smart contracts and can be retrieved using transaction hash.
 5. **Waiting for about 50 epochs -> Confirmed**: This is the stage where transactions are confirmed by nodes after being executed for about 50 epochs (about 50 seconds). A transaction is executed does not mean that the status of the transaction will not change anymore. Due to the structure of blockchain, the blockchain may fork or shift the main chain due to the arrival or creation of new blocks, which may revert certain transactions. A confirmed transaction means that it has been included in a "deep" enough block and has a extremely low probability of being reverted.
 6. **Waiting for PoS chain Finalization -> Finalized**: This is the final stage where transactions are finalized by nodes after being referenced by Conflux's [PoS chain](./consensus-mechanisms/proof-of-stake/pos_overview.md). Conflux's PoS chain periodically refers a stable PoW block to provide finality for transactions. A finalized transaction means that it has zero probability of being reverted unless the attacker possesses more than 67% of the CFX staked in PoS.
-
-## FAQ
-
-### Can a transaction be canceled or replaced?
-
-If a transaction has not been packed into a block and is in the transaction pool, it can be replaced by sending a new transaction with the same nonce and a higher gasPrice.
-
-Transactions cannot be canceled but can be replaced with a transaction of value 0. This is a way to reach the same result as canceling the transaction.
-

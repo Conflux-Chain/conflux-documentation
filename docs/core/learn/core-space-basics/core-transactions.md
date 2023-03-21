@@ -1,13 +1,12 @@
 ---
-sidebar_position: 1
+sidebar_position: 8.5
 id: transaction_explain
-title: Core Space Transactions
+title: Transactions
 keywords:
   - transaction
-  - to modify # the trailing "failure" part should be moved to another place
 ---
 
-The act of sending a transaction is the only method of storing or modifying data on the blockchain. This includes both the transfer of CFX and the modification of contract states. The process of sending a transaction consists of three steps: constructing the transaction, signing it, and finally transmitting it. Most programming languages have an [SDK](../../../build/sdks-and-tools/sdks.md) with a convenient method that can be used for this purpose. However, if you are looking for a deeper understanding of the underlying mechanics or if you are experiencing problems when sending transactions, this article may help.
+The act of sending a transaction is the only method of storing or modifying data on the blockchain. This includes both the transfer of CFX and the modification of contract states. The process of sending a transaction consists of three steps: constructing the transaction, signing it, and finally transmitting it. Most programming languages have an [SDK](../../build/sdks-and-tools/sdks.md) with a convenient method that can be used for this purpose. However, if you are looking for a deeper understanding of the underlying mechanics or if you are experiencing problems when sending transactions, this article may help.
 
 ## Transaction Fields
 
@@ -98,34 +97,5 @@ Compared to Ethereum `155 transaction`, transactions through Conflux have severa
 
 ## Related topics
 
-- [cfx_sendRawTransaction](../../../build/json-rpc/cfx-namespace.md#cfx_sendrawtransaction)
-- [why transaction is pending](./why-transaction-is-pending.md)
-- reasons for transaction failure
-
-## Reasons for transaction failure
-
-Based on the stage in which the transaction fails, there are three categories of failures:
-
-### Rejected by RPC
-
-The sending transaction is directly rejected by RPC. The reason for rejection can be found in the `message` field of RPC Response.
-
-1. `Invalid parameters: tx', 'data': '"Failed imported to deferred pool: Tx with same nonce already inserted. To replace it, you need to specify a gas price > xxx` The error code indicates that the same nonce has been used in the transaction pool and cannot be reused. However, you can replace an existing transaction by sending a transaction with the same nonce but higher gas price.
-2. `'Invalid parameters: tx', 'data': '"Transaction 0x2004b0aea956e8cfad601cd6daad5630c1a95624bad446d1966895973325136c is discarded due to a too stale nonce` This indicates that the same nonce used has been used in history and cannot be used again.
-3. `Sending transactions to invalid address. The first four bits must be 0x0 (built-in/reserved), 0x1 (user-account), or 0x8 (contract).` This indicates that the receiving address of the transaction is wrong.
-4. `Transaction {:?} is discarded due to in too distant future` This indicates that the transaction is using a nonce that is too large for the account's current nonce
-5. `tx already exist` This indicates that the transaction already exists.
-
-Sometimes, the `data` of Response will also contain some error information. （This field is a hex-encoded string. The parsing method is: hex -> buffer -> UTF8 string）
-
-### Execution failed
-
-Execution failure is usually due to an error that occurred during the execution process of the contract, which then caused the transaction failure. Such errors are mostly caused by contract execution failures or errors returned when estimating gas cost through the estimate interface.
-You can check the specific reason for the transaction failure in the `txExecErrorMsg` under receipt:
-
-1. `VmError(OutOfGas)` The transaction specified gas fee is not enough
-2. `VmError(ExceedStorageLimit)` The transaction specified upper-limit storage is not enough
-3. `NotEnoughCash` Insufficient user balance
-4. `Vm reverted, Reason provided by the contract: xxxx` The contract execution failed with details provided. 
-5. `VmError(BadInstruction xxxx)` Contract deployment failed
-6. `Vm reverted, xxxx` The contract execution failed with no details provided.
+- [cfx_sendRawTransaction](../../build/json-rpc/cfx-namespace.md#cfx_sendrawtransaction)
+- [why transaction is pending](../../../general/faq/core-space-transactions/why-transaction-is-pending.md)
