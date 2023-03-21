@@ -1,8 +1,9 @@
 ---
 sidebar_position: 3
-title: Staking Risks
+title: Staking Considerations
 ---
-According to the rules of Conflux network, staking CFX on PoS is not risk free.
+
+Before participating in staking activities, it's important to be aware of potential risks and take appropriate measures to mitigate them.
 
 The following operations may cause your staked tokens to be permanently locked, and the user is responsible for losses caused by these risks.
 
