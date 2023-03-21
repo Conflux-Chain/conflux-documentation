@@ -23,7 +23,7 @@ And `conflux-truffle`'s [setup guide](https://github.com/Conflux-Chain/conflux-t
 ChainIDE is a Cloud-Based Multi-Chain IDE. Developers don’t need to install extra tools while working on smart contracts. ChainIDE supports multi-chain development environments that include Conflux(core), Conflux(eSpace), Ethereum, BNB Chain, Polygon, Dfinity, Nervos, Flow, and it also supports consortium blockchains such as Chain33 and FiscoBcos.
 For more information about how to use ChainIDE, please check [this page](https://chainide.gitbook.io/chainide-english-1/ethereum-ide-1/4.-conflux-ide). 
 
-<img alt="PoS-Reference Architecture" src={useBaseUrl('/img/chainide.png')} />
+![Chainide](../image/chainide.png)
 
 ## [Conflux studio](https://github.com/ObsidianLabs/ConfluxStudio/blob/master/README-EN.md)
 

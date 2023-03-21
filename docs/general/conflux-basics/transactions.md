@@ -18,9 +18,8 @@ Transactions go through the following stages from construction to confirmation.
 6. Waiting for about 50 epochs -> Confirmed
 7. Waiting to be referenced by PoS chain -> Finalized
 
-<!---
-![image|347x500](/img/transaction/transaction-stages.png) 
--->
+![Transaction Stages](../conflux-basics/img/transaction-stages)
+
 ## Detailed Explanation of the Transaction Stages
 
 ### Preparing the account‘s private key and address

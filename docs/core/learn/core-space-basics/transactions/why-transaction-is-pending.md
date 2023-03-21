@@ -7,23 +7,18 @@ keywords:
 
 Because today’s blockchain systems may have problems such as low throughput and high entry barriers, it is inevitable that some transactions will not be packaged when sent through the blockchain. Take Conflux as an example, the Conflux network normally produces two blocks per second. After a transaction `is successfully sent`, it should be packaged and executed within `20 seconds` depending on the network congestion level. If the transaction is not packaged for a long time, it’s very likely that something went wrong, and requires the sender to manually intervene.
 
-<!---
-![](/img/why-tx-pending/tx-pending.png)
--->
+![Tx Pending](../img/tx-pending-01)
+
 
 ## How to find out the reason for a pending transaction
 
 If the pending transaction is successfully inserted into the transaction pool of the node used by [Scan](https://www.confluxscan.io/), the transaction can be searched by hash on Scan, and the status of the transaction can be seen as `Pending` on the transaction details page. 
 
-<!---
-![](/img/why-tx-pending/scan-pending-detail.png)
--->
+![Scan Pending](../img/scan-pending-detail-02)
 
  At this time, we can go to the `account details page` of the transaction sender, and view the pending transactions of the user through the `View Pending Txns` tab on the account page.
 
-<!---
-![](/img/why-tx-pending/scan-pending-entry.jpeg)
--->
+![Scan Pending](../img/scan-pending-entry-03)
 
 In this tab, you can see the total number of pending transactions of this user and the earliest pending transactions (up to 10). The most important thing is that you can also see the pending reasons for the first pending transaction. There are three possible reasons:
 
@@ -31,9 +26,7 @@ In this tab, you can see the total number of pending transactions of this user a
 * Insufficient balance
 * Ready to pack
 
-<!---
-![](/img/why-tx-pending/scan-pending-tx-list.jpeg)
--->
+![Scan Pending](../img/scan-pending-tx-list-04)
 
 This page uses the RPC method [`cfx_getAccountPendingTransactions`](../../build/../../build/json-rpc/cfx-namespace.md#cfx_getaccountpendingtransactions) to obtain the current pending transaction information of an account.
 

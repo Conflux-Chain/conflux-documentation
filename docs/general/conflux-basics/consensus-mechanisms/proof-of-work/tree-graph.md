@@ -14,3 +14,5 @@ First, Conflux replaces the longest chain rule with the GHAST chain selection ru
 Second, Conflux uses the Tree-Graph as its ledger structure. Each block, apart from having a single parent edge, also contains a list of reference edges to previous blocks. This introduces new information about the before-after relationship between blocks. This structure is essentially a [directed tree](https://en.wikipedia.org/wiki/Polytree) (parent edges only) embedded inside a [DAG](https://en.wikipedia.org/wiki/Directed_acyclic_graph) (all edges), hence the name Tree-Graph.
 
 When processing transactions, Conflux first selects a pivot chain in the Tree-Graph using GHAST. Then, using the pivot chain and the reference edges, it orders the ledger into a linear sequence of blocks. Finally, it executes transactions following this linear order.
+
+![Tree Graph](../../img/tree_graph.jpg)

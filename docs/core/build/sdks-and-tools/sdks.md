@@ -119,9 +119,9 @@ This is the famous library for secure smart contract development. Build on a sol
 
 The Conflux C++ API allows any C++ client to interact with a local or remote Conflux node based on JSON-RPC 2.0 protocol. With Conflux C++ API, user can easily manage accounts, send transactions, deploy smart contracts and query blockchain information.
 
-<!---
-![](/img/CPP-SDK-shot.png)
--->
+
+![CPP-SDK](../image/CPP-SDK-shot)
+
 
 ### [.NET SDK](https://github.com/Nconflux/Conflux.net.SDK)
 
