@@ -46,7 +46,7 @@ let txParams = {
 };
 ```
 
-> The detailed explanation of each field can be found [here](../learn/core-space-basics/transactions/what-is-transaction.md)
+> The detailed explanation of each field can be found [here](../learn/core-space-basics/core-transactions.md)
 
 * Send the composed transaction via ```cfx.sendTransaction``` and get the returned transaction hash. Then you can view the transaction details by using `tx.mined()` or `tx.executed()`, which APIs will return the transaction data or transaction receipt when transaction is mined or executed. Noting these 2 APIs are a simple wrapping layer for `cfx.getTransactionByHash` and `cfx.getTransactionReceipt`. You can also search the hash at [Conflux Scan](http://confluxscan.io/).
 

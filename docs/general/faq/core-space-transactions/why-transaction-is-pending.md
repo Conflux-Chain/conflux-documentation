@@ -28,7 +28,7 @@ In this tab, you can see the total number of pending transactions of this user a
 
 ![Scan Pending](../img/scan-pending-tx-list-04)
 
-This page uses the RPC method [`cfx_getAccountPendingTransactions`](../../build/../../build/json-rpc/cfx-namespace.md#cfx_getaccountpendingtransactions) to obtain the current pending transaction information of an account.
+This page uses the RPC method [`cfx_getAccountPendingTransactions`](../../../core/build/json-rpc/cfx-namespace.md#cfx_getaccountpendingtransactions) to obtain the current pending transaction information of an account.
 
 ### Wrong nonce
 
