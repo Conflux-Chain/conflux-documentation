@@ -61,7 +61,7 @@ You can install the **Conflux app** on your Ledger device by following these ste
 
 The Conflux app is now installed successfully.
 
-![Ledger](./img/conflux-app-in-ledger-live)
+![Ledger](./img/conflux-app-in-ledger-live.jpg)
 
 ## Connecting Your Ledger Device to Fluent
 
@@ -87,7 +87,7 @@ You can import accounts from your Ledger device into your Fluent wallet by follo
 
 Your account is now available in Fluent as "LedgerNanoS-1" (or similar).
 
-![Ledger](./img/add-ledger-accounts-in-fluent-0)
+![Ledger](./img/add-ledger-accounts-in-fluent-0.jpg)
 
 ## Using Ledger: Sending Crypto Assets
 
@@ -119,7 +119,7 @@ Make sure you have already imported your Ledger account into your Fluent wallet 
 
 After the transaction has been approved, it is now signed and sent to the Conflux Network. You can see the transaction status in Fluent. If you click on "History", then click on the arrow icon at the top right corner of your transaction, you can see more details on [Conflux Scan](https://confluxscan.io).
 
-![Ledger](./img/send-tx-using-ledger)
+![Ledger](./img/send-tx-using-ledger.jpg)
 
 ## Next Steps
 
