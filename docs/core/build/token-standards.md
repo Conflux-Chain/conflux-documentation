@@ -20,3 +20,13 @@ We plan to issue POAP NFTs as a token of appreciation to contributors who help w
 Thank you for your interest in Conflux. We look forward to sharing the completed content with you.
 
 :::
+
+## Related Links
+
+Here are some links relating to this topic:
+
+- [ERC-20](https://eips.ethereum.org/EIPS/eip-20)
+- [ERC-721](https://eips.ethereum.org/EIPS/eip-721)
+- [ERC-777](https://eips.ethereum.org/EIPS/eip-777)
+- [ERC-1155](https://eips.ethereum.org/EIPS/eip-1155)
+- [CIP-1820](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-1820.md)
