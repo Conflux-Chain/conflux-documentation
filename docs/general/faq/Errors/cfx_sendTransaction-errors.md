@@ -1,34 +1,18 @@
 ---
-title: Core Transaction Errors
+title: cfx_sendRawTransaction Errors
 ---
 
-When sending a transaction via method ``cfx_sendRawTransaction``, if the transaction is not constructed correctly, the sending will fail. Some of the common errors are:
+When sending transactions in Conflux via the `cfx_sendRawTransaction` method, certain errors may arise due to incorrect transaction construction or other issues. This guide covers common errors and their solutions.
 
-- using a nonce that has already been executed
-- using a nonce that has already been sent to the transaction pool
+## Nonce Errors
 
-There are also several other cases where sending fails:
-
-- The chainId is under mismatch.
-- epochHeight is too large
-- gas exceeds 15 million (half of block gas limit)
-- gas is less than 21000
-- data is too large (exceeds 200K)
-- gasPrice is set to 0
-- Signature error
-- Transaction pool is full
-
-The following are the RPC errors returned by the ``cfx_sendRawTransaction`` method when a transaction fails
-
-## Nonce Usage Error
-
-### using a nonce that has already been executed
+### Using an already executed nonce
 
 ```js
 {
     "jsonrpc": "2.0",
     "id": "15922956697249514502",
-    "error":
+    "error": {
         "code": -32602,
         "message": "Invalid parameters: tx",
         "data": "\"Transaction 0x4a2cfa73267139d965ab86d41f2af16db09e62ff92a5abffd7f8e743f36f327c is discarded due to a too stale nonce\""
@@ -36,9 +20,10 @@ The following are the RPC errors returned by the ``cfx_sendRawTransaction`` meth
 }
 ```
 
-In this case, the nonce needs to be changed to a currently available (unused) one
+**Solution:** Change the nonce to the first unused one.
 
-### using a nonce that has already been sent to the transaction pool
+### Using a nonce already sent to the transaction pool
+
 
 ```js
 {
@@ -54,7 +39,7 @@ In this case, the nonce needs to be changed to a currently available (unused) on
 
 or
 
-```js 
+```js
 {
     "jsonrpc": "2.0",
     "id": "15922956697249514502",
@@ -66,11 +51,9 @@ or
 }
 ```
 
-For both cases, the transaction has already been sent to the transaction pool. If you want to update or replace it, you can use the same nonce, modify the corresponding field, and resend it with a higher gasPrice value.
+**Solution:** The transaction has already been sent to the transaction pool. To update or replace it, use the same nonce, modify the corresponding field, and resend it with a higher gasPrice value.
 
-### using a too large nonce
-
-The nonce for sending a transaction cannot be too large for the user's current nonce. If it exceeds 2000, the following error will be found:
+### Using a too large nonce
 
 ```js
 {
@@ -84,9 +67,11 @@ The nonce for sending a transaction cannot be too large for the user's current n
   }
 ```
 
-### Gas
+**Solution:** Change the nonce to the first unused one.
 
-If the gas traded is too small (``<21000``) or too large (``>15m``) the following error is returned:
+## Gas-related Issues
+
+### Gas too small (`<21000`) or too large (`>15m`)
 
 ```js
 {
@@ -100,6 +85,8 @@ If the gas traded is too small (``<21000``) or too large (``>15m``) the followin
 }
 ```
 
+**Solution:** Change the `gas` field to the right one.
+
 ```js
 {
     "jsonrpc": "2.0",
@@ -112,29 +99,31 @@ If the gas traded is too small (``<21000``) or too large (``>15m``) the followin
 }
 ```
 
-### gasPrice
+**Solution:** Change the `gas` field to a smaller one. Or optimize contract implementation to reduce gas cost.
 
-The gasPrice of the transaction cannot be set to 0:
+## Invalid gasPrice
+
+### Gas price set to 0
 
 ```js
 {
     "jsonrpc": "2.0",
     "id": "15922956697249514502",
-    "error": {
-        "code": -32602,
-        "message": "Invalid parameters: tx",
-        "data": "\"ZeroGasPrice\""
+    "error": { 
+      "code": -32602,
+      "message": "Invalid parameters: tx", 
+      "data": "\"ZeroGasPrice\"" 
     }
 }
 ```
 
-### Data
+**Solution:** Use return value from `cfx_gasPrice` as the `gasPrice`
 
-The transaction has a size limit. The maximum is 200k.
+## Data Size Limit Exceeded
 
-### epochHeight
+The transaction has a size limit, with the maximum being 200k.
 
-If the epochHeight of a transaction is smaller than the epochNumber of the current network by more than 100k, the following error will be found.
+## Incorrect epochHeight
 
 ```js
 {
@@ -148,7 +137,9 @@ If the epochHeight of a transaction is smaller than the epochNumber of the curre
 }
 ```
 
-### chainId Usage Error
+**Solution:** Use return value from `cfx_epochNumber` as the `epochHight`
+
+## Mismatched chainId
 
 ```js
 {
@@ -162,7 +153,9 @@ If the epochHeight of a transaction is smaller than the epochNumber of the curre
 }
 ```
 
-### Encoding or Signature Error
+**Solution:** Use `chainId` field from return value from `cfx_status` as the `chainId`
+
+## Encoding or Signature Errors
 
 ```js
 {
@@ -188,7 +181,9 @@ If the epochHeight of a transaction is smaller than the epochNumber of the curre
 }
 ```
 
-### Full Transaction Pool
+**Solution:** Making sure you are using the SDK in the right way
+
+## Full Transaction Pool
 
 ```js
 {
@@ -201,6 +196,7 @@ If the epochHeight of a transaction is smaller than the epochNumber of the curre
     }
 }
 ```
+
 or
 
 ```js
@@ -215,11 +211,9 @@ or
 }
 ```
 
-In this case, you can wait for a while to resend the transaction and increase the gasPrice of the transaction to help improve the chances of sending
+**Solution:** Wait for a while to resend the transaction and increase the gasPrice of the transaction to improve the chances of sending.
 
-## Others
-
-### the node is in catch-up mode
+## Node in Catch-up Mode
 
 ```js
 {
@@ -227,15 +221,15 @@ In this case, you can wait for a while to resend the transaction and increase th
     "id": "15922956697249514502",
     "error": {
         "code": -32077,
-        "message": "Request rejected due to still in the catch up mode"
+        "message": "Request rejected due to still in the catch up mode",
         "data": null
     }
 }
 ```
 
-Wait for the node data to sync to the latest before sending
+**Solution:** Wait for the node data to sync to the latest before sending.
 
-### internal error
+## Internal Error
 
 ```js
 {
@@ -249,14 +243,17 @@ Wait for the node data to sync to the latest before sending
 }
 ```
 
-### Execution failure
+## Execution Failure
 
-Execution failure is usually due to an error that occurred during the execution process of the contract, which then caused the transaction failure. Such errors are mostly caused by contract execution failures or errors returned when estimating gas cost through the estimate interface.
-You can check the specific reason for the transaction failure in the `txExecErrorMsg` under receipt:
+Execution failures can be due to errors that occurred during the contract execution process or errors returned when estimating gas cost through the estimate interface. To find the specific reason for the transaction failure, check the `txExecErrorMsg` under the receipt:
 
-1. `VmError(OutOfGas)` The transaction specified gas fee is not enough
-2. `VmError(ExceedStorageLimit)` The transaction specified upper-limit storage is not enough
-3. `NotEnoughCash` Insufficient user balance
-4. `Vm reverted, Reason provided by the contract: xxxx` The contract execution failed with details provided. 
-5. `VmError(BadInstruction xxxx)` Contract deployment failed
-6. `Vm reverted, xxxx` The contract execution failed with no details provided.
+1.  `VmError(OutOfGas)`: The transaction specified gas fee is not enough.
+2.  `VmError(ExceedStorageLimit)`: The transaction specified upper-limit storage is not enough.
+3.  `NotEnoughCash`: Insufficient user balance.
+4.  `Vm reverted, Reason provided by the contract: xxxx`: The contract execution failed with details provided.
+5.  `VmError(BadInstruction xxxx)`: Contract deployment failed.
+6.  `Vm reverted, xxxx`: The contract execution failed with no details provided.
+
+**Solution:** Depending on the specific error message, you may need to adjust the gas fee, increase the storage limit, ensure sufficient balance, or debug the contract code to identify and fix the issues causing the failure.
+
+Remember that when handling transaction errors, it's essential to identify the root cause of the error and apply the appropriate solution. In most cases, modifying transaction parameters, waiting for node synchronization, or debugging the contract code can help resolve the issues.
