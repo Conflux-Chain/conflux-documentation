@@ -57,6 +57,14 @@ The chainId of Conflux is a constant, currently:
 `networkId` is used to distinguish between blockchains at the network layer. Currently Conflux mainnet/testnet's `networkId` is same as `chainId`.
 You can get both of these from the `cfx_getStatus` RPC method.
 
+## internal transactions
+
+Internal transactions in blockchain refer to value transfers or operations within a smart contract. Internal transactions are triggered by external transactions and can involve actions such as transferring tokens, creating new tokens, executing function calls, or interacting with other smart contracts. These transactions are not recorded individually on the blockchain. [ConfluxScan](https://confluxscan.io) and [trace JSON-RPC API](../../core/build/json-rpc/trace-namespace.md) can track and display internal transactions for analysis and visibility.
+
+Related links:
+
+- [trace JSON-RPC API](../../core/build/json-rpc/trace-namespace.md)
+
 ## spaces
 
 In the Conflux v2.0 (Hydra) upgrade, a new feature called "Spaces" was introduced. Spaces is a way to virtually create a sub-chain of the original Conflux network, known as **`eSpace`**.  Core Space refers to the original Conflux network, while eSpace is the virtualized Ethereum chain running on top of the Core Space network. The two spaces are logically independent of each other and do not affect each other.
