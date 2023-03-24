@@ -38,5 +38,5 @@ If you want to deploy an Ethereum project to take advantage of Conflux's high pe
 ## Reference
 
 - [CIP-90](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-90.md).
-- [Espace RPC Compatibility](../../espace/build/compatibility/rpc-compatibility.md).
-- [Espace EVM Compatibility](../../espace/build/compatibility/evm-compatibility.md).
+- [Espace RPC Compatibility](../../espace/build/resources/json-rpc.md).
+- [Espace EVM Compatibility](../../espace/build/evm-compatibility.md).
