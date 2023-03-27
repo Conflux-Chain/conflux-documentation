@@ -4,26 +4,27 @@ import cx from 'clsx';
 
 const DocCatalogFackData = [
   {
-    catalogue: 'Tutorial Intro',
+    catalogue: 'General',
     items: [
-      { url: 'docs/intro#getting-started', text: 'Getting Started', preview: 'Getting Started' },
-      { url: 'docs/intro#what-youll-need', text: "What You'll Need", preview: "What You'll Need" },
-      { url: 'docs/intro#generate-a-new-site', text: "Generate a New Site", preview: "Generate a New Site" },
-      { url: 'docs/intro#start-your-site', text: "Start Your Site", preview: "Start Your Site" },
+      { url: 'docs/general/conflux-basics', text: 'Conflux Basics' },
+      { url: 'docs/category/run-a-node', text: 'Run a Node',  },
+      { url: 'docs/category/mining--staking', text: 'Mining & Staking'},
+      { url: 'docs/general/build', text: 'Build'},
+      { url: 'docs/general/faq', text: 'FAQ'},
     ]
   },
   {
-    catalogue: 'Tutorial Extras',
+    catalogue: 'Core',
     items: [
-      { url: 'docs/tutorial-extras/manage-docs-versions', text: 'Manage Docs Versions', preview: 'Manage Docs Versions' },
-      { url: 'docs/tutorial-extras/translate-your-site', text: 'Translate Your Site', preview: 'Translate Your Site' },
+      { url: 'docs/core/learn', text: 'Learn' },
+      { url: 'docs/core/build', text: 'Build' },
     ]
   },
   {
-    catalogue: 'Learn',
+    catalogue: 'eSpace',
     items: [
-      { url: 'docs/category/getting-started', text: 'Getting Started', preview: 'Getting Started' },
-      { url: 'docs/category/conflux-basics', text: 'Conflux Basics', preview: 'Conflux Basics' },
+      { url: 'docs/category/learn', text: 'Learn' },
+      { url: 'docs/category/build', text: 'Build' },
     ]
   },
 ]

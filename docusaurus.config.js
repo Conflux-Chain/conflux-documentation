@@ -109,23 +109,19 @@ const config = {
         style: 'dark',
         links: [
           {
-            title: 'Docs',
+            title: 'Resources',
             items: [
               {
-                label: 'Learn',
-                to: '/docs/category/learn',
+                label: 'Conflux Website',
+                to: 'https://confluxnetwork.org',
               },
               {
-                label: 'Mine',
-                to: '/docs/category/learn',
+                label: 'Conflux Forum',
+                to: 'https://forum.conflux.fun',
               },
               {
-                label: 'Stake',
-                to: '/docs/category/learn',
-              },
-              {
-                label: 'Build',
-                to: '/docs/category/learn',
+                label: 'Github',
+                to: 'https://github.com/Conflux-Chain',
               },
 
             ],
@@ -134,33 +130,37 @@ const config = {
             title: 'Community',
             items: [
               {
-                label: 'Stack Overflow',
-                to: 'https://stackoverflow.com/questions/tagged/docusaurus',
-              },
-              {
                 label: 'Discord',
-                to: 'https://discordapp.com/invite/docusaurus',
+                to: 'https://discord.gg/3BhYcCM4HY',
               },
               {
-                label: 'Twitter',
-                to: 'https://twitter.com/docusaurus',
+                label: 'Telegram',
+                to: 'https://t.me/Conflux_English',
+              },
+              {
+                label: 'DeWork',
+                to: 'https://app.dework.xyz/conflux',
               },
             ],
           },
           {
-            title: 'More',
+            title: 'Developers',
             items: [
               {
-                label: 'Contribute',
-                to: '/docs/category/contribute',
+                label: 'ConfluxDevs Twitter',
+                to: 'https://twitter.com/ConfluxDevs',
               },
               {
-                label: 'Get Involved',
-                to: '/docs/category/get-involved',
+                label: 'ConfluxDevs Telegram',
+                to: 'https://t.me/ConfluxDevs',
               },
               {
-                label: 'GitHub',
-                href: 'https://github.com/documentation/docusaurus',
+                label: 'Open Technical Grants',
+                href: 'https://forum.conflux.fun/t/open-technical-grants/14399',
+              },
+              {
+                label: 'Contribute (Github)',
+                href: 'https://github.com/Conflux-Chain/conflux-documentation',
               },
             ],
           },
