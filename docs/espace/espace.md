@@ -1,0 +1,15 @@
+---
+title: eSpace
+sidebar_position: 3
+---
+
+Conflux eSpace is an independent space that runs on the same underlying infrastructure as the [Core](../core/core.mdx) space. Conflux eSpace has fully compatible interface with Ethereum, so dApps of Ethereum can be directly deployed to eSpace without any modification. Development tools, SDKs, wallets, and services of Ethereum can be directly used in eSpace.
+
+- `Learn`: User guide of eSpace.
+- `Build`: introduces how to develop in eSpace.
+
+```mdx-code-block
+import DocCardList from '@theme/DocCardList';
+
+<DocCardList />
+```
