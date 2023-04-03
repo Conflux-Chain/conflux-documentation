@@ -1,0 +1,8 @@
+{
+  "label": "Run a Node",
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "description": "Tutorials about running a node for Conflux network."
+  }
+}
