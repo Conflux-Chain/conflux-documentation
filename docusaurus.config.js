@@ -100,7 +100,7 @@ const config = {
           {
             position: 'left',
             label: 'eSpace',
-            to: '/docs/category/espace',
+            to: '/docs/espace',
           },
           {
             type: 'localeDropdown',
