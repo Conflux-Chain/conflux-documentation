@@ -8,7 +8,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'Conflux Docs',
   tagline: 'Developer resources for building on Conflux. By developers, for developers.',
-  url: 'https://docs.conflux123.xyz/',
+  url: 'https://doc.confluxnetwork.org/',
   baseUrl: '/',
   onBrokenLinks: 'ignore',
   onBrokenMarkdownLinks: 'warn',
