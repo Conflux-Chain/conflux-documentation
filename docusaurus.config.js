@@ -24,7 +24,12 @@ const config = {
   // to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
-    locales: ['en'],
+    locales: ['en','zh-Hans'],
+    localeConfigs: {
+      "zh-Hans": {
+        path: "zh"
+      }
+    }
   },
 
   plugins: [
@@ -96,6 +101,10 @@ const config = {
             position: 'left',
             label: 'eSpace',
             to: '/docs/category/espace',
+          },
+          {
+            type: 'localeDropdown',
+            position: 'right',
           },
           {
             href: 'https://github.com/Conflux-Chain/conflux-documentation',
