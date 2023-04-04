@@ -17,16 +17,16 @@ const config = {
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'Conflux', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  projectName: 'conflux-documentation', // Usually your repo name.
 
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
   // to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
-    locales: ['en','zh-Hans'],
+    locales: ['en','zh-CN'],
     localeConfigs: {
-      "zh-Hans": {
+      "zh-CN": {
         path: "zh"
       }
     }
@@ -56,9 +56,9 @@ const config = {
           // Remove this to remove the "edit this page" links.
           editUrl: ({locale, versionDocsDirPath, docPath}) => {
             // link zh documentation to Crowdin
-            // if (locale !== DefaultLocale) {
-            //   return `https://crowdin.com/project/docusaurus-v2/${locale}`;
-            // }
+            if (locale !== 'en') {
+              return `https://crowdin.com/project/conflux/${locale}`;
+            }
             //  link en documentation to GitHub
             return `https://github.com/Conflux-Chain/conflux-documentation/edit/main/docs/${docPath}`;
           },  
