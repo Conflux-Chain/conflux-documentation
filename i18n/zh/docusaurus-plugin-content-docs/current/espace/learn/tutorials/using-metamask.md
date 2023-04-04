@@ -155,13 +155,10 @@ After a few moments the transaction will be confirmed by the network. You can se
 
 ![MetaMask-my-token-sent-account1](./img/token-transfer-balance-changed-24a5b4588118295da68d10d9a3cea0cf.jpeg)
 
-
 If you transferred to another MetaMask account you hold then you can follow the aforementioned instructions for adding the token to MetaMask on the other account, and view its balance also.
 
 
 ![MetaMask-add-token-account2](./img/mm-token-balance-changed-c59c6e2434009c0dcb6e03ef79ba5e60.png)
-
-
 
 
 ## Summary
