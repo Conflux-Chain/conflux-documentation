@@ -1,7 +1,7 @@
 ---
 id: json_rpc
 sidebar_position: 1
-title: cfx Namespace
+title: cfx 区块空间
 keywords:
   - conflux
   - json-rpc
