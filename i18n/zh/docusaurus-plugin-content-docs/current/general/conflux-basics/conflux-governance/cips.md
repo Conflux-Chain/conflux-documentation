@@ -5,7 +5,7 @@ title: CIPs
 
 # CIPs
 
-## 概览
+## Overview
 
 As a decentralized network, major changes to the Conflux protocol need to reach consensus before they can be enacted. Such changes are proposed in the form of a **Conflux Improvement Proposal**, or CIP for short. After a CIP is discussed, the specification is finalized, and popular support is achieved, a set of CIPs is implemented and rolled out as a network upgrade, also known as a hard fork.
 
