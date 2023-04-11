@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-title: 地址
+title: Addresses
 ---
 
 In Conflux, every [account](../../../general/conflux-basics/accounts.md) is associated with a pair of public and private keys, and is identified by an address. This page is about how address is presented and computed in core space.

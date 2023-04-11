@@ -3,7 +3,7 @@ sidebar_position: 3
 title: Accounts and Addresses
 ---
 
-## 概览
+## Overview
 
 Conflux eSpace is an independent space that is logically isolated from the Core space on Conflux Network. Accounts in the eSpace have their own balance and status. To interact with the eSpace, you need to use hex40 addresses, which are different from [base32 addresses](../../core/learn/core-space-basics/addresses.md) used for the Core space. You can transfer funds between your Core and eSpace wallets using a [bridge service](../learn/tutorials/transfer-funds-across-spaces.md).
 

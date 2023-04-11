@@ -3,7 +3,7 @@ sidebar_position: 1
 title: AdminControl
 ---
 
-## 概览
+## Overview
 
 The `AdminControl` contract is a debug tool for contract development. When a contract is created during a transaction, the sender for the current transaction will become the contract admin automatically.
 
