@@ -2,56 +2,56 @@
 sidebar_postion: 6
 ---
 
-# Contributing
+# 贡献
 
 :::info
-Thank you for your interest in contributing to our documentation site! We appreciate your support and value the insights and expertise of our community. This page outlines the guidelines and process for contributing, as well as the rewards you can earn for your efforts.
+感谢您对我们文档站点的兴趣！ 我们非常感谢您的支持，并重视我们社区的见解和专业知识。 本页面概述了为文档网站贡献内容的准则和流程，以及您的付出所能获得的回报。
 :::
 
-## How to Contribute
+## 如何贡献
 
-We welcome contributions in a variety of forms, including but not limited to:
+我们欢迎各种形式的贡献，包括但不限于：
 
-1. Pointing out a mistake/typo and (optionally) providing a solution
-2. Providing translation
-3. Creating or improving diagrams, charts, or visual aids
-4. Suggesting improvements to the documentation structure or organization
-5. Writing or updating a tutorial or guide
-6. Creating or updating code samples, examples, or demos
-7. Polishing or improving document writing
+1. 指出（内容上的）错误/笔误并（可选的）给出解决方案
+2. 提供翻译
+3. 添加或改进配图、表格或其他可视化内容
+4. 对文档组织结构的建议
+5. 编写或更新教程/指南
+6. 添加/更新代码示例
+7. 改进文档写作质量
 
-To submit a contribution, please follow these suggestions:
+要进行贡献，请参考以下建议操作：
 
-### Create an Issue
+### 创建 issue
 
-Create an issue in our documentation repository using an existed template
+请使用仓库中已有的 issue 模版进行创建。
 
-### Create a Pull Request
+### 创建 Pull Request
 
-Before creating a pull request, it is suggested to:
+在创建Pull Request前，建议：
 
-1. Make sure a relavent issue with "ACCEPTED" label exists.
-2. Leave a comment in the issue in case duplicate people working on the same issue.
-3. Mention the issue `#xx` in the commit message. Example `fix: typo. Ref #123456`.
+1. 确认存在与 Pull Request 内容相关的并有 “ACCEPTED” 标签的 Issue。
+2. 在该 Issue 下留言，以防多个人处理相同的问题。
+3. 在提交信息中提及该 Issue `#xx` 例`fix: typo. Ref #123456`.
 
 :::note
-These are not mandatory steps but will decrease the possibility your PR be rejected.
+这些不是强制性步骤，但会降低您的 PR 被拒绝的可能性。
 :::
 
-### Provide Translation
+### 提供翻译
 
-We are using [Crowdin](https://crowdin.com/project/conflux) for document translation integration. Translation strings will be pushed to Github repo after they are reviewed. A translation PR in the Github repo will NEVER be accepted.
+我们使用 [Crowdin](https://crowdin.com/project/conflux) 进行文档翻译集成。 经过审核的翻译字符串将推送到 GitHub 仓库。 直接在 GitHub 仓库中提交的翻译 PR 将 **不会** 被接受。
 
-## Contributor POAPs
+## 贡献者 POAP
 
-Anyone who contributes to the documentation site during a season can mint a contributor POAP. Your contribution must be accepted or implemented to be eligible for the POAP.
+在一个季度内为文档站点做出贡献的任何人都可以铸造贡献者 POAP。 注意：您的贡献必须被接受或实现才能获得POAP资格。
 
-### Special POAPs
+### 特殊 POAP
 
-In addition to the regular contributor POAPs, we recognize and reward significant contributions with special POAPs. Examples of significant contributions include high-quality guides or consistent, frequent contributions to the project. The decision to award a special POAP is made on a case-by-case basis by the project maintainers.
+除了常规的贡献者 POAP，我们还会铸造特殊 POAP 用于表彰和鼓励重要贡献。 重要贡献包括如：高质量的指南或对项目的持续、频繁的贡献。 特殊 POAP 的授予由项目维护者单独评定。
 
-### Issuing Rule Updates
+### Poap 发行规则更新
 
-Please note that the POAP issuing rules are subject to review and possible changes every 3 months. This ensures that our guidelines remain relevant and effective in promoting and rewarding valuable contributions.
+请注意，POAP 发行规则每三个月进行审查并可能进行修改。 这将保证我们的本指导方针能足够有效地鼓励社区为文档建设作出贡献。
 
-We look forward to your contributions and thank you for helping us improve our documentation site! If you have any questions or need assistance, please feel free to create an issue in our Github repo.
+我们期待您的贡献，并感谢您帮助我们改进我们的文档网站！ 如果您有任何问题或需要帮助，欢迎随时在我们的 Github 仓库中创建Issue。
