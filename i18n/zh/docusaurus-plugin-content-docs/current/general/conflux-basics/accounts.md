@@ -3,7 +3,7 @@ sidebar_position: 8
 title: Accounts and Addresses
 ---
 
-## 概览
+## Overview
 
 Accounts in Conflux can be compared to "bank accounts", as they store CFX. Users can create and manage their accounts, deposit CFX, and send transactions. The account address is a unique string that identifies an account and is used to retrieve account information from the Conflux VM's huge table, which stores the account content and balance.
 
