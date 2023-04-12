@@ -18,3 +18,5 @@ If you have a suggested solution or correction, please provide it here.
 
 **Optional: Additional context**
 Add any other context, screenshots, or relevant information about the issue.
+
+- [ ] I'd be willing to fix this issue myself.
