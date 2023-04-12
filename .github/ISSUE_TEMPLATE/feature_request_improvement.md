@@ -21,3 +21,5 @@ If you have any ideas on how to implement this feature or improvement, please pr
 
 **Optional: Additional context**
 Add any other context, screenshots, or relevant information about the feature or improvement.
+
+- [ ] I'd be willing to contribute this feature myself
