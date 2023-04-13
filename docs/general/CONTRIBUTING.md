@@ -24,74 +24,27 @@ To submit a contribution, please follow these suggestions:
 
 ### Create an Issue
 
-You can create an issue to 
-
-- report any mistake / typo 
-- or request new content / current content improvement
-
-![issue templates](image/2023-04-13-15-16-53.png)
-
-It would be wonderful if you are able to take the initiative and resolve the issue on your own!
-
-```
-// in BUG template
-- [ ] I'd be willing to fix this issue myself.
-// in Feature Request template
-- [ ] I'd be willing to contribute this feature myself
-```
+Create an issue in our documentation repository using an existed template
 
 ### Create a Pull Request
 
-You can create a Pull Request to submit content changes **EXCEPT FOR [TRANSLATIONS](#provide-translation)**.
+Before creating a pull request, it is suggested to:
 
-If you are not working on an issue created by yourself, it is suggested to follow these steps:
+1. Make sure a relavent issue with "ACCEPTED" label exists.
+2. Leave a comment in the issue in case duplicate people working on the same issue.
+3. Mention the issue `#xx` in the commit message. Example `fix: typo. Ref #123456`.
 
 :::note
 These are not mandatory steps but will decrease the possibility your PR be rejected.
 :::
 
-1. Make sure a relavent open issue with "ACCEPTED" label exists.
-2. Leave a comment in the issue in case duplicate people working on the same issue.
-3. Mention the issue `#xx` in the commit message. Example `fix: typo. Ref #123456`.
-
-
 ### Provide Translation
 
-:::note
-
-A translation PR in the Github repo will NEVER be accepted.
-
-:::
-
-We are using [Crowdin](https://crowdin.com/project/conflux) for document translation integration. Crowdin helps us to know whether translation strings are outdated after the source files are changed. Anyone can submit translation strings in Crowdin, and translation strings will be pushed to Github repo after they are reviewed.
-
-#### Crowdin Tutorial
-
-Visit our project page on Crowdin at either https://crowdin.com/project/conflux or https://zh.crowdin.com/project/conflux and select the language you wish to translate.
-
-![languages](image/2023-04-13-15-54-46.png)
-
-You will be able to select a file to begin translating.
-
-![files](image/2023-04-13-15-57-59.png)
-
-In order to edit, you will need to be logged in. No need to fret though, you can easily log in with your Github account by clicking a few buttons.
-
-![login](image/2023-04-13-16-01-17.png)
-
-Once you are in, you can start the translation process! Simply click on a source string on the left-hand panel and input the translation or edited string. Remember to click SAVE and wait for your translation to be reviewed.
-
-![translation](image/2023-04-13-16-06-44.png)
-
-Once reviewed, the translation string will be pushed to the Github repository and you can visit your translation on the official documentation site.
+We are using [Crowdin](https://crowdin.com/project/conflux) for document translation integration. Translation strings will be pushed to Github repo after they are reviewed. A translation PR in the Github repo will NEVER be accepted.
 
 ## Contributor POAPs
 
-Individuals who ever engage in contribution to the documentation site during a season will be able to mint a Contributor POAP. To qualify for minting the POAP, your contribution must also be "ACCEPTED" , meaning:
-
-- any issue has been created with the "ACCEPTED" label added by admin
-- any Pull Request has been successfully merged into the main branch
-- or any translation string has been fully reviewed
+Anyone who contributes to the documentation site during a season can mint a contributor POAP. Your contribution must be accepted or implemented to be eligible for the POAP.
 
 ### Special POAPs
 
