@@ -24,33 +24,33 @@ sidebar_postion: 6
 
 ### 创建 Issue
 
-You can create an issue to
+您可以通过创建 Issue 以:
 
-- report any mistake / typo
-- or request new content / current content improvement
+- 反馈任何的事实性错误或笔误
+- 建议新内容或现有内容的改进
 
 ![issue templates](image/2023-04-13-15-16-53.png)
 
-It would be wonderful if you are able to take the initiative and resolve the issue on your own!
+如果您能协助解决相应问题就更好了！
 
 ```
-// in BUG template
+// issue 的 BUG 模版
 - [ ] I'd be willing to fix this issue myself.
-// in Feature Request template
+// issue 的 Feature Request 模版
 - [ ] I'd be willing to contribute this feature myself
 ```
 
 ### 创建 Pull Request
 
-You can create a Pull Request to submit content changes **EXCEPT FOR [TRANSLATIONS](#provide-translation)**.
+您可以通过 Pull Request 来提交新内容， ** [翻译](#provide-translation)除外 **.
 
-If you are not working on an issue created by yourself, it is suggested to follow these steps:
+如果您不是在解决您自己提出的 issue，建议您遵循以下步骤：
 
 :::note
 虽然这些步骤不是强制性的，但遵循它们可以降低您的 PR 被拒绝的风险。
 :::
 
-1. Make sure a relavent open issue with "ACCEPTED" label exists.
+1. 确保相关 Issue 未被关闭且已经被管理员添加 "ACCEPTED" 标签。
 2. 在 Issue 中留下评论，防止多人同时处理同一个问题。
 3. 在提交信息中提及该 Issue `#xx`。 例`fix: typo. Ref #123456`。
 
@@ -63,35 +63,35 @@ If you are not working on an issue created by yourself, it is suggested to follo
 
 :::
 
-我们使用 [Crowdin](https://crowdin.com/project/conflux) 进行文档翻译集成。 Crowdin helps us to know whether translation strings are outdated after the source files are changed. Anyone can submit translation strings in Crowdin, and translation strings will be pushed to Github repo after they are reviewed.
+我们使用 [Crowdin](https://crowdin.com/project/conflux) 进行文档翻译集成。 Crowdin 能够帮助我们了解源文件更改后已翻译内容是否需要变更。 任何人都能在Crowdin中提交翻译，已翻译内容在审查后会被推送至文档的Github仓库。
 
-#### Crowdin Tutorial
+#### Crowdin 教程
 
-Visit our project page on Crowdin at either https://crowdin.com/project/conflux or https://zh.crowdin.com/project/conflux and select the language you wish to translate.
+在 Crowdin 上访问我们的项目页面：https://crowdin.com/project/conflux 或 https://zh.crowdin.com/project/conflux， 并选择您想要翻译的语言。
 
 ![languages](image/2023-04-13-15-54-46.png)
 
-You will be able to select a file to begin translating.
+您可以选择一个文件开始翻译。
 
 ![files](image/2023-04-13-15-57-59.png)
 
-In order to edit, you will need to be logged in. No need to fret though, you can easily log in with your Github account by clicking a few buttons.
+您需要登录才能编辑翻译。 无需烦躁，只需点击几个按钮，就能使用您的 Github 账户登录。
 
 ![login](image/2023-04-13-16-01-17.png)
 
-Once you are in, you can start the translation process! Simply click on a source string on the left-hand panel and input the translation or edited string. Remember to click SAVE and wait for your translation to be reviewed.
+进入页面后即可开始翻译。 点击左侧面板上的源字符串，之后即可输入翻译或编辑字符串。 别忘了点击 SAVE 按钮，之后请等待您的翻译内容接受审核。
 
 ![translation](image/2023-04-13-16-06-44.png)
 
-Once reviewed, the translation string will be pushed to the Github repository and you can visit your translation on the official documentation site.
+一旦审核完成，翻译内容将被推送到Github 仓库，您可以在官方文档站点访问您提供的翻译内容。
 
 ## 贡献者 POAP
 
-Individuals who ever engage in contribution to the documentation site during a season will be able to mint a Contributor POAP. To qualify for minting the POAP, your contribution must also be "ACCEPTED" , meaning:
+每季度文档站点建设的参与者将能够铸造贡献者POAP。 但您的贡献内容必须被“接受”，您才能获得铸造资格，这意味着：
 
-- any issue has been created with the "ACCEPTED" label added by admin
-- any Pull Request has been successfully merged into the main branch
-- or any translation string has been fully reviewed
+- 您创建的任意 issue 需要被管理员添加 "ACCEPTED" 标签
+- 您创建的任何 Pull Request 需要被成功合并进主分支
+- 或者您提交的任何翻译已通过审核
 
 ### 特殊 POAP
 
