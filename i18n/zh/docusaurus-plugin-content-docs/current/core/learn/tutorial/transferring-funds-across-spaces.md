@@ -1,43 +1,43 @@
 ---
 sidebar_position: 2
-title: Transferring Funds Across Spaces
+title: 跨空间转账
 ---
 
-# Transferring Funds Across Spaces
+# 跨空间转账
 
-## Overview
+## 概览
 
-Since the Hydra hard fork in 2022, Conflux has two spaces: Core Space and eSpace. Both spaces use CFX as their native token and they run on the same blockchain. For more details, please refer to the [documentation](https://hackmd.io/@thegaram/S15_VAwh5) or to [this article](https://medium.com/conflux-network/conflux-espace-a-high-level-overview-cdca29bc422a).
+2022年Hydra硬分叉之后，Conflux中存在两个空间：Core Space 和 eSpace。 两个空间都使用CFX作为它们的原生代币，并且运行在同一条区块链上。 欲了解更多详情，请参阅 [文档](https://hackmd.io/@thegaram/S15_VAwh5) 或 [这篇文章](https://medium.com/conflux-network/conflux-espace-a-high-level-overview-cdca29bc422a)。
 
-It is possible to move CFX or ERC20 tokens between Core Space and eSpace. This operation is called cross-space transfer. In the next section, we will explain how you can make such transfers.
+用户可以在Conflux的Core Space和eSpace之间转移CFX或ERC20代币。 这个操作被称为跨空间转账。 在下一节中，我们将解释如何进行这种转账。
 
 ## ConfluxHub
 
-The easiest way to transfer assets between Core Space and eSpace is to use [ConfluxHub](https://confluxhub.io/espace-bridge/cross-space). We recommend that you set up two wallets: [Fluent](https://fluentwallet.com/) for Core Space and [MetaMask](https://metamask.io/) for eSpace.
+使用[ConfluxHub](https://confluxhub.io/espace-bridge/cross-space)是在Core Space和eSpace之间转移资产最简单的方式。 我们建议您设置两个钱包：用于Core Space的[Fluent](https://fluentwallet.com/)和用于eSpace的[MetaMask](https://metamask.io/)。
 
 
 ![Locale Dropdown](./img/transferAssets.png)
 
-Follow these steps to make a cross-space transfer:
+按照这些步骤进行跨空间转账：
 
-- Start by clicking on `Connect Wallet` to connect your Fluent and MetaMask wallets to ConfluxHub.
-- `To: Conflux eSpace` at the top shows that you are making a transfer from Core Space to eSpace. If you would like to make a transfer in the other direction, click on the arrow next to this text.
-- In the `Conflux eSpace Destination Address` field, type in your eSpace address or click the MetaMask icon on the right to fill this field automatically.
-- Next, select the token that you want to transfer and enter the transfer amount.
-- If the button on the bottom says `Approve`, click on it to submit an ERC20 token approval first.
-- Once the button on the bottom says `Transfer`, click on it to make the transfer.
+- 点击 `连接钱包` 来将您的Fluent和MetaMask钱包连接到 ConfluxHub。
+- `To: Conflux eSpace` 顶部显示了您正在从Core Space转账到eSpace。 如果您想要在另一个方向进行传输，请点击此文本旁边的箭头。
+- 在 `Conflux eSpace Destination Address` 字段中输入您的eSpace地址，或点击右边的 MetaMask图标自动填写此字段。
+- 接下来，选择您想要转移的代币，输入转移数量。
+- 如果底部的按钮显示为`Approve`，则需要点击该按钮先提交一个ERC20代币的授权。
+- 一旦底部的按钮显示 `Transfer`，点击它进行转账。
 
-Making a cross-space transfer from eSpace to Core Space follows a similar process but it has two main steps: First, transfer the token to the bridge on eSpace. Second, withdraw the token from the bridge on Core Space. Please follow the site’s instructions.
+将资产从 eSpace 转移到 Core Space 的跨空间转账也是一个类似的过程，但包含两个主要步骤：首先，将代币转移到 eSpace 上的桥接合约。 第二步，从 Core Space 上的桥接合约中提取代币。 请按照网站的说明进行操作。
 
-**⚠️ When making a cross-space transfer, always double check your addresses to avoid accidental asset loss.**
+**⚠️ 当进行跨空间转账时，请始终仔细检查地址，以避免意外的资产损失。**
 
-## Cross-Space Transfers for Developers
+## 开发者的跨空间转账
 
-Below we will discuss how to make cross-space transfers programmatically.
+以下我们将讨论如何通过编程方式进行跨空间转账。
 
-### Internal Contract
+### 内置合约
 
-[CIP-90](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-90.md) introduced the concept of two spaces running on one blockchain, and defined a new [internal contract](https://hackmd.io/@thegaram/S15_VAwh5) to connect the two. This contract is available under the address [`cfx:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaa2sn102vjv`](https://confluxscan.io/address/cfx:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaa2sn102vjv) (hex: `0x0888000000000000000000000000000000000006`) on Core Space.
+[CIP-90](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-90.md)是引入在同一条区块链上运行两个空间概念的提案，定义了一个新的[内置合约](https://hackmd.io/@thegaram/S15_VAwh5)来连接这两个空间。 这个合约在Core Space上的地址是 [`cfx:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaa2sn102vjv`](https://confluxscan.io/address/cfx:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaa2sn102vjv) (hex: `0x0888000000000000000000000000000000000006`)。
 
 ```js
 interface CrossSpace {
