@@ -1,14 +1,14 @@
 ---
 sidebar_position: 5
-title: Transfer Stablecoins Across Chains Using Meson
+title: 使用 Meson 跨链转移稳定币
 ---
 
-[Meson](https://meson.fi/zh) is a stablecoin cross-chain swap protocol that supports multiple networks. With Meson, you can bridge either USDC or USDT tokens from different networks into Conflux eSpace, or from Conflux eSpace to other networks.
-- In this guide, we'll bridge USDC on BNB Chain to USDT on Conflux eSpace through Meson.
+[Meson](https://meson.fi/zh) 是一个支持多个网络的稳定币跨链交换协议。 使用Meson，您可以将来自不同网络的USDC或USDT代币桥接到Conflux eSpace，或者从Conflux eSpace桥接到其他网络。
+- 在本指南中，我们将通过 Meson 将 BNB Chain 上的 USDC 转换为 Conflux eSpace 上的 USDT。
 
-## Prerequisites
+## 前提条件
 
-- A USDC or USDT stablecoin on any of the following networks:
+- 在以下任意网络中有USDC或USDT稳定币：
 - Ethereum (USDC/USDT)
 - BNB Chain (USDC/USDT)
 - Tron (USDT)
@@ -16,93 +16,93 @@ title: Transfer Stablecoins Across Chains Using Meson
 - Fantom (USDC)
 - Polygon (USDC)
 - Conflux (USDC/USDT)
-- Your MetaMask wallet connected to Conflux eSpace.
+- 请确保你的MetaMask钱包已经连接到了Conflux eSpace网络。
 
-## Bridging Stablecoins to Conflux eSpace with Meson
+## 使用 Meson 将稳定币桥接到 Conflux eSpace
 
-1. Go to [Meson](https://meson.fi/zh).​
-2. Click **Connect Wallet** to connect MetaMask to Meson.
+1. 前往[Meson](https://meson.fi/zh)。
+2. 点击**Connect Wallet**，将MetaMask连接到Meson。
 
 ![meson1](./img/meson1.webp)
 
-3. Select the account(s) that you wish to use on Meson and click Next.
+3. 选择您希望在 Meson 上使用的账户，然后点击下一步。
 
 ![meson](./img/meson.webp)
 
-4. Confirm the connection to the site by clicking **Connect**.
+4. 点击**Connect**确认连接到该网站。
 
 ![meson2](./img/meson2.webp)
 
-Your MetaMask wallet is now connected to Meson. Let's now bridge our tokens.
+你的 MetaMask 钱包现在已经连接到 Meson。 现在让我们开始跨链。
 
-5. In the **FROM** drop-down list, select the network that you'll transfer your assets from (for example: BNB Chain).
+5. 在**FROM**下拉列表中，选择您将要转移资产的网络(例如：BNB Chain)。
 
 ![meson3](./img/meson3.webp)
 
-6. In the token type drop-down list, select **USDC**.
+6. 在token type下拉列表中，选择**USDC**。
 
 ![meson4](./img/meson4.webp)
 
-7. Enter the amount of USDC that you want to transfer.
+7. 输入您想转移的 USDC 数量。
 
 ![meson5](./img/meson5.webp)
 
-8. In the **TO** drop-down list, select **Conflux eSpace**.
+8. 在 **TO** 下拉列表中，选择 **Conflux eSpace**。
 
 ![meson6](./img/meson6.webp)
 
-9. Confirm the transaction details and click **Swap**.
+9. 确认交易细节，然后点击 **Swap**。
 
 ![meson7](./img/meson7.webp)
 
-10. In the Approve dialog, click **Approve** to invoke MetaMask and grant Meson permission to access your funds.
+10. 在弹出的 Approve 窗口中，点击 **Approve**，以调用 MetaMask 并授权 Meson 访问您的资金。
 
 ![meson8](./img/meson8.webp)
 
 :::note  
-The approval operation requires a gas fee, however, this is the only time you'll need to pay for gas, the gas fee for other steps are on Meson.
+授权操作需要燃气费，不过这是你唯一需要支付燃气费的时候，其它步骤的燃气费由 Meson 承担。
 :::
 
-11. In MetaMask, click **Confirm** to give permission to Meson to access your funds.
+11. 在 MetaMask 中，点击 **Confirm** 来授权 Meson 访问您的资金。
 
 ![meson9](./img/meson9.webp)
 
-12. Once you grant permission to MetaMask, click **Confirm** in the Swap Summary to confirm the swap transaction you're about to do.
+12. 一旦你允许 MetaMask 访问你的资金，点击 Swap Summary 中的 **Confirm** 来确认即将进行的兑换交易。
 
 ![meson10](./img/meson10.webp)
 
-13. Now, in MetaMask, click **Sign** to sign and proceed with the transaction.
+13. 现在在 MetaMask 中，点击 **Sign** 以签名并继续执行交易。
 
 ![meson11](./img/meson11.webp)
 
-14. In the Swap Summary, wait for the swap request to be processed. :::note    
-    This may take around 1 minute.
+14. 在Swap Summary中，等待交换请求被处理。 :::note    
+    这可能需要约1分钟。
 :::
 
 ![meson12](./img/meson12.webp)
 
-15. Once the swap request transaction is processed, click **Sign** on MetaMask to release the funds in Conflux.
+15. 一旦交换请求交易被处理，点击 MetaMask 上的 **Sign** 来释放在 Conflux 中的资金。
 
 ![meson13](./img/meson13.webp)
 
-You have now bridged your funds to Conflux eSpace!
+您现在已经将您的资金桥接到 Conflux eSpace！
 
-## Verifying Transactions
+## 验证交易
 
-To verify the transaction:
+验证交易：
 
-1. Open the wallet menu.
+1. 打开钱包菜单。
 
 ![meson14](./img/meson14.webp)
 
-2. Click on the Swap ID to open the Meson transaction explorer.
+2. 点击 Swap ID 以打开 Meson 交易浏览器。
 
 ![meson15](./img/meson15.webp)
 
-3. You can verify the transactions on both networks' transaction explorers.
+3. 你可以在两个网络的区块链浏览器上验证交易。
 
 ![meson16](./img/meson16.webp)
 
-## Additional Resources
+## 其他资源
 
-- To learn more about Meson, check out [Meson's blog](https://medium.com/@mesonfi.)
+- 了解更多关于Meson的信息，请查看[Meson's blog](https://medium.com/@mesonfi)。

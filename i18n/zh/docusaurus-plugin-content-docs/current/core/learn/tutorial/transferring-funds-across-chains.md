@@ -1,53 +1,53 @@
 ---
 sidebar_position: 3
-title: Transferring Funds Across Chains
+title: 跨链转账
 ---
 
 
-## Transferring Funds Across Chains Using ShuttleFlow
+## 使用ShuttleFlow跨链转移资金
 
-To transfer Funds to Conflux Core Space from other chains, users can do it on [ConfluxHub](https://www.confluxhub.io/shuttle-flow)’s ShuttleFlow page.
+要将资金从其他链转到Conflux Core Space，用户可以在 [ConfluxHub](https://www.confluxhub.io/shuttle-flow)的ShuttleFlow 页面做到这一点。
 
-ShuttleFlow is a decentralized cross-chain asset transfer protocol that allows users to move their assets between different blockchain networks, such as Conflux Core, Ethereum, and Binance Smart Chain. By using ShuttleFlow, users can transfer their assets quickly, securely, and at a low cost.
+ShuttleFlow是一个去中心化的跨链资产转移协议，允许用户在不同的区块链网络之间转移他们的资产，例如Conflux Core、以太坊和币安智能链。 通过使用ShuttleFlow，用户可以快速、安全和低成本地转移其资产。
 
-Here's a step-by-step guide on how to transfer funds using ShuttleFlow:
+下面是关于如何使用ShuttleFlow转移资产的分步指南：
 
-**Step 1: Connect your Wallets**
+**第 1 步：连接您的钱包**
 
-The first step is to connect your wallets. You need to use Fluent Wallet for Conflux Core and MetaMask for the other network.
+第一步是连接你的钱包。 您需要在Conflux Core网络上使用Fluent钱包，在其他网络上使用MetaMask。
 
 ![shuttleflow](./img/shuttleflow.jpg) ![shuttleflow1](./img/shuttleflow1.jpg)
 
-**Step 2: Choose the Asset and Network**
+**第 2 步：选择资产和网络**
 
-Once your wallets are connected, select the asset that you want to transfer and the network that you want to transfer it to. In this case, we will be transferring CFX from Conflux Core to Binance Smart Chain.
+一旦你的钱包连接成功，选择你想要转移的资产和你想要转移到的网络。 在这种情况下，我们将从Conflux Core转移CFX到Binance Smart Chain。
 
 ![shuttleflow5](./img/shuttleflow5.jpg)
 
-**Step 3: Initiate the Transfer**
+**第 3 步：发起转账**
 
-Click on the **Next** button to initiate the transfer.
+点击 **Next** 按钮来发起转账。
 
 ![shuttleflow4](./img/shuttleflow4.jpg)
 
-**Step 4: Input Transfer Information**
+**第 4 步：输入转账信息**
 
-Enter the amount of CFX that you want to transfer and the BSC address where you want to receive the tokens. You will also need to approve the transaction and pay the gas fees.
+输入您想要转移的CFX数量和您希望接收代币的BSC地址。 您还需要批准交易并支付燃气费用。
 
 ![shuttleflow2](./img/shuttleflow2.jpg)
 
-**Step 5: Confirm and Wait for the Transfer**
+**第5步：确认并等待转账完成**
 
-Once you have entered all the necessary information and paid the gas fees, confirm the transaction. The transfer will then be processed by ShuttleFlow, and you will need to wait for the confirmation.
+一旦您输入了所有必要的信息并支付了燃气费用，请确认交易。 随后，ShuttleFlow 将处理该转账，并且您需要等待交易确认。
 
 ![shuttleflow3](./img/shuttleflow3.jpg)
 
-**Step 6: Check Your Wallet**
+**第 6 步：检查您的钱包**
 
-After the transfer is complete, you should see the transferred assets in your BSC wallet. Congratulations! You have successfully transferred your assets using ShuttleFlow.
+转移完成后，您应该在您的 BSC 钱包中看到已转移的资产。 恭喜！ 您已成功使用 ShuttleFlow 转移您的资产。
 
 ![shuttleflow6](./img/shuttleflow6.jpg)
 
 :::note 
-The process is similar when transferring from another chain to Conflux Core.
+当从另一个链转移资产到 Conflux Core 时，该过程类似。
 :::

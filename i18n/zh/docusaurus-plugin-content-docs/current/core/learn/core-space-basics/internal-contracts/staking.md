@@ -3,7 +3,7 @@ sidebar_position: 3
 title: Staking
 ---
 
-## Overview
+## 概览
 
 Conflux introduces the staking mechanism for two reasons: first, staking mechanism provides a better way to charge the occupation of storage space (comparing to “pay once, occupy forever”); and second, this mechanism also helps in defining the voting power in decentralized governance.
 

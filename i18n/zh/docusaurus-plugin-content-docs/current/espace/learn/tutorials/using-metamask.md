@@ -7,34 +7,34 @@ keywords:
   - EVMSpace
 ---
 
-## Introduction
+## 简介
 
-[MetaMask](https://metamask.io/) is a convenient UI for interacting with Ethereum-compatible blockchains (such as Conflux eSpace). For the purpose of this guide, we will assume you are already familiar with MetaMask and have it installed. If you need help getting started with MetaMask itself, [check out their documentation](https://metamask.io/faqs.html).
+[MetaMask](https://metamask.io/) 是一个具有用户界面的浏览器扩展，用于与兼容以太坊的区块链(例如 Conflux eSpace)进行交互。 For the purpose of this guide, we will assume you are already familiar with MetaMask and have it installed. 如果您需要了解如何使用 MetaMask 本身，请[查看Metamask的文档](https://metamask.io/faqs.html)。
 
-In this tutorial we will walk through connecting MetaMask to the Conflux eSpace Testnet , deploying a simple ERC-20 contract using [Remix](https://remix.ethereum.org), and transferring the new token using MetaMask.
+在本教程中，我们将演示如何连接 MetaMask 到 Conflux eSpace Testnet，使用 [Remix](https://remix.ethereum.org) 部署一个简单的 ERC-20 合约，并使用 MetaMask 转移新代币。
 
 :::note
-Screenshots in this tutorial are taken from the MetaMask browser extension version 10.8.1.
+本教程中的屏幕截图来自MetaMask 浏览器扩展版本 10.8.1。
 :::
 
-## Connecting MetaMask to Conflux eSpace
+## 连接 MetaMask 到 Conflux eSpace。
 
-You can add the Conflux eSpace network to your MetaMask wallet by following these steps:
+您可以通过以下步骤添加 Conflux eSpace 网络到您的 MetaMask 钱包：
 
-1. Open your browser and navigate to https://chainlist.org.
-2. Search for "Conflux eSpace".
-1. Click "Connect Wallet" under "Conflux eSpace" to allow this site to send requests to Metamask.
-1. Click "Add to Metamask" under "Conflux eSpace".
-1. When MetaMask prompts "Allow this site to add a network?", click "Approve".
-1. When MetaMask prompts "Allow this site to switch the network?", click "Approve".
+1. 打开您的浏览器，访问 https://chainlist.org。
+2. 搜索“Conflux eSpace”
+1. 在“Conflux eSpace”下点击“连接钱包”，以允许此站点向 MetaMask 发送请求。
+1. 在“Conflux eSpace”下点击“添加到 MetaMask”。
+1. 当 MetaMask 提示“允许此站点添加网络？”时，点击“批准”。
+1. 当 MetaMask 提示“允许此站点切换网络？”时，点击“批准”。
 
-Your MetaMask wallet is now connected to Conflux eSpace. You can switch to other networks anytime through the network selection dropdown menu in MetaMask.
+您的 MetaMask 钱包现在已连接到 Conflux eSpace。 您可以随时通过Metamask中的网络选择菜单切换到其他网络。
 
-Alternatively, you can add Conflux eSpace to MetaMask manually by selecting "Add Network" (or "Custom RPC") in the network selection drop-down menu:
+或者，您可以通过在网络选择下拉菜单中选择“添加网络”(或“自定义 RPC”)手动将 Conflux eSpace 添加到 MetaMask：
 
  ![MetaMask-network-select](./img/metamask_choose_network-0.png)
 
-For the eSpace **mainnet**, please use the following configuration values:
+对于eSpace **mainnet**, 请使用以下配置值：
 
 - **Network Name**: Conflux eSpace
 - **New RPC URL**: https://evm.confluxrpc.com
@@ -42,7 +42,7 @@ For the eSpace **mainnet**, please use the following configuration values:
 - **Currency Symbol**: CFX
 - **Block Explorer URL**: https://evm.confluxscan.net
 
-For the eSpace **testnet**, please use the following configuration values:
+对于 eSpace **testnet**，请使用以下配置值：
 
 - **Network Name**: Conflux eSpace (Testnet)
 - **New RPC URL**: https://evmtestnet.confluxrpc.com
@@ -53,18 +53,18 @@ For the eSpace **testnet**, please use the following configuration values:
 ![MetaMask-create-EVM-Space-rpc](./img/metamask_add_network-ce.png)
 
 :::note
-All the Conflux eSpace RPC endpoint URLs and chain IDs can be found on our Networks page.
+所有Conflux eSpace RPC 端点URL 和 chain ID都可以在我们的网络页面上找到。
 :::
 
-Click `Save`, and you should see `Conflux eSpace` is now the network selected in MetaMask. To see MetaMask in action, we will connect it to Remix and perform some transactions. The rest of this guide will assume your MetaMask is connected to `Conflux eSpace (Testnet)`.
+点击 `保存`，然后您应该在 MetaMask 中看到 `Conflux eSpace` 是当前选择的网络。 为了让您体验 MetaMask操作情况，我们将把它连接到 Remix 并执行一些交易。 本指南的其余部分将假设您的 MetaMask 已连接到 `Conflux eSpace(Testnet)`。
 
-## Deploying an ERC-20 Token using Remix
+## 使用 Remix 部署 ERC-20 代币
 
-In a new tab, open the Remix IDE at [remix.ethereum.org](https://remix.ethereum.org). It might take a minute to load, but once it has, create a new file `ERC20Token.sol` in the workspace panel on the left:
+在一个新标签页中打开 Remix IDE，网址是[remix.ethereum.org](https://remix.ethereum.org)。 它可能需要一分钟才能加载，但一旦加载完成，请在左侧的工作区面板中创建一个名为 `ERC20Token.sol` 的新文件：
 
 ![Remix-new-file](./img/remix_new_file-1.png)
 
-Copy and paste the following code into the central editor panel:
+将以下代码复制并粘贴到中央的编辑器面板中：
 
 ```solidity
 // SPDX-License-Identifier: MIT
@@ -82,85 +82,85 @@ contract MyToken is ERC20 {
 }
 ```
 
-Click the `Solidity Compile` button on the far left panel (the second icon down); ensure your selected Solidity compiler version is 0.8 (minor versions within 0.8, e.g., 0.8.4 work too), and click `Compile ERC20Token.sol`.
+点击左侧面板最左侧的`Solidity Compile`按钮(第二个向下的图标)； 确保您选择的Solidity编译器版本为0.8(0.8内的次要版本，例如0.8.4也可以)，然后点击`Compile ERC20Token.sol`。
 
 
 ![Remix-solidity-compile](./img/remix_solidity_compile-1f459820c9caef73c47d3af1c87e71a6-1f459820c9caef73c47d3af1c87e71a6.png)
 
-Once the contract is compiled, click the `Deploy & run transactions` button in the far left panel (the icon below the Solidity compiler). In the `ENVIRONMENT` drop-down select `Injected Web3`.
+一旦合约编译完成，点击最左侧面板上的`Deploy & run transactions`按钮(Solidity编译器下面的图标)。 在左侧面板的`ENVIRONMENT`下拉菜单中，选择 `Injected Web3`。
 
 ![Remix-inject-web3](./img/remix_injected_web3-dbb0d671a1703239451d7d4e133f68ba-dbb0d671a1703239451d7d4e133f68ba.png)
 
-You will see a MetaMask pop-up window asking you to give the Remix IDE permission to access it. Click `Next` and then `Connect` to grant access.
+你将会看到一个 MetaMask 弹窗，请求你允许 Remix IDE 访问它。 点击 `Next` 然后 `Connect` 以授予访问权限。
 
 ![Remix-connect-metamask](./img/remix_connect_with_metamask-9d8214740f372d3b41e489cbe23c5884-9d8214740f372d3b41e489cbe23c5884.png)
 
-Back in the Remix interface, click the arrow next to the `DEPLOY` section of the left panel. Fill in the token details with whatever you like (`GoldenToken` and `GLD` in the example), and click `transact`.
+在Remix界面中，点击左侧面板的`DEPLOY`部分旁边的箭头。 填写代币详情，可根据自己的喜好填写(在示例中为`GoldenToken`和`GLD`)，然后点击`transact`。
 
 ![Remix-deploy-contract](./img/remix_deploy_contract-6423d60330003a7ffc0dc28ee5cd8178-6423d60330003a7ffc0dc28ee5cd8178.png)
 
-Another MetaMask pop-up will appear asking you to confirm the transaction. Click `Confirm`.
+另一个 MetaMask 弹出窗口将会要求您确认交易。 点击 `确认`。
 
 ![Remix-deploy-contract-metamask-confirm](./img/remix_deploy_contract_metamask_confirm-6b4f8c2a751ec4a4b6ad9df96584c623-6b4f8c2a751ec4a4b6ad9df96584c623.png)
 
 
-After a few moments the transaction will be confirmed by the network. You will see a success message in the bottom panel and the contract listed under `Deployed Contracts` on the left panel. Click the copy button to copy the address of the newly deployed contract.
+几分钟后，交易将由网络确认。 你将在底部面板看到一个成功的消息，以及左边面板下的`Deployed Contracts`列表下看到该合约。 点击复制按钮复制新部署合约的地址。
 
 ![Remix-deploy-contract-confirmed](./img/remix_deploy_contract_confirmed-59390e985747c30736f46356a88b4ff1-59390e985747c30736f46356a88b4ff1.png)
 
 
-Now that the contract is deployed on the Conflux eSpace, we can interact with it via MetaMask.
+现在，合约已经部署到了Conflux eSpace，我们可以通过MetaMask与其进行交互。
 
-## Adding an ERC-20 Token to MetaMask
+## 添加ERC-20代币到MetaMask
 
-In the MetaMask interface (with the Conflux EVM Testnet network still selected), click the `Add Token` button:
+在 MetaMask 界面中(确保选择的是 Conflux EVM Testnet 网络)，点击`Add Token`按钮：
 
 ![MetaMask-add-token-button](./img/metam-import-token-b2a756a7a4ed3ac17f1a75fca77bf738.png)
 
 
-Paste the token address copied from Remix in the previous step. The remaining token details should fill in automatically as MetaMask finds the contract on-chain. Click `Next`:
+将从上一步中从Remix中复制的代币地址粘贴到此处。 剩余的代币详细信息会自动填充，因为 MetaMask 在链上找到了该合约。 点击 `Next`:
 
 ![MetaMask-add-token](./img/mm-import-token-short-1-71f005c4fdb996d2a4b5651ceb6bc7bd.png)
 
 
-On the next screen you see the balance (100 tokens), as minted in our contract constructor. Click `Add Tokens`:
+在下一个界面上，您将看到余额(100个代币)，这是在我们的合约构造函数中创建的。 点击`Add Tokens`：
 
 ![MetaMask-add-token-confirm](./img/mm-import-token-short-2.png)
 
 
 
-The token has now been added to MetaMask and we can use the MetaMask interface to view the token balance and to transfer the token to others.
+代币已经成功添加到了 MetaMask 中，我们可以使用 MetaMask 界面查看代币余额，并将代币转移到其他账户中。
 
-## Transferring an ERC-20 Token with MetaMask
+## 使用 MetaMask 转移 ERC-20 代币
 
-Continuing from the previous step, click the `Send` button in the MetaMask interface:
+接着上一步，点击MetaMask界面的`Send`按钮：
 
 ![MetaMask-my-token](./img/start-send-gld-b56abfa83bb02864b94c3a5adcbcc0d0.jpeg)
 
 
-Select a recipient (if you have multiple accounts in MetaMask you can simply select another account), and an amount of tokens to send. Click `Next`:
+选择一个接收者(如果你在 MetaMask 中有多个账户，可以选择另一个账户)，然后选择要发送的代币数量。 点击 `Next`:
 
 ![MetaMask-send-my-token](./img/send-gld-1-da8b6feee94ca0dfe89afc5118267c89.jpeg)
 
 :::note
-Once again the gas price should be set to zero, but this will change going forward.
+同样地，燃气价格应该设置为零，但是这将会随着时间的推移而改变。
 :::
 
-Click `Confirm` to send the transaction to the network:
+点击 `Confirm` 发送交易到网络：
 
 
 ![MetaMask-send-my-token-confirm](./img/send-gld-confirm-7789e263d3d53e45e2e4bebbf1d057cb.jpeg)
 
-After a few moments the transaction will be confirmed by the network. You can see the updated balance your account holds in the MetaMask interface:
+几分钟后，交易将由网络确认。 您可以在 MetaMask 界面中看到您的账户所持有的更新后的余额。
 
 ![MetaMask-my-token-sent-account1](./img/token-transfer-balance-changed-24a5b4588118295da68d10d9a3cea0cf.jpeg)
 
-If you transferred to another MetaMask account you hold then you can follow the aforementioned instructions for adding the token to MetaMask on the other account, and view its balance also.
+如果您将代币转移到您拥有的另一个 MetaMask 账户，则可以按照前面提到的将代币添加到 MetaMask 上的步骤，在其他账户上查看它的余额。
 
 
 ![MetaMask-add-token-account2](./img/mm-token-balance-changed-c59c6e2434009c0dcb6e03ef79ba5e60.png)
 
 
-## Summary
+## 总结
 
-In this tutorial we connected MetaMask to the Conflux EVM Testnet, deployed an ERC-20 token contract using Remix, and transferred that token using MetaMask. The only difference to doing this on the original Ethereum network was setting the RPC endpoint to be Conflux eSpace's.
+在本教程中，我们连接了MetaMask到Conflux EVM测试网络，使用Remix部署了一个ERC-20代币合约，并使用MetaMask转移了该代币。 这个过程在以太坊网络上进行的唯一区别是将 RPC 端点设置为 Conflux eSpace 的端点。

@@ -1,21 +1,21 @@
 ---
 sidebar_position: 1
-title: Addresses
+title: 地址
 ---
 
-In Conflux, every [account](../../../general/conflux-basics/accounts.md) is associated with a pair of public and private keys, and is identified by an address. This page is about how address is presented and computed in core space.
+在Conflux中，每个 [账户](../../../general/conflux-basics/accounts.md) 都与一个公私钥对相关联，并由一个“地址”标识。 本页面介绍地址在core space中的表示和计算方式。
 
 :::info
 
-Refer to [General-address](../../../general/conflux-basics/accounts.md#address) for the basic concepts about addresses.
+请参考 [General-address](../../../general/conflux-basics/accounts.md#address)了解有关地址的基本概念。
 
 :::
 
-## Hex and Base32 Addresses
+## Hex地址 和 Base32 地址
 
-Before the release of `Conflux-rust v1.1.1`, Conflux addresses were exclusively presented as hex-encoded strings, such as `0x1292d4955bb47f5153b88ca12c7a9e4048f09839`. This format closely resembles addresses used by Ethereum and other EVM-compatible blockchains. However, Conflux employs a unique method to compute EOA addresses, which means that the address strings generated from the same private key will usually differ between Conflux and Ethereum. This similarity in appearance, combined with the difference in computation, makes it all too easy for users to confuse Conflux addresses with Ethereum addresses, potentially leading to the loss of assets.
+在 `Conflux-rust v1.1.1`发布之前，Conflux 地址完全以十六进制编码字符串形式呈现，例如 `0x1292d4955b47f5153b88c12c7a94048f09839` 此格式与Etherum和其他兼容的EVM区块链使用的地址非常相似。 然而，Conflux 采用独特的方法来计算EOA地址， 这意味着由同一私钥生成的地址字符串在Conflux 和 Etherum之间通常是不同的。 这种表面上的相似性，加上计算上的差异， 使得用户很容易将Conflux地址与Ethereum 地址混淆，从而可能导致资产损失。
 
-In order to address this issue, Conflux introduced a new base32-encoded address format in [CIP-37](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-37.md). The new format is derived directly from the original hex-encoded addresses including a distinctive prefix (such as "cfx"), an optional address type, and a checksum. As a result, the hex-encoded address mentioned earlier can be converted into a more easily recognizable base32 address, like `cfx:aakkfzezns4h8ymx1cgmcnd4x3aev6e2hexz250ym5`, or an alternative verbose format with an optional address type, such as `CFX:TYPE.USER:AAKKFZEZNS4H8YMX1CGMCND4X3AEV6E2HEXZ250YM5`. This new format minimizes the risk of confusion between Conflux and Ethereum addresses, offering a safer and more user-friendly experience.
+为了解决这个问题，Conflux在 [CIP-37](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-37.md) 中引入了一个新的基于 base32 编码地址格式。 新格式直接来自原有的十六进制编码地址，包括一个独特的前缀(例如"cfx")、一个可选的地址类型和一个校验和。 因此，上文提到的Hex编码地址可以转换成更容易识别的base32地址。例如 `cfx:aakkfzezns4h8ymx1cgmcnd4x3aev6e2hexz250ym5`, 可选的，也可以表示为详细格式地址，详细格式包含了非必须的地址类型信息, 例如 `CFX:TYPE .USER：AAKKFZEZNS4H8YMX1CGMCN4X3AEV6E2HEXZ250YM5`. 这种新格式最大限度地减少了Conflux 和 Etherum地址之间混淆的风险，提供了更安全和更方便的用户体验。
 
 :::caution
 
@@ -23,25 +23,25 @@ Base32 addresses are utilized throughout the Conflux core ecosystem, with the ex
 
 :::
 
-## Address Computation
+## 地址计算
 
 :::info
 
-This section is informational in nature. Typically, users or developers won't need to calculate the hex address on their own. It's advised to rely on the return values from the SDK or RPC to obtain the EOA/contract address, and to use the SDK or [online address converter](https://www.confluxscan.net/address-converter) for converting between hex and base32 address formats.
+本节内容仅供信息参考。 用户或开发者通常不需要自己计算十六进制地址。 It's advised to rely on the return values from the SDK or RPC to obtain the EOA/contract address, and to use the SDK or [online address converter](https://www.confluxscan.net/address-converter) for converting between hex and base32 address formats.
 
 :::
 
-### Hex Address Computation
+### 十六进制地址计算
 
-Base32 addresses are derived directly from the original hex-encoded addresses. Therefore, we need to understand the computation of hex addresses.
+Base32地址直接由原始的十六进制编码地址派生而来。 因此，我们需要理解十六进制地址的计算方法。
 
-A Conflux hex address is a 20-byte hex value, represented as a 42-character string starting with "0x". The hex-encoded address starts with a 1(3)-character "type indicator" that signifies the address type. There are currently three types of indicators:
+Conflux 十六进制地址是一个20字节的十六进制值，以“0x”开头的包括42个字符的字符串表示。 十六进制编码地址以一个1(3)字符“类型标识”开头，表示地址类型。 目前有三种类型的标识：
 
-- `(0x)1`: Represents the address of an EOA account.
-- `(0x)8`: Represents the address of a contract
+- `(0x)1`: 代表一个EOA 帐户的地址
+- `(0x)8`: 代表一个合约的地址
 - `(0x)0`: Represents the address of an [internal contract](../core-space-basics/internal-contracts/internal-contracts.mdx), which implements hard-coded logic on the chain, or a null address (`0x0000000000000000000000000000000000000000`).
 
-#### EOA Hex Address Computation
+#### EOA 十六进制地址计算
 
 The computaion of EOA hex address is specified in [Conflux protocol specification](https://www.confluxnetwork.org/files/Conflux_Protocol_Specification.pdf) `3.1: Accounts`. The account address is a concatenation of a 4-bit type indicator and the rightmost 156-bit Keccak digest of the associated public key of the private key.
 
@@ -51,11 +51,11 @@ An contract can be deployed via `create2` opcode or not.
 
 :::note
 
-The contract address computation is quite different from that of Ethereum.
+合约地址的计算方式与以太坊有很大不同。
 
 :::
 
-If `create2` is used, the deployed address of can be computed as the following Python code described:
+如果使用 `create2` ，可以使用以下Python代码计算部署地址：
 
 ```python
 # using web3.py is also viable
@@ -71,7 +71,7 @@ def compute_address_using_salt(salt: bytes, bytecode_hash: bytes, hex_deployer_a
     return "0x8"+ core_part.hex()[-39:]
 ```
 
-If `create2` is not used:
+如果 `create2` 未被使用：
 
 ```python
 # using web3.py is also viable
@@ -86,9 +86,9 @@ def compute_address_using_nonce(nonce: int, bytecode_hash: bytes, hex_deployer_a
     return "0x8"+ core_part.hex()[-39:]
 ```
 
-### Base32 Address Computation
+### Base32地址计算
 
-Conflux base32 address is a network-prefixed Conflux base32-checksum address defined in [CIP-37](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-37.md). The address consists of a network-prefix indicating the network on which this address is valid, a colon (`":"`), and a base32-encoded payload indicating the destination of the address and containing a checksum, e.g. `cfx:aarc9abycue0hhzgyrr53m6cxedgccrmmyybjgh4xg`. Optionally, the address can contain a list of key value pairs in the format `key.value` between the network-prefix and the payload, separated by colons, e.g. `cfx:type.user:aarc9abycue0hhzgyrr53m6cxedgccrmmyybjgh4xg`.
+Conflux的 base32 地址指由 [CIP-37](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-37.md) 定义的具有网络前缀的Conflux Base32校验和地址。 The address consists of a network-prefix indicating the network on which this address is valid, a colon (`":"`), and a base32-encoded payload indicating the destination of the address and containing a checksum, e.g. `cfx:aarc9abycue0hhzgyrr53m6cxedgccrmmyybjgh4xg`. Optionally, the address can contain a list of key value pairs in the format `key.value` between the network-prefix and the payload, separated by colons, e.g. `cfx:type.user:aarc9abycue0hhzgyrr53m6cxedgccrmmyybjgh4xg`.
 
 #### Network Prefix
 
