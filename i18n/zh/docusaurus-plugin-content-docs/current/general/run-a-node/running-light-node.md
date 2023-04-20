@@ -7,7 +7,7 @@ title: Running a Light Node
 
 > Note: Currently, eSpace (EVM full-compatible space) RPC methods are not supported on the Conflux Light Node.
 
-## Overview
+## 概览
 **Node version: `conflux-rust v2.1.0`**.
 
 Light nodes are special nodes in the Conflux network that store block headers only and retrieve everything else from their peers on-demand. This means that by default light nodes do not store transactions nor do they store state trees either. This can drastically reduce the disk and bandwidth use of light nodes compared to full and archive nodes, especially under high TPS. As a trade-off RPC queries have a higher latency on light nodes.
