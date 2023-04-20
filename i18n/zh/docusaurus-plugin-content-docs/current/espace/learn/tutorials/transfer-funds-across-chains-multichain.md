@@ -11,7 +11,7 @@ title: Transfer Funds Across Chains Using Multichain
 ## Prerequisites
 - A BNB Chain account funded with bCFX and BNB.
 - For the purposes of this guide, we'll bridge bCFX from BNB Chain to Conflux eSpace. However, other chains and tokens are also supported.
-- Your MetaMask wallet connected to Conflux eSpace.
+- 请确保你的MetaMask钱包已经连接到了Conflux eSpace网络。
 
 ## Bridging bCFX to Conflux eSpace with Multichain
 
@@ -84,5 +84,5 @@ title: Transfer Funds Across Chains Using Multichain
 ![Locale Dropdown](./img/connectWallet-17.png)
 
 
-You have now bridged your funds to Conflux eSpace!
+您现在已经将您的资金桥接到 Conflux eSpace！
 
