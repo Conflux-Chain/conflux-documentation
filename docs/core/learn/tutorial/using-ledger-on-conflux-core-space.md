@@ -107,7 +107,7 @@ Make sure you have already imported your Ledger account into your Fluent wallet 
 
 **4.** In Fluent, select your Ledger account (e.g., "LedgerNanoS-1").
 
-**5.** Click "Send" and enter the recipient address (should start with `0x`).
+**5.** Click "Send" and enter the recipient address.
 
 **6.** Under "Token and Amount", enter the amount of CFX to transfer and click "Next".
 
