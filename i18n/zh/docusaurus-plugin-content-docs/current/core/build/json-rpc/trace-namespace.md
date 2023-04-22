@@ -48,11 +48,11 @@ Check this [document](https://github.com/Conflux-Chain/conflux-doc/blob/master/d
 
 Get block traces by block hash
 
-#### Parameters
+#### 参数
 
 1. DATA, 32 Bytes - hash of a block
 
-#### Returns
+#### 返回值
 
 * `blockHash`: `HASH` - Hash of block
 * `epochHash`: `HASH` - Hash of epoch
@@ -191,17 +191,17 @@ curl --location --request POST 'http://testnet-rpc:12537' \
 }
 ```
 
-#### Returns
+#### 返回值
 
 ### trace_transaction
 
 Get transaction's trace by it's hash
 
-#### Parameters
+#### 参数
 
 1. DATA, 32 Bytes - hash of a transaction
 
-#### Returns
+#### 返回值
 
 * `type`: `string` - Avaliable value is `call`, `create`, `call_result`, `create_result`, `internal_transfer_action`
 * `transactionPosition`: `QUANTITY` - Position of transaction in block
