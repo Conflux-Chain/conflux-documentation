@@ -18,7 +18,7 @@ These RPC methods require node's `public_rpc_apis` config set to `safe` or `all`
 
 Return one address's next usable nonce in transaction pool.
 
-#### Parameters
+#### 参数
 
 1. `ADDRESS`: CIP-37 address
 
@@ -28,11 +28,11 @@ params: [
 ]
 ```
 
-#### Returns
+#### 返回值
 
 `QUANTITY` - Account's next usable nonce
 
-#### Example
+#### 示例
 
 Request
 
