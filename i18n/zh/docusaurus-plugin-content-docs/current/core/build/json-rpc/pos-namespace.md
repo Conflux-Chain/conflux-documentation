@@ -85,11 +85,11 @@ The information regarding a user's in-queue votes.
 
 Returns the current status of the PoS chain.
 
-#### Parameters
+#### 参数
 
 `Empty`
 
-#### Returns
+#### 返回值
 
 `Object` - PoS status object.
 
@@ -98,7 +98,7 @@ Returns the current status of the PoS chain.
 * `latestVoted`: [`QUANTITY`] - The number of the latest successfully voted block, or `null` (if there are no blocks completed voting).
 * `pivotDecision`: [`Decision`](#decision) - The PoS chain's finalized decision about the latest PoW pivot block.
 
-#### Example
+#### 示例
 
 Request
 
@@ -135,7 +135,7 @@ Result
 
 Get the PoS account information
 
-#### Parameters
+#### 参数
 
 1. `ADDRESS`: 32 Bytes - PoS account address
 2. [`QUANTITY`]: block number, optional for querying the status of the account at a certain block height
@@ -147,7 +147,7 @@ params: [
 ]
 ```
 
-#### Returns
+#### 返回值
 
 `Object` - the account object, or `null` (if the account corresponding to the address does not exist)
 
@@ -155,7 +155,7 @@ params: [
 * `blockNumber`: `QUANTITY` - the block number corresponding to the status
 * `status`: `OBJECT` - the user's current status, see [Account Status](#accountstatus) for more information
 
-#### Example
+#### 示例
 
 Request
 
@@ -196,11 +196,11 @@ Response
 
 Get the current PoS committee information in default. It is also able to get the committee information for a block in history by specifying the blockNumber.
 
-#### Parameters
+#### 参数
 
 1. [`QUANTITY`]:  block number, optional for querying the committee information at a certain block height
 
-#### Returns
+#### 返回值
 
 * `currentCommittee`: `OBJECT` -  current committee members, see [CurrentCommittee](#currentcommittee) for more information
 * `elections`: `Array` - nodes who are running for election
@@ -227,7 +227,7 @@ Committee member information
 * `startBlockNumber`: `QUANTITY` - the starting block number
 * `topElectingNodes`: `Array` of [CommitteNode](#committenode) - the top ranked 50 nodes after election
 
-#### Example
+#### 示例
 
 Request
 
@@ -293,7 +293,7 @@ Response
 
 Get block information by its hash value
 
-#### Parameters
+#### 参数
 
 1. `HASH`: the hash value of the block
 
@@ -303,7 +303,7 @@ params: [
 ]
 ```
 
-#### Returns
+#### 返回值
 
 * `epoch`: `QUANTITY` - the epoch that the block is in
 * `hash`: `HASH` - the hash value of the block
@@ -323,7 +323,7 @@ Block signature info
 * `account`: `ADDRESS` - the account address of the signature
 * `votes`: `QUANTITY` - the number of votes of the signing account
 
-#### Example
+#### 示例
 
 Request
 
@@ -375,15 +375,15 @@ Response
 
 Get block information by its block number
 
-#### Parameters
+#### 参数
 
 1. `QUANTITY|TAG`: block number or block TAG（`latest_committed`, `latest_voted`）
 
-#### Returns
+#### 返回值
 
 the same as [pos_getBlockByHash](#pos_getblockbyhash)
 
-#### Example
+#### 示例
 
 Request
 
@@ -402,7 +402,7 @@ curl --location --request POST 'http://localhost:12537' \
 
 returns the rewards information of a PoS epoch
 
-#### Parameters
+#### 参数
 
 1. `QUANTITY`: epoch number
 
@@ -412,7 +412,7 @@ params: [
 ]
 ```
 
-#### Returns
+#### 返回值
 
 * `accountRewards`: `Array` of [AccountReward](#accountreward)
 * `powEpochHash`: `HASH` - the hash value of the PoW block when the rewards are made
@@ -423,7 +423,7 @@ params: [
 * `powAddress`: `BASE32` - PoW account address
 * `reward`: `QUANTITY` - the number of rewards, in the unit of Drip
 
-##### Example
+##### 示例
 
 Request
 
@@ -466,7 +466,7 @@ Response
 
 Get the transaction information by transaction number
 
-#### Parameters
+#### 参数
 
 1. `QUANTITY`: transaction number
 
@@ -476,7 +476,7 @@ params: [
 ]
 ```
 
-#### Returns
+#### 返回值
 
 交易详情
 
@@ -570,7 +570,7 @@ The structure of ConflictingVotes is shown as below:
 * second: `STRING` - the second vote
 
 
-##### Example
+##### 示例
 
 Request
 
