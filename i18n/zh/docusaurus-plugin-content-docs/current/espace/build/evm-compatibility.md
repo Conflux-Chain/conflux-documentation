@@ -47,7 +47,7 @@ As EVM clients are not aware of Conflux space transactions (the two spaces use d
 - `gas` and `gasPrice` are `0`. Gas for cross-space transactions is charged in the core space. Therefore, the corresponding phantom transactions do not consume any gas.
 - Invalid signature (`r`, `s`, `v`, `standardV`). The Conflux protocol is unable to sign transactions on behalf of the sender of the cross-space transaction. Therefore, phantom transactions use a fake signature that will not pass ECDSA verification.
 
-### Example
+### 示例
 
 When we retrieve epoch `0x72819` in the Conflux core space, we see it contains a single Conflux transaction.
 
