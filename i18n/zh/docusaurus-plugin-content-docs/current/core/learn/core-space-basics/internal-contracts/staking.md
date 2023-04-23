@@ -29,7 +29,7 @@ Locking does not have any influence on the stake interest. When the account with
 
 At any time, each locked Drip will be assigned a *vote power* from 0 to 1 according to its unlock time. The Drips to be unlocked in more than one year will have a full vote power. See section 8.3.2 in the [Conflux Protocol Specification](https://conflux-protocol.s3-ap-southeast-1.amazonaws.com/tech-specification.pdf) for more details.
 
-## Examples
+## 示例
 
 ```javascript
 const PRIVATE_KEY = '0xxxxxxx';
