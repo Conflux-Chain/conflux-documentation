@@ -5,7 +5,7 @@ title: SponsorWhitelistControl
 
 ## 概览
 
-Conflux implements a sponsorship mechanism to subsidize the usage of smart contracts. Thus, a new account with zero balance is able to call smart contracts as long as the execution is sponsored (usually by the operator of Dapps). The built-in SponsorControl contract is introduced to record the sponsorship information of smart contracts.
+Conflux implements a sponsorship mechanism to subsidize the usage of smart contracts. 因此，一个零余额的新账户只要得到赞助（通常是由Dapps的运营者提供），就能够调用智能合约。 The built-in SponsorControl contract is introduced to record the sponsorship information of smart contracts.
 
 When a message call happens, Conflux does not check sponsorship again. For example, if normal address `A` calls contract `B` and contract `B` calls contract `C`, Conflux only checks whether address `A` is sponsored by contract `B`. If `A` is sponsored, `B` will afford all the gas and/or collateral during the transaction execution, including the message call from `B` to `C`. In other words, only a transaction sender could be sponsored.
 
@@ -48,12 +48,12 @@ Only the contract itself or contract admin can update the contract whitelist. Th
 
 A contract can call function `addPrivilege(address[] memory)` to any addresses to the whitelist. It means that if the `sponsor_for_gas` is set, the contract will pay the gas fee for the accounts in the whitelist, and if the `sponsor_for_collateral` is set, the contract will pay the CFS (collateral for storage) for the accounts in the whitelist. The zero address is a special address `0x0000000000000000000000000000000000000000`. If this address is added to whitelist, all the transactions calling this contract will be sponsored. A contract can call this function `removePrivilege(address[] memory)` to remove some normal account address from the whitelist. Remove a non-existent address will not cause an error or exception.
 
-**Corner cases:**
+**边界情况：**
 1. A contract address can also be added to the whitelist, but it is meaningless because only the transaction sender could be sponsored.
 
 The admin of a contract can use the interfaces `addPrivilegeByAdmin(address contractAddr, address[] memory addresses)` and `removePrivilegeByAdmin(address contractAddr, address[] memory addresses)` to maintain the whitelist.
 
-## Examples
+## 示例
 
 Suppose you have a simple contract like this.
 ```solidity
