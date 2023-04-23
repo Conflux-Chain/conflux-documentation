@@ -21,7 +21,7 @@ In order to run a single node Conflux chain for development, you can follow the 
 
 5. Set the `dev_block_interval_ms` parameter to the block generation interval you want. In the development mode, Conflux will automatically generate a block in a fixed interval.
 
-6. Run Conflux binary with `development.toml` as the configuration file. For example:
+6. Run Conflux binary with `development.toml` as the configuration file. 例如：
 
 ```bash
 $ ../target/release/conflux --config development.toml
