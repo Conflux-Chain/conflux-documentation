@@ -5,27 +5,27 @@ title: AdminControl
 
 ## 概览
 
-The `AdminControl` contract is a debug tool for contract development. When a contract is created during a transaction, the sender for the current transaction will become the contract admin automatically.
+`AdminControl` 合约是一个用于合约开发调试的工具。  当在一个交易中创建一个合约时，当前交易的发送方将自动成为合约的管理员。
 
-The `admin` address can transfer the administrator rights to another **normal address** or **zero address** by calling interface `setAdmin(address contractAddr, address newAdmin)`. A contract can never be an admin.
+`admin`地址可以通过调用接口`setAdmin(address contractAddr, address newAdmin)`将管理员权限转移给其他**普通地址**或**零地址**。 合约永远不能是管理员。
 
-The admin of a contract has several administrator rights. It can call interface `destroy(address contractAddr)` to destroy contract, just like a contract calling `suicide()` function. The SponsorWhitelist internal contract provides some functions can only be called by admin address. These functions can update the whitelist in sponsor mechanism. They will be introduced later.
+管理员在合约中有多种管理员权限。 它可以调用接口 `destroy(address contractAddr)` 来销毁合约，就像合约调用 `suicide()` 函数一样。 SponsorWhitelist 内部合约提供了一些只能被管理员地址调用的功能。 这些函数可以更新赞助人机制中的白名单。 他们稍后会被介绍。
 
-**Note: For all the interfaces requiring administrator rights, no matter the execution success or not, no error or exception will be triggered during internal contract execution.** For example, if a non-admin address tries to transfer the admin address to itself, this transaction will success but nothing will be changed.
+**注意：所有需要管理员权限的接口，在内置合约执行期间，无论执行成功与否，都不会触发错误或异常。**例如，如果一个非管理员地址试图将管理员地址设置为自己的地址，该交易将成功，但不会发生任何变化。
 
-ConfluxScan may mark a contract as debug mode if the contract has non-zero admin address. **So remember, if you think the contract is ready for production environment, you should set admin address to zero.**
+ConfluxScan 可能会将具有非零管理员地址的合约标记为调试模式。 **所以请记住，如果您认为合约已经准备好进入生产环境，您应该将管理员地址设置为零。**
 
 
-The `AdminControl` contract also provides a query interface `getAdmin(address contractAddr)` which can be called by anyone.
+`AdminControl` 合约还提供了一个查询接口 `getAdmin(address contractAddr)`，任何人都可以调用。
 
-**Corner cases:**
-1. The admin is set at the start of contract creation. So if sender `A` creates contract `B` and set admin to `C` during contract construction, the admin will be `C` when the contract is deployed.
-2. However, if sender `A` calls contract `B`, then contract `B` creates contract `C` and then set admin to `D` during contract contraction, then the set will fail because the admin of `C` is `A` and the sender for creating `C` is `B`.
-3. But, Conflux introduces a special policy. In case 2, if `D` is zero address, the set admin will success. This means that a contract can declare "I don't need admin" during contract creation.
+**边界情况：**
+1. 管理员在合约创建时就被设置了。 因此，如果发送方 `A` 创建合约 `B` 并在合约构造期间将管理员设置为 `C`，则合约部署时管理员将为 `C`。
+2. 然而，如果发送者 `A` 调用合约 `B`，然后合约 `B` 创建合约 `C` 并在合约构造期间将管理员设置为 `D`，那么该设置将失败，因为 `C` 的管理员是 `A`，而创建 `C` 的发送者是 `B`。
+3. 但是，Conflux 引入了一种特殊策略。 在情况2中，如果 `D` 是零地址，则设置管理员会成功。 这意味着一个合约可以在创建时声明“我不需要管理员”。
 
-## Examples
+## 示例
 
-Consider you have deployed a contract whose address is `contract_addr`. The administrator can call `AdminControl.setAdmin(contract_addr, new_admin)` to change the administrator and call `AdminControl.destroy(contract_addr)` to kill the contract.
+假设您已经部署了一个地址为 `contract_addr` 的合约。 管理员可以调用`AdminControl.setAdmin(contract_addr, new_admin)`来更改管理员，并调用`AdminControl.destroy(contract_addr)`来销毁合约。
 
 ```javascript
 const PRIVATE_KEY = '0xxxxxxx';
