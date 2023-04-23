@@ -7,33 +7,33 @@ keywords:
   - why
 ---
 
-Let's start by explaining the reality that Conflux will have to consider the risk of a 51% attack in quite a long period of time: Due to the huge mining revenue of Ethereum and the increasing demands of graphics cards, miners have already purchased a lot of graphics cards, forming a huge pool of hashing power.
+让我们首先解释这样一个现实，即 Conflux 在相当长的一段时间内必须考虑 51% 攻击风险：由于以太坊的巨大挖矿收益和显卡需求的增加，矿工已经购买了大量的显卡，形成了庞大的算力池。
 
-Conflux also uses graphics cards for mining, and the hashing power of graphics cards to maintain the security of Conflux is still far behind that of Ethereum. Therefore, there is a risk that a large number of graphics cards will switch to Conflux in a short period of time to complete a 51% attack.
+Conflux 也使用显卡进行挖矿，而显卡的算力在维护 Conflux 的安全性方面仍然远远落后于以太坊。 因此，存在着大量的显卡在短时间内切换到 Conflux 来完成 51% 攻击的风险。
 
-Similar risks of 51% attack exist not only in other PoW public chains with graphics card mining, but also exist in blockchains like BCH, which uses the same ASIC mining as BTC but with significantly lower computing power. To address the 51% attack risk, BCH has even gone so far as to adopt a "less elegant" solution by limiting the rollback length.
+类似的 51% 攻击风险不仅存在于其他使用显卡挖矿的 PoW 公链中，也存在于像 BCH 这样使用与 BTC 相同的 ASIC 挖矿但算力明显低于 BTC 的区块链中。 为了应对 51% 攻击风险，BCH 甚至采取了一种“不太优雅”的解决方案，通过限制回滚长度来实现。
 
-In theory, a public chain with PoW can never completely eliminate the risk of 51% attack. In practice, whether or not an attacker launches a 51% attack largely depends on the benefits and costs of the attack. In terms of the attacker's gain: a successful 51% attack will not harm the mining profit. The attacker's gain may be reduced mainly for two reasons. One is the loss caused by the collapse of the token value after a successful attack; the other is the community may reach a consensus to roll back the state through a hard fork to eliminate the attacker's gain. However, nowadays blockchains have supported multiple on-chain assets and provided cross-chain services, so it is now difficult to eliminate the impact caused by a double-spending attack through a simple hard fork, which is quite different from the situation when ETC were forked from ETH.
+理论上，一个使用 PoW 的公链永远无法完全消除 51% 攻击的风险。 实践中，攻击者是否发动 51% 攻击很大程度上取决于攻击的收益和成本。 就攻击者的收益而言：一次成功的 51% 攻击不会损害挖矿收益。 攻击者的收益可能会因为两个原因而减少。 一个是攻击成功后代币价值的崩溃所造成的损失；另一个是社区可能达成共识，通过硬分叉来回滚状态，以消除攻击者的收益。 但是，现在区块链已经支持了多种链上资产，并提供了跨链服务，所以现在很难通过简单的硬分叉来消除双花攻击造成的影响，这与 ETC 从 ETH 分叉时的情况有很大不同。
 
-In terms of increasing the cost to the 51% attackers, there are now three response options available:
+在增加 51% 攻击者的成本方面，目前有三种应对方案可供选择：
 
-1. Avoiding all large-scale hashing power pools. Specifically, abandon graphics card mining and change to specialized ASIC mining.
-2. Getting Conflux's network hashing power approaching or even exceeding Ethereum. This requires increasing the total mining revenue of Conflux to a level comparable to that of Ethereum. The current mining issuance of Ethereum is about 2.6 ETH every 13 seconds, or an average of 0.2 ETH per second. Based on the market price of 3400 USD/ETH, that gives Ethereum a mining revenue of about 680 USD per second, or about 58,752,000 USD per day. To raise Conflux's mining revenue to this level, it would require a boost of about 170 times. This means increasing the revenue of each block to $340,  that is, increasing the reward per block to over 340 CFX while maintaining the price of 1USD/CFX, or increasing the unit price of CFX by 170 times while maintaining the output. Achieving this goal in the short term may require Elon Musk to send a tweet for CFX every week or even every day.
-3. Introducing a PoS mechanism to counter 51% attacks. The PoS decision makes it impossible for an attacker to achieve a double-spending attack based solely on the advantage of computing power, unless the attacker additionally invests enough CFX to influence the PoS decision.
+1. 避开所有大规模的算力池。 具体来说，放弃显卡挖矿，改用专用的 ASIC 挖矿。
+2. 使 Conflux 的网络算力接近甚至超过以太坊。 这需要将 Conflux 的总挖矿收益提高到与以太坊相当的水平。 以太坊目前的挖矿发行量大约是每 13 秒 2.6 ETH，平均每秒 0.2 ETH。 按照 3400 美元/ETH 的市场价格，以太坊的挖矿收益大约是每秒 680 美元，每天约为 58752000 美元。 要将 Conflux 的挖矿收益提高到这个水平，需要提升约 170 倍。 这意味着将每个区块的收益提高到 340 美元，也就是说，在保持 1USD/CFX 的价格的情况下，将每个区块的奖励提高到 340 CFX 以上，或者在保持产量不变的情况下，将 CFX 的单价提高 170 倍。 要在短期内实现这个目标，可能需要 Elon Musk 每周甚至每天为 CFX 发一条推特。
+3. 引入 PoS 机制来对抗 51% 攻击。 PoS 决策使得攻击者仅凭算力优势就无法实现双花攻击，除非攻击者额外投入足够的 CFX 来影响 PoS 决策。
 
-Of these three options, we believe that only the last one is actually feasible.
+在这三种方案中，我们认为只有最后一种是真正可行的。
 
-As for the team's technical roadmap, Conflux's goal is to achieve a "decentralized public chain platform that is accessible and affordable to everyone", rather than a "public chain with a specific PoW consensus protocol". The technical approach is only a means to serve the goal, not the goal itself. For this reason, adding PoS finality decisions to Conflux's existing PoW consensus mechanism to improve confirmation speed and resist potential 51% attacks is in line with Conflux's goals. In addition, to reduce the complexity and potential risk of adding PoS finality mechanism, we choose to leave the selection and packaging of transactions entirely to PoW miners, and the ordering of blocks still follows the Tree-Graph ordering rules, with PoS voting only on the finality of blocks generated by PoW miners.
+关于团队的技术路线图，Conflux 的目标是实现一个“人人都能使用和负担得起的去中心化公链平台”，而不是一个“具有特定 PoW 共识协议的公链”。 技术手段只是为了服务于目标，而不是目标本身。 出于这个原因，在 Conflux 现有的 PoW 共识机制上增加 PoS 最终确定性决策，以提高确认速度和抵抗潜在的 51% 攻击，是符合 Conflux 的目标的。 另外，为了降低增加 PoS 最终确定性机制的复杂度和潜在风险，我们选择将交易的选择和打包完全交给 PoW 矿工，区块的排序仍然遵循 Tree-Graph 排序规则，PoS 投票只对 PoW 矿工生成的区块的最终确定性进行投票。
 
-Regarding the understanding of PoW and PoS, we have never changed: PoW is more secure but slower to confirm; PoS is faster to confirm but less secure. The combination of PoW and PoS has the potential to be a more desirable consensus protocol
+关于对 PoW 和 PoS 的理解，我们从未改变：PoW 更安全但确认速度较慢；PoS 确认速度更快但安全性较低。 PoW 和 PoS 的结合有可能是一个更理想的共识协议。
 
-## PoW + PoS Hybrid Consensus?
+## PoW + PoS 混合共识？
 
-- The advantages of PoW consensus - security and reliability
-- Advantages of PoS consensus - efficiency (fast confirmation, low energy consumption)
-- Both can achieve throughput close to the network capacity limit
-  - Further expansion requires infrastructure upgrade or layer2 solutions
-- How to combine the advantages of both?
-  - High security
-  - Fast confirmation
-  - Reasonable energy consumption
+- PoW 共识的优势 - 安全性和可靠性
+- PoS 共识的优势 - 效率（快速确认，低能耗）
+- 两者都可以实现接近网络容量限制的吞吐量
+  - 进一步扩展需要基础设施升级或Layer 2解决方案
+- 如何结合两者的优势？
+  - 高安全性
+  - 快速确认
+  - 合理的能源消耗
