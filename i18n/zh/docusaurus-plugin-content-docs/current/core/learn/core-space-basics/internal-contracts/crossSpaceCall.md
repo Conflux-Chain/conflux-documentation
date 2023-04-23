@@ -3,11 +3,11 @@ sidebar_position: 6
 title: CrossSpaceCall
 ---
 
-## CrossSpaceCall Interface
+## CrossSpaceCall 接口
 
-[CIP-90](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-90.md) introduces a new internal contract: `CrossSpaceCall`. This contract is located at address `cfx:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaa2sn102vjv` (`0x0888000000000000000000000000000000000006`) in the Core Space. `CrossSpaceCall` enables **CFX and data** to be transferred between the two spaces.
+[CIP-90](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-90.md) 引入了一个新的内置合约：`CrossSpaceCall`. 这个合约位于Core Space的地址`cfx:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaa2sn102vjv` (`0x0888000000000000000000000000000000000006`)。 `CrossSpaceCall`可以实现**CFX和数据**在两个空间之间的转移。
 
-NOTE: The `CrossSpaceCall` contract is deployed in the Core Space. It can only be call from the Core Space.
+注意：`CrossSpaceCall`合约部署在Core Space。 它只能从Core Space调用。
 
 ```js
 // SPDX-License-Identifier: MIT
@@ -74,13 +74,13 @@ interface CrossSpaceCall {
 }
 ```
 
-## Cross-Space CFX Transfer
+## 跨空间CFX转移
 
-### From Core to eSpace
+### 从Core到eSpace
 
-Transferring CFX from Conflux Core to eSpace can be done by calling the `CrossSpaceCall.transferEVM(bytes20 to)` method. When calling this method, you also need to specify the destination address (`to`). The amount of CFX to be transferred is specified as the value of this transaction.
+将CFX从Conflux核心转移到eSpace可以通过调用`CrossSpaceCall.transferEVM(bytes20 to)`方法来实现。 调用这个方法时，你还需要指定目标地址（`to`）。 通过设置该交易的 value 来指定要转移的 CFX 数量。
 
-Take js-conflux-sdk (v2) as an example：
+以js-conflux-sdk (v2)为例：
 
 ```js
 const { Conflux, format, Drip, CONST } = require('js-conflux-sdk');
@@ -114,16 +114,16 @@ async function main() {
 main().catch(console.log);
 ```
 
-As long as the `CrossSpaceCall.transferEVM(bytes20 to)` method is called successfully, you can see the change by looking up the balance of the desination address in eSpace.
+只要成功调用了`CrossSpaceCall.transferEVM(bytes20 to)`方法，你就可以通过查看eSpace中目标地址的余额来看到变化。
 
-### From eSpace back to Core
+### 从eSpace回到Core
 
-Transferring CFX from eSpace back to Conflux Core requires two steps.
+将CFX从eSpace回到Conflux Core Space需要两个步骤。
 
-1. Transfer CFX to the mapped account of the receiver Core Space address in eSpace.
-2. Call `CrossSpaceCall.withdrawFromMapped(amount)` in Core with the receiver address to withdraw the CFX.
+1. 将CFX转移到接收者Core Space地址在eSpace中的映射账户。
+2. 在Core Space用接收者地址调用`CrossSpaceCall.withdrawFromMapped(amount)`来提取CFX。
 
-Example of using js-conflux-sdk (v2) to cross back CFX:
+使用js-conflux-sdk (v2)跨回CFX的示例：
 
 ```js
 // Check above init code
