@@ -19,7 +19,7 @@ title: 地址
 
 :::caution
 
-Base32 addresses are utilized throughout the Conflux core ecosystem, with the exception of smart contract `.sol` source code. In cases where a hardcoded [EIP-55](https://eips.ethereum.org/EIPS/eip-55) checksum address is necessary within `.sol` files, developers should opt for a Conflux hex-encoded address instead of the base32 format.
+在Conflux Core Space 的生态中，都需要使用Base32地址——但是智能合约 `.sol` 源代码除外。 在`.sol`文件中需要硬编码[EIP-55](https://eips.ethereum.org/EIPS/eip-55) 校验和地址的情况下，开发人员应该选择使用Conflux的十六进制编码地址，而不是Base32格式。
 
 :::
 
@@ -27,7 +27,7 @@ Base32 addresses are utilized throughout the Conflux core ecosystem, with the ex
 
 :::info
 
-本节内容仅供信息参考。 用户或开发者通常不需要自己计算十六进制地址。 It's advised to rely on the return values from the SDK or RPC to obtain the EOA/contract address, and to use the SDK or [online address converter](https://www.confluxscan.net/address-converter) for converting between hex and base32 address formats.
+本节内容仅供信息参考。 用户或开发者通常不需要自己计算十六进制地址。 建议基于 SDK 或 RPC 的返回值来获取 EOA / 合约地址，使用 SDK 或 [在线地址转换器](https://www.confluxscan.net/address-converter) 来转换十六进制和 base32 地址格式。
 
 :::
 
@@ -39,15 +39,15 @@ Conflux 十六进制地址是一个20字节的十六进制值，以“0x”开�
 
 - `(0x)1`: 代表一个EOA 帐户的地址
 - `(0x)8`: 代表一个合约的地址
-- `(0x)0`: Represents the address of an [internal contract](../core-space-basics/internal-contracts/internal-contracts.mdx), which implements hard-coded logic on the chain, or a null address (`0x0000000000000000000000000000000000000000`).
+- `(0x)0`: 表示一个在链上实现硬编码逻辑 [内置合约](../core-space-basics/internal-contracts/internal-contracts.mdx), 或一个空地址 (`0x0000000000000000000000000000000000000000000000000000`)。
 
 #### EOA 十六进制地址计算
 
-The computaion of EOA hex address is specified in [Conflux protocol specification](https://www.confluxnetwork.org/files/Conflux_Protocol_Specification.pdf) `3.1: Accounts`. The account address is a concatenation of a 4-bit type indicator and the rightmost 156-bit Keccak digest of the associated public key of the private key.
+计算EOA 十六进制地址的规定详见 [Conflux protocol specification](https://www.confluxnetwork.org/files/Conflux_Protocol_Specification.pdf) `3.1: 账户`. 将账户公钥进行Keccak运算得到摘要，账户地址由4位类型标识和该摘要的最右侧156位串联而成。
 
-#### Contract Address Computation
+#### 合约地址计算
 
-An contract can be deployed via `create2` opcode or not.
+可选的，合约可以通过 `create2` 操作码进行部署。
 
 :::note
 
@@ -88,28 +88,28 @@ def compute_address_using_nonce(nonce: int, bytecode_hash: bytes, hex_deployer_a
 
 ### Base32地址计算
 
-Conflux的 base32 地址指由 [CIP-37](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-37.md) 定义的具有网络前缀的Conflux Base32校验和地址。 The address consists of a network-prefix indicating the network on which this address is valid, a colon (`":"`), and a base32-encoded payload indicating the destination of the address and containing a checksum, e.g. `cfx:aarc9abycue0hhzgyrr53m6cxedgccrmmyybjgh4xg`. Optionally, the address can contain a list of key value pairs in the format `key.value` between the network-prefix and the payload, separated by colons, e.g. `cfx:type.user:aarc9abycue0hhzgyrr53m6cxedgccrmmyybjgh4xg`.
+Conflux的 base32 地址指由 [CIP-37](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-37.md) 定义的具有网络前缀的Conflux Base32校验和地址。 该地址由表示该地址有效的网络的网络前缀、一个冒号(`":"`) 和一个 Base32 编码的载荷组成，并包含一个校验和，例如`cfx:aarc9abycue0hzgyr53m6cxedgccrmybjgh4xg`。 可选的，地址可以在网络前缀和载荷之间包含一组键值对，格式为`key.value`，以冒号分隔，例如`cfx:type.user:aarc9abycue0hhzgyrr53m6cxedgccrmmyybjgh4xg`。
 
-#### Network Prefix
+#### 网络前缀（Network Prefix）
 
-`network-prefix` is one of the following values: `"cfx"` (mainnet, corresponds to network-id 1029), `"cfxtest"` (testnet, corresponds to network-id 1), `"net[n]"` where `n != 1, 1029` (private Conflux network)
+`网络前缀` 是以下值之一： `"cfx"` (代表主网, 对应于网络 ID 1029)， `"cfxtest"` (测试网, 相对应网络ID 1), `"net[n]"` `n !=1，1029` (代表私有Conflux网络)
 
-Examples of valid network-prefixes: `"cfx"`, `"cfxtest"`, `"net17"`
+有效的网络前缀示例： `"cfx"`, `"cfxtest"`, `"net17"`
 
-Examples of invalid network-prefixes: `"bch"`, `"conflux"`, `"net1"`, `"net1029"`
+无效的网络前缀示例： `"bch"`, `"conflux"`, `"net1"`, `"net1029"`
 
-#### Address Type
+#### 地址类型（Address Type）
 
-Address type is an optional field to provide human-readable information for the address type. For the null address (`0x0000000000000000000000000000000000000000`), address-type must be `type.null`. Otherwise,
+地址类型是一个可选字段，为地址类型提供可读的信息。 对于空地址 (`0x000000000000000000000000000000000000000000`), 地址类型必须是 `type. null`。 其他为：
 
 - `0x0`: `type.builtin`
 - `0x1`: `type.user`
 - `0x1`: `type.contract`
 
-#### Payload
+#### 载荷 (Payload)
 
-1. Concatenate `version-byte`: concatenate the `version-byte`(`0x00`) with hex address to get a 21-byte array.
-2. Base32 encode: encode the above result left-to-right, mapping each 5-bit sequence to the corresponding ASCII character (see alphabet below). Pad to the right with zero bits(should be 2 bit 0-padding) to complete any unfinished chunk at the end.
+1. 拼接 `版本字节（version-byte）`:将 `版本字节`(`0x00`) 与十六进制地址拼接起来，得到一个21字节数组。
+2. Base32 编码：将以上结果从左到右编码，将每5位序列映射到对应的 ASCII 字符(见下文字母表)。 在结尾补零位（应为2个零位），以完成未完成的任何块。
     ```
     0x00 => a    0x08 => j    0x10 => u    0x18 => 2
     0x01 => b    0x09 => k    0x11 => v    0x19 => 3
@@ -121,22 +121,22 @@ Address type is an optional field to provide human-readable information for the 
     0x07 => h    0x0f => t    0x17 => 1    0x1f => 9
     ```
 
-#### Checksum
+#### 校验和(Checksum)
 
-1. Prepare checksum input: `data` is used as the input of checksum function. It
-   - The lower 5 bits of each character of the `network-prefix`. - e.g. `"cfx..."` becomes `0x03, 0x06, 0x18, ...`
-   - A zero for the separator (5 zero bits).
-   - The payload by chunks of 5 bits. If necessary, the payload is padded to the right with zero bits to complete any unfinished chunk at the end.
-   - Eight zeros as a "template" for the checksum.
-2. Calculate checksum: calculate using [Bitcoin Cash checksum algorithm](https://github.com/bitcoincashorg/bitcoincash.org/blob/master/spec/cashaddr.md#checksum) over the `data`.
-3. Base32 encode: encode the returned 40-bit checksum according to the same step in [Payload-Base32 encode](#payload)
+1. 准备输入校验和输入： `data` 被用作校验和函数的输入。 It
+   - `网络前缀` 的每个字符的最低5比特。 - e.g. `"cfx..."` becomes `0x03, 0x06, 0x18, ...`
+   - 分隔符（5比特0）。
+   - 5位一组将载荷分块。 如果需要，使用0在载荷的最右侧进行填充，以便恰好将载荷分为5位1组。
+   - 八个零作为校验和的"模板"。
+2. 计算校验和：使用[比特币现金校验和算法](https://github.com/bitcoincashorg/bitcoincash.org/blob/master/spec/cashaddr.md#checksum)计算`data`的校验和。
+3. Base32编码：根据 [Payload-Base32](#payload)编码中的相同步骤编码返回的 40位校验和。
 
-#### Final Result and Example
+#### 最终结果和示例
 
-Concatenate the following parts to get the final address: `[network-prefix]`, `":"`, `[payload]`, `[checksum]`
-   - Optionally, **address-type** can also be included: `[network-prefix]`, `":"`, `[address-type]`, `":"`, `[payload]`, `[checksum]`
+连接这些部分就能获得最终地址： `[network-prefix]`, `":"`, `[payload]`, `[checksum]`
+   - 可选的，可以在其中包含**address-type**：`[network-prefix]`, `":"`, `[address-type]`, `":"`, `[payload]`, `[checksum]`
 
-Here is an example presenting each step of encoding:
+下面是一个展示了编码各步骤的例子：
 
 ```
 encode(0x1a2f80341409639ea6a35bbcab8299066109aa55, "cfx")
