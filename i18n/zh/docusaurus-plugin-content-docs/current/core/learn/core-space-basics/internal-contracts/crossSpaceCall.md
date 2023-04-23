@@ -144,9 +144,9 @@ async function main() {
 main().catch(console.log);
 ```
 
-The above example is intended to demonstrate the technical details of transferring CFX between Conflux Core and Conflux eSpace. Users can use the [Space Bridge Dapp](https://confluxhub.io/espace-bridge/cross-space) to cross CFX directly through their wallets.
+上面的示例是为了演示在Conflux Core Space和Conflux eSpace之间转移CFX的技术细节。 用户可以使用[Space Bridge Dapp](https://confluxhub.io/espace-bridge/cross-space) 直接通过他们的钱包跨CFX。
 
-## Refers
+## 参考
 
 * [Mainnet Space Bridge](https://confluxhub.io/espace-bridge/cross-space)
 * [Testnet Space Bridge](https://test.confluxhub.io/espace-bridge/cross-space)
