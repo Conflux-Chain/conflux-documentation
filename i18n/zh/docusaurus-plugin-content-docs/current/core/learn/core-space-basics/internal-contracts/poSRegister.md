@@ -3,19 +3,19 @@ sidebar_position: 5
 title: PoSRegister
 ---
 
-This contract is used let user participate in PoS chain. If anyone want to become a PoS node, he need to interact with this contract. This contract provide serveral methods to increase or decrease PoS votes:
+这个合约用于让用户参与PoS链。 需要与这个合约交互才能成为PoS节点。 这个合约提供了几个方法来增加或减少PoS投票：
 
-- `register` - Regist in PoS chain to become a PoS node
-- `increaseStake` - Increase PoS stake
-- `retire` - Decrease PoS stake
+- `register` - 注册到PoS链，成为一个PoS节点
+- `increaseStake` - 增加PoS权益
+- `retire` - 减少PoS权益
 
-Also several methods to query one account's PoS info:
+还有几个方法可以查询一个账户的PoS信息：
 
-- `getVotes` - Query one account's votes info, will return `totalStakedVotes` and `totalUnlockedVotes`
-- `identifierToAddress` - Query one PoS account's binded PoW address
-- `addressToIdentifier` - Query one PoW account's binded PoS address
+- `getVotes` - 查询一个账户的投票信息，将返回`totalStakedVotes`和`totalUnlockedVotes`
+- `identifierToAddress` - 查询一个PoS账户绑定的PoW地址
+- `addressToIdentifier` - 查询一个PoW账户绑定的PoS地址
 
-`PoSRegister`'s hex40 contract address is `0x0888000000000000000000000000000000000005`
+`PoSRegister`的hex40合约地址是`0x0888000000000000000000000000000000000005`
 
 ```js
 // SPDX-License-Identifier: MIT
