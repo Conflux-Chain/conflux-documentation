@@ -189,7 +189,7 @@ SUBCOMMANDS:
 ### net
 `net` sub-command helps you to inspect the P2P network status.
 
-#### Examples
+#### 示例
 - List all connected P2P nodes: `./conflux.exe rpc local net session`
 - List a single P2P node: `./conflux.exe rpc local net session --id <node_id>`
 - Check network egress: `./conflux.exe rpc local net throttling`
@@ -197,7 +197,7 @@ SUBCOMMANDS:
 ### txpool
 `txpool` sub-command helps you to inspect the transaction pool.
 
-#### Examples
+#### 示例
 - List transaction pool status: `./conflux.exe rpc local txpool status`
 - List transactions in details: `./conflux.exe rpc local txpool content`
 - List summary of transactions: `./conflux.exe rpc local txpool inspect`
