@@ -1,5 +1,5 @@
 ---
-title: Transactions
+title: 交易
 sidebar_position: 8.5
 keywords:
   - transaction
@@ -13,7 +13,7 @@ This section introduces transaction concepts from a high level. For more details
 
 ## Concept of Transaction
 
-A transaction is a single instruction composed by an external actor with a Conflux account, and this instruction is cryptographically signed using the sender account’s private key. A transaction can involve a simple transfer of CFX (the native currency of Conflux), a transfer of tokens (such as ERC20 or ERC721), a deployment of a new smart contract, or an execution of a function on an existing smart contract. Transactions are the only way to store or update data on the blockchain.
+A transaction is a single instruction composed by an external actor with a Conflux account, and this instruction is cryptographically signed using the sender account’s private key. 一笔交易可以涉及简单的CFX（Conflux的本地货币）转账、代币（如ERC20或ERC721）转账、新智能合约的部署或现有智能合约上的函数执行。 交易是在区块链上存储或更新数据的唯一方式。
 
 ## Transaction Fields
 
