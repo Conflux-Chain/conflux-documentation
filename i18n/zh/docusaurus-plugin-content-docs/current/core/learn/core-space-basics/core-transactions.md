@@ -1,7 +1,7 @@
 ---
 sidebar_position: 8.5
 id: transaction_explain
-title: Transactions
+title: 交易
 keywords:
   - transaction
 ---
