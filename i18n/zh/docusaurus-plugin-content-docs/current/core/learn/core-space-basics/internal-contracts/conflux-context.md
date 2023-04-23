@@ -3,13 +3,13 @@ sidebar_position: 4
 title: ConfluxContext
 ---
 
-This contract can be used to query Conflux network info including:
+这个合约可以用来查询Conflux网络信息，包括：
 
-- `epochNumber` - Current epoch number
-- `posHeight` - Current block height of PoS chain
-- `finalizedEpochNumber` - The latest finalized (by PoS chain) PoW epoch number
+- `epochNumber` - 当前纪元号
+- `posHeight` - PoS链的当前区块高度
+- `finalizedEpochNumber` - （由PoS链）最新确定的PoW纪元号
 
-`ConfluxContext`'s hex40 contract address is `0x0888000000000000000000000000000000000004`
+`ConfluxContext`的hex40合约地址是`0x0888000000000000000000000000000000000004`
 
 ```js
 // SPDX-License-Identifier: MIT
