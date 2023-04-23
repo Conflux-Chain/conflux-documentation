@@ -1,15 +1,15 @@
 ---
 sidebar_position: 2
-title: Send Transactions Using SDKs
+title: 使用 SDK 发送交易
 ---
 
-## Installation
+## 安装
 
 `npm install js-conflux-sdk`
 
-## Send transaction using SDK
+## 使用 SDK 发送交易
 
-* Import `js-conflux-sdk` and set a Conflux provider. For the Conflux test-net, there is a node provided at `https://test.confluxrpc.com`. It can also be changed to any other Conflux node, even your own.
+* 导入`js-conflux-sdk`并设置一个Conflux provider。 对于Conflux测试网，你可以使用提供在`https://test.confluxrpc.com`的节点。 它也可以改为任何其他Conflux节点，甚至是你自己的。
 
 ```javascript
 const { Conflux, Drip } = require('js-conflux-sdk');
@@ -21,7 +21,7 @@ const conflux = new Conflux({
 });
 ```
 
-* Paste your private key into the program
+* 将你的私钥粘贴到程序中
 
 ```javascript
 const PRIVATE_KEY = 'Your Private Key';
@@ -30,7 +30,7 @@ const account = conflux.wallet.addPrivateKey(PRIVATE_KEY); // create account ins
 const receiver = 'cfxtest:aarc9abycue0hhzgyrr53m6cxedgccrmmy8m50bu1p'
 ```
 
-* Compose your transaction:
+* 组装你的交易：
 
 ```javascript
 let txParams = {
@@ -46,9 +46,9 @@ let txParams = {
 };
 ```
 
-> The detailed explanation of each field can be found [here](../learn/core-space-basics/core-transactions.md)
+> 每个字段的详细解释可以在[这里](../learn/core-space-basics/core-transactions.md)找到
 
-* Send the composed transaction via `cfx.sendTransaction` and get the returned transaction hash. Then you can view the transaction details by using `tx.mined()` or `tx.executed()`, which APIs will return the transaction data or transaction receipt when transaction is mined or executed. Noting these 2 APIs are a simple wrapping layer for `cfx.getTransactionByHash` and `cfx.getTransactionReceipt`. You can also search the hash at [Conflux Scan](http://confluxscan.io/).
+* 通过`cfx.sendTransaction`发送组装完成的交易，并获得返回的交易哈希。 然后你可以通过使用`tx.mined()`或`tx.executed()`来查看交易详情，这些API将在交易被完成或执行时返回交易数据或交易收据。 注意这两个API是对`cfx.getTransactionByHash`和`cfx.getTransactionReceipt`的简单封装层。 你也可以在[Conflux Scan](http://confluxscan.io/)上搜索哈希。
 
 ```javascript
 async function main() {
@@ -63,6 +63,6 @@ async function main() {
 main().catch(e => console.error(e));
 ```
 
-## Other language examples
+## 其他语言示例
 
-Refer to [SDKs](./sdks-and-tools/sdks.md) for examples of other SDKs.
+参考[SDKs](./sdks-and-tools/sdks.md)，查看其他SDK的示例。
