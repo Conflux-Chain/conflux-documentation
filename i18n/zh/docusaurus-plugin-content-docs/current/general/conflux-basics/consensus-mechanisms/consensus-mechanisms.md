@@ -3,11 +3,11 @@ sidebar_position: 2
 title: Consensus
 ---
 
-In blockchain, **consensus** refers to the process by which all nodes in the network agree on the current state of the ledger. To achieve consensus, each node in the network must validate and confirm that new transactions added to the blockchain are valid and follow the rules of the protocol. This process is typically achieved through a consensus algorithm, such as Proof of Work or Proof of Stake, which incentivizes nodes to work together to validate transactions and maintain the integrity of the blockchain.
+在区块链中，**共识**指的是网络中所有节点对账本当前状态达成一致的过程。 为了实现共识，网络中的每个节点必须验证和确认添加到区块链上的新交易是有效的，并遵循协议的规则。 This process is typically achieved through a consensus algorithm, such as Proof of Work or Proof of Stake, which incentivizes nodes to work together to validate transactions and maintain the integrity of the blockchain.
 
 Consensus is critical to the security and trustworthiness of the blockchain, as it ensures that all participants in the network have a consistent view of the state of the ledger.
 
-Conflux’s consensus is a hybrid mechanism that combines PoW and PoS. PoW miners produce blocks and sort them using the Tree-Graph algorithm, achieving high throughput and scalability. PoS nodes sign pivot blocks to finalize them, which reduces fork probability. The PoS nodes are selected based on their stake in CFX tokens, which incentivizes them to behave honestly. The PoW/PoS consensus enables Conflux to achieve high performance without compromising decentralization.
+Conflux的共识是一种结合了PoW和PoS的混合机制。 PoW矿工产生区块，并使用树图算法对它们进行排序，实现高吞吐量和可扩展性。 PoS节点对主链区块进行签名以确定它们，从而降低分叉概率。 PoS节点是根据已质押的CFX代币来选择的，这能激励PoS节点诚实地行事。 PoW/PoS共识使得Conflux能够在不牺牲去中心化的情况下实现高性能。
 
 ```mdx-code-block
 import DocCardList from '@theme/DocCardList';
