@@ -16,7 +16,7 @@ keywords:
 
 ## CONVENIENCE LIBRARIES
 
-虽然你可以选择通过JSON-RPC API直接与Conflux客户端交互，但对于dapp开发者来说，通常有更方便的选项。 有许多<a href=“https://github.com/conflux-chain/js-conflux-sdk”>JavaScript</a>和<a href=“https://github.com/conflux-chain/go-conflux-sdk”>后端API</a>库提供了在JSON-RPC API之上的封装。 通过这些库，开发者可以方便地写下直观的，甚至单行的函数来初始化（后端的）JSON RPC 请求并用于与Conflux进行交互。
+虽然你可以选择通过JSON-RPC API直接与Conflux客户端交互，但对于dapp开发者来说，通常有更方便的选项。 有许多[JavaScript](https://github.com/conflux-chain/js-conflux-sdk)和[后端API](https://github.com/conflux-chain/go-conflux-sdk)库提供了在JSON-RPC API之上的封装。 通过这些库，开发者可以方便地写下直观的，甚至单行的函数来初始化（后端的）JSON RPC 请求并用于与Conflux进行交互。
 
 ## SPEC
 
@@ -24,7 +24,7 @@ keywords:
 
 ## JSON-RPC endpoints
 
-目前，Conflux有一个<a href=“https://github.com/Conflux-Chain/conflux-rust”>Rust实现</a>，支持通过HTTP、TCP或WebSocket的方式调用JSON-RPC API。
+目前，Conflux有一个[Rust实现](https://github.com/Conflux-Chain/conflux-rust)，支持通过HTTP、TCP或WebSocket的方式调用JSON-RPC API。
 
 如果你是一个节点运营者，你可以通过 TOML 配置文件，或者直接传递命令行参数，来启用和配置各种 RPC 接口。 主要的配置项如下表所示。 注意，如果你想启用 HTTPS 或访问控制，你需要为你的节点设置一个代理。
 
@@ -56,7 +56,7 @@ When encoding **QUANTITIES** (integers, numbers): encode as hex using the most c
 
 #### 未格式化的数据
 
-当编码<strong x-id=“1”>未格式化的数据</strong>（字节数组、哈希值、字节码数组）时：使用两个十六进制数字表示每个字节，并在前面加上`“0x”`作为前缀。 例如：
+当编码**未格式化的数据**（字节数组、哈希值、字节码数组）时：使用两个十六进制数字表示每个字节，并在前面加上`“0x”`作为前缀。 例如：
 
 * `0x41` (size 1, `"A"`)
 * `0x004200` (size 3, `"\0B\0"`)
@@ -113,7 +113,7 @@ $ curl -H "Content-Type: application/json" -X POST --data '{"jsonrpc":"2.0","met
 
 Conflux的归档节点和全节点会删除历史状态树，以减少存储空间的占用。 全节点也会丢弃历史区块的交易和收据。 因此，一些RPC接口可能无法用于历史查询。
 
-下面是Conflux RPC API的列表，以及它们在归档节点和全节点上的可用性。 <em x-id=“3”>“recent”</em>表示该RPC只支持最近的项目，<em x-id=“3”>“OK”</em>表示它应该对任何有效的输入都能正常工作。
+下面是Conflux RPC API的列表，以及它们在归档节点和全节点上的可用性。 *“recent”*表示该RPC只支持最近的项目，*“OK”*表示它应该对任何有效的输入都能正常工作。
 
 | RPC                                                                               |  归档节点  |  全节点   |
 | --------------------------------------------------------------------------------- |:------:|:------:|
