@@ -6,21 +6,21 @@ keywords:
   - VM
 ---
 
-The eSpace implements an Ethereum Virtual Machine (EVM). Below are some differences between eSpace and Ethereum:
+eSpace 实现了一个以太坊虚拟机 (EVM)。 以下是 eSpace 和以太坊之间的一些区别：
 
-* The `NUMBER` opcode will return the tree-graph `epoch number`. As a result, `block.number` used in eSpace contracts will not grow at a stable and predictable rate, and so it might not be suitable for measuring time.
-* The `BLOCKHASH` opcode can only take `NUMBER-1` as input. (Unlike Ethereum, which takes any integer in `NUMBER-256` to `NUMBER-1` as input)
-* Block generate rate is 1.25s per block (mainnet)
-* Contract max code size is `49152` double as Ethereum
-* No gas refund in `SSTORE` opcode and `SUICIDE` opcode.
-* The operations which occupy storage have a different gas cost.
-  1. `SSTORE` costs 40000 gas (instead of 20000 gas in Ethereum) when changing a storage entry from zero to non-zero.
-  2. When deploying a new contract, each byte costs 400 gas (instead of 200 gas in Ethereum).
-  3. When creating a new account by `CALL` or `SUICIDE`, it consumes 50000 gas (instead of 25000 gas in Ethereum).
-* At most `1/4` of transaction `gasLimit` will be refund (if not used)
-* Only the block whose block height is a multiple of `5` can pack Ethereum type transaction. The total gas limit of these transaction cannot exceed half of the block gas limit (1500w).
+* `NUMBER` opcode将返回树图`epoch number`。 因此，在 eSpace 合约中使用的 `block.number` 不会以稳定和可预测的速率增长，因此它可能不适合用于测量时间。
+* `BLOCKHASH` opcode只能将 `NUMBER-1` 作为输入。 （不像以太坊，它将 `NUMBER-256` 到 </code>NUMBER-1</code> 之间的任何整数作为输入）
+* 区块生成速率为每个区块 1.25 秒（主网）
+* 合约最大代码大小为 `49152`，是以太坊的两倍
+* `SSTORE` 操作码和 `SUICIDE` opcode中不会退还gas。
+* 占用存储的操作有不同的gas消耗。
+  1. 当将存储条目从零更改为非零时，`SSTORE` 花费 40000 gas（而以太坊中为 20000 gas）。
+  2. 部署新合约时，每个字节花费 400 gas（而以太坊中为 200 gas）。
+  3. 通过 `CALL` 或 `SUICIDE` 创建新账户时，该操作消耗 50000 gas（而以太坊中为 25000 gas）。
+* 最多 `1/4` 的交易 `gasLimit` 可以被退还（如果未使用）
+* 只有区块高度是 `5` 的倍数的区块才能打包以太坊类型的交易。 这些交易的总gas limit不能超过区块gas limit的一半（1500w）。
 
-## Precompiles
+## 预编译
 
 ### Standard precompiles
 
@@ -40,16 +40,16 @@ The eSpace implements an Ethereum Virtual Machine (EVM). Below are some differen
 
 ## Phantom transactions
 
-A *cross-space transaction* is a transaction in the Conflux core space that, at some point during its execution, calls one of the state-changing (i.e., not `view`) methods of the `CrossSpaceCall` internal contract. Such transactions can change CFX balances and contract storage in both spaces, core and eSpace.
+*跨空间交易*是 Conflux Core Space中的一种交易，在其执行过程中，调用了 `CrossSpaceCall` 内部合约的一个状态改变（即非`只读/view`）方法。 这样的交易可以在Core Space和eSpace中更改 CFX 的余额和合约存储。
 
-As EVM clients are not aware of Conflux space transactions (the two spaces use different transaction formats), we construct one or more *phantom* transactions (aka *virtual* transactions) for each call to the `CrossSpaceCall` internal contract. These phantom transactions are derived from the corresponding core space transaction, they do not exist in the ledger. Phantom transactions have the following special properties:
+由于 EVM 客户端不知道 Conflux 空间交易（两个空间使用不同的交易格式），因此我们为每次对 `CrossSpaceCall` 内部合约的调用构造一个或多个 *phantom* 交易（也称为 *虚拟* 交易）。 这些 phantom 交易源自相应的 Core Space 交易，它们并不存在于账本中。 Phantom 交易具有以下特殊属性：
 
-- `gas` and `gasPrice` are `0`. Gas for cross-space transactions is charged in the core space. Therefore, the corresponding phantom transactions do not consume any gas.
-- Invalid signature (`r`, `s`, `v`, `standardV`). The Conflux protocol is unable to sign transactions on behalf of the sender of the cross-space transaction. Therefore, phantom transactions use a fake signature that will not pass ECDSA verification.
+- 其中，`gas` 和 `gasPrice` 值均为 `0`。 跨空间交易的 gas 费用将在Core Space中收取。 因此，相应的 phantom 交易不会消耗任何 gas。
+- 无效的签名（`r`、`s`、`v`、`standardV`）。 Conflux 协议无法代表跨空间交易的发送者签名交易。 因此，phantom 交易使用一个伪造的签名，而这个签名无法通过 ECDSA 验证。
 
 ### 示例
 
-When we retrieve epoch `0x72819` in the Conflux core space, we see it contains a single Conflux transaction.
+当我们在 Conflux Core Space中检索 epoch `0x72819` 时，我们会看到它包含一个单独的 Conflux 交易。
 
 ```
 cfx_getBlockByEpochNumber(0x72819, true)
@@ -76,7 +76,7 @@ cfx_getBlockByEpochNumber(0x72819, true)
 }
 ```
 
-When we retrieve the corresponding block in the eSpace, we see it contains two phantom transactions.
+当我们在eSpace中检索相应的区块时，我们会看到它包含两个 phantom 交易。
 
 ```
 eth_getBlockByNumber(0x72819, true)
