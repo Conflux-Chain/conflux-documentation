@@ -1,17 +1,17 @@
 ---
-title: What to Do Next?
+title: 接下来是？
 ---
 
 :::info
 
-This page is mainly about Conflux core space. Refer to [eSpace](../../../espace/learn/overview.md) for the guide of eSpace.
+这个页面主要介绍 Conflux Core Space。 请参考 [eSpace](../../../espace/learn/overview.md)来获取eSpace的指南，
 
 :::
 
-After installing your wallet and finish your first transaction by claiming CFX in testnet faucet, you may wonder what to do next. Here are some suggestions and links to help you explore the Conflux network and its ecosystem.
+安装钱包并在测试网络中的水龙头领取了第一笔 CFX 后，你可能想知道接下来该做什么。 以下是一些建议和链接，帮助您探索 Conflux 网络及其生态系统。
 
-- **Learn more about Conflux**. If you want to learn more about Conflux's technical principles and architecture, you can refer to the [Core Space Basics](../core-space-basics/core-space-basics.mdx) and [papers](../../../general/conflux-basics/additional-resources/papers.md).
-- **Participate in Conflux's governance/community**. Learn how Conflux's governance works [here](../../../general/conflux-basics/conflux-governance/governance-overview.md). You can also join the [Conflux forum](https://forum.conflux.fun/) and the [Discord channel](https://discord.com/invite/aCZkf2C) for more information.
-- **Run a Conflux Node**. If you want to run a Conflux node and sync with the network, you can refer to [Run a Node](/docs/category/run-a-node) for more information.
-- **Mine and Stake in Conflux**. If you want to mine CFX tokens and contribute to the security of the Conflux network, you can refer to [Mining & Staking](/docs/category/mining--staking) for more information.
-- **Develop for Conflux**. If you want to develop your own smart contracts or DApps and deploy them on the Conflux network, you can refer to [Build](../../build/build.mdx) for more information. There are also [SDKs and tools](/docs/category/sdks-and-tools) to simplify your development process.
+- **了解更多与 Conflux 有关的知识**。 如果您想了解更多有关Conflux的技术原理和架构的知识，您可以参考[Core Space Basics](../core-space-basics-zh/core-space-basics-zh.mdx)和[papers](../../../general/conflux-basics-zh/additional-resources-zh/papers-zh.md)。
+- **参与 Conflux 的治理和社区**。 可以在[这里](../../../general/conflux-basics/conflux-governance/governance-overview.md)了解 Conflux 的治理方式，。 你还可以加入 [Conflux 论坛](https://forum.conflux.fun/)和 [Discord 频道](https://discord.com/invite/aCZkf2C)，获取更多信息。
+- **运行一个 Conflux 节点**。 如果你想要运行一个 Conflux 节点并与网络同步，你可以参考[运行节点](/docs/category/run-a-node)以获取更多信息。
+- **在 Conflux 上挖矿和质押**。 如果您想要挖掘CFX代币并为Conflux网络的安全做出贡献，您可以参考[Mining & Staking](/docs/category/mining--staking)获取更多信息。
+- **为 Conflux 开发应用**。 如果你想为Conflux开发自己的智能合约或DApp并在Conflux网络上部署它们，你可以参考[Build](../../build/build.mdx)获取更多信息。 这里也提供了一些[SDK和工具](/docs/category/sdks-and-tools)，可以简化您的开发过程。
