@@ -9,7 +9,7 @@ keywords:
 eSpace 实现了一个以太坊虚拟机 (EVM)。 以下是 eSpace 和以太坊之间的一些区别：
 
 * `NUMBER` opcode将返回树图`epoch number`。 因此，在 eSpace 合约中使用的 `block.number` 不会以稳定和可预测的速率增长，因此它可能不适合用于测量时间。
-* `BLOCKHASH` opcode只能将 `NUMBER-1` 作为输入。 （不像以太坊，它将 `NUMBER-256` 到 </code>NUMBER-1</code> 之间的任何整数作为输入）
+* `BLOCKHASH` opcode只能将 `NUMBER-1` 作为输入。 （不像以太坊，它将 `NUMBER-256` 到`NUMBER-1`之间的任何整数作为输入）
 * 区块生成速率为每个区块 1.25 秒（主网）
 * 合约最大代码大小为 `49152`，是以太坊的两倍
 * `SSTORE` 操作码和 `SUICIDE` opcode中不会退还gas。
