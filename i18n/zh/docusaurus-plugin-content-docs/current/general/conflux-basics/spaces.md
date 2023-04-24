@@ -15,7 +15,7 @@ In other words, we can think of Spaces as a virtualization technology from opera
 
 Conflux is a high-performance, fully decentralized public chain enabled by an innovative Tree-Graph consensus algorithm. The transaction fee of Conflux is very low, which can be seen as almost free compared to other networks such as Ethereum. However, Ethereum has already built a mature ecosystem, including tools, SDKs, wallets, and Solidity libraries. To reduce the migration cost of projects and users and make users experience the advantages of low fees and high TPS of Conflux, eSpace was introduced.
 
-Through the fully compatible interface, smart contracts, and dApps of Ethereum can be directly deployed to eSpace without any modification. Development tools, SDKs, wallets, and services of Ethereum can be directly used in eSpace. Users do not need to learn new knowledge but can use the original tools to get started directly.
+Through the fully compatible interface, smart contracts, and dApps of Ethereum can be directly deployed to eSpace without any modification. 以太坊的开发工具、SDK、钱包和服务可以直接在eSpace中使用。 Users do not need to learn new knowledge but can use the original tools to get started directly.
 
 eSpace is very easy to use for Ethereum developers and users, just like BSC, Polygon, Aurora.
 
