@@ -5,9 +5,9 @@ title: Spaces
 
 ## **Introduction to Spaces**
 
-In the Conflux v2.0 (Hydra) upgrade, a new feature called Spaces was introduced through **[CIP-90](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-90.md)**. Spaces is an abstract concept that is used to distinguish Conflux-format transactions from Ethereum-format transactions. Spaces is a way to virtually create a sub-chain of the original Conflux network, known as **`eSpace`**.
+In the Conflux v2.0 (Hydra) upgrade, a new feature called Spaces was introduced through **[CIP-90](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-90.md)**. Spaces is an abstract concept that is used to distinguish Conflux-format transactions from Ethereum-format transactions. Spaces是一种在原始Conflux网络上虚拟创建子链的方式，称为**`eSpace`**。
 
-Core Space refers to the original Conflux network, while eSpace is the virtualized Ethereum chain running on top of the Core Space network. The two spaces are logically independent of each other and do not affect each other.
+Core Space指的是原始Conflux网络，而eSpace指的是在Core Space网络之上运行的虚拟化以太坊链。 The two spaces are logically independent of each other and do not affect each other.
 
 In other words, we can think of Spaces as a virtualization technology from operating system concepts, where eSpace is a virtualized Ethereum chain running on the original Conflux network.
 
@@ -15,7 +15,7 @@ In other words, we can think of Spaces as a virtualization technology from opera
 
 Conflux is a high-performance, fully decentralized public chain enabled by an innovative Tree-Graph consensus algorithm. The transaction fee of Conflux is very low, which can be seen as almost free compared to other networks such as Ethereum. However, Ethereum has already built a mature ecosystem, including tools, SDKs, wallets, and Solidity libraries. To reduce the migration cost of projects and users and make users experience the advantages of low fees and high TPS of Conflux, eSpace was introduced.
 
-Through the fully compatible interface, smart contracts, and dApps of Ethereum can be directly deployed to eSpace without any modification. Development tools, SDKs, wallets, and services of Ethereum can be directly used in eSpace. Users do not need to learn new knowledge but can use the original tools to get started directly.
+Through the fully compatible interface, smart contracts, and dApps of Ethereum can be directly deployed to eSpace without any modification. 以太坊的开发工具、SDK、钱包和服务可以直接在eSpace中使用。 Users do not need to learn new knowledge but can use the original tools to get started directly.
 
 eSpace is very easy to use for Ethereum developers and users, just like BSC, Polygon, Aurora.
 

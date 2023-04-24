@@ -3,33 +3,33 @@ sidebar_position: 3
 title: Funding Your Account on Testnet
 ---
 
-Are you a new user of Conflux blockchain? Or are you a developer planning to develop a Dapp on Conflux? Then you may need some CFX to interact with the Conflux network. We provide the testnet CFX faucet service, which allows users to apply for the testnet CFX and experience it in the Conflux testnet environment.
+您是 Conflux 区块链的新用户吗？ 或者您是一名计划在Conflux上开发Dapp的开发者吗？ 那么你可能需要一些CFX与Conflux网络进行交互。 我们提供测试网 CFX faucet 服务，允许用户申请测试网 CFX 并在 Conflux 测试网络环境中进行体验。
 
 ## Faucet Dapp
 
-We have developed a [Faucet Dapp](https://faucet.confluxnetwork.org/), which not only can be used to claim `CFX` but also tokens, currently includes `FC`, `cUSDT`.
+我们开发了一个[Faucet Dapp](https://faucet.confluxnetwork.org/)，不仅可以用于领取` CFX`，还可以领取代币，目前包括 `FC` 和 `cUSDT`。
 
 ![Dapp-faucet](./img/Dapp-faucet-1)
 
-To use the Faucet Dapp, simply connect to the dapp using Fluent or Portal, and click "Claim".
+要使用 Faucet Dapp，只需使用 Fluent 或 Portal 连接到该 dapp，然后单击“领取”。
 
 ### Apply for testnet CFX
 
-The default Fluent network is `Conflux Hydra` (mainnet). The first step is to switch the Fluent network to `Conflux testnet`.
+默认的 Fluent 网络是 `Conflux Hydra`(主网)。 首先需要将Fluent网络切换到 `Conflux testnet`。
 
 ![SwitchNetwork](./img/SwitchNetwork)
 
-After switching the network, please note the warning message about the address change.
+在切换网络后，请注意关于地址更改的警告信息。
 
-Now you can go to the [Faucet Dapp](http://faucet.confluxnetwork.org/), and click on the `Connect` button in both the page and in the "Connect to this web site" form.
+现在你可以前往[Faucet Dapp](http://faucet.confluxnetwork.org/)，并在页面上和"Connect to this web site"表单中点击`Connect`按钮。
 
 ![FaucetConnectFluent](./img/FaucetConnectFluent)
 
-When the wallet is connected, your CFX address appears in the Connect button and it is green now. You can select `CFX` in the tokens list and clic on the `CLAIM` button, a sign transaction window appears and you can click on the Confirm button .
+当钱包连接成功后，您的CFX地址将出现在“连接”按钮中，此时按钮的颜色将变为绿色。 您可以在代币列表中选择`CFX`，并单击`CLAIM`按钮，然后会出现一个签名交易窗口，您可以单击确认按钮。
 
 ![SignTransaction](./img/SignTransaction)
 
-If successful, the interface will return the hash of the CFX transaction. Switch back to Fluent and you can see that the balance will increase by 1,000 CFX. You can use the hash to view the details of the transaction on [ConfluxScan](https://testnet.confluxscan.io/).
+如果成功，界面将返回CFX交易的哈希。 切换回 Fluent，你可以看到余额将增加 1,000 CFX。 您可以使用交易哈希在[ConfluxScan](https://testnet.confluxscan.io/)上查看交易的详细信息。
 
 ![AddressWithTestCFX](./img/AddressWithTestCFX)
 

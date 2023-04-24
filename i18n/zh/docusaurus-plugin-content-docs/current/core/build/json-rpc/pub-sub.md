@@ -1,21 +1,21 @@
 ---
 id: pubsub
-title: Publish-Subscribe API
+title: 发布/订阅 API
 keywords:
   - conflux
   - pubsub
   - sdk
 ---
 
-The Publish-Subscribe API of Conflux (also called pub-sub) makes it possible to query certain items on an ongoing basis, without polling through the JSON-RPC HTTP interface. You can use this API on top of a TCP or WebSocket connection.
+Conflux 的发布-订阅 API（也称为 pub-sub）使得可以持续地查询特定的项目，而不需要通过 JSON-RPC HTTP 接口进行轮询。 你可以在 TCP 或 WebSocket 连接之上使用 Conflux 的发布-订阅 API（也称为 pub-sub）。
 
-To use the pub-sub API, please make sure that you have access to a node with its TCP or WebSocket port open. If you maintain your own node, you can set these using the `--jsonrpc-tcp-port PORT` and `--jsonrpc-ws-port PORT` CLI flags (see `conflux --help`) or through the `jsonrpc_tcp_port` and `jsonrpc_ws_port` configuration parameters (see `run/default.toml`). In this document, we will use the default TCP (`12536`) and WebSocket (`12535`) ports.
+使用发布-订阅 API，请确保您可以访问具有 TCP 或 WebSocket 端口打开的节点。 如果您维护自己的节点，请确保其 TCP 或 WebSocket 端口已打开，以便使用发布-订阅 API。您可以使用命令行接口（CLI）标志`--jsonrpc-tcp-port PORT` 和`--jsonrpc-ws-port PORT`（参见`conflux --help`），或者通过 `jsonrpc_tcp_port` 和 `jsonrpc_ws_port` 配置参数（参见 `run/default.toml`）进行设置。 在本文档中，我们将使用默认的 TCP 端口（`12536`）和 WebSocket 端口（`12535`）。
 
-## Subscriptions
+## 订阅
 
-You can subscribe to a topic through a `cfx_subscribe` JSON-RPC call. This will result in a subscription ID, which can later be used to unsubscribe through a `cfx_unsubscribe` JSON-RPC call.
+您可以通过 `cfx_subscribe` JSON-RPC 订阅主题。 这将返回一个订阅 ID，稍后可以使用 `cfx_unsubscribe` JSON-RPC 取消订阅。
 
-The following example shows how to create a subscription over a TCP connection using `nc` (`netcat`):
+以下是如何使用 `nc`（`netcat`）在 TCP 连接上创建订阅的示例：
 
 ```json
 > nc localhost 12536
@@ -26,7 +26,7 @@ The following example shows how to create a subscription over a TCP connection u
 { "jsonrpc": "2.0", "result": true, "id": 2 }
 ```
 
-The following example shows how to create a subscription over a WebSocket connection using `websocat`:
+以下示例展示了如何使用 `websocat` 在 WebSocket 连接上创建订阅：
 
 ```json
 > websocat ws://localhost:12535
@@ -37,11 +37,11 @@ The following example shows how to create a subscription over a WebSocket connec
 { "jsonrpc": "2.0", "result": true, "id": 2 }
 ```
 
-Currently, we support the following topics: `newHeads`, `epochs`, `logs`.
+目前，我们支持以下主题：`newHeads`，`epochs`，`logs`。
 
 ## `newHeads`
 
-The `newHeads` topic streams all new block headers participating in the consensus.
+`newHeads` 主题流式传输所有参与共识的新区块头。
 
 ```json
 { "jsonrpc": "2.0", "method": "cfx_subscribe", "params": ["newHeads"], "id": 1 }
@@ -54,11 +54,11 @@ The `newHeads` topic streams all new block headers participating in the consensu
 
 ## `epochs`
 
-The `epochs` topic streams consensus results: the total order of blocks, as expressed by a sequence of epochs.
+`epochs` 主题流式传输共识结果：区块的全序，由一系列 epoch 表示。
 
-The returned series of epoch numbers is monotonically increasing with an increment of one. If you see the same epoch twice, this suggests a pivot chain reorg has happened (this might happen for recent epochs).
+返回的纪元数（epoch number）序列是单调递增的，每个数字之间增加一。 如果你看到同一个 epoch 两次，说明可能发生了主链重组（这可能发生在最近的 epoch 中）。
 
-An optional parameter can be passed to control the subscribed epoch. available value is `latest_state` and `latest_mined` (default).
+一个可选的参数可以传递以控制订阅的 epoch。 可用的值为 `latest_state` 和 `latest_mined`（默认值）。
 
 ```json
 { "jsonrpc": "2.0", "method": "cfx_subscribe", "params": ["epochs"], "id": 1 }
@@ -72,7 +72,7 @@ An optional parameter can be passed to control the subscribed epoch. available v
 ...
 ```
 
-For each epoch, the **last** hash in `epochHashesOrdered` is the hash of the pivot block. In the example above, we know that currently the last section of the pivot chain is:
+每个 epoch，`epochHashesOrdered` 中的 **最后一个** 哈希是主链区块的哈希。 以下是示例中，我们知道当前主链的最后一部分：
 
 ```
 0x6f21f408476f404ecc07f0a52170ffdf62ca23497bdc3e3d64429b2c26308e00 (epoch 0x6a7)
@@ -83,11 +83,11 @@ For each epoch, the **last** hash in `epochHashesOrdered` is the hash of the piv
 
 ## `logs`
 
-The `logs` topic streams all logs matching a certain filter, in order.
+`logs` 主题按顺序流式传输与特定筛选条件匹配的所有日志。
 
-The filter format follows that of the `cfx_getLogs` JSON-RPC API. It is a JSON object with the (optional) fields `address` (contract address), and `topics` (order-dependent array of indexed log topics).
+筛选器格式遵循 `cfx_getLogs` JSON-RPC API。 这是一个 JSON 对象，包含以下（可选）字段： `address` （合约地址）和 `topics` （有序索引日志主题数组）。
 
-In case of a pivot chain reorg (which might affect recent logs), a special `revert` message is sent. All logs received previously that belong to epochs larger than the one in this message should be considered invalid.
+如果发生 pivot chain 重组（可能会影响最近的日志），则会发送一个特殊的 `revert` 消息。 所有之前接收到的属于大于该消息中所述的 epochs 的日志都应视为无效。
 
 ```json
 { "jsonrpc": "2.0", "method": "cfx_subscribe", "params": ["logs", { "topics": ["0xc822296d568499547c3a5b93a500428bab54ef8f6a481f352c7086f1daf4277f"] }], "id": 1 }
@@ -101,13 +101,13 @@ In case of a pivot chain reorg (which might affect recent logs), a special `reve
 ...
 ```
 
-In the example above, the `revert` message **invalidates all logs with an epoch number greater than `0x40f`** (i.e. epochs `0x410`, `0x411`, etc). Transaction `0xf639c7b...` is re-executed and the corresponding log is published again. This time, the transaction ends up in epoch `0x410` instead of `0x411`. All logs in the epochs up to (and including) **`0x40f`** remain valid.
+在上面的例子中，`revert` 消息**使所有具有大于 `0x40f` 的 epoch 号的日志无效**（即 epoch `0x410`、`0x411` 等）。 交易 `0xf639c7b...` 被重新执行并对应的日志被再次发布。 这一次，交易结束时处于 `0x410` 块而不是 `0x411`。 所有在包括 **`0x40f`** 在内的 epochs 的日志仍然有效。
 
-*Note: The `logs` pub-sub topic is not supported on light nodes.*
+*注意：轻节点不支持 `logs` pub-sub 主题。*
 
-## Node.js example
+## Node.js 示例
 
-Below is a simple example of using the pub-sub API through Node.js. In this example, we detect pivot chain reorgs using the `epochs` topic. We rely on `js-conflux-sdk`. For simplicity, we omit error handling.
+以下是通过 Node.js 使用 pub-sub API 的简单示例。 在这个例子中，我们使用 `epochs` 主题检测 pivot chain 重组。 我们依赖于 `js-conflux-sdk`。 为了简单起见，我们省略了错误处理。
 
 ```js
 const sdk = require("js-conflux-sdk")
@@ -128,7 +128,7 @@ const cfx = new sdk.Conflux({ url: "ws://127.0.0.1:12535" });
 
 ```
 
-Example output:
+示例输出：
 
 ```
 epoch 3136 produced
@@ -142,4 +142,4 @@ chain reorg of depth 1 (3143 --> 3142)
 ...
 ```
 
-*Note: Shallow pivot chain reorgs are quite common as the end of the pivot chain tends to oscillate before it stabilizes.*
+*注意: 轻度的 pivot chain 重组是非常常见的，因为在主链的末端在稳定前常常会出现波动。*

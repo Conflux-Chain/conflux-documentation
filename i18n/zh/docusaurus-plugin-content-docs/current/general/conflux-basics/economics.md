@@ -3,10 +3,10 @@ sidebar_position: 6
 title: Economics
 ---
 
-# **A Scalable Economic Model**
-Conflux's economic model encourages participation and growth of the network while supporting technological stability. A well-designed economic model is essential for a decentralized system to operate efficiently. Blockchain technology establishes trust and encourages efficient relationships among cooperators, accelerating the transfer of value.
+# **一个可扩展的经济模型**
+Conflux's economic model encourages participation and growth of the network while supporting technological stability. 一个精心设计的经济模型对于一个去中心化的系统有效运行是必不可少的。 区块链技术建立了信任，并促进了合作者之间的高效关系，加速了价值的转移。
 
-## **Conflux Economic Model Overview**
+## **Conflux经济模型概述**
 ### Key Elements
 
 **1. Value System:** Public blockchain systems require tokens to serve as a measurable unit with economic value. Tokens clarify asset ownership and are a transaction medium for value interaction. Tokens are also connected to storage resources and can be distributed as long-term incentives.

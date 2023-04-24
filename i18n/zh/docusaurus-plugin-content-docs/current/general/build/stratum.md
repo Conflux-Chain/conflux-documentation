@@ -27,14 +27,14 @@ In the scenario where an external miner connecting to Conflux-Rust via its strat
 #### mining.subscribe
 Start to subscribe the proof-of-work notification from the stratum server
 
-##### Parameters
+##### 参数
  1. WORKER_ID, string - the name of the miner
  2. Secret, empty or 32-bytes, the secret that corresponds to the keccak result of the password in the configuration. Empty if password is not enabled.
 
-##### Returns
+##### 返回值
 `Bool` - `true` if successful, `false` if not.
 
-##### Example
+##### 示例
 ```
 // Request
 '{"jsonrpc":"2.0","method":"mining.subscribe","params":["cfxmine", ""],"id":1}'
@@ -51,16 +51,16 @@ Start to subscribe the proof-of-work notification from the stratum server
 #### mining.submit
 Submit a PoW solution to the stratum server
 
-##### Parameters
+##### 参数
  1. WORKER_ID, string - the name of the miner
  2. JOB_ID, hex-string - the identifier of the job, which is typically same as the hash of the PoW problem.
  3. NONCE, hex-string of 32-bytes - the nonce solution of the PoW problem
  4. HASH, hex-string of 32-bytes - the hash of the solved PoW problem.
 
-##### Returns
+##### 返回值
 `Array` - A single element of `true` if successful, the first element will be `false` if not and the second element will explain reasons in string.
 
-##### Example
+##### 示例
 ```
 // Request
 '{"jsonrpc":"2.0","method":"mining.submit","params":["cfxmine", "0x2106e1162d1199483fa010bcaa7d4f05b23b85d456b4a7089d787ae2e880deaf","0x21b49d385865819a171ed8cd9d9f80acc468e501f3486d3600000000000c786c","0x2106e1162d1199483fa010bcaa7d4f05b23b85d456b4a7089d787ae2e880deaf"],"id":1}'
@@ -87,12 +87,12 @@ Note that although the server notifies the mining client via a RPC like request,
 #### mining.notify
 Notify the client about a new PoW problem.
 
-##### Parameters
+##### 参数
  1. JOB_ID, hex-string - the identifier of the job.
  2. HASH, 32-bytes - the hash of the PoW problem.
  3. BOUNDARY, U256 - the difficulty boundary of the problem. For a nonce to be valid, the resulting hash must be smaller than the BOUNDARY.
 
-##### Example
+##### 示例
 
 ``` // Request '{"jsonrpc":"2.0","method":"mining.notify","params":["0x4e08db21d43a7696afa3d00ed948568210f3ab3f34673f1d17198625ec175a9c","0x4e08db21d43a7696afa3d00ed948568210f3ab3f34673f1d17198625ec175a9c","0x1a4e3422948568210f3ab3f34673f1d17198625ec175a9c"],"id":3}'
 

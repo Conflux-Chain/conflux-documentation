@@ -1,20 +1,20 @@
 ---
 sidebar_position: 3
-title: Accounts and Addresses
+title: 账户与地址
 ---
 
 ## 概览
 
-Conflux eSpace is an independent space that is logically isolated from the Core space on Conflux Network. Accounts in the eSpace have their own balance and status. To interact with the eSpace, you need to use hex40 addresses, which are different from [base32 addresses](../../core/learn/core-space-basics/addresses.md) used for the Core space. You can transfer funds between your Core and eSpace wallets using a [bridge service](../learn/tutorials/transfer-funds-across-spaces.md).
+Conflux的eSpace是一个独立的空间，与 Conflux 网络上的Core Space在逻辑上隔离开来。 eSpace中的账户有自己的余额和状态。 要与 eSpace 交互，您需要使用 hex40 地址，它们与用于Core Space的 [base32 地址](../../core/learn/core-space-basics/addresses.md)不同。 您可以使用[桥接服务](../learn/tutorials/transfer-funds-across-spaces.md)在您的Core Space和 eSpace 钱包之间转移资金。
 
-Conflux eSpace is a new feature introduced by Conflux Network in its V2 hard fork. It is an independent space that runs on the same underlying infrastructure as the Core space, but with different rules and specifications. In the eSpace, accounts follow the Ethereum account model and use hex40 addresses instead of [base32 addresses](../../core/learn/core-space-basics/addresses.md). This means it is ok to use the same private key in core space and espace, but the account in core space and espace will have different addresses and will have their own balance and status.
+Conflux eSpace 是 Conflux Network 在其 V2 硬分叉中引入的新特性。 它是一个独立的空间，运行在与Core Space相同的底层基础设施上，但具有不同的规则和规范。 在 eSpace 中，账户遵循以太坊账户模型，并使用 hex40 地址而不是 [base32 地址](../../core/learn/core-space-basics/addresses.md)。 这意味着在Core Space和 eSpace 中使用相同的私钥是可以的，但是Core Space和 eSpace 中的账户将具有不同的地址，并且将拥有自己的余额和状态。
 
-Hex40 addresses are compatible with Ethereum addresses, which means that users can easily import their Ethereum wallets to Conflux eSpace and vice versa. Learn more about basic model of eSpace accounts and addresses at [Ethereum Accounts](https://ethereum.org/en/developers/docs/accounts/).
+Hex40 地址与以太坊地址兼容，这意味着用户可以轻松地将他们的以太坊钱包导入 Conflux eSpace，反之亦然。 在[以太坊账户](https://ethereum.org/en/developers/docs/accounts/)中了解更多关于 eSpace 账户和地址的基本模型。
 
 
-## Mapped Addresses in Cross-Space Operations
+## 跨空间操作中的映射地址
 
-Although the two spaces are independent, atomic-crossing of CFX and data can be achieved through the `CrossSpaceCall` internal contract. The following three methods of this contract allow CFX transfers between the two spaces. Note that `CrossSpaceCall` (like other internal contracts) can only be accessed in the Conflux Core space.
+虽然两个空间是独立的，但可以通过 `CrossSpaceCall` 内置合约实现 CFX 和数据的原子跨链。 该合约的以下三种方法允许两个空间之间进行 CFX 转移。 注意，`CrossSpaceCall`（像其他内置合约一样）只能在 Conflux Core Space中访问。
 
 ```js
 function transferEVM(bytes20 to) external payable returns (bytes memory output);
@@ -22,17 +22,17 @@ function mappedBalance(address addr) external view returns (uint256);
 function withdrawFromMapped(uint256 value) external;
 ```
 
-**Core to eSpace**: To transfer CFX from Conflux Core to Conflux eSpace, the `transferEVM(bytes20 to)` method of this contract needs to be called. The destination address of this transfer is specified by the method parameter `to`. The cross-space transfer will be executed in a single atomic step.
+**Core到 eSpace**：要将 CFX 从 Conflux Core Space转移到 Conflux eSpace，需要调用该合约的 `transferEVM(bytes20 to)` 方法。 该转移的目标地址由方法参数 `to` 指定。 跨空间转移将在一个单一的原子步骤中执行。
 
-**eSpace to Core**: Each account in Core Space has a **mapped account** (hex40) in eSpace. To transfer CFX from Conflux eSpace to Conflux Core, two steps are required. First, transfer CFX to the mapped account (eSpace) that belongs to the destination account (Core Space). This action requires an eSpace transaction. Second, call the `withdrawFromMapped(uint256 value)` method of the `CrossSpaceCall` internal contract. This call with transfer the CFX from the mapped account back to the corresponding destination address.
+**eSpace 到Core**：Core Space中的每个账户在 eSpace 中都有一个**映射账户**（hex40）。 要将 CFX 从 Conflux eSpace 转移到 Conflux Core，需要两个步骤。 首先，将 CFX 转移到属于目标账户（Core Space）的映射账户（eSpace）。 这个操作需要一个 eSpace 交易。 其次，调用 `CrossSpaceCall` 内置合约的 `withdrawFromMapped(uint256 value)` 方法。 这个调用将把 CFX 从映射账户转回到相应的目标地址。
 
-### computation
+### 计算方法
 
-The mapped address is calculated from the base32 address in Conflux Core through the following steps:
+映射地址是通过以下步骤从 Conflux Core 中的 base32 地址计算出来的：
 
-1. Convert the base32 address to hex format, and then convert to bytes type.
-2. Keccak the bytes from the previous step to get the hash.
-3. Take the last 160 bits of the hash and convert it to hex40 format, which is the mapped eSpace address.
+1. 将 base32 地址转换为十六进制格式，然后转换为字节类型。
+2. 对前一步中获得的字节进行 Keccak，得到哈希值。
+3. 取哈希值的最后 160 位，并转换为 hex40 格式，这就是映射的 eSpace 地址。
 
 `js-conflux-sdk v2.0` provides a method to get the mapped address of the base32 address:
 
@@ -45,14 +45,14 @@ const mappedAddress = address.cfxMappedEVMSpaceAddress(base32Address);
 
 :::note
 
-Notes about the mapped address:
+关于映射地址的注意事项：
 
-1. The mapped address is an address in eSpace, so it has a hex40 format.
-2. The purpose of the mapped address is to serve as a transit address when crossing CFX back to Core space.
-3. **Remember NOT to convert the base32 address directly to hex40 format as the mapped address. This action will result in the loss of your assets**
+1. 映射地址是 eSpace 中的一个地址，所以它是 hex40 格式。
+2. 映射地址的目的是在将 CFX 跨回Core Space时作为一个中转地址。
+3. **记住不要直接将 base32 地址转换为 hex40 格式作为映射地址。 这样做会导致您的资产丢失。**
 
 :::
 
-## Related Topics
+## 相关主题
 
 * Cross space dApp tutorial: [Transferring Funds Across Spaces](./tutorials/transfer-funds-across-spaces.md)

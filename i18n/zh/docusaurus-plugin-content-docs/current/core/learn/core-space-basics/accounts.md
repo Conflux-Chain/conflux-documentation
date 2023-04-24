@@ -1,23 +1,23 @@
 ---
 sidebar_position: 1.5
-title: Accounts
+title: 账户
 ---
 
 :::note
 
-This page is created to provide information for CORE SPACE ACCOUNTS. Refer to [General-Accounts](../../../general/conflux-basics/accounts.md) for the overall introduction of the concept of ACCOUNTS.
+本页面是为了提供有关 CORE SPACE ACCOUNTS 的信息。 有关账户概念的总体介绍，请参考[General-Accounts](../../../general/conflux-basics/accounts.md)。
 
 :::
 
-## Account Address
+## 账户地址
 
-An account is identified by its address. For more information, refer to [Address](./addresses.md)
+账户由其地址来标识。 欲了解更多信息，请参阅 [地址](./addresses.md)
 
-## Account State
+## 账户状态
 
-### Query
+### 查询
 
-The account state can be queried using [cfx_getAccount RPC](../../build/json-rpc/cfx-namespace.md#cfx_getaccount).
+可以使用 [cfx_getAccount RPC](../../build/json-rpc/cfx-namespace.md#cfx_getaccount) 查询账户状态。
 
 ```json
 // Request
@@ -41,25 +41,25 @@ curl --data '{"jsonrpc":"2.0","method":"cfx_getAccount","params":["cfx:type.cont
 
 ### Illustration
 
-The global state of Conflux is composed of individual account states, each of which is an address-state pair (key pair).
+Conflux 的全局状态由各个账户状态组成，每个账户状态是一个地址-状态对（键值对）。
 
-A Conflux account state includes five parts:
+Conflux 账户状态包括五个部分：
 
-- `Basic state` is the basic state of the account.
-- `Storage state` is a key/value database or storage space that can be used to store custom states or data of smart contracts.
-- `Code information` is the code information of the smart contract account. It includes the contract codes and the `address` of the account that paid the fee for the storage space occupied by the codes.
+- `Basic state`是账户的基本状态。
+- `Storage state` 是一个键/值数据库或存储空间，可以用于存储智能合约的自定义状态或数据。
+- `Code information` 是智能合约账户的代码信息。 它包括合约代码和支付代码占用存储空间费用的账户`address`。
 - `Staking deposit list` is the list of Staking operations of the accounts (it will be removed in the next Hardfork).
-- `Staking vote lock list` is the list of lock operations performed by the account to participate in DAO voting.
+- `Staking vote lock list` 是账户为了参与 DAO 投票而执行的锁定操作列表。
 
-The basic status of the account consists of eight fields as follows:
+账户的基本状态由以下八个字段组成：
 
-- `Nonce` is a counter to keep track of the number of transactions sent by an account. It is also used to ensure that each transaction can only be executed once. For contract accounts, this value indicates the number of `contracts created by this contract`.
-- `Balance` is the number of CFX of the address in Drip. Drip is the smallest unit of CFX, where 1CFX=1018 Drip.
-- `CodeHash` is the hash of the code of the contract account. The user can reference the contract code, the code cannot be modified after the contract is created. The code will be executed when the contract receives a message call. For external accounts, codeHash is a hash of an empty string.
-- `StakingBalance` is the balance of the staked amount. Similarly, the unit is Drip.
-- `Admin` is the administrator address of the `contract account` recorded in the AdminControl internal contract. In default, the contract administrator is set to the account which deployed this contract when it is created. The administrator can destroy the contract it manages through the internal contract AdminControl, or give the administrator role to another account. The administrator address of an external account is itself.
-- `SponsorInfo` is the information of the contract sponsor. It contains `sponsor for gas`, `sponsor for collateral`, `sponsor gas limit`, `sponsor balance for gas`, and `sponsor balance for collateral`.
-- `StorageCollateral` is the amount of Drip staked to use the storage spaces.
-- `AccumulatedInterestReturn` is the amount of cumulative reward of the account from Staking. The unit of it is Drip. Starting with Conflux 2.0, users must also participate in PoS in order to receive the reward.
+- `Nonce` 是一个计数器，用于跟踪一个账户发送的交易数量。 它也用于确保每个交易只能被执行一次。 对于合约账户，这个值表示`该合约创建的合约数量`。
+- `Balance` 是地址中 CFX 的数量，单位是 Drip。 Drip is the smallest unit of CFX, where 1CFX=1018 Drip.
+- `CodeHash` 是合约账户代码的哈希值。 用户可以引用合约代码，合约创建后，代码不能被修改。 当合约收到消息调用时，代码将被执行。 对于外部账户，codeHash 是一个空字符串的哈希。
+- `StakingBalance` 是已质押的余额。 同样，单位是 Drip。
+- `Admin` 是`合约账户`在 AdminControl 内置合约中记录的管理员地址。 默认情况下，合约管理员在合约创建时被设置为部署该合约的账户。 管理员可以通过内部合约 AdminControl 销毁它管理的合约，或者将管理员角色转给另一个账户。 外部账户的管理员地址是它自己。
+- `SponsorInfo` 是合约赞助者的信息。 它包括`gas 的赞助者`、`存储抵押的赞助者`、`赞助的 gas 限制`、` gas 的赞助余额`和`存储抵押的赞助余额`。
+- `StorageCollateral` 是用于使用存储空间而质押的 Drip 数量。
+- `AccumulatedInterestReturn` 是账户从质押中获得的累积奖励金额。 它的单位是 Drip。 从 Conflux 2.0 开始，用户必须参与 PoS 才能获得奖励。
 
-For more details about accounts, please refer to the `Accounts` section in [Conflux Protocol Specification](https://www.confluxnetwork.org/files/Conflux_Protocol_Specification.pdf).
+关于`账户`的更多细节，请参考 [Conflux 协议规范](https://www.confluxnetwork.org/files/Conflux_Protocol_Specification.pdf)中的账户部分。

@@ -70,7 +70,7 @@ The PoS account can withdraw the voting rights and unlock CFX.
   2. The request for unlocking has passed for 7 days
 * If there are multiple transactions locking tokens, they will be unlocked in chronological order until the required unlocking quantity is met.
 
-### Example
+### 示例
 
 Suppose that user A locks 2000 CFX on Jan 1st, 3rd, and 5th, respectively, and applies to unlock 3000 CFX on Jan 9th.
 

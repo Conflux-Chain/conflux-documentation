@@ -5,31 +5,31 @@ title: Staking
 
 ## 概览
 
-Conflux introduces the staking mechanism for two reasons: first, staking mechanism provides a better way to charge the occupation of storage space (comparing to “pay once, occupy forever”); and second, this mechanism also helps in defining the voting power in decentralized governance.
+Conflux 引入了质押机制，有两个原因：第一，质押机制提供了一种更好的方式来收取存储空间的占用费用（与“一次付费，永久占用”相比）；第二，这种机制也有助于在去中心化治理中定义投票权。
 
-At a high level, Conflux implements a built-in **Staking** contract to record the staking information of all accounts, for both normal addresses and smart contracts. By sending a transaction to this contract, users (both external users and smart contracts) can deposit/withdraw funds, which is also called stakes in the contract.
+从高层次来看，Conflux 实现了一个内置的**Staking**合约，用于记录所有账户的质押信息，包括普通地址和智能合约。 通过向这个合约发送交易，用户（包括外部用户和智能合约）可以存入/取出资金，这也被称为在合约中的质押。
 
-A user (or a contract) can deposit balance for staking by calling `deposit(uint amount)` and then `amount` Drip will be moved from its `balance` to `stakingBalance`. Notice that this function is non-payable, the user only needs to specify the amount to be staked without transferring any funds to internal contract and the minimum deposit amount is `1 CFX`.
+用户（或合约）可以通过调用 `deposit(uint amount)` 来存入余额进行质押，然后 `amount` Drip 将从其`balance`转移到 `stakingBalance`。 请注意，此函数是non-payable， 用户只需要指定待处理的金额而不将任何资金转到内部合约，最低存款金额是 `1 CFX`。
 
-The user can also withdraw balance by `withdraw(uint amount)`. The caller can call this function to withdraw some tokens from the Conflux Internal Staking Contract. The staking capital will be transferred to the user's balance in time. All the withdrawal applications will be processed on a first-come-first-served basis according to the sequence of staking orders.
+用户还可以通过 `withdraw(uint amount) `来提取余额。 调用者可以调用这个函数从 Staking 合约中提取一些代币。 质押本金将及时转移到用户的余额中。 All the withdrawal applications will be processed on a first-come-first-served basis according to the sequence of staking orders.
 
 ## Locking and Voting Power
 
-By locking the staking balance, the user can obtain *vote power* for further on-chain governance. With function `voteLock(uint amount, uint unlock_block_number)`, the account makes a promise that This process resembles making promise that "My `stakingBalance` will always have at least `amount` Drip before the block with block number `unlock_block_number`". The account can make multiple promises, like "I will always at least 10 CFX in this year, and then always stake at least 5 CFX in the next year."  **Once the promise has been made, there is no way to cancel it!** But the account can overwrite old promise by locking more balance. Whenever the account tries to withdraw `stakingBalance`, the internal contract will check whether the rest balance matches the locking promise.
+通过锁定质押余额（stakingBalance），用户可以获得*投票权*，进而进行链上治理。 With function `voteLock(uint amount, uint unlock_block_number)`, the account makes a promise that This process resembles making promise that "My `stakingBalance` will always have at least `amount` Drip before the block with block number `unlock_block_number`". 账户可以做出多个承诺，比如“我今年总是至少有 10 CFX，明年总是至少有 5 CFX。”  **一旦做出了承诺，就没有办法取消它！**但是账户可以通过锁定更多的余额来覆盖旧的承诺。 每当账户试图提取 `stakingBalance` 时，内部合约将检查剩余的余额是否符合锁定的承诺。
 
-Here we introduce the detailed logic for locking balance by illustrating several examples. Suppose the current block number is `base`, Conflux will generate about `x` blocks in the rest of this year and `y` blocks in the next year. Since Conflux generates two block per second, `y` approximately equals to `2 * 60 * 60 * 24 * 365`. And the value of `x` depends on when you read this article.
+在这里，我们通过举几个例子来介绍锁定余额的详细逻辑。 假设当前的区块号是 `base`，Conflux 在今年剩余的时间内大约会生成 `x` 个区块，在明年会生成 `y` 个区块。 由于 Conflux 每秒生成两个区块，`y` 大约等于 `2 * 60 * 60 * 24 * 365`. 而 `x` 的值取决于你阅读这篇文章的时间。
 
-1. If an account has 10 CFX in `stakingBalance`, and it calls `voteLock(100 * 10^18, base + x)`, then the transaction will  fail because this account tries to lock 100 CFX with insufficient `stakingBalance`.
-2. However, if this account calls `voteLock(8 * 10^18, base + x)`, the transaction will success.
-3. After that, if this account calls `voteLock(6 * 10^18, base + x + y)`, the transaction will also success. It means that 8 - 6 = 2 CFX will be unlocked until the end of this year, and another 6 CFX will be locked until the end of next year.
-4. Then, if this account calls `voteLock(0, base + x)`, nothing will happen. The transaction will not trigger an error during execution. The internal contract will regard this call as a meaningless promise: the account will stake at least 0 CFX. The old promises made in step 2 and step 3 will still hold.
-5. If this account calls `voteLock(9 * 10^18, base + x + y)`, the old two promises will be overwritten because "locking 9 CFX until the end of the next year" is a stronger promise.
+1. 如果一个账户在 `stakingBalance` 中有 10 CFX，并且它调用了 `voteLock(100 * 10^18, base + x)`，那么交易将失败，因为这个账户试图用不足的 `stakingBalance` 锁定 100 CFX。
+2. 然而，如果这个账户调用了 `voteLock(8 * 10^18, base + x)`，那么交易将成功。
+3. 在此之后，如果这个账户调用了 `voteLock(6 * 10^18, base + x + y)`，那么交易也将成功。 这意味着 8 - 6 = 2 CFX 将在今年年底解锁，另外 6 CFX 将在明年年底解锁。
+4. 然后，如果这个账户调用了 `voteLock(0, base + x)`，什么也不会发生。 交易在执行过程中不会触发错误。 内置合约将把这个调用视为一个无意义的承诺：账户将至少质押 0 CFX。 第 2 步和第 3 步做出的旧承诺仍然有效。
+5. 如果这个账户调用了 `voteLock(9 * 10^18, base + x + y)`，那么旧的两个承诺将被覆盖，因为“在明年年底之前锁定 9 CFX”是一个更强的承诺。
 
-Locking does not have any influence on the stake interest. When the account withdraw staking balance successfully, the staking interest will be computed as usual.
+锁定对质押利息没有任何影响。 当账户成功提取质押余额时，质押利息将按照通常的方式计算。
 
-At any time, each locked Drip will be assigned a *vote power* from 0 to 1 according to its unlock time. The Drips to be unlocked in more than one year will have a full vote power. See section 8.3.2 in the [Conflux Protocol Specification](https://conflux-protocol.s3-ap-southeast-1.amazonaws.com/tech-specification.pdf) for more details.
+在任何时候，每个锁定的 Drip 都会根据其解锁时间被分配一个从 0 到 1 的*投票权*。 在一年以上解锁的 Drip 将拥有完全的投票权。 更多细节请参见 [Conflux 协议规范](https://conflux-protocol.s3-ap-southeast-1.amazonaws.com/tech-specification.pdf)第 8.3.2 节。
 
-## Examples
+## 示例
 
 ```javascript
 const PRIVATE_KEY = '0xxxxxxx';

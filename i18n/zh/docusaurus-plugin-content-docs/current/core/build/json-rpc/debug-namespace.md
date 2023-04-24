@@ -12,7 +12,7 @@ keywords:
 
 Get one epoch's all receipts in one RPC call
 
-#### Parameters
+#### 参数
 
 1. `QUANTITY`: Epoch number
 
@@ -26,7 +26,7 @@ params: [
 
 `ARRAY` - Receipt array
 
-#### Example
+#### 示例
 
 Request
 

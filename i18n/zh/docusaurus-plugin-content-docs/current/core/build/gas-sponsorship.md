@@ -1,25 +1,25 @@
 ---
 sidebar_position: 4
-title: Foundation Gas Sponsorship
+title: 基金会 Gas 赞助
 ---
 
-Developers can submit a request to the Foundation for sponsorship.
+开发者可以向基金会提交赞助请求。
 
-> Refer to [SponsorWhitelistControl](../learn/core-space-basics/internal-contracts/sponsor-whitelist-control.md) and check out the basics of sponsorship mechanism.
+> 参考[SponsorWhitelistControl](../learn/core-space-basics/internal-contracts/sponsor-whitelist-control.md)，了解赞助机制的基本原理。
 
-## Tutorial
+## 教程
 
-1. Go to the ConfluxScan official website (confluxscan.io)
-2. Click on "Blockchain", select "Sponsorship Contracts" under "Contracts" column and enter the sponsorship contract interface
-3. Fill in the search field with the address of the contract you want to apply for sponsorship, click "Search"
-4. Click on "Apply"
+1. 进入ConfluxScan官方网站（confluxscan.io）
+2. 点击“区块链”，在“合约”栏下选择“赞助合约”，进入赞助合约界面
+3. 在搜索框中填入你想申请赞助的合约地址，点击“搜索”
+4. 点击“申请”
 
 ![](image/2023-03-06-18-12-16.png) ![](image/2023-03-06-18-12-27.png)
 
-## Rules of Sponsorship
+## 赞助规则
 
-Undifferentiated storage collateral sponsorship: 1 * 10 cfx. Undifferentiated gas sponsorship: 5 * 1 Gdrip, upper bound 500,000 drip (roughly Gas with price 1 and Gas limit of no more than 500,000)
+无差别存储抵押赞助：1 * 10 cfx。 Undifferentiated gas sponsorship: 5 * 1 Gdrip, upper bound 500,000 drip (roughly Gas with price 1 and Gas limit of no more than 500,000)
 
-Applications for sponsorship require individual negotiation for each project specifically (currently self-service is not open), project groups are requested to complete the following two steps and wait for review. Complete the contract verification on Confluxscan, fix the warning messages in the project, and set the built-in contract Admin (note: not the admin in contract management)to zero address. After completing item 1, contract scan@confluxnetwork.org with the following details: Project Name. Purpose (gas sponsorship/storage sponsorship). Contract Address. Contact information.
+赞助申请需要针对每个项目单独协商（目前自助服务未开放），项目组请完成以下两个步骤并等待审核。 在Confluxscan上完成合约验证，修复项目中的警告信息，并将内置合约Admin（注意：不是合约管理中的admin）设置为零地址。 完成第1项后，联系 scan@confluxnetwork.org 并附带以下细节：合约：项目名称。 用途：（燃气代付/存储代付）。 合约地址。 联系方式。
 
-Usually, the result will be returned within 7 business days. Please note that the submission does not mean the sponsorship application is approved. Therefore, please pay attention to the reply to the email and the contact information filled in the application.
+通常申请会在7个工作日内回复结果。 请注意，提交并不意味着赞助申请被批准。 请注意邮件及所留联系方式的回复。

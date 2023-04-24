@@ -32,7 +32,7 @@ OPTIONS:
         --keys-iterations <NUM>    Specify the number of iterations to use when deriving key from the password (bigger is more secure). [default: 10240]
         --password <FILE>          Provide a file containing a password for unlocking an account. Leading and trailing whitespace is trimmed.
 ```
-#### Example
+#### 示例
 `./conflux.exe account new`
 
 ### list
@@ -50,7 +50,7 @@ FLAGS:
     -h, --help       Prints help information
     -V, --version    Prints version information
 ```
-#### Example
+#### 示例
 `./conflux.exe account list`
 
 ### import
@@ -71,7 +71,7 @@ FLAGS:
 OPTIONS:
         --import-path <PATH>...    A list of file paths to import.
 ```
-#### Example
+#### 示例
 `./conflux.exe account import --import-path ./keystores`
 
 ## Public APIs
@@ -189,7 +189,7 @@ SUBCOMMANDS:
 ### net
 `net` sub-command helps you to inspect the P2P network status.
 
-#### Examples
+#### 示例
 - List all connected P2P nodes: `./conflux.exe rpc local net session`
 - List a single P2P node: `./conflux.exe rpc local net session --id <node_id>`
 - Check network egress: `./conflux.exe rpc local net throttling`
@@ -197,7 +197,7 @@ SUBCOMMANDS:
 ### txpool
 `txpool` sub-command helps you to inspect the transaction pool.
 
-#### Examples
+#### 示例
 - List transaction pool status: `./conflux.exe rpc local txpool status`
 - List transactions in details: `./conflux.exe rpc local txpool content`
 - List summary of transactions: `./conflux.exe rpc local txpool inspect`
@@ -235,7 +235,7 @@ OPTIONS:
         --value <HEX>          value sent with this transaction
 ```
 
-#### Example
+#### 示例
 Alice transfer 5 Drip (1 CFX = 10^18 Drip) to Bob. Note, the address of Alice must exist at local machine, otherwise please [create](#new) account for alice at first.
 
 `./conflux.exe rpc local send --from <alice_address> --to <bob_address> --value 0x5 --password 123456`

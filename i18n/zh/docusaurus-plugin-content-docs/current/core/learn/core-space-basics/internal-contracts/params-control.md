@@ -3,7 +3,7 @@ sidebar_position: 7
 title: ParamsControl
 ---
 
-`ParamsControl` at address `0x0888000000000000000000000000000000000007` with the following interfaces. Which can be used to participate chain parameter DAO vote.
+`ParamsControl`位于地址`0x0888000000000000000000000000000000000007`，具有以下接口。 它可以用来参与链参数投票。
 
 ```js
 // SPDX-License-Identifier: MIT

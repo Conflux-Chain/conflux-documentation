@@ -1,23 +1,23 @@
 ---
 sidebar_position: 8
-title: Accounts and Addresses
+title: 账户和地址
 ---
 
 ## 概览
 
-Accounts in Conflux can be compared to "bank accounts", as they store CFX. Users can create and manage their accounts, deposit CFX, and send transactions. The account address is a unique string that identifies an account and is used to retrieve account information from the Conflux VM's huge table, which stores the account content and balance.
+Accounts in Conflux can be compared to "bank accounts", as they store CFX. 用户可以创建和管理他们的账户，存入CFX，并发送交易。 账户地址是一个标识账户的唯一的字符串，用于从Conflux VM的巨大表中检索账户信息，该表存储了账户内容和余额。
 
 :::note
 
-The account implementation, including the account content and address computing rule is slight different in [core space](../../core/learn/core-space-basics/accounts.md) and [espace](../../espace/learn/accounts.md).
+账户实现，包括账户内容和地址计算规则在[core space](../../core/learn/core-space-basics/accounts.md)和[espace](../../espace/learn/accounts.md)中略有不同。
 
 :::
 
-## Address
+## 地址
 
-Account addresses, like bank account numbers, identify accounts and can be examined on [ConfluxScan](https://confluxscan.io). However, the address format differs between [core space](../../core/learn/core-space-basics/addresses.md) and espace. Core space uses the CIP-37 encoding scheme, while espace uses the same format as Ethereum.
+Account addresses, like bank account numbers, identify accounts and can be examined on [ConfluxScan](https://confluxscan.io). 然而，地址格式在[core space](../../core/learn/core-space-basics/addresses.md) 和espace之间有所不同。 Core space使用CIP-37编码方案，而espace使用与以太坊相同的格式。
 
-Here are examples showing the address format in the 2 spaces:
+下面是一些示例，显示了两个空间中的地址格式：
 
 ``` 
 // espace address
@@ -28,27 +28,27 @@ cfx:aatktb2te25ub7dmyag3p8bbdgr31vrbeackztm2rj
 cfxtest:aatktb2te25ub7dmyag3p8bbdgr31vrbeajcg9pwkc
 ```
 
-## Account Types
+## 账户类型
 
-There are two account types, the externally-owned account (EOA) and the contract account. The EOA is controlled by anyone with the private keys of the account, while the contract account is a smart contract deployed on the network, controlled by its code.
+有两种账户类型，外部拥有的账户（externally-owned account, EOA）和合约账户。 EOA由拥有该账户私钥的任何人控制，而合约账户是部署在网络上的智能合约，由其代码控制。
 
-### External Accounts and Public-private Key Pairs
+### 外部账户和公私钥对
 
-EOAs consist of a cryptographic pair of keys: a public and a private key. The private key, which is a 64 hexadecimal character string, is used to sign transactions and grants custody over the funds associated with the account. Public-key cryptography ensures that a transaction is not forged and that the sender can prove the authenticity of the transaction request. This protects against malicious actors broadcasting fake transactions.
+EOA由一对加密密钥组成：一个公钥和一个私钥。 私钥是一个64个十六进制字符的字符串，用于签署交易并掌管与该账户相关的资金。 公钥密码学确保交易不会被伪造，并且发送者可以证明交易请求的真实性。 这可以防止恶意行为者广播假交易。
 
-Here is an example of private key:
+这是一个作为示例的私钥：
 
 ```
 c5eca1e5de819725cf7c6764f4bba7eea95549a40275b21eaff91554c59bef90
 ```
 
-The public key is calculated from the private key by the [Elliptic Curve Cryptography Algorithm](https://en.wikipedia.org/wiki/Elliptic_Curve_Digital_Signature_Algorithm):
+公钥是通过 [椭圆曲线加密算法](https://en.wikipedia.org/wiki/Elliptic_Curve_Digital_Signature_Algorithm)从私钥计算出来的
 
 ```
 0xa82d8039606ea598798ae1c995e2dbad90561d67ffa9555f96e0bc3dbc38c32aa1ede8ab17a137b8515b94b158b49a746c77abc432c2677cb0a6d3240be98872
 ```
 
-An EOA's address is then computed from its public key:
+EOA的地址从其公钥计算出来：
 
 ```
 // espace address, encoded in EIP-55 checksum format
@@ -57,32 +57,32 @@ An EOA's address is then computed from its public key:
 cfx:aajfvxvhz6mna0md1b68mpg9puygt18tm6nynadnf6
 ```
 
-### Smart Contract Accounts
+### 智能合约账户
 
-[Smart contracts](./contracts.md) also have addresses, and users can interact with them by sending transactions. The contract address is determined when the contract is deployed, and the computation rule differs between core space and espace.
+[智能合约](./contracts.md)也有地址，用户可以通过发送交易与它们交互。 合约地址在合约部署时确定，计算规则在core space和espace之间有所不同。
 
-## Comparations of Different Account Types
+## 不同账户类型的比较
 
-### Similarities
+### 相似之处
 
-- Both of them can accept, hold, and send CFX.
-- Both of them can interact with smart contracts in the network
+- 它们都可以接受、持有和发送CFX。
+- 它们都可以与网络中的智能合约交互
 
-### Differences
+### 差异
 
-#### External Accounts
+#### 外部账户
 
-- Creating external accounts does not have costs, such as CFX or other resources
-- They can send transactions to others
+- 创建外部账户没有成本，例如CFX或其他资源
+- 它们可以向其他人发送交易
 - Transactions between external accounts can only be CFX or token transactions
 
-#### Smart Contracts
+#### 智能合约
 
-- Creating smart contracts does have costs, as it uses the network's storage and computational resources
+- 创建智能合约有成本，因为它使用了网络的存储和计算资源
 - Transactions can only be sent to other contracts as a response to a received transaction
-- Transactions sent from external accounts to contract accounts can trigger the smart contract's codes to perform many different operations, such as token transfers, creating new contracts, etc.
+- 从外部账户发送到合约账户的交易可以触发智能合约的代码执行许多不同的操作，例如代币转移，创建新合约等。
 
-## Related Topics
+## 相关主题
 
 - [Ethereum Accounts](https://ethereum.org/en/developers/docs/accounts/)
 - [Core space accounts](../../core/learn/core-space-basics/accounts.md)
