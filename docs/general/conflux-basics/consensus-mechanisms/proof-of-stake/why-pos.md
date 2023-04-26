@@ -7,6 +7,12 @@ keywords:
   - why
 ---
 
+:::note
+
+This is an article written before the Ethereum Merge to explain why Conflux decides to introduce PoS.
+
+:::
+
 Let's start by explaining the reality that Conflux will have to consider the risk of a 51% attack in quite a long period of time: Due to the huge mining revenue of Ethereum and the increasing demands of graphics cards, miners have already purchased a lot of graphics cards, forming a huge pool of hashing power.
 
 Conflux also uses graphics cards for mining, and the hashing power of graphics cards to maintain the security of Conflux is still far behind that of Ethereum. Therefore, there is a risk that a large number of graphics cards will switch to Conflux in a short period of time to complete a 51% attack.

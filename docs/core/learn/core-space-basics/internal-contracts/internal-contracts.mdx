@@ -3,7 +3,7 @@ sidebar_position: 4
 title: Internal Contracts
 ---
 
-Conflux introduces several built-in internal contracts for better system maintenance and on-chain governance. Now Conflux has six internal contracts: `AdminControl` contract, `SponsorWhitelistControl` contract and `Staking` contract are introduced from the beginning, `ConfluxContext`, `PoSRegister`, `ConfluxContext` are introduced at v2 hard-fork, `ParamsControl` is introduced at v2.1 hard-fork. These contracts provide solidity function apis defined [`here`](https://github.com/Conflux-Chain/conflux-rust/tree/master/internal_contract/contracts). These function can only be called via `CALL` or `STATICCALL` operation. Using operation `CALLCODE` or `DELEGATECALL` to interact with internal contracts will trigger an error.
+Conflux introduces several built-in internal contracts for better system maintenance and on-chain governance. Now Conflux has seven internal contracts: `AdminControl` contract, `SponsorWhitelistControl` contract and `Staking` contract are introduced from the beginning, `ConfluxContext`, `PoSRegister`, `ConfluxContext` are introduced at v2 hard-fork, `ParamsControl` is introduced at v2.1 hard-fork. These contracts provide solidity function apis defined [`here`](https://github.com/Conflux-Chain/conflux-rust/tree/master/internal_contract/contracts). These function can only be called via `CALL` or `STATICCALL` operation. Using operation `CALLCODE` or `DELEGATECALL` to interact with internal contracts will trigger an error.
 
 The addresses of these 7 internal contracts are list as follows:
 
@@ -29,7 +29,7 @@ The addresses of these 7 internal contracts are list as follows:
     - `cfxtest:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaa64p5db1w9`
     - `cfx:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaa6uhjxh70z`
 
-All the example code in this document will use [js-conflux-sdk](https://github.com/Conflux-Chain/js-conflux-sdk). The solidity function apis are list [here](https://github.com/Conflux-Chain/conflux-rust/tree/master/internal_contract/contracts).
+All the example code in this document will use [js-conflux-sdk](https://github.com/Conflux-Chain/js-conflux-sdk).
 
 ```mdx-code-block
 import DocCardList from '@theme/DocCardList';

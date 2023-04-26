@@ -10,5 +10,5 @@ Conflux has a virtual machine that is similar to the EVM. However, there are sti
 Accounts in Conflux Core and Conflux eSpace are **separated**. This means that Conflux transactions can only be sent between core space accounts (using their [CIP-37](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-37.md) base32 addresses), while Ethereum-compatible EIP-155 transactions can only be sent between eSpace accounts (using their [EIP-55](https://eips.ethereum.org/EIPS/eip-55) hex addresses). Assets and data can be transferred across the two spaces using the new ```CrossSpaceCall``` internal contract. Unlike cross-chain operations, **cross-space** operations are **atomic** and they have **layer-1 security**.
 
 :::tips
-Refer to [tutorials](/docs/category/tutorials) for cross chian and wallet usage tutorials.
+Refer to [tutorials](/docs/category/tutorials) for cross chain and wallet usage tutorials.
 :::

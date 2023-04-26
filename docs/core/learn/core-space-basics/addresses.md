@@ -104,7 +104,7 @@ Address type is an optional field to provide human-readable information for the 
 
 - `0x0`: `type.builtin`
 - `0x1`: `type.user`
-- `0x1`: `type.contract`
+- `0x8`: `type.contract`
 
 #### Payload
 
@@ -123,8 +123,8 @@ Address type is an optional field to provide human-readable information for the 
 
 #### Checksum 
 
-1. Prepare checksum input: `data` is used as the input of checksum function. It 
-   - The lower 5 bits of each character of the `network-prefix`. - e.g. `"cfx..."` becomes `0x03, 0x06, 0x18, ...`
+1. Prepare checksum input: `data` is used as the input of checksum function. It contains:
+   - The lower 5 bits of each character of the `network-prefix`, e.g. `"cfx..."` becomes `0x03, 0x06, 0x18, ...`
    - A zero for the separator (5 zero bits).
    - The payload by chunks of 5 bits. If necessary, the payload is padded to the right with zero bits to complete any unfinished chunk at the end.
    - Eight zeros as a "template" for the checksum.
