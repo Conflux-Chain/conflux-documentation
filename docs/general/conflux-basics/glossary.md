@@ -67,7 +67,7 @@ Related links:
 
 ## spaces
 
-In the Conflux v2.0 (Hydra) upgrade, a new feature called "Spaces" was introduced. Spaces is a way to virtually create a sub-chain of the original Conflux network, known as **`eSpace`**.  Core Space refers to the original Conflux network, while eSpace is the virtualized Ethereum chain running on top of the Core Space network. The two spaces are logically independent of each other and do not affect each other.
+In the Conflux v2.0 (Hydra) upgrade, a new feature called "Spaces" was introduced. Spaces is a way to virtually create a sub-chain of the original Conflux network, known as **`eSpace`**.  Core Space refers to the original Conflux network, while eSpace is the virtualized Ethereum chain running on top of the Core Space network. The two spaces are logically independent of each other and do not affect each other except for certain cross-space operations.
 
 Refer to [spaces](./spaces.md) for more information.
 

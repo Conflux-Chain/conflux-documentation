@@ -120,7 +120,7 @@ As long as the `CrossSpaceCall.transferEVM(bytes20 to)` method is called success
 
 Transferring CFX from eSpace back to Conflux Core requires two steps.
 
-1. Transfer CFX to the mapped account of the receiver Core Space address in eSpace.
+1. Transfer CFX to the mapped account of the receiver [Core Space address](../../../../espace/learn/accounts.md#mapped-addresses-in-cross-space-operations) in eSpace.
 2. Call `CrossSpaceCall.withdrawFromMapped(amount)` in Core with the receiver address to withdraw the CFX.
 
 Example of using js-conflux-sdk (v2) to cross back CFX:

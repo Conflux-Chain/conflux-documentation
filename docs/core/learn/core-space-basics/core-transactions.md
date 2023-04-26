@@ -27,7 +27,7 @@ In order to construct a transaction, the following fields are required:
 
 The `from`, `to`, and `value` are the basic fields of a transaction. These fields correspond to the address of sender account, address of the receiver account and the amount to be transferred, respectively.
 
-The `from` field identifies the sender of the transaction. Essentially, the 'from' field tells you who is initiating the transaction and who is paying for the transaction. And in the [Signing](#Signing) phase, the transaction will be signed with the private key of the `from` account, so you cannot specify any address as the sender. It is also important to remember that the account must have a sufficient balance to cover both the transfer amount (`value` field) and the transaction fee, otherwise the RPC will reject the transaction and it will not be sent. It's worth mentioning that in some specific cases, Conflux's sponsor mechanism can allow for other accounts to pay the transaction fee, allowing accounts with 0 balance to send transactions.
+The `from` field identifies the sender of the transaction. Essentially, the 'from' field tells you who is initiating the transaction and who is paying for the transaction. And in the [Signing](#Signing) phase, the transaction will be signed with the private key of the `from` account, so you cannot specify arbitary address as the sender. It is also important to remember that the account must have a sufficient balance to cover both the transfer amount (`value` field) and the transaction fee, otherwise the RPC will reject the transaction and it will not be sent. It's worth mentioning that in some specific cases, Conflux's sponsor mechanism can allow for other accounts to pay the transaction fee, allowing accounts with 0 balance to send transactions.
 
 > In fact, the `from` field is not directly included in an encoded transaction. Generally speaking, tools such as SDKs will remove the `from` field from transaction before encoding and sign the transaction using corresponding private key. Others can recover the sender from the signature of the transaction.
 
@@ -45,7 +45,7 @@ The `nonce` is the execution sequence number of transactions sent from an accoun
 4. The nonce cannot be skipped: Suppose that the current nonce of an account is n. If the nonce of the transaction is m such that m > n, then the transaction will not be executed until all transactions with nonce < m have been executed.
 5. After the transaction is sent via the `cfx_sendRawTransaction` method, it will not be executed immediately. You must wait for the miner to pack it first. Once packed, it will be executed with a delay of 5 epochs. After the transaction is executed, the nonce of the account will be increased by one.
 
-Correctly setting the nonce is critical to a successful transaction execution. A common issue for developers is when a transaction is sent but its receipt (indicating successful execution) is not available, usually due to an accidentally skipped nonce. This results in the transaction being stuck in the transaction pool, waiting for previous transactions to be executed first.
+A transaction with incorrect nonce won't be included in blockchain, so correctly setting the nonce is critical to transaction execution. A common issue for developers is that a transaction was sent but its receipt (indicating transaction is executed) is not available, which case is typically due to an accidentally skipped nonce. This results in the transaction being stuck in the transaction pool, waiting for previous transactions to be executed first.
 
 When using an SDK to construct a transaction, value of nonce field do not need to be set manually as the SDK will automatically query it using `cfx_getNextNonce`. However, if multiple transactions are sent at once, the nonce values may be reused because the return value of `cfx_getNextNonce` is not updated immediately after the previous transaction is sent. To avoid this, the developer is advised to manage the nonce manually by recording the transaction hash, incrementing the nonce by 1, and using the updated value to construct subsequent transactions.
 
@@ -55,11 +55,17 @@ In the Conflux network, transactions are processed by miners who charge a fee fo
 
 The `gas` field represents the maximum amount of gas that can be used to execute the transaction. If the actual amount of gas consumed during the execution exceeds this limit, the transaction will fail. And if the actual consumption was less than the `gas` set, the sender must pay at least 75% of the `gas`, and up to 25% can be refunded, which means setting the `gas` too high is not encouraged. The gas consumption depends on the complexity of the contract code (or `21000` if it is a simple transfer transaction) and can be estimated using the `cfx_estimateGasAndCollateral` method, which returns the `gasUsed`, `gasLimit` and `storageCollaterized` fields. It is recommended to use `gasLimit` as the `gas` field.
 
-The `gasPrice` field is the amount of Drip(10**-18 CFX) the sender is willing to pay per unit of gas, and should be greater than 1G(10**9). Miners prioritise transactions with higher payouts, and the `gasPrice` can be increased to speed up the processing of a stuck transaction. The `cfx_gasPrice` method provides a reasonable gas price based on network conditions.
+The `gasPrice` field is the amount of Drip(10**-18 CFX) the sender is willing to pay per unit of gas, and should be greater than 1G(10**9). As Conflux default setting, miners prioritise transactions with higher `gasPrice`, and the `gasPrice` can be increased to speed up the processing of a stuck transaction. The `cfx_gasPrice` method provides a reasonable gas price based on network conditions.
 
 In addition to transaction fees, the Conflux network requires the pledging of CFX for occupying new storage space or modifying existed storage during a transaction. The pledged CFX generates a 4% annual interest, which is paid to miners to subsidise their storage costs. When the occupied space is released or modified by others, the pledged CFX is returned. The `storageLimit` field specifies the upper limit of the storage space that can be occupied by a transaction. And it is recommended to use the `storageCollaterized` field of returned value from `cfx_estimateGasAndCollateral` as the `storageLimit` field.
 
-When sending a transaction, the sender must ensure that there is sufficient balance to cover the `value + storageLimit * (10^18/1024) + gas * gasPrice`. If the balance is insufficient, the transaction will be rejected by nodes. If the transaction interacts with a contract that has a sponsor, the sender only needs to ensure sufficient funds for the value cost. The current SDK provides methods to automatically set reasonable values for `gas`, `storageLimit`, and `gasPrice`, but users can also specify these values manually.
+:::info
+
+Refer to [storage](./storage.md) for more information.
+
+:::
+
+When sending a transaction, the sender must ensure that there is sufficient balance to cover the `value + storageLimit * (10^18/1024) + gas * gasPrice`. If the balance is insufficient, the transaction will be rejected by nodes. If the transaction is [sponsored](./internal-contracts/sponsor-whitelist-control.md), the sender only needs to ensure sufficient funds for the value cost. The current SDK provides methods to automatically set reasonable values for `gas`, `storageLimit`, and `gasPrice`, but users can also specify these values manually.
 
 ### data
 

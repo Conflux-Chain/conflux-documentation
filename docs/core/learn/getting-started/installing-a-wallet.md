@@ -9,7 +9,7 @@ To interact with Conflux Core Space, you'll first need to create an account. Usu
 
 ### Installing [Fluent Wallet](https://fluentwallet.com/)
 
-Fluent is a browser plug-in wallet, similar to Ethereum's MetaMask wallet. It is currently supported by Chrome, Firefox and Edge. Users can directly search for `Fluent Wallet` in the browser plug-in market, select and install it. Or find it in [Fluent official website](https://fluentwallet.com/)
+Fluent is a browser plug-in wallet, similar to Ethereum's MetaMask wallet. It currently supports by Chrome, Firefox and Edge. Users can directly search for `Fluent Wallet` in the browser plug-in market, select and install it. Or find it in [Fluent official website](https://fluentwallet.com/)
 
 ![Fluent](./img/Fluent-Create-1)
 
