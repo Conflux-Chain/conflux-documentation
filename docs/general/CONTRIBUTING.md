@@ -50,7 +50,7 @@ If you are not working on an issue created by yourself, it is suggested to follo
 These are not mandatory steps but will decrease the possibility your PR be rejected.
 :::
 
-1. Make sure a relavent open issue with "ACCEPTED" label exists.
+1. Make sure a relevent open issue with "ACCEPTED" label exists.
 2. Leave a comment in the issue in case duplicate people working on the same issue.
 3. Mention the issue `#xx` in the commit message. Example `fix: typo. Ref #123456`.
 
