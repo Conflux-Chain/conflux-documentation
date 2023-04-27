@@ -9,7 +9,7 @@ keywords:
 
 ### 安装 [Fluent Wallet](https://fluentwallet.com/)
 
-Fluent 是一个浏览器插件钱包，类似于Etherum的 MetaMask 钱包。 It is currently supported by Chrome, Firefox and Edge. 用户可以直接在浏览器插件市场中搜索 `Fluent Wallet`，选择并安装它。 或者在[Fluent官网](https://fluentwallet.com/)上找到它。
+Fluent 是一个浏览器插件钱包，类似于Etherum的 MetaMask 钱包。 It currently supports by Chrome, Firefox and Edge. 用户可以直接在浏览器插件市场中搜索 `Fluent Wallet`，选择并安装它。 或者在[Fluent官网](https://fluentwallet.com/)上找到它。
 
 ![Fluent](./img/Fluent-Create-1)
 
