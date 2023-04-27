@@ -9,7 +9,7 @@ Accounts in Conflux can be compared to "bank accounts", as they store CFX. Users
 
 :::note
 
-The account implementation, including the account content and address computing rule is slight different in [core space](../../core/learn/core-space-basics/accounts.md) and [espace](../../espace/learn/accounts.md).
+The account implementation, including the account content and address computing rule is slightly different in [core space](../../core/learn/core-space-basics/accounts.md) and [espace](../../espace/learn/accounts.md).
 
 :::
 
