@@ -64,7 +64,7 @@ cfxtest:aatktb2te25ub7dmyag3p8bbdgr31vrbeajcg9pwkc
 
 ## 空间（spaces）
 
-在Conflux v2.0（Hydra）升级中，引入了一种名为“Spaces”的新特性。 Spaces是一种在原始Conflux网络上虚拟创建子链的方式，称为**`eSpace`**。  Core Space指的是原始Conflux网络，而eSpace指的是在Core Space网络之上运行的虚拟化以太坊链。 The two spaces are logically independent of each other and do not affect each other.
+在Conflux v2.0（Hydra）升级中，引入了一种名为“Spaces”的新特性。 Spaces是一种在原始Conflux网络上虚拟创建子链的方式，称为**`eSpace`**。  Core Space指的是原始Conflux网络，而eSpace指的是在Core Space网络之上运行的虚拟化以太坊链。 The two spaces are logically independent of each other and do not affect each other except for certain cross-space operations.
 
 详细信息请参考[spaces](./spaces.md)。
 
