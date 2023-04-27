@@ -27,7 +27,7 @@ keywords:
 
 `from`、`to` 和 `value` 是交易的基本字段。 这些字段分别对应发送者账户的地址、接收者账户的地址和要转移的金额。
 
-`from` 字段标识了交易的发送者。 本质上，from 字段告诉你谁发起了交易，谁支付了交易费用。 And in the [Signing](#Signing) phase, the transaction will be signed with the private key of the `from` account, so you cannot specify any address as the sender. 还要记住，账户必须有足够的余额来支付转账金额（`value` 字段）和交易费用，否则 RPC 将拒绝交易，交易将不会被发送。 值得一提的是，在一些特定的情况下，Conflux 的赞助机制可以允许其他账户支付交易费用，从而让余额为 0 的账户也能发送交易。
+`from` 字段标识了交易的发送者。 本质上，from 字段告诉你谁发起了交易，谁支付了交易费用。 And in the [Signing](#Signing) phase, the transaction will be signed with the private key of the `from` account, so you cannot specify arbitary address as the sender. 还要记住，账户必须有足够的余额来支付转账金额（`value` 字段）和交易费用，否则 RPC 将拒绝交易，交易将不会被发送。 值得一提的是，在一些特定的情况下，Conflux 的赞助机制可以允许其他账户支付交易费用，从而让余额为 0 的账户也能发送交易。
 
 > 事实上，`from` 字段并没有直接包含在编码后的交易中。 一般来说，SDK 等工具会在编码前从交易中移除 `from` 字段，并用相应的私钥对交易进行签名。 其他人可以从交易的签名中恢复出发送者。
 
@@ -45,7 +45,7 @@ keywords:
 4. Nonce 不能跳过：假设一个账户的当前 nonce 是 n。 如果交易的 nonce 是 m，使得 m > n，那么这个交易就不会被执行，直到所有 nonce < m 的交易都被执行。
 5. 通过 `cfx_sendRawTransaction` 方法发送交易后，它不会立即被执行。 你必须等待矿工先打包它。 一旦打包，它将延迟 5 个 epoch 执行。 交易执行后，账户的 nonce 将增加一。
 
-Correctly setting the nonce is critical to a successful transaction execution. A common issue for developers is when a transaction is sent but its receipt (indicating successful execution) is not available, usually due to an accidentally skipped nonce. 这导致交易被卡在交易池中，等待之前的交易先被执行。
+A transaction with incorrect nonce won't be included in blockchain, so correctly setting the nonce is critical to transaction execution. A common issue for developers is that a transaction was sent but its receipt (indicating transaction is executed) is not available, which case is typically due to an accidentally skipped nonce. 这导致交易被卡在交易池中，等待之前的交易先被执行。
 
 当使用 SDK 构造交易时，nonce 字段的值不需要手动设置，因为 SDK 会自动使用 `cfx_getNextNonce` 查询它。 但是，如果一次发送多个交易，nonce 值可能会被重复使用，因为在发送前一个交易后，`cfx_getNextNonce` 的返回值不会立即更新。 为了避免这种情况，建议开发者手动管理 nonce，通过记录交易哈希，将 nonce 加 1，并使用更新后的值来构造后续的交易。
 
@@ -55,11 +55,17 @@ Correctly setting the nonce is critical to a successful transaction execution. A
 
 `gas` 字段表示执行交易时可以使用的最大 gas 量。 如果执行过程中实际消耗的 gas 超过了这个限制，交易将失败。 如果实际消耗的 `gas` 少于设置的 `gas`，发送者必须支付至少 75% 的 `gas`，最多 25% 可以退还，这意味着设置过高的 <0>gas</0> 是不鼓励的。 Gas 消耗取决于合约代码的复杂度（如果是简单的转账交易则为 `21000`），可以用 `cfx_estimateGasAndCollateral` 方法来估算，它返回 `gasUsed`、`gasLimit` 和 `storageCollaterized` 字段。 建议使用 `gasLimit` 作为 `gas` 字段。
 
-`gasPrice` 字段是发送者愿意为每单位 gas 支付的 Drip（10**-18 CFX）数量，应该大于 1G（10**9）。 Miners prioritise transactions with higher payouts, and the `gasPrice` can be increased to speed up the processing of a stuck transaction. `cfx_gasPrice` 方法根据网络状况提供一个合理的 gas 价格。
+`gasPrice` 字段是发送者愿意为每单位 gas 支付的 Drip（10**-18 CFX）数量，应该大于 1G（10**9）。 As Conflux default setting, miners prioritise transactions with higher `gasPrice`, and the `gasPrice` can be increased to speed up the processing of a stuck transaction. `cfx_gasPrice` 方法根据网络状况提供一个合理的 gas 价格。
 
 除了交易费用外，Conflux 网络还要求在交易过程中为占用新的存储空间或修改已有的存储空间的质押 CFX。 质押的 CFX 产生 4% 的年利息，这部分利息支付给矿工，以补贴他们的存储成本。 当占用的空间被释放或被他人修改时，质押的 CFX 将被返还。 `storageLimit` 字段指定了交易可以占用的存储空间的上限。 建议使用 `cfx_estimateGasAndCollateral` 返回值中的 `storageCollaterized` 字段作为 `storageLimit` 字段。
 
-发送交易时，发送者必须确保有足够的余额来支付 `value + storageLimit * (10^18/1024) + gas * gasPrice`。 如果余额不足，交易将被节点拒绝。 If the transaction interacts with a contract that has a sponsor, the sender only needs to ensure sufficient funds for the value cost. 当前的 SDK 提供了自动设置 `gas`、`storageLimit` 和 `gasPrice` 的合理值的方法，但用户也可以手动指定这些值。
+:::info
+
+Refer to [storage](./storage.md) for more information.
+
+:::
+
+发送交易时，发送者必须确保有足够的余额来支付 `value + storageLimit * (10^18/1024) + gas * gasPrice`。 如果余额不足，交易将被节点拒绝。 If the transaction is [sponsored](./internal-contracts/sponsor-whitelist-control.md), the sender only needs to ensure sufficient funds for the value cost. 当前的 SDK 提供了自动设置 `gas`、`storageLimit` 和 `gasPrice` 的合理值的方法，但用户也可以手动指定这些值。
 
 ### data
 
