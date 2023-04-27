@@ -5,25 +5,21 @@ title: 工作量证明（PoW）
 
 ## PoW的概念
 
-工作量证明（PoW）的概念最早由Cynthia Dwork和Moni Naor在1993年提出，作为一种防止垃圾邮件的手段。 这个概念很简单：要求发送邮件的人在发送邮件之前解决一个计算问题。 这样做的目的是让发送大量垃圾邮件的人更加困难和耗费资源，同时仍然允许合法的邮件发送者不受任何不便地发送他们的邮件。 
+工作量证明（PoW）的概念最早由Cynthia Dwork和Moni Naor在1993年提出，作为一种防止垃圾邮件的手段。 The concept was simple: require the email sender to solve a computational problem before sending. The computational problem is designed to be time-consuming, requiring certain amount of computational power to solve.  The receiver of the email would then verify that the sender had solved the computational problem before accepting the email. This verification process would ensure that only legitimate emails are accepted and that spammers are unable to flood the receiver's inbox with unsolicited emails.
 
-The computational problem that the sender is required to solve is similar to the ones used in PoW for blockchain technology. The problem is designed to be complex and time-consuming, requiring a significant amount of computational power to solve. The sender would need to solve the problem before being allowed to send the email.
+The idea behind this was to make it much more difficult and resource-intensive for spammers to send mass emails, while still allowing legitimate email senders to send their messages but with little inconvenience. While the concept of PoW for email spam prevention was sound, it was not widely adopted due to the inconvenience it posed to legitimate email senders. However, the concept of PoW was later adapted by Satoshi Nakamoto to create the peer-to-peer electronic cash system, or the blockchain "bitcoin".
 
-The receiver of the email would then verify that the sender had solved the computational problem before accepting the email. This verification process would ensure that only legitimate emails are accepted and that spammers are unable to flood the receiver's inbox with unsolicited emails.
+## Bitcoin's PoW Consensus
 
-While the concept of PoW for email spam prevention was sound, it was not widely adopted due to the inconvenience it posed to legitimate email senders. However, the concept of PoW was later adapted by Satoshi Nakamoto to create the peer-to-peer electronic cash system, or the blockchain "bitcoin".
+Bitcoin uses PoW mechanism to determine who can mine new blocks on the blockchain. The process of mining a block involves repeatedly hashing the block header with a nonce value to find a hash that meets the current difficulty target set by the network. Miners compete to solve this puzzle, and the first miner to solve it is rewarded with newly minted bitcoins and any transaction fees associated with the transactions in the block.
 
-## 比特币的PoW共识
+Besides, the **Longest Chain Rule** is is introduced to ensure that the network agrees on a single version of the blockchain. If two miners create blocks at the same time, a fork in the blockchain occurs, creating two competing versions of the blockchain. To determine which of the two forks is the valid one, the Longest Chain Rule is applied. This rule states that the valid fork is the one with the longest chain of blocks, i.e., the one with the most proof of work invested in it.
 
-比特币使用PoW机制来决定谁可以在区块链上挖掘新的区块。 挖掘一个区块的过程涉及重复地对区块头和一个随机数进行哈希运算，以找到一个满足网络当前难度目标的哈希值。 矿工们竞争解决这个难题，第一个解决它的矿工会得到新铸造的比特币和与区块中交易相关的任何交易费用作为奖励。
+By making it difficult and resource-intensive to create new blocks, PoW ensures that the network is secure and that no single entity can control the system unless it controls over 51% of the computing power. In addition, the reward system incentivizes miners to participate in and maintain the network. The introduction of PoW has revolutionized the way we think about decentralized systems and has paved the way for the development of many other cryptocurrencies and blockchain applications.
 
-此外，比特币引入了**最长链规则**，以确保网络在区块链的单一版本上达成一致。 如果两个矿工同时创建区块，就会发生区块链的分叉，形成两个竞争的区块链版本。 而为了确定两个分叉中的哪一个是有效的，要应用最长链规则。 这条规则指出，有效的分叉是拥有最长区块链的分叉，换言之，包含最多工作证明的分叉。
+## Conflux's PoW Consensus
 
-通过使创建新区块变得困难和资源密集，PoW确保了网络的安全性，以及除非某个实体控制了超过51%的计算能力，否则无法控制系统。 In addition, the reward system incentivizes miners to participate in the network and maintain its integrity. PoW的引入彻底改变了我们对去中心化系统的思考方式，并为许多其他加密货币和区块链应用的发展铺平了道路。
-
-## Conflux的PoW共识
-
-Conflux也使用PoW共识机制来保护其网络。 结合[Tree-Graph](https://arxiv.org/pdf/1805.03870.pdf)账本结构和 [GHAST](https://confluxnetwork.medium.com/conflux-research-group-ghast-mechanism-adaptive-weight-ghast-explained-part-1-ffe8224a7282)链选择规则，它可以在保持与比特币和以太坊相同的去中心化和安全性水平的同时，将交易吞吐量(TPS)和确认延迟提高两个数量级以上。 
+Conflux also uses the PoW consensus mechanism to secure its network. Combining the [Tree-Graph](https://arxiv.org/pdf/1805.03870.pdf) ledger structure and the [GHAST](https://confluxnetwork.medium.com/conflux-research-group-ghast-mechanism-adaptive-weight-ghast-explained-part-1-ffe8224a7282) chain selection rule,  it can achieve the same level of decentralization and security as Bitcoin and Ethereum but provide more than two orders of magnitude improvement on transaction throughput (TPS) and confirmation latency. 
 
 ```mdx-code-block
 import DocCardList from '@theme/DocCardList';
@@ -31,4 +27,4 @@ import DocCardList from '@theme/DocCardList';
 <DocCardList />
 ```
 
-> 请参考[Conflux技术介绍](https://confluxnetwork.org/files/Conflux_Technical_Presentation_20200309.pdf)第45-47页关于Conflux的吞吐量的最准确描述。
+> Refer to the [Conflux Technical Presentation](https://confluxnetwork.org/files/Conflux_Technical_Presentation_20200309.pdf) page 45-47 for the most accurate description of Conflux's throughput.
