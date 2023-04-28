@@ -5,80 +5,80 @@ title: Gas
 
 # Gas
 
-Conflux users usually see fields like `gasFee`, `gas`, and `gasPrice` when they are sending transactions using their wallets (Fluent) or SDK. This article is going to explain in detail about what these concepts mean and how to set the values properly.
+Conflux用户在使用钱包（Fluent）或SDK发送交易时，通常会看到`gasFee`、`gas`和`gasPrice`等字段。 本文将详细解释这些概念的含义，以及如何正确地设置这些值。
 
 
 ![Sign Transaction](./img/gas1.png)
 
 ## gasFee
 
-In real life, when we send money to someone else at a bank, we usually have to pay transaction fees. It is the same for sending transactions in blockchains (Bitcoin, Ethereum, Conflux). `gasFee` is the fee for sending a transaction. Usually, it needs to be paid by the native token of the chain. Take Conflux as an example, CFX is needed for paying the transaction fee (gas fee).
+在现实生活中，当我们在银行向别人汇款时，我们通常要支付交易费用。 在区块链（比特币、以太坊、Conflux）中发送交易也是一样的。 `gasFee`是发送交易的费用。 通常，它需要用链的原生代币来支付。 以Conflux为例，需要用CFX来支付交易费用（gas费用）。
 
 ![tx gas charged](./img/tx-gas-charged.jpeg)
 
-## Why Pay Fees
+## 为什么要支付费用
 
-As we all know, blockchain is in fact a decentralized ledger, which is maintained by miners. There is a cost for miners to store data and generate blocks (calculating hashes). Therefore, in order to motivate miners to actively participate in the chain maintenance and protect the network security, the blockchain consensus system is designed to include a reward mechanism for miners, and the transaction fee is one of the rewards for miners, which will be paid to miners who participate in generating blocks. This mechanism can ensure the sustainability of the entire decentralized network.
+众所周知，区块链实际上是一个去中心化的账本，由矿工维护。 矿工存储数据和生成区块（计算哈希）有一定的成本。 因此，为了激励矿工积极参与链维护和保护网络安全，区块链共识系统被设计为包含一个对矿工的奖励机制，而交易费就是矿工的奖励之一，它将支付给参与生成区块的矿工。 这个机制可以保证整个去中心化网络的可持续性。
 
-In addition, the gas fee mechanism can also prevent abusive transactions and thus improve the efficiency of blockchain utilization.
+另外，gas费用机制也可以防止滥用交易，从而提高区块链利用效率。
 
-## What is Gas
+## 什么是Gas
 
-The concept of gas is borrowed from the real 'gas', petrol. Vehicles consume gasoline to drive. The further a car travels, the more gasoline it consumes. In EVM blockchains, gas represents the work amount required to execute a transaction. Therefore, it is a unit that measures the amount of computation required to perform certain operations.
+Gas的概念借鉴了现实中的“汽油”。 汽车消耗汽油来行驶。 汽车行驶得越远，消耗的汽油就越多。 在EVM区块链中，gas表示执行一笔交易所需的工作总量。 因此，它是一个衡量执行某些操作所需计算量的单位。
 
-To provide more details, all Conflux transactions are executed by EVM, including regular CFX transfers and smart contract method calls. When these operations are executed, they are compiled into individual OPCodes. The amount of work required to execute each OPCode varies. More information for OPCode gas fees can be found [here](https://ethereum.org/en/developers/docs/evm/opcodes/).
+具体来说，所有Conflux的交易都是由EVM执行的，包括普通的CFX转账和智能合约方法调用。 当这些操作被执行时，它们被编译成单个OPCode。 执行每个OPCode所需的工作量不同。 关于OPCode gas费用的更多信息可以在[这里](https://ethereum.org/en/developers/docs/evm/opcodes/)找到。
 
-Usually, the gas consumed for a regular CFX transfer is `21000`. A smart contract transaction usually needs more, depending on the complexity of the contract execution.
+通常，一笔普通的CFX转账所消耗的gas为`21000`。 一笔智能合约交易通常需要更多，具体取决于合约执行的复杂度。
 
 ## Gas Limit
 
-When constructing a transaction, the `gas` field is very important, as the field itself means the `maximum amount of gas` that can be consumed by the execution of the transaction.
+在构造一笔交易时，`gas`字段非常重要，因为该字段本身表示交易执行所能消耗的`gas的上限`。
 
-It is very important to fill the gas field correctly. If the gas limit is set to a value less than the actual amount of gas needed, the transaction will fail. If the gas limit is set too high, you may pay more gas than you actually need to.
+正确填写gas字段非常重要。 如果燃料限制设置为小于实际所需gas量的值，交易将失败。 如果gas限制设置得太高，你可能会支付比你实际需要的更多的gas。
 
-The maximum gas limit for a single transaction in the Conflux network is 15M. This ensures that the transactions will not overconsume EVM resources.
+Conflux网络中单笔交易的最大gas限制是15M。 这确保了交易不会过度消耗EVM资源。
 
 ## gasPrice
 
-The gasPrice of a transaction is specified by the sender of the transaction and represents the fee that the person is willing to pay per unit of gas. The unit of gasPrice is GDrip, where 1 GDrip is equal to 0.000000001 CFX (10-9 CFX).
+交易的gasPrice由交易发送者指定，表示该人愿意支付的每单位gas的费用。 GasPrice的单位是GDrip，其中1 GDrip等于0.000000001 CFX（10-9 CFX）。
 
-A transaction's gasPrice value affects how fast the transaction is packaged by miners, as miners will prioritize packaging transactions with higher gasPrice in order to make more profits. When the network is not congested, setting gasPrice to `1Gdrip` is enough to be packed normally. However, when the network is congested, more transactions are waiting to be packed. At this time, if the gasPrice is set to be less than most other transactions, it will not be packed but keep waiting.
+交易的gasPrice值影响了交易被矿工打包的速度，因为矿工会优先打包gasPrice较高的交易，以获得更多的利润。 当网络不拥堵时，将gasPrice设置为1Gdrip就足以正常打包。 然而，当网络拥堵时，更多的交易在等待打包。 这时，如果gasPrice设置得比大多数其他交易低，它将不会被打包，而是一直等待。
 
-Therefore, if you want the transaction to be packaged quickly, you can set the gasPrice higher. Usually setting it to 10G-1000G is high enough in Conflux to ensure it is executed quickly.
+因此，如果你想让交易快速打包，你可以将gasPrice设置得高一些。 通常在Conflux中将其设置为10G-1000G就足够高，以确保它快速执行。
 
-NOTE: Do not set gasPrice too high. It may lead to sky-high transaction fees. If gasPrice is set to 1CFX, then the fee for a regular transfer is 21000 CFX, which is quite a lot for a transaction.
+注意：不要将gasPrice设置得太高。 它可能导致天价的交易费用。 如果gasPrice设置为1CFX，那么一笔普通转账的费用是21000 CFX，这对于一笔交易来说是相当多的。
 
-## How gasFee is Calculated
+## 如何计算gasFee
 
-gasFee is the total gas fee paid for a transaction. It is calculated as `gasFee = gasUsed * gasPrice`. gasFee takes the smallest unit of CFX, Drip.
+gasFee是一笔交易支付的总gas费用。 它的计算公式是`gasFee = gasUsed * gasPrice`。 gasFee采用CFX的最小单位Drip。
 
-Suppose there is a regular transfer of 1 CFX, the gas limit can be set to 21,000. If the gasPrice is set to 1GDrip, then the total cost of the transaction is `1 + 21000 * 0.000000001 = 1.000021 CFX`, where 1 CFX is transferred to the recipient's account, and 0.000021 CFX is the reward for the miner.
+假设有一笔1 CFX的普通转账，gas限制可以设置为21,000。 如果gasPrice设置为1GDrip，那么交易的总成本是`1 + 21000 * 0.000000001 = 1.000021 CFX`，其中1 CFX转到收款人的账户，0.000021 CFX是矿工的奖励。
 
-In addition, in a Conflux transaction, if the `gas limit` is more than the actual amount of gas consumed (`gasUsed`), the exceeding part will be returned. The returning amount of gas can only be up to a quarter of the `gas limit`.
+另外，在Conflux的一笔交易中，如果`gas limit`大于实际消耗的gas量（`gasUsed`），超出部分将被退还。 退还的gas量最多只能达到`gas limit`的四分之一。
 
-Suppose the gas limit for a regular CFX transfer is set to 100k and the actual execution consumed 21,000, since the gas limit for the transaction is set too high, at most 25,000 of the gas fee will be returned(25% of the gas limit). The gas used for the transaction will be `0.000075 CFX`.
+假设一笔普通CFX转账的gas限制设置为100k，实际执行消耗了21,000，由于交易的gas限制设置得太高，最多有25,000的gas费用会被退还（gas limit的25%）。 该交易使用的gas将是`0.000075 CFX`。
 
-If the gas limit setting of the transaction is not that high, take the same example as above but set the gas limit to 25000, which is 4000 more than the actual amount used, the exceeding part is not more than a quarter of the gas limit. This part will be returned fully, and the final amount of fees charged will still be `0.000021 CFX`.
+如果交易的gas限制设置得不是那么高，以前面的例子为例，但将gas限制设置为25000，比实际使用的多4000，超出部分不超过gas限制的四分之一。 这部分将被完全退还，最终收取的费用仍然是`0.000021 CFX`。
 
-## How to Set gas and gasPrice Properly
+## 如何正确设置gas和gasPrice
 
 ### gasPrice
 
-Usually, gasPrice can be set within the range of 1G to 10,000G. If the network is not congested, 1G would be enough. If the waiting time after sending the transaction is too long, you can set the gasPrice to 10G or 100G.
+通常，gasPrice可以在1G到10000G的范围内设置。 如果网络不拥堵，1G就足够了。 如果发送交易后等待时间太长，你可以将gasPrice设置为10G或100G。
 
 ### gas
 
-For regular CFX transfers, setting the gas to 21,000 is enough.
+Gas 对于普通的CFX转账，将gas设置为21000就足够了。
 
-For contract interactions, you can estimate the gas value by using the method `cfx_estimateGasAndCollateral`, which simulates the execution of the transaction and returns the actual amount of gas used for the transaction. In most cases the value returned by this method is accurate, but sometimes there could be underestimations. A safe way of dealing with this is to multiply the result of the estimation by a factor `1.3`. This ensures that the gas limit is sufficient for the transaction, and any excessive gas fee will be refunded.
+对于合约交互，你可以使用方法cfx_estimateGasAndCollateral来估算gas值，该方法模拟执行交易，并返回交易所需的实际gas量。 In most cases the value returned by this method is accurate, but sometimes there could be underestimations. A safe way of dealing with this is to multiply the result of the estimation by a factor `1.3`. This ensures that the gas limit is sufficient for the transaction, and any excessive gas fee will be refunded.
 
-## FAQs
+## 常见问题解答
 
-### 1. Are there any EIP-1559 transactions in the Conflux network?
+### 1. Conflux网络中有没有符合EIP-1559标准的交易？
 
-Currently, in the Conflux network, there are only transactions that correspond to the EIP-155 standard.
+目前，在Conflux网络中，只有符合EIP-155标准的交易。
 
-## Further Readings
+## 了解更多
 
 - [Ethereum Developer Documentation: Gas and Fees](https://ethereum.org/en/developers/docs/gas/)
 - [Ethereum Gas Explained](https://ethgas.io/index.html)
