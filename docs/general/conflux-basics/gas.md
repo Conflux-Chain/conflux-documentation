@@ -36,11 +36,17 @@ When constructing a transaction, the ```gas``` field is very important, as the f
 
 It is very important to fill the gas field correctly. If the gas limit is set to a value less than the actual amount of gas needed, the transaction will fail. If the gas limit is set too high, you may pay more gas than you actually need to.
 
+:::info
+
+It should be mentioned that transaction will typically fail if the gas limit is exactly set to gas consumption due to [EIP-150](https://eips.ethereum.org/EIPS/eip-150).
+
+:::
+
 The maximum gas limit for a single transaction in the Conflux network is 15M. This ensures that the transactions will not overconsume EVM resources.
 
 ## gasPrice
 
-The gasPrice of a transaction is specified by the sender of the transaction and represents the fee that the person is willing to pay per unit of gas. The unit of gasPrice is GDrip, where 1 GDrip is equal to 0.000000001 CFX (10-9 CFX).
+The gasPrice of a transaction is specified by the sender of the transaction and represents the fee that the person is willing to pay per unit of gas. The unit of gasPrice is GDrip, where 1 GDrip is equal to 0.000000001 CFX (10**-9 CFX).
 
 A transaction's gasPrice value affects how fast the transaction is packaged by miners, as miners will prioritize packaging transactions with higher gasPrice in order to make more profits. When the network is not congested, setting gasPrice to ```1Gdrip``` is enough to be packed normally. However, when the network is congested, more transactions are waiting to be packed. At this time, if the gasPrice is set to be less than most other transactions, it will not be packed but keep waiting.
 
@@ -62,15 +68,35 @@ If the gas limit setting of the transaction is not that high, take the same exam
 
 ## How to Set gas and gasPrice Properly
 
+The answer is different depending on different spaces.
+
 ### gasPrice
 
-Usually, gasPrice can be set within the range of 1G to 10,000G. If the network is not congested, 1G would be enough. If the waiting time after sending the transaction is too long, you can set the gasPrice to 10G or 100G.
+The Conflux consensus don't limit the transaction gas prices and the minimum gas price depends on the miners' setting. Here are the minimum gas price settings of Confura, the public RPC endpoints supported by Conflux foundation:
+
+- core space: 1 GDrip
+- eSpace: 20 GDrip
+
+Besides, it is recommended to set gas price based on core space / espace RPC return value:
+
+- core space: `cfx_gasPrice`
+- eSpace: `eth_gasPrice`
 
 ### gas
 
-For regular CFX transfers, setting the gas to 21,000 is enough.
+For regular CFX transfers, setting the gas to 21,000 is sufficient.
 
-For contract interactions, you can estimate the gas value by using the method ```cfx_estimateGasAndCollateral```, which simulates the execution of the transaction and returns the actual amount of gas used for the transaction. In most cases the value returned by this method is accurate, but sometimes there could be underestimations. A safe way of dealing with this is to multiply the result of the estimation by a factor ```1.3```. This ensures that the gas limit is sufficient for the transaction, and any excessive gas fee will be refunded.
+For contract interactions, it is recommended to set gas based on the return value of core space / espace RPC:
+
+- core space: `gasLimit` field of `cfx_estimateGasAndCollateral`
+- eSpace: `eth_estimateGas`
+
+These methods simulates the execution of the transaction and return the estimated amount of gas used for the transaction. Actually, in most cases, the value `gasUsed` returned by `cfx_estimateGasAndCollateral` is accurate, but it is not recommended to use `gasUsed` due to two main reasons: 
+
+1. Due to [EIP-150](https://eips.ethereum.org/EIPS/eip-150), setting the gas to the actual gas consumption may often lead to transaction failure.
+2. The result is based on the current blockchain state during the simulation, but the actual execution states may be different. 
+
+The `gasLimit` field typically equals `1.3 * gasUsed`. This ensures that the gas limit is sufficient for the transaction, and any excessive gas fee will be refunded.
 
 ## FAQs
 
