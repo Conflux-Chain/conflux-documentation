@@ -5,18 +5,18 @@ keywords:
   - transaction
 ---
 
-Because today’s blockchain systems may have problems such as low throughput and high entry barriers, it is inevitable that some transactions will not be packaged when sent through the blockchain. Take Conflux as an example, the Conflux network normally produces two blocks per second. After a transaction `is successfully sent`, it should be packaged and executed within `20 seconds` depending on the network congestion level. If the transaction is not packaged for a long time, it’s very likely that something went wrong, and requires the sender to manually intervene.
+由于当前的区块链系统可能存在吞吐量低和准入门槛高等问题，因此通过区块链发送的某些交易可能无法被打包确认。 以 Conflux 为例，Conflux 网络通常每秒可以产生两个区块。 在交易` 成功发送后 `，它应该在约` 20 秒 `内被打包并执行，具体时间取决于网络拥塞程度。 如果交易长时间未被打包，很可能出现了问题，需要发送者进行手动干预。
 
 ![Tx Pending](./img/tx-pending-01.png)
 
 
-## How to find out the reason for a pending transaction
+## 如何查找待处理交易的原因？
 
-If the pending transaction is successfully inserted into the transaction pool of the node used by [Scan](https://www.confluxscan.io/), the transaction can be searched by hash on Scan, and the status of the transaction can be seen as `Pending` on the transaction details page.
+如果待处理交易已成功插入 [ConfluxScan](https://www.confluxscan.io/) 使用的节点的交易池中，则可以在 Scan 上通过哈希搜索该交易，并在交易详细信息页面上查看交易状态为` Pending `。
 
 ![Tx Pending](./img/scan-pending-detail-02.png)
 
- At this time, we can go to the `account details page` of the transaction sender, and view the pending transactions of the user through the `View Pending Txns` tab on the account page.
+ 此时，我们可以进入交易发送者的` 账户详情页面 `，并通过账户页面上的` View Pending Txns `选项卡查看用户的待处理交易。
 
 ![Tx Pending](./img/scan-pending-entry-03.png)/
 
@@ -29,13 +29,13 @@ In this tab, you can see the total number of pending transactions of this user a
 
 ![Tx Pending](./img/scan-pending-tx-list-04.png)
 
-This page uses the RPC method [`cfx_getAccountPendingTransactions`](../../../core/build/json-rpc/cfx-namespace.md#cfx_getaccountpendingtransactions) to obtain the current pending transaction information of an account.
+该页面使用 RPC 方法 [`cfx_getAccountPendingTransactions`](../../../core/build/json-rpc/cfx-namespace.md#cfx_getaccountpendingtransactions) 来获取一个账户的当前待处理交易信息。
 
-### Wrong Nonce
+### nonce 错误
 
-This kind of error means that the sent transaction used the wrong nonce. Normally, the transaction needs to be executed one by one in the order of nonce. If there are transactions with a smaller nonce pending in the queue, this transaction will wait until all previous transactions are successfully executed.
+这种错误意味着发送的交易使用了错误的 nonce。 通常情况下，交易需要按照 nonce 的顺序一个一个地执行。 如果队列中有 nonce 更小的待处理交易，这笔交易将等待直到所有先前的交易都成功执行。
 
-In this case, we need to resend the transaction with the correct nonce. It should be noted that the pending transaction will be automatically executed after all previous transactions are executed (and the balance is sufficient).
+在这种情况下，我们需要使用正确的 nonce 重新发送交易。 需要注意的是，在所有先前的交易都执行完成之后（并且余额充足的情况下），待处理交易将自动执行。
 
 ### Stale Epoch Height
 
@@ -51,8 +51,8 @@ This situation means that the transaction itself has reached the conditions that
 
 If the transaction is in this state for a long time, the gasPrice of the transaction can be increased appropriately to resend the transaction, which can improve the speed to package and execute a transaction.
 
-## How to set gasPrice correctly
+## 如何正确设置 gasPrice？
 
-The speed to package and execute a transaction is mainly affected by the gasPrice of the transaction. The higher the gasPrice, the faster it is packaged by miners, so it is very important to set the gasPrice correctly.
+交易的打包和执行速度主要受交易的 gasPrice 影响。 gasPrice 越高，交易被矿工打包的速度就越快，因此正确设置 gasPrice 非常重要。
 
-You can use the `cfx_gasPrice` RPC method of fullnode to get a suggested gasPrice value. This method will give a recommended value based on the gas usage of a certain number of the latest blocks and the gasPrice of the transactions in it.
+您可以使用全节点的 `cfx_gasPrice` RPC 方法来获取建议的 gasPrice 值。 该方法会根据最新几个块的 gas 使用情况和其中交易的 gasPrice 给出建议的值。
