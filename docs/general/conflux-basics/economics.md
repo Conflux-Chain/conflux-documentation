@@ -73,9 +73,22 @@ Miners are responsible for confirming transactions in the Proof of Work (PoW) sy
 
 Miners also receive interest income from Collateral for Storage (CFS) tokens paid by smart contract deployers. These incentives are important for the sustainability of the Conflux network.
 
-Stakers are another essential group of system maintainers in Conflux's Proof of Stake (PoS) consensus mechanism layer. Unlike miners in the Proof of Work (PoW) system, stakers do not validate transactions using computing power. Instead, they stake a certain amount of CFX in the governance platform or in PoS Staking Pools to earn CFX rewards.
+Stakers are another crucial group of system maintainers in Conflux's Proof of Stake (PoS) consensus mechanism layer. Unlike miners in the Proof of Work (PoW) system, stakers do not compete with each other using computing power. Instead, they stake a certain amount of CFX and either run PoS nodes themselves or delegate their CFX to PoS pools. In return, they earn CFX rewards proportional to their stakes.
+
+### On-chain DAO Vote for Chain Parameters
+
+Conflux introduces internal contract [ParamControl](../../core/learn/core-space-basics/internal-contracts/params-control.md) in [CIP-94](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-94.md) to control the chain parameters including PoW base block reward and PoS base reward interest rate. In other word, the operational phase CFX distribution is now controlled by DAO.
 
 ### **CFX Annual Inflation**
+
+:::info
+
+As PoW base block reward and PoS base reward interest rate are subject to change due to [ParamControl](../../core/learn/core-space-basics/internal-contracts/params-control.md), the CFX annual inflation computation may also change. The following computations provides a reference when:
+
+- PoW base block reward is 2/block
+- PoS base reward interest rate is 0.04(4%)
+
+:::
 
 Conflux Network incorporates a certain level of built-in inflation: more CFX is gradually added to the total circulation over time. Today, there are more than 2 billion CFX in circulation, which is a mix of both the pre-mine distribution and the new mining and staking rewards being generated.
 
