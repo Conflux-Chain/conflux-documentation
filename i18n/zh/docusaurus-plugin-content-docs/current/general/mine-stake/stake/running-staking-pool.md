@@ -277,7 +277,7 @@ One-Click PoS Pool is a an application that enables users without code experienc
 3. [How to deal with PoS force retire](https://github.com/conflux-fans/pos-pool/blob/main/contract/docs/PoolForceRetired.md)
 4. [How to deploy eSpace pool contract](https://github.com/conflux-fans/pos-pool/blob/main/contract/docs/HowToDeployEspacePool.md)
 
-## References
+## 参考资料
 - [PoS Pool](https://github.com/conflux-fans/pos-pool)
 - [PoS Pool Contract](https://github.com/conflux-fans/pos-pool/blob/main/contract/README.md)
 - [PoS Pool Interface](https://github.com/conflux-fans/pos-pool/blob/main/interface/README.md)
