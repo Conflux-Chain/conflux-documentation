@@ -75,7 +75,7 @@ cd graph-node/docker`
 
 `docker-compose up`
 
-***References***
+***参考资料***
 
 [https://thegraph.com/docs/en/operating-graph-node/](https://thegraph.com/docs/en/operating-graph-node/)
 
