@@ -36,11 +36,17 @@ Gas的概念借鉴了现实中的“汽油”。 汽车消耗汽油来行驶。 
 
 正确填写gas字段非常重要。 如果燃料限制设置为小于实际所需gas量的值，交易将失败。 如果gas限制设置得太高，你可能会支付比你实际需要的更多的gas。
 
+:::info
+
+It should be mentioned that transaction will typically fail if the gas limit is exactly set to gas consumption due to [EIP-150](https://eips.ethereum.org/EIPS/eip-150).
+
+:::
+
 Conflux网络中单笔交易的最大gas限制是15M。 这确保了交易不会过度消耗EVM资源。
 
 ## gasPrice
 
-交易的gasPrice由交易发送者指定，表示该人愿意支付的每单位gas的费用。 GasPrice的单位是GDrip，其中1 GDrip等于0.000000001 CFX（10-9 CFX）。
+交易的gasPrice由交易发送者指定，表示该人愿意支付的每单位gas的费用。 The unit of gasPrice is GDrip, where 1 GDrip is equal to 0.000000001 CFX (10**-9 CFX).
 
 交易的gasPrice值影响了交易被矿工打包的速度，因为矿工会优先打包gasPrice较高的交易，以获得更多的利润。 当网络不拥堵时，将gasPrice设置为1Gdrip就足以正常打包。 然而，当网络拥堵时，更多的交易在等待打包。 这时，如果gasPrice设置得比大多数其他交易低，它将不会被打包，而是一直等待。
 
@@ -62,15 +68,35 @@ gasFee是一笔交易支付的总gas费用。 它的计算公式是`gasFee = gas
 
 ## 如何正确设置gas和gasPrice
 
+The answer is different depending on different spaces.
+
 ### gasPrice
 
-通常，gasPrice可以在1G到10000G的范围内设置。 如果网络不拥堵，1G就足够了。 如果发送交易后等待时间太长，你可以将gasPrice设置为10G或100G。
+The Conflux consensus don't limit the transaction gas prices and the minimum gas price depends on the miners' setting. Here are the minimum gas price settings of Confura, the public RPC endpoints supported by Conflux foundation:
+
+- core space: 1 GDrip
+- eSpace: 20 GDrip
+
+Besides, it is recommended to set gas price based on core space / espace RPC return value:
+
+- core space: `cfx_gasPrice`
+- eSpace: `eth_gasPrice`
 
 ### gas
 
-Gas 对于普通的CFX转账，将gas设置为21000就足够了。
+For regular CFX transfers, setting the gas to 21,000 is sufficient.
 
-对于合约交互，你可以使用方法cfx_estimateGasAndCollateral来估算gas值，该方法模拟执行交易，并返回交易所需的实际gas量。 In most cases the value returned by this method is accurate, but sometimes there could be underestimations. A safe way of dealing with this is to multiply the result of the estimation by a factor `1.3`. This ensures that the gas limit is sufficient for the transaction, and any excessive gas fee will be refunded.
+For contract interactions, it is recommended to set gas based on the return value of core space / espace RPC:
+
+- core space: `gasLimit` field of `cfx_estimateGasAndCollateral`
+- eSpace: `eth_estimateGas`
+
+These methods simulates the execution of the transaction and return the estimated amount of gas used for the transaction. Actually, in most cases, the value `gasUsed` returned by `cfx_estimateGasAndCollateral` is accurate, but it is not recommended to use `gasUsed` due to two main reasons:
+
+1. Due to [EIP-150](https://eips.ethereum.org/EIPS/eip-150), setting the gas to the actual gas consumption may often lead to transaction failure.
+2. The result is based on the current blockchain state during the simulation, but the actual execution states may be different.
+
+The `gasLimit` field typically equals `1.3 * gasUsed`. This ensures that the gas limit is sufficient for the transaction, and any excessive gas fee will be refunded.
 
 ## 常见问题解答
 
