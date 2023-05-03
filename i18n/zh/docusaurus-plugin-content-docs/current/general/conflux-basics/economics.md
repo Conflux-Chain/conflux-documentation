@@ -74,9 +74,22 @@ Conflux Network创世区块中预挖的代币数量为50亿CFX。 预挖的代�
 
 矿工还可以从智能合约部署者支付的存储抵押（CFS）代币中获得利息收入。 这些激励对于Conflux网络的可持续性至关重要。
 
-Staker 是 Conflux 的权益证明（PoS）共识机制层中另一个重要的系统维护者群体。 Unlike miners in the Proof of Work (PoW) system, stakers do not validate transactions using computing power. Instead, they stake a certain amount of CFX in the governance platform or in PoS Staking Pools to earn CFX rewards.
+Stakers are another crucial group of system maintainers in Conflux's Proof of Stake (PoS) consensus mechanism layer. Unlike miners in the Proof of Work (PoW) system, stakers do not compete with each other using computing power. Instead, they stake a certain amount of CFX and either run PoS nodes themselves or delegate their CFX to PoS pools. In return, they earn CFX rewards proportional to their stakes.
+
+### 链上DAO投票链参数
+
+Conflux introduces internal contract [ParamControl](../../core/learn/core-space-basics/internal-contracts/params-control.md) in [CIP-94](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-94.md) to control the chain parameters including PoW base block reward and PoS base reward interest rate. In other word, the operational phase CFX distribution is now controlled by DAO.
 
 ### **CFX年通胀率**
+
+:::info
+
+As PoW base block reward and PoS base reward interest rate are subject to change due to [ParamControl](../../core/learn/core-space-basics/internal-contracts/params-control.md), the CFX annual inflation computation may also change. The following computations provides a reference when:
+
+- PoW base block reward is 2/block
+- PoS base reward interest rate is 0.04(4%)
+
+:::
 
 Conflux Network内置了一定程度的通胀：随着时间的推移，流通中的CFX逐渐增加。 目前，流通中有超过20亿CFX，这是预挖分配和新产生的挖矿和质押奖励的混合。
 
