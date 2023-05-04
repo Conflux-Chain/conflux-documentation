@@ -31,7 +31,7 @@ In this tab, you can see the total number of pending transactions of this user a
 
 该页面使用 RPC 方法 [`cfx_getAccountPendingTransactions`](../../../core/build/json-rpc/cfx-namespace.md#cfx_getaccountpendingtransactions) 来获取一个账户的当前待处理交易信息。
 
-### nonce 错误
+### Wrong Nonce
 
 这种错误意味着发送的交易使用了错误的 nonce。 通常情况下，交易需要按照 nonce 的顺序一个一个地执行。 如果队列中有 nonce 更小的待处理交易，这笔交易将等待直到所有先前的交易都成功执行。
 
