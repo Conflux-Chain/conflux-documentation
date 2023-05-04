@@ -3,7 +3,7 @@ sidebar_position: 4
 title: 内置合约
 ---
 
-Conflux引入了几个内嵌的内置合约，以便更好地进行系统维护和链上治理。 现在Conflux有七个内部合约：AdminControl合约、SponsorWhitelistControl合约和Staking合约是从一开始就引入的，ConfluxContext、PoSRegister、ConfluxContext是在v2硬分叉时引入的，ParamsControl是在v2.1硬分叉时引入的。 这些合约提供了在[`这里`](https://github.com/Conflux-Chain/conflux-rust/tree/master/internal_contract/contracts)定义的solidity函数api。 这些函数只能通过CALL或STATICCALL操作来调用。 使用操作CALLCODE或DELEGATECALL与内部合约交互将触发错误。
+Conflux引入了几个内嵌的内置合约，以便更好地进行系统维护和链上治理。 Now Conflux has seven internal contracts: `AdminControl` contract, `SponsorWhitelistControl` contract and `Staking` contract are introduced from the beginning, `ConfluxContext`, `PoSRegister`, `ConfluxContext` are introduced at v2 hard-fork, `ParamsControl` is introduced at v2.1 hard-fork. 这些合约提供了在[`这里`](https://github.com/Conflux-Chain/conflux-rust/tree/master/internal_contract/contracts)定义的solidity函数api。 这些函数只能通过CALL或STATICCALL操作来调用。 使用操作CALLCODE或DELEGATECALL与内部合约交互将触发错误。
 
 这7个内置合约的地址如下所示：
 
@@ -29,7 +29,7 @@ Conflux引入了几个内嵌的内置合约，以便更好地进行系统维护�
     -   `cfxtest:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaa64p5db1w9`
     -   `cfx:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaa6uhjxh70z`
 
-此文档中的所有示例代码都将使用 [js-conflux-sdk](https://github.com/Conflux-Chain/js-conflux-sdk)。 The solidity function apis are list [here](https://github.com/Conflux-Chain/conflux-rust/tree/master/internal_contract/contracts).
+此文档中的所有示例代码都将使用 [js-conflux-sdk](https://github.com/Conflux-Chain/js-conflux-sdk)。
 
 ```mdx-code-block
 import DocCardList from '@theme/DocCardList';

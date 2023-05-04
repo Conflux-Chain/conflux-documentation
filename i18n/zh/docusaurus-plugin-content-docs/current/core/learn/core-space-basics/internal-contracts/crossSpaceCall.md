@@ -120,7 +120,7 @@ main().catch(console.log);
 
 将CFX从eSpace回到Conflux Core Space需要两个步骤。
 
-1. 将CFX转移到接收者Core Space地址在eSpace中的映射账户。
+1. Transfer CFX to the mapped account of the receiver [Core Space address](../../../../espace/learn/accounts.md#mapped-addresses-in-cross-space-operations) in eSpace.
 2. 在Core Space用接收者地址调用`CrossSpaceCall.withdrawFromMapped(amount)`来提取CFX。
 
 使用js-conflux-sdk (v2)跨回CFX的示例：

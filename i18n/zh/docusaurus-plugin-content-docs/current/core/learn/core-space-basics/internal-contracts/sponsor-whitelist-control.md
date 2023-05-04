@@ -19,7 +19,7 @@ The **SponsorControl** contract keeps the following information for each user-es
 
 有两种资源可以被赞助：gas消耗和存储抵押。
 
-+ *For gas consumption*: If a transaction calls a contract with non-empty `sponsor_for_gas` and the sender is in the `whitelist` of the contract and the gas fee specified by the transaction is within the `sponsor_limit_for_gas_fee`, the gas consumption of the transaction is paid from the `sponsor_balance_for_gas` of the contract (if it is sufficient) rather than from the sender’s balance, and the execution of the transaction would fail if the `sponsor_balance_for_gas` cannot afford the gas consumption. 否则，发送者应该支付gas消耗。
++ *For gas consumption*: If a transaction calls a contract with non-empty `sponsor_for_gas` and the sender is in the `whitelist` of the contract and the gas fee specified by the transaction is within the `sponsor_limit_for_gas_fee`, the gas consumption of the transaction is paid from the `sponsor_balance_for_gas` of the contract (if it is sufficient) rather than from the sender’s balance. 否则，发送者应该支付gas消耗。
 + *对于存储抵押*：如果一个交易调用了一个`sponsor_for_collateral`非空的合约，并且发送者在合约的`whitelist`中，那么交易执行过程中产生的存储抵押将从合约的`sponsor_balance_for_collateral`中扣除，同时将那些被修改的存储条目的所有者设置为相应的合约地址。 否则，发送者应该支付交易执行过程中产生的存储抵押。
 
 当一个合约被创建时，它的`sponsor_for_gas`和`sponsor_for_collateral`将被初始化为零地址，赞助余额将被初始化为0。 Gas和存储抵押的赞助都可以通过调用SponsorControl合约来更新。 当前的赞助者可以调用这个合约来转移资金，直接增加赞助余额，当前的gas赞助者也可以在不转移新资金的情况下增加`sponsor_limit_for_gas_fee`。 其他普通账户可以通过调用这个合约并提供更多的赞助资金来替换当前的赞助者。

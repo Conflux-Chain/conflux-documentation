@@ -7,6 +7,12 @@ keywords:
   - why
 ---
 
+:::note
+
+This is an article written before the Ethereum Merge to explain why Conflux decides to introduce PoS.
+
+:::
+
 让我们首先解释这样一个现实，即 Conflux 在相当长的一段时间内必须考虑 51% 攻击风险：由于以太坊的巨大挖矿收益和显卡需求的增加，矿工已经购买了大量的显卡，形成了庞大的算力池。
 
 Conflux 也使用显卡进行挖矿，而显卡的算力在维护 Conflux 的安全性方面仍然远远落后于以太坊。 因此，存在着大量的显卡在短时间内切换到 Conflux 来完成 51% 攻击的风险。

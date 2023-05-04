@@ -104,7 +104,7 @@ Conflux的 base32 地址指由 [CIP-37](https://github.com/Conflux-Chain/CIPs/bl
 
 - `0x0`: `type.builtin`
 - `0x1`: `type.user`
-- `0x1`: `type.contract`
+- `0x8`: `type.contract`
 
 #### 载荷 (Payload)
 
@@ -123,8 +123,8 @@ Conflux的 base32 地址指由 [CIP-37](https://github.com/Conflux-Chain/CIPs/bl
 
 #### 校验和(Checksum)
 
-1. 准备输入校验和输入： `data` 被用作校验和函数的输入。 It
-   - `网络前缀` 的每个字符的最低5比特。 - e.g. `"cfx..."` becomes `0x03, 0x06, 0x18, ...`
+1. 准备输入校验和输入： `data` 被用作校验和函数的输入。 It contains:
+   - The lower 5 bits of each character of the `network-prefix`, e.g. `"cfx..."` becomes `0x03, 0x06, 0x18, ...`
    - 分隔符（5比特0）。
    - 5位一组将载荷分块。 如果需要，使用0在载荷的最右侧进行填充，以便恰好将载荷分为5位1组。
    - 八个零作为校验和的"模板"。

@@ -3,9 +3,9 @@ sidebar_position: 3
 title: Funding Your Account on Testnet
 ---
 
-您是 Conflux 区块链的新用户吗？ 或者您是一名计划在Conflux上开发Dapp的开发者吗？ 那么你可能需要一些CFX与Conflux网络进行交互。 我们提供测试网 CFX faucet 服务，允许用户申请测试网 CFX 并在 Conflux 测试网络环境中进行体验。
+您是 Conflux 区块链的新用户吗？ 或者您是一名计划在Conflux上开发Dapp的开发者吗？ 那么你可能需要一些CFX与Conflux网络进行交互。 We provide the testnet CFX faucet dApp, which allows users to claim testnet CFX and experience it in the Conflux testnet environment.
 
-## Faucet Dapp
+## Faucet dApp
 
 我们开发了一个[Faucet Dapp](https://faucet.confluxnetwork.org/)，不仅可以用于领取` CFX`，还可以领取代币，目前包括 `FC` 和 `cUSDT`。
 
@@ -13,7 +13,7 @@ title: Funding Your Account on Testnet
 
 要使用 Faucet Dapp，只需使用 Fluent 或 Portal 连接到该 dapp，然后单击“领取”。
 
-### Apply for testnet CFX
+### Steps
 
 默认的 Fluent 网络是 `Conflux Hydra`(主网)。 首先需要将Fluent网络切换到 `Conflux testnet`。
 

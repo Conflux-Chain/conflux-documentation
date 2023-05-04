@@ -1,6 +1,6 @@
 ---
 sidebar_position: 5
-title: FAQs
+title: 常见问题解答
 ---
 
 # PoS FAQs
