@@ -14,11 +14,11 @@ The initial phase in establishing an NFT smart contract involves preparing your 
 
 ## What is Pinata?
 
-Pinata is an NFT media management service that allows users to host, manage and share files of any kind on the blockchain of their choice. As an IPFS pinning service, we focus on giving both technical and non-technical creators a fast, easy, and reliable way to share content without limits.
+Pinata is an NFT media management service that allows users to host, manage and share files of any kind on the blockchain of their choice. As an IPFS pinning service, Pinata focuses on giving both technical and non-technical creators a fast, easy, and reliable way to share content without limits.
 
-For developers, Pinata is the easiest way to pin content to IPFS and build web3 applications without having to build and manage your own IPFS nodes. We do all the heavy lifting for you.
+For developers, Pinata iis one of the easiest ways to pin content to IPFS and build web3 applications without having to build and manage your own IPFS nodes. We do all the heavy lifting for you.
 
-For creators, Pinata makes it easy to serve content at scale without any technical experience. We offer anyone the ability to start creating without having to worry about the technical side of web3 or IPFS right away.
+For creators, Pinata makes it easy to serve content at scale without any technical experience. Pinata offers the ability to start creating without having to worry about the technical side of web3 or IPFS right away.
 
 When you “pin” data on an IPFS node, you are telling that node that the data is important, and it should be saved. A node is a program that connects you to IPFS and stores files.
 
@@ -78,7 +78,7 @@ Now, let's fill in the metadata file values. You can choose any **`name`** and *
 
 The **`tokenId`** here will be **`0`** to correspond with the uploaded image. If uploading multiple files, this needs to increment in each file.
 
-Paste the **`image`** link (the URL we saved earlier) here, so the smart contract knows where to locate the image file for your NFT. If uploading multiple files, the end of the URL (the specific image) needs to increment in each file.
+Paste the **`image`** link (the URL that was saved earlier) here, so the smart contract knows where to locate the image file for your NFT. If uploading multiple files, the end of the URL (the specific image) needs to increment in each file.
 
 The **`attributes`** field is not as crucial here, but if you were uploading NFTs with multiple layers, the attributes would represent those specific layers' information. This is often employed when determining NFT rarity to rank them based on the frequency of their layers throughout the entire collection. We'll leave it empty in this tutorial.
 
