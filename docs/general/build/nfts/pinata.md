@@ -16,7 +16,7 @@ The initial phase in establishing an NFT smart contract involves preparing your 
 
 Pinata is an NFT media management service that allows users to host, manage and share files of any kind on the blockchain of their choice. As an IPFS pinning service, Pinata focuses on giving both technical and non-technical creators a fast, easy, and reliable way to share content without limits.
 
-For developers, Pinata iis one of the easiest ways to pin content to IPFS and build web3 applications without having to build and manage your own IPFS nodes. We do all the heavy lifting for you.
+For developers, Pinata is one of the easiest ways to pin content to IPFS and build web3 applications without having to build and manage your own IPFS nodes. It has done all the heavy lifting for developers.
 
 For creators, Pinata makes it easy to serve content at scale without any technical experience. Pinata offers the ability to start creating without having to worry about the technical side of web3 or IPFS right away.
 
