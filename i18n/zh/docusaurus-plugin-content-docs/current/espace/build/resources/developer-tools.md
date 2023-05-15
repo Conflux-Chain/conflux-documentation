@@ -9,8 +9,8 @@ title: Developer Tools
 
 To track the progress of this page or get involved, please visit the corresponding GitHub issue: [Complete espace/build/resources/developer-tools](https://github.com/Conflux-Chain/conflux-documentation/issues/122). 如果你有兴趣为这个页面的完成做出贡献，欢迎**在issue下留言**。
 
-We plan to issue POAP NFTs as a token of appreciation to contributors who help with the documentation. 您对项目的参与将得到认可和奖励。
+我们计划发放POAP NFT作为对帮助文档的贡献者的感谢。 您对项目的参与将得到认可和奖励。
 
-感谢您对Conflux的关注。 We look forward to sharing the completed content with you.
+感谢您对Conflux的关注。 我们期待与您分享完成的内容。
 
 :::
