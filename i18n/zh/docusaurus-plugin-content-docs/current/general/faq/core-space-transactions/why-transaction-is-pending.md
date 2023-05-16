@@ -20,7 +20,7 @@ keywords:
 
 ![Tx Pending](./img/scan-pending-entry-03.png)/
 
-In this tab, you can see the total number of pending transactions of this user and the earliest pending transactions (up to 10). The most important thing is that you can also see the pending reasons for the first pending transaction. There are four possible reasons:
+在这个选项卡中，您可以看到该用户的待处理交易总数以及最早的待处理交易（最多 10 笔）。 最重要的是，您还可以查看第一笔待处理交易的待处理原因。 有三个可能的原因：
 
 * Wrong nonce
 * Stale epoch height
@@ -49,7 +49,7 @@ The error message tells that `The full node internal error. The sender needs to 
 
 This situation means that the transaction itself has reached the conditions that can be packaged, but because the entire network is relatively congested or for other reasons, it has not been packaged.
 
-If the transaction is in this state for a long time, the gasPrice of the transaction can be increased appropriately to resend the transaction, which can improve the speed to package and execute a transaction.
+如果交易长时间处于这种状态，可以适当提高交易的 gasPrice 以重新发送交易，这可以提高交易的打包和执行速度。
 
 ## 如何正确设置 gasPrice？
 
