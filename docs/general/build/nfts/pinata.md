@@ -32,7 +32,13 @@ Once your file is pinned to IPFS, you have full control to share, distribute, mo
 
 This guide will focus on creating a single NFT, but if you want to make more, feel free to do so. The image being used can be found here if you'd like to utilize it.
 
-![0.png](./img/0.png)
+```mdx-code-block
+
+import Image from '@theme/IdealImage';
+
+<Image img={require('./img/0.png')} style={{width: 300}}/>
+
+```
 
 Save your image file in a folder on your computer. Name this image **`0`**, making it the first image retrieved by the smart contract. It will be the first (and only) NFT in this collection; however, if you're adding more images, continue naming them in ascending numerical order. Upload this folder to Pinata once your images are properly organized and named.
 
