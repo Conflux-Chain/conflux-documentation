@@ -8,7 +8,7 @@ keywords:
 
 Public available Conflux network RPC endpoints
 
-## Confura
+## 1. Confura
 
 Confura是Conflux网络上的一个与以太坊Infura等效的公共JSON-RPC服务，由Conflux基金会开发和维护。
 
@@ -18,52 +18,51 @@ Confura是Conflux网络上的一个与以太坊Infura等效的公共JSON-RPC服�
 
 #### 香港
 
-| Network | Chain ID | Explorer                        | Endpoint                                                             |
+| Network | Chain ID | Explorer                        | RPC Endpoint                                                         |
 | ------- | -------- | ------------------------------- | -------------------------------------------------------------------- |
 | Mainnet | 1029     | https://confluxscan.net         | https://main.confluxrpc.com <br/> wss://main.confluxrpc.com/ws |
 | Testnet | 1        | https://testnet.confluxscan.net | https://test.confluxrpc.com <br/> wss://test.confluxrpc.com/ws |
 
 #### US East
 
-| Network | Chain ID | Explorer                       | Endpoint                                                             |
+| Network | Chain ID | Explorer                       | RPC Endpoint                                                         |
 | ------- | -------- | ------------------------------ | -------------------------------------------------------------------- |
 | Mainnet | 1029     | https://confluxscan.io         | https://main.confluxrpc.org <br/> wss://main.confluxrpc.org/ws |
 | Testnet | 1        | https://testnet.confluxscan.io | https://test.confluxrpc.org <br/> wss://test.confluxrpc.org/ws |
 
 ### 速率限制
 
-为了确保服务的可用性，我们添加了一些速率限制器（用令牌桶算法实现），以缓解突发的流入流量。 用户如果在短时间内发送多个请求，可能会看到显示为状态码`429`的错误响应。
+Reference for various fee tiers and their rate limits.
 
-| Method                 | QPS | Burst | Comment                                                |
-| ---------------------- | --- | ----- | ------------------------------------------------------ |
-| all                    | 100 | 1000  | limits the number of all requests per second           |
-| cfx_getLogs            | 20  | 20    | limits the number of `cfx_getLogs` requests per second |
-| cfx_call               | 10  | 200   | limits the number of `cfx_call` requests per second    |
-| cfx_sendRawTransaction | 50  | 500   | 限制每秒 `cfx_sendRawTransaction` 请求数量                     |
-| cfx_getNextNonce       | 50  | 500   | 限制每秒 `cfx_getNextNonce` 请求数量                           |
+| Fee Tier                                                                                                       | Price                                | 速率限制                                        |
+| -------------------------------------------------------------------------------------------------------------- | ------------------------------------ | ------------------------------------------- |
+| Free                                                                                                           | $0                                   | 50 calls/second, up to  100,000 calls/day   |
+| [Standard](https://confluxhub.io/payment/consumer/app/subscription/0x33A9451ee070d750a077C93f71D2cFcD0180Fa7D) | $150/mo                              | 100 calls/second, up to 1,000,000 calls/day |
+| Enterprise                                                                                                     | please inquire bd@confluxnetwork.org | customize on demand                         |
 
-如果你有更高的QPS需求，请访问 [Conflux Hub](https://confluxhub.io/payment/consumer/apps) 购买我们的VIP订阅计划，该计划具有以下新的QPS标准。
+**Notes**
+- Maximum result-set size is 10,000 for `getLogs` call;
+- Old archived event logs may be inaccessible due to data prune;
+- Append your api key to the endpoint for privileged access (eg., `https://main.confluxrpc.com/<api-key>`);
+- Rate limits are also imposed per RPC method, please check the following specification for more details.
 
-| Method                 | QPS | Burst | Comment                                                |
-| ---------------------- | --- | ----- | ------------------------------------------------------ |
-| all                    | 200 | 1000  | limits the number of all requests per second           |
-| cfx_getLogs            | 40  | 40    | limits the number of `cfx_getLogs` requests per second |
-| cfx_call               | 20  | 200   | limits the number of `cfx_call` requests per second    |
-| cfx_sendRawTransaction | 50  | 500   | 限制每秒 `cfx_sendRawTransaction` 请求数量                     |
-| cfx_getNextNonce       | 100 | 500   | 限制每秒 `cfx_getNextNonce` 请求数量                           |
+<details>
+<summary>Rate Limit Specification</summary>
 
-#### 常见原因和缓解措施
+| RPC Method          | Free tier                                | Standard Tier                                 | Comment                                                                                   |
+| ------------------- | ---------------------------------------- | --------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| all                 | QPS < 50; <br/> daily total < 100k | QPS < 100; <br/> daily total < 1million | overall RPC requests                                                                      |
+| cfx_getLogs         | QPS < 5                                  | QPS < 20                                      | -                                                                                         |
+| cfx_call            | QPS < 5                                  | QPS < 50                                      | -                                                                                         |
+| cfx_getBlockBy*     | QPS < 5                                  | QPS < 20                                      | includes: <br/> `cfx_getBlockByHash`, <br/>`cfx_getBlockByEpochNumber`        |
+| cfx_getTransaction* | QPS < 5                                  | QPS < 20                                      | includes: <br/> `cfx_getTransactionByHash`, <br/> `cfx_getTransactionReceipt` |
+| debug RPC           | not supported                            | QPS < 20                                      | includes: <br/> `cfx_getEpochReceipts` etc.                                         |
+| trace RPC           | not supported                            | QPS < 20                                      | includes: <br/> `trace_block`, `trace_filter`, `trace_transaction`                  |
+| filter API          | not supported                            | supported                                     | includes: <br/> `cfx_newFilter`, `cfx_getFilterChanges` etc.                        |
 
-速率限制可能发生在各种情况下，但最常见的情况是这些情况：
+</details>
 
-* 一次性发出多个状态调用请求可能导致速率限制。 我们建议使用`Multicall`，它可以聚合多个合约常量函数调用的结果，并减少需要发送的单独JSON RPC请求的数量。
-* 高频运行 `cfx_getLogs` 请求以赶上最新纪元可能触发速率限制。 由于 `cfx_getLogs` 请求调用是昂贵的，我们建议调整你的日志查询过滤器中的纪元范围或区块范围，以减少请求调用。
-
-### 其他注意事项
-
-* `cfx_getLogs` 方法不再限制日志查询过滤器中`from_epoch` 和 `to_epoch` 之间的最大间隙。 不过，现在的查询是以合理的查询集大小为界限的，最大运行时间为3秒，结果集大小不超过10,000，在其他情况下，你可能需要缩小你的搜索条件。
-
-## Unifra
+## 2. Unifra
 
 Unifra是一个专注于简化区块链开发的Web3开发者平台。 它建立了一套开发者工具，增强了API，以及一个卓越的节点基础设施，以无缝构建和运行区块链应用程序。 Unifra 为多个链提供 API 服务，包括 以太坊、BNB 智能链、Polygon 和 Conflux。
 
