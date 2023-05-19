@@ -8,7 +8,7 @@ keywords:
 
 Public available Conflux network RPC endpoints
 
-## Confura
+## 1. Confura
 
 Confura is an Ethereum Infura equivalent public JSON-RPC service on Conflux network, which is developed and maintained by Conflux foundation.
 
@@ -18,52 +18,51 @@ Our public RPC services are located in different regions globally. By utilizing 
 
 #### Hong Kong
 
-| Network | Chain ID | Explorer | Endpoint | 
+| Network | Chain ID | Explorer | RPC Endpoint | 
 | -------- | -------- | --------| -------- |
 | Mainnet | 1029 | https://confluxscan.net | https://main.confluxrpc.com <br/> wss://main.confluxrpc.com/ws |
 | Testnet | 1 | https://testnet.confluxscan.net |https://test.confluxrpc.com <br/> wss://test.confluxrpc.com/ws |
 
 #### US East
 
-| Network | Chain ID | Explorer | Endpoint | 
+| Network | Chain ID | Explorer | RPC Endpoint | 
 | -------- | -------- | --------| -------- |
 | Mainnet | 1029 | https://confluxscan.io | https://main.confluxrpc.org <br/> wss://main.confluxrpc.org/ws |
 | Testnet | 1 | https://testnet.confluxscan.io |https://test.confluxrpc.org <br/> wss://test.confluxrpc.org/ws |
 
 ### Rate Limits
 
-To ensure the service availability, we've added several rate limiters (implemented with token bucket algorithm) to mitigate against bursts of incoming traffic. Users who send many requests in quick succession may see error responses that show up as status code `429`.
+Reference for various fee tiers and their rate limits.
 
-| Method | QPS | Burst | Comment | 
+| Fee Tier | Price | Rate Limits | 
 | -------- | -------- | --------| -------- |
-| all | 100 | 1000 |  limits the number of all requests per second |
-| cfx_getLogs | 20 | 20 | limits the number of `cfx_getLogs` requests per second |
-| cfx_call | 10 | 200 | limits the number of `cfx_call` requests per second |
-| cfx_sendRawTransaction | 50 | 500 | limits the number of `cfx_sendRawTransaction` requests per second |
-| cfx_getNextNonce | 50 | 500 | limits the number of `cfx_getNextNonce` requests per second |
+| Free | $0 | 50 calls/second, up to  100,000 calls/day |
+| [Standard](https://confluxhub.io/payment/consumer/app/subscription/0x33A9451ee070d750a077C93f71D2cFcD0180Fa7D) | $150/mo | 100 calls/second, up to 1,000,000 calls/day |
+| Enterprise | please inquire bd@confluxnetwork.org | customize on demand |
 
-If you are have higher QPS requirements, please visit [Conflux Hub](https://confluxhub.io/payment/consumer/apps) to purchase our VIP subscription plan with the following new QPS standards.
+**Notes** 
+- Maximum result-set size is 10,000 for `getLogs` call;
+- Old archived event logs may be inaccessible due to data prune;
+- Append your api key to the endpoint for privileged access (eg., `https://main.confluxrpc.com/<api-key>`);
+- Rate limits are also imposed per RPC method, please check the following specification for more details.
 
-| Method | QPS | Burst | Comment |
+<details>
+<summary>Rate Limit Specification</summary>
+
+| RPC Method | Free tier | Standard Tier | Comment |
 | -------- | -------- | --------| -------- |
-| all | 200 | 1000 |  limits the number of all requests per second |
-| cfx_getLogs | 40 | 40 | limits the number of `cfx_getLogs` requests per second |
-| cfx_call | 20 | 200 | limits the number of `cfx_call` requests per second |
-| cfx_sendRawTransaction | 50 | 500 | limits the number of `cfx_sendRawTransaction` requests per second |
-| cfx_getNextNonce | 100 | 500 | limits the number of `cfx_getNextNonce` requests per second |
+| all | QPS < 50; <br/> daily total < 100k | QPS < 100; <br/> daily total < 1million | overall RPC requests |
+| cfx_getLogs | QPS < 5 | QPS < 20 | - |
+| cfx_call | QPS < 5 | QPS < 50 | - |
+| cfx_getBlockBy* | QPS < 5 | QPS < 20 | includes: <br/> `cfx_getBlockByHash`, <br/>`cfx_getBlockByEpochNumber` |
+| cfx_getTransaction* | QPS < 5 | QPS < 20 | includes: <br/> `cfx_getTransactionByHash`, <br/> `cfx_getTransactionReceipt` |
+| debug RPC | not supported | QPS < 20 | includes: <br/> `cfx_getEpochReceipts` etc. |
+| trace RPC | not supported | QPS < 20 | includes: <br/> `trace_block`, `trace_filter`, `trace_transaction` |
+| filter API | not supported | supported | includes: <br/> `cfx_newFilter`, `cfx_getFilterChanges` etc. |
 
-#### Common causes and mitigations
+</details>
 
-Rate limiting can occur under a variety of conditions, but it’s most common in these scenarios:
-
-* Issuing multiple state call requests all at once can lead to rate limitting. We recommend using `Multicall`, which aggregates results from multiple contract constant function calls, and reduces the number of separate JSON RPC requests that need to be sent.
-* Running high frequency `cfx_getLogs` requests to catch up latest epoch can trigger rate limitting. As `cfx_getLogs` request calls are expensive, we recommend adapting the epoch range or block range within your log query filter to reduces request calls.
-
-### Other Notes
-
-* The `cfx_getLogs` method no longer restrict the maximum gap between `from_epoch` and `to_epoch` for log query filter. Instead the query is now bounded with reasonable queryset size, 3s maximum running time and no more than 10,000 resultset size, under other circumstance you may need to narrow down your search condition.
-
-## Unifra
+## 2. Unifra
 
 Unifra is a Web3 developer platform focused on simplifying blockchain development. It has built a suite of developer tools, enhanced APIs, and a superior node infrastructure to seamlessly build and run blockchain applications. Unifra provide API services for multiple chains including Ethereum, BNB Smart Chain, Polygon and Conflux.
 
