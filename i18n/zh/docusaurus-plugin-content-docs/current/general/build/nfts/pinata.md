@@ -10,15 +10,17 @@ keywords:
 
 # Uploading files to IPFS using Pinata
 
-The initial phase in establishing an NFT smart contract involves preparing your NFT files. In this instance, the files will be uploaded to **[Pinata](https://www.pinata.cloud/)**, a service that keeps files from being purged on IPFS. If you haven't created an account yet, please do so.
+The initial phase in establishing an NFT smart contract involves preparing your NFT files. In this instance, the files will be uploaded to **[Pinata](https://www.pinata.cloud/)**, a service that allows you to easily manage and maintain media files on IPFS. If you haven't created an account yet, you can sign-up [here](https://t.sidekickopen86.com/Ctc/RJ+23284/d2q6Hj04/Jk82-6q7W5BW0B06lZ3kSN7N8wZqXqbPzW3TCKPf589Q6FW4CMm433Rb7jyW5KKmWM4jVWNSW1f4SqZ71c-GSW9j-gR-80Z4v9W3K4DpB1nb46WW1CMpy61tWQ0DN3tmTqJq-Wf5W31LKxg3_czldN84Hg68NYPpZW4cZKff1fgZnmW2cBYL08gsKw0W65_dds31pzQFVs9Cdk6Tv5lDW7rrBjl8gNbVJN6Z5JYxhfDJLW4MgBMz7S_jFzf743mLY04).
 
 ## What is Pinata?
 
-Pinata is an NFT media management service that allows users to host, manage and share files of any kind on the blockchain of their choice. As an IPFS pinning service, Pinata focuses on giving both technical and non-technical creators a fast, easy, and reliable way to share content without limits.
+Pinata is a web3 media management service that allows users to host, manage and share files in IPFS. As an IPFS pinning service, Pinata focuses on giving both technical and non-technical creators a fast, easy, and reliable way to share content without limits.
 
 For developers, Pinata is one of the easiest ways to pin content to IPFS and build web3 applications without having to build and manage your own IPFS nodes. It has done all the heavy lifting for developers.
 
 For creators, Pinata makes it easy to serve content at scale without any technical experience. Pinata offers the ability to start creating without having to worry about the technical side of web3 or IPFS right away.
+
+## What is 'pinning'?
 
 When you “pin” data on an IPFS node, you are telling that node that the data is important, and it should be saved. A node is a program that connects you to IPFS and stores files.
 
@@ -30,9 +32,15 @@ Once your file is pinned to IPFS, you have full control to share, distribute, mo
 
 This guide will focus on creating a single NFT, but if you want to make more, feel free to do so. The image being used can be found here if you'd like to utilize it.
 
-![0.png](./img/0.png)
+```mdx-code-block
 
-Put your image file in a folder on your computer. Name this image **`0`**, making it the first image retrieved by the smart contract. It will be the first (and only) NFT in this collection; however, if you're adding more images, continue naming them in ascending numerical order. Upload this folder to Pinata once your images are properly organized and named.
+import Image from '@theme/IdealImage';
+
+<Image img={require('./img/0.png')} style={{width: 300}}/>
+
+```
+
+Save your image file in a folder on your computer. Name this image **`0`**, making it the first image retrieved by the smart contract. It will be the first (and only) NFT in this collection; however, if you're adding more images, continue naming them in ascending numerical order. Upload this folder to Pinata once your images are properly organized and named.
 
 :::note
 💡 Some projects begin file names with **`0`**, while others with **`1`**. Make sure to be consistent with the smart contract code. We'll name this file **`0`**.
@@ -60,7 +68,7 @@ Right-click on the image to copy its URL. This URL is crucial. Save it for the n
 
 ## Setting Up the Metadata
 
-With the image uploaded and its URL available, we can create the corresponding metadata file.
+With the image uploaded and its URL available, we can create the corresponding metadata file. For this, we will need to (create a JSON file[https://codebeautify.org/blog/how-to-create-json-file/#:~:text=How%20to%20Create%20JSON%20File%3F%201%201.%20Using,3.%20Create%20a%20file%20from%20the%20JSON%20URL]).
 
 As this NFT will be an ERC-721, we know we can utilize metadata standards commonly found on Marketplaces like **[Joepegs.com](https://joepegs.com/)**. The .json file below demonstrates what the **[metadata](https://docs.opensea.io/docs/metadata-standards#metadata-structure)** should resemble.
 
