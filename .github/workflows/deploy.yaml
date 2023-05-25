@@ -38,3 +38,5 @@ jobs:
           # You can swap them out with your own user credentials.
           user_name: github-actions[bot]
           user_email: 41898282+github-actions[bot]@users.noreply.github.com
+      - name: Update Bot # MYSHELL_AUTHORIZATION_HEADER example: 'Authorization: xxx-xxx-xxx'
+        run: curl --location --request POST http://54.189.227.128/api/knowledge_base/conflux_discord/refresh --header ${{ secrets.MYSHELL_AUTHORIZATION_HEADER }}
