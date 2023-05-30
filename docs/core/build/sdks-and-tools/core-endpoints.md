@@ -20,15 +20,15 @@ Our public RPC services are located in different regions globally. By utilizing 
 
 | Network | Chain ID | Explorer | RPC Endpoint | 
 | -------- | -------- | --------| -------- |
-| Mainnet | 1029 | https://confluxscan.net | *HTTP*: https://main.confluxrpc.com <br/> *Websocket*: wss://main.confluxrpc.com/ws |
-| Testnet | 1 | https://testnet.confluxscan.net | *HTTP*: https://test.confluxrpc.com <br/>*Websocket*: wss://test.confluxrpc.com/ws |
+| Mainnet | 1029 | https://confluxscan.net | *HTTP*: https://main.confluxrpc.com<br/>*Websocket*: wss://main.confluxrpc.com/ws |
+| Testnet | 1 | https://testnet.confluxscan.net | *HTTP*: https://test.confluxrpc.com<br/>*Websocket*: wss://test.confluxrpc.com/ws |
 
 #### US East
 
 | Network | Chain ID | Explorer | RPC Endpoint | 
 | -------- | -------- | --------| -------- |
-| Mainnet | 1029 | https://confluxscan.io | https://main.confluxrpc.org <br/> wss://main.confluxrpc.org/ws |
-| Testnet | 1 | https://testnet.confluxscan.io |https://test.confluxrpc.org <br/> wss://test.confluxrpc.org/ws |
+| Mainnet | 1029 | https://confluxscan.io | *HTTP*: https://main.confluxrpc.org<br/>*Websocket*: wss://main.confluxrpc.org/ws |
+| Testnet | 1 | https://testnet.confluxscan.io | *HTTP*: https://test.confluxrpc.org<br/>*Websocket*: wss://test.confluxrpc.org/ws |
 
 ### Rate Limits
 
