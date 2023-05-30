@@ -20,8 +20,8 @@ Our public RPC services are located in different regions globally. By utilizing 
 
 | Network | Chain ID | Explorer | RPC Endpoint | 
 | -------- | -------- | --------| -------- |
-| Mainnet | 1029 | https://confluxscan.net | https://main.confluxrpc.com <br/> wss://main.confluxrpc.com/ws |
-| Testnet | 1 | https://testnet.confluxscan.net |https://test.confluxrpc.com <br/> wss://test.confluxrpc.com/ws |
+| Mainnet | 1029 | https://confluxscan.net | *HTTP*: https://main.confluxrpc.com <br/> *Websocket*: wss://main.confluxrpc.com/ws |
+| Testnet | 1 | https://testnet.confluxscan.net | *HTTP*: https://test.confluxrpc.com <br/>*Websocket*: wss://test.confluxrpc.com/ws |
 
 #### US East
 
