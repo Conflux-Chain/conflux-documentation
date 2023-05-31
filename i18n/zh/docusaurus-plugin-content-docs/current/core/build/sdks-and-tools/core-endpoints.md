@@ -18,17 +18,17 @@ Confura是Conflux网络上的一个与以太坊Infura等效的公共JSON-RPC服�
 
 #### 香港
 
-| Network | Chain ID | Explorer                        | RPC Endpoint                                                         |
-| ------- | -------- | ------------------------------- | -------------------------------------------------------------------- |
-| Mainnet | 1029     | https://confluxscan.net         | https://main.confluxrpc.com <br/> wss://main.confluxrpc.com/ws |
-| Testnet | 1        | https://testnet.confluxscan.net | https://test.confluxrpc.com <br/> wss://test.confluxrpc.com/ws |
+| Network | Chain ID | Explorer                        | RPC Endpoint                                                                            |
+| ------- | -------- | ------------------------------- | --------------------------------------------------------------------------------------- |
+| Mainnet | 1029     | https://confluxscan.net         | *HTTP*: https://main.confluxrpc.com<br/>*Websocket*: wss://main.confluxrpc.com/ws |
+| Testnet | 1        | https://testnet.confluxscan.net | *HTTP*: https://test.confluxrpc.com<br/>*Websocket*: wss://test.confluxrpc.com/ws |
 
 #### US East
 
-| Network | Chain ID | Explorer                       | RPC Endpoint                                                         |
-| ------- | -------- | ------------------------------ | -------------------------------------------------------------------- |
-| Mainnet | 1029     | https://confluxscan.io         | https://main.confluxrpc.org <br/> wss://main.confluxrpc.org/ws |
-| Testnet | 1        | https://testnet.confluxscan.io | https://test.confluxrpc.org <br/> wss://test.confluxrpc.org/ws |
+| Network | Chain ID | Explorer                       | RPC Endpoint                                                                            |
+| ------- | -------- | ------------------------------ | --------------------------------------------------------------------------------------- |
+| Mainnet | 1029     | https://confluxscan.io         | *HTTP*: https://main.confluxrpc.org<br/>*Websocket*: wss://main.confluxrpc.org/ws |
+| Testnet | 1        | https://testnet.confluxscan.io | *HTTP*: https://test.confluxrpc.org<br/>*Websocket*: wss://test.confluxrpc.org/ws |
 
 ### 速率限制
 
