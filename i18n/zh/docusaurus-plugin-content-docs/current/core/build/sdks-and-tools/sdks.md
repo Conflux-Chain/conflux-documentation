@@ -12,7 +12,7 @@ Conflux 有用于主流编程语言的 SDK，包括 `JavaScript`, `Golang`, `Jav
 If you are familiar with JavaScript or Node.js, or if you want to build a web site to interact with your contract, `js-conflux-sdk` is right for you. It has a lot of useful features.
 
 ```js
-const {Conflux} = require('js-conflux-sdk');
+const { Conflux } = require("js-conflux-sdk");
 
 async function main() {
   let conflux = new Conflux({
@@ -20,7 +20,9 @@ async function main() {
     networkId: 1,
   });
 
-  let balance = await conflux.cfx.getBalance("cfxtest:aakkfzezns4h8ymx1cgmcnd4x3aev6e2he38nnu8sv");
+  let balance = await conflux.cfx.getBalance(
+    "cfxtest:aakkfzezns4h8ymx1cgmcnd4x3aev6e2he38nnu8sv"
+  );
   console.log("balance: ", balance);
 }
 
@@ -101,6 +103,10 @@ print(balance)
 
 ## Solidity SDKs
 
+### [thirdweb Solidity SDK](https://portal.thirdweb.com/solidity)
+
+This SDK provides the tools needed to build custom smart contracts efficiently by offering a set of prebuilt base contracts and a set of reusable components, or extensions, that can be integrated into your own smart contracts.
+
 ### [Conflux-contracts](https://github.com/conflux-fans/conflux-contracts)
 
 This is a Solidity package including common useful contracts in Conflux DAPP developments. Which is kindly like OpenZeppelin. Currenlty most used is `Conflux InternalContracts`.
@@ -109,19 +115,21 @@ This is a Solidity package including common useful contracts in Conflux DAPP dev
 
 This is the famous library for secure smart contract development. Build on a solid foundation of community-vetted code.
 
-* Implementations of standards like ERC20 and ERC721.
-* Flexible role-based permissioning scheme.
-* Reusable Solidity components to build custom contracts and complex decentralized systems.
+- Implementations of standards like ERC20 and ERC721.
+- Flexible role-based permissioning scheme.
+- Reusable Solidity components to build custom contracts and complex decentralized systems.
 
 ## Community developed SDKs
+
+### [thirdweb SDK](https://portal.thirdweb.com/sdk)
+
+The SDK covers all aspects of the web3 development stack, including connecting to user’s wallets, interacting with the blockchain and smart contracts, decentralized storage, authentication, and more; enabling you to build scalable and performant web3 applications on any EVM-compatible blockchain.
 
 ### [cpp-conflux-sdk](https://csyangbinbin.github.io/cpp-conflux-sdk/)
 
 The Conflux C++ API allows any C++ client to interact with a local or remote Conflux node based on JSON-RPC 2.0 protocol. With Conflux C++ API, user can easily manage accounts, send transactions, deploy smart contracts and query blockchain information.
 
-
 ![CPP-SDK](../image/CPP-SDK-shot.png)
-
 
 ### [.NET SDK](https://github.com/Nconflux/Conflux.net.SDK)
 
