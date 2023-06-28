@@ -1,10 +1,17 @@
 ---
-sidebar_position: 4
-title: MetaMask (eSpace)
+sidebar_position: 3
+title: MetaMask
 keywords:
   - MetaMask
   - EVMSpace
 ---
+
+
+:::tip
+
+This wallet supports eSpace ONLY.
+
+:::
 
 ## Introduction
 
