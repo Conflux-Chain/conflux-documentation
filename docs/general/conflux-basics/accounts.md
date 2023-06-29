@@ -1,5 +1,5 @@
 ---
-sidebar_position: 8
+sidebar_position: 10
 title: Accounts and Addresses
 ---
 
@@ -61,7 +61,7 @@ cfx:aajfvxvhz6mna0md1b68mpg9puygt18tm6nynadnf6
 
 [Smart contracts](./contracts.md) also have addresses, and users can interact with them by sending transactions. The contract address is determined when the contract is deployed, and the computation rule differs between core space and espace.
 
-## Comparations of Different Account Types
+## Comparison of Different Account Types
 
 ### Similarities
 

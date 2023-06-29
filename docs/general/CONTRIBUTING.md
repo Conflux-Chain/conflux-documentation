@@ -47,10 +47,10 @@ You can create a Pull Request to submit content changes **EXCEPT FOR [TRANSLATIO
 If you are not working on an issue created by yourself, it is suggested to follow these steps:
 
 :::note
-These are not mandatory steps but will decrease the possibility your PR be rejected.
+These are not mandatory steps but will decrease the possibility your PR will be rejected.
 :::
 
-1. Make sure a relevent open issue with "ACCEPTED" label exists.
+1. Make sure a relevant open issue with "ACCEPTED" label exists.
 2. Leave a comment in the issue in case duplicate people working on the same issue.
 3. Mention the issue `#xx` in the commit message. Example `fix: typo. Ref #123456`.
 
