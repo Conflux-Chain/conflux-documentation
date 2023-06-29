@@ -9,7 +9,7 @@ Accounts in Conflux can be compared to "bank accounts", as they store CFX. Users
 
 :::note
 
-The account implementation, including the account content and address computing rule is slight different in [core space](../../core/learn/core-space-basics/accounts.md) and [espace](../../espace/learn/accounts.md).
+The account implementation, including the account content and address computing rule is slightly different in [core space](../../core/learn/core-space-basics/accounts.md) and [espace](../../espace/learn/accounts.md).
 
 :::
 
@@ -61,7 +61,7 @@ cfx:aajfvxvhz6mna0md1b68mpg9puygt18tm6nynadnf6
 
 [Smart contracts](./contracts.md) also have addresses, and users can interact with them by sending transactions. The contract address is determined when the contract is deployed, and the computation rule differs between core space and espace.
 
-## Comparations of Different Account Types
+## Comparison of Different Account Types
 
 ### Similarities
 
