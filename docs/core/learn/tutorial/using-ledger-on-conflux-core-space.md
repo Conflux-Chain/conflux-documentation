@@ -8,6 +8,6 @@ keywords:
 
 :::tip
 
-This tutorial was moved to this [page](../../../../docs/general/tutorials/wallets/using-ledger-on-conflux-core-space).
+This tutorial was moved to this [page](../../../../docs/general/tutorials/wallets/ledger).
 
 :::
