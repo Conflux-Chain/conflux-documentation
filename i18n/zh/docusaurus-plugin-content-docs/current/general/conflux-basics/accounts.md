@@ -1,5 +1,5 @@
 ---
-sidebar_position: 8
+sidebar_position: 10
 title: 账户和地址
 ---
 
@@ -9,7 +9,7 @@ Accounts in Conflux can be compared to "bank accounts", as they store CFX. 用�
 
 :::note
 
-账户实现，包括账户内容和地址计算规则在[core space](../../core/learn/core-space-basics/accounts.md)和[espace](../../espace/learn/accounts.md)中略有不同。
+The account implementation, including the account content and address computing rule is slightly different in [core space](../../core/learn/core-space-basics/accounts.md) and [espace](../../espace/learn/accounts.md).
 
 :::
 
@@ -61,7 +61,7 @@ cfx:aajfvxvhz6mna0md1b68mpg9puygt18tm6nynadnf6
 
 [智能合约](./contracts.md)也有地址，用户可以通过发送交易与它们交互。 合约地址在合约部署时确定，计算规则在core space和espace之间有所不同。
 
-## 不同账户类型的比较
+## Comparison of Different Account Types
 
 ### 相似之处
 
