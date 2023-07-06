@@ -32,8 +32,6 @@ The Conflux Network supports several wallets, including but not limited to:
 - [Ledger](../tutorials/wallets/ledger.md): A hardware wallet known for its security features. Supports both Core a eSpace.
 - [MetaMask](../tutorials/wallets/metamask.md): A popular wallet that can also be configured to work with the Conflux Network eSpace.
 
-You can find more information on supported wallets [here](../tutorials/wallets/supported-wallets.mdx).
+You can find more information on supported wallets [here](../tutorials/wallets/wallets.mdx).
 
 Remember, the safety of your assets is largely dependent on how securely you handle your private keys and your wallet. Always keep your private keys private, use secure internet connections, and regularly update your wallet software to the latest version.
-
-
