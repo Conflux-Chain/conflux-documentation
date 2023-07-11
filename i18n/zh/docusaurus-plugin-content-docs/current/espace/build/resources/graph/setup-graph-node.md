@@ -56,7 +56,7 @@ createdb graph-node`
 
 ### Getting started using Docker
 
-### Prerequisites
+### 前提条件
 
 - **Ethereum node** - By default, the docker compose setup will use mainnet: [http://host.docker.internal:8545](http://host.docker.internal:8545/) to connect to the Ethereum node on your host machine. You can replace this network name and url by updating `docker-compose.yml`.
 

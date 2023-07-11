@@ -47,10 +47,10 @@ sidebar_postion: 6
 如果您不是在解决您自己提出的 issue，建议您遵循以下步骤：
 
 :::note
-虽然这些步骤不是强制性的，但遵循它们可以降低您的 PR 被拒绝的风险。
+These are not mandatory steps but will decrease the possibility your PR will be rejected.
 :::
 
-1. 确保相关 Issue 未被关闭且已经被管理员添加 "ACCEPTED" 标签。
+1. Make sure a relevant open issue with "ACCEPTED" label exists.
 2. 在 Issue 中留下评论，防止多人同时处理同一个问题。
 3. 在提交信息中提及该 Issue `#xx`。 例`fix: typo. Ref #123456`。
 
