@@ -34,11 +34,11 @@ Confura是Conflux网络上的一个与以太坊Infura等效的公共JSON-RPC服�
 
 Reference for various fee tiers and their rate limits.
 
-| Fee Tier                                                                                                       | Price                                | 速率限制                                        |
-| -------------------------------------------------------------------------------------------------------------- | ------------------------------------ | ------------------------------------------- |
-| Free                                                                                                           | $0                                   | 50 calls/second, up to  100,000 calls/day   |
-| [Standard](https://confluxhub.io/payment/consumer/app/subscription/0x33A9451ee070d750a077C93f71D2cFcD0180Fa7D) | $150/mo                              | 100 calls/second, up to 1,000,000 calls/day |
-| Enterprise                                                                                                     | please inquire bd@confluxnetwork.org | customize on demand                         |
+| Fee Tier   | Price                                | 速率限制                                        | Buy Links                                                                                                                                                                                                                                    |
+| ---------- | ------------------------------------ | ------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Free       | $0                                   | 50 calls/second, up to  100,000 calls/day   | -                                                                                                                                                                                                                                            |
+| Standard   | $150/mo                              | 100 calls/second, up to 1,000,000 calls/day | [mainnet](https://confluxhub.io/payment/consumer/app/subscription/0x33A9451ee070d750a077C93f71D2cFcD0180Fa7D) <br/> [testnet](https://test.confluxhub.io/payment/consumer/app/subscription/0x4805C5B2741088B8458ed781083eA8940186E477) |
+| Enterprise | please inquire bd@confluxnetwork.org | customize on demand                         | -                                                                                                                                                                                                                                            |
 
 **Notes**
 - Maximum result-set size is 10,000 for `getLogs` call;
