@@ -3,39 +3,39 @@ sidebar_position: 1
 title: Running a Mining Node
 ---
 
-## Conflux Network PoW - GPU Mining Instruction
+## Conflux网络PoW（工作量证明）- GPU挖矿指南
 
-Network: Conflux Hydra
+网络：Conflux Hydra
 
-Version: v2.2.1-fixpos
+版本：v2.2.1-fixpos
 
-Graphics: Card Type NVIDIA GPU
+显卡类型：NVIDIA GPU
 
-Graphics Memory: 8G or more
+显存容量：8GB或更多
 
-Install NVIDIA Drivers: [Download](https://www.nvidia.cn/Download/index.aspx?lang=cn)
+安装NVIDIA驱动程序：[下载链接](https://www.nvidia.cn/Download/index.aspx?lang=cn)
 
-## Downloading the latest version
-For downloading the latest version of the software, please refer to: https://github.com/Conflux-Chain/conflux-rust/releases
+## 下载最新版本
+要下载Conflux节点的最新版本，请参考以下链接：https://github.com/Conflux-Chain/conflux-rust/releases
 
 
-## Windows Testing Instruction
-Notes:
+## Windows 测试指南
+注意：
 
-1. It is recommended to turn off antivirus softwares.
-2. Win 10, version 1903 and above.
+1. 建议关闭防病毒软件。
+2. 需要Win 10, version 1903 或者更高
 
-## Run Files
+## 运行文件
 
-1. ** cfxmine.win.zip: mining program:** [Click to see Conflux PoW mining algorithm](https://github.com/Conflux-Chain/open-cfxmine/releases)
-2. ** conflux_v2.2.1-fixpos.zip: Fullnode program:** [Click to see fullnode program](https://github.com/Conflux-Chain/conflux-rust/releases)
+1. **cfxmine.win.zip: 挖矿程序：[点击查看Conflux PoW挖矿算法](https://github.com/Conflux-Chain/open-cfxmine/releases)
+2. **conflux_v2.2.1-fixpos.zip：全节点程序：**[点击查看全节点程序](https://github.com/Conflux-Chain/conflux-rust/releases)
 
-## Prepare to Run conflux
-1. Create a directory named “conflux”
-2. Extract the download package to the directory
-3. Download the pos_config package and move the decompressed folder to the run directory
+## 准备运行 Conflux
+1. 创建一个名为“conflux”的目录
+2. 解压下载包到目录
+3. 请下载 pos_config 包并将解压后的文件夹移动到运行目录
 
-:warning: The directory structure should look like this:
+:warning: 目录结构应如下所示：
 
 ```
 conflux
@@ -54,57 +54,57 @@ conflux
     └── throttling.toml
 ```
 
-Note: the previous tethys.toml has changed to hydra.toml.
+注意：之前的 tethys.toml 已更改为 hydra.toml。
 
 
-## Configuration Instructions
+## 配置说明
 
-If you only run the PoS node, no modification is required here; If you plan to run the GPU mining software, you need to edit hydra.toml file in order to set up the configuration.
+如果您只运行 PoS 节点，这里无需进行任何修改； 如果您计划运行 GPU 挖矿软件，您需要编辑 hydra.toml 文件以进行配置设置。
 
 ```
 # mining_author="cfx:xxxxxxxxxx..."
 ```
 
-Please change the “cfx:xxxx…” to your own wallet address, and then delete “#” before “mining_author…”
+请将 "cfx:xxxx..." 修改为您自己的钱包地址，并删除 "mining_author..." 前面的 "#" 符号。
 
 
-## Run GPU Mining Program
+## 运行 GPU 挖矿程序
 
-Conflux GPU Mining Program **cfxmine** needs to run with the Conflux node program. Follow the steps below to start:
+Conflux GPU 挖矿程序 **cfxmine** 需要与 Conflux 全节点程序一起运行。 按照以下步骤：
 
-- Open the directory of the **run** executable file in cmd, and start the fullnode:
+- 在命令提示符（cmd）中打开 **run** 可执行文件所在的目录，并启动全节点，请按照以下步骤操作：
 
 ```bash
 cd conflux\run
 conflux --config hydra.toml --full 2>stderr.txt
 ```
 
-Then you can start mining.
+然后就可以开始挖矿了。
 
-- Open the cfxmine executable file in cmd, and start the Conflux GPU Mining Program:
+- 在命令提示符（cmd）中打开 cfxmine 可执行文件，并启动 Conflux GPU 挖矿程序，请按照以下步骤操作：
 
 ```bash
 cd conflux
 cfxmine --gpu 1
 ```
 
-Note: The GPU command line is executed after the fullnode synchronization is completed.
+注意：在完成全节点的同步之后，才执行 GPU 命令行。
 
-## Testing Instruction for Linux
+## Linux测试指南
 
-**Run Files**
+**运行文件**
 
 - **cfxmine.linux.gz:** [Mining ProgramClick to see Conflux PoW Mining Algorithm](https://github.com/Conflux-Chain/open-cfxmine/releases)
-- **conflux_linux_v2.2.1-fixpos:** \[Fullnode ProgramClick to see fullnode Program\] (https://github.com/Conflux-Chain/conflux-rust/releases)
-- （Differences from the previous version: the default.toml in the mainnet release will be renamed as tethys.toml, and in the testnet it will be testnet.toml.）
+- **conflux_linux_v2.2.1-fixpos：全节点程序** \[点击查看全节点程序\] (https://github.com/Conflux-Chain/conflux-rust/releases)
+- （与先前版本的区别：在主网发布中，default.toml 将被重命名为 tethys.toml，在测试网中将被命名为 testnet.toml。）
 
-## Prepare to Run conflux
+## 准备运行 Conflux
 
-1. Create a directory named “conflux”
-2. Extract the download package to the directory
-3. Download the pos_config package and move the decompressed folder to the run directory
+1. 创建一个名为“conflux”的目录
+2. 解压下载包到目录
+3. 请下载 pos_config 包并将解压后的文件夹移动到运行目录。
 
-:warning: The directory structure should look like this:
+:warning: 目录结构应如下所示：
 
 ```
 conflux
@@ -123,55 +123,55 @@ conflux
     └── throttling.toml
 ```
 
-Note: the previous tethys.toml has changed to hydra.toml.
+注意：之前的 tethys.toml 已更改为 hydra.toml。
 
-## Configuration Instructions
+## 配置说明
 
-Open the `run/hydra.toml` file with a text editor and configure mining related parameters:
+请使用文本编辑器打开 `run/hydra.toml` 文件，并配置与挖矿相关的参数。
 
 ```
 # mining_author="cfx:xxxxxxxxxx..."
 ```
 
-Please change the “cfx:xxxx…” to your own wallet address, and then delete “#” before “mining_author…”
+请将 "cfx:xxxx..." 修改为您自己的钱包地址，并删除 "mining_author..." 前面的 "#" 符号。
 
 
-## Run GPU Mining Program
+## 运行 GPU 挖矿程序
 
-Conflux GPU Mining Program **cfxmine** needs to run with the Conflux node program. Follow the steps below to start:
+Conflux GPU 挖矿程序 **cfxmine** 需要与 Conflux 全节点程序一起运行。 按照以下步骤：
 
-- In `bash` (or any POSIX compliant Shell), start the fullnode:
+- 在 Bash（或任何符合 POSIX 标准的 Shell）中，启动全节点，请按照以下步骤操作：
 
 ```bash
 cd conflux/run
 ./conflux --config hydra.toml --full 2>stderr.txt
 ```
 
-Then you can start mining.
+然后就可以开始挖矿了。
 
-- Open the directory of the cfxmine executable file in bash (or any POSIX compliant Shell), and start the Conflux GPU miningprogram:
+- 在 Bash（或任何符合 POSIX 标准的 Shell）中打开 cfxmine 可执行文件所在的目录，并启动 Conflux GPU 挖矿程序，请按照以下步骤操作：
 
 ```bash
 cd conflux
 ./cfxmine --gpu 1
 ```
 
-Note: The GPU command line is executed after the fullnode synchronization is completed
+注意：在完成全节点的同步之后，才执行 GPU 命令行。
 
-## Tips:
+## 温馨提示：
 
-If the Conflux node program and **cfxmine** are not on the same computer, you can specify the IP address and the port (the default is 32525) of the remote Conflux node program when starting cfxmine.
+如果 Conflux 全节点程序和 **cfxmine** 不在同一台计算机上，您可以在启动 cfxmine 时指定远程 Conflux 全节点程序的 IP 地址和端口（默认为 32525）。
 
 ```
 ./cfxmine --gpu --addr A.B.C.D
 ```
 
-or
+或者
 
 ```
 ./cfxmine --gpu --addr A.B.C.D --port xxxx
 ```
 
-If you want to designate remote node, you need to change the configuration of the node into: stratum_listen_address=“0.0.0.0”，and delete #
+如果您希望指定远程节点，您需要将节点的配置更改为：stratum_listen_address="0.0.0.0"，并删除 # 符号。
 
-Note: The GPU command line is executed after the fullnode synchronization is completed.
+注意：在完成全节点的同步之后，才执行 GPU 命令行。
