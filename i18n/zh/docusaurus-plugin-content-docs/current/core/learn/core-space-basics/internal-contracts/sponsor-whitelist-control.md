@@ -9,7 +9,7 @@ Conflux实现了赞助机制，来补贴智能合约的使用。 因此，一个
 
 当一个子调用（message call）发生时，Conflux不会再次检查赞助。 例如，如果普通地址`A`调用合约`B`，合约`B`调用合约`C`，Conflux只会检查地址`A`是否被合约`B`赞助。 如果`A`被赞助，`B`将承担交易执行过程中的所有gas和/或存储抵押，包括从`B`到`C`的消息调用。 换句话说，只有一个交易发送者才能被赞助。
 
-The **SponsorControl** contract keeps the following information for each user-established contract:
+**SponsorControl**合约为每个用户建立的合约保存以下信息：
 + `sponsor_for_gas`: 这是提供gas消耗补贴的账户；
 + `sponsor_for_collateral`: 这是提供存储抵押补贴的账户；
 + `sponsor_balance_for_gas`: 这是可用于gas消耗补贴的余额；
