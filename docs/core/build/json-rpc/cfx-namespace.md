@@ -1069,8 +1069,6 @@ Returns logs matching the filter provided.
     * `blockHashes`: `Array` of `DATA` - (optional, default: `null`) Array of up to 128 block hashes that the search will be applied to. This will override from/to epoch fields if it's not `null`.
     * `address`: `Array` of `BASE32` - (optional, default: `null`) Search contract addresses. If `null`, match all. If specified, the log must be produced by one of these contracts.
     * `topics`: `Array` - (optional, default: `null`) 32-byte earch topics. Logs can have `4` topics: the event signature and up to `3` indexed event arguments. The elements of `topics` match the corresponding log topics. Example: `["0xA", null, ["0xB", "0xC"], null]` matches logs with `"0xA"` as the 1st topic AND (`"0xB"` OR `"0xC"`) as the 3rd topic. If `null`, match all.
-    <!-- * `limit`: `QUANTITY` - (optional, default: `null`) If `null` return all logs, otherwise should only return the **last** `limit` logs. Note: if the node has `get_logs_filter_max_limit` set, it will override `limit` if it is `null` or greater than the preset value.
-    * `offset`: `QUANTITY` - If specified, the response will skip the `last` offset logs. For instance, with 10 matching logs (0..9) and offset=0x1, limit=0x5, the response will contain logs 4..8. Note: Even if you specify offset, the corresponding logs still need to be processed by the node, so a filter with offset=10000, limit=10 has about the same performance as a filter with offset=0, limit=100010 -->
 
 ```json
 params: [
