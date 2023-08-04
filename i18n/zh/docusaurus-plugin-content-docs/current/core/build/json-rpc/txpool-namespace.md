@@ -8,7 +8,7 @@ keywords:
   - sdk
 ---
 
-`txpool` related RPCs which can enable developer get more info about transaction pool. Which was introduced from `conflux-rust v1.1.6`.
+`txpool` 相关的 RPC 可以让开发者获取更多关于交易池的信息。 Which was introduced from `conflux-rust v1.1.6`.
 
 These RPC methods require node's `public_rpc_apis` config set to `safe` or `all`, or the namespace include `txpool`
 
@@ -16,7 +16,7 @@ These RPC methods require node's `public_rpc_apis` config set to `safe` or `all`
 
 ### txpool_nextNonce
 
-Return one address's next usable nonce in transaction pool.
+返回交易池中一个地址的下一个可用none。
 
 #### 参数
 
@@ -34,7 +34,7 @@ params: [
 
 #### 示例
 
-Request
+请求
 
 ```sh
 curl --location --request POST 'http://localhost:12537' \
@@ -47,7 +47,7 @@ curl --location --request POST 'http://localhost:12537' \
 }'
 ```
 
-Response
+返回结果
 
 ```json
 {
