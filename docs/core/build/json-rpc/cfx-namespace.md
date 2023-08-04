@@ -2032,7 +2032,9 @@ Response
 
 ### cfx_newFilter
 
-Create a log filter for following up usage. Returns a log filter id which can be used via [cfx_getFilterChanges](#cfx_getfilterchanges) to retrieve new logs generated from newly executed transactions since last retrieve. Also usable via [cfx_getFilterLogs](#cfx_getfilterlogs) to retrieve all logs matching the filter.
+This function creates a log filter for tracking usage. It returns a log filter ID, which can be employed through the [cfx_getFilterChanges](#cfx_getfilterchanges) command to retrieve logs newly generated from recently executed transactions. The `from*` field in this context will be disregarded by this RPC (Remote Procedure Call). This function can also be used via [cfx_getFilterLogs](#cfx_getfilterlogs) to retrieve all logs that match the filter criteria. In this instance, the `from*` fields are considered.
+
+It is important to note that the filter object will expire after a certain period of inactivity from the last request, typically 60 seconds. This expiration duration is configured by the node. To avoid losing log tracking, it is recommended to refresh or recreate the filter as necessary.
 
 #### Parameters
 
@@ -2089,6 +2091,8 @@ Response
 
 Create a block filter for following up usage. Returns the block filter id which can be used via [cfx_getFilterChanges](#cfx_getfilterchanges) to retrieve latest executed blocks.
 
+It is important to note that the filter object will expire after a certain period of inactivity from the last request, typically 60 seconds. This expiration duration is configured by the node. To avoid losing log tracking, it is recommended to refresh or recreate the filter as necessary.
+
 #### Parameters
 
 None.
@@ -2127,8 +2131,12 @@ Response
 Create a pending transaction filter for following up usage. Returns the transaction filter id which can be used via [cfx_getFilterChanges](#cfx_getfilterchanges) to retrieve **ready but not executed** transactions.
 
 :::note
+
 The created filter will only filter out ready transactions, which means a pending transaction with a future nonce will never be listed via corresponding [cfx_getFilterChanges](#cfx_getfilterchanges).
+
 :::
+
+Besides, it is important to note that the filter object will expire after a certain period of inactivity from the last request, typically 60 seconds. This expiration duration is configured by the node. To avoid losing log tracking, it is recommended to refresh or recreate the filter as necessary.
 
 #### Parameters
 
@@ -2167,7 +2175,7 @@ Response
 
 Get filter changes since last retrieve. Return value depends on which type of filter id is provided. Filter id can be returned from current RPCs:
 
-* [cfx_newFilter](cfx_newFilter): new logs generated from newly executed transactions matching the filter.
+* [cfx_newFilter](cfx_newFilter): new logs generated from newly executed transactions matching the filter. Noting that `from*` fields will be ignored by this RPC.
 * [cfx_newBlockFilter](cfx_newBlockFilter): new executed blocks.
 * [cfx_newPendingTransactionFilter](cfx_newPendingBlockFilter): new pending transactions which are **ready to execute**.
 
@@ -2218,7 +2226,7 @@ Response
 
 ### cfx_getFilterLogs
 
-Returns **all** logs matching the log filter.
+Returns **all** logs matching the log filter (Unlike `cfx_getFilterChanges`, `from*` fields still work).
 
 #### Parameters
 
