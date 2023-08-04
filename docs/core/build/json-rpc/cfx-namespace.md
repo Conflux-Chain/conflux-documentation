@@ -2039,9 +2039,9 @@ It is important to note that the filter object will expire after a certain perio
 #### Parameters
 
 1. `Object` - A log filter object:
-    * `fromEpoch`: `QUANTITY|TAG` - (optional, default: `"latest_checkpoint"`) the epoch number, or the string `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-default-epochnumber-parameter). Search will be applied from this epoch number.
+    * `fromEpoch`: `QUANTITY|TAG` - (optional, default: `"latest_checkpoint"`) the epoch number, or the string `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-default-epochnumber-parameter). The start epoch to search. Noting that [cfx_getFilterChanges] will ignore this parameter.
     * `toEpoch`: `QUANTITY|TAG` - (optional, default: `"latest_state"`) the epoch number, or the string `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-default-epochnumber-parameter). Search will be applied up until (and including) this epoch number.
-    * `fromBlock`: `QUANTITY` - (optional, default: `null`). Search will be applied from this specified block.
+    * `fromBlock`: `QUANTITY` - (optional, default: `null`). The start block to search. Noting that [cfx_getFilterChanges] will ignore this parameter.
     * `toBlock`: `QUANTITY` - (optional, default: `null`). Search will be applied untial (and including) this specified block.
     * `blockHashes`: `Array` of `DATA` - (optional, default: `null`) Array of up to 128 block hashes that the search will be applied to. This will override from/to epoch fields if it's not `null`.
     * `address`: `Array` of `BASE32` - (optional, default: `null`) Search contract addresses. If `null`, match all. If specified, the log must be produced by one of these contracts.
@@ -2240,7 +2240,7 @@ params: [
 
 #### Returns
 
-`Array` - array of log receipts (same as [cfx_getLogs](#cfx_getlogs).
+`Array` - array of log receipts (same as [cfx_getLogs](#cfx_getlogs)).
 
 ##### Example
 
@@ -2310,7 +2310,7 @@ Returns all transaction receipts within the specific epoch.
 
 #### Parameters
 
-1. `QUANTITY|TAG` - the epoch number, or the string `"latest_mined"`, `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-default-epochnumber-parameter).
+1. `QUANTITY|TAG` - the epoch number, or the string `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-default-epochnumber-parameter).
 2. `Boolean` - whether eSpace transaction receipts will be included in the return value, defaults to `false`.
 
 ```json
@@ -2382,7 +2382,7 @@ Returns current chain collateral status info.
 
 #### Parameters
 
-1. `QUANTITY|TAG` - (optional, default: `"latest_mined"`) the epoch number, or the string ``"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-default-epochnumber-parameter).
+1. `QUANTITY|TAG` - (optional, default: `"latest_state"`) the epoch number, or the string ``"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-default-epochnumber-parameter).
 
 ```json
 params: [
@@ -2409,7 +2409,7 @@ curl --location --request POST 'http://localhost:12537' \
     "id": 1,
     "jsonrpc": "2.0",
     "method": "cfx_getCollateralInfo",
-    "params": ["latest_mined"]
+    "params": ["latest_executed"]
 }'
 ```
 
