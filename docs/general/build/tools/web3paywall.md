@@ -2,9 +2,10 @@
 sidebar_position: 2
 title: Web3 Paywall
 ---
+# Web3 Paywall
 
-# Introduction
-Web3 Paywall is a set of smart contracts on Conflux eSpace that you can purchase development resource with cryptocurrency as a consumer, and you can configure your own developed resource and receive cryptocurrency such as CFX or USDT.
+## Introduction
+Web3 Paywall is a set of smart contracts on Conflux eSpace that you can purchase development resource with cryptocurrency as a consumer.
 
 ## As a consumer
 
@@ -27,6 +28,8 @@ Web3 Paywall is a set of smart contracts on Conflux eSpace that you can purchase
 
 You can purchase mainnet subscriptions with cryptocurrency of Confura RPC and ConfluxScan API upgrade services on [**confluxhub**](https://confluxhub.io/payment/consumer/apps) currently.
 
+## Purchase on Testnet
+
 If you want to purchase the testnet Confura RPC and ConfluxScan API upgrade service, you can visit [**confluxhub**](https://test.confluxhub.io/payment/consumer/apps) to purchase it.
 
 Before you purchase the services of testnet, you can obtain some eSpace test tokens first.
@@ -39,46 +42,3 @@ Before you purchase the services of testnet, you can obtain some eSpace test tok
 3.Click claim button and wait for a few minutes.
 
 4.Follow the above process to purchase the testnet Confura RPC and ConfluxScan API upgrade service.
-
-
-## As a provider
-
-You can configuring your own developer services through contracts and receiving cryptocurrency as a service charge.
-
-**Configure your app resource service:**
-
-1.Connect Metamask or Fluent Wallet and switch to Conflux eSpace network.
-
-2.Fill your app informations.
-
-**Name:** your app service name.
-
-**Symbol:** your app service token symbol that will be issued as resource information.
-
-**Link:** your app service website.
-
-**Description:** your app service description.
-
-**Payment type:** subscription or billing compatible with your service.
-
-**Default weight:** the weight is used for per deduction of resource charging.
-
-3.You need to configure the information of the subscription items when you set the subscription type.
-
-**Resource name:** item‘s name.
-
-**Price:** pricing of subscription.
-
-**Basic days:** period of using the service.
-
-**Giveaways:** gifted period of the service.
-
-**Configurations:** resource extensions.
-
-Value: extended parameters that can be used for your service or description of the project.
-
-Description: parameters description.
-
-4.Submit configuration information and sign with wallet.
-
-In your app details, you can modify your own configured apps information and airdrop services to users. You can withdraw the settlement fee of the service, which can be withdrawn as CFX or USDT.
