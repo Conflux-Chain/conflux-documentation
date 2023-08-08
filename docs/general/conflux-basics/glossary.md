@@ -17,7 +17,7 @@ The terms are organized in alphabetical order for easy navigation. Each term inc
 4. [**Block**](#4-block)
 5. [**Blockchain**](#5-blockchain)
 6. [**CFX**](#6-cfx)
-7. [**ChainId**](#7-chainid)
+7. [**ChainId & NetworkId**](#7-chainid--networkid)
 8. [**Conflux Ecosystem**](#8-conflux-ecosystem)
 9. [**Conflux Scan**](#9-conflux-scan)
 10. [**Consensus Algorithm**](#10-consensus-algorithm)
@@ -99,14 +99,23 @@ For more information on the genesis creation, distribution, and release of CFX, 
 - [On-chain DAO Vote for Chain Parameters](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-94.md)
 - [Economics](./economics.md)
 
-### 7. **ChainId**
-In Conflux, chainId is a number indicating where a transaction is intended to be executed. It's used to prevent transaction replay attacks. The chainId of Conflux is a constant. 
+### 7. **ChainId & NetworkId**
+`chainId` is a number indicating where a transaction is intended to be executed. It is used to prevent transaction replay attacks.
+The chainId of Conflux chains are constant, currently:
+
+- Conflux Core Mainnet: `1029`
+- Conflux Core Testnet: `1`
+- Conflux eSpace Mainnet: `1030`
+- Conflux eSpace Testnet: `71`
+
+`networkId` is used to distinguish between blockchains at the network layer. Currently Conflux mainnet/testnet's `networkId` is same as `chainId`.
+You can get both of these from the `cfx_getStatus` RPC method.
 
 ### 8. **Conflux Ecosystem**
 The Conflux Ecosystem refers to the various projects, applications, platforms, and services that are built on or integrated with the Conflux network. This includes decentralized applications (DApps), decentralized finance (DeFi) platforms, wallet services, and more. The Conflux Ecosystem is a vibrant and growing community of developers, users, and organizations that contribute to the Conflux network.
 
 ### 9. **Conflux Scan**
-Conflux Scan is the official blockchain explorer for the Conflux network. It provides a user-friendly, details-driven interface for users to view, confirm, and inspect transactions and contracts on the Conflux network. With Conflux Scan, users can track the status of their transactions, view the balance of their accounts, explore smart contracts, and much more.
+[Conflux Scan](https://confluxscan.io/) is the official blockchain explorer for the Conflux network. It provides a user-friendly, details-driven interface for users to view, confirm, and inspect transactions and contracts on the Conflux network. With Conflux Scan, users can track the status of their transactions, view the balance of their accounts, explore smart contracts, and much more.
 
 ### 10. **Consensus Algorithm**
 A consensus algorithm is a process in computer science used to achieve agreement on a single data value among distributed processes or systems. In the context of blockchain, it's used to agree on the validity of transactions. Conflux uses a unique consensus algorithm based on a Tree-Graph structure, which allows for high throughput and low latency in large-scale decentralized networks.
@@ -135,8 +144,12 @@ In blockchain, a fork is a change to the software that creates two separate vers
 ### 18. **Gas**
 In the context of blockchain, gas refers to the fee required to successfully conduct a transaction or execute a contract on the Ethereum blockchain. In Conflux, the concept of gas also exists, but with a unique twist: the gas fee for contract execution is paid by contract sponsors, not by users. This improves the user experience by allowing users to interact with smart contracts without worrying about gas fees.
 
+Refer to [Gas](./gas.md) for more information.
+
 ### 19. **GHAST**
 GHAST (Greedy Heaviest Adaptive SubTree) is the Conflux protocol's rule for selecting a chain from the Tree-Graph structure. It's designed to ensure safety and liveness properties in the network. GHAST is a key part of Conflux's unique consensus mechanism.
+
+Refer to [GHAST](../conflux-basics/consensus-mechanisms/proof-of-work/ghast.md) for more information.
 
 ### 20. **Hard Fork**
 A hard fork is a type of fork that creates a permanent divergence from the previous version of the blockchain. Nodes running the old version will not be accepted by the new version. This is a common concept in many blockchains, but due to the unique structure of Conflux, hard forks are less common.
@@ -159,8 +172,12 @@ A Merkle tree, in cryptography and computer science, is a tree in which every le
 ### 24. **Mining**
 Mining is the process of validating new transactions and recording them on a blockchain. Miners use powerful computers to solve complex mathematical problems that validate transactions. The first miner to solve the problem gets to add a new block to the blockchain and is rewarded with a certain amount of cryptocurrency. In the context of Conflux, mining is used to add new blocks to the Tree-Graph structure of the network.
 
+Refer to [Mining](../mine-stake/mine/running-mining-node.md) for more information about running a mining node.
+
 ### 25. **Node**
-n the context of blockchain, a node is a computer that participates in the blockchain network. Each node keeps a copy of the entire blockchain and follows the rules of the network. In the Conflux network, nodes participate in the consensus mechanism, validate transactions, and maintain the network's security and decentralization.
+In the context of blockchain, a node is a computer that participates in the blockchain network. Each node keeps a copy of the entire blockchain and follows the rules of the network. In the Conflux network, nodes participate in the consensus mechanism, validate transactions, and maintain the network's security and decentralization.
+
+Refer to [Run a Node](../run-a-node/node-requirements.md) section for more information about running nodes.
 
 ### 26. **Nonce**
 In blockchain technology, a nonce ("number only used once") is a number added to a hashed—or encrypted—block in a blockchain that, when rehashed, meets the difficulty level restrictions. The nonce is the number that blockchain miners are solving for. In the context of Conflux, the nonce is used in the mining process to add new blocks to the network.
@@ -174,8 +191,12 @@ A peer-to-peer network is one in which each computer in the network can act as a
 ### 29. **Proof of Stake (PoS)**
 Proof of Stake (PoS) is a type of consensus algorithm where block creators are chosen based on the number of tokens they hold or are willing to "stake". PoS is used in the Conflux network to prevent 51% attacks and to finalize blocks.
 
+Refer to [PoS](../conflux-basics/consensus-mechanisms/proof-of-stake/pos_overview.md) for more information.
+
 ### 30. **Proof of Work (PoW)**
 Proof of Work (PoW) is a type of consensus algorithm where the first participant to solve a complex mathematical problem gets to add a new block to the blockchain. PoW is used in many blockchains, including Bitcoin and Ethereum. While Conflux uses a unique consensus mechanism based on a Tree-Graph structure, it shares similarities with PoW in terms of incentivizing participants to maintain the network.
+
+Refer to [PoW](../conflux-basics/consensus-mechanisms/proof-of-work/proof-of-work.mdx) for more information.
 
 ### 31. **Public/Private Key**
 A public key is a cryptographic code that allows a user to receive cryptocurrencies into his or her account. The private key is used to sign transactions or digital messages and the public key is used to verify the signature. In the context of Conflux, users have a pair of public and private keys that they use to interact with the network.
@@ -186,22 +207,30 @@ A smart contract is a self-executing contract with the terms of the agreement di
 ### 33. **Space**
 In the Conflux network, "Space" refers to a specific environment within the network. For example, Core Space refers to the original Conflux network, while eSpace is the virtualized Ethereum chain running on top of the Core Space network. The two spaces are logically independent of each other and do not affect each other except for certain cross-space operations.
 
-Refer to [spaces](./spaces.md) for more information.
+Refer to [Spaces](./spaces.md) for more information.
 
 ### 34. **Sponsorship Mechanism**
 In Conflux, the gas fee for contract execution is not paid by users but by contract sponsors. This sponsorship mechanism allows DApp users on Conflux to not worry about gas fees, improving user experience. Sponsors can set up a sponsorship by depositing CFX into a contract, and they can withdraw the sponsorship at any time.
 
+Refer to [Sponsor Mechanism](../../core/learn/core-space-basics/sponsor-mechanism.md) for more information.
+
 ### 35. **Staking (in Conflux)**
 Staking in Conflux refers to the process of participating in the network consensus by locking up a certain amount of CFX. Stakers can earn rewards for their participation. This mechanism helps to secure the network and incentivize participation.
+
+Refer to [Staking FAQs](../mine-stake/stake/faqs.md) for more information.
 
 ### 36. **Transactions**
 A Conflux transaction is a single instruction composed by an external actor with a Conflux account, and this instruction is cryptographically signed using the sender account's private key to prevent transaction forge. A transaction can involve a simple transfer of CFX (the native currency of Conflux), a transfer of tokens (such as ERC20 or ERC721), a deployment of a new smart contract, or an execution of a function on an existing smart contract. Transactions are the only way to store or update data on the blockchain.
 
-Refer to [transactions](./transactions.md) for more information.
+Refer to [Transactions](./transactions.md) for more information.
 
 ### 37. **Tree-Graph**
 In the context of Conflux, the Tree-Graph is a novel consensus mechanism that allows for high throughput and low latency in large-scale decentralized networks. Unlike traditional blockchain systems that follow a linear chain, Conflux forms a tree-like structure of blocks, allowing for multiple blocks to be produced concurrently. This structure is key to Conflux's ability to process a high number of transactions per second.
 
-### 38. **Wallet**
-In the context of blockchain, a wallet is a digital place to store cryptocurrency. It can be in the form of a software (online or offline) or hardware device. In the Conflux network, users can use wallets like the Conflux Portal to manage their CFX and interact with the network.
+Refer to [Tree-Graph](../conflux-basics/consensus-mechanisms/proof-of-work/tree-graph.md) for more information.
 
+
+### 38. **Wallet**
+In the context of blockchain, a wallet is a digital place to store cryptocurrency. It can be in the form of a software (online or offline) or hardware device. In the Conflux Network, users can use wallets like Fluent to manage their CFX and interact with the network.
+
+Refer to [Wallets](../tutorials/wallets/wallets.mdx) for more information about supported wallets.
