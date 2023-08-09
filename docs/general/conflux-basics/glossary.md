@@ -180,7 +180,11 @@ In the context of blockchain, a node is a computer that participates in the bloc
 Refer to [Run a Node](../run-a-node/node-requirements.md) section for more information about running nodes.
 
 ### 26. **Nonce**
-In blockchain technology, a nonce ("number only used once") is a number added to a hashed—or encrypted—block in a blockchain that, when rehashed, meets the difficulty level restrictions. The nonce is the number that blockchain miners are solving for. In the context of Conflux, the nonce is used in the mining process to add new blocks to the network.
+In blockchain technology, nonce ("number only used once") has different meaning in different context.
+
+In mining, nonce is a number added to let the block header meet the difficulty level restrictions. The nonce is the number that blockchain miners are solving for.
+
+In transaction, nonce is the execution sequence number of transactions sent from an account. A transaction with incorrect nonce won't be included in blockchain, so correctly setting the nonce is critical to transaction execution. Refer to [nonce](../../core/learn/core-space-basics/core-transactions.md#nonce) for more information.
 
 ### 27. **Oracles**
 In the context of blockchains and smart contracts, an oracle is an agent that finds and verifies real-world occurrences and submits this information to a blockchain to be used by smart contracts. Oracles are used in the Conflux network to bring external information into smart contracts, enabling them to interact with the outside world.
