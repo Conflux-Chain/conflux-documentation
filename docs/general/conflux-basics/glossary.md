@@ -219,7 +219,7 @@ In Conflux, the gas fee for contract execution is not paid by users but by contr
 Refer to [Sponsor Mechanism](../../core/learn/core-space-basics/sponsor-mechanism.md) for more information.
 
 ### 35. **Staking (in Conflux)**
-Staking in Conflux refers to the process of participating in the network consensus by locking up a certain amount of CFX. Stakers can earn rewards for their participation. This mechanism helps to secure the network and incentivize participation.
+Staking in Conflux typically refers to the PoS staking, the process of participating in the network PoS consensus by locking up a certain amount of CFX. Stakers can earn rewards for their participation. This mechanism helps to secure the network and incentivize participation.
 
 Refer to [Staking FAQs](../mine-stake/stake/faqs.md) for more information.
 
