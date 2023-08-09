@@ -175,7 +175,7 @@ Mining is the process of validating new transactions and recording them on a blo
 Refer to [Mining](../mine-stake/mine/running-mining-node.md) for more information about running a mining node.
 
 ### 25. **Node**
-In the context of blockchain, a node is a computer that participates in the blockchain network. Each node keeps a copy of the entire blockchain and follows the rules of the network. In the Conflux network, nodes participate in the consensus mechanism, validate transactions, and maintain the network's security and decentralization.
+In the context of blockchain, a node is a server that participates in the blockchain network. Each node keeps a copy of the blockchain in some way (depending on its type) and follows the rules of the network. Nodes validate transactions, maintaining the network's security and decentralization.
 
 Refer to [Run a Node](../run-a-node/node-requirements.md) section for more information about running nodes.
 
