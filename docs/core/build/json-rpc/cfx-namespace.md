@@ -2308,6 +2308,12 @@ Response
 
 Returns all transaction receipts within the specific epoch.
 
+:::note
+
+This method is supported by [Confura](../sdks-and-tools/core-endpoints.md#1-confura) if api key is provided. For normal nodes, this method is also supported, but can only be accessed in local environment.
+
+:::
+
 #### Parameters
 
 1. `QUANTITY|TAG` - the epoch number, or the string `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-default-epochnumber-parameter).
@@ -2322,8 +2328,7 @@ params: [
 
 #### Returns
 
-`Array` -  This is a two-dimensional array of transaction receipts. Each sub-array represents transactions within a block.
-Certainly, here's an example of the cfx_getEpochReceipts API call:
+`Array` -  This is a two-dimensional array of [transaction receipts](#cfx_gettransactionreceipt). Each sub-array represents transactions within a block. Noting an extra field of `space` will be added to each transaction receipt if the second parameter is set to `true`. The value of `space` will be either `native` meaning this is a core space transaction receipt or `evm` meaning the transaction is from eSpace.
 
 ##### Example
 
