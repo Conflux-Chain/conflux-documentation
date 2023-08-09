@@ -214,7 +214,7 @@ In the Conflux network, "Space" refers to a specific environment within the netw
 Refer to [Spaces](./spaces.md) for more information.
 
 ### 34. **Sponsorship Mechanism**
-In Conflux, the gas fee for contract execution is not paid by users but by contract sponsors. This sponsorship mechanism allows DApp users on Conflux to not worry about gas fees, improving user experience. Sponsors can set up a sponsorship by depositing CFX into a contract, and they can withdraw the sponsorship at any time.
+In Conflux, the transaction fee for contract execution can be paid by users but also by contract sponsors. This sponsorship mechanism allows DApp users on Conflux to not worry about gas fees, improving user experience. Sponsors can set up a sponsorship by depositing CFX into a contract.
 
 Refer to [Sponsor Mechanism](../../core/learn/core-space-basics/sponsor-mechanism.md) for more information.
 
