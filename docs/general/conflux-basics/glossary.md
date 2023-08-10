@@ -89,7 +89,8 @@ A decentralized application (DApp) is a computer application that runs on a dist
 Double spending is a potential flaw in a digital cash scheme in which a single digital token can be spent more than once. This is possible because a digital token consists of a digital file that can be duplicated or falsified. The Conflux network, like other blockchain networks, uses a consensus mechanism to prevent double spending.
 
 ### **Epoch**
-Given the pivot chain in a Tree-Graph, Conflux splits all blocks into epochs. Each epoch has a limit of executing 200 blocks. When a single epoch contains more than 200 blocks, Conflux will only execute the last 200 blocks in that epoch. This limit is introduced to battle DoS attacks about releasing a lot of blocks suddenly. The concept of epochs is crucial to the operation of the Conflux network.
+
+In Conflux, an epoch is a fundamental unit used to update the world state, setting it apart from blockchain like Bitcoin or Ethereum, where updates are done by block. An epoch in Conflux is a specific partitioning of blocks that determines their total order. This partitioning is based on the pivot chain in a Tree-Graph structure, and the pivot block will be the last block in each epoch. Once the pivot chain is determined and not reverted, the partition of epochs becomes immutable, meaning the order of transactions and execution results cannot be changed.
 
 ### **ERC20**
 ERC20 is a standard for tokens on the Ethereum blockchain. It specifies a set of functions and events that a token contract has to implement. While this is a standard on the Ethereum network, tokens on the Conflux network can also follow this standard, especially if they are transferred from the Ethereum network via the ShuttleFlow protocol.
