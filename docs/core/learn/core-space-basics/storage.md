@@ -35,6 +35,12 @@ Conflux implements a [sponsorship mechanism](./internal-contracts/sponsor-whitel
 
 As is mentioned above, CFX acts as collateral when utilizing storage space. And if the storage space in use is freed or its ownership changes, the collateralized CFX is refunded. However, circumstance slightly changes for storage collateral sponsorship with the activation of [CIP-107 DAO-Adjustable Burn of Storage Collateral](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-107.md).
 
-When a sponsor adds storage collateral for a contract, `p` proportion (starts at 0.5 and can be adjusted by [On-Chain DAO Vote for Chain Parameters](./internal-contracts/params-control.md)) of the CFX tokens will be burned and corresponding amount of "storage point" will be minted. The converted CFX is permanently burned and non-refundable under all circumstances, including situations where the contract is destroyed or the sponsor is replaced. For every 1 CFX burned, 1024 storage points will be generated. These storage points are non-transferrable and won't generate storage interest. However, they can be used to cover storage collateral costs and are prioritized for usage over sponsor collateral balances.
+When a sponsor adds storage collateral for a contract, `p` proportion (starts at 0.5 and can be adjusted by [On-Chain DAO Vote for Chain Parameters](./internal-contracts/params-control.md)) of the CFX tokens will be burned and corresponding amount of "storage point" will be minted. The converted CFX is permanently burned and non-refundable under all circumstances, including situations where the contract is destroyed or the sponsor is replaced. For every 1 CFX burned, 1024 storage points will be generated. These storage points are non-transferrable and won't generate storage interest but can be used to cover storage collateral costs.
+
+:::note
+
+Sponsor collateral balances are prioritized for usage over storage points.
+
+:::
 
 Refer to [sponsorship mechanism](./internal-contracts/sponsor-whitelist-control.md) or [CIP-107 DAO-Adjustable Burn of Storage Collateral](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-107.md) for more information of the mentioned mechanisms.

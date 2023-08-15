@@ -321,7 +321,7 @@ Conflux keeps the following information for each user-established contract:
 There are two resources that can be sponsored: gas consumption and storage collateral.
 
 - *For gas consumption*: If a transaction calls a contract with non-empty `sponsor_for_gas` and the sender is in the `whitelist` of the contract and the gas fee specified by the transaction is within the `sponsor_limit_for_gas_fee`, the gas consumption of the transaction is paid from the `sponsor_balance_for_gas` of the contract (if it is sufficient) rather than from the sender’s balance. Otherwise, the sender should pay for the gas consumption.
-- *For storage collateral*: If a transaction calls a contract with non-empty `available_storage_points` or `sponsor_for_collateral` and the sender is in the `whitelist` of the contract, the collateral for storage incurred in the execution of the transaction is deducted from `available_storage_points`(with priority) or `sponsor_for_collateral` of the contract, and the owner of those modified storage entries is set to the contract address accordingly. Otherwise, the sender should pay for the collateral for storage incurred in the execution.
+- *For storage collateral*: If a transaction calls a contract with non-empty `available_storage_points` or `sponsor_for_collateral` and the sender is in the `whitelist` of the contract, the collateral for storage incurred in the execution of the transaction is deducted from `sponsor_for_collateral`(with priority) or `available_storage_points` of the contract, and the owner of those modified storage entries is set to the contract address accordingly. Otherwise, the sender should pay for the collateral for storage incurred in the execution.
 
 ### Storage Points
 
