@@ -74,8 +74,6 @@ When encoding **QUANTITIES** (integers, numbers): encode as hex using the most c
 * 无论包含还是省去地址类型都是可以接受的，例如：`cfx:aarc9abycue0hhzgyrr53m6cxedgccrmmyybjgh4xg`和`cfx:type.user:aarc9abycue0hhzgyrr53m6cxedgccrmmyybjgh4xg`是等价的。 但是，类型不正确的地址，例如：`cfx:type.contract:aarc9abycue0hhzgyrr53m6cxedgccrmmyybjgh4xg`，会被拒绝。
 * 全大写或者全小写地址都是可以接受的，例如：`cfx:aarc9abycue0hhzgyrr53m6cxedgccrmmyybjgh4xg`和`CFX:AARC9ABYCUE0HHZGYRR53M6CXEDGCCRMMYYBJGH4XG`都是有效的。 但混合大小写地址会被拒绝。
 
-Refer to [Addresses](../../learn/core-space-basics/addresses.md) for more knowledge about Base32 addresses.
-
 ### 默认的 epochNumber （纪元数） 参数
 
 有几个RPC方法有一个epoch number参数。 Epoch的概念在Conflux中有点类似于其他账本中的区块号（高度），但是一个epoch可能包含多个区块。
@@ -95,34 +93,11 @@ Epoch number指定了在一个时间点时，系统的相应状态，这些状�
 TODO: Add links to deferred execution documentation.
 -->
 
-请注意，由于性能优化，最新的已知epoch没有被执行，所以这些epoch没有可用的状态。 对于大多数与状态查询有关的RPC，推荐使用`"latest_state"`。 (Refer to [transaction lifecycle](../../../general/conflux-basics/transactions.md#transaction-lifecycle) for more information about transaction life cycle in Conflux).
+请注意，由于性能优化，最新的已知epoch没有被执行，所以这些epoch没有可用的状态。 对于大多数与状态查询有关的RPC，推荐使用`"latest_state"`。
 
-#### EIP-1898 style Conflux epochNumber parameter
+## EXAMPLES
 
-Conflux core space supports epoch number parameter in [EIP-1898](https://eips.ethereum.org/EIPS/eip-1898) style for certain RPCs. The [EIP-1898](https://eips.ethereum.org/EIPS/eip-1898) style epoch number parameter is an object with 3 optional fields:
-
-- `epochNumber`. Corresponding to EIP-1898 defined `blockNumber`
-- `blockHash`. Same as EIP-1898 `blockHash`
-- `requirePivot`. Corresponding to EIP-1898 `requireCanonical`. Defaults to `true`
-
-例如：
-
-```json
-{
-  "blockHash": "0x692373025c7315fa18b2d02139d08e987cd7016025920f59ada4969c24e44e06",
-  "requirePivot": false
-}
-```
-
-The EIP-1898 style epoch number parameter is now usable in following RPCs:
-
-* [cfx_getBalance](#cfx_getbalance)
-* [cfx_getStorageAt](#cfx_getstorageat)
-* [cfx_call](#cfx_call)
-* [cfx_getNextNonce](#cfx_getnextnonce)
-* [cfx_getCode](#cfx_getcode)
-
-* [cfx_getEpochReceipts](#cfx_getepochreceipts)
+在此页面上，我们提供了如何使用命令行工具 [curl](https://curl.se/) 使用单个 JSON RPC API 端点的示例。 这些单独的endpoint示例位于下面的Curl 示例部分。 Further down the page, we also provide an end-to-end example for compiling and deploying a smart contract using a Geth node, the JSON_RPC API and curl.
 
 ## CURL EXAMPLES
 
@@ -241,7 +216,7 @@ In this example, we are told that the earliest available state is at epoch `9510
 
 ### History 方法
 
-获取从创世区块开始的每个区块的历史记录。 This is like one large append-only file, and includes all block headers, block bodies, and transaction receipts.
+获取从创世区块开始的每个区块的历史记录。 This is like one large append-only file, and includes all block headers, block bodies, uncle blocks, and transaction receipts.
 
 * cfx_getBlockByHash
 * cfx_getBlockByEpochNumber
@@ -418,7 +393,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"cfx_getBlockByHash","params":["0
 
 #### 参数
 
-1. `QUANTITY|TAG` - the epoch number, or the string `"latest_mined"`, `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-default-epochnumber-parameter).
+1. `QUANTITY|TAG` - the epoch number, or the string `"latest_mined"`, `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-epoch-number-parameter).
 2. `Boolean` - if `true`, it returns the full transaction objects. If `false`, only the hashes of the transactions are returned
 
 ```json
@@ -479,7 +454,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"cfx_getBestBlockHash","id":1}' -
 
 #### 参数
 
-1. `TAG` - (optional, default: `"latest_mined"`) String `"latest_mined"`, `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-default-epochnumber-parameter).
+1. `TAG` - (optional, default: `"latest_mined"`) String `"latest_mined"`, `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-epoch-number-parameter).
 
 #### 返回值
 
@@ -535,7 +510,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"cfx_gasPrice","id":1}' -H "Conte
 
 #### 参数
 
-1. `QUANTITY|TAG` - the epoch number, or the string `"latest_mined"`, `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-default-epochnumber-parameter).
+1. `QUANTITY|TAG` - the epoch number, or the string `"latest_mined"`, `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-epoch-number-parameter).
 
 #### 返回值
 
@@ -575,7 +550,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"cfx_getBlocksByEpoch","params":[
 #### 参数
 
 1. `BASE32` - address to check for balance.
-2. `QUANTITY|TAG` - (optional, default: `"latest_state"`) integer epoch number, or the string `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-default-epochnumber-parameter)
+2. `QUANTITY|TAG` - (optional, default: `"latest_state"`) integer epoch number, or the string `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-epoch-number-parameter)
 
 ```json
 params: [
@@ -611,7 +586,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"cfx_getBalance","params":["cfx:t
 #### 参数
 
 1. `BASE32` - address to check for staking balance.
-2. `QUANTITY|TAG` - (optional, default: `"latest_state"`) integer epoch number, or the string `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-default-epochnumber-parameter)
+2. `QUANTITY|TAG` - (optional, default: `"latest_state"`) integer epoch number, or the string `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-epoch-number-parameter)
 
 ```json
 params: [
@@ -648,7 +623,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"cfx_getStakingBalance","params":
 #### 参数
 
 1. `BASE32` - address to check for collateral storage.
-2. `QUANTITY|TAG` - (optional, default: `"latest_state"`) integer epoch number, or the string `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-default-epochnumber-parameter)
+2. `QUANTITY|TAG` - (optional, default: `"latest_state"`) integer epoch number, or the string `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-epoch-number-parameter)
 
 ```json
 params: [
@@ -684,7 +659,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"cfx_getCollateralForStorage","pa
 #### 参数
 
 1. `BASE32` - address of the contract.
-2. `QUANTITY|TAG` - (optional, default: `"latest_state"`) integer epoch number, or the string `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-default-epochnumber-parameter)
+2. `QUANTITY|TAG` - (optional, default: `"latest_state"`) integer epoch number, or the string `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-epoch-number-parameter)
 
 ```json
 params: [
@@ -720,7 +695,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"cfx_getAdmin","params":["cfx:typ
 #### 参数
 
 1. `BASE32` - address of the contract.
-2. `QUANTITY|TAG` - (optional, default: `"latest_state"`) integer epoch number, or the string `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-default-epochnumber-parameter)
+2. `QUANTITY|TAG` - (optional, default: `"latest_state"`) integer epoch number, or the string `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-epoch-number-parameter)
 
 ```json
 params: [
@@ -757,7 +732,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"cfx_getCode","params":["cfx:type
 
 1. `BASE32` - address of the contract.
 2. `QUANTITY` - a storage position (see [here](https://solidity.readthedocs.io/en/v0.7.1/internals/layout_in_storage.html) for more info).
-3. `QUANTITY|TAG` - (optional, default: `"latest_state"`) integer epoch number, or the string `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-default-epochnumber-parameter)
+3. `QUANTITY|TAG` - (optional, default: `"latest_state"`) integer epoch number, or the string `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-epoch-number-parameter)
 
 ```json
 params: [
@@ -794,7 +769,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"cfx_getStorageAt","params":["cfx
 #### 参数
 
 1. `BASE32` - address of the contract.
-2. `QUANTITY|TAG` - (optional, default: `"latest_state"`) integer epoch number, or the string `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-default-epochnumber-parameter)
+2. `QUANTITY|TAG` - (optional, default: `"latest_state"`) integer epoch number, or the string `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-epoch-number-parameter)
 
 ```json
 params: [
@@ -845,7 +820,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"cfx_getStorageRoot","params":["c
 #### 参数
 
 1. `BASE32` - address of the contract.
-2. `QUANTITY|TAG` - (optional, default: `"latest_state"`) integer epoch number, or the string `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-default-epochnumber-parameter)
+2. `QUANTITY|TAG` - (optional, default: `"latest_state"`) integer epoch number, or the string `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-epoch-number-parameter)
 
 ```json
 params: [
@@ -858,15 +833,11 @@ params: [
 
 `Object` - A sponsor info object. If the contract doesn't have a sponsor, then all fields in the object returned will be `0`:
 
-* `sponsorBalanceForCollateral`: `QUANTITY` - the sponsored balance for storage.
-* `sponsorBalanceForGas`: `QUANTITY` - the sponsored balance for gas.
-* `sponsorGasBound`: `QUANTITY` - the max gas that could be sponsored for one transaction.
-* `sponsorForCollateral`: `BASE32` - the address of the storage sponsor.
-* `sponsorForGas`: `BASE32` - the address of the gas sponsor.
-* `usedStoragePoints`: `QUANTITY` - storage points already used.
-* `availableStoragePoints`: `QUANTITY` - the storage points available for sponsorship.
-
-[Hard fork v2.3](../../../general/hardforks/v2.3.md#cip-107) provides the introduction for storage points. Refer to [CIP-107](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-107.md) for the detailed explanation.
+   * `sponsorBalanceForCollateral`: `QUANTITY` - the sponsored balance for storage.
+   * `sponsorBalanceForGas`: `QUANTITY` - the sponsored balance for gas.
+   * `sponsorGasBound`: `QUANTITY` - the max gas that could be sponsored for one transaction.
+   * `sponsorForCollateral`: `BASE32` - the address of the storage sponsor.
+   * `sponsorForGas`: `BASE32` - the address of the gas sponsor.
 
 ##### 示例
 
@@ -896,7 +867,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"cfx_getSponsorInfo","params":["c
 #### 参数
 
 1. `BASE32` - address of the account.
-2. `QUANTITY|TAG` - (optional, default: `"latest_state"`) integer epoch number, or the string `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-default-epochnumber-parameter)
+2. `QUANTITY|TAG` - (optional, default: `"latest_state"`) integer epoch number, or the string `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-epoch-number-parameter)
 
 ```json
 params: [
@@ -973,7 +944,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"cfx_sendRawTransaction","params"
     * `data`: `DATA` - (optional, default: `0x`) the data send along with the transaction.
     * `nonce`: `QUANTITY` - (optional, default: `0`) the number of transactions made by the sender prior to this one.
 
-2. `QUANTITY|TAG` - (optional, default: `"latest_state"`) integer epoch number, or the string `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-default-epochnumber-parameter)
+2. `QUANTITY|TAG` - (optional, default: `"latest_state"`) integer epoch number, or the string `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-epoch-number-parameter)
 
 ```json
 params: [
@@ -1063,13 +1034,13 @@ curl -X POST --data '{"method":"cfx_estimateGasAndCollateral","id":1,"jsonrpc":"
 #### 参数
 
 1. `Object` - A log filter object:
-    * `fromEpoch`: `QUANTITY|TAG` - (optional, default: `"latest_checkpoint"`) the epoch number, or the string `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-default-epochnumber-parameter). Search will be applied from this epoch number.
-    * `toEpoch`: `QUANTITY|TAG` - (optional, default: `"latest_state"`) the epoch number, or the string `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-default-epochnumber-parameter). Search will be applied up until (and including) this epoch number.
-    * `fromBlock`: `QUANTITY` - (optional, default: `null`). Search will be applied from this specified block.
-    * `toBlock`: `QUANTITY` - (optional, default: `null`). Search will be applied untial (and including) this specified block.
+    * `fromEpoch`: `QUANTITY|TAG` - (optional, default: `"latest_checkpoint"`) the epoch number, or the string `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-epoch-number-parameter). Search will be applied from this epoch number.
+    * `toEpoch`: `QUANTITY|TAG` - (optional, default: `"latest_state"`) the epoch number, or the string `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-epoch-number-parameter). Search will be applied up until (and including) this epoch number.
     * `blockHashes`: `Array` of `DATA` - (optional, default: `null`) Array of up to 128 block hashes that the search will be applied to. This will override from/to epoch fields if it's not `null`.
     * `address`: `Array` of `BASE32` - (optional, default: `null`) Search contract addresses. If `null`, match all. If specified, the log must be produced by one of these contracts.
     * `topics`: `Array` - (optional, default: `null`) 32-byte earch topics. Logs can have `4` topics: the event signature and up to `3` indexed event arguments. The elements of `topics` match the corresponding log topics. Example: `["0xA", null, ["0xB", "0xC"], null]` matches logs with `"0xA"` as the 1st topic AND (`"0xB"` OR `"0xC"`) as the 3rd topic. If `null`, match all.
+    * `limit`: `QUANTITY` - (optional, default: `null`) If `null` return all logs, otherwise should only return the **last** `limit` logs. Note: if the node has `get_logs_filter_max_limit` set, it will override `limit` if it is `null` or greater than the preset value.
+    * `offset`: `QUANTITY` - If specified, the response will skip the `last` offset logs. For instance, with 10 matching logs (0..9) and offset=0x1, limit=0x5, the response will contain logs 4..8. Note: Even if you specify offset, the corresponding logs still need to be processed by the node, so a filter with offset=10000, limit=10 has about the same performance as a filter with offset=0, limit=100010
 
 ```json
 params: [
@@ -1078,6 +1049,8 @@ params: [
         "toEpoch": "0x87431b",
         "address": "cfx:type.contract:acc7uawf5ubtnmezvhu9dhc6sghea0403y2dgpyfjp",
         "topics": [["0x233e08777131763a85257b15eafc9f96ef08f259653d9944301ff924b3917cf5", "0xd7fb65c06987247ab480a21659e16bdf0b5862a19869ec264075d50ab3525435"], null, "0x0000000000000000000000001d618f9b63eca8faf90faa9cb799bf4bfe616c26"],
+        "limit": "0x2",
+        "offset": "0x1"
     }
 ]
 ```
@@ -1226,7 +1199,7 @@ Returns an account, identified by its address.
 #### 参数
 
 1. `BASE32` - address of the account.
-2. `QUANTITY|TAG` - (optional, default: `"latest_state"`) integer epoch number, or the string `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-default-epochnumber-parameter)
+2. `QUANTITY|TAG` - (optional, default: `"latest_state"`) integer epoch number, or the string `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-epoch-number-parameter)
 
 ```json
 params: [
@@ -1279,7 +1252,7 @@ curl --data '{"jsonrpc":"2.0","method":"cfx_getAccount","params":["cfx:type.cont
 
 #### 参数
 
-1. `QUANTITY|TAG` - (optional, default: `"latest_state"`) integer epoch number, or the string `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-default-epochnumber-parameter)
+1. `QUANTITY|TAG` - (optional, default: `"latest_state"`) integer epoch number, or the string `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-epoch-number-parameter)
 
 ```json
 params: [
@@ -1313,7 +1286,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"cfx_getInterestRate","params":["
 
 #### 参数
 
-1. `QUANTITY|TAG` - (optional, default: `"latest_state"`) integer epoch number, or the string `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-default-epochnumber-parameter)
+1. `QUANTITY|TAG` - (optional, default: `"latest_state"`) integer epoch number, or the string `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-epoch-number-parameter)
 
 ```json
 params: [
@@ -1351,7 +1324,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"cfx_getAccumulateInterestRate","
 3. `QUANTITY`, gas limit
 4. `QUANTITY`, gas price
 5. `QUANTITY`, storage limit
-6. `QUANTITY|TAG`, (optional, default: `"latest_state"`) integer epoch number, or the string `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-default-epochnumber-parameter).
+6. `QUANTITY|TAG`, (optional, default: `"latest_state"`) integer epoch number, or the string `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-epoch-number-parameter).
 
 ```json
 params: [
@@ -1395,7 +1368,7 @@ Returns the list of non-executed blocks in an epoch. By default, Conflux only ex
 
 #### 参数
 
-1. `QUANTITY|TAG` - integer epoch number, or the string `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-default-epochnumber-parameter)
+1. `QUANTITY|TAG` - integer epoch number, or the string `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-epoch-number-parameter)
 
 ```json
 params: [
@@ -1540,7 +1513,7 @@ Returns the reward info for all executed blocks in the specified epoch.
 
 #### 参数
 
-1. `QUANTITY|TAG` - integer epoch number, or the string `"latest_checkpoint"`, see the [epoch number parameter](#the-default-epochnumber-parameter)
+1. `QUANTITY|TAG` - integer epoch number, or the string `"latest_checkpoint"`, see the [epoch number parameter](#the-epoch-number-parameter)
 
 ```json
 params: [
@@ -1623,7 +1596,7 @@ Returns the deposit list of the given account, identified by its address.
 #### 参数
 
 1. `BASE32` - address of the account.
-2. `QUANTITY|TAG` - (optional, default: `"latest_state"`) integer epoch number, or the string `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-default-epochnumber-parameter)
+2. `QUANTITY|TAG` - (optional, default: `"latest_state"`) integer epoch number, or the string `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-epoch-number-parameter)
 
 ```json
 params: [
@@ -1671,7 +1644,7 @@ Returns the vote list of the given account, identified by its address.
 #### 参数
 
 1. `BASE32` - address of the account.
-2. `QUANTITY|TAG` - (optional, default: `"latest_state"`) integer epoch number, or the string `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-default-epochnumber-parameter)
+2. `QUANTITY|TAG` - (optional, default: `"latest_state"`) integer epoch number, or the string `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-epoch-number-parameter)
 
 ```json
 params: [
@@ -1879,7 +1852,7 @@ Returns PoS economics summary info.
 
 #### 参数
 
-1. [`QUANTITY`] - (optional, default: `"latest_state"`) integer epoch number, or the string `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-default-epochnumber-parameter)
+1. [`QUANTITY`] - (optional, default: `"latest_state"`) integer epoch number, or the string `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-epoch-number-parameter)
 
 #### 返回值
 
@@ -1990,7 +1963,7 @@ Returns DAO vote params info
 
 #### 参数
 
-1. `QUANTITY`: (optional, default: `"latest_state"`) integer epoch number, or the string `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-default-epochnumber-parameter)
+1. `QUANTITY`: (optional, default: `"latest_state"`) integer epoch number, or the string `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-epoch-number-parameter)
 
 ```json
 params: [
@@ -2028,408 +2001,6 @@ Response
         "interestRate": "0x2",
     },
     "id": 1
-}
-```
-
-### cfx_newFilter
-
-This function creates a log filter for tracking usage. It returns a log filter ID, which can be employed through the [cfx_getFilterChanges](#cfx_getfilterchanges) command to retrieve logs newly generated from recently executed transactions. The `from*` field in this context will be disregarded by this RPC (Remote Procedure Call). This function can also be used via [cfx_getFilterLogs](#cfx_getfilterlogs) to retrieve all logs that match the filter criteria. In this instance, the `from*` fields are considered.
-
-It is important to note that the filter object will expire after a certain period of inactivity from the last request, typically 60 seconds. This expiration duration is configured by the node. To avoid losing log tracking, it is recommended to refresh or recreate the filter as necessary.
-
-#### 参数
-
-1. `Object` - A log filter object:
-    * `fromEpoch`: `QUANTITY|TAG` - (optional, default: `"latest_checkpoint"`) the epoch number, or the string `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-default-epochnumber-parameter). The start epoch to search. Noting that [cfx_getFilterChanges] will ignore this parameter.
-    * `toEpoch`: `QUANTITY|TAG` - (optional, default: `"latest_state"`) the epoch number, or the string `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-default-epochnumber-parameter). Search will be applied up until (and including) this epoch number.
-    * `fromBlock`: `QUANTITY` - (optional, default: `null`). The start block to search. Noting that [cfx_getFilterChanges] will ignore this parameter.
-    * `toBlock`: `QUANTITY` - (optional, default: `null`). Search will be applied untial (and including) this specified block.
-    * `blockHashes`: `Array` of `DATA` - (optional, default: `null`) Array of up to 128 block hashes that the search will be applied to. This will override from/to epoch fields if it's not `null`.
-    * `address`: `Array` of `BASE32` - (optional, default: `null`) Search contract addresses. If `null`, match all. If specified, the log must be produced by one of these contracts.
-    * `topics`: `Array` - (optional, default: `null`) 32-byte earch topics. Logs can have `4` topics: the event signature and up to `3` indexed event arguments. The elements of `topics` match the corresponding log topics. Example: `["0xA", null, ["0xB", "0xC"], null]` matches logs with `"0xA"` as the 1st topic AND (`"0xB"` OR `"0xC"`) as the 3rd topic. If `null`, match all.
-
-```json
-params: [
-    {
-        "fromEpoch": "0x873e12",
-        "toEpoch": "0x87431b",
-        "address": "cfx:type.contract:acc7uawf5ubtnmezvhu9dhc6sghea0403y2dgpyfjp",
-        "topics": [["0x233e08777131763a85257b15eafc9f96ef08f259653d9944301ff924b3917cf5", "0xd7fb65c06987247ab480a21659e16bdf0b5862a19869ec264075d50ab3525435"], null, "0x0000000000000000000000001d618f9b63eca8faf90faa9cb799bf4bfe616c26"],
-    }
-]
-```
-
-#### 返回值
-
-`QUANTITY` - the id of the log filter object.
-
-##### 示例
-
-Request
-
-```sh
-curl --location --request POST 'http://localhost:12537' \
---header 'Content-Type: application/json' \
---data-raw '{
-    "id": 1,
-    "jsonrpc": "2.0",
-    "method": "cfx_getParamsFromVote",
-    "params": ["fromEpoch": "0x873e12"]
-}'
-```
-
-Response
-
-```json
-{
-    "jsonrpc": "2.0",
-    "result": "0x09294f7b3b63b52d3771fcafb7b7ed61",
-    "id": 1
-}
-```
-
-### cfx_newBlockFilter
-
-Create a block filter for following up usage. Returns the block filter id which can be used via [cfx_getFilterChanges](#cfx_getfilterchanges) to retrieve latest executed blocks.
-
-It is important to note that the filter object will expire after a certain period of inactivity from the last request, typically 60 seconds. This expiration duration is configured by the node. To avoid losing log tracking, it is recommended to refresh or recreate the filter as necessary.
-
-#### 参数
-
-None.
-
-#### 返回值
-
-`QUANTITY` - the id of the block filter object.
-
-##### 示例
-
-Request
-
-```sh
-curl --location --request POST 'http://localhost:12537' \
---header 'Content-Type: application/json' \
---data-raw '{
-    "id": 1,
-    "jsonrpc": "2.0",
-    "method": "cfx_newBlockFilter",
-    "params": []
-}'
-```
-
-Response
-
-```json
-{
-    "jsonrpc": "2.0",
-    "result": "0x09294f7b3b63b52d3771fcafb7b7ed61",
-    "id": 1
-}
-```
-
-### cfx_newPendingTransactionFilter
-
-Create a pending transaction filter for following up usage. Returns the transaction filter id which can be used via [cfx_getFilterChanges](#cfx_getfilterchanges) to retrieve **ready but not executed** transactions.
-
-:::note
-
-The created filter will only filter out ready transactions, which means a pending transaction with a future nonce will never be listed via corresponding [cfx_getFilterChanges](#cfx_getfilterchanges).
-
-:::
-
-Besides, it is important to note that the filter object will expire after a certain period of inactivity from the last request, typically 60 seconds. This expiration duration is configured by the node. To avoid losing log tracking, it is recommended to refresh or recreate the filter as necessary.
-
-#### 参数
-
-None.
-
-#### 返回值
-
-`QUANTITY` - the id of the pending transaction filter object.
-
-##### 示例
-
-Request
-
-```sh
-curl --location --request POST 'http://localhost:12537' \
---header 'Content-Type: application/json' \
---data-raw '{
-    "id": 1,
-    "jsonrpc": "2.0",
-    "method": "cfx_newPendingTransactionFilter",
-    "params": []
-}'
-```
-
-Response
-
-```json
-{
-    "jsonrpc": "2.0",
-    "result": "0x09294f7b3b63b52d3771fcafb7b7ed61",
-    "id": 1
-}
-```
-
-### cfx_getFilterChanges
-
-Get filter changes since last retrieve. Return value depends on which type of filter id is provided. Filter id can be returned from current RPCs:
-
-* [cfx_newFilter](cfx_newFilter): new logs generated from newly executed transactions matching the filter. Noting that `from*` fields will be ignored by this RPC.
-* [cfx_newBlockFilter](cfx_newBlockFilter): new executed blocks.
-* [cfx_newPendingTransactionFilter](cfx_newPendingBlockFilter): new pending transactions which are **ready to execute**.
-
-:::note
-
-The created filter will only filter out ready transactions, which means a pending transaction with a future nonce will never be listed via corresponding [cfx_getFilterChanges](#cfx_getfilterchanges).
-
-:::
-
-#### 参数
-
-1. `QUANTITY` - the filter id.
-
-```json
-params: [
-  "0x09294f7b3b63b52d3771fcafb7b7ed61"
-]
-```
-
-#### 返回值
-
-`Array` - array of log receipts (same format as [cfx_getLogs](#cfx_getlogs) return value), block hashes, or transaction hashes depending on the input.
-
-##### 示例
-
-Request
-
-```sh
-curl --location --request POST 'http://localhost:12537' \
---header 'Content-Type: application/json' \
---data-raw '{
-    "id": 1,
-    "jsonrpc": "2.0",
-    "method": "cfx_getFilterChanges",
-    "params": [0x09294f7b3b63b52d3771fcafb7b7ed61]
-}'
-```
-
-Response
-
-```json
-{
-    "jsonrpc": "2.0",
-    "result": ["0xcc103077ede14825a5667bddad79482d7bbf1f1a658fed6894fa0e9287fc6be1"],
-    "id": 1
-}
-```
-
-### cfx_getFilterLogs
-
-Returns **all** logs matching the log filter (Unlike `cfx_getFilterChanges`, `from*` fields still work).
-
-#### 参数
-
-1. `QUANTITY` - the filter id.
-
-```json
-params: [
-  "0x09294f7b3b63b52d3771fcafb7b7ed61"
-]
-```
-
-#### 返回值
-
-`Array` - array of log receipts (same as [cfx_getLogs](#cfx_getlogs)).
-
-##### 示例
-
-Request
-
-```sh
-curl --location --request POST 'http://localhost:12537' \
---header 'Content-Type: application/json' \
---data-raw '{
-    "id": 1,
-    "jsonrpc": "2.0",
-    "method": "cfx_getFilterLogs",
-    "params": [0x09294f7b3b63b52d3771fcafb7b7ed61]
-}'
-```
-
-Response
-
-Refer to [cfx_getLogs](#cfx_getlogs).
-
-### cfx_uninstallFilter
-
-Uninstall the specified filter. Returns a bool whether the uninstallation succeeds.
-
-#### 参数
-
-1. `QUANTITY` - the filter id.
-
-```json
-params: [
-  "0x09294f7b3b63b52d3771fcafb7b7ed61"
-]
-```
-
-#### 返回值
-
-`Boolean` - whether the uninstallation succeeds.
-
-##### 示例
-
-Request
-
-```sh
-curl --location --request POST 'http://localhost:12537' \
---header 'Content-Type: application/json' \
---data-raw '{
-    "id": 1,
-    "jsonrpc": "2.0",
-    "method": "cfx_uninstallFilter",
-    "params": [0x09294f7b3b63b52d3771fcafb7b7ed61]
-}'
-```
-
-Response
-
-```json
-{
-    "jsonrpc" : "2.0",
-    "result" : true,
-    "id" : 1
-}
-```
-
-### cfx_getEpochReceipts
-
-Returns all transaction receipts within the specific epoch.
-
-:::note
-
-This method is supported by [Confura](../sdks-and-tools/core-endpoints.md#1-confura) if api key is provided. For normal nodes, this method is also supported, but can only be accessed in local environment.
-
-:::
-
-#### 参数
-
-1. `QUANTITY|TAG` - the epoch number, or the string `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-default-epochnumber-parameter).
-2. `Boolean` - whether eSpace transaction receipts will be included in the return value, defaults to `false`.
-
-```json
-params: [
-    "0x1000",
-    true
-]
-```
-
-#### 返回值
-
-`Array` -  This is a two-dimensional array of [transaction receipts](#cfx_gettransactionreceipt). Each sub-array represents transactions within a block. Noting an extra field of `space` will be added to each transaction receipt if the second parameter is set to `true`. The value of `space` will be either `native` meaning this is a core space transaction receipt or `evm` meaning the transaction is from eSpace.
-
-##### 示例
-
-Request
-
-```sh
-curl --location --request POST 'http://localhost:12537' \
---header 'Content-Type: application/json' \
---data-raw '{
-    "id": 1,
-    "jsonrpc": "2.0",
-    "method": "cfx_getEpochReceipts",
-    "params": ["0x1000", true]
-}'
-```
-
-Response
-
-```json
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "result": [
-    [],
-    [
-      {
-        "transactionHash": "0x386442f263e3d4b382f97efe577e3bb5956872a322936b8581133be4ec392153",
-        "index": "0x0",
-        "blockHash": "0x6ebb905fbfcc80506080e639b80d7bc696dab2f6168e01daedf3c15597987da2",
-        "epochNumber": "0x7e6f164",
-        "from": "cfxtest:aakvz2e5nt82c9nvbbg84hzbrjy53nsdf20ng5wuj1",
-        "to": "cfxtest:acbpnfz9mu42a6ubhdcyadj04m2w8wt6sex7atgyg6",
-        "gasUsed": "0x15a1b",
-        "accumulatedGasUsed": "0x15a1b",
-        "gasFee": "0x50957e574e00",
-        "contractCreated": null,
-        "logs": [],
-        "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
-        "stateRoot": "0x6ef7bcc4d8cb7c777a587a22002930c5d44e62e1047043c44dd44f89d16e462d",
-        "outcomeStatus": "0x0",
-        "txExecErrorMsg": null,
-        "gasCoveredBySponsor": false,
-        "storageCoveredBySponsor": false,
-        "storageCollateralized": "0x0",
-        "storageReleased": [],
-        "space": "native"
-      }
-    ]
-  ]
-}
-```
-
-### cfx_getCollateralInfo
-
-Returns current chain collateral status info.
-
-#### 参数
-
-1. `QUANTITY|TAG` - (optional, default: `"latest_state"`) the epoch number, or the string ``"latest_state"`,`"latest_confirmed"`,`"latest_checkpoint"`or`"earliest"`, see the [epoch number parameter](#the-default-epochnumber-parameter).
-
-```json
-params: [
-    "latest_state",
-]
-```
-
-#### 返回值
-
-`Object` - The storage collateral info object of the chain.
-
-* `totalStorageTokens`
-* `convertedStoragePoints` - converted storage points of the total chain
-* `usedStoragePoints` - storage points already used for sponsorship
-
-##### 示例
-
-Request
-
-```sh
-curl --location --request POST 'http://localhost:12537' \
---header 'Content-Type: application/json' \
---data-raw '{
-    "id": 1,
-    "jsonrpc": "2.0",
-    "method": "cfx_getCollateralInfo",
-    "params": ["latest_executed"]
-}'
-```
-
-Response
-
-```json
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "result": {
-    "totalStorageTokens": "0x12c6e8ec75a2740998000",
-    "convertedStoragePoints": "0x485ec66",
-    "usedStoragePoints": "0x290bc0"
-  }
 }
 ```
 
