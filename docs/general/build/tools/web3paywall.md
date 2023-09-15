@@ -5,7 +5,7 @@ title: Web3 Paywall
 # Web3 Paywall
 
 ## Introduction
-Web3 Paywall is a set of smart contracts on Conflux eSpace that you can purchase development resource with cryptocurrency as a consumer.
+[Web3 Paywall](https://confluxhub.io/payment/consumer/paid-apps) is a set of smart contracts on Conflux eSpace that you can purchase development resource with cryptocurrency as a consumer.
 
 ## As a consumer
 
