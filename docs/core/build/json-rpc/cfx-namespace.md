@@ -696,6 +696,12 @@ params: [
 
 `BASE32` - address of admin, or `null` if the contract does not exist.
 
+:::note
+
+Although meaningless, it is also possible to use user address as the input parameter of `cfx_getAdmin` method. In this case, the return value will be zero address if the input user address exists in the world state, else `null` will be returned.
+
+:::
+
 ##### Example
 
 ```json
