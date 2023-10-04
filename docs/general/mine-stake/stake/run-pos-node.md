@@ -50,7 +50,7 @@ Check https://github.com/Conflux-Chain/conflux-rust/releases for the latest vers
 tar xvzf pos_config-hydra.tar.gz conflux-rust/run 
 ```
 
-7. Follow the instructions on configuring and running a Conflux node [here](../../run-a-node/node-requirements.md)
+7. Follow the instructions on configuring and running a Conflux node [here](../../run-a-node)
 
 ## Running the Conflux Client and Syncing the Node
 

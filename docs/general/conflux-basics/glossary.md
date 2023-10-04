@@ -137,7 +137,7 @@ Refer to [Mining](../mine-stake/mine/running-mining-node.md) for more informatio
 ### **Node**
 In the context of blockchain, a node is a server that participates in the blockchain network. Each node keeps a copy of the blockchain in some way (depending on its type) and follows the rules of the network. Nodes validate transactions, maintaining the network's security and decentralization.
 
-Refer to [Run a Node](../run-a-node/node-requirements.md) section for more information about running nodes.
+Refer to [Run a Node](../run-a-node) section for more information about running nodes.
 
 ### **Nonce**
 In blockchain technology, nonce ("number only used once") has different meaning in different context.

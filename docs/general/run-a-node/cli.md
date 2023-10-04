@@ -1,7 +1,7 @@
 ---
 id: cli_sub_commands
 title: CLI Sub-commands
-sidebar_position: 10
+sidebar_position: 8
 keywords:
   - conflux
   - cli
