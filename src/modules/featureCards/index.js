@@ -8,7 +8,7 @@ import CFXREACT from '@site/static/img/cfx_react.jpg';
 const FeatureList = [
   {
     title: 'Conflux Basics',
-    Image: () => <img src={CFXBOX} alt='CFX box' className='w-full pointer-events-none' />,
+    Image: () => <img src={CFXBOX} alt='' className='w-full pointer-events-none' />,
     description: (
       <>
         Get started with Conflux Network and understand its unique features.
@@ -19,7 +19,7 @@ const FeatureList = [
   },
   {
     title: 'Build on Conflux',
-    Image: () => <img src={CFXSREEN} alt='CFX Screen' className='w-full pointer-events-none' />,
+    Image: () => <img src={CFXSREEN} alt='' className='w-full pointer-events-none' />,
     description: (
       <>
       Discover the possibilities of building decentralized applications (dApps) 
@@ -31,7 +31,7 @@ const FeatureList = [
   {
     title: 'Run a Node',
     // Svg: require('@site/static/img/cfx_react.svg').default,
-    Image: () => <img src={CFXREACT} alt='CFX React' className='w-full pointer-events-none' />,
+    Image: () => <img src={CFXREACT} alt='' className='w-full pointer-events-none' />,
     description: (
       <>
         Learn how to run a node on the Conflux Network and become part of the decentralized 
