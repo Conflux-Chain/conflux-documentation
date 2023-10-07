@@ -174,6 +174,9 @@ jsonrpc_local_http_port=12539
 # public_rpc_apis = "safe"
 # public_evm_rpc_apis = "evm"
 
+# Specify the filter lifetime in seconds, only this option is set, the filter-related RPC methods (cfx_newFilter etc) will be available.
+# poll_lifetime_in_seconds = 600
+
 # --------------- Performance-related Network Parameters ----------------------
 
 # Timeout for block-related requests (GetBlock, GetCmpctBlock, GetBlockTxn)
