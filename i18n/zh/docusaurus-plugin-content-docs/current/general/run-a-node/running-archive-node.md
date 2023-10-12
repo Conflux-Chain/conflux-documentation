@@ -1,16 +1,70 @@
 ---
 title: Running an Archive Node
-sidebar_position: 5.5
+sidebar_position: 12
 ---
 
-:::info
+# Running an Archive Node
 
-这个文档页面目前正在建设中。 作为一个开源项目，我们依靠贡献者的协作来创建全面和最新的内容。
 
-To track the progress of this page or get involved, please visit the corresponding GitHub issue: [Complete general/run-a-node/run-an-archive-node](https://github.com/Conflux-Chain/conflux-documentation/issues/118). 如果你有兴趣为这个页面的完成做出贡献，欢迎**在issue下留言**。
 
-我们计划发放POAP NFT作为对参与文档建设的贡献者的感谢。 您对项目的参与将得到认可和奖励。
+## Introduction
 
-感谢您对Conflux的关注。 期待能早日向您展示建设完成的页面。
+There are three types of Conflux nodes: archivenode, fullnode, and lightnode. The distinction between these nodes is based on the amount of data they store, with the archive node storing the most data.
 
-:::
+### 1. Node Types and Requirements
+
+#### 1.1 Archive Node vs Full Node
+
+Archive Node: This node type stores the most data and is essential if you want to use it as an RPC service.
+
+Full Node: Suitable for those who want to participate in mining. It stores less data compared to the archive node.
+
+Light Node: Primarily used as a wallet and stores the least amount of data.
+
+#### 1.2 Hardware Requirements for Archive Node
+
+* A computer with a recent version of Linux or macOS.
+
+* At least 16GB of RAM.
+
+* A minimum of 2TB free disk space (SSD is recommended).
+
+* A stable internet connection.
+
+Open Files Limit: It's recommended to set the maximum number of open files to 10,000. On Linux, the default is 1,024, which may be insufficient. You can configure this using the following command on the Linux terminal
+
+```
+ulimit -n 10000 
+```
+
+### 2. Configuring the Node
+
+Conflux nodes can be configured using either CLI options or a configuration file. If there's a discrepancy between the CLI flags and the config file, the CLI takes precedence.
+
+#### 2.1 Using Configuration File
+
+The configuration file follows the TOML format.
+
+The path for the configuration file can be set using the CLI option -config path/to/hydra.toml.
+
+A default configuration file named hydra.toml is provided in the run directory, which can be used as a starting point for customization.
+
+Set the mode parameter in the configuration file to "archive":
+
+```
+mode = "archive" 
+```
+#### 2.2 CLI Options
+
+List all CLI options by running $ ./conflux --help.
+
+Most CLI options map to a setting in the TOML file. For instance, -public-address 127.0.0.1:32323 can be set in the config file under public_address.
+
+
+### 4. Running the Node
+
+Start the node with the custom configuration file:
+
+```
+./target/release/conflux --config ./run/hydra.toml 
+```
