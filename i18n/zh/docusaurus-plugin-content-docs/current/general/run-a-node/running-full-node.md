@@ -1,7 +1,17 @@
 ---
-sidebar_position: 4
+sidebar_position: 11
 title: Running a Full Node
 ---
+
+### Requirements
+
+* A computer with a recent version of Linux or macOS.
+
+* At least 8GB of RAM.
+
+* A minimum of 1TB free disk space (SSD is recommended).
+
+* A stable internet connection.
 
 ## Configuring Conflux Full Node
 
