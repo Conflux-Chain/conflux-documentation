@@ -2,36 +2,36 @@
 sidebar_postion: 6
 ---
 
-# Contributing
+# Contribuir
 
-:::info
-Thank you for your interest in contributing to our documentation site! We appreciate your support and value the insights and expertise of our community. This page outlines the guidelines and process for contributing, as well as the rewards you can earn for your efforts.
+:::información
+¡Gracias por tu interés en contribuir en nuestra documentación! Agradecemos su apoyo y valoramos los conocimientos y la experiencia de nuestra comunidad. Esta página describe las pautas y procesos para contribuir, así como las recompensas que puedes ganar por tus esfuerzos.
 :::
 
-## How to Contribute
+## Cómo contribuir
 
-We welcome contributions in a variety of forms, including but not limited to:
+Las contribuciones son bienvenidas de varias formas, incluyendo pero no limitado a:
 
-1. Pointing out a mistake/typo and (optionally) providing a solution
-2. Providing translation
-3. Creating or improving diagrams, charts, or visual aids
-4. Suggesting improvements to the documentation structure or organization
-5. Writing or updating a tutorial or guide
-6. Creating or updating code samples, examples, or demos
-7. Polishing or improving document writing
+1. Señalar una falla/error tipográfico y (opcionalmente) proporcionar una solución
+2. Proporcionar una traducción
+3. Crear o mejorar diagramas, gráficos o ayudas visuales
+4. Sugerir mejoras a la estructura de documentación u organización
+5. Escribir o actualizar un tutorial o una guía
+6. Crear o actualizar ejemplos de códigos o demos
+7. Mejorar la redacción de documentos
 
-To submit a contribution, please follow these suggestions:
+Para contribuir, sigue estas sugerencias:
 
-### Create an Issue
+### Crear un Issue
 
-You can create an issue to
+Puede crear un Issue para
 
-- report any mistake / typo
-- or request new content / current content improvement
+- reportar algún error / error tipográfico
+- o solicitar nuevo contenido / mejora de contenido actual
 
 ![issue templates](image/2023-04-13-15-16-53.png)
 
-It would be wonderful if you are able to take the initiative and resolve the issue on your own!
+Sería estupendo que pudiera tomar la iniciativa y resolver el problema por su cuenta!
 
 ```
 // in BUG template
@@ -40,65 +40,65 @@ It would be wonderful if you are able to take the initiative and resolve the iss
 - [ ] I'd be willing to contribute this feature myself
 ```
 
-### Create a Pull Request
+### Crear un Pull Request
 
-You can create a Pull Request to submit content changes **EXCEPT FOR [TRANSLATIONS](#provide-translation)**.
+Puedes crear una Pull Request para enviar cambios de contenido **EXCEPTO PARA [TRADUCCIONES](#provide-translation)**.
 
-If you are not working on an issue created by yourself, it is suggested to follow these steps:
+Si no estas trabajando en un Issue creado por ti mismo, se sugiere seguir estos pasos:
 
-:::note
-These are not mandatory steps but will decrease the possibility your PR will be rejected.
+:::nota
+Estos no son pasos obligatorios pero disminuirán la posibilidad de que tu PR sea rechazada.
 :::
 
-1. Make sure a relevant open issue with "ACCEPTED" label exists.
-2. Leave a comment in the issue in case duplicate people working on the same issue.
-3. Mention the issue `#xx` in the commit message. Example `fix: typo. Ref #123456`.
+1. Asegúrese de que existe un Issue abierto relevante con la etiqueta "ACCEPTED".
+2. Deja un comentario en el Issue por si hay algún contribuyente trabajando en la misma Issue.
+3. Menciona el Issue `#xx` en el mensaje de commit. Ejemplo `fix: typo. Ref #123456`.
 
 
-### Provide Translation
+### Proveer traducción
 
-:::note
+:::nota
 
-A translation PR in the Github repo will NEVER be accepted.
+Un PR para traducciones en el repositorio de GitHub NUNCA será aceptado.
 
 :::
 
-We are using [Crowdin](https://crowdin.com/project/conflux) for document translation integration. Crowdin helps us to know whether translation strings are outdated after the source files are changed. Anyone can submit translation strings in Crowdin, and translation strings will be pushed to Github repo after they are reviewed.
+Estamos usando [Crowdin](https://crowdin.com/project/conflux) para integrar la traducción de documentos. Crowdin nos ayuda a saber si las traducciones están desactualizadas después de que cambien los archivos de origen. Cualquiera puede enviar traducciones en Crowdin, y las traducciones se colocarán en el repositorio de Github después de que sean revisadas.
 
-#### Crowdin Tutorial
+#### Tutorial de Crowdin
 
-Visit our project page on Crowdin at either https://crowdin.com/project/conflux or https://zh.crowdin.com/project/conflux and select the language you wish to translate.
+Visita nuestra página de proyecto en Crowdin en https://crowdin.com/project/nbux o https://zh.crowdin.com/project/nbux y selecciona el idioma que deseas traducir.
 
 ![languages](image/2023-04-13-15-54-46.png)
 
-You will be able to select a file to begin translating.
+Podrás seleccionar un archivo para empezar a traducir.
 
 ![files](image/2023-04-13-15-57-59.png)
 
-In order to edit, you will need to be logged in. No need to fret though, you can easily log in with your Github account by clicking a few buttons.
+Para poder editar, necesitarás iniciar sesión. Puede iniciar sesión fácilmente con su cuenta de Github.
 
 ![login](image/2023-04-13-16-01-17.png)
 
-Once you are in, you can start the translation process! Simply click on a source string on the left-hand panel and input the translation or edited string. Remember to click SAVE and wait for your translation to be reviewed.
+¡Una vez que estés conectado, puedes comenzar el proceso de traducción! Simplemente haga clic en una cadena de origen en el panel de la izquierda e introduzca la traducción o la edición. Recuerde hacer clic en SAVE y espera a que su traducción sea revisada.
 
 ![translation](image/2023-04-13-16-06-44.png)
 
-Once reviewed, the translation string will be pushed to the Github repository and you can visit your translation on the official documentation site.
+Una vez revisado, la traducción será incluida en el repositorio de Github y puede visitar su traducción en el sitio de documentación oficial.
 
-## Contributor POAPs
+## POAPs de contribuyentes
 
-Individuals who ever engage in contribution to the documentation site during a season will be able to mint a Contributor POAP. To qualify for minting the POAP, your contribution must also be "ACCEPTED" , meaning:
+Las personas que realicen alguna contribución al sitio de documentación durante una temporada podrán mintear un POAP de contribuyente. Para calificar para mintear el POAP, tu contribución debe ser también "ACEPTADA" , lo que significa:
 
-- any issue has been created with the "ACCEPTED" label added by admin
-- any Pull Request has been successfully merged into the main branch
-- or any translation string has been fully reviewed
+- cualquie Issue creado tenga la etiqueta "ACCEPTED" agregada por el admin
+- cualquier Pull Request ha sido fusionado exitosamente en la rama principal
+- o cualquier traduccion ha sido revisada completamente
 
-### Special POAPs
+### POAPs especiales
 
-In addition to the regular contributor POAPs, we recognize and reward significant contributions with special POAPs. Examples of significant contributions include high-quality guides or consistent, frequent contributions to the project. The decision to award a special POAP is made on a case-by-case basis by the project maintainers.
+Además de los POAPs regulares de los contribuyentes, reconocemos y recompensamos contribuciones significativas con POAPs especiales. Ejemplos de contribuciones significativas incluyen guías de alta calidad o contribuciones constantes y frecuentes al proyecto. La decisión de otorgar un POAP especial es tomada caso por caso por los encargados del proyecto.
 
-### Issuing Rule Updates
+### Actualizaciones de reglas de entrega de POAPs
 
-Please note that the POAP issuing rules are subject to review and possible changes every 3 months. This ensures that our guidelines remain relevant and effective in promoting and rewarding valuable contributions.
+Tenga en cuenta que las normas de entrega de POAP están sujetas a revisión y posibles cambios cada 3 meses. Esto garantiza que nuestras directrices sigan siendo relevantes y eficaces para promover y recompensar contribuciones valiosas.
 
-We look forward to your contributions and thank you for helping us improve our documentation site! If you have any questions or need assistance, please feel free to create an issue in our Github repo.
+¡Esperamos tus contribuciones y gracias por ayudarnos a mejorar nuestro sitio de documentación! Si tiene alguna pregunta o necesita ayuda, por favor siéntase libre de crear un Issue en nuestro repositorio de Github.
