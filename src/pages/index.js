@@ -12,10 +12,12 @@ const Home = () => {
   const { siteConfig } = useDocusaurusContext();
 
   return (
+
     <Layout
       title={`${siteConfig.title}`}
       description=""
     >
+
       <main className='bg-[#F6F9FF] dark:bg-[#0C1831] flex flex-col items-center justify-center pb-24' >
         <div className={cx('w-full flex justify-center', styles.gradientBg)}>
           <div className='max-w-[1920px] w-full px-[76px] flex flex-col lg:flex-row lg:justify-between items-center z-10'>
@@ -28,13 +30,16 @@ const Home = () => {
             <CFX role='img' className='w-10/12 lg:w-[58.3%] h-auto order-1 lg:order-2' />
           </div>
         </div>
+        
         <FeatureCards wrapperClassName='mt-20 lg:mt-0 xl:-translate-y-14 xl:-translate-y-12 z-10' />
+        
         <div className='px-[78px] w-full max-w-[1920px]'>
           <div className='text-[32px] font-semibold'>Explore the documentation</div>
           <DocCatalog />
         </div>
       </main>
     </Layout>
+
   );
 }
 

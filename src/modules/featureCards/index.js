@@ -16,6 +16,7 @@ const FeatureList = [
         and how it differs from other blockchain platforms.
       </>
     ),
+    link: '/docs/general/conflux-basics/', // Add link property to each feature
   },
   {
     title: 'Build on Conflux',
@@ -27,10 +28,10 @@ const FeatureList = [
       high-performance dApps on Conflux Network.
       </>
     ),
+    link: '/docs/general/build/',
   },
   {
     title: 'Run a Node',
-    // Svg: require('@site/static/img/cfx_react.svg').default,
     Image: () => <img src={CFXREACT} alt='' className='w-full pointer-events-none' />,
     description: (
       <>
@@ -39,6 +40,7 @@ const FeatureList = [
         connect to the network, and start participating in consensus.
       </>
     ),
+    link: '/docs/general/run-a-node/',
   },
 ];
 
@@ -46,10 +48,19 @@ const FeatureCards = ({ wrapperClassName }) => {
   return (
     <div className={cx('max-w-[1920px] px-20 grid grid-cols-1 md:grid-cols-3 md:gap-8', wrapperClassName)} >
       {FeatureList.map((feature) => {
-        return <Card key={feature.title} {...feature} className='w-10/12 mx-auto lg:mx-0 md:w-full mb-20' />
+        return (
+          // Wrap each Card component with a Link component
+          <a href={feature.link} key={feature.title} style={{ textDecoration: 'none' }}  >
+            <Card {...feature} className='w-10/12 mx-auto lg:mx-0 md:w-full mb-20' />
+          </a>
+        );
       })}
     </div>
   )
 }
 
 export default FeatureCards;
+
+
+
+
