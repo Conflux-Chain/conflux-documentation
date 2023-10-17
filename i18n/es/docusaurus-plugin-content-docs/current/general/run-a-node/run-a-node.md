@@ -98,6 +98,8 @@ nano ./run/hydra.toml
 
 Make sure to review and modify the settings according to your preferences and system capabilities.
 
+For more detailed instructions, please visit [this](./node-configuration.md) page.
+
 ### Step 5: Running the Node
 
 You can start the Conflux node by running the following command:
