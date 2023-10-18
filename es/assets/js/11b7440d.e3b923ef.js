@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkconflux_docs=self.webpackChunkconflux_docs||[]).push([[1113],{2647:s=>{s.exports=JSON.parse('{"label":"facebook","permalink":"/es/blog/tags/facebook","allTagsPath":"/es/blog/tags","count":1}')}}]);
