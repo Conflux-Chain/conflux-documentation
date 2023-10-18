@@ -1,0 +1,8 @@
+{
+  "label": "Grants",
+  "position": 5,
+  "link": {
+    "type": "generated-index",
+    "description": "This section provides informations about the different types of Conflux Grants."
+  }
+}
