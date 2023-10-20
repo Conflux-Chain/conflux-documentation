@@ -4,7 +4,7 @@ sidebar_postion: 6
 
 # Contribuir
 
-:::información
+:::info
 ¡Gracias por tu interés en contribuir en nuestra documentación! Agradecemos su apoyo y valoramos los conocimientos y la experiencia de nuestra comunidad. Esta página describe las pautas y procesos para contribuir, así como las recompensas que puedes ganar por tus esfuerzos.
 :::
 
