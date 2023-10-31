@@ -13,10 +13,6 @@ sidebar_position: 2
 
 You need to maintain the nonce yourself, adding one for each transaction.
 
-### **When exporting the private key of `0x1323ff37de4d4aa270a609dec4eef0595e7386b2` on the portal, then using `importKey` to generate a keystore file, and then importing the keystore file into the node, the address becomes `0xe323ff37de4d4aa270a609dec4eef0595e7386b2`. Does this affect signing?**
-
-No, it doesn't affect it.
-
 ### **What does the error "ExceedStorageLimit" mean when sending a transaction?**
 
 The **`storagelimit`** value is set lower than the actual required value.
@@ -42,10 +38,6 @@ No, CFX is not a contract token. CFX is equivalent to Ethereum's ETH.
 
 Yes, it's supported. You can directly reference it. However, note that the ERC1820 contract address on the Conflux chain is different from Ethereum. On Conflux, the ERC1820 contract address is: 0x88887ed889e776bcbe2f0f9932ecfabcdfcd1820.
 
-### **Where can I download the Google Chrome extension wallet portal?**
-
-From the Google Play Store, but you might need to use a VPN.
-
 ### **Where is the testnet faucet?**
 
 - To receive CFX test tokens, you can get them directly from the faucet portals.
@@ -57,23 +49,9 @@ From the Google Play Store, but you might need to use a VPN.
 
 This can happen in cases of poor network connectivity, primarily due to high block synchronization delays.
 
-### **How are transaction statuses like "waiting for packaging" and "executed" confirmed?**
-
-Currently, you can get the pending status of a transaction using local rpc **`tx_inspect_pending`**, which retrieves the pending nonce range for a specific address.
-
-```json
-curl -X POST --data '{"jsonrpc":"2.0","method":"tx_inspect_pending","params":["0x10b719e45050518a81f56f7e7e2b1d90bdf2c228"],"id":1}' -H "Content-Type: application/json" http://127.0.0.1:12537
-
-```
-
-If a transaction is not in this collection, it means it has been packaged. If the **`outcomestatus`** value in **`getTransactionReceipt`** is not null, it means the transaction has been executed.
-
 ### **What settings do developers need to make when starting a node?**
 
-- **`persist_tx_index = true`**: Store the transaction index for queries. If you change this configuration, you need to delete all data and restart the node, otherwise, it will get stuck.
-- **`executive_trace = true`**: Store the function call stack for each transaction execution.
-- **`enable_tracing = true`**: Open trace-related RPC to the public. Currently, only the rpc **`trace_block`** is available.
-- **`mode = "dev"`**: Set to dev mode so the node won't connect to other nodes and will produce blocks at the set interval.
+You can find all node related documentation on [THIS](../run-a-node/) section.
 
 ### **Does CFX have an API to query computing power?**
 
@@ -140,7 +118,7 @@ I hope this translation helps you understand the content better! If you have any
 Storage collateral refers to the need to collateralize a corresponding amount of cfx when adding new storage usage in a contract. For each storage entry, the last account that writes to this entry is called the owner of this storage entry. The storage collateral fee will be returned to the owner after the storage is released.
 Every 1kb of storage requires a collateral of 1cfx.
 
-> For more details, please refer to: link
+> For more details, please refer to [THIS](../../core/learn/core-space-basics/storage) section.
 > 
 
 ### What fees are included in the GasFee returned by cfx_getTransactionReceipt? Does it include storage collateral fees?
@@ -171,48 +149,26 @@ contract.abi.decodeData(transaction.data)
 
 Contracts cannot be replaced or upgraded; you can only deploy a new one.
 
-### Are there corresponding SDKs for Android and iOS?
+### Is there any SDKs for Android?
 
-Android can use java-conflux-sdk, and iOS can use swift-conflux-sdk.
+Android can use java-conflux-sdk.
 
 ### What versions of the conflux sdk are available?
 
-- [js-conflux-sdk](https://github.com/Conflux-Chain/js-conflux-sdk)
-- [java-conflux-sdk](https://github.com/Conflux-Chain/java-conflux-sdk)
-- [go-conflux-sdk](https://github.com/Conflux-Chain/go-conflux-sdk)
-- [swift-conflux-wallet-sdk](https://github.com/Conflux-Chain/swift-conflux-wallet-sdk)
-
-> Python version is not available yet.
-> 
+You can find all the Conflux SDKs in [THIS](../../core/build/sdks-and-tools/sdks) section
 
 ### Is the nonce in a block the same as the nonce in a transaction?
 
 The nonce of a transaction indicates the number of transactions from a specific address, while the nonce of a block refers to the random number used in PoW calculations.
 
-### Dapp error: ChainIdMismatch {expected: 1029, got: 1}
-
-This is because the Dapp needs to connect to the mainnet, but it's actually connecting to the testnet.
-
 ### What are the chainIds for the mainnet and testnet? How to query?
 
 The mainnet is 1029, and the testnet is 1. You can obtain them using the rpc "cfx_getStatus" or the SDK's getStatus method.
-
-### Does Conflux have a random number oracle?
-
-It's still in the process of integrating with Chainlink.
-
-### Does the portal not support importing mnemonic phrases?
-
-When the portal is first installed, you can import a mnemonic phrase. If you already have a mnemonic phrase, you can only import a private key or keystore file when adding an account.
 
 ### How to view the bootnode data of the node I'm running?
 
 - If it's a testnet or mainnet node, the bootnode list is the bootnodes configuration in the toml configuration file.
 - For a local node, it itself is the bootnode (or it doesn't have a bootnode).
-
-### How to distinguish in a contract if it's on the Conflux chain?
-
-Call a read-only internal contract function. If it succeeds, it means it's on Conflux.
 
 ### What are the reasons for a transaction not being packaged?
 
@@ -224,10 +180,6 @@ The following conditions can lead to a transaction not being packaged:
 ### How to view the actual fee deducted for each transaction?
 
 Check the gasFee in the transaction receipt.
-
-### ConfluxPortal 0.5.6, transferring CFX between wallet accounts, it's been hours and it's still pending. What to do?
-
-If the balance is sufficient, you can try resetting the portal. Usually, it's because the nonce is messed up.
 
 ### Is the epochHeight in Transaction the same as the epochNumber in TransactionReceipt?
 
@@ -269,26 +221,20 @@ Any object that has implemented the methods error, info, and log can be used.
 
 Yes.
 
-### **Once the contract is set up for sponsorship, does it mean that all methods use the balance of the sponsorship? Is there a way to specify a method to skip sponsorship?**
-
-The current version does not support this.
-
 ### **Is there any information on the conflux sponsorship mode?**
 
 [Here's the link](../../core/learn/core-space-basics/sponsor-mechanism).
 
-### **Conflux-studio can't run on Windows 10 system.**
-
-[Here's the forum link for reference](https://forum.conflux.fun/t/topic/4280).
-
 ### **Are ERC20/ERC777 still called this way in the Conflux network?**
 
-They are still referred to as ERC20/ERC777, without any separate standard.
+Both can be used. They are still referred to as ERC20/ERC777, but in some contexts you can find them reffered as CRC20/CRC777.
 
 ### **What are the websocket service ports of the official nodes of the mainnet and testnet?**
 
-Mainnet URL: ws://main.confluxrpc.org/ws
-Testnet URL: ws://test.confluxrpc.org/ws
+You can find all the Network Endpoints in the following pages:
+
+- [Core Space Network Endpoints](../../core/build/sdks-and-tools/conflux_rpcs)
+- [eSpace Network Endpoints](../../espace/build/network-endpoints.md)
 
 ### **When `docker pull confluxchain/conflux-rust` prompts "no such file", how to solve it?**
 
@@ -304,10 +250,6 @@ It might be a network issue. You can try setting a registry for docker:
   "debug": true}
 
 ```
-
-### **When we use the wallet to transfer, we are asked to enter the set password, and then the transfer is successful. Why use symmetric encryption instead of a private key here?**
-
-Entering a private key is too cumbersome and hard to remember. This password is the portal (wallet) password. The private key is stored inside the portal wallet. Essentially, only the private key can authorize sending a transaction. The password is mainly for easier wallet (private key) management and to add a layer of protection. If you have very high security requirements, it is recommended to use a hardware wallet.
 
 ### **What is block height?**
 
@@ -330,20 +272,9 @@ Reason: The constructor was invalid when deploying the contract; it is usually c
 
 ### **How do developers start a node?**
 
-- Testnet node: [Link](https://github.com/Conflux-Chain/conflux-rust/releases/tag/v1.1.0-testnet)
-- Mainnet node: [Link](https://github.com/Conflux-Chain/conflux-rust/releases/tag/v1.1.0)
-- Private node: Set mode = "dev" in the configuration file.
+You can find all node related documentation on [THIS](../run-a-node/) section.
 
-To start the node, use the command: **`./conflux --config ./xxx.toml --full 2>stderr`**.
 
-### **What should you pay attention to before sending a transaction?**
+### **What is the Transactions Lifecycle?**
 
-Remember to set gas + strongeLimit (you can get it by executing **`estimateGasAndCollateral`**). **`strongeLimit`** is where Conflux differs from Ethereum. When using the SDK, the SDK will automatically handle it before sending the transaction.
-
-### **How many states are there in a block, and what is the order?**
-
-There are 3 states of a block: mined, executed, confirmed.
-
-- Mined means the block has been successfully packaged, but the transactions in the block have not been executed yet.
-- Due to the instability of the mined state's pivot block, to avoid invalid execution, transactions will only be executed 5 epochs after packaging, changing the state to executed.
-- When the block **`(confirmationRisk/2^256)<1e-8`**, the state is confirmed. At this time, it is believed that the block has been confirmed, that is, the probability of the pivot chain changing from the genesis block
+You can find allthe details on the Transaction Lifecycle in [THIS](../../general/conflux-basics/transactions/#transaction-lifecycle) section.
