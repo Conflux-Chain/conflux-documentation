@@ -57,7 +57,7 @@ Estos no son pasos obligatorios pero disminuirán la posibilidad de que tu PR se
 
 ### Proveer traducción
 
-:::nota
+:::note
 
 Un PR para traducciones en el repositorio de GitHub NUNCA será aceptado.
 
