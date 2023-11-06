@@ -1,9 +1,9 @@
 ---
 sidebar_position: 1
-title: What is Conflux?
+title: '¿Qué es Conflux?'
 ---
 
-Conflux stands out as a public blockchain with superior performance, a unique consensus mechanism, and an innovative dual-space design. These features enable Conflux to deliver a fast, secure, and decentralized platform that is well-suited for various applications, including decentralized finance and gaming.
+Conflux se destaca como una blockchain pública con un rendimiento superior, un mecanismo de consenso único y un innovador diseño dual-space. These features enable Conflux to deliver a fast, secure, and decentralized platform that is well-suited for various applications, including decentralized finance and gaming.
 
 Conflux employs a hybrid [consensus mechanism](./consensus-mechanisms/consensus-mechanisms.md), combining Proof of Work (PoW) and Proof of Stake (PoS), ensuring high security, throughput, and decentralization. Conflux's PoW consensus leverages the [Tree-Graph ledger structure](./consensus-mechanisms/proof-of-work/tree-graph.md) and [GHAST algorithm](./consensus-mechanisms/proof-of-work/ghast.md), delivering a high transaction throughput of up to 3,000 TPS and confirmation latency within 1 minute, while maintaining the same level of decentralization as Bitcoin and Ethereum. Conflux's PoS consensus offers the network finality, mitigating [the risk of 51% attack](./consensus-mechanisms/proof-of-stake/why-pos.md). Consequently, Conflux has the capability to efficiently handle a large number of transactions, making it a robust and reliable platform for a wide range of applications.
 
