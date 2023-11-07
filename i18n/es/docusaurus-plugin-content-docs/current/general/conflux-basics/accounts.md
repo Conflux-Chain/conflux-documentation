@@ -1,23 +1,23 @@
 ---
 sidebar_position: 10
-title: Accounts and Addresses
+title: Cuentas y Direcciones
 ---
 
-## Overview
+## Información general
 
-Accounts in Conflux can be compared to "bank accounts", as they store CFX. Users can create and manage their accounts, deposit CFX, and send transactions. The account address is a unique string that identifies an account and is used to retrieve account information from the Conflux VM's huge table, which stores the account content and balance.
+Las cuentas en Conflux se pueden comparar con "cuentas bancarias", ya que almacenan CFX. Los usuarios pueden crear y administrar sus cuentas, depositar CFX y enviar transacciones. La dirección de la cuenta es una cadena única que identifica una cuenta y se utiliza para recuperar la información de la cuenta de la enorme tabla de la Conflux VM, que almacena la información y el saldo de la cuenta.
 
 :::note
 
-The account implementation, including the account content and address computing rule is slightly different in [core space](../../core/learn/core-space-basics/accounts.md) and [espace](../../espace/learn/accounts.md).
+La apertura de la cuenta, incluyendo el contenido de la cuenta y la regla de cálculo de direcciones es ligeramente diferente en [Core Space](../../core/learn/core-space-basics/accounts.md) y [eSpace](../../espace/learn/accounts.md).
 
 :::
 
 ## Address
 
-Account addresses, like bank account numbers, identify accounts and can be examined on [ConfluxScan](https://confluxscan.io). However, the address format differs between [core space](../../core/learn/core-space-basics/addresses.md) and espace. Core space uses the CIP-37 encoding scheme, while espace uses the same format as Ethereum.
+Las direcciones de las cuentas, como números de cuenta bancaria, identifican las cuentas y pueden ser examinadas en [ConfluxScan](https://confluxscan.io). Sin embargo, el formato difieren entre el [Core Space](../../core/learn/core-space-basics/addresses.md) y el eSpace. El espacio central utiliza el esquema de codificación CIP-37, mientras que el espacio utiliza el mismo formato que Ethereum.
 
-Here are examples showing the address format in the 2 spaces:
+Estos son ejemplos que muestran el formato de las direcciones en los 2 espacios:
 
 ``` 
 // espace address
@@ -28,11 +28,11 @@ cfx:aatktb2te25ub7dmyag3p8bbdgr31vrbeackztm2rj
 cfxtest:aatktb2te25ub7dmyag3p8bbdgr31vrbeajcg9pwkc
 ```
 
-## Account Types
+## Tipos de cuentas
 
-There are two account types, the externally-owned account (EOA) and the contract account. The EOA is controlled by anyone with the private keys of the account, while the contract account is a smart contract deployed on the network, controlled by its code.
+Existen dos tipos de cuentas, las cuentas de propiedad externa (EOA) y las cuentas de los contratos. La EOA está controlada por quien posea las claves privadas de la cuenta, mientras que la cuenta de un contrato es un Smart Contract (contrato inteligente) desplegado en la red, controlado por su código.
 
-### External Accounts and Public-private Key Pairs
+### Cuentas de propiedad externa (EOA) y pares de claves pública-privada
 
 EOAs consist of a cryptographic pair of keys: a public and a private key. The private key, which is a 64 hexadecimal character string, is used to sign transactions and grants custody over the funds associated with the account. Public-key cryptography ensures that a transaction is not forged and that the sender can prove the authenticity of the transaction request. This protects against malicious actors broadcasting fake transactions.
 
