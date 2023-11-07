@@ -1,6 +1,6 @@
 ---
 sidebar_position: 2
-title: Why Introducing PoS?
+title: '¿Por qué introducir PoS?'
 id: why_pos
 keywords:
   - pos
@@ -9,37 +9,37 @@ keywords:
 
 :::note
 
-This is an article written before the Ethereum Merge to explain why Conflux decides to introduce PoS.
+Este es un artículo escrito antes del merge de Ethereum para explicar por qué Conflux decide introducir PoS.
 
 :::
 
-Let's start by explaining the reality that Conflux will have to consider the risk of a 51% attack in quite a long period of time: Due to the huge mining revenue of Ethereum and the increasing demands of graphics cards, miners have already purchased a lot of graphics cards, forming a huge pool of hashing power.
+Empecemos por explicar la realidad de que Conflux tendrá que considerar el riesgo de un ataque del 51% en un período bastante largo: debido a los enormes ingresos mineros de Ethereum y a las crecientes demandas de tarjetas gráficas, los mineros ya han comprado un montón de tarjetas gráficas, formando un enorme grupo de poder de hashing.
 
-Conflux also uses graphics cards for mining, and the hashing power of graphics cards to maintain the security of Conflux is still far behind that of Ethereum. Therefore, there is a risk that a large number of graphics cards will switch to Conflux in a short period of time to complete a 51% attack.
+Conflux también utiliza tarjetas gráficas para la minería, y el poder de hashing de las tarjetas gráficas para mantener la seguridad de Conflux sigue estando muy por detrás de la de Ethereum. Por lo tanto, existe el riesgo de que un gran número de tarjetas gráficas se cambien a Conflux en un corto período de tiempo para realizar un ataque del 51%.
 
-Similar risks of 51% attack exist not only in other PoW public chains with graphics card mining, but also exist in blockchains like BCH, which uses the same ASIC mining as BTC but with significantly lower computing power. To address the 51% attack risk, BCH has even gone so far as to adopt a "less elegant" solution by limiting the rollback length.
+Riesgos similares de ataques del 51% no sólo existen en cadenas públicas de PoW con minería por tarjetas gráficas, también existen en blockchains como BCH, que utiliza la misma minería ASIC que BTC pero con una potencia de cómputo significativamente menor. Para hacer frente al riesgo de ataque del 51%, BCH ha llegado incluso a adoptar una solución "menos elegante" al limitar la duración de la cancelación.
 
-In theory, a public chain with PoW can never completely eliminate the risk of 51% attack. In practice, whether or not an attacker launches a 51% attack largely depends on the benefits and costs of the attack. In terms of the attacker's gain: a successful 51% attack will not harm the mining profit. The attacker's gain may be reduced mainly for two reasons. One is the loss caused by the collapse of the token value after a successful attack; the other is the community may reach a consensus to roll back the state through a hard fork to eliminate the attacker's gain. However, nowadays blockchains have supported multiple on-chain assets and provided cross-chain services, so it is now difficult to eliminate the impact caused by a double-spending attack through a simple hard fork, which is quite different from the situation when ETC were forked from ETH.
+En teoría, una cadena pública con PoW nunca puede eliminar completamente el riesgo de un ataque del 51%. En la práctica, si un atacante lanza o no un ataque del 51 % depende en gran medida de los beneficios y costos del ataque. En términos de la ganancia del atacante: un ataque del 51% exitoso no dañará la ganancia de la minería. La ganancia del atacante puede reducirse principalmente por dos razones. Uno es la pérdida causada por el colapso del valor del token después de un ataque exitoso; la otra es que la comunidad puede llegar a un consenso para hacer retroceder el estado a través de un hard fork para eliminar la ganancia del atacante. Sin embargo, hoy en día las blockchains han soportado múltiples activos en cadena y proporcionado servicios cruzados, así que ahora es difícil eliminar el impacto causado por un ataque de doble gasto a través de un simple hard fork, que es muy diferente de la situación cuando se bifurcó la ETC de ETH.
 
-In terms of increasing the cost to the 51% attackers, there are now three response options available:
+En términos de aumentar el coste para los atacantes del 51%, ahora hay tres opciones disponibles:
 
-1. Avoiding all large-scale hashing power pools. Specifically, abandon graphics card mining and change to specialized ASIC mining.
-2. Getting Conflux's network hashing power approaching or even exceeding Ethereum. This requires increasing the total mining revenue of Conflux to a level comparable to that of Ethereum. The current mining issuance of Ethereum is about 2.6 ETH every 13 seconds, or an average of 0.2 ETH per second. Based on the market price of 3400 USD/ETH, that gives Ethereum a mining revenue of about 680 USD per second, or about 58,752,000 USD per day. To raise Conflux's mining revenue to this level, it would require a boost of about 170 times. This means increasing the revenue of each block to $340,  that is, increasing the reward per block to over 340 CFX while maintaining the price of 1USD/CFX, or increasing the unit price of CFX by 170 times while maintaining the output. Achieving this goal in the short term may require Elon Musk to send a tweet for CFX every week or even every day.
-3. Introducing a PoS mechanism to counter 51% attacks. The PoS decision makes it impossible for an attacker to achieve a double-spending attack based solely on the advantage of computing power, unless the attacker additionally invests enough CFX to influence the PoS decision.
+1. Evitar todos los grupos de poder de hashing de gran escala. Específicamente, abandonar la minería por tarjetas gráficas y cambiar a la minería especializada ASIC.
+2. Obtener un poder de hashing en la red de Conflux cercana o incluso superior a la de Ethereum. Esto requiere aumentar los ingresos totales de la minería de Conflux a un nivel comparable al de Ethereum. La emisión de minería actual de Ethereum es de aproximadamente 2,6 ETH cada 13 segundos, o un promedio de 0,2 ETH por segundo. Basado en el precio de mercado de 3400 USD/ETH, que da a Ethereum un ingreso minero de unos 680 USD por segundo, o unos 58.752.000 USD por día. Para aumentar los ingresos de minería de Conflux a este nivel, requeriría un impulso de alrededor de 170 veces. Esto significa aumentar los ingresos de cada bloque a $340, es decir, aumentar la recompensa por bloque a más de 340 CFX manteniendo el precio de 1USD/CFX, o aumentar el precio unitario de CFX 170 veces mientras se mantiene la salida. Alcanzar este objetivo en el corto plazo puede requerir que Elon Musk envíe un tweet para CFX cada semana o incluso cada día.
+3. Introducir un mecanismo de PoS para contrarrestar ataques del 51%. La decisión PoS hace imposible que un atacante consiga un ataque de doble gasto basado únicamente en la ventaja del poder de cómputo. a menos que el atacante invierta adicionalmente suficiente CFX para influir en la decisión de PoS.
 
-Of these three options, we believe that only the last one is actually feasible.
+De estas tres opciones, creemos que sólo la última es realmente factible.
 
-As for the team's technical roadmap, Conflux's goal is to achieve a "decentralized public chain platform that is accessible and affordable to everyone", rather than a "public chain with a specific PoW consensus protocol". The technical approach is only a means to serve the goal, not the goal itself. For this reason, adding PoS finality decisions to Conflux's existing PoW consensus mechanism to improve confirmation speed and resist potential 51% attacks is in line with Conflux's goals. In addition, to reduce the complexity and potential risk of adding PoS finality mechanism, we choose to leave the selection and packaging of transactions entirely to PoW miners, and the ordering of blocks still follows the Tree-Graph ordering rules, with PoS voting only on the finality of blocks generated by PoW miners.
+En cuanto al roadmap técnico del equipo, el objetivo de Conflux es lograr una "plataforma de cadena pública descentralizada accesible y asequible para todos", en lugar de una "cadena pública con un protocolo específico de consenso de PoW". El enfoque técnico es sólo un medio para servir al objetivo, no al propio objetivo. Por esta razón, añadir decisiones PoS al final al mecanismo de consenso de Conflux para mejorar la velocidad de confirmación y resistir posibles ataques del 51% está en línea con los objetivos de Conflux. Además, reducir la complejidad y el riesgo potencial de añadir mecanismo de finalidad de PoS, elegimos dejar la selección y el despacho de las transacciones enteramente en manos de los mineros de PoW, y el ordenamiento de bloques sigue las reglas de ordenación de los árboles, con la votación de PoS sólo sobre la finalidad de bloques generados por los mineros de PoW.
 
-Regarding the understanding of PoW and PoS, we have never changed: PoW is more secure but slower to confirm; PoS is faster to confirm but less secure. The combination of PoW and PoS has the potential to be a more desirable consensus protocol
+En cuanto a la comprensión de PoW y PoS, nunca hemos cambiado: PoW es más seguro pero más lento para confirmar; PoS es más rápido de confirmar pero menos seguro. La combinación de PoW y PoS tiene el potencial de ser un protocolo de consenso más deseable
 
-## PoW + PoS Hybrid Consensus?
+## Consenso Híbrido PoW + PoS?
 
-- The advantages of PoW consensus - security and reliability
-- Advantages of PoS consensus - efficiency (fast confirmation, low energy consumption)
-- Both can achieve throughput close to the network capacity limit
-  - Further expansion requires infrastructure upgrade or layer2 solutions
-- How to combine the advantages of both?
-  - High security
-  - Fast confirmation
-  - Reasonable energy consumption
+- Las ventajas del consenso de PoW - seguridad y fiabilidad
+- Ventajas de consenso PoS - eficiencia (confirmación rápida, bajo consumo de energía)
+- Ambos pueden lograr un avance cercano al límite de capacidad de red
+  - La expansión adicional requiere actualización de infraestructura o soluciones de capa 2
+- ¿Cómo combinar las ventajas de ambos?
+  - Alta seguridad
+  - Confirmación rápida
+  - Consumo energético razonable
