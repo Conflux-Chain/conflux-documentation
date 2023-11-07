@@ -3,7 +3,7 @@ sidebar_position: 2
 title: Fluent
 keywords:
   - Fluent
-  - Wallet
+  - Wallet (billetera)
 ---
 
 :::tip
