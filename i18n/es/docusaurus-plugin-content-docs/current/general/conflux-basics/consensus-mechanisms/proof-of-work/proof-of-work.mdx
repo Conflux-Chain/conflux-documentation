@@ -1,25 +1,25 @@
 ---
 sidebar_position: 1
-title: Proof of Work
+title: Prueba de trabajo (Proof of Work)
 ---
 
-## Concept of PoW
+## Concepto de PoW
 
-The concept of Proof of Work (PoW)  was first introduced by Cynthia Dwork and Moni Naor in 1993 as a means to prevent spam emails. The concept was simple: require the email sender to solve a computational problem before sending. The computational problem is designed to be time-consuming, requiring certain amount of computational power to solve.  The receiver of the email would then verify that the sender had solved the computational problem before accepting the email. This verification process would ensure that only legitimate emails are accepted and that spammers are unable to flood the receiver's inbox with unsolicited emails.
+El concepto de Prueba de Trabajo (PoW) fue introducido por primera vez por Cynthia Dwork y Moni Naor en 1993 como un medio para prevenir el correo no deseado (spam). El concepto era simple: requiere que el remitente de correo electrónico resuelva un problema de computación antes de enviarlo. El problema computacional está diseñado para que requiera tiempo, necesitando cierta cantidad de poder computo para resolver.  El receptor del correo electrónico verificaría entonces que el remitente había resuelto el problema computacional antes de aceptar el correo electrónico. Este proceso de verificación aseguraría que sólo se aceptarán correos electrónicos legítimos y que los spammers no pueden inundar la bandeja de entrada del receptor con correos electrónicos no solicitados.
 
-The idea behind this was to make it much more difficult and resource-intensive for spammers to send mass emails, while still allowing legitimate email senders to send their messages but with little inconvenience. While the concept of PoW for email spam prevention was sound, it was not widely adopted due to the inconvenience it posed to legitimate email senders. However, the concept of PoW was later adapted by Satoshi Nakamoto to create the peer-to-peer electronic cash system, or the blockchain "bitcoin".
+La idea detrás de esto era hacer que resulte mucho más difícil y intensivo en recursos para que los spammers envíen correos masivos, mientras que todavía permite a los remitentes legítimos de correo electrónico enviar sus mensajes, pero con unas pocas inconveniencias. Mientras que el concepto de PoW para la prevención de spam por correo electrónico se escuchó, no fue ampliamente adoptada debido a las molestias que planteó a los remitentes de correo electrónico legítimos. Sin embargo, el concepto de PoW fue adaptado más tarde por Satoshi Nakamoto para crear el sistema electrónico de activos digitales peer-to-peer o la blockchain "bitcoin".
 
-## Bitcoin's PoW Consensus
+## Consenso PoW de Bitcoin
 
-Bitcoin uses PoW mechanism to determine who can mine new blocks on the blockchain. The process of mining a block involves repeatedly hashing the block header with a nonce value to find a hash that meets the current difficulty target set by the network. Miners compete to solve this puzzle, and the first miner to solve it is rewarded with newly minted bitcoins and any transaction fees associated with the transactions in the block.
+Bitcoin utiliza el mecanismo PoW para determinar quién puede agregar nuevos bloques en la cadena de bloques. El proceso de adición de un bloque involucra una y otra vez hacer hash en la cabecera del bloque con un valor nonce para encontrar un hash que cumpla con el objetivo de dificultad actual establecido por la red. Los mineros compiten para resolver este rompecabezas, y el primer minero en resolverlo es recompensado con bitcoins recién creados y cualquier comisión de transacción asociada con las transacciones en el bloque.
 
-Besides, the **Longest Chain Rule** is is introduced to ensure that the network agrees on a single version of the blockchain. If two miners create blocks at the same time, a fork in the blockchain occurs, creating two competing versions of the blockchain. To determine which of the two forks is the valid one, the Longest Chain Rule is applied. This rule states that the valid fork is the one with the longest chain of blocks, i.e., the one with the most proof of work invested in it.
+Además, se introduce la **regla de cadena de bloques más larga** para asegurar que la red acuerde una sola versión de la cadena de bloques. Si dos mineros crean bloques al mismo tiempo, una bifurcación en la cadena de bloques ocurre, creando dos versiones competitivas de la cadena de bloques. Para determinar cuál de las dos bifurcaciones es la válida, se aplica la regla de cadena más larga. Esta regla establece que la bifurcación válida es la que tiene la cadena de bloques más larga, es decir el que tiene más prueba de trabajo invertido en él.
 
-By making it difficult and resource-intensive to create new blocks, PoW ensures that the network is secure and that no single entity can control the system unless it controls over 51% of the computing power. In addition, the reward system incentivizes miners to participate in and maintain the network. The introduction of PoW has revolutionized the way we think about decentralized systems and has paved the way for the development of many other cryptocurrencies and blockchain applications.
+Al hacer difícil y intensivo en recursos crear nuevos bloques, PoW asegura que la red es segura y que ninguna entidad puede controlar el sistema a menos que controle más del 51% de la potencia de cómputo. Además, el sistema de recompensas incentiva a los mineros para participar y mantener la red. La introducción de PoW ha revolucionado la manera en que pensamos en los sistemas descentralizados y ha allanado el camino para el desarrollo de muchas otras criptomonedas y aplicaciones de blockchain.
 
-## Conflux's PoW Consensus
+## Consenso de PoW de Conflux
 
-Conflux also uses the PoW consensus mechanism to secure its network. Combining the [Tree-Graph](https://arxiv.org/pdf/1805.03870.pdf) ledger structure and the [GHAST](https://confluxnetwork.medium.com/conflux-research-group-ghast-mechanism-adaptive-weight-ghast-explained-part-1-ffe8224a7282) chain selection rule,  it can achieve the same level of decentralization and security as Bitcoin and Ethereum but provide more than two orders of magnitude improvement on transaction throughput (TPS) and confirmation latency. 
+Conflux también utiliza el mecanismo de consenso PoW para asegurar su red. Combinando la estructura de ledger [Tree-Graph](https://arxiv.org/pdf/1805.03870.pdf) y la [GHAST](https://confluxnetwork.medium.com/conflux-research-group-ghast-mechanism-adaptive-weight-ghast-explained-part-1-ffe8224a7282) regla de selección de cadena, puede lograr el mismo nivel de descentralización y seguridad que Bitcoin y Ethereum pero proporcionar más de dos órdenes de mejora de magnitud en la transacción (TPS) y latencia de confirmación. 
 
 ```mdx-code-block
 import DocCardList from '@theme/DocCardList';
