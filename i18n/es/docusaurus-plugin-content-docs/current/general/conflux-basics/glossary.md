@@ -192,7 +192,7 @@ In the context of Conflux, the Tree-Graph is a novel consensus mechanism that al
 Refer to [Tree-Graph](../conflux-basics/consensus-mechanisms/proof-of-work/tree-graph.md) for more information.
 
 
-### **Wallet**
+### **Wallet (billetera)**
 In the context of blockchain, a wallet is a digital place to store cryptocurrency. It can be in the form of a software (online or offline) or hardware device. In the Conflux Network, users can use wallets like Fluent to manage their CFX and interact with the network.
 
 Refer to [Wallets](../tutorials/wallets/wallets.mdx) for more information about supported wallets.
