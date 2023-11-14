@@ -105,6 +105,6 @@ To verify the transaction:
 
 ![meson16](./img/meson16.webp)
 
-## Additional Resources
+## Recursos Adicionales
 
 - To learn more about Meson, check out [Meson's blog](https://medium.com/@mesonfi.)

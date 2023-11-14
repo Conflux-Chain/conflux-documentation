@@ -1,144 +1,144 @@
 ---
 id: pos_overview
-title: PoS Overview
+title: Introducción a PoS
 keywords:
   - pos
   - overview
 sidebar_position: 2
 ---
 
-This document is to introduce Conflux PoS Finality without practical details. It is to help readers understand PoS in general, and it is essential for reading other technical documents.
+Este documento es una introducción a la finalidad de Conflux PoS sin detalles prácticos. Es para ayudar a los lectores a entender PoS en general, y es esencial para leer otros documentos técnicos.
 
-There might be a `51%` attack problem in the early stage of a PoW chain when the hashing power is low. This became an even more significant issue when hashpower rental platforms emerged along with the development of public blockchains. Ethereum Classic, Grin, and Verge have all been the victims of the 51% attack last year.
+Puede haber un problema de ataque del `51%` en la fase inicial en una cadena PoW cuando el poder de hashing es bajo. Esto se convirtió en un problema aún más importante cuando surgieron las plataformas de renta de hashpower junto con el desarrollo de blockchains públicas. Ethereum Classic, Grin y Abge han sido víctimas del ataque del 51%.
 
-To deal with the threats caused by 51% attacks, Conflux will introduce a stand-alone PoS chain. The consensus participants of the PoS chain will sign the pivot of the tree structure regularly. All PoW miners should select the pivot with enough signatures into the pivot chain, even if its sibling blocks have higher weights. Briefly speaking, the PoS chain specifies a pivot block, and all PoW miners should follow that block.
+Para hacer frente a las amenazas causadas por ataques del 51%, Conflux introduce una cadena PoS independiente. Los participantes del consenso de la cadena PoS firmarán el pivot de la estructura Tree-Graph. Todos los mineros de PoW deben seleccionar el bloque pivot con suficientes firmas en la cadena, incluso si sus bloques hermanos tienen más pesos. En pocas palabras, la cadena de PoS especifica un bloque pivot y todos los mineros de PoW deber seguir ese bloque.
 
-This means as long as the PoS consensus votes to a pivot block, even if the 51% attackers try to reverse the block, it won’t be recognized by the PoW nodes.
+Esto significa que mientras el consenso PoS vote a un bloque pivote, aunque los atacantes del 51% intenten revertir el bloque, no será reconocido por los nodos de PoW.
 
-Conflux requires the PoS consensus to use the power of specifying pivot blocks in a restrictive manner. A block must be confirmed for a few minutes under the PoW rules before the honest PoS nodes will sign it. This means that the block sorting and confirmation of the tree graph are still accomplished by the PoW miners.
+Conflux requiere que el consenso PoS utilice el poder de especificar bloques pivot de manera restrictiva. Un bloque debe confirmarse durante unos minutos según las reglas de PoW antes de que los nodos de PoS honestos lo firmen. Esto significa que los mineros de PoW siguen encargándose de la clasificación de bloques y la confirmación del tree-graph.
 
-* The PoS chain is only used to deal with 51% of attacks. Therefore, it only includes basic features such as pivot block voting and voting committee election. It does not include the functionalities of general blockchains such as transactions and contract executions
-* The PoS chain features are built-in functionalities in the nodes of Conflux. Externally, there is still only one program: conflux-rust.
-* In this document, the Conflux chain refers to the running blockchain, and the PoS chain refers to the newly introduced chain.
-* There is approximately 1 PoS block generated per minute. All the times stated below are corresponding to the number of blocks.
+* La cadena de PoS sólo se utiliza para hacer frente al 51% de los ataques. Por lo tanto, sólo incluye funciones básicas como la votación del bloque pivot y la elección del comité de votación. No incluye las funcionalidades de blockchains generales como transacciones y ejecuciones de contratos
+* Las características de la cadena de PoS son funcionalidades integradas en los nodos de Conflux. Externamente, sigue habiendo un solo programa: el Conflux-rust.
+* En este documento, la cadena Conflux se refiere a la cadena de bloques en funcionamiento, y la cadena PoS se refiere a la cadena introducida.
+* Hay aproximadamente 1 bloque de PoS generado por minuto. Todos los tiempos indicados a continuación corresponden al número de bloques.
 
-## PoS Account
+## Cuenta de PoS
 
-### Address
+### Address (dirección)
 
-Generally speaking, the account model on a blockchain is: a private key creates a public key, and a public key produces an address. The accounts on the PoS chain are similar, but there are two private keys called the BLS private key and the VRF private key, corresponding to the BLS public key and the VRF public key respectively. The two public keys are hashed to obtain the PoS address, which is currently 256-bit long.
+En términos generales, el modelo de cuenta en una blockchain es: una clave privada crea una clave pública, y una clave pública produce una dirección. Las cuentas en la cadena de PoS son similares, pero hay dos claves privadas llamadas la clave privada BLS y la clave privada VRF, con sus correspondientes clave pública BLS y clave pública VRF. Las dos claves privadas son procesadas para obtener la dirección PoS, que actualmente es de 256-bits de  longitud.
 
 
 ```js
 0xd731d7633dd38c47769c2a62926b9a54d288a5e664f4d2108ac5bb6601bb30f5
 ```
 
-### Wallet
+### Wallet (billetera)
 
-The primary responsibility of a PoS account is to maintain the Conflux consensus protocol. Each PoS account should run an independent Conflux node. Thus, the Conflux core code has the built-in wallet functionality for PoS accounts, including: When the Conflux node is launched for the first time and is running in the PoS account mode, it will automatically generate the PoS private key and require users to provide the password. The private key that is encrypted by the supplied password is stored locally.
+La responsabilidad principal de una cuenta PoS es mantener el protocolo de consenso de Conflux. Cada cuenta PoS debe correr un nodo de Conflux independiente. Por lo tanto, el código de Conflux Core tiene la funcionalidad de cartera incorporada para cuentas PoS, incluyendo: Cuando se inicia el nodo Conflux por primera vez y se ejecuta en modo de cuenta PoS, generará automáticamente la clave privada PoS y requerirá que los usuarios proporcionen la contraseña. La clave privada que es encriptada por la contraseña suministrada es almacenada localmente.
 
-* When the Conflux node restarts, the user is required to enter the password to unlock the private key file if the encrypted private key file is detected.
-* The transactions are automatically processed under the consensus protocol of PoS during operation, without user intervention.
-* Since the wallet is implemented by a full node, the interaction with the wallet is primitive, which may involve copying files manually, etc.
+* Cuando el nodo de Conflux se reinicia, se requiere que el usuario introduzca la contraseña para desbloquear el archivo de clave privada si el archivo de clave privada encriptado es detectado.
+* Las transacciones se procesan automáticamente bajo el protocolo de consenso de PoS durante la operación, sin intervención del usuario.
+* Puesto que la billetera está implementada por un nodo completo, la interacción con la cartera es primitiva, lo que puede implicar la copia de archivos manualmente, etc.
 
-### Become a consensus node
+### Convertirse en un nodo de consenso
 
-After a PoS account is created, it can only become a legal consensus node by staking and registering on the PoW chain.
+Después de crear una cuenta PoS, sólo puede convertirse en un nodo de consenso legal al hacer Staking y registrarse en la cadena PoW.
 
-* Staking: no difference from the current staking process.
-* Registration: interact with specific internal contact on the Conflux chain; submit relevant information provided by the full node; lock the staked amount, one vote per `1000` locked CFX.
+* Staking: sin diferencias respecto al proceso de staking corriente.
+* Registro: involucra interactuar con un contacto interno específico en la red de Conflux; enviar información relevante proporcionada por el nodo completo; bloquear el monto en staking, un voto por `1000` CFX bloqueados.
 
-After completing the registration, the PoW account that staked and the PoS account form a one-to-one binding relationship. The PoS account cannot change its bound PoW account. The PoW account can bind to another PoS account as long as it releases the previous binding relationship.
+Después de completar el registro, la cuenta de PoW que participó y la cuenta de PoS forman una relación vinculante uno a uno. La cuenta PoS no puede cambiar su vinculo con la cuenta PoW. La cuenta PoW puede vincularse con otras cuentas PoS siempre y cuando libere el vinculo anterior.
 
-## Participating in PoS Consensus
+## Participando en el Consenso PoS
 
-### Get voting rights
+### Obtener derechos de voto
 
-PoS accounts can get voting rights by locking CFX. (refer to chapter “Become a consensus node”)
+Las cuentas PoS pueden obtener derechos de voto bloqueando CFX. (consulte el capítulo “Convertirse en un nodo de consenso”)
 
-* Conflux-rust will automatically monitor the registration information. Therefore, after the PoS account is registered, it will perform corresponding operations without the user’s intervention.
-* Users can lock more CFX tokens on the Conflux chain at any time to obtain more voting rights.
-* After the token is locked, it takes about `10 minutes` to synchronize the state from the Conflux chain to the PoS chain. The user will get the voting rights after the synchronization.
+* Conflux-rust supervisará automáticamente la información de registro. Por lo tanto, una vez registrada la cuenta PoS, realizará las operaciones correspondientes sin la intervención del usuario.
+* Los usuarios pueden bloquear más tokens CFX en la cadena Conflux en cualquier momento para obtener más derechos de voto.
+* Después de que el token está bloqueado, se tarda aproximadamente `10 minutos` en sincronizar el estado de la cadena Conflux a la cadena PoS. El usuario obtendrá los derechos de voto después de la sincronización.
 
-### Withdraw voting rights
+### Retirar derechos de voto
 
-The PoS account can withdraw the voting rights and unlock CFX.
+La cuenta PoS puede retirar los derechos de voto y desbloquear CFX.
 
-* Users need to use the bound PoW account to send transactions on the Conflux chain to apply for unlocking tokens (referred to as ‘retirement’ in the code). Users can unlock any number of locked tokens.
-* Users can apply for unlocking at any time. Once the unlock is requested, the corresponding voting rights will become invalid immediately. However, the tokens will be unlocked only when the following conditions are met:
-  1. The tokens have been locked for at least 14 days.
-  2. The request for unlocking has passed for 7 days
-* If there are multiple transactions locking tokens, they will be unlocked in chronological order until the required unlocking quantity is met.
+* Los usuarios deben utilizar la cuenta vinculada de PoW para enviar transacciones en la cadena Conflux para solicitar el desbloqueo de tokens (denominado "retiro" en el código). Los usuarios pueden desbloquear cualquier número de tokens bloqueados.
+* Los usuarios pueden solicitar el desbloqueo en cualquier momento. Una vez que se solicite el desbloqueo, los derechos de voto correspondientes se invalidarán inmediatamente. Sin embargo, los tokens sólo se desbloquearán cuando se cumplan las siguientes condiciones:
+  1. Los tokens han sido bloqueados por al menos 14 días.
+  2. Han pasado 7 días de que la solicitud de desbloqueo ha sido realizada.
+* Si existen multiples transacciones de bloqueo de tokens, van a ser desbloqueados en orden cronológico hasta que la cantidad desbloqueada requerida es alcanzada.
 
-### Example
+### Ejemplo
 
-Suppose that user A locks 2000 CFX on Jan 1st, 3rd, and 5th, respectively, and applies to unlock 3000 CFX on Jan 9th.
+Supongamos que el usuario A bloquea 2000 CFX en 1 de enero, 3 y 5, respectivamente, y se aplica para desbloquear 3000 CFX el 9 de enero.
 
-* The 2000 CFX locked on Jan 1st will unlock first.
-* 14-day requirement for locking: Jan 1st + 14 days = Jan 15th.
-* 7-day requirement after unlocking request: Jan 9th + 7 days = Jan 16th.
-* Therefore, there will be 2000 CFX unlocked on Jan 16th.
-* After that, 1000 CFX on Jan 3rd will unlock.
-* 14-day requirement for locking: Jan 3rd + 14 days = Jan 17th.
-* 7-day requirement after unlocking request: Jan 9th + 7 days = Jan 16th.
-* Therefore, there will be 1000 CFX unlocked on Jan 17th, which will satisfy the requested unlocking amount, 3000.
+* Los 2000 CFX bloqueados el 1 de enero se desbloquearán primero.
+* Requisito de 14 días de bloqueo: 1 de enero + 14 días = 15 de enero.
+* Requisito de 7 días luego de la solicitud: 9 de enero + 7 días = 16 de enero.
+* Por lo tanto, se desbloquearán 2000 CFX el 16 de enero.
+* Luego, 1000 CFX del bloqueo del 3 de enero se desbloquearán.
+* Requisito de 14 días de bloqueo: 3 de enero + 14 días = 17 de enero.
+* Requisito de 7 días luego de la solicitud: 9 de enero + 7 días = 16 de enero.
+* Por lo tanto, se desbloquearán 1000 CFX el 17 de enero, lo que cumple con la cantidad solicitada de desbloqueo, 3000 CFX.
 
-At the end, the user is left with 1000 CFX locked on Jan 3rd and 2000 CFX locked on Jan 5th.
+Al final, el usuario queda con 1000 CFX bloqueados el 3 de enero y 2000 CFX bloqueados el 5 de enero.
 
-## The Work of PoS Consensus
+## El trabajo del consenso PoS
 
-The following content is about what the PoS node does automatically, for your information.
+El siguiente contenido es sobre lo que hace el nodo PoS automáticamente, para su información.
 
-### Candidate committee
+### Comité de Candidatos
 
-* The PoS account will join the election of a committee of up to `300` seats through VRF.
-* The committee consists of 6 groups of members, each with 50 seats.
-* Every hour, one of the 6 groups that served the longest time will retire, and a new group succeeds.
-* The election starts 1.5 hours in advance and ends half an hour in advance.
-* The vote of each PoS account is regarded as an independent candidate at the time of election. If a PoS account has 10 votes, it will be considered as 10 different candidates participating in the election. If 2 votes of this account have been elected, it will occupy 2 seats in this committee, and the remaining 8 votes can participate in the next election.
-* The PoS account submits the result of the VRF during the election period. The hash value is calculated based on the result, and the 50 votes with the smallest hash value will be selected.
+* La cuenta PoS se unirá a la elección de un comité de hasta `300` plazas a través de VRF.
+* El comité se compone de 6 grupos, cada uno con 50 plazas.
+* Cada hora, el grupo que sirvió más tiempo se retirará y un nuevo grupo tendrá entrará al comité..
+* La elección comienza con una hora y media de antelación y termina con media hora de antelación.
+* El voto de cada cuenta de PoS se considera un candidato independiente en el momento de la elección. Si una cuenta PoS tiene 10 votos, será considerada como 10 candidatos diferentes que participan en la elección. Si se han elegido 2 votos de esta cuenta, ocupará 2 plazas en esta comisión, y los restantes 8 votos pueden participar en las próximas elecciones.
+* La cuenta PoS envía el resultado del VRF durante el período electoral. El valor del hash se calcula basándose en el resultado, y los 50 votos con el  hash más pequeño serán seleccionados.
 
-For instance, if the VRF result is x, and the PoS account has 5 votes, then the hash value is hash(x, 0) ~ hash(x, 4).
+Por ejemplo, si el resultado VRF es x, y la cuenta PoS tiene 5 votos, entonces el valor del hash es hash(x, 0) ~ hash(x, 4).
 
-### As a member
+### Como miembro
 
-* The members of the committee will participate in the PoS consensus and vote on the pivot block of the Conflux chain.
+* Los miembros del comité participarán en el consenso PoS y votarán el bloque pivot de la cadena Conflux.
 
-### Incentive Plan
+### Plan de incentivos
 
-**The existing staking interest for Conflux will be cancelled.**
+**El interés de staking existente en Conflux será cancelado.**
 
-* After the PoS account participates in the election or becomes a committee member, points will be awarded based on different actions it takes. The total point is 6,000,000.
-* The points are settled when the committee changes (every 60 blocks). The interest generated by the Conflux chain during this period will be divided into 6,000,000 shares evenly. The interest will be distributed to the PoW accounts that are bound to the PoS accounts according to the points they have.
-* The points produced by a committee may be less than 6,000,000. The interest that is not distributed will be burned.
+* Después de que la cuenta PoS participe en la elección o se convierta en miembro del comité, los puntos se otorgarán en función de las diferentes acciones que tome. El puntaje total es de 6.000.000.
+* Los puntos se reparten cuando cambia el comité (cada 60 bloques). El interés generado por la red de Conflux durante este período se dividirá en 6.000.000 de acciones uniformemente. El interés se distribuirá a las cuentas PoW que estén vinculadas a las cuentas PoS de acuerdo con los puntos que tengan.
+* Los puntos producidos por un comité pueden ser inferiores a 6.000.000. El interés que no se distribuya será quemado.
 
-### Points composition
+### Composición del puntaje
 
-* The 10000 votes that participate in the election and have the smallest hash value get 120 points each, forming a total of 1.2M points.
-* 15,000 points will be awarded to PoS accounts per elected vote. There will be a total of 4.5M points for 300 committee votes.
-* Becoming the leader of a PoS block will be awarded 3,000 points. There are 60 blocks for a total of 180,000 points.
-* Each PoS block requires 201 out of 300 signatures, but the leader can pack more than 200 signatures. Starting with the 200th signature, each additional signature will receive 20 points up to 2,000 points. There are 60 blocks for a maximum of 120,000 points.
+* Los 10000 votos que participan en la elección y tienen el valor hash más pequeño obtienen 120 puntos cada uno, formando un total de 1.2M puntos.
+* Se otorgarán 15.000 puntos a cuentas PoS por voto elegido. Habrá un total de 4,5 millones de puntos para las 300 votaciones del comité.
+* Convertirse en el líder de un bloque PoS otorgará 3.000 puntos. Hay 60 bloques obteniendo un total de 180,000 puntos.
+* Cada bloque PoS requiere 201 de 300 firmas, pero el líder puede reunir más de 200 firmas. A partir de la firma número 200, cada firma adicional recibirá desde 20 puntos hasta 2.000 puntos. Hay 60 bloques obteniendo un total de 120,000 puntos como máximo.
 
-### Accrued interest
+### Interés acumulado
 
-* Since the amount of staking and the total issuance of CFX are changing, the interest generated by each Conflux chain block is also changing. The interest generated by each block on the Conflux chain is:  sqrt(total staking amount / total CFX circulating) * 4% / number of blocks per year.
-* No interest will be accrued if the PoS committee has not been changed after 7,200 consecutive blocks on the Conflux chain. Interest accruing will resume only after the current interest is distributed. This is to prevent PoS nodes from deliberately slowing down the consensus to obtain more interest.
+* Dado que la cantidad de staking y la emisión total de CFX están cambiando, el interés generado por cada bloque de la cadena de Conflux también está cambiando. El interés generado por cada bloque en Conflux es: sqrt(staking total/CFX total circulando) * 4% / número de bloques por año.
+* No se acumulará ningún interés si el comité PoS no ha sido modificado después de 7200 bloques consecutivos de la red. Los intereses acumulados se reanudarán sólo después de que se distribuya el interés actual. Esto es para evitar que los nodos PoS desaceleren deliberadamente el consenso para obtener más interés.
 
-## Risk Reminder
+## Recordatorio de riesgos
 
-### Principal Loss
+### Pérdida del Principal
 
-If a PoS account signs two different PoS blocks with the same height, its CFX tokens will be locked permanently. This situation may occur when:
+Si una cuenta PoS firma dos bloques PoS diferentes con el mismo peso, sus tokens CFX serán bloqueados permanentemente. Esta situación puede ocurrir cuando:
 
-* The account attacks the consensus protocol by modifying the Conflux node;
-* Using the same PoS account on multiple Conflux nodes. (This will cause the same account to perform conflicting operations, which is considered as an attack to the consensus protocol.)
-* Losing PoS private key files.
+* La cuenta ataca el protocolo de consenso modificando el nodo de Conflux;
+* Se usa la misma cuenta PoS en múltiples nodos de Conflux. (Esto causará que la misma cuenta realice operaciones contradictorias, que se consideran un ataque al protocolo de consenso.)
+* Se pierden archivos de clave privada de la cuenta PoS.
 
-### Liquidity Risk
+### Riesgo de liquidez
 
-* All the locked votes will unlock automatically if a candidate is elected to join the committee but does not participate in signing between two elections. All newly locked votes will unlock automatically in the next `7` days as well.
+* Todos los votos bloqueados se desbloquearán automáticamente si un candidato es elegido para formar parte del comité, pero no participa en la votación entre dos elecciones. Todos los votos recién bloqueados se desbloquearán automáticamente luego de `7` días también.
 
-### Revenue Loss
+### Pérdida de Ingresos
 
-* If the node bound to the PoS account is not launched successfully, there may be no gains.
+* Si el nodo vinculado a la cuenta PoS no se ejecuta con éxito, puede que no haya ganancias.
 

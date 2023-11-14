@@ -1,9 +1,9 @@
 ---
 sidebar_position: 1
-title: Conflux Basics
+title: Bases de Conflux
 ---
 
-Basic concepts in Conflux network
+Conceptos básicos acerca de Conflux Network
 
 ```mdx-code-block
 import DocCardList from '@theme/DocCardList';
