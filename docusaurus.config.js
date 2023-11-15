@@ -99,6 +99,11 @@ const config = {
         items: [
           {
             position: 'left',
+            label: 'Overview',
+            to: '/docs',
+          },
+          {
+            position: 'left',
             label: 'General',
             to: '/docs/general',
           },
@@ -150,7 +155,7 @@ const config = {
             items: [
               {
                 label: 'Discord',
-                to: 'https://discord.gg/3BhYcCM4HY',
+                to: 'https://discord.gg/confluxnetwork',
               },
               {
                 label: 'Telegram',
