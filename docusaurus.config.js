@@ -100,7 +100,7 @@ const config = {
           {
             position: 'left',
             label: 'Overview',
-            to: '/docs',
+            to: '/docs/general/overview',
           },
           {
             position: 'left',
