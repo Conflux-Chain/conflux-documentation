@@ -3,25 +3,25 @@ sidebar_position: 7
 title: Spaces
 ---
 
-## **Introduction to Spaces**
+## **Spaces介绍**
 
-In the Conflux v2.0 (Hydra) upgrade, a new feature called Spaces was introduced through **[CIP-90](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-90.md)**. Spaces is an abstract concept that is used to distinguish Conflux-format transactions from Ethereum-format transactions. Spaces是一种在原始Conflux网络上虚拟创建子链的方式，称为**`eSpace`**。
+在Conflux v2.0（Hydra）升级中，通过**[CIP-90](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-90.md)**引入了一种名为“Spaces”的新特性。 Spaces是一个抽象概念，用于区分Conflux格式的交易和以太坊格式的交易。 Spaces是一种在原始Conflux网络上虚拟创建子链的方式，称为**`eSpace`**。
 
-Core Space指的是原始Conflux网络，而eSpace指的是在Core Space网络之上运行的虚拟化以太坊链。 The two spaces are logically independent of each other and do not affect each other.
+Core Space指的是原始Conflux网络，而eSpace指的是在Core Space网络之上运行的虚拟化以太坊链。 两个空间在逻辑上是相互独立的，不会相互影响。
 
-In other words, we can think of Spaces as a virtualization technology from operating system concepts, where eSpace is a virtualized Ethereum chain running on the original Conflux network.
+换句话说，我们可以把空间看作是操作系统概念中的虚拟化技术，其中eSpace是一个虚拟化的以太坊链，在原始Conflux网络之上运行。
 
-## **Why Introduce eSpace?**
+## **为什么要引入eSpace？**
 
-Conflux is a high-performance, fully decentralized public chain enabled by an innovative Tree-Graph consensus algorithm. The transaction fee of Conflux is very low, which can be seen as almost free compared to other networks such as Ethereum. However, Ethereum has already built a mature ecosystem, including tools, SDKs, wallets, and Solidity libraries. To reduce the migration cost of projects and users and make users experience the advantages of low fees and high TPS of Conflux, eSpace was introduced.
+Conflux是一个高性能、完全去中心化的公链，它采用了一种创新的树图共识算法。 Conflux的交易费用非常低，相比于其他网络如以太坊，可以看作是几乎免费的。 然而，以太坊已经建立了一个成熟的生态系统，包括工具、SDK、钱包和Solidity库。 为了降低项目和用户的迁移成本，让用户体验到Conflux低费用和高TPS的优势，eSpace被引入。
 
-Through the fully compatible interface, smart contracts, and dApps of Ethereum can be directly deployed to eSpace without any modification. 以太坊的开发工具、SDK、钱包和服务可以直接在eSpace中使用。 Users do not need to learn new knowledge but can use the original tools to get started directly.
+通过完全兼容的接口，以太坊的智能合约和dApps可以直接部署到eSpace，无需任何修改。 以太坊的开发工具、SDK、钱包和服务可以直接在eSpace中使用。 用户无需学习新知识，就可以使用原有的工具直接上手。
 
-eSpace is very easy to use for Ethereum developers and users, just like BSC, Polygon, Aurora.
+eSpace对于以太坊的开发者和用户来说非常容易使用，就像BSC、Polygon、Aurora一样。
 
-## **The Relationship Between the Two Spaces**
+## **两个空间之间的关系**
 
-Core Space and eSpace are two logically independent spaces with their own transactions, account status, and contracts. They share the same ledger (chain) for underlying data storage. A block may contain transactions from both Spaces, and they are only differentiated by the transaction type when transactions are executed. Each will only impact the account status in its own Space.
+Core Space和eSpace是两个逻辑上独立的空间，它们有自己的交易、账户状态和合约。 它们共享同一个账本（链）作为底层数据存储。 一个区块可能包含来自两个空间的交易，当交易被执行时，它们只根据交易类型进行区分。 每个space只会影响自己space内的账户状态。
 
 To interact with Core Space, use Conflux-compatible wallet (Fluent), SDK (*-conflux-SDK), and development tools (chainIDE, conflux-truffle). To interact with eSpace directly, use the existing tools and products from the Ethereum ecosystem, such as Metamask, Truffle, Hardhat, Ethers.js, etc. (by simply setting the RPC network of the tool to **[Conflux eSpace RPC](../../espace/build/network-endpoints.md)**.
 
