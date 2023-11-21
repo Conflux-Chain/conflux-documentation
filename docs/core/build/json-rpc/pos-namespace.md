@@ -26,11 +26,11 @@ public_rpc_apis = "all"
 
 ### epoch
 
-The concept of epoch is also used in PoS. However, different from the epoch in PoW, an epoch in PoS represents the term of a committee, starting from term `1`. Each epoch is equivalent to `one hour` on average. After each epoch, a part of the members of the committee are replaced. The rewards for participating in PoS consensus are also given on an epoch basis.
+The concept of epoch is also used in PoS. However, different from the epoch in PoW, an epoch in PoS represents the term of a committee, starting from term `1`. Each epoch is equivalent to `half hour` on average. After each epoch, a part of the members of the committee are replaced. The rewards for participating in PoS consensus are also given on an epoch basis.
 
 ### round
 
-A PoS chain will on average perform one round of consensus `every minute` (i.e. try to generate a PoS block). This means that each epoch will have `60` rounds, and with each `new epoch`, the round will start from `1` again.
+A PoS chain will on average perform one round of consensus `30 seconds` (i.e. try to generate a PoS block). This means that each epoch will have `60` rounds, and with each `new epoch`, the round will start from `1` again.
 
 Note: Not every round will generate a block. there may be network or consensus failures preventing a block from generating.
 

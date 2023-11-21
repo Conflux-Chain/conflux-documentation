@@ -91,7 +91,7 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: 'CONFLUXDOCS',
+        title: '',
         logo: {
           alt: 'Conflux Logo',
           src: 'img/logo.svg',
@@ -109,7 +109,7 @@ const config = {
           },
           {
             position: 'left',
-            label: 'Core',
+            label: 'Core Space',
             to: '/docs/core',
           },
           {
@@ -147,7 +147,10 @@ const config = {
                 label: 'Github',
                 to: 'https://github.com/Conflux-Chain',
               },
-
+              {
+                label: 'Fluent Docs',
+                to: 'https://docs.fluentwallet.com/',
+              },
             ],
           },
           {

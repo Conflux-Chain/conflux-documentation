@@ -2007,6 +2007,7 @@ params: [
 
 * `powBaseReward`: `QUANTITY` - The PoW base reward amount
 * `interestRate`: `QUANTITY` - The PoS interest rate
+* `storagePointProp`: `QUANTITY` - The proportion of sponsored storage will transfer to storage point
 
 ##### Example
 
