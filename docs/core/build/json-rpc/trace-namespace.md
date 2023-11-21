@@ -376,6 +376,38 @@ curl --location --request POST 'http://testnet-rpc:12537' \
 }
 ```
 
+### trace_epoch
+
+Get whole epoch transaction's trace by it's number
+
+#### Parameters
+
+1. `QUANTITY|TAG` - the epoch number, or the string `"latest_mined"`, `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-default-epochnumber-parameter).
+
+#### Returns
+
+TODO
+
+### trace_filter
+
+Returns all traces matching the provided filter.
+
+#### Parameters
+
+1. `Object` - A trace filter object:
+    * `fromEpoch`: `QUANTITY|TAG` - (optional) the epoch number, or the string `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-default-epochnumber-parameter) Search will be applied from this epoch number.
+    * `toEpoch`: `QUANTITY|TAG` - (optional) the epoch number, or the string `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-default-epochnumber-parameter). Search will be applied up until (and including) this epoch number.
+    * `fromAddress`: `BASE32` - (optional).
+    * `toAddres`: `BASE32` - (optional).
+    * `blockHashes`: `Array` of `DATA` - (optional, default: `null`) Array of up to 128 block hashes that the search will be applied to. This will override from/to epoch fields if it's not `null`.
+    * `actionTypes`: `Array` of action type enum - (optional) If None, match all. If specified, trace must match one of these action types.
+    * `after`: `QUANTITY` - (optional) The offset trace number.
+    * `count`: `QUANTITY` - (optional) The number of traces to display in a batch.
+
+#### Returns
+
+Same as `trace_transaction`
+
 ## Note
 
 1. One `call` trace, will have one corresponding `call_result` trace. A `create` trace will also have one corresponding `create_result` trace
