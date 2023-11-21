@@ -3,51 +3,51 @@ title: FAQs of Core Space Transactions
 sidebar_position: 1
 ---
 
-## How to send a transaction?
+## 如何发送交易？
 
-The easiest way to send a transaction is to use a wallet such as Conflux Fluent, and click “send” to directly set the amount. If you are a developer, you can use the Conflux SDK (JS, Java, Go) to construct the transaction yourself, and then send it to the chain via the node RPC.
+使用钱包（如Conflux Fluent）发送交易的最简单方法是直接设置金额并单击“发送”。 如果您是开发人员，可以使用Conflux SDK（JS，Java，Go）自己构建交易，然后通过节点RPC将其发送到链上。
 
-## Can a transaction be canceled or replaced?
+## 是否可以取消或替换交易？
 
-If a transaction has not been packed into a block and is in the transaction pool, it can be replaced by sending a new transaction with the same nonce and a higher gasPrice.
+如果一笔交易还没有被打包进区块，仍在交易池中，那么可以通过发送一个新交易，nonce相同但是gasPrice更高的方式，替换原来的交易。
 
-Transactions cannot be canceled but can be replaced with a transaction of value 0. This is a way to reach the same result as canceling the transaction.
+交易无法取消，但可以用价值为0的交易替换。 这是一种达到与取消交易相同结果的方法。
 
-## What are the gas and storage fees when sending a transaction?
+## 在发送交易时，燃气费和存储费是什么？
 
-The gas fee is a fee required for transaction execution. Miners need to charge a certain amount of fee for packaging and executing the transaction. The way to calculate the gas fee is gasFee = gasPrice * gasUsed. Additionally, the execution of the transaction may occupy new storage space. Even though you don't need to pay for the occupation of this space, a certain amount of CFX needs to be staked for the use of this storage. As the storage is released, the staked CFX will be returned. The storage fee refers to the amount of staked CFX for the storage used, and 1 CFX is required per 1024 bytes used.
+燃气费是执行交易所需的费用。 矿工需要对打包和执行交易收取一定数量的费用。 计算燃气费的方式是 gasFee = gasPrice * gasUsed。 此外，交易的执行可能会占用新的存储空间。 尽管您无需为占用这些空间支付费用，但需要抵押一定数量的 CFX 以使用这些存储空间。 随着存储空间的释放，抵押的 CFX 将被返还。 存储费指的是用于所使用存储空间的抵押 CFX 数量，每使用 1024 字节需要 1 CFX。
 
-## What information (parameters) need to be specified when using the SDK to send transactions？
+## 使用SDK发送交易时，需要指定哪些信息（参数）？
 
-If you make simple CFX transfers using JS-SDK, you only need to specify `from` (transfer from which account), `to` (send to which account), `value` (quantity to send, unit: Drip).
+如果您使用JS-SDK进行简单的 CFX 转账，则只需要指定`from`（从哪个账户转出）、`to`（转账到哪个账户）、`value`（转账金额，单位：Drip）。
 
-## How to get the correct nonce?
+## 如何获得正确的nonce？
 
-Through the  `cfx_getNextNonce` RPC, the next available nonce of an account can be obtained. The used nonce cannot be used again. The transaction will not be packaged if using a nonce with a value greater than the current nonce.
+通过 `cfx_getNextNonce` RPC，可以获取一个账户的下一个可用 nonce 值。 使用过的 nonce 值不能再次使用。 如果使用一个大于当前 nonce 值的 nonce，交易将无法被打包。
 
-## When will the nonce increase by 1? Will the nonce increase by 1 if the transaction fails? Why has the nonce not changed when the transaction has been sent?
+## nonce 何时会增加？ 如果交易失败，nonce 值会增加吗？ 为什么交易已发送但 nonce 值未发生变化？
 
-The nonce increases once the transaction is executed, whether it succeeds or fails. After the transaction is sent, the nonce queried through `cfx_getNextNonce` stays unchanged because the transaction has not been executed. At this time, the transaction may be in the transaction pool and has not been packed, or it may have just been packed and be in the `defer` state, waiting to be executed.
+交易被执行后，无论成功或失败，nonce 值都会增加。 在交易被发送后，通过 `cfx_getNextNonce` 查询到的 nonce 值不会发生变化，因为交易尚未被执行。 此时，交易可能在交易池中等待打包，也可能刚刚被打包并处于`defer`状态，等待被执行。
 
-## How to calculate the gas fee actually used in the transaction?
+## 如何计算交易中实际使用的燃气费用？
 
-On ConfluxScan, users can view gas usage, gas price, gas fee, and other relevant information of a transaction, which is obtained through `cfx_getTransactionReceipt`: `gasFee = gasCharged * gasPrice`, but the gasCharged is not necessarily equal to gasUsed. There is a rule in Conflux: `gas` is used to set the upper limit of gas that can be used in a transaction. It must be greater than the actual gas used value (gasUsed). For the excessive part, at most, only 1/4 will be refunded: if the excessive part is less than 1/4 of the gasLimit, all will be refunded, but if it is greater than 1/4, only 1/4 will be returned. Hence, try to give an accurate gas value when sending a transaction.
+On ConfluxScan, users can view gas usage, gas price, gas fee, and other relevant information of a transaction, which is obtained through `cfx_getTransactionReceipt`: `gasFee = gasCharged * gasPrice`, but the gasCharged is not necessarily equal to gasUsed. 在 Conflux 中有一个规则：`gas` 被用来设置交易中可用的最大燃气量上限。 在 Conflux 中，交易中的 `gas` 必须大于实际使用的燃气量（gasUsed）的值。 对于超出实际使用的部分，最多只会退还 1/4 的 gas 费用：如果超出部分小于 gasLimit 的 1/4，将全部退还；但如果超出部分大于 gasLimit 的 1/4，只有 1/4 的 gas 费用会被返还。 因此，在发送交易时，尽量给出准确的 gas 值是很重要的。
 
-## How to release the storage deposit?
+## 如何释放存储抵押金？
 
-When the storage is released, the deposit is automatically refunded. For example, if the balance of the ERC20 token changes from non-zero to 0, the deposit will be refunded. If a contract is destroyed, the deposit generated by the interaction between all addresses and the contract will be refunded as well.
+当存储空间被释放时，抵押金会自动返还。 例如，如果 ERC20 代币的余额从非零值变为 0，存储抵押金将会被返还。 如果一个合约被销毁，所有地址和该合约之间交互产生的存储抵押金也将被返还。
 
-## Why has the balance not changed after interacting with a contract and the gas fee is paid for this transaction?
+## 为什么与合约进行交互后余额没有改变，但交易燃气费已被支付？
 
-The Conflux network has a sponsor mechanism. If a contract has a sponsor, the gas and storage fees for this contract’s interactions will be paid by the sponsor.
+Conflux 网络具有赞助机制。 如果一个合约有赞助者，该合约与其他账户之间的交互所产生的燃气费用和存储费用将由赞助者支付。
 
-## If you want to send transactions in batches, how to manage nonce?
+## 如果您想批量发送交易，如何管理 nonce？
 
-When sending transactions in batches, you need to manually manage the nonce. Every time you send a transaction, the nonce is manually incremented by one. In this case, for a failed transaction of which nonce is not used, you need to manually adjust the transaction parameters to resend it. Therefore, you need to keep all transaction hashes and monitor the status of the transactions when sending in batches.
+当批量发送交易时，需要手动管理 nonce 值。 每次发送交易时，需要手动将 nonce 值加一。 在这种情况下，如果有一个交易失败，导致它的 nonce 没有被使用，您需要手动调整交易参数并重新发送该交易。 因此，在批量发送交易时，您需要保留所有交易的哈希值，并监控这些交易的状态。
 
 ## How to know the amount of gas and storage used by a transaction?
 
-The `cfx_estimateGasAndCollateral` RPC can be used to estimate the amount of gas and storage that a transaction needs to use, but the estimation is not 100% accurate. Hence, the returned gas can be adjusted manually, such as multiplying by `1.3`.
+可以使用 `cfx_estimateGasAndCollateral` RPC 方法来估算交易需要使用的燃气量和存储量，但是这种估算并不是百分之百准确的。 因此，返回的 gas 值可以手动调整，例如乘以 `1.3`。
 
 ## How do I know that a transaction has been successfully executed?
 
