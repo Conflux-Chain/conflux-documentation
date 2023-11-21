@@ -30,10 +30,10 @@ Reference for various fee tiers and their rate limits.
 | Enterprise | please inquire bd@confluxnetwork.org | customize on demand                         | -                                                                                                                                                                                                                                            |
 
 **Notes**
-- Maximum result-set size is 10,000 for `getLogs` call;
-- Old archived event logs may be inaccessible due to data prune;
+- `getLogs`调用的结果集最大大小为10,000。
+- 由于数据裁剪，旧的存档事件日志可能无法访问。
 - Append your api key to the endpoint for privileged access (eg., `https://evm.confluxrpc.com/<api-key>`);
-- Rate limits are also imposed per RPC method, please check the following specification for more details.
+- 每个RPC方法也有速率限制，请查阅以下规范以了解更多详细信息。
 
 <details>
 <summary>Rate Limit Specification</summary>
