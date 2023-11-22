@@ -1,6 +1,6 @@
 ---
-sidebar_position: 1
-title: JSON-RPC
+sidebar_position: 3
+title: JSON-RPC Compatibility
 ---
 
 Conflux eSpace implements the Web3 JSON-RPC protocol.
