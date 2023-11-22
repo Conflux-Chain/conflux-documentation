@@ -11,7 +11,6 @@ Conflux eSpace is a new feature introduced by Conflux Network in its V2 hard for
 
 Hex40 addresses are compatible with Ethereum addresses, which means that users can easily import their Ethereum wallets to Conflux eSpace and vice versa. Learn more about basic model of eSpace accounts and addresses at [Ethereum Accounts](https://ethereum.org/en/developers/docs/accounts/).
 
-
 ## Mapped Addresses in Cross-Space Operations
 
 Although the two spaces are independent, atomic-crossing of CFX and data can be achieved through the `CrossSpaceCall` internal contract. The following three methods of this contract allow CFX transfers between the two spaces. Note that `CrossSpaceCall` (like other internal contracts) can only be accessed in the Conflux Core space.
