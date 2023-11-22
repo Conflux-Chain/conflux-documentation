@@ -65,4 +65,4 @@ main().catch(e => console.error(e));
 
 ## Other language examples
 
-Refer to [SDKs](./sdks-and-tools/sdks.md) for examples of other SDKs.
+Refer to [SDKs](../build/sdks-and-tools/sdks.md) for examples of other SDKs.
