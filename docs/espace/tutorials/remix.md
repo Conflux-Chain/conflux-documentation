@@ -1,6 +1,5 @@
 ---
 sidebar_position: 1
-title: Remix IDE
 ---
 
 # Deploying an ERC-20 Token using Remix IDE
