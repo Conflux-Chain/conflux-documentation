@@ -8,6 +8,10 @@ keywords:
 
 The eSpace implements an Ethereum Virtual Machine (EVM). Below are some differences between eSpace and Ethereum:
 
+## Transaction Type
+
+Currently eSpace only support 155 type transaction. 1559 type transaction is not support.
+
 ## EVM Opcodes
 
 * The `BLOCKHASH` opcode can only take `NUMBER-1` as input. (Unlike Ethereum, which takes any integer in `NUMBER-256` to `NUMBER-1` as input). This is the only break  opcode.

@@ -15,20 +15,20 @@ Development tools(Remix, Hardhat, Foundry etc), SDKs(ethers.js, viem, web3.py), 
 ## Developer tutorials
 
 * [Developer Quickstart](./DeveloperQuickstart.md)
-* Contract verify
 * How to deploy a contract
+* How to verify a contract
 
 ## Technical details
 
-* CrossSpace Internal Contract
-* EVM compatibility
-* JSON-RPC compatibility
+* [CrossSpace Internal Contract](./build/cross-space-bridge.md)
+* [EVM compatibility](./build/evm-compatibility.md)
+* [JSON-RPC compatibility](./build/jsonrpc-compatibility.md)
 
 ## Resources
 
-* [eSpace Explorer](https://e.confluxscan.io/)
+* [eSpace Blockchain Explorer](https://e.confluxscan.io/)
 * [eSpace RPC endpoints](./network-endpoints.md)
-* [Confluxhub Space Bridge](https://confluxhub.io/espace-bridge/cross-space)
+* [ConfluxHub Space Bridge Dapp](https://confluxhub.io/espace-bridge/cross-space)
 * [eSpace Testnet faucet](https://efaucet.confluxnetwork.org/)
 
 ## FAQs

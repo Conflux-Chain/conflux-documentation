@@ -5,34 +5,71 @@ title: CrossSpace Contract
 
 Conflux eSpace and Core space are two separate space, you can not send CFX from base32 address to hex address directly. You can only use [Confluxhub Space Bridge](https://confluxhub.io/espace-bridge/cross-space) to cross CFX between eSpace and Core Space.
 
-Under the hood the Space Bridge, there is a contract named `CrossSpaceCall` in Core Space, which is used to transfer CFX between eSpace and Core Space. With CrossSpaceCall, it becomes feasible to directly engage with eSpace contracts from within Core Space. This contract is introduced by [CIP-90](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-90.md). 
+Under the hood there is a internal contract named `CrossSpaceCall` in Core Space, which is used to transfer CFX between eSpace and Core Space. With CrossSpaceCall, it becomes feasible to directly engage with eSpace contracts from within Core Space. This contract is introduced by [CIP-90](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-90.md). 
 
 ## CrossSpaceCall Interface
 
 This contract is available on Core Space under the address:
 
 * base32 address: [`cfx:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaa2sn102vjv`](https://confluxscan.io/address/cfx:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaa2sn102vjv)
-* hex: `0x0888000000000000000000000000000000000006`
+* hex address(use in solidity): `0x0888000000000000000000000000000000000006`
+
+Below is the interface of this contract:
 
 ```js
-interface CrossSpace {
+interface CrossSpaceCall {
+    /**
+     * @dev Deploy a contract in eSpace
+     * @param init bytes -  The contract init bytecode
+     * @return bytes20 - The hex address of the deployed contract
+     */
+    function createEVM(bytes calldata init) external payable returns (bytes20);
     /* methods for cross-space CFX transfers */
 
-    /* transfer CFX to eSpace address specified by parameter 'to' */
+    /**
+     * @dev Transfer CFX from Core space to eSpace specify address. Transfer amount is specified by transaction value.
+     * @param to bytes20 - The hex address of the receiver address in eSpace
+     * @return output bytes
+     */
     function transferEVM(bytes20 to) external payable returns (bytes memory output);
     
-    /* withdraw CFX from eSpace mapped address, amount specified by parameter 'value' */
+    /**
+     * @dev Widthdraw CFX from eSpace mapped account's balance
+     * @param value uint256 - The amount of CFX to be withdrawn
+     */ 
     function withdrawFromMapped(uint256 value) external;
 
-    /* query eSpace mapped account CFX balance */
+    /**
+     * @dev Query eSpace mapped account's CFX balance
+     * @param addr address - The core address to query
+     * @return uint256 - Balance
+     */
     function mappedBalance(address addr) external view returns (uint256);
+
+
+    /**
+     * @dev Query eSpace mapped account's nonce
+     * @param addr address - The core address to query
+     * @return uint256 - Balance
+     * */ 
+    function mappedNonce(address addr) external view returns (uint256);
     
     /* methods for other cross-space operations */
 
-    /* call eSpace contract's method */
+    /**
+     * @dev Call eSpace contract method from Core space
+     * @param to bytes20 - The hex address of the contract in eSpace
+     * @param data bytes - The contract method call data
+     * @return output bytes - Method call result
+     */ 
     function callEVM(bytes20 to, bytes calldata data) external payable returns (bytes memory output);
 
-    /* static call eSpace contract's method */
+    /**
+     * @dev Static call eSpace contract method from Core space
+     * @param to bytes20 - The hex address of the contract in eSpace
+     * @param data bytes - The contract method call data
+     * @return output bytes - Method call result
+     */ 
     function staticCallEVM(bytes20 to, bytes calldata data) external view returns (bytes memory output);
 }
 ```
@@ -68,10 +105,11 @@ const crossSpaceCall = conflux.InternalContract('CrossSpaceCall');
 async function main() {
     const eSpaceAddress = '0x3D69D968e3673e188B2D2d42b6a385686186258f';
 
-    const receipt = await crossSpaceCall.transferEVM(eSpaceAddress).sendTransaction({
-        from: account,
-        value: Drip.fromCFX(1),  // transfer 1 CFX, the amount is specify by value
-    }).executed();
+    const receipt = await crossSpaceCall.transferEVM(eSpaceAddress)
+        .sendTransaction({
+            from: account,
+            value: Drip.fromCFX(1),  // transfer 1 CFX, the amount is specify by value
+        }).executed();
 
     console.log(`Transfer to ${eSpaceAddress} ${receipt.outcomeStatus === 0 ? 'succeed' : 'failed'}`);
 }
@@ -91,8 +129,8 @@ For details about the mapped address, see [Mapped Addresses](../learn/accounts.m
 
 To transfer CFX from Conflux eSpace to Conflux Core, two steps are required. 
 
-* First, transfer CFX to the eSpace mapped account that belongs to the Core destination account. This action requires an eSpace transaction.
-* Second, call the `withdrawFromMapped(uint256 value)` method of the `CrossSpaceCall` internal contract. This call with transfer the CFX from the mapped account back to the corresponding destination address. Another method `mappedBalance` can be used to query the balance of one core address's mapped address.
+1. Transfer CFX to the eSpace mapped account that belongs to the Core destination account. This action requires an eSpace transaction.
+2. Call the `withdrawFromMapped(uint256 value)` method of the `CrossSpaceCall` internal contract. This call with transfer the CFX from the mapped account back to the corresponding destination address. Another method `mappedBalance` can be used to query the balance of one core address's mapped address.
 
 ```js
 function withdrawFromMapped(uint256 value) external;
@@ -103,7 +141,7 @@ function mappedBalance(address addr) external view returns (uint256);
 
 #### JS Example
 
-Step1: use js-conflux-sdk's address utility method to get the mapped address of the destination account.
+Step1: use js-conflux-sdk's address utility method to get the mapped address of the Core Space destination account.
 
 ```js
 const { address } = require('js-conflux-sdk');
@@ -132,9 +170,10 @@ const account = conflux.wallet.addPrivateKey(process.env.PRIVATE_KEY);
 const crossSpaceCall = conflux.InternalContract('CrossSpaceCall');
 
 async function main() {
-    const receipt = await crossSpaceCall.withdrawFromMapped(Drip.fromCFX(1)).sendTransaction({
-        from: account,
-    }).executed();
+    const receipt = await crossSpaceCall.withdrawFromMapped(Drip.fromCFX(1))
+        .sendTransaction({
+            from: account,
+        }).executed();
 
     console.log(`Withdraw from eSpace ${receipt.outcomeStatus === 0 ? 'succeed' : 'failed'}`);
 }
