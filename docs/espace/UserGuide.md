@@ -17,7 +17,7 @@ This guide will help user connect their metamask  wallet to Conflux eSpace.
 
 [MetaMask](https://metamask.io/) is a convenient UI for interacting with Ethereum-compatible blockchains (such as Conflux eSpace).
 For the purpose of this guide, we will assume you are already familiar with MetaMask and have it installed.
-If you need help getting started with MetaMask itself, [check out their documentation](https://metamask.io/faqs.html).
+If you need help getting started with MetaMask itself, [check out Metamask documentation](https://metamask.io/faqs.html) and [Ethereum documentation](https://ethereum.org/en/).
 
 In this tutorial we will walk through connecting MetaMask to the Conflux eSpace Testnet.
 

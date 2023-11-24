@@ -20,3 +20,7 @@ You can use [Confluxhub Space Bridge](https://confluxhub.io/espace-bridge/cross-
 ## Can I use base32 address in eSpace?
 
 Base32 address is only used in core space, and eSpace is not supported. You can use the hex address in eSpace.
+
+## What is the eSpace TPS ?
+
+It's about 300 TPS.

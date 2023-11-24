@@ -1,6 +1,6 @@
 ---
 sidebar_position: 4
-title: CrossSpace Contract
+title: CrossSpaceCall Contract
 ---
 
 Conflux eSpace and Core space are two separate space, you can not send CFX from base32 address to hex address directly. You can only use [Confluxhub Space Bridge](https://confluxhub.io/espace-bridge/cross-space) to cross CFX between eSpace and Core Space.
@@ -123,7 +123,7 @@ main()
 
 To cross CFX from eSpace to Core Space, a mapped address is required. Each account in Core Space has a **mapped account** (hex40) in eSpace. Only the Core space account can withdraw CFX from it's mapped account.
 
-For details about the mapped address, see [Mapped Addresses](../learn/accounts.md#mapped-addresses-in-cross-space-operations).
+For details about the mapped address, see [Mapped Addresses](./accounts.md#mapped-addresses-in-cross-space-operations).
 
 #### Transfer Steps
 
@@ -223,6 +223,6 @@ contract CrossCallExample {
 ## Resources
 
 * [CIP-90](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-90.md)
-* [Mapped Addresses](../learn/accounts.md#mapped-addresses-in-cross-space-operations)
+* [Mapped Addresses](./accounts.md#mapped-addresses-in-cross-space-operations)
 * [CrossSpaceCall](../../core/learn/core-space-basics/internal-contracts/crossSpaceCall.md)
 * [eSpace Phantom Transactions](./evm-compatibility.md#phantom-transactions)

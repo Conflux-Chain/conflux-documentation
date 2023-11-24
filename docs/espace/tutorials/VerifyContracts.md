@@ -1,5 +1,5 @@
 ---
-sidebar_position: 7
+sidebar_position: 2
 title: Contract Verification
 ---
 
@@ -86,3 +86,13 @@ forge verify-contract <contract address> <contract name> \
 <Aside type="caution" title="Caution">
   Do not specify the chain ID.
 </Aside>
+
+## Verify on Web UI Manually
+
+Any contract deployed on eSpace can be verified on the [ConfluxScan](https://evm.confluxscan.net/) block explorer's contract detail page. If contract is not verified, the contract detail page will show a entry to verify page.
+
+![](./img/contract-verify-submit.png)
+
+Developer can use flatten tools (hardhat, foundry) to merge his contract and it's dependencies into one file. Then copy the flatten code into the editor. And fill in the contract name, compiler version, license. Finally, click the submit button to verify the contract.
+
+If the verification failed, maybe the compiler version or optimization settings are not correct. Please check the compiler version and optimization settings in the contract deployment configuration.

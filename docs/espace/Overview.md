@@ -3,7 +3,7 @@ sidebar_position: 1
 title: Overview
 ---
 
-Conflux eSpace is a fully **EVM-compatible** space(or chain) of Conflux with much lower gas fee and higher TPS than Ethereum, it is independent from [Core](../core/core.mdx) space.
+Conflux eSpace is a fully **EVM-compatible** space(chain) of Conflux with much lower gas fee and higher TPS than Ethereum, it is independent from [Core](../core/core.mdx) space.
 
 The experience of eSpace for **developers** and **common users** is the same as Ethereum. dApps of Ethereum can be directly deployed to eSpace without any modification. 
 Development tools(Remix, Hardhat, Foundry etc), SDKs(ethers.js, viem, web3.py), wallets(Metamask, Taho), and services(TheGraph) of Ethereum can be directly used in eSpace.
@@ -11,12 +11,13 @@ Development tools(Remix, Hardhat, Foundry etc), SDKs(ethers.js, viem, web3.py), 
 ## User Guides
 
 * [How to connect metamask to eSpace](./UserGuide.md)
+* [How to cross CFX between Core and eSpace](../general/tutorials/transferring-funds/transfer-funds-across-spaces)
 
 ## Developer tutorials
 
 * [Developer Quickstart](./DeveloperQuickstart.md)
-* How to deploy a contract
-* How to verify a contract
+* [How to deploy a contract](./tutorials/deployContract/hardhat.md)
+* [How to verify a contract](./tutorials/VerifyContracts.md)
 
 ## Technical details
 

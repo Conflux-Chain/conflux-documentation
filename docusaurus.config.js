@@ -100,12 +100,12 @@ const config = {
           {
             position: 'left',
             label: 'Overview',
-            to: '/docs/general/overview',
+            to: '/docs/overview',
           },
           {
             position: 'left',
-            label: 'General',
-            to: '/docs/general',
+            label: 'eSpace',
+            to: '/docs/espace',
           },
           {
             position: 'left',
@@ -114,8 +114,8 @@ const config = {
           },
           {
             position: 'left',
-            label: 'eSpace',
-            to: '/docs/espace',
+            label: 'General',
+            to: '/docs/general',
           },
           {
             type: 'localeDropdown',
