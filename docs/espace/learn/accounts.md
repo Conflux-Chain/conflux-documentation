@@ -5,7 +5,7 @@ title: Accounts and Addresses
 
 ## Overview
 
-Conflux eSpace is an independent space that is logically isolated from the Core space on Conflux Network. Accounts in the eSpace have their own balance and status. To interact with the eSpace, you need to use hex40 addresses, which are different from [base32 addresses](../../core/learn/core-space-basics/addresses.md) used for the Core space. You can transfer funds between your Core and eSpace wallets using a [bridge service](../learn/tutorials/transfer-funds-across-spaces.md).
+Conflux eSpace is an independent space that is logically isolated from the Core space on Conflux Network. Accounts in the eSpace have their own balance and status. To interact with the eSpace, you need to use hex40 addresses, which are different from [base32 addresses](../../core/learn/core-space-basics/addresses.md) used for the Core space. You can transfer funds between your Core and eSpace wallets using a [bridge service](../../general/tutorials/transferring-funds/transfer-funds-across-spaces.md).
 
 Conflux eSpace is a new feature introduced by Conflux Network in its V2 hard fork. It is an independent space that runs on the same underlying infrastructure as the Core space, but with different rules and specifications. In the eSpace, accounts follow the Ethereum account model and use hex40 addresses instead of [base32 addresses](../../core/learn/core-space-basics/addresses.md). This means it is ok to use the same private key in core space and espace, but the account in core space and espace will have different addresses and will have their own balance and status.
 
@@ -54,4 +54,4 @@ Notes about the mapped address:
 
 ## Related Topics
 
-* Cross space dApp tutorial: [Transferring Funds Across Spaces](./tutorials/transfer-funds-across-spaces.md)
+* Cross space dApp tutorial: [Transferring Funds Across Spaces](../../general/tutorials/transferring-funds/transfer-funds-across-spaces.md)
