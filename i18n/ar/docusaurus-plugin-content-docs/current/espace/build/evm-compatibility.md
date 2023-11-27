@@ -1,28 +1,47 @@
 ---
-sidebar_position: 3
+sidebar_position: 2
 title: EVM Compatibility
+description: EVM Compatibility of Conflux eSpace
 keywords:
   - EVM
-  - VM
+  - Compatibility
 ---
 
 The eSpace implements an Ethereum Virtual Machine (EVM). Below are some differences between eSpace and Ethereum:
 
+## Transaction Type
+
+Currently eSpace only support 155 type transaction. 1559 type transaction is not support.
+
+## EVM Opcodes
+
+* The `BLOCKHASH` opcode can only take `NUMBER-1` as input. (Unlike Ethereum, which takes any integer in `NUMBER-256` to `NUMBER-1` as input). This is the only break  opcode.
 * The `NUMBER` opcode will return the tree-graph `epoch number`. As a result, `block.number` used in eSpace contracts will not grow at a stable and predictable rate, and so it might not be suitable for measuring time.
-* The `BLOCKHASH` opcode can only take `NUMBER-1` as input. (Unlike Ethereum, which takes any integer in `NUMBER-256` to `NUMBER-1` as input)
-* Block generate rate is 1.25s per block (mainnet)
-* Contract max code size is `49152` double as Ethereum
+
+## Block Time
+
+Block generate rate is 1.25s per block (mainnet), is same as Core Space Epoch time.
+
+## Contract Size
+
+Contract max code size is `49152` double as Ethereum
+
+## Transaction Fees
+
 * No gas refund in `SSTORE` opcode and `SUICIDE` opcode.
 * The operations which occupy storage have a different gas cost.
   1. `SSTORE` costs 40000 gas (instead of 20000 gas in Ethereum) when changing a storage entry from zero to non-zero.
   2. When deploying a new contract, each byte costs 400 gas (instead of 200 gas in Ethereum).
   3. When creating a new account by `CALL` or `SUICIDE`, it consumes 50000 gas (instead of 25000 gas in Ethereum).
 * At most `1/4` of transaction `gasLimit` will be refund (if not used)
-* Only the block whose block height is a multiple of `5` can pack Ethereum type transaction. The total gas limit of these transaction cannot exceed half of the block gas limit (1500w).
 
-## Precompiles
+## Transaction Gas limit
 
-### Standard precompiles
+Only the block whose block height is a multiple of `5` can pack Ethereum type transaction. The total gas limit of these transaction cannot exceed half of the block gas limit (1500w).
+
+## EVM Precompiles
+
+All standard precompiles are supported.
 
 <div class="compat-evm-precompiles-table"></div>
 
