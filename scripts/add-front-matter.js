@@ -3,28 +3,41 @@ const path = require('path');
 const matter = require('gray-matter');
 
 const config = {
-  defaultFrontMatter: {
-    displayed_sidebar: 'allSidebar'
+  "./docs/general": {
+    defaultFrontMatter: {
+      displayed_sidebar: "generalSidebar",
+    },
+    targetExtnames: [".md", ".mdx"],
   },
-  targetExtnames: ['.md', '.mdx'],
-  targetDir: ["./docs"]
-}
+  "./docs/core": {
+    defaultFrontMatter: {
+      displayed_sidebar: "coreSidebar",
+    },
+    targetExtnames: [".md", ".mdx"],
+  },
+  "./docs/espace": {
+    defaultFrontMatter: {
+      displayed_sidebar: "eSpaceSidebar",
+    },
+    targetExtnames: [".md", ".mdx"],
+  },
+};
 
-function addDefaultFrontMatter(directory, defaultOptions, dryRun) {
+function addDefaultFrontMatter(directory, defaultFrontMatter, targetExtnames, dryRun) {
   const files = fs.readdirSync(directory);
 
   files.forEach(file => {
     const filePath = path.join(directory, file);
     const fileStats = fs.statSync(filePath);
 
-    if (fileStats.isFile() && config.targetExtnames.includes(path.extname(file))) {
+    if (fileStats.isFile() && targetExtnames.includes(path.extname(file))) {
       const content = fs.readFileSync(filePath, 'utf8');
       const parsed = matter(content);
 
       let modified = false;
-      Object.keys(defaultOptions).forEach(key => {
+      Object.keys(defaultFrontMatter).forEach(key => {
         if (!(key in parsed.data)) {
-          parsed.data[key] = defaultOptions[key];
+          parsed.data[key] = defaultFrontMatter[key];
           modified = true;
         }
       });
@@ -37,7 +50,7 @@ function addDefaultFrontMatter(directory, defaultOptions, dryRun) {
         console.log(`Updated front matter for ${filePath}`);
       }
     } else if (fileStats.isDirectory()) {
-      addDefaultFrontMatter(filePath, defaultOptions, dryRun); // Ensure dryRun is passed in recursive calls
+      addDefaultFrontMatter(filePath, defaultFrontMatter, targetExtnames, dryRun); // Ensure dryRun is passed in recursive calls
     }
   });
 }
@@ -45,6 +58,7 @@ function addDefaultFrontMatter(directory, defaultOptions, dryRun) {
 // Check for --dryRun argument in the command line
 const dryRun = process.argv.includes('--dryRun');
 
-config.targetDir.forEach((dir) => {
-  addDefaultFrontMatter(dir, config.defaultFrontMatter, dryRun);
+Object.keys(config).forEach((dir) => {
+  console.log(dir)
+  addDefaultFrontMatter(dir, config[dir].defaultFrontMatter, config[dir].targetExtnames, dryRun);
 });

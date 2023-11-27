@@ -130,13 +130,13 @@ const config = {
             sidebarId: "concepts",
             type: "docSidebar"
           },
-          {
-            position: 'left',
-            label: 'Tutorials',
-            // to: '/docs/core',
-            sidebarId: "tutorials",
-            type: "docSidebar",
-          },
+          // {
+          //   position: 'left',
+          //   label: 'Tutorials',
+          //   // to: '/docs/core',
+          //   sidebarId: "tutorials",
+          //   type: "docSidebar",
+          // },
           {
             type: 'localeDropdown',
             position: 'right',
