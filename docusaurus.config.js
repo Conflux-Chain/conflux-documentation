@@ -58,6 +58,7 @@ const config = {
   presets: [
     [
       'classic',
+      
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
@@ -116,6 +117,25 @@ const config = {
             position: 'left',
             label: 'General',
             to: '/docs/general',
+          },
+          {
+            type: 'html',
+            position: 'left',
+            value: '｜',
+          },
+          {
+            position: 'left',
+            label: 'Concepts',
+            // to: '/docs/core',
+            sidebarId: "concepts",
+            type: "docSidebar"
+          },
+          {
+            position: 'left',
+            label: 'Tutorials',
+            // to: '/docs/core',
+            sidebarId: "tutorials",
+            type: "docSidebar",
           },
           {
             type: 'localeDropdown',
