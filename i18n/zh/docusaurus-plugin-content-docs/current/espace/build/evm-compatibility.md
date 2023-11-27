@@ -1,28 +1,47 @@
 ---
-sidebar_position: 3
+sidebar_position: 2
 title: EVM Compatibility
+description: EVM Compatibility of Conflux eSpace
 keywords:
   - EVM
-  - VM
+  - Compatibility
 ---
 
 eSpace 实现了一个以太坊虚拟机 (EVM)。 以下是 eSpace 和以太坊之间的一些区别：
 
+## Transaction Type
+
+Currently eSpace only support 155 type transaction. 1559 type transaction is not support.
+
+## EVM Opcodes
+
+* `BLOCKHASH` opcode只能将 `NUMBER-1` 作为输入。 (Unlike Ethereum, which takes any integer in `NUMBER-256` to `NUMBER-1` as input). This is the only break  opcode.
 * `NUMBER` opcode将返回树图`epoch number`。 因此，在 eSpace 合约中使用的 `block.number` 不会以稳定和可预测的速率增长，因此它可能不适合用于测量时间。
-* `BLOCKHASH` opcode只能将 `NUMBER-1` 作为输入。 （不像以太坊，它将 `NUMBER-256` 到`NUMBER-1`之间的任何整数作为输入）
-* 区块生成速率为每个区块 1.25 秒（主网）
-* 合约最大代码大小为 `49152`，是以太坊的两倍
+
+## Block Time
+
+Block generate rate is 1.25s per block (mainnet), is same as Core Space Epoch time.
+
+## Contract Size
+
+合约最大代码大小为 `49152`，是以太坊的两倍
+
+## Transaction Fees
+
 * `SSTORE` 操作码和 `SUICIDE` opcode中不会退还gas。
 * 占用存储的操作有不同的gas消耗。
   1. 当将存储条目从零更改为非零时，`SSTORE` 花费 40000 gas（而以太坊中为 20000 gas）。
   2. 部署新合约时，每个字节花费 400 gas（而以太坊中为 200 gas）。
   3. 通过 `CALL` 或 `SUICIDE` 创建新账户时，该操作消耗 50000 gas（而以太坊中为 25000 gas）。
 * 最多 `1/4` 的交易 `gasLimit` 可以被退还（如果未使用）
-* 只有区块高度是 `5` 的倍数的区块才能打包以太坊类型的交易。 这些交易的总gas limit不能超过区块gas limit的一半（1500w）。
 
-## 预编译
+## Transaction Gas limit
 
-### Standard precompiles
+只有区块高度是 `5` 的倍数的区块才能打包以太坊类型的交易。 这些交易的总gas limit不能超过区块gas limit的一半（1500w）。
+
+## EVM Precompiles
+
+All standard precompiles are supported.
 
 <div class="compat-evm-precompiles-table"></div>
 
