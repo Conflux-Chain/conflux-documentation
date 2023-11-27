@@ -24,32 +24,3 @@ title: Across Spaces
 将资产从 eSpace 转移到 Core Space 的跨空间转账也是一个类似的过程，但包含两个主要步骤：首先，将代币转移到 eSpace 上的桥接合约。 第二步，从 Core Space 上的桥接合约中提取代币。 请按照网站的说明进行操作。
 
 **⚠️ 当进行跨空间转账时，请始终仔细检查地址，以避免意外的资产损失。**
-
-## 开发者的跨空间转账
-
-以下我们将讨论如何通过编程方式进行跨空间转账。
-
-### 内置合约
-
-[CIP-90](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-90.md)是引入在同一条区块链上运行两个空间概念的提案，定义了一个新的[内置合约](https://hackmd.io/@thegaram/S15_VAwh5)来连接这两个空间。 这个合约在Core Space上的地址是 [`cfx:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaa2sn102vjv`](https://confluxscan.io/address/cfx:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaa2sn102vjv) (hex: `0x0888000000000000000000000000000000000006`)。
-
-```js
-interface CrossSpace {
-    /* methods for cross-space CFX transfers */
-
-    function transferEVM(bytes20 to) external payable returns (bytes memory output);
-
-    function withdrawFromMapped(uint256 value) external;
-
-    function mappedBalance(address addr) external view returns (uint256);
-
-    /* methods for other cross-space operations */
-
-    function callEVM(bytes20 to, bytes calldata data) external payable returns (bytes memory output);
-
-    function staticCallEVM(bytes20 to, bytes calldata data) external view returns (bytes memory output);
-
-    // ...
-}
-
-```
