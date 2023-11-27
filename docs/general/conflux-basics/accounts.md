@@ -9,7 +9,7 @@ Accounts in Conflux can be compared to "bank accounts", as they store CFX. Users
 
 :::note
 
-The account implementation, including the account content and address computing rule is slightly different in [core space](../../core/learn/core-space-basics/accounts.md) and [espace](../../espace/learn/accounts.md).
+The account implementation, including the account content and address computing rule is slightly different in [core space](../../core/learn/core-space-basics/accounts.md) and [espace](../../espace/build/accounts.md).
 
 :::
 
@@ -86,5 +86,5 @@ cfx:aajfvxvhz6mna0md1b68mpg9puygt18tm6nynadnf6
 
 - [Ethereum Accounts](https://ethereum.org/en/developers/docs/accounts/)
 - [Core space accounts](../../core/learn/core-space-basics/accounts.md)
-- [espace accounts](../../espace/learn/accounts.md)
+- [espace accounts](../../espace/build/accounts.md)
 - [Core space addresses](../../core/learn/core-space-basics/addresses.md)

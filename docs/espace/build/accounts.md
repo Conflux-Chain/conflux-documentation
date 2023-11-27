@@ -1,6 +1,6 @@
 ---
-sidebar_position: 3
-title: Accounts and Addresses
+sidebar_position: 5
+title: eSpace Mapped Addresses(Cross Space)
 ---
 
 ## Overview
@@ -10,7 +10,6 @@ Conflux eSpace is an independent space that is logically isolated from the Core 
 Conflux eSpace is a new feature introduced by Conflux Network in its V2 hard fork. It is an independent space that runs on the same underlying infrastructure as the Core space, but with different rules and specifications. In the eSpace, accounts follow the Ethereum account model and use hex40 addresses instead of [base32 addresses](../../core/learn/core-space-basics/addresses.md). This means it is ok to use the same private key in core space and espace, but the account in core space and espace will have different addresses and will have their own balance and status.
 
 Hex40 addresses are compatible with Ethereum addresses, which means that users can easily import their Ethereum wallets to Conflux eSpace and vice versa. Learn more about basic model of eSpace accounts and addresses at [Ethereum Accounts](https://ethereum.org/en/developers/docs/accounts/).
-
 
 ## Mapped Addresses in Cross-Space Operations
 

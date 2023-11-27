@@ -1,6 +1,6 @@
 ---
-sidebar_position: 4
-title: Network Endpoints
+sidebar_position: 5
+title: Network RPC Endpoints
 ---
 
 ## 1. Confura
