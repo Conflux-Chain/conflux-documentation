@@ -26,7 +26,7 @@ const Home = () => {
               <h1 className="text-[68px]">Developer</h1>
               <h1 className="text-[68px]">Portal</h1>
               <p className="hero__subtitle text-[#737A88] text-[24px] dark:text-[#A2A8B6] font-normal mt-6">{siteConfig.tagline}</p>
-              <a href='/docs/Overview'>
+              <a href='/docs/overview'>
                 <button className={cx('text-[18px]', styles.startBuildingBtn)}>Start Building</button>
               </a>
             </div>
