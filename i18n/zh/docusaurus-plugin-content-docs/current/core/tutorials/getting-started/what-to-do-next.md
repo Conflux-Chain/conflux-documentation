@@ -4,7 +4,7 @@ title: 接下来是？
 
 :::info
 
-这个页面主要介绍 Conflux Core Space。 请参考 [eSpace](../../../espace/learn/overview.md)来获取eSpace的指南，
+这个页面主要介绍 Conflux Core Space。 Refer to [eSpace](../../../espace/Overview.md) for the guide of eSpace.
 
 :::
 
