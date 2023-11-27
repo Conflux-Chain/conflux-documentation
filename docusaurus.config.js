@@ -105,7 +105,7 @@ const config = {
           {
             position: 'left',
             label: 'eSpace',
-            to: '/docs/espace',
+            to: '/docs/espace/Overview',
           },
           {
             position: 'left',

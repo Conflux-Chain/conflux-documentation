@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 title: Developer Quickstart
+description: Quickstart for developers to Ethereum developers to build on eSpace
 keywords:
     - Quickstart
 ---

@@ -1,8 +1,8 @@
 ---
 sidebar_position: 2
+title: Deploying an ERC-20 Token using Remix IDE
+description: Deploying an ERC-20 Token using Remix IDE
 ---
-
-# Deploying an ERC-20 Token using Remix IDE
 
 In a new tab, open the Remix IDE at [remix.ethereum.org](https://remix.ethereum.org).
 It might take a minute to load, but once it has, create a new file `ERC20Token.sol` in the workspace panel on the left:

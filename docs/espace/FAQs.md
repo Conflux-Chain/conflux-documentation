@@ -1,6 +1,7 @@
 ---
 sidebar_position: 15
 title: FAQs
+description: Frequently asked questions about Conflux eSpace
 ---
 
 ## How to run eSpace node?

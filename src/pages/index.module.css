@@ -39,3 +39,13 @@
   align-items: center;
   justify-content: center;
 }
+
+.startBuildingBtn {
+    display: inline-block;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-right: 3rem;
+    padding-left: 3rem;
+    background-color: #1e90ff;
+    color: #fff;
+}

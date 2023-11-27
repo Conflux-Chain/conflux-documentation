@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 title: Overview
+description: Overview of Conflux eSpace
 ---
 
 Conflux eSpace is a fully **EVM-compatible** space(chain) of Conflux with much lower gas fee and higher TPS than Ethereum, it is independent from [Core](../core/core.mdx) space.
