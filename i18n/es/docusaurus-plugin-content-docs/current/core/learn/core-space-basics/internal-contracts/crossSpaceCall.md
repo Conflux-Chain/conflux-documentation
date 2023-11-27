@@ -5,9 +5,7 @@ title: CrossSpaceCall
 
 ## CrossSpaceCall Interface
 
-[CIP-90](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-90.md) introduces a new internal contract: `CrossSpaceCall`. This contract is located at address `cfx:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaa2sn102vjv` (`0x0888000000000000000000000000000000000006`) in the Core Space. `CrossSpaceCall` enables **CFX and data** to be transferred between the two spaces.
-
-NOTE: The `CrossSpaceCall` contract is deployed in the Core Space. It can only be call from the Core Space.
+[CIP-90](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-90.md) introduces a new internal contract: `CrossSpaceCall`. CrossSpaceCall enables **CFX and data** to be transferred between the two spaces. This contract is located at **core** address: `cfx:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaa2sn102vjv`
 
 ```js
 // SPDX-License-Identifier: MIT
@@ -74,79 +72,17 @@ interface CrossSpaceCall {
 }
 ```
 
-## Cross-Space CFX Transfer
+If you want to interact with this contract in Solidity, you can use address `0x0888000000000000000000000000000000000006`.
 
-### From Core to eSpace
+NOTE: The `CrossSpaceCall` contract is deployed in the Core Space. It can only be call from the Core Space.
 
-Transferring CFX from Conflux Core to eSpace can be done by calling the `CrossSpaceCall.transferEVM(bytes20 to)` method. When calling this method, you also need to specify the destination address (`to`). The amount of CFX to be transferred is specified as the value of this transaction.
+## Further Explain
 
-Take js-conflux-sdk (v2) as an example：
+For detail information about how to use `CrossSpaceCall` contract cross CFX and data between Core Space and eSpace [check here](/docs/espace/build/cross-space-bridge). You can also find  JS and Solidity examples in there.
 
-```js
-const { Conflux, format, Drip, CONST } = require('js-conflux-sdk');
+## Space Bridge Dapp
 
-// Init Conflux instance
-const conflux = new Conflux({
-  url: "https://test.confluxrpc.com",
-  networkId: 1
-});
-
-// Add account private key
-const account = conflux.wallet.addPrivateKey(process.env.PRIVATE_KEY);  // Replace PRIVTE_KEY with your own private key
-
-const CrossSpaceCall = conflux.InternalContract('CrossSpaceCall');
-
-async function main() {
-  // The eSpace receiver address
-  const receiverAddress = "0x02e1A5817ABf2812f04c744927FC91F03099C0f4";
-
-  const receipt = await CrossSpaceCall
-    .transferEVM(receiverAddress)
-    .sendTransaction({
-      from: account.address,
-      value: Drip.fromCFX(1),
-    })
-    .executed();
-
-  console.log('Cross-space transfer: ', receipt.outcomeStatus === CONST.TX_STATUS.SUCCESS ? 'Success' : 'Fail');
-}
-
-main().catch(console.log);
-```
-
-As long as the `CrossSpaceCall.transferEVM(bytes20 to)` method is called successfully, you can see the change by looking up the balance of the desination address in eSpace.
-
-### From eSpace back to Core
-
-Transferring CFX from eSpace back to Conflux Core requires two steps.
-
-1. Transfer CFX to the mapped account of the receiver [Core Space address](../../../../espace/learn/accounts.md#mapped-addresses-in-cross-space-operations) in eSpace.
-2. Call `CrossSpaceCall.withdrawFromMapped(amount)` in Core with the receiver address to withdraw the CFX.
-
-Example of using js-conflux-sdk (v2) to cross back CFX:
-
-```js
-// Check above init code
-async function main() {
-  const mappedBalance = await CrossSpaceCall.mappedBalance(account.address);
-  console.log('Mapped account balance: ', Drip.toCFX(`${mappedBalance}`));
-
-  const receipt = await CrossSpaceCall
-    .withdrawFromMapped(Drip.fromCFX(1))
-    .sendTransaction({
-      from: account.address,
-    })
-    .executed();
-
-  console.log('Cross-space transfer: ', receipt.outcomeStatus === CONST.TX_STATUS.SUCCESS ? 'Success' : 'Fail');
-}
-
-main().catch(console.log);
-```
-
-The above example is intended to demonstrate the technical details of transferring CFX between Conflux Core and Conflux eSpace. Users can use the [Space Bridge Dapp](https://confluxhub.io/espace-bridge/cross-space) to cross CFX directly through their wallets.
-
-## Refers
+Common users can use the [Space Bridge Dapp](https://confluxhub.io/espace-bridge/cross-space) to cross CFX directly through their wallets(Fluent and MetaMask) easily.
 
 * [Mainnet Space Bridge](https://confluxhub.io/espace-bridge/cross-space)
 * [Testnet Space Bridge](https://test.confluxhub.io/espace-bridge/cross-space)
