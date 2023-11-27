@@ -15,7 +15,7 @@ eSpace is compatible with Ethereum, you can use the same SDK as Ethereum. So eth
 
 ## How to bridge CFX between eSpace and Core Space?
 
-You can use [Confluxhub Space Bridge](https://confluxhub.io/espace-bridge/cross-space) to cross CFX between eSpace and Core Space.
+You can use [Confluxhub Space Bridge](https://confluxhub.io/espace-bridge/cross-space) to bridge CFX between eSpace and Core Space.
 
 ## Can I use base32 address in eSpace?
 
