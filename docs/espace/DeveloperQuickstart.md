@@ -67,6 +67,8 @@ const config: HardhatUserConfig = {
 ...
 ```
 
+A complete workflow for using Hardhat deploy contract is shown [here](./tutorials/deployContract/hardhatAndFoundry.md)
+
 ### Foundry
 
 To deploy using the eSpace Testnet Public RPC, run:
@@ -74,6 +76,8 @@ To deploy using the eSpace Testnet Public RPC, run:
 ```bash
 forge create ... --rpc-url=https://evmtestnet.confluxrpc.com --legacy
 ```
+
+A complete workflow for using foundry deploy contract is shown [here](./tutorials/deployContract/hardhatAndFoundry.md)
 
 ### Remix Web IDE
 
