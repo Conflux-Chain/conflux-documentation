@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 title: Deploying contract using hardhat and foundry
+description: Deploying contract using hardhat and foundry
 ---
 
 The eSpace Testnet allows anyone to deploy a smart contract on eSpace. In this tutorial, you will learn how to deploy a contract on eSpace Testnet using common tools for developing on Ethereum. This [demo repo](https://github.com/conflux-fans/espace-contract-guide) illustrates contract deployment with [Hardhat](https://hardhat.org/) and [Foundry](https://github.com/foundry-rs/foundry).

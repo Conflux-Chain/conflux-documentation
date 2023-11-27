@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 title: Deploying contract using thirdweb
+description: Deploying contract using thirdweb
 ---
 
 ## Create Contract

@@ -7,6 +7,26 @@ import CFXREACT from '@site/static/img/cfx_react.jpg';
 
 const FeatureList = [
   {
+    title: 'Build on Conflux eSpace',
+    Image: () => <img src={CFXSREEN} alt='' className='w-full pointer-events-none' />,
+    description: (
+        <>
+        Conflux eSpace is a fully EVM-compatible blockchain with much lower gas fee and higher TPS than Ethereum, which can enable developers quick build dApps on it.
+        </>
+    ),
+    link: '/docs/espace/Overview',
+  },
+  {
+    title: 'Build on Conflux Core Space',
+    Image: () => <img src={CFXSREEN} alt='' className='w-full pointer-events-none' />,
+    description: (
+        <>
+        Conflux Core Space is a third-generation decentralized blockchain with ultra-high performance, utilizing an original Tree-Graph ledger structure and the Ghast consensus algorithm. It natively integrates a transaction sponsorship mechanism, offering a novel user experience for both users and developers.
+        </>
+    ),
+    link: '/docs/core',
+  },
+  {
     title: 'Conflux Basics',
     Image: () => <img src={CFXBOX} alt='' className='w-full pointer-events-none' />,
     description: (
@@ -16,19 +36,7 @@ const FeatureList = [
         and how it differs from other blockchain platforms.
       </>
     ),
-    link: '/docs/general/conflux-basics/', // Add link property to each feature
-  },
-  {
-    title: 'Build on Conflux',
-    Image: () => <img src={CFXSREEN} alt='' className='w-full pointer-events-none' />,
-    description: (
-      <>
-      Discover the possibilities of building decentralized applications (dApps) 
-      on Conflux Network. Find out how to build scalable, 
-      high-performance dApps on Conflux Network.
-      </>
-    ),
-    link: '/docs/general/build/',
+    link: '/docs/general/conflux-basics/',
   },
   {
     title: 'Run a Node',
@@ -41,6 +49,17 @@ const FeatureList = [
       </>
     ),
     link: '/docs/general/run-a-node/',
+  },
+  {
+    title: 'Mining on Conflux',
+    Image: () => <img src={CFXBOX} alt='' className='w-full pointer-events-none' />,
+    description: (
+      <>
+        Learn how to mine CFX on the Conflux Network. Follow our step-by-step guides to 
+        install and configure your node, connect to the network, and start mining.
+      </>
+    ),
+    link: '/docs/category/mining--staking',
   },
 ];
 

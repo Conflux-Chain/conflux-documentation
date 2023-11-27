@@ -22,12 +22,15 @@ const Home = () => {
         <div className={cx('w-full flex justify-center', styles.gradientBg)}>
           <div className='max-w-[1920px] w-full px-[76px] flex flex-col lg:flex-row lg:justify-between items-center z-10'>
             <div className='flex flex-col lg:w-[37.5%] order-2 lg:order-1 font-bold'>
-              <h1 className="text-[68px]">CONFLUX</h1>
-              <h1 className="text-[68px]">DEVELOPER</h1>
-              <h1 className="text-[68px]">PORTAL</h1>
+              <h1 className="text-[68px]">Conflux</h1>
+              <h1 className="text-[68px]">Developer</h1>
+              <h1 className="text-[68px]">Portal</h1>
               <p className="hero__subtitle text-[#737A88] text-[24px] dark:text-[#A2A8B6] font-normal mt-6">{siteConfig.tagline}</p>
+              <a href='/docs/Overview'>
+                <button className={cx('text-[18px]', styles.startBuildingBtn)}>Start Building</button>
+              </a>
             </div>
-            <CFX role='img' className='w-10/12 lg:w-[58.3%] h-auto order-1 lg:order-2' />
+            <CFX role='img' className='w-10/12 lg:w-[43.3%] h-auto order-1 lg:order-2' />
           </div>
         </div>
         

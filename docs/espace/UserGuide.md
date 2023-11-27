@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 title: User Guide
+description: How to connect metamask to eSpace
 keywords:
   - MetaMask
   - EVMSpace
