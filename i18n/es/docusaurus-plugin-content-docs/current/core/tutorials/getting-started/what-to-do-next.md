@@ -4,7 +4,7 @@ title: What to Do Next?
 
 :::info
 
-This page is mainly about Conflux core space. Refer to [eSpace](../../../espace/learn/overview.md) for the guide of eSpace.
+This page is mainly about Conflux core space. Refer to [eSpace](../../../espace/Overview.md) for the guide of eSpace.
 
 :::
 
