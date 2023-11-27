@@ -13,7 +13,7 @@ eSpace is compatible with Ethereum, you can use the same SDK as Ethereum. So eth
 
 `js-conflux-sdk` is only used to develop DApp for Conflux Core, and it is not compatible with Ethereum or eSpace.
 
-## How to cross CFX between eSpace and Core Space?
+## How to bridge CFX between eSpace and Core Space?
 
 You can use [Confluxhub Space Bridge](https://confluxhub.io/espace-bridge/cross-space) to cross CFX between eSpace and Core Space.
 
