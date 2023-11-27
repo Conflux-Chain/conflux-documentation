@@ -52,7 +52,7 @@ For the eSpace **mainnet**, please use the following configuration values:
 - **New RPC URL**: https://evm.confluxrpc.com
 - **Chain ID**: 1030
 - **Currency Symbol**: CFX
-- **Block Explorer URL**: https://evm.confluxscan.net
+- **Block Explorer URL**: https://evm.confluxscan.io
 
 For the eSpace **testnet**, please use the following configuration values:
 
@@ -60,7 +60,7 @@ For the eSpace **testnet**, please use the following configuration values:
 - **New RPC URL**: https://evmtestnet.confluxrpc.com
 - **Chain ID**: 71
 - **Currency Symbol**: CFX
-- **Block Explorer URL**: https://evmtestnet.confluxscan.net
+- **Block Explorer URL**: https://evmtestnet.confluxscan.io
 
 ![MetaMask-create-EVM-Space-rpc](./img/metamask_add_network-ce.png)
 
