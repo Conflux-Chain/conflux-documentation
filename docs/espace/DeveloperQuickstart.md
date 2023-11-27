@@ -28,7 +28,7 @@ Use the table below to configure your Ethereum tools to the eSpace mainnet.
 | RPC URL            | [https://evm.confluxrpc.com](https://evm.confluxrpc.com)   |
 | Chain ID           | 1030                                               |
 | Currency Symbol    | CFX                                                |
-| Block Explorer URL | [https://evm.confluxscan.net](https://evm.confluxscan.net) |
+| Block Explorer URL | [https://evm.confluxscan.io](https://evm.confluxscan.io) |
 
 ### eSpace Testnet
 
@@ -39,7 +39,7 @@ Use the table below to configure your Ethereum tools to the eSpace Testnet.
 | RPC URL            | [https://evmtestnet.confluxrpc.com](https://evmtestnet.confluxrpc.com)  |
 | Chain ID           | 71                                                                |
 | Currency Symbol    | CFX                                                               |
-| Block Explorer URL | [https://evmtestnet.confluxscan.net](https://evmtestnet.confluxscan.net) |
+| Block Explorer URL | [https://evmtestnet.confluxscan.io](https://evmtestnet.confluxscan.io) |
 
 ## Configure your tooling
 
@@ -127,7 +127,7 @@ live:
 - name: Ethereum
  networks:
  - chainid: 71
-   explorer: https://evmtestnet.confluxscan.net
+   explorer: https://evmtestnet.confluxscan.io
    host: https://evmtestnet.confluxrpc.com
    id: confluxEspace
    name: Conflux eSpace
@@ -209,7 +209,7 @@ export const NETWORKS = {
     color: "#e9d0b8",
     chainId: 71,
     rpcUrl: "https://evmtestnet.confluxrpc.com",
-    blockExplorer: "https://evmtestnet.confluxscan.net",
+    blockExplorer: "https://evmtestnet.confluxscan.io",
   },
 ...
 }
