@@ -1,6 +1,6 @@
 ---
 sidebar_position: 5
-title: Accounts and Addresses
+title: eSpace Mapped Addresses(Cross Space)
 ---
 
 ## Overview
