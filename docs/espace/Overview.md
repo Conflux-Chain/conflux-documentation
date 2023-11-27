@@ -16,7 +16,7 @@ Development tools(Remix, Hardhat, Foundry etc), SDKs(ethers.js, viem, web3.py), 
 ## Developer tutorials
 
 * [Developer Quickstart](./DeveloperQuickstart.md)
-* [How to deploy a contract](./tutorials/deployContract/hardhat.md)
+* [How to deploy a contract](./tutorials/deployContract/hardhatAndFoundry.md)
 * [How to verify a contract](./tutorials/VerifyContracts.md)
 
 ## Technical details
