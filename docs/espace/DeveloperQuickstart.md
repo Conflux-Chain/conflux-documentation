@@ -83,7 +83,7 @@ Now, in the “Deploy and Run Transactions” tab, use the “Environment” dro
 
 ![](./img/injectedProviderMM.avif)
 
-Connect your wallet and select the Conflux eSpace Testnet. Your account should be selected automatically in Remix, and you can click “Deploy.”
+Connect your wallet and select the Conflux eSpace Testnet. Your account should be selected automatically in Remix, and you can click “Deploy.” A complete workflow for Remix usage is shown [here](./tutorials/deployContract/remix.md)
 
 ### Truffle
 
