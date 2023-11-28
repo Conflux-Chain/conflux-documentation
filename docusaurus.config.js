@@ -130,6 +130,12 @@ const config = {
             sidebarId: "concepts",
             type: "docSidebar"
           },
+          {
+            position: "left",
+            label: "References",
+            sidebarId: "references",
+            type: "docSidebar"
+          },
           // {
           //   position: 'left',
           //   label: 'Tutorials',

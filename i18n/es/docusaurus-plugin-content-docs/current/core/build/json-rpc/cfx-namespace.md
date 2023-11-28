@@ -1,5 +1,5 @@
 ---
-id: json_rpc
+id: cfx-namespace
 sidebar_position: 1
 title: cfx Namespace
 keywords:

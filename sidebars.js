@@ -156,6 +156,133 @@ const sidebars = {
     //   dirName: 'espace/learn'
     // },
   ],
+  references: [
+    {
+      type: 'html',
+      value: "<span class='menu__item'><b><medium> Introduction </medium></b></span>"
+    },
+    "general/article-collection-links/reference-links",
+    {
+      type: 'html',
+      value: "<span class='menu__item'><b><medium> RPC </medium></b></span>"
+    },
+    {
+      type: "category",
+      label: "Core Space JSON RPC",
+      link: {
+        "type": "doc",
+        "id": "core/build/json-rpc/json-rpc"
+      },
+      items: [
+        "core/build/json-rpc/cfx-namespace",
+        "core/build/json-rpc/pos_rpc",
+        "core/build/json-rpc/debug_rpc",
+        "core/build/json-rpc/txpool_rpc",
+        "core/build/json-rpc/trace_rpc",
+        "core/build/json-rpc/pubsub",
+      ]
+    },
+    {
+      type: "doc",
+      label: "eSpace JSON RPC",
+      id: "espace/build/jsonrpc-compatibility",
+    },
+    {
+      type: 'html',
+      value: "<span class='menu__item'><b><medium> Network Endpoints </medium></b></span>"
+    },
+    {
+      type: "doc",
+      id: "core/build/sdks-and-tools/conflux_rpcs",
+      label: "Core Space Network Endpoints",
+    },
+    {
+      type: "doc",
+      id: "espace/network-endpoints",
+      label: "eSpace Network Endpoints",
+    },
+    {
+      type: 'html',
+      value: "<span class='menu__item'><b><medium> SDKs And Tools </medium></b></span>"
+    },
+    {
+      type: 'doc',
+      id: "core/build/sdks-and-tools/sdks",
+      label: "Core Space SDKs",
+    },
+    {
+      type: 'doc',
+      id: "core/build/sdks-and-tools/tools",
+      label: "Core Space Tools",
+    },
+    {
+      type: 'doc',
+      id: "espace/DeveloperQuickstart",
+      label: "eSpace(Ethereum) Tools Tutorial",
+    },
+    {
+      type: 'html',
+      value: "<span class='menu__item'><b><medium> Contracts </medium></b></span>"
+    },
+    {
+      type: "category",
+      label: "Core Space Internal Contracts",
+      link: {
+        type: "doc",
+        id: "core/learn/core-space-basics/internal-contracts/internal-contracts",
+      },
+      items: [
+        "core/learn/core-space-basics/internal-contracts/admin",
+        "core/learn/core-space-basics/internal-contracts/sponsor-whitelist-control",
+        "core/learn/core-space-basics/internal-contracts/staking",
+        "core/learn/core-space-basics/internal-contracts/conflux-context",
+        "core/learn/core-space-basics/internal-contracts/poSRegister",
+        "core/learn/core-space-basics/internal-contracts/crossSpaceCall",
+        "core/learn/core-space-basics/internal-contracts/params-control",
+      ]
+    },
+    {
+      type: "doc",
+      id: "espace/build/deployed-contracts",
+      label: "eSpace Deployed Contracts",
+    },
+    {
+      type: 'html',
+      value: "<span class='menu__item'><b><medium> Migration from Ethereum </medium></b></span>"
+    },
+    {
+      type: "doc",
+      id: "espace/build/jsonrpc-compatibility",
+      label: "eSpace JSON RPC Compatibility",
+    },
+    {
+      type: "doc",
+      id: "espace/build/evm-compatibility",
+      label: "eSpace EVM Compatibility",
+    },
+    {
+      type: 'html',
+      value: "<span class='menu__item'><b><medium> Others </medium></b></span>"
+    },
+    {
+      type: "doc",
+      id: "general/run-a-node/configuration-files",
+      label: "Node Configuration Files",
+    },
+    // commented because of i18n build failure
+    // {
+    //   type: "doc",
+    //   id: "general/hardforks/hardforks",
+    // },
+    {
+      type: "doc",
+      id: "general/conflux-basics/additional-resources/conflux_papers",
+    },
+    {
+      type: "doc",
+      id: "general/conflux-basics/conflux-governance/cips",
+    },
+  ]
   // tutorials: [
   //   {
   //     type: 'doc',
