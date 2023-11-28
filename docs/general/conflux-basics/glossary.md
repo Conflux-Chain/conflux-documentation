@@ -1,7 +1,7 @@
 ---
 sidebar_position: 5
 title: Glossary
-# keywords: to enrich
+displayed_sidebar: generalSidebar
 ---
 ## Introduction
 

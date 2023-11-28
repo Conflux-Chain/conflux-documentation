@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 title: SponsorWhitelistControl
+displayed_sidebar: coreSidebar
 ---
 
 Conflux implements a sponsorship mechanism to subsidize the usage of smart contracts. This allows a new account with a zero balance to call smart contracts, provided the execution is sponsored (usually by the operator of Dapps). The internal `SponsorWhitelistControl` contract records the sponsorship information for smart contracts.

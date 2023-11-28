@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 title: SDKs
+displayed_sidebar: coreSidebar
 ---
 
 Conflux has SDKs for mainstream programming languages, including `JavaScript`, `Golang`, `Java` and `Python`. This is just a short introduction to the SDKs, for detailed usage info, check their respective documentation.

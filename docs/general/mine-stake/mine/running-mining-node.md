@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 title: Running a Mining Node
+displayed_sidebar: generalSidebar
 ---
 
 ## Conflux Network PoW - GPU Mining Instruction

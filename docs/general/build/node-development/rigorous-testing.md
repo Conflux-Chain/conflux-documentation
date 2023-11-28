@@ -1,3 +1,6 @@
+---
+displayed_sidebar: generalSidebar
+---
 # Rigorous Testing Tools for Conflux
 
 Ensuring the correctness of a blockchain system like Conflux is a challenging

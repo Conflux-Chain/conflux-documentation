@@ -4,6 +4,7 @@ sidebar_position: 3
 title: pos Namespace
 keywords:
   - pos-rpc
+displayed_sidebar: coreSidebar
 ---
 
 `conflux-rust` introduces the PoS finality starting from v2.0.0 to speed up the finality of blocks and prevent 51% attacks. PoS finality will introduce an independent PoS chain for PoS consensus and finalizing PoW blocks. Correspondingly, PoS also has its own RPC methods for obtaining data from the PoS chain.

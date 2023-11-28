@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 title: Node Setup
+displayed_sidebar: eSpaceSidebar
 ---
 
 Graph Node is the component which indexes subgraphs, and makes the resulting data available to query via a GraphQL API. As such it is central to the indexer stack, and correct operation of Graph Node is crucial to running a successful indexer.

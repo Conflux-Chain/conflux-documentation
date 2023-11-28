@@ -2,6 +2,7 @@
 sidebar_position: 5
 title: Network RPC Endpoints
 description: Conflux eSpace RPC endpoints
+displayed_sidebar: eSpaceSidebar
 ---
 
 ## 1. Confura

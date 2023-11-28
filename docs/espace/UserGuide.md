@@ -5,6 +5,7 @@ description: How to connect metamask to eSpace
 keywords:
   - MetaMask
   - EVMSpace
+displayed_sidebar: eSpaceSidebar
 ---
 
 

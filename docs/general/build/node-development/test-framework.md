@@ -1,3 +1,6 @@
+---
+displayed_sidebar: generalSidebar
+---
 # Test Framework
 
 The framework is written in `python3`. It can setup multiple Conflux nodes and test the distributed system behavior locally. It controls the nodes behavior by setting the node configurations, calling their RPCs, or sending them P2P messages directly.

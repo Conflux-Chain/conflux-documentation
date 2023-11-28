@@ -1,6 +1,7 @@
 ---
 sidebar_position: 6
 title: Node Configuration
+displayed_sidebar: generalSidebar
 ---
 
 # Node Configuration 

@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 title: Tools
+displayed_sidebar: coreSidebar
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

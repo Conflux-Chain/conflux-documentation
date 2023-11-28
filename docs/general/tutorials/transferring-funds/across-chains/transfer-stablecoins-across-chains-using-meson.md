@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 title: Meson
+displayed_sidebar: generalSidebar
 ---
 
 # Transfer Stablecoins Across Chains Using Meson

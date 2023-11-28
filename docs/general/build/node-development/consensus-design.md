@@ -1,3 +1,6 @@
+---
+displayed_sidebar: generalSidebar
+---
 # The Conflux Consensus Layer Design and Implementation
 
 The Conflux consensus layer processes all incoming blocks received from the

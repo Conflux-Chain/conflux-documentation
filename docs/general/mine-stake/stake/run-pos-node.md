@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 title: Run a PoS Node
+displayed_sidebar: generalSidebar
 ---
 
 ## Setting Up Your Conflux Node

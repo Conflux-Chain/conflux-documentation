@@ -1,5 +1,6 @@
 ---
 title: What to Do Next?
+displayed_sidebar: coreSidebar
 ---
 
 :::info
