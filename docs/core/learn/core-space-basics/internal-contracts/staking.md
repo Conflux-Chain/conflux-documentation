@@ -27,6 +27,52 @@ Here we introduce the detailed logic for locking balance by illustrating several
 
 At any time, each locked Drip will be assigned a *vote power* from 0 to 1 according to its unlock time. The Drips to be unlocked in more than one year will have a full vote power. See section 8.3.2 in the [Conflux Protocol Specification](https://conflux-protocol.s3-ap-southeast-1.amazonaws.com/tech-specification.pdf) for more details.
 
+## Interface And Address
+
+The address of the internal contract: `0x0888000000000000000000000000000000000002`
+
+```js
+pragma solidity >=0.4.15;
+
+contract Staking {
+    /*** Query Functions ***/
+    /**
+     * @dev get user's staking balance
+     * @param user The address of specific user
+     */
+    function getStakingBalance(address user) public view returns (uint256) {}
+
+    /**
+     * @dev get user's locked staking balance at given blockNumber
+     * @param user The address of specific user
+     * @param blockNumber The blockNumber as index.
+     */
+    // ------------------------------------------------------------------------
+    // Note: if the blockNumber is less than the current block number, function
+    // will return current locked staking balance.
+    // ------------------------------------------------------------------------
+    function getLockedStakingBalance(address user, uint256 blockNumber) public view returns (uint256) {}
+
+
+    /**
+     * @dev get user's vote power staking balance at given blockNumber
+     * @param user The address of specific user
+     * @param blockNumber The blockNumber as index.
+     */
+    // ------------------------------------------------------------------------
+    // Note: if the blockNumber is less than the current block number, function
+    // will return current vote power.
+    // ------------------------------------------------------------------------
+    function getVotePower(address user, uint256 blockNumber) public view returns (uint256) {}
+
+    function deposit(uint256 amount) external {}
+
+    function withdraw(uint256 amount) external {}
+
+    function voteLock(uint256 amount, uint256 unlockBlockNumber) external {}
+}
+```
+
 ## Examples
 
 ```javascript
