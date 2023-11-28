@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-title: Addresses
+title: Base32 Addresses
 displayed_sidebar: coreSidebar
 ---
 
