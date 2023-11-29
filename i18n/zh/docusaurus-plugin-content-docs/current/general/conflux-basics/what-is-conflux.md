@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 title: What is Conflux?
+displayed_sidebar: generalSidebar
 ---
 
 Conflux是一条具有卓越性能、独特共识机制和创新双空间设计的公链。 这些特点使得 Conflux 能够提供一个快速、安全、去中心化的平台，非常适合于各种应用，包括去中心化金融和游戏。
