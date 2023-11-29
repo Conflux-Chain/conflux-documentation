@@ -5,6 +5,7 @@ title: Common RPC errors
 keywords:
   - rpc
   - error
+displayed_sidebar: generalSidebar
 ---
 
 ## Common errors
