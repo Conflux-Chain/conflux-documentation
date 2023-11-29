@@ -1,6 +1,7 @@
 ---
 sidebar_position: 11
 title: Running a Full Node
+displayed_sidebar: generalSidebar
 ---
 
 ### Requirements
