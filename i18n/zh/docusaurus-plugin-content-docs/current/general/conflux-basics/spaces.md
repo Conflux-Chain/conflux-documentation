@@ -1,6 +1,7 @@
 ---
 sidebar_position: 7
 title: Spaces
+displayed_sidebar: generalSidebar
 ---
 
 ## **Spaces介绍**
