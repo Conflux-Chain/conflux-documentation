@@ -1,6 +1,7 @@
 ---
 sidebar_position: 6
 title: CrossSpaceCall
+displayed_sidebar: coreSidebar
 ---
 
 ## CrossSpaceCall 接口
