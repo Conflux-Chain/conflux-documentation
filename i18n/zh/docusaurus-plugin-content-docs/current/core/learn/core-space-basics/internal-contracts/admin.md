@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 title: AdminControl
+displayed_sidebar: coreSidebar
 ---
 
 ## 概览
