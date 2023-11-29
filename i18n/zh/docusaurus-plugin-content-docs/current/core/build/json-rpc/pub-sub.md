@@ -5,6 +5,7 @@ keywords:
   - conflux
   - pubsub
   - sdk
+displayed_sidebar: coreSidebar
 ---
 
 Conflux 的发布-订阅 API（也称为 pub-sub）使得可以持续地查询特定的项目，而不需要通过 JSON-RPC HTTP 接口进行轮询。 你可以在 TCP 或 WebSocket 连接之上使用 Conflux 的发布-订阅 API（也称为 pub-sub）。
