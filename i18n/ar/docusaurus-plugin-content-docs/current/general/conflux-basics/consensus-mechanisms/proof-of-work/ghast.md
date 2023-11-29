@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 title: GHAST
+displayed_sidebar: generalSidebar
 ---
 
 GHAST (Greedy-Heaviest-Adaptive-SubTree)
