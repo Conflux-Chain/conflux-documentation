@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 title: OKX
+displayed_sidebar: generalSidebar
 ---
 
 
