@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 title: Growth Grants
+displayed_sidebar: eSpaceSidebar
 ---
 
 :::info
