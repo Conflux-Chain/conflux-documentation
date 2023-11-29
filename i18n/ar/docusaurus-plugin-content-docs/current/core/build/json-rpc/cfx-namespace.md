@@ -2318,7 +2318,7 @@ Returns all transaction receipts within the specific epoch.
 
 :::note
 
-This method is supported by [Confura](../sdks-and-tools/core-endpoints.md#1-confura) if api key is provided. For normal nodes, this method is also supported, but can only be accessed in local environment.
+This method is supported by [Confura](../../core-endpoints.md#1-confura) if api key is provided. For normal nodes, this method is also supported, but can only be accessed in local environment.
 
 :::
 

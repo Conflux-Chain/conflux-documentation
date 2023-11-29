@@ -40,7 +40,7 @@ Welcome to the Conflux Network Developer Portal! This comprehensive portal is de
 - [**Run a Node**](./general/run-a-node/):
   Familiarize yourself with the process of setting up and operating a Conflux node, becoming an integral part of the network.
 
-- [**Getting Started with Core Space**](./core/tutorials/getting-started/):
+- [**Getting Started with Core Space**](./core/getting-started/):
   Begin your journey in Conflux's Core space, understanding its fundamental concepts and operations.
 
 - [**SDKs & Tools**](./category/sdks-and-tools):
@@ -49,7 +49,7 @@ Welcome to the Conflux Network Developer Portal! This comprehensive portal is de
 - [**Sponsorship Tutorial**](./core/learn/core-space-basics/internal-contracts/sponsor-whitelist-control):
   Discover Conflux’s gas sponsorship mechanism, which facilitates smart contract usage without gas costs, allowing sponsored contract executions even by new, zero-balance accounts.
 
-- [**Core Space Network Endpoints**](./core/build/sdks-and-tools/conflux_rpcs) & [**eSpace Network Endpoints**](./espace/network-endpoints):
+- [**Core Space Network Endpoints**](./core/conflux_rpcs) & [**eSpace Network Endpoints**](./espace/network-endpoints):
   Find the list of network endpoints for both Conflux's Core Space and eSpace.
 
 - [**Core Space JSON-RPC**](./core/build/json-rpc/) & [**eSpace JSON-RPC**](./espace/build/jsonrpc-compatibility.md):

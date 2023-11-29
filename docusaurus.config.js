@@ -111,7 +111,7 @@ const config = {
           {
             position: 'left',
             label: 'Core Space',
-            to: '/docs/core',
+            to: '/docs/core/Overview',
           },
           {
             position: 'left',

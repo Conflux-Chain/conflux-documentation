@@ -193,7 +193,7 @@ const sidebars = {
     },
     {
       type: "doc",
-      id: "core/build/sdks-and-tools/conflux_rpcs",
+      id: "core/conflux_rpcs",
       label: "Core Space Network Endpoints",
     },
     {

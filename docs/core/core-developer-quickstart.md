@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2
+sidebar_position: 3
 title: Developer Quickstart
 displayed_sidebar: coreSidebar
 description: This tutorial will show you how to send a transaction using the js-conflux-sdk.
@@ -73,7 +73,7 @@ For example:
 * Mainnet Address: `cfx:aamjy3abae3j0ud8ys0npt38ggnunk5r4ps2pg8vcc`
 * Testnet Address: `cfxtest:aamjy3abae3j0ud8ys0npt38ggnunk5r4pex9025gj`
 
-You can learn more about Conflux Core address [here](../learn/core-space-basics/addresses.md).
+You can learn more about Conflux Core address [here](./learn/core-space-basics/addresses.md).
 
 ### Query Account Balance
 
@@ -91,7 +91,7 @@ async function main() {
 main().catch(e => console.error(e));
 ```
 
-There are a lot of other APIs under `cfx` namespace to query the blockchain data. You can find them in the [SDK API Reference](https://github.com/Conflux-Chain/js-conflux-sdk/blob/v2/docs/api/Conflux.md#conflux) and Conflux [Core RPC API Reference](../build/json-rpc/).
+There are a lot of other APIs under `cfx` namespace to query the blockchain data. You can find them in the [SDK API Reference](https://github.com/Conflux-Chain/js-conflux-sdk/blob/v2/docs/api/Conflux.md#conflux) and Conflux [Core RPC API Reference](./build/json-rpc/).
 
 ### Send transaction
 
@@ -108,7 +108,7 @@ let txParams = {
 };
 ```
 
-> The detailed explanation of each field can be found [here](../learn/core-space-basics/core-transactions.md)
+> The detailed explanation of each field can be found [here](./learn/core-space-basics/core-transactions.md)
 
 2. Send the composed transaction via ```cfxClient.cfx.sendTransaction``` and get the returned transaction hash. Then you can view the transaction details by using `tx.mined()` or `tx.executed()`, which APIs will return the transaction data or transaction receipt when transaction is mined or executed. Noting these 2 APIs are a simple wrapping layer for `cfxClient.cfx.getTransactionByHash` and `cfxClient.cfx.getTransactionReceipt`. You can also search the hash at [Conflux Scan](https://confluxscan.io/).
 
@@ -144,6 +144,6 @@ If your account does not have enough balance, you will encounter the following e
 ## Resources
 
 1. Check [js-conflux-sdk's documentation](https://docs.confluxnetwork.org/js-conflux-sdk/) for more details
-2. Refer to [SDKs](../build/sdks-and-tools/sdks.md) for examples of other SDKs.
+2. Refer to [SDKs](./build/sdks-and-tools/sdks.md) for examples of other SDKs.
 3. [Core Space Faucet](https://faucet.confluxnetwork.org/)
 4. [Conflux Core Scan](https://confluxscan.io/)

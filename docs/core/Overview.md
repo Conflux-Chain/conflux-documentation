@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 title: Overview
+displayed_sidebar: coreSidebar
 ---
 
 Conflux Core Space 是 Conflux 网络的原生空间. 得益于 Conflux 创新性的树图账本结构和共识算法, Core Space 在不牺牲去中心化的前提下, 实现了远超比特币和以太坊的性能. 从而为 Conflux 生态的发展提供了强有力的支撑.
@@ -11,7 +12,7 @@ Core Space 的账户地址格式为 **base32 编码格式**, 与以太坊地址�
 
 ## Quick Start
 
-* [User Guide](./tutorials/getting-started/)
+* [User Guide](./getting-started/)
 * [Developer Quickstart](./tutorials/core-developer-quickstart)
 
 ## Tutorials

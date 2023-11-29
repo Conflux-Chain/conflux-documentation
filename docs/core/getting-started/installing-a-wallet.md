@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2
+sidebar_position: 1
 title: Installing a Wallet
 description: Install and setup Fluent wallet
 keywords:

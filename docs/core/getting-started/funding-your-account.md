@@ -1,5 +1,5 @@
 ---
-sidebar_position: 3
+sidebar_position: 2
 title: Funding Your Account on Testnet
 description: How to get testnet CFX
 displayed_sidebar: coreSidebar

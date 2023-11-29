@@ -2,9 +2,10 @@
 sidebar_position: 2
 title: JS SDK Complete Guide
 description: This is a complete guide for the js-conflux-sdk.
+displayed_sidebar: coreSidebar
 ---
 
-[Developer Quickstart](./core-developer-quickstart.md) demonstrate how to install and use the js-conflux-sdk send transactions. This guide will go through the js-conflux-sdk in detail.
+[Developer Quickstart](../core-developer-quickstart.md) demonstrate how to install and use the js-conflux-sdk send transactions. This guide will go through the js-conflux-sdk in detail.
 
 * Account generation
 * Query blockchain data

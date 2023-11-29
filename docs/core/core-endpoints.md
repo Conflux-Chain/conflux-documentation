@@ -1,13 +1,13 @@
 ---
 id: conflux_rpcs
-title: Network Endpoints
-sidebar_position: 3
+title: Network RPC Endpoints
+sidebar_position: 4
 keywords:
   - endpoints
 displayed_sidebar: coreSidebar
 ---
 
-Public available Conflux network RPC endpoints
+Public available Conflux Core Space network RPC endpoints
 
 ## 1. Confura
 

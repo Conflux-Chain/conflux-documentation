@@ -2,6 +2,7 @@
 sidebar_position: 4
 title: Use ChainIDE Develop Contract
 description: Deploy contract on Core Space with ChainIDE
+displayed_sidebar: coreSidebar
 ---
 
 [ChainIDE](https://chainide.com/) is a web-based IDE for blockchain smart contract development. It provides a one-stop solution for smart contract development, testing, debugging, and deployment.

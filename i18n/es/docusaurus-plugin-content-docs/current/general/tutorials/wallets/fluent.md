@@ -52,4 +52,4 @@ You can turn on "Show Testnet" in Fluent's advanced options.
 
 To learn how to install Fluent you can follow this guide:
 
-- [Getting Started](https://doc.confluxnetwork.org/docs/core/tutorials/getting-started/installing-a-wallet)
+- [Getting Started](https://doc.confluxnetwork.org/docs/core/getting-started/installing-a-wallet)
