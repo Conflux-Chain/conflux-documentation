@@ -1,6 +1,7 @@
 ---
 sidebar_position: 8
 title: Wallets
+displayed_sidebar: generalSidebar
 ---
 
 This guide will help you understand the basics of wallets, their purpose, and their role in the Conflux Network.
