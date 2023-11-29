@@ -6,6 +6,7 @@ keywords:
   - conflux
   - pinata
   - ipfs
+displayed_sidebar: generalSidebar
 ---
 
 # 使用Pinata上传文件至IPFS
