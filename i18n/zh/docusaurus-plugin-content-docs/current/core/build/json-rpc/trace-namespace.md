@@ -4,6 +4,7 @@ sidebar_position: 5
 title: trace Namespace
 keywords:
   - trace-rpc
+displayed_sidebar: coreSidebar
 ---
 
 Through `trace` RPCs we can know the transaction executive details. To use these RPC Conflux archive node need set two additional config:
