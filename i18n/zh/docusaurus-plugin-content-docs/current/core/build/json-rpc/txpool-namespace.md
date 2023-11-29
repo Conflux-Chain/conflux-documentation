@@ -6,6 +6,7 @@ keywords:
   - conflux
   - txpool-rpc
   - sdk
+displayed_sidebar: coreSidebar
 ---
 
 `txpool` 相关的 RPC 可以让开发者获取更多关于交易池的信息。 Which was introduced from `conflux-rust v1.1.6`.
