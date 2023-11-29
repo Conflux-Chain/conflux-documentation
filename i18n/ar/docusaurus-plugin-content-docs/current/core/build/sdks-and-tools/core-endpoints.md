@@ -4,6 +4,7 @@ title: Network Endpoints
 sidebar_position: 3
 keywords:
   - endpoints
+displayed_sidebar: coreSidebar
 ---
 
 Public available Conflux network RPC endpoints
