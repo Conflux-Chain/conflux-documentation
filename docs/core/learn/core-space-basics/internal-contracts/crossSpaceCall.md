@@ -1,6 +1,7 @@
 ---
 sidebar_position: 6
 title: CrossSpaceCall
+displayed_sidebar: coreSidebar
 ---
 
 [CIP-90](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-90.md) introduces a new internal contract: `CrossSpaceCall`. CrossSpaceCall enables **CFX and data** to be transferred between the two spaces.

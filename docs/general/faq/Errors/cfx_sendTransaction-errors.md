@@ -1,5 +1,6 @@
 ---
 title: cfx_sendRawTransaction Errors
+displayed_sidebar: generalSidebar
 ---
 
 When sending transactions in Conflux via the `cfx_sendRawTransaction` method, certain errors may arise due to incorrect transaction construction or other issues. This guide covers common errors and their solutions.

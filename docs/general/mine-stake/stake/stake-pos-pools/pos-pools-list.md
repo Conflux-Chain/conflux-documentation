@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 title: Conflux PoS Validators - Pools List
+displayed_sidebar: generalSidebar
 ---
 
 [Conflux PoS Validators](https://www.conflux-pos-validators.com/) is a third-party application that compiles a list of PoS staking pools on the Conflux network. Its purpose is to centralize information on the different staking pools that secure the Conflux network, and anyone can add their pool to the list by following the instructions provided. 

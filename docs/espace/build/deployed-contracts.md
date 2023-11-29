@@ -2,6 +2,7 @@
 sidebar_position: 10
 title: Deployed Contracts
 description: Useful utilities contract addresses for Conflux eSpace
+displayed_sidebar: eSpaceSidebar
 ---
 
 In this article you’ll find useful contract addresses for Conflux eSpace and commonly used protocols

@@ -1,3 +1,6 @@
+---
+displayed_sidebar: generalSidebar
+---
 # Stratum Protocol in Conflux-Rust
 
 ## Design Goal

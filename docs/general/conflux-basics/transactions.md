@@ -3,6 +3,7 @@ title: Transactions
 sidebar_position: 9
 keywords:
   - transaction
+displayed_sidebar: generalSidebar
 ---
 
 :::info

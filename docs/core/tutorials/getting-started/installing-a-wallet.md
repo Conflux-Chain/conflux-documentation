@@ -3,7 +3,8 @@ sidebar_position: 2
 title: Installing a Wallet
 description: Install and setup Fluent wallet
 keywords:
-    - wallet
+  - wallet
+displayed_sidebar: coreSidebar
 ---
 
 To interact with Conflux Core Space, you'll first need to create an account. Usually accounts in Conflux Core Space are created and managed through the Fluent wallet. 

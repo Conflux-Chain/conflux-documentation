@@ -1,6 +1,7 @@
 ---
 sidebar_position: 10
 title: Gas
+displayed_sidebar: generalSidebar
 ---
 
 Conflux Core users usually see fields like ```gasFee```, ```gas```, and ```gasPrice``` when they are sending transactions using their wallets (Fluent) or SDK. This article is going to explain in detail about what these concepts mean and how to set the values properly.

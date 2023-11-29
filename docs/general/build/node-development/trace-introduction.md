@@ -1,3 +1,6 @@
+---
+displayed_sidebar: generalSidebar
+---
 # Introduction to Transaction Traces
 
 Traces are used to record the transaction execution details. It can be used to debug or retrieve more information (like getting contract addresses created within transaction execution).

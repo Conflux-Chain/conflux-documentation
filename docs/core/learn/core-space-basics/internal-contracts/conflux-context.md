@@ -1,6 +1,7 @@
 ---
 sidebar_position: 4
 title: ConfluxContext
+displayed_sidebar: coreSidebar
 ---
 
 This contract can be used in `Solidity contract` to query Conflux Core network info including:

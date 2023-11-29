@@ -1,11 +1,12 @@
 ---
-id: json_rpc
+id: cfx-namespace
 sidebar_position: 1
 title: cfx Namespace
 keywords:
   - conflux
   - json-rpc
   - sdk
+displayed_sidebar: coreSidebar
 ---
 
 In order for a software application to interact with the Conflux blockchain - either by reading blockchain data or sending transactions to the network - it must connect to an Conflux node.
