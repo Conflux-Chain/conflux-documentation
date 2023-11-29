@@ -11,12 +11,12 @@ Core Space 的账户地址格式为 **base32 编码格式**, 与以太坊地址�
 
 ## Quick Start
 
-* User Guide
-* Developer Quickstart
+* [User Guide](./tutorials/getting-started/)
+* [Developer Quickstart](./tutorials/core-developer-quickstart)
 
 ## Tutorials
 
-* js-conflux-sdk Tutorial
+* [JS SDK Complete Guide](./tutorials/js-conflux-sdk)
 * hardhat-conflux Tutorial
 * chainIDE Tutorial
 * Contract Sponsor Tutorial

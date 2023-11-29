@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 title: Funding Your Account on Testnet
+description: How to get testnet CFX
 ---
 
 Are you a new user of Conflux blockchain? Or are you a developer planning to develop a Dapp on Conflux? Then you may need some CFX to interact with the Conflux network. We provide the testnet CFX faucet dApp, which allows users to claim testnet CFX and experience it in the Conflux testnet environment.

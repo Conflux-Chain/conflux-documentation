@@ -1,5 +1,7 @@
 ---
 title: What to Do Next?
+sidebar: 3
+description: What to do after familiar using Fluent wallet.
 ---
 
 :::info
