@@ -40,7 +40,7 @@ Welcome to the Conflux Network Developer Portal! This comprehensive portal is de
 - [**Run a Node**](run-a-node/):
   Familiarize yourself with the process of setting up and operating a Conflux node, becoming an integral part of the network.
 
-- [**Getting Started with Core Space**](../core/learn/getting-started/):
+- [**Getting Started with Core Space**](../core/tutorials/getting-started/):
   Begin your journey in Conflux's Core space, understanding its fundamental concepts and operations.
 
 - [**SDKs & Tools**](category/sdks-and-tools):

@@ -5,7 +5,7 @@ title: 账户与地址
 
 ## 概览
 
-Conflux的eSpace是一个独立的空间，与 Conflux 网络上的Core Space在逻辑上隔离开来。 eSpace中的账户有自己的余额和状态。 要与 eSpace 交互，您需要使用 hex40 地址，它们与用于Core Space的 [base32 地址](../../core/learn/core-space-basics/addresses.md)不同。 您可以使用[桥接服务](../learn/tutorials/transfer-funds-across-spaces.md)在您的Core Space和 eSpace 钱包之间转移资金。
+Conflux的eSpace是一个独立的空间，与 Conflux 网络上的Core Space在逻辑上隔离开来。 eSpace中的账户有自己的余额和状态。 要与 eSpace 交互，您需要使用 hex40 地址，它们与用于Core Space的 [base32 地址](../../core/learn/core-space-basics/addresses.md)不同。 You can transfer funds between your Core and eSpace wallets using a [bridge service](../../general/tutorials/transferring-funds/transfer-funds-across-spaces.md).
 
 Conflux eSpace 是 Conflux Network 在其 V2 硬分叉中引入的新特性。 它是一个独立的空间，运行在与Core Space相同的底层基础设施上，但具有不同的规则和规范。 在 eSpace 中，账户遵循以太坊账户模型，并使用 hex40 地址而不是 [base32 地址](../../core/learn/core-space-basics/addresses.md)。 这意味着在Core Space和 eSpace 中使用相同的私钥是可以的，但是Core Space和 eSpace 中的账户将具有不同的地址，并且将拥有自己的余额和状态。
 
@@ -55,4 +55,4 @@ const mappedAddress = address.cfxMappedEVMSpaceAddress(base32Address);
 
 ## 相关主题
 
-* Cross space dApp tutorial: [Transferring Funds Across Spaces](./tutorials/transfer-funds-across-spaces.md)
+* Cross space dApp tutorial: [Transferring Funds Across Spaces](../../general/tutorials/transferring-funds/transfer-funds-across-spaces.md)

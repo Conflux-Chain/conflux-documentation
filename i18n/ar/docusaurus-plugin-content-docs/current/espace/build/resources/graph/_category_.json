@@ -1,0 +1,8 @@
+{
+  "label": "The Graph",
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "description": "This section provides information about how to set up a The Graph node and create subgraphs."
+  }
+}
