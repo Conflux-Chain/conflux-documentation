@@ -1,6 +1,7 @@
 ---
 sidebar_position: 5
 title: Additional Documentation
+displayed_sidebar: eSpaceSidebar
 ---
 
 :::info
