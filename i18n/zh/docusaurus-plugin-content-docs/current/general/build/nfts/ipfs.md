@@ -5,6 +5,7 @@ sidebar_position: 1
 keywords:
   - conflux
   - ipfs
+displayed_sidebar: generalSidebar
 ---
 
 ## IPFS简介
