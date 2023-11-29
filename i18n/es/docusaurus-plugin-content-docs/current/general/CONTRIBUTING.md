@@ -1,5 +1,6 @@
 ---
 sidebar_postion: 6
+displayed_sidebar: generalSidebar
 ---
 
 # Contribuir
