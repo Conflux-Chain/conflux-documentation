@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 title: Bases de Conflux
+displayed_sidebar: generalSidebar
 ---
 
 Conceptos básicos acerca de Conflux Network
