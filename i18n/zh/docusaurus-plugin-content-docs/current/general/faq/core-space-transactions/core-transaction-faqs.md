@@ -1,6 +1,7 @@
 ---
 title: FAQs of Core Space Transactions
 sidebar_position: 1
+displayed_sidebar: generalSidebar
 ---
 
 ## 如何发送交易？
