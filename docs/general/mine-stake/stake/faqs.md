@@ -1,6 +1,7 @@
 ---
 sidebar_position: 5
 title: FAQs
+displayed_sidebar: generalSidebar
 ---
 
 # PoS FAQs

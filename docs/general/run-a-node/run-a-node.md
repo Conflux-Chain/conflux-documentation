@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 title: Running a Node
+displayed_sidebar: generalSidebar
 ---
 
 # Running a Node

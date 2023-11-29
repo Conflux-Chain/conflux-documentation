@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 title: Web3 Paywall
+displayed_sidebar: generalSidebar
 ---
 # Web3 Paywall
 

@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1.5
 title: Accounts
+displayed_sidebar: coreSidebar
 ---
 
 :::note

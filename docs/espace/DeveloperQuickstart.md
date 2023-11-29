@@ -3,7 +3,8 @@ sidebar_position: 3
 title: Developer Quickstart
 description: Quickstart for developers to Ethereum developers to build on eSpace
 keywords:
-    - Quickstart
+  - Quickstart
+displayed_sidebar: eSpaceSidebar
 ---
 
 With Conflux eSpace, your favorite tools for building and testing smart contracts just work.

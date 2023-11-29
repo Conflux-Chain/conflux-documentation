@@ -1,6 +1,7 @@
 ---
 title: Nodes FAQs
 sidebar_position: 3
+displayed_sidebar: generalSidebar
 ---
 # Nodes FAQs
 

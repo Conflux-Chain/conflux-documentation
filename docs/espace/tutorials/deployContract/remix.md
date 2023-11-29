@@ -2,6 +2,7 @@
 sidebar_position: 2
 title: Deploying an ERC-20 Token using Remix IDE
 description: Deploying an ERC-20 Token using Remix IDE
+displayed_sidebar: eSpaceSidebar
 ---
 
 In a new tab, open the Remix IDE at [remix.ethereum.org](https://remix.ethereum.org).

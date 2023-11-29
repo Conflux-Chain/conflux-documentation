@@ -1,3 +1,6 @@
+---
+displayed_sidebar: generalSidebar
+---
 # Block Synchronization Process
 
 ## Synchronization Graph

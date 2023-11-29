@@ -2,7 +2,8 @@
 sidebar_position: 2
 title: Why Transaction is Pending?
 keywords:
-    - transaction
+  - transaction
+displayed_sidebar: generalSidebar
 ---
 
 Because today’s blockchain systems may have problems such as low throughput and high entry barriers, it is inevitable that some transactions will not be packaged when sent through the blockchain. Take Conflux as an example, the Conflux network normally produces two blocks per second. After a transaction `is successfully sent`, it should be packaged and executed within `20 seconds` depending on the network congestion level. If the transaction is not packaged for a long time, it’s very likely that something went wrong, and requires the sender to manually intervene.

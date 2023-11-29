@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 title: Send Transactions Using SDKs
+displayed_sidebar: coreSidebar
 ---
 
 ## Installation

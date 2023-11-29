@@ -6,6 +6,7 @@ keywords:
   - conflux
   - txpool-rpc
   - sdk
+displayed_sidebar: coreSidebar
 ---
 
 `txpool` related RPCs which can enable developer get more info about transaction pool. Which was introduced from `conflux-rust v1.1.6`.

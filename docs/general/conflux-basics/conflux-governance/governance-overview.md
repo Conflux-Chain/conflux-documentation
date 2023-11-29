@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 title: Governance Overview
+displayed_sidebar: generalSidebar
 ---
 
 ## **Governance Model — CFX Voting**
