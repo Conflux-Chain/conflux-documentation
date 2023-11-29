@@ -1,5 +1,6 @@
 ---
 sidebar_position: 2.5
+displayed_sidebar: generalSidebar
 ---
 
 # Hard Forks
