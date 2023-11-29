@@ -1,6 +1,7 @@
 ---
 sidebar_position: 4
 title: Foundation Gas Sponsorship
+displayed_sidebar: coreSidebar
 ---
 
 Developers can submit a request to the Foundation for sponsorship.
