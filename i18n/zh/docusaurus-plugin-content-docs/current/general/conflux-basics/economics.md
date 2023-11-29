@@ -1,6 +1,7 @@
 ---
 sidebar_position: 6
 title: Economics
+displayed_sidebar: generalSidebar
 ---
 
 Conflux 的经济模型旨在鼓励用户参与和网络发展，同时确保技术的稳定性。 一个精心设计的经济模型对于一个去中心化的系统有效运行是必不可少的。 区块链技术建立了信任，并促进了合作者之间的高效关系，加速了价值的转移。
