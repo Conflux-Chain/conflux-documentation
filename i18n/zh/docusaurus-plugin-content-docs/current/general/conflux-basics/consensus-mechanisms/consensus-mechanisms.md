@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 title: Consensus
+displayed_sidebar: generalSidebar
 ---
 
 在区块链中，**共识**指的是网络中所有节点对账本当前状态达成一致的过程。 为了实现共识，网络中的每个节点必须验证和确认添加到区块链上的新交易是有效的，并遵循协议的规则。 This process is typically achieved through a consensus algorithm, such as Proof of Work or Proof of Stake, which incentivizes nodes to maintain the consistency and availability of the blockchain.
