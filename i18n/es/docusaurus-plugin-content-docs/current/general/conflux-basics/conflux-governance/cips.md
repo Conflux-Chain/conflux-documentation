@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 title: CIPs
+displayed_sidebar: generalSidebar
 ---
 
 # CIPs
