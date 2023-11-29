@@ -1,6 +1,7 @@
 ---
 sidebar_position: 9
 title: Contracts
+displayed_sidebar: generalSidebar
 ---
 
 # Introduction to Smart Contracts
