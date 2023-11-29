@@ -5,6 +5,7 @@ keywords:
   - conflux
   - pubsub
   - sdk
+displayed_sidebar: coreSidebar
 ---
 
 The Publish-Subscribe API of Conflux (also called pub-sub) makes it possible to query certain items on an ongoing basis, without polling through the JSON-RPC HTTP interface. You can use this API on top of a TCP or WebSocket connection.
