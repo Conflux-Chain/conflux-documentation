@@ -1,6 +1,7 @@
 ---
 sidebar_position: 4
 title: 基金会 Gas 赞助
+displayed_sidebar: coreSidebar
 ---
 
 开发者可以向基金会提交赞助请求。
