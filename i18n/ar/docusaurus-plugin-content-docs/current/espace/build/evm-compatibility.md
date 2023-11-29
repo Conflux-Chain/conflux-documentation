@@ -5,6 +5,7 @@ description: EVM Compatibility of Conflux eSpace
 keywords:
   - EVM
   - Compatibility
+displayed_sidebar: eSpaceSidebar
 ---
 
 The eSpace implements an Ethereum Virtual Machine (EVM). Below are some differences between eSpace and Ethereum:
