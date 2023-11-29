@@ -1,6 +1,7 @@
 ---
 sidebar_position: 4
 title: Running a PoS Staking Pool
+displayed_sidebar: generalSidebar
 ---
 
 In this section we present a guide for how to deploy, configure and manage a POS Pool that will allow CONFLUX holders to join to the PoS protocol just interacting with the front-end application of the PoS Pool and without dealing with the technical complexities.
