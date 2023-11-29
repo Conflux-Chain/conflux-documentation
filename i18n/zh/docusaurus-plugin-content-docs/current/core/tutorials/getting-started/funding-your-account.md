@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 title: Funding Your Account on Testnet
+displayed_sidebar: coreSidebar
 ---
 
 您是 Conflux 区块链的新用户吗？ 或者您是一名计划在Conflux上开发Dapp的开发者吗？ 那么你可能需要一些CFX与Conflux网络进行交互。 We provide the testnet CFX faucet dApp, which allows users to claim testnet CFX and experience it in the Conflux testnet environment.
