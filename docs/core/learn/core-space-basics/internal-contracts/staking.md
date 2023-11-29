@@ -9,11 +9,13 @@ Conflux introduces the staking mechanism for two reasons: first, staking mechani
 
 At a high level, Conflux implements a built-in **Staking** contract to record the staking information of all accounts, for both normal addresses and smart contracts. By sending a transaction to this contract, users (both external users and smart contracts) can deposit/withdraw funds, which is also called stakes in the contract.
 
-A user (or a contract) can deposit balance for staking by calling `deposit(uint amount)` and then `amount` Drip will be moved from its `balance` to `stakingBalance`. Notice that this function is non-payable, the user only needs to specify the amount to be staked without transferring any funds to internal contract and the minimum deposit amount is `1 CFX`.
+## Deposit and Withdraw
+
+A user (or a contract) can deposit balance for staking by calling `deposit(uint amount)` and then `amount` Drip will be moved from its `balance` to `stakingBalance`. Notice that this function is non-payable, the user only needs to specify the amount to be staked without transferring any funds to internal contract and the **minimum deposit amount is 1 CFX**.
 
 The user can also withdraw balance by `withdraw(uint amount)`. The caller can call this function to withdraw some tokens from the Conflux Internal Staking Contract. The staking capital will be transferred to the user's balance in time.
 
-## Locking and Vote Power 
+## Locking and Vote Power
 
 By locking the staking balance, the user can obtain *vote power* for further on-chain governance. With function `voteLock(uint amount, uint unlock_block_number)`, the account makes a promise that "My `stakingBalance` will always have at least `amount` Drip before the block with block number `unlock_block_number`". The account can make multiple promises, like "I will always at least 10 CFX in this year, and then always stake at least 5 CFX in the next year."  **Once the promise has been made, there is no way to cancel it!** But the account can overwrite old promise by locking more balance. Whenever the account tries to withdraw `stakingBalance`, the internal contract will check whether the rest balance matches the locking promise. 
 
@@ -27,7 +29,7 @@ Here we introduce the detailed logic for locking balance by illustrating several
 
 At any time, each locked Drip will be assigned a *vote power* from 0 to 1 according to its unlock time. The Drips to be unlocked in more than one year will have a full vote power. See section 8.3.2 in the [Conflux Protocol Specification](https://conflux-protocol.s3-ap-southeast-1.amazonaws.com/tech-specification.pdf) for more details.
 
-## Interface And Address
+## Interface
 
 The address of the internal contract: `0x0888000000000000000000000000000000000002`
 

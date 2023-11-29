@@ -151,3 +151,15 @@ encode(0x1a2f80341409639ea6a35bbcab8299066109aa55, "cfx")
    checksum string: "ybjgh4xg"
 5. concatenated result: "cfx:type.user:aarc9abycue0hhzgyrr53m6cxedgccrmmyybjgh4xg"
 ```
+
+## Use Cases for Base32 and Hex Addresses
+
+The Conflux Core RPC methods only accept base32 address, so Conflux Core SDKs and wallets also use base32 address. Base32 is the most common address format in the Core Space.
+
+In Solidity smart contract, if a specific address need to be hardcoded in the contract code, it should be hex address. This is the only situation that hex address is used in the Core Space.
+
+## Address Format Convert Tool
+
+ConfluxScan provide a [Online Address Converter](https://www.confluxscan.io/address-converter) which is very useful.
+
+![](./img/scan-address-converter.png)

@@ -3,11 +3,13 @@ sidebar_position: 4
 title: ConfluxContext
 ---
 
-This contract can be used to query Conflux network info including:
+This contract can be used in `Solidity contract` to query Conflux Core network info including:
 
-- ```epochNumber``` - Current epoch number
-- ```posHeight``` - Current block height of PoS chain
-- ```finalizedEpochNumber``` - The latest finalized (by PoS chain) PoW epoch number
+- `epochNumber` - Current epoch number
+- `posHeight` - Current block height of PoS chain
+- `finalizedEpochNumber` - The latest finalized (by PoS chain) PoW epoch number
+
+## Interface
 
 ```ConfluxContext```'s hex40 contract address is ```0x0888000000000000000000000000000000000004```
 
@@ -33,5 +35,4 @@ interface ConfluxContext {
      */
     function finalizedEpochNumber() external view returns (uint256);
 }
-
 ```

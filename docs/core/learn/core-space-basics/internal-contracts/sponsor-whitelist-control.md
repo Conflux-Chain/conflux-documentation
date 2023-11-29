@@ -5,11 +5,11 @@ title: SponsorWhitelistControl
 
 Conflux implements a sponsorship mechanism to subsidize the usage of smart contracts. This allows a new account with a zero balance to call smart contracts, provided the execution is sponsored (usually by the operator of Dapps). The internal `SponsorWhitelistControl` contract records the sponsorship information for smart contracts.
 
-When a message call occurs, Conflux does not recheck sponsorship. For instance, if normal address `A` calls contract `B` and contract `B` calls contract `C`, Conflux only checks whether address `A` is sponsored by contract `B`. If `A` is sponsored, `B` will afford all the gas and/or collateral during the transaction execution, including the message call from `B` to `C`. In other words, only a transaction sender could be sponsored.  
+## Interface
 
-## SponsorWhitelistControl Interfaces
+SponsorWhitelistControl's hex40 address is `0x0888000000000000000000000000000000000001`, with interface:
 
-```sol
+```js
 pragma solidity >=0.4.15;
 
 contract SponsorWhitelistControl {
@@ -103,7 +103,7 @@ contract SponsorWhitelistControl {
 
 ## How to Sponsor a Contract
 
-`SponsorWhitelistControl` maintains a whitelist for each user-established contract containing accounts eligible for the subsidy. First and foremost, eligible accounts should be added into the whitelist using `addPrivilege(address[] memory)` or `addPrivilegeByAdmin(address contractAddr, address[] memory addresses)`. Specially, if a zero address is added to the whitelist, any account will become eligible for subsidy.
+`SponsorWhitelistControl` maintains a whitelist for each user-established contract containing accounts eligible for the subsidy. First and foremost, eligible accounts should be added into the whitelist using `addPrivilege(address[] memory)` or `addPrivilegeByAdmin(address contractAddr, address[] memory addresses)`. Specially, if a **zero address** is added to the whitelist, any account will become eligible for subsidy.
 
 There are two resources that can be sponsored: gas consumption and storage collateral. The two resources can be sponsored separately through `payable` interfaces `setSponsorForGas(address contractAddr, uint upperBound)` and `setSponsorForCollateral(address contractAddr)`.The paid CFX will be used for future gas or storage collateral sponsorship.
 
@@ -117,7 +117,7 @@ The `upperBound` (unit: Drip) sets the sponsor upper bound of each transaction. 
 
 Suppose you have the provided test contract needs sponsorship:
 
-```solidity
+```js
 pragma solidity >=0.8.0;
 
 import "https://github.com/Conflux-Chain/conflux-rust/blob/master/internal_contract/contracts/SponsorWhitelistControl.sol";
@@ -323,6 +323,8 @@ There are two resources that can be sponsored: gas consumption and storage colla
 - *For gas consumption*: If a transaction calls a contract with non-empty `sponsor_for_gas` and the sender is in the `whitelist` of the contract and the gas fee specified by the transaction is within the `sponsor_limit_for_gas_fee`, the gas consumption of the transaction is paid from the `sponsor_balance_for_gas` of the contract (if it is sufficient) rather than from the sender’s balance. Otherwise, the sender should pay for the gas consumption.
 - *For storage collateral*: If a transaction calls a contract with non-empty `available_storage_points` or `sponsor_for_collateral` and the sender is in the `whitelist` of the contract, the collateral for storage incurred in the execution of the transaction is deducted from `sponsor_for_collateral`(with priority) or `available_storage_points` of the contract, and the owner of those modified storage entries is set to the contract address accordingly. Otherwise, the sender should pay for the collateral for storage incurred in the execution.
 
+When a message call occurs, Conflux does not recheck sponsorship. For instance, if normal address `A` calls contract `B` and contract `B` calls contract `C`, Conflux only checks whether address `A` is sponsored by contract `B`. If `A` is sponsored, `B` will afford all the gas and/or collateral during the transaction execution, including the message call from `B` to `C`. In other words, only a transaction sender could be sponsored.  
+
 ### Storage Points
 
 [CIP-107](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-107.md) introduced the concept of storage points to improve Conflux tokenomics.
@@ -376,7 +378,7 @@ surplus storage points
 = p * (tx.value - (sponsor_balance_for_collateral + (collateral_for_storage - use_storage_points / 1024))) * 1024
 ```
 
-## Whitelist maintenance
+### Whitelist maintenance
 
 Only the contract itself or contract admin can update the contract whitelist. Sponsors have no rights to change the whitelist.
 

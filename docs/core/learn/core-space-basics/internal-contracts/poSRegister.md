@@ -15,6 +15,8 @@ Also several methods to query one account's PoS info:
 - ```identifierToAddress``` - Query one PoS account's binded PoW address
 - ```addressToIdentifier``` - Query one PoW account's binded PoS address
 
+## Interface
+
 ```PoSRegister```'s hex40 contract address is ```0x0888000000000000000000000000000000000005```
 
 ```js

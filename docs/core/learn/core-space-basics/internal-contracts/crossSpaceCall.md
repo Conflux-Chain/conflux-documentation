@@ -3,9 +3,11 @@ sidebar_position: 6
 title: CrossSpaceCall
 ---
 
-## CrossSpaceCall Interface
+[CIP-90](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-90.md) introduces a new internal contract: `CrossSpaceCall`. CrossSpaceCall enables **CFX and data** to be transferred between the two spaces.
 
-[CIP-90](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-90.md) introduces a new internal contract: `CrossSpaceCall`. CrossSpaceCall enables **CFX and data** to be transferred between the two spaces. This contract is located at **core** address: `cfx:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaa2sn102vjv`
+## Interface
+
+This contract's hex40 address is `0x0888000000000000000000000000000000000006` with interface:
 
 ```js
 // SPDX-License-Identifier: MIT
@@ -71,8 +73,6 @@ interface CrossSpaceCall {
     function mappedNonce(address addr) external view returns (uint256);
 }
 ```
-
-If you want to interact with this contract in Solidity, you can use address `0x0888000000000000000000000000000000000006`.
 
 NOTE: The `CrossSpaceCall` contract is deployed in the Core Space. It can only be call from the Core Space.
 
