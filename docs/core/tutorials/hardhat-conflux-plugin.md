@@ -59,7 +59,7 @@ module.export = {
 }
 ```
 
-If your config file is hardhat.config.ts, the config is more or less.
+If your config file is hardhat.config.ts, the settings is more or less.
 
 Make sure the private key's account you use has enough balance to interact with Core Space. If not you can use [faucet](https://faucet.confluxnetwork.org/) to get some test tokens.
 
@@ -100,7 +100,7 @@ function getContractAt(abi: any[], address: string): Promise<ConfluxSDK.Contract
 
 ## Usage
 
-Developers can wright hardhat scripts to deploy, interact, test contracts on Core Space.
+Developers can write hardhat scripts to deploy, interact, test contracts on Core Space.
 
 ### Deploy Contract
 
@@ -170,6 +170,12 @@ main().catch(err => {
     console.log(err);
     process.exit(1);
 })
+```
+
+Then you can run this script with:
+
+```shell
+npx hardhat run scripts/interact.js --network cfxTestnet
 ```
 
 ### Verify Contract

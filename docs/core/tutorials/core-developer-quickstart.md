@@ -61,6 +61,19 @@ const account = cfxClient.wallet.addPrivateKey(PRIVATE_KEY); // create account i
 console.log("Account address: ", account.address);
 ```
 
+### Conflux Address
+
+The address of Conflux Core Space is different from Ethereum. It is a base32 encoded string introduced by [CIP-37](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-37.md).
+
+Different network's address prefix is different. For example, the address prefix of Conflux Core Testnet is `cfxtest` and mainnet is `cfx`.
+
+For example: 
+
+* Mainnet Address: `cfx:aamjy3abae3j0ud8ys0npt38ggnunk5r4ps2pg8vcc`
+* Testnet Address: `cfxtest:aamjy3abae3j0ud8ys0npt38ggnunk5r4pex9025gj`
+
+You can learn more about Conflux Core address [here](../learn/core-space-basics/addresses.md).
+
 ### Query Account Balance
 
 You can query the account balance by using `cfxClient.cfx.getBalance`:
