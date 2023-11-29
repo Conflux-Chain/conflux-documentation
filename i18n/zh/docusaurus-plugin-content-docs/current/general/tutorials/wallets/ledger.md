@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 title: Ledger
+displayed_sidebar: generalSidebar
 ---
 
 
