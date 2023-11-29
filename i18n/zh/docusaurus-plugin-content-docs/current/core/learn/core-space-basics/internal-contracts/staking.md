@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 title: Staking
+displayed_sidebar: coreSidebar
 ---
 
 ## 概览
