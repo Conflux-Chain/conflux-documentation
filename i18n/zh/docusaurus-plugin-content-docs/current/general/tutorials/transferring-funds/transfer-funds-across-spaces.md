@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 title: Across Spaces
+displayed_sidebar: generalSidebar
 ---
 
 # 跨空间转账
