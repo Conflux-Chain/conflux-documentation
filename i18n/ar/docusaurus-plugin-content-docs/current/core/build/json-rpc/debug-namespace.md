@@ -4,6 +4,7 @@ sidebar_position: 4
 title: debug Namespace
 keywords:
   - debug-rpc
+displayed_sidebar: coreSidebar
 ---
 
 ## RPCs
