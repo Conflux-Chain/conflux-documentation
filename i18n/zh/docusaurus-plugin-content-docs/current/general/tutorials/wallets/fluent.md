@@ -4,6 +4,7 @@ title: Fluent
 keywords:
   - Fluent
   - Wallet
+displayed_sidebar: generalSidebar
 ---
 
 :::tip
