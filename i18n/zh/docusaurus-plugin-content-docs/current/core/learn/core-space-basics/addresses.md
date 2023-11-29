@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
-title: 地址
+title: Base32 Addresses
+displayed_sidebar: coreSidebar
 ---
 
 在Conflux中，每个 [账户](../../../general/conflux-basics/accounts.md) 都与一个公私钥对相关联，并由一个“地址”标识。 本页面介绍地址在core space中的表示和计算方式。
