@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 title: Creating Subgraphs
+displayed_sidebar: eSpaceSidebar
 ---
 
 
