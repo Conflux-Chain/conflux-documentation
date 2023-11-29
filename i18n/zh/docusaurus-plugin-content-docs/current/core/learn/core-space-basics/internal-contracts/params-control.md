@@ -1,6 +1,7 @@
 ---
 sidebar_position: 7
 title: ParamsControl
+displayed_sidebar: coreSidebar
 ---
 
 `ParamsControl`位于地址`0x0888000000000000000000000000000000000007`，具有以下接口。 它可以用来参与链参数投票。
