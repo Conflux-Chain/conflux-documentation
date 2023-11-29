@@ -109,47 +109,65 @@ module.exports = {
 }
 ```
 
+### web3.py
+
+:::tip
+
+It is recommended to create virtual environments before using `web3.py` to avoid dependency conflicts, for example, by using [venv](https://docs.python.org/3/library/venv.html) or [conda](https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#creating-an-environment-with-commands).
+
+:::
+
+`web3.py` is one of the most widely used Python interfaces for interacting with the Ethereum blockchain and ecosystem. It can be installed using the command:
+
+```bash
+pip install web3 # or pip3 install web3
+```
+
+`web3.py` can also be used to interact with Conflux eSpace. The example code below shows how to connect to the Conflux eSpace testnet endpoint and check the connection:
+
+```py
+>>> from web3 import Web3
+>>> w3 = Web3(Web3.HTTPProvider("https://evmtestnet.confluxrpc.com"))
+>>> w3.is_connected() 
+True # should return True
+```
+
+It should be noted that the latest version of `web3.py` populates `maxFeePerGas` and `maxPriorityFeePerGas` for transactions by default, while Conflux eSpace only supports the legacy transaction type prior to EIP-1559. Therefore, developers need to specify the `gas_price` field in transactions or use the [gas price API](https://web3py.readthedocs.io/en/stable/gas_price.html).
+
+```python
+from web3 import Web3
+from web3.middleware.signing import construct_sign_and_send_raw_middleware
+from web3.gas_strategies.rpc import rpc_gas_price_strategy
+
+w3 = Web3(Web3.HTTPProvider("https://evmtestnet.confluxrpc.com"))
+assert w3.is_connected()
+acct = w3.eth.account.from_key("xxxxxx") # your secret key
+
+w3.middleware_onion.add(construct_sign_and_send_raw_middleware(acct))
+w3.eth.default_account = acct.address
+
+# Set gas price strategy
+w3.eth.set_gas_price_strategy(rpc_gas_price_strategy)
+
+w3.eth.send_transaction({"from": acct.address, "value": 0, "to": acct.address})
+```
+
 ### Brownie
 
-To add the eSpace Testnet, run the following command:
+[Brownie](https://eth-brownie.readthedocs.io/en/stable/) is a Python-based development and testing framework for smart contracts targeting the Ethereum Virtual Machine. To add the Conflux eSpace networks to Brownie, run the following command:
 
 ```bash
-brownie networks add Ethereum confluxEspace host=https://evmtestnet.confluxrpc.com chainid=71
+brownie networks add "Conflux eSpace" conflux-espace-main name=Mainnet host=https://evm.confluxrpc.com explorer=https://evm.confluxscan.io chainid=1030
+brownie networks add "Conflux eSpace" conflux-espace-test name=Testnet host=https://evmtestnet.confluxrpc.com explorer=https://evmtestnet.confluxscan.io chainid=71
 ```
 
-To set this as your default network, add the following in your project config file:
-
-```yaml
-networks:
-  default: confluxEspace
-```
-
-Another way to add the eSpace Testnet is to create a `yaml` file and run a command to add it.
-
-This is an example of a yaml file called `network-config.yaml`
-
-```yaml
-live:
-- name: Ethereum
- networks:
- - chainid: 71
-   explorer: https://evmtestnet.confluxscan.io
-   host: https://evmtestnet.confluxrpc.com
-   id: confluxEspace
-   name: Conflux eSpace
-```
-
-To add the eSpace Testnet to the network list, run the following command:
+To deploy on eSpace, specify the Conflux network by using the `--network` option.
 
 ```bash
-brownie networks import ./network-config.yaml
+brownie run scripts/token.py --network conflux-espace-test
 ```
 
-To deploy on eSpace, run the following command. In this example, `token.py` is the script to deploy the smart contract. Replace this with the name of your script:
-
-```bash
-brownie run token.py --network confluxEspace
-```
+The `scripts/token.py` is the Brownie script you want to run on Conflux eSpace. In our [**Brownie tutorial**](./tutorials/deployContract/brownie.md), we show the complete workflow of how to configure a template Brownie project and how to run Brownie scripts on Conflux eSpace.
 
 ### ethers.js
 
