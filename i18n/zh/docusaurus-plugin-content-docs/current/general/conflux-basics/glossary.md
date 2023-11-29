@@ -31,7 +31,7 @@ cfx:aatktb2te25ub7dmyag3p8bbdgr31vrbeackztm2rj
 cfxtest:aatktb2te25ub7dmyag3p8bbdgr31vrbeajcg9pwkc
 ```
 
-详细信息请参考[general-address](./accounts.md#address)、[core-address](../../core/learn/core-space-basics/addresses.md)、[espace-address](../../espace/learn/accounts.md#mapped-addresses-in-cross-space-operations)。
+Refer to [general-address](./accounts.md#address), [core-address](../../core/learn/core-space-basics/addresses.md), [espace-address](../../espace/build/accounts.md#mapped-addresses-in-cross-space-operations) for more information.
 
 ### **Block**
 In blockchain technology, a block is a collection of transactions. It's like a page of a ledger or record book. Each block is linked to the one before it and after it, creating a chain of blocks, hence the term "blockchain". In the context of Conflux, blocks form a tree-like structure, allowing for multiple blocks to be produced concurrently.
