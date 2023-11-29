@@ -1,6 +1,7 @@
 ---
 sidebar_position: 5
 title: Glossary
+displayed_sidebar: generalSidebar
 ---
 
 ## Introduction
