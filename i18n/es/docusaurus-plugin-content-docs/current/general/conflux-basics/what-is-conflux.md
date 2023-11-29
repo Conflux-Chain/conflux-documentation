@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 title: '¿Qué es Conflux?'
+displayed_sidebar: generalSidebar
 ---
 
 Conflux se destaca como una blockchain pública con un rendimiento superior, un mecanismo de consenso único y un innovador diseño dual-space. Estas características permiten que Conflux ofrezca una plataforma rápida, segura y descentralizada que es adecuada para diversas aplicaciones, incluidas las finanzas descentralizadas y los juegos.
