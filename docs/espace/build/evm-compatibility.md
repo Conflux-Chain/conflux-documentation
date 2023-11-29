@@ -11,14 +11,15 @@ The eSpace implements an Ethereum Virtual Machine (EVM). Below are some differen
 
 ## Transaction Type
 
-Currently eSpace only support 155 type transaction. 1559 type transaction is not support.
+Currently eSpace only support **155 type** transaction. 1559 type transaction is not support.
 
 ## EVM Opcodes
 
-* The `BLOCKHASH` opcode can only take `NUMBER-1` as input. (Unlike Ethereum, which takes any integer in `NUMBER-256` to `NUMBER-1` as input). This is the only break  opcode.
-* The `NUMBER` opcode will return the tree-graph `epoch number`. As a result, `block.number` used in eSpace contracts will not grow at a stable and predictable rate, and so it might not be suitable for measuring time.
+* The `BLOCKHASH` opcode can only take `NUMBER-1` as input. (Unlike Ethereum, which takes any integer in `NUMBER-256` to `NUMBER-1` as input). This is the **only break opcode**.
 
 ## Block Time
+
+The `NUMBER` opcode will return the tree-graph `epoch number`. As a result, `block.number` used in eSpace contracts will not grow at a stable and predictable rate, and so it might not be suitable for measuring time.
 
 Block generate rate is 1.25s per block (mainnet), is same as Core Space Epoch time.
 
