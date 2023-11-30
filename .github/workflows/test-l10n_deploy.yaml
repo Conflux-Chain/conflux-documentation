@@ -2,7 +2,7 @@ name: Test l10n deployment
 
 on:
   pull_request:
-    types: [opened]
+    types: [opened, reopened]
     branches: 
     - l10n_main
     # Review gh actions docs if you want to further define triggers, paths, etc
