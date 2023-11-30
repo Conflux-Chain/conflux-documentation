@@ -4,7 +4,7 @@ title: Gas
 displayed_sidebar: generalSidebar
 ---
 
-Conflux Core users usually see fields like ```gasFee```, ```gas```, and ```gasPrice``` when they are sending transactions using their wallets (Fluent) or SDK. This article is going to explain in detail about what these concepts mean and how to set the values properly.
+Conflux users(both Core Space and eSpace) usually see fields like ```gasFee```, ```gas```, and ```gasPrice``` when they are sending transactions using their wallets (Fluent) or SDK. This article is going to explain in detail about what these concepts mean and how to set the values properly.
 
 ![Sign Transaction](./img/gas1.png)
 
@@ -58,7 +58,7 @@ gasFee is the total gas fee paid for a transaction. It is calculated as ```gasFe
 
 Suppose there is a regular transfer of 1 CFX, the gas limit can be set to 21,000. If the gasPrice is set to 1GDrip, then the total cost of the transaction is ```1 + 21000 * 0.000000001 = 1.000021 CFX```, where 1 CFX is transferred to the recipient's account, and 0.000021 CFX is the reward for the miner.
 
-In addition, in a Conflux transaction, if the ```gas limit``` is more than the actual amount of gas consumed (```gasUsed```), the exceeding part will be returned. The returning amount of gas can only be up to a quarter of the ```gas limit```.
+In addition, in a Conflux transaction, if the ```gas limit``` is more than the actual amount of gas consumed (```gasUsed```), the exceeding part will be returned. The returning amount of gas **can only be up to** a quarter of the ```gas limit```.
 
 Suppose the gas limit for a regular CFX transfer is set to 100k and the actual execution consumed 21,000, since the gas limit for the transaction is set too high, at most 25,000 of the gas fee will be returned(25% of the gas limit). The gas used for the transaction will be ```0.000075 CFX```.
 

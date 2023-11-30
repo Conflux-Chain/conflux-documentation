@@ -13,15 +13,15 @@ Core Space 的账户地址格式为 **base32 编码格式**, 与以太坊地址�
 ## Quick Start
 
 * [User Guide](./getting-started/)
-* [Developer Quickstart](./tutorials/core-developer-quickstart)
+* [Developer Quickstart](./core-developer-quickstart)
 
 ## Tutorials
 
 * [JS SDK Complete Guide](./tutorials/js-conflux-sdk)
-* hardhat-conflux Tutorial
-* chainIDE Tutorial
-* Contract Sponsor Tutorial
-* NFT Tutorial
+* [hardhat-conflux Tutorial](./tutorials/hardhat-conflux-plugin.md)
+* [chainIDE Tutorial](./tutorials/chainide.md)
+* [Contract Sponsor Tutorial](./tutorials/how-to-sponsor-contract.md)
+* [NFT Tutorial](./tutorials/nft-tutorial.md)
 
 ## Technical Details
 
@@ -35,13 +35,13 @@ Core Space 的账户地址格式为 **base32 编码格式**, 与以太坊地址�
 
 ## Resources
 
-1. Testnet Faucet
+1. [Testnet Faucet](https://faucet.confluxnetwork.org/)
 2. How to run a node
 3. Core Space SDKs: js, go, python, java
 
 ## References
 
-1. Network JSON-RPC endpoints
+1. [Network JSON-RPC endpoints](./core-endpoints.md)
 2. JSON-RPC APIs
 3. Internal Contract APIs
 

@@ -92,7 +92,7 @@ After every field of a transaction is prepared, following steps are required bef
 2. Signing: sign the hash obtained in the previous step using the private key of the sending account and perform the ecdsaSign signature operation to obtain the values for `r, s, v`.
 3. Transaction Encoding: Do RLP encoding in the order of `((nonce, gasPrice, gas, to, value, storageLimit, epochHeight, chainId, data), v, r, s)` and convert it into a hexadecimal string.
 
-## Differences between Conflux and Ethereum
+## Differences With Ethereum 155 Transaction
 
 Compared to Ethereum `155 transaction`, transactions through Conflux have several differences:
 

@@ -5,7 +5,7 @@ keywords:
   - storage
 ---
 
-Conflux 引入了存储抵押（CFS）机制作为使用存储空间的定价方法。 与 Ethereum 中的一次性存储费用相比，CFS 机制将更加公平合理。 原则上，这种机制要求锁定一定数量的资金作为抵押，以占用存储空间。 在相应的存储空间被释放或被他人覆盖之前，抵押的资金将被锁定，而锁定抵押品所产生的相应利息将直接分配给矿工，用于维护存储空间。 因此，Conflux 的存储成本也取决于占用存储空间的时间长短。 Conflux specifically introduced this mechanism in detail in chapter 7 of its [Conflux_Protocol_Specification](https://confluxnetwork.org/files/Conflux_Protocol_Specification_20201020.pdf).
+Conflux 引入了存储抵押（CFS）机制作为使用存储空间的定价方法。 与 Ethereum 中的一次性存储费用相比，CFS 机制将更加公平合理。 原则上，这种机制要求锁定一定数量的资金作为抵押，以占用存储空间。 在相应的存储空间被释放或被他人覆盖之前，抵押的资金将被锁定，而锁定抵押品所产生的相应利息将直接分配给矿工，用于维护存储空间。 因此，Conflux 的存储成本也取决于占用存储空间的时间长短。 Conflux specifically introduced this mechanism in detail in chapter 7 of its [Conflux_Protocol_Specification](https://confluxnetwork.org/files/Conflux_Protocol_Specification.pdf).
 
 在 Conflux 网络中，每个存储条目占用 64B（B 是字节，byte）的空间，这也是世界状态中键/值对的大小。 需要注意的是，区块链中的键通常是 256 位长，值也是 256 位长（每个都是 32B 长，总共是 64B 长）。 存储所需的抵押与可以覆盖所有存储项的 64B 的最小倍数成正比。 对于每个存储条目，最后写入该条目的账户被称为该存储条目的所有者。 If a storage item is written during the execution of contract C, and a guarantor provides guarantee for it, then C is regarded as the writer of the item and accordingly becomes the owner of the item (see section 7.1 for details). 在世界状态中，在一个存储项的整个生命周期中，该项的所有者必须锁定一定数量的 CFX 作为存储空间的存储抵押。 具体来说，对于一个大小为 64B 的存储条目，其所有者将被锁定 1/16CFX。 为了占用 `1KB` 的空间，你将支付 `1CFX` 作为抵押，相应的公式如下：
 

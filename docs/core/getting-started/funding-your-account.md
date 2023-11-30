@@ -13,7 +13,7 @@ We have developed a [Faucet Dapp](https://faucet.confluxnetwork.org/), which not
 
 ![Dapp-faucet](./img/Dapp-faucet-1)
 
-To use the Faucet Dapp, simply connect to the dapp using Fluent or Portal, and click "Claim".
+To use the Faucet Dapp, simply connect to the dapp using Fluent and click "Claim".
 
 ### Steps
 
