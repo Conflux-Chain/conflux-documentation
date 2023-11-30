@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 title: Incubation Program
+displayed_sidebar: eSpaceSidebar
 ---
 
 :::info

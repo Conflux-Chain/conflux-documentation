@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 title: The Tree-Graph
+displayed_sidebar: generalSidebar
 ---
 
 # The Tree-Graph

@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 title: use-wallet
+displayed_sidebar: generalSidebar
 ---
 
 # use-wallet Library

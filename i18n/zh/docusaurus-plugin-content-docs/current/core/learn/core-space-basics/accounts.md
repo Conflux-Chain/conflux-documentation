@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1.5
 title: 账户
+displayed_sidebar: coreSidebar
 ---
 
 :::note

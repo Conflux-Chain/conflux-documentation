@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 title: Running a Mining Node
+displayed_sidebar: generalSidebar
 ---
 
 ## Conflux网络PoW（工作量证明）- GPU挖矿指南

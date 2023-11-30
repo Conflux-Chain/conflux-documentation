@@ -5,6 +5,7 @@ id: why_pos
 keywords:
   - pos
   - why
+displayed_sidebar: generalSidebar
 ---
 
 :::note

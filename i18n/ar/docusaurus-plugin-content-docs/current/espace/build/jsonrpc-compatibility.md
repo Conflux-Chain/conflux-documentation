@@ -2,6 +2,7 @@
 sidebar_position: 3
 title: JSON-RPC Compatibility
 description: JSON-RPC compatibility with Ethereum
+displayed_sidebar: eSpaceSidebar
 ---
 
 Conflux eSpace implements the Web3 JSON-RPC protocol.

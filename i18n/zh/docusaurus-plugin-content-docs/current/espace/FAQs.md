@@ -2,6 +2,7 @@
 sidebar_position: 15
 title: 常见问题解答
 description: Frequently asked questions about Conflux eSpace
+displayed_sidebar: eSpaceSidebar
 ---
 
 ## How to run eSpace node?

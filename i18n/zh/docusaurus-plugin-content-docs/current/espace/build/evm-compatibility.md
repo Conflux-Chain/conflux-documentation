@@ -5,6 +5,7 @@ description: EVM Compatibility of Conflux eSpace
 keywords:
   - EVM
   - Compatibility
+displayed_sidebar: eSpaceSidebar
 ---
 
 eSpace 实现了一个以太坊虚拟机 (EVM)。 以下是 eSpace 和以太坊之间的一些区别：

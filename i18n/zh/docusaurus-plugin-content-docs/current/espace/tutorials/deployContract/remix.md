@@ -2,6 +2,7 @@
 sidebar_position: 2
 title: Deploying an ERC-20 Token using Remix IDE
 description: Deploying an ERC-20 Token using Remix IDE
+displayed_sidebar: eSpaceSidebar
 ---
 
 在一个新标签页中打开 Remix IDE，网址是[remix.ethereum.org](https://remix.ethereum.org)。 它可能需要一分钟才能加载，但一旦加载完成，请在左侧的工作区面板中创建一个名为 `ERC20Token.sol` 的新文件：

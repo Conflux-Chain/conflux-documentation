@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 title: 使用 SDK 发送交易
+displayed_sidebar: coreSidebar
 ---
 
 ## 安装

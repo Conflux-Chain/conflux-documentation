@@ -5,6 +5,7 @@ title: Papers
 keywords:
   - conflux
   - papers
+displayed_sidebar: generalSidebar
 ---
 
 The Conflux Protocol is defined and analyzed in a number of research papers.

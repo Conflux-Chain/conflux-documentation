@@ -1,6 +1,7 @@
 ---
 sidebar_position: 5
 title: PoSRegister
+displayed_sidebar: coreSidebar
 ---
 
 这个合约用于让用户参与PoS链。 需要与这个合约交互才能成为PoS节点。 这个合约提供了几个方法来增加或减少PoS投票：

@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 title: SDKs
+displayed_sidebar: coreSidebar
 ---
 
 Conflux 有用于主流编程语言的 SDK，包括 `JavaScript`, `Golang`, `Java` 和 `Python`。 本文为对SDK的简短介绍，详细的使用说明请查看SDK各自的文档。

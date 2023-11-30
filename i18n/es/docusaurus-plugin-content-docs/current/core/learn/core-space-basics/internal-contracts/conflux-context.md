@@ -1,6 +1,7 @@
 ---
 sidebar_position: 4
 title: ConfluxContext
+displayed_sidebar: coreSidebar
 ---
 
 This contract can be used to query Conflux network info including:

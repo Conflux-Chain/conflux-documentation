@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 title: Meson
+displayed_sidebar: generalSidebar
 ---
 
 # 使用 Meson 跨链转移稳定币

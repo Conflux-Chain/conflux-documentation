@@ -1,6 +1,7 @@
 ---
 sidebar_position: 10
 title: Gas
+displayed_sidebar: generalSidebar
 ---
 
 # Gas

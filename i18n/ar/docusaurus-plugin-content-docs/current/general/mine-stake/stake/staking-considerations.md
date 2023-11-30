@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 title: Staking Considerations
+displayed_sidebar: generalSidebar
 ---
 
 Before participating in staking activities, it's important to be aware of potential risks and take appropriate measures to mitigate them.

@@ -1,9 +1,10 @@
 name: Test l10n deployment
 
 on:
-  push:
-    branches:
-      - l10n_main
+  pull_request:
+    types: [opened]
+    branches: 
+    - l10n_main
     # Review gh actions docs if you want to further define triggers, paths, etc
     # https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#on
 

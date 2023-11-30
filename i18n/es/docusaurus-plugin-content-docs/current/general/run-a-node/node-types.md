@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 title: Node Types
+displayed_sidebar: generalSidebar
 ---
 
 # Node Types Overview

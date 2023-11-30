@@ -5,6 +5,7 @@ keywords:
   - pos
   - overview
 sidebar_position: 2
+displayed_sidebar: generalSidebar
 ---
 
 This document is to introduce Conflux PoS Finality without practical details. It is to help readers understand PoS in general, and it is essential for reading other technical documents.

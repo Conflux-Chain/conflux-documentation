@@ -1,6 +1,7 @@
 ---
 sidebar_position: 4
 title: ConfluxContext
+displayed_sidebar: coreSidebar
 ---
 
 这个合约可以用来查询Conflux网络信息，包括：

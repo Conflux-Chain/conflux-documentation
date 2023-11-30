@@ -3,6 +3,7 @@ sidebar_position: 2
 title: 安装钱包
 keywords:
   - wallet
+displayed_sidebar: coreSidebar
 ---
 
 与 Conflux Core Space 互动之前，您首先需要创建一个账户。 通常情况下，在Conflux Core Space中创建和管理账户需要使用Fluent钱包。

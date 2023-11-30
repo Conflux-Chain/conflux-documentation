@@ -4,6 +4,7 @@ id: transaction_explain
 title: 交易
 keywords:
   - transaction
+displayed_sidebar: coreSidebar
 ---
 
 发送交易是在区块链上存储或修改数据的唯一方法。 这包括 CFX 的转账和合约状态的修改。 发送交易的过程包括三个步骤：构造交易、签名交易和最后传输交易。 大多数编程语言提供了 [SDK](../../build/sdks-and-tools/sdks.md)，提供了便捷的方法来发送交易。 但是，如果你想深入了解底层的机制，或者在发送交易时遇到问题，这篇文章可能会有帮助。

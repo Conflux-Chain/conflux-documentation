@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 title: Consenso
+displayed_sidebar: generalSidebar
 ---
 
 En blockchain, **consenso** se refiere al proceso por el cual todos los nodos de la red están de acuerdo con el estado actual de la cadena de bloques. Para lograr el consenso, cada nodo en la red debe validar y confirmar que las nuevas transacciones añadidas a la blockchain son válidas y cumplen las reglas del protocolo. Este proceso se logra a través de un algoritmo de consenso, como Proof of Work (PoW) o Proof of Stake (PoS), que incentiva a los nodos a mantener la consistencia y la disponibilidad de la cadena de bloques.

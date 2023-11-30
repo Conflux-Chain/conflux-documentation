@@ -3,6 +3,7 @@ sidebar_position: 3
 title: Storage
 keywords:
   - storage
+displayed_sidebar: coreSidebar
 ---
 
 Conflux 引入了存储抵押（CFS）机制作为使用存储空间的定价方法。 与 Ethereum 中的一次性存储费用相比，CFS 机制将更加公平合理。 原则上，这种机制要求锁定一定数量的资金作为抵押，以占用存储空间。 在相应的存储空间被释放或被他人覆盖之前，抵押的资金将被锁定，而锁定抵押品所产生的相应利息将直接分配给矿工，用于维护存储空间。 因此，Conflux 的存储成本也取决于占用存储空间的时间长短。 Conflux specifically introduced this mechanism in detail in chapter 7 of its [Conflux_Protocol_Specification](https://confluxnetwork.org/files/Conflux_Protocol_Specification_20201020.pdf).

@@ -1,6 +1,7 @@
 ---
 sidebar_position: 6
 title: Economics
+displayed_sidebar: generalSidebar
 ---
 
 Conflux's economic model encourages participation and growth of the network while supporting technological stability. A well-designed economic model is essential for a decentralized system to operate efficiently. Blockchain technology establishes trust and encourages efficient relationships among cooperators, accelerating the transfer of value.

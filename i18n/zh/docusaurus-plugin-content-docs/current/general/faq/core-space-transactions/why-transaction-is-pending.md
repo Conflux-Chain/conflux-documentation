@@ -3,6 +3,7 @@ sidebar_position: 2
 title: Why Transaction is Pending?
 keywords:
   - transaction
+displayed_sidebar: generalSidebar
 ---
 
 由于当前的区块链系统可能存在吞吐量低和准入门槛高等问题，因此通过区块链发送的某些交易可能无法被打包确认。 以 Conflux 为例，Conflux 网络通常每秒可以产生两个区块。 在交易` 成功发送后 `，它应该在约` 20 秒 `内被打包并执行，具体时间取决于网络拥塞程度。 如果交易长时间未被打包，很可能出现了问题，需要发送者进行手动干预。

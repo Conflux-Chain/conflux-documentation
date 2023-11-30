@@ -6,6 +6,7 @@ keywords:
   - conflux
   - pinata
   - ipfs
+displayed_sidebar: generalSidebar
 ---
 
 # Uploading files to IPFS using Pinata

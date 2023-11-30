@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 title: Snapshot Tool
+displayed_sidebar: generalSidebar
 ---
 
 # Snapshot Tool

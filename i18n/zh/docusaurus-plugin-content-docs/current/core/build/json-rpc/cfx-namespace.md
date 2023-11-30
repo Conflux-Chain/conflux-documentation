@@ -6,6 +6,7 @@ keywords:
   - conflux
   - json-rpc
   - sdk
+displayed_sidebar: coreSidebar
 ---
 
 为了使软件应用程序与 Conflux 区块链交互——无论是读取区块链数据还是向网络发送交易——它必须连接到一个 Conflux 节点。

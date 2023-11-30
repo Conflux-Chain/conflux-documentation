@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 title: SponsorWhitelistControl
+displayed_sidebar: coreSidebar
 ---
 
 Conflux实现了赞助机制，来补贴智能合约的使用。 这允许余额为零的新账户调用智能合约，前提是执行操作得到赞助（通常由Dapp运营者提供）。 内部的 `SponsorWhitelistControl` 合约记录了智能合约的赞助信息。

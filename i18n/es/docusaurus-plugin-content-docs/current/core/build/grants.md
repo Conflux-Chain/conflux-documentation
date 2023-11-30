@@ -1,6 +1,7 @@
 ---
 sidebar_position: 9
 title: Grants
+displayed_sidebar: coreSidebar
 ---
 
 :::info

@@ -1,6 +1,7 @@
 ---
 title: Running an Archive Node
 sidebar_position: 12
+displayed_sidebar: generalSidebar
 ---
 
 # Running an Archive Node
