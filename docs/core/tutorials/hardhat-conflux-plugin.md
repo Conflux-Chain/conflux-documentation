@@ -195,7 +195,7 @@ There is a complete example in [hardhat-conflux-example](https://github.com/Conf
 
 ### Can I use Hardhat network to test contracts for Conflux Core?
 
-If your contracts are not using any Conflux specific features(Builtin Contracts, 1820, create2), you can use Hardhat network to test your contracts. For the VM difference between Hardhat network and Conflux Core, please refer to [VM difference](../learn/core-space-basics/vm-difference.md).
+If your contracts are not using any Conflux specific features(Builtin Contracts, 1820, create2), you can use Hardhat network to test your contracts. For the VM difference between Hardhat network and Conflux Core, please refer to [VM difference](../core-space-basics/vm-difference.md).
 
 ### Can I use Hardhat fork feature on Conflux Core?
 

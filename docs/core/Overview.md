@@ -4,11 +4,11 @@ title: Overview
 displayed_sidebar: coreSidebar
 ---
 
-Conflux Core Space 是 Conflux 网络的原生空间. 得益于 Conflux 创新性的树图账本结构和共识算法, Core Space 在不牺牲去中心化的前提下, 实现了远超比特币和以太坊的性能. 从而为 Conflux 生态的发展提供了强有力的支撑.
+Conflux Core Space is the native space of the Conflux network. Thanks to Conflux's innovative Tree-Graph ledger structure and consensus algorithm, Core Space achieves performance far surpassing that of Bitcoin and Ethereum without sacrificing decentralization. This provides strong support for the development of the Conflux ecosystem.
 
-Core Space 是一个智能合约平台, 脱胎于 EVM, 智能合约可使用 **Solidity** 开发, 并在其基础之上进行了大量的优化和改进, 包括合约的管理员机制, 以及**燃气费赞助机制**等. 除此之外 Core Space 还引入了多个内置合约, 以实现 **PoS 质押**, **跨 Space 通信**, **链上治理**等功能.
+Core Space is a smart contract platform that evolved from the EVM. Smart contracts can be developed using **Solidity**, and numerous optimizations and improvements have been made on this basis. These include the contract administration mechanism and the **gas fee sponsorship mechanism**. In addition to this, Core Space has introduced several built-in contracts to implement features such as **PoS staking**, **cross-Space communication**, and **on-chain governance**.
 
-Core Space 的账户地址格式为 **base32 编码格式**, 与以太坊地址不同, 并且提供一套**独有的 JSON-RPC 接口**. 因此同 Conflux Core Space 交互, 需要使用**专有**的钱包(Fluent) 和 SDK(js-conflux-sdk等).
+The account address format in Core Space is in **base32 encoding**, which is different from Ethereum addresses. It also offers a set of **unique JSON-RPC interfaces**. Therefore, interacting with Conflux Core Space requires the use of **proprietary** wallets (such as Fluent) and SDKs (like js-conflux-sdk).
 
 ## Quick Start
 
@@ -25,24 +25,24 @@ Core Space 的账户地址格式为 **base32 编码格式**, 与以太坊地址�
 
 ## Technical Details
 
-1. Base32 Address
-2. Account State
-3. Transaction
-4. Gas & Storage Collateral
-5. VM Differences with EVM
-6. Internal Contract explanation
-7. Sponsor mechanism
+1. [Base32 Address](./core-space-basics/addresses.md)
+2. [Account State](./core-space-basics/accounts.md)
+3. [Transaction](./core-space-basics/core-transactions.md)
+4. [Gas & Storage Collateral](./core-space-basics/storage.md)
+5. [VM Differences with EVM](./core-space-basics/vm-difference.md)
+6. [Internal Contract explanation](./core-space-basics/internal-contracts/)
+7. [Sponsor mechanism](./core-space-basics/sponsor-mechanism.md)
 
 ## Resources
 
 1. [Testnet Faucet](https://faucet.confluxnetwork.org/)
-2. How to run a node
+2. [How to run a node](../general/run-a-node/)
 3. Core Space SDKs: js, go, python, java
 
 ## References
 
 1. [Network JSON-RPC endpoints](./core-endpoints.md)
-2. JSON-RPC APIs
-3. Internal Contract APIs
+2. [JSON-RPC APIs](./build/json-rpc/)
+3. [Internal Contract APIs](./core-space-basics/internal-contracts/)
 
 ## FAQs

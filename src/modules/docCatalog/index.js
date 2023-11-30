@@ -18,9 +18,9 @@ const DocCatalogFackData = [
   {
     catalogue: 'Core Space',
     items: [
-      { url: '/docs/core/tutorials/', text: 'Tutorials', preview: 'Tutorials about Conflux Core Space' },
-      { url: '/docs/core/learn/', text: 'Learn', preview: 'Learn about the Conflux Core Space' },
-      { url: '/docs/core/build', text: 'Build', preview: 'Learn how to build on Core Space' },
+      { url: '/docs/category/core-space-basics', text: 'Core Space Basic', preview: 'Learn about the Conflux Core Space' },
+      { url: '/docs/category/tutorials', text: 'Tutorials', preview: 'Tutorials for build Conflux Core Space' },
+      { url: '/docs/category/build', text: 'Build', preview: 'Learn how to build on Core Space' },
     ]
   },
   {

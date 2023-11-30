@@ -23,7 +23,7 @@ This page provides quick entries for Conflux reference documentation.
 
 ## Contracts
 
-- [Core Space Internal Contracts](../../core/learn/core-space-basics/internal-contracts/internal-contracts)
+- [Core Space Internal Contracts](../../core/core-space-basics/internal-contracts/internal-contracts)
 - [eSpace Deployed Contracts](../../espace/build/deployed-contracts)
 
 ## Migration from Ethereum

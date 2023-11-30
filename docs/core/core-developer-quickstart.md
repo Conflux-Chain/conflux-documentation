@@ -73,7 +73,7 @@ For example:
 * Mainnet Address: `cfx:aamjy3abae3j0ud8ys0npt38ggnunk5r4ps2pg8vcc`
 * Testnet Address: `cfxtest:aamjy3abae3j0ud8ys0npt38ggnunk5r4pex9025gj`
 
-You can learn more about Conflux Core address [here](./learn/core-space-basics/addresses.md).
+You can learn more about Conflux Core address [here](./core-space-basics/addresses.md).
 
 ### Query Account Balance
 
@@ -108,7 +108,7 @@ let txParams = {
 };
 ```
 
-> The detailed explanation of each field can be found [here](./learn/core-space-basics/core-transactions.md)
+> The detailed explanation of each field can be found [here](./core-space-basics/core-transactions.md)
 
 2. Send the composed transaction via ```cfxClient.cfx.sendTransaction``` and get the returned transaction hash. Then you can view the transaction details by using `tx.mined()` or `tx.executed()`, which APIs will return the transaction data or transaction receipt when transaction is mined or executed. Noting these 2 APIs are a simple wrapping layer for `cfxClient.cfx.getTransactionByHash` and `cfxClient.cfx.getTransactionReceipt`. You can also search the hash at [Conflux Scan](https://confluxscan.io/).
 

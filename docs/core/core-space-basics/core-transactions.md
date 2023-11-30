@@ -1,5 +1,5 @@
 ---
-sidebar_position: 8.5
+sidebar_position: 5
 id: transaction_explain
 title: Transactions
 keywords:

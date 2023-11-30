@@ -5,7 +5,7 @@ description: Use ConfluxScan Read&Write Tool sponsor a contract
 displayed_sidebar: coreSidebar
 ---
 
-Conflux Core [Sponsorship](../learn/core-space-basics/sponsor-mechanism.md) is a user-friendly feature for blockchain new users. In this tutorial, we will show you how to use [ConfluxScan Read&Write Tool](https://testnet.confluxscan.io/address/cfxtest:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaaeprn7v0eh?tab=contract-viewer) to sponsor a contract.
+Conflux Core [Sponsorship](../core-space-basics/sponsor-mechanism.md) is a user-friendly feature for blockchain new users. In this tutorial, we will show you how to use [ConfluxScan Read&Write Tool](https://testnet.confluxscan.io/address/cfxtest:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaaeprn7v0eh?tab=contract-viewer) to sponsor a contract.
 
 Read&Write Tool is a tool for users to interact with smart contracts. Any verified contract on ConfluxScan can use it read or write data.
 
@@ -81,7 +81,7 @@ After setting up the sponsor, we can interact with the contract without paying g
 
 ## Other Sponsor Methods
 
-Developers can use SDKs to call `SponsorWhitelistControl`'s methods to sponsor a contract. Check [example at here](../learn/core-space-basics/internal-contracts/sponsor-whitelist-control.md#how-to-sponsor-a-contract).
+Developers can use SDKs to call `SponsorWhitelistControl`'s methods to sponsor a contract. Check [example at here](../core-space-basics/internal-contracts/sponsor-whitelist-control.md#how-to-sponsor-a-contract).
 
 ## FAQs
 
