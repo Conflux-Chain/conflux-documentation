@@ -18,20 +18,20 @@ The account address format in Core Space is in **base32 encoding**, which is dif
 ## Tutorials
 
 * [JS SDK Complete Guide](./tutorials/js-conflux-sdk)
-* [hardhat-conflux Tutorial](./tutorials/hardhat-conflux-plugin.md)
-* [chainIDE Tutorial](./tutorials/chainide.md)
-* [Contract Sponsor Tutorial](./tutorials/how-to-sponsor-contract.md)
-* [NFT Tutorial](./tutorials/nft-tutorial.md)
+* [hardhat-conflux Tutorial](./tutorials/hardhat-conflux-plugin)
+* [chainIDE Tutorial](./tutorials/chainide)
+* [Contract Sponsor Tutorial](./tutorials/how-to-sponsor-contract)
+* [NFT Tutorial](./tutorials/nft-tutorial)
 
 ## Technical Details
 
-1. [Base32 Address](./core-space-basics/addresses.md)
-2. [Account State](./core-space-basics/accounts.md)
-3. [Transaction](./core-space-basics/core-transactions.md)
-4. [Gas & Storage Collateral](./core-space-basics/storage.md)
-5. [VM Differences with EVM](./core-space-basics/vm-difference.md)
+1. [Base32 Address](./core-space-basics/addresses)
+2. [Account State](./core-space-basics/accounts)
+3. [Transaction](./core-space-basics/transaction_explain)
+4. [Gas & Storage Collateral](./core-space-basics/storage)
+5. [VM Differences with EVM](./core-space-basics/vm-difference)
 6. [Internal Contract explanation](./core-space-basics/internal-contracts/)
-7. [Sponsor mechanism](./core-space-basics/sponsor-mechanism.md)
+7. [Sponsor mechanism](./core-space-basics/sponsor-mechanism)
 
 ## Resources
 
