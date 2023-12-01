@@ -1,38 +1,38 @@
 ---
+
 sidebar_position: 4
-title: Use ChainIDE Develop Contract
-description: Deploy contract on Core Space with ChainIDE
+title: Using ChainIDE for Smart Contract Development
+description: Deploy contracts on Core Space with ChainIDE
 displayed_sidebar: coreSidebar
 ---
 
-[ChainIDE](https://chainide.com/) is a web-based IDE for blockchain smart contract development. It provides a one-stop solution for smart contract development, testing, debugging, and deployment.
-It is kind like Remix for Ethereum, but it is more powerful. It supports multiple blockchains, including Conflux Core Space.
+[ChainIDE](https://chainide.com/) is a web-based IDE tailored for blockchain smart contract development. It offers a comprehensive solution for developing, testing, debugging, and deploying smart contracts. Comparable to Ethereum's Remix, ChainIDE is more versatile, supporting multiple blockchains including Conflux Core Space.
 
 ![](./imgs/chainide/chainide.png)
 
-This tutorial will show you how to use ChainIDE to develop and deploy a smart contract on Core Space.
+This tutorial will guide you through using ChainIDE to develop and deploy a smart contract on Core Space.
 
-## Create Project
+## Creating a Project
 
-First, you need to create a project on ChainIDE. First select `Conflux` in left Chain list, and then choose a template from right cards. In this tutorial will choose **Storage** template.
+To start, create a project on ChainIDE. Select `Conflux` from the left-hand chain list, then choose a template from the right. For this tutorial, we will use the **Storage** template.
 
 ![](./imgs/chainide/create-project.png)
 
 ## Workspace Overview
 
-After creating a project, you will see the workspace of ChainIDE. It is similar to VSCode. The left side is the file explorer, the right side is the editor, and the bottom is the terminal.
+Once you create a project, you'll see ChainIDE's workspace, reminiscent of VSCode. It features a file explorer on the left, an editor on the right, and a terminal at the bottom.
 
 ![](./imgs/chainide/overview.jpg)
 
-The example solidity code is: 
+The example Solidity code is:
 
-```js
+```solidity
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
 /**
  * @title Storage
- * @dev Store & retrieve value in a variable
+ * @dev Store & retrieve values in a variable
  */
 contract Storage {
 
@@ -57,55 +57,55 @@ contract Storage {
 
 ```
 
-## Compile Contract
+## Compiling the Contract
 
-In the right toolbox the first one is **Solidity Compiler**, you can choose the compiler version, and then click **Compile** button to compile the contract.
+In the right-side toolbox, the first option is **Solidity Compiler**. Here, you can select the compiler version and then click the **Compile** button to compile your contract.
 
-After the compilation is completed, you will get the `ABI` and `BYTECODE`.
+After compilation, you will get the `ABI` and `BYTECODE`.
 
 ![](./imgs/chainide/compile.png)
 
-## Connect Fluent Wallet
+## Connecting Fluent Wallet
 
-Before we deploy this contract to Core Space Testnet, we need to connect the Fluent Wallet. Click the **Connect Wallet** button in the window top right.
+Before deploying this contract to the Core Space Testnet, connect your Fluent Wallet. Click the **Connect Wallet** button at the top right of the window.
 
-And then click **Injected Web3 Provider** button in the popup window.
+Then, in the popup window, select **Injected Web3 Provider**.
 
 ![](./imgs/chainide/connect-wallet-1.png)
 
-After that, we can choose the Fluent Wallet, because we want to deploy contract to Core Space.
+Next, choose the Fluent Wallet, as we aim to deploy the contract to Core Space.
 
 ![](./imgs/chainide/connect-wallet-2.png)
 
-Finally click **approve** in wallet popup window. Then we can see that the status(top right) of wallet connection is **Connected**, and the connected account address and balance in bottom right.
+Finally, click **approve** in the wallet popup window. You will then see the wallet connection status (top right) as **Connected**, along with the connected account address and balance at the bottom right.
 
 Remember to switch the network to **Conflux Testnet** in Fluent.
 
-## Deploy Contract
+## Deploying the Contract
 
-Click the **Deploy & Interaction** in right toolbox, then choose a contract to deploy, click the **Deploy** button. Then a deploy confirmation popup window will show, click **Confirm** button to deploy the contract. A transaction will send to Core Space Testnet, and the contract will be deployed after the transaction is executed.
+Click on **Deploy & Interaction** in the right toolbox, select a contract, and hit the **Deploy** button. A deployment confirmation popup will appear; click **Confirm**. This action sends a transaction to the Core Space Testnet and deploys the contract upon execution.
 
 ![](./imgs/chainide/contract-deploy.png)
 
-You can see the deploy progress in the **Output** area, include the transaction hash.
+The **Output** area will display the deployment progress, including the transaction hash.
 
-After the contract is deployed, a new contract will appear in **Interact** area.
+Once deployed, a new contract will appear in the **Interact** area.
 
 ![](./imgs/chainide/contract-interact.jpg)
 
-## Interact with Contract
+## Interacting with the Contract
 
-The Interact tool will list all the public functions of the contract. If a function is read only, you can click the **Get** button to get result. If function has parameters, you can specify them with input box.
+The Interact tool lists all public functions of the contract. For read-only functions, click the **Get** button. If the function requires parameters, enter them in the input box.
 
-If the function is a state changing function, you need to click **Submit** button to send a transaction to Core Space Testnet. After the transaction is executed, the result will show in the **Output** area.
+For state-changing functions, click the **Submit** button to send a transaction to the Core Space Testnet. The result will appear in the **Output** area after the transaction executes.
 
 ![](./imgs/chainide/interact-contract-change-state.png)
 
-## Other tools
+## Additional Tools
 
-There are other tools in the right toolbox, include:
+Other tools in the right toolbox include:
 
-1. Contract Verifier: can be used to verify contract source code on ConfluxScan
+1. Contract Verifier: Verifies contract source code on ConfluxScan.
 2. Address Converter
 
 ![](./imgs/chainide/contract-verifier.jpg)
@@ -114,4 +114,4 @@ There are other tools in the right toolbox, include:
 
 ## Summary
 
-ChainIDE is a powerful IDE for smart contract development. It is very convenient to use, and it is very suitable for beginners. You can use it to develop and deploy smart contracts on Core Space Testnet.
+ChainIDE is a powerful IDE for smart contract development, offering convenience and suitability for beginners. It is an excellent tool for developing and deploying smart contracts on the Core Space Testnet.

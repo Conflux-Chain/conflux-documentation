@@ -1,25 +1,25 @@
 ---
 sidebar_position: 2
 title: JS SDK Complete Guide
-description: This is a complete guide for the js-conflux-sdk.
+description: A comprehensive guide to using the js-conflux-sdk.
 displayed_sidebar: coreSidebar
 ---
 
-[Developer Quickstart](../core-developer-quickstart.md) demonstrate how to install and use the js-conflux-sdk send transactions. This guide will go through the js-conflux-sdk in detail.
+The [Developer Quickstart](../core-developer-quickstart.md) demonstrates how to install and use the js-conflux-sdk for sending transactions. This guide delves into the details of the js-conflux-sdk.
 
-* Account generation
-* Query blockchain data
-* Deploy smart contract
-* Call smart contract
-* Common utils
-* Unit conversion
-* Hash and sign
+* Account Generation
+* Querying Blockchain Data
+* Deploying Smart Contracts
+* Calling Smart Contracts
+* Common Utilities
+* Unit Conversion
+* Hashing and Signing
 
-For more details, and examples, please check the [js-conflux-sdk's documentation](https://docs.confluxnetwork.org/js-conflux-sdk/)
+For further details and examples, please refer to the [js-conflux-sdk documentation](https://docs.confluxnetwork.org/js-conflux-sdk/).
 
-## Account generation
+## Account Generation
 
-Use **PrivateKeyAccount** to random generate a new account.
+Generate a new account using **PrivateKeyAccount**.
 
 ```javascript
 const { PrivateKeyAccount } = require('js-conflux-sdk');
@@ -50,9 +50,9 @@ PrivateKeyAccount.random('0xabcdefabcdef', 1);
 } */
 ```
 
-## Query blockchain data
+## Querying Blockchain Data
 
-There are a lot of functions to query blockchain data, such as block, transaction, receipt, epoch, etc.
+Numerous functions are available to query blockchain data, such as block, transaction, receipt, epoch, etc.
 
 ```javascript
 const { Conflux } = require('js-conflux-sdk');
@@ -68,29 +68,24 @@ async function main() {
     console.log(status);
 }
 
-/*
-cfxClient.cfx.getStatus
-cfxClient.cfx.getBalance
-cfxClient.cfx.getNextNonce
-cfxClient.cfx.getBlockByHash
-cfxClient.cfx.getTransactionByHash
-cfxClient.cfx.getTransactionReceipt
-*/
+// Other available methods:
+// cfxClient.cfx.getBalance
+// cfxClient.cfx.getNextNonce
+// cfxClient.cfx.getBlockByHash
+// cfxClient.cfx.getTransactionByHash
+// cfxClient.cfx.getTransactionReceipt
 ```
 
-Check [Conflux cfx namespace API](https://github.com/Conflux-Chain/js-conflux-sdk/blob/v2/docs/api/Conflux.md) for complete method list.
+Explore the [Conflux cfx namespace API](https://github.com/Conflux-Chain/js-conflux-sdk/blob/v2/docs/api/Conflux.md) for a complete method list. For more on JSON-RPC, see [Conflux Core JSON-RPC API](../build/json-rpc/).
 
-Check [Conflux Core JSON-RPC API](../build/json-rpc/) for more information about the JSON-RPC.
+## Deploying Smart Contracts
 
-## Deploy smart contract
-
-The js conflux sdk provides a simple way to deploy smart contract.
+The js-conflux-sdk simplifies smart contract deployment.
 
 ```javascript
-// to deploy a smart contract, you need a account with enough balance
-// and the smart contract's bytecode and abi, which can get from solc or hardhat tools
-const abi = []; // replace with your smart contract's abi
-const bytecode = '0xabcd'; // replace with your smart contract's bytecode
+// Prerequisites: an account with sufficient balance and the smart contract's bytecode and ABI from solc or hardhat
+const abi = []; // Replace with your contract's ABI
+const bytecode = '0xabcd'; // Replace with your contract's bytecode
 
 const contract = cfxClient.Contract({
   abi,
@@ -98,8 +93,7 @@ const contract = cfxClient.Contract({
 });
 
 async function main() {
-    // if the contract's constructor has no params, you can use the following code
-    // if has params, you need to use contract.constructor(params).sendTransaction
+    // Deploy the contract (modify if the constructor has parameters)
     const receipt = await contract.constructor().sendTransaction({
         from: account,
     }).executed();
@@ -107,13 +101,13 @@ async function main() {
 }
 ```
 
-## Call smart contract
+## Calling Smart Contracts
 
-To call a smart contract, you need the contract's abi and address.
+To call a smart contract, you need its ABI and address.
 
 ```javascript
-const address = ''; // replace with your contract's address
-const abi = []; // replace with your contract's abi
+const address = ''; // Replace with your contract's address
+const abi = []; // Replace with your contract's ABI
 
 const contract = cfxClient.Contract({
   abi,
@@ -121,10 +115,10 @@ const contract = cfxClient.Contract({
 });
 
 async function main() {
-    // call a view function
+    // Call a view function
     const result = await contract.viewFunctionName(params);
     console.log(result);
-    // call a non-view function
+    // Call a non-view function
     const receipt = await contract.nonViewFunctionName(params).sendTransaction({
         from: account,
     }).executed();
@@ -132,102 +126,91 @@ async function main() {
 }
 ```
 
-Check sdk's [Contract interaction guide](https://docs.confluxnetwork.org/js-conflux-sdk/docs/interact_with_contract) for more details.
+Consult the sdk's [Contract interaction guide](https://docs.confluxnetwork.org/js-conflux-sdk/docs/interact_with_contract) for more information.
 
-## Common utils
+## Common Utilities
 
 ### Address
 
-The address module provides functions to encode and decode cfx address, address checker.
+The address module offers functions for encoding and decoding cfx addresses and address validation.
 
 ```javascript
 const { address } = require('js-conflux-sdk');
 
-// encode hex address to base32 cfx address
-const address = address.encodeCfxAddress('0x166d0ff7691030b0ca33d4e60e842cd300a3010d', 1);
-// 'cfxtest:aang4d91rejdbpgmgtmspdyefxkubj2bbywrwm9j3z'
+// Encode a hex address to a base32 cfx address
+const cfxAddress = address.encodeCfxAddress('0x166d0ff7691030b0ca33d4e60e842cd300a3010d', 1);
 
-// decode base32 cfx address to hex address
+// Decode a base32 cfx address to a hex address
 const decoded = address.decodeCfxAddress('cfxtest:aang4d91rejdbpgmgtmspdyefxkubj2bbywrwm9j3z');
-/*
-{
-  hexAddress: <Buffer 16 6d 0f f7 69 10 30 b0 ca 33 d4 e6 0e 84 2c d3 00 a3 01 0d>,
-  netId: 1,
-  type: 'user'
-}
-*/
 
-// check if the address is valid
-address.isValidCfxAddress('cfxtest:aang4d91rejdbpgmgtmspdyefxkubj2bbywrwm9j3z'); // true
+// Check if an address is valid
+address.isValidCfxAddress('cfxtest:aang4d91rejdbpgmgtmspdyefxkubj2bbywrwm9j3z'); // Returns true
 
-// calculate the mapped evm address
-address.cfxMappedEVMSpaceAddress('cfxtest:aang4d91rejdbpgmgtmspdyefxkubj2bbywrwm9j3z');
-// 0xe24a38C4F38b39FD288fedEB3388d924B26817df
+// Calculate the mapped EVM address
+address.cfxMappedEVMSpace
+
+Address('cfxtest:aang4d91rejdbpgmgtmspdyefxkubj2bbywrwm9j3z');
 ```
 
-Check [address utils api](https://github.com/Conflux-Chain/js-conflux-sdk/blob/v2/docs/api/util/address.md) for more details.
+Discover more at the [address utils API](https://github.com/Conflux-Chain/js-conflux-sdk/blob/v2/docs/api/util/address.md).
 
-### format
+### Format
 
-format has many useful functions to format the data, which can be used convert data from one format to another.
+The format module includes functions to convert data between various formats.
 
 ```javascript
 const { format } = require('js-conflux-sdk');
 
-// uInt
-format.uInt(3) // 3
-format.uInt('3') // 3
-format.uInt('0x3') // 3
-
-// hex
-format.hex(3) // 0x03
-format.hex(Buffer.from('hi')) // 0x6869 
-format.hex('0x3') // 0x03
-
-// bytes
-format.bytes('0x03') // <Buffer 03>
+// Examples:
+format.uInt(3); // Returns 3
+format.hex(Buffer.from('hi')); // Returns 0x6869
+format.bytes('0x03'); // Returns <Buffer 03>
 ```
 
-Check [format api](https://github.com/Conflux-Chain/js-conflux-sdk/blob/v2/docs/api/util/format.md) for more details.
+Explore the [format API](https://github.com/Conflux-Chain/js-conflux-sdk/blob/v2/docs/api/util/format.md) for more details.
 
-## Unit conversion
+## Token Unit Conversion
 
-The `Drip` class is used to convert between **Drip** and **CFX**.
+Use the `Drip` class for conversions between **Drip** and **CFX**.
 
 ```javascript
 const { Drip } = require('js-conflux-sdk');
 
-// init Drip instance
-let drip = new Drip('1000000000000000000'); // 1 CFX
-drip = new Drip(1000000000000000000n); // 1 drip
-drip = new Drip(1); // 1 drip
+// Initialize a Drip instance
+let drip = new Drip('1000000000000000000'); // Equivalent to 1 CFX
 
-// init from CFX
-drip = Drip.fromCFX(1); // 1 CFX
+// Initialize from CFX
+drip = Drip.fromCFX(1); // Equivalent to 1 CFX
 
-// convert to CFX
-
-drip.toCFX(); // 1
+// Convert to CFX
+drip.toCFX(); // Returns 1
 ```
 
-## Hash and sign
+## Hashing and Signing
 
-The `sign` module provides functions to hash and sign data.
+The `sign` module facilitates hashing and signing data.
 
 ```js
 const { sign } = require('js-conflux-sdk');
-// generate a random buffer
+
+// Generate a random buffer
 let buf = sign.randomBuffer(0);
-// 
+
+// Generate a keccak hash
 let keccakHash = sign.keccak256(buf);
-// random generate a private key
+
+// Generate a random private key
 let privateKey = sign.randomPrivateKey(buf);
-// get public key from private key
+
+// Convert private key to public key
 let pubKey = sign.privateKeyToPublicKey(privateKey);
-// get address from public key
+
+// Convert public key to address
 let address = sign.publicKeyToAddress(pubKey);
-// use private key sign (ecdsa) a buffer
+
+// Sign a buffer with the private key
 let signResult = sign.ecdsaSign(buf, privateKey);
-// recover public key from signature and buf, then convert it to address
+
+// Recover public key from signature and buffer, then convert it to address
 sign.publicKeyToAddress(sign.ecdsaRecover(buf, sign.ecdsaSign(signResult, privateKey)))
 ```

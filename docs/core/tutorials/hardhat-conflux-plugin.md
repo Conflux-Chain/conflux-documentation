@@ -1,17 +1,18 @@
 ---
+
 sidebar_position: 3
 title: Hardhat Conflux Plugin
-description: Tutorial for using Hardhat Conflux Plugin
+description: Tutorial for using the Hardhat Conflux Plugin
 displayed_sidebar: coreSidebar
 ---
 
-[Hardhat](https://hardhat.org/) is a fantastic tool for building smart contracts. It is a development environment, testing framework, and asset pipeline for Ethereum-like blockchains, such as Conflux. [Hardhat Conflux Plugin](https://github.com/conflux-chain/hardhat-conflux) is a plugin for Hardhat that adds Conflux Core Space support.
+[Hardhat](https://hardhat.org/) is an exceptional tool for building smart contracts. It serves as a development environment, testing framework, and asset pipeline for Ethereum-like blockchains, such as Conflux. The [Hardhat Conflux Plugin](https://github.com/conflux-chain/hardhat-conflux) adds Conflux Core Space support to Hardhat.
 
-Developers can use Hardhat to compile solidity code, use hardhat-conflux plugin to deploy, interact, test contracts on Core Space.
+Developers can use Hardhat to compile Solidity code and the Hardhat-Conflux plugin to deploy, interact with, and test contracts on Core Space.
 
-Hardhat-conflux plugin is build on top of `js-conflux-sdk`, so the usage of deploy and interact is very similar to `js-conflux-sdk`.
+The Hardhat-Conflux plugin is built on top of `js-conflux-sdk`, making its usage for deployment and interaction very similar to that of `js-conflux-sdk`.
 
-If you are not familiar with Hardhat, please refer to [Hardhat documentation](https://hardhat.org/getting-started/).
+If you are not familiar with Hardhat, please refer to the [Hardhat documentation](https://hardhat.org/getting-started/).
 
 ## Installation
 
@@ -23,85 +24,81 @@ npm install hardhat-conflux js-conflux-sdk
 
 ## Configuration
 
-First you need import the plugin in your hardhat.config.js:
+First, import the plugin in your `hardhat.config.js`:
 
 ```js
 require("hardhat-conflux");
 ```
 
-Or hardhat.config.ts:
+Or in `hardhat.config.ts`:
 
 ```ts
 import "hardhat-conflux";
 ```
 
-Then you need to add conflux network to your hardhat.config.js:
+Then, add the Conflux network to your `hardhat.config.js`:
 
 ```js
 const PRIVATE_KEY = "0x0123456789012345678901234567890123456789012345678901234567890123"; // replace with your private key
-module.export = {
+module.exports = {
     defaultNetwork: "cfxTestnet",
     networks: {
         cfx: {
             url: "https://main.confluxrpc.com",
-            accounts: [
-                PRIVATE_KEY,
-            ],
+            accounts: [PRIVATE_KEY],
             chainId: 1029,
         },
         cfxTestnet: {
             url: "https://test.confluxrpc.com",
-            accounts: [
-                PRIVATE_KEY,
-            ],
+            accounts: [PRIVATE_KEY],
             chainId: 1,
         },
     }
 }
 ```
 
-If your config file is hardhat.config.ts, the settings is more or less.
+If your configuration file is `hardhat.config.ts`, the settings are similar.
 
-Make sure the private key's account you use has enough balance to interact with Core Space. If not you can use [faucet](https://faucet.confluxnetwork.org/) to get some test tokens.
+Ensure that the private key's account you use has enough balance to interact with Core Space. If not, you can use the [faucet](https://faucet.confluxnetwork.org/) to obtain some test tokens.
 
-## What hardhat-conflux plugin provides
+## What the Hardhat-Conflux Plugin Provides
 
 ### Tasks
 
-This plugin provides the verifyCfxContract task, which allows you to verify contracts through ConfluxScan's service.
+This plugin provides the `verifyCfxContract` task, which allows you to verify contracts through ConfluxScan's service.
 
 ```shell
 npx hardhat verifyCfxContract Greeter cfxtest:acba7cvb1k6bhctzsfshybg5zgch39gnpuc8teem53
 ```
 
-### Environment extensions
+### Environment Extensions
 
-This plugins extend Hardhat Runtime Environment by adding the following members:
+This plugin extends the Hardhat Runtime Environment by adding the following members:
 
 #### ConfluxSDK
 
-This is the js-conflux-sdk object, which is the same as the one you get by `require('js-conflux-sdk')`.
+This is the `js-conflux-sdk` object, which is the same as the one obtained by `require('js-conflux-sdk')`.
 
 #### conflux object
 
-A conflux field is added to Hardhat Runtime Environment, which is an Conflux instance automatically connected to the selected network, with some extra Hardhat-specific functionality.
+A Conflux field is added to the Hardhat Runtime Environment, which is a Conflux instance automatically connected to the selected network, with extra Hardhat-specific functionality.
 
 ```js
-// get a signer array
+// Get a signer array
 function getSigners(): Promise<ConfluxSDK.PrivateKeyAccount[]>;
-// get js-conflux-sdk Contract Factory by name
+// Get js-conflux-sdk Contract Factory by name
 function getContractFactory(name: string): Promise<ConfluxSDK.Contract>;
-// get js-conflux-sdk Contract Factory by abi and bytecode
+// Get js-conflux-sdk Contract Factory by ABI and bytecode
 function getContractFactory(abi: any[], bytecode: string): Promise<ConfluxSDK.Contract>;
-// get js-conflux-sdk Contract instance by name and address
+// Get js-conflux-sdk Contract instance by name and address
 function getContractAt(name: string, address: string): Promise<ConfluxSDK.Contract>;
-// get js-conflux-sdk Contract instance by name and address
+// Get js-conflux-sdk Contract instance by ABI and address
 function getContractAt(abi: any[], address: string): Promise<ConfluxSDK.Contract>;
 ```
 
 ## Usage
 
-Developers can write hardhat scripts to deploy, interact, test contracts on Core Space.
+Developers can write Hardhat scripts to deploy, interact with, and test contracts on Core Space.
 
 ### Deploy Contract
 
@@ -113,36 +110,38 @@ async function main() {
     const signers = await hre.conflux.getSigners();
     const defaultAccount = signers[0];
 
-    // deploy contract
+    // Deploy the contract
     const Greeter = await hre.conflux.getContractFactory('Greeter');
     const receipt = await Greeter.constructor('Hello').sendTransaction({
         from: defaultAccount.address,
     }).executed();
 
-    console.log(`Contract deploy ${receipt.outcomeStatus === 0 ? 'Success' : 'Failed'}`);
+    console.log(`Contract deployment ${receipt.outcomeStatus === 0 ? 'succeeded' : 'failed'}`);
     
     if (receipt.outcomeStatus !== 0) {
         console.log(`Error message: ${receipt.outcomeErr}`);
         return;
     }
 
-    const contractAddress = receipt.contractCreated;
-    console.log(`New deployed contract address: ${contractAddress}`);
+    const contractAddress = receipt.contract
+
+Created;
+    console.log(`Newly deployed contract address: ${contractAddress}`);
 }
 
 main().catch(err => {
     console.log(err);
     process.exit(1);
-})
+});
 ```
 
-Then you can run this script with:
+Then, you can run this script with:
 
 ```shell
 npx hardhat run scripts/deploy.js --network cfxTestnet
 ```
 
-After the script is executed, you can see the contract address in the console.
+After executing the script, you can view the contract address in the console.
 
 ### Interact with Contract
 
@@ -154,13 +153,13 @@ async function main() {
     const defaultAccount = signers[0];
     const contractAddress = 'cfxtest:acba7cvb1k6bhctzsfshybg5zgch39gnpuc8teem53'; // replace with your contract address
     
-    // get contract instance
+    // Get the contract instance
     const greeter = await hre.conflux.getContractAt('Greeter', contractAddress);
     
-    // read contract state
+    // Read the contract state
     const greet = await greeter.greet();
     
-    // update contract state through sending transaction
+    // Update the contract state by sending a transaction
     const receipt = await greeter.setGreeting('new greet').sendTransaction({
         from: defaultAccount.address,
     }).executed();
@@ -170,10 +169,10 @@ async function main() {
 main().catch(err => {
     console.log(err);
     process.exit(1);
-})
+});
 ```
 
-Then you can run this script with:
+Then, you can run this script with:
 
 ```shell
 npx hardhat run scripts/interact.js --network cfxTestnet
@@ -181,7 +180,7 @@ npx hardhat run scripts/interact.js --network cfxTestnet
 
 ### Verify Contract
 
-You can use the **verifyCfxContract** task to verify contracts through ConfluxScan's service.
+Use the **verifyCfxContract** task to verify contracts through ConfluxScan's service.
 
 ```shell
 npx hardhat verifyCfxContract Greeter cfxtest:acba7cvb1k6bhctzsfshybg5zgch39gnpuc8teem53
@@ -189,18 +188,18 @@ npx hardhat verifyCfxContract Greeter cfxtest:acba7cvb1k6bhctzsfshybg5zgch39gnpu
 
 ## Complete Example
 
-There is a complete example in [hardhat-conflux-example](https://github.com/Conflux-Chain/hardhat-conflux-example)
+A complete example is available at [hardhat-conflux-example](https://github.com/Conflux-Chain/hardhat-conflux-example).
 
 ## FAQs
 
-### Can I use Hardhat network to test contracts for Conflux Core?
+### Can I use the Hardhat network to test contracts for Conflux Core?
 
-If your contracts are not using any Conflux specific features(Builtin Contracts, 1820, create2), you can use Hardhat network to test your contracts. For the VM difference between Hardhat network and Conflux Core, please refer to [VM difference](../core-space-basics/vm-difference.md).
+If your contracts do not use any Conflux-specific features (like Internal Contracts, 1820, create2), you can use the Hardhat network to test your contracts. For the VM differences between the Hardhat network and Conflux Core, please refer to [VM differences](../core-space-basics/vm-difference.md).
 
-### Can I use Hardhat fork feature on Conflux Core?
+### Can I use the Hardhat fork feature on Conflux Core?
 
-No. Hardhat fork feature is not supported on Conflux Core.
+No. The Hardhat fork feature is not supported on Conflux Core.
 
-### When I use helper methods in typescript, it shows error like `Property 'getContractFactory' does not exist on 'hre.conflux'`
+### When I use helper methods in TypeScript, it shows an error like `Property 'getContractFactory' does not exist on 'hre.conflux'`
 
-Currently, this plugin do not provide typescript type definition. You can use `// @ts-ignore` to close the error message, it will not affect the code to run. We will provide typescript type definition in the future.
+Currently, this plugin does not provide TypeScript type definitions. You can use `// @ts-ignore` to suppress the error message; it will not affect the code's execution. We plan to provide TypeScript type definitions in the future.
