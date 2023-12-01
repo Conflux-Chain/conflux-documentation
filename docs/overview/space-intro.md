@@ -8,7 +8,7 @@ The Conflux Network features a unique design known as [Conflux Spaces](/docs/gen
 
 ## eSpace
 
-eSpace is a space within the Conflux Network that is fully compatible with the Ethereum Virtual Machine (EVM). This means that any smart contract that can run on Ethereum can also run in eSpace. Ethereum's development tools, SDKs, wallets, etc., can all be directly used in eSpace. The user experience in eSpace is completely consistent with that of Ethereum.
+eSpace is a space within the Conflux Network that is fully compatible with the Ethereum Virtual Machine (EVM). This means that any smart contract that can run on Ethereum can also run in eSpace. Ethereum's development tools, SDKs, wallets, etc, can all be directly used in eSpace. The user experience in eSpace is completely consistent with that of Ethereum.
 
 If you are an Ethereum developer looking to quickly deploy your application on the Conflux Network, eSpace would be your preferred choice.
 
