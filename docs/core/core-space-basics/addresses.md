@@ -157,7 +157,7 @@ encode(0x1a2f80341409639ea6a35bbcab8299066109aa55, "cfx")
 
 The Conflux Core RPC methods only accept base32 address, so Conflux Core SDKs and wallets also use base32 address. Base32 is the most common address format in the Core Space.
 
-In Solidity smart contract, if a specific address need to be hardcoded in the contract code, it should be hex address. This is the only situation that hex address is used in the Core Space.
+For Conflux Core Space contract development, Ethereum toolchains are used to compile contracts. So in Solidity smart contract `.sol` files, base32 format addresses would bring about compilation errors. If a specific address needs to be hardcoded in the contract code, it should be in hex format. This is the only situation that hex address is used in the Core Space.
 
 ## Address Format Convert Tool
 
