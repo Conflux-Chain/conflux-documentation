@@ -22,7 +22,7 @@ It is the equivalent of web3.js of Ethereum for Conflux Core Space. But APIs are
 ## Prerequisites
 
 1. Node.js environment to install and use the SDK.
-2. A Conflux node to connect to. You can use the public test-net node at `https://test.confluxrpc.com`.
+2. A Conflux node to connect to. You can use the public testnet rpc endpoint `https://test.confluxrpc.com`.
 3. An account private key to sign the transaction. The account should have some testnet CFX to pay for the transaction value and fee. You can get some testnet CFX from [Conflux Core Faucet](https://faucet.confluxnetwork.org/).
 
 Note: The private key can be exported from Fluent Wallet settings page. Do not use your mainnet private key on testnet.
