@@ -30,7 +30,7 @@ The `block.number` is the sequence number in whole tree-graph.
 
 ## Internal Contracts
 
-Core Space has some [built-in contracts](./internal-contracts/) that are not in Ethereum.
+Core Space has some built-in [internal contracts](./internal-contracts/) that are not in Ethereum.
 
 ## Gas
 
