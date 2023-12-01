@@ -6,7 +6,7 @@ displayed_sidebar: coreSidebar
 
 The Core Space VM is compatible with the EVM in most cases, but there are some differences. This page lists the differences between the two.
 
-## Contract Address Calculation
+## Address Calculation
 
 The contract address calculation is different from Ethereum. Check [Core Address](addresses#contract-address-computation) for more details.
 
