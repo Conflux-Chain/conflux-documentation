@@ -29,7 +29,7 @@ This error may be caused by an incorrect password input for the pos_key.
 
 ### No such device or address
 
-failed to start full client: Os { code: 6, kind: Uncategorized, message: "No such device or address" }
+`failed to start full client: Os { code: 6, kind: Uncategorized, message: "No such device or address" }`
 
 This error occurs when starting the node using Docker. The node attempts to read the pos_key password from standard input, and if it cannot be read, it returns an error. In this case, you can configure the password in the configuration file or set it as an environment variable.
 

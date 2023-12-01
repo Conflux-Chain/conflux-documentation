@@ -3,7 +3,6 @@ title: Community FAQs
 sidebar_position: 2
 displayed_sidebar: generalSidebar
 ---
-
 # Community FAQs
 
 ### **Do we need to pay attention to the `storageLimit` and `epochHeight` fields in regular transactions?**
@@ -43,10 +42,10 @@ Yes, it's supported. You can directly reference it. However, note that the ERC18
 ### **Where is the testnet faucet?**
 
 - To receive CFX test tokens, you can get them directly from the faucet portals.
-    - Core Space Testnet Faucet: https://faucet.confluxnetwork.org/
+    - Core Space Testnet Faucet: https://faucet.confluxnetwork.org/ 
     - eSpace Testnet Faucet: https://efaucet.confluxnetwork.org/
     - Mainnet Faucets: https://conflux-faucets.com/
-
+ 
 ### **Why does the value sometimes appear smaller when I use `latest_confirmed` to get the epoch?**
 
 This can happen in cases of poor network connectivity, primarily due to high block synchronization delays.
@@ -83,12 +82,12 @@ cssCopy code
 1. Start a full node (archive node) and enable the websocket RPC service.
 2. Subscribe to the **`latest mined epoch`** event using **`rpc_subscribeEpoch`**.
 3. Wait for the latest mined epoch B and compare it with the previously obtained latest mined epoch A.
-4. If B <= A, a pivot chain switch has occurred.
+4. If `B <= A`, a pivot chain switch has occurred.
 5. Go to step 3.
 
 **How can developers synchronize block and transaction status?**
 
-If local data needs to be kept up-to-date and accurate for blocks and transactions, then when a pivot chain switch occurs (assuming the latest mined epoch number changes from A to B, and B <= A):
+If local data needs to be kept up-to-date and accurate for blocks and transactions, then when a pivot chain switch occurs (assuming the latest mined epoch number changes from A to B, and `B <= A`):
 
 - Assume the latest state epoch number obtained when the latest mined epoch number was A is A'.
 - Assume the latest state epoch number obtained when the latest mined epoch number was B is B'.
@@ -101,7 +100,7 @@ If local data needs to be kept up-to-date and accurate for blocks and transactio
 
 ```
 
-1. If B <= A', delete the data between [B, A'].
+1. If `B <= A'`, delete the data between [B, A'].
 
 ```css
 
@@ -117,9 +116,11 @@ I hope this translation helps you understand the content better! If you have any
 
 ### What is storage collateral, and how is it calculated? For example, how many drips are required for 1kb storage?
 
-Storage collateral refers to the need to collateralize a corresponding amount of cfx when adding new storage usage in a contract. For each storage entry, the last account that writes to this entry is called the owner of this storage entry. The storage collateral fee will be returned to the owner after the storage is released. Every 1kb of storage requires a collateral of 1cfx.
+Storage collateral refers to the need to collateralize a corresponding amount of cfx when adding new storage usage in a contract. For each storage entry, the last account that writes to this entry is called the owner of this storage entry. The storage collateral fee will be returned to the owner after the storage is released.
+Every 1kb of storage requires a collateral of 1cfx.
 
 > For more details, please refer to [THIS](../../core/core-space-basics/storage) section.
+> 
 
 ### What fees are included in the GasFee returned by cfx_getTransactionReceipt? Does it include storage collateral fees?
 
@@ -266,7 +267,11 @@ The smallest unit in conflux is drip.
 - 1cfx = 10^18 drip
 - 1gdrip = 10^9 drip
 
-### **What does the error `estimateGasAndColletral` mean? "Cannot estimate: transaction execution failed, all gas will be charged (execution error: VmError(BadInstruction { instruction: 169 }))"**
+### **What does the error `estimateGasAndColletral` mean? "Cannot estimate: transaction execution failed, all gas will be charged"**
+
+```
+Cannot estimate: transaction execution failed, all gas will be charged (execution error: VmError(BadInstruction { instruction: 169 }))
+```
 
 Reason: The constructor was invalid when deploying the contract; it is usually caused by forgetting to write the **`to`** address when calling the contract.
 

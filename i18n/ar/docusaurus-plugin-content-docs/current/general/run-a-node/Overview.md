@@ -14,6 +14,9 @@ If you want to **contribute to the decentralization of the Conflux network**, pa
 
 Here is a video about what's a node, why it's important, and how to run a node:
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 <Tabs>
   <TabItem value="youtube" label="Video source: YouTube">
     <iframe width="560" height="315" src="https://www.youtube.com/embed/ocsbQRkL9fQ?si=wRmI5Aa6Ewfv-BCx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>

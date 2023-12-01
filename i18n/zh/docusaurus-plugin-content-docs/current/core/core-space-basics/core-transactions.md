@@ -54,7 +54,7 @@ A transaction with incorrect nonce won't be included in blockchain, so correctly
 
 在 Conflux 网络中，交易由收取服务费用的矿工处理。 这个费用激励矿工参与网络并保持其顺畅运行。 费用以 CFX 支付，并由交易发起者通过交易中的 `gas`、`gasPrice` 和 `storageLimit` 字段来指定。
 
-`gas` 字段表示执行交易时可以使用的最大 gas 量。 如果执行过程中实际消耗的 gas 超过了这个限制，交易将失败。 如果实际消耗的 `gas` 少于设置的 `gas`，发送者必须支付至少 75% 的 `gas`，最多 25% 可以退还，这意味着设置过高的 <0>gas</0> 是不鼓励的。 Gas 消耗取决于合约代码的复杂度（如果是简单的转账交易则为 `21000`），可以用 `cfx_estimateGasAndCollateral` 方法来估算，它返回 `gasUsed`、`gasLimit` 和 `storageCollaterized` 字段。 建议使用 `gasLimit` 作为 `gas` 字段。
+`gas` 字段表示执行交易时可以使用的最大 gas 量。 如果执行过程中实际消耗的 gas 超过了这个限制，交易将失败。 如果实际消耗的 `gas` 少于设置的 `gas`，发送者必须支付至少 75% 的 `gas`，最多 25% 可以退还，这意味着设置过高的 `gas` 是不鼓励的。 Gas 消耗取决于合约代码的复杂度（如果是简单的转账交易则为 `21000`），可以用 `cfx_estimateGasAndCollateral` 方法来估算，它返回 `gasUsed`、`gasLimit` 和 `storageCollaterized` 字段。 建议使用 `gasLimit` 作为 `gas` 字段。
 
 `gasPrice` 字段是发送者愿意为每单位 gas 支付的 Drip（10**-18 CFX）数量，应该大于 1G（10**9）。 As Conflux default setting, miners prioritise transactions with higher `gasPrice`, and the `gasPrice` can be increased to speed up the processing of a stuck transaction. `cfx_gasPrice` 方法根据网络状况提供一个合理的 gas 价格。
 
