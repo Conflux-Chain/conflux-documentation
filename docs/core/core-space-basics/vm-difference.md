@@ -28,7 +28,7 @@ The block gas limit is fixed at 3000w.
 
 The `block.number` is the sequence number in whole tree-graph.
 
-## Built-in Contracts
+## Internal Contracts
 
 Core Space has some [built-in contracts](./internal-contracts/) that are not in Ethereum.
 
