@@ -17,7 +17,7 @@ Ethereum SDKs (ethers.js, web3.js, web3,py, web3j) are not compatible with Confl
 
 [**js-conflux-sdk**](https://github.com/conflux-chain/js-conflux-sdk) is a JavaScript SDK for Conflux Core Space. It is a collection of libraries that allow you to interact with a local or remote Conflux node using HTTP, WebSocket. You can use it to send transactions, deploy and interact with smart contracts, and so on.
 
-It is the equivalent of web3.js of Ethereum for Conflux Core Space. But it's usage is different from web3.js. 
+It is the equivalent of web3.js of Ethereum for Conflux Core Space. But APIs are different. 
 
 ## Prerequisites
 
