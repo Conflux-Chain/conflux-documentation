@@ -15,4 +15,4 @@ In this article you’ll find useful contract addresses for Conflux eSpace and c
 ## eSpace testnet
 
 * WCFX9: 0x2ed3dddae5b2f321af0806181fbfa6d049be47d8
-* Multicall3: 
+* Multicall3: 0xeff0078910f638cd81996cc117bccd3edf2b072f
