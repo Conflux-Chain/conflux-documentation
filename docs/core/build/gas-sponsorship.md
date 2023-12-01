@@ -6,7 +6,7 @@ displayed_sidebar: coreSidebar
 
 Developers can submit a request to the Foundation for sponsorship.
 
-> Refer to [SponsorWhitelistControl](../learn/core-space-basics/internal-contracts/sponsor-whitelist-control.md) and check out the basics of sponsorship mechanism.
+> Refer to [SponsorWhitelistControl](../core-space-basics/internal-contracts/sponsor-whitelist-control.md) and check out the basics of sponsorship mechanism.
 
 ## Tutorial
 

@@ -101,7 +101,7 @@ Make sure to review and modify the settings according to your preferences and sy
 
 For more detailed instructions, please visit [this](./node-configuration.md) page.
 
-### Step 5: Running the Node 
+## Step 5: Running the Node 
 
 You can start the Conflux node by running the following command: 
 

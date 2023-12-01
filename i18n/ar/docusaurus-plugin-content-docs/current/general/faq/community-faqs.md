@@ -233,7 +233,7 @@ Both can be used. They are still referred to as ERC20/ERC777, but in some contex
 
 You can find all the Network Endpoints in the following pages:
 
-- [Core Space Network Endpoints](../../core/build/sdks-and-tools/conflux_rpcs)
+- [Core Space Network Endpoints](../../core/conflux_rpcs)
 - [eSpace Network Endpoints](../../espace/network-endpoints.md)
 
 ### **When `docker pull confluxchain/conflux-rust` prompts "no such file", how to solve it?**

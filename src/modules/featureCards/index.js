@@ -24,7 +24,7 @@ const FeatureList = [
         Conflux Core Space is a third-generation decentralized blockchain with ultra-high performance, utilizing an original Tree-Graph ledger structure and the Ghast consensus algorithm. It natively integrates a transaction sponsorship mechanism, offering a novel user experience for both users and developers.
         </>
     ),
-    link: '/docs/core',
+    link: '/docs/core/Overview',
   },
   {
     title: 'Conflux Basics',

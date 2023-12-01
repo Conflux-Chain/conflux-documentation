@@ -111,7 +111,7 @@ const config = {
           {
             position: 'left',
             label: 'Core Space',
-            to: '/docs/core',
+            to: '/docs/core/Overview',
           },
           {
             position: 'left',
@@ -227,8 +227,9 @@ const config = {
         copyright: `Copyright © ${new Date().getFullYear()} ConfluxNetwork, Inc.`,
       },
       prism: {
-        theme: lightCodeTheme,
+        theme: lightCodeTheme, 
         darkTheme: darkCodeTheme,
+        additionalLanguages: ['solidity'],
       },
       algolia: {
         // The application ID provided by Algolia

@@ -119,7 +119,7 @@ I hope this translation helps you understand the content better! If you have any
 Storage collateral refers to the need to collateralize a corresponding amount of cfx when adding new storage usage in a contract. For each storage entry, the last account that writes to this entry is called the owner of this storage entry. The storage collateral fee will be returned to the owner after the storage is released.
 Every 1kb of storage requires a collateral of 1cfx.
 
-> For more details, please refer to [THIS](../../core/learn/core-space-basics/storage) section.
+> For more details, please refer to [THIS](../../core/core-space-basics/storage) section.
 > 
 
 ### What fees are included in the GasFee returned by cfx_getTransactionReceipt? Does it include storage collateral fees?
@@ -224,7 +224,7 @@ Yes.
 
 ### **Is there any information on the conflux sponsorship mode?**
 
-[Here's the link](../../core/learn/core-space-basics/sponsor-mechanism).
+[Here's the link](../../core/core-space-basics/sponsor-mechanism).
 
 ### **Are ERC20/ERC777 still called this way in the Conflux network?**
 
@@ -234,7 +234,7 @@ Both can be used. They are still referred to as ERC20/ERC777, but in some contex
 
 You can find all the Network Endpoints in the following pages:
 
-- [Core Space Network Endpoints](../../core/build/sdks-and-tools/conflux_rpcs)
+- [Core Space Network Endpoints](../../core/conflux_rpcs)
 - [eSpace Network Endpoints](../../espace/network-endpoints.md)
 
 ### **When `docker pull confluxchain/conflux-rust` prompts "no such file", how to solve it?**
