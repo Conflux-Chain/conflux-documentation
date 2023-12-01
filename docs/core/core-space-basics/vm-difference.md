@@ -36,4 +36,3 @@ Core Space has some built-in [internal contracts](./internal-contracts/) that ar
 
 1. Gas used and refund: Conflux requires less gas in `SSTORE` operation but no longer refunds resetting storage and contract destruction.
 2. Gas Fee Refund: In Ethereum, if a transaction's gas limit exceeds the actual gas cost, the remaining gas is fully refunded. In contrast, Conflux refunds a maximum of 1/4 of the **gas limit**. Setting an excessively high gas limit in Conflux can lead to additional transaction fee costs. However, no extra fees are incurred if the gas limit is set to less than 4/3 of the actual cost. Therefore, providing an accurate gas estimate for a transaction is crucial for optimizing transaction fees.
-before signing transactions.
