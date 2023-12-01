@@ -7,56 +7,75 @@ title: Overview
 
 Welcome to the Conflux Network Developer Portal! This comprehensive portal is designed to guide you through the complexities of the Conflux Network, a high-performance, decentralized blockchain network. Here, you'll find detailed summaries of the platform's foundational concepts, tools, and guidelines.
 
-## **Understanding the Conflux Network**
+## **eSpace**
 
-- [**Consensus Mechanism**](../general/conflux-basics/consensus-mechanisms): Discover Conflux's hybrid PoW-PoS consensus mechanism, combining Proof of Work with Proof of Stake for enhanced security and performance.
+- [**User Guide**](../espace/UserGuide): A guide for users configuring Metamask to interact with Conflux's eSpace.
 
-- [**Spaces**](../general/conflux-basics/spaces):
-Explore the dual space ecosystem of Conflux, facilitating seamless integration of Conflux-format and Ethereum-format transactions within one network.
+- [**Developer Quickstart**](../espace/DeveloperQuickstart): A quickstart for Ethereum developers to configure their development environment to interact with Conflux's eSpace.
 
-- [**Accounts**](../general/conflux-basics/accounts):
-Learn about network accounts, capable of holding balances and initiating transactions.
+- [**Developer Tutorials**](/docs/category/tutorials-1): Developer tutorials for building on Conflux's eSpace: Contracts deployment, verification.
 
-- [**Core Space Addresses**](../core/core-space-basics/addresses):
-Understand how Conflux accounts are identified by addresses, with Core Space using a base32 encoding format.
+- [**Cross Space Bridge**](../espace/build/cross-space-bridge): Learn about the cross space bridge, which enables seamless transfer of assets and data between Conflux's eSpace and Core Space.
 
-- [**Transactions**](../general/conflux-basics/transactions):
-Explore the transactions – transfers and other actions that modify Conflux's state. Notably, this section also elucidates the unique aspects of the Conflux transaction lifecycle, distinct from Ethereum's model.
+- [**eSpace Network Endpoints**](../espace/network-endpoints): Find the list of network endpoints for eSpace.
 
-- [**Transactions(core space)**](../core/core-space-basics/transaction_explain#differences-between-conflux-and-ethereum):
-Understand the nuances differentiating Conflux Core Space transactions from Ethereum transactions.
+- [**EVM Compatibility**](../espace/build/evm-compatibility): Learn about eSpace's VM compatibility with the Ethereum Virtual Machine (EVM), helping to deploy evm-compatible smart contracts and dapps to Conflux.
 
-- [**Gas**](../general/conflux-basics/gas):
-Learn about the gas mechanism in Conflux, which is utilized to compute transaction costs and incentivize network operations.
+- [**JSON-RPC Compatibility**](../espace/build/jsonrpc-compatibility.md): Learn about eSpace's JSON-RPC compatibility with the Ethereum RPCs.
 
-- [**Storage(core space)**](../core/core-space-basics/storage):
-Understand Conflux's Collateral for Storage (CFS) mechanism, the pricing method for using storage in Conflux **core space**, which is more fair and reasonable than Ethereum.
-
-- [**Internal Contracts(core space)**](../core/core-space-basics/internal-contracts/):
-Conflux introduces several built-in internal contracts for better system maintenance and on-chain governance in core space: `AdminControl`, `SponsorWhitelistControl`, `Staking`, `ConfluxContext`, `PoSRegister`, and `ParamsControl`. This section provides a comprehensive look at the internal contracts in Conflux that provide foundational functionality for the network here.
-
-## **Build with Conflux Network**
-
-- [**Run a Node**](../general/run-a-node/):
-Familiarize yourself with the process of setting up and operating a Conflux node, becoming an integral part of the network.
+## **Core Space**
 
 - [**Getting Started with Core Space**](../core/getting-started/):
 Begin your journey in Conflux's Core space, understanding its fundamental concepts and operations.
 
-- [**SDKs & Tools**](../category/sdks-and-tools):
-Access a suite of software development kits and tools tailored for seamless integration and development on Conflux core space.
+- [**Developer Quickstart**](../core/core-developer-quickstart): A quickstart for developers to use `js-conflux-sdk` send their first Core Space transaction.
+
+- [**Developer Tutorials**](/docs/category/tutorials): Developer tutorials for building on Core eSpace: Contracts deployment, contract verification, Sponsorship.
+
+- [**Core Space Basics**](/docs/category/core-space-basics): Learn about the foundational concepts of Conflux's Core Space, including accounts, transactions, and gas.
+
+- [**Core Space Network Endpoints**](../core/conflux_rpcs): Find the list of network endpoints for both Conflux's Core Space and eSpace.
+
+- [**Core Space JSON-RPC**](../core/build/json-rpc/): Learn about the JSON-RPC protocols in the Core Space for remote procedures.
+
+- [**Storage**](../core/core-space-basics/storage): Understand Conflux's Collateral for Storage (CFS) mechanism, the pricing method for using storage in Conflux **core space**, which is more fair and reasonable than Ethereum.
 
 - [**Sponsorship Mechanism**](../core/core-space-basics/sponsor-mechanism):
 Discover Conflux’s gas sponsorship mechanism, which facilitates smart contract usage without gas costs, allowing sponsored contract executions even by new, zero-balance accounts.
 
-- [**Core Space Network Endpoints**](../core/conflux_rpcs) & [**eSpace Network Endpoints**](../espace/network-endpoints):
-Find the list of network endpoints for both Conflux's Core Space and eSpace.
+- [**Internal Contracts**](../core/core-space-basics/internal-contracts/):
+Conflux introduces several built-in internal contracts for better system maintenance and on-chain governance in core space: `AdminControl`, `SponsorWhitelistControl`, `Staking`, `ConfluxContext`, `PoSRegister`, and `ParamsControl`. This section provides a comprehensive look at the internal contracts in Conflux that provide foundational functionality for the network here.
 
-- [**Core Space JSON-RPC**](../core/build/json-rpc/) & [**eSpace JSON-RPC**](../espace/build/jsonrpc-compatibility.md):
-Learn about the JSON-RPC protocols in the Core Space or eSpace for remote procedures.
+- [**Run a Node**](../general/run-a-node/):
+Familiarize yourself with the process of setting up and operating a Conflux node, becoming an integral part of the network.
 
-- [**EVM Compatibility**](../espace/build/evm-compatibility):
-Learn about Conflux's compatibility with the Ethereum Virtual Machine (EVM), helping to deploy evm-compatible smart contracts and dapps to Conflux.
+## **Understanding the Conflux Network**
+
+- [**Spaces**](../general/conflux-basics/spaces):
+Explore the dual space ecosystem of Conflux, facilitating seamless integration of Conflux-format and Ethereum-format transactions within one network.
+
+- [**Consensus Mechanism**](../general/conflux-basics/consensus-mechanisms): Discover Conflux's hybrid PoW-PoS consensus mechanism, combining Proof of Work with Proof of Stake for enhanced security and performance.
+
+- [**TreeGraph & GHAST**](../general/conflux-basics/consensus-mechanisms/proof-of-work/): The TreeGraph blockchain structure and GHAST algorithm are the foundational components of Conflux's Proof of Work (PoW) consensus mechanism.
+
+- [**Proof Of Stake**](../general/conflux-basics/consensus-mechanisms/proof-of-stake/pos_overview): Proof of Stake (PoS) is a consensus mechanism that allows a blockchain network to achieve distributed consensus. Conflux's PoS mechanism is a hybrid PoW-PoS consensus mechanism, combining Proof of Work with Proof of Stake for enhanced security and performance.
+
+- [**Economics**](../general/conflux-basics/economics): Introduction to the economic model of Conflux, including the native token, CFX, and its utility within the network.
+
+- [**Governance**](../general/conflux-basics/conflux-governance/governance-overview): Conflux Governance Overview
+
+- [**Research Papers**](../general/conflux-basics/additional-resources/conflux_papers): The Conflux Network is built on a foundation of rigorous research. Here, you'll find a collection of Conflux's research papers, including the original whitepaper, detailing the network's innovative consensus mechanism.
+
+- [**Conflux_Protocol_Specification**](https://confluxnetwork.org/files/Conflux_Protocol_Specification.pdf): The yellow paper of Conflux.
+
+- [**Accounts**](../general/conflux-basics/accounts):
+Learn about network accounts, capable of holding balances and initiating transactions.
+
+- [**Transactions**](../general/conflux-basics/transactions):
+Explore the transactions – transfers and other actions that modify Conflux's state. Notably, this section also elucidates the unique aspects of the Conflux transaction lifecycle, distinct from Ethereum's model.
+
+- [**Gas**](../general/conflux-basics/gas):
+Learn about the gas mechanism in Conflux, which is utilized to compute transaction costs and incentivize network operations.
 
 ## One more thing
 
