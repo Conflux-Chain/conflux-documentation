@@ -75,7 +75,7 @@ Note that block and transaction hashes are represented using 32 bytes.
 * Including and omitting the address-type are both accepted, i.e. `cfx:aarc9abycue0hhzgyrr53m6cxedgccrmmyybjgh4xg` and `cfx:type.user:aarc9abycue0hhzgyrr53m6cxedgccrmmyybjgh4xg` are equivalent. However, addresses with an incorrect type, e.g. `cfx:type.contract:aarc9abycue0hhzgyrr53m6cxedgccrmmyybjgh4xg`, are rejected.
 * Both lowercase (`cfx:aarc9abycue0hhzgyrr53m6cxedgccrmmyybjgh4xg`) and uppercase (`CFX:AARC9ABYCUE0HHZGYRR53M6CXEDGCCRMMYYBJGH4XG`) addresses are accepted. Mixed-case addresses are rejected.
 
-Refer to [Addresses](../../learn/core-space-basics/addresses.md) for more knowledge about Base32 addresses.
+Refer to [Addresses](../../core-space-basics/addresses.md) for more knowledge about Base32 addresses.
 
 ### The default epochNumber parameter
 
