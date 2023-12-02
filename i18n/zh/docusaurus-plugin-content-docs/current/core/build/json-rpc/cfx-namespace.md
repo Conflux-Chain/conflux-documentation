@@ -75,7 +75,7 @@ When encoding **QUANTITIES** (integers, numbers): encode as hex using the most c
 * 无论包含还是省去地址类型都是可以接受的，例如：`cfx:aarc9abycue0hhzgyrr53m6cxedgccrmmyybjgh4xg`和`cfx:type.user:aarc9abycue0hhzgyrr53m6cxedgccrmmyybjgh4xg`是等价的。 但是，类型不正确的地址，例如：`cfx:type.contract:aarc9abycue0hhzgyrr53m6cxedgccrmmyybjgh4xg`，会被拒绝。
 * 全大写或者全小写地址都是可以接受的，例如：`cfx:aarc9abycue0hhzgyrr53m6cxedgccrmmyybjgh4xg`和`CFX:AARC9ABYCUE0HHZGYRR53M6CXEDGCCRMMYYBJGH4XG`都是有效的。 但混合大小写地址会被拒绝。
 
-Refer to [Addresses](../../learn/core-space-basics/addresses.md) for more knowledge about Base32 addresses.
+Refer to [Addresses](../../core-space-basics/addresses.md) for more knowledge about Base32 addresses.
 
 ### 默认的 epochNumber （纪元数） 参数
 
