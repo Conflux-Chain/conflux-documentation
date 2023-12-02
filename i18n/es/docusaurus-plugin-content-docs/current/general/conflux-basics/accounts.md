@@ -10,13 +10,13 @@ Las cuentas en Conflux se pueden comparar con "cuentas bancarias", ya que almace
 
 :::note
 
-The account implementation, including the account content and address computing rule is slightly different in [core space](../../core/learn/core-space-basics/accounts.md) and [espace](../../espace/build/accounts.md).
+The account implementation, including the account content and address computing rule is slightly different in [core space](../../core/core-space-basics/accounts.md) and [espace](../../espace/build/accounts.md).
 
 :::
 
 ## Address
 
-Las direcciones de las cuentas, como números de cuenta bancaria, identifican las cuentas y pueden ser examinadas en [ConfluxScan](https://confluxscan.io). Sin embargo, el formato difieren entre el [Core Space](../../core/learn/core-space-basics/addresses.md) y el eSpace. El espacio central utiliza el esquema de codificación CIP-37, mientras que el espacio utiliza el mismo formato que Ethereum.
+Las direcciones de las cuentas, como números de cuenta bancaria, identifican las cuentas y pueden ser examinadas en [ConfluxScan](https://confluxscan.io). However, the address format differs between [core space](../core-space-basics/addresses.md) and espace. El espacio central utiliza el esquema de codificación CIP-37, mientras que el espacio utiliza el mismo formato que Ethereum.
 
 Estos son ejemplos que muestran el formato de las direcciones en los 2 espacios:
 
@@ -86,6 +86,6 @@ cfx:aajfvxvhz6mna0md1b68mpg9puygt18tm6nynadnf6
 ## Related Topics
 
 - [Ethereum Accounts](https://ethereum.org/en/developers/docs/accounts/)
-- [Core space accounts](../../core/learn/core-space-basics/accounts.md)
+- [Core space accounts](../../core/core-space-basics/accounts.md)
 - [espace accounts](../../espace/build/accounts.md)
-- [Core space addresses](../../core/learn/core-space-basics/addresses.md)
+- [Core space addresses](../../core/core-space-basics/addresses.md)
