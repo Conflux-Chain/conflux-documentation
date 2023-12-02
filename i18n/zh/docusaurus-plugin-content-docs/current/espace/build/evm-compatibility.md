@@ -12,20 +12,21 @@ eSpace 实现了一个以太坊虚拟机 (EVM)。 以下是 eSpace 和以太坊�
 
 ## Transaction Type
 
-Currently eSpace only support 155 type transaction. 1559 type transaction is not support.
+Currently eSpace only support **155 type** transaction. 1559 type transaction is not support.
 
 ## EVM Opcodes
 
-* `BLOCKHASH` opcode只能将 `NUMBER-1` 作为输入。 (Unlike Ethereum, which takes any integer in `NUMBER-256` to `NUMBER-1` as input). This is the only break  opcode.
-* `NUMBER` opcode将返回树图`epoch number`。 因此，在 eSpace 合约中使用的 `block.number` 不会以稳定和可预测的速率增长，因此它可能不适合用于测量时间。
+* The `BLOCKHASH` opcode can only take `NUMBER-1` as input. (Unlike Ethereum, which takes any integer in `NUMBER-256` to `NUMBER-1` as input). This is the **only break opcode**.
 
 ## Block Time
+
+`NUMBER` opcode将返回树图`epoch number`。 因此，在 eSpace 合约中使用的 `block.number` 不会以稳定和可预测的速率增长，因此它可能不适合用于测量时间。
 
 Block generate rate is 1.25s per block (mainnet), is same as Core Space Epoch time.
 
 ## Contract Size
 
-合约最大代码大小为 `49152`，是以太坊的两倍
+Contract max code size is `49152` double as Ethereum
 
 ## Transaction Fees
 
@@ -38,7 +39,7 @@ Block generate rate is 1.25s per block (mainnet), is same as Core Space Epoch ti
 
 ## Transaction Gas limit
 
-只有区块高度是 `5` 的倍数的区块才能打包以太坊类型的交易。 这些交易的总gas limit不能超过区块gas limit的一半（1500w）。
+Only the block whose block height is a multiple of `5` can pack Ethereum type transaction. The total gas limit of these transaction cannot exceed half of the block gas limit (1500w).
 
 ## EVM Precompiles
 
@@ -60,16 +61,16 @@ All standard precompiles are supported.
 
 ## Phantom transactions
 
-*跨空间交易*是 Conflux Core Space中的一种交易，在其执行过程中，调用了 `CrossSpaceCall` 内部合约的一个状态改变（即非`只读/view`）方法。 这样的交易可以在Core Space和eSpace中更改 CFX 的余额和合约存储。
+A *cross-space transaction* is a transaction in the Conflux core space that, at some point during its execution, calls one of the state-changing (i.e., not `view`) methods of the `CrossSpaceCall` internal contract. Such transactions can change CFX balances and contract storage in both spaces, core and eSpace.
 
-由于 EVM 客户端不知道 Conflux 空间交易（两个空间使用不同的交易格式），因此我们为每次对 `CrossSpaceCall` 内部合约的调用构造一个或多个 *phantom* 交易（也称为 *虚拟* 交易）。 这些 phantom 交易源自相应的 Core Space 交易，它们并不存在于账本中。 Phantom 交易具有以下特殊属性：
+As EVM clients are not aware of Conflux space transactions (the two spaces use different transaction formats), we construct one or more *phantom* transactions (aka *virtual* transactions) for each call to the `CrossSpaceCall` internal contract. These phantom transactions are derived from the corresponding core space transaction, they do not exist in the ledger. Phantom transactions have the following special properties:
 
 - 其中，`gas` 和 `gasPrice` 值均为 `0`。 跨空间交易的 gas 费用将在Core Space中收取。 因此，相应的 phantom 交易不会消耗任何 gas。
 - 无效的签名（`r`、`s`、`v`、`standardV`）。 Conflux 协议无法代表跨空间交易的发送者签名交易。 因此，phantom 交易使用一个伪造的签名，而这个签名无法通过 ECDSA 验证。
 
 ### 示例
 
-当我们在 Conflux Core Space中检索 epoch `0x72819` 时，我们会看到它包含一个单独的 Conflux 交易。
+When we retrieve epoch `0x72819` in the Conflux core space, we see it contains a single Conflux transaction.
 
 ```
 cfx_getBlockByEpochNumber(0x72819, true)
@@ -96,7 +97,7 @@ cfx_getBlockByEpochNumber(0x72819, true)
 }
 ```
 
-当我们在eSpace中检索相应的区块时，我们会看到它包含两个 phantom 交易。
+When we retrieve the corresponding block in the eSpace, we see it contains two phantom transactions.
 
 ```
 eth_getBlockByNumber(0x72819, true)
