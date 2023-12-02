@@ -4,10 +4,7 @@ title: Gas
 displayed_sidebar: generalSidebar
 ---
 
-# Gas
-
-Conflux用户在使用钱包（Fluent）或SDK发送交易时，通常会看到`gasFee`、`gas`和`gasPrice`等字段。 本文将详细解释这些概念的含义，以及如何正确地设置这些值。
-
+Conflux users(both Core Space and eSpace) usually see fields like `gasFee`, `gas`, and `gasPrice` when they are sending transactions using their wallets (Fluent) or SDK. 本文将详细解释这些概念的含义，以及如何正确地设置这些值。
 
 ![Sign Transaction](./img/gas1.png)
 
@@ -61,7 +58,7 @@ gasFee是一笔交易支付的总gas费用。 它的计算公式是`gasFee = gas
 
 假设有一笔1 CFX的普通转账，gas限制可以设置为21,000。 如果gasPrice设置为1GDrip，那么交易的总成本是`1 + 21000 * 0.000000001 = 1.000021 CFX`，其中1 CFX转到收款人的账户，0.000021 CFX是矿工的奖励。
 
-另外，在Conflux的一笔交易中，如果`gas limit`大于实际消耗的gas量（`gasUsed`），超出部分将被退还。 退还的gas量最多只能达到`gas limit`的四分之一。
+另外，在Conflux的一笔交易中，如果`gas limit`大于实际消耗的gas量（`gasUsed`），超出部分将被退还。 The returning amount of gas **can only be up to** a quarter of the `gas limit`.
 
 假设一笔普通CFX转账的gas限制设置为100k，实际执行消耗了21,000，由于交易的gas限制设置得太高，最多有25,000的gas费用会被退还（gas limit的25%）。 该交易使用的gas将是`0.000075 CFX`。
 
