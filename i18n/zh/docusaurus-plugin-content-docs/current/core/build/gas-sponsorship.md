@@ -6,7 +6,7 @@ displayed_sidebar: coreSidebar
 
 开发者可以向基金会提交赞助请求。
 
-> 参考[SponsorWhitelistControl](../learn/core-space-basics/internal-contracts/sponsor-whitelist-control.md)，了解赞助机制的基本原理。
+> Refer to [SponsorWhitelistControl](../core-space-basics/internal-contracts/sponsor-whitelist-control.md) and check out the basics of sponsorship mechanism.
 
 ## 教程
 
