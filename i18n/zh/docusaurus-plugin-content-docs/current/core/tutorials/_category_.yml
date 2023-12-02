@@ -1,7 +1,7 @@
-label: '教程'
+label: 'Tutorials'
 link:
   type: generated-index
   title: '教程'
   description: Step-by-step tutorials for building on Conflux Core Space.
 collapsed: false
-position: 1
+position: 4
