@@ -7,9 +7,9 @@ displayed_sidebar: eSpaceSidebar
 
 ## 概览
 
-Conflux的eSpace是一个独立的空间，与 Conflux 网络上的Core Space在逻辑上隔离开来。 eSpace中的账户有自己的余额和状态。 要与 eSpace 交互，您需要使用 hex40 地址，它们与用于Core Space的 [base32 地址](../../core/learn/core-space-basics/addresses.md)不同。 You can transfer funds between your Core and eSpace wallets using a [bridge service](../../general/tutorials/transferring-funds/transfer-funds-across-spaces.md).
+Conflux的eSpace是一个独立的空间，与 Conflux 网络上的Core Space在逻辑上隔离开来。 eSpace中的账户有自己的余额和状态。 To interact with the eSpace, you need to use hex40 addresses, which are different from [base32 addresses](../../core/core-space-basics/addresses.md) used for the Core space. You can transfer funds between your Core and eSpace wallets using a [bridge service](../../general/tutorials/transferring-funds/transfer-funds-across-spaces.md).
 
-Conflux eSpace 是 Conflux Network 在其 V2 硬分叉中引入的新特性。 它是一个独立的空间，运行在与Core Space相同的底层基础设施上，但具有不同的规则和规范。 在 eSpace 中，账户遵循以太坊账户模型，并使用 hex40 地址而不是 [base32 地址](../../core/learn/core-space-basics/addresses.md)。 这意味着在Core Space和 eSpace 中使用相同的私钥是可以的，但是Core Space和 eSpace 中的账户将具有不同的地址，并且将拥有自己的余额和状态。
+Conflux eSpace 是 Conflux Network 在其 V2 硬分叉中引入的新特性。 它是一个独立的空间，运行在与Core Space相同的底层基础设施上，但具有不同的规则和规范。 In the eSpace, accounts follow the Ethereum account model and use hex40 addresses instead of [base32 addresses](../../core/core-space-basics/addresses.md). 这意味着在Core Space和 eSpace 中使用相同的私钥是可以的，但是Core Space和 eSpace 中的账户将具有不同的地址，并且将拥有自己的余额和状态。
 
 Hex40 地址与以太坊地址兼容，这意味着用户可以轻松地将他们的以太坊钱包导入 Conflux eSpace，反之亦然。 在[以太坊账户](https://ethereum.org/en/developers/docs/accounts/)中了解更多关于 eSpace 账户和地址的基本模型。
 
