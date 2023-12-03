@@ -4,11 +4,11 @@ title: Base32 Addresses
 displayed_sidebar: coreSidebar
 ---
 
-In Conflux, every [account](../../../general/conflux-basics/accounts.md) is associated with a pair of public and private keys, and is identified by an address. This page is about how address is presented and computed in core space. 
+In Conflux, every [account](../../general/conflux-basics/accounts.md) is associated with a pair of public and private keys, and is identified by an address. This page is about how address is presented and computed in core space. 
 
 :::info
 
-Refer to [General-address](../../../general/conflux-basics/accounts.md#address) for the basic concepts about addresses. 
+Refer to [General-address](../../general/conflux-basics/accounts.md#address) for the basic concepts about addresses. 
 
 :::
 
