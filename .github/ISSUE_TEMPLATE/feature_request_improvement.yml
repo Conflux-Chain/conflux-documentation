@@ -1,0 +1,55 @@
+name: "Feature Request / Improvement 建议新特性/改进"
+description: "Suggest a new feature, content, or improvement to the documentation 建议文档中的新特性/新内容/现有内容的改进"
+labels: ["enhancement"]
+
+body:
+  - type: markdown
+    attributes:
+      value: "Please fill out the following to the best of your ability."
+
+  - type: textarea
+    attributes:
+      label: "Describe the feature or improvement 描述新特性或改进"
+      description: "A clear and concise description of the feature or improvement you are suggesting."
+      placeholder: "Describe the feature or improvement..."
+    validations:
+      required: true
+
+  - type: input
+    attributes:
+      label: "Optional: Affected page(s) or section(s) 受影响的页面"
+      description: "Please provide the URL(s) or the section(s) of the documentation where the feature or improvement would be relevant."
+      placeholder: "URL(s) or section(s)..."
+    validations:
+      required: false
+
+  - type: textarea
+    attributes:
+      label: "Optional: Why is this feature or improvement important? 为什么需要这个新特性或改进？"
+      description: "Explain why this feature or improvement would benefit the documentation and its users."
+      placeholder: "Why is this feature or improvement important?"
+    validations:
+      required: false
+
+  - type: textarea
+    attributes:
+      label: "Optional: Implementation ideas 如何实现"
+      description: "If you have any ideas on how to implement this feature or improvement, please provide them here."
+      placeholder: "Your implementation ideas..."
+    validations:
+      required: false
+
+  - type: textarea
+    attributes:
+      label: "Optional: Additional context 其他上下文信息"
+      description: "Add any other context, screenshots, or relevant information about the feature or improvement."
+      placeholder: "Additional context..."
+    validations:
+      required: false
+
+  - type: checkboxes
+    attributes:
+      label: "Contribution Confirmation"
+      description: "Check the box below if you'd be willing to contribute this feature yourself."
+      options:
+        - label: "I'd be willing to contribute this feature myself. 我将自己实现这个feature"
