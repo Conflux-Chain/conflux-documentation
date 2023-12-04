@@ -25,7 +25,7 @@ body:
 
   - type: textarea
     attributes:
-      label: "Optional: Suggested solution 可选：如何解决"
+      label: "Optional: Suggested solution 如何解决"
       description: "If you have a suggested solution or correction, please provide it here."
       placeholder: "Your suggested solution..."
     validations:
@@ -33,7 +33,7 @@ body:
 
   - type: textarea
     attributes:
-      label: "Optional: Additional context 可选：问题上下文信息"
+      label: "Optional: Additional context 问题上下文信息"
       description: "Add any other context, screenshots, or relevant information about the issue."
       placeholder: "Additional context..."
     validations:
