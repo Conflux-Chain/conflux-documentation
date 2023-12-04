@@ -81,7 +81,7 @@ Stakers are another crucial group of system maintainers in Conflux's Proof of St
 
 #### 链上DAO投票链参数
 
-Conflux introduces internal contract [ParamControl](../../core/learn/core-space-basics/internal-contracts/params-control.md) in [CIP-94](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-94.md) to control the chain parameters including PoW base block reward and PoS base reward interest rate. In other word, the operational phase CFX distribution is now controlled by DAO.
+Conflux introduces internal contract [ParamControl](../../core/core-space-basics/internal-contracts/params-control.md) in [CIP-94](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-94.md) to control the chain parameters including PoW base block reward and PoS base reward interest rate. In other word, the operational phase CFX distribution is now controlled by DAO.
 
 ### **CFX年通胀率**
 

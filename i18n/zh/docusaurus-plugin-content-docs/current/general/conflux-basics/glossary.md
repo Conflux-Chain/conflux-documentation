@@ -32,7 +32,7 @@ cfx:aatktb2te25ub7dmyag3p8bbdgr31vrbeackztm2rj
 cfxtest:aatktb2te25ub7dmyag3p8bbdgr31vrbeajcg9pwkc
 ```
 
-Refer to [general-address](./accounts.md#address), [core-address](../../core/learn/core-space-basics/addresses.md), [espace-address](../../espace/build/accounts.md#mapped-addresses-in-cross-space-operations) for more information.
+Refer to [general-address](./accounts.md#address), [core-address](../../core/core-space-basics/addresses.md), [espace-address](../../espace/build/accounts.md#mapped-addresses-in-cross-space-operations) for more information.
 
 ### **Block**
 In blockchain technology, a block is a collection of transactions. It's like a page of a ledger or record book. Each block is linked to the one before it and after it, creating a chain of blocks, hence the term "blockchain". In the context of Conflux, blocks form a tree-like structure, allowing for multiple blocks to be produced concurrently.
@@ -143,7 +143,7 @@ In blockchain technology, nonce ("number only used once") has different meaning 
 
 In mining, nonce is a number added to let the block header meet the difficulty level restrictions. The nonce is the number that blockchain miners are solving for.
 
-In transaction, nonce is the execution sequence number of transactions sent from an account. A transaction with incorrect nonce won't be included in blockchain, so correctly setting the nonce is critical to transaction execution. Refer to [nonce](../../core/learn/core-space-basics/core-transactions.md#nonce) for more information.
+In transaction, nonce is the execution sequence number of transactions sent from an account. A transaction with incorrect nonce won't be included in blockchain, so correctly setting the nonce is critical to transaction execution. Refer to [nonce](../core-space-basics/core-transactions.md#nonce) for more information.
 
 ### **Oracles**
 In the context of blockchains and smart contracts, an oracle is an agent that finds and verifies real-world occurrences and submits this information to a blockchain to be used by smart contracts. Oracles are used in the Conflux network to bring external information into smart contracts, enabling them to interact with the outside world.
@@ -175,7 +175,7 @@ Refer to [Spaces](./spaces.md) for more information.
 ### **Sponsorship Mechanism**
 In Conflux, the transaction fee for contract execution can be paid by users but also by contract sponsors. This sponsorship mechanism allows DApp users on Conflux to not worry about gas fees, improving user experience. Sponsors can set up a sponsorship by depositing CFX into a contract.
 
-Refer to [Sponsor Mechanism](../../core/learn/core-space-basics/sponsor-mechanism.md) for more information.
+Refer to [Sponsor Mechanism](../../core/core-space-basics/sponsor-mechanism.md) for more information.
 
 ### **Staking (in Conflux)**
 Staking in Conflux typically refers to the PoS staking, the process of participating in the network PoS consensus by locking up a certain amount of CFX. Stakers can earn rewards for their participation. This mechanism helps to secure the network and incentivize participation.

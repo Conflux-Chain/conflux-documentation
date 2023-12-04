@@ -8,7 +8,7 @@ displayed_sidebar: generalSidebar
 
 :::info
 
-This section introduces transaction concepts from a high level. For more details on core space transactions, please refer to [core space transactions](../../core/learn/core-space-basics/core-transactions.md). For espace transactions, you may find it helpful to refer to [Ethereum transactions](https://ethereum.org/developers/docs/transactions/) as they are almost exactly same in format and functionality.
+This section introduces transaction concepts from a high level. For more details on core space transactions, please refer to [core space transactions](../../core/core-space-basics/core-transactions.md). For espace transactions, you may find it helpful to refer to [Ethereum transactions](https://ethereum.org/developers/docs/transactions/) as they are almost exactly same in format and functionality.
 
 :::
 

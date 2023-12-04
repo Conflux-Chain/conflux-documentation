@@ -1,0 +1,63 @@
+---
+sidebar_position: 7
+title: 内置合约
+displayed_sidebar: coreSidebar
+---
+
+Conflux引入了几个内嵌的内置合约，以便更好地进行系统维护和链上治理。 Now Conflux has seven internal contracts. These contracts provide [`solidity interfaces defined here`](https://github.com/Conflux-Chain/conflux-rust/tree/master/internal_contract/contracts). 这些函数只能通过CALL或STATICCALL操作来调用。 使用操作CALLCODE或DELEGATECALL与内部合约交互将触发错误。
+
+`AdminControl` contract, `SponsorWhitelistControl` contract and `Staking` contract are introduced from the beginning.
+
+`ConfluxContext`, `PoSRegister`, `ConfluxContext` are introduced at v2 hard-fork, 
+
+`ParamsControl` is introduced at v2.1 hard-fork. 
+
+这7个内置合约的地址如下所示：
+
+## AdminControl:
+
+-   hex40: `0x0888000000000000000000000000000000000000`
+-   Mainnet base32: `cfxtest:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaaawby2s44d`
+-   Testnet base32: `cfx:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaaa2mhjju8k`
+
+## SponsorWhitelistControl:
+
+-   hex40: `0x0888000000000000000000000000000000000001`
+-   Mainnet base32: `cfxtest:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaaeprn7v0eh`
+-   Testnet base32: `cfx:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaaegg2r16ar`
+
+## Staking
+
+-   hex40: `0x0888000000000000000000000000000000000002`
+-   Mainnet base32: `cfxtest:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaajh3dw3ctn`
+-   Testnet base32: `cfx:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaajrwuc9jnb`
+
+## ConfluxContext:
+
+-   hex40: `0x0888000000000000000000000000000000000004`
+-   Mainnet base32: `cfxtest:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaauv2xpkd3x`
+-   Testnet base32: `cfx:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaau5xa6tk73`
+
+## PoSRegister:
+
+-   hex40: `0x0888000000000000000000000000000000000005`
+-   Mainnet base32: `cfxtest:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaaytypk0th1`
+-   Testnet base32: `cfx:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaayf993ufd7`
+
+## CrossSpaceCall
+
+-   hex40: `0x0888000000000000000000000000000000000006`
+-   Mainnet base32: `cfxtest:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaa2eaeg85p5`
+-   Testnet base32: `cfx:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaa2sn102vjv`
+
+## ParamsControl
+
+-   hex40: `0x0888000000000000000000000000000000000007`
+-   Mainnet base32: `cfxtest:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaa64p5db1w9`
+-   Testnet base32: `cfx:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaa6uhjxh70z`
+
+```mdx-code-block
+import DocCardList from '@theme/DocCardList';
+
+<DocCardList />
+```

@@ -8,7 +8,7 @@ displayed_sidebar: generalSidebar
 
 :::info
 
-本节更深入地介绍了交易的概念。 有关Core Space交易的更多详细信息，请参见[core space 交易](../../core/learn/core-space-basics/core-transactions.md)。 对于 eSpace 交易，您可能会发现参考[Ethereum 交易](https://ethereum.org/developers/docs/transactions/)有所帮助，因为它们在格式和功能上几乎完全相同。
+本节更深入地介绍了交易的概念。 For more details on core space transactions, please refer to [core space transactions](../../core/core-space-basics/core-transactions.md). 对于 eSpace 交易，您可能会发现参考[Ethereum 交易](https://ethereum.org/developers/docs/transactions/)有所帮助，因为它们在格式和功能上几乎完全相同。
 
 :::
 

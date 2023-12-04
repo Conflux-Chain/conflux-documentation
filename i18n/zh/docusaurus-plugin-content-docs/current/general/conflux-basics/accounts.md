@@ -10,13 +10,13 @@ Accounts in Conflux can be compared to "bank accounts", as they store CFX. 用�
 
 :::note
 
-The account implementation, including the account content and address computing rule is slightly different in [core space](../../core/learn/core-space-basics/accounts.md) and [espace](../../espace/build/accounts.md).
+The account implementation, including the account content and address computing rule is slightly different in [core space](../../core/core-space-basics/accounts.md) and [espace](../../espace/build/accounts.md).
 
 :::
 
 ## 地址
 
-Account addresses, like bank account numbers, identify accounts and can be examined on [ConfluxScan](https://confluxscan.io). 然而，地址格式在[core space](../../core/learn/core-space-basics/addresses.md) 和espace之间有所不同。 Core space使用CIP-37编码方案，而espace使用与以太坊相同的格式。
+Account addresses, like bank account numbers, identify accounts and can be examined on [ConfluxScan](https://confluxscan.io). However, the address format differs between [core space](../core-space-basics/addresses.md) and espace. Core space使用CIP-37编码方案，而espace使用与以太坊相同的格式。
 
 下面是一些示例，显示了两个空间中的地址格式：
 
@@ -86,6 +86,6 @@ cfx:aajfvxvhz6mna0md1b68mpg9puygt18tm6nynadnf6
 ## 相关主题
 
 - [Ethereum Accounts](https://ethereum.org/en/developers/docs/accounts/)
-- [Core space accounts](../../core/learn/core-space-basics/accounts.md)
+- [Core space accounts](../../core/core-space-basics/accounts.md)
 - [espace accounts](../../espace/build/accounts.md)
-- [Core space addresses](../../core/learn/core-space-basics/addresses.md)
+- [Core space addresses](../../core/core-space-basics/addresses.md)
