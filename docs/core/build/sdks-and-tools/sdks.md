@@ -84,23 +84,26 @@ public class App {
 
 ### [python-conflux-sdk](https://github.com/conflux-chain/python-conflux-sdk)
 
-Python is the first choice for a lot of developers, we also have `python-conflux-sdk` for you.
+`python-conflux-sdk` (also known as `conflux_web3`) is the official Python SDK for Conflux Core Space. It is built upon [web3.py](https://github.com/ethereum/web3.py) v6, and most of its API is consistent with `web3.py`, offering convenience for developers who wish to migrate their Python code from Ethereum. For example:
 
 ```python
-from conflux import (
-    Conflux,
-    HTTPProvider,
-)
-provider = HTTPProvider('https://test.confluxrpc.com')
-c = Conflux(provider)
+# modified from https://web3py.readthedocs.io/en/stable/middleware.html#signing
+from conflux_web3 import Web3
+w3 = Web3("https://test.confluxrpc.com")
+from conflux_web3.middleware import construct_sign_and_send_raw_middleware
+from cfx_account import Account
+acct = Account.create('KEYSMASH FJAFJKLDSKF7JKFDJ 1530')
+w3.middleware_onion.add(construct_sign_and_send_raw_middleware(acct))
+w3.cfx.default_account = acct.address
 
-# get RPC's clientVersion
-print(c.clientVersion)
-
-test_address = 'cfxtest:aak7fsws4u4yf38fk870218p1h3gxut3ku00u1k1da'
-balance = c.cfx.getBalance(test_address)
-print(balance)
+transaction = {
+    'to': w3.address.zero_address(),
+    'value': 22,
+}
+w3.cfx.send_transaction(transaction)
 ```
+
+Online runnable examples (courtesy of [Binder](https://mybinder.org/)) are provided in the [SDK documentation](https://python-conflux-sdk.readthedocs.io/en/latest/README.html), available in both English and Chinese.
 
 ## Solidity SDKs
 
