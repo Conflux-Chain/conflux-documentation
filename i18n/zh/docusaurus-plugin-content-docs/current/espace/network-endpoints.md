@@ -18,8 +18,8 @@ displayed_sidebar: eSpaceSidebar
 
 | Network             | Chain ID     | RPC Endpoint URL                                                                              | Explorer                            |
 | ------------------- | ------------ | --------------------------------------------------------------------------------------------- | ----------------------------------- |
-| [Mainnet](#mainnet) | 1030 (0x406) | *HTTP*: <https://evm.confluxrpc.org><br/>*Websocket*: wss://evm.confluxrpc.com/ws       | <https://evm.confluxscan.io>        |
-| [Testnet](#testnet) | 71 (0x47)    | <https://evmtestnet.confluxrpc.org><br/>*Websocket*: wss://evmtestnet.confluxrpc.com/ws | <https://evmtestnet.confluxscan.io> |
+| [Mainnet](#mainnet) | 1030 (0x406) | *HTTP*: <https://evm.confluxrpc.org><br/>*Websocket*: wss://evm.confluxrpc.org/ws       | <https://evm.confluxscan.io>        |
+| [Testnet](#testnet) | 71 (0x47)    | <https://evmtestnet.confluxrpc.org><br/>*Websocket*: wss://evmtestnet.confluxrpc.org/ws | <https://evmtestnet.confluxscan.io> |
 
 ### 速率限制
 
