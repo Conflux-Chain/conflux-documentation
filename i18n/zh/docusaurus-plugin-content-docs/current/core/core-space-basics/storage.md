@@ -1,6 +1,6 @@
 ---
 sidebar_position: 2
-title: Storage Collateral
+title: 存储抵押
 keywords:
   - storage
 displayed_sidebar: coreSidebar
