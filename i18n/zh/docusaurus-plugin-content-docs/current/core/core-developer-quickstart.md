@@ -1,11 +1,11 @@
 ---
 sidebar_position: 3
-title: Developer Quickstart
+title: 开发者快速入门
 displayed_sidebar: coreSidebar
-description: This tutorial will show you how to send a transaction using the js-conflux-sdk.
+description: 本教程将向您展示如何使用 js-conflux-sdk 发送交易。
 ---
 
-To send a transaction on Conflux Core Space, you need to use it's own SDKs. This tutorial will show you how to send a transaction using the js-conflux-sdk.
+To send a transaction on Conflux Core Space, you need to use it's own SDKs. 本教程将向您展示如何使用 js-conflux-sdk 发送交易。
 
 :::tip
 
