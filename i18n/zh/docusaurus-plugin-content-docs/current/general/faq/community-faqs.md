@@ -1,10 +1,10 @@
 ---
-title: Community FAQs
+title: 社区常见问题
 sidebar_position: 2
 displayed_sidebar: generalSidebar
 ---
 
-# Community FAQs
+# 社区常见问题
 
 ### **Do we need to pay attention to the `storageLimit` and `epochHeight` fields in regular transactions?**
 
