@@ -1,6 +1,6 @@
 ---
 sidebar_position: 9
-title: Contracts
+title: 智能合约
 displayed_sidebar: generalSidebar
 ---
 
@@ -353,5 +353,5 @@ In addition to Solidity you can use also Vyper for developing smart contracts.
 
 Other
 
-- [Conflux Basics](../category/conflux-basics/)
+- [Conflux 基础概念](../category/conflux-basics/)
 - [Ethereum's introduction of smart contract](https://ethereum.org/en/developers/docs/smart-contracts/)
