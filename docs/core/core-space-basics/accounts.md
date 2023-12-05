@@ -6,7 +6,7 @@ displayed_sidebar: coreSidebar
 
 :::note
 
-This page is created to provide information for CORE SPACE ACCOUNTS. Refer to [General-Accounts](../../../general/conflux-basics/accounts.md) for the overall introduction of the concept of ACCOUNTS.
+This page is created to provide information for CORE SPACE ACCOUNTS. Refer to [General-Accounts](../../general/conflux-basics/accounts.md) for the overall introduction of the concept of ACCOUNTS.
 
 :::
 
@@ -18,7 +18,7 @@ An account is identified by its address. For more information, refer to [Address
 
 ### Query
 
-The account state can be queried using [cfx_getAccount RPC](../../build/json-rpc/cfx-namespace.md#cfx_getaccount).
+The account state can be queried using [cfx_getAccount RPC](../build/json-rpc/cfx-namespace.md#cfx_getaccount).
 
 ```json
 // Request

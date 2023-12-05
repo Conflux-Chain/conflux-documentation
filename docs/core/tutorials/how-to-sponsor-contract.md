@@ -5,13 +5,17 @@ description: Use the ConfluxScan Read&Write Tool to sponsor a contract.
 displayed_sidebar: coreSidebar
 ---
 
-Conflux Core [Sponsorship](../core-space-basics/sponsor-mechanism.md) offers a user-friendly feature for new blockchain users. This tutorial will guide you on how to use the [ConfluxScan Read&Write Tool](https://testnet.confluxscan.io/address/cfxtest:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaaeprn7v0eh?tab=contract-viewer) to sponsor a contract.
+Conflux Core [Sponsorship](../core-space-basics/sponsor-mechanism.md) offers a user-friendly feature for new blockchain users. This tutorial will guide you on how to use the [ConfluxScan Read&Write Tool](https://www.confluxscan.io/address/cfx:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaaegg2r16ar?tab=contract-viewer) to sponsor a contract.
 
-The Read&Write Tool allows users to interact with smart contracts. Any verified contract on ConfluxScan can utilize this tool to read or write data.
+The Contract Read&Write Tool allows users to interact with smart contracts. Any verified contract on ConfluxScan can utilize this tool to read or write data.
+
+- [Mainnet SponsorWhitelistControl Read&Write Tool](https://www.confluxscan.io/address/cfx:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaaegg2r16ar?tab=contract-viewer)
+- [Testnet SponsorWhitelistControl Read&Write Tool](https://testnet.confluxscan.io/address/cfxtest:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaaeprn7v0eh?tab=contract-viewer)
 
 ![](./imgs/sponsor/sponsor-read-methods.png)
 
 ## Preparation
+
 1. Install the [Fluent](https://fluentwallet.com/) wallet and switch to the Conflux Testnet network.
 2. Acquire some test tokens from the [Conflux Testnet Faucet](https://faucet.confluxnetwork.org/).
 3. Have a contract address ready, for example: `cfxtest:acgwyxdwpc8475n2na9uk9rfbghstg1xtumht10mue`.
