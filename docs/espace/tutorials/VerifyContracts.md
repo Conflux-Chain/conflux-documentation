@@ -97,4 +97,8 @@ Any contract deployed on eSpace can be verified on the [ConfluxScan](https://evm
 
 Developer can use flatten tools (hardhat, foundry) to merge his contract and it's dependencies into one file. Then copy the flatten code into the editor. And fill in the contract name, compiler version, license. Finally, click the submit button to verify the contract.
 
-If the verification failed, maybe the compiler version or optimization settings are not correct. Please check the compiler version and optimization settings in the contract deployment configuration.
+If the verification failed, maybe the **compiler version** or **optimization settings** or **evm version** are not correct. Please check the compiler version and optimization settings in the contract deployment configuration.
+
+### Resources
+
+- [EVM Versions to Target](https://docs.soliditylang.org/en/v0.8.23/using-the-compiler.html#setting-the-evm-version-to-target)
