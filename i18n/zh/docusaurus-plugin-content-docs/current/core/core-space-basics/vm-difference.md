@@ -1,6 +1,6 @@
 ---
 sidebar_position: 6
-title: VM Differences
+title: 虚拟机的差异
 displayed_sidebar: coreSidebar
 ---
 
@@ -32,7 +32,7 @@ The `block.number` is the sequence number in whole tree-graph.
 
 Core Space has some built-in [internal contracts](./internal-contracts/) that are not in Ethereum.
 
-## Gas
+## 燃气
 
 1. Gas used and refund: Conflux requires less gas in `SSTORE` operation but no longer refunds resetting storage and contract destruction.
 2. Gas Fee Refund: In Ethereum, if a transaction's gas limit exceeds the actual gas cost, the remaining gas is fully refunded. In contrast, Conflux refunds a maximum of 1/4 of the **gas limit**. Setting an excessively high gas limit in Conflux can lead to additional transaction fee costs. However, no extra fees are incurred if the gas limit is set to less than 4/3 of the actual cost. Therefore, providing an accurate gas estimate for a transaction is crucial for optimizing transaction fees.
