@@ -1,7 +1,7 @@
 ---
 sidebar_position: 1
 id: conflux_papers
-title: Papers
+title: 论文
 keywords:
   - conflux
   - papers
