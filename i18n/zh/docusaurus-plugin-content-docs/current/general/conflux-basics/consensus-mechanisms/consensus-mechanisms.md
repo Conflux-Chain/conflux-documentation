@@ -1,6 +1,6 @@
 ---
 sidebar_position: 2
-title: Consensus
+title: 共识
 displayed_sidebar: generalSidebar
 ---
 
