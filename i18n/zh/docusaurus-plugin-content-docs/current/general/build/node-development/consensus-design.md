@@ -2,7 +2,7 @@
 displayed_sidebar: generalSidebar
 ---
 
-# The Conflux Consensus Layer Design and Implementation
+# Conflux 共识层的设计与实现
 
 The Conflux consensus layer processes all incoming blocks received from the
 synchronization layer, produces the total order of blocks based on the Conflux
