@@ -179,7 +179,7 @@ Transaction sent: 0x547675979e80eccfe0665d2ab347cefc8ca3644dbdaddb0572b76cc7a62d
   Token deployed at: 0x634757eFE5DD3D27ecf38480c6F2Eac6752E90DB
 ```
 
-## What to Do Next?
+## 接下来是？
 
 Now that you've deployed your ERC-20 token on Conflux eSpace using Brownie, you can start building upon this foundation:
 
