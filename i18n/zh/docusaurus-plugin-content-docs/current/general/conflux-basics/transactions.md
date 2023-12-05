@@ -8,7 +8,7 @@ displayed_sidebar: generalSidebar
 
 :::info
 
-本节更深入地介绍了交易的概念。 For more details on core space transactions, please refer to [core space transactions](../../core/core-space-basics/core-transactions.md). 对于 eSpace 交易，您可能会发现参考[Ethereum 交易](https://ethereum.org/developers/docs/transactions/)有所帮助，因为它们在格式和功能上几乎完全相同。
+本节更深入地介绍了交易的概念。 有关 Core 空间交易的详细信息，请参见[ core 空间交易](../../core/core-space-basics/core-transactions.md)。 对于 eSpace 交易，您可能会发现参考[Ethereum 交易](https://ethereum.org/developers/docs/transactions/)有所帮助，因为它们在格式和功能上几乎完全相同。
 
 :::
 
@@ -20,45 +20,45 @@ displayed_sidebar: generalSidebar
 
 一般而言，一个交易包含以下内容：
 
-- Who send the transaction: A `from` field in an unsigned transaction or the transaction signature fields indicating the signer. This tells the network who is responsible for initiating the transaction and who will pay for the fees.
+- 交易发起人：在未签名交易中是一个`from`字段，在交易签名中则是标识签名者的字段。 这告诉网络谁负责发起交易以及谁将支付费用。
 
-- What this transaction will do, including:
+- 这个交易将要做什么，包括：
 
-  - Who will be the transaction receiver or which smart contract to interact with(`to` field). This specifies the destination address of the transaction, which can be either user account or a smart contract that can execute some logic or empty to create a contract.
+  - 交易的接收方是谁，或者将要与哪个智能合约进行交互（`to`字段）。 这指定了交易的目的地址，可以是用户账户；也可以是能够执行某些逻辑的智能合约；或者为空，用于创建合约。
 
-  -  How much native token will be send(`value` field). This indicates how much CFX (the native token of Conflux) will be transferred from the sender to the receiver. If the receiver is a smart contract, this value can also be used as an input parameter for its logic.
+  -  将发送多少原生代币（`value`字段）。 这表示将从发送方向接收方转移多少 CFX（Conflux 的原生代币）。 如果接收方是一个智能合约，这个值也可以作为其逻辑的输入参数使用。
 
-  -  How to interact with a smart contract(`data` field). This contains additional information for calling a smart contract function or deploying a new smart contract. It can encode the name and arguments of the function to be invoked or the bytecode of the new contract to be created.
+  -  如何与智能合约进行交互（`data`字段）。 这包含调用智能合约函数或部署新智能合约的额外信息。 它可以编码要调用的函数的名称和参数，或者要创建的新合约的字节码。
 
--  Transaction fee information, including:
-   - Field(s) indicating base transaction fee (`gas` in both spaces, and extra `storageLimit` field in core space). These fields is determine according to how much computational resources are required to execute the transaction and (in core space) how much storage space are occupied by its effects.
+-  交易费用信息，包括：
+   - 指示基础交易费用的字段（在两个空间中都是`gas`，并且在Core Space中还有额外的`storageLimit`字段）。 这些字段是根据执行交易所需的计算资源以及（在Core Space中）其效果所占用的存储空间来确定的。
 
-   -  Field indicating how much "tip" sender is willing to pay to miner(`gasPrice` field). This field allows senders to adjust their priority in getting their transactions packed by miners. A higher `gasPrice` means a higher chance of being included in a block sooner.
+   -  指示发送方愿意支付给矿工多少“小费”的字段（`gasPrice`字段）。 此字段允许发送方调整他们在获取他们的交易被矿工打包的优先级。 更高的`gasPrice`意味着更有可能更快地被包含在一个块中。
 
-- Field indicating when or where the transaction is "valid" (`chainId`, `nonce` in both spaces, and `epochHeight` in core space). `chainId` prevents a transaction being executed on another chain and `nonce` field ensures the sent transactions are executed in the expected order. `epochHeight` field sets an expiration time for the transaction based on the epoch number (a concept similar to "block number" in Ethereum). A transaction can only be executed within an epoch range associated with `epochHeight`.
+- 指示交易何时或在哪里是“有效”的字段（两个空间中的`chainId`，`nonce`，在Core Space中还有`epochHeight`）。 `chainId` 防止交易在另一个链上执行，而 `nonce` 字段确保发送的交易按照预期顺序执行。 `epochHeight`字段根据 epoch number（类似于 Ethereum 中的“block number”概念）为交易设置了一个过期时间。 一笔交易只能在与 `epochHeight` 关联的某个纪元范围内执行。
 
 :::info
 
-Transaction fields are slightly different between [spaces](./spaces.md). Core space transactions follow the definition of [Conflux Protocol](https://www.confluxnetwork.org/files/Conflux_Protocol_Specification.pdf). Espace transactions follow the [EIP-155](https://eips.ethereum.org/EIPS/eip-155) specification.
+交易字段在[空间](./spaces.md)之间略有不同。 Core 空间交易遵循[Conflux 协议](https://www.confluxnetwork.org/files/Conflux_Protocol_Specification.pdf)的定义。 eSpace 交易遵循[EIP-155](https://eips.ethereum.org/EIPS/eip-155)规范。
 
 :::
 
 ## 交易生命周期
 
-Transactions go through several stages from the time they are constructed to the time they are finally confirmed on the chain. A good understanding of these stages will help users and developers better identify problems with sending transactions and ultimately ensure that transactions are successfully confirmed.
+交易从构建时到最终在链上确认之前会经历几个阶段。 充分了解这些阶段将有助于用户和开发人员更好地识别发送交易时的问题，最终确保交易得到确认。
 
-The following are the main stages of a transaction from construction to confirmation.
+下面是交易从构建到确认的主要阶段。
 
-1. **Transaction construction**: This is the stage where users or developers create a transaction with all the necessary fields and parameters and get it signed. 交易对象可以使用各种工具或库创建，如 Fluent Wallet、Conflux SDK 等。 在发送交易之前，交易将被编码为十六进制字符串作为“rawTransaction”。
+1. **交易构建阶段**：这是用户或开发人员使用所有必要的字段和参数创建并签名交易的阶段。 交易对象可以使用各种工具或库创建，如 Fluent Wallet、Conflux SDK 等。 在发送交易之前，交易将被编码为十六进制字符串作为“rawTransaction”。
 
-2. **Broadcast**: This is the stage where users or developers send their signed transaction to a Conflux node via RPC or WebSocket. 如果交易通过验证，节点将验证交易并将其广播到网络中的其他节点。 节点还将返回一个交易哈希（这是一个唯一标识符）给发送者以进行跟踪。
+2. **广播阶段**：这是用户或开发人员通过 RPC 或 WebSocket 将已签名的交易发送到 Conflux 节点的阶段。 如果交易通过验证，节点将验证交易并将其广播到网络中的其他节点。 节点还将返回一个交易哈希（这是一个唯一标识符）给发送者以进行跟踪。
 
-3. **Packed into a block -> Mined**: This is the stage where miners select transactions from their mempool (a pool of pending transactions) and include them in their blocks. 矿工将优先考虑具有更高`gasPrice`的交易。 一旦包含交易的区块被挖出，它将被传播到网络中的其他节点。
+3. **打包进区块后->已挖出（Mined）**：这是矿工从其 mempool（一个未确认交易池）中选择交易并将其包含在其区块中的阶段。 矿工将优先考虑具有更高`gasPrice`的交易。 一旦包含交易的区块被挖出，它将被传播到网络中的其他节点。
 
-4. **Deferring 5 epochs -> Executed**: This is the stage where transactions are executed by nodes after being deferred for 5 epochs (about 5 seconds). 这意味着节点将运行交易的逻辑并相应地更新其状态。 每个交易的执行结果将记录在收据（Receipt）中，其中包含诸如状态（成功或失败）、已使用的 gas、智能合约发出的日志和事件等信息，并可使用交易哈希检索。
+4. **推迟 5 个epoch后 -> 已执行（Executed）**：这是节点在推迟了 5 个epoch（约 5 秒钟）后执行交易的阶段。 这意味着节点将运行交易的逻辑并相应地更新其状态。 每个交易的执行结果将记录在收据（Receipt）中，其中包含诸如状态（成功或失败）、已使用的 gas、智能合约发出的日志和事件等信息，并可使用交易哈希检索。
 
-5. **Waiting for about 50 epochs -> Confirmed**: This is the stage where transactions are confirmed by nodes after being executed for about 50 epochs (about 50 seconds). 执行一个交易并不意味着交易的状态不会再次改变。 由于区块链的结构，区块链可能会因为新块而分叉或转移主链，这可能会导致某些交易回滚。 确认的交易意味着它已经被包含在足够深的区块中，并且几乎不可能回滚。
+5. **等待约 50 个epoch后 -> 已确认**：这是在交易执行了约 50 个epoch（约 50 秒钟）后，节点确认交易的阶段。 执行一个交易并不意味着交易的状态不会再次改变。 由于区块链的结构，区块链可能会因为新块而分叉或转移主链，这可能会导致某些交易回滚。 确认的交易意味着它已经被包含在足够深的区块中，并且几乎不可能回滚。
 
-6. **Waiting for PoS chain Finalization -> Finalized**: This is the final stage where transactions are finalized after specific PoW block being referenced by Conflux's [PoS chain](./consensus-mechanisms/proof-of-stake/pos_overview.md). Conflux 的 PoS 链会定期引用一个稳定的 PoW 区块，以为交易提供最终性。 一个已经最终化的交易意味着它几乎没有被回滚的可能性，除非攻击者拥有 PoS 中超过 67% 的 CFX。 It takes approximately 4-5 minutes to finalize a transaction since it is included in a block (after [CIP-113](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-113.md) activation).
+6. **等待 PoS 链最终确认 -> 已最终确认**：这是最后一个阶段，在此阶段中，节点会在被 Conflux 的 [PoS 链](./consensus-mechanisms/proof-of-stake/pos_overview.md)引用后最终化交易。 Conflux 的 PoS 链会定期引用一个稳定的 PoW 区块，以为交易提供最终性。 一个已经最终化的交易意味着它几乎没有被回滚的可能性，除非攻击者拥有 PoS 中超过 67% 的 CFX。 交易上链后需要 4～5 分钟完成最终确认（[CIP-113](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-113.md)激活后）。
 
 ![Transaction](./img/transaction-stages)
