@@ -1,5 +1,5 @@
 ---
-title: FAQs of Core Space Transactions
+title: Core 空间交易常见问题
 sidebar_position: 1
 displayed_sidebar: generalSidebar
 ---
