@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-title: Running a Mining Node
+title: 运行矿工节点
 displayed_sidebar: generalSidebar
 ---
 
