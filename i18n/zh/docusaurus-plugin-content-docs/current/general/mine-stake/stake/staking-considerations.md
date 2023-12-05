@@ -1,6 +1,6 @@
 ---
 sidebar_position: 3
-title: Staking Considerations
+title: 质押注意事项
 displayed_sidebar: generalSidebar
 ---
 
