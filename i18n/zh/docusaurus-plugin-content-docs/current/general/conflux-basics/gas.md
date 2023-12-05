@@ -1,6 +1,6 @@
 ---
 sidebar_position: 10
-title: Gas
+title: 燃气
 displayed_sidebar: generalSidebar
 ---
 
