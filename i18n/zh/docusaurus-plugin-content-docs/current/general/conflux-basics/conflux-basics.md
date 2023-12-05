@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-title: Conflux Basics
+title: Conflux 基础概念
 displayed_sidebar: generalSidebar
 ---
 
