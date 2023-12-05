@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-title: Run a PoS Node
+title: 运行 PoS 验证者节点
 displayed_sidebar: generalSidebar
 ---
 
