@@ -1,6 +1,6 @@
 ---
 sidebar_position: 7
-title: Configuration Files
+title: 节点配置文件
 keywords:
   - config
   - node
