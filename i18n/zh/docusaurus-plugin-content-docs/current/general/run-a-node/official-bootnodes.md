@@ -1,6 +1,6 @@
 ---
 sidebar_position: 9
-title: Official Bootnodes
+title: 官方启动节点列表
 displayed_sidebar: generalSidebar
 ---
 
