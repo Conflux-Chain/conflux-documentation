@@ -1,6 +1,6 @@
 ---
 sidebar_position: 2.5
-title: Fluent Wallet Integration
+title: 集成 Fluent 钱包
 displayed_sidebar: coreSidebar
 ---
 
