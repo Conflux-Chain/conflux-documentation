@@ -1,5 +1,5 @@
 ---
-title: FAQ
+title: 常见问题
 sidebar_position: 5
 displayed_sidebar: generalSidebar
 ---
