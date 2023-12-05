@@ -53,4 +53,4 @@ You can turn on "Show Testnet" in Fluent's advanced options.
 
 To learn how to install Fluent you can follow this guide:
 
-- [Getting Started](/docs/core/getting-started/installing-a-wallet)
+- [起步](/docs/core/getting-started/installing-a-wallet)
