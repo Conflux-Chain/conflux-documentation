@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-title: Conflux PoS Validators - Pools List
+title: Conflux PoS 验证者池列表
 displayed_sidebar: generalSidebar
 ---
 
