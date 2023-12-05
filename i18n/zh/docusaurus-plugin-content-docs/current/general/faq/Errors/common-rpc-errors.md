@@ -1,7 +1,7 @@
 ---
 id: common_rpc_error
 sidebar_position: 6
-title: Common RPC errors
+title: 常见 RPC 错误
 keywords:
   - rpc
   - error
