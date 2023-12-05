@@ -1,6 +1,6 @@
 ---
 sidebar_position: 4
-title: Running a PoS Staking Pool
+title: 运行 PoS 质押池
 displayed_sidebar: generalSidebar
 ---
 
