@@ -1,10 +1,10 @@
 ---
 sidebar_position: 5
-title: Compiling the Conflux Client
+title: 编译 Conflux 节点
 displayed_sidebar: generalSidebar
 ---
 
-# Compiling the Conflux Client
+# 编译 Conflux 节点
 
 Here is a step by step guide on how to build Conflux from the source code and get a node running.
 
