@@ -1,6 +1,6 @@
 ---
 sidebar_position: 5
-title: Token Standards
+title: Token 标准
 displayed_sidebar: coreSidebar
 ---
 
