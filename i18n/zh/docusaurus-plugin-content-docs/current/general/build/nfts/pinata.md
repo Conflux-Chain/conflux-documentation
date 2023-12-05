@@ -1,6 +1,6 @@
 ---
 id: pinata
-title: Uploading files to IPFS using Pinata
+title: 使用 Pinata 上传文件到 IPFS
 sidebar_position: 1
 keywords:
   - conflux
@@ -31,7 +31,7 @@ Pinata是一个web3媒体管理服务，允许用户在IPFS中托管、管理和
 
 ## 准备好你的图片
 
-This guide will focus on creating a single NFT, but if you want to make more, feel free to do so. The image being used can be found here if you'd like to utilize it.
+本指南将专注于创建单个NFT，也可以用同样的方式为更多NFT准备图片。 The image being used can be found here if you'd like to utilize it.
 
 ```mdx-code-block
 

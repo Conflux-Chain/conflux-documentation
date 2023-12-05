@@ -1,6 +1,6 @@
 ---
 sidebar_position: 13
-title: Running an Independent Chain
+title: 运行私有链
 displayed_sidebar: generalSidebar
 ---
 

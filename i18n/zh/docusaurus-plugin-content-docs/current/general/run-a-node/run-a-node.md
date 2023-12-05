@@ -1,10 +1,10 @@
 ---
 sidebar_position: 1
-title: Running a Node
+title: 运行节点
 displayed_sidebar: generalSidebar
 ---
 
-# Running a Node
+# 运行节点
 
 Conflux Network is a scalable blockchain platform that aims to achieve high throughput and security. Running a Conflux node allows you to participate in the network, validate transactions, and interact with the Conflux blockchain.
 

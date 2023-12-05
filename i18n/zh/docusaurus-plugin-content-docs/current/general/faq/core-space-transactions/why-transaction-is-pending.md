@@ -1,6 +1,6 @@
 ---
 sidebar_position: 2
-title: Why Transaction is Pending?
+title: 为什么交易一直为待处理？
 keywords:
   - transaction
 displayed_sidebar: generalSidebar

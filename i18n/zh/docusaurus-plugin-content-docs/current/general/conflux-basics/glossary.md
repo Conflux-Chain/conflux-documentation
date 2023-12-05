@@ -1,6 +1,6 @@
 ---
 sidebar_position: 5
-title: Glossary
+title: 术语表
 displayed_sidebar: generalSidebar
 ---
 
@@ -100,7 +100,7 @@ ERC721 is a standard for non-fungible tokens (NFTs) on the Ethereum blockchain. 
 ### **Fork**
 In blockchain, a fork is a change to the software that creates two separate versions of the blockchain with a shared history. Forks can be either "hard" or "soft", depending on whether the change is compatible with previous versions of the software. In the context of Conflux, forks are less common due to the Tree-Graph structure of the network, which allows for concurrent block production.
 
-### **Gas**
+### **燃气**
 In the context of blockchain, gas refers to the fee required to successfully conduct a transaction or execute a contract on the Ethereum blockchain. In Conflux, the concept of gas also exists, but with a unique twist: the gas fee for contract execution is paid by contract sponsors, not by users. This improves the user experience by allowing users to interact with smart contracts without worrying about gas fees.
 
 Refer to [Gas](./gas.md) for more information.

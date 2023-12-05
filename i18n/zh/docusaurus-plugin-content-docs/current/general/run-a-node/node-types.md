@@ -1,6 +1,6 @@
 ---
 sidebar_position: 2
-title: Node Types
+title: 节点类型
 displayed_sidebar: generalSidebar
 ---
 

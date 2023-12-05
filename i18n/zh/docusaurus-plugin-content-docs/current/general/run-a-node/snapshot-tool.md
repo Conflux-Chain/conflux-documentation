@@ -1,6 +1,6 @@
 ---
 sidebar_position: 3
-title: Snapshot Tool
+title: 节点快照工具
 displayed_sidebar: generalSidebar
 ---
 

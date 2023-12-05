@@ -1,6 +1,6 @@
 ---
 sidebar_position: 4
-title: Build
+title: 开发
 displayed_sidebar: generalSidebar
 ---
 

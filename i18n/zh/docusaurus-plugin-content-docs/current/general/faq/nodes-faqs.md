@@ -1,10 +1,10 @@
 ---
-title: Nodes FAQs
+title: 节点常见问题
 sidebar_position: 3
 displayed_sidebar: generalSidebar
 ---
 
-# Nodes FAQs
+# 节点常见问题
 
 ### Why does synchronization take a long time after restart?
 

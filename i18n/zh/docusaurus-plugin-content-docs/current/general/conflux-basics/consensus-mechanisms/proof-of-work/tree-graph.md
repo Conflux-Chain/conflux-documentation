@@ -1,10 +1,10 @@
 ---
 sidebar_position: 2
-title: The Tree-Graph
+title: 树图账本结构
 displayed_sidebar: generalSidebar
 ---
 
-# The Tree-Graph
+# 树图账本结构
 
 Conflux的核心是[树图](https://arxiv.org/pdf/1805.03870.pdf) 账本结构和 [GHAST](https://confluxnetwork.medium.com/conflux-research-group-ghast-mechanism-adaptive-weight-ghast-explained-part-1-ffe8224a7282)链选择规则。
 

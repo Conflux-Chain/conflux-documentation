@@ -1,5 +1,5 @@
 ---
-title: cfx_sendRawTransaction Errors
+title: cfx_sendRawTransaction 接口错误
 displayed_sidebar: generalSidebar
 ---
 

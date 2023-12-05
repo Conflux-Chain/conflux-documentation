@@ -21,7 +21,7 @@ This page provides quick entries for Conflux reference documentation.
 - [Core Space Tools](../../core/build/sdks-and-tools/tools)
 - [eSpace(Ethereum) Tools Tutorial](../../espace/DeveloperQuickstart)
 
-## Contracts
+## 智能合约
 
 - [Core Space Internal Contracts](../../core/core-space-basics/internal-contracts/internal-contracts)
 - [eSpace Deployed Contracts](../../espace/build/deployed-contracts)

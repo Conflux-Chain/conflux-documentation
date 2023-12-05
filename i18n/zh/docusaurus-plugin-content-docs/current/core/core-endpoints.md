@@ -1,13 +1,13 @@
 ---
 id: conflux_rpcs
-title: Network RPC Endpoints
+title: 网络 RPC 端点
 sidebar_position: 5
 keywords:
-  - endpoints
+  - 端点
 displayed_sidebar: coreSidebar
 ---
 
-Public available Conflux Core Space network RPC endpoints
+公开可用的 Conflux Core 空间网络 RPC 端点
 
 ## 1. Confura
 
@@ -44,7 +44,7 @@ Reference for various fee tiers and their rate limits.
 **Notes**
 - `getLogs`调用的结果集最大大小为10,000。
 - 由于数据裁剪，旧的存档事件日志可能无法访问。
-- Append your api key to the endpoint for privileged access (eg., `https://main.confluxrpc.com/<api-key>`);
+- 请将您的 Api 密钥附加到端点上以获取特权访问（例如：`https://main.confluxrpc.com/<api-key>`）。
 - 每个RPC方法也有速率限制，请查阅以下规范以了解更多详细信息。
 
 <details>

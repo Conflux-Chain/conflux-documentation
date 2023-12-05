@@ -1,6 +1,6 @@
 ---
 sidebar_position: 2
-title: Funding Your Account on Testnet
+title: 领取测试网代币
 description: How to get testnet CFX
 displayed_sidebar: coreSidebar
 ---

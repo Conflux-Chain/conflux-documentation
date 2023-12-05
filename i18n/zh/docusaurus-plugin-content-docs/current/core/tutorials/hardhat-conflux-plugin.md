@@ -1,7 +1,7 @@
 ---
 sidebar_position: 3
-title: Hardhat Conflux Plugin
-description: Tutorial for using the Hardhat Conflux Plugin
+title: Hardhat Conflux 插件
+description: Hardhat Conflux 插件使用教程
 displayed_sidebar: coreSidebar
 ---
 

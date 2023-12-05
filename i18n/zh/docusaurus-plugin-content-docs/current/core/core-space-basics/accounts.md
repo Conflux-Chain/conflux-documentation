@@ -40,7 +40,7 @@ curl --data '{"jsonrpc":"2.0","method":"cfx_getAccount","params":["cfx:type.cont
 }
 ```
 
-### Illustration
+### 详细解释
 
 Conflux 的全局状态由各个账户状态组成，每个账户状态是一个地址-状态对（键值对）。
 

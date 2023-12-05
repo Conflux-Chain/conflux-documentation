@@ -1,9 +1,9 @@
 ---
 sidebar_position: 1
 title: 安装钱包
-description: Install and setup Fluent wallet
+description: 安装并设置 Fluent 钱包
 keywords:
-  - wallet
+  - 钱包
 displayed_sidebar: coreSidebar
 ---
 
@@ -11,7 +11,7 @@ displayed_sidebar: coreSidebar
 
 ### 安装 [Fluent Wallet](https://fluentwallet.com/)
 
-Fluent 是一个浏览器插件钱包，类似于Etherum的 MetaMask 钱包。 It currently supports by Chrome, Firefox and Edge. 用户可以直接在浏览器插件市场中搜索 `Fluent Wallet`，选择并安装它。 或者在[Fluent官网](https://fluentwallet.com/)上找到它。
+Fluent 是一个浏览器插件钱包，类似于Etherum的 MetaMask 钱包。 它当前支持 Chrome，火狐与 Edge 浏览器。 用户可以直接在浏览器插件市场中搜索 `Fluent Wallet`，选择并安装它。 或者在[Fluent官网](https://fluentwallet.com/)上找到它。
 
 ![Fluent](./img/Fluent-Create-1)
 

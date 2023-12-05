@@ -1,6 +1,6 @@
 ---
 sidebar_position: 4
-title: Downloading the Conflux Client
+title: 下载 Conflux 节点客户端
 displayed_sidebar: generalSidebar
 ---
 

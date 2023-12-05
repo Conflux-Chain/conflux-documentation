@@ -1,6 +1,6 @@
 ---
 sidebar_position: 7
-title: Spaces
+title: 空间（Spaces）
 displayed_sidebar: generalSidebar
 ---
 

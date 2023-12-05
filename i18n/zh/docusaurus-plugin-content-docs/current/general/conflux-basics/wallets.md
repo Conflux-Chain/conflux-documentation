@@ -1,6 +1,6 @@
 ---
 sidebar_position: 8
-title: Wallets
+title: 钱包
 displayed_sidebar: generalSidebar
 ---
 

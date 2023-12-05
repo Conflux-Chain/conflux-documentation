@@ -3,7 +3,7 @@ sidebar_position: 2.5
 displayed_sidebar: generalSidebar
 ---
 
-# Hard Forks
+# 硬分叉
 
 A hard fork represents a significant alteration in a blockchain network's protocol. Such a change is not backward compatible, implying that every network participant must upgrade their software to the latest version to remain an active participant within the network. Upon the execution of the hard forks, all network participants are expected to update their nodes to the newest version. Failure to do so will render them incapable of participating in the validation and verification of new transactions on the blockchain.
 

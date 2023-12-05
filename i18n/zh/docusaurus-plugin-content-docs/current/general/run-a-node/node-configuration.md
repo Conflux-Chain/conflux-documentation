@@ -1,10 +1,10 @@
 ---
 sidebar_position: 6
-title: Node Configuration
+title: 配置节点
 displayed_sidebar: generalSidebar
 ---
 
-# Node Configuration
+# 配置节点
 
 Configuring a Conflux node allows you to tailor its operation to your specific needs and system capabilities.
 

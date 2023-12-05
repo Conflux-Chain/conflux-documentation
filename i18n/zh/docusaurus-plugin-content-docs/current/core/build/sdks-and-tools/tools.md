@@ -1,6 +1,6 @@
 ---
 sidebar_position: 2
-title: Tools
+title: 开发工具
 displayed_sidebar: coreSidebar
 ---
 

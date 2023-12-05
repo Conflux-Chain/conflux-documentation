@@ -1,7 +1,7 @@
 ---
 id: cfx-namespace
 sidebar_position: 1
-title: cfx Namespace
+title: cfx 命名空间
 keywords:
   - conflux
   - json-rpc

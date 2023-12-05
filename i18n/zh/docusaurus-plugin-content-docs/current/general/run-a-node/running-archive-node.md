@@ -1,10 +1,10 @@
 ---
-title: Running an Archive Node
+title: 运行归档节点
 sidebar_position: 12
 displayed_sidebar: generalSidebar
 ---
 
-# Running an Archive Node
+# 运行归档节点
 
 
 

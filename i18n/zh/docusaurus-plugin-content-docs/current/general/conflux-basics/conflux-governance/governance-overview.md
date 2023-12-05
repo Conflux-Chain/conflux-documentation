@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-title: Governance Overview
+title: 治理概览
 displayed_sidebar: generalSidebar
 ---
 

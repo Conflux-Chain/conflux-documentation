@@ -1,7 +1,7 @@
 ---
 sidebar_position: 5
 title: 如何赞助智能合约
-description: Use the ConfluxScan Read&Write Tool to sponsor a contract.
+description: 使用 ConfluxScan的读取/写入工具赞助合约。
 displayed_sidebar: coreSidebar
 ---
 

@@ -1,7 +1,7 @@
 ---
 id: trace_rpc
 sidebar_position: 5
-title: trace Namespace
+title: trace 命名空间
 keywords:
   - trace-rpc
 displayed_sidebar: coreSidebar

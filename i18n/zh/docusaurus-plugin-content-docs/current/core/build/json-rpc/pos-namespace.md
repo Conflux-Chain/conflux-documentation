@@ -1,13 +1,13 @@
 ---
 id: pos_rpc
 sidebar_position: 3
-title: pos Namespace
+title: pos 命名空间
 keywords:
   - pos-rpc
 displayed_sidebar: coreSidebar
 ---
 
-`conflux-rust` introduces the PoS finality starting from v2.0.0 to speed up the finality of blocks and prevent 51% attacks. PoS finality will introduce an independent PoS chain for PoS consensus and finalizing PoW blocks. Correspondingly, PoS also has its own RPC methods for obtaining data from the PoS chain.
+`conflux-rust`自v2.0.0版本起引入了PoS最终性，以加速区块的最终性并防止51%攻击。 PoS finality将引入一个独立的PoS链用于PoS共识和确认PoW块的最终性。 对应地，PoS也有自己的RPC方法，用于从PoS链中获取数据。
 
 Currently, only the archive nodes of conflux-rust can provide PoS RPC service to the public. `public_rpc_apis` needs to be configured to open RPC.
 

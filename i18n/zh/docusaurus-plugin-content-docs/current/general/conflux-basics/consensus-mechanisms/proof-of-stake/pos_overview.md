@@ -1,6 +1,6 @@
 ---
 id: pos_overview
-title: PoS Overview
+title: PoS 概览
 keywords:
   - pos
   - overview
@@ -8,19 +8,19 @@ sidebar_position: 2
 displayed_sidebar: generalSidebar
 ---
 
-This document is to introduce Conflux PoS Finality without practical details. It is to help readers understand PoS in general, and it is essential for reading other technical documents.
+本文是介绍 Conflux PoS 最终性的概念，而不涉及具体的细节。 它是帮助读者一般地理解 PoS 的，也是阅读其他技术文档的基础。
 
-There might be a `51%` attack problem in the early stage of a PoW chain when the hashing power is low. This became an even more significant issue when hashpower rental platforms emerged along with the development of public blockchains. Ethereum Classic, Grin, and Verge have all been the victims of the 51% attack last year.
+在 PoW 链的早期阶段，当算力较低时，可能会存在 `51%` 攻击的问题。 随着公链的发展，算力租赁平台的出现使这个问题更加严重。 Ethereum Classic, Grin, and Verge have all been the victims of the 51% attack last year.
 
-To deal with the threats caused by 51% attacks, Conflux will introduce a stand-alone PoS chain. The consensus participants of the PoS chain will sign the pivot of the tree structure regularly. All PoW miners should select the pivot with enough signatures into the pivot chain, even if its sibling blocks have higher weights. Briefly speaking, the PoS chain specifies a pivot block, and all PoW miners should follow that block.
+为了应对 51% 攻击带来的威胁，Conflux 将引入一条独立的 PoS 链。 PoS 链上的共识参与者将定期对树图结构的枢轴区块进行签名。 所有 PoW 矿工应该选择有足够签名的枢轴区块进入主链，即使它的兄弟区块有更高的权重。 简单来说，PoS 链指定了一个枢轴区块，所有 PoW 矿工都应该遵循这个区块。
 
-This means as long as the PoS consensus votes to a pivot block, even if the 51% attackers try to reverse the block, it won’t be recognized by the PoW nodes.
+这意味着只要 PoS 共识对一个枢轴区块进行了投票，即使 51% 的攻击者试图回滚这个区块，它也不会被 PoW 节点所认可。
 
-Conflux requires the PoS consensus to use the power of specifying pivot blocks in a restrictive manner. A block must be confirmed for a few minutes under the PoW rules before the honest PoS nodes will sign it. This means that the block sorting and confirmation of the tree graph are still accomplished by the PoW miners.
+Conflux 要求 PoS 共识有限制地指定枢轴区块。 一个区块必须在 PoW 规则下被确认几分钟后，诚实的 PoS 节点才会对它进行签名。 这意味着树图结构中的区块排序和确认仍然是由 PoW 矿工完成的。
 
-* The PoS chain is only used to deal with 51% of attacks. Therefore, it only includes basic features such as pivot block voting and voting committee election. It does not include the functionalities of general blockchains such as transactions and contract executions
-* The PoS chain features are built-in functionalities in the nodes of Conflux. Externally, there is still only one program: conflux-rust.
-* In this document, the Conflux chain refers to the running blockchain, and the PoS chain refers to the newly introduced chain.
+* PoS 链只用于应对 51% 的攻击。 因此，它只包含基本的功能，如枢轴区块投票和投票委员会选举。 它不包含一般区块链的功能，如交易和合约执行。
+* PoS 链的功能是 Conflux 节点中内置的功能。 从外部来看，仍然只有一个程序：conflux-rust。
+* 在本文中，Conflux 链指的是运行中的区块链，PoS 链指的是新引入的链。
 * There is approximately 1 PoS block generated per minute. All the times stated below are corresponding to the number of blocks.
 
 ## PoS Account

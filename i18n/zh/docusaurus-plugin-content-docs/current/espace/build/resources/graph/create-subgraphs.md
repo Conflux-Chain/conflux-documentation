@@ -1,6 +1,6 @@
 ---
 sidebar_position: 2
-title: Creating Subgraphs
+title: 创建子图
 displayed_sidebar: eSpaceSidebar
 ---
 

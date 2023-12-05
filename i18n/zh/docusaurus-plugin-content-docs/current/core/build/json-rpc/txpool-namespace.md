@@ -1,7 +1,7 @@
 ---
 id: txpool_rpc
 sidebar_position: 2
-title: txpool Namespace
+title: txpool 命名空间
 keywords:
   - conflux
   - txpool-rpc

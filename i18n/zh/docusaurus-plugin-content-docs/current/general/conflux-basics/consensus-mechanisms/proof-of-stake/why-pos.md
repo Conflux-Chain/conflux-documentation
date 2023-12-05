@@ -1,6 +1,6 @@
 ---
 sidebar_position: 2
-title: Why Introducing PoS?
+title: 为什么要引入 PoS ？
 id: why_pos
 keywords:
   - pos

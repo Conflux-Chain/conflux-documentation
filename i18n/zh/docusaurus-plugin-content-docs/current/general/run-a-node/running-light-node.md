@@ -1,10 +1,10 @@
 ---
 sidebar_position: 10
-title: Running a Light Node
+title: 运行轻节点
 displayed_sidebar: generalSidebar
 ---
 
-# Running a Light Node
+# 运行轻节点
 
 > Note: Currently, eSpace (EVM full-compatible space) RPC methods are not supported on the Conflux Light Node.
 

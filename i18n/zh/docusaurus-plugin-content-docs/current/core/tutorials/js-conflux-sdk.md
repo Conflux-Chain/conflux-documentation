@@ -1,7 +1,7 @@
 ---
 sidebar_position: 2
-title: JS SDK Complete Guide
-description: A comprehensive guide to using the js-conflux-sdk.
+title: JS SDK 指南
+description: 使用 js-conflux-sdk 的全面指南。
 displayed_sidebar: coreSidebar
 ---
 

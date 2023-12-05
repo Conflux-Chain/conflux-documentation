@@ -1,6 +1,6 @@
 ---
 sidebar_position: 9
-title: Grants
+title: 基金会补助
 displayed_sidebar: coreSidebar
 ---
 

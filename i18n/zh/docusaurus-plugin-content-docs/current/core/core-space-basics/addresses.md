@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-title: Base32 Addresses
+title: Base32 地址
 displayed_sidebar: coreSidebar
 ---
 

@@ -1,6 +1,6 @@
 ---
 sidebar_position: 3
-title: Sponsorship Mechanism
+title: 赞助机制
 displayed_sidebar: coreSidebar
 ---
 

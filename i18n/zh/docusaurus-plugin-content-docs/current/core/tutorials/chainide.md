@@ -1,7 +1,7 @@
 ---
 sidebar_position: 4
-title: Using ChainIDE for Smart Contract Development
-description: Deploy contracts on Core Space with ChainIDE
+title: 使用 ChainIDE 开发智能合约
+description: 使用 ChainIDE 在 Core 空间部署智能合约
 displayed_sidebar: coreSidebar
 ---
 
