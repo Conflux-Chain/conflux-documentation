@@ -8,7 +8,7 @@ Conflux eSpace also have it's own RPC Providers, just like Infura, Alchemy, Quic
 
 ## [Unifra](https://unifra.io/)
 
-[Unifra](https://unifra.io/) is an open infrastructure for everyone, they provides open, reliable infrastructure service for all web3 developers. Their node service already supports Conflux eSpace network.
+[Unifra](https://unifra.io/) offers an open infrastructure accessible to everyone, providing reliable infrastructure services to all Web3 developers. Their node service already includes support for the Conflux eSpace network.
 They offer a stable and user-friendly RPC service, which can be utilized to connect to the Conflux eSpace network.
 
 Unifra also provides a free-to-use RPC endpoint:
