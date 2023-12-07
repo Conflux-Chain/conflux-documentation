@@ -4,7 +4,7 @@ title: RPC Providers
 displayed_sidebar: eSpaceSidebar
 ---
 
-Conflux eSpace also have it's own RPC Providers, just like Infura, Alchemy, Quick, etc. You can use it to connect to Conflux eSpace network.
+Conflux eSpace also offers its own RPC Providers, similar to those like Infura, Alchemy, and QuickNode. These can be utilized to connect to the Conflux eSpace network.
 
 ## [Unifra](https://unifra.io/)
 
