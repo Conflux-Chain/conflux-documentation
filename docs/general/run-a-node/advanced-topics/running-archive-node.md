@@ -24,8 +24,6 @@ Light Node: Primarily used as a wallet and stores the least amount of data.
 
 #### 1.2 Hardware Requirements for Archive Node 
 
-* A computer with a recent version of Linux or macOS. 
-
 * At least 16GB of RAM. 
 
 * A minimum of 2TB free disk space (SSD is recommended). 

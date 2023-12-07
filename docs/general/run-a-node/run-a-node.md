@@ -18,7 +18,6 @@ Requirements depend on the type of node. For the specific requirements of each t
 
 For a Full Node, requirements are the following:
 
-* A computer with a recent version of Linux or macOS. 
 * At least 4GB of RAM (8GB or more is recommended). 
 * A minimum of 1TB free disk space (SSD is recommended). 
 * A stable internet connection. 
@@ -69,7 +68,7 @@ There are two options, downloading a pre-built Conflux Client, or compiling the 
 
 ### Option 1: Downloading the Conflux Client
 
-The [release](https://github.com/Conflux-Chain/conflux-rust/releases) page on the conflux-rust GitHub repository providers pre-built binaries that you can download and run directly. For more detailed instructions, please visit [this](./downloading-conflux-client.md) page.
+The [release](https://github.com/Conflux-Chain/conflux-rust/releases) page on the conflux-rust GitHub repository providers pre-built binaries that you can download and run directly. For more detailed instructions, please visit [this](./advanced-topics/downloading-conflux-client.md) page.
 
 ### Option 2: Compiling the Conflux Client
 Compiling the Conflux Client is another option, and can be done in two steps:
@@ -85,7 +84,7 @@ git clone https://github.com/Conflux-Chain/conflux-rust.git
 cd conflux-rust 
 cargo build --release 
 ``` 
-For more detailed instructions, please visit [this](./compiling-conflux-client.md) page.
+For more detailed instructions, please visit [this](./advanced-topics/compiling-conflux-client.md) page.
 
 ## Step 4: Configure the Node 
 
@@ -99,7 +98,7 @@ nano ./run/hydra.toml
 
 Make sure to review and modify the settings according to your preferences and system capabilities. 
 
-For more detailed instructions, please visit [this](./node-configuration.md) page.
+For more detailed instructions, please visit [this](./advanced-topics/node-configuration.md) page.
 
 ## Step 5: Running the Node 
 
@@ -134,3 +133,13 @@ curl -H "Content-Type: application/json" -X POST –data '{"jsonrpc":"2.0","meth
 ## Step 7: Keeping Your Node Updated 
 
 Make sure to keep your Conflux node software updated to the latest version to ensure compatibility with the network and to include the latest features and security patches. 
+
+
+# Video Tutorial
+
+<Tabs>
+  <TabItem value="youtube" label="Video source: YouTube">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/ocsbQRkL9fQ?si=wRmI5Aa6Ewfv-BCx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+    </iframe>
+  </TabItem>
+</Tabs>

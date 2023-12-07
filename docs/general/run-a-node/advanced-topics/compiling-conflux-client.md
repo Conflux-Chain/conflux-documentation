@@ -114,7 +114,7 @@ Note, when compiling a crate and you receive errors, it's in most cases your out
 $ cargo clean && cargo update
 ```
 
-To start running a Conflux full node, you can follow the instructions at [Running Conflux Full Node](../../general/run-a-node/running-full-node.md).
+To start running a Conflux full node, you can follow the instructions at [Running Conflux Full Node](../../general/run-a-node/advanced-topics/running-full-node.md).
 
 ## Install Test Dependencies
 
@@ -149,4 +149,4 @@ You can follow the detailed instructions at [Installing the Solidity Compiler](h
 
 Note that latest solidity compiler may be incompatible with Conflux and may cause the integration test to fail. If you encounter such problem, please install solidity compiler version 0.5.2.
 
-To run tests, you can build the source code first and follow the instructions at [Running Test](./running-full-node.md#running-test).
+To run tests, you can build the source code first and follow the instructions at [Running Test](./advanced-topics/running-full-node.md#running-test).
