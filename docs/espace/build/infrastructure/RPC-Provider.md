@@ -21,7 +21,7 @@ You can also buy **a higher tier RPC service** from Unifra at it [console dashbo
 
 ## Confura
 
-[Confura](../../network-endpoints) is a RPC service provided by Conflux foundation, the public RPC service is free to use. If the rate limit not enough for your development. You can apply for a high tier RPC service from Conflux foundation by sending email to [bd@confluxnetwork.org](bd@confluxnetwork.org).
+[Confura](../../network-endpoints) is an RPC service offered by the Conflux Foundation. This public RPC service is available at no cost. However, if the rate limit does not meet your development needs, you can apply for a higher-tier RPC service by contacting the Conflux Foundation via email at [bd@confluxnetwork.org](mailto:bd@confluxnetwork.org).
 
 ## FAQs
 
