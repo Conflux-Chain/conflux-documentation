@@ -1,9 +1,11 @@
 ---
 title: cfx_sendRawTransaction Errors
-displayed_sidebar: generalSidebar
+sidebar_position: 7
+description: Common errors of cfx_sendRawTransaction
+displayed_sidebar: coreSidebar
 ---
 
-When sending transactions in Conflux via the `cfx_sendRawTransaction` method, certain errors may arise due to incorrect transaction construction or other issues. This guide covers common errors and their solutions.
+When sending transactions in Conflux Core Space via the `cfx_sendRawTransaction` method, certain errors may arise due to incorrect transaction construction or other issues. This guide covers common errors and their solutions.
 
 ## Nonce Errors
 
