@@ -14,10 +14,6 @@ The PoS chain is an overlay chain that works alongside the PoW chain. The PoS ch
 
 Conflux will use a hybrid PoW-PoS chain. There is currently no plan to do a full migration to a PoS chain.
 
-## When will the PoS upgrade be released?
-
-The PoS upgrade will be deployed in February. You can join the tests here.
-
 ## Will the PoS upgrade break compatibility?
 
 Yes. Users running Conflux nodes will need to update their clients to be able to run the PoS chain.
@@ -72,7 +68,7 @@ Compared with these formulas, it is not very expensive to take an extra look at 
 
 ## What is forced retirement?
 
-If a candidate is elected to join the committee but does not participate in signing between two elections, all the locked votes will unlock automatically. This can happen if your PoS node is offline for some reason. In this case, the node's PoS account will be unable to acquire voting power for the following 7 days. This mechanism is often referred to as *forced retirement*.
+If a candidate is elected to join the committee but does not participate in signing between two elections, all the locked votes will unlock automatically. This can happen if your PoS node is offline for some reason. In this case, the node's PoS account will be unable to acquire voting power for the following 1-14 days. This mechanism is often referred to as *forced retirement*.
 
 ## How can I safely restart my PoS node?
 
