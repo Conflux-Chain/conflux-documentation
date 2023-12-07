@@ -11,7 +11,7 @@ With Conflux eSpace, your favorite tools for building and testing smart contract
 
 Since eSpace is EVM-Compatible, you’ll just need to point your favorite builder tools at a Conflux eSpace RPC Provider.
 
-If you not familiar with Ethereum development, you can first learn [Ethereum's basic and stack at it's documentation](https://ethereum.org/en/developers/)
+If you are not familiar with Ethereum development, you can start by learning the basics and understanding its stack through [Ethereum's official documentation](https://ethereum.org/en/developers/)
 
 ## Acquiring CFX
 
