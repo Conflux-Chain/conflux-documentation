@@ -7,6 +7,20 @@ displayed_sidebar: coreSidebar
 
 When sending transactions in Conflux Core Space via the `cfx_sendRawTransaction` method, certain errors may arise due to incorrect transaction construction or other issues. This guide covers common errors and their solutions.
 
+## Balance not enough
+
+```js
+{
+    "jsonrpc": "2.0",
+    "id": "15922956697249514502",
+    "error": {
+        "code": -32602,
+        "message": "Invalid parameters: tx",
+        "data": "\"Transaction 0xf34740b7f033b13b8670df91f24537e756700a32f17e5e09a7d297701cec6859 is discarded due to out of balance, needs 9000000000420000000000000 but account balance is 90095849479680000000000\""
+    }
+}
+```
+
 ## Nonce Errors
 
 ### Using an already executed nonce
@@ -26,7 +40,6 @@ When sending transactions in Conflux Core Space via the `cfx_sendRawTransaction`
 **Solution:** Change the nonce to the first unused one.
 
 ### Using a nonce already sent to the transaction pool
-
 
 ```js
 {
@@ -102,7 +115,7 @@ or
 }
 ```
 
-**Solution:** Change the `gas` field to a smaller one. Or optimize contract implementation to reduce gas cost.
+**Solution:** Change the `gas` field to a smaller one. The maximum value is 15 million.
 
 ## Invalid gasPrice
 
@@ -121,6 +134,20 @@ or
 ```
 
 **Solution:** Use return value from `cfx_gasPrice` as the `gasPrice`
+
+### Gas price smaller than minimum gas price
+
+```js
+{
+    "jsonrpc": "2.0",
+    "id": "15922956697249514502",
+    "error": {
+        "code": -32602,
+        "message": "Invalid parameters: tx",
+        "data": "\"transaction gas price 1 less than the minimum value 20000000000\""
+    }
+}
+```
 
 ## Data Size Limit Exceeded
 
@@ -168,6 +195,18 @@ The transaction has a size limit, with the maximum being 200k.
         "code": -32602,
         "message": "Invalid parameters: raw",
         "data": "\"RlpIncorrectListLen\""
+    }
+}
+```
+
+```js
+{
+    "jsonrpc": "2.0",
+    "id": "15922956697249514502",
+    "error": {
+        "code": -32602,
+        "message": "Invalid parameters: raw",
+        "data": "\"RlpExpectedToBeList\""
     }
 }
 ```
