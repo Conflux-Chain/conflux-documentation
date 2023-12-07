@@ -4,7 +4,7 @@ title: Oracles
 displayed_sidebar: eSpaceSidebar
 ---
 
-Oracles are data feeds that make off-chain data sources available to the blockchain for smart contracts. This is necessary because Ethereum-based smart contracts cannot, by default, access information stored outside the blockchain network. To learn more about oracles in [Ethereum's Oracle documentation](https://ethereum.org/en/developers/docs/oracles/)
+Oracles are data feeds that enable smart contracts on the blockchain to access off-chain data sources. This functionality is crucial, as Ethereum-based smart contracts are inherently unable to access information stored outside the blockchain network by default. For further information, you can explore [Ethereum's Oracle documentation](https://ethereum.org/en/developers/docs/oracles/).
 
 There are already oracle services available on Conflux eSpace.
 
