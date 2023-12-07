@@ -1,6 +1,6 @@
 ---
 sidebar_position: 5
-title: Network RPC Endpoints
+title: 网络 RPC 端点
 description: Conflux eSpace RPC endpoints
 displayed_sidebar: eSpaceSidebar
 ---
