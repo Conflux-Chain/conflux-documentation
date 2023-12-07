@@ -7,7 +7,7 @@ displayed_sidebar: eSpaceSidebar
 
 ## Confura
 
-Confura is a public RPC service provided by Conflux Foundation, it is free to use. To keep the usability of the service, there are some rate limits for the free tier. You can buy a higher tier RPC service at [Web3 Paywall](../general/build/tools/web3paywall.md) or apply from Conflux foundation by sending email to [bd@confluxnetwork.org](bd@confluxnetwork.org)
+Confura, a public RPC service offered by the Conflux Foundation, is available for free use. However, to maintain the service's usability, there are rate limits in place for the free tier. For access to a higher tier of RPC service, you can make a purchase through the [Web3 Paywall](./general/build/tools/web3paywall.md), or you can apply directly to the Conflux Foundation by emailing [bd@confluxnetwork.org](mailto:bd@confluxnetwork.org).
 
 ### Hong Kong
 
