@@ -105,7 +105,7 @@ Smart contract compilation is the process of generating the elements required wh
 - Bytecode: Smart contracts are executed on the Ethereum Virtual Machine (EVM). The bytecode is the hexadecimal value corresponding to the smart contract that the EVM can recognize.
 - ABI: ABI refers to the Application Binary Interface, which describes each function name, modifier, visibility, parameters name, and its type, returns value name and its type and description of events in the public interface of contract (in JSON format). When we call the contract function externally and encode it in a certain way based on the description of the function in the ABI, we can get a value that the EVM can recognize and display in hexadecimal format. You can use this value to interact with the smart contract.
 
-You can use `solc`,  [conflux-truffle for Conflux Core](https://github.com/Conflux-Chain/conflux-truffle) or [truffle for Conflux eSpace](https://github.com/trufflesuite/truffle) to compile the smart contract.
+You can use `solc`, or [hardhat](https://hardhat.org/) or [foundry](https://book.getfoundry.sh/) to compile the smart contract.
 
 Here we take `solc` as example.
 
@@ -170,7 +170,7 @@ The smart contract deployment is creating a contract on the Conflux Network by s
 
 > If the constructor contains parameters, `data` should be a combination of `bytecode` and the ABI encoding of the `constructor`.
 
-We will use `js-conflux-sdk` to demostrate:
+We will use `js-conflux-sdk` to demonstrate on Core Space:
 
 ```javascript
 const { Conflux } = require("js-conflux-sdk");
@@ -220,7 +220,7 @@ deploy tx receipt: {
 }
 ```
 
-> The example directly sending transaction for demostration purpose. If the contract constructor contains parameters, a better way is to use smart contract development tools as [conflux-truffle](https://github.com/Conflux-Chain/conflux-truffle) (for Conflux Core) and [hardhat](https://hardhat.org/) or [truffle](https://trufflesuite.com/) (for Conflux eSpace) to develop, compilate and deploy process.
+> The example directly sending transaction for demonstration purpose. If the contract constructor contains parameters, a better way is to use smart contract development tools as [hardhat](https://hardhat.org/) and [hardhat-conflux](https://github.com/conflux-chain/hardhat-conflux) (for Core Space) and [hardhat](https://hardhat.org/) (for eSpace) to develop, compile and deploy process.
 
 ## Calling smart contract functions
 
