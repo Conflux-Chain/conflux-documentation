@@ -10,7 +10,7 @@ There are already oracle services available on Conflux eSpace.
 
 ## [Pyth](https://pyth.network/)
 
-Pyth is a famous oracle service in industry, provide **Smarter Data for Smarter Contracts**. It can secure your smart contracts with reliable, low-latency market data from institutional sources. Build apps with high-fidelity oracle feeds designed for mission-critical systems.
+Pyth is a renowned oracle service in the industry, offering **Smarter Data for Smarter Contracts**. It ensures the security of your smart contracts by providing reliable, low-latency market data sourced from institutional-grade providers. Developers can build applications utilizing high-fidelity oracle feeds, specifically designed for mission-critical systems.
 
 Pyth is already integrated in Conflux eSpace, you can use it directly. Check it's [documentation](https://docs.pyth.network/documentation/pythnet-price-feeds/evm#mainnets) for how to use it in your smart contracts.
 
