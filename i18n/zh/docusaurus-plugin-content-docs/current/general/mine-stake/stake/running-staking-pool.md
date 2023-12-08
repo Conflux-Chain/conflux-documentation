@@ -28,7 +28,7 @@ For the Conflux’s full node configuration, you need to have in place the follo
 * A Server with Ubuntu (recommended) or Windows
 * Hard disk with 500GB of available space, ideally a SSD with NVMe drivers
 * Nodejs and Yarn frameworks installed in the server
-* Configure the server following the full node configuration [guide](../../run-a-node/running-full-node.md)
+* Configure the server following the full node configuration [guide](../../run-a-node/advanced-topics/running-full-node.md)
 
 It’s important to have the latest release of Conflux, you can download the node client from: https://github.com/Conflux-Chain/conflux-rust/releases
 
