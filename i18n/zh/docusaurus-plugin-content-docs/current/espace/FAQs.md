@@ -30,3 +30,8 @@ It's about 300 TPS.
 ## Is it easy to migrate an Ethereum DApp to eSpace?
 
 Yes, it is very easy, normally you only need to change the RPC endpoint url to the eSpace RPC endpoint url, and the DApp can run on eSpace.
+
+## What's the eSpace hardfork block number?
+
+- Mainnet: EpochNumber 36935000, BlockNumber 92060600
+- Testnet: EpochNumber 61465000, BlockNumber 77340000
