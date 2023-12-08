@@ -5,7 +5,9 @@ description: Conflux eSpace RPC endpoints
 displayed_sidebar: eSpaceSidebar
 ---
 
-## 1. Confura
+## Confura
+
+Confura, a public RPC service offered by the Conflux Foundation, is available for free use. However, to maintain the service's usability, there are rate limits in place for the free tier. For access to a higher tier of RPC service, you can make a purchase through the [Web3 Paywall](./general/build/tools/web3paywall.md), or you can apply directly to the Conflux Foundation by emailing [bd@confluxnetwork.org](mailto:bd@confluxnetwork.org).
 
 ### Hong Kong
 
@@ -34,7 +36,7 @@ Reference for various fee tiers and their rate limits.
 **Notes**
 - Maximum result-set size is 10,000 for `getLogs` call;
 - Old archived event logs may be inaccessible due to data prune;
-- Append your api key to the endpoint for privileged access (eg., `https://evm.confluxrpc.com/<api-key>`);
+- Append your api key(get from [Web3 Paywall](./general/build/tools/web3paywall.md) or Conflux Foundation) to the endpoint for privileged access (eg., `https://evm.confluxrpc.com/<api-key>`);
 - Rate limits are also imposed per RPC method, please check the following specification for more details.
 
 <details>
@@ -53,14 +55,12 @@ Reference for various fee tiers and their rate limits.
 
 </details>
 
-## 2. Unifra
+## FAQs
 
-| Network             | Chain ID     | RPC Endpoint URL                          | Explorer                      |
-| ------------------- | ------------ | ----------------------------------------- | ----------------------------- |
-| [Mainnet](#mainnet) | 1030 (0x406) | <https://conflux-espace-public.unifra.io> | <https://evm.confluxscan.net> |
+### How to get a Confura advanced API key?
 
+Confura is a public RPC service provided by Conflux Foundation, it is free to use. For using the free tier, you don't need an API key. To get a higher tier RPC service, you can buy it at [Web3 Paywall](../general/build/tools/web3paywall.md) or apply from Conflux foundation by sending email to [bd@confluxnetwork.org](bd@confluxnetwork.org)
 
-## Hardfork number
+### Does eSpace have any other RPC service or Provider?
 
-* Mainnet: EpochNumber 36935000, BlockNumber 92060600
-* Testnet: EpochNumber 61465000, BlockNumber 77340000
+Yes, you can check them [here](./build/infrastructure/RPC-Provider.md)
