@@ -1,5 +1,5 @@
 ---
-sidebar_position: 1
+sidebar_position: 11
 title: CIP-90
 displayed_sidebar: eSpaceSidebar
 ---
