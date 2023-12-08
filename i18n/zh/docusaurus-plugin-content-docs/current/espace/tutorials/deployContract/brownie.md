@@ -6,6 +6,7 @@ keywords:
   - Brownie
   - 智能合约
   - Python
+displayed_sidebar: eSpaceSidebar
 ---
 
 [Brownie](https://eth-brownie.readthedocs.io/en/stable/) is a Python-based development and testing framework for smart contracts targeting the Ethereum Virtual Machine. In this tutorial, we will guide you through configuring Brownie (or eth-brownie) for Conflux eSpace and demonstrate how to use Brownie scripts to deploy contracts on Conflux eSpace.
