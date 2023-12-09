@@ -7,7 +7,7 @@ displayed_sidebar: eSpaceSidebar
 
 ## Confura
 
-Confura, a public RPC service offered by the Conflux Foundation, is available for free use. However, to maintain the service's usability, there are rate limits in place for the free tier. For access to a higher tier of RPC service, you can make a purchase through the [Web3 Paywall](./general/build/tools/web3paywall.md), or you can apply directly to the Conflux Foundation by emailing [bd@confluxnetwork.org](mailto:bd@confluxnetwork.org).
+Confura, a public RPC service offered by the Conflux Foundation, is available for free use. However, to maintain the service's usability, there are rate limits in place for the free tier. For access to a higher tier of RPC service, you can make a purchase through the [Web3 Paywall](../general/build/tools/web3paywall), or you can apply directly to the Conflux Foundation by emailing [bd@confluxnetwork.org](mailto:bd@confluxnetwork.org).
 
 ### Hong Kong
 
@@ -36,7 +36,7 @@ Reference for various fee tiers and their rate limits.
 **Notes**
 - Maximum result-set size is 10,000 for `getLogs` call;
 - Old archived event logs may be inaccessible due to data prune;
-- Append your api key(get from [Web3 Paywall](./general/build/tools/web3paywall.md) or Conflux Foundation) to the endpoint for privileged access (eg., `https://evm.confluxrpc.com/<api-key>`);
+- Append your api key(get from [Web3 Paywall](../general/build/tools/web3paywall.md) or Conflux Foundation) to the endpoint for privileged access (eg., `https://evm.confluxrpc.com/<api-key>`);
 - Rate limits are also imposed per RPC method, please check the following specification for more details.
 
 <details>
