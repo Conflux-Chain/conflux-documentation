@@ -93,24 +93,6 @@ Now, in the “Deploy and Run Transactions” tab, use the “Environment” dro
 
 Connect your wallet and select the Conflux eSpace Testnet. Your account should be selected automatically in Remix, and you can click “Deploy.” A complete workflow for Remix usage is shown [here](./tutorials/deployContract/remix.md)
 
-### Truffle
-
-Assuming you already have a Truffle environment setup, go to the Truffle [configuration file](https://trufflesuite.com/docs/truffle/reference/configuration/), `truffle.js`. Make sure to have installed HDWalletProvider: `npm install @truffle/hdwallet-provider@1.4.0`
-
-```js
-const HDWalletProvider = require("@truffle/hdwallet-provider")
-...
-module.exports = {
-  networks: {
-    eSpaceTestnet: {
-      provider: () =>
-        new HDWalletProvider(process.env.PRIVATE_KEY, "https://evmtestnet.confluxrpc.com"),
-      network_id: '*',
-    },
-  }
-}
-```
-
 ### web3.py
 
 :::tip
