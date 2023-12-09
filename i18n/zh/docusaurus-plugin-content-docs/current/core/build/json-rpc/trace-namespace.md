@@ -53,7 +53,7 @@ Get block traces by block hash
 
 1. DATA, 32 Bytes - hash of a block
 
-#### 返回值
+#### Returns
 
 * `blockHash`: `HASH` - Hash of block
 * `epochHash`: `HASH` - Hash of epoch
@@ -192,7 +192,7 @@ curl --location --request POST 'http://testnet-rpc:12537' \
 }
 ```
 
-#### 返回值
+#### Returns
 
 ### trace_transaction
 
@@ -202,7 +202,7 @@ Get transaction's trace by it's hash
 
 1. DATA, 32 Bytes - hash of a transaction
 
-#### 返回值
+#### Returns
 
 * `type`: `string` - Avaliable value is `call`, `create`, `call_result`, `create_result`, `internal_transfer_action`
 * `transactionPosition`: `QUANTITY` - Position of transaction in block
@@ -385,7 +385,7 @@ Get whole epoch transaction's trace by it's number
 
 1. `QUANTITY|TAG` - the epoch number, or the string `"latest_mined"`, `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-default-epochnumber-parameter).
 
-#### 返回值
+#### Returns
 
 TODO
 
@@ -405,7 +405,7 @@ Returns all traces matching the provided filter.
     * `after`: `QUANTITY` - (optional) The offset trace number.
     * `count`: `QUANTITY` - (optional) The number of traces to display in a batch.
 
-#### 返回值
+#### Returns
 
 Same as `trace_transaction`
 
