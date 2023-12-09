@@ -1,6 +1,8 @@
 ---
 id: pubsub
 title: 发布/订阅 API
+description: The Publish-Subscribe API of Conflux Core Space
+sidebar_position: 6
 keywords:
   - conflux
   - pubsub
