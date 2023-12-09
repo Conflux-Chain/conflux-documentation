@@ -2,6 +2,7 @@
 id: pos_rpc
 sidebar_position: 3
 title: pos 命名空间
+description: The `pos` namespace includes RPCs related to PoS consensus.
 keywords:
   - pos-rpc
 displayed_sidebar: coreSidebar
@@ -90,7 +91,7 @@ Returns the current status of the PoS chain.
 
 `Empty`
 
-#### 返回值
+#### Returns
 
 `Object` - PoS status object.
 
@@ -148,7 +149,7 @@ params: [
 ]
 ```
 
-#### 返回值
+#### Returns
 
 `Object` - the account object, or `null` (if the account corresponding to the address does not exist)
 
@@ -201,7 +202,7 @@ Get the current PoS committee information in default. It is also able to get the
 
 1. [`QUANTITY`]:  block number, optional for querying the committee information at a certain block height
 
-#### 返回值
+#### Returns
 
 * `currentCommittee`: `OBJECT` -  current committee members, see [CurrentCommittee](#currentcommittee) for more information
 * `elections`: `Array` - nodes who are running for election
@@ -304,7 +305,7 @@ params: [
 ]
 ```
 
-#### 返回值
+#### Returns
 
 * `epoch`: `QUANTITY` - the epoch that the block is in
 * `hash`: `HASH` - the hash value of the block
@@ -380,7 +381,7 @@ Get block information by its block number
 
 1. `QUANTITY|TAG`: block number or block TAG（`latest_committed`, `latest_voted`）
 
-#### 返回值
+#### Returns
 
 the same as [pos_getBlockByHash](#pos_getblockbyhash)
 
@@ -413,7 +414,7 @@ params: [
 ]
 ```
 
-#### 返回值
+#### Returns
 
 * `accountRewards`: `Array` of [AccountReward](#accountreward)
 * `powEpochHash`: `HASH` - the hash value of the PoW block when the rewards are made
@@ -477,7 +478,7 @@ params: [
 ]
 ```
 
-#### 返回值
+#### Returns
 
 交易详情
 
