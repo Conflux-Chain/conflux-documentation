@@ -114,7 +114,11 @@ Note, when compiling a crate and you receive errors, it's in most cases your out
 $ cargo clean && cargo update
 ```
 
+<<<<<<< HEAD
 To start running a Conflux full node, you can follow the instructions at [Running Conflux Full Node](./running-full-node.md).
+=======
+To start running a Conflux full node, you can follow the instructions at [Running Conflux Full Node](../advanced-topics/running-full-node.md).
+>>>>>>> main
 
 ## Install Test Dependencies
 
