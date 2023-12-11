@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 title: Snapshot Tool
+description: Learn how to use the Conflux Snapshot Tool to quickly set up a Conflux node from a snapshot.
 displayed_sidebar: generalSidebar
 ---
 

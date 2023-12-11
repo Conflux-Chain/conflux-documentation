@@ -1,6 +1,7 @@
 ---
 title: FAQs
 sidebar_position: 13
+description: Frequently asked questions about running a node.
 displayed_sidebar: generalSidebar
 ---
 # Nodes FAQs
