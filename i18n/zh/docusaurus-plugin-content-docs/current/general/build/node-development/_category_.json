@@ -1,8 +1,8 @@
 {
-  "label": "Node Development",
+  "label": "节点开发",
   "position": 1,
   "link": {
     "type": "generated-index",
-    "description": "Documents related to Node Development."
+    "description": "节点开发相关文档。"
   }
 }
