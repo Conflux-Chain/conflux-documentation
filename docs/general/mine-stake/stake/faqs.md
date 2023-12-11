@@ -1,5 +1,5 @@
 ---
-sidebar_position: 5
+sidebar_position: 6
 title: FAQs
 displayed_sidebar: generalSidebar
 ---

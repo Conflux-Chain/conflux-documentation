@@ -1,8 +1,71 @@
 ---
-sidebar_position: 1
-title: Run a PoS Node
+sidebar_position: 5
+title: Run a PoS Node on AWS
 displayed_sidebar: generalSidebar
 ---
+
+This tutorial will help you set up a PoS node on AWS.
+
+## Setting up an AWS Instance
+
+In this section, you’ll configure and launch an AWS EC2 instance where your Conflux PoS staking pool will be hosted.
+
+1. Create an AWS account or log in your existing account.
+2. In AWS, go to Services > EC2 Management Console and launch a new EC2 instance.
+3. Click select on the Ubuntu Server 20.04 64-bit (x86) image. You can optionally use other Linux or Windows-based images, but we’ll stick to this one in this tutorial.
+4. Select the t2.large instance type and click Next: Configure Instance Details.
+5. Leave the default Configure Instance Details parameters and click Next: Add Storage.
+6. In Add Storage, set an image size of 700 GiB and click Review and Launch.
+:::note
+You can resize this later to 400 GiB, but this will greatly speed up the node setup process.
+:::
+7. Review the instance details and click Launch.
+
+You have successfully created and launched an EC2 instance. Now let’s log in to it from our local machine.
+
+## Logging in to the EC2 Instance
+
+1. In this section, you’ll login to the EC2 instance for the first time.
+2. Once your instance is created, in the EC2 Management Console go to Network & Security > Key Pairs. If you already have an AWS key pair, you can skip to Step 6.
+3. In Key Pairs, click Create key pair.
+4. Create and download a key pair.
+5. In Create key pair, enter a name for your key pair (in this case, we’ll enter the name conflux), then click create Create key pair.
+6. Download the newly-created key pair.
+7. In the EC2 Management Console, go to Instances > Instances.
+8. Go to your newly-created instance details by click its Instance ID.
+9. In the Instance summary, ensure that the instance state is “Running” and copy its Public IPv4 address.
+10. Go to your local machine’s terminal, and connect to your instance. You can do this by typing:
+
+:::note
+You’ll need to change your key pair file’s permissions.
+:::
+
+```js
+ssh -i <path to your key pair> ubuntu@<your machine's IP address or IPv4 DNS> 
+```
+
+11. Enter the password that you defined in your key pair.
+
+You have successfully logged in to your EC2 instance! Now let’s log in to our instance and prepare the server.
+
+## First Steps on the Server
+
+Some of the recommended first steps are the following:
+
+- Upgrade currently installed applications.
+
+```js
+sudo apt-get update
+sudo apt-get upgrade
+```
+
+- Adding a new dedicated user for your PoS node.
+- Add your user to sudoers.
+- Changing your server’s hostname.
+
+None of these are essential steps, so you can skip them or save them for later.
+
+Now that you have done this initial set up on your server, let’s move on and set up a Conflux node following the initial steps described on this guide.
 
 ## Setting Up Your Conflux Node
 
@@ -19,7 +82,7 @@ This will be, roughly, a two-step process:
 
 
 :::note
-The archivenode snapshot has a file size of around 160GB. Downloading it might take a few hours.
+The archivenode snapshot has a file size of around 200GB. Downloading it might take a few hours.
 :::
 
 ```
@@ -73,68 +136,3 @@ This step might take a few hours.
 
 
 You have successfully installed, configured, and ran a fully-synched Conflux PoS node!
-
-
-## Running a PoS node on AWS - Server Setup & Node Configuration
-
-This tutorial will help you set up a PoS node on AWS.
-
-1. Setting up an AWS Instance
-In this section, you’ll configure and launch an AWS EC2 instance where your Conflux PoS staking pool will be hosted.
-
-1. Create an AWS account or log in your existing account.
-2. In AWS, go to Services > EC2 Management Console and launch a new EC2 instance.
-3. Click select on the Ubuntu Server 20.04 64-bit (x86) image. You can optionally use other Linux or Windows-based images, but we’ll stick to this one in this tutorial.
-4. Select the t2.large instance type and click Next: Configure Instance Details.
-5. Leave the default Configure Instance Details parameters and click Next: Add Storage.
-6. In Add Storage, set an image size of 700 GiB and click Review and Launch.
-:::note
-You can resize this later to 400 GiB, but this will greatly speed up the node setup process.
-:::
-8. Review the instance details and click Launch.
-
-You have successfully created and launched an EC2 instance. Now let’s log in to it from our local machine.
-
-## Logging in to the EC2 Instance
-
-1. In this section, you’ll login to the EC2 instance for the first time.
-2. Once your instance is created, in the EC2 Management Console go to Network & Security > Key Pairs. If you already have an AWS key pair, you can skip to Step 6.
-3. In Key Pairs, click Create key pair.
-4. Create and download a key pair.
-5. In Create key pair, enter a name for your key pair (in this case, we’ll enter the name conflux), then click create Create key pair.
-6. Download the newly-created key pair.
-7. In the EC2 Management Console, go to Instances > Instances.
-8. Go to your newly-created instance details by click its Instance ID.
-9. In the Instance summary, ensure that the instance state is “Running” and copy its Public IPv4 address.
-10. Go to your local machine’s terminal, and connect to your instance. You can do this by typing:
-
-:::note
-You’ll need to change your key pair file’s permissions.
-:::
-
-```js
-ssh -i <path to your key pair> ubuntu@<your machine's IP address or IPv4 DNS> 
-```
-
-11. Enter the password that you defined in your key pair.
-
-You have successfully logged in to your EC2 instance! Now let’s log in to our instance and prepare the server.
-
-## First Steps on the Server
-
-Some of the recommended first steps are the following:
-
-- Upgrade currently installed applications.
-
-```js
-sudo apt-get update
-sudo apt-get upgrade
-```
-
-- Adding a new dedicated user for your PoS node.
-- Add your user to sudoers.
-- Changing your server’s hostname.
-
-None of these are essential steps, so you can skip them or save them for later.
-
-Now that you have done this initial set up on your server, let’s move on and set up a Conflux node following the initial steps described on this guide.
