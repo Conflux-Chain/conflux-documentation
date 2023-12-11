@@ -30,8 +30,6 @@ A full node stores the entire state of the blockchain, including all blocks and 
 
 ### Requirements 
 
-* A computer with a recent version of Linux or macOS. 
-
 * At least 8GB of RAM. 
 
 * A minimum of 1TB free disk space (SSD is recommended). 
@@ -58,8 +56,6 @@ Start the node with the custom configuration file, using the following command:
 An archive node stores the entire state of the blockchain, including all blocks, transactions, and every historical state. It requires more storage than a full node. 
 
 ### Requirements 
-
-* A computer with a recent version of Linux or macOS. 
 
 * At least 16GB of RAM. 
 
@@ -88,7 +84,6 @@ A light node only stores the block headers and a small subset of other data, all
 
 ### Requirements 
 
-* A computer with a recent version of Linux or macOS. 
 * At least 4GB of RAM. 
 * A minimum of 200GB free disk space (SSD is recommended). 
 * A stable internet connection. 

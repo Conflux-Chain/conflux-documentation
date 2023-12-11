@@ -213,35 +213,35 @@ for (ii = 0; ii < 10; ++ii) {
 
 | RPC  | status |
 | --------- | ---------------------- |
-| [cfx_call](../../core/build/json-rpc/cfx-namespace.md#cfx_call)  |  ❌ Not supported yet  |
-| [cfx_checkBalanceAgainstTransaction](../../core/build/json-rpc/cfx-namespace.md#cfx_checkbalanceagainsttransaction)  |  ✅ Supported  |
-| [cfx_clientVersion](../../core/build/json-rpc/cfx-namespace.md#cfx_clientversion) |  ✅ Supported  |
-| [cfx_epochNumber](../../core/build/json-rpc/cfx-namespace.md#cfx_epochnumber) |  ✅ Supported  |
-| [cfx_estimateGasAndCollateral](../../core/build/json-rpc/cfx-namespace.md#cfx_estimategasandcollateral)  |  ❌ Not supported yed  |
-| [cfx_gasPrice](../../core/build/json-rpc/cfx-namespace.md#cfx_gasprice) |  ✅ Supported  |
-| [cfx_getAccount](../../core/build/json-rpc/cfx-namespace.md#cfx_getaccount) |  ✅ Supported  |
-| [cfx_getAccumulateInterestRate](../../core/build/json-rpc/cfx-namespace.md#cfx_getaccumulateinterestrate) |  ✅ Supported  |
-| [cfx_getAdmin](../../core/build/json-rpc/cfx-namespace.md#cfx_getadmin) |  ✅ Supported  |
-| [cfx_getBalance](../../core/build/json-rpc/cfx-namespace.md#cfx_getbalance) |  ✅ Supported  |
-| [cfx_getBestBlockHash](../../core/build/json-rpc/cfx-namespace.md#cfx_getbestblockhash) |  ✅ Supported  |
-| [cfx_getBlockByEpochNumber](../../core/build/json-rpc/cfx-namespace.md#cfx_getblockbyepochnumber) |  ✅ Supported  |
-| [cfx_getBlockByHash](../../core/build/json-rpc/cfx-namespace.md#cfx_getblockbyhash) |  ✅ Supported  |
-| [cfx_getBlockByHashWithPivotAssumption](../../core/build/json-rpc/cfx-namespace.md#cfx_getblockbyhashwithpivotassumption) |  ✅ Supported  |
-| [cfx_getBlockRewardInfo](../../core/build/json-rpc/cfx-namespace.md#cfx_getblockrewardinfo)  |  ❌ Not supported yet  |
-| [cfx_getBlocksByEpoch](../../core/build/json-rpc/cfx-namespace.md#cfx_getblocksbyepoch) |  ✅ Supported  |
-| [cfx_getCode](../../core/build/json-rpc/cfx-namespace.md#cfx_getcode) |  ✅ Supported  |
-| [cfx_getCollateralForStorage](../../core/build/json-rpc/cfx-namespace.md#cfx_getcollateralforstorage) |  ✅ Supported  |
-| [cfx_getConfirmationRiskByHash](../../core/build/json-rpc/cfx-namespace.md#cfx_getconfirmationriskbyhash) |  ✅ Supported  |
-| [cfx_getInterestRate](../../core/build/json-rpc/cfx-namespace.md#cfx_getinterestrate) |  ✅ Supported  |
-| [cfx_getLogs](../../core/build/json-rpc/cfx-namespace.md#cfx_getlogs) |  ✅ Supported  |
-| [cfx_getNextNonce](../../core/build/json-rpc/cfx-namespace.md#cfx_getnextnonce) |  ✅ Supported  |
-| [cfx_getSkippedBlocksByEpoch](../../core/build/json-rpc/cfx-namespace.md#cfx_getskippedblocksbyepoch) |  ✅ Supported  |
-| [cfx_getSponsorInfo](../../core/build/json-rpc/cfx-namespace.md#cfx_getsponsorinfo) |  ✅ Supported  |
-| [cfx_getStakingBalance](../../core/build/json-rpc/cfx-namespace.md#cfx_getstakingbalance) |  ✅ Supported  |
-| [cfx_getStatus](../../core/build/json-rpc/cfx-namespace.md#cfx_getstatus) |  ✅ Supported  |
-| [cfx_getStorageAt](../../core/build/json-rpc/cfx-namespace.md#cfx_getstorageat) |  ✅ Supported  |
-| [cfx_getStorageRoot](../../core/build/json-rpc/cfx-namespace.md#cfx_getstorageroot) |  ✅ Supported  |
-| [cfx_getTransactionByHash](../../core/build/json-rpc/cfx-namespace.md#cfx_gettransactionbyhash) |  ✅ Supported  |
-| [cfx_getTransactionReceipt](../../core/build/json-rpc/cfx-namespace.md#cfx_gettransactionreceipt) |  ✅ Supported  |
-| [cfx_sendRawTransaction](../../core/build/json-rpc/cfx-namespace.md#cfx_sendrawtransaction) |  ✅ Supported  |
-| [cfx_getSupplyInfo](../../core/build/json-rpc/cfx-namespace.md#cfx_getsupplyinfo) |  ❌ Not supported yet  |
+| [cfx_call](../../../core/build/json-rpc/cfx-namespace.md#cfx_call)  |  ❌ Not supported yet  |
+| [cfx_checkBalanceAgainstTransaction](../../../core/build/json-rpc/cfx-namespace.md#cfx_checkbalanceagainsttransaction)  |  ✅ Supported  |
+| [cfx_clientVersion](../../../core/build/json-rpc/cfx-namespace.md#cfx_clientversion) |  ✅ Supported  |
+| [cfx_epochNumber](../../../core/build/json-rpc/cfx-namespace.md#cfx_epochnumber) |  ✅ Supported  |
+| [cfx_estimateGasAndCollateral](../../../core/build/json-rpc/cfx-namespace.md#cfx_estimategasandcollateral)  |  ❌ Not supported yed  |
+| [cfx_gasPrice](../../../core/build/json-rpc/cfx-namespace.md#cfx_gasprice) |  ✅ Supported  |
+| [cfx_getAccount](../../../core/build/json-rpc/cfx-namespace.md#cfx_getaccount) |  ✅ Supported  |
+| [cfx_getAccumulateInterestRate](../../../core/build/json-rpc/cfx-namespace.md#cfx_getaccumulateinterestrate) |  ✅ Supported  |
+| [cfx_getAdmin](../../../core/build/json-rpc/cfx-namespace.md#cfx_getadmin) |  ✅ Supported  |
+| [cfx_getBalance](../../../core/build/json-rpc/cfx-namespace.md#cfx_getbalance) |  ✅ Supported  |
+| [cfx_getBestBlockHash](../../../core/build/json-rpc/cfx-namespace.md#cfx_getbestblockhash) |  ✅ Supported  |
+| [cfx_getBlockByEpochNumber](../../../core/build/json-rpc/cfx-namespace.md#cfx_getblockbyepochnumber) |  ✅ Supported  |
+| [cfx_getBlockByHash](../../../core/build/json-rpc/cfx-namespace.md#cfx_getblockbyhash) |  ✅ Supported  |
+| [cfx_getBlockByHashWithPivotAssumption](../../../core/build/json-rpc/cfx-namespace.md#cfx_getblockbyhashwithpivotassumption) |  ✅ Supported  |
+| [cfx_getBlockRewardInfo](../../../core/build/json-rpc/cfx-namespace.md#cfx_getblockrewardinfo)  |  ❌ Not supported yet  |
+| [cfx_getBlocksByEpoch](../../../core/build/json-rpc/cfx-namespace.md#cfx_getblocksbyepoch) |  ✅ Supported  |
+| [cfx_getCode](../../../core/build/json-rpc/cfx-namespace.md#cfx_getcode) |  ✅ Supported  |
+| [cfx_getCollateralForStorage](../../../core/build/json-rpc/cfx-namespace.md#cfx_getcollateralforstorage) |  ✅ Supported  |
+| [cfx_getConfirmationRiskByHash](../../../core/build/json-rpc/cfx-namespace.md#cfx_getconfirmationriskbyhash) |  ✅ Supported  |
+| [cfx_getInterestRate](../../../core/build/json-rpc/cfx-namespace.md#cfx_getinterestrate) |  ✅ Supported  |
+| [cfx_getLogs](../../../core/build/json-rpc/cfx-namespace.md#cfx_getlogs) |  ✅ Supported  |
+| [cfx_getNextNonce](../../../core/build/json-rpc/cfx-namespace.md#cfx_getnextnonce) |  ✅ Supported  |
+| [cfx_getSkippedBlocksByEpoch](../../../core/build/json-rpc/cfx-namespace.md#cfx_getskippedblocksbyepoch) |  ✅ Supported  |
+| [cfx_getSponsorInfo](../../../core/build/json-rpc/cfx-namespace.md#cfx_getsponsorinfo) |  ✅ Supported  |
+| [cfx_getStakingBalance](../../../core/build/json-rpc/cfx-namespace.md#cfx_getstakingbalance) |  ✅ Supported  |
+| [cfx_getStatus](../../../core/build/json-rpc/cfx-namespace.md#cfx_getstatus) |  ✅ Supported  |
+| [cfx_getStorageAt](../../../core/build/json-rpc/cfx-namespace.md#cfx_getstorageat) |  ✅ Supported  |
+| [cfx_getStorageRoot](../../../core/build/json-rpc/cfx-namespace.md#cfx_getstorageroot) |  ✅ Supported  |
+| [cfx_getTransactionByHash](../../../core/build/json-rpc/cfx-namespace.md#cfx_gettransactionbyhash) |  ✅ Supported  |
+| [cfx_getTransactionReceipt](../../../core/build/json-rpc/cfx-namespace.md#cfx_gettransactionreceipt) |  ✅ Supported  |
+| [cfx_sendRawTransaction](../../../core/build/json-rpc/cfx-namespace.md#cfx_sendrawtransaction) |  ✅ Supported  |
+| [cfx_getSupplyInfo](../../../core/build/json-rpc/cfx-namespace.md#cfx_getsupplyinfo) |  ❌ Not supported yet  |

@@ -2,6 +2,7 @@
 id: cfx-namespace
 sidebar_position: 1
 title: cfx Namespace
+description: The core JSON-RPC API of Conflux.
 keywords:
   - conflux
   - json-rpc
@@ -9,35 +10,9 @@ keywords:
 displayed_sidebar: coreSidebar
 ---
 
-In order for a software application to interact with the Conflux blockchain - either by reading blockchain data or sending transactions to the network - it must connect to an Conflux node.
+## JSON-RPC Spec
 
-For this purpose, every [Conflux client](https://github.com/conflux-chain/conflux-rust) implements a [JSON-RPC specification](https://github.com/Conflux-Chain/jsonrpc-spec), so there are a uniform set of methods that applications can rely on regardless of the specific node or client implementation.
-
-[JSON-RPC](https://www.jsonrpc.org/specification) is a stateless, light-weight remote procedure call (RPC) protocol. It defines several data structures and the rules around their processing. It is transport agnostic in that the concepts can be used within the same process, over sockets, over HTTP, or in many various message passing environments. It uses JSON (RFC 4627) as data format.
-
-## CONVENIENCE LIBRARIES
-
-While you may choose to interact directly with Conflux clients via the JSON-RPC API, there are often easier options for dapp developers. Many [JavaScript](https://github.com/conflux-chain/js-conflux-sdk) and [backend API](https://github.com/conflux-chain/go-conflux-sdk) libraries exist to provide wrappers on top of the JSON-RPC API. With these libraries, developers can write intuitive, one-line methods in the programming language of their choice to initialize JSON-RPC requests (under the hood) that interact with Conflux.
-
-## SPEC
-
-[Read the full JSON-RPC API spec on GitHub.](https://github.com/Conflux-Chain/jsonrpc-spec)
-
-## JSON-RPC endpoints
-
-Currently, Conflux has a [Rust implementation](https://github.com/Conflux-Chain/conflux-rust) that supports JSON-RPC 2.0 over an HTTP, TPC, or WebSocket connection.
-
-If you are a node operator, you can enable and configure various RPC interfaces through the TOML config file, or directly by passing command line arguments. The main configuration items are listed in the table below. Note that if you want to enable HTTPS or access control, you will need to set up a proxy for your node.
-
-| config parameter          | cli parameter         | default port   | enabled by default   |
-|---------------------------|-----------------------|:--------------:|:--------------------:|
-| `jsonrpc_ws_port`         | `--jsonrpc-ws-port`   | 12535          | no                   |
-| `jsonrpc_tcp_port`        | `--jsonrpc-tcp-port`  | 12536          | no                   |
-| `jsonrpc_http_port`       | `--jsonrpc-http-port` | 12537          | no                   |
-| `jsonrpc_local_tcp_port`  | -                     | 12538          | no                   |
-| `jsonrpc_local_http_port` | -                     | 12539          | yes                  |
-
-The examples in the rest of this document will use the HTTP endpoint.
+There is a [**JSON-RPC API spec**](https://open-rpc.org/) of cfx namespace on [GitHub](https://github.com/Conflux-Chain/jsonrpc-spec). You can view it in [open-rpc playground](https://playground.open-rpc.org/?schemaUrl=https://raw.githubusercontent.com/Conflux-Chain/jsonrpc-spec/main/src/cfx/cfx.json&uiSchema%5BappBar%5D%5Bui:splitView%5D=false&uiSchema%5BappBar%5D%5Bui:input%5D=false&uiSchema%5BappBar%5D)
 
 ## CONVENTIONS
 
@@ -121,7 +96,6 @@ The EIP-1898 style epoch number parameter is now usable in following RPCs:
 * [cfx_call](#cfx_call)
 * [cfx_getNextNonce](#cfx_getnextnonce)
 * [cfx_getCode](#cfx_getcode)
-
 * [cfx_getEpochReceipts](#cfx_getepochreceipts)
 
 ## CURL EXAMPLES
@@ -133,6 +107,8 @@ The curl requests might return an error message relating to the content type. Th
 ```shell
 $ curl -H "Content-Type: application/json" -X POST --data '{"jsonrpc":"2.0","method":"cfx_clientVersion","params":[],"id":67}' 127.0.0.1:12537
 ```
+
+The examples in the rest of this document will use the HTTP endpoint.
 
 ## State and transaction availability
 
@@ -947,6 +923,10 @@ params: [
 #### Returns
 
 `DATA`, 32 Bytes - the transaction hash.
+
+#### Common Errors
+
+Check [send raw transaction errors](./cfx_sendTransaction-errors.md) for details.
 
 ##### Example
 

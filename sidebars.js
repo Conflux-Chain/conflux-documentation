@@ -267,7 +267,7 @@ const sidebars = {
     },
     {
       type: "doc",
-      id: "general/run-a-node/configuration-files",
+      id: "general/run-a-node/advanced-topics/configuration-files",
       label: "Node Configuration Files",
     },
     // commented because of i18n build failure
@@ -333,7 +333,7 @@ const sidebars = {
   //     type: 'html',
   //     value: "<span class='menu__item'><b><medium> Node Deployment </medium></b></span>"
   //   },
-  //   "general/run-a-node/run-a-node",
+  //   "general/run-a-node/advanced-topics/run-a-node",
   //   {
   //     type: 'html',
   //     value: "<span class='menu__item'><b><medium> Core Space Dev </medium></b></span>"
