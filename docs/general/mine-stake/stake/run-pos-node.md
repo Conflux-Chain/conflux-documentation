@@ -4,7 +4,7 @@ title: Run a PoS Node on AWS
 displayed_sidebar: generalSidebar
 ---
 
-This tutorial will help you set up a PoS node on AWS.
+This tutorial will help you set up a Conflux node on AWS.
 
 ## Setting up an AWS Instance
 

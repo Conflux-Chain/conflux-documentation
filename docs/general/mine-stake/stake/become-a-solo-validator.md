@@ -16,13 +16,13 @@ This guide will walk you through the process of setting up a solo validator.
 
 A PoS node is also a Conflux node. So you can run a PoS node following the [run a node](/docs/general/run-a-node/) guide. Either a full node or a archive node is fine.
 
-节点的 PoS 配置文件位于下载的节点程序包的 `pos_config` 目录下, 该目录下的 `pos_config.yaml` 文件是 PoS 的配置文件, 通常该文件的配置不需要修改.
+The PoS configuration file for the node is located in the `pos_config` directory within the downloaded node package. The `pos_config.yaml` file in this directory is the PoS configuration file, and typically, the settings in this file do not need to be modified.
 
-第一次启动节点时, 会要求设置一个密码, 用于保护节点的 PoS 私钥. 请务必牢记这个密码, 一旦忘记, 将无法恢复. 后期节点重启时, 会要求输入这个密码. 该私钥会被保存在节点目录的 `pos_config/pos_key` 文件中, 建议备份该文件.
+When you first start the node, you will be prompted to set a password to protect the PoS private key of the node. Please remember this password carefully, as it cannot be recovered if forgotten. When the node is restarted later, you will be required to enter this password. The private key is stored in the `pos_config/pos_key` file in the node directory, and it is recommended to create a backup of this file.
 
-节点首次启动时建议使用区块链数据快照, 可以大大加快节点同步速度. 请参考 [区块链数据快照](/docs/general/run-a-node/snapshot-tool) 了解如何使用区块链数据快照.
+When starting the node for the first time, it is recommended to use a blockchain data snapshot, as it can significantly accelerate the node synchronization speed. Please refer to [Blockchain Data Snapshot](/docs/general/run-a-node/snapshot-tool) for information on how to use the blockchain data snapshot.
 
-待节点数据同步到最新区块后(节点日志的 Catch-up mode 变为 false), 即可进行 PoS 注册.
+Once the node data is synchronized to the latest block (and the "Catch-up mode" in the node logs changes to false), you can proceed with PoS registration.
 
 ## 2. Register it in PoS
 
@@ -55,7 +55,7 @@ It is very easy to use, just connect your Fluent wallet, input the amount of CFX
 
 ### Register
 
-Then we can use the [ConfluxHub's PoS register tool](https://confluxhub.io/governance/pow-stake) to register our node.
+Then we can use the [ConfluxHub's PoS register tool](https://confluxhub.io/pos/register) to register our node.
 
 1. Paste the register data we got in the previous step into the "Full node data" input box.
 2. Input 1 in the "Votes" input box.
@@ -68,7 +68,7 @@ After the transaction is executed, the register data will be synced to the PoS c
 
 ## 3. Stake CFX in this PoS node
 
-After the register data is synced to the PoS chain, you can enter a page like this.
+After the register data is synced to the PoS chain, you can enter a [page like this](https://confluxhub.io/pos/increase).
 
 ![](./img/Stake-More.jpg)
 
@@ -133,16 +133,30 @@ The other reason is that your node is not running correctly, you can check your 
 1. Is your node synced to the latest block?
 2. Are your node's `pos_key` and `pos_db/secure_storage.json` matching? If you are unsure, you can delete the `pos_db/secure_storage.json` file and restart your node; the node will regenerate the `pos_db/secure_storage.json` file.
 
-### 运行节点需要注意的风险?
+### The risks to be aware of when running a node?
 
-### 如何重新生成 PoS 私钥?
+The risks to be aware of when running a node include:
 
-### 如何安全的重启节点?
+1. Risk of PoS private key leakage or loss. Please securely store the PoS private key and avoid uploading it to any public servers.
+2. Stability of PoS node operation. If the node is elected to the committee and does not participate in PoS voting for more than 1.5 hours, all PoS votes will be forcibly retired. There will be no rewards after retirement, but there won't be any penalties either.
+3. Sharing a pos_key file between two PoS nodes may result in the permanent lockup of all PoS votes for that node. This is **the most severe risk and should be treated with utmost caution**.
 
-### CFX 从质押进 PoS 到提取出来, 最快需要多久?
+### How to regenerate the PoS private key?
 
-### 解质押 PoS Votes 多久可以到账?
+Deleting `pos_config/pos_key` and `pos_db/secure_storage.json`, and restarting the node will regenerate the PoS private key.**Please be sure that you want to delete these two files because once deleted, your PoS account cannot be recovered.**
 
-### PoS 节点绑定的 PoW 账户可以修改吗?
+### How long does it take for CFX to go from staking to withdrawal in PoS?
 
-### PoS 节点绑定的 PoW 账户可以是合约账户么? 合约是否需要实现 receive 或 fallback 函数?
+14 days
+
+### How long does it take for unstaked PoS votes to be credited?
+
+Typically, it takes 1-14 days, depending on the staking duration. If your PoS votes have been staked for over 13 days, unstaking will only take one day. If recently staked, it will require the full 14 days.
+
+### Can the PoS node bound to a PoW account be modified?
+
+Modification is possible, but it requires unstaking all votes associated with the PoS node. Once the unstaking process is complete, the node can be directly bound to another PoS node.
+
+### Can a PoS node be bound to a PoW account that is a contract account? Does the contract need to implement the receive or fallback functions?
+
+It can be a contract account, and there is no need to implement receive or fallback functions. This is because rewards are directly mined to the PoW account by the chain and do not involve transfers.

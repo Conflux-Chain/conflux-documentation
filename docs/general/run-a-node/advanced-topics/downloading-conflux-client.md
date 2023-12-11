@@ -20,6 +20,7 @@ On the Release page, each version will have a version update description and `As
 ├── start.bat
 ├── start.sh
 ├── hydra.toml
+├── pos_config
 └── throttling.toml
 
 0 directories, 6 files
@@ -28,9 +29,10 @@ On the Release page, each version will have a version update description and `As
 * `conflux` Node program
 * `hydra.toml` Mainnet configuration file (If you download the testnet program, the configuration file is called `testnet.toml`)
 * `log.yaml` Log configuration file
-* `throttling.toml` Internet speed flow limit configuration file (used for development and testing) 
+* `throttling.toml` Internet speed flow limit configuration file (used for development and testing)
 * `start.sh` Linux system startup script
 * `start.bat` Windows system startup script
+* `pos_config` Configuration files for the PoS consensus mechanism. Normally you don't need to edit it.
 
 **Make sure you only run binaries downloaded from the official Conflux-Chain/conflux-rust GitHub repository.**
 
