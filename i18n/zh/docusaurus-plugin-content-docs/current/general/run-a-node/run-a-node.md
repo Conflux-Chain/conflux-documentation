@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 title: 运行节点
+description: Quick guide for running a Conflux node.
 displayed_sidebar: generalSidebar
 ---
 
