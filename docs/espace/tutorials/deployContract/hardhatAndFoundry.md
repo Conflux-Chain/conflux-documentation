@@ -70,6 +70,10 @@ Before you start deploying the contract, you need to request test tokens from a 
      --legacy contracts/Lock.sol:Lock
    ```
 
+:::tip
+We are using the —-legacy flag because Foundry uses the EIP1559 transaction object structure which the eSpace testnet doesn’t support
+:::
+
 ## Questions and Feedback
 
 Thank you for participating in and developing on the eSpace Testnet! If you encounter any issues, join our [Discord](https://discord.gg/conflux-network-707952293412339843) and ask us in it.

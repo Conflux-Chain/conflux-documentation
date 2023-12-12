@@ -23,6 +23,7 @@ Development tools(Remix, Hardhat, Foundry etc), SDKs(ethers.js, viem, web3.py), 
 
 ## Technical details
 
+* [A High-Level Overview of eSpace](https://medium.com/conflux-network/conflux-espace-a-high-level-overview-cdca29bc422a)
 * [CrossSpace Internal Contract](./build/cross-space-bridge.md)
 * [EVM compatibility](./build/evm-compatibility.md)
 * [JSON-RPC compatibility](./build/jsonrpc-compatibility.md)

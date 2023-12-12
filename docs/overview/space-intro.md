@@ -12,6 +12,8 @@ eSpace is a space within the Conflux Network that is fully compatible with the E
 
 If you are an Ethereum developer looking to quickly deploy your application on the Conflux Network, eSpace would be your preferred choice.
 
+If you want to build DeFi, DEX, DAO, or stablecoin applications, eSpace would be your preferred choice.
+
 ## Core Space
 
 Core Space is the core area of the Conflux Network and is also its native space. Core Space boasts higher network performance and additional features (such as the sponsorship mechanism) but is not compatible with Ethereum. It requires the use of **Conflux's own** SDKs, tools, and wallets.
