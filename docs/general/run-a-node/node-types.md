@@ -1,10 +1,9 @@
 ---
 sidebar_position: 2
 title: Node Types
+description: Learn about the different types of nodes in the Conflux Network.
 displayed_sidebar: generalSidebar
 ---
-
-# Node Types Overview
 
 In the Conflux Network, there are different types of nodes that you can run, each serving different purposes and having different requirements. 
 There are 3 types of nodes: Archive Node, Full Node and Light Node. The difference between three types of nodes lies in the amount of data reserved for storage. The Archive Node takes the most and the Light Node takes the least. Of course, more data consumes more hardware resources.
