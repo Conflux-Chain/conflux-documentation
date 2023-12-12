@@ -68,7 +68,7 @@ La cuenta PoS puede retirar los derechos de voto y desbloquear CFX.
 * Los usuarios deben utilizar la cuenta vinculada de PoW para enviar transacciones en la cadena Conflux para solicitar el desbloqueo de tokens (denominado "retiro" en el código). Los usuarios pueden desbloquear cualquier número de tokens bloqueados.
 * Los usuarios pueden solicitar el desbloqueo en cualquier momento. Una vez que se solicite el desbloqueo, los derechos de voto correspondientes se invalidarán inmediatamente. Sin embargo, los tokens sólo se desbloquearán cuando se cumplan las siguientes condiciones:
   1. Los tokens han sido bloqueados por al menos 14 días.
-  2. Han pasado 7 días de que la solicitud de desbloqueo ha sido realizada.
+  2. The request for unlocking has passed for 1 days
 * Si existen multiples transacciones de bloqueo de tokens, van a ser desbloqueados en orden cronológico hasta que la cantidad desbloqueada requerida es alcanzada.
 
 ### Ejemplo
@@ -77,11 +77,11 @@ Supongamos que el usuario A bloquea 2000 CFX en 1 de enero, 3 y 5, respectivamen
 
 * Los 2000 CFX bloqueados el 1 de enero se desbloquearán primero.
 * Requisito de 14 días de bloqueo: 1 de enero + 14 días = 15 de enero.
-* Requisito de 7 días luego de la solicitud: 9 de enero + 7 días = 16 de enero.
-* Por lo tanto, se desbloquearán 2000 CFX el 16 de enero.
+* 1-day requirement after unlocking request: Jan 9th + 1 days = Jan 10th.
+* Therefore, there will be 2000 CFX unlocked on Jan 15th.
 * Luego, 1000 CFX del bloqueo del 3 de enero se desbloquearán.
 * Requisito de 14 días de bloqueo: 3 de enero + 14 días = 17 de enero.
-* Requisito de 7 días luego de la solicitud: 9 de enero + 7 días = 16 de enero.
+* 1-day requirement after unlocking request: Jan 9th + 1 days = Jan 10th.
 * Por lo tanto, se desbloquearán 1000 CFX el 17 de enero, lo que cumple con la cantidad solicitada de desbloqueo, 3000 CFX.
 
 Al final, el usuario queda con 1000 CFX bloqueados el 3 de enero y 2000 CFX bloqueados el 5 de enero.
@@ -137,7 +137,7 @@ Si una cuenta PoS firma dos bloques PoS diferentes con el mismo peso, sus tokens
 
 ### Riesgo de liquidez
 
-* Todos los votos bloqueados se desbloquearán automáticamente si un candidato es elegido para formar parte del comité, pero no participa en la votación entre dos elecciones. Todos los votos recién bloqueados se desbloquearán automáticamente luego de `7` días también.
+* Todos los votos bloqueados se desbloquearán automáticamente si un candidato es elegido para formar parte del comité, pero no participa en la votación entre dos elecciones. All newly locked votes will unlock automatically in the next `1` days as well.
 
 ### Pérdida de Ingresos
 
