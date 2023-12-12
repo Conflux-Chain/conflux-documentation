@@ -35,3 +35,7 @@ Yes, it is very easy, normally you only need to change the RPC endpoint url to t
 
 - Mainnet: EpochNumber 36935000, BlockNumber 92060600
 - Testnet: EpochNumber 61465000, BlockNumber 77340000
+
+## How long does it take to execute a transaction in eSpace?
+
+Typically, it takes 10 seconds from the time a transaction is sent to when it is executed.
