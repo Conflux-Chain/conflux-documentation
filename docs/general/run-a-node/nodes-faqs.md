@@ -44,4 +44,4 @@ If you run the node through `start.sh`, you can check the error log in `stderr
 
 ### How to run a PoS node?
 
-Refer to [THIS](../mine-stake/stake/run-pos-node) section.
+Refer to [THIS](../mine-stake/stake/run-pos-node-on-aws) section.

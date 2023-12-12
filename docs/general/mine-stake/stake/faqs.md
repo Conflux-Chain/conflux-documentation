@@ -4,6 +4,10 @@ title: FAQs
 displayed_sidebar: generalSidebar
 ---
 
+## Is Conflux PoS node and PoW node use the same client?
+
+Yes, the PoS node and PoW node use the same client. A conflux node works as a PoS node and a PoW node at the same time.
+
 ## What is forced retirement?
 
 If a candidate is elected to join the committee but does not participate in signing between two elections, all the locked votes will unlock automatically. This can happen if your PoS node is offline for some reason. In this case, the node's PoS account will be unable to acquire voting power for the following 1-14 days. This mechanism is often referred to as *forced retirement*.

@@ -44,4 +44,4 @@ If you run the node through `start.sh`, you can check the error log in `stderr
 
 ### How to run a PoS node?
 
-Refer to [THIS](../mine-stake/stake/run-pos-node) section.
+An Conflux node is a PoS node by default, you can run it directly.

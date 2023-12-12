@@ -23,11 +23,11 @@ Then you can use the ConfluxScan API to get the data you want. For a complete li
 
 The API endpoints are listed below:
 
-- Mainnet: `https://evmapi.confluxscan.io`
-- Testnet: `https://evmapi-testnet.confluxscan.io`
+* Mainnet: `https://evmapi.confluxscan.io`
+* Testnet: `https://evmapi-testnet.confluxscan.io`
 
 Check API's rate limit, notes in it's [swagger doc](https://evmapi.confluxscan.io/doc).
 
 ## API Key
 
-If the free quota is not enough for your usage, you can apply for an API key by contact us via email at [bd@confluxnetwork.org](mailto:bd@confluxnetwork.org)
+If the free quota is not enough for your usage, you can apply for an API key by contact us via email at [bd@confluxnetwork.org](mailto:bd@confluxnetwork.org) or make a purchase through the [Web3 Paywall](../../../general/build/tools/web3paywall)

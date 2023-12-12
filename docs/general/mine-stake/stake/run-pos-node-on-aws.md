@@ -134,5 +134,4 @@ cd run
 This step might take a few hours.
 :::
 
-
 You have successfully installed, configured, and ran a fully-synched Conflux PoS node!
