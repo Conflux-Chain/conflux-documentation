@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 title: Running a Node
+description: Quick guide for running a Conflux node.
 displayed_sidebar: generalSidebar
 ---
 
