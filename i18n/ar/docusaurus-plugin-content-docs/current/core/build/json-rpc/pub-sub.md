@@ -1,6 +1,8 @@
 ---
 id: pubsub
 title: Publish-Subscribe API
+description: The Publish-Subscribe API of Conflux Core Space
+sidebar_position: 6
 keywords:
   - conflux
   - pubsub

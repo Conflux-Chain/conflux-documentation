@@ -24,7 +24,7 @@ eSpace对于以太坊的开发者和用户来说非常容易使用，就像BSC�
 
 Core Space和eSpace是两个逻辑上独立的空间，它们有自己的交易、账户状态和合约。 它们共享同一个账本（链）作为底层数据存储。 一个区块可能包含来自两个空间的交易，当交易被执行时，它们只根据交易类型进行区分。 每个space只会影响自己space内的账户状态。
 
-To interact with Core Space, use Conflux-compatible wallet (Fluent), SDK (*-conflux-SDK), and development tools (chainIDE, conflux-truffle). To interact with eSpace directly, use the existing tools and products from the Ethereum ecosystem, such as Metamask, Truffle, Hardhat, Ethers.js, etc. (by simply setting the RPC network of the tool to **[Conflux eSpace RPC](../../espace/network-endpoints.md)**.
+To interact with Core Space, use Conflux-compatible wallet (Fluent), SDK (*-conflux-SDK), and development tools (chainIDE, hardhat). To interact with eSpace directly, use the existing tools and products from the Ethereum ecosystem, such as Metamask, Hardhat, Ethers.js, etc. (by simply setting the RPC network of the tool to **[Conflux eSpace RPC](../../espace/network-endpoints.md)**.
 
 ## **How to Communicate Between Spaces**
 

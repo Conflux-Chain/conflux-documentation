@@ -11,6 +11,8 @@ With Conflux eSpace, your favorite tools for building and testing smart contract
 
 Since eSpace is EVM-Compatible, you’ll just need to point your favorite builder tools at a Conflux eSpace RPC Provider.
 
+If you are not familiar with Ethereum development, you can start by learning the basics and understanding its stack through [Ethereum's official documentation](https://ethereum.org/en/developers/)
+
 ## Acquiring CFX
 
 eSpace also uses CFX as its native currency, which will be needed to pay transaction fees for deploying and interacting with the network.
@@ -90,24 +92,6 @@ Now, in the “Deploy and Run Transactions” tab, use the “Environment” dro
 ![](./img/injectedProviderMM.avif)
 
 Connect your wallet and select the Conflux eSpace Testnet. Your account should be selected automatically in Remix, and you can click “Deploy.” A complete workflow for Remix usage is shown [here](./tutorials/deployContract/remix.md)
-
-### Truffle
-
-Assuming you already have a Truffle environment setup, go to the Truffle [configuration file](https://trufflesuite.com/docs/truffle/reference/configuration/), `truffle.js`. Make sure to have installed HDWalletProvider: `npm install @truffle/hdwallet-provider@1.4.0`
-
-```js
-const HDWalletProvider = require("@truffle/hdwallet-provider")
-...
-module.exports = {
-  networks: {
-    eSpaceTestnet: {
-      provider: () =>
-        new HDWalletProvider(process.env.PRIVATE_KEY, "https://evmtestnet.confluxrpc.com"),
-      network_id: '*',
-    },
-  }
-}
-```
 
 ### web3.py
 

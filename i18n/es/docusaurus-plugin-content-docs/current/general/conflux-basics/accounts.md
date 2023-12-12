@@ -16,7 +16,7 @@ The account implementation, including the account content and address computing 
 
 ## Address
 
-Las direcciones de las cuentas, como números de cuenta bancaria, identifican las cuentas y pueden ser examinadas en [ConfluxScan](https://confluxscan.io). However, the address format differs between [core space](../core-space-basics/addresses.md) and espace. El espacio central utiliza el esquema de codificación CIP-37, mientras que el espacio utiliza el mismo formato que Ethereum.
+Las direcciones de las cuentas, como números de cuenta bancaria, identifican las cuentas y pueden ser examinadas en [ConfluxScan](https://confluxscan.io). However, the address format differs between [core space](../../core/core-space-basics/addresses.md) and espace. El espacio central utiliza el esquema de codificación CIP-37, mientras que el espacio utiliza el mismo formato que Ethereum.
 
 Estos son ejemplos que muestran el formato de las direcciones en los 2 espacios:
 

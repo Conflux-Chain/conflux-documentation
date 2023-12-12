@@ -6,7 +6,7 @@ displayed_sidebar: coreSidebar
 
 :::note
 
-本页面是为了提供有关 CORE SPACE ACCOUNTS 的信息。 有关账户概念的总体介绍，请参考[General-Accounts](../../../general/conflux-basics/accounts.md)。
+本页面是为了提供有关 CORE SPACE ACCOUNTS 的信息。 Refer to [General-Accounts](../../general/conflux-basics/accounts.md) for the overall introduction of the concept of ACCOUNTS.
 
 :::
 
@@ -18,7 +18,7 @@ displayed_sidebar: coreSidebar
 
 ### 查询
 
-可以使用 [cfx_getAccount RPC](../../build/json-rpc/cfx-namespace.md#cfx_getaccount) 查询账户状态。
+The account state can be queried using [cfx_getAccount RPC](../build/json-rpc/cfx-namespace.md#cfx_getaccount).
 
 ```json
 // Request

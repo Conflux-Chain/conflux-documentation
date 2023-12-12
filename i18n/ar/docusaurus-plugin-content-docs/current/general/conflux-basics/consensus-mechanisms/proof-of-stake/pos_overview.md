@@ -68,7 +68,7 @@ The PoS account can withdraw the voting rights and unlock CFX.
 * Users need to use the bound PoW account to send transactions on the Conflux chain to apply for unlocking tokens (referred to as ‘retirement’ in the code). Users can unlock any number of locked tokens.
 * Users can apply for unlocking at any time. Once the unlock is requested, the corresponding voting rights will become invalid immediately. However, the tokens will be unlocked only when the following conditions are met:
   1. The tokens have been locked for at least 14 days.
-  2. The request for unlocking has passed for 7 days
+  2. The request for unlocking has passed for 1 days
 * If there are multiple transactions locking tokens, they will be unlocked in chronological order until the required unlocking quantity is met.
 
 ### Example
@@ -77,11 +77,11 @@ Suppose that user A locks 2000 CFX on Jan 1st, 3rd, and 5th, respectively, and a
 
 * The 2000 CFX locked on Jan 1st will unlock first.
 * 14-day requirement for locking: Jan 1st + 14 days = Jan 15th.
-* 7-day requirement after unlocking request: Jan 9th + 7 days = Jan 16th.
-* Therefore, there will be 2000 CFX unlocked on Jan 16th.
+* 1-day requirement after unlocking request: Jan 9th + 1 days = Jan 10th.
+* Therefore, there will be 2000 CFX unlocked on Jan 15th.
 * After that, 1000 CFX on Jan 3rd will unlock.
 * 14-day requirement for locking: Jan 3rd + 14 days = Jan 17th.
-* 7-day requirement after unlocking request: Jan 9th + 7 days = Jan 16th.
+* 1-day requirement after unlocking request: Jan 9th + 1 days = Jan 10th.
 * Therefore, there will be 1000 CFX unlocked on Jan 17th, which will satisfy the requested unlocking amount, 3000.
 
 At the end, the user is left with 1000 CFX locked on Jan 3rd and 2000 CFX locked on Jan 5th.
@@ -137,7 +137,7 @@ If a PoS account signs two different PoS blocks with the same height, its CFX to
 
 ### Liquidity Risk
 
-* All the locked votes will unlock automatically if a candidate is elected to join the committee but does not participate in signing between two elections. All newly locked votes will unlock automatically in the next `7` days as well.
+* All the locked votes will unlock automatically if a candidate is elected to join the committee but does not participate in signing between two elections. All newly locked votes will unlock automatically in the next `1` days as well.
 
 ### Revenue Loss
 

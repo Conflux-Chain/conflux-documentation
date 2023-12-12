@@ -33,7 +33,7 @@ This page provides quick entries for Conflux reference documentation.
 
 ## Others
 
-- [Node Configuration Files](../run-a-node/configuration-files.md)
+- [Node Configuration Files](../run-a-node/advanced-topics/configuration-files.md)
 - [Hard Forks](../hardforks/hardforks.md)
 - [CIPs](../conflux-basics/conflux-governance/cips.md)
 - [Papers](../conflux-basics/additional-resources/papers.md)

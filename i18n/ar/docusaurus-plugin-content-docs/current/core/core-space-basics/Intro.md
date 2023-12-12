@@ -13,7 +13,7 @@ Core Space uses Base32 address instead of hex address. The Base32 address is a b
 - cfx:aarc9abycue0hhzgyrr53m6cxedgccrmmyybjgh4xg
 - cfxtest:aarc9abycue0hhzgyrr53m6cxedgccrmmy8m50bu1p
 
-Check [Address](./addresses.md) for more details. Core Space's wallet is [Fluent](https://fluentwallet.com/)
+Check [Address](./addresses) for more details. Core Space's wallet is [Fluent](https://fluentwallet.com/)
 
 ## CFX
 
@@ -21,16 +21,16 @@ CFX is the native token of Core Space. It is used to pay for gas and storage. `D
 
 ## Gas & Storage
 
-Core Space has a [gas mechanism](../../general/conflux-basics/gas.md). It is similar to Ethereum's gas mechanism. It also has a storage mechanism as a **pricing method for using storage**, check [storage specification](./storage.md) for details.
+Core Space has a [gas mechanism](../../general/conflux-basics/gas). It is similar to Ethereum's gas mechanism. It also has a storage mechanism as a **pricing method for using storage**, check [storage specification](./storage) for details.
 
 ## Sponsorship
 
-Core Space has a sponsorship mechanism. It allows users to pay for the gas fee of other users. Check [Sponsorship](./sponsorship.md) for more details.
+Core Space has a sponsorship mechanism. It allows users to pay for the gas fee of other users. Check [Sponsorship](./sponsor-mechanism) for more details.
 
 ## CVM
 
-Core Space has a virtual machine called CVM. It is compatible with EVM in most cases, but there are some differences. Check [CVM Differences](./vm-difference.md) for more details.
+Core Space has a virtual machine called CVM. It is compatible with EVM in most cases, but there are some differences. Check [CVM Differences](./vm-difference) for more details.
 
 ## Internal Contracts
 
-Core Space has several internal contracts. They are used to provide some basic functions. Check [Internal Contracts](./internal-contracts.md) for more details.
+Core Space has several internal contracts. They are used to provide some basic functions. Check [Internal Contracts](./internal-contracts) for more details.

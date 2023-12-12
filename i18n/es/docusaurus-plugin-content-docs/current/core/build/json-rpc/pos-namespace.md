@@ -2,6 +2,7 @@
 id: pos_rpc
 sidebar_position: 3
 title: pos Namespace
+description: The `pos` namespace includes RPCs related to PoS consensus.
 keywords:
   - pos-rpc
 displayed_sidebar: coreSidebar

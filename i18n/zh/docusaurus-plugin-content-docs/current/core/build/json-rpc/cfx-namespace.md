@@ -2,6 +2,7 @@
 id: cfx-namespace
 sidebar_position: 1
 title: cfx 命名空间
+description: The core JSON-RPC API of Conflux.
 keywords:
   - conflux
   - json-rpc
@@ -9,35 +10,9 @@ keywords:
 displayed_sidebar: coreSidebar
 ---
 
-为了使软件应用程序与 Conflux 区块链交互——无论是读取区块链数据还是向网络发送交易——它必须连接到一个 Conflux 节点。
+## JSON-RPC Spec
 
-为此，每个 [Conflux 客户端](https://github.com/conflux-chain/conflux-rust) 都实现了 [JSON-RPC 规范](https://github.com/Conflux-Chain/jsonrpc-spec)，因此无论特定节点或客户端实现如何，应用程序都可以依赖一组统一的方法来读取区块链数据或将交易发送到网络中。
-
-[JSON-RPC](https://www.jsonrpc.org/specification) 是一种无状态、轻量级的远程过程调用 (RPC) 协议。 它定义了几个数据结构以及它们处理的规则。 它与传输无关，因为这些概念可以在同一进程，通过接口、超文本传输协议或许多不同的消息传递环境中使用。 它使用 JSON (RFC 4627) 作为数据格式。
-
-## CONVENIENCE LIBRARIES
-
-虽然你可以选择通过JSON-RPC API直接与Conflux客户端交互，但对于dapp开发者来说，通常有更方便的选项。 有许多[JavaScript](https://github.com/conflux-chain/js-conflux-sdk)和[后端API](https://github.com/conflux-chain/go-conflux-sdk)库提供了在JSON-RPC API之上的封装。 通过这些库，开发者可以方便地写下直观的，甚至单行的函数来初始化（后端的）JSON RPC 请求并用于与Conflux进行交互。
-
-## SPEC
-
-[在GitHub上阅读完整的JSON-RPC API规范。](https://github.com/Conflux-Chain/jsonrpc-spec)
-
-## JSON-RPC endpoints
-
-目前，Conflux有一个[Rust实现](https://github.com/Conflux-Chain/conflux-rust)，支持通过HTTP、TCP或WebSocket的方式调用JSON-RPC API。
-
-如果你是一个节点运营者，你可以通过 TOML 配置文件，或者直接传递命令行参数，来启用和配置各种 RPC 接口。 主要的配置项如下表所示。 注意，如果你想启用 HTTPS 或访问控制，你需要为你的节点设置一个代理。
-
-| config parameter          | cli parameter         | default port | enabled by default |
-| ------------------------- | --------------------- |:------------:|:------------------:|
-| `jsonrpc_ws_port`         | `--jsonrpc-ws-port`   |    12535     |         no         |
-| `jsonrpc_tcp_port`        | `--jsonrpc-tcp-port`  |    12536     |         no         |
-| `jsonrpc_http_port`       | `--jsonrpc-http-port` |    12537     |         no         |
-| `jsonrpc_local_tcp_port`  | -                     |    12538     |         no         |
-| `jsonrpc_local_http_port` | -                     |    12539     |        yes         |
-
-本文档剩余部分的示例将使用 HTTP endpoint。
+There is a [**JSON-RPC API spec**](https://open-rpc.org/) of cfx namespace on [GitHub](https://github.com/Conflux-Chain/jsonrpc-spec). You can view it in [open-rpc playground](https://playground.open-rpc.org/?schemaUrl=https://raw.githubusercontent.com/Conflux-Chain/jsonrpc-spec/main/src/cfx/cfx.json&uiSchema%5BappBar%5D%5Bui:splitView%5D=false&uiSchema%5BappBar%5D%5Bui:input%5D=false&uiSchema%5BappBar%5D)
 
 ## CONVENTIONS
 
@@ -122,7 +97,6 @@ The EIP-1898 style epoch number parameter is now usable in following RPCs:
 * [cfx_call](#cfx_call)
 * [cfx_getNextNonce](#cfx_getnextnonce)
 * [cfx_getCode](#cfx_getcode)
-
 * [cfx_getEpochReceipts](#cfx_getepochreceipts)
 
 ## CURL EXAMPLES
@@ -134,6 +108,8 @@ Curl 请求可能会返回与内容类型相关的错误消息。 这是因为 `
 ```shell
 $ curl -H "Content-Type: application/json" -X POST --data '{"jsonrpc":"2.0","method":"cfx_clientVersion","params":[],"id":67}' 127.0.0.1:12537
 ```
+
+本文档剩余部分的示例将使用 HTTP endpoint。
 
 ## State and transaction availability
 
@@ -265,7 +241,7 @@ params: [
 ]
 ```
 
-#### 返回值
+#### Returns
 
 `Object` - a transaction object, or `null` when no transaction was found:
 
@@ -340,7 +316,7 @@ params: [
 ]
 ```
 
-#### 返回值
+#### Returns
 
 `Object` - A block object, or `null` when no block was found:
 
@@ -429,7 +405,7 @@ params: [
 ]
 ```
 
-#### 返回值
+#### Returns
 
 See [cfx_getBlockByHash](#cfx_getblockbyhash).
 
@@ -452,7 +428,7 @@ Result see [cfx_getBlockByHash](#cfx_getblockbyhash).
 
 None.
 
-#### 返回值
+#### Returns
 
 `DATA`, 32 Bytes - hash of the best block.
 
@@ -482,7 +458,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"cfx_getBestBlockHash","id":1}' -
 
 1. `TAG` - (optional, default: `"latest_mined"`) String `"latest_mined"`, `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-default-epochnumber-parameter).
 
-#### 返回值
+#### Returns
 
 `QUANTITY` - the integer epoch number corresponding to the given tag.
 
@@ -510,7 +486,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"cfx_epochNumber","params":["late
 
 None.
 
-#### 返回值
+#### Returns
 
 `QUANTITY` - integer of the current gas price in Drip.
 
@@ -538,7 +514,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"cfx_gasPrice","id":1}' -H "Conte
 
 1. `QUANTITY|TAG` - the epoch number, or the string `"latest_mined"`, `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-default-epochnumber-parameter).
 
-#### 返回值
+#### Returns
 
 `Array` - array of block hashes, sorted by their execution (topological) order. Note that the last one is the pivot hash.
 
@@ -585,7 +561,7 @@ params: [
 ]
 ```
 
-#### 返回值
+#### Returns
 
 `QUANTITY` - integer of the current balance in Drip.
 
@@ -621,7 +597,7 @@ params: [
 ]
 ```
 
-#### 返回值
+#### Returns
 
 `QUANTITY` - integer of the current staking balance in Drip.
 
@@ -658,7 +634,7 @@ params: [
 ]
 ```
 
-#### 返回值
+#### Returns
 
 `QUANTITY` - integer of the collateral storage in Byte.
 
@@ -694,7 +670,7 @@ params: [
 ]
 ```
 
-#### 返回值
+#### Returns
 
 `BASE32` - address of admin, or `null` if the contract does not exist.
 
@@ -736,7 +712,7 @@ params: [
 ]
 ```
 
-#### 返回值
+#### Returns
 
 `DATA` - byte code of the contract, or `0x` if the account has no code.
 
@@ -774,7 +750,7 @@ params: [
 ]
 ```
 
-#### 返回值
+#### Returns
 
 `DATA` - 32 Bytes - the contents of the storage position, or `null` if the contract does not exist.
 
@@ -810,7 +786,7 @@ params: [
 ]
 ```
 
-#### 返回值
+#### Returns
 
 `Object` - A storage root object, or `null` if the contract does not exist:
 
@@ -861,7 +837,7 @@ params: [
 ]
 ```
 
-#### 返回值
+#### Returns
 
 `Object` - A sponsor info object. If the contract doesn't have a sponsor, then all fields in the object returned will be `0`:
 
@@ -912,7 +888,7 @@ params: [
 ]
 ```
 
-#### 返回值
+#### Returns
 
 `QUANTITY` - integer of the next nonce that should be used by the given address.
 
@@ -945,9 +921,13 @@ params: [
 ]
 ```
 
-#### 返回值
+#### Returns
 
 `DATA`, 32 Bytes - the transaction hash.
+
+#### Common Errors
+
+Check [send raw transaction errors](./cfx_sendTransaction-errors.md) for details.
 
 ##### 示例
 
@@ -995,7 +975,7 @@ params: [
 ]
 ```
 
-#### 返回值
+#### Returns
 
 `DATA`, Bytes - the output data, or an execution error.
 
@@ -1036,7 +1016,7 @@ params: [
 ]
 ```
 
-#### 返回值
+#### Returns
 
 `Object` - an estimate result object:
    * `gasLimit`: `QUANTITY` - the recommended gas_limit.
@@ -1089,7 +1069,7 @@ params: [
 ]
 ```
 
-#### 返回值
+#### Returns
 
 `Array` - array of log objects corresponding to the matching logs:
 
@@ -1160,7 +1140,7 @@ params: [
 ]
 ```
 
-#### 返回值
+#### Returns
 
 `Object` - a transaction receipt object, or `null` when no transaction was found or the transaction was not executed yet:
 
@@ -1242,7 +1222,7 @@ params: [
 ]
 ```
 
-#### 返回值
+#### Returns
 
 `Object` - the state of the given account:
 
@@ -1294,7 +1274,7 @@ params: [
 ]
 ```
 
-#### 返回值
+#### Returns
 
 `QUANTITY` - the interest rate at the given epoch.
 
@@ -1328,7 +1308,7 @@ params: [
 ]
 ```
 
-#### 返回值
+#### Returns
 
 `QUANTITY` - the accumulate interest rate at the given epoch.
 
@@ -1371,7 +1351,7 @@ params: [
 ]
 ```
 
-#### 返回值
+#### Returns
 
 * `isBalanceEnough`: `Boolean` - indicate balance is enough for gas fee and collateral storage
 * `willPayCollateral`: `Boolean` - false if the transaction is eligible for storage collateral sponsorship, true otherwise.
@@ -1410,7 +1390,7 @@ params: [
 ]
 ```
 
-#### 返回值
+#### Returns
 
 * `Array` of block hashes
 
@@ -1444,7 +1424,7 @@ params: [
 ]
 ```
 
-#### 返回值
+#### Returns
 
 * `QUANTITY`, the integer confirmation risk, or `null` if the block does not exist.
 
@@ -1472,7 +1452,7 @@ Returns the node status.
 
 None.
 
-#### 返回值
+#### Returns
 
 * `bestHash`: `DATA` - hash of the latest epoch's pivot block
 * `blockNumber`: `QUANTITY` - total block number
@@ -1522,7 +1502,7 @@ Returns the conflux-rust version.
 
 None.
 
-#### 返回值
+#### Returns
 
 * `STRING` - the client version
 
@@ -1557,7 +1537,7 @@ params: [
 
 Please note that reward calculation is delayed so it might not be available for the latest few epochs (including `"latest_state"`).
 
-#### 返回值
+#### Returns
 
 `Array` - array of reward info objects
 
@@ -1609,7 +1589,7 @@ params: [
 ]
 ```
 
-#### 返回值
+#### Returns
 See [cfx_getBlockByHash](#cfx_getblockbyhash).
 
 ##### 示例
@@ -1639,7 +1619,7 @@ params: [
 ]
 ```
 
-#### 返回值
+#### Returns
 
 `Array` - array of deposit info objects:
 
@@ -1687,7 +1667,7 @@ params: [
 ]
 ```
 
-#### 返回值
+#### Returns
 
 `Array` - array of vote info objects:
 
@@ -1721,7 +1701,7 @@ Returns summary supply info of the entire chain.
 
 None.
 
-#### 返回值
+#### Returns
 
 `Object` - Object include the supply summary info.
 
@@ -1764,7 +1744,7 @@ params: [
 ]
 ```
 
-#### 返回值
+#### Returns
 
 `Object` - Object include account's pending info.
 
@@ -1808,7 +1788,7 @@ params: [
 ]
 ```
 
-#### 返回值
+#### Returns
 
 `Object` - Object include account's pending transaction info.
 
@@ -1861,7 +1841,7 @@ params: [
 ]
 ```
 
-#### 返回值
+#### Returns
 
 See [cfx_getBlockByHash](#cfx_getblockbyhash).
 
@@ -1888,7 +1868,7 @@ Returns PoS economics summary info.
 
 1. [`QUANTITY`] - (optional, default: `"latest_state"`) integer epoch number, or the string `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-default-epochnumber-parameter)
 
-#### 返回值
+#### Returns
 
 * `distributablePosInterest`: `QUANTITY` Total distributable PoS interest (Unit is Drip)
 * `lastDistributeBlock`: `QUANTITY` Last block that distributable PoS interest
@@ -1937,7 +1917,7 @@ params: [
 ]
 ```
 
-#### 返回值
+#### Returns
 
 * `accountRewards`: `Array` of [AccountReward](#accountreward)
 * `powEpochHash`: `HASH` - the hash value of the PoW block when the rewards are made
@@ -2005,7 +1985,7 @@ params: [
 ]
 ```
 
-#### 返回值
+#### Returns
 
 * `powBaseReward`: `QUANTITY` - The PoW base reward amount
 * `interestRate`: `QUANTITY` - The PoS interest rate
@@ -2067,7 +2047,7 @@ params: [
 ]
 ```
 
-#### 返回值
+#### Returns
 
 `QUANTITY` - the id of the log filter object.
 
@@ -2106,7 +2086,7 @@ It is important to note that the filter object will expire after a certain perio
 
 None.
 
-#### 返回值
+#### Returns
 
 `QUANTITY` - the id of the block filter object.
 
@@ -2151,7 +2131,7 @@ Besides, it is important to note that the filter object will expire after a cert
 
 None.
 
-#### 返回值
+#### Returns
 
 `QUANTITY` - the id of the pending transaction filter object.
 
@@ -2204,7 +2184,7 @@ params: [
 ]
 ```
 
-#### 返回值
+#### Returns
 
 `Array` - array of log receipts (same format as [cfx_getLogs](#cfx_getlogs) return value), block hashes, or transaction hashes depending on the input.
 
@@ -2247,7 +2227,7 @@ params: [
 ]
 ```
 
-#### 返回值
+#### Returns
 
 `Array` - array of log receipts (same as [cfx_getLogs](#cfx_getlogs)).
 
@@ -2284,7 +2264,7 @@ params: [
 ]
 ```
 
-#### 返回值
+#### Returns
 
 `Boolean` - whether the uninstallation succeeds.
 
@@ -2335,7 +2315,7 @@ params: [
 ]
 ```
 
-#### 返回值
+#### Returns
 
 `Array` -  This is a two-dimensional array of [transaction receipts](#cfx_gettransactionreceipt). Each sub-array represents transactions within a block. Noting an extra field of `space` will be added to each transaction receipt if the second parameter is set to `true`. The value of `space` will be either `native` meaning this is a core space transaction receipt or `evm` meaning the transaction is from eSpace.
 
@@ -2404,7 +2384,7 @@ params: [
 ]
 ```
 
-#### 返回值
+#### Returns
 
 `Object` - The storage collateral info object of the chain.
 

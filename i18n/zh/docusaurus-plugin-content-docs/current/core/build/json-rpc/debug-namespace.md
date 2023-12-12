@@ -2,6 +2,7 @@
 id: debug_rpc
 sidebar_position: 4
 title: debug Namespace
+description: A set of methods related to debugging
 keywords:
   - debug-rpc
 displayed_sidebar: coreSidebar

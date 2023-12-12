@@ -4,11 +4,11 @@ title: Base32 地址
 displayed_sidebar: coreSidebar
 ---
 
-在Conflux中，每个 [账户](../../../general/conflux-basics/accounts.md) 都与一个公私钥对相关联，并由一个“地址”标识。 本页面介绍地址在core space中的表示和计算方式。
+In Conflux, every [account](../../general/conflux-basics/accounts.md) is associated with a pair of public and private keys, and is identified by an address. 本页面介绍地址在core space中的表示和计算方式。
 
 :::info
 
-请参考 [General-address](../../../general/conflux-basics/accounts.md#address)了解有关地址的基本概念。
+Refer to [General-address](../../general/conflux-basics/accounts.md#address) for the basic concepts about addresses.
 
 :::
 

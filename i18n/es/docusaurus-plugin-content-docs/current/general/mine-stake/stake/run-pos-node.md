@@ -26,9 +26,9 @@ The archivenode snapshot has a file size of around 160GB. Downloading it might t
 wget https://github.com/conflux-fans/archive-tool 
 ```
 
-2. Follow the instructions on downloading the Conflux client pre-built binaries [here](../../run-a-node/downloading-conflux-client)
+2. Follow the instructions on downloading the Conflux client pre-built binaries [here](../../run-a-node/advanced-topics/downloading-conflux-client)
 
-3. Follow the instructions on compiling the Conflux client from source [here](../../run-a-node/compiling-conflux-client)
+3. Follow the instructions on compiling the Conflux client from source [here](../../run-a-node/advanced-topics/compiling-conflux-client.md)
 
 4. Extract the archive node snapshot to conflux-rust/run
 
