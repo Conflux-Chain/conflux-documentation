@@ -7,6 +7,9 @@ displayed_sidebar: generalSidebar
 
 :::info
 ¡Gracias por tu interés en contribuir en nuestra documentación! Agradecemos su apoyo y valoramos los conocimientos y la experiencia de nuestra comunidad. Esta página describe las pautas y procesos para contribuir, así como las recompensas que puedes ganar por tus esfuerzos.
+
+If you are seeking funding from the Conflux Foundation, please refer to our [grants](./build/grants.md) page.
+
 :::
 
 ## Cómo contribuir
