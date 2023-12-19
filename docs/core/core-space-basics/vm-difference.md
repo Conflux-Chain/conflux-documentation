@@ -22,7 +22,7 @@ Which means the Solidity built-in function `blockhash` can only take `block.numb
 
 ## Block Gas Limit
 
-The block gas limit is fixed at 3000w.
+The block gas limit is fixed at 30000000.
 
 ## block.number
 
