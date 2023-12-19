@@ -66,7 +66,7 @@ After the transaction execution, you can query the contract's sponsor info again
 
 Finally, add the zero address to the whitelist to use the contract without paying a gas fee.
 
-For the second parameter, which is an array, pass \["0x0000000000000000000000000000000000000000"].
+For the second parameter, which is an array, pass ["0x0000000000000000000000000000000000000000"].
 
 ![](./imgs/sponsor/add-zero-address-whitelist.png)
 
