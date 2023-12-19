@@ -7,6 +7,9 @@ displayed_sidebar: generalSidebar
 
 :::info
 Thank you for your interest in contributing to our documentation site! We appreciate your support and value the insights and expertise of our community. This page outlines the guidelines and process for contributing, as well as the rewards you can earn for your efforts.
+
+If you are seeking funding from the Conflux Foundation, please refer to our [grants](./build/grants.md) page.
+
 :::
 
 ## How to Contribute

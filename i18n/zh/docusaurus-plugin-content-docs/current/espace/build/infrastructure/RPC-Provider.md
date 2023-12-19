@@ -13,8 +13,8 @@ They offer a stable and user-friendly RPC service, which can be utilized to conn
 
 Unifra also provides a free-to-use RPC endpoint:
 
-| Network             | Chain ID     | RPC Endpoint URL                         | Explorer                     |
-| ------------------- | ------------ | ---------------------------------------- | ---------------------------- |
+| Network             | Chain ID                        | RPC Endpoint URL                         | Explorer                     |
+| ------------------- | ------------------------------- | ---------------------------------------- | ---------------------------- |
 | [Mainnet](#mainnet) | 1030 (0x406) | https\://conflux-espace-public.unifra.io | https\://evm.confluxscan.net |
 
 You can also buy **a higher tier RPC service** from Unifra at it [console dashboard](https://console.unifra.io/).

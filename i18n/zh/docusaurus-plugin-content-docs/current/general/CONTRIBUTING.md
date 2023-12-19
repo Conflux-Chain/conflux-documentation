@@ -7,6 +7,9 @@ displayed_sidebar: generalSidebar
 
 :::info
 感谢您对我们文档站点的关注！ 我们非常珍视您的支持，并且很高兴能够听取社区的见解和专业知识。 本页面概述了贡献的指南、流程，以及您所付出的努力可能获得的奖励。
+
+If you are seeking funding from the Conflux Foundation, please refer to our [grants](./build/grants.md) page.
+
 :::
 
 ## 如何贡献

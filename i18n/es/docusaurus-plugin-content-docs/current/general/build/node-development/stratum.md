@@ -52,7 +52,7 @@ Start to subscribe the proof-of-work notification from the stratum server
 
 ##### Parameters
 
-1. WORKER\_ID, string - the name of the miner
+1. WORKER_ID, string - the name of the miner
 2. Secret, empty or 32-bytes, the secret that corresponds to the keccak result
    of the password in the configuration. Empty if password is not enabled.
 
@@ -82,8 +82,8 @@ Submit a PoW solution to the stratum server
 
 ##### Parameters
 
-1. WORKER\_ID, string - the name of the miner
-2. JOB\_ID, hex-string - the identifier of the job, which is typically same as
+1. WORKER_ID, string - the name of the miner
+2. JOB_ID, hex-string - the identifier of the job, which is typically same as
    the hash of the PoW problem.
 3. NONCE, hex-string of 32-bytes - the nonce solution of the PoW problem
 4. HASH, hex-string of 32-bytes - the hash of the solved PoW problem.
@@ -128,7 +128,7 @@ Notify the client about a new PoW problem.
 
 ##### Parameters
 
-1. JOB\_ID, hex-string - the identifier of the job.
+1. JOB_ID, hex-string - the identifier of the job.
 2. HASH, 32-bytes - the hash of the PoW problem.
 3. BOUNDARY, U256 - the difficulty boundary of the problem. For a nonce to be valid, the resulting
    hash must be smaller than the BOUNDARY.
