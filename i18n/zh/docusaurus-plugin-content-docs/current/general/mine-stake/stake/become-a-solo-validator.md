@@ -139,7 +139,7 @@ The risks to be aware of when running a node include:
 
 1. Risk of PoS private key leakage or loss. Please securely store the PoS private key and avoid uploading it to any public servers.
 2. Stability of PoS node operation. If the node is elected to the committee and does not participate in PoS voting for more than 1.5 hours, all PoS votes will be forcibly retired. There will be no rewards after retirement, but there won't be any penalties either.
-3. Sharing a pos\_key file between two PoS nodes may result in the permanent lockup of all PoS votes for that node. This is **the most severe risk and should be treated with utmost caution**.
+3. Sharing a pos_key file between two PoS nodes may result in the permanent lockup of all PoS votes for that node. This is **the most severe risk and should be treated with utmost caution**.
 
 ### How to regenerate the PoS private key?
 
