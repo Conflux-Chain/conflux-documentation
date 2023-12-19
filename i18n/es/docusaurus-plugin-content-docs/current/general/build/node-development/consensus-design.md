@@ -52,7 +52,7 @@ with which other components interact.
 
 ### ConsensusGraphInner
 
-`ConsensusGraphInner` (core/src/consensus/consensus\_inner/mod.rs) is the inner
+`ConsensusGraphInner` (core/src/consensus/consensus_inner/mod.rs) is the inner
 structure of `ConsensusGraph`. `ConsensusGraph::on_new_block()` acquires the
 write lock of the inner struct at the start of the function. The rest are
 query functions that only acquire read locks.
@@ -74,16 +74,16 @@ implementations.
 ### ConsensusNewBlockHandler
 
 `ConsensusNewBlockHandler`
-(core/src/consensus/consensus\_inner/consensus\_new\_block\_handler.rs) contains a
+(core/src/consensus/consensus_inner/consensus_new_block_handler.rs) contains a
 set of routines for processing a new block. In theory, this code could be part
 of `ConsensusGraphInner` because it mostly manipulates the inner struct.
 However, these routines are all subroutine of the `on_new_block()` and the
-consensus\_inner/mod.rs is already very complicated. We therefore decided to put
+consensus_inner/mod.rs is already very complicated. We therefore decided to put
 them into a separate file.
 
 ### ConsensusExecutor
 
-`ConsensusExecutor` (core/src/consensus/consensus\_inner/consensus\_executor.rs)
+`ConsensusExecutor` (core/src/consensus/consensus_inner/consensus_executor.rs)
 is the interface struct for the standalone transaction execution thread.
 `ConsensusExecutor::enqueue_epoch()` allows other threads to send an execution
 task to execute the epoch of a given pivot chain block asynchronously. Once the
@@ -96,7 +96,7 @@ routines for the calculation for block rewards, including
 
 ### ConfirmationMeter
 
-`ConfirmationMeter` (core/src/consensus/consensus\_inner/confirmation\_meter.rs)
+`ConfirmationMeter` (core/src/consensus/consensus_inner/confirmation_meter.rs)
 conservatively calculates the confirmation risk of each pivot chain block. Its
 result will be useful for the storage layer to determine when it is _safe_ to
 discard old snapshots. It can also be used to serve RPC queries about block
@@ -104,8 +104,8 @@ confirmation if we decide to provide such RPC.
 
 ### AnticoneCache and PastsetCache
 
-`AnticoneCache` (core/src/consensus/anticone\_cache.rs) and `PastsetCache`
-(core/src/consensus/pastset\_cache.rs) are two structs that implement customized
+`AnticoneCache` (core/src/consensus/anticone_cache.rs) and `PastsetCache`
+(core/src/consensus/pastset_cache.rs) are two structs that implement customized
 caches for data structures in `ConsensusGraphInner`. In the implementation of
 the inner struct, we need to calculate and store the anticone set and the past
 set of each block. However, it is not possible to store all of these sets in
