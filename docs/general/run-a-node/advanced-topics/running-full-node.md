@@ -5,7 +5,7 @@ displayed_sidebar: generalSidebar
 ---
 ### Requirements 
 
-* At least 8GB of RAM. 
+* At least 16GB of RAM. 
 
 * A minimum of 1TB free disk space (SSD is recommended). 
 

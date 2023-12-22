@@ -15,7 +15,7 @@ In this section, you’ll configure and launch an AWS EC2 instance where your Co
 3. Click select on the Ubuntu Server 20.04 64-bit (x86) image. You can optionally use other Linux or Windows-based images, but we’ll stick to this one in this tutorial.
 4. Select the t2.large instance type and click Next: Configure Instance Details.
 5. Leave the default Configure Instance Details parameters and click Next: Add Storage.
-6. In Add Storage, set an image size of 700 GiB and click Review and Launch.
+6. In Add Storage, set an image size of 1000 GiB and click Review and Launch.
 :::note
 You can resize this later to 400 GiB, but this will greatly speed up the node setup process.
 :::
@@ -40,7 +40,7 @@ You have successfully created and launched an EC2 instance. Now let’s log in t
 You’ll need to change your key pair file’s permissions.
 :::
 
-```js
+```shell
 ssh -i <path to your key pair> ubuntu@<your machine's IP address or IPv4 DNS> 
 ```
 
@@ -54,7 +54,7 @@ Some of the recommended first steps are the following:
 
 - Upgrade currently installed applications.
 
-```js
+```shell
 sudo apt-get update
 sudo apt-get upgrade
 ```
@@ -80,41 +80,23 @@ This will be, roughly, a two-step process:
 
 1. Download the archive node snapshot. This will help us speed up the node synchronization process by downloading a recent snapshot of the chain.
 
-
 :::note
 The archivenode snapshot has a file size of around 200GB. Downloading it might take a few hours.
 :::
 
-```
-wget https://github.com/conflux-fans/archive-tool 
+```shell
+wget https://conflux-blockchain-data.oss-cn-beijing.aliyuncs.com/fullnode-db/M/download.sh
 ```
 
 2. Follow the instructions on downloading the Conflux client pre-built binaries [here](../../run-a-node/advanced-topics/downloading-conflux-client)
 
-3. Follow the instructions on compiling the Conflux client from source [here](../../run-a-node/advanced-topics/compiling-conflux-client.md)
+3. Extract the archive node snapshot to conflux-rust/run
 
-4. Extract the archive node snapshot to conflux-rust/run
-
-```js
-tar xvzf <archive-node-snapshot>.tar.gz conflux-rust/run 
+```shell
+tar -xvzf <archive-node-snapshot>.tar.gz conflux-rust/run 
 ```
 
-5. Download the latest PoS configuration file:
-
-https://github.com/Conflux-Chain/conflux-rust/releases/tag/v2.2.1-fixpos
-
-:::note
-Check https://github.com/Conflux-Chain/conflux-rust/releases for the latest version.
-:::
-
-
-6. Extract the files to conflux-rust/run
-
-```js
-tar xvzf pos_config-hydra.tar.gz conflux-rust/run 
-```
-
-7. Follow the instructions on configuring and running a Conflux node [here](../../run-a-node)
+4. Follow the instructions on configuring and running a Conflux node [here](../../run-a-node)
 
 ## Running the Conflux Client and Syncing the Node
 
@@ -122,9 +104,9 @@ In this process, we’ll run a Conflux node. Once the node is running, it will f
 
 1. Run the Conflux client.
 
-```js
+```shell
 cd run 
-../target/release/conflux --config hydra.toml 
+./conflux --config hydra.toml 
 ```
 
 2. Set a secure PoS encryption password.
