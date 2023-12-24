@@ -18,18 +18,26 @@ Ensure you have curl installed on your system. If not, you can download and inst
 1. For Linux & Mac - Mainnet - Archive Node:
 
 ```shell
+# Beijing
 wget https://conflux-blockchain-data.oss-cn-beijing.aliyuncs.com/archivenode-db/M/download.sh
+# US West
 wget https://conflux-blockchain-data-us.s3.us-west-1.amazonaws.com/archivenode-db/M/download.sh
+# EU Central
 wget https://conflux-blockchain-data-eu.s3.eu-central-1.amazonaws.com/archivenode-db/M/download.sh
+
 bash download.sh 
 ```
 
 2. For Windows - Mainnet - Archive Node:
 
 ```shell
+# Beijing
 wget https://conflux-blockchain-data.oss-cn-beijing.aliyuncs.com/archivenode-db/M/download.bat
+# US West
 wget https://conflux-blockchain-data-us.s3.us-west-1.amazonaws.com/archivenode-db/M/download.bat
-get https://conflux-blockchain-data-eu.s3.eu-central-1.amazonaws.com/archivenode-db/M/download.bat
+# EU Central
+wget https://conflux-blockchain-data-eu.s3.eu-central-1.amazonaws.com/archivenode-db/M/download.bat
+
 download.bat 
 ```
 
@@ -74,3 +82,19 @@ Then you can start your node.
 ### service is not available?
 
 Please download the latest version of the snapshot tool.
+
+### What's the snapshot data size?
+
+At the time of writing(2023.12.22), the fullnode snapshot data size is about 200G, the archivenode snapshot data size is 550G.
+
+You can check the newest snapshot data size in `download.sh` file.
+
+### Does the archive node snapshot data include the trace data?
+
+Yes, it does.
+
+### Does the archive node snapshot data include the fullstate data?
+
+No, it doesn't. If you want to setup a fullstate archive node, you need sync the data from beginning.
+
+The Confura public RPC service is a fullstate archive node. You can use it to query the fullstate data.
