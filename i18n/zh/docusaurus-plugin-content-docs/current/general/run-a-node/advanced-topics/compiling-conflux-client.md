@@ -4,8 +4,6 @@ title: 编译 Conflux 节点
 displayed_sidebar: generalSidebar
 ---
 
-# 编译 Conflux 节点
-
 Here is a step by step guide on how to build Conflux from the source code and get a node running.
 
 ## Install Build Dependencies
@@ -14,7 +12,7 @@ Conflux requires **Rust 1.62.0**, `clang`, and `sqlite` to build.
 
 We recommend installing Rust through [rustup](https://rustup.rs/). If you don't already have `rustup` or `clang`, you can install them like this:
 
-## Linux
+### Linux
 
 ```
 $ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
@@ -54,7 +52,7 @@ $ make
 $ sudo make install
 ```
 
-## OSX
+### OSX
 
 ```
 $ curl https://sh.rustup.rs -sSf | sh
@@ -79,7 +77,7 @@ You also need to install other dependencies with homebrew and set up the environ
 $ brew install openssl pkg-config cmake
 ```
 
-## Windows
+### Windows
 
 Make sure you have Visual Studio 2015 with C++ support installed. Next, download and run the `rustup` installer from [this link](https://static.rust-lang.org/rustup/dist/x86_64-pc-windows-msvc/rustup-init.exe), start `VS2015 x64 Native Tools Command Prompt`, and use the following command to install and set up the `msvc` toolchain:
 
@@ -99,14 +97,13 @@ After installing the dependencies mentioned above, now you can clone our reposit
 # download Conflux code
 $ git clone https://github.com/Conflux-Chain/conflux-rust
 $ cd conflux-rust
-$ git checkout v2.0.0
-
+$ git checkout v2.3.3  # checkout to the latest release version
 
 # build in release mode
 $ cargo build --release
 ```
 
-This produces an executable in the `./target/release` subdirectory.
+This produces an executable called **conflux** in the **./target/release** subdirectory. The **conflux** binary it a client software that we can use to run a node.
 
 Note, when compiling a crate and you receive errors, it's in most cases your outdated version of Rust, or some of your crates have to be recompiled. Cleaning the repository will most likely solve the issue if you are on the latest stable version of Rust, try:
 
@@ -116,7 +113,7 @@ $ cargo clean && cargo update
 
 To start running a Conflux full node, you can follow the instructions at [Running Conflux Full Node](./running-full-node.md).
 
-## Install Test Dependencies
+## Install Test Dependencies (Optional)
 
 We have a test framework written in Python3 (version>=3.6). Required packages can be installed by running
 
@@ -150,3 +147,26 @@ You can follow the detailed instructions at [Installing the Solidity Compiler](h
 Note that latest solidity compiler may be incompatible with Conflux and may cause the integration test to fail. If you encounter such problem, please install solidity compiler version 0.5.2.
 
 To run tests, you can build the source code first and follow the instructions at [Running Test](./running-full-node.md#running-test).
+
+## 常见问题解答
+
+### Why the build process failed?
+
+Please make sure you install all the dependencies, and your network is good to download rust crates. If you are in China, you can try to use [rustup](https://rustup.rs/) to install rust and set the mirror to [Rust China](https://mirrors.tuna.tsinghua.edu.cn/help/rustup/).
+
+### Is mainnet and testnet client compatible?
+
+No, the mainnet and testnet client are not same.
+
+### How to build the testnet client?
+
+Checkout to the latest testnet tag and build the source code:
+
+```bash
+$ git checkout v2.3.3-testnet  # checkout to the latest testnet release version
+$ cargo build --release
+```
+
+### Where to find the latest release version?
+
+You can find the latest release version at [Releases](https://github.com/Conflux-Chain/conflux-rust/releases)
