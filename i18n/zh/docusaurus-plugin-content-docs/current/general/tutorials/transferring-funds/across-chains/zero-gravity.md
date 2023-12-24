@@ -50,3 +50,13 @@ In this tutorial, we will explain the steps to transfer CFX from Conflux Core Sp
 ![zg9](./img/zerogravity9.png)
 
 9. After the cross-chain transfer is completed you can use the corresponding blockchain explorers to verify the assets transfer. The assets will be displayed in your destination wallet.
+
+## 常见问题解答
+
+### Q: What should I do if my CFX transfer from another chain (like Binance Smart Chain) to Conflux Network gets stuck in a continuous loading loop during withdrawal?
+
+**A:** If the cross-chain bridge interface continuously loads without completing the CFX withdrawal, this might be a front-end issue. Start by clearing your web browser's cache to eliminate any stored data that could be causing the problem. If the issue persists, try switching to a different web browser and attempt the withdrawal again. This step often helps to circumvent browser-specific glitches or compatibility issues with the cross-chain bridge interface.
+
+### Q: Why did I receive _**PeggedCFX**_ instead of CFX?
+
+**A:** Receiving _**PeggedCFX**_ indicates a shortage of CFX liquidity in the cross-chain bridge, often occurring in Conflux eSpace. You can visit [https://confluxhub.io/espace-bridge/espace-cross-chain](https://confluxhub.io/espace-bridge/espace-cross-chain) to claim your CFX once additional liquidity is provided. Alternatively, you have the option to send PeggedCFX back to the Binance Smart Chain (BSC).
