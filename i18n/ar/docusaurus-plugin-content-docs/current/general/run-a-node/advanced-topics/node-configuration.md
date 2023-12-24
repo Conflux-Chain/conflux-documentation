@@ -4,65 +4,203 @@ title: Node Configuration
 displayed_sidebar: generalSidebar
 ---
 
-# Node Configuration
+Conflux nodes offer a rich set of configuration options, allowing the adjustment of node behavior by modifying these settings. This document provides an overview of the node configuration options and their meanings.
 
-Configuring a Conflux node allows you to tailor its operation to your specific needs and system capabilities.
+## How to configure nodes.
 
-Here's a step-by-step guide to configuring a Conflux node.
+### Configuration File
 
-## Step 1: Install Conflux Node
+The configuration file for Conflux nodes is `hydra.toml`, and by default, it is located in the `run` directory where the node program is downloaded. By modifying the configuration options in this file, you can adjust the behavior of the node.
 
-If you haven't already installed the Conflux node, please refer to the previous tutorial on how to run a Conflux network node for installation instructions.
+### Command Line Parameters
 
-## Step 2: Locate Configuration File
+Nodes can also be configured using command line parameters, where the **priority of command line parameters is higher than that of the configuration file**. For example, the JSON-RPC port of the node can be specified using the `--jsonrpc-http-port` parameter.
 
-Conflux provides a sample configuration file that you can use as a starting point. This file is usually named hydra.toml or similar, depending on the network version. You'll find it in the run directory of the Conflux repository.
-
-## Step 3: Create a Custom Configuration File
-
-Copy the sample configuration file to a new file that you'll edit:
-```
-cp ./run/hydra.toml ./run/hydra.toml 
+```shell
+./conflux --jsonrpc-http-port 12537
 ```
 
-## Step 4: Edit the Configuration File
+A detailed list of parameters can be viewed by running `./conflux -h`.
 
-Open the custom configuration file in a text editor:
-```
-nano ./run/hydra.toml 
-```
+## Introduction to Configuration File Options
 
-Here are some common parameters you might want to configure:
+### node type
 
-```
-mode: Defines the synchronization mode. Options include "full" for a full node, "archive" for an archive node, and "light" for a light node. 
+Node types, with three possible values: `full`, `archive`, `light`. The default value is `full`.
 
-net_conf/listen_ip: The IP address that the node will listen on. Default is "0.0.0.0", meaning it will listen on all available network interfaces. 
-
-net_conf/listen_port: The port number that the node will listen on. Default is 32323. 
-
-net_conf/public_address: If your node is behind a NAT, you can set this to the public IP address and port that other nodes can use to connect to your node. 
-
-storage/data: The directory where the blockchain data will be stored. 
-
-mining/miner_author: The address that mining rewards will be sent to if you are mining. 
-
-mining/stratum_listen_address: If you are running a mining pool, this sets the address that the stratum server will listen on. 
-
-log_conf: Path to the log configuration file. 
-
-jsonrpc_local_http_port: Port for the local JSON-RPC HTTP service. 
-
-jsonrpc_public_http_port: Port for the public JSON-RPC HTTP service. 
-
+```toml
+node_type="full"
 ```
 
-Edit these and any other parameters as needed, then save and exit the file.
+### chain id
 
-## Step 5: Start the Node with the Custom Configuration
+Chain ID, used to identify the Conflux network. The Chain ID for the Core Space mainnet is **1029**, and for the eSpace mainnet, it is **1030**. The testnets have Chain IDs of 1 and 71, respectively.
 
-Start the Conflux node using the custom configuration file:
-
+```toml
+chain_id=1029
+evm_chain_id=1030
 ```
-./target/release/conflux --config ./run/hydra.toml 
+
+Usually, this configuration option does not need to be modified unless you want to set up a local test network.
+
+### Core Space RPC
+
+Core Space RPC related options.
+
+```toml
+jsonrpc_http_port=12537 # JSON-RPC HTTP port
+jsonrpc_ws_port=12535 # JSON-RPC WebSocket port
+public_rpc_apis='safe' # JSON-RPC API namespace list，Multiple namespaces are separated by commas, and using "all" represents enabling all APIs.
 ```
+
+### eSpace RPC
+
+eSpace RPC related options.
+
+```toml
+jsonrpc_http_eth_port=8545
+jsonrpc_ws_eth_port=8546
+public_evm_rpc_apis = "evm"
+```
+
+### Data indexing
+
+RPC interfaces related to transactions (tx) and blocks do not support querying historical data by default. If you need to query historical data, you must enable data indexing.
+
+```toml
+persist_block_number_index=true
+persist_tx_index=true
+```
+
+### transaction trace
+
+transaction trace related options.
+
+```toml
+executive_trace=true
+```
+
+If you want to enable this configuration, you will need to resynchronize the data.
+
+### fullstate
+
+Fullstate mode supports querying the historical state of the blockchain.
+
+To enable the fullstate mode for a single Space, you can specify the Space name using the `single_mpt_space` configuration option.
+
+```toml
+single_mpt_space = "evm" # core-space use "native"
+```
+
+Enabling the fullstate mode for dual spaces.
+
+```toml
+enable_single_mpt_storage=true
+```
+
+### cfx_getLogs/eth_getLogs related options
+
+The `getLogs` RPC method imposes a significant performance overhead on the node. Excessive querying of data with this method can lead to high node loads. To mitigate this, adjust the following configuration option to limit the amount of data requested per `getLogs` request.
+
+```toml
+get_logs_filter_max_limit=1000
+get_logs_epoch_batch_size=1000
+get_logs_filter_max_epoch_range=1000
+get_logs_filter_max_block_number_range=2000
+```
+
+### log
+
+Configuration options related to node logs.
+
+```toml
+log_conf="log.yaml" # log configuration file
+log_file="conflux.log"
+log_level="info" # The value should be one of "error", "warn", "info", "debug", "trace", "off"
+```
+
+### pow mining
+
+Configuration options related to Proof-of-Work (PoW) mining.
+
+```toml
+mining_author="cfx:aarc9abycue0hhzgyrr53m6cxedgccrmmyybjgh4xg"
+stratum_listen_address="127.0.0.1"
+stratum_port=32525
+stratum_secret="aaaa"
+pow_problem_window_size=1
+```
+
+### tx pool
+
+Transaction pool-related configuration options.
+
+```toml
+tx_pool_size=50000 # tx pool size
+tx_pool_min_native_tx_gas_price=1_000_000_000 # core space tx minimum gas price
+tx_pool_min_eth_tx_gas_price=20_000_000_000 # eSpace tx minimum gas price
+```
+
+### storage directory
+
+Blockchain data storage directory configuration:
+
+```toml
+conflux_data_dir="./blockchain_data"
+block_db_dir="./blockchain_data/blockchain_db"
+netconf_dir="./blockchain_data/net_config"
+```
+
+### pos_key pwd
+
+Password for encrypting the POS private key, used to secure the POS private key. By default, this password is set interactively through the command line during the first node startup. You can set this password through the configuration file to avoid command line interaction.
+
+```toml
+dev_pos_private_key_encryption_password="aaaa"
+```
+
+## Configuration File Example
+
+For a more comprehensive configuration file example, you can refer to [hydra.toml](./configuration-files.md).
+
+## FAQs
+
+### I want to run a Core Space RPC node, what parameters do I need to configure?
+
+```toml
+node_type="archive"
+jsonrpc_http_port=12537
+jsonrpc_ws_port=12535
+public_rpc_apis='safe'
+persist_block_number_index=true
+persist_tx_index=true
+```
+
+### I want to run an eSpace RPC node, what parameters do I need to configure?
+
+```toml
+node_type="archive"
+jsonrpc_http_eth_port=8545
+jsonrpc_ws_eth_port=8546
+public_evm_rpc_apis = "evm"
+persist_block_number_index=true
+persist_tx_index=true
+```
+
+### After my node has been running for a while, I want to enable the `executive_trace` configuration. Do I need to resynchronize the data?
+
+Yes, you need to resynchronize the data.
+
+### Does the archive node snapshot data provided by the official source include trace data?
+
+Yes, it does.
+
+### After the configuration is modified, do I need to clear the data then restart the node?
+
+Depending on the situation, sometimes it does, sometimes it doesn’t. If the configuration involves data store or data index, you need to restart the node if the configuration changes, for example:
+
+- `persist_tx_index`
+- `executive_trace`
+- `persist_block_number_index`
+
+Other restart are generally not required.
