@@ -48,7 +48,7 @@ const FeatureList = [
         connect to the network, and start participating in consensus.
       </>
     ),
-    link: '/docs/general/run-a-node/',
+    link: '/docs/general/run-a-node/Overview',
   },
   {
     title: 'Mining on Conflux',

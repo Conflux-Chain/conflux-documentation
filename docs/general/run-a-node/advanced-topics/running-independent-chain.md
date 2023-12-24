@@ -25,7 +25,7 @@ In order to run a single node Conflux chain for development, you can follow the 
 6. Run Conflux binary with ```development.toml``` as the configuration file. For example:
 
 ```bash
-$ ../target/release/conflux --config development.toml
+$ ./conflux --config development.toml
 ```
 
 ## Run Multiple Node Production Chain
