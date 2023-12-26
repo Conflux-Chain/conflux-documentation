@@ -30,7 +30,7 @@ const DocCatalogFackData = [
     catalogue: 'General',
     items: [
       { url: 'docs/general/conflux-basics', text: 'Conflux Basics', preview: 'Learn about the Conflux basics' },
-      { url: 'docs/category/run-a-node', text: 'Run a Node', preview: 'Docs about how to run a node' },
+      { url: '/docs/general/run-a-node/Overview', text: 'Run a Node', preview: 'Docs about how to run a node' },
       { url: 'docs/category/mining--staking', text: 'Mining & Staking', preview: 'Learn about the Conflux mining & staking' },
       { url: 'docs/general/build', text: 'Build', preview: 'Learn how to build on Conflux' },
       { url: 'docs/general/faq', text: 'FAQ', preview: 'Common questions and answers about Conflux'},

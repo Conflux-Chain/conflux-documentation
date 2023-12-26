@@ -28,11 +28,11 @@ Follow guide ["run a node"](./run-a-node.md) to quickly set up a Conflux node on
 We also provider detail documentation for every step:
 
 * The difference between [node types](./node-types.md)
-* How to [download](./advanced-topics/downloading-conflux-client.md) or [compile the Conflux software](./advanced-topics/compiling-conflux-client.md)
+* How to [download](./advanced-topics/downloading-conflux-client.md) or [compile](./advanced-topics/compiling-conflux-client.md) the Conflux software
 * We also provide [docker image](./advanced-topics/downloading-conflux-client#docker) for Conflux client
 * Use [snapshot](./snapshot-tool.md) to accelerate the synchronization process
 * The common [configuration options](./advanced-topics/node-configuration.md) explained
 * A [configuration file template](./advanced-topics/configuration-files.md) for mainnet, and [mainnet bootnodes list](./advanced-topics/official-bootnodes.md)
 * How to [setup a private chain](./advanced-topics/running-independent-chain.md)
 
-If you have encountered any problem, please check [FAQs](./nodes-faqs.md) and [trouble shooting](./TroubleShooting) page.
+If you have encountered any problem, please check [FAQs](./nodes-faqs.md) and [troubleshooting](./TroubleShooting) page.
