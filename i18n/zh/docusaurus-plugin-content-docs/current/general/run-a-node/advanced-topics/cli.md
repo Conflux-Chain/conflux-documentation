@@ -18,12 +18,11 @@ Conflux CLI sub-commands is a collection of command line interfaces which allows
 Create a new account at local machine.
 #### Usage
 ```text
-$ ./conflux.exe account new --help
-conflux.exe-account-new
+$ ./conflux account new --help
 Create a new account (and its associated key) for the given --chain (default conflux).
 
 USAGE:
-    conflux.exe account new [OPTIONS]
+    conflux account new [OPTIONS]
 
 FLAGS:
     -h, --help       Prints help information
@@ -34,36 +33,34 @@ OPTIONS:
         --password <FILE>          Provide a file containing a password for unlocking an account. Leading and trailing whitespace is trimmed.
 ```
 #### 示例
-`./conflux.exe account new`
+`./conflux account new`
 
 ### list
 List all accounts at local machine.
 #### Usage
 ```text
-$ ./conflux.exe account list --help
-conflux.exe-account-list
+$ ./conflux account list --help
 List existing accounts of the given --chain (default conflux).
 
 USAGE:
-    conflux.exe account list
+    conflux account list
 
 FLAGS:
     -h, --help       Prints help information
     -V, --version    Prints version information
 ```
 #### 示例
-`./conflux.exe account list`
+`./conflux account list`
 
 ### import
 Import accounts from JSON UTC keystore files.
 #### Usage
 ```text
-$ ./conflux.exe account import --help
-conflux.exe-account-import
+$ ./conflux account import --help
 Import accounts from JSON UTC keystore files to the specified --chain (default conflux)
 
 USAGE:
-    conflux.exe account import --import-path <PATH>...
+    conflux account import --import-path <PATH>...
 
 FLAGS:
     -h, --help       Prints help information
@@ -73,7 +70,7 @@ OPTIONS:
         --import-path <PATH>...    A list of file paths to import.
 ```
 #### 示例
-`./conflux.exe account import --import-path ./keystores`
+`./conflux account import --import-path ./keystores`
 
 ## Public APIs
 Public API allows you to interact with a local or remote Conflux node via HTTP connection in JSON-RPC protocol. All public APIs are under `rpc` sub-command, and access to the JSON-RPC API at local machine with default `url` option.
@@ -92,12 +89,11 @@ jsonrpc_local_http_port=12539
 ```
 All available commands are as following:
 ```text
-$ ./conflux.exe rpc --help
-conflux.exe-rpc
+$ ./conflux rpc --help
 RPC based subcommands to query blockchain information and send transactions
 
 USAGE:
-    conflux.exe rpc [OPTIONS] <SUBCOMMAND>
+    conflux rpc [OPTIONS] <SUBCOMMAND>
 
 FLAGS:
     -h, --help       Prints help information
@@ -127,34 +123,34 @@ SUBCOMMANDS:
 ```
 
 ### Get balance
-`./conflux.exe rpc balance --address cfx:type.user:aarc9abycue0hhzgyrr53m6cxedgccrmmyybjgh4xg`
+`./conflux rpc balance --address cfx:type.user:aarc9abycue0hhzgyrr53m6cxedgccrmmyybjgh4xg`
 
 ### Get nonce
-`./conflux.exe rpc nonce --address cfx:type.user:aarc9abycue0hhzgyrr53m6cxedgccrmmyybjgh4xg`
+`./conflux rpc nonce --address cfx:type.user:aarc9abycue0hhzgyrr53m6cxedgccrmmyybjgh4xg`
 
 ### Get current epoch number
-`./conflux.exe rpc epoch`
+`./conflux rpc epoch`
 
 ### Get block(s)
-- Get Best block hash: `./conflux.exe rpc best-block-hash`
-- Get block by epoch: `./conflux.exe rpc block-by-epoch --epoch latest_state`
-- Get block by height: `./conflux.exe rpc block-by-epoch --epoch 0x10`
-- Get blocks in epoch: `./conflux.exe rpc blocks --epoch latest_state`
+- Get Best block hash: `./conflux rpc best-block-hash`
+- Get block by epoch: `./conflux rpc block-by-epoch --epoch latest_state`
+- Get block by height: `./conflux rpc block-by-epoch --epoch 0x10`
+- Get blocks in epoch: `./conflux rpc blocks --epoch latest_state`
 
 ### Get transaction
-`./conflux.exe rpc tx --hash 0x718532fe76dbd8c4208c6c5a79588db35c0bf97e7d8a0faa5988ba66ad88b74c`
+`./conflux rpc tx --hash 0x718532fe76dbd8c4208c6c5a79588db35c0bf97e7d8a0faa5988ba66ad88b74c`
 
 ### Get receipt
-`./conflux.exe rpc receipt --hash 0x718532fe76dbd8c4208c6c5a79588db35c0bf97e7d8a0faa5988ba66ad88b74c`
+`./conflux rpc receipt --hash 0x718532fe76dbd8c4208c6c5a79588db35c0bf97e7d8a0faa5988ba66ad88b74c`
 
 ### Send signed transaction
 Send a signed transaction which encoded in HEX format. Generally, this API is used for Java-Script API to send encoded transaction. To send a transaction with CLI, suggest to use private API [send transaction](#send-transaction).
 
-`./conflux.exe rpc send --raw-bytes 0x...`
+`./conflux rpc send --raw-bytes 0x...`
 
 ### Misc
-- Get contract code: `./conflux.exe rpc code --address cfx:type.contract:acc7uawf5ubtnmezvhu9dhc6sghea0403y2dgpyfjp`
-- Get recent mean gas price: `./conflux.exe rpc price`
+- Get contract code: `./conflux rpc code --address cfx:type.contract:acc7uawf5ubtnmezvhu9dhc6sghea0403y2dgpyfjp`
+- Get recent mean gas price: `./conflux rpc price`
 
 ## Private APIs
 Private API allows you to interact with local Conflux node **only** via HTTP connection in JSON-RPC protocol. Private APIs are provided for user to manage the local Conflux node, and requires the `jsonrpc_local_http_port` configured in ***default.toml*** configuration file.
@@ -164,12 +160,11 @@ In addition, private APIs also helps developers to debug, test, and monitor the 
 All private APIs are under `local` sub-command, and access to the JSON-RPC API at local machine with default `url` option.
 
 ```text
-$ ./conflux.exe rpc local --help
-conflux.exe-rpc-local
+$ ./conflux rpc local --help
 Debug subcommands (requires jsonrpc_local_http_port configured)
 
 USAGE:
-    conflux.exe rpc local [OPTIONS] <SUBCOMMAND>
+    conflux rpc local [OPTIONS] <SUBCOMMAND>
 
 FLAGS:
     -h, --help       Prints help information
@@ -191,35 +186,34 @@ SUBCOMMANDS:
 `net` sub-command helps you to inspect the P2P network status.
 
 #### 示例
-- List all connected P2P nodes: `./conflux.exe rpc local net session`
-- List a single P2P node: `./conflux.exe rpc local net session --id <node_id>`
-- Check network egress: `./conflux.exe rpc local net throttling`
+- List all connected P2P nodes: `./conflux rpc local net session`
+- List a single P2P node: `./conflux rpc local net session --id <node_id>`
+- Check network egress: `./conflux rpc local net throttling`
 
 ### txpool
 `txpool` sub-command helps you to inspect the transaction pool.
 
 #### 示例
-- List transaction pool status: `./conflux.exe rpc local txpool status`
-- List transactions in details: `./conflux.exe rpc local txpool content`
-- List summary of transactions: `./conflux.exe rpc local txpool inspect`
-- Inspect a transaction in detail: `./conflux.exe rpc local txpool inspect-one --hash <tx_hash>`
+- List transaction pool status: `./conflux rpc local txpool status`
+- List transactions in details: `./conflux rpc local txpool content`
+- List summary of transactions: `./conflux rpc local txpool inspect`
+- Inspect a transaction in detail: `./conflux rpc local txpool inspect-one --hash <tx_hash>`
 
 ### sync-phase
 Get the synchronization phase of local conflux node.
 
-`./conflux.exe rpc local sync-phase`
+`./conflux rpc local sync-phase`
 
 ### Send transaction
 Send a transaction to local Conflux node.
 
 #### Usage
 ```text
-$ ./conflux.exe rpc local send --help
-conflux.exe-rpc-local-send
+$ ./conflux rpc local send --help
 Send a transaction and return its hash
 
 USAGE:
-    conflux.exe rpc local send [OPTIONS] --from <ADDRESS> --value <HEX>
+    conflux rpc local send [OPTIONS] --from <ADDRESS> --value <HEX>
 
 FLAGS:
     -h, --help       Prints help information
@@ -239,8 +233,8 @@ OPTIONS:
 #### 示例
 Alice transfer 5 Drip (1 CFX = 10^18 Drip) to Bob. Note, the address of Alice must exist at local machine, otherwise please [create](#new) account for alice at first.
 
-`./conflux.exe rpc local send --from <alice_address> --to <bob_address> --value 0x5 --password 123456`
+`./conflux rpc local send --from <alice_address> --to <bob_address> --value 0x5 --password 123456`
 
 Alice create a contract with gas 3,000,000. You can use ***solc*** to compile contract to get the bytecodes.
 
-`./conflux.exe rpc local send --from <alice_address> --value 0x0 --gas 0x2DC6C0 --data <HEX_contract_bytecodes> --password 123456`
+`./conflux rpc local send --from <alice_address> --value 0x0 --gas 0x2DC6C0 --data <HEX_contract_bytecodes> --password 123456`

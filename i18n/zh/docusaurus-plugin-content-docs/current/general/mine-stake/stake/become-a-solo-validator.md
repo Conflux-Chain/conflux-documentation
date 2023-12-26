@@ -14,7 +14,7 @@ This guide will walk you through the process of setting up a solo validator.
 
 ## 1. Run a Conflux node
 
-A PoS node is also a Conflux node. So you can run a PoS node following the [run a node](/docs/general/run-a-node/) guide. Either a full node or a archive node is fine.
+A PoS node is also a Conflux node. So you can run a PoS node following the [run a node](/docs/general/run-a-node/Overview) guide. Either a full node or a archive node is fine.
 
 The PoS configuration file for the node is located in the `pos_config` directory within the downloaded node package. The `pos_config.yaml` file in this directory is the PoS configuration file, and typically, the settings in this file do not need to be modified.
 

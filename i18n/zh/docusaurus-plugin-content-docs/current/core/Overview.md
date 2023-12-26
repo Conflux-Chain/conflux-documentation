@@ -36,7 +36,7 @@ The account address format in Core Space is in **base32 encoding**, which is dif
 ## Resources
 
 1. [Testnet Faucet](https://faucet.confluxnetwork.org/)
-2. [How to run a node](../general/run-a-node/)
+2. [How to run a node](../general/run-a-node/Overview)
 3. Core Space SDKs: js, go, python, java
 
 ## 参考资料
