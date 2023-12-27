@@ -167,7 +167,7 @@ The transaction has a size limit, with the maximum being 200k.
 }
 ```
 
-**Solution:** Use return value from `cfx_epochNumber` as the `epochHight`
+**Solution:** Use return value from `cfx_epochNumber` as the `epochHeight`
 
 ## Mismatched chainId
 

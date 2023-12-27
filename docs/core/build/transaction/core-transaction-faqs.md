@@ -1,7 +1,7 @@
 ---
 title: FAQs of Core Space Transactions
 sidebar_position: 1
-displayed_sidebar: generalSidebar
+displayed_sidebar: coreSidebar
 ---
 
 ## How to send a transaction?
