@@ -1,6 +1,6 @@
 ---
 sidebar_position: 5
-id: transaction_explain
+id: transaction_explain1
 title: Core Transaction
 keywords:
   - transaction

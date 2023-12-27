@@ -1,6 +1,6 @@
 ---
 title: FAQs of Core Space Transactions
-sidebar_position: 1
+sidebar_position: 11
 displayed_sidebar: coreSidebar
 ---
 
