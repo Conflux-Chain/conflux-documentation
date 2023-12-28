@@ -68,7 +68,7 @@ Then, you’ll need to unzip the file, and copy (or move) its content into your 
 For example:
 
 ```shell
-tar -xvzf conflux-fullnode-db-snapshot-2023-09-20.tgz ./run
+tar -xvzf conflux-fullnode-db-snapshot-2023-09-20.tgz -C ./run
 ```
 
 The snapshot data also includes the `pos_config` folder, and the Conflux client release will also include the `pos_config` folder. You can use either one.
