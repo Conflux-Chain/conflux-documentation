@@ -17,9 +17,10 @@ Requirements depend on the type of node. For the specific requirements of each t
 
 For a Full Node, requirements are the following:
 
-* At least 16GB of RAM
-* A minimum of 1TB free disk space (SSD is recommended).
+* At least 16GB of RAM(32GB is recommended), 4 CPU cores.
+* A minimum of 1.5TB free disk space (SSD is recommended).
 * A stable internet connection.
+* While the Linux XFS file system offers performance benefits, it is not as stable; therefore, **ext4 is recommended** for its reliability and stability.
 
 ## Steps
 
@@ -50,6 +51,7 @@ There are two options, downloading a pre-built Conflux Client, or compiling the 
 The [release](https://github.com/Conflux-Chain/conflux-rust/releases) page on the conflux-rust GitHub repository providers pre-built binaries that you can download and run directly. For more detailed instructions, please visit [this](./advanced-topics/downloading-conflux-client.md) page.
 
 #### Option 2: Compiling the Conflux Client
+
 Compiling the Conflux Client is another option, and can be done in two steps:
 
 1. Clone the Conflux repository:
@@ -64,6 +66,7 @@ git clone https://github.com/Conflux-Chain/conflux-rust.git
 cd conflux-rust 
 cargo build --release 
 ```
+
 For more detailed instructions, please visit [this](./advanced-topics/compiling-conflux-client.md) page.
 
 ### Step 3: Using Snapshot Tool (Optional)
@@ -86,6 +89,8 @@ Second, run the "download" program:
 ```shell
 bash download.sh 
 ```
+
+The compressed snapshot data is several hundred gigabytes. After completing the download, unzip its contents into the **run** folder of the node.
 
 ### Step 4: Configure the Node
 
@@ -137,4 +142,8 @@ curl -H "Content-Type: application/json" -X POST –data '{"jsonrpc":"2.0","meth
 
 ### Step 7: Keeping Your Node Updated
 
-Make sure to keep your Conflux node software updated to the latest version to ensure compatibility with the network and to include the latest features and security patches.
+Make sure to [keep your Conflux node software updated](./how-to-upgrad.md) to the latest version to ensure compatibility with the network and to include the latest features and security patches.
+
+## 常见问题解答
+
+Check the [FAQs](./nodes-faqs.md) and [troubleshooting](./TroubleShooting.md) section if you encounter any problems during the setup of nodes.
