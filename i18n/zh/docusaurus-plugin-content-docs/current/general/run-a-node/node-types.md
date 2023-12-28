@@ -25,7 +25,7 @@ A full node stores the entire block headers and most **recent 10w Epoch blocks**
 
 * At least 16GB of RAM.
 
-* A minimum of 1TB free disk space (SSD is recommended).
+* A minimum of 1.5TB free disk space (SSD is recommended).
 
 * A stable internet connection.
 

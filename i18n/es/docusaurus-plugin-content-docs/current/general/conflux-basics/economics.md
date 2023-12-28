@@ -1,6 +1,6 @@
 ---
 sidebar_position: 6
-title: Economics
+title: Economía
 displayed_sidebar: generalSidebar
 ---
 
@@ -20,19 +20,19 @@ Conflux's economic model encourages participation and growth of the network whil
 
 Participants in the Conflux Network ecosystem include three groups:
 
-1) ***Direct builders**:* *Conflux Foundation* and the *founding team* responsible for developing the underlying technology of the Conflux public chain and the Conflux Network operations;
+1\) _**Direct builders**:_ _Conflux Foundation_ and the _founding team_ responsible for developing the underlying technology of the Conflux public chain and the Conflux Network operations;
 
-2) ***System maintainers***: *Miners* and *Stakers* maintaining the normal operation and security of the whole Conflux Network system;
+2\) _**System maintainers**_: _Miners_ and _Stakers_ maintaining the normal operation and security of the whole Conflux Network system;
 
-3) ***Ecosystem contributors***: *Community Users* who continuously generate value for the Conflux Network ecosystem.
+3\) _**Ecosystem contributors**_: _Community Users_ who continuously generate value for the Conflux Network ecosystem.
 
 ### Development Phases
 
 Conflux Network will choose different incentive patterns during different development phases to ensure a stable shift from the initial phase to the operational phase.
 
-- **Initial phase**: the *direct builders* and the *ecosystem contributors* are incentivized to resolve the cold start problem of the system;
+- **Initial phase**: the _direct builders_ and the _ecosystem contributors_ are incentivized to resolve the cold start problem of the system;
 
-- **Operational phase**: *system maintainers* are incentivized to promote continuous system upgrading; self-adaptive configuration of Conflux system resources is promoted through the marketization of system resources.
+- **Operational phase**: _system maintainers_ are incentivized to promote continuous system upgrading; self-adaptive configuration of Conflux system resources is promoted through the marketization of system resources.
 
 ## **Incentives Mechanism**
 
@@ -55,15 +55,16 @@ Each CFX token consists of smaller units called **drips**, which are similar to
 
 In the **initial phase**, direct builders and ecosystem contributors are rewarded to constantly improve the ecosystem and lay a solid foundation for the entire ecosystem during the cold start phase.
 
-The amount of pre-mined tokens in the genesis block of Conflux Network is 5 billion CFX. The pre-mined tokens will be offered as rewards to the *direct builders* and the *ecosystem contributors* of Conflux Network.
+The amount of pre-mined tokens in the genesis block of Conflux Network is 5 billion CFX. The pre-mined tokens will be offered as rewards to the _direct builders_ and the _ecosystem contributors_ of Conflux Network.
 
 **Direct builders** are rewarded to constantly improve the ecosystem and to lay a solid foundation for the entire Conflux ecosystem.
 
-- *Private Equity Funders*: 16% of the genesis tokens will be allocated to our private round investors and will be released over two years.
-- *Genesis Team*: 36% of the genesis tokens will be awarded to the founding team including the IIIS team (of Tsinghua University), Conflux Foundation employees, and advisors. The genesis team’s tokens will be released over 4 years and serve as a capital pool. Reasonable marketing activities will be set to solve the cold start problem so that users joining the ecosystem in an early stage and early miners will get extra tokens or higher block-rewards. This will encourage them to contribute more to the ecosystem.
-- *Community Fund:* 8% of the genesis tokens will be provided as rewards for ordinary community users for the encouragement of them to participate in the early stages of developing and maintaining the Conflux ecosystem. This part of the tokens will be unlocked within four years.
-- *Ecosystem Fund*: 40% of the genesis tokens will be offered to community developers supporting the DApps in the Conflux ecosystem. This proportion of tokens will be unlocked within four years.
-- *Public Fund*: 0% of the genesis tokens will be allocated into the public fund account.
+- _Private Equity Funders_: 12% of the genesis tokens will be allocated to our private round investors and will be released over two years.
+- _Foundation Holdings_: 4% plus any unsold CFXs in the previous category will be allocated to support the long term financial need of Conflux Foundation. These tokens will be unlocked monthly over 2 years.
+- _Genesis Team_: 36% of the genesis tokens will be awarded to the founding team including the IIIS team (of Tsinghua University), Conflux Foundation employees, and advisors. The genesis team’s tokens will be released over 4 years and serve as a capital pool. Reasonable marketing activities will be set to solve the cold start problem so that users joining the ecosystem in an early stage and early miners will get extra tokens or higher block-rewards. This will encourage them to contribute more to the ecosystem.
+- _Community Fund:_ 8% of the genesis tokens will be provided as rewards for ordinary community users for the encouragement of them to participate in the early stages of developing and maintaining the Conflux ecosystem. This part of the tokens will be unlocked within four years.
+- _Ecosystem Fund_: 40% of the genesis tokens will be offered to community developers supporting the DApps in the Conflux ecosystem. This proportion of tokens will be unlocked within four years.
+- _Public Fund_: 0% of the genesis tokens will be allocated into the public fund account.
 
 ### **Operational Phase CFX Distribution**
 
