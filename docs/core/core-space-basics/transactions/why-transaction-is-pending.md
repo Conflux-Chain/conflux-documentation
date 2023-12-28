@@ -1,6 +1,6 @@
 ---
-sidebar_position: 2
-title: Why Transaction is Pending?
+sidebar_position: 7
+title: Why TX is Pending?
 keywords:
   - transaction
 displayed_sidebar: coreSidebar

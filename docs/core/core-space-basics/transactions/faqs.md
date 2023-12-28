@@ -1,6 +1,6 @@
 ---
-title: FAQs of Core Space Transactions
-sidebar_position: 11
+title: FAQs
+sidebar_position: 15
 displayed_sidebar: coreSidebar
 ---
 
@@ -98,3 +98,7 @@ Transaction execution failures are roughly divided into the following situations
 * VmError(OutOfGas): the specified gas fee is not enough
 * VmError(BadInstruction {instruction: 238 }): contract deployment failed
 * Vm reverted: the contract execution failed, but the contract did not return detailed information.
+
+## 为什么一个交易同时被打包进多个区块？
+
+这是由于树图账本结构并发出块导致的，虽然一笔交易可能被打包进多个区块，但最终只会在一个区块执行

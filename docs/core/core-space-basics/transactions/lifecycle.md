@@ -1,4 +1,6 @@
 ---
+sidebar_position: 5
+title: Lifecycle
 displayed_sidebar: coreSidebar
 ---
 
