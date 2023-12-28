@@ -142,7 +142,7 @@ curl -H "Content-Type: application/json" -X POST –data '{"jsonrpc":"2.0","meth
 
 ### Step 7: Keeping Your Node Updated
 
-Make sure to keep your Conflux node software updated to the latest version to ensure compatibility with the network and to include the latest features and security patches.
+Make sure to [keep your Conflux node software updated](./how-to-upgrad.md) to the latest version to ensure compatibility with the network and to include the latest features and security patches.
 
 ## FAQs
 
