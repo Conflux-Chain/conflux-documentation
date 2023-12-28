@@ -20,7 +20,7 @@ For a Full Node, requirements are the following:
 * At least 16GB of RAM(32GB is recommended), 4 CPU cores.
 * A minimum of 1.5TB free disk space (SSD is recommended).
 * A stable internet connection.
-* Linux XFS file system is performance but not stable, **ext4 is recommended**.
+* While the Linux XFS file system offers performance benefits, it is not as stable; therefore, **ext4 is recommended** for its reliability and stability.
 
 ## Steps
 
