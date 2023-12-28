@@ -1,27 +1,27 @@
 ---
 sidebar_position: 5
-title: Glossary
+title: Glosario
 displayed_sidebar: generalSidebar
 ---
 
-## Introduction
+## Introducción
 
-Welcome to the Glossary section of the Conflux documentation. This section is designed to provide you with clear and concise definitions of key terms and concepts used within Conflux and the broader blockchain industry.
+Bienvenido a la sección Glosario de la documentación de Conflux. Esta sección está diseñada para proporcionarle definiciones claras y concisas de términos y conceptos clave utilizados en Conflux y en la industria de blockchain.
 
-The terms are organized in alphabetical order for easy navigation. Each term includes a straightforward definition and, where applicable, links to more detailed explanations within our documentation or external resources.
+Los términos están organizados en orden alfabético para facilitar la navegación. Cada término incluye una definición directa y, en su caso, enlaces a explicaciones más detalladas dentro de nuestra documentación o recursos externos.
 
-## Definitions
+## Definiciones
 
-### **51% Attack**
-A 51% attack refers to a potential attack on a blockchain network, where a single entity or organization is able to control the majority of the network's mining hash rate. This control could allow them to disrupt the network by altering the ordering of transactions, preventing new transactions from gaining confirmations, or even allowing for double spending. It's called a "51% attack" because it typically requires at least 51% control of the network's hash rate to be successful.
+### **Ataque del 51 %**
+Un ataque del 51 % se refiere a un ataque potencial en una red blockchain, donde una única entidad u organización es capaz de controlar la mayoría de la tasa de hash de la minería de la red. Este control podría permitirles interrumpir la red modificando el orden de las transacciones, evitando que las nuevas transacciones obtengan confirmaciones o incluso permitan el doble gasto. Se llama un "ataque del 51%" porque normalmente requiere controlar al menos un 51% de la tasa de hash de la red para tener éxito.
 
-### **Account**
-The Conflux global state is described in an account model, with the basic storage component called an account. Every actor, which is either a person or an entity that is able to interact with the Conflux world, has its necessary information stored in an account α as a key/value pair of [address](#address) and corresponding state. Refer to [general-accounts](./accounts.md) for detailed information.
+### **Cuenta**
+El estado global de Conflux se describe en un modelo de cuenta, con el componente de almacenamiento básico llamado cuenta. Cada actor, que es una persona o una entidad capaz de interactuar con el mundo de Conflux, tiene su información necesaria almacenada en una cuenta α como un par clave/valor de [la dirección](#address) y estado correspondiente. Consulte [General/Cuentas](./accounts.md) para obtener información detallada.
 
-### **Address**
-An address in Conflux is the identifier of an [account](#account). It's a unique string of characters that represents the account on the blockchain. The format of the address can differ in different Conflux [spaces](./spaces.md). There are different formats for espace addresses and Core Space addresses.
+### **Dirección**
+Una dirección en Conflux es el identificador de una [cuenta](#account). Es una cadena única de caracteres que representa la cuenta en la cadena de bloques. El formato de la dirección difieren en los diferentes [espacios de Conflux](./spaces.md). Hay diferentes formatos para direcciones de eSpace y direcciones del Core Space.
 
-For example:
+Por ejemplo:
 
 ``` 
 // espace address
@@ -32,67 +32,67 @@ cfx:aatktb2te25ub7dmyag3p8bbdgr31vrbeackztm2rj
 cfxtest:aatktb2te25ub7dmyag3p8bbdgr31vrbeajcg9pwkc
 ```
 
-Refer to [general-address](./accounts.md#address), [core-address](../../core/core-space-basics/addresses.md), [espace-address](../../espace/build/accounts.md#mapped-addresses-in-cross-space-operations) for more information.
+Consulte [general-address](./accounts.md#address), [core-address](../../core/core-space-basics/addresses.md), [espace-address](../../espace/build/accounts.md#mapped-addresses-in-cross-space-operations) para más información.
 
-### **Block**
-In blockchain technology, a block is a collection of transactions. It's like a page of a ledger or record book. Each block is linked to the one before it and after it, creating a chain of blocks, hence the term "blockchain". In the context of Conflux, blocks form a tree-like structure, allowing for multiple blocks to be produced concurrently.
+### **Bloque**
+En la tecnología blockchain, un bloque es un conjunto de transacciones. Es como una página de un libro de registro. Cada bloque está vinculado a un bloque anterior y a otro posterios de él, creando una cadena de bloques, de ahí el término "blockchain". En el contexto de Conflux, los bloques forman una estructura similar a un árbol, permitiendo la producción simultánea de múltiples bloques.
 
-### **Blockchain**
-A blockchain is a decentralized and distributed digital ledger that records transactions across many computers so that any involved record cannot be altered retroactively, without the alteration of all subsequent blocks. This technology underpins cryptocurrencies like Bitcoin and Ethereum, and it's the foundational technology for the Conflux network.
+### **Cadena de bloques**
+Una blockchain es un registro digital descentralizado y distribuido que registra transacciones en muchas computadoras para que cualquier registro involucrado no pueda ser modificado retroactivamente, sin la alteración de todos los bloques posteriores. Esta tecnología sustenta criptomonedas como Bitcoin y Ethereum, y es la tecnología fundamental para la red Conflux.
 
 ### **CFX**
-CFX is the native currency of the Conflux network. It's used to incentivize the maintenance of the Conflux network and charge users for consumption of resources. CFX plays a very important role in the stability of the system, working as the reward for consensus mechanisms, the transaction fee for each transaction, and for DAO voting.
+CFX es la moneda nativa de la red Conflux. Es usado para incentivar el mantenimiento de la red Conflux y cobrar a los usuarios por el consumo de recursos. CFX juega un papel muy importante en la estabilidad del sistema, trabaja como recompensa por los mecanismos de consenso, las comisiones (fees) de cada transacción, y para la votación en la DAO.
 
-The smallest subdenomination is denoted by Drip, in which all values processed in Conflux are integers. One Conflux is defined as 10^18 Drip. Frequently used subdenominations of Conflux are listed below:
+La subdenominación más pequeña se denota por Drip, en la que todos los valores procesados en Conflux son enteros. Un CFX se define como 10^18 Drip. Las subdenominaciones de Conflux frecuentemente utilizadas se enumeran a continuación:
 
-| Multiplier (in Drip) |     Name     |
-| -------------------- |:------------:|
-| 10^0                 |     Drip     |
-| 10^9                 |    GDrip     |
-| 10^12                |     uCFX     |
-| 10^18                | Conflux(CFX) |
+| Multiplicador (en Drip) |    Nombre    |
+| ----------------------- |:------------:|
+| 10^0                    |     Drip     |
+| 10^9                    |    GDrip     |
+| 10^12                   |     uCFX     |
+| 10^18                   | Conflux(CFX) |
 
-For more information on the genesis creation, distribution, and release of CFX, please refer to:
+Para más información sobre la creación, distribución y lanzamiento de CFX, por favor consulte en:
 
-- [Economics white paper](https://confluxnetwork.org/files/Conflux_Economic_Paper_20201230.pdf)
-- [The Role of the CFX token in the Conflux Network](https://medium.com/conflux-network/the-role-of-the-cfx-token-in-the-conflux-network-5a56c2b43bb0)
-- [On-chain DAO Vote for Chain Parameters](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-94.md)
-- [Economics](./economics.md)
+- [White Paper de la Economía](https://confluxnetwork.org/files/Conflux_Economic_Paper_20201230.pdf)
+- [El rol del token CFX en la red Conflux](https://medium.com/conflux-network/the-role-of-the-cfx-token-in-the-conflux-network-5a56c2b43bb0)
+- [Votación de la DAO en cadena para los parámetros de la cadena](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-94.md)
+- [Economía](./economics.md)
 
 ### **ChainId & NetworkId**
-`chainId` is a number indicating where a transaction is intended to be executed. It is used to prevent transaction replay attacks. The chainId of Conflux chains are constant, currently:
+`chainId` es un número que indica dónde se pretende ejecutar una transacción. Se utiliza para prevenir ataques de repetición de transacciones. El chainId de las cadenas Conflux son constantes, actualmente:
 
 - Conflux Core Mainnet: `1029`
 - Conflux Core Testnet: `1`
 - Conflux eSpace Mainnet: `1030`
 - Conflux eSpace Testnet: `71`
 
-`networkId` is used to distinguish between blockchains at the network layer. Currently Conflux mainnet/testnet's `networkId` is same as `chainId`. You can get both of these from the `cfx_getStatus` RPC method.
+`networkId` se utiliza para distinguir entre blockchains en la capa de red. Actualmente Conflux mainnet/testnet `networkId` es igual que `chainId`. Puede obtener ambos mediante el método RPC `cfx_getStatus`.
 
-### **Conflux Ecosystem**
-The Conflux Ecosystem refers to the various projects, applications, platforms, and services that are built on or integrated with the Conflux network. This includes decentralized applications (DApps), decentralized finance (DeFi) platforms, wallet services, and more. The Conflux Ecosystem is a vibrant and growing community of developers, users, and organizations that contribute to the Conflux network.
+### **Ecosistema de Conflux**
+El ecosistema de Conflux se refiere a los diversos proyectos, aplicaciones, plataformas y servicios que han sido construidos o están integrados con la red Conflux. Esto incluye aplicaciones descentralizadas (DApps), plataformas de finanzas descentralizadas (DeFi), billeteras y más. El ecosistema de Conflux es una vibrante y creciente comunidad de desarrolladores, usuarios y organizaciones que contribuyen a la red Conflux.
 
 ### **Conflux Scan**
-[Conflux Scan](https://confluxscan.io/) is the official blockchain explorer for the Conflux network. It provides a user-friendly, details-driven interface for users to view, confirm, and inspect transactions and contracts on the Conflux network. With Conflux Scan, users can track the status of their transactions, view the balance of their accounts, explore smart contracts, and much more.
+[Conflux Scan](https://confluxscan.io/) es el explorador oficial de blockchain para la red Conflux. Proporciona una interfaz fácil de usar, basada en detalles para que los usuarios puedan ver, confirmar e inspeccionar transacciones y contratos en la red Conflux. Con Conflux Scan, los usuarios pueden rastrear el estado de sus transacciones, ver el saldo de sus cuentas, explorar contratos inteligentes y mucho más.
 
-### **Consensus Algorithm**
-A consensus algorithm is a process in computer science used to achieve agreement on a single data value among distributed processes or systems. In the context of blockchain, it's used to agree on the (total) order of transactions. Conflux uses a unique consensus algorithm based on a Tree-Graph structure, which allows for high throughput and low latency in large-scale decentralized networks.
+### **Algoritmo de consenso**
+Un algoritmo de consenso es un proceso en ciencias de la computación usado para alcanzar un acuerdo sobre un único valor de datos entre los procesos o sistemas distribuidos. En el contexto de blockchain, se utiliza para acordar el (total) orden de las transacciones. Conflux utiliza un algoritmo de consenso único basado en la estructura Tree-Graph, que permite un alto rendimiento y baja latencia en redes descentralizadas a gran escala.
 
 ### **DAG (Directed Acyclic Graph)**
-In the context of Conflux, DAG is used to represent the block structure of the Conflux network. Unlike traditional blockchain systems that follow a linear chain, Conflux forms a DAG structure of blocks, allowing for multiple blocks to be produced concurrently. This structure is key to Conflux's ability to achieve high throughput and low latency.
+En el contexto de Conflux, DAG se utiliza para representar la estructura de bloques de la red Conflux. A diferencia de los sistemas tradicionales de blockchain que siguen una cadena lineal, Conflux forma una estructura de bloques DAG, permitiendo que múltiples bloques se produzcan simultáneamente. Esta estructura es clave para que Conflux tenga la capacidad de lograr un alto rendimiento y baja latencia.
 
-### **Decentralized Application (DApp)**
-A decentralized application (DApp) is a computer application that runs on a distributed computing system such as a blockchain. Unlike traditional applications that run on centralized servers, DApps leverage the power of blockchain's peer-to-peer network to provide transparency, immutability, and resistance to censorship. The typical framework of a DApp includes 2 layers: the front-end or user interface, and the smart contracts running on the blockchain acting as the back-end logic. The front-end, developed using standard languages like HTML, CSS, and JavaScript, interacts with the blockchain through smart contracts. These smart contracts, written in languages like Solidity, define the rules and logic of the DApp, and are stored and executed on the blockchain, ensuring consistent and trustless operation.
+### **Aplicación descentralizada (DApp)**
+Una aplicación descentralizada (DApp) es una aplicación de computadora que se ejecuta en un sistema de cómputo distribuido como una cadena de bloques. A diferencia de las aplicaciones tradicionales que funcionan en servidores centralizados, las DApps aprovechan el poder de la red peer-to-peer de la blockchain para proporcionar transparencia, inmutabilidad y resistencia a la censura. El framework típico de un DApp incluye 2 capas: el front-end o interfaz de usuario, y los contratos inteligentes que se ejecutan en la blockchain actuando como la lógica del back-end. El front-end, desarrollado usando lenguajes estándar como HTML, CSS y JavaScript, interactúa con la cadena de bloques a través de contratos inteligentes. Estos contratos inteligentes, escritos en idiomas como Solidity, definen las reglas y la lógica de la DApp, y se almacenan y ejecutan en la cadena de bloques, asegurando una operación consistente y de confianza.
 
-### **Double Spending**
-Double spending is a potential flaw in a digital cash scheme in which a single digital token can be spent more than once. This is possible because a digital token consists of a digital file that can be duplicated or falsified. The Conflux network, like other blockchain networks, uses a consensus mechanism to prevent double spending.
+### **Doble gasto**
+El doble gasto es un defecto potencial en un sistema de dinero digital en el que se puede gastar más de una vez un solo token digital. Esto es posible porque un token digital consiste en un archivo digital que puede ser duplicado o falsificado. La red Conflux, al igual que otras redes de blockchain, utiliza un mecanismo de consenso para prevenir el doble gasto.
 
 ### **Epoch**
 
-In Conflux, an epoch is a fundamental unit used to update the world state, setting it apart from blockchain like Bitcoin or Ethereum, where updates are done by block. An epoch in Conflux is a specific partitioning of blocks that determines their total order. This partitioning is based on the pivot chain in a Tree-Graph structure, and the pivot block will be the last block in each epoch. Once the pivot chain is determined and not reverted, the partition of epochs becomes immutable, meaning the order of transactions and execution results cannot be changed.
+En Conflux,el epoch es la unidad fundamental que se utiliza para actualizar el estado general, estableciéndola aparte de blockchains como Bitcoin o Ethereum, donde las actualizaciones son realizadas por bloque. Epoch en Conflux es una partición específica de bloques que determina su orden total. Esta particióno se basa en la cadena pivot de la estructura Tree-Graph, y el bloque pivot será el último bloque en cada epoch. Una vez que se determina la cadena pivot y no se revierte, la partición de epochs se vuelve inmutable significa que el orden de las transacciones y los resultados de la ejecución no pueden cambiarse.
 
 ### **ERC20**
-ERC20 is a standard for tokens on the Ethereum blockchain. It specifies a set of functions and events that a token contract has to implement. While this is a standard on the Ethereum network, tokens on the Conflux network can also follow this standard, especially if they are transferred from the Ethereum network via the [Zero Gravity protocol](../tutorials/transferring-funds/across-chains/zero-gravity.md).
+ERC20 es un estándar para tokens en la blockchain de Ethereum. Especifica un conjunto de funciones y eventos que un contrato de token tiene que implementar. While this is a standard on the Ethereum network, tokens on the Conflux network can also follow this standard, especially if they are transferred from the Ethereum network via the [Zero Gravity protocol](../tutorials/transferring-funds/across-chains/zero-gravity.md).
 
 ### **ERC721**
 ERC721 is a standard for non-fungible tokens (NFTs) on the Ethereum blockchain. Unlike ERC20 tokens, which are identical to each other, each ERC721 token is unique. This makes them suitable for representing ownership of unique items or assets. Like ERC20, ERC721 tokens can also exist on the Conflux network, especially if they are transferred from the Ethereum network.
@@ -187,7 +187,7 @@ A Conflux transaction is a single instruction composed by an external actor with
 
 Refer to [Transactions](./transactions.md) for more information.
 
-### **Tree-Graph**
+### **Tree Graph**
 In the context of Conflux, the Tree-Graph is a novel consensus mechanism that allows for high throughput and low latency in large-scale decentralized networks. Unlike traditional blockchain systems that follow a linear chain, Conflux forms a tree-like structure of blocks, allowing for multiple blocks to be produced concurrently. This structure is key to Conflux's ability to process a high number of transactions per second.
 
 Refer to [Tree-Graph](../conflux-basics/consensus-mechanisms/proof-of-work/tree-graph.md) for more information.
