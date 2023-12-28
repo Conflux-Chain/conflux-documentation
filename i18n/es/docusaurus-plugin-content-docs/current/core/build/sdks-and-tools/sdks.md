@@ -84,7 +84,7 @@ public class App {
 
 ### [python-conflux-sdk](https://github.com/conflux-chain/python-conflux-sdk)
 
-`python-conflux-sdk` (also known as `conflux_web3`) is the official Python SDK for Conflux Core Space. It is built upon [web3.py](https://github.com/ethereum/web3.py) v6, and most of its API is consistent with `web3.py`, offering convenience for developers who wish to migrate their Python code from Ethereum. For example:
+`python-conflux-sdk` (also known as `conflux_web3`) is the official Python SDK for Conflux Core Space. It is built upon [web3.py](https://github.com/ethereum/web3.py) v6, and most of its API is consistent with `web3.py`, offering convenience for developers who wish to migrate their Python code from Ethereum. Por ejemplo:
 
 ```python
 # modified from https://web3py.readthedocs.io/en/stable/middleware.html#signing
