@@ -158,6 +158,19 @@ const config = {
       footer: {
         style: 'dark',
         links: [
+            {
+                title: 'Quick Links',
+                items: [
+                  {
+                    label: 'eSpace RPC Endpoints',
+                    to: '/docs/espace/network-endpoints',
+                  },
+                  {
+                    label: 'Core Space RPC Endpoints',
+                    to: '/docs/core/conflux_rpcs',
+                  },
+                ],
+              },
           {
             title: 'Resources',
             items: [
