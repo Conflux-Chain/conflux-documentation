@@ -79,7 +79,7 @@ Miners also receive interest income from Collateral for Storage (CFS) tokens pai
 
 Stakers are another crucial group of system maintainers in Conflux's Proof of Stake (PoS) consensus mechanism layer. Unlike miners in the Proof of Work (PoW) system, stakers do not compete with each other using computing power. Instead, they stake a certain amount of CFX and either run PoS nodes themselves or delegate their CFX to PoS pools. In return, they earn CFX rewards proportional to their stakes.
 
-#### On-chain DAO Vote for Chain Parameters
+#### Votación de la DAO en cadena para los parámetros de la cadena
 
 Conflux introduces internal contract [ParamControl](../../core/core-space-basics/internal-contracts/params-control.md) in [CIP-94](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-94.md) to control the chain parameters including PoW base block reward and PoS base reward interest rate. In other word, the operational phase CFX distribution is now controlled by DAO.
 

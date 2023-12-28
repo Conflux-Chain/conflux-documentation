@@ -63,7 +63,7 @@ download.bat
 
 Then, you’ll need to unzip the file, and copy (or move) its content into your node folder, usually named "run".
 
-For example:
+Por ejemplo:
 
 ```shell
 tar -xvzf conflux-fullnode-db-snapshot-2023-09-20.tgz ./run

@@ -8,7 +8,7 @@ We will give you a quick introduction to Core Space. It is a smart contract plat
 
 ## Base32 Address
 
-Core Space uses Base32 address instead of hex address. The Base32 address is a base32 encoded string that starts with `cfx` or `cfxtest`. For example:
+Core Space uses Base32 address instead of hex address. The Base32 address is a base32 encoded string that starts with `cfx` or `cfxtest`. Por ejemplo:
 
 - cfx:aarc9abycue0hhzgyrr53m6cxedgccrmmyybjgh4xg
 - cfxtest:aarc9abycue0hhzgyrr53m6cxedgccrmmy8m50bu1p
