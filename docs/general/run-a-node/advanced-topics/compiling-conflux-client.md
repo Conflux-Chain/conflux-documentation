@@ -16,6 +16,9 @@ We recommend installing Rust through [rustup](https://rustup.rs/). If you don't 
 
 ```shell
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+# you might need to run 
+# source "$HOME/.cargo/env"
+# to configure your shell
 rustup install 1.62.0
 ```
 
@@ -56,6 +59,9 @@ sudo make install
 
 ```shell
 curl https://sh.rustup.rs -sSf | sh
+# you might need to run 
+# source "$HOME/.cargo/env"
+# to configure your shell
 rustup install 1.62.0
 ```
 
