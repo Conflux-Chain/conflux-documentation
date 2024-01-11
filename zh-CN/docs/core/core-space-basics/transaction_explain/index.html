@@ -9,7 +9,7 @@
 
 
 <link rel="search" type="application/opensearchdescription+xml" title="Conflux Docs" href="/zh-CN/opensearch.xml"><link rel="stylesheet" href="/zh-CN/assets/css/styles.b4600378.css">
-<script src="/zh-CN/assets/js/runtime~main.ace6d64e.js" defer="defer"></script>
+<script src="/zh-CN/assets/js/runtime~main.742f6fd7.js" defer="defer"></script>
 <script src="/zh-CN/assets/js/main.7cdeb87d.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -49,7 +49,7 @@
 <p>当使用 SDK 构造交易时，nonce 字段的值不需要手动设置，因为 SDK 会自动使用 <code>cfx_getNextNonce</code> 查询它。 但是，如果一次发送多个交易，nonce 值可能会被重复使用，因为在发送前一个交易后，<code>cfx_getNextNonce</code> 的返回值不会立即更新。 为了避免这种情况，建议开发者手动管理 nonce，通过记录交易哈希，将 nonce 加 1，并使用更新后的值来构造后续的交易。</p>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="费用相关字段">费用相关字段<a href="#费用相关字段" class="hash-link" aria-label="费用相关字段的直接链接" title="费用相关字段的直接链接">​</a></h3>
 <p>在 Conflux 网络中，交易由收取服务费用的矿工处理。 这个费用激励矿工参与网络并保持其顺畅运行。 费用以 CFX 支付，并由交易发起者通过交易中的 <code>gas</code>、<code>gasPrice</code> 和 <code>storageLimit</code> 字段来指定。</p>
-<p><code>gas</code> 字段表示执行交易时可以使用的最大 gas 量。 如果执行过程中实际消耗的 gas 超过了这个限制，交易将失败。 如果实际消耗的 <code>gas</code> 少于设置的 <code>gas</code>，发送者必须支付至少 75% 的 <code>gas</code>，最多 25% 可以退还，这意味着设置过高的 <code>gas</code> 是不鼓励的。 Gas 消耗取决 于合约代码的复杂度（如果是简单的转账交易则为 <code>21000</code>），可以用 <code>cfx_estimateGasAndCollateral</code> 方法来估算，它返回 <code>gasUsed</code>、<code>gasLimit</code> 和 <code>storageCollaterized</code> 字段。 建议使用 <code>gasLimit</code> 作为 <code>gas</code> 字段。</p>
+<p><code>gas</code> 字段表示执行交易时可以使用的最大 gas 量。 如果执行过程中实际消耗的 gas 超过了这个限制，交易将失败。 如果实际消耗的 <code>gas</code> 少于设置的 <code>gas</code>，发送者必须支付至少 75% 的 gas，最多 25% 可以退还，这意味着设置过高的 gas 是不鼓励的。 Gas 消耗取决于合约代码的复杂度（如果是简单的转账交易则为 <code>21000</code>），可以用 <code>cfx_estimateGasAndCollateral</code> 方法来估算，它返回 <code>gasUsed</code>、<code>gasLimit</code> 和 <code>storageCollaterized</code> 字段。 建议使用 <code>gasLimit</code> 作为 <code>gas</code> 字段。</p>
 <p><code>gasPrice</code> 字段是发送者愿意为每单位 gas 支付的 Drip（10**-18 CFX）数量，应该大于 1G（10**9）。 As Conflux default setting, miners prioritise transactions with higher <code>gasPrice</code>, and the <code>gasPrice</code> can be increased to speed up the processing of a stuck transaction. <code>cfx_gasPrice</code> 方法根据网络状况提供一个合理的 gas 价格。</p>
 <p>除了交易费用外，Conflux 网络还要求在交易过程中为占用新的存储空间或修改已有的存储空间的质押 CFX。 质押的 CFX 产生 4% 的年利息，这部分利息支付给矿工，以补贴他们的存储成本。 当占用的空间被释放或被他人修改时，质押的 CFX 将被返还。 <code>storageLimit</code> 字段指定了交易可以占用的存储空间的上限。 建议使用 <code>cfx_estimateGasAndCollateral</code> 返回值中的 <code>storageCollaterized</code> 字段作为 <code>storageLimit</code> 字段。</p>
 <div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>信息</div><div class="admonitionContent_BuS1"><p>Refer to <a href="/zh-CN/docs/core/core-space-basics/storage">storage</a> for more information.</p></div></div>
