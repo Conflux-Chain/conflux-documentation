@@ -83,16 +83,16 @@ cssCopy code
 1. Start a full node (archive node) and enable the websocket RPC service.
 2. Subscribe to the **`latest mined epoch`** event using **`rpc_subscribeEpoch`**.
 3. Wait for the latest mined epoch B and compare it with the previously obtained latest mined epoch A.
-4. If B <= A, a pivot chain switch has occurred.
+4. If `B <= A`, a pivot chain switch has occurred.
 5. Go to step 3.
 
 **How can developers synchronize block and transaction status?**
 
-If local data needs to be kept up-to-date and accurate for blocks and transactions, then when a pivot chain switch occurs (assuming the latest mined epoch number changes from A to B, and B <= A):
+If local data needs to be kept up-to-date and accurate for blocks and transactions, then when a pivot chain switch occurs (assuming the latest mined epoch number changes from A to B, and `B <= A`):
 
 - Assume the latest state epoch number obtained when the latest mined epoch number was A is A'.
 - Assume the latest state epoch number obtained when the latest mined epoch number was B is B'.
-1. If B > A', update (A', B'] (i.e., this situation will not affect the executed blocks and transactions, process normally).
+1. If `B > A'`, update (A', B'] (i.e., this situation will not affect the executed blocks and transactions, process normally).
 
 ```css
 
@@ -101,7 +101,7 @@ If local data needs to be kept up-to-date and accurate for blocks and transactio
 
 ```
 
-1. If B <= A', delete the data between [B, A'].
+1. If `B <= A'`, delete the data between [B, A'].
 
 ```css
 
@@ -266,7 +266,11 @@ The smallest unit in conflux is drip.
 - 1cfx = 10^18 drip
 - 1gdrip = 10^9 drip
 
-### **What does the error `estimateGasAndColletral` mean? "Cannot estimate: transaction execution failed, all gas will be charged (execution error: VmError(BadInstruction { instruction: 169 }))"**
+### **What does the error `estimateGasAndColletral` mean? "Cannot estimate: transaction execution failed, all gas will be charged"**
+
+```
+Cannot estimate: transaction execution failed, all gas will be charged (execution error: VmError(BadInstruction { instruction: 169 }))
+```
 
 Reason: The constructor was invalid when deploying the contract; it is usually caused by forgetting to write the **`to`** address when calling the contract.
 

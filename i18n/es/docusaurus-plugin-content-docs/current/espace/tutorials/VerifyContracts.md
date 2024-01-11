@@ -87,9 +87,11 @@ forge verify-contract <contract address> <contract name> \
   --constructor-args <your constructor arguments>
 ```
 
-<Aside type="caution" title="Caution">
-  Do not specify the chain ID.
-</Aside>
+:::warning
+
+Do not specify the chain ID.
+
+:::
 
 ## Verify on Web UI Manually
 
