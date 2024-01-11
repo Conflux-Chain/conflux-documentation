@@ -3,6 +3,7 @@ title: Community FAQs
 sidebar_position: 2
 displayed_sidebar: generalSidebar
 ---
+
 # Community FAQs
 
 ### **Do we need to pay attention to the `storageLimit` and `epochHeight` fields in regular transactions?**
@@ -42,10 +43,10 @@ Yes, it's supported. You can directly reference it. However, note that the ERC18
 ### **Where is the testnet faucet?**
 
 - To receive CFX test tokens, you can get them directly from the faucet portals.
-    - Core Space Testnet Faucet: https://faucet.confluxnetwork.org/ 
+    - Core Space Testnet Faucet: https://faucet.confluxnetwork.org/
     - eSpace Testnet Faucet: https://efaucet.confluxnetwork.org/
     - Mainnet Faucets: https://conflux-faucets.com/
- 
+
 ### **Why does the value sometimes appear smaller when I use `latest_confirmed` to get the epoch?**
 
 This can happen in cases of poor network connectivity, primarily due to high block synchronization delays.
@@ -116,11 +117,9 @@ I hope this translation helps you understand the content better! If you have any
 
 ### What is storage collateral, and how is it calculated? For example, how many drips are required for 1kb storage?
 
-Storage collateral refers to the need to collateralize a corresponding amount of cfx when adding new storage usage in a contract. For each storage entry, the last account that writes to this entry is called the owner of this storage entry. The storage collateral fee will be returned to the owner after the storage is released.
-Every 1kb of storage requires a collateral of 1cfx.
+Storage collateral refers to the need to collateralize a corresponding amount of cfx when adding new storage usage in a contract. For each storage entry, the last account that writes to this entry is called the owner of this storage entry. The storage collateral fee will be returned to the owner after the storage is released. Every 1kb of storage requires a collateral of 1cfx.
 
 > For more details, please refer to [THIS](../../core/core-space-basics/storage) section.
-> 
 
 ### What fees are included in the GasFee returned by cfx_getTransactionReceipt? Does it include storage collateral fees?
 
