@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkconflux_docs=self.webpackChunkconflux_docs||[]).push([[7495],{42100:l=>{l.exports=JSON.parse('{"label":"hola","permalink":"/zh-CN/blog/tags/hola","allTagsPath":"/zh-CN/blog/tags","count":1}')}}]);
