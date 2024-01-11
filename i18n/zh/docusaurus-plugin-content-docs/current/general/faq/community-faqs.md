@@ -92,7 +92,7 @@ If local data needs to be kept up-to-date and accurate for blocks and transactio
 
 - Assume the latest state epoch number obtained when the latest mined epoch number was A is A'.
 - Assume the latest state epoch number obtained when the latest mined epoch number was B is B'.
-1. If `B > A'`, update (A', B'] (i.e., this situation will not affect the executed blocks and transactions, process normally).
+1. If B > A', update (A', B'] (i.e., this situation will not affect the executed blocks and transactions, process normally).
 
 ```css
 
