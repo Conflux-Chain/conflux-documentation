@@ -1,6 +1,7 @@
 ---
 sidebar_postion: 6
 displayed_sidebar: generalSidebar
+toc_max_heading_level: 4
 ---
 
 # Contribuir
@@ -8,7 +9,7 @@ displayed_sidebar: generalSidebar
 :::info
 ¡Gracias por tu interés en contribuir en nuestra documentación! Agradecemos su apoyo y valoramos los conocimientos y la experiencia de nuestra comunidad. Esta página describe las pautas y procesos para contribuir, así como las recompensas que puedes ganar por tus esfuerzos.
 
-If you are seeking funding from the Conflux Foundation, please refer to our [grants](./build/grants.md) page.
+If you are seeking funding from the Conflux Foundation for your projects, please refer to our [**Grants**](./build/grants.md) page.
 
 :::
 
@@ -24,46 +25,108 @@ Las contribuciones son bienvenidas de varias formas, incluyendo pero no limitado
 6. Crear o actualizar ejemplos de códigos o demos
 7. Mejorar la redacción de documentos
 
-Para contribuir, sigue estas sugerencias:
+To make a contribution, please take one of the following actions:
+
+- **Report an Issue**: If you spot a problem or is willing to suggest improvements, [create an issue](#create-an-issue) to let us know.
+- **Submit Changes**: For direct contributions to content, [create a pull request](#create-a-pull-request).
+- **Help with Translation**: To contribute translations, please follow our [translation guidelines](#provide-translation).
 
 ### Crear un Issue
 
-Puede crear un Issue para
+You can create an issue for the following purposes:
 
-- reportar algún error / error tipográfico
-- o solicitar nuevo contenido / mejora de contenido actual
+- To report any mistakes or typos.
+- To request new content or improvements to current content.
+
+You can typically create an issue directly through the [GitHub web page](https://github.com/Conflux-Chain/conflux-documentation/issues/new/choose). Here, you'll find various templates to guide your issue submission.
 
 ![issue templates](image/2023-04-13-15-16-53.png)
 
-Sería estupendo que pudiera tomar la iniciativa y resolver el problema por su cuenta!
+If you're able to address the issue yourself, we encourage you to take the initiative. When creating an issue, you can indicate your willingness to resolve it. For bug reports, select the option “I'd be willing to fix this issue myself” in the BUG template. For feature requests, select “I'd be willing to contribute this feature myself” in the Feature Request template.
 
-```
+```md
+
 // in BUG template
 - [ ] I'd be willing to fix this issue myself.
 // in Feature Request template
 - [ ] I'd be willing to contribute this feature myself
+
 ```
+
+Alternatively, you can submit your issue through the [Conflux Documentation Issue Form](https://forms.office.com/r/pKVBywZwLY). If your submission is approved, it will be created on the GitHub repository.
+
+![Conflux Documentation Issue Form](image/Conflux%20Documentation%20Issue%20Form.png)
 
 ### Crear un Pull Request
 
-Puedes crear una Pull Request para enviar cambios de contenido **EXCEPTO PARA [TRADUCCIONES](#provide-translation)**.
+Contributing to projects through a pull request (PR) is a valuable way to improve existing documentation or code. This guide will walk you through the process step by step, ensuring clarity and ease of understanding, especially for those new to GitHub and git operations.
 
-Si no estas trabajando en un Issue creado por ti mismo, se sugiere seguir estos pasos:
+:::note
 
-:::nota
-Estos no son pasos obligatorios pero disminuirán la posibilidad de que tu PR sea rechazada.
+This process does not apply to [TRANSLATIONS](#provide-translation).
+
 :::
 
-1. Asegúrese de que existe un Issue abierto relevante con la etiqueta "ACCEPTED".
-2. Deja un comentario en el Issue por si hay algún contribuyente trabajando en la misma Issue.
-3. Menciona el Issue `#xx` en el mensaje de commit. Ejemplo `fix: typo. Ref #123456`.
+#### Minor Changes via Github Web UI
 
+For simple corrections or enhancements like typos or sentence improvements:
+
+1. Navigate to the Page:
+   - Go to the **English version** of the page you wish to edit and click the "Edit this page" button. This button is typically found at the top or bottom of the page.
+     - ![Edit this page](./image/2024-01-04-17-09-22.png)
+
+2. Forking the Repository:
+   - You'll be redirected to GitHub, where you might see a prompt saying, "You need to fork this repository to propose changes." Click "Fork this repository".
+     - ![Fork this repository](./image/2024-01-04-17-12-54.png)
+
+3. Making Edits:
+   - Once in the editor mode, make the necessary changes. After editing, scroll to the bottom where you'll find the "Commit changes" section. Fill in a brief description of your changes, then click "Propose changes".
+
+4. Submitting the Pull Request:
+   - After proposing changes, you'll be directed to a new page to initiate the pull request. Click "Create pull request". Double-check the changes and fill in any additional information if necessary, then finalize by clicking "Create pull request" again.
+     - Remember to check preflight checks by adding "x".
+     - ![preflight checks](image/2024-01-04-17-36-59.png)
+
+#### Local Development for Substantial Changes
+
+:::tip
+
+Refer to [Github's tutorial](https://docs.github.com/en/get-started/exploring-projects-on-github/contributing-to-a-project) if you are not familiar with git or Github operations.
+
+:::
+
+For more significant contributions like adding a new page or extensive revisions:
+
+1. Setting Up:
+   - Ensure you have [node.js](https://nodejs.org/en) (version `>= 18`) and [yarn](https://yarnpkg.com/getting-started/install) installed.
+   - Fork and clone the [documentation repository](https://github.com/Conflux-Chain/conflux-documentation). Detailed instructions for forking and cloning are available on GitHub's help pages.
+
+2. Making Changes Locally:
+   - Run `yarn && yarn start` in your terminal to preview the site at `http://localhost:3000`.
+   - Navigate to the `docs/**` folder in your cloned repository to make changes. Refresh your local server to see updates.
+
+3. Submitting Your Changes:
+   - After making changes, run `yarn build` to ensure everything compiles correctly.
+   - Commit your changes with a meaningful message, then push to your forked repository. Initiate a pull request on GitHub by comparing your branch to the original repository.
+
+#### Working on an Existing Issue
+
+To avoid overlapping efforts and streamline contributions, it is suggested to follow these steps:
+
+1. Check for Accepted Issues:
+   - Look for issues labeled "ACCEPTED" or similarly indicating readiness for contributions. If unsure, ask in the issue comments.
+
+2. Announce Your Intentions:
+   - Comment on the issue stating that you are working on it. This helps prevent duplicate efforts.
+
+3. (Optional)Link Your Contributions:
+   - When committing your changes, reference the issue number in your commit message, e.g., `fix: typo. Ref #123456`.
 
 ### Proveer traducción
 
 :::note
 
-Un PR para traducciones en el repositorio de GitHub NUNCA será aceptado.
+A translation pull request in the Github repo will NOT be accepted.
 
 :::
 
@@ -91,17 +154,30 @@ Una vez revisado, la traducción será incluida en el repositorio de Github y pu
 
 ## POAPs de contribuyentes
 
-Las personas que realicen alguna contribución al sitio de documentación durante una temporada podrán mintear un POAP de contribuyente. Para calificar para mintear el POAP, tu contribución debe ser también "ACEPTADA" , lo que significa:
+After the end of each quarter, we issue a batch of Contributor POAPs (Proof of Attendance Protocol) to recognize individuals who have made contributions to our documentation site. To be eligible for minting a POAP, your contribution must meet the following "ACCEPTED" criteria:
 
-- cualquie Issue creado tenga la etiqueta "ACCEPTED" agregada por el admin
-- cualquier Pull Request ha sido fusionado exitosamente en la rama principal
-- o cualquier traduccion ha sido revisada completamente
+- Creation of an issue that has been labelled "ACCEPTED" by the repo maintainter.
+- Successful merging of a Pull Request into the main branch.
+- Full review and approval of a translation string.
+
+**POAP Contract Addresses:**
+
+- **Core Space:** [cfx:acd97pbhxm11cegrz3anuuvcuj9j0nh956a108f5cc](https://www.confluxscan.io/address/cfx:acd97pbhxm11cegrz3anuuvcuj9j0nh956a108f5cc)
+- **eSpace:** [0x500371e7ec0b5bca911a11964300e694bb0fec9d](https://evm.confluxscan.io/address/0x500371e7ec0b5bca911a11964300e694bb0fec9d)
+
+These POAPs, deployable in both Core Space and eSpace, function as a unified NFT, symbolizing your valuable contribution across the Conflux network.
 
 ### POAPs especiales
 
 Además de los POAPs regulares de los contribuyentes, reconocemos y recompensamos contribuciones significativas con POAPs especiales. Ejemplos de contribuciones significativas incluyen guías de alta calidad o contribuciones constantes y frecuentes al proyecto. La decisión de otorgar un POAP especial es tomada caso por caso por los encargados del proyecto.
 
-### Actualizaciones de reglas de entrega de POAPs
+### FC (FansCoin) Rewards for POAP Holders
+
+As a token of appreciation, contributors can claim [FansCoin (FC)](https://confluxscan.io/token/cfx:achc8nxj7r451c223m18w2dwjnmhkd6rxawrvkvsy2) rewards for each POAP they own. The amount of FC awarded varies depending on the specific POAP.
+
+> Please note that the FC reward pool is located exclusively in Core Space at [cfx:achm6kb92by13rpvwd04zscn1127zuaseu25usm7sc](https://confluxscan.io/address/cfx:achm6kb92by13rpvwd04zscn1127zuaseu25usm7sc).
+
+### Regular Review of POAP Issuing Rules
 
 Tenga en cuenta que las normas de entrega de POAP están sujetas a revisión y posibles cambios cada 3 meses. Esto garantiza que nuestras directrices sigan siendo relevantes y eficaces para promover y recompensar contribuciones valiosas.
 
