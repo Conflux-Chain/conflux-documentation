@@ -12,7 +12,7 @@ const config = {
   tagline: 'Developer resources for building on Conflux. By developers, for developers.',
   url: 'https://doc.confluxnetwork.org/',
   baseUrl: '/',
-  onBrokenLinks: 'ignore',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/logo.svg',
 
