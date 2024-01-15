@@ -36,3 +36,14 @@ If successful, the interface will return the hash of the CFX transaction. Switch
  
 ![AddressWithTestCFX](./img/AddressWithTestCFX)
 
+
+For more detailed instructions, please refer to the following video tutorial:
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+  <TabItem value="youtube" label="Conflux Faucets Video">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/MyQi99-fEM4?si=PPPJLlUHFEofnnv2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  </TabItem>
+</Tabs>

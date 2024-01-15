@@ -14,6 +14,8 @@ The Hardhat-Conflux plugin is built on top of `js-conflux-sdk`, making its usage
 
 If you are not familiar with Hardhat, please refer to the [Hardhat documentation](https://hardhat.org/getting-started/).
 
+
+
 ## Installation
 
 After installing Hardhat, you can install the plugin with:
