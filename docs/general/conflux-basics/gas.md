@@ -4,7 +4,7 @@ title: Gas
 displayed_sidebar: generalSidebar
 ---
 
-Conflux users(both Core Space and eSpace) usually see fields like ```gasFee```, ```gas```, and ```gasPrice``` when they are sending transactions using their wallets (Fluent) or SDK. This article is going to explain in detail about what these concepts mean and how to set the values properly.
+Conflux users(both Core Space and eSpace) usually see fields like ```gasFee```, ```gas```, and ```gasPrice``` when they are sending transactions using their wallets (Fluent) or SDK. This article is going to explain in detail about what these concepts mean.
 
 ![Sign Transaction](./img/gas1.png)
 
@@ -22,7 +22,7 @@ In addition, the gas fee mechanism can also prevent abusive transactions and thu
 
 ## What is Gas
 
-The concept of gas is borrowed from the real 'gas', petrol. Vehicles consume gasoline to drive. The further a car travels, the more gasoline it consumes. In EVM blockchains, gas represents the work amount required to execute a transaction. Therefore, it is a unit that measures the amount of computation required to perform certain operations.
+The concept of gas is borrowed from the real 'gas', petrol. Vehicles consume gasoline to drive. The further a car travels, the more gasoline it consumes. In EVM blockchains, gas represents the work amount required to execute a transaction. Therefore, it is a **unit that measures the amount of computation** required to perform certain operations.
 
 To provide more details, all Conflux transactions are executed by EVM, including regular CFX transfers and smart contract method calls. When these operations are executed, they are compiled into individual OPCodes. The amount of work required to execute each OPCode varies. More information for OPCode gas fees can be found [here](https://ethereum.org/en/developers/docs/evm/opcodes/).
 
@@ -54,55 +54,32 @@ NOTE: Do not set gasPrice too high. It may lead to sky-high transaction fees. If
 
 ## How gasFee is Calculated
 
-gasFee is the total gas fee paid for a transaction. It is calculated as ```gasFee = gasUsed * gasPrice```. gasFee takes the smallest unit of CFX, Drip.
+gasFee is the total gas fee paid for a transaction. It is calculated as ```gasFee = gasCharged * gasPrice```. gasFee takes the smallest unit of CFX, Drip.
 
 Suppose there is a regular transfer of 1 CFX, the gas limit can be set to 21,000. If the gasPrice is set to 1GDrip, then the total cost of the transaction is ```1 + 21000 * 0.000000001 = 1.000021 CFX```, where 1 CFX is transferred to the recipient's account, and 0.000021 CFX is the reward for the miner.
 
-In addition, in a Conflux transaction, if the ```gas limit``` is more than the actual amount of gas consumed (```gasUsed```), the exceeding part will be returned. The returning amount of gas **can only be up to** a quarter of the ```gas limit```.
+### gasUsed
+
+The actual gas consumed during transaction execution.
+
+### gasCharged
+
+The charged amount of gas. **The `gasCharged` may be greater than `gasUsed`, because not all unused gas will be refunded.**
+
+In a Conflux transaction, if the ```gas limit``` is more than the actual amount of gas consumed (```gasUsed```), the exceeding part will be returned. The returning amount of gas **can only be up to** a quarter of the ```gas limit```.
+
+### Example
 
 Suppose the gas limit for a regular CFX transfer is set to 100k and the actual execution consumed 21,000, since the gas limit for the transaction is set too high, at most 25,000 of the gas fee will be returned(25% of the gas limit). The gas used for the transaction will be ```0.000075 CFX```.
 
 If the gas limit setting of the transaction is not that high, take the same example as above but set the gas limit to 25000, which is 4000 more than the actual amount used, the exceeding part is not more than a quarter of the gas limit. This part will be returned fully, and the final amount of fees charged will still be ```0.000021 CFX```.
 
-## How to Set gas and gasPrice Properly
+## Further Readings
 
-The answer is different depending on different spaces.
-
-### gasPrice
-
-The Conflux consensus don't limit the transaction gas prices and the minimum gas price depends on the miners' setting. Here are the minimum gas price settings of Confura, the public RPC endpoints supported by Conflux foundation:
-
-- core space: 1 GDrip
-- eSpace: 20 GDrip
-
-Besides, it is recommended to set gas price based on core space / espace RPC return value:
-
-- core space: `cfx_gasPrice`
-- eSpace: `eth_gasPrice`
-
-### gas
-
-For regular CFX transfers, setting the gas to 21,000 is sufficient.
-
-For contract interactions, it is recommended to set gas based on the return value of core space / espace RPC:
-
-- core space: `gasLimit` field of `cfx_estimateGasAndCollateral`
-- eSpace: `eth_estimateGas`
-
-These methods simulates the execution of the transaction and return the estimated amount of gas used for the transaction. Actually, in most cases, the value `gasUsed` returned by `cfx_estimateGasAndCollateral` is accurate, but it is not recommended to use `gasUsed` due to two main reasons: 
-
-1. Due to [EIP-150](https://eips.ethereum.org/EIPS/eip-150), setting the gas to the actual gas consumption may often lead to transaction failure.
-2. The result is based on the current blockchain state during the simulation, but the actual execution states may be different. 
-
-The `gasLimit` field typically equals `1.3 * gasUsed`. This ensures that the gas limit is sufficient for the transaction, and any excessive gas fee will be refunded.
+- [Ethereum Developer Documentation: Gas and Fees](https://ethereum.org/en/developers/docs/gas/)
 
 ## FAQs
 
 ### 1. Are there any EIP-1559 transactions in the Conflux network?
 
 Currently, in the Conflux network, there are only transactions that correspond to the EIP-155 standard.
-
-## Further Readings
-
-- [Ethereum Developer Documentation: Gas and Fees](https://ethereum.org/en/developers/docs/gas/)
-- [Ethereum Gas Explained](https://ethgas.io/index.html)

@@ -101,3 +101,10 @@ There are several reasons that may cause the transaction to fail:
 If sponsor replacement happens, the previous sponsor balance will be returned to the sponsor. The remaining balance will be used as the new sponsor balance.
 
 And for the storage sponsorship, part of the sponsor balance will be converted to storage points.
+
+### Sponsorship Settings More than Needed, Can the Excess Portion be Refunded?
+
+Partial refunds for sponsorship settings are not allowed; only a full refund is possible. There are two ways to initiate a full refund:
+
+1. Terminate or destroy the contract.
+2. Have a new sponsor replace the current sponsor.

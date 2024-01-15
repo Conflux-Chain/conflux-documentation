@@ -41,9 +41,9 @@ The Core Space transaction includes the following additional information:
 
 Transactions require a fee and must be included in a validated block. The fee is paid in CFX and is calculated by multiplying the gasCharged by the gasPrice.
 
-Gas fee 被用来支付矿工费用，来激励他们打包，验证区块，维护区块链的安全。
+Gas fees are used to compensate miners, motivating them to package, validate blocks, and maintain the security of the blockchain.
 
-具体的计算方式可参看 [Transaction Fee](./fake-link)。
+For specific calculation details, please refer to [Transaction Fee](./gas.md).
 
 ## Transaction Lifecycle
 
@@ -54,19 +54,18 @@ Once the transaction has been submitted the following happens:
 3. A validator must pick your transaction and include it in a block in order to verify the transaction and consider it "successful".
 4. As time passes the block containing your transaction will be upgraded to "justified" then "finalized". These upgrades make it much more certain that your transaction was successful and will never be altered. Once a block is "finalized" it could only ever be changed by a network level attack that would cost many billions of dollars.
 
-想要了解更详细的交易生命周期，可参看 [Transaction Lifecycle](./fake-link)。
+For a more detailed understanding of the transaction lifecycle, you can refer to [Transaction Lifecycle](/docs/core/core-space-basics/transactions/lifecycle.md).
 
 ## Transaction Status
 
-被打包进区块的交易，最终会被执行并产生交易 **Receipt**，但并不是所有的交易都会执行成功，通常交易的执行有两种状态**成功**或**失败**. 
+The transactions that are included in a block will eventually be executed, generating a [transaction **Receipt**](/docs/core/core-space-basics/transactions/receipt.md). However, not all transactions will be executed successfully; typically, transactions can have two states: **Success** or **Failure**.
 
-eSpace 交易可通过 Receipt 的 **status** 字段来判断执行状态， 1 代表成功，0 代表失败。
+For eSpace transactions, you can determine the execution status through the **status** field in the Receipt, where **1 represents success, and 0 represents failure**.
 
-Core 交易可通过 Receipt 的 **outcomeStatus** 字段来判断执行状态，0 代表成功，1 代表失败。
+For Core transactions, you can check the execution status through the **outcomeStatus** field in the Receipt, where **0 represents success, and 1 represents failure**.
 
-除此以外 Receipt 还包含了交易执行的[其他信息](./fake-link)，例如区块信息，事件信息等
+In addition to this, the Receipt also includes other information about the transaction execution, such as block information and event details.
 
-## 其他
+## Details
 
-1. 发送交易的常见问题
-2. 交易提交后为什么一直不执行？
+If you want to learn details about transactions, you can refer to the transaction explanation in the [Core Space](/docs/core/core-space-basics/transactions/overview.md).

@@ -16,17 +16,26 @@ The process of sending a transaction consists of three steps:
 2. Signing and encoding the transaction.
 3. Broadcasting it to the network.
 
-通常我们使用钱包或 SDK 来发送交易，这些工具会帮助我们完成上述三个步骤，且使用起来比较简单。
+Typically, we use wallets or SDKs to send transactions, and these tools help us complete the aforementioned three steps, making the process relatively straightforward.
 
-但是如果你想深入了解交易的原理，或者在发送交易时遇到问题，那么这篇文章可能会对你有所帮助。在这里我们会详细介绍 Core Space 交易的如下内容：
+However, if you wish to delve deeper into the principles of transactions or encounter issues while sending transactions, this article might be helpful. Here, we will provide a detailed overview of the following aspects of Core Space transactions:
 
-- 交易的基本信息，各个字段的含义，以及如何正确的设置这些字段。
-- 交易的编码和签名方式。
-- 交易的 Gas 费机制。
-- 交易的 nonce 机制。
-- 交易的生命周期。
-- 交易执行的状态及结果。
-- 交易的回滚机制。
-- 发送交易的常见错误及解决方案。
-- 为什么交易一直处于 pending 状态？
-- 其他常见问题。
+- [Basic information about transactions](./tx-fields.md), the meanings of various fields, and how to correctly set these fields.
+- [Transaction encoding and signing](./encoding-signning.md).
+- [Gas fee mechanism for transactions](./gas-fee.md)
+- [Nonce mechanism for transactions.](./nonce.md)
+- [Transaction lifecycle.](./lifecycle.md)
+- [Execution status and results of transactions.](./receipt.md)
+- [Common errors and solutions when sending transactions.](./send-tx-error.md)
+- [Why is a transaction stuck in a pending state?](./why-transaction-is-pending.md)
+- [Other frequently asked questions.](./faqs.md)
+
+## FAQs
+
+### What types of transactions does Core Space support?
+
+There is only one type, similar to Ethereum 155 transactions.
+
+### Does Core Space support EIP-1559 transactions or EIP-2718?
+
+No, it does not support them.

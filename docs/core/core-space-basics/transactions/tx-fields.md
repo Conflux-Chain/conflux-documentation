@@ -22,19 +22,25 @@ In order to construct a Core Space transaction, the following fields are require
 
 The `from`, `to`, and `value` are the basic fields of a transaction. These fields correspond to the **address of sender account**, **address of the receiver account** and the **amount to be transferred**, respectively.
 
-The `from` field identifies the sender of the transaction. Essentially, the `from` field tells you who is initiating the transaction and who is paying for the transaction. And in the [Signing](./fake-link) phase, the transaction will be signed with the private key of the `from` account, so you cannot specify arbitary address as the sender.
+### from
 
-It is also important to remember that the account must have a sufficient balance to cover both the transfer amount (`value` field) and the **transaction fee**, otherwise the RPC will reject the transaction and it will not be sent.
+The `from` field identifies the sender of the transaction. Essentially, the `from` field tells you who is initiating the transaction and who is paying for the transaction. And in the [Signing](./encoding-signning.md) phase, the transaction will be signed with the private key of the `from` account, so you cannot specify arbitary address as the sender.
+
+It is also important to remember that the account **must have a sufficient balance to cover** both the transfer amount (`value` field) and the **transaction fee**, otherwise the RPC will reject the transaction and it will not be sent.
 
 It's worth mentioning that in some specific cases, Conflux Core Space's sponsor mechanism can allow for other accounts to pay the transaction fee, allowing accounts with 0 balance to send transactions.
 
 > In fact, the `from` field is not directly included in an encoded transaction. Generally speaking, tools such as SDKs will remove the `from` field from transaction before encoding and sign the transaction using corresponding private key. Others can recover the sender from the signature of the transaction.
+
+### to
 
 The `to` field indicates the recipient account of the transaction.
 
 * If you are making a simple CFX transfer, this field should be set to the **CFX recipient's account**. 
 * If you are modifying the state of a contract, the to field should be set to **the address of the contract**. 
 * If you are deploying a new contract, the `to` field is **left empty**.
+
+### value
 
 The `value` field represents the amount of CFX to be transferred and must be set as an integer in **the unit of Drip** (10**-18 CFX).
 
@@ -46,7 +52,7 @@ If you want to expedite transaction processing, you may want to explore the [non
 
 ## data
 
-The data field of the transaction can be left blank or set to a hex-encoded byte array. This can be roughly categorized into three situations:
+The data field of the transaction **can be left blank** or set to a hex-encoded bytes. This can be roughly categorized into three situations:
 
 * Regular CFX transfer transaction: The `data` field is usually blank, but hex-encoded data can be set as a **transaction remark or postscript**.
 * Contract deployment transaction: `data` needs to be set as the **contract's bytecode and the parameters of the constructor** (if any)
@@ -56,31 +62,31 @@ Smart contracts are usually written in high-level contract development languages
 
 ## Fee-Related Fields
 
-交易信息中有多个是关于手续费的，各自有不同的作用
+There are several fields in the transaction information related to fees, each serving a different purpose.
 
 ### gas
 
-在 EVM 执行交易的过程中，每步操作都会消耗一定的 gas，为了避免交易过多消耗网络计算资源或被收取过多费用，需要对交易执行消耗的 gas 进行限制，交易信息的 **gas** 字段即是用来指定交易执行可消耗燃气的上限。如果交易执行实际所消耗的 gas 总和超过此上限，交易执行将会失败。
+During the execution of a transaction in the EVM, each operation consumes a certain amount of gas. To prevent excessive consumption of network computing resources or being charged excessively, it is necessary to limit the gas consumption during transaction execution. The **gas** field in transaction information is used to specify the **upper limit of gas consumption for transaction execution**. If the actual total gas consumed during transaction execution exceeds this limit, the transaction will fail.
 
-交易执行实际消耗的 gas 数量跟交易的复杂度有关，普通的 CFX 转账交易(不带data)会花费 21000 gas, 合约部署或交互花费的 gas 会更多。可通过 `cfx_estimateGasAndCollateral` 方法来预估交易执行所需的 gas 数量。
+The actual amount of gas consumed during transaction execution is related to the complexity of the transaction. A **standard CFX transfer** transaction (without data) typically consumes **21,000 gas**, while contract deployment or interaction may consume more. 
 
-`cfx_estimateGasAndCollateral` 方法预估的 gas 有时并不是很准确，可能偏小，所以在设置交易 gas 时，会在该方法返回数值的基础上乘一个系数， 例如 1.3，这样更加稳妥。
+The `cfx_estimateGasAndCollateral` method can be used to estimate the required amount of gas for transaction execution, which returns the `gasUsed`, `gasLimit` and `storageCollaterized` fields. It is recommended to use `gasLimit` as the `gas` field.
 
-关于 gas 的用途，预估，收费方式可参看 [gas 介绍](/docs/general/conflux-basics/gas.md)
+The gas estimated by the `cfx_estimateGasAndCollateral` method may not always be accurate and could be conservative. Therefore, when setting the transaction gas, it is common to multiply the value returned by this method by a factor, such as 1.3, for added safety.
+
+For more information on the usage, estimation, and charging of gas, refer to [Introduction to Gas](/docs/general/conflux-basics/gas.md).
 
 ### gasPrice
 
-gasPrice 是用来设置交易发送者愿意为一单位 gas 支付的 CFX 数量（单位为 Drip）, 交易总 gas 费为 **gasCharged * gasPrice**. 矿工是根据 gasPrice 来决定交易打包的顺序，通常 gasPrice 越高，交易打包越快
+The gasPrice is used to set the amount of CFX that the sender is willing to pay for one unit of gas (in Drip). The total gas fee for the transaction is **gasCharged * gasPrice**. Miners **use the gasPrice to determine the order in which transactions are included in a block**. Generally, **higher gasPrice results in faster transaction inclusion**.
 
-通常情况可使用 `cfx_gasPrice` 方法来获取合适的燃气价格，在交易拥堵时往往需要手动设置更高的价格，详情参看[如何设置价格](./gas-fee.md)
+The `cfx_gasPrice` method can be used to obtain an appropriate gas price. During periods of network congestion, it may be necessary to manually set a higher price; details can be found in [How to Set Prices](./gas-fee.md).
 
 ### storageLimit
 
-在 Conflux Core Space 中，交易执行不仅消耗计算资源，也会占用存储资源，因此交易也会被收取一定存储费用，具体收取方式参看 [Storage Collateral](../../core-space-basics/storage.md)
+In Conflux Core Space, transaction execution not only consumes computing resources but also occupies storage resources. Therefore, transactions are charged for storage usage. The **storageLimit** field in a transaction is similar to the **gas** field and is used to specify the upper limit of storage space that a transaction can occupy. If this limit is exceeded, the transaction will fail.
 
-交易的 `storageLimit` 字段与 `gas` 字段类似，是用来指定交易执行所能占用存储空间的上限，超过上限也会失败。
-
-`cfx_estimateGasAndCollateral` 方法也会同时预估交易执行会占用的存储大小。
+The `cfx_estimateGasAndCollateral` method also estimates the storage size that a transaction execution will occupy.
 
 ## Other Fields
 
@@ -88,7 +94,7 @@ gasPrice 是用来设置交易发送者愿意为一单位 gas 支付的 CFX 数�
 
 The `chainId` field in transactions is used to identify the specific chain. For example, the current chainId of the Core Space is **1029** and that of the Core Space testnet is **1**. This field is included in transactions primarily to prevent replay attacks. 
 
-It's generally not necessary to fill in this field manually, as the SDK will automatically obtain the current RPC chainId through the `cfx_getStatus` method.
+It's generally not necessary to fill in this field manually, as the SDK will automatically obtain the chainId through the `cfx_getStatus` method.
 
 ### epochHeight
 
@@ -96,17 +102,31 @@ The `epochHeight` field is used to specify the target epoch range for a transact
 
 The SDK will also automatically set this field to the current epoch obtained by the `cfx_epochNumber` method.
 
-### signature
+## Signature Fields
 
-交易签名是由交易的发送者生成的，用于证明发送者对交易的授权。交易签名由三个字段组成：r, s, v。其中 r 和 s 是两个 256 位的大整数，v 是一个 8 位的整数。交易签名的生成过程如下：
+The transaction signature is generated by the sender of the transaction to prove the sender's authorization of the transaction. The transaction signature consists of three fields: **r, s, and v**. Among them, r and s are two 256-bit integers, and v is an 8-bit integer. The process of generating a transaction signature is as follows:
 
-1. 将交易的基本信息进行 RLP 编码，得到编码后的数据
-2. 对编码后的数据进行 Keccak256 哈希运算，得到 256 位的哈希值
-3. 将哈希值和发送者的私钥作为参数，调用 ECDSA 签名算法，得到签名的 r, s, v 字段
+1. Encode the basic information of the transaction using RLP, resulting in the encoded data.
+2. Perform a Keccak256 hash operation on the encoded data to obtain a 256-bit hash value.
+3. Use the hash value and the sender's private key as parameters to invoke the ECDSA signature algorithm, obtaining the signature's r, s, and v fields.
 
-具体生成细节参看[交易编码和签名](./fake-link)
+For specific generation details, refer to [Transaction Encoding and Signature](./encoding-signning.md).
 
 ## References
 
-- Core Space transactions follow the definition of [Conflux Protocol](https://www.confluxnetwork.org/files/Conflux_Protocol_Specification.pdf)
-- eSpace transactions follow the [EIP-155](https://eips.ethereum.org/EIPS/eip-155) specification
+* Core Space transactions follow the definition of [Conflux Protocol](https://www.confluxnetwork.org/files/Conflux_Protocol_Specification.pdf)
+* eSpace transactions follow the [EIP-155](https://eips.ethereum.org/EIPS/eip-155) specification
+
+## FAQs
+
+### What's max value of transaction gas limit?
+
+1500w
+
+### What's minimum value of Core Space transaction gasPrice?
+
+1 GDrip
+
+### What's the max size of transaction data?
+
+It's about 200k

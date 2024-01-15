@@ -102,3 +102,13 @@ Transaction execution failures are roughly divided into the following situations
 ## 为什么一个交易同时被打包进多个区块？
 
 这是由于树图账本结构并发出块导致的，虽然一笔交易可能被打包进多个区块，但最终只会在一个区块执行
+
+## What's the differences between Ethereum 155 Transaction and Core Space Transaction
+
+Compared to Ethereum `155 transaction`, transactions through Conflux Core Space have several differences:
+
+* Fields are different: with 2 more field `storageLimit`, and `epochHeight`.
+* Differences when encoding transactionss:
+  1. The RLP structure to compute transaction hash is `[nonce, gasPrice, gas, to, value, storageLimit, epochHeight, chainId, data]`
+  2. The RLP structure of a rawTx is `[[nonce, gasPrice, gas, to, value, storageLimit, epochHeight, chainId, data], v, r, s]`
+* The `v` value signed by ecdsaSign will not be specifically modified in Conflux Core Space, while in Ethereum, there will be some special treatments to the v value.
