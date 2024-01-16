@@ -22,7 +22,6 @@ Here are some links relating to this topic:
 
 - [ERC-20](https://eips.ethereum.org/EIPS/eip-20)
 - [ERC-721](https://eips.ethereum.org/EIPS/eip-721)
-- [ERC-777](https://eips.ethereum.org/EIPS/eip-777)
 - [ERC-1155](https://eips.ethereum.org/EIPS/eip-1155)
 - [CIP-1820](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-1820.md)
 
@@ -45,10 +44,6 @@ import TabItem from '@theme/TabItem';
 
  <TabItem value="erc721" label="ERC-721">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/V7s0g8y5O78?si=j8IH8qzZ24ZybQeC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-  </TabItem>
-
- <TabItem value="erc777" label="ERC-777">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/vlGEL7fR_no?si=Ralfqa95P413bT7w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
   </TabItem>
 
   <TabItem value="erc1155" label="ERC-1155">
