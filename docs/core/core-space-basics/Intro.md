@@ -21,8 +21,6 @@ CFX is the native token of Core Space which can be used to pay for gas and stora
 
 ## Gas & Storage
 
-Core Space has a [gas mechanism](../../general/conflux-basics/gas). It is similar to Ethereum's gas mechanism. It also has a storage mechanism as a **pricing method for using storage**, check [storage specification](./storage) for details.
-
 Core Space incorporates a gas mechanism, akin to the one used in Ethereum, detailed further in the [gas mechanism overview](../../general/conflux-basics/gas). Additionally, it employs a storage collateral mechanism that serves as a pricing strategy for utilizing contract storage space. For more in-depth information, refer to the [storage specification](./storage).
 
 ## Sponsorship
