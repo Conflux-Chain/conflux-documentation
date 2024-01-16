@@ -27,7 +27,7 @@ Core Space incorporates a gas mechanism, akin to the one used in Ethereum, detai
 
 ## Sponsorship
 
-Core Space features a unique sponsorship mechanism. This system enables users to cover the gas fees for other users, facilitating a more collaborative environment. For an in-depth understanding of this mechanism, please refer to [Sponsorship](./sponsor-mechanism).
+Core Space features a unique sponsorship mechanism. This system enables users to cover the gas fees as well as storage collateral for other users, facilitating a more collaborative environment. For an in-depth understanding of this mechanism, please refer to [Sponsorship](./sponsor-mechanism).
 
 ## CVM
 
