@@ -34,6 +34,13 @@ const config = {
     }
   },
 
+  scripts: [
+    {
+      src: '/js/clarity.js',
+      async: false,
+    }
+  ],
+
   plugins: [
     async function myPlugin(context, options) {
       return {
