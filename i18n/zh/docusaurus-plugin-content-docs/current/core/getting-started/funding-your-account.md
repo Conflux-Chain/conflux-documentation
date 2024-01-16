@@ -1,21 +1,21 @@
 ---
 sidebar_position: 2
 title: 领取测试网代币
-description: How to get testnet CFX
+description: 如何获取测试网上的 CFX
 displayed_sidebar: coreSidebar
 ---
 
-您是 Conflux 区块链的新用户吗？ 或者您是一名计划在Conflux上开发Dapp的开发者吗？ 那么你可能需要一些CFX与Conflux网络进行交互。 We provide the testnet CFX faucet dApp, which allows users to claim testnet CFX and experience it in the Conflux testnet environment.
+您是 Conflux 区块链的新用户吗？ 或者您是一名计划在Conflux上开发Dapp的开发者吗？ 那么你可能需要一些CFX与Conflux网络进行交互。 我们提供了测试网 CFX 水龙头 的 dApp，用户可以通过它领取测试网 CFX，并在 Conflux 的测试网环境中进行体验。
 
-## Faucet dApp
+## 水龙头 dApp
 
 我们开发了一个[Faucet Dapp](https://faucet.confluxnetwork.org/)，不仅可以用于领取` CFX`，还可以领取代币，目前包括 `FC` 和 `cUSDT`。
 
 ![Dapp-faucet](./img/Dapp-faucet-1)
 
-To use the Faucet Dapp, simply connect to the dapp using Fluent and click "Claim".
+要使用水龙头 Dapp，只需使用 Fluent 连接到 dapp 并点击“领取”。
 
-### Steps
+### 使用步骤
 
 默认的 Fluent 网络是 `Conflux Hydra`(主网)。 首先需要将Fluent网络切换到 `Conflux testnet`。
 
