@@ -12,7 +12,7 @@
 
 
 <script src="/js/clarity.js"></script><link rel="stylesheet" href="/assets/css/styles.b4600378.css">
-<script src="/assets/js/runtime~main.17b6d3f6.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.c79364cc.js" defer="defer"></script>
 <script src="/assets/js/main.c271fb42.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -32,8 +32,8 @@ Pave the way for the mass adoption of blockchain.</p>
 <li><code>upperBound</code>: The upper limit for gas fee sponsorship per transaction, measured in Drip, where 1 CFX = 10^18 Drip. If the gas fee (calculated as gasPrice * gasLimit) for a transaction interacting with the same contract exceeds this limit, it cannot be sponsored.</li>
 </ul>
 <p>Currently, the minimum gas fee on the Conflux Core network is 1 GDrip, which is 10^9 Drip. Typically, the gas for a transaction ranges from tens of thousands to several hundred thousand. Therefore, it&#x27;s common to set the <code>upperBound</code> to around 5 million GDrip. This can be adjusted according to specific needs in special cases.</p>
-<p>Additionally, the total amount of gas to be sponsored needs to be set through the <code>value</code> field of the transaction. This means that when calling this method, a CFX transfer must be made simultaneously. Moreover, each sponsorship amount should be sufficient to cover the gas fees for at least <code>1000 transactions</code> (1000 * upperBound). For instance, if the upperBound is set to 1 million GDrip, then each sponsorship amount should be at least 1000 * 1 million GDrip.</p>
-<p>For example, to sponsor Contract A with a gas limit of 1 million GDrip and a total sponsorship amount of 100 CFX, you would initiate a transaction calling <code>setSponsorForGas(A, 10^15)</code>, with the transaction&#x27;s value field set to 100 CFX.</p>
+<p>Additionally, the total amount of gas fees to be sponsored needs to be set through the <code>value</code> field of the transaction. This means that when calling this method, a CFX transfer must be made simultaneously. Moreover, each sponsorship amount should be sufficient to cover the gas fees for at least <code>1000 transactions</code> (1000 * upperBound). For instance, if the upperBound is set to 1 million GDrip, then each sponsorship amount should be at least 1000 * 1 million GDrip.</p>
+<p>For example, to sponsor Contract A with a sponsorship upperbound of 1 million GDrip and a total sponsorship amount of 100 CFX, you would initiate a transaction calling <code>setSponsorForGas(A, 10^15)</code>, with the transaction&#x27;s value field set to 100 CFX.</p>
 <p>This built-in contract also provides several methods for querying sponsorship information of a contract:</p>
 <ol>
 <li><code>getSponsoredGasFeeUpperBound</code>: To query the upper limit of gas fee sponsorship for a contract.</li>
