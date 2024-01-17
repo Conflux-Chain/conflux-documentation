@@ -30,9 +30,9 @@ To sponsor the gas fees of a contract, you call the `setSponsorForGas` method of
 
 Currently, the minimum gas fee on the Conflux Core network is 1 GDrip, which is 10^9 Drip. Typically, the gas for a transaction ranges from tens of thousands to several hundred thousand. Therefore, it's common to set the `upperBound` to around 5 million GDrip. This can be adjusted according to specific needs in special cases.
 
-Additionally, the total amount of gas to be sponsored needs to be set through the `value` field of the transaction. This means that when calling this method, a CFX transfer must be made simultaneously. Moreover, each sponsorship amount should be sufficient to cover the gas fees for at least `1000 transactions` (1000 \* upperBound). For instance, if the upperBound is set to 1 million GDrip, then each sponsorship amount should be at least 1000 \* 1 million GDrip.
+Additionally, the total amount of gas fees to be sponsored needs to be set through the `value` field of the transaction. This means that when calling this method, a CFX transfer must be made simultaneously. Moreover, each sponsorship amount should be sufficient to cover the gas fees for at least `1000 transactions` (1000 \* upperBound). For instance, if the upperBound is set to 1 million GDrip, then each sponsorship amount should be at least 1000 \* 1 million GDrip.
 
-For example, to sponsor Contract A with a gas limit of 1 million GDrip and a total sponsorship amount of 100 CFX, you would initiate a transaction calling `setSponsorForGas(A, 10^15)`, with the transaction's value field set to 100 CFX.
+For example, to sponsor Contract A with a sponsorship upperbound of 1 million GDrip and a total sponsorship amount of 100 CFX, you would initiate a transaction calling `setSponsorForGas(A, 10^15)`, with the transaction's value field set to 100 CFX.
 
 This built-in contract also provides several methods for querying sponsorship information of a contract:
 
