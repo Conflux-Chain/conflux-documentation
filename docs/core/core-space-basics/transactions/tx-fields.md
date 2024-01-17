@@ -46,7 +46,7 @@ The `value` field represents the amount of CFX to be transferred and must be set
 
 ## nonce
 
-The `nonce` is the **execution sequence number** of transactions sent from an account. Normally you can get it by calling the `cfx_getNextNonce` RPC method.
+The `nonce` is the **execution sequence number** of transactions sent from an account. Normally you can get it by calling the [`cfx_getNextNonce`](/docs/core/build/json-rpc/cfx-namespace/#cfx_getnextnonce) RPC method.
 
 If you want to expedite transaction processing, you may want to explore the [nonce management mechanism](./nonce.md) further.
 
@@ -68,11 +68,11 @@ There are several fields in the transaction information related to fees, each se
 
 During the execution of a transaction in the EVM, each operation consumes a certain amount of gas. To prevent excessive consumption of network computing resources or being charged excessively, it is necessary to limit the gas consumption during transaction execution. The **gas** field in transaction information is used to specify the **upper limit of gas consumption for transaction execution**. If the actual total gas consumed during transaction execution exceeds this limit, the transaction will fail.
 
-The actual amount of gas consumed during transaction execution is related to the complexity of the transaction. A **standard CFX transfer** transaction (without data) typically consumes **21,000 gas**, while contract deployment or interaction may consume more. 
+The actual amount of gas consumed during transaction execution is related to the complexity of the transaction. A **standard CFX transfer** transaction (without data) typically consumes **21,000 gas**, while contract deployment or interaction may consume more.
 
-The `cfx_estimateGasAndCollateral` method can be used to estimate the required amount of gas for transaction execution, which returns the `gasUsed`, `gasLimit` and `storageCollaterized` fields. It is recommended to use `gasLimit` as the `gas` field.
+The [`cfx_estimateGasAndCollateral`](/docs/core/build/json-rpc/cfx-namespace/#cfx_estimategasandcollateral) method can be used to estimate the required amount of gas for transaction execution, which returns the `gasUsed`, `gasLimit` and `storageCollaterized` fields. It is recommended to use `gasLimit` as the `gas` field.
 
-The gas estimated by the `cfx_estimateGasAndCollateral` method may not always be accurate and could be conservative. Therefore, when setting the transaction gas, it is common to multiply the value returned by this method by a factor, such as 1.3, for added safety.
+The gas estimated by the [`cfx_estimateGasAndCollateral`](/docs/core/build/json-rpc/cfx-namespace/#cfx_estimategasandcollateral) method may not always be accurate and could be conservative. Therefore, when setting the transaction gas, it is common to multiply the value returned by this method by a factor, such as 1.3, for added safety.
 
 For more information on the usage, estimation, and charging of gas, refer to [Introduction to Gas](/docs/general/conflux-basics/gas.md).
 
@@ -80,13 +80,13 @@ For more information on the usage, estimation, and charging of gas, refer to [In
 
 The gasPrice is used to set the amount of CFX that the sender is willing to pay for one unit of gas (in Drip). The total gas fee for the transaction is **gasCharged * gasPrice**. Miners **use the gasPrice to determine the order in which transactions are included in a block**. Generally, **higher gasPrice results in faster transaction inclusion**.
 
-The `cfx_gasPrice` method can be used to obtain an appropriate gas price. During periods of network congestion, it may be necessary to manually set a higher price; details can be found in [How to Set Prices](./gas-fee.md).
+The [`cfx_gasPrice`](/docs/core/build/json-rpc/cfx-namespace#cfx_gasprice) method can be used to obtain an appropriate gas price. During periods of network congestion, it may be necessary to manually set a higher price; details can be found in [How to Set Prices](./gas-fee.md).
 
 ### storageLimit
 
 In Conflux Core Space, transaction execution not only consumes computing resources but also occupies storage resources. Therefore, transactions are charged for storage usage. The **storageLimit** field in a transaction is similar to the **gas** field and is used to specify the upper limit of storage space that a transaction can occupy. If this limit is exceeded, the transaction will fail.
 
-The `cfx_estimateGasAndCollateral` method also estimates the storage size that a transaction execution will occupy.
+The [`cfx_estimateGasAndCollateral`](/docs/core/build/json-rpc/cfx-namespace/#cfx_estimategasandcollateral) method also estimates the storage size that a transaction execution will occupy.
 
 ## Other Fields
 
@@ -94,13 +94,13 @@ The `cfx_estimateGasAndCollateral` method also estimates the storage size that a
 
 The `chainId` field in transactions is used to identify the specific chain. For example, the current chainId of the Core Space is **1029** and that of the Core Space testnet is **1**. This field is included in transactions primarily to prevent replay attacks. 
 
-It's generally not necessary to fill in this field manually, as the SDK will automatically obtain the chainId through the `cfx_getStatus` method.
+It's generally not necessary to fill in this field manually, as the SDK will automatically obtain the chainId through the [`cfx_getStatus`](/docs/core/build/json-rpc/cfx-namespace/#cfx_getstatus) method.
 
 ### epochHeight
 
 The `epochHeight` field is used to specify the target epoch range for a transaction. Transactions will only be executed within the range of [epochHeight - 100000, epochHeight + 100000]. If the epoch of the current chain exceeds this range, the transaction will be discarded. 
 
-The SDK will also automatically set this field to the current epoch obtained by the `cfx_epochNumber` method.
+The SDK will also automatically set this field to the current epoch obtained by the [`cfx_epochNumber`](/docs/core/build/json-rpc/cfx-namespace/#cfx_epochnumber) method.
 
 ## Signature Fields
 

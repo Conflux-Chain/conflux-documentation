@@ -4,7 +4,7 @@ title: Nonce Management
 displayed_sidebar: coreSidebar
 ---
 
-In Conflux, each account has a nonce value, representing the number of transactions executed by that account. This value can be obtained using the RPC method `cfx_getNextNonce`. The nonce field in a transaction is used to specify the execution order, with lower nonce values indicating earlier execution. Typically, you can directly use this value as the nonce for the next transaction.
+In Conflux, each account has a nonce value, representing the number of transactions executed by that account. This value can be obtained using the RPC method [`cfx_getNextNonce`](/docs/core/build/json-rpc/cfx-namespace/#cfx_getnextnonce). The nonce field in a transaction is used to specify the execution order, with lower nonce values indicating earlier execution. Typically, you can directly use this value as the nonce for the next transaction.
 
 However, in scenarios with high network transaction volume (congestion) or when quick transaction submission is required, obtaining the nonce value becomes more complex. This article will provide a detailed explanation of the nonce update mechanism and how to manage transaction nonces in special circumstances.
 
@@ -16,7 +16,7 @@ Here are some details about the **nonce mechanism**:
 2. The initial value of nonce is 0, and the nonce is incremented by 1 for each transaction execution.
 3. The nonce cannot be reused.
 4. The nonce cannot be skipped: Suppose that the current nonce of an account is n. If the nonce of the transaction is m such that m > n, then the transaction **will not be executed** until all **transactions with nonce < m have been executed**.
-5. After the transaction is sent via the `cfx_sendRawTransaction` method, it will **not be executed immediately**. You must wait for the miner to pack it first. Once packed, it will be executed with a delay of 5 epochs. After the transaction is executed, the nonce of the account will be increased by one.
+5. After the transaction is sent via the [`cfx_sendRawTransaction`](/docs/core/build/json-rpc/cfx-namespace#cfx_sendrawtransaction) method, it will **not be executed immediately**. You must wait for the miner to pack it first. Once packed, it will be executed with a delay of 5 epochs. After the transaction is executed, the nonce of the account will be increased by one.
 
 ## Issues Caused by Improper Nonce Usage
 

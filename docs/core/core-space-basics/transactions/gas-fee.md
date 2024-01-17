@@ -23,7 +23,7 @@ The Conflux consensus don't limit the transaction gas prices and the minimum gas
 
 Besides, it is recommended to set gas price based on Core space / eSpace RPC return value:
 
-- core space: `cfx_gasPrice`
+- core space: [`cfx_gasPrice`](/docs/core/build/json-rpc/cfx-namespace#cfx_gasprice)
 - eSpace: `eth_gasPrice`
 
 #### Speeding up a transaction
@@ -42,10 +42,10 @@ For regular CFX transfers, setting the gas to 21,000 is sufficient.
 
 For contract interactions, it is recommended to set gas based on the return value of core space / espace RPC:
 
-- Core space: `gasLimit` field of `cfx_estimateGasAndCollateral`
+- Core space: `gasLimit` field of [`cfx_estimateGasAndCollateral`](/docs/core/build/json-rpc/cfx-namespace/#cfx_estimategasandcollateral)
 - eSpace: `eth_estimateGas`
 
-These methods simulates the execution of the transaction and return the estimated amount of gas used for the transaction. Actually, in most cases, the value `gasUsed` returned by `cfx_estimateGasAndCollateral` is accurate, but it is not recommended to use `gasUsed` due to two main reasons: 
+These methods simulates the execution of the transaction and return the estimated amount of gas used for the transaction. Actually, in most cases, the value `gasUsed` returned by [`cfx_estimateGasAndCollateral`](/docs/core/build/json-rpc/cfx-namespace/#cfx_estimategasandcollateral) is accurate, but it is not recommended to use `gasUsed` due to two main reasons: 
 
 1. Due to [EIP-150](https://eips.ethereum.org/EIPS/eip-150), setting the gas to the actual gas consumption may often lead to transaction failure.
 2. The result is based on the current blockchain state during the simulation, but the actual execution states may be different. 
@@ -56,7 +56,7 @@ The `gasLimit` field typically equals `1.3 * gasUsed`. This ensures that the gas
 
 In addition to transaction fees, the Conflux network requires the pledging of CFX for occupying new storage space or modifying existed storage during a transaction. The pledged CFX generates a 4% annual interest, which is paid to miners to subsidise their storage costs. When the occupied space is released or modified by others, the pledged CFX is returned. 
 
-The `storageLimit` field specifies the upper limit of the storage space that can be occupied by a transaction. And it is recommended to use the `storageCollaterized` field of returned value from `cfx_estimateGasAndCollateral` as the `storageLimit` field.
+The `storageLimit` field specifies the upper limit of the storage space that can be occupied by a transaction. And it is recommended to use the `storageCollaterized` field of returned value from [`cfx_estimateGasAndCollateral`](/docs/core/build/json-rpc/cfx-namespace/#cfx_estimategasandcollateral) as the `storageLimit` field.
 
 :::info
 Refer to [storage](../storage.md) for more information.
