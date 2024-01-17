@@ -70,7 +70,7 @@ In addition to this, the Receipt also includes other information about the trans
 
 If you want to learn details about transactions, you can refer to the transaction explanation in the [Core Space](/docs/core/core-space-basics/transactions/overview.md).
 
-## Transaction Video
+## Intro Video
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
