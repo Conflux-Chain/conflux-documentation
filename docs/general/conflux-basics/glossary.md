@@ -139,6 +139,9 @@ In the context of blockchain, a node is a server that participates in the blockc
 
 Refer to [Run a Node](../run-a-node) section for more information about running nodes.
 
+### **Sponsor**
+Sponsor is blablabla
+
 ### **Nonce**
 In blockchain technology, nonce ("number only used once") has different meaning in different context.
 
