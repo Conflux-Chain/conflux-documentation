@@ -40,7 +40,7 @@ This is the stage where transactions are confirmed by nodes after being executed
 
 ## 6. **Waiting for PoS chain Finalization -> Finalized**
 
-This is the final stage where transactions are finalized after specific PoW block being referenced by Conflux's [PoS chain](./consensus-mechanisms/proof-of-stake/pos_overview.md). Conflux's PoS chain periodically refers a stable PoW block to provide finality for transactions. A finalized transaction means that it has zero probability of being reverted unless the attacker possesses more than 67% of the CFX staked in PoS. It takes approximately 400 Epochs(6-8 minutes) to finalize a transaction since it is included in a block (after [CIP-113](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-113.md) activation).
+This is the final stage where transactions are finalized after specific PoW block being referenced by Conflux's [PoS chain](../../../general/conflux-basics/consensus-mechanisms/proof-of-stake/pos_overview.md). Conflux's PoS chain periodically refers a stable PoW block to provide finality for transactions. A finalized transaction means that it has zero probability of being reverted unless the attacker possesses more than 67% of the CFX staked in PoS. It takes approximately 400 Epochs(6-8 minutes) to finalize a transaction since it is included in a block (after [CIP-113](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-113.md) activation).
 
 ## FAQs
 
