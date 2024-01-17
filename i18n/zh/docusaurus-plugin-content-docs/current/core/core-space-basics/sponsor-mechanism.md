@@ -4,59 +4,59 @@ title: 赞助机制
 displayed_sidebar: coreSidebar
 ---
 
-Conflux Core Space implements a sponsorship mechanism to subsidize the usage of smart contracts. 因此，一个零余额的新账户只要得到赞助（通常是由Dapps的运营者提供），就能够调用智能合约。 This mechanism is designed to reduce the barrier of entry for new users.
-Pave the way for the mass adoption of blockchain.
+Conflux Core 空间实现了赞助机制，来补贴智能合约的使用。 这允许余额为零的新账户调用智能合约，前提是执行操作得到赞助（通常由Dapp运营者提供）。 这个机制旨在降低新用户的入门门槛。
+为区块链的大规模应用铺平道路。
 
-## Introduction
+## 简介
 
-In the blockchain world, it is very common to pay transaction fees when sending transactions. Ethereum has gas fees, and Conflux Core Space has not only gas fees but also storage collateral fees. Typically, these costs are paid by the sender of the transaction. However, new users in the blockchain world may not understand these concepts and may not have the tokens to pay these fees, creating a barrier to entry into the blockchain world. To lower this barrier, Conflux Core Space has introduced a sponsorship mechanism.
+在区块链世界中，发送交易时支付交易费是非常常见的。 以太坊有燃气费，而Conflux Core Space不仅有燃气费，还有存储抵押费。 通常，这些费用由交易的发送方支付。 然而，很多刚进入区块链世界的新用户可能不理解这些概念，没有代币来支付这些费用，从而构成进入区块链世界的障碍。 为了解决这种障碍，Conflux Core Space引入了赞助机制。
 
-The sponsorship mechanism allows a contract to be sponsored. Once sponsored, the transaction fees incurred when the contract is called are paid by the sponsor, meaning that users do not need to worry about or pay these fees. The sponsor can be the owner of the contract or someone else. Imagine a `USDT` token deployed on Core Space that can be transferred by anyone without any fees – this is incredibly user-friendly for new users.
+赞助机制允许合约得到赞助。 一旦进行赞助，调用合约时产生的交易费用将由赞助方支付，这意味着用户无需担心或支付这些费用。 赞助方可以是合约的所有者或其他任何人。 想象一下，一个部署在 Core Space 上的 `USDT` 代币，任何人都可以在无需支付任何费用情况下进行转账 —— 这对于新用户来说非常友好。
 
-Both the gas and storage collateral for a transaction can be sponsored, and they support two different sponsors. For example, the gas fees for a contract could be sponsored by Sponsor A, while the storage collateral is sponsored by Sponsor B.
+交易的 gas 费和存储抵押都可以被赞助，并且它们可以由两个不同的赞助方赞助。 例如，合约的燃气费可以由赞助方A赞助，而存储抵押由赞助方B赞助。
 
-Note that only contracts can be sponsored; the sponsorship mechanism does not apply to regular accounts. This means that for standard CFX transfer transactions, the gas fees need to be paid by the sender.
+请注意，只有合约可以被赞助；赞助机制不适用于普通账户。 这意味着对于标准的CFX转账交易，燃气费需要由发送方支付。
 
 ## 如何赞助智能合约
 
-To sponsor a contract, the sponsor needs to call [SponsorWhitelistControl](./internal-contracts/sponsor-whitelist-control) internal contract. It also record the sponsorship information of smart contracts
+要赞助合约，赞助方需要调用 [SponsorWhitelistControll](./internal-contracts/sponsor-whitelist-control) 内置合约。 它还会记录智能合约的赞助信息。
 
-### Gas Sponsorship
+### 燃气费赞助
 
-To sponsor the gas fees of a contract, you call the `setSponsorForGas` method of the `SponsorWhitelistControl`. This method has two parameters:
+要赞助合约的燃气费用，您可以调用 `SponsorWhitelistControl` 的 `setSponsorForGas` 方法。 此方法有两个参数：
 
-- `contractAddr`: The address of the contract to be sponsored.
-- `upperBound`: The upper limit for gas fee sponsorship per transaction, measured in Drip, where 1 CFX = 10^18 Drip. If the gas fee (calculated as gasPrice \* gasLimit) for a transaction interacting with the same contract exceeds this limit, it cannot be sponsored.
+- `contractAddr`：要赞助的合约地址。
+- `upperBound`: 每笔交易中的 gas 赞助上限值, 以 Drip 为单位, 1 CFX = 10^18 Drip。 如果与同一智能合约交互的交易产生的 gas 费用 (按 gasPrice \* gasLimit 计算)超过了这一限额，则不能获得赞助。
 
-Currently, the minimum gas fee on the Conflux Core network is 1 GDrip, which is 10^9 Drip. Typically, the gas for a transaction ranges from tens of thousands to several hundred thousand. Therefore, it's common to set the `upperBound` to around 5 million GDrip. This can be adjusted according to specific needs in special cases.
+目前， Conflux Core 网络中的最小的 gas 费用是 1 Gdrip，也就是10^9 Drip。 通常情况下，一笔交易的 gas 开销从数万到数十万不等。 因此，`upperBound` 通常被设定为 500万 GDrip 左右。 特殊情况下，这个数值可以根据具体需求加以调整。
 
-Additionally, the total amount of gas to be sponsored needs to be set through the `value` field of the transaction. This means that when calling this method, a CFX transfer must be made simultaneously. Moreover, each sponsorship amount should be sufficient to cover the gas fees for at least `1000 transactions` (1000 \* upperBound). For instance, if the upperBound is set to 1 million GDrip, then each sponsorship amount should be at least 1000 \* 1 million GDrip.
+Additionally, the total amount of gas to be sponsored needs to be set through the `value` field of the transaction. 这意味着在调用此方法时，必须同时进行 CFX 转账。 此外，每笔赞助金额应足以支付至少 `1000笔交易`（1000 \* upperBound）的gas费用。 For instance, if the upperBound is set to 1 million GDrip, then each sponsorship amount should be at least 1000 \* 1 million GDrip.
 
 For example, to sponsor Contract A with a gas limit of 1 million GDrip and a total sponsorship amount of 100 CFX, you would initiate a transaction calling `setSponsorForGas(A, 10^15)`, with the transaction's value field set to 100 CFX.
 
-This built-in contract also provides several methods for querying sponsorship information of a contract:
+这个内置合约还提供了几种方法来查询合约的赞助信息：
 
 1. `getSponsoredGasFeeUpperBound`: To query the upper limit of gas fee sponsorship for a contract.
-2. `getSponsoredBalanceForGas`: To query the remaining balance of gas fee sponsorship for a contract.
-3. `getSponsorForGas`: To query the sponsor of the gas fee for a contract.
+2. `getSponsoredBalanceForGas`：查询合约被赞助的 gas 费剩余余额。
+3. `getSponsorForGas`：查询合约 gas 费的赞助者。
 
-If a sponsor already exists for the contract when calling `setSponsorForGas`, and if the new sponsor is the same as the current one, the sponsorship balance for the contract will be topped up. If the new sponsor is different, a replacement will occur. In this case, the amount of sponsorship needs to be greater than `currentSponsorBalance + 1000 * upperBound`. The balance of the previous sponsor will be refunded, and the remaining amount will serve as the sponsorship balance after the change of sponsor.
+如果在调用 `setSponsorForGas` 时合约已经有了赞助者，并且新的赞助者与当前赞助者相同，合约的赞助余额将会增加。 如果新的赞助者发生变动，合约的赞助余额将被被替换。 在这种情况下，赞助金额需要大于 ` currentSponsorBalance + 1000 * upperBound`。 前一个赞助者的赞助余额将被退还，剩余金额将更换为赞助者后的赞助余额。
 
-### Storage Sponsorship
+### 关于存储的赞助
 
-To sponsor the storage collateral of a contract, you can call the `setSponsorForCollateral` method of the `SponsorWhitelistControl`. This method has only one parameter:
+要赞助合约的存储抵押，可以调用 `SponsorWhitelistControl` 里面的 `setSponsorForCollateral` 方法。 这个方法只需要一个参数：
 
-- `contractAddr`: The address of the contract to be sponsored.
+- `contractAddr`：想要赞助的合约地址。
 
-The **total amount** of sponsorship is also specified through the `value` of the transaction. According to CIP-107, a portion of the sponsorship (currently 50%) is converted into storage points after the sponsorship is set. Both storage points and the storage sponsorship balance can be used to pay for the contract's storage collateral fees, with the storage sponsorship balance being used first.
+赞助的**总金额**也可以通过交易的 value 来指定。 根据 CIP-107，赞助金额设定后，其中的一部分(当前为 50% )将转换为存储点。 存储点和存储赞助余额都可以用来支付合约存储抵押物的费用，存储赞助余额会被优先使用。
 
-This built-in contract also provides several methods for querying sponsorship information of a contract:
+这个内置合约还提供了几种方法来查询合约的赞助信息：
 
-1. `getSponsoredBalanceForCollateral`: To query the remaining balance of storage collateral sponsorship for a contract.
-2. `getSponsorForCollateral`: To query the sponsor of the storage for a contract.
-3. `getAvailableStoragePoints`: To query the remaining balance of storage points sponsored for a contract.
+1. `getSponsoredBalanceForCollateral`：查询合约存储抵押赞助的剩余余额。
+2. `getSponsorForCollateral`：查询合约存储的赞助者。
+3. `getAvailableStoragePoints`：查询合约的存储点的剩余余额。
 
-Similarly, if a sponsor already exists for the contract when calling `setSponsorForCollateral`, and if the new sponsor is the same as the current one, the sponsorship balance for the contract will be topped up. If the new sponsor is different, a replacement will occur. In this case, the amount of sponsorship needs to be greater than `currentSponsorBalance` + `currentCollateral`. The balance and collateral of the previous sponsor will be refunded, and the remaining amount will serve as the sponsorship balance after the change of sponsor (a portion of which will be converted into storage points).
+类似的，如果在调用 `setSponsorForCollateral` 时合约已经有了赞助者，且新赞助者与当前赞助者相同，则合约的赞助余额将增加。 如果新的赞助者发生变动，合约的赞助余额将被替换。 In this case, the amount of sponsorship needs to be greater than `currentSponsorBalance` + `currentCollateral`. The balance and collateral of the previous sponsor will be refunded, and the remaining amount will serve as the sponsorship balance after the change of sponsor (a portion of which will be converted into storage points).
 
 ### Whitelist
 

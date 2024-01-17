@@ -12,6 +12,20 @@ This section introduces transaction concepts from a high level. For more details
 
 :::
 
+## Conflux Transaction Video
+
+To learn about transactions in Conflux Network you can start with the following video:
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+
+<Tabs>
+  <TabItem value="youtube" label="Transactions on Conflux Network">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/GIeD2khbbXs?si=cTRZo6DalLkLguXi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  </TabItem>
+</Tabs>
+
 ## Concept of Transaction
 
 A transaction is a single instruction composed by an external actor with a Conflux account, and this instruction is cryptographically signed using the sender account’s private key. A transaction can involve a simple transfer of CFX (the native currency of Conflux), a transfer of tokens (such as ERC20 or ERC721), a deployment of a new smart contract, or an execution of a function on an existing smart contract. Transactions are the only way to store or update data on the blockchain.
@@ -62,3 +76,4 @@ The following are the main stages of a transaction from construction to confirma
 6. **Waiting for PoS chain Finalization -> Finalized**: This is the final stage where transactions are finalized after specific PoW block being referenced by Conflux's [PoS chain](./consensus-mechanisms/proof-of-stake/pos_overview.md). Conflux's PoS chain periodically refers a stable PoW block to provide finality for transactions. A finalized transaction means that it has zero probability of being reverted unless the attacker possesses more than 67% of the CFX staked in PoS. It takes approximately 4-5 minutes to finalize a transaction since it is included in a block (after [CIP-113](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-113.md) activation).
 
 ![Transaction](./img/transaction-stages)
+

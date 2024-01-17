@@ -69,3 +69,14 @@ In addition to this, the Receipt also includes other information about the trans
 ## Details
 
 If you want to learn details about transactions, you can refer to the transaction explanation in the [Core Space](/docs/core/core-space-basics/transactions/overview.md).
+
+## Transaction Video
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+  <TabItem value="youtube" label="Transactions on Conflux Network">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/GIeD2khbbXs?si=cTRZo6DalLkLguXi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  </TabItem>
+</Tabs>

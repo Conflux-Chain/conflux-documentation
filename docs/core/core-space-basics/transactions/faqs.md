@@ -62,8 +62,8 @@ Transaction execution failures are roughly divided into the following situations
 
 * Vm reverted, Reason provided by the contract: ’xxxxx’: the contract execution failed, and the contract returned detailed information
 * VmError(ExceedStorageLimit): the specified storage limit is not enough
-* NotEnoughCash {required: 22625000000010862646, got: 22062499999972687418, actual_gas_cost: 10862646, max_storage_limit_cost: 22625000000000000000}: insufficient balance
+* NotEnoughCash `{required: 22625000000010862646, got: 22062499999972687418, actual_gas_cost: 10862646, max_storage_limit_cost: 22625000000000000000}: insufficient balance`
 * VmError(OutOfGas): the specified gas fee is not enough
-* VmError(BadInstruction {instruction: 238 }): contract deployment failed
+* `VmError(BadInstruction {instruction: 238 }): contract deployment failed`
 * Vm reverted: the contract execution failed, but the contract did not return detailed information.
 

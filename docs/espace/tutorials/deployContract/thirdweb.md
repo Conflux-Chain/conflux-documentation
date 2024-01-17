@@ -1,6 +1,6 @@
 ---
 sidebar_position: 3
-title: Deploying contract using thirdweb
+title: thirdweb
 description: Deploying contract using thirdweb
 displayed_sidebar: eSpaceSidebar
 ---
@@ -90,3 +90,18 @@ Deploy allows you to deploy a smart contract to any EVM compatible network witho
 For additional information on Deploy, please reference [thirdweb’s documentation](https://portal.thirdweb.com/deploy).
 
 If you have any further questions or encounter any issues during the process, please reach out to thirdweb support at [support.thirdweb.com](http://support.thirdweb.com/).
+
+
+## Video Tutorial
+
+In the following video, you can find a hands-on demonstration on how to use thirdweb to deploy smart contracts on Conflux eSpace:
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+
+<Tabs>
+  <TabItem value="youtube" label="thirdweb tutorial">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Ilkj3ay0Uu4?si=CJmPLankHKlPgkAy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  </TabItem>
+</Tabs>

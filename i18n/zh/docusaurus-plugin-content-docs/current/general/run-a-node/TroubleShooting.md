@@ -1,8 +1,6 @@
 ---
-title: Trouble Shooting
-sidebar_position: 14
-description: How to solve common problems
-displayed_sidebar: generalSidebar
+sidebar_position: 9
+title: Troubleshooting
 ---
 
 ## Node startup failure.
@@ -13,7 +11,7 @@ If you encounter an 'illegal instruction' error when starting the node using the
 
 ### Linux: GLIBC_2.27 not found?
 
-The Conflux binary depends on the glibc library. If it is not installed on your system or the installed version is too low, you may encounter this error.
+The Conflux binary depends on the **glibc** library. If it is not installed on your system or the installed version is **too low**, you may encounter this error.
 
 ### kvdb_rocksdb - DB has been previously marked as corrupted, attempting repair
 
@@ -29,7 +27,7 @@ This error may be caused by an incorrect password input for the pos_key.
 
 ### No such device or address
 
-failed to start full client: Os { code: 6, kind: Uncategorized, message: "No such device or address" }
+`failed to start full client: Os { code: 6, kind: Uncategorized, message: "No such device or address" }`
 
 This error occurs when starting the node using Docker. The node attempts to read the pos_key password from standard input, and if it cannot be read, it returns an error. In this case, you can configure the password in the configuration file or set it as an environment variable.
 
@@ -95,7 +93,15 @@ If the node's running log shows **Catch-up mode: false**, it indicates that the 
 
 ### Why is my node not synchronizing?
 
-TODO
+The node synchronization may encounter various issues, with common ones including:
+
+1. Insufficient disk space on the node machine.
+2. Network issues, such as inadequate incoming and outgoing bandwidth (recommended at least 5M).
+3. Linux maximum file open limit not set high enough (ulimit -n 10000).
+4. Incorrect specification of the configuration file; without proper configuration file settings, bootnodes cannot be located, leading to data synchronization issues. (When starting via Docker and mounting directories, it is easy to forget to specify the configuration file.)
+5. Check for any error in node's running log. (When starting via start.sh, error messages are saved in stderr.txt.)
+
+If after checking none of the above issues are present, but the node's **latest epoch** is not increasing, the node is likely running normally but engaged in other tasks, such as creating a checkpoint. In such cases, it is advisable to observe for an extended period, as this situation may persist for several hours or even tens of hours.
 
 ### After restarting the node, the epoch height remains unchanged?
 

@@ -7,6 +7,19 @@ displayed_sidebar: eSpaceSidebar
 
 Conflux eSpace implements the Web3 JSON-RPC protocol.
 
+Check out the following video to get a quick overview of this topic:
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+
+<Tabs>
+  <TabItem value="youtube" label="JSON-RPC Compatibility Video">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/svpqUAjzdk0?si=j6Ia3OEi8Go5DTPq" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  </TabItem>
+</Tabs>
+
+
 ## Methods
 
 | Method                 | Status      | Note    |

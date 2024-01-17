@@ -9,7 +9,7 @@ displayed_sidebar: generalSidebar
 
 ### How long does it take to synchronize the data from beginning?
 
-It takes about 2 weeks to synchronize the data from beginning.
+It takes about 3 weeks to synchronize the data from beginning.
 
 ### How to synchronize data quickly to run an archive node?
 
@@ -34,3 +34,7 @@ No
 ### Are the configuration files and node programs the same for the mainnet and testnet, and can they be used interchangeably?
 
 The mainnet and testnet's client software and configuration files are different, and cannot be used interchangeably.
+
+### Can I invoke RPC methods during node synchronization?
+
+Some RPC methods are unavailable during node synchronization; it is advisable to access RPC methods only after the node synchronization process is complete.

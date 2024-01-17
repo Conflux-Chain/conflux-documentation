@@ -7,13 +7,15 @@ displayed_sidebar: generalSidebar
 
 ## Introduction
 
-The Conflux Blockchain Data Snapshot Tool (aka Archive-Tool) is designed to help users quickly set up a Conflux node from a snapshot. This tool provides the download links, and by default, it downloads the DB snapshot data of the current day. The Snapshot tool can help save weeks of time required to download and sync all the blockchain data at the moment of running a node. Using this tool is optional, **but highly recommended**. The tool supports resuming downloads from breakpoints using the curl command. If an error occurs during the process, users are advised to follow the script prompts.
+The Conflux Blockchain Data Snapshot Tool (aka Archive-Tool) is designed to help users quickly set up a Conflux node from a snapshot. This tool provides the download links, and by default, it downloads the DB snapshot data of the current day. The Snapshot tool can help save weeks of time required to download and sync all the blockchain data at the moment of running a node. Using this tool is optional, **but highly recommended**. The tool supports **resuming downloads** from breakpoints using the curl command. If an error occurs during the process, users are advised to follow the script prompts.
 
 ## Prerequisites
 
 Ensure you have curl installed on your system. If not, you can download and install it from [here](https://curl.se/).
 
 ## Download Snapshot Data
+
+Select the snapshot download link based on the node type and location:
 
 1. For Linux & Mac - Mainnet - Archive Node:
 
@@ -66,7 +68,7 @@ Then, you’ll need to unzip the file, and copy (or move) its content into your 
 For example:
 
 ```shell
-tar -xvzf conflux-fullnode-db-snapshot-2023-09-20.tgz ./run
+tar -xvzf conflux-fullnode-db-snapshot-2023-09-20.tgz -C ./run
 ```
 
 The snapshot data also includes the `pos_config` folder, and the Conflux client release will also include the `pos_config` folder. You can use either one.

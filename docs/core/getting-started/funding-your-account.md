@@ -7,6 +7,20 @@ displayed_sidebar: coreSidebar
 
 Are you a new user of Conflux blockchain? Or are you a developer planning to develop a Dapp on Conflux? Then you may need some CFX to interact with the Conflux network. We provide the testnet CFX faucet dApp, which allows users to claim testnet CFX and experience it in the Conflux testnet environment.
 
+## Video Tutorial
+
+For a quick demo on how to use the Conflux Faucets, please refer to the following video tutorial:
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+  <TabItem value="youtube" label="Conflux Faucets Video">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/MyQi99-fEM4?si=PPPJLlUHFEofnnv2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  </TabItem>
+</Tabs>
+
+
 ## Faucet dApp
 
 We have developed a [Faucet Dapp](https://faucet.confluxnetwork.org/), which not only can be used to claim `CFX` but also tokens, currently includes `FC`, `cUSDT`.

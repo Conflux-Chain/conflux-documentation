@@ -1,7 +1,7 @@
 ---
 id: conflux_rpcs
 title: 网络 RPC 端点
-sidebar_position: 5
+sidebar_position: 4
 keywords:
   - 端点
 displayed_sidebar: coreSidebar

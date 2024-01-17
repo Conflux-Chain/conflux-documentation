@@ -222,6 +222,11 @@ const sidebars = {
       label: "eSpace(Ethereum) Tools Tutorial",
     },
     {
+      type: "link",
+      href: "https://api.confluxscan.io/doc",
+      label: "ConfluxScan APIs"
+    },
+    {
       type: 'html',
       value: "<span class='menu__item'><b><medium> Contracts </medium></b></span>"
     },
@@ -283,6 +288,10 @@ const sidebars = {
       type: "doc",
       id: "general/conflux-basics/conflux-governance/cips",
     },
+    {
+      type: "doc",
+      id: "general/hardforks/hardforks",
+    }
   ]
   // tutorials: [
   //   {

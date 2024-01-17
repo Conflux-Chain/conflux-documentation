@@ -68,7 +68,7 @@ The address of Conflux Core Space is different from Ethereum. It is a base32 enc
 
 Different network's address prefix is different. For example, the address prefix of Conflux Core Testnet is `cfxtest` and mainnet is `cfx`.
 
-For example:
+Por ejemplo:
 
 - Mainnet Address: `cfx:aamjy3abae3j0ud8ys0npt38ggnunk5r4ps2pg8vcc`
 - Testnet Address: `cfxtest:aamjy3abae3j0ud8ys0npt38ggnunk5r4pex9025gj`

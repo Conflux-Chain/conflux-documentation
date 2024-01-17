@@ -59,7 +59,8 @@ The amount of pre-mined tokens in the genesis block of Conflux Network is 5 bill
 
 **Direct builders** are rewarded to constantly improve the ecosystem and to lay a solid foundation for the entire Conflux ecosystem.
 
-- *Private Equity Funders*: 16% of the genesis tokens will be allocated to our private round investors and will be released over two years.
+- *Private Equity Funders*: 12% of the genesis tokens will be allocated to our private round investors and will be released over two years.
+- *Foundation Holdings*: 4% plus any unsold CFXs in the previous category will be allocated to support the long term financial need of Conflux Foundation. These tokens will be unlocked monthly over 2 years.
 - *Genesis Team*: 36% of the genesis tokens will be awarded to the founding team including the IIIS team (of Tsinghua University), Conflux Foundation employees, and advisors. The genesis team’s tokens will be released over 4 years and serve as a capital pool. Reasonable marketing activities will be set to solve the cold start problem so that users joining the ecosystem in an early stage and early miners will get extra tokens or higher block-rewards. This will encourage them to contribute more to the ecosystem.
 - *Community Fund:* 8% of the genesis tokens will be provided as rewards for ordinary community users for the encouragement of them to participate in the early stages of developing and maintaining the Conflux ecosystem. This part of the tokens will be unlocked within four years.
 - *Ecosystem Fund*: 40% of the genesis tokens will be offered to community developers supporting the DApps in the Conflux ecosystem. This proportion of tokens will be unlocked within four years.

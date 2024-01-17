@@ -1,6 +1,6 @@
 ---
 sidebar_position: 7
-title: Run a eSpace Node
+title: Run an eSpace Node
 displayed_sidebar: eSpaceSidebar
 ---
 

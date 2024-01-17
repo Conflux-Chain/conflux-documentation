@@ -29,6 +29,21 @@ Pinning prevents important data from being deleted from your node. You and only 
 
 Once your file is pinned to IPFS, you have full control to share, distribute, monetize and share your files however you’d like.
 
+## Video Tutorial
+
+For a hands-on demonstration on how to use pinata to store your Web3 files, please check out the following video:
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+
+<Tabs>
+  <TabItem value="youtube" label="Pinata Video Tutorial">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/9y2NK85Z6Hk?si=0TsnWNR40f9mz4Wo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  </TabItem>
+</Tabs>
+
+
 ## Getting the Images Ready
 
 This guide will focus on creating a single NFT, but if you want to make more, feel free to do so. The image being used can be found here if you'd like to utilize it.
@@ -115,3 +130,5 @@ Now, repeat the folder upload process to add the metadata to Pinata. Follow the 
 ![6.png](./img/6.png)
 
 Click on the metadata folder to be directed to the IPFS gateway and save the URL. This URL will be your base URL and won't need the direct file links. The smart contract will append the necessary file information for each NFT as needed. For example, our URL is **`https://gateway.pinata.cloud/ipfs/QmewVNwWYW27gKTrwhDG1Ge1ABqyQGxACCAdpx9a47d3sm`**.
+
+

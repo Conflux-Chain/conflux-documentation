@@ -12,6 +12,15 @@ Yes, the PoS node and PoW node use the same client. A conflux node works as a Po
 
 If a candidate is elected to join the committee but does not participate in signing between two elections, all the locked votes will unlock automatically. This can happen if your PoS node is offline for some reason. In this case, the node's PoS account will be unable to acquire voting power for the following 1-14 days. This mechanism is often referred to as *forced retirement*.
 
+## Why my node is force retired?
+
+If a PoS node is elected to the PoS committee but fails to actively participate in voting for PoS blocks and other election-related activities, it will be forcibly retired. The following situations may lead to the forced retirement of a node:
+
+1. PoS node downtime or lag in data synchronization.
+2. Mismatch between the `pos_config/pos_key` file and the `pos_db/secure_storage.json` file, resulting in abnormal voting.
+
+The second scenario may occur if the `pos_config/pos_key` file of an existing node is deleted without removing the corresponding `pos_db/secure_storage.json` file. If you need to regenerate the PoS account private key, both of these files need to be deleted together.
+
 ## How can I safely restart my PoS node?
 
 To prevent forced retirement while restarting your PoS node, it is recommended to follow the these steps:
