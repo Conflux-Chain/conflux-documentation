@@ -28,9 +28,9 @@ We welcome contributions in a variety of forms, including but not limited to:
 
 To make a contribution, please take one of the following actions:
 
-- **Report an Issue**: If you spot a problem or is willing to suggest improvements, [create an issue](./docs/general/CONTRIBUTING.m#create-an-issue) to let us know.
-- **Submit Changes**: For direct contributions to content, [create a pull request](./docs/general/CONTRIBUTING.m#create-a-pull-request).
-- **Help with Translation**: To contribute translations, please follow our [translation guidelines](./docs/general/CONTRIBUTING.m#provide-translation).
+- **Report an Issue**: If you spot a problem or is willing to suggest improvements, [create an issue](./docs/general/CONTRIBUTING.md#create-an-issue) to let us know.
+- **Submit Changes**: For direct contributions to content, [create a pull request](./docs/general/CONTRIBUTING.md#create-a-pull-request).
+- **Help with Translation**: To contribute translations, please follow our [translation guidelines](./docs/general/CONTRIBUTING.md#provide-translation).
 
 ### Contributor POAPs
 
