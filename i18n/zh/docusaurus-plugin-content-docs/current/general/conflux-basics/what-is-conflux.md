@@ -10,6 +10,17 @@ Conflux使用了一种工作量证明（PoW）- 权益证明（PoS）混合[共�
 
 Conflux网络包含两个不同的[空间](./spaces.md): Conflux [Core Space](../../core/Overview.md)和Conflux [eSpace](../../espace/build/cip90.md)。 Core Space 是采用混合共识机制的首要的区块链网络，具有[合约赞助机制](../../core/core-space-basics/internal-contracts/sponsor-whitelist-control.md)。 代付机制使项目用户在没有余额的情况下与智能合约交互，降低了区块链使用门槛并扩大了用户群体。 eSpace 完全兼容以太坊虚拟机 (EVM) 的区块链空间，使开发人员可以轻松地将其现有的以太坊智能合约迁移到 Conflux eSpace，并从其高性能和可扩展性中获益。 Conflux的 Core Space 和 eSpace 可以通过[CrossSpaceCall](../../core/core-space-basics/internal-contracts/crossSpaceCall.md)合约相互通信，通过该合约可以实现两个空间之间的资金原子转移和智能合约调用的原子执行。
 
+If you want to learn more about Conflux, check out this video covering its unique Tree-Graph Algorithm, GHAST, Spaces, and the Hybrid PoW + PoS Consensus Mechanism:
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+  <TabItem value="youtube" label="What is Conflux?">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/5JwUO3v2sW0?si=lNvkMZqhHKnzBNIm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  </TabItem>
+</Tabs>
+
 :::tip
 
 欢迎您访问 Conflux 文档站点，这将是您了解 Conflux 基本概念和开发的起点。 祝您探索愉快！
