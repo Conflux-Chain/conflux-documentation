@@ -5,26 +5,26 @@ description: 使用 js-conflux-sdk 的全面指南。
 displayed_sidebar: coreSidebar
 ---
 
-The [Developer Quickstart](../core-developer-quickstart.md) demonstrates how to install and use the js-conflux-sdk for sending transactions. This guide delves into the details of the js-conflux-sdk.
+[开发者快速入门](../core-developer-quickstart.md) 演示了如何安装和使用 js-conflux-sdk 来发送交易。 这份指南深入探讨了 js-conflux-sdk 的细节。
 
-- Account Generation
-- Querying Blockchain Data
-- Deploying Smart Contracts
-- Calling Smart Contracts
-- Common Utilities
-- Unit Conversion
-- Hashing and Signing
+- 账户生成
+- 查询区块链数据
+- 部署智能合约
+- 调用智能合约
+- 常见工具
+- 单位换算
+- 哈希和签名
 
-For further details and examples, please refer to the [js-conflux-sdk documentation](https://docs.confluxnetwork.org/js-conflux-sdk/).
+更多细节和示例，请参考 [js-conflux-sdk 文档](https://docs.confluxnetwork.org/js-conflux-sdk/)。
 
-## Account Generation
+## 账户生成
 
-Generate a new account using **PrivateKeyAccount**.
+使用 **PrivateKeyAccount** 生成新账户。
 
 ```javascript
 const { PrivateKeyAccount } = require('js-conflux-sdk');
 
-// generate a random testnet account
+// 生成一个随机的测试网络账户
 PrivateKeyAccount.random(undefined, 1)
 /* PrivateKeyAccount {
     privateKey: '0xd28edbdb7bbe75787b84c5f525f47666a3274bb06561581f00839645f3c26f66',
@@ -32,15 +32,15 @@ PrivateKeyAccount.random(undefined, 1)
     address: 'cfxtest:aass3rfcwjz1ab9cg5rtbv61531fmwnsuuy8c26f20',
     networkId: 1
 } */
-// generate a random mainnet account
-PrivateKeyAccount.random(undefined, 1029) // gen a different account from above
+// 生成一个随机的主网账户
+PrivateKeyAccount.random(undefined, 1029) // 与上述账户不同
 /* PrivateKeyAccount {
     privateKey: '0x1b67150f56f49556ef7e3899024d83c125d84990d311ec08fa98aa1433bc0f53',
     publicKey: '0xd442207828ffd4dad918fea0d75d42dbea1fe5e3789c00a82e18ce8229714eae3f70b12f2f1abd795ad3e5c52a5a597289eb5096548438c233431f498b47b9a6',
     address: 'cfx:aanpezyvznsdg29zu20wpudwnbhx7t4gcp9k23xchw',
     networkId: 1029
 } */
-// generate a random account with a random source
+// 使用随机源生成随机账户
 PrivateKeyAccount.random('0xabcdefabcdef', 1);
 /* PrivateKeyAccount {
     privateKey: '0x1d41e006afd28ea339922d8ab4be93154a14d4f1b6d0ad4e7aabf807e7536a5f',
@@ -50,9 +50,9 @@ PrivateKeyAccount.random('0xabcdefabcdef', 1);
 } */
 ```
 
-## Querying Blockchain Data
+## 查询区块链数据
 
-Numerous functions are available to query blockchain data, such as block, transaction, receipt, epoch, etc.
+我们还提供了许多函数以查询区块链数据，包括区块、交易、收据、纪元等。
 
 ```javascript
 const { Conflux } = require('js-conflux-sdk');
@@ -60,7 +60,7 @@ const { Conflux } = require('js-conflux-sdk');
 const cfxClient = new Conflux({
   url: 'https://test.confluxrpc.com',
   networkId: 1,
-  //   logger: console, // for debug
+  //   logger: console, // 用于调试
 });
 
 async function main() {
@@ -68,7 +68,7 @@ async function main() {
     console.log(status);
 }
 
-// Other available methods:
+// 其他可用的方法：
 // cfxClient.cfx.getBalance
 // cfxClient.cfx.getNextNonce
 // cfxClient.cfx.getBlockByHash
@@ -76,16 +76,16 @@ async function main() {
 // cfxClient.cfx.getTransactionReceipt
 ```
 
-Explore the [Conflux cfx namespace API](https://github.com/Conflux-Chain/js-conflux-sdk/blob/v2/docs/api/Conflux.md) for a complete method list. For more on JSON-RPC, see [Conflux Core JSON-RPC API](../build/json-rpc/).
+浏览 [ Conflux cfx 命名空间 API](https://github.com/Conflux-Chain/js-conflux-sdk/blob/v2/docs/api/Conflux.md) ，以获取完整的方法列表。 有关 JSON-RPC 的更多信息，请浏览 [Conflux Core JSON-RPC API](../build/json-rpc/).
 
-## Deploying Smart Contracts
+## 部署智能合约
 
-The js-conflux-sdk simplifies smart contract deployment.
+js-conflux-sdk 简化了智能合约的部署。
 
 ```javascript
-// Prerequisites: an account with sufficient balance and the smart contract's bytecode and ABI from solc or hardhat
+// 先决条件：账户具有足够余额且已有来自 solc 或 hardhat 的智能合约字节码和 ABI
 const abi = []; // Replace with your contract's ABI
-const bytecode = '0xabcd'; // Replace with your contract's bytecode
+const bytecode = '0xabcd'; // 替换为您合约的字节码
 
 const contract = cfxClient.Contract({
   abi,
@@ -93,7 +93,7 @@ const contract = cfxClient.Contract({
 });
 
 async function main() {
-    // Deploy the contract (modify if the constructor has parameters)
+    // 部署合约（如果构造函数内有参数，请进行修改）
     const receipt = await contract.constructor().sendTransaction({
         from: account,
     }).executed();
@@ -101,13 +101,13 @@ async function main() {
 }
 ```
 
-## Calling Smart Contracts
+## 调用智能合约
 
-To call a smart contract, you need its ABI and address.
+要进行智能合约的调用，您需要有合约 ABI 和合约地址。
 
 ```javascript
-const address = ''; // Replace with your contract's address
-const abi = []; // Replace with your contract's ABI
+const address = '';  // 替换为您的合约地址
+const abi = []; // 替换为您合约的 ABI
 
 const contract = cfxClient.Contract({
   abi,
@@ -115,10 +115,10 @@ const contract = cfxClient.Contract({
 });
 
 async function main() {
-    // Call a view function
+    // 调用视图函数
     const result = await contract.viewFunctionName(params);
     console.log(result);
-    // Call a non-view function
+    // 调用非视图函数
     const receipt = await contract.nonViewFunctionName(params).sendTransaction({
         from: account,
     }).executed();
@@ -126,91 +126,91 @@ async function main() {
 }
 ```
 
-Consult the sdk's [Contract interaction guide](https://docs.confluxnetwork.org/js-conflux-sdk/docs/interact_with_contract) for more information.
+查看 sdk 部分的[合约交互指南](https://docs.confluxnetwork.org/js-conflux-sdk/docs/interact_with_contract)获取更多信息。
 
-## Common Utilities
+## 常用工具
 
-### Address
+### 地址
 
-The address module offers functions for encoding and decoding cfx addresses and address validation.
+地址模块提供了对 cfx 地址进行编码和解码以及验证的功能。
 
 ```javascript
 const { address } = require('js-conflux-sdk');
 
-// Encode a hex address to a base32 cfx address
+// 将十六进制地址编码为 base32 格式的 cfx 地址
 const cfxAddress = address.encodeCfxAddress('0x166d0ff7691030b0ca33d4e60e842cd300a3010d', 1);
 
-// Decode a base32 cfx address to a hex address
+// 将 base32 格式的 cfx 地址解码为十六进制地址
 const decoded = address.decodeCfxAddress('cfxtest:aang4d91rejdbpgmgtmspdyefxkubj2bbywrwm9j3z');
 
-// Check if an address is valid
+// 检查地址是否有效
 address.isValidCfxAddress('cfxtest:aang4d91rejdbpgmgtmspdyefxkubj2bbywrwm9j3z'); // Returns true
 
-// Calculate the mapped EVM address
+// 计算 EVM 映射地址
 address.cfxMappedEVMSpace
 
 Address('cfxtest:aang4d91rejdbpgmgtmspdyefxkubj2bbywrwm9j3z');
 ```
 
-Discover more at the [address utils API](https://github.com/Conflux-Chain/js-conflux-sdk/blob/v2/docs/api/util/address.md).
+查看[地址工具 API ](https://github.com/Conflux-Chain/js-conflux-sdk/blob/v2/docs/api/util/address.md)获取更多信息。
 
-### Format
+### 格式
 
-The format module includes functions to convert data between various formats.
+格式模块中包括在各种格式之间转换数据的函数。
 
 ```javascript
 const { format } = require('js-conflux-sdk');
 
-// Examples:
-format.uInt(3); // Returns 3
-format.hex(Buffer.from('hi')); // Returns 0x6869
-format.bytes('0x03'); // Returns <Buffer 03>
+// 示例：
+format.uInt(3); // 返回 3
+format.hex(Buffer.from('hi')); // 返回 0x6869
+format.bytes('0x03'); // 返回 <Buffer 03>
 ```
 
-Explore the [format API](https://github.com/Conflux-Chain/js-conflux-sdk/blob/v2/docs/api/util/format.md) for more details.
+探索[格式 API](https://github.com/Conflux-Chain/js-conflux-sdk/blob/v2/docs/api/util/form.md) 以获取更多信息。
 
-## Token Unit Conversion
+## 代币单位换算
 
-Use the `Drip` class for conversions between **Drip** and **CFX**.
+使用 `Drip` 类进行 **Drip** 和 **CFX** 之间的转换。
 
 ```javascript
 const { Drip } = require('js-conflux-sdk');
 
-// Initialize a Drip instance
+// 初始化 Drip 实例
 let drip = new Drip('1000000000000000000'); // Equivalent to 1 CFX
 
-// Initialize from CFX
+// 从 CFX 初始化
 drip = Drip.fromCFX(1); // Equivalent to 1 CFX
 
-// Convert to CFX
+// 转换为 CFX
 drip.toCFX(); // Returns 1
 ```
 
-## Hashing and Signing
+## 哈希和签名
 
-The `sign` module facilitates hashing and signing data.
+`签名`模块提供了计算数据哈希和签名的功能。
 
 ```js
 const { sign } = require('js-conflux-sdk');
 
-// Generate a random buffer
+// 生成随机 buffer
 let buf = sign.randomBuffer(0);
 
-// Generate a keccak hash
+// 生成 keccak 哈希
 let keccakHash = sign.keccak256(buf);
 
-// Generate a random private key
+// 生成一个随机私钥
 let privateKey = sign.randomPrivateKey(buf);
 
-// Convert private key to public key
+// 将私钥转换为公钥
 let pubKey = sign.privateKeyToPublicKey(privateKey);
 
-// Convert public key to address
+// 将公钥转换为地址
 let address = sign.publicKeyToAddress(pubKey);
 
-// Sign a buffer with the private key
+// 使用私钥对 buffer 签名
 let signResult = sign.ecdsaSign(buf, privateKey);
 
-// Recover public key from signature and buffer, then convert it to address
+// 从签名和 buffer 中恢复公钥，然后将其转换为地址
 sign.publicKeyToAddress(sign.ecdsaRecover(buf, sign.ecdsaSign(signResult, privateKey)))
 ```

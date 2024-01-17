@@ -1,6 +1,6 @@
 ---
 sidebar_position: 4
-title: Deploying an ERC-20 Token Using Brownie
+title: Brownie
 description: Learn how to deploy an ERC-20 Token using Brownie.
 keywords:
   - Brownie

@@ -6,7 +6,7 @@ displayed_sidebar: generalSidebar
 
 # use-wallet Library
 
-## Introduction
+## 简介
 
 use-wallet is a front-end-view wallet hooks library designed for lightweight decentralized application (DApp) development. It only encapsulates the wallet injection in the window provider. If you need more complete and powerful support, js-conflux-sdk or web3.js will be more suitable. It serves as a simpler way to 'use' wallet in web development.
 

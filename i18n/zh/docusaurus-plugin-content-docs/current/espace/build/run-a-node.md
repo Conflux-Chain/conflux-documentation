@@ -4,11 +4,11 @@ title: Run an eSpace Node
 displayed_sidebar: eSpaceSidebar
 ---
 
-eSpace and Core Space share a common node program, so please refer to the [Core Space Node Operation Guide](/docs/category/run-a-node) for running a node. Below are some eSpace specific configurations.
+eSpace 和 Core Space 共用一个节点程序，请参考 [Core Space 节点操作指南](/docs/category/run-a-node) 来运行节点。 以下是一些特定于 eSpace 的配置。
 
-## eSpace RPC configuration
+## eSpace RPC 配置
 
-To setup a **eSpace RPC node**, you need to open the following configuration items:
+要设置一个 eSpace RPC 节点，您需要打开以下配置项：
 
 ```toml
 jsonrpc_http_eth_port=8545
@@ -16,7 +16,7 @@ jsonrpc_ws_eth_port=8546
 public_evm_rpc_apis = "evm"
 ```
 
-eSpace's RPC endpoint port is different from Core Space, you **can not** access the eth RPC interface at the **Core Space RPC port**.
+eSpace 的 RPC 端点端口与 Core Space 不同，您**不能**在 **Core Space 的 RPC 端口**访问 eth RPC 接口。
 
 ## Full State
 

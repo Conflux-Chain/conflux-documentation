@@ -22,7 +22,7 @@ For a Full Node, requirements are the following:
 * A stable internet connection.
 * While the Linux XFS file system offers performance benefits, it is not as stable; therefore, **ext4 is recommended** for its reliability and stability.
 
-## Steps
+## 使用步骤
 
 ### Step 1: Install Dependencies
 

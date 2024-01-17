@@ -12,6 +12,20 @@ displayed_sidebar: generalSidebar
 
 :::
 
+## Conflux Transaction Video
+
+To learn about transactions in Conflux Network you can start with the following video:
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+
+<Tabs>
+  <TabItem value="youtube" label="Transactions on Conflux Network">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/GIeD2khbbXs?si=cTRZo6DalLkLguXi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  </TabItem>
+</Tabs>
+
 ## 交易的概念
 
 交易为拥有 Conflux 账户的外部参与者编写的单个指令，并由发送者使用其账户私钥进行了密码学签名。 一笔交易可以涉及简单的CFX（Conflux的本地货币）转账、代币（如ERC20或ERC721）转账、新智能合约的部署或现有智能合约上的函数执行。 交易是在区块链上存储或更新数据的唯一方式。
@@ -62,3 +76,4 @@ displayed_sidebar: generalSidebar
 6. **等待 PoS 链最终确认 -> 已最终确认**：这是最后一个阶段，在此阶段中，节点会在被 Conflux 的 [PoS 链](./consensus-mechanisms/proof-of-stake/pos_overview.md)引用后最终化交易。 Conflux 的 PoS 链会定期引用一个稳定的 PoW 区块，以为交易提供最终性。 一个已经最终化的交易意味着它几乎没有被回滚的可能性，除非攻击者拥有 PoS 中超过 67% 的 CFX。 交易上链后需要 4～5 分钟完成最终确认（[CIP-113](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-113.md)激活后）。
 
 ![Transaction](./img/transaction-stages)
+
