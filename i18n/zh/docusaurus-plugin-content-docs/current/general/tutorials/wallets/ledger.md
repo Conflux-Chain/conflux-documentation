@@ -11,7 +11,7 @@ This wallet supports both Core and eSpace
 
 :::
 
-## Introduction
+## 简介
 
 You can now use your **Ledger Nano S** or **Ledger Nano X** hardware wallet to securely store your assets on both Core and eSpace. In this guide, we will show you how to interact with Conflux using your Ledger device and how to transfer assets.
 
