@@ -4,7 +4,7 @@ title: 术语表
 displayed_sidebar: generalSidebar
 ---
 
-## Introduction
+## 简介
 
 Welcome to the Glossary section of the Conflux documentation. This section is designed to provide you with clear and concise definitions of key terms and concepts used within Conflux and the broader blockchain industry.
 
