@@ -1,6 +1,6 @@
 ---
 sidebar_position: 2
-title: Deploying an ERC-20 Token using Remix IDE
+title: Remix IDE
 description: Deploying an ERC-20 Token using Remix IDE
 displayed_sidebar: eSpaceSidebar
 ---
@@ -105,3 +105,16 @@ contract MyToken is ERC20 {
 
 ![MetaMask-add-token-account2](../img/mm-token-balance-changed-c59c6e2434009c0dcb6e03ef79ba5e60.png)
 
+
+## Video Tutorial
+
+For an on-hands demonstration of how to deploy a smart contract using Remix IDE, please refer to the following video:
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+  <TabItem value="youtube" label="Remix IDE Video Tutorial">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/WLbUXQ1FS8M?si=kJD-6-QN3ZqFf0_v" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  </TabItem>
+</Tabs>
