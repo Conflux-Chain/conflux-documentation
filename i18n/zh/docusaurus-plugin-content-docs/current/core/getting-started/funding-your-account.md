@@ -7,6 +7,19 @@ displayed_sidebar: coreSidebar
 
 您是 Conflux 区块链的新用户吗？ 或者您是一名计划在Conflux上开发Dapp的开发者吗？ 那么你可能需要一些CFX与Conflux网络进行交互。 我们提供了测试网 CFX 水龙头 的 dApp，用户可以通过它领取测试网 CFX，并在 Conflux 的测试网环境中进行体验。
 
+## Video Tutorial
+
+For a quick demo on how to use the Conflux Faucets, please refer to the following video tutorial:
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+  <TabItem value="youtube" label="Conflux Faucets Video">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/MyQi99-fEM4?si=PPPJLlUHFEofnnv2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  </TabItem>
+</Tabs>
+
 ## 水龙头 dApp
 
 我们开发了一个[Faucet Dapp](https://faucet.confluxnetwork.org/)，不仅可以用于领取` CFX`，还可以领取代币，目前包括 `FC` 和 `cUSDT`。
