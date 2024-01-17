@@ -20,6 +20,7 @@ const DocCatalogFackData = [
     items: [
       { url: '/docs/core/getting-started/', text: 'Getting Started', preview: 'Getting started using Fluent Wallet' },
       { url: '/docs/category/core-space-basics', text: 'Core Space Basics', preview: 'Learn about the Conflux Core Space' },
+      { url: '/docs/core/core-space-basics/transactions/overview', text: 'Core Space Basics', preview: 'Core Space Transaction Details' },
       { url: '/docs/core/core-space-basics/sponsor-mechanism', text: 'Sponsorship Mechanism', preview: 'Intro of Core Space Sponsorship Mechanism' },
       { url: '/docs/category/tutorials', text: 'Developer Tutorials', preview: 'Tutorials for build on Conflux Core Space' },
       { url: '/docs/core/conflux_rpcs', text: 'Core Space RPC Endpoints', preview: 'RPC endpoint, block explorer url, chainId etc' },

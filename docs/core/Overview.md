@@ -27,7 +27,7 @@ The account address format in Core Space is in **base32 encoding**, which is dif
 
 1. [Base32 Address](./core-space-basics/addresses)
 2. [Account State](./core-space-basics/accounts)
-3. [Transaction](./core-space-basics/transaction_explain)
+3. [Transaction](./core-space-basics/transactions/overview.md)
 4. [Gas & Storage Collateral](./core-space-basics/storage)
 5. [VM Differences with EVM](./core-space-basics/vm-difference)
 6. [Internal Contract explanation](./core-space-basics/internal-contracts/)
