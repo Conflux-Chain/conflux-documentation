@@ -1,8 +1,10 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const lightCodeTheme = require('prism-react-renderer/themes/github');
-const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+const { themes } = require('prism-react-renderer');
+
+const lightCodeTheme = themes.github
+const darkCodeTheme = themes.dracula
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -10,7 +12,7 @@ const config = {
   tagline: 'Developer resources for building on Conflux. By developers, for developers.',
   url: 'https://doc.confluxnetwork.org/',
   baseUrl: '/',
-  onBrokenLinks: 'ignore',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/logo.svg',
 
@@ -31,6 +33,13 @@ const config = {
       }
     }
   },
+
+  scripts: [
+    {
+      src: '/js/clarity.js',
+      async: false,
+    }
+  ],
 
   plugins: [
     async function myPlugin(context, options) {
@@ -158,6 +167,19 @@ const config = {
       footer: {
         style: 'dark',
         links: [
+            {
+                title: 'Quick Links',
+                items: [
+                  {
+                    label: 'eSpace RPC Endpoints',
+                    to: '/docs/espace/network-endpoints',
+                  },
+                  {
+                    label: 'Core Space RPC Endpoints',
+                    to: '/docs/core/conflux_rpcs',
+                  },
+                ],
+              },
           {
             title: 'Resources',
             items: [

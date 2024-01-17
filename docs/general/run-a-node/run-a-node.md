@@ -17,25 +17,26 @@ Requirements depend on the type of node. For the specific requirements of each t
 
 For a Full Node, requirements are the following:
 
-* At least 16GB of RAM
-* A minimum of 1TB free disk space (SSD is recommended). 
-* A stable internet connection. 
+* At least 16GB of RAM(32GB is recommended), 4 CPU cores.
+* A minimum of 1.5TB free disk space (SSD is recommended).
+* A stable internet connection.
+* While the Linux XFS file system offers performance benefits, it is not as stable; therefore, **ext4 is recommended** for its reliability and stability.
 
 ## Steps
 
-### Step 1: Install Dependencies 
+### Step 1: Install Dependencies
 
-Before installing the Conflux node software, you'll need to install `openssl`. 
+Before installing the Conflux node software, you'll need to install `openssl`.
 
-On Linux (Ubuntu) 
+On Linux (Ubuntu)
 
 ```shell
 sudo apt-get update 
 sudo apt upgrade –y 
 sudo apt install -y libssl-dev
 ```
- 
-On macOS 
+
+On macOS
 
 ```shell
 brew install openssl 
@@ -50,9 +51,10 @@ There are two options, downloading a pre-built Conflux Client, or compiling the 
 The [release](https://github.com/Conflux-Chain/conflux-rust/releases) page on the conflux-rust GitHub repository providers pre-built binaries that you can download and run directly. For more detailed instructions, please visit [this](./advanced-topics/downloading-conflux-client.md) page.
 
 #### Option 2: Compiling the Conflux Client
+
 Compiling the Conflux Client is another option, and can be done in two steps:
 
-1. Clone the Conflux repository: 
+1. Clone the Conflux repository:
 
 ```shell
 git clone https://github.com/Conflux-Chain/conflux-rust.git 
@@ -63,14 +65,15 @@ git clone https://github.com/Conflux-Chain/conflux-rust.git
 ```shell
 cd conflux-rust 
 cargo build --release 
-``` 
+```
+
 For more detailed instructions, please visit [this](./advanced-topics/compiling-conflux-client.md) page.
 
 ### Step 3: Using Snapshot Tool (Optional) 
 
 The Conflux Snapshot Tool (aka Archive-Tool) is designed to help users quickly set up a Conflux node from a snapshot. This tool provides the download links, and by default, it downloads the DB snapshot data of the current day. The Snapshot tool can help save weeks of time required to download and sync all the blockchain data at the moment of running a node. Using this tool is optional, but highly recommended.
 
-For more information about this tool, visit [this](./snapshot-tool) section or the [github repository](https://github.com/conflux-fans/archive-tool). 
+For more information about this tool, visit [this](./snapshot-tool) section or the [github repository](https://github.com/conflux-fans/archive-tool).
  
 
 #### Usage Example: (Linux & Mac - Mainnet - full node)
@@ -87,23 +90,25 @@ Second, run the "download" program:
 bash download.sh 
 ```
 
-### Step 4: Configure the Node 
+The compressed snapshot data is several hundred gigabytes. After completing the download, unzip its contents into the **run** folder of the node.
+
+### Step 4: Configure the Node
 
 You may want to configure your Conflux node by editing the configuration file. You can find a sample configuration file in the Conflux repository, usually named **hydra.toml** or similar, depending on the network version. 
 
-Edit it as needed: 
+Edit it as needed:
 
 ```shell
 nano ./run/hydra.toml 
-``` 
+```
 
-Make sure to review and modify the settings according to your preferences and system capabilities. 
+Make sure to review and modify the settings according to your preferences and system capabilities.
 
 For more detailed instructions, please visit [this](./advanced-topics/node-configuration.md) page.
 
-### Step 5: Running the Node 
+### Step 5: Running the Node
 
-You can start the Conflux node by running the following command: 
+You can start the Conflux node by running the following command:
 
 The maximum number of open files are advised to set to 10000. In Linux, the default value is 1024, which is insufficient. You can configure this using the following command on the Linux terminal
 
@@ -123,9 +128,9 @@ Or
 ./start.sh
 ```
 
-This will start the Conflux node using the configuration file you edited earlier. 
+This will start the Conflux node using the configuration file you edited earlier.
 
-### Step 6: Interacting with the Node 
+### Step 6: Interacting with the Node
 
 You can interact with your Conflux node using RPC calls. The Conflux node exposes an HTTP JSON-RPC service that you can use to send requests and interact with the blockchain.
 
@@ -135,6 +140,10 @@ Example:
 curl -H "Content-Type: application/json" -X POST –data '{"jsonrpc":"2.0","method":"cfx_clientVersion","params":[],"id":67}' 127.0.0.1:12537
 ```
 
-### Step 7: Keeping Your Node Updated 
+### Step 7: Keeping Your Node Updated
 
-Make sure to keep your Conflux node software updated to the latest version to ensure compatibility with the network and to include the latest features and security patches.
+Make sure to [keep your Conflux node software updated](./how-to-upgrad.md) to the latest version to ensure compatibility with the network and to include the latest features and security patches.
+
+## FAQs
+
+Check the [FAQs](./nodes-faqs.md) and [troubleshooting](./TroubleShooting.md) section if you encounter any problems during the setup of nodes.

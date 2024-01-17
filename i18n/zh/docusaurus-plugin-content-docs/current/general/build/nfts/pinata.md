@@ -29,6 +29,20 @@ Pinata是一个web3媒体管理服务，允许用户在IPFS中托管、管理和
 
 一旦您的文件被固定到IPFS，您可以完全控制分享、分发、变现和分享您的文件。
 
+## Video Tutorial
+
+For a hands-on demonstration on how to use pinata to store your Web3 files, please check out the following video:
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+
+<Tabs>
+  <TabItem value="youtube" label="Pinata Video Tutorial">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/9y2NK85Z6Hk?si=0TsnWNR40f9mz4Wo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  </TabItem>
+</Tabs>
+
 ## 准备好你的图片
 
 本指南将专注于创建单个NFT，也可以用同样的方式为更多NFT准备图片。 The image being used can be found here if you'd like to utilize it.
@@ -115,3 +129,5 @@ import Image from '@theme/IdealImage';
 ![6.png](./img/6.png)
 
 点击元数据文件夹，将被引导到IPFS网关并保存URL。 这个URL将是你的基础URL，不需要直接的文件链接。 智能合约将追加每个NFT所需的必要文件信息。 例如，我们的URL是**`https://gateway.pinata.cloud/ipfs/QmewVNwWYW27gKTrwhDG1Ge1ABqyQGxACCAdpx9a47d3sm`**。
+
+

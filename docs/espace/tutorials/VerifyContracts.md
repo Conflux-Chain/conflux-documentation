@@ -85,9 +85,12 @@ forge verify-contract <contract address> <contract name> \
   --etherscan-api-key <anything is ok> \
   --constructor-args <your constructor arguments>
 ```
-<Aside type="caution" title="Caution">
-  Do not specify the chain ID.
-</Aside>
+
+:::warning
+
+Do not specify the chain ID.
+
+:::
 
 ## Verify on Web UI Manually
 

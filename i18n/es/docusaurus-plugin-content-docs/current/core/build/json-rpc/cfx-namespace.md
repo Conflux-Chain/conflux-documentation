@@ -81,7 +81,7 @@ Conflux core space supports epoch number parameter in [EIP-1898](https://eips.et
 - `blockHash`. Same as EIP-1898 `blockHash`
 - `requirePivot`. Corresponding to EIP-1898 `requireCanonical`. Defaults to `true`
 
-For example:
+Por ejemplo:
 
 ```json
 {

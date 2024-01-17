@@ -11,17 +11,18 @@ Confura, a public RPC service offered by the Conflux Foundation, is available fo
 
 ### 香港
 
-| Network             | Chain ID     | RPC Endpoint URL                                                                                      | Explorer                             |
-| ------------------- | ------------ | ----------------------------------------------------------------------------------------------------- | ------------------------------------ |
-| [Mainnet](#mainnet) | 1030 (0x406) | *HTTP*: <https://evm.confluxrpc.com><br/> *Websocket*: wss://evm.confluxrpc.com/ws              | <https://evm.confluxscan.net>        |
-| [Testnet](#testnet) | 71 (0x47)    | *HTTP*: <https://evmtestnet.confluxrpc.com><br/>*Websocket*: wss://evmtestnet.confluxrpc.com/ws | <https://evmtestnet.confluxscan.net> |
+| Network             | Chain ID     | RPC Endpoint URL                                                                                    | Explorer                           |
+| ------------------- | ------------ | --------------------------------------------------------------------------------------------------- | ---------------------------------- |
+| [Mainnet](#mainnet) | 1030 (0x406) | *HTTP*: https://evm.confluxrpc.com<br/> *Websocket*: wss://evm.confluxrpc.com/ws              | https://evm.confluxscan.net        |
+| [Testnet](#testnet) | 71 (0x47)    | *HTTP*: https://evmtestnet.confluxrpc.com<br/>*Websocket*: wss://evmtestnet.confluxrpc.com/ws | https://evmtestnet.confluxscan.net |
 
 ### US East
 
-| Network             | Chain ID     | RPC Endpoint URL                                                                              | Explorer                            |
-| ------------------- | ------------ | --------------------------------------------------------------------------------------------- | ----------------------------------- |
-| [Mainnet](#mainnet) | 1030 (0x406) | *HTTP*: <https://evm.confluxrpc.org><br/>*Websocket*: wss://evm.confluxrpc.org/ws       | <https://evm.confluxscan.io>        |
-| [Testnet](#testnet) | 71 (0x47)    | <https://evmtestnet.confluxrpc.org><br/>*Websocket*: wss://evmtestnet.confluxrpc.org/ws | <https://evmtestnet.confluxscan.io> |
+| Network             | Chain ID     | RPC Endpoint URL                                                                            | Explorer                          |
+| ------------------- | ------------ | ------------------------------------------------------------------------------------------- | --------------------------------- |
+| [Mainnet](#mainnet) | 1030 (0x406) | *HTTP*: https://evm.confluxrpc.org<br/>*Websocket*: wss://evm.confluxrpc.org/ws       | https://evm.confluxscan.io        |
+| [Testnet](#testnet) | 71 (0x47)    | https://evmtestnet.confluxrpc.org<br/>*Websocket*: wss://evmtestnet.confluxrpc.org/ws | https://evmtestnet.confluxscan.io |
+
 
 ### 速率限制
 

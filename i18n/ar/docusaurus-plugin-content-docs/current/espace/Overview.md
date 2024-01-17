@@ -30,9 +30,10 @@ Development tools(Remix, Hardhat, Foundry etc), SDKs(ethers.js, viem, web3.py), 
 ## Resources
 
 - [eSpace Blockchain Explorer](https://evm.confluxscan.io/)
-- [eSpace RPC endpoints](./network-endpoints.md)
+- [Network RPC endpoints](./network-endpoints.md)
 - [ConfluxHub Space Bridge Dapp](https://confluxhub.io/espace-bridge/cross-space)
 - [eSpace Testnet faucet](https://efaucet.confluxnetwork.org/)
+- [Run a eSpace node](./build/run-a-node.md)
 
 ## FAQs
 

@@ -1,7 +1,7 @@
 ---
 sidebar_position: 1
-title: Deploying contract using hardhat and foundry
-description: Deploying contract using hardhat and foundry
+title: Hardhat and Foundry
+description: Deploying smart contracts using Hardhat and Foundry
 displayed_sidebar: eSpaceSidebar
 ---
 
@@ -9,7 +9,9 @@ The eSpace Testnet allows anyone to deploy a smart contract on eSpace. In this t
 
 Before you start deploying the contract, you need to request test tokens from a [eSpace faucet](https://efaucet.confluxnetwork.org/).
 
-## Deploy contracts with Hardhat
+
+
+## Deploying smart contracts with Hardhat
 
 1. If you haven't already, install [nodejs](https://nodejs.org/en/download/) and [yarn](https://classic.yarnpkg.com/lang/en/docs/install).
 2. Clone the repo and install dependencies:
@@ -28,7 +30,27 @@ Before you start deploying the contract, you need to request test tokens from a 
 
 6. Run `yarn test` for hardhat tests.
 
-## Deploy contracts with Foundry
+
+### Video Guides
+
+To learn more about smart contract deployment using Hardhat, please refer to the following videos:
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+<TabItem value="overview" label="Hardhat Overview">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/p0Bzc2Y_0Kc?si=sfchFwTtSHlHyK4w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</TabItem>
+
+<TabItem value="tutorial" label="Hardhat Tutorial">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/SBzhyV3TSGg?si=HXxu0XdHAsNNJPkf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</TabItem>
+
+</Tabs>
+
+
+## Deploying smart contracts with Foundry
 
 1. Clone the repo:
 

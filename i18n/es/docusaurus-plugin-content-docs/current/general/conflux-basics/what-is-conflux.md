@@ -10,6 +10,17 @@ Conflux utiliza un [mecanismo de consenso](./consensus-mechanisms/consensus-mech
 
 The Conflux network comprises two distinct [spaces](./spaces.md): Conflux [Core Space](../../core/Overview.md) and Conflux [eSpace](../../espace/build/cip90.md). The Core Space is the primary blockchain network that utilizes the hybrid consensus mechanism and features a [contract sponsorship mechanism](../../core/core-space-basics/internal-contracts/sponsor-whitelist-control.md). El mecanismo de subsidio permite a los usuarios del proyecto interactuar con contratos sin tener un saldo, reduciendo el límite de uso de la blockchain y expandiendo la base de usuarios. El eSpace es totalmente compatible con la máquina virtual de Ethereum (EVM), que permite a los desarrolladores migrar fácilmente sus contratos inteligentes de Ethereum a Conflux eSpace y beneficiarse de su alto rendimiento y escalabilidad. Conflux Core Space and eSpace can communicate with each other via the [CrossSpaceCall](../../core/core-space-basics/internal-contracts/crossSpaceCall.md) contract, which facilitates atomic transfer of funds and atomic execution of smart contract calls between the two spaces.
 
+If you want to learn more about Conflux, check out this video covering its unique Tree-Graph Algorithm, GHAST, Spaces, and the Hybrid PoW + PoS Consensus Mechanism:
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+  <TabItem value="youtube" label="What is Conflux?">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/5JwUO3v2sW0?si=lNvkMZqhHKnzBNIm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  </TabItem>
+</Tabs>
+
 :::tip
 
 Bienvenidos al sitio de documentación de Conflux, su punto de partida para aprender sobre los conceptos básicos y el desarrollo de Conflux. ¡Disfrute la visita!

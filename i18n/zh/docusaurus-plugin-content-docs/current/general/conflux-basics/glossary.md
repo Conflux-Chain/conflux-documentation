@@ -57,7 +57,7 @@ The smallest subdenomination is denoted by Drip, in which all values processed i
 - [经济白皮书](https://confluxnetwork.org/files/Conflux_Economic_Paper_20201230.pdf)
 - [CFX代币在Conflux网络中的作用](https://medium.com/conflux-network/the-role-of-the-cfx-token-in-the-conflux-network-5a56c2b43bb0)
 - [链上DAO投票链参数](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-94.md)
-- [经济学](./economics.md)
+- [Economics](./economics.md)
 
 ### **ChainId & NetworkId**
 `chainId`是一个数字，表示一笔交易打算在哪里执行。 它用于防止交易重放攻击。 The chainId of Conflux chains are constant, currently:
