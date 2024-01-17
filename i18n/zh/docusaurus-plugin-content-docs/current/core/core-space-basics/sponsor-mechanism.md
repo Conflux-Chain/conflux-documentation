@@ -1,15 +1,15 @@
 ---
 sidebar_position: 3
-title: 赞助机制
+title: 代付机制
 displayed_sidebar: coreSidebar
 ---
 
-Conflux Core 空间实现了赞助机制，来补贴智能合约的使用。 这允许余额为零的新账户调用智能合约，前提是执行操作得到赞助（通常由Dapp运营者提供）。 这个机制旨在降低新用户的入门门槛。
+Conflux Core 空间实现了代付机制，来补贴智能合约的使用。 这允许余额为零的新账户调用智能合约，前提是执行操作得到代付（通常由Dapp运营者提供）。 这个机制旨在降低新用户的入门门槛。
 为区块链的大规模应用铺平道路。
 
 ## 简介
 
-在区块链世界中，发送交易时支付交易费是非常常见的。 以太坊有燃气费，而Conflux Core Space不仅有燃气费，还有存储抵押费。 通常，这些费用由交易的发送方支付。 然而，很多刚进入区块链世界的新用户可能不理解这些概念，没有代币来支付这些费用，从而构成进入区块链世界的障碍。 为了解决这种障碍，Conflux Core Space引入了赞助机制。
+在区块链世界中，发送交易时支付交易费是非常常见的。 以太坊有燃气费，而Conflux Core Space不仅有燃气费，还有存储抵押费。 通常，这些费用由交易的发送方支付。 然而，很多刚进入区块链世界的新用户可能不理解这些概念，没有代币来支付这些费用，从而构成进入区块链世界的障碍。 为了解决这种障碍，Conflux Core Space引入了代付机制。
 
 赞助机制允许合约得到赞助。 一旦进行赞助，调用合约时产生的交易费用将由赞助方支付，这意味着用户无需担心或支付这些费用。 赞助方可以是合约的所有者或其他任何人。 想象一下，一个部署在 Core Space 上的 `USDT` 代币，任何人都可以在无需支付任何费用情况下进行转账 —— 这对于新用户来说非常友好。
 
@@ -30,9 +30,9 @@ Conflux Core 空间实现了赞助机制，来补贴智能合约的使用。 这
 
 目前， Conflux Core 网络中的最小的 gas 费用是 1 Gdrip，也就是10^9 Drip。 通常情况下，一笔交易的 gas 开销从数万到数十万不等。 因此，`upperBound` 通常被设定为 500万 GDrip 左右。 特殊情况下，这个数值可以根据具体需求加以调整。
 
-Additionally, the total amount of gas to be sponsored needs to be set through the `value` field of the transaction. 这意味着在调用此方法时，必须同时进行 CFX 转账。 此外，每笔赞助金额应足以支付至少 `1000笔交易`（1000 \* upperBound）的gas费用。 For instance, if the upperBound is set to 1 million GDrip, then each sponsorship amount should be at least 1000 \* 1 million GDrip.
+Additionally, the total amount of gas fees to be sponsored needs to be set through the `value` field of the transaction. 这意味着在调用此方法时，必须同时进行 CFX 转账。 此外，每笔赞助金额应足以支付至少 `1000笔交易`（1000 \* upperBound）的gas费用。 For instance, if the upperBound is set to 1 million GDrip, then each sponsorship amount should be at least 1000 \* 1 million GDrip.
 
-For example, to sponsor Contract A with a gas limit of 1 million GDrip and a total sponsorship amount of 100 CFX, you would initiate a transaction calling `setSponsorForGas(A, 10^15)`, with the transaction's value field set to 100 CFX.
+For example, to sponsor Contract A with a sponsorship upperbound of 1 million GDrip and a total sponsorship amount of 100 CFX, you would initiate a transaction calling `setSponsorForGas(A, 10^15)`, with the transaction's value field set to 100 CFX.
 
 这个内置合约还提供了几种方法来查询合约的赞助信息：
 
