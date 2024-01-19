@@ -4,7 +4,7 @@ title: Transaction Fields
 displayed_sidebar: coreSidebar
 ---
 
-In order to construct a Core Space transaction, the following fields are required:
+In order to encode a Core Space transaction, the following fields are required:
 
 * `from` - the address of the sender, that will be signing the transaction. This will be an externally-owned account as contract accounts cannot send transactions.
 * `to` - the receiving address (if an externally-owned account, the transaction will transfer value. If a contract account, the transaction will execute the contract code)
@@ -80,7 +80,7 @@ For more information on the usage, estimation, and charging of gas, refer to [In
 
 The gasPrice is used to set the amount of CFX that the sender is willing to pay for one unit of gas (in Drip). The total gas fee for the transaction is **gasCharged * gasPrice**. Miners **use the gasPrice to determine the order in which transactions are included in a block**. Generally, **higher gasPrice results in faster transaction inclusion**.
 
-The [`cfx_gasPrice`](/docs/core/build/json-rpc/cfx-namespace#cfx_gasprice) method can be used to obtain an appropriate gas price. During periods of network congestion, it may be necessary to manually set a higher price; details can be found in [How to Set Prices](./gas-fee.md).
+The [`cfx_gasPrice`](/docs/core/build/json-rpc/cfx-namespace#cfx_gasprice) method can be used to obtain an appropriate gas price. During periods of network congestion, it may be necessary to manually set a higher price; details can be found in [How to Set Prices](./transaction-fee.md).
 
 ### storageLimit
 
@@ -121,12 +121,16 @@ For specific generation details, refer to [Transaction Encoding and Signature](.
 
 ### What's max value of transaction gas limit?
 
-1500w
+It's half of the block gas limit, where as 30 million gas * 0.5 (15000000).
 
 ### What's minimum value of Core Space transaction gasPrice?
 
-1 GDrip
+1 GDrip (10**9 Drip).
 
 ### What's the max size of transaction data?
 
-It's about 200k
+It's about 200k bytes.
+
+### What Parameters are Required for Sending Transactions via SDK?
+
+When using the JS-SDK for basic CFX transfers, three parameters are essential: `from` (the originating account), `to` (the recipient account), and `value` (the amount to be transferred, measured in Drip). Other fields can be automatically populated by SDK.

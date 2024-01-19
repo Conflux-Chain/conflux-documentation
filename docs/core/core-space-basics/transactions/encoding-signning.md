@@ -2,11 +2,15 @@
 sidebar_position: 2
 title: Encoding & Signing
 displayed_sidebar: coreSidebar
+keywords: 
+    - transaction
+    - signing
+    - encoding
 ---
 
 After every field of a transaction is prepared, following steps are required before it can be sent to network (don't worry, these steps are already implemented by wallets or SDKs):
 
-1. Prepare hash for signing: do RLP encoding in the order of `[nonce, gasPrice, gas, to, value, storageLimit, epochHeight, chainId, data]` and then apply the `keccak256` operation to the encoded result to obtain a hash.
+1. Prepare hash for signing: do [RLP encoding](https://ethereum.org/en/developers/docs/data-structures-and-encoding/rlp/) in the order of `[nonce, gasPrice, gas, to, value, storageLimit, epochHeight, chainId, data]` and then apply the `keccak256` operation to the encoded result to obtain a hash.
 2. Signing: sign the hash obtained in the previous step using the **private key of the sending account** and perform the ecdsaSign signature operation to obtain the values for `r, s, v`.
 3. Transaction Encoding: Do RLP encoding in the order of `[[nonce, gasPrice, gas, to, value, storageLimit, epochHeight, chainId, data], v, r, s]` and convert it into a hexadecimal string.
 

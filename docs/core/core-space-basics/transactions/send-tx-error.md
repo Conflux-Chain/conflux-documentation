@@ -2,13 +2,16 @@
 sidebar_position: 7
 title: Send Transaction Errors
 displayed_sidebar: coreSidebar
+toc_max_heading_level: 4
+keywords:
+    - errors
 ---
 
 When using SDK or the Fluent wallet to send transactions, you may encounter some errors. This document outlines some common errors and their solutions.
 
-## Common Errors and Solutions
+## Errors from RPC endpoint
 
-### EstimateGas Failure
+### Errors from Estimation
 
 During the construction of a transaction, it is necessary to estimate the gas fee using the `estimateGas` method. If it is an interaction with a contract, the `estimateGas` method may fail for various reasons, such as:
 
@@ -29,7 +32,7 @@ If the `estimateGas` method fails, it will return an error, for example:
 
 Sometimes, the error message contains obvious information about the error, making it easy to identify the cause. In some cases, it may only show `Vm reverted`. In such cases, you may need to locate the error through repeated code verification and trials, or by using trace data to assist in finding the error.
 
-### cfx_sendRawTransaction Failure
+### `cfx_sendRawTransaction` Failure
 
 After assembling the transaction, it needs to be sent using the [`cfx_sendRawTransaction`](/docs/core/build/json-rpc/cfx-namespace#cfx_sendrawtransaction) method, which may fail for various reasons.
 
@@ -109,4 +112,4 @@ If there is a network issue, please wait for the network to recover or switch to
 
 ## Reference
 
-- [cfx_sendRawTransaction complete error list](/docs/core/build/json-rpc/cfx_sendTransaction-errors)
+- [cfx_sendRawTransaction error list](/docs/core/build/json-rpc/cfx_sendTransaction-errors)
