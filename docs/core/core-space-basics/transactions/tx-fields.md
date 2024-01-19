@@ -121,7 +121,7 @@ For specific generation details, refer to [Transaction Encoding and Signature](.
 
 ### What's max value of transaction gas limit?
 
-It's half of the block gas limit, where as 30 million gas * 0.5 (15000000).
+It's half of the block gas limit, whereas 30 million gas * 0.5 (15000000).
 
 ### What's minimum value of Core Space transaction gasPrice?
 
