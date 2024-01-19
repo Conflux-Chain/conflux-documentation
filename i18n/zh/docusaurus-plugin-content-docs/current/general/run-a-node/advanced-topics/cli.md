@@ -1,6 +1,6 @@
 ---
 id: cli_sub_commands
-title: 命令行可用命令
+title: 命令行子命令
 sidebar_position: 8
 keywords:
   - conflux
