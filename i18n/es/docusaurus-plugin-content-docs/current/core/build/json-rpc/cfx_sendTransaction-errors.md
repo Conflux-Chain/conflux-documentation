@@ -167,7 +167,7 @@ The transaction has a size limit, with the maximum being 200k.
 }
 ```
 
-**Solution:** Use return value from `cfx_epochNumber` as the `epochHight`
+**Solution:** Use return value from `cfx_epochNumber` as the `epochHeight`
 
 ## Mismatched chainId
 
@@ -284,18 +284,3 @@ or
     }
 }
 ```
-
-## Execution Failure
-
-Execution failures can be due to errors that occurred during the contract execution process or errors returned when estimating gas cost through the estimate interface. To find the specific reason for the transaction failure, check the `txExecErrorMsg` under the receipt:
-
-1.  `VmError(OutOfGas)`: The transaction specified gas fee is not enough.
-2.  `VmError(ExceedStorageLimit)`: The transaction specified upper-limit storage is not enough.
-3.  `NotEnoughCash`: Insufficient user balance.
-4.  `Vm reverted, Reason provided by the contract: xxxx`: The contract execution failed with details provided.
-5.  `VmError(BadInstruction xxxx)`: Contract deployment failed.
-6.  `Vm reverted, xxxx`: The contract execution failed with no details provided.
-
-**Solution:** Depending on the specific error message, you may need to adjust the gas fee, increase the storage limit, ensure sufficient balance, or debug the contract code to identify and fix the issues causing the failure.
-
-Remember that when handling transaction errors, it's essential to identify the root cause of the error and apply the appropriate solution. In most cases, modifying transaction parameters, waiting for node synchronization, or debugging the contract code can help resolve the issues.
