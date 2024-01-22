@@ -6,74 +6,77 @@ keywords:
 displayed_sidebar: generalSidebar
 ---
 
-:::info
+A transaction is a single instruction composed by an external actor with a Conflux account, and this instruction is cryptographically signed using the sender account’s private key. A transaction can involve a **simple transfer of CFX** (the native currency of Conflux), a **transfer of tokens** (such as ERC20 or ERC721), a **deployment of a new smart contract**, or an **execution of a function on an existing smart contract**. Transactions are the only way to store or update data on the blockchain.
 
-This section introduces transaction concepts from a high level. For more details on core space transactions, please refer to [core space transactions](../../core/core-space-basics/core-transactions.md). For espace transactions, you may find it helpful to refer to [Ethereum transactions](https://ethereum.org/developers/docs/transactions/) as they are almost exactly same in format and functionality.
+## Prerequisites
 
-:::
+To help you better understand this page, we recommend you first read [Accounts](./accounts.md).
 
-## Conflux Transaction Video 
+## What's a Transaction?
 
-To learn about transactions in Conflux Network you can start with the following video:
+An transaction refers to an action initiated by an externally-owned account, in other words an account managed by a human, not a contract. For example, if Bob sends Alice 1 CFX, Bob's account must be debited and Alice's must be credited. This state-changing action takes place within a transaction.
+
+![](./img/tx.png)
+
+Transactions, which change the state of the EVM, need to be broadcast to the whole network. Any node can broadcast a request for a transaction to be executed on the EVM; after this happens, a validator will execute the transaction and propagate the resulting state change to the rest of the network.
+
+A submitted transaction includes the following information:
+
+* from – the address of the sender, that will be signing the transaction. This will be an externally-owned account as contract accounts cannot send transactions.
+* recipient – the receiving address (if an externally-owned account, the transaction will transfer value. If a contract account, the transaction will execute the contract code)
+* signature – the identifier of the sender. This is generated when the sender's private key signs the transaction and confirms the sender has authorized this transaction
+* nonce - a sequentially incrementing counter which indicates the transaction number from the account
+* value – amount of CFX to transfer from sender to recipient (denominated in Drip, where 1CFX equals 1e+18Drip)
+* input data – optional field to include arbitrary data
+* gasLimit – the maximum amount of gas units that can be consumed by the transaction. The EVM specifies the units of gas required by each computational step
+* gasPrice - the price of the consumed gas to be included as a tip to the validator
+* chainId - the id of the blockchain, which is used to prevent replay attacks
+
+The Core Space transaction includes the following additional information:
+
+* storageLimit - the maximum amount of storage space that can be consumed by the transaction. 
+* epochHeight - the epoch number of the blockchain, which is used to sets an expiration time for the transaction
+
+## Gas Fee
+
+Transactions require a fee and must be included in a validated block. The fee is paid in CFX and is calculated by multiplying the gasCharged by the gasPrice.
+
+Gas fees are used to compensate miners, motivating them to package, validate blocks, and maintain the security of the blockchain.
+
+For specific calculation details, please refer to [Transaction Fee](./gas.md).
+
+## Transaction Lifecycle
+
+Once the transaction has been submitted the following happens:
+
+1. A transaction hash is cryptographically generated: 0x97d99bc7729211111a21b12c933c949d4f31684f1d6954ff477d0477538ff017
+2. The transaction is then broadcasted to the network and added to a transaction pool consisting of all other pending network transactions.
+3. A validator must pick your transaction and include it in a block in order to verify the transaction and consider it "successful".
+4. As time passes the block containing your transaction will be upgraded to "justified" then "finalized". These upgrades make it much more certain that your transaction was successful and will never be altered. Once a block is "finalized" it could only ever be changed by a network level attack that would cost many billions of dollars.
+
+For a more detailed understanding of the transaction lifecycle, you can refer to [Transaction Lifecycle](/docs/core/core-space-basics/transactions/lifecycle.md).
+
+## Transaction Status
+
+The transactions that are included in a block will eventually be executed, generating a [transaction **Receipt**](/docs/core/core-space-basics/transactions/receipt.md). However, not all transactions will be executed successfully; typically, transactions can have two states: **Success** or **Failure**.
+
+For eSpace transactions, you can determine the execution status through the **status** field in the Receipt, where **1 represents success, and 0 represents failure**.
+
+For Core transactions, you can check the execution status through the **outcomeStatus** field in the Receipt, where **0 represents success, and 1 represents failure**.
+
+In addition to this, the Receipt also includes other information about the transaction execution, such as block information and event details.
+
+## Details
+
+If you want to learn details about transactions, you can refer to the transaction explanation in the [Core Space](/docs/core/core-space-basics/transactions/overview.md).
+
+## Intro Video
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-
 
 <Tabs>
   <TabItem value="youtube" label="Transactions on Conflux Network">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/GIeD2khbbXs?si=cTRZo6DalLkLguXi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
   </TabItem>
 </Tabs>
-
-## Concept of Transaction
-
-A transaction is a single instruction composed by an external actor with a Conflux account, and this instruction is cryptographically signed using the sender account’s private key. A transaction can involve a simple transfer of CFX (the native currency of Conflux), a transfer of tokens (such as ERC20 or ERC721), a deployment of a new smart contract, or an execution of a function on an existing smart contract. Transactions are the only way to store or update data on the blockchain.
-
-## Transaction Fields
-
-Generally speaking, a transaction contains:
-
-- Who send the transaction: A `from` field in an unsigned transaction or the transaction signature fields indicating the signer. This tells the network who is responsible for initiating the transaction and who will pay for the fees.
-
-- What this transaction will do, including:
-
-  - Who will be the transaction receiver or which smart contract to interact with(`to` field). This specifies the destination address of the transaction, which can be either user account or a smart contract that can execute some logic or empty to create a contract.
-
-  -  How much native token will be send(`value` field). This indicates how much CFX (the native token of Conflux) will be transferred from the sender to the receiver. If the receiver is a smart contract, this value can also be used as an input parameter for its logic.
-
-  -  How to interact with a smart contract(`data` field). This contains additional information for calling a smart contract function or deploying a new smart contract. It can encode the name and arguments of the function to be invoked or the bytecode of the new contract to be created.
-
--  Transaction fee information, including:
-   - Field(s) indicating base transaction fee (`gas` in both spaces, and extra `storageLimit` field in core space). These fields is determine according to how much computational resources are required to execute the transaction and (in core space) how much storage space are occupied by its effects.
- 
-   -  Field indicating how much "tip" sender is willing to pay to miner(`gasPrice` field). This field allows senders to adjust their priority in getting their transactions packed by miners. A higher `gasPrice` means a higher chance of being included in a block sooner.
-
-- Field indicating when or where the transaction is "valid" (`chainId`, `nonce` in both spaces, and `epochHeight` in core space). `chainId` prevents a transaction being executed on another chain and `nonce` field ensures the sent transactions are executed in the expected order. `epochHeight` field sets an expiration time for the transaction based on the epoch number (a concept similar to "block number" in Ethereum). A transaction can only be executed within an epoch range associated with `epochHeight`.
-
-:::info
-
-Transaction fields are slightly different between [spaces](./spaces.md). Core space transactions follow the definition of [Conflux Protocol](https://www.confluxnetwork.org/files/Conflux_Protocol_Specification.pdf). Espace transactions follow the [EIP-155](https://eips.ethereum.org/EIPS/eip-155) specification.
-
-:::
-
-## Transaction Lifecycle
-
-Transactions go through several stages from the time they are constructed to the time they are finally confirmed on the chain. A good understanding of these stages will help users and developers better identify problems with sending transactions and ultimately ensure that transactions are successfully confirmed.
-
-The following are the main stages of a transaction from construction to confirmation.
-
-1. **Transaction construction**: This is the stage where users or developers create a transaction with all the necessary fields and parameters and get it signed. The transaction object can be created using various tools or libraries, such as Fluent Wallet, Conflux SDK, etc. The transaction will be encoded into a hex string as "rawTransaction" before it is sent.
-
-2. **Broadcast**: This is the stage where users or developers send their signed transaction to a Conflux node via RPC or WebSocket. The node will validate the transaction and broadcast it to other nodes in the network if it passes the validation. The node will also return a transaction hash (a unique identifier) to the sender for tracking purposes.
-
-3. **Packed into a block -> Mined**: This is the stage where miners select transactions from their mempool (a pool of pending transactions) and include them in their blocks. Miners will prioritize transactions with higher `gasPrice`. Once a block containing a transaction is mined, it will be propagated to other nodes in the network.
-
-4. **Deferring 5 epochs -> Executed**: This is the stage where transactions are executed by nodes after being deferred for 5 epochs (about 5 seconds). This means that nodes will run the logic of the transactions and update their state accordingly. The execution results of each transaction will be recorded in a receipt, which contains information such as status (success or failure), gas used, logs and events emitted by smart contracts and can be retrieved using transaction hash.
-
-5. **Waiting for about 50 epochs -> Confirmed**: This is the stage where transactions are confirmed by nodes after being executed for about 50 epochs (about 50 seconds). A transaction is executed does not mean that the status of the transaction will not change anymore. Due to the structure of blockchain, the blockchain may fork or shift the main chain due to the arrival or creation of new blocks, which may revert certain transactions. A confirmed transaction means that it has been included in a "deep" enough block and has a extremely low probability of being reverted.
-
-6. **Waiting for PoS chain Finalization -> Finalized**: This is the final stage where transactions are finalized after specific PoW block being referenced by Conflux's [PoS chain](./consensus-mechanisms/proof-of-stake/pos_overview.md). Conflux's PoS chain periodically refers a stable PoW block to provide finality for transactions. A finalized transaction means that it has zero probability of being reverted unless the attacker possesses more than 67% of the CFX staked in PoS. It takes approximately 4-5 minutes to finalize a transaction since it is included in a block (after [CIP-113](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-113.md) activation).
-
-![Transaction](./img/transaction-stages)
-

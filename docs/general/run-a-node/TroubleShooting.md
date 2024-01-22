@@ -89,6 +89,14 @@ Statistics: StatisticsInner {
 }
 ```
 
+3. Check **construct_pivot_state** in the running logs:
+
+If the **index** or **height** keep increase, the node is running normally.
+
+```txt
+cfxcore::con - construct_pivot_state: index 30774 height 86370774 compute_epoch true
+```
+
 ### How to determine if a node is synchronized to the latest block?
 
 If the node's running log shows **Catch-up mode: false**, it indicates that the node has synchronized to the latest data.

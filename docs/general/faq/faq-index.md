@@ -9,7 +9,7 @@ In this page you will find a detailed list of all FAQs (Frequently Asked Questio
 | **Topic** | **Description** |
 |---|---|
 |[Community FAQs](community-faqs.md)  | Community related questions  |
-|[RPC Errors](./Errors/common-rpc-errors.md)   |  Questions related to RPC most common errors |
+|[RPC Errors](/docs/core/build/json-rpc/common-rpc-errors.md)   |  Questions related to RPC most common errors |
 |[Conflux Core FAQs](../../core/FAQs.md)   | Questions related to Conflux Core Space  |
 |[Conflux eSpace FAQs](../../espace/FAQs.md)   |  Questions related to Conflux eSpace |
 |[Sponsorship Mechanism FAQs](../../core/core-space-basics/sponsor-mechanism.md#faqs)   |  Questions related to Conflux Core's Sponsorship Mechanism |

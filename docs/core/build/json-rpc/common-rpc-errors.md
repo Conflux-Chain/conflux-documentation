@@ -1,11 +1,11 @@
 ---
 id: common_rpc_error
-sidebar_position: 6
+sidebar_position: 7
 title: Common RPC errors
 keywords:
   - rpc
   - error
-displayed_sidebar: generalSidebar
+displayed_sidebar: coreSidebar
 ---
 
 ## Common errors
