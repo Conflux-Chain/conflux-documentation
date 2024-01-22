@@ -1,5 +1,5 @@
 ---
-sidebar_position: 4
+sidebar_position: 2
 title: Accounts
 displayed_sidebar: coreSidebar
 ---
