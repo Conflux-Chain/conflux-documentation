@@ -6,74 +6,77 @@ keywords:
 displayed_sidebar: generalSidebar
 ---
 
-:::info
+交易为拥有 Conflux 账户的外部参与者编写的单个指令，并由发送者使用其账户私钥进行了密码学签名。 A transaction can involve a **simple transfer of CFX** (the native currency of Conflux), a **transfer of tokens** (such as ERC20 or ERC721), a **deployment of a new smart contract**, or an **execution of a function on an existing smart contract**. 交易是在区块链上存储或更新数据的唯一方式。
 
-本节更深入地介绍了交易的概念。 有关 Core 空间交易的详细信息，请参见[ core 空间交易](../../core/core-space-basics/core-transactions.md)。 对于 eSpace 交易，您可能会发现参考[Ethereum 交易](https://ethereum.org/developers/docs/transactions/)有所帮助，因为它们在格式和功能上几乎完全相同。
+## 前提条件
 
-:::
+To help you better understand this page, we recommend you first read [Accounts](./accounts.md).
 
-## Conflux Transaction Video
+## What's a Transaction?
 
-To learn about transactions in Conflux Network you can start with the following video:
+An transaction refers to an action initiated by an externally-owned account, in other words an account managed by a human, not a contract. For example, if Bob sends Alice 1 CFX, Bob's account must be debited and Alice's must be credited. This state-changing action takes place within a transaction.
+
+![](./img/tx.png)
+
+Transactions, which change the state of the EVM, need to be broadcast to the whole network. Any node can broadcast a request for a transaction to be executed on the EVM; after this happens, a validator will execute the transaction and propagate the resulting state change to the rest of the network.
+
+A submitted transaction includes the following information:
+
+* from – the address of the sender, that will be signing the transaction. This will be an externally-owned account as contract accounts cannot send transactions.
+* recipient – the receiving address (if an externally-owned account, the transaction will transfer value. If a contract account, the transaction will execute the contract code)
+* signature – the identifier of the sender. This is generated when the sender's private key signs the transaction and confirms the sender has authorized this transaction
+* nonce - a sequentially incrementing counter which indicates the transaction number from the account
+* value – amount of CFX to transfer from sender to recipient (denominated in Drip, where 1CFX equals 1e+18Drip)
+* input data – optional field to include arbitrary data
+* gasLimit – the maximum amount of gas units that can be consumed by the transaction. The EVM specifies the units of gas required by each computational step
+* gasPrice - the price of the consumed gas to be included as a tip to the validator
+* chainId - the id of the blockchain, which is used to prevent replay attacks
+
+The Core Space transaction includes the following additional information:
+
+* storageLimit - the maximum amount of storage space that can be consumed by the transaction.
+* epochHeight - the epoch number of the blockchain, which is used to sets an expiration time for the transaction
+
+## Gas Fee
+
+Transactions require a fee and must be included in a validated block. The fee is paid in CFX and is calculated by multiplying the gasCharged by the gasPrice.
+
+Gas fees are used to compensate miners, motivating them to package, validate blocks, and maintain the security of the blockchain.
+
+For specific calculation details, please refer to [Transaction Fee](./gas.md).
+
+## 交易生命周期
+
+Once the transaction has been submitted the following happens:
+
+1. A transaction hash is cryptographically generated: 0x97d99bc7729211111a21b12c933c949d4f31684f1d6954ff477d0477538ff017
+2. The transaction is then broadcasted to the network and added to a transaction pool consisting of all other pending network transactions.
+3. A validator must pick your transaction and include it in a block in order to verify the transaction and consider it "successful".
+4. As time passes the block containing your transaction will be upgraded to "justified" then "finalized". These upgrades make it much more certain that your transaction was successful and will never be altered. Once a block is "finalized" it could only ever be changed by a network level attack that would cost many billions of dollars.
+
+For a more detailed understanding of the transaction lifecycle, you can refer to [Transaction Lifecycle](/docs/core/core-space-basics/transactions/lifecycle.md).
+
+## Transaction Status
+
+The transactions that are included in a block will eventually be executed, generating a [transaction **Receipt**](/docs/core/core-space-basics/transactions/receipt.md). However, not all transactions will be executed successfully; typically, transactions can have two states: **Success** or **Failure**.
+
+For eSpace transactions, you can determine the execution status through the **status** field in the Receipt, where **1 represents success, and 0 represents failure**.
+
+For Core transactions, you can check the execution status through the **outcomeStatus** field in the Receipt, where **0 represents success, and 1 represents failure**.
+
+In addition to this, the Receipt also includes other information about the transaction execution, such as block information and event details.
+
+## Details
+
+If you want to learn details about transactions, you can refer to the transaction explanation in the [Core Space](/docs/core/core-space-basics/transactions/overview.md).
+
+## Intro Video
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-
 
 <Tabs>
   <TabItem value="youtube" label="Transactions on Conflux Network">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/GIeD2khbbXs?si=cTRZo6DalLkLguXi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
   </TabItem>
 </Tabs>
-
-## 交易的概念
-
-交易为拥有 Conflux 账户的外部参与者编写的单个指令，并由发送者使用其账户私钥进行了密码学签名。 一笔交易可以涉及简单的CFX（Conflux的本地货币）转账、代币（如ERC20或ERC721）转账、新智能合约的部署或现有智能合约上的函数执行。 交易是在区块链上存储或更新数据的唯一方式。
-
-## 交易字段
-
-一般而言，一个交易包含以下内容：
-
-- 交易发起人：在未签名交易中是一个`from`字段，在交易签名中则是标识签名者的字段。 这告诉网络谁负责发起交易以及谁将支付费用。
-
-- 这个交易将要做什么，包括：
-
-  - 交易的接收方是谁，或者将要与哪个智能合约进行交互（`to`字段）。 这指定了交易的目的地址，可以是用户账户；也可以是能够执行某些逻辑的智能合约；或者为空，用于创建合约。
-
-  -  将发送多少原生代币（`value`字段）。 这表示将从发送方向接收方转移多少 CFX（Conflux 的原生代币）。 如果接收方是一个智能合约，这个值也可以作为其逻辑的输入参数使用。
-
-  -  如何与智能合约进行交互（`data`字段）。 这包含调用智能合约函数或部署新智能合约的额外信息。 它可以编码要调用的函数的名称和参数，或者要创建的新合约的字节码。
-
--  交易费用信息，包括：
-   - 指示基础交易费用的字段（在两个空间中都是`gas`，并且在Core Space中还有额外的`storageLimit`字段）。 这些字段是根据执行交易所需的计算资源以及（在Core Space中）其效果所占用的存储空间来确定的。
-
-   -  指示发送方愿意支付给矿工多少“小费”的字段（`gasPrice`字段）。 此字段允许发送方调整他们在获取他们的交易被矿工打包的优先级。 更高的`gasPrice`意味着更有可能更快地被包含在一个块中。
-
-- 指示交易何时或在哪里是“有效”的字段（两个空间中的`chainId`，`nonce`，在Core Space中还有`epochHeight`）。 `chainId` 防止交易在另一个链上执行，而 `nonce` 字段确保发送的交易按照预期顺序执行。 `epochHeight`字段根据 epoch number（类似于 Ethereum 中的“block number”概念）为交易设置了一个过期时间。 一笔交易只能在与 `epochHeight` 关联的某个纪元范围内执行。
-
-:::info
-
-交易字段在[空间](./spaces.md)之间略有不同。 Core 空间交易遵循[Conflux 协议](https://www.confluxnetwork.org/files/Conflux_Protocol_Specification.pdf)的定义。 eSpace 交易遵循[EIP-155](https://eips.ethereum.org/EIPS/eip-155)规范。
-
-:::
-
-## 交易生命周期
-
-交易从构建时到最终在链上确认之前会经历几个阶段。 充分了解这些阶段将有助于用户和开发人员更好地识别发送交易时的问题，最终确保交易得到确认。
-
-下面是交易从构建到确认的主要阶段。
-
-1. **交易构建阶段**：这是用户或开发人员使用所有必要的字段和参数创建并签名交易的阶段。 交易对象可以使用各种工具或库创建，如 Fluent Wallet、Conflux SDK 等。 在发送交易之前，交易将被编码为十六进制字符串作为“rawTransaction”。
-
-2. **广播阶段**：这是用户或开发人员通过 RPC 或 WebSocket 将已签名的交易发送到 Conflux 节点的阶段。 如果交易通过验证，节点将验证交易并将其广播到网络中的其他节点。 节点还将返回一个交易哈希（这是一个唯一标识符）给发送者以进行跟踪。
-
-3. **打包进区块后->已挖出（Mined）**：这是矿工从其 mempool（一个未确认交易池）中选择交易并将其包含在其区块中的阶段。 矿工将优先考虑具有更高`gasPrice`的交易。 一旦包含交易的区块被挖出，它将被传播到网络中的其他节点。
-
-4. **推迟 5 个epoch后 -> 已执行（Executed）**：这是节点在推迟了 5 个epoch（约 5 秒钟）后执行交易的阶段。 这意味着节点将运行交易的逻辑并相应地更新其状态。 每个交易的执行结果将记录在收据（Receipt）中，其中包含诸如状态（成功或失败）、已使用的 gas、智能合约发出的日志和事件等信息，并可使用交易哈希检索。
-
-5. **等待约 50 个epoch后 -> 已确认**：这是在交易执行了约 50 个epoch（约 50 秒钟）后，节点确认交易的阶段。 执行一个交易并不意味着交易的状态不会再次改变。 由于区块链的结构，区块链可能会因为新块而分叉或转移主链，这可能会导致某些交易回滚。 确认的交易意味着它已经被包含在足够深的区块中，并且几乎不可能回滚。
-
-6. **等待 PoS 链最终确认 -> 已最终确认**：这是最后一个阶段，在此阶段中，节点会在被 Conflux 的 [PoS 链](./consensus-mechanisms/proof-of-stake/pos_overview.md)引用后最终化交易。 Conflux 的 PoS 链会定期引用一个稳定的 PoW 区块，以为交易提供最终性。 一个已经最终化的交易意味着它几乎没有被回滚的可能性，除非攻击者拥有 PoS 中超过 67% 的 CFX。 交易上链后需要 4～5 分钟完成最终确认（[CIP-113](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-113.md)激活后）。
-
-![Transaction](./img/transaction-stages)
-
