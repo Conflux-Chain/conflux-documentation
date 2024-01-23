@@ -206,7 +206,7 @@ const config = {
             items: [
               {
                 label: 'Discord',
-                to: 'https://discord.gg/confluxnetwork',
+                to: 'https://discord.gg/conflux-network-707952293412339843',
               },
               {
                 label: 'Telegram',
