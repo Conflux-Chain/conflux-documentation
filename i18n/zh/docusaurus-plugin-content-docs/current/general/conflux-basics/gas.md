@@ -4,7 +4,7 @@ title: 燃气
 displayed_sidebar: generalSidebar
 ---
 
-Conflux users(both Core Space and eSpace) usually see fields like `gasFee`, `gas`, and `gasPrice` when they are sending transactions using their wallets (Fluent) or SDK. 本文将详细解释这些概念的含义，以及如何正确地设置这些值。
+Conflux users(both Core Space and eSpace) usually see fields like `gasFee`, `gas`, and `gasPrice` when they are sending transactions using their wallets (Fluent) or SDK. This article is going to explain in detail about what these concepts mean.
 
 ![Sign Transaction](./img/gas1.png)
 
@@ -22,7 +22,7 @@ Conflux users(both Core Space and eSpace) usually see fields like `gasFee`, `gas
 
 ## 什么是Gas
 
-Gas的概念借鉴了现实中的“汽油”。 汽车消耗汽油来行驶。 汽车行驶得越远，消耗的汽油就越多。 在EVM区块链中，gas表示执行一笔交易所需的工作总量。 因此，它是一个衡量执行某些操作所需计算量的单位。
+Gas的概念借鉴了现实中的“汽油”。 汽车消耗汽油来行驶。 汽车行驶得越远，消耗的汽油就越多。 在EVM区块链中，gas表示执行一笔交易所需的工作总量。 Therefore, it is a **unit that measures the amount of computation** required to perform certain operations.
 
 具体来说，所有Conflux的交易都是由EVM执行的，包括普通的CFX转账和智能合约方法调用。 当这些操作被执行时，它们被编译成单个OPCode。 执行每个OPCode所需的工作量不同。 关于OPCode gas费用的更多信息可以在[这里](https://ethereum.org/en/developers/docs/evm/opcodes/)找到。
 
@@ -54,55 +54,32 @@ Conflux网络中单笔交易的最大gas限制是15M。 这确保了交易不会
 
 ## 如何计算gasFee
 
-gasFee是一笔交易支付的总gas费用。 它的计算公式是`gasFee = gasUsed * gasPrice`。 gasFee采用CFX的最小单位Drip。
+gasFee是一笔交易支付的总gas费用。 It is calculated as `gasFee = gasCharged * gasPrice`. gasFee采用CFX的最小单位Drip。
 
 假设有一笔1 CFX的普通转账，gas限制可以设置为21,000。 如果gasPrice设置为1GDrip，那么交易的总成本是`1 + 21000 * 0.000000001 = 1.000021 CFX`，其中1 CFX转到收款人的账户，0.000021 CFX是矿工的奖励。
 
-另外，在Conflux的一笔交易中，如果`gas limit`大于实际消耗的gas量（`gasUsed`），超出部分将被退还。 The returning amount of gas **can only be up to** a quarter of the `gas limit`.
+### gasUsed
+
+The actual gas consumed during transaction execution.
+
+### gasCharged
+
+The charged amount of gas. **The `gasCharged` may be greater than `gasUsed`, because not all unused gas will be refunded.**
+
+In a Conflux transaction, if the `gas limit` is more than the actual amount of gas consumed (`gasUsed`), the exceeding part will be returned. The returning amount of gas **can only be up to** a quarter of the `gas limit`.
+
+### 示例
 
 假设一笔普通CFX转账的gas限制设置为100k，实际执行消耗了21,000，由于交易的gas限制设置得太高，最多有25,000的gas费用会被退还（gas limit的25%）。 该交易使用的gas将是`0.000075 CFX`。
 
 如果交易的gas限制设置得不是那么高，以前面的例子为例，但将gas限制设置为25000，比实际使用的多4000，超出部分不超过gas限制的四分之一。 这部分将被完全退还，最终收取的费用仍然是`0.000021 CFX`。
 
-## 如何正确设置gas和gasPrice
+## 了解更多
 
-The answer is different depending on different spaces.
-
-### gasPrice
-
-The Conflux consensus don't limit the transaction gas prices and the minimum gas price depends on the miners' setting. Here are the minimum gas price settings of Confura, the public RPC endpoints supported by Conflux foundation:
-
-- core space: 1 GDrip
-- eSpace: 20 GDrip
-
-Besides, it is recommended to set gas price based on core space / espace RPC return value:
-
-- core space: `cfx_gasPrice`
-- eSpace: `eth_gasPrice`
-
-### gas
-
-For regular CFX transfers, setting the gas to 21,000 is sufficient.
-
-For contract interactions, it is recommended to set gas based on the return value of core space / espace RPC:
-
-- core space: `gasLimit` field of `cfx_estimateGasAndCollateral`
-- eSpace: `eth_estimateGas`
-
-These methods simulates the execution of the transaction and return the estimated amount of gas used for the transaction. Actually, in most cases, the value `gasUsed` returned by `cfx_estimateGasAndCollateral` is accurate, but it is not recommended to use `gasUsed` due to two main reasons:
-
-1. Due to [EIP-150](https://eips.ethereum.org/EIPS/eip-150), setting the gas to the actual gas consumption may often lead to transaction failure.
-2. The result is based on the current blockchain state during the simulation, but the actual execution states may be different.
-
-The `gasLimit` field typically equals `1.3 * gasUsed`. This ensures that the gas limit is sufficient for the transaction, and any excessive gas fee will be refunded.
+- [Ethereum Developer Documentation: Gas and Fees](https://ethereum.org/en/developers/docs/gas/)
 
 ## 常见问题解答
 
 ### 1. Conflux网络中有没有符合EIP-1559标准的交易？
 
 目前，在Conflux网络中，只有符合EIP-155标准的交易。
-
-## 了解更多
-
-- [Ethereum Developer Documentation: Gas and Fees](https://ethereum.org/en/developers/docs/gas/)
-- [Ethereum Gas Explained](https://ethgas.io/index.html)

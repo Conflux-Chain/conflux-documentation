@@ -10,7 +10,7 @@ displayed_sidebar: coreSidebar
 
 ## 教程
 
-1. 进入ConfluxScan官方网站（confluxscan.io）
+1. 前往ConfluxScan官方网站（confluxscan.io）
 2. 点击“区块链”，在“合约”栏下选择“赞助合约”，进入赞助合约界面
 3. 在搜索框中填入你想申请赞助的合约地址，点击“搜索”
 4. 点击“申请”

@@ -15,7 +15,7 @@ This guide will help user connect their metamask  wallet to Conflux eSpace.
 
 :::
 
-## Introduction
+## 简介
 
 [MetaMask](https://metamask.io/) 是一个具有用户界面的浏览器扩展，用于与兼容以太坊的区块链(例如 Conflux eSpace)进行交互。 For the purpose of this guide, we will assume you are already familiar with MetaMask and have it installed. If you need help getting started with MetaMask itself, [check out Metamask documentation](https://metamask.io/faqs.html) and [Ethereum documentation](https://ethereum.org/en/).
 

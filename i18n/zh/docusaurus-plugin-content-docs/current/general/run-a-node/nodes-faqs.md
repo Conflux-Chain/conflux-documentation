@@ -1,5 +1,5 @@
 ---
-title: 节点常见问题
+title: 节点常见问题解答
 sidebar_position: 13
 description: Frequently asked questions about running a node.
 displayed_sidebar: generalSidebar

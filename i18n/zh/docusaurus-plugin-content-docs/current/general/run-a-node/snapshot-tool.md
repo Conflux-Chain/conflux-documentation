@@ -5,7 +5,7 @@ description: Learn how to use the Conflux Snapshot Tool to quickly set up a Conf
 displayed_sidebar: generalSidebar
 ---
 
-## Introduction
+## 简介
 
 The Conflux Blockchain Data Snapshot Tool (aka Archive-Tool) is designed to help users quickly set up a Conflux node from a snapshot. This tool provides the download links, and by default, it downloads the DB snapshot data of the current day. The Snapshot tool can help save weeks of time required to download and sync all the blockchain data at the moment of running a node. Using this tool is optional, **but highly recommended**. The tool supports **resuming downloads** from breakpoints using the curl command. If an error occurs during the process, users are advised to follow the script prompts.
 

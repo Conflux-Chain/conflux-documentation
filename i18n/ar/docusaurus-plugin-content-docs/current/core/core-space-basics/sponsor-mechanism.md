@@ -1,5 +1,5 @@
 ---
-sidebar_position: 3
+sidebar_position: 5
 title: Sponsorship Mechanism
 displayed_sidebar: coreSidebar
 ---
@@ -30,9 +30,9 @@ To sponsor the gas fees of a contract, you call the `setSponsorForGas` method of
 
 Currently, the minimum gas fee on the Conflux Core network is 1 GDrip, which is 10^9 Drip. Typically, the gas for a transaction ranges from tens of thousands to several hundred thousand. Therefore, it's common to set the `upperBound` to around 5 million GDrip. This can be adjusted according to specific needs in special cases.
 
-Additionally, the total amount of gas to be sponsored needs to be set through the `value` field of the transaction. This means that when calling this method, a CFX transfer must be made simultaneously. Moreover, each sponsorship amount should be sufficient to cover the gas fees for at least `1000 transactions` (1000 \* upperBound). For instance, if the upperBound is set to 1 million GDrip, then each sponsorship amount should be at least 1000 \* 1 million GDrip.
+Additionally, the total amount of gas fees to be sponsored needs to be set through the `value` field of the transaction. This means that when calling this method, a CFX transfer must be made simultaneously. Moreover, each sponsorship amount should be sufficient to cover the gas fees for at least `1000 transactions` (1000 \* upperBound). For instance, if the upperBound is set to 1 million GDrip, then each sponsorship amount should be at least 1000 \* 1 million GDrip.
 
-For example, to sponsor Contract A with a gas limit of 1 million GDrip and a total sponsorship amount of 100 CFX, you would initiate a transaction calling `setSponsorForGas(A, 10^15)`, with the transaction's value field set to 100 CFX.
+For example, to sponsor Contract A with a sponsorship upperbound of 1 million GDrip and a total sponsorship amount of 100 CFX, you would initiate a transaction calling `setSponsorForGas(A, 10^15)`, with the transaction's value field set to 100 CFX.
 
 This built-in contract also provides several methods for querying sponsorship information of a contract:
 
@@ -88,7 +88,7 @@ You can call `SponsorWhitelistControl`'s query methods to check the sponsorship 
 
 You can use ConfluxScan's [Read and Write Contract page](https://confluxscan.io/address/cfx:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaaegg2r16ar?tab=contract-viewer) to call the query methods.
 
-### I sponsored a contract, but the transaction still failed. Why?
+### Why Did My Transaction Fail Even After I Sponsored a Contract?
 
 There are several reasons that may cause the transaction to fail:
 
@@ -96,8 +96,15 @@ There are several reasons that may cause the transaction to fail:
 2. The sponsor balance is not enough.
 3. The whitelist is not set correctly.
 
-### Why the sponsor balance is small than what I sponsored?
+### Why is the Sponsor Balance Lower than the Amount I Sponsored?
 
 If sponsor replacement happens, the previous sponsor balance will be returned to the sponsor. The remaining balance will be used as the new sponsor balance.
 
 And for the storage sponsorship, part of the sponsor balance will be converted to storage points.
+
+### Can Unused CFX Sponsorship Funds be Refunded?
+
+Refunds for unused CFX in sponsorship are restricted to full refunds. Partial refunds are not available under any circumstances. To initiate a full refund, there are two options:
+
+1. Terminate (destroy) the sponsored contract.
+2. Arrange for a new sponsor to replace the existing one.

@@ -4,7 +4,7 @@ title: SDKs
 displayed_sidebar: coreSidebar
 ---
 
-Conflux 有用于主流编程语言的 SDK，包括 `JavaScript`, `Golang`, `Java` 和 `Python`。 本文为对SDK的简短介绍，详细的使用说明请查看SDK各自的文档。
+Conflux 拥有主流编程语言的SDK，包括`JavaScript`, `Golang`, `Java` 和 `Python`。 这只是SDK的简要介绍，详细的使用信息请查阅各自的文档。
 
 ## 官方SDK
 

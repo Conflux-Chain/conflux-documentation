@@ -20,7 +20,7 @@ Conflux's economic model encourages participation and growth of the network whil
 
 Participants in the Conflux Network ecosystem include three groups:
 
-1\) _**Direct builders**:_ _Conflux Foundation_ and the _founding team_ responsible for developing the underlying technology of the Conflux public chain and the Conflux Network operations;
+1\) _**Direct builders**_: _Conflux Foundation_ and the _founding team_ responsible for developing the underlying technology of the Conflux public chain and the Conflux Network operations;
 
 2\) _**System maintainers**_: _Miners_ and _Stakers_ maintaining the normal operation and security of the whole Conflux Network system;
 
