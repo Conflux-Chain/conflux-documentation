@@ -50,6 +50,6 @@ body:
   - type: checkboxes
     attributes:
       label: "Contribution Confirmation"
-      description: "Check the box below if you'd be willing to contribute this feature yourself."
+      description: "Check the box below if you'd be willing to contribute this feature yourself within 2 months."
       options:
-        - label: "I'd be willing to contribute this feature myself. 我将自己实现这个feature"
+        - label: "I'd be willing to contribute this feature myself within 2 months. 我将在两个月内自己实现这个feature"
