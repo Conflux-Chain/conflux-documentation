@@ -42,6 +42,6 @@ body:
   - type: checkboxes
     attributes:
       label: "Confirmation"
-      description: "Check the box below if you'd be willing to fix this issue yourself."
+      description: "Check the box below if you'd be willing to fix this issue yourself within 2 months."
       options:
-        - label: "I'd be willing to fix this issue myself. 我将自己修复这个问题。"
+        - label: "I'd be willing to fix this issue myself within 2 months. 我将在两个月内自己修复这个问题。"
