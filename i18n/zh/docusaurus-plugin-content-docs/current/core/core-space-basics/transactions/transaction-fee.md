@@ -5,7 +5,7 @@ displayed_sidebar: coreSidebar
 keywords:
   - transaction
   - gas
-  - storage collateral
+  - 存储抵押
 ---
 
 In the Conflux Core Space, transactions are processed by miners who charge a fee for their service. 这个费用激励矿工参与网络并保持其顺畅运行。 The fees are paid in CFX and are specified by the transaction initiator through the `gas`, `gasPrice` and `storageLimit` fields in the transaction.
