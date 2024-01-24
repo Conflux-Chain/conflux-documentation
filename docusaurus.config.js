@@ -98,8 +98,18 @@ const config = {
   ],
 
   themeConfig:
-    /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
+    /** @type {import('@docusaurus/preset-classic').ThemeConfig & import('@markprompt/docusaurus-theme-search').ThemeConfig} */
     ({
+      // Replace with your project's social card
+      image: 'img/docusaurus-social-card.jpg',
+      markprompt: {
+        // Set the project key here, on in a `.env` file. You can obtain
+        // the project key in the Markprompt dashboard, under
+        // project settings.
+        projectKey: 'sk_test_rlIAuikuI5sErDaLAc9RkIC5fLH3yrDl',
+        trigger: { floating: false },
+        search: { enabled: true },
+      },
       navbar: {
         title: '',
         logo: {
