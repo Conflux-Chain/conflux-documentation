@@ -33,3 +33,7 @@ Not currently.
 ### 5. Does eSpace have a mobile version of the Safe App?
 
 Not currently.
+
+### 6. Unable to Trigger Wallet Connection Popup When Clicking the Connect Button on the Welcome Page?
+
+First, ensure that your browser has the MetaMask wallet extension installed, and your computer's network connection is stable (it is recommended to use a VPN in mainland China). If it is your first time opening the welcome page, click the downward arrow in the upper right corner, then select the **CFX** network. Afterward, click the Connect button, and a wallet selection popup will appear. Choose MetaMask at this point.
