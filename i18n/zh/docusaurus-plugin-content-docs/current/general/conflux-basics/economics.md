@@ -1,6 +1,6 @@
 ---
 sidebar_position: 6
-title: Economics
+title: 经济模型
 displayed_sidebar: generalSidebar
 ---
 
