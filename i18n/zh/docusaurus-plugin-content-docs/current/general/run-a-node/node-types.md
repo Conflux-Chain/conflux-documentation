@@ -13,13 +13,13 @@ displayed_sidebar: generalSidebar
 
 ## 节点类型差异
 
-* **全节点（Full Node）**：存储所有区块头和最近的**10万个纪元（Epoch）**区块。 **适用于大多数用户和开发者**。
+* **Full Node**: Stores all block headers and blocks in the most recent **100,000 Epochs**. **适用于大多数用户和开发者**。
 * **归档节点（Archive Node）**：存储整个区块链和所有历史数据。 需要大量存储空间，适用于进行数据分析和需要访问完整历史数据的应用。
 * **轻节点（Light Node）**：仅存储区块头和一小部分区块链和历史数据。 适用于资源有限的设备，可以在不存储整个区块链的情况下与区块链网络交互。
 
 ## 全节点
 
-A full node stores the entire block headers and most **recent 10w Epoch blocks** of the blockchain.
+A full node stores the entire block headers and blocks in the most recent **100,000 Epochs**.
 
 ### 硬件要求
 
@@ -43,7 +43,7 @@ Start the node with the custom configuration file, using the following command:
 conflux --config ./run/hydra.toml 
 ```
 
-## Archive Node
+## 归档节点
 
 An archive node stores the entire data of the blockchain, including all blocks, transactions. It requires more storage than a full node.
 
@@ -69,7 +69,7 @@ Start the node with the custom configuration file, using the following command:
 conflux --config ./run/hydra.toml 
 ```
 
-## Light Node
+## 轻节点
 
 A light node only stores the block headers and a small subset of other data, allowing it to verify the authenticity of the data without storing the entire blockchain.
 
@@ -97,11 +97,11 @@ conflux --config ./run/hydra.toml
 
 ### Why the cfx_getTransactionByHash API returns null?
 
-If you want to get the transaction details, you need to run a `fullnode` or `archivenode`, and set the `persist_tx_index` config to `true`. The fullnode only store transactions in latest 10w Epoch.
+If you want to get the transaction details, you need to run a `fullnode` or `archivenode`, and set the `persist_tx_index` config to `true`. The fullnode only store transactions in latest 100,000 Epoch.
 
 ### Is fullnode enough for Exchange?
 
-Yes, fullnode only support querying transactions in latest 10w Epoch
+Yes, fullnode only support querying transactions in latest 100,000 Epoch
 
 ### I want to participate in mining or staking, which node type should I run?
 
