@@ -4,7 +4,7 @@ title: Conflux Spaces
 displayed_sidebar: overviewSidebar
 ---
 
-The Conflux Network features a unique design known as [Conflux Spaces](/docs/general/conflux-basics/spaces). A Space in the Conflux Network can be understood as a specific area or akin to an individual blockchain. 目前，Conflux Network上有两个Space：**eSpace** 和 **Core Space** 。
+Conflux Network的特色之一是其独特的设计，被称为 [Conflux Spaces](/docs/general/conflux-basics/spaces)。 在Conflux Network中，一个Space可以被理解为一个特定区域或类似于一个独立的区块链。 目前，Conflux Network上有两个Space：**eSpace** 和 **Core Space** 。
 
 ## eSpace
 
