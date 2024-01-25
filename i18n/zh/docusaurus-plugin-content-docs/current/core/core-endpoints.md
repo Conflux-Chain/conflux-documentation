@@ -19,47 +19,47 @@ Confura是Conflux网络上的一个与以太坊Infura等效的公共JSON-RPC服�
 
 #### 香港
 
-| Network | Chain ID | Explorer                        | RPC Endpoint                                                                            |
-| ------- | -------- | ------------------------------- | --------------------------------------------------------------------------------------- |
-| Mainnet | 1029     | https://confluxscan.net         | *HTTP*: https://main.confluxrpc.com<br/>*Websocket*: wss://main.confluxrpc.com/ws |
-| Testnet | 1        | https://testnet.confluxscan.net | *HTTP*: https://test.confluxrpc.com<br/>*Websocket*: wss://test.confluxrpc.com/ws |
+| 网络名称 | 链 ID | 浏览器网址                           | RPC 端点                                                                                  |
+| ---- | ---- | ------------------------------- | --------------------------------------------------------------------------------------- |
+| 主网   | 1029 | https://confluxscan.net         | *HTTP*: https://main.confluxrpc.com<br/>*Websocket*: wss://main.confluxrpc.com/ws |
+| 测试网  | 1    | https://testnet.confluxscan.net | *HTTP*: https://main.confluxrpc.com<br/>*Websocket*: wss://test.confluxrpc.com/ws |
 
-#### US East
+#### 美国东部
 
-| Network | Chain ID | Explorer                       | RPC Endpoint                                                                            |
-| ------- | -------- | ------------------------------ | --------------------------------------------------------------------------------------- |
-| Mainnet | 1029     | https://confluxscan.io         | *HTTP*: https://main.confluxrpc.org<br/>*Websocket*: wss://main.confluxrpc.org/ws |
-| Testnet | 1        | https://testnet.confluxscan.io | *HTTP*: https://test.confluxrpc.org<br/>*Websocket*: wss://test.confluxrpc.org/ws |
+| 网络名称 | 链 ID | 浏览器网址                          | RPC 端点                                                                                  |
+| ---- | ---- | ------------------------------ | --------------------------------------------------------------------------------------- |
+| 主网   | 1029 | https://confluxscan.io         | *HTTP*: https://main.confluxrpc.org<br/>*Websocket*: wss://main.confluxrpc.org/ws |
+| 测试网  | 1    | https://testnet.confluxscan.io | *HTTP*: https://test.confluxrpc.org<br/>*Websocket*: wss://test.confluxrpc.org/ws |
 
 ### 速率限制
 
-Reference for various fee tiers and their rate limits.
+不同费率档次和其速率限制的参考。
 
-| Fee Tier   | Price                                | 速率限制                                        | Buy Links                                                                                                                                                                                                                                    |
-| ---------- | ------------------------------------ | ------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Free       | $0                                   | 50 calls/second, up to  100,000 calls/day   | -                                                                                                                                                                                                                                            |
-| Standard   | $150/mo                              | 100 calls/second, up to 1,000,000 calls/day | [mainnet](https://confluxhub.io/payment/consumer/app/subscription/0x33A9451ee070d750a077C93f71D2cFcD0180Fa7D) <br/> [testnet](https://test.confluxhub.io/payment/consumer/app/subscription/0x4805C5B2741088B8458ed781083eA8940186E477) |
-| Enterprise | please inquire bd@confluxnetwork.org | customize on demand                         | -                                                                                                                                                                                                                                            |
+| 付费级别 | 价格                          | 速率限制                          | 购买链接                                                                                                                                                                                                                                         |
+| ---- | --------------------------- | ----------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 免费   | $0                          | 每秒 50 次调用，每天最多100,000次 调用     | -                                                                                                                                                                                                                                            |
+| 标准   | 150 美元/月                    | 每秒 100 次调用，每天最多 1,000,000 次调用 | [mainnet](https://confluxhub.io/payment/consumer/app/subscription/0x33A9451ee070d750a077C93f71D2cFcD0180Fa7D) <br/> [testnet](https://test.confluxhub.io/payment/consumer/app/subscription/0x4805C5B2741088B8458ed781083eA8940186E477) |
+| 企业用户 | 请发邮件至 bd@confluxnetwork.org | 按需定制                          | -                                                                                                                                                                                                                                            |
 
-**Notes**
+**说明**
 - `getLogs`调用的结果集最大大小为10,000。
 - 由于数据裁剪，旧的存档事件日志可能无法访问。
 - 请将您的 Api 密钥附加到端点上以获取特权访问（例如：`https://main.confluxrpc.com/<api-key>`）。
 - 每个RPC方法也有速率限制，请查阅以下规范以了解更多详细信息。
 
 <details>
-<summary>Rate Limit Specification</summary>
+<summary>速率限制细则</summary>
 
-| RPC Method          | Free tier                                | Standard Tier                                 | Comment                                                                                   |
-| ------------------- | ---------------------------------------- | --------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| all                 | QPS < 50; <br/> daily total < 100k | QPS < 100; <br/> daily total < 1million | overall RPC requests                                                                      |
-| cfx_getLogs         | QPS < 5                                  | QPS < 20                                      | -                                                                                         |
-| cfx_call            | QPS < 5                                  | QPS < 50                                      | -                                                                                         |
-| cfx_getBlockBy*     | QPS < 5                                  | QPS < 20                                      | includes: <br/> `cfx_getBlockByHash`, <br/>`cfx_getBlockByEpochNumber`        |
-| cfx_getTransaction* | QPS < 5                                  | QPS < 20                                      | includes: <br/> `cfx_getTransactionByHash`, <br/> `cfx_getTransactionReceipt` |
-| debug RPC           | not supported                            | QPS < 20                                      | includes: <br/> `cfx_getEpochReceipts` etc.                                         |
-| trace RPC           | not supported                            | QPS < 20                                      | includes: <br/> `trace_block`, `trace_filter`, `trace_transaction`                  |
-| filter API          | not supported                            | supported                                     | includes: <br/> `cfx_newFilter`, `cfx_getFilterChanges` etc.                        |
+| RPC 方法              | 免费级别                                | 标准级别                                  | 注释                                                                                  |
+| ------------------- | ----------------------------------- | ------------------------------------- | ----------------------------------------------------------------------------------- |
+| 全部                  | 每秒请求数< 50；<br/>每日总数 < 100,000 | 每秒请求数< 100；<br/>每日总数 < 100,0000 | RPC 请求总数                                                                            |
+| cfx_getLogs         | 每秒请求数< 5                            | 每秒请求数< 20                             | -                                                                                   |
+| cfx_call            | 每秒请求数< 5                            | 每秒请求数< 50                             | -                                                                                   |
+| cfx_getBlockBy*     | 每秒请求数< 5                            | 每秒请求数< 20                             | 包括： <br/> `cfx_getBlockByHash`, <br/>`cfx_getBlockByEPochNumber`        |
+| cfx_getTransaction* | 每秒请求数< 5                            | 每秒请求数< 20                             | 包括： <br/> `cfx_getTransactionByHash`, <br/> `cfx_getTransactionreceipt` |
+| debug RPC           | 暂不支持                                | 每秒请求数< 20                             | 包括： <br/> `cfx_getEpochreceips` 等。                                            |
+| trace RPC           | 暂不支持                                | 每秒请求数< 20                             | 包括： <br/> `trace_block`, `trace_filter`, `trace_transaction`                  |
+| filter API          | 暂不支持                                | 支持                                    | 包括： <br/> `cfx_newFilter`, `cfx_getFilterChanges` 等。                          |
 
 </details>
 
@@ -79,6 +79,6 @@ Unifra提供：
 
 ### 公共端点
 
-| Network | Chain ID | Explorer                | Endpoint                              |
-| ------- | -------- | ----------------------- | ------------------------------------- |
-| Mainnet | 1029     | https://confluxscan.net | https://conflux-core-public.unifra.io |
+| 网络名称 | 链 ID | 浏览器网址                   | 端点                                    |
+| ---- | ---- | ----------------------- | ------------------------------------- |
+| 主网   | 1029 | https://confluxscan.net | https://conflux-core-public.unifra.io |
