@@ -15,13 +15,13 @@ Here's a detail on the requirements for running all types of nodes in the Conflu
 
 ## Differences Between Node Types
 
-* **Full Node**: Stores all block headers and most recent **10w Epoch** block. **Suitable for most users and developers**.
+* **Full Node**: Stores all block headers and blocks in the most recent **100,000 Epochs**. **Suitable for most users and developers**.
 * **Archive Node**: Stores the entire blockchain and all historical data. Requires significant storage and is suitable for data analysis and applications that need access to the full historical data.
 * **Light Node**: Stores only block headers and a small subset of data. Suitable for low-resource devices and provides a way to interact with the network without storing the entire blockchain.
 
 ## Full Node
 
-A full node stores the entire block headers and most **recent 10w Epoch blocks** of the blockchain.
+A full node stores the entire block headers and blocks in the most recent **100,000 Epochs**.
 
 ### Requirements
 
@@ -99,11 +99,11 @@ conflux --config ./run/hydra.toml
 
 ### Why the cfx_getTransactionByHash API returns null?
 
-If you want to get the transaction details, you need to run a `fullnode` or `archivenode`, and set the `persist_tx_index` config to `true`. The fullnode only store transactions in latest 10w Epoch.
+If you want to get the transaction details, you need to run a `fullnode` or `archivenode`, and set the `persist_tx_index` config to `true`. The fullnode only store transactions in latest 100,000 Epoch.
 
 ### Is fullnode enough for Exchange?
 
-Yes, fullnode only support querying transactions in latest 10w Epoch
+Yes, fullnode only support querying transactions in latest 100,000 Epoch
 
 ### I want to participate in mining or staking, which node type should I run?
 
