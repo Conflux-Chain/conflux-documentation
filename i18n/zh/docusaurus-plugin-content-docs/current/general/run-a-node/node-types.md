@@ -21,7 +21,7 @@ displayed_sidebar: generalSidebar
 
 A full node stores the entire block headers and most **recent 10w Epoch blocks** of the blockchain.
 
-### Requirements
+### 硬件要求
 
 * At least 16GB of RAM.
 
@@ -47,7 +47,7 @@ conflux --config ./run/hydra.toml
 
 An archive node stores the entire data of the blockchain, including all blocks, transactions. It requires more storage than a full node.
 
-### Requirements
+### 硬件要求
 
 * At least 32GB of RAM.
 
@@ -73,7 +73,7 @@ conflux --config ./run/hydra.toml
 
 A light node only stores the block headers and a small subset of other data, allowing it to verify the authenticity of the data without storing the entire blockchain.
 
-### Requirements
+### 硬件要求
 
 * At least 4GB of RAM.
 * A minimum of 300GB free disk space (SSD is recommended).
