@@ -2,6 +2,7 @@
 sidebar_position: 1
 title: Running a Node
 description: Quick guide for running a Conflux node.
+toc_max_heading_level: 4
 displayed_sidebar: generalSidebar
 ---
 
