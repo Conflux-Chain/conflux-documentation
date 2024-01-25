@@ -1,23 +1,23 @@
 ---
 sidebar_position: 2
 title: 节点类型
-description: Learn about the different types of nodes in the Conflux Network.
+description: 了解Conflux 网络中不同类型的节点。
 displayed_sidebar: generalSidebar
 ---
 
-In the Conflux Network, there are different types of nodes that you can run, each serving different purposes and having different requirements. There are 3 types of nodes: **Archive Node, Full Node and Light Node**.
+在 Conflux 网络中，你可以运行三种不同类型的节点，每种类型都有不同的目的和不同的硬件要求。 这三类分别是：**归档节点，全节点和轻节点**。
 
-The difference between three types of nodes lies in **the amount of data reserved for storage**. The Archive Node takes the most and the Light Node takes the least. Of course, more data consumes more hardware resources. In general, **if you want to participate in mining, a fullnode will suffice** . you need to run an archive node if you want to use it as RPC service. The lightnode is mainly used as a wallet.
+三种类型的节点之间的区别在于**存储的数据量**。 归档节点需要的存储最多，而轻节点需要的最少。 当然，更多的数据会消耗更多的硬件资源。 一般而言，**如果您想参与挖矿，运行一个全节点即可**。 如果您想提供 RPC 服务，则需要运行归档节点。 轻节点主要用作钱包。
 
-Here's a detail on the requirements for running all types of nodes in the Conflux Network, along with the differences between each one.
+在Conflux网络中运行所有类型节点的要求和它们之间的区别，具体描述如下：
 
-## Differences Between Node Types
+## 节点类型差异
 
-* **Full Node**: Stores all block headers and most recent **10w Epoch** block. **Suitable for most users and developers**.
-* **Archive Node**: Stores the entire blockchain and all historical data. Requires significant storage and is suitable for data analysis and applications that need access to the full historical data.
-* **Light Node**: Stores only block headers and a small subset of data. Suitable for low-resource devices and provides a way to interact with the network without storing the entire blockchain.
+* **全节点（Full Node）**：存储所有区块头和最近的**10万个纪元（Epoch）**区块。 **适用于大多数用户和开发者**。
+* **归档节点（Archive Node）**：存储整个区块链和所有历史数据。 需要大量存储空间，适用于进行数据分析和需要访问完整历史数据的应用。
+* **轻节点（Light Node）**：仅存储区块头和一小部分区块链和历史数据。 适用于资源有限的设备，可以在不存储整个区块链的情况下与区块链网络交互。
 
-## Full Node
+## 全节点
 
 A full node stores the entire block headers and most **recent 10w Epoch blocks** of the blockchain.
 
