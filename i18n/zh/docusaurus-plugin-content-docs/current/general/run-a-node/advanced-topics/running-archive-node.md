@@ -6,7 +6,7 @@ displayed_sidebar: generalSidebar
 
 Conflux archive nodes store the entire history of the Conflux blockchain. This allows them to serve historical data to other nodes and applications.
 
-### 1. Requirements
+### 1. 硬件要求
 
 #### Hardware Requirements for Archive Node
 
