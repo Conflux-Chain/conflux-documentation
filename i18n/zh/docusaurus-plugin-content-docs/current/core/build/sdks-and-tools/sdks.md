@@ -84,7 +84,7 @@ public class App {
 
 ### [python-conflux-sdk](https://github.com/conflux-chain/python-conflux-sdk)
 
-`python-conflux-sdk` (also known as `conflux_web3`) is the official Python SDK for Conflux Core Space. It is built upon [web3.py](https://github.com/ethereum/web3.py) v6, and most of its API is consistent with `web3.py`, offering convenience for developers who wish to migrate their Python code from Ethereum. 例如：
+`python-conflux-sdk` (也称为`conflux_web3`)是Conflux Core Space的官方Python SDK。 它基于[web3.py v6](https://github.com/ethereum/web3.py) 构建, 其大部分API与`web3.py`一致，为希望将其Python代码从Ethereum迁移的开发人员提供了便利。 例如：
 
 ```python
 # modified from https://web3py.readthedocs.io/en/stable/middleware.html#signing
@@ -103,17 +103,17 @@ transaction = {
 w3.cfx.send_transaction(transaction)
 ```
 
-Online runnable examples (courtesy of [Binder](https://mybinder.org/)) are provided in the [SDK documentation](https://python-conflux-sdk.readthedocs.io/en/latest/README.html), available in both English and Chinese.
+[SDK文档](https://python-conflux-sdk.readthedocs.io/en/latest/README.html)提供了在线可运行的示例（由[Binder](https://mybinder.org/)提供），支持英文和中文两种语言。
 
 ## Solidity SDKs
 
 ### [thirdweb Solidity SDK](https://portal.thirdweb.com/solidity)
 
-This SDK provides the tools needed to build custom smart contracts efficiently by offering a set of prebuilt base contracts and a set of reusable components, or extensions, that can be integrated into your own smart contracts.
+该SDK通过提供一组预构建的基础合约和一组可重用的组件或扩展，为构建自定义智能合约提供了所需的工具，从而能够高效地构建自定义智能合约。
 
 ### [Conflux-contracts](https://github.com/conflux-fans/conflux-contracts)
 
-这是一个 Solidity package，包含了 Conflux DAPP 开发中常用的有用合约。 这个包类似于 OpenZeppelin 目前最常用的是 `Conflux InternalContracts`。
+这是一个Solidity包，包含了 Conflux DAPP 开发中常用的有用合约。 这个包类似于 OpenZeppelin。 目前最常用的是 `Conflux InternalContracts`。
 
 ### [OpenZeppelin](https://docs.openzeppelin.com/contracts/4.x/)
 
