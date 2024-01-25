@@ -30,7 +30,7 @@ Use the table below to configure your Ethereum tools to the eSpace mainnet.
 | Network Name       | Conflux eSpace                                           |
 | ------------------ | -------------------------------------------------------- |
 | RPC URL            | [https://evm.confluxrpc.com](https://evm.confluxrpc.com) |
-| Chain ID           | 1030                                                     |
+| 链 ID               | 1030                                                     |
 | Currency Symbol    | CFX                                                      |
 | Block Explorer URL | [https://evm.confluxscan.io](https://evm.confluxscan.io) |
 
@@ -41,7 +41,7 @@ Use the table below to configure your Ethereum tools to the eSpace Testnet.
 | Network Name       | Conflux eSpace Testnet                                                 |
 | ------------------ | ---------------------------------------------------------------------- |
 | RPC URL            | [https://evmtestnet.confluxrpc.com](https://evmtestnet.confluxrpc.com) |
-| Chain ID           | 71                                                                     |
+| 链 ID               | 71                                                                     |
 | Currency Symbol    | CFX                                                                    |
 | Block Explorer URL | [https://evmtestnet.confluxscan.io](https://evmtestnet.confluxscan.io) |
 
