@@ -6,7 +6,7 @@ displayed_sidebar: coreSidebar
 
 Conflux Core Space is the native space of the Conflux network. Thanks to Conflux's innovative Tree-Graph ledger structure and consensus algorithm, Core Space achieves performance far surpassing that of Bitcoin and Ethereum without sacrificing decentralization. This provides strong support for the development of the Conflux ecosystem.
 
-Core Space is a smart contract platform that evolved from the EVM. Smart contracts can be developed using **Solidity**, and numerous optimizations and improvements have been made on this basis. These include the contract administration mechanism and the **gas fee sponsorship mechanism**. In addition to this, Core Space has introduced several built-in contracts to implement features such as **PoS staking**, **cross-Space communication**, and **on-chain governance**.
+Core Space is a smart contract platform that evolved from the EVM. Smart contracts can be developed using **Solidity**, and numerous optimizations and improvements have been made on this basis. These include the contract administration mechanism and the **transaction fee sponsorship mechanism**. In addition to this, Core Space has introduced several built-in contracts to implement features such as **PoS staking**, **cross-Space communication**, and **on-chain governance**.
 
 The account address format in Core Space is in **base32 encoding**, which is different from Ethereum addresses. It also offers a set of **unique JSON-RPC interfaces**. Therefore, interacting with Conflux Core Space requires the use of **proprietary** wallets (such as Fluent) and SDKs (like js-conflux-sdk).
 
