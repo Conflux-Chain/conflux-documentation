@@ -7,7 +7,7 @@ displayed_sidebar: coreSidebar
 
 When sending transactions in Conflux Core Space via the `cfx_sendRawTransaction` method, certain errors may arise due to incorrect transaction construction or other issues. This guide covers common errors and their solutions.
 
-## Balance not enough
+## 余额不足
 
 ```js
 {
