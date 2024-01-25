@@ -187,7 +187,7 @@ Conflux交易是由一个拥有Conflux账户的外部参与者组成的单个指
 
 Refer to [Transactions](./transactions.md) for more information.
 
-### **Tree-Graph**
+### **树图**
 In the context of Conflux, the Tree-Graph is a novel consensus mechanism that allows for high throughput and low latency in large-scale decentralized networks. Unlike traditional blockchain systems that follow a linear chain, Conflux forms a tree-like structure of blocks, allowing for multiple blocks to be produced concurrently. This structure is key to Conflux's ability to process a high number of transactions per second.
 
 Refer to [Tree-Graph](../conflux-basics/consensus-mechanisms/proof-of-work/tree-graph.md) for more information.
