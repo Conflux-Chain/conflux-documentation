@@ -4,7 +4,7 @@ title: 运行全节点
 displayed_sidebar: generalSidebar
 ---
 
-### Requirements
+### 硬件要求
 
 * At least 16GB of RAM.
 
