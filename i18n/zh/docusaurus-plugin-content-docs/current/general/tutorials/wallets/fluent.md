@@ -9,13 +9,13 @@ displayed_sidebar: generalSidebar
 
 :::tip
 
-This wallet supports both Core and eSpace
+此钱包支持Core和eSpace两种模式
 
 :::
 
 **Fluent**
 
-Fluent is a web3 wallet built specifically for Conflux Network that enables users to interact with dApps and manage their assets securely and easily. With Fluent, users can easily manage their CFX, ERC-20 tokens, and NFTs, as well as interact with dApps on Conflux Network. It also provides a seamless and user-friendly experience for users looking to use Conflux Network and its ecosystem. The Fluent team is actively working to add new features and functionality to the wallet, making it an excellent choice for developers and users alike.
+Fluent是专为Conflux网络构建的web3钱包，使用户能够安全轻松地与dApps互动并管理他们的资产。 With Fluent, users can easily manage their CFX and ERC-20 tokens, as well as interact with dApps on Conflux Network. It also provides a seamless and user-friendly experience for users looking to use Conflux Network and its ecosystem. The Fluent team is actively working to add new features and functionality to the wallet, making it an excellent choice for developers and users alike.
 
 **Open Priority Connection**
 
