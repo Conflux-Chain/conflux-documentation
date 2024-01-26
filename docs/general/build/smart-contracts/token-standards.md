@@ -1,20 +1,21 @@
 ---
-sidebar_position: 2
+sidebar_position: 3
 title: Token Standards
 displayed_sidebar: generalSidebar
 ---
 
-:::info
+Token standards are critical in blockchain ecosystems, providing a set of rules and guidelines for token implementation. They ensure interoperability and consistency across different applications and platforms. The main standards include:
 
-This document page is currently under construction. As an open-source project, we rely on the collaboration of our contributors to create comprehensive and up-to-date content.
+- **ERC-20**: The most common standard for fungible tokens, allowing for the creation of interchangeable tokens with uniform properties. It's widely used for ICOs and as a basis for other tokens.
 
-To track the progress of this page or get involved, please visit the corresponding GitHub issue: [Complete core/build/token-standards page](https://github.com/Conflux-Chain/conflux-documentation/issues/109). If you're interested in contributing to the completion of this page, feel free to **leave a comment under the issue**.
+- **ERC-721**: A standard for non-fungible tokens (NFTs), enabling the creation of unique tokens. Each token has distinct characteristics, ideal for collectibles and digital uniqueness.
 
-We plan to issue POAP NFTs as a token of appreciation to contributors who help with the documentation. Your involvement in the project will be recognized and rewarded.
+- **ERC-1155**: A multi-token standard allowing a single contract to manage multiple token types, both fungible and non-fungible. It's efficient for batch transfers and managing complex token ecosystems.
 
-Thank you for your interest in Conflux. We look forward to sharing the completed content with you.
+- **CIP-1820**: Specific to Conflux, this standard focuses on interface detection, making it easier to identify and interact with contracts that follow specific interfaces.
 
-:::
+These standards are integral for developers to create tokens that are compatible and functional within the broader blockchain environment.
+
 
 ## Related Links
 
@@ -26,7 +27,7 @@ Here are some links relating to this topic:
 - [CIP-1820](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-1820.md)
 
 
-## Educational Videos
+## Videos
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
