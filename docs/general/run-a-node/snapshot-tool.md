@@ -45,12 +45,12 @@ download.bat
   
 3. For Linux & Mac - Mainnet - Full Node:
 ```shell
+# Beijing
 wget https://conflux-blockchain-data.oss-cn-beijing.aliyuncs.com/fullnode-db/M/download.sh
-bash download.sh 
-```
-
-```
+# US West
 wget https://conflux-blockchain-data-us.s3.us-west-1.amazonaws.com/fullnode-db/M/download.sh
+
+bash download.sh 
 ```
   
 4. For Linux & Mac - Testnet - Archive Node:
