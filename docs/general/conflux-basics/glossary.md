@@ -130,7 +130,7 @@ Related links:
 A Merkle tree, in cryptography and computer science, is a tree in which every leaf node is labelled with the hash of a data block, and every non-leaf node is labelled with the cryptographic hash of the labels of its child nodes. Merkle trees are used in blockchains to efficiently verify the contents of large data structures.
 
 ### **Mining**
-Mining is the process of validating new transactions and recording them on a blockchain. Miners use powerful computers to solve complex mathematical problems that validate transactions. The first miner to solve the problem gets to add a new block to the blockchain and is rewarded with a certain amount of cryptocurrency. In the context of Conflux, mining is used to add new blocks to the Tree-Graph structure of the network.
+Mining is the process of validating new transactions and recording them on a blockchain. Miners utilize specialized hardware, such as ASICs or high-performance GPUs, to engage in the Proof of Work process. This involves continuously attempting calculations to find a hash value that meets specific criteria, thereby achieving network consensus and securely adding new blocks, which contain verified transactions, to the blockchain. The first miner to solve the problem gets to add a new block to the blockchain and is rewarded with a certain amount of cryptocurrency. In the context of Conflux, mining is used to add new blocks to the Tree-Graph structure of the network.
 
 Refer to [Mining](../mine-stake/mine/running-mining-node.md) for more information about running a mining node.
 
