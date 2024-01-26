@@ -99,7 +99,7 @@ function getContractAt(abi: any[], address: string): Promise<ConfluxSDK.Contract
 
 Developers can write Hardhat scripts to deploy, interact with, and test contracts on Core Space.
 
-### Deploy Contract
+### 部署合约
 
 Here is a simple example of deploying a contract:
 
