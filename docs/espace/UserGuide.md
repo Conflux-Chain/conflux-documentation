@@ -77,4 +77,4 @@ The rest of this guide will assume your MetaMask is connected to `Conflux eSpace
 ## Faucet
 
 To interact with our testnet, you first need to receive testnet CFX on eSpace Testnet. You can get testnet CFX from our [faucet](https://efaucet.confluxnetwork.org/).
-Paste your wallet address in the address input box solve the puzzle and click `Claim` to receive testnet CFX.
+Paste your wallet address in the address input box, input the captcha and click `Claim` to receive testnet CFX.
