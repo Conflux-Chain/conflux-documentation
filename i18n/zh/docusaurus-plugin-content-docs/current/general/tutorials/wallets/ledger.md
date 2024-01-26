@@ -7,7 +7,7 @@ displayed_sidebar: generalSidebar
 
 :::tip
 
-This wallet supports both Core and eSpace
+此钱包支持Core和eSpace两种模式
 
 :::
 
