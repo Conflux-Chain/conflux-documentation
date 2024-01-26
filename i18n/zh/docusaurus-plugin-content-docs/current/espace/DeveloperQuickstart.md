@@ -3,7 +3,7 @@ sidebar_position: 3
 title: 开发者快速入门
 description: Quickstart for developers to Ethereum developers to build on eSpace
 keywords:
-  - Quickstart
+  - 快速入门
 displayed_sidebar: eSpaceSidebar
 ---
 
@@ -13,15 +13,15 @@ Since eSpace is EVM-Compatible, you’ll just need to point your favorite builde
 
 If you are not familiar with Ethereum development, you can start by learning the basics and understanding its stack through [Ethereum's official documentation](https://ethereum.org/en/developers/)
 
-## Acquiring CFX
+## 获取 CFX
 
 eSpace also uses CFX as its native currency, which will be needed to pay transaction fees for deploying and interacting with the network.
 
-To start building on eSpace, we suggest you begin with using eSpace testnet. You'll first need to acquire some testnet CFX through [faucet](https://efaucet.confluxnetwork.org/).
+要在 eSpace 上进行开发，我们建议您首先使用 eSpace 测试网。 You'll first need to acquire some testnet CFX through [faucet](https://efaucet.confluxnetwork.org/).
 
 Once you're ready to deploy on eSpace's mainnet, if you only have Core CFX, you can bridge over CFX from Core Space using [our space bridge](./).
 
-## Network Configuration
+## 网络配置
 
 ### eSpace Mainnet
 
