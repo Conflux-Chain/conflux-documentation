@@ -64,4 +64,4 @@ Confura 是由 Conflux 基金会提供的公共 RPC 服务，可以免费使用�
 
 ### Does eSpace have any other RPC service or Provider?
 
-Yes, you can check them [here](./build/infrastructure/RPC-Provider.md)
+是的，您可以在这里进行[查看](./build/infrastructure/RPC-Provider.md)
