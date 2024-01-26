@@ -1,6 +1,6 @@
 ---
 sidebar_position: 4
-title: Oracles
+title: 预言机
 displayed_sidebar: eSpaceSidebar
 ---
 
