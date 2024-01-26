@@ -1,5 +1,5 @@
 ---
-title: Reference Articles
+title: 参考文章
 displayed_sidebar: references
 ---
 
@@ -32,7 +32,7 @@ This page provides quick entries for Conflux reference documentation.
 - [eSpace JSON RPC Compatibility](../../espace/build/jsonrpc-compatibility)
 - [eSpace EVM Compatibility](../../espace/build/evm-compatibility)
 
-## Others
+## 其他
 
 - [Node Configuration Files](../run-a-node/advanced-topics/configuration-files.md)
 - [Hard Forks](../hardforks/hardforks.md)
