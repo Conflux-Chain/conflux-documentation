@@ -2,6 +2,7 @@
 sidebar_position: 1
 title: RPC Providers
 displayed_sidebar: eSpaceSidebar
+description: Enterprise-grade providers offering access to Conflux.
 ---
 
 Conflux eSpace also offers its own RPC Providers, similar to those like Infura, Alchemy, and QuickNode. These can be utilized to connect to the Conflux eSpace network.

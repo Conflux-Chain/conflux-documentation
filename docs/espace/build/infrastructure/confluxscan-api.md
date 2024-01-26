@@ -2,6 +2,7 @@
 sidebar_position: 3
 title: ConfluxScan API
 displayed_sidebar: eSpaceSidebar
+description: The block explorer for the Conflux network providing a RESTful API for accessing **aggregated** blockchain data.
 ---
 
 [ConfluxScan](https://evm.confluxscan.io/) is a block explorer for the Conflux network, just like Etherscan for Ethereum. It provides a [**RESTful API**](https://evmapi.confluxscan.io/doc) for developers to query **aggregated blockchain data**. The API is free to use and compatible with the [Etherscan API](https://etherscan.io/apis).
