@@ -3,7 +3,7 @@ sidebar_position: 2
 title: Fluent
 keywords:
   - Fluent
-  - Wallet
+  - 钱包
 displayed_sidebar: generalSidebar
 ---
 

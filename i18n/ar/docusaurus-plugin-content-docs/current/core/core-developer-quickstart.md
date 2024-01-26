@@ -29,7 +29,7 @@ Note: The private key can be exported from Fluent Wallet settings page. Do not u
 
 ## Installation
 
-To use it, the Node.js environment is required. You can install it via npm:
+To use it, the [Node.js](https://nodejs.org/en) environment is required. You can install it via npm:
 
 ```shell
 npm install js-conflux-sdk 
@@ -39,7 +39,7 @@ npm install js-conflux-sdk
 
 ### Import And Create Conflux Instance
 
-Import class `Conflux` from `js-conflux-sdk` and set a Conflux provider. For the Conflux Core Testnet, you can directly use the public RPC endpoint `https://test.confluxrpc.com`. It can also be changed to any other Conflux node, even your own.
+Import class `Conflux` from `js-conflux-sdk` and set a Conflux provider. For the Conflux Core Testnet, you can directly use the public RPC endpoint `https://test.confluxrpc.com`. A "provider" in this context refers to a service or node that allows your application to communicate with the Conflux blockchain. It can also be changed to any other Conflux node, even your own.
 
 ```javascript
 const { Conflux } = require('js-conflux-sdk');

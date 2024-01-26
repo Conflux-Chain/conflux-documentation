@@ -6,12 +6,12 @@ displayed_sidebar: coreSidebar
 
 开发者可以向基金会提交赞助请求。
 
-> Refer to [SponsorWhitelistControl](../core-space-basics/internal-contracts/sponsor-whitelist-control.md) and check out the basics of sponsorship mechanism.
+> 请参考[SponsorWhitelistControl](../core-space-basics/internal-contracts/sponsor-whitelist-control.md)，了解代付机制的基础知识。
 
 ## 教程
 
 1. 前往ConfluxScan官方网站（confluxscan.io）
-2. 点击“区块链”，在“合约”栏下选择“赞助合约”，进入赞助合约界面
+2. 点击“区块链”，在“合约”栏下选择“合约代付”，进入合约代付界面
 3. 在搜索框中填入你想申请赞助的合约地址，点击“搜索”
 4. 点击“申请”
 

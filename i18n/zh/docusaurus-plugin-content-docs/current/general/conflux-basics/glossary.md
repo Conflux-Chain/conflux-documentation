@@ -6,19 +6,19 @@ displayed_sidebar: generalSidebar
 
 ## 简介
 
-Welcome to the Glossary section of the Conflux documentation. This section is designed to provide you with clear and concise definitions of key terms and concepts used within Conflux and the broader blockchain industry.
+欢迎来到Conflux文档的术语表部分。 本节旨在为您提供Conflux及更广泛的区块链行业内关键术语和概念的清晰、简洁定义。
 
-The terms are organized in alphabetical order for easy navigation. Each term includes a straightforward definition and, where applicable, links to more detailed explanations within our documentation or external resources.
+术语按字母顺序排列，便于查找。 每个术语都包括一个直接的定义，并在适用的情况下，链接到我们文档中的更详细解释或外部资源。
 
-## Definitions
+## 定义
 
-### **51% Attack**
-A 51% attack refers to a potential attack on a blockchain network, where a single entity or organization is able to control the majority of the network's mining hash rate. This control could allow them to disrupt the network by altering the ordering of transactions, preventing new transactions from gaining confirmations, or even allowing for double spending. It's called a "51% attack" because it typically requires at least 51% control of the network's hash rate to be successful.
+### **51%攻击**
+51%攻击指的是对区块链网络的潜在攻击，其中单个实体或组织能够控制网络大部分的挖矿哈希率。 这种控制允许他们通过改变交易的顺序、阻止新交易获得确认，甚至允许双重支付来破坏网络。 之所以称为“51%攻击”，是因为通常需要至少控制51%的网络哈希率才能成功。
 
-### **Account**
+### **账户**
 Conflux的全局状态是用一个账户模型来描述的，基本的存储组件称为账户。 每一个能够与Conflux世界交互的参与者，无论是人还是实体，都有其必要的信息以[地址](#address)和相应状态的键/值对的形式存储在一个账户α中。 详细信息请参考[general-accounts](./accounts.md)。
 
-### **Address**
+### **地址**
 An address in Conflux is the identifier of an [account](#account). It's a unique string of characters that represents the account on the blockchain. The format of the address can differ in different Conflux [spaces](./spaces.md). There are different formats for espace addresses and Core Space addresses.
 
 例如：
@@ -34,18 +34,18 @@ cfxtest:aatktb2te25ub7dmyag3p8bbdgr31vrbeajcg9pwkc
 
 Refer to [general-address](./accounts.md#address), [core-address](../../core/core-space-basics/addresses.md), [espace-address](../../espace/build/accounts.md#mapped-addresses-in-cross-space-operations) for more information.
 
-### **Block**
-In blockchain technology, a block is a collection of transactions. It's like a page of a ledger or record book. Each block is linked to the one before it and after it, creating a chain of blocks, hence the term "blockchain". In the context of Conflux, blocks form a tree-like structure, allowing for multiple blocks to be produced concurrently.
+### **区块**
+在区块链技术中，区块是交易的集合。 它就像账本或记录簿的一页。 每个区块都与前后的区块相连，形成一连串的区块，因此得名“区块链”。 在Conflux中，区块形成树状结构，允许同时产生多个区块。
 
-### **Blockchain**
-A blockchain is a decentralized and distributed digital ledger that records transactions across many computers so that any involved record cannot be altered retroactively, without the alteration of all subsequent blocks. This technology underpins cryptocurrencies like Bitcoin and Ethereum, and it's the foundational technology for the Conflux network.
+### **区块链**
+区块链是一种去中心化和分布式的数字账本，可以跨多台计算机记录交易，使任何涉及的记录都无法在不更改所有后续区块的情况下被追溯性地更改。 这种技术是比特币和以太坊等加密货币的基础，也是Conflux网络的基础技术。
 
 ### **CFX**
-CFX is the native currency of the Conflux network. It's used to incentivize the maintenance of the Conflux network and charge users for consumption of resources. CFX plays a very important role in the stability of the system, working as the reward for consensus mechanisms, the transaction fee for each transaction, and for DAO voting.
+CFX是Conflux网络的原生货币。 It's used to incentivize the maintenance of the Conflux network and charge users for consumption of resources. CFX作为共识机制的奖励、每笔交易的交易费以及DAO投票的工具，在系统稳定性方面发挥着非常重要的作用。
 
-The smallest subdenomination is denoted by Drip, in which all values processed in Conflux are integers. 一个Conflux定义为10^18 Drip。 Conflux常用的子单位如下：
+最小的子单位称为Drip，Conflux处理的所有Drip的值都是整数。 一个Conflux定义为10^18 Drip。 Conflux常用的子单位如下：
 
-| Multiplier (in Drip) |     Name     |
+| Multiplier (in Drip) |      名称      |
 | -------------------- |:------------:|
 | 10^0                 |     Drip     |
 | 10^9                 |    GDrip     |
@@ -57,7 +57,7 @@ The smallest subdenomination is denoted by Drip, in which all values processed i
 - [经济白皮书](https://confluxnetwork.org/files/Conflux_Economic_Paper_20201230.pdf)
 - [CFX代币在Conflux网络中的作用](https://medium.com/conflux-network/the-role-of-the-cfx-token-in-the-conflux-network-5a56c2b43bb0)
 - [链上DAO投票链参数](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-94.md)
-- [Economics](./economics.md)
+- [经济模型](./economics.md)
 
 ### **ChainId & NetworkId**
 `chainId`是一个数字，表示一笔交易打算在哪里执行。 它用于防止交易重放攻击。 The chainId of Conflux chains are constant, currently:
@@ -69,25 +69,25 @@ The smallest subdenomination is denoted by Drip, in which all values processed i
 
 `networkId`用于在网络层区分不同的区块链。 目前Conflux主网/测试网的`networkId`与`chainId`相同。 你可以从`cfx_getStatus` RPC方法中获取这两个值。
 
-### **Conflux Ecosystem**
+### **Conflux生态系统**
 The Conflux Ecosystem refers to the various projects, applications, platforms, and services that are built on or integrated with the Conflux network. This includes decentralized applications (DApps), decentralized finance (DeFi) platforms, wallet services, and more. The Conflux Ecosystem is a vibrant and growing community of developers, users, and organizations that contribute to the Conflux network.
 
 ### **Conflux Scan**
 [Conflux Scan](https://confluxscan.io/) is the official blockchain explorer for the Conflux network. It provides a user-friendly, details-driven interface for users to view, confirm, and inspect transactions and contracts on the Conflux network. With Conflux Scan, users can track the status of their transactions, view the balance of their accounts, explore smart contracts, and much more.
 
-### **Consensus Algorithm**
+### **共识算法**
 A consensus algorithm is a process in computer science used to achieve agreement on a single data value among distributed processes or systems. In the context of blockchain, it's used to agree on the (total) order of transactions. Conflux uses a unique consensus algorithm based on a Tree-Graph structure, which allows for high throughput and low latency in large-scale decentralized networks.
 
-### **DAG (Directed Acyclic Graph)**
+### **DAG（有向无环图）**
 In the context of Conflux, DAG is used to represent the block structure of the Conflux network. Unlike traditional blockchain systems that follow a linear chain, Conflux forms a DAG structure of blocks, allowing for multiple blocks to be produced concurrently. This structure is key to Conflux's ability to achieve high throughput and low latency.
 
-### **Decentralized Application (DApp)**
+### **去中心化应用（DApp）**
 A decentralized application (DApp) is a computer application that runs on a distributed computing system such as a blockchain. Unlike traditional applications that run on centralized servers, DApps leverage the power of blockchain's peer-to-peer network to provide transparency, immutability, and resistance to censorship. The typical framework of a DApp includes 2 layers: the front-end or user interface, and the smart contracts running on the blockchain acting as the back-end logic. The front-end, developed using standard languages like HTML, CSS, and JavaScript, interacts with the blockchain through smart contracts. These smart contracts, written in languages like Solidity, define the rules and logic of the DApp, and are stored and executed on the blockchain, ensuring consistent and trustless operation.
 
-### **Double Spending**
+### **双花**
 Double spending is a potential flaw in a digital cash scheme in which a single digital token can be spent more than once. This is possible because a digital token consists of a digital file that can be duplicated or falsified. The Conflux network, like other blockchain networks, uses a consensus mechanism to prevent double spending.
 
-### **Epoch**
+### **纪元（Epoch）**
 
 In Conflux, an epoch is a fundamental unit used to update the world state, setting it apart from blockchain like Bitcoin or Ethereum, where updates are done by block. An epoch in Conflux is a specific partitioning of blocks that determines their total order. This partitioning is based on the pivot chain in a Tree-Graph structure, and the pivot block will be the last block in each epoch. Once the pivot chain is determined and not reverted, the partition of epochs becomes immutable, meaning the order of transactions and execution results cannot be changed.
 
@@ -97,7 +97,7 @@ ERC20 is a standard for tokens on the Ethereum blockchain. It specifies a set of
 ### **ERC721**
 ERC721 is a standard for non-fungible tokens (NFTs) on the Ethereum blockchain. Unlike ERC20 tokens, which are identical to each other, each ERC721 token is unique. This makes them suitable for representing ownership of unique items or assets. Like ERC20, ERC721 tokens can also exist on the Conflux network, especially if they are transferred from the Ethereum network.
 
-### **Fork**
+### **分叉**
 In blockchain, a fork is a change to the software that creates two separate versions of the blockchain with a shared history. Forks can be either "hard" or "soft", depending on whether the change is compatible with previous versions of the software. In the context of Conflux, forks are less common due to the Tree-Graph structure of the network, which allows for concurrent block production.
 
 ### **燃气**
@@ -113,10 +113,10 @@ Refer to [GHAST](../conflux-basics/consensus-mechanisms/proof-of-work/ghast.md) 
 ### **Hard Fork**
 A hard fork is a type of fork that creates a permanent divergence from the previous version of the blockchain. Nodes running the old version will not be accepted by the new version. This is a common concept in many blockchains, but due to the unique structure of Conflux, hard forks are less common.
 
-### **Hash**
+### **哈希**
 A hash is a function that converts the input data into an encrypted output of a fixed length. In the context of blockchain, a hash function is used to secure data. Each block in a blockchain has a unique hash, and any change to the block's data will result in a different hash.
 
-### **Internal Transactions**
+### **内部交易**
 区块链中的内部交易指的是智能合约内部的价值转移或操作。 These transactions are triggered by external transactions and can involve actions such as transferring tokens, creating new tokens, executing function calls, or interacting with other smart contracts. These transactions are not recorded individually on the blockchain, but they can be tracked and displayed for analysis and visibility.
 
 [ConfluxScan](https://confluxscan.io)和[trace JSON-RPC API](../../core/build/json-rpc/trace-namespace.md)可以跟踪和显示内部交易，以便进行分析和可视化。
@@ -125,15 +125,15 @@ A hash is a function that converts the input data into an encrypted output of a 
 
 - [trace JSON-RPC API](../../core/build/json-rpc/trace-namespace.md)
 
-### **Merkle Tree**
+### **默克尔树**
 A Merkle tree, in cryptography and computer science, is a tree in which every leaf node is labelled with the hash of a data block, and every non-leaf node is labelled with the cryptographic hash of the labels of its child nodes. Merkle trees are used in blockchains to efficiently verify the contents of large data structures.
 
-### **Mining**
+### **挖矿**
 Mining is the process of validating new transactions and recording them on a blockchain. Miners use powerful computers to solve complex mathematical problems that validate transactions. The first miner to solve the problem gets to add a new block to the blockchain and is rewarded with a certain amount of cryptocurrency. In the context of Conflux, mining is used to add new blocks to the Tree-Graph structure of the network.
 
 Refer to [Mining](../mine-stake/mine/running-mining-node.md) for more information about running a mining node.
 
-### **Node**
+### **节点**
 In the context of blockchain, a node is a server that participates in the blockchain network. Each node keeps a copy of the blockchain in some way (depending on its type) and follows the rules of the network. Nodes validate transactions, maintaining the network's security and decentralization.
 
 Refer to [Run a Node](../run-a-node) section for more information about running nodes.
@@ -145,39 +145,39 @@ In mining, nonce is a number added to let the block header meet the difficulty l
 
 In transaction, nonce is the execution sequence number of transactions sent from an account. A transaction with incorrect nonce won't be included in blockchain, so correctly setting the nonce is critical to transaction execution. Refer to [nonce](/docs/core/core-space-basics/transactions/tx-fields.md#nonce) for more information.
 
-### **Oracles**
+### **预言机**
 In the context of blockchains and smart contracts, an oracle is an agent that finds and verifies real-world occurrences and submits this information to a blockchain to be used by smart contracts. Oracles are used in the Conflux network to bring external information into smart contracts, enabling them to interact with the outside world.
 
-### **Peer-to-Peer Network (P2P)**
+### **点对点网络（P2P）**
 A peer-to-peer network is one in which each computer in the network can act as a client or server for the other computers in the network, allowing shared access to files and peripherals without the need for a central server. Conflux, like other blockchain networks, operates as a peer-to-peer network, with each node communicating directly with others.
 
-### **Proof of Stake (PoS)**
+### **权益证明（PoS）**
 Proof of Stake (PoS) is a type of consensus algorithm where block creators are chosen based on the number of tokens they hold or are willing to "stake". PoS is used in the Conflux network to prevent 51% attacks and to finalize blocks.
 
 Refer to [PoS](../conflux-basics/consensus-mechanisms/proof-of-stake/pos_overview.md) for more information.
 
-### **Proof of Work (PoW)**
+### **工作量证明（PoW）**
 Proof of Work (PoW) is a type of consensus algorithm where the first participant to solve a complex mathematical problem gets to add a new block to the blockchain. PoW is used in many blockchains, including Bitcoin and Ethereum before September 15, 2022. While Conflux uses a unique consensus mechanism based on a Tree-Graph structure, it shares similarities with PoW in terms of incentivizing participants to maintain the network.
 
 Refer to [PoW](../conflux-basics/consensus-mechanisms/proof-of-work/proof-of-work.mdx) for more information.
 
-### **Public/Private Key**
+### **公钥/私钥**
 A public key is a cryptographic code that allows a user to receive cryptocurrencies into his or her account. The private key is used to sign transactions or digital messages and the public key is used to verify the signature. In the context of Conflux, users have a pair of public and private keys that they use to interact with the network.
 
-### **Smart Contract**
+### **智能合约**
 A smart contract is a self-executing contract with the terms of the agreement directly written into code. They run on the blockchain, so they are stored on a public database and cannot be changed. In the Conflux network, users can create and interact with smart contracts, which can automate a wide range of applications and processes.
 
 ### **Space**
-In the Conflux network, "Space" refers to a specific environment within the network. For example, Core Space refers to the original Conflux network, while eSpace is the virtualized Ethereum chain running on top of the Core Space network. The two spaces are logically independent of each other and do not affect each other except for certain cross-space operations.
+在Conflux网络中，“Space”指的是网络内的特定环境。 For example, Core Space refers to the original Conflux network, while eSpace is the virtualized Ethereum chain running on top of the Core Space network. 这两个空间在逻辑上是相互独立的，除了某些跨空间操作外，它们不会相互影响。
 
 Refer to [Spaces](./spaces.md) for more information.
 
-### **Sponsorship Mechanism**
-In Conflux, the transaction fee for contract execution can be paid by users but also by contract sponsors. This sponsorship mechanism allows DApp users on Conflux to not worry about gas fees, improving user experience. Sponsors can set up a sponsorship by depositing CFX into a contract.
+### **赞助机制**
+在Conflux中，合约执行的交易费用可以由用户支付，也可以由代付方支付。 这种代付机制允许Conflux上的DApp用户不必担心燃气费用，从而改善用户体验。 代付方可以通过向合约存入CFX来设置代付。
 
-Refer to [Sponsor Mechanism](../../core/core-space-basics/sponsor-mechanism.md) for more information.
+更多信息请参考[代付机制](../../core/core-space-basics/sponsor-mechanism.md)。
 
-### **Staking (in Conflux)**
+### **质押（在Conflux中）**
 Staking in Conflux typically refers to the PoS staking, the process of participating in the network PoS consensus by locking up a certain amount of CFX. Stakers can earn rewards for their participation. This mechanism helps to secure the network and incentivize participation.
 
 Refer to [Staking FAQs](../mine-stake/stake/faqs.md) for more information.
@@ -187,13 +187,13 @@ Conflux交易是由一个拥有Conflux账户的外部参与者组成的单个指
 
 Refer to [Transactions](./transactions.md) for more information.
 
-### **Tree-Graph**
+### **树图**
 In the context of Conflux, the Tree-Graph is a novel consensus mechanism that allows for high throughput and low latency in large-scale decentralized networks. Unlike traditional blockchain systems that follow a linear chain, Conflux forms a tree-like structure of blocks, allowing for multiple blocks to be produced concurrently. This structure is key to Conflux's ability to process a high number of transactions per second.
 
 Refer to [Tree-Graph](../conflux-basics/consensus-mechanisms/proof-of-work/tree-graph.md) for more information.
 
 
-### **Wallet**
+### **钱包**
 In the context of blockchain, a wallet is a digital place to store cryptocurrency. It can be in the form of a software (online or offline) or hardware device. In the Conflux Network, users can use wallets like Fluent to manage their CFX and interact with the network.
 
 Refer to [Wallets](../tutorials/wallets/wallets.mdx) for more information about supported wallets.

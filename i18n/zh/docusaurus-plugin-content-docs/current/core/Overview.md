@@ -4,45 +4,45 @@ title: 概览
 displayed_sidebar: coreSidebar
 ---
 
-Conflux Core Space is the native space of the Conflux network. Thanks to Conflux's innovative Tree-Graph ledger structure and consensus algorithm, Core Space achieves performance far surpassing that of Bitcoin and Ethereum without sacrificing decentralization. This provides strong support for the development of the Conflux ecosystem.
+Conflux Core Space 是 Conflux 网络的原生空间。 得益于 Conflux 创新的树图账本结构以及共识算法，Core Space 在不牺牲去中心化的前提下拥有远超比特币和以太坊的性能。 这为 Conflux 生态系统的发展提供了有力支持。
 
-Core Space is a smart contract platform that evolved from the EVM. Smart contracts can be developed using **Solidity**, and numerous optimizations and improvements have been made on this basis. These include the contract administration mechanism and the **gas fee sponsorship mechanism**. In addition to this, Core Space has introduced several built-in contracts to implement features such as **PoS staking**, **cross-Space communication**, and **on-chain governance**.
+Core Space 是一个由 EVM 发展而来的智能合约平台。 可以使用 **Solidity** 进行智能合约的开发，并在此基础上进行了众多优化和改进。 These include the contract administration mechanism and the **transaction fee sponsorship mechanism**. 除此之外，Core Space 还引入了几个内置合约，以实现诸如 **PoS 质押**、**跨空间通信**和**链上治理**等功能。
 
-The account address format in Core Space is in **base32 encoding**, which is different from Ethereum addresses. It also offers a set of **unique JSON-RPC interfaces**. Therefore, interacting with Conflux Core Space requires the use of **proprietary** wallets (such as Fluent) and SDKs (like js-conflux-sdk).
+Core Space 中的账户地址使用 **base32编码**，与以太坊不同。 它还提供了一套**独有的 JSON-RPC 接口**。 因此，与 Conflux Core Space 的交互需要使用**专有**钱包（如 Fluent）和 SDK（如 js-conflux-sdk）。
 
-## Quick Start
+## 快速入门
 
-- [User Guide](./getting-started/)
-- [Developer Quickstart](./core-developer-quickstart)
+- [用户指南](./getting-started/)
+- [开发者快速入门](./core-developer-quickstart)
 
-## Tutorials
+## 教程
 
-- [JS SDK Complete Guide](./tutorials/js-conflux-sdk)
+- [JS SDK 完整指南](./tutorials/js-conflux-sdk)
 - [hardhat-conflux Tutorial](./tutorials/hardhat-conflux-plugin)
-- [chainIDE Tutorial](./tutorials/chainide)
-- [Contract Sponsor Tutorial](./tutorials/how-to-sponsor-contract)
-- [NFT Tutorial](./tutorials/nft-tutorial)
+- [chainIDE 教程](./tutorials/chainide)
+- [合约代付教程](./tutorials/how-to-sponsor-contract)
+- [NFT 教程](./tutorials/nft-tutorial)
 
-## Technical Details
+## 技术细节
 
-1. [Base32 Address](./core-space-basics/addresses)
-2. [Account State](./core-space-basics/accounts)
-3. [Transaction](./core-space-basics/transactions/overview.md)
-4. [Gas & Storage Collateral](./core-space-basics/storage)
-5. [VM Differences with EVM](./core-space-basics/vm-difference)
-6. [Internal Contract explanation](./core-space-basics/internal-contracts/)
-7. [Sponsor mechanism](./core-space-basics/sponsor-mechanism)
+1. [Base32 地址](./core-space-basics/addses)
+2. [账户状态](./core-space-basics/account)
+3. [交易](./core-space-basics/transactions/overview.md)
+4. [Storage Collateral](./core-space-basics/storage)
+5. [虚拟机与 EVM 的差异](./core-space-basics/vm-difference)
+6. [内置合约相关解释](./core-space-basics/internal-contracts/)
+7. [代付机制](./core-space-basics/sponsor-mechanism)
 
-## Resources
+## 其他资源
 
-1. [Testnet Faucet](https://faucet.confluxnetwork.org/)
-2. [How to run a node](../general/run-a-node/Overview)
+1. [测试网水龙头](https://faucet.confluxnetwork.org/)
+2. [如何运行节点](../general/run-a-node/Overview)
 3. Core Space SDKs: js, go, python, java
 
 ## 参考资料
 
-1. [Network JSON-RPC endpoints](./core-endpoints.md)
-2. [JSON-RPC APIs](./build/json-rpc/)
-3. [Internal Contract APIs](./core-space-basics/internal-contracts/)
+1. [网络 JSON-RPC 端点](./core-endpoints.md)
+2. [JSON-RPC API](./build/json-rpc/)
+3. [内置合约 API ](./core-space-basics/internal-contracts/)
 
 ## 常见问题解答

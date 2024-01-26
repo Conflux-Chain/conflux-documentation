@@ -39,7 +39,7 @@ Contract max code size is `49152` double as Ethereum
 
 ## Transaction Gas limit
 
-Only the block whose block height is a multiple of `5` can pack Ethereum type transaction. The total gas limit of these transaction cannot exceed half of the block gas limit (1500w).
+Only the block whose block height is a multiple of `5` can pack Ethereum type transaction. The total gas limit of these transaction cannot exceed half of the block gas limit (15,000,000).
 
 ## EVM Precompiles
 
@@ -47,7 +47,7 @@ All standard precompiles are supported.
 
 <div class="compat-evm-precompiles-table"></div>
 
-| Address | ID          | Name                                 | Spec             | Status |
+| Address | ID          | 名称                                   | Spec             | Status |
 | ------- | ----------- | ------------------------------------ | ---------------- | ------ |
 | 0x01    | `ECRecover` | ECDSA public key recovery            | [Yellow Paper][] | ✅      |
 | 0x02    | `SHA256`    | SHA-2 256-bit hash function          | [Yellow Paper][] | ✅      |

@@ -34,7 +34,7 @@ Generally speaking, the account model on a blockchain is: a private key creates 
 0xd731d7633dd38c47769c2a62926b9a54d288a5e664f4d2108ac5bb6601bb30f5
 ```
 
-### Wallet
+### 钱包
 
 The primary responsibility of a PoS account is to maintain the Conflux consensus protocol. Each PoS account should run an independent Conflux node. Thus, the Conflux core code has the built-in wallet functionality for PoS accounts, including: When the Conflux node is launched for the first time and is running in the PoS account mode, it will automatically generate the PoS private key and require users to provide the password. The private key that is encrypted by the supplied password is stored locally.
 

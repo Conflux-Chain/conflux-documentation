@@ -39,7 +39,7 @@ Contract max code size is `49152` double as Ethereum
 
 ## Transaction Gas limit
 
-Only the block whose block height is a multiple of `5` can pack Ethereum type transaction. The total gas limit of these transaction cannot exceed half of the block gas limit (1500w).
+Only the block whose block height is a multiple of `5` can pack Ethereum type transaction. The total gas limit of these transaction cannot exceed half of the block gas limit (15,000,000).
 
 ## EVM Precompiles
 

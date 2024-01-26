@@ -925,7 +925,7 @@ params: [
 
 `DATA`, 32 Bytes - the transaction hash.
 
-#### Common Errors
+#### 常见错误
 
 Check [send raw transaction errors](./cfx_sendTransaction-errors.md) for details.
 

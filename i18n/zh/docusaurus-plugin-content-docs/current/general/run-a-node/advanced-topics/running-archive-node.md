@@ -6,7 +6,7 @@ displayed_sidebar: generalSidebar
 
 Conflux archive nodes store the entire history of the Conflux blockchain. This allows them to serve historical data to other nodes and applications.
 
-### 1. Requirements
+### 1. 硬件要求
 
 #### Hardware Requirements for Archive Node
 
@@ -16,7 +16,7 @@ Conflux archive nodes store the entire history of the Conflux blockchain. This a
 
 #### File Limit
 
-Open Files Limit: It's recommended to set the maximum number of open files to 10,000. On Linux, the default is 1,024, which may be insufficient. You can configure this using the following command on the Linux terminal
+Open Files Limit: It's recommended to set the maximum number of open files to 10,000. On Linux, the default is 1,024, which may be insufficient. 您可以在Linux终端使用如下命令设置该参数。
 
 ```shell
 ulimit -n 10000 

@@ -11,28 +11,28 @@ Confura, a public RPC service offered by the Conflux Foundation, is available fo
 
 ### 香港
 
-| Network             | Chain ID     | RPC Endpoint URL                                                                                    | Explorer                           |
-| ------------------- | ------------ | --------------------------------------------------------------------------------------------------- | ---------------------------------- |
-| [Mainnet](#mainnet) | 1030 (0x406) | *HTTP*: https://evm.confluxrpc.com<br/> *Websocket*: wss://evm.confluxrpc.com/ws              | https://evm.confluxscan.net        |
-| [Testnet](#testnet) | 71 (0x47)    | *HTTP*: https://evmtestnet.confluxrpc.com<br/>*Websocket*: wss://evmtestnet.confluxrpc.com/ws | https://evmtestnet.confluxscan.net |
+| 网络名称            | 链 ID         | RPC Endpoint URL                                                                                    | 浏览器网址                              |
+| --------------- | ------------ | --------------------------------------------------------------------------------------------------- | ---------------------------------- |
+| [主网](#mainnet)  | 1030 (0x406) | *HTTP*: https://evm.confluxrpc.com<br/> *Websocket*: wss://evm.confluxrpc.com/ws              | https://evm.confluxscan.net        |
+| [测试网](#testnet) | 71 (0x47)    | *HTTP*: https://evmtestnet.confluxrpc.com<br/>*Websocket*: wss://evmtestnet.confluxrpc.com/ws | https://evmtestnet.confluxscan.net |
 
-### US East
+### 美国东部
 
-| Network             | Chain ID     | RPC Endpoint URL                                                                            | Explorer                          |
-| ------------------- | ------------ | ------------------------------------------------------------------------------------------- | --------------------------------- |
-| [Mainnet](#mainnet) | 1030 (0x406) | *HTTP*: https://evm.confluxrpc.org<br/>*Websocket*: wss://evm.confluxrpc.org/ws       | https://evm.confluxscan.io        |
-| [Testnet](#testnet) | 71 (0x47)    | https://evmtestnet.confluxrpc.org<br/>*Websocket*: wss://evmtestnet.confluxrpc.org/ws | https://evmtestnet.confluxscan.io |
+| 网络名称            | 链 ID         | RPC Endpoint URL                                                                            | 浏览器网址                             |
+| --------------- | ------------ | ------------------------------------------------------------------------------------------- | --------------------------------- |
+| [主网](#mainnet)  | 1030 (0x406) | *HTTP*: https://evm.confluxrpc.org<br/>*Websocket*: wss://evm.confluxrpc.org/ws       | https://evm.confluxscan.io        |
+| [测试网](#testnet) | 71 (0x47)    | https://evmtestnet.confluxrpc.org<br/>*Websocket*: wss://evmtestnet.confluxrpc.org/ws | https://evmtestnet.confluxscan.io |
 
 
 ### 速率限制
 
-Reference for various fee tiers and their rate limits.
+不同费率档次和其速率限制的参考。
 
-| Fee Tier   | Price                                | 速率限制                                        | Buy Links                                                                                                                                                                                                                                    |
-| ---------- | ------------------------------------ | ------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Free       | $0                                   | 50 calls/second, up to  100,000 calls/day   | -                                                                                                                                                                                                                                            |
-| Standard   | $150/mo                              | 100 calls/second, up to 1,000,000 calls/day | [mainnet](https://confluxhub.io/payment/consumer/app/subscription/0x33A9451ee070d750a077C93f71D2cFcD0180Fa7D) <br/> [testnet](https://test.confluxhub.io/payment/consumer/app/subscription/0x4805C5B2741088B8458ed781083eA8940186E477) |
-| Enterprise | please inquire bd@confluxnetwork.org | customize on demand                         | -                                                                                                                                                                                                                                            |
+| 付费级别 | 价格                          | 速率限制                          | 购买链接                                                                                                                                                                                                                                         |
+| ---- | --------------------------- | ----------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 免费   | $0                          | 每秒 50 次调用，每天最多100,000次 调用     | -                                                                                                                                                                                                                                            |
+| 标准   | 150 美元/月                    | 每秒 100 次调用，每天最多 1,000,000 次调用 | [mainnet](https://confluxhub.io/payment/consumer/app/subscription/0x33A9451ee070d750a077C93f71D2cFcD0180Fa7D) <br/> [testnet](https://test.confluxhub.io/payment/consumer/app/subscription/0x4805C5B2741088B8458ed781083eA8940186E477) |
+| 企业用户 | 请发邮件至 bd@confluxnetwork.org | 按需定制                          | -                                                                                                                                                                                                                                            |
 
 **Notes**
 - `getLogs`调用的结果集最大大小为10,000。
@@ -41,18 +41,18 @@ Reference for various fee tiers and their rate limits.
 - 每个RPC方法也有速率限制，请查阅以下规范以了解更多详细信息。
 
 <details>
-<summary>Rate Limit Specification</summary>
+<summary>速率限制细则</summary>
 
-| RPC Method          | Free tier                                | Standard Tier                                 | Comment                                                                                   |
-| ------------------- | ---------------------------------------- | --------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| all                 | QPS < 50; <br/> daily total < 100k | QPS < 100; <br/> daily total < 1million | overall RPC requests                                                                      |
-| eth_getLogs         | QPS < 5                                  | QPS < 20                                      | -                                                                                         |
-| eth_call            | QPS < 5                                  | QPS < 50                                      | -                                                                                         |
-| eth_getBlockBy*     | QPS < 5                                  | QPS < 20                                      | includes: <br/> `eth_getBlockByHash`, <br/>`eth_getBlockByNumber`             |
-| eth_getTransaction* | QPS < 5                                  | QPS < 20                                      | includes: <br/> `eth_getTransactionByHash`, <br/> `eth_getTransactionReceipt` |
-| debug RPC           | not supported                            | QPS < 20                                      | includes: <br/> `parity_getBlockReceipts` etc.                                      |
-| trace RPC           | not supported                            | QPS < 20                                      | includes: <br/> `trace_block`, `trace_filter`, `trace_transaction`                  |
-| filter API          | not supported                            | supported                                     | includes: <br/> `eth_newFilter`, `eth_getFilterChanges` etc.                        |
+| RPC 方法              | 免费级别                                | 标准级别                                  | 注释                                                                                        |
+| ------------------- | ----------------------------------- | ------------------------------------- | ----------------------------------------------------------------------------------------- |
+| 全部                  | 每秒请求数< 50；<br/>每日总数 < 100,000 | 每秒请求数< 100；<br/>每日总数 < 100,0000 | RPC 请求总数                                                                                  |
+| eth_getLogs         | 每秒请求数< 5                            | 每秒请求数< 20                             | -                                                                                         |
+| eth_call            | 每秒请求数< 5                            | 每秒请求数< 50                             | -                                                                                         |
+| eth_getBlockBy*     | 每秒请求数< 5                            | 每秒请求数< 20                             | includes: <br/> `eth_getBlockByHash`, <br/>`eth_getBlockByNumber`             |
+| eth_getTransaction* | 每秒请求数< 5                            | 每秒请求数< 20                             | includes: <br/> `eth_getTransactionByHash`, <br/> `eth_getTransactionReceipt` |
+| debug RPC           | 暂不支持                                | 每秒请求数< 20                             | includes: <br/> `parity_getBlockReceipts` etc.                                      |
+| trace RPC           | 暂不支持                                | 每秒请求数< 20                             | 包括： <br/> `trace_block`, `trace_filter`, `trace_transaction`                        |
+| filter API          | 暂不支持                                | 支持                                    | includes: <br/> `eth_newFilter`, `eth_getFilterChanges` etc.                        |
 
 </details>
 
