@@ -27,7 +27,7 @@ Development tools(Remix, Hardhat, Foundry etc), SDKs(ethers.js, viem, web3.py), 
 - [EVM compatibility](./build/evm-compatibility.md)
 - [JSON-RPC compatibility](./build/jsonrpc-compatibility.md)
 
-## Resources
+## 其他资源
 
 - [eSpace Blockchain Explorer](https://evm.confluxscan.io/)
 - [Network RPC endpoints](./network-endpoints.md)
