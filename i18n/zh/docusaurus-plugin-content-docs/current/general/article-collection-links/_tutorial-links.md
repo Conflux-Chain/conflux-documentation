@@ -1,6 +1,6 @@
 ---
-title: Tutorial Articles
-displayed_sidebar: tutorials
+title: 教程文章
+displayed_sidebar: 教程
 ---
 
-This is the page collecting links for Conflux tutorials, including user guides, node deployment guides, and core space / eSpace tutotial guides. Feel free to explore the mentioned tutorials and let us know what other tutorials you need by [creating issues on our github repo](https://github.com/Conflux-Chain/conflux-documentation/issues/new/choose)
+这个页面集合了 Conflux 的教程链接，其中包括用户指南、节点部署指南以及 Core Space / eSpace 教程指南。 您可以随意浏览上述提到的教程，并通过在我们的 [GitHub 仓库上创建问题](https://github.com/Conflux-Chain/conflux-documentation/issues/new/choose)来告诉我们您还需要哪些其他教程。
