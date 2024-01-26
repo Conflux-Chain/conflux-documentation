@@ -1,13 +1,13 @@
 ---
 sidebar_position: 3
 title: thirdweb
-description: Deploying contract using thirdweb
+description: 使用 thirdweb 部署合约
 displayed_sidebar: eSpaceSidebar
 ---
 
 ## Create Contract
 
-To create a new smart contract using thirdweb CLI, follow these steps:
+想使用 thirdweb 命令行创建新的智能合约，请按照以下步骤操作：
 
 1. In your CLI run the following command:
 
@@ -56,7 +56,7 @@ To create a new smart contract using thirdweb CLI, follow these steps:
 
 Alternatively, you can deploy a prebuilt contract for NFTs, tokens, or marketplace directly from the thirdweb Explore page:
 
-1. Go to the thirdweb Explore page: https\://thirdweb.com/explore
+1. 访问 thirdweb Explore 页面：https\://thirdweb.com/explore
 
    ![thirdweb Explore page](/img/thirdweb-explore.png)
 
@@ -64,13 +64,13 @@ Alternatively, you can deploy a prebuilt contract for NFTs, tokens, or marketpla
 
 3. Follow the on-screen prompts to configure and deploy your contract.
 
-> For more information on different contracts available on Explore, check out [thirdweb’s documentation.](https://portal.thirdweb.com/pre-built-contracts)
+> 想要了解 Explore 上不同合约的更多信息，请查看 [thirdweb 文档](https://portal.thirdweb.com/pre-built-contracts)。
 
-## Deploy Contract
+## 部署合约
 
 Deploy allows you to deploy a smart contract to any EVM compatible network without configuring RPC URLs, exposing your private keys, writing scripts, and other additional setup such as verifying your contract.
 
-1. To deploy your smart contract using deploy, navigate to the root directory of your project and execute the following command:
+1. 想要使用 deploy 部署您的智能合约，请导航至您项目的根目录并执行以下命令：
 
    ```bash
    npx thirdweb deploy
@@ -78,7 +78,7 @@ Deploy allows you to deploy a smart contract to any EVM compatible network witho
 
    Executing this command will trigger the following actions:
 
-   - Compiling all the contracts in the current directory.
+   - 编译当前目录中的所有合约。
    - Providing the option to select which contract(s) you wish to deploy.
    - Uploading your contract source code (ABI) to IPFS.
 
@@ -94,9 +94,9 @@ Deploy allows you to deploy a smart contract to any EVM compatible network witho
 
 For additional information on Deploy, please reference [thirdweb’s documentation](https://portal.thirdweb.com/deploy).
 
-If you have any further questions or encounter any issues during the process, please reach out to thirdweb support at [support.thirdweb.com](http://support.thirdweb.com/).
+如果您在过程中有任何问题或遇到任何问题，请联系 thirdweb 寻求支持 [support.thirdweb.com](http://support.thirdweb.com/)。
 
-## Video Tutorial
+## 视频教程
 
 In the following video, you can find a hands-on demonstration on how to use thirdweb to deploy smart contracts on Conflux eSpace:
 

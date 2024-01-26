@@ -1,15 +1,15 @@
 ---
 sidebar_position: 1
-title: Hardhat and Foundry
-description: Deploying smart contracts using Hardhat and Foundry
+title: Hardhat 和 Foundry
+description: 使用 Hardhat 和 Foundry 部署智能合约
 displayed_sidebar: eSpaceSidebar
 ---
 
 The eSpace Testnet allows anyone to deploy a smart contract on eSpace. In this tutorial, you will learn how to deploy a contract on eSpace Testnet using common tools for developing on Ethereum. This [demo repo](https://github.com/conflux-fans/espace-contract-guide) illustrates contract deployment with [Hardhat](https://hardhat.org/) and [Foundry](https://github.com/foundry-rs/foundry).
 
-Before you start deploying the contract, you need to request test tokens from a [eSpace faucet](https://efaucet.confluxnetwork.org/).
+在开始部署合约之前，您需要先从[ eSpace 水龙头](https://efaucet.confluxnetwork.org/)获取测试代币。
 
-## Deploying smart contracts with Hardhat
+## 使用 Hardhat 部署智能合约
 
 1. If you haven't already, install [nodejs](https://nodejs.org/en/download/) and [yarn](https://classic.yarnpkg.com/lang/en/docs/install).
 
@@ -29,7 +29,7 @@ Before you start deploying the contract, you need to request test tokens from a 
 
 6. Run `yarn test` for hardhat tests.
 
-### Video Guides
+### 视频教程
 
 To learn more about smart contract deployment using Hardhat, please refer to the following videos:
 
@@ -47,7 +47,7 @@ import TabItem from '@theme/TabItem';
 
 </Tabs>
 
-## Deploying smart contracts with Foundry
+## 使用 Foundry 部署智能合约
 
 1. Clone the repo:
 
@@ -89,6 +89,6 @@ import TabItem from '@theme/TabItem';
      --legacy contracts/Lock.sol:Lock
    ```
 
-## Questions and Feedback
+## 问题和反馈
 
-Thank you for participating in and developing on the eSpace Testnet! If you encounter any issues, join our [Discord](https://discord.gg/conflux-network-707952293412339843) and ask us in it.
+Thank you for participating in and developing on the eSpace Testnet! 如果您遇到任何问题，请加入我们的 [Discord](https://discord.gg/conflux-network-707952293412339843) 并在其中向我们提问。

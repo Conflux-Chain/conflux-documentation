@@ -106,7 +106,7 @@ contract MyToken is ERC20 {
 ![MetaMask-add-token-account2](../img/mm-token-balance-changed-c59c6e2434009c0dcb6e03ef79ba5e60.png)
 
 
-## Video Tutorial
+## 视频教程
 
 For an on-hands demonstration of how to deploy a smart contract using Remix IDE, please refer to the following video:
 

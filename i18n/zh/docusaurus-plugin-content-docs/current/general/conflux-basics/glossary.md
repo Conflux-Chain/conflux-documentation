@@ -92,26 +92,26 @@ Double spending is a potential flaw in a digital cash scheme in which a single d
 In Conflux, an epoch is a fundamental unit used to update the world state, setting it apart from blockchain like Bitcoin or Ethereum, where updates are done by block. An epoch in Conflux is a specific partitioning of blocks that determines their total order. This partitioning is based on the pivot chain in a Tree-Graph structure, and the pivot block will be the last block in each epoch. Once the pivot chain is determined and not reverted, the partition of epochs becomes immutable, meaning the order of transactions and execution results cannot be changed.
 
 ### **ERC20**
-ERC20 is a standard for tokens on the Ethereum blockchain. It specifies a set of functions and events that a token contract has to implement. While this is a standard on the Ethereum network, tokens on the Conflux network can also follow this standard, especially if they are transferred from the Ethereum network via the [Zero Gravity protocol](../tutorials/transferring-funds/across-chains/zero-gravity.md).
+ERC20是以太坊区块链上代币的标准。 它规定了代币合约必须实现的一组函数和事件。 这是以太坊网络上的标准，但Conflux网络上的代币也可以遵循这个标准，特别是通过[Zero Gravity protocol](../tutorials/transferring-funds/across-chains/zero-gravity.md)从以太坊网络转移过来的代币。
 
 ### **ERC721**
-ERC721 is a standard for non-fungible tokens (NFTs) on the Ethereum blockchain. Unlike ERC20 tokens, which are identical to each other, each ERC721 token is unique. This makes them suitable for representing ownership of unique items or assets. Like ERC20, ERC721 tokens can also exist on the Conflux network, especially if they are transferred from the Ethereum network.
+ERC721是以太坊区块链上非同质化代币（NFT）的标准。 与彼此相同的ERC20代币不同，每个ERC721代币都是独一无二的。 这使它们适合代表独特物品或资产的所有权。 像ERC20一样，ERC721代币也可以存在于Conflux网络上，尤其当它们是从以太坊网络转移过来的。
 
 ### **分叉**
 In blockchain, a fork is a change to the software that creates two separate versions of the blockchain with a shared history. Forks can be either "hard" or "soft", depending on whether the change is compatible with previous versions of the software. In the context of Conflux, forks are less common due to the Tree-Graph structure of the network, which allows for concurrent block production.
 
 ### **燃气**
-In the context of blockchain, gas refers to the fee required to successfully conduct a transaction or execute a contract on the Ethereum blockchain. In Conflux, the concept of gas also exists, but with a unique twist: the gas fee for contract execution is paid by contract sponsors, not by users. This improves the user experience by allowing users to interact with smart contracts without worrying about gas fees.
+In the context of blockchain, gas refers to the fee required to successfully conduct a transaction or execute a contract on the Ethereum blockchain. In Conflux, the concept of gas also exists, but with a unique twist: the gas fee for contract execution is paid by contract sponsors, not by users. 这通过允许用户在不担心燃气费用的情况下与智能合约互动，改善了用户体验。
 
 Refer to [Gas](./gas.md) for more information.
 
 ### **GHAST**
-GHAST (Greedy Heaviest Adaptive SubTree) is the Conflux protocol's rule for selecting a chain from the Tree-Graph structure. It's designed to ensure safety and liveness properties in the network. GHAST is a key part of Conflux's unique consensus mechanism.
+GHAST（贪婪最重适应子树 Greedy Heaviest Adaptive SubTree ）是Conflux协议用于从树图结构中选择链的规则。 它旨在确保网络中的安全性和活性属性。 GHAST是Conflux独特共识机制的关键部分。
 
-Refer to [GHAST](../conflux-basics/consensus-mechanisms/proof-of-work/ghast.md) for more information.
+更多信息请参考[GHAST](../conflux-basics/consensus-mechanisms/proof-of-work/ghast.md)。
 
-### **Hard Fork**
-A hard fork is a type of fork that creates a permanent divergence from the previous version of the blockchain. Nodes running the old version will not be accepted by the new version. This is a common concept in many blockchains, but due to the unique structure of Conflux, hard forks are less common.
+### **硬分叉**
+硬分叉是一种分叉，它创建了与区块链之前版本的永久性分歧。 运行旧版本的节点将不会被新版本接受。 This is a common concept in many blockchains, but due to the unique structure of Conflux, hard forks are less common.
 
 ### **哈希**
 A hash is a function that converts the input data into an encrypted output of a fixed length. In the context of blockchain, a hash function is used to secure data. Each block in a blockchain has a unique hash, and any change to the block's data will result in a different hash.
@@ -126,10 +126,10 @@ A hash is a function that converts the input data into an encrypted output of a 
 - [trace JSON-RPC API](../../core/build/json-rpc/trace-namespace.md)
 
 ### **默克尔树**
-A Merkle tree, in cryptography and computer science, is a tree in which every leaf node is labelled with the hash of a data block, and every non-leaf node is labelled with the cryptographic hash of the labels of its child nodes. Merkle trees are used in blockchains to efficiently verify the contents of large data structures.
+在密码学和计算机科学中，默克尔树是一种树状结构，其中每个叶子节点都被赋予了一个数据块哈希值的标签，而每个非叶子节点的标签则是由其所有子节点的标签的值经过哈希计算得来的。 默克尔树在区块链中用于高效验证大型数据结构的内容。
 
 ### **挖矿**
-Mining is the process of validating new transactions and recording them on a blockchain. Miners use powerful computers to solve complex mathematical problems that validate transactions. The first miner to solve the problem gets to add a new block to the blockchain and is rewarded with a certain amount of cryptocurrency. In the context of Conflux, mining is used to add new blocks to the Tree-Graph structure of the network.
+Mining is like a competition where people use powerful computers to solve puzzles. Each puzzle solved helps confirm new transactions and safely add them to the blockchain. Think of **miners** as special participants who use advanced equipment, like ASICs or high-performance GPUs, to take part in this puzzle-solving contest. The contest involves lots of trial and error to find a special code (hash value) that fits certain rules. When a miner finds the right code, it's like they win the round, allowing them to add a page (block) of confirmed transactions to the ledger. The first one to do this gets a prize in the form of digital money (cryptocurrency). In the Conflux network, this process helps to build a unique ledger structure known as the Tree-Graph, which organizes transactions in a special way.
 
 Refer to [Mining](../mine-stake/mine/running-mining-node.md) for more information about running a mining node.
 

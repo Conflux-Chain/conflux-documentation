@@ -1,7 +1,7 @@
 ---
 sidebar_position: 4
 title: Brownie
-description: Learn how to deploy an ERC-20 Token using Brownie.
+description: 学习如何使用 Brownie 部署 ERC-20 代币。
 keywords:
   - Brownie
   - 智能合约
@@ -11,7 +11,7 @@ displayed_sidebar: eSpaceSidebar
 
 [Brownie](https://eth-brownie.readthedocs.io/en/stable/) is a Python-based development and testing framework for smart contracts targeting the Ethereum Virtual Machine. In this tutorial, we will guide you through configuring Brownie (or eth-brownie) for Conflux eSpace and demonstrate how to use Brownie scripts to deploy contracts on Conflux eSpace.
 
-## Install Brownie
+## 安装 Brownie
 
 :::tip
 
@@ -19,13 +19,13 @@ To avoid dependency conflicts, it is recommended to create virtual environments 
 
 :::
 
-Execute the following command to install Brownie:
+执行以下命令安装 Brownie：
 
 ```bash
 pip install eth-brownie # or pip3 install eth-brownie
 ```
 
-## Add Conflux eSpace Networks
+## 添加 Conflux eSpace 网络
 
 To add the Conflux eSpace networks to Brownie, execute these commands:
 
@@ -52,7 +52,7 @@ live:
     name: Testnet
 ```
 
-Then, run the following command to add them to your network configuration:
+然后，运行以下命令将其添加到您的网络配置：
 
 ```bash
 brownie networks import ./network-config.yaml

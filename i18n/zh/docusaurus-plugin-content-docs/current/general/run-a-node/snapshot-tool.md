@@ -1,69 +1,73 @@
 ---
 sidebar_position: 3
 title: 节点快照工具
-description: Learn how to use the Conflux Snapshot Tool to quickly set up a Conflux node from a snapshot.
+description: 学习如何使用Conflux快照工具从快照中快速建立一个Conflux节点。
 displayed_sidebar: generalSidebar
 ---
 
 ## 简介
 
-The Conflux Blockchain Data Snapshot Tool (aka Archive-Tool) is designed to help users quickly set up a Conflux node from a snapshot. 该工具提供了下载链接，且默认情况下仅下载当天的数据库快照数据 快照工具在运行一个节点时可以节省用于下载和同步所有区块链数据所需的数周时间。 Using this tool is optional, **but highly recommended**. The tool supports **resuming downloads** from breakpoints using the curl command. If an error occurs during the process, users are advised to follow the script prompts.
+Conflux区块链数据快照工具(也称为归档工具)旨在帮助用户从快照中快速建立一个Conflux节点。 该工具提供了下载链接，且默认情况下会下载当天的数据库快照数据。 快照工具在运行一个节点时可以节省用于下载和同步所有区块链数据所需的数周时间。 此工具是可选的，但**强烈建议使用**。 此工具支持使用curl命令的**断点续传** 。 如果在此过程中发生错误，建议用户跟随脚本提示操作。
 
-## 前提条件
+## 先决条件
 
-Ensure you have curl installed on your system. If not, you can download and install it from [here](https://curl.se/).
+首先，确保你的系统中安装了curl。 如果没有安装，你可以从[这里](https://curl.se/)下载并安装。
 
-## Download Snapshot Data
+## 下载快照数据
 
-Select the snapshot download link based on the node type and location:
+根据节点类型和您的地理位置选择快照下载链接：
 
-1. For Linux & Mac - Mainnet - Archive Node:
+1. Linux & Mac - 主网 - 归档节点:
 
 ```shell
-# Beijing
+# 北京
 wget https://conflux-blockchain-data.oss-cn-beijing.aliyuncs.com/archivenode-db/M/download.sh
-# US West
+# 美国西部
 wget https://conflux-blockchain-data-us.s3.us-west-1.amazonaws.com/archivenode-db/M/download.sh
-# EU Central
+# 欧洲中部
 wget https://conflux-blockchain-data-eu.s3.eu-central-1.amazonaws.com/archivenode-db/M/download.sh
 
 bash download.sh 
 ```
 
-2. For Windows - Mainnet - Archive Node:
+2. Windows - 主网 - 归档节点 :
 
 ```shell
-# Beijing
+# 北京
 wget https://conflux-blockchain-data.oss-cn-beijing.aliyuncs.com/archivenode-db/M/download.bat
-# US West
+# 美国西部
 wget https://conflux-blockchain-data-us.s3.us-west-1.amazonaws.com/archivenode-db/M/download.bat
-# EU Central
+# 欧洲中部
 wget https://conflux-blockchain-data-eu.s3.eu-central-1.amazonaws.com/archivenode-db/M/download.bat
 
 download.bat 
 ```
 
-3. For Linux & Mac - Mainnet - Full Node:
+3. Linux & Mac - 主网 - 全节点 :
 ```shell
+# Beijing
 wget https://conflux-blockchain-data.oss-cn-beijing.aliyuncs.com/fullnode-db/M/download.sh
+# US West
+wget https://conflux-blockchain-data-us.s3.us-west-1.amazonaws.com/fullnode-db/M/download.sh
+
 bash download.sh 
 ```
 
-4. For Linux & Mac - Testnet - Archive Node:
+4. Linux & Mac - 测试网 - 归档节点:
 ```shell
 wget https://conflux-blockchain-data.oss-cn-beijing.aliyuncs.com/archivenode-db/T/download.sh
 bash download.sh 
 ```
 
-5. For Windows - Testnet - Archive Node:
+5. For Windows - 测试网 - 归档节点:
 ```shell
 wget https://conflux-blockchain-data.oss-cn-beijing.aliyuncs.com/archivenode-db/T/download.bat
 download.bat 
 ```
 
-## Unzip Snapshot Data
+## 解压缩快照数据
 
-Then, you’ll need to unzip the file, and copy (or move) its content into your node folder, usually named "run".
+接下来，你需要解压文件，并将其内容复制(或移动)到你的节点文件夹，通常命名为"run"。
 
 例如：
 
@@ -71,32 +75,32 @@ Then, you’ll need to unzip the file, and copy (or move) its content into your 
 tar -xvzf conflux-fullnode-db-snapshot-2023-09-20.tgz -C ./run
 ```
 
-The snapshot data also includes the `pos_config` folder, and the Conflux client release will also include the `pos_config` folder. You can use either one.
+快照数据包括`pos_config`文件夹，Conflux客户端版本也包含`pos_config` 文件夹。 你可以选择其中任何一个。
 
-Then you can start your node.
+然后，你可以启动你的节点。
 
-## Resources
+## 其他资源
 
-- [Conflux Blockchain Data Snapshot Archive-tool](https://github.com/conflux-fans/archive-tool).
+- [Conflux区块链数据快照归档工具](https://github.com/conflux-fans/archive-tool)。
 
 ## 常见问题解答
 
-### service is not available?
+### 服务不可用？
 
-Please download the latest version of the snapshot tool.
+请下载快照工具的最新版本。
 
-### What's the snapshot data size?
+### 快照数据的大小是多少？
 
-At the time of writing(2023.12.22), the fullnode snapshot data size is about 200G, the archivenode snapshot data size is 550G.
+截至撰写本报告时(2023年12月22日)，全节点快照数据大小约为200GB，存档节点快照数据大小为550GB。
 
-You can check the newest snapshot data size in `download.sh` file.
+你可以在 `download.sh` 文件中查看最新的快照数据大小。
 
-### Does the archive node snapshot data include the trace data?
+### 归档节点快照数据是否包含 trace 数据？
 
-Yes, it does.
+是的，包含。
 
-### Does the archive node snapshot data include the fullstate data?
+### 归档节点快照数据是否包含全状态数据？
 
-No, it doesn't. If you want to setup a fullstate archive node, you need sync the data from beginning.
+不包含。 如果你想设置一个全状态归档节点，你需要从头同步数据。
 
-The Confura public RPC service is a fullstate archive node. You can use it to query the fullstate data.
+Confura公共RPC服务是一个全状态归档节点。 你可以使用它来查询全状态数据。

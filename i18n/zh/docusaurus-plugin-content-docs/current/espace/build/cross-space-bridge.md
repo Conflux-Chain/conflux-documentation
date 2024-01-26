@@ -222,7 +222,7 @@ contract CrossCallExample {
 
 ```
 
-## Resources
+## 其他资源
 
 - [CIP-90](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-90.md)
 - [Mapped Addresses](./accounts.md#mapped-addresses-in-cross-space-operations)

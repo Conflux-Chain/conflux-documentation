@@ -25,7 +25,7 @@ A `Trace` trace object contain below field:
 * `type`: `STRING` - Type of trace. Avaliable value is `call`, `create`, `call_result`, `create_result`, `internal_transfer_action`
 * `action`: `OBJECT` - Trace's action info，different type trace's action have different fields.
 
-Example:
+例如:
 
 ```json
 {
