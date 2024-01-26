@@ -1,7 +1,7 @@
 ---
 sidebar_position: 1
 title: 概览
-description: Overview of Conflux eSpace
+description: Conflux eSpace 概览
 displayed_sidebar: eSpaceSidebar
 ---
 
