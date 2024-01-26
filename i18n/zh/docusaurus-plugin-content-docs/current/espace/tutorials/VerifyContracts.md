@@ -103,6 +103,6 @@ Developer can use flatten tools (hardhat, foundry) to merge his contract and it'
 
 If the verification failed, maybe the **compiler version** or **optimization settings** or **evm version** are not correct. Please check the compiler version and optimization settings in the contract deployment configuration.
 
-### Resources
+### 其他资源
 
 - [EVM Versions to Target](https://docs.soliditylang.org/en/v0.8.23/using-the-compiler.html#setting-the-evm-version-to-target)
