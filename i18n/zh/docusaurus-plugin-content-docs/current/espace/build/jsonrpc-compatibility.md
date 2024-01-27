@@ -84,7 +84,7 @@ import TabItem from '@theme/TabItem';
 
 Legend: ❌ = not supported. 🚧 = work in progress. ✅ = supported.
 
-## Notes
+## 备注
 
 * `eth_sendRawTransaction` only accept 155 transaction, `1559`, `2930` is not supported
 * Methods not listed here are also not supported.
