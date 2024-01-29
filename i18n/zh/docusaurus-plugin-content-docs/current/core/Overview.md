@@ -18,7 +18,7 @@ Core Space 中的账户地址使用 **base32编码**，与以太坊不同。 它
 ## 教程
 
 - [JS SDK 完整指南](./tutorials/js-conflux-sdk)
-- [hardhat-conflux Tutorial](./tutorials/hardhat-conflux-plugin)
+- [hardhat-conflux 教程](./tutorials/hard-conflux-plugin)
 - [chainIDE 教程](./tutorials/chainide)
 - [合约代付教程](./tutorials/how-to-sponsor-contract)
 - [NFT 教程](./tutorials/nft-tutorial)

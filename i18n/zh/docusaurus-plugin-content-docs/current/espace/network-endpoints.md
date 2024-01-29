@@ -1,7 +1,7 @@
 ---
 sidebar_position: 5
 title: 网络 RPC 端点
-description: Conflux eSpace RPC endpoints
+description: Conflux eSpace RPC 端点
 displayed_sidebar: eSpaceSidebar
 ---
 
@@ -11,14 +11,14 @@ Confura 是由 Conflux 基金会提供的公共 RPC 服务，可以免费使用�
 
 ### 香港
 
-| 网络名称            | 链 ID         | RPC Endpoint URL                                                                                    | 浏览器网址                              |
+| 网络名称            | 链 ID         | RPC 端点 URL                                                                                          | 浏览器网址                              |
 | --------------- | ------------ | --------------------------------------------------------------------------------------------------- | ---------------------------------- |
 | [主网](#mainnet)  | 1030 (0x406) | *HTTP*: https://evm.confluxrpc.com<br/> *Websocket*: wss://evm.confluxrpc.com/ws              | https://evm.confluxscan.net        |
 | [测试网](#testnet) | 71 (0x47)    | *HTTP*: https://evmtestnet.confluxrpc.com<br/>*Websocket*: wss://evmtestnet.confluxrpc.com/ws | https://evmtestnet.confluxscan.net |
 
 ### 美国东部
 
-| 网络名称            | 链 ID         | RPC Endpoint URL                                                                            | 浏览器网址                             |
+| 网络名称            | 链 ID         | RPC 端点 URL                                                                                  | 浏览器网址                             |
 | --------------- | ------------ | ------------------------------------------------------------------------------------------- | --------------------------------- |
 | [主网](#mainnet)  | 1030 (0x406) | *HTTP*: https://evm.confluxrpc.org<br/>*Websocket*: wss://evm.confluxrpc.org/ws       | https://evm.confluxscan.io        |
 | [测试网](#testnet) | 71 (0x47)    | https://evmtestnet.confluxrpc.org<br/>*Websocket*: wss://evmtestnet.confluxrpc.org/ws | https://evmtestnet.confluxscan.io |
@@ -34,7 +34,7 @@ Confura 是由 Conflux 基金会提供的公共 RPC 服务，可以免费使用�
 | 标准   | 150 美元/月                    | 每秒 100 次调用，每天最多 1,000,000 次调用 | [mainnet](https://confluxhub.io/payment/consumer/app/subscription/0x33A9451ee070d750a077C93f71D2cFcD0180Fa7D) <br/> [testnet](https://test.confluxhub.io/payment/consumer/app/subscription/0x4805C5B2741088B8458ed781083eA8940186E477) |
 | 企业用户 | 请发邮件至 bd@confluxnetwork.org | 按需定制                          | -                                                                                                                                                                                                                                            |
 
-**Notes**
+**备注**
 - `getLogs`调用的结果集最大大小为10,000。
 - 由于数据裁剪，旧的存档事件日志可能无法访问。
 - Append your api key(get from [Web3 Paywall](../general/build/tools/web3paywall.md) or Conflux Foundation) to the endpoint for privileged access (eg., `https://evm.confluxrpc.com/<api-key>`);
@@ -60,8 +60,8 @@ Confura 是由 Conflux 基金会提供的公共 RPC 服务，可以免费使用�
 
 ### 如何获取 Confura 高级 API 密钥？
 
-Confura 是由 Conflux 基金会提供的公共 RPC 服务，可以免费使用。 对于免费级别，您不需要 API 密钥。 To get a higher tier RPC service, you can buy it at [Web3 Paywall](../general/build/tools/web3paywall.md) or apply from Conflux foundation by sending email to [bd@confluxnetwork.org](bd@confluxnetwork.org)
+Confura 是由 Conflux 基金会提供的公共 RPC 服务，可以免费使用。 对于免费级别，您不需要 API 密钥。 要获取更高级别的 RPC 服务，您可以在 [Web3 Paywall ](../general/build/tools/web3paywall.md) 上进行购买，或者发送邮件到 [bd@confluxnetwork.org](bd@confluxnetwork.org) 向 Conflux 基金会申请。
 
-### Does eSpace have any other RPC service or Provider?
+### eSpace 有其他的 RPC 服务或提供商吗？
 
 是的，您可以在这里进行[查看](./build/infrastructure/RPC-Provider.md)

@@ -37,6 +37,6 @@ The following pools are for both Core Space and eSpace users:
 - [ABC PoS Pool](https://confluxpos.cn/)
 - [hydrasf Pool](https://hydrasf.club/)
 
-## Notes
+## 备注
 
 Use these pools at your own risk. The Conflux team is not responsible for any lost or blocked tokens.
