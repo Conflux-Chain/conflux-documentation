@@ -44,7 +44,7 @@ displayed_sidebar: eSpaceSidebar
 
 或者，您可以通过在网络选择下拉菜单中选择“添加网络”(或“自定义 RPC”)手动将 Conflux eSpace 添加到 MetaMask：
 
- ![MetaMask-network-select](./img/metamask_choose_network-0.png)
+ ![Metamask 的网络选择](./img/metamask_choose_network-0.png)
 
 对于eSpace **mainnet**, 请使用以下配置值：
 
