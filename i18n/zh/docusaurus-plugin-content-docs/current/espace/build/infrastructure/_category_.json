@@ -1,0 +1,9 @@
+{
+  "label": "Infrastructures",
+  "position": 1,
+  "link": {
+    "type": "generated-index",
+    "description": "Developing Web3 dApps is a multifaceted process, necessitating a variety of tools and services. Presently, numerous solutions are available on eSpace for constructing a dApp."
+  },
+  "collapsed": false
+}
