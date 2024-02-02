@@ -164,8 +164,10 @@ dev_pos_private_key_encryption_password="aaaa"
 Storage optimization related options.
 
 ```toml
-# Setting it to true will reduce the disk usage.
-use_isolated_db_for_mpt_table=true # Use isolated database for MPT table. Was introduced in v2.3.4 https://github.com/Conflux-Chain/conflux-rust/releases/tag/v2.3.4
+# Use isolated database for MPT table
+# Setting it to true will reduce the disk usage
+# Was introduced in v2.3.4 https://github.com/Conflux-Chain/conflux-rust/releases/tag/v2.3.4
+use_isolated_db_for_mpt_table=true 
 ```
 
 ## Configuration File Example
