@@ -2,6 +2,7 @@
 sidebar_position: 4
 title: 预言机
 displayed_sidebar: eSpaceSidebar
+description: Oracles provide a bridge for off-chain data sources to be accessible within the blockchain, essential for smart contracts.
 ---
 
 Oracles are data feeds that enable smart contracts on the blockchain to access off-chain data sources. This functionality is crucial, as Ethereum-based smart contracts are inherently unable to access information stored outside the blockchain network by default. For further information, you can explore [Ethereum's Oracle documentation](https://ethereum.org/en/developers/docs/oracles/).

@@ -5,7 +5,7 @@ description: Conflux eSpace RPC 端点
 displayed_sidebar: eSpaceSidebar
 ---
 
-## Confura
+## Public RPC Endpoints
 
 Confura 是由 Conflux 基金会提供的公共 RPC 服务，可以免费使用。 但为了维持服务的可用性，免费级别的服务有速率限制。 如果你需要更高级别的 RPC 服务，你可以通过 [Web3 Paywall](../general/build/tools/web3paywall.md) 进行购买，或者可以直接发送邮件到 [bd@confluxnetwork.org](mailto:bd@confluxnetwork.org) 向 Conflux 基金会申请。
 
@@ -22,7 +22,6 @@ Confura 是由 Conflux 基金会提供的公共 RPC 服务，可以免费使用�
 | --------------- | ------------ | ------------------------------------------------------------------------------------------- | --------------------------------- |
 | [主网](#mainnet)  | 1030 (0x406) | *HTTP*: https://evm.confluxrpc.org<br/>*Websocket*: wss://evm.confluxrpc.org/ws       | https://evm.confluxscan.io        |
 | [测试网](#testnet) | 71 (0x47)    | https://evmtestnet.confluxrpc.org<br/>*Websocket*: wss://evmtestnet.confluxrpc.org/ws | https://evmtestnet.confluxscan.io |
-
 
 ### 速率限制
 
@@ -56,12 +55,12 @@ Confura 是由 Conflux 基金会提供的公共 RPC 服务，可以免费使用�
 
 </details>
 
+## Commercial RPC Service
+
+There are couple of commercial RPC service providers, you can check them [here](./build/infrastructure/RPC-Provider.md)
+
 ## 常见问题解答
 
 ### 如何获取 Confura 高级 API 密钥？
 
 Confura 是由 Conflux 基金会提供的公共 RPC 服务，可以免费使用。 对于免费级别，您不需要 API 密钥。 要获取更高级别的 RPC 服务，您可以在 [Web3 Paywall ](../general/build/tools/web3paywall.md) 上进行购买，或者发送邮件到 [bd@confluxnetwork.org](bd@confluxnetwork.org) 向 Conflux 基金会申请。
-
-### eSpace 有其他的 RPC 服务或提供商吗？
-
-是的，您可以在这里进行[查看](./build/infrastructure/RPC-Provider.md)
