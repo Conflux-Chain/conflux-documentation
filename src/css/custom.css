@@ -178,3 +178,45 @@ img{
   --ifm-git-bg-url:url(@site/static/img/GitHubDark.svg);
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
+
+:root {
+    --ifm-color-white: #fff;
+    --ifm-color-black: #111928;
+    
+    --ifm-color-gray-0: var(--ifm-color-white);
+    --ifm-color-gray-100: #f3f4f6;
+    --ifm-color-gray-200: #e5e7eb;
+    --ifm-color-gray-300: #d1d5db;
+    --ifm-color-gray-400: #9ca3af;
+    --ifm-color-gray-500: #6b7280;
+    --ifm-color-gray-600: #4b5563;
+    --ifm-color-gray-700: #374151;
+    --ifm-color-gray-800: #1f2a37;
+    --ifm-color-gray-900: #111928;
+    --ifm-color-gray-1000: var(--ifm-color-black);
+    
+    --ifm-color-emphasis-0: var(--ifm-color-gray-0);
+    --ifm-color-emphasis-100: var(--ifm-color-gray-100);
+    --ifm-color-emphasis-200: var(--ifm-color-gray-200);
+    --ifm-color-emphasis-300: var(--ifm-color-gray-300);
+    --ifm-color-emphasis-400: var(--ifm-color-gray-400);
+    --ifm-color-emphasis-500: var(--ifm-color-gray-500);
+    --ifm-color-emphasis-600: var(--ifm-color-gray-600);
+    --ifm-color-emphasis-700: var(--ifm-color-gray-700);
+    --ifm-color-emphasis-800: var(--ifm-color-gray-800);
+    --ifm-color-emphasis-900: var(--ifm-color-gray-900);
+    --ifm-color-emphasis-1000: var(--ifm-color-gray-1000);
+    
+    --ifm-color-content: var(--ifm-color-emphasis-900);
+    --ifm-color-content-inverse: var(--ifm-color-emphasis-0);
+    --ifm-color-content-secondary: var(--ifm-color-emphasis-600);
+
+    --w3a-border-color: var(--ifm-color-emphasis-200);
+    --w3a-border-light-color: var(--ifm-color-emphasis-200);
+
+    --ifm-background-surface-color: var(--ifm-color-emphasis-0);
+
+    --w3a-color-icon-active-background: #ebf5ff;
+
+    --w3a-color-icon-gray: var(--ifm-color-emphasis-500);
+}
