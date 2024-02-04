@@ -85,7 +85,7 @@ A complete workflow for using foundry deploy contract is shown [here](./tutorial
 
 ### Remix Web IDE
 
-After compiling your contracts, the easiest way to deploy using Remix is by [setting up Metamask](./UserGuide.md), then selecting the **Conflux eSpace Testnet** network.
+After compiling your contracts, the easiest way to deploy using Remix is by [setting up Metamask](./espace-user-guide.mdx), then selecting the **Conflux eSpace Testnet** network.
 
 Now, in the “Deploy and Run Transactions” tab, use the “Environment” drop-down and select “Injected Provider - MetaMask.”
 
