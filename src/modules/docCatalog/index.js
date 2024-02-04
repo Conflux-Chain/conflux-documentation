@@ -9,7 +9,7 @@ const DocCatalogFackData = [
       { url: '/docs/espace/UserGuide', text: 'User Guide', preview: 'Guiding user connect Metamask to eSpace' },
       { url: '/docs/espace/UserGuide', text: 'Space Bridge Guide', preview: 'Guiding user bridge CFX between eSpace and Core Space' },
       { url: '/docs/espace/DeveloperQuickstart', text: 'Developer Quickstart', preview: 'Quickstart for Ethereum developers' },
-      { url: '/docs/espace/tutorials/', text: 'Tutorials', preview: 'Developer tutorials' },
+      { url: '/docs/category/tutorials-1', text: 'Tutorials', preview: 'Developer tutorials' },
       { url: '/docs/espace/network-endpoints', text: 'Network RPC Endpoints', preview: 'RPC endpoint, block explorer url, chainId etc' },
       { url: '/docs/espace/build/evm-compatibility', text: 'EVM Compatibility', preview: 'Learn about compatibility with EVM' },
       { url: '/docs/espace/FAQs', text: 'FAQs', preview: 'Frequently question & answers' },
