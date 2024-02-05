@@ -1,4 +1,5 @@
 #!/bin/bash
+# This script is used by vercel to check which branch needs preview
 
 current_branch=$(git rev-parse --abbrev-ref HEAD)
 

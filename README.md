@@ -10,7 +10,10 @@ Deployments:
 ## Repo Structure
 
 - docs: contains the original doc contents (in English)
+  - docs/templates: special folder served as template for reuse, aimed for creating similar articles in eSpace and bSpace. The [eSpace User Guide](./docs/espace/UserGuide.md) serves as an example to show how to replace texts, links and images.
 - i18n: contains the localized doc contents. Note: the contents are added by the translation platform Crowdin. NEVER directly edit the content in this file to edit the translation
+- docusaurus.config.js: the configuration file for docusaurus
+- sidebar.js: the sidebar configuration, used by docusaurus.config.js
 
 ## Contributing
 
