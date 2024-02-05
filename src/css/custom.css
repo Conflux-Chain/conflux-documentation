@@ -77,6 +77,12 @@ img{
   margin-right: 20px;
 }
 
+.header-feedback-link{
+  background:var(--ifm-feedback-bg-url) no-repeat;
+  height: 1.5rem;
+  margin-right: 20px;
+}
+
 /* .blog-wrapper{
   @apply max-w-[1920px] mx-auto
 }
@@ -155,6 +161,7 @@ img{
   --ifm-color-success-contrast-background: #E6EDFD;
   --ifm-bg-ingradient:linear-gradient(181.9deg, var(--ifm-color-primary-darkest) 1.6%, var(--ifm-color-primary-lightest) 98.06%);
   --ifm-git-bg-url:url(@site/static/img/VectorgitHub.svg);
+  --ifm-feedback-bg-url:url(@site/static/img/communication.svg);
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 }
 
@@ -176,6 +183,7 @@ img{
   --ifm-hover-overlay:#152748!important;
   --ifm-bg-ingradient:linear-gradient(181.9deg, var(--ifm-color-primary-darkest) 0%, var(--ifm-color-primary-lightest) 100%);
   --ifm-git-bg-url:url(@site/static/img/GitHubDark.svg);
+  --ifm-feedback-bg-url:url(@site/static/img/communication.svg);
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
