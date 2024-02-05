@@ -110,6 +110,6 @@ In this case, you can try switching the RPC node or wait for the RPC node to rec
 
 If there is a network issue, please wait for the network to recover or switch to a different RPC node before resubmitting the transaction. If you encounter a full transaction pool, increase the gasPrice when sending the transaction. For other errors, it is likely that there is an issue with the settings of certain transaction fields. Please follow the methods introduced earlier to correctly set the fields and resend the transaction.
 
-## Reference
+## Referencia
 
 - [cfx_sendRawTransaction error list](/docs/core/build/json-rpc/cfx_sendTransaction-errors)
