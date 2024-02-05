@@ -12,7 +12,7 @@ Development tools(Remix, Hardhat, Foundry etc), SDKs(ethers.js, viem, web3.py), 
 
 ## User Guides
 
-* [How to connect metamask to eSpace](./espace-user-guide.mdx)
+* [How to connect metamask to eSpace](./UserGuide.md)
 * [How to cross CFX between Core and eSpace](../general/tutorials/transferring-funds/transfer-funds-across-spaces)
 
 ## Developer tutorials
