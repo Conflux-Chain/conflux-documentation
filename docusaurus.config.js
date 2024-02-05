@@ -169,6 +169,12 @@ const config = {
             className: 'header-github-link',
             'aria-label': 'GitHub repository',
           },
+          {
+            href: 'https://forms.office.com/r/pKVBywZwLY',
+            position: 'right',
+            className: 'header-feedback-link',
+            'aria-label': 'Feedback',
+          },
         ],
       },
       footer: {
