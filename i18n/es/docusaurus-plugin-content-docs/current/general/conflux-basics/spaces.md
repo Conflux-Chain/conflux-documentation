@@ -1,43 +1,43 @@
 ---
 sidebar_position: 7
-title: Spaces
+title: Espacios
 displayed_sidebar: generalSidebar
 ---
 
-## **Introduction to Spaces**
+## **Introducción a los Espacios**
 
-In the Conflux v2.0 (Hydra) upgrade, a new feature called Spaces was introduced through **[CIP-90](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-90.md)**. Spaces is an abstract concept that is used to distinguish Conflux-format transactions from Ethereum-format transactions. Spaces is a way to virtually create a sub-chain of the original Conflux network, known as **`eSpace`**.
+En la actualización de Conflux v2.0 (Hydra), se introdujo una nueva característica llamada Spaces a través de **[CIP-90](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-90.md)**. Los espacios son un concepto abstracto que se utiliza para distinguir las transacciones en formato Conflux de las transacciones en formato Ethereum. Los espacios son una manera de crear virtualmente una subcadena de la red original de Conflux, conocida como **`eSpace`**.
 
-Core Space refers to the original Conflux network, while eSpace is the virtualized Ethereum chain running on top of the Core Space network. The two spaces are logically independent of each other and do not affect each other.
+Core Space se refiere a la red original de Conflux, mientras que eSpace es un sub-espacio completamente compatible con la máquina virtual de Ethereum corriendo sobre la misma infraestructura. Los dos espacios son lógicamente independientes entre sí y no se afectan mutuamente.
 
-In other words, we can think of Spaces as a virtualization technology from operating system concepts, where eSpace is a virtualized Ethereum chain running on the original Conflux network.
+En otras palabras, podemos pensar en los Espacios como una tecnología de virtualización de los conceptos del sistema operativo, donde eSpace es una cadena virtualizada de Ethereum corriendo en la red Conflux original.
 
-## **Why Introduce eSpace?**
+## **¿Por qué introducir eSpace?**
 
-Conflux is a high-performance, fully decentralized public chain enabled by an innovative Tree-Graph consensus algorithm. The transaction fee of Conflux is very low, which can be seen as almost free compared to other networks such as Ethereum. However, Ethereum has already built a mature ecosystem, including tools, SDKs, wallets, and Solidity libraries. To reduce the migration cost of projects and users and make users experience the advantages of low fees and high TPS of Conflux, eSpace was introduced.
+Conflux es una cadena pública de alto rendimiento, totalmente descentralizada, activada por un innovador algoritmo de consenso Tree-Graph. La tasa de transacción de Conflux es muy baja, que se puede considerar casi gratuita en comparación con otras redes como Ethereum. Sin embargo, Ethereum ya ha construido un ecosistema maduro, incluyendo herramientas, SDKs, billeteras y bibliotecas de Solidity. Para reducir el coste de migración de proyectos y usuarios y hacer que los usuarios experimenten las ventajas de las tarifas bajas y el alto TPS de Conflux, eSpace fue introducido.
 
-Through the fully compatible interface, smart contracts, and dApps of Ethereum can be directly deployed to eSpace without any modification. Development tools, SDKs, wallets, and services of Ethereum can be directly used in eSpace. Users do not need to learn new knowledge but can use the original tools to get started directly.
+A través de la interfaz totalmente compatible, los contratos inteligentes y dApps de Ethereum pueden ser desplegados directamente en eSpace sin ninguna modificación. Herramientas de desarrollo, SDKs, billeteras y servicios de Ethereum pueden utilizarse directamente en eSpace. Los usuarios no necesitan aprender nuevos conocimientos pero pueden utilizar las herramientas originales para empezar directamente.
 
-eSpace is very easy to use for Ethereum developers and users, just like BSC, Polygon, Aurora.
+eSpace es muy fácil de usar para desarrolladores y usuarios de Ethereum, al igual que BSC, Polygon, Aurora.
 
-## **The Relationship Between the Two Spaces**
+## **La relación entre los dos espacios**
 
-Core Space and eSpace are two logically independent spaces with their own transactions, account status, and contracts. They share the same ledger (chain) for underlying data storage. A block may contain transactions from both Spaces, and they are only differentiated by the transaction type when transactions are executed. Each will only impact the account status in its own Space.
+El Core Space y el eSpace son dos espacios lógicamente independientes con sus propias transacciones, estado de cuenta y contratos. Comparten el mismo registro (cadena) para el almacenamiento de datos subyacente. Un bloque puede contener transacciones de ambos Espacios, y sólo se diferencian por el tipo de transacción cuando las transacciones son ejecutadas. Cada uno sólo afectará el estado de la cuenta en su propio espacio.
 
-To interact with Core Space, use Conflux-compatible wallet (Fluent), SDK (*-conflux-SDK), and development tools (chainIDE, hardhat). To interact with eSpace directly, use the existing tools and products from the Ethereum ecosystem, such as Metamask, Hardhat, Ethers.js, etc. (by simply setting the RPC network of the tool to **[Conflux eSpace RPC](../../espace/network-endpoints.md)**.
+Para interactuar con Core Space, utilice la billetera (Fluent), SDK (*-conflux-SDK), y las herramientas de desarrollo (chainIDE, hardhat) compatibles con Conflux. Para interactuar directamente con eSpace, utilice las herramientas y productos existentes del ecosistema Ethereum, como Metamask, Hardhat, Ethers. s, etc. (simplemente configurando la red RPC de la herramienta a **[Conflux eSpace RPC](../../espace/network-endpoints.md)**.
 
-## **How to Communicate Between Spaces**
+## **Cómo comunicarse entre espacios**
 
-To communicate between Conflux Core Space and eSpace, the [CrossSpaceCall](../../core/core-space-basics/internal-contracts/crossSpaceCall.md) contract can be used to transfer CFX and deploy contracts from Core Space to eSpace, as well as call eSpace contract methods in Core Space. Each account in Core Space has a corresponding [mirror address](../../espace/build/accounts.md#mapped-addresses-in-cross-space-operations) in eSpace, calculated by decoding the original Base32 address and hashing it with Keccak. The internal contract provides **synchronous** cross-space transfers of CFX, making it simple, safe, and fast. The built-in event system and On-chain Message Passing can also be used for communication between spaces.
+Para comunicarse entre el Core Space de Conflux y el eSpace, el contrato [CrossSpaceCall](../../core/core-space-basics/internal-contracts/crossSpaceCall.md) puede utilizarse para transferir CFX y desplegar contratos del Core Space al eSpace, así como también los métodos de contrato del eSpace en el Core Space. Cada cuenta en el espacio central tiene una correspondiente [dirección espejo](../../espace/build/accounts.md#mapped-addresses-in-cross-space-operations) en eSpace, calculado decodificando la dirección original Base32 y creando el hash con Keccak. El contrato interno provee transferencias de CFX a través de los espacios **sincronizadas**, haciéndolas simples, seguras y rápidas. El sistema de eventos integrado y el paso de mensajes en cadena también pueden utilizarse para la comunicación entre espacios.
 
-## **Which To Choose**
+## **Cuál Elegir**
 
-Conflux Core Space is a native space that supports [contract sponsorship](../../core/core-space-basics/internal-contracts/sponsor-whitelist-control.md) and has more network capacity (higher TPS). However, its [address format](../../core/core-space-basics/addresses.md) and [RPC](../../core/build/json-rpc/cfx-namespace.md) is different from Ethereum, so developers is expected to adopt Conflux-specific [toolchains](../../core/build/sdks-and-tools/sdks.md) to develop. Therefore, if you want to develop a brand new project, you can choose the Core Space. The contract sponsorship mechanism makes it possible for project users to interact with the contract without a balance, helping to lower the threshold of blockchain usage and expand the user base. Moreover, this feature allows developers to develop public chain applications in compliance with regulations in countries or regions where digital currencies are strictly monitored.
+Conflux Core Space es un espacio nativo que soporta [subsidios de contrato](../../core/core-space-basics/internal-contracts/sponsor-whitelist-control.md) y tiene más capacidad de red (mayor TPS). Sin embargo, su [ formato de dirección](../../core/core-space-basics/addresses.md) y [RPC](../../core/build/json-rpc/cfx-namespace.md) es diferente a Ethereum, así que se espera que los desarrolladores adopten [herramientas específicas de Conflux](../../core/build/sdks-and-tools/sdks.md) para desarrollar. Por lo tanto, si quieres desarrollar un proyecto nuevo, puedes elegir el Core Space. El mecanismo de subsidio de contratos permite a los usuarios del proyecto interactuar con contratos sin tener un saldo, reduciendo el límite de uso de la blockchain y expandiendo la base de usuarios. Además, esta característica permite a los desarrolladores desarrollar aplicaciones en cadena pública de acuerdo con las regulaciones en países o regiones donde las monedas digitales son estrictamente controladas.
 
-If you want to deploy an Ethereum project to take advantage of Conflux's high performance and low cost in order to reduce user costs, you can choose eSpace. The project can be deployed directly without any modification. If you are a skilled Ethereum engineer, you can also choose eSpace directly and use the tools and SDKs that you are familiar with to get started quickly.
+Si desea desplegar un proyecto de Ethereum para aprovechar el alto rendimiento y bajo costo de Conflux reduciendo los costos del usuario, puedes elegir eSpace. El proyecto se puede desplegar directamente sin ninguna modificación. Si eres un ingeniero experto en Ethereum, también puede elegir eSpace directamente y utilizar las herramientas y SDKs con las que está familiarizado para comenzar rápidamente.
 
-## Reference
+## Referencia
 
 - [CIP-90](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-90.md).
-- [Espace RPC Compatibility](../../espace/build/jsonrpc-compatibility.md).
-- [Espace EVM Compatibility](../../espace/build/evm-compatibility.md).
+- [Compatibilidad RPC del eSpace](../../espace/build/jsonrpc-compatibility.md).
+- [Compatibilidad EVM del eSpace](../../espace/build/evm-compatibility.md).
