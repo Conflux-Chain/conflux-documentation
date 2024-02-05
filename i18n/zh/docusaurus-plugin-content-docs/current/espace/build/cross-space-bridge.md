@@ -131,18 +131,18 @@ main();
 要将 CFX 从 Conflux eSpace 转移到 Conflux Core，需要两个步骤。
 
 1. 将 CFX 转移到属于 Core 目标地址的 eSpace 映射地址。 这个操作需要一个 eSpace 交易。
-2. 调用 `CrossSpaceCall` 内部合约的 `withdrawFromMapped(uint256 value)` 方法。 这个调用将把 CFX 从映射账户转回到相应的目标地址。 Another method `mappedBalance` can be used to query the balance of one core address's mapped address.
+2. 调用 `CrossSpaceCall` 内部合约的 `withdrawFromMapped(uint256 value)` 方法。 这个调用将把 CFX 从映射账户转回到相应的目标地址。 另一个方法 `mappedBalance` 可用于查询一个 core 地址的映射地址余额。
 
 ```js
 function withdrawFromMapped(uint256 value) external;
 
-// parameter addr is a core account address
+// 参数 addr 是一个 core 账户地址
 function mappedBalance(address addr) external view returns (uint256);
 ```
 
 #### JS 示例
 
-Step1: use js-conflux-sdk's address utility method to get the mapped address of the Core Space destination account.
+步骤 1: 使用 js-conflux-sdk 的地址工具方法获取 Core Space 目标账户的映射地址。
 
 ```js
 const { address } = require('js-conflux-sdk');
@@ -154,9 +154,9 @@ const mappedAddress = address.cfxMappedEVMSpaceAddress(base32Address);
 // 0x12Bf6283CcF8Ad6ffA63f7Da63EDc217228d839A
 ```
 
-Step2: transfer CFX to the mapped address in eSpace through wallet or ethers.js
+步骤 2: 通过钱包或 ethers.js 在 eSpace 中向映射地址转移 CFX
 
-Step3: invoke the `withdrawFromMapped` method of `CrossSpaceCall` internal contract in Core Space to withdraw CFX from the mapped address.
+步骤 3: 在 Core Space 中调用 `CrossSpaceCall` 内部合约的 `withdrawFromMapped` 方法，从映射地址提取 CFX。
 
 ```js
 const { Conflux, Drip, address } = require('js-conflux-sdk');
@@ -176,17 +176,17 @@ async function main() {
             from: account,
         }).executed();
 
-    console.log(`Withdraw from eSpace ${receipt.outcomeStatus === 0 ? 'succeed' : 'failed'}`);
+    console.log(`从 eSpace 提取 ${receipt.outcomeStatus === 0 ?' succeed' : 'failed'}`);
 }
 
-main()
+main();
 ```
 
-## Call eSpace Contract from Core Space
+## 从 Core Space 调用 eSpace 合约
 
-Through CrossSpaceCall contract, it is possible the read or write eSpace contract's state from Core Space. We will give a simple example to show how to call eSpace contract from Core Space.
+通过 CrossSpaceCall 合约，可以从 Core Space 读取或写入 eSpace 合约的状态。 我们将给出一个简单的示例，展示如何从 Core Space 调用 eSpace 合约。
 
-Below is a contract deployed in eSpace at address `0x8c2a2b6b4c3b6e7e7d3b5e8b4b6b6b6b6b6b6b6b`:
+以下是在 eSpace 中部署的合约，地址为 `0x8c2a2b6b4c3b6e7e7d3b5e8b4b6b6b6b6b6b6b6b`：
 
 ```js
 contract SimpleStore {
@@ -198,7 +198,7 @@ contract SimpleStore {
 }
 ```
 
-And below is a contract deployed in Core Space:
+以下是在 Core Space 中部署的合约：
 
 ```js
 
@@ -209,7 +209,7 @@ contract CrossCallExample {
     function readValue() public returns (uint256) {
         bytes20 to = bytes20(0x8c2a2b6b4c3b6e7e7d3b5e8b4b6b6b6b6b6b6b6b);
         bytes memory num = crossSpaceCall.staticCallEVM(to, abi.encodeWithSignature("value()"));
-        return abi.decode(num, (uint256))
+        return abi.decode(num, (uint256));
     }
 
     function setValue(uint256 _value) public {
@@ -224,6 +224,6 @@ contract CrossCallExample {
 ## 其他资源
 
 - [CIP-90](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-90.md)
-- [Mapped Addresses](./accounts.md#mapped-addresses-in-cross-space-operations)
+- [关于映射地址](./accounts.md#mapped-addresses-in-cross-space-operations)
 - [CrossSpaceCall](../../core/core-space-basics/internal-contracts/crossSpaceCall.md)
-- [eSpace Phantom Transactions](./evm-compatibility.md#phantom-transactions)
+- [eSpace 虚拟交易](./evm-compatibility.md#phantom-transactions)
