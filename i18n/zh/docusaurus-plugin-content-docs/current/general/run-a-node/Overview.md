@@ -32,10 +32,10 @@ import TabItem from '@theme/TabItem';
 
 - [节点类型](./node-types.md)之间的区别
 - 如何[下载](./advanced-topics/downloading-conflux-client.md)或者[编译](./advanced-topics/compiling-conflux-client.md)Conflux软件
-- We also provide [docker image](./advanced-topics/downloading-conflux-client#docker) for Conflux client
-- Use [snapshot](./snapshot-tool.md) to accelerate the synchronization process
-- The common [configuration options](./advanced-topics/node-configuration.md) explained
+- 我们提供Conflux客户端的[docker镜像](./advanced-topics/downloading-conflux-client#docker)
+- 使用[快照](./snapshot-tool.md)加速同步
+- 常见的[配置选项](./advanced-topics/node-configuration.md)解释
 - A [configuration file template](./advanced-topics/configuration-files.md) for mainnet, and [mainnet bootnodes list](./advanced-topics/official-bootnodes.md)
-- How to [setup a private chain](./advanced-topics/running-independent-chain.md)
+- 如何[搭建私有链](./advanced-topics/running-independent-chain.md)
 
-If you have encountered any problem, please check [FAQs](./nodes-faqs.md) and [troubleshooting](./TroubleShooting) page.
+如果您遇到任何问题，请查看[常见问题解答](./nodes-faqs.md)和[故障排除](./TroubleShooting)页面。
