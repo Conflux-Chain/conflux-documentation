@@ -7,65 +7,65 @@ displayed_sidebar: generalSidebar
 
 ## Node startup failure.
 
-### Linux: illegal instruction?
+### Linux: illegal instruction？
 
-If you encounter an 'illegal instruction' error when starting the node using the official provided binary, it indicates a mismatch between your CPU instruction set and the one used to compile the binary. You may try downloading the compatible version from the release page or compile it yourself.
+如果在使用官方提供的二进制文件启动节点时遇到 'illegal instruction' 错误，这表明您的CPU指令集与编译二进制文件时使用的指令集不匹配。 您可以尝试从发布页面下载兼容版本或自行编译。
 
-### Linux: GLIBC_2.27 not found?
+### Linux: GLIBC_2.27 not found？
 
-The Conflux binary depends on the **glibc** library. If it is not installed on your system or the installed version is **too low**, you may encounter this error.
+Conflux二进制文件依赖于 **glibc** 库。 如果系统未安装该库，或者安装的版本**过低**，您可能会遇到此错误。
 
 ### kvdb_rocksdb - DB has been previously marked as corrupted, attempting repair
 
-This error occurs because the data files of the node have been corrupted, making it unable to start. In such cases, you can try deleting the data directory and allowing the node to resynchronize the data.
+这个错误发生是因为节点的数据文件已损坏，无法启动。 在这种情况下，您可以尝试删除数据目录，让节点重新同步数据。
 
-If you want to quickly start the node, you can directly download the node data snapshot, unzip it, and start the node.
+如果您想快速启动节点，可以直接下载节点数据快照，解压并启动节点。
 
 ### Err value: PKCS#8 cryptographic error
 
 ![](./imgs/pos-key-pwd-wrong.png)
 
-This error may be caused by an incorrect password input for the pos_key.
+这个错误可能是由于为pos_key输入的密码不正确。
 
 ### No such device or address
 
 `failed to start full client: Os { code: 6, kind: Uncategorized, message: "No such device or address" }`
 
-This error occurs when starting the node using Docker. The node attempts to read the pos_key password from standard input, and if it cannot be read, it returns an error. In this case, you can configure the password in the configuration file or set it as an environment variable.
+使用Docker启动节点时可能出现这个错误。 节点尝试从标准输入读取 pos_key 密码，如果无法读取，则返回错误。 在这种情况下，您可以在配置文件中配置密码，或将其设置为环境变量。
 
 ### Mac System Symbol not found
 
 ![](./imgs/mac-os-version-too-low.png)
 
-If this occurs, it indicates that the host system's version is too low. Currently, only systems with macOS 12 or above are supported.
+如果出现这种情况，表明宿主系统的版本过低。 目前，只支持macOS 12或以上的系统。
 
-Additionally, when running the node program on a Mac, it's important to choose the correct processor version based on your computer's architecture. M1 and x86 versions are not interchangeable.
+此外，在Mac上运行节点程序时，重要的是根据您电脑的架构选择正确的处理器版本。 M1和x86版本不可互换。
 
 ### Windows System  ExecutionContext exists for cur_era_genesis core\src\block_data_manager\mod.rs
 
-When using a data snapshot on a Windows system to start a node, you may encounter the following error:
+在Windows系统上使用数据快照启动节点时，您可能会遇到以下错误：
 
 ![](./imgs/snapshot-download-uncomplete.jpeg)
 
-### The node crashes shortly after startup.
+### 节点在启动后不久崩溃。
 
-If this issue occurs on a Linux system, it may be due to insufficient permissions for the startup account. You can try starting it in sudo mode.
+如果这个问题发生在Linux系统上，可能是由于启动账户权限不足。 您可以尝试以sudo模式启动。
 
-## Node data synchronization issue.
+## 节点数据同步问题及其解决方法：
 
-### The node is unable to connect to peers after startup.
+### 节点启动后无法连接到其他节点
 
-It is possible that an incorrect configuration file was used, such as using the mainnet binary with testnet configuration, testnet binary with mainnet configuration, or **not specifying a configuration file** when starting the node.
+可能是由于使用了错误的配置文件，例如使用主网二进制文件与测试网配置，测试网二进制文件与主网配置，或者在启动节点时**未指定配置文件**。
 
-The fundamental reason for not connecting to peers is often **the lack of correctly specified bootnodes**.
+通常不连接到其他节点的根本原因是没有**正确指定启动节点**。
 
-Another possibility is that the node is unable to connect to the network due to network issues.
+另一种可能性是由于网络问题导致节点无法连接到网络。
 
-### How to determine if a node is running properly?
+### 如何确定节点是否正常运行？
 
-1. Check the **latest epoch** in the running logs:
+1. 检查运行日志中的**latest epoch**：
 
-If the **latest epoch** in the node's running logs keeps increasing, or if the **epochNumber** obtained through the `cfx_getStatus` method continues to rise, it indicates that the node is running normally.
+如果节点的运行日志中的**latest epoch**不断增加，或者通过`cfx_getStatus`方法获得的**epochNumber**持续上升，说明节点正在正常运行。
 
 ```txt
 Catch-up mode: false, latest epoch: 85959xxxx
@@ -97,43 +97,43 @@ If the **index** or **height** keep increase, the node is running normally.
 cfxcore::con - construct_pivot_state: index 30774 height 86370774 compute_epoch true
 ```
 
-### How to determine if a node is synchronized to the latest block?
+### 如何确定节点是否同步到最新的区块？
 
-If the node's running log shows **Catch-up mode: false**, it indicates that the node has synchronized to the latest data.
+如果节点的运行日志显示**Catch-up mode: false**，表示节点已经同步到最新数据。
 
-### Why is my node not synchronizing?
+### 为什么我的节点没有在同步？
 
-The node synchronization may encounter various issues, with common ones including:
+节点同步可能遇到各种问题，常见的包括：
 
-1. Insufficient disk space on the node machine.
-2. Network issues, such as inadequate incoming and outgoing bandwidth (recommended at least 5M).
-3. Linux maximum file open limit not set high enough (ulimit -n 10000).
-4. Incorrect specification of the configuration file; without proper configuration file settings, bootnodes cannot be located, leading to data synchronization issues. (When starting via Docker and mounting directories, it is easy to forget to specify the configuration file.)
-5. Check for any error in node's running log. (When starting via start.sh, error messages are saved in stderr.txt.)
+1. 节点机器上的磁盘空间不足。
+2. 网络问题，如进出带宽不足（推荐至少5M）。
+3. Linux最大文件打开限制设置不够高（ulimit -n 10000）。
+4. 配置文件指定不正确；没有正确的配置文件设置，无法定位启动节点，导致数据同步问题。 (当通过 Docker 和 挂载目录 启动时，很容易忘记指定配置文件。)
+5. 检查节点的运行日志是否有任何错误。 （通过 start.sh 启动时，错误信息存储在 stderr.txt 中。）
 
-If after checking none of the above issues are present, but the node's **latest epoch** is not increasing, the node is likely running normally but engaged in other tasks, such as creating a checkpoint. In such cases, it is advisable to observe for an extended period, as this situation may persist for several hours or even tens of hours.
+如果检查了上述所有问题都不存在，但节点的 **latest epoch** 没有增加，那么节点可能正常运行但正在执行其他任务，如创建检查点。 在这种情况下，建议观察一段时间，因为这种情况可能持续数小时甚至数十小时。
 
-### After restarting the node, the epoch height remains unchanged?
+### 重启节点后，纪元高度保持不变？
 
-After restarting the node, there might be a state rebuilding operation at the era checkpoint. This process takes a considerable amount of time, ranging from half an hour to several hours. Please be patient and wait.
+重启节点后，可能会 era 检查点进行状态重建操作。 这个过程需要较长时间，从半小时到几小时不等。 请耐心等待。
 
-### Why does synchronization take a long time after restart?
+### 重启后同步为何需要较长时间？
 
-After a node is restarted, it synchronizes data from the last checkpoint and replays block data. It will take different amounts of time according to the distance to the last checkpoint. After that, it will start synchronizing from the latest block.
+重启节点后，它会从上一个检查点同步数据并重放区块数据。 所需时间根据距离上一个检查点的距离而异。 之后，它将开始从最新区块同步。
 
-It’s normal, generally it will take a few minutes to more than ten minutes.
+这是正常现象，通常会花费几分钟到十多分钟的时间。
 
-### Why does the block height stop increasing?
+### 为什么区块高度停止增长？
 
-If the block height stops increasing, you can check the log or terminal to determine whether there is any error. If there is no error, it is most likely due to network reasons, you can try to restart the node.
+如果区块高度停止增长，您可以检查日志或终端以确定是否有任何错误。 如果没有错误，最有可能是由于网络原因，您可以尝试重启节点。
 
-### How to check the error log?
+### 如何检查错误日志？
 
-If you run the node through `start.sh`, you can check the error log in `stderr.txt` in the same directory.
+如果您通过 `start.sh` 运行节点，您可以在同一目录下的 `stderr.txt` 中检查错误日志。
 
-### Synchronizing data from the beginning on the testnet, the synchronization process gets stuck in the middle.
+### 在测试网上从头开始同步数据，同步过程中卡住
 
-To perform a full sync on the testnet, you need to increase the option `additional_maintained_snapshot_count` to 50.
+要在测试网上进行完整同步，需要将选项 `additional_maintained_snapshot_count` 增加到50。
 
 ### failed to calculate mempool broadcast RTT: SystemTimeError(1.2762543s)
 
@@ -181,11 +181,11 @@ backtrace = '''
   29:     0x7ffc36822651 - RtlUserThreadStart
 ```
 
-This error is caused by the system API returning a system time that is set backward. It is recommended to synchronize the time promptly to avoid the widening of the system time deviation.
+This error is caused by the system API returning a system time that is set backward. 建议及时同步时间，以避免系统时间偏差的扩大。
 
-## Normal node running logs.
+## 正常节点运行日志
 
-During the node's operation, the following information appears, which does not affect the normal functioning of the node and can be ignored.
+在节点运行期间，出现以下信息，这些信息不影响节点的正常功能，可以忽略。
 
 ### ERROR IO Worker #2 cfxcore::con - Fail to recover state_valid
 
@@ -195,8 +195,8 @@ During the node's operation, the following information appears, which does not a
 
 INFO Background Snapshot cfx_storage: - COW copy failed, check file system support. Command "cp" "-R" "--reflink=always"
 
-This message is a prompt indicating that the machine's file system does not support the Copy on Write (COW) feature. It does not affect the node's operation. If the machine supports COW, it can help improve node performance.
+这些消息是提示，表明机器的文件系统不支持写时复制（COW）功能。 这不会影响节点的操作。 如果机器支持COW，可以帮助提高节点性能。
 
 ### WARN  Socket IO Worker #2  cfxcore::tra - an unexecuted tx is garbage-collected.
 
-Excessive transactions in the transaction pool result in the recycling of transactions in the pool. This does not affect the normal operation of the node.
+过多的交易在交易池中会导致池中的交易被回收。 这不会影响节点的正常运行。
