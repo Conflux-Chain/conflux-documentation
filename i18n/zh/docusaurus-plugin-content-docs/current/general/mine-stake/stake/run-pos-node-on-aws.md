@@ -4,100 +4,100 @@ title: Run a PoS Node on AWS
 displayed_sidebar: generalSidebar
 ---
 
-This tutorial will help you set up a Conflux node on AWS.
+以下是如何在AWS上搭建Conflux节点的教程。
 
-## Setting up an AWS Instance
+## 设置AWS实例
 
-In this section, you’ll configure and launch an AWS EC2 instance where your Conflux PoS staking pool will be hosted.
+在本节中，您将配置并启动一个 AWS EC2 实例，在这个实例中，您将会建立起您自己的Conflux PoS 质押池。
 
-1. Create an AWS account or log in your existing account.
-2. In AWS, go to Services > EC2 Management Console and launch a new EC2 instance.
-3. Click select on the Ubuntu Server 20.04 64-bit (x86) image. You can optionally use other Linux or Windows-based images, but we’ll stick to this one in this tutorial.
-4. Select the t2.large instance type and click Next: Configure Instance Details.
-5. Leave the default Configure Instance Details parameters and click Next: Add Storage.
-6. In Add Storage, set an image size of 1000 GiB and click Review and Launch. :::note  
-   You can resize this later to 400 GiB, but this will greatly speed up the node setup process.
+1. 创建或登录您的AWS账户。
+2. 在AWS中，转到“服务 > EC2管理控制台”并启动一个新的EC2实例。
+3. 选择Ubuntu Server 20.04 64位（x86）镜像，点击选择。 虽然也可以选择其他Linux或Windows基础镜像，但本教程将使用这一镜像。
+4. 选择 t2.large 实例类型，然后点击“下一步：配置实例详情”。
+5. 保留默认的“配置实例详情”参数，然后点击“下一步：添加存储”。
+6. 在“添加存储”中，设置镜像大小为1000 GiB，然后点击“查看和启动”。 :::note  
+   之后可以将大小调整为400 GiB，但这将加快节点搭建速度。
 :::
-7. Review the instance details and click Launch.
+7. 查看实例详情并点击“启动”。
 
-You have successfully created and launched an EC2 instance. Now let’s log in to it from our local machine.
+您已成功创建并启动了一个 EC2 实例。 现在让我们从本地机器登录它。
 
-## Logging in to the EC2 Instance
+## 登录到EC2实例
 
-1. In this section, you’ll login to the EC2 instance for the first time.
-2. Once your instance is created, in the EC2 Management Console go to Network & Security > Key Pairs. If you already have an AWS key pair, you can skip to Step 6.
-3. In Key Pairs, click Create key pair.
-4. Create and download a key pair.
-5. In Create key pair, enter a name for your key pair (in this case, we’ll enter the name conflux), then click create Create key pair.
-6. Download the newly-created key pair.
-7. In the EC2 Management Console, go to Instances > Instances.
-8. Go to your newly-created instance details by click its Instance ID.
-9. In the Instance summary, ensure that the instance state is “Running” and copy its Public IPv4 address.
-10. Go to your local machine’s terminal, and connect to your instance. You can do this by typing:
+1. 在本节中，您将第一次登录到EC2实例。
+2. 实例创建后，在EC2管理控制台中转到“网络&安全 > 密钥对”。 如果您已经有AWS密钥对，可跳到第6步。
+3. 在“密钥对”中，点击“创建密钥对”。
+4. 创建并下载密钥对。
+5. 创建时，输入密钥对名称（例如，我们输入conflux），然后点击“创建密钥对”。
+6. 下载新创建的密钥对。
+7. 在EC2管理控制台中转到“实例 > 实例”。
+8. 点击新创建的实例ID，查看实例详情。
+9. 确保实例状态为“运行中”，复制其公共IPv4地址。
+10. 在本地机器的终端中，连接到您的实例： You can do this by typing:
 
 :::note
-You’ll need to change your key pair file’s permissions.
+您需要更改密钥对文件的权限。
 :::
 
 ```shell
-ssh -i <path to your key pair> ubuntu@<your machine's IP address or IPv4 DNS> 
+ssh -i <密钥对路径> ubuntu@ <机器的IP地址或IPv4 DNS> 
 ```
 
-11. Enter the password that you defined in your key pair.
+11. 输入您在密钥对中定义的密码。
 
-You have successfully logged in to your EC2 instance! Now let’s log in to our instance and prepare the server.
+现在，您已成功登录到您的 EC2 实例！ 让我们登录我们的实例并准备服务器。
 
-## First Steps on the Server
+## 服务器上的首要步骤
 
-Some of the recommended first steps are the following:
+建议先采取以下步骤：
 
-- Upgrade currently installed applications.
+- 更新已安装的应用程序：
 
 ```shell
 sudo apt-get update
 sudo apt-get upgrade
 ```
 
-- Adding a new dedicated user for your PoS node.
-- Add your user to sudoers.
-- Changing your server’s hostname.
+- 为您的PoS节点添加一个新的专用用户。
+- 并将其添加到sudoers。
+- 更改服务器的主机名。
 
-None of these are essential steps, so you can skip them or save them for later.
+当然，这些步骤不是必需的，因此您可以跳过它们或稍后再做。
 
-Now that you have done this initial set up on your server, let’s move on and set up a Conflux node following the initial steps described on this guide.
+现在您已经在您的服务器上完成了这些初步设置， 让我们按照本指南中的首要步骤继续往后，并搭建 Conflux 节点。
 
-## Setting Up Your Conflux Node
+## 搭建Conflux节点
 
-In this section, you’ll download, install, configure, run, synchronize your Conflux node.
+在本节中，您将完成下载、安装、配置、运行、同步您的 Conflux 节点。
 
-This will be, roughly, a two-step process:
+大概会分为两个步骤
 
-1. Installing and configuring the Conflux client.
-2. Running the Conflux client and syncing the node.
+1. 安装和配置 Conflux 客户端。
+2. 运行 Conflux 客户端并同步节点。
 
-## Installing & Configuring the Conflux Client
+## 安装和配置Conflux客户端：
 
-1. Download the archive node snapshot. This will help us speed up the node synchronization process by downloading a recent snapshot of the chain.
+1. 下载归档节点快照。 这将帮助我们通过下载链上的最新快照来加速节点同步过程。
 
 :::note
-The archivenode snapshot has a file size of around 200GB. Downloading it might take a few hours.
+归档节点快照的文件大小大约为200GB。 下载可能需要几个小时。
 :::
 
 ```shell
 wget https://conflux-blockchain-data.oss-cn-beijing.aliyuncs.com/fullnode-db/M/download.sh
 ```
 
-2. Follow the instructions on downloading the Conflux client pre-built binaries [here](../../run-a-node/advanced-topics/downloading-conflux-client)
+2. 按照以下步骤[下载](../../run-a-node/advanced-topics/downloading-conflux-client)Conflux客户端预构建二进制文件
 
-3. Extract the archive node snapshot to conflux-rust/run
+3. 将归档节点快照提取到conflux-rust/run
 
 ```shell
-tar -xvzf <archive-node-snapshot>.tar.gz conflux-rust/run 
+tar -xvzf <归档节点快照>.tar.gz conflux-rust/run 
 ```
 
-4. Follow the instructions on configuring and running a Conflux node [here](../../run-a-node)
+4. 按照以下步骤配置和[运行Conflux节点](../../run-a-node)
 
-## Running the Conflux Client and Syncing the Node
+## 运行Conflux客户端并同步节点
 
 In this process, we’ll run a Conflux node. Once the node is running, it will first sync to the latest PoW block. Once this process is done it will then sync to the latest PoS block.
 
