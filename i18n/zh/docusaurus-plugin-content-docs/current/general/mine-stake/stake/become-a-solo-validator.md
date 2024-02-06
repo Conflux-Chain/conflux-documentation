@@ -12,27 +12,27 @@ To become a solo validator, you’ll need to:
 
 This guide will walk you through the process of setting up a solo validator.
 
-## 1. Run a Conflux node
+## 1. 运行Conflux节点
 
-A PoS node is also a Conflux node. So you can run a PoS node following the [run a node](/docs/general/run-a-node/Overview) guide. Either a full node or a archive node is fine.
+运行PoS节点同样是运行Conflux节点。 你可以按照[运行节点指南](/docs/general/run-a-node/Overview)来操作。 运行全节点或归档节点都可以。
 
-The PoS configuration file for the node is located in the `pos_config` directory within the downloaded node package. The `pos_config.yaml` file in this directory is the PoS configuration file, and typically, the settings in this file do not need to be modified.
+节点的PoS配置文件位于下载的节点包中的 `pos_config` 目录。 此目录中的 `pos_config.yaml` 文件是PoS配置文件，通常不需要修改此文件中的设置。
 
-When you first start the node, you will be prompted to set a password to protect the PoS private key of the node. Please remember this password carefully, as it cannot be recovered if forgotten. When the node is restarted later, you will be required to enter this password. The private key is stored in the `pos_config/pos_key` file in the node directory, and it is recommended to create a backup of this file.
+首次启动节点时，系统会提示您设置密码以保护节点的PoS私钥。 请务必记住这个密码，因为一旦忘记，您将无法找回密码。 稍后重新启动节点时，将需要输入此密码。 私钥存储在节点目录的 `pos_config/pos_key` 文件中，建议备份此文件。
 
-When starting the node for the first time, it is recommended to use a blockchain data snapshot, as it can significantly accelerate the node synchronization speed. Please refer to [Blockchain Data Snapshot](/docs/general/run-a-node/snapshot-tool) for information on how to use the blockchain data snapshot.
+首次启动节点时，建议使用区块链数据快照，因为它可以大大加快节点同步速度。 有关如何使用区块链数据快照的信息，请参阅[区块链数据快照](/docs/general/run-a-node/snapshot-tool) 。
 
 Once the node data is synchronized to the latest block (and the "Catch-up mode" in the node logs changes to false), you can proceed with PoS registration.
 
-## 2. Register it in PoS
+## 2. 在PoS中注册
 
 ### 前提条件
 
-To become a validator, you need to register your node in PoS. To register a node, you need a **Conflux Core account** and the node's **PoS register data**.
+要成为验证者，你需要在PoS中注册你的节点。 注册节点需要一个 **Conflux Core账户** 和节点的 **PoS注册数据** 。
 
-So first you should have Fluent Wallet installed, and have a account with at least 1000 CFX + gasFee in it. Because one PoS vote is 1000 CFX.
+首先，你需要安装Fluent Wallet，并且账户中拥有至少 1000 CFX + gasFee。 因为每一个 PoS 投票需要1000 CFX。
 
-The you can get the PoS register data by running the following command in your node directory:
+然后，您可以在节点目录中运行以下命令来获取PoS注册数据：
 
 ```bash
 ./conflux rpc local pos register --power 1
@@ -43,120 +43,120 @@ The you can get the PoS register data by running the following command in your n
 ]
 ```
 
-It should return two strings, the first one is the register data, the second one is the **PoS node address**.
+运行后会输出两个字符串，第一个是注册数据，第二个是 **PoS节点地址** 。
 
-### Stake in PoW
+### 在此PoS节点中质押CFX
 
-Before you can register your node in PoS, you need to stake some CFX in PoW, you can do it use [ConfluxHub's PoW stake tool](https://confluxhub.io/governance/pow-stake).
+在您可以在PoS中注册您的节点之前，您需要在PoW中质押一些CFX，您可以使用[ConfluxHub的PoW质押工具](https://confluxhub.io/governance/pow-stake)来进行。
 
 ![](./img/pow-stake.jpg)
 
-It is very easy to use, just connect your Fluent wallet, input the amount of CFX you want to stake, and click the "Stake" button. Here we can choose to stake 1000 CFX.
+这个工具非常容易使用，只需连接您的Fluent钱包，输入您想要质押的CFX数量，然后点击“质押”按钮。 这里我们可以选择质押1000 CFX。
 
 ### Register
 
-Then we can use the [ConfluxHub's PoS register tool](https://confluxhub.io/pos/register) to register our node.
+然后我们可以使用[ConfluxHub的PoS注册工具](https://confluxhub.io/pos/register)来注册我们的节点。
 
-1. Paste the register data we got in the previous step into the "Full node data" input box.
-2. Input 1 in the "Votes" input box.
-3. Click the "Register and Bind" button.
-4. It will pop up a window to confirm the transaction, click the "Confirm" button.
+1. 将我们在上一步中获得的注册数据粘贴到“全节点数据”输入框中。
+2. 在“投票”输入框中输入1。
+3. 点击“注册并绑定”按钮。
+4. 它会弹出一个窗口来确认交易，点击“确认”按钮。
 
 ![](./img/pos-register.jpg)
 
-After the transaction is executed, the register data will be synced to the PoS chain, and the sync process will take about 10 minute.
+交易执行后，注册数据将同步到PoS链上，同步过程大约需要10分钟。
 
 ## 3. Stake CFX in this PoS node
 
-After the register data is synced to the PoS chain, you can enter a [page like this](https://confluxhub.io/pos/increase).
+注册数据同步到PoS链后，您可以进入像[这样的页面](https://confluxhub.io/pos/increase)。
 
 ![](./img/Stake-More.jpg)
 
-This is PoS validator dashboard, you can:
+这是PoS验证者仪表板，您可以：
 
-1. See validator's status: PoS address, How many votes it has, How much reward it has got, etc.
-2. Stake more Votes to this validator, unstake votes from it.
-3. See the validator's Locking & Unlocking votes.
+1. 查看验证者的状态：PoS地址，它拥有多少投票，获得了多少奖励等。
+2. 向此验证者质押更多投票，或从中撤销投票。
+3. 查看验证者的锁定和解锁投票。
 
-### Stake more Votes
+### 质押更多投票
 
-You can stake more votes to this validator anytime you want, first you need [**stake more CFX in PoW**](#stake-in-pow), then input the amount of votes you want to stake in the "Votes" input box, and click the "Stake" button. Then these votes will be synced to PoS chain in about 10 minutes.
+您可以随时向此验证者[**质押更多投票**](#stake-in-pow)，首先您需要在PoW中质押更多CFX，然后在“投票”输入框中输入您想要质押的投票数量，并点击“质押”按钮。 然后这些投票将在大约10分钟内同步到PoS链。
 
-Normally the new staked votes will be in **locking** status for 13 days. After 13 days, these votes will be in **locked** status. The votes in **Locking** status will also have rewards.
+通常新质押的投票将在13天内处于**锁定中**状态。 13天后，这些投票将处于**已锁定**状态。 **锁定中**状态的投票也将获得奖励。
 
-### Unstake votes
+### 撤销投票
 
-If you want to unstake some votes from this validator, you can input the amount of votes you want to unstake in the "Votes" input box, and click the "Unstake" button. Then these votes will be synced to PoS chain in about 10 minutes.
+如果您想从这个验证者那里撤销一些投票，您可以在“投票”输入框中输入您想要撤销的投票数量，并点击“撤销”按钮。 然后这些投票将在大约10分钟内同步到PoS链。
 
-Normally the unstaked votes will be in **unlocking** status for 1-14 days. After that, these votes will be in **unlocked** status, and can be withdrawn to your account use the [ConfluxHub's Pow Stake Tool](#stake-in-pow)
+通常撤销的投票将在1-14天内处于**解锁中**状态。 之后，这些投票将处于**已解锁**状态，并可以使用[ConfluxHub的PoW质押工具](#stake-in-pow)提现到您的账户。
 
-## View validator's status in ConfluxScan
+## 在ConfluxScan中查看验证者的状态
 
-You can also view validator's status in [ConfluxScan](https://confluxscan.io/). By visiting this url **`https://confluxscan.io/pos/accounts/0x<your-pos-node-address>?tab=overview`**
+您还可以在[ConfluxScan](https://confluxscan.io/)中查看验证者的状态。 通过访问此链接 **https\://confluxscan.io/pos/accounts/0x<your-pos-node-address>?tab=overview**
 
-In this page you can view:
+在这个页面上，您可以查看：
 
-1. Validator's status in detail.
-2. Incoming history.
-3. Voting History.
-4. Pending Rights Status: The locking and unlocking votes.
+1. 详细的验证者状态。
+2. 进入历史。
+3. 投票历史。
+4. 待定权利状态：锁定和解锁投票。
 
 ![](./imgs/../img/scan-pos-account.png)
 
-## Mainnet & Testnet ConfluxHub
+## ConfluxHub主网与测试网
 
 - [Confluxhub Mainnet](https://confluxhub.io/governance/pow-stake)
 - [Confluxhub Testnet](https://test.confluxhub.io/governance/pow-stake)
 
 ## 常见问题解答
 
-### Which Conflux Space does the register process take?
+### 注册过程在Conflux的哪个space进行？
 
-It's in Core Space, and Fluent Wallet is required in this process.
+注册过程发生在Core Space中，此过程中需要Fluent Wallet。
 
-### How do I claim my rewards?
+### 如何领取我的奖励？
 
-The rewards will be automatically sent to your Core Space account every half hour.
+奖励将每半小时自动发送到您的 Core Space 账户。
 
-### What's the expected reward rate?
+### 预期的质押收益率是多少？
 
-The expected reward rate is 10-14% per year.
+大约为每年10-14%
 
-### Why my node is not elected?
+### 为什么我的节点没有被选中？
 
-The more votes you have, the more likely you will be elected. There are total **300** votes in the network, you can calculate the required votes to be elected by this formula:
+拥有的票数越多，被选中的可能性越高。 网络中总共有 **300** 个席位，您可以通过以下公式计算被选为验证者所需的票数：
 
-Total CFX staked in the network / 300 = Required votes to be elected
+网络中总质押CFX总量 / 300 = 被选为验证者所需的票数
 
-The other reason is that your node is not running correctly, you can check your node's status:
+另一个原因可能是您的节点未正确运行。您可以检查节点状态：
 
-1. Is your node synced to the latest block?
-2. Are your node's `pos_key` and `pos_db/secure_storage.json` matching? If you are unsure, you can delete the `pos_db/secure_storage.json` file and restart your node; the node will regenerate the `pos_db/secure_storage.json` file.
+1. 节点是否与最新区块同步？
+2. 节点的 `pos_key` 和 `pos_db/secure_storage.json` 是否匹配？ 如果不确定，您可以删除 `pos_db/secure_storage.json` 文件并重启节点；节点将重新生成 `pos_db/secure_storage.json` 文件。
 
-### The risks to be aware of when running a node?
+### 运行节点时需注意哪些风险？
 
-The risks to be aware of when running a node include:
+需要注意的风险包括：
 
-1. Risk of PoS private key leakage or loss. Please securely store the PoS private key and avoid uploading it to any public servers.
-2. Stability of PoS node operation. If the node is elected to the committee and does not participate in PoS voting for more than 1.5 hours, all PoS votes will be forcibly retired. There will be no rewards after retirement, but there won't be any penalties either.
-3. Sharing a pos_key file between two PoS nodes may result in the permanent lockup of all PoS votes for that node. This is **the most severe risk and should be treated with utmost caution**.
+1. PoS私钥的泄露或丢失风险。 请安全存储PoS私钥，避免将其上传至任何公共服务器。
+2. PoS节点运行的稳定性。 如果节点被选为PoS委员会成员并且超过1.5小时未参与PoS投票，将被强制退休。 退休后将不再有奖励，但也不会有任何处罚。
+3. 在两个PoS节点之间共享pos_key文件可能导致该节点的所有PoS票权永久锁定。 这是 **最严重的风险，应极为谨慎对待** 。
 
-### How to regenerate the PoS private key?
+### 如何重新生成PoS私钥？
 
-Deleting `pos_config/pos_key` and `pos_db/secure_storage.json`, and restarting the node will regenerate the PoS private key.**Please be sure that you want to delete these two files because once deleted, your PoS account cannot be recovered.**
+删除 `pos_config/pos_key` 和 `pos_db/secure_storage.json` ，然后重启节点将重新生成PoS私钥。**请确保您确实想删除这两个文件，因为一旦删除，您的PoS账户将无法恢复。**
 
-### How long does it take for CFX to go from staking to withdrawal in PoS?
+### 在PoS中，从CFX质押到提现需要多长时间？
 
-14 days
+答：14天。
 
 ### How long does it take for unstaked PoS votes to be credited?
 
-Typically, it takes 1-14 days, depending on the staking duration. If your PoS votes have been staked for over 13 days, unstaking will only take one day. If recently staked, it will require the full 14 days.
+答：通常需要1-14天，这取决于质押的持续时间。 如果您的PoS投票已经质押超过13天，则撤销只需要一天。 如果是最近质押的，则需要满14天。
 
-### Can the PoS node bound to a PoW account be modified?
+### 是否可以修改绑定到PoW账户的PoS节点？
 
-Modification is possible, but it requires unstaking all votes associated with the PoS node. Once the unstaking process is complete, the node can be directly bound to another PoS node.
+答：可以修改，但需要撤销与PoS节点关联的所有投票。 一旦完成撤销过程，就可以将节点直接绑定到另一个PoS节点。
 
-### Can a PoS node be bound to a PoW account that is a contract account? Does the contract need to implement the receive or fallback functions?
+### PoS节点是否可以绑定到PoW的合约账户（非EOA账户）？ 合约是否需要实现receive或fallback函数？
 
-It can be a contract account, and there is no need to implement receive or fallback functions. This is because rewards are directly mined to the PoW account by the chain and do not involve transfers.
+答：可以将PoS节点绑定到合约账户，且无需实现receive或fallback函数。 这是因为奖励是由链直接挖给PoW账户，不涉及转账。
