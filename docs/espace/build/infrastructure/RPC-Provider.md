@@ -12,7 +12,7 @@ Conflux eSpace also offers its own RPC Providers, similar to those like Infura, 
 NOWNodes is a blockchain-as-a-service solution that lets users get access to full Nodes and blockbook Explorers via API. The service provides a high-quality infrastructure that is quick, cost-effective, and reliable. They have Service Quality Standards available for all partners.
 The users's nodes are under 24/7 surveillance - their availability and relevance are constantly being monitored. That’s way, their clients can enjoy the scalability for any large tasks and blazing fast API responses.
 
-NOWNodes currently supports the Conflux eSpace network, and the eSpace node url is **https://cfx.nowndodes.io**. Currently, it only provides Fullnode RPC services for the **Mainnet** network. In the future, support for the testnet will be added gradually. For the supported networks, please refer to [NOWNodes' node list](https://nownodes.io/nodes).
+NOWNodes currently supports the Conflux eSpace network, and the eSpace node url is **https://cfx.nownodes.io**. Currently, it only provides Fullnode RPC services for the **Mainnet** network. In the future, support for the testnet will be added gradually. For the supported networks, please refer to [NOWNodes' node list](https://nownodes.io/nodes).
 
 NOWNodes offers both Shared Nodes and Dedicated Nodes solution, along with free basic services and paid plans. For service pricing details, please refer to [NOWNodes' pricing list](https://nownodes.io/pricing). NOWNodes supports payments in Euros and cryptocurrencies.
 
