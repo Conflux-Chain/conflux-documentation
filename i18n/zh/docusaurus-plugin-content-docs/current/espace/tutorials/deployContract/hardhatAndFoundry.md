@@ -98,4 +98,4 @@ For more possible reasons, please refer to the [Sending Transaction Errors](/doc
 
 ## Feedback
 
-Thank you for participating in and developing on the eSpace Testnet! 如果您遇到任何问题，请加入我们的 [Discord](https://discord.gg/conflux-network-707952293412339843) 并在其中向我们提问。
+Thank you for participating in and developing on the eSpace Testnet! If you encounter any issues, join our [Discord](https://discord.gg/conflux-network) and ask us in it.
