@@ -246,7 +246,7 @@ const config = {
           width:32,
           height:16,
         },
-        copyright: `Copyright © ${new Date().getFullYear()} ConfluxNetwork, Inc.`,
+        copyright: `Copyright © ${new Date().getFullYear()} ConfluxNetwork, Org.`,
       },
       prism: {
         theme: lightCodeTheme, 

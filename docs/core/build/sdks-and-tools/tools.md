@@ -18,3 +18,9 @@ ChainIDE is a Cloud-Based Multi-Chain IDE. Developers don’t need to install ex
 For more information about how to use ChainIDE, please check [this page](https://chainide.gitbook.io/chainide-english-1/ethereum-ide-1/4.-conflux-ide).
 
 ![Chainide](../image/chainide.png)
+
+## Address Format Convert Tool
+
+ConfluxScan provide a [Online Address Converter](https://www.confluxscan.io/address-converter) which is very useful.
+
+![](../../core-space-basics/img/scan-address-converter.png)
