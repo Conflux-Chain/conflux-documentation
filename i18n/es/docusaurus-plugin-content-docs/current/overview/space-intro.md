@@ -1,19 +1,19 @@
 ---
 sidebar_position: 2
-title: Conflux Spaces
+title: Espacios de Conflux
 displayed_sidebar: overviewSidebar
 ---
 
-The Conflux Network features a unique design known as [Conflux Spaces](/docs/general/conflux-basics/spaces). A Space in the Conflux Network can be understood as a specific area or akin to an individual blockchain. Currently, there are two Spaces on the Conflux Network: **eSpace** and **Core Space**.
+La Red de Conflux presenta un diseño único conocido como [Espacios de Conflux](/docs/general/conflux-basics/spaces). Un espacio en la red de Conflux puede ser entendido como un área específica o similar a una cadena de bloques individual. Actualmente hay dos espacios en la Red Conflux: **eSpace** y **Core Space**.
 
 ## eSpace
 
-eSpace is a space within the Conflux Network that is fully compatible with the Ethereum Virtual Machine (EVM). This means that any smart contract that can run on Ethereum can also run in eSpace. Ethereum's development tools, SDKs, wallets, etc, can all be directly used in eSpace. The user experience in eSpace is completely consistent with that of Ethereum.
+eSpace es un espacio dentro de Conflux Network que es totalmente compatible con la máquina virtual Ethereum (EVM). Esto significa que cualquier contrato inteligente que se pueda ejecutar en Ethereum también puede ejecutarse en eSpace. Las herramientas de desarrollo de Ethereum, SDKs, billeteras, etc, pueden utilizarse directamente en eSpace. La experiencia de usuario en eSpace es totalmente coherente con la de Ethereum.
 
-If you are an Ethereum developer looking to quickly deploy your application on the Conflux Network, eSpace would be your preferred choice.
+Si usted es un desarrollador de Ethereum que busca implementar rápidamente su aplicación en Conflux Network, eSpace sería su opción preferida.
 
 ## Core Space
 
-Core Space is the core area of the Conflux Network and is also its native space. Core Space boasts higher network performance and additional features (such as the sponsorship mechanism) but is not compatible with Ethereum. It requires the use of **Conflux's own** SDKs, tools, and wallets.
+Core Space es el espacio principal de la red de Conflux y también es su espacio nativo. Core Space tiene un mayor rendimiento de red y características adicionales (como el mecanismo de patrocinio), pero no es compatible con Ethereum. Requiere el uso de SDKs, herramientas y billeteras **propios de Conflux**.
 
-If you want to utilize the native features of the Conflux Network, then Core Space would be your preferred choice.
+Si desea utilizar las características nativas de Conflux Network, entonces Core Space sería su opción preferida.

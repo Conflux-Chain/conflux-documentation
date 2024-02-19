@@ -18,7 +18,7 @@ After every field of a transaction is prepared, following steps are required bef
 
 After completing the above steps, you will obtain a hex-encoded rawTx. You can then use the [`cfx_sendRawTransaction`](../../build/json-rpc/cfx-namespace.md#cfx_sendrawtransaction) method to send it to the network. Upon a successful invocation of this method, a transaction hash will be returned, which can be used to query the status of the transaction.
 
-### Reference
+### Referencia
 
 - [Elliptic Curve Digital Signature Algorithm (ECDSA)](https://fitsaleem.medium.com/ethereums-elliptic-curve-digital-signature-algorithm-ecdsa-88e1659f4879#:~:text=ECDSA%20is%20used%20in%20Ethereum,included%20in%20the%20transaction%20data.)
 - [keccak256 hashing](https://ethereum.org/en/glossary/#keccak-256)

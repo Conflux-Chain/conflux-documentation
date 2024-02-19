@@ -54,7 +54,7 @@ contract AdminControl {
 }
 ```
 
-## JS Example
+## JS 示例
 
 Consider you have deployed a contract whose address is `contractAddr`. The administrator can call `AdminControl.setAdmin(contractAddr, new_admin)` to change the administrator and call `AdminControl.destroy(contractAddr)` to kill the contract.
 

@@ -13,31 +13,31 @@ displayed_sidebar: generalSidebar
 
 ## 节点类型差异
 
-* **Full Node**: Stores all block headers and blocks in the most recent **100,000 Epochs**. **适用于大多数用户和开发者**。
+* **全节点**：存储最近**100,000个纪元** 的所有区块头和区块。 **适用于大多数用户和开发者**。
 * **归档节点（Archive Node）**：存储整个区块链和所有历史数据。 需要大量存储空间，适用于进行数据分析和需要访问完整历史数据的应用。
 * **轻节点（Light Node）**：仅存储区块头和一小部分区块链和历史数据。 适用于资源有限的设备，可以在不存储整个区块链的情况下与区块链网络交互。
 
 ## 全节点
 
-A full node stores the entire block headers and blocks in the most recent **100,000 Epochs**.
+一个全节点存储了最近100,000个纪元内的所有区块头和区块。
 
 ### 硬件要求
 
-* At least 16GB of RAM.
+* 至少16GB 内存。
 
-* A minimum of 1.5TB free disk space (SSD is recommended).
+* 至少1.5TB的可用磁盘空间（推荐使用SSD）。
 
-* A stable internet connection.
+* 稳定的互联网网络连接。
 
-### How to Run
+### 如何运行全节点
 
-Follow the steps in the previous tutorial to install and configure the Conflux node, then set the mode parameter in the configuration file to "full":
+按照先前教程中的步骤安装和配置Conflux节点，然后在配置文件中将mode参数设置为"full"：
 
 ```toml
 mode = "full" 
 ```
 
-Start the node with the custom configuration file, using the following command:
+使用以下命令启动具有自定义配置文件的节点：
 
 ```shell
 conflux --config ./run/hydra.toml 
@@ -45,25 +45,25 @@ conflux --config ./run/hydra.toml
 
 ## 归档节点
 
-An archive node stores the entire data of the blockchain, including all blocks, transactions. It requires more storage than a full node.
+归档节点存储区块链的全部数据，包括所有区块和交易。 它需要比全节点更多的存储空间。
 
-### 硬件要求
+### 归档节点安装要求
 
-* At least 32GB of RAM.
+* 至少32GB 内存。
 
-* A minimum of 2TB free disk space (SSD is recommended).
+* 至少2TB的可用磁盘空间（推荐使用SSD）。
 
-* A stable internet connection.
+* 稳定的互联网网络连接。
 
-### How to Run
+### 如何运行归档节点
 
-Set the mode parameter in the configuration file to "archive":
+在配置文件中将mode参数设置为“archive"：
 
 ```toml
 mode = "archive" 
 ```
 
-Start the node with the custom configuration file, using the following command:
+使用以下命令启动具有自定义配置文件的节点：
 
 ```shell
 conflux --config ./run/hydra.toml 
@@ -71,23 +71,23 @@ conflux --config ./run/hydra.toml
 
 ## 轻节点
 
-A light node only stores the block headers and a small subset of other data, allowing it to verify the authenticity of the data without storing the entire blockchain.
+轻节点仅存储区块头和一小部分其他数据，使其能够验证数据的真实性，而无需存储整个区块链。
 
-### 硬件要求
+### 轻节点安装要求
 
-* At least 4GB of RAM.
-* A minimum of 300GB free disk space (SSD is recommended).
-* A stable internet connection.
+* 至少4GB 内存。
+* 至少300GB的可用磁盘空间（推荐使用SSD）。
+* 稳定的互联网网络连接。
 
-### How to Run
+### 如何运行轻节点
 
-Set the mode parameter in the configuration file to "light":
+在配置文件中将mode参数设置为“light"：
 
 ```toml
 mode = "light" 
 ```
 
-Start the node with the custom configuration file, using the following command:
+使用以下命令启动具有自定义配置文件的节点：
 
 ```shell
 conflux --config ./run/hydra.toml 
@@ -95,14 +95,14 @@ conflux --config ./run/hydra.toml
 
 ## 常见问题解答
 
-### Why the cfx_getTransactionByHash API returns null?
+### 为什么cfx_getTransactionByhash API返回null？
 
-If you want to get the transaction details, you need to run a `fullnode` or `archivenode`, and set the `persist_tx_index` config to `true`. The fullnode only store transactions in latest 100,000 Epoch.
+如果您想获取交易详情，您需要运行一个 `全节点` 或 `归档节点`，并将 `persist_tx_index` 配置设置为 `true`。 The fullnode only store transactions in latest 100,000 Epoch.
 
-### Is fullnode enough for Exchange?
+### 全节点对交易所是否足够？
 
 Yes, fullnode only support querying transactions in latest 100,000 Epoch
 
-### I want to participate in mining or staking, which node type should I run?
+### 我想参与挖矿或质押，应该运行哪种节点类型？
 
-Fullnode will be enough.
+全节点就足够了。

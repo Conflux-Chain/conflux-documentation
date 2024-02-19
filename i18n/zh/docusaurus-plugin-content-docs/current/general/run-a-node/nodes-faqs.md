@@ -1,40 +1,40 @@
 ---
 title: 节点常见问题解答
 sidebar_position: 13
-description: Frequently asked questions about running a node.
+description: 运行节点的常见问题。
 displayed_sidebar: generalSidebar
 ---
 
 ## Common
 
-### How long does it take to synchronize the data from beginning?
+### 从零开始同步数据需要多长时间？
 
-It takes about 3 weeks to synchronize the data from beginning.
+从零开始同步数据大约需要3周时间。
 
-### How to synchronize data quickly to run an archive node?
+### 运行一个归档节点时如何快速同步数据？
 
-You can use [snapshot-tool](./snapshot-tool.md) to download the data snapshot of the archive node, node data can be quickly synchronized to the latest data using a snapshot.
+你可以使用[snapshot-tool](./snapshot-tool.md)下载归档节点的数据快照，使用快照可以将节点数据快速同步到最新数据。
 
-### What is the size of the current archive node data?
+### 当前归档节点数据的大小是多少？
 
-Check it at [HERE](./snapshot-tool#whats-the-snapshot-data-size)
+在[这儿](./snapshot-tool#whats-the-snapshot-data-size)查看。
 
-### How to get involved in mining?
+### 如何参与挖矿？
 
-Mining requires GPU, you can see here for [details](https://forum.conflux.fun/t/conflux-tethys-gpu-mining-instruction-v1-1-4/3775)
+如何要参与Conflux网络的挖矿，通常需要使用GPU，有关详细信息，请点击[详细信息](https://forum.conflux.fun/t/conflux-tethys-gpu-mining-instruction-v1-1-4/3775)。
 
-### How to run a PoS node?
+### 如何运行 PoS 节点？
 
-Refer to [THIS](/docs/general/mine-stake/stake/) section.
+请参考[这部分](/docs/general/mine-stake/stake/) 。
 
-### Does running a Conflux node requires a public IP address?
+### 运行 Conflux 节点是否需要公共IP地址？
 
-No
+不需要。
 
-### Are the configuration files and node programs the same for the mainnet and testnet, and can they be used interchangeably?
+### 主网和测试网的配置文件和节点程序是否相同？它们可以互换使用吗？
 
-The mainnet and testnet's client software and configuration files are different, and cannot be used interchangeably.
+主网和测试网的客户端软件和配置文件是不同的，不能互换使用。
 
-### Can I invoke RPC methods during node synchronization?
+### 节点同步期间能调用RPC方法吗？
 
-Some RPC methods are unavailable during node synchronization; it is advisable to access RPC methods only after the node synchronization process is complete.
+在节点同步期间，某些RPC方法不可用；建议仅在节点同步过程完成后访问RPC方法。

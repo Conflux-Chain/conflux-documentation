@@ -4,41 +4,41 @@ title: 运行 PoS 质押池
 displayed_sidebar: generalSidebar
 ---
 
-In this section we present a guide for how to deploy, configure and manage a **POS Pool** that will allow CFX holders to join to the PoS protocol just interacting with the front-end application of the PoS Pool and without dealing with the technical complexities.
+在本节中，我们提供了一个指南，介绍了如何部署、配置和管理一个**PoS池**，允许 CFX 持有者通过与PoS池前端应用程序进行交互而无需处理技术复杂性就加入PoS协议。
 
-## Reference Architecture
+## 参考架构
 
 ![Architecture](./img/PoSReferenceArchitecture.png)
 
 Please note this configuration guide is to do the technical setup of the PoS Pool staking environment.
 
-Conflux PoS Pool configuration has two major components: Interface application and full node. It needs technical knowledge for configuration of instances, ports, contracts deployment and storage configuration.
+Conflux的PoS池配置有两个主要组成部分：接口应用程序和全节点。 It needs technical knowledge for configuration of instances, ports, contracts deployment and storage configuration.
 
-The configuration of a reverse proxy and a firewall is recommended but is out of the scope of this guide.
+推荐配置反向代理和防火墙，但这超出了本指南的范围。
 
 ## conflux-fans/pos-pool
 
-[conflux-fans/pos-pool](https://github.com/conflux-fans/pos-pool) is a open source project that provides a PoS Pool interface and a PoS Pool contract. We can use it to setup a PoS Pool dApp.
+[conflux-fans/pos-pool](https://github.com/conflux-fans/pos-pool)是一个提供PoS池接口和PoS池合约的开源项目。 我们可以使用它来建立一个PoS池dApp。
 
 ### 前提条件
 
-The POS Pool operator needs to have the infrastructure to run the following:
+PoS池运营商需要具备以下基础设施：
 
-* A full/archive node
+* 一个全节点/归档节点
 * A Web Server Farm, or a single web server to run the POS Pool application
 
-### Run a full/archive node
+### 运行全节点/归档节点
 
-First of all, we need to run a full/archive node following the [instructions](../../run-a-node/) in the Conflux documentation.
+首先，我们需要按照Conflux文档中的[说明](../../run-a-node/)运行一个全节点/归档节点。
 
-### Deploy PoS Pool Contract
+### 部署PoS池合约
 
-Then we need to deploy the PoS Pool contract following the [instructions](https://github.com/conflux-fans/pos-pool/tree/main/contract#setup) in pos-pool's documentation.
+然后，我们需要按照pos-pool文档中的[说明](https://github.com/conflux-fans/pos-pool/tree/main/contract#setup)部署PoS池合约。
 
 ### Setup Pool Interface
 
 Finally, we need to setup the PoS Pool interface following the [instructions](https://github.com/conflux-fans/pos-pool/blob/main/interface/README.md)
 
-## Summary
+## 总结
 
-**Conflux-fans/pos-pool** is just a reference implementation of a PoS Pool. Use it at your own risk. If you have encountered any problems, you can check it's [documentation](https://github.com/conflux-fans/pos-pool/tree/main/contract/docs), [faqs](https://github.com/conflux-fans/pos-pool/tree/main#faqs) and [issues](https://github.com/conflux-fans/pos-pool/issues).
+**Conflux-fans/pos-pool**是PoS池的一个参考实现。 使用它需自担风险。 如果遇到任何问题，您可以查阅其[文档](https://github.com/conflux-fans/pos-pool/tree/main/contract/docs)、[常见问题解答](https://github.com/conflux-fans/pos-pool/tree/main#faqs)和[问题](https://github.com/conflux-fans/pos-pool/issues)。

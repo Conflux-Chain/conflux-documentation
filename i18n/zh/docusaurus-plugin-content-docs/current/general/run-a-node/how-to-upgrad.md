@@ -1,54 +1,54 @@
 ---
 sidebar_position: 4
-title: Upgrade a Node
+title: 升级节点
 displayed_sidebar: generalSidebar
 ---
 
-When the node software releases a new version, node operators need to upgrade the node software to ensure its proper functioning.
+当节点软件发布新版本时，节点运营者需要升级节点软件以确保其正常运行。
 
-## How to Upgrade
+## 如何升级节点
 
-The upgrade process is straightforward. Simply replace the old node software (Conflux) with the new one and restart.
+节点更新步骤非常直接。 只需用用新的节点软件（Conflux）替换旧的软件并重新启动。
 
-### 1. Download the New Node Software
+### 1. 下载新的节点软件
 
-Visit the [Release page](https://github.com/Conflux-Chain/conflux-rust/releases) of Conflux-Rust and download the latest node software. After extracting, you will find an executable file named `conflux`.
+访问[发布页面](https://github.com/Conflux-Chain/conflux-rust/releases) 并下载最新的节点软件。 解压后，你将找到一个名为conflux的可执行文件。
 
-### 2. Stop the Old Node Process
+### 2. 停止旧的节点进程
 
-Typically, on Linux, you can stop the node software by pressing `Ctrl + C`. If it cannot be stopped, you can use the `kill` command to force stop.
+通常，在Linux上，您可以通过按Ctrl + C来停止节点软件。 如果无法停止，您可以使用kill命令强制停止。
 
-If you are running a PoS node, additional steps are required to prevent forced retirement. See [How to Safely Restart a PoS Node](/docs/general/mine-stake/stake/faqs#how-can-i-safely-restart-my-pos-node).
+如果你正在运行一个PoS节点，则需要采取额外的步骤来防止强制退休。 请参阅[如何安全重启一个PoS节点](/docs/general/mine-stake/stake/faqs#how-can-i-safely-restart-my-pos-node).
 
-### 3. Replace the Old Node Software and Start
+### 3. 替换旧节点软件并启动
 
-Copy the new node software `conflux` to the directory where the node software is located and restart the node software.
+将新的节点软件 `conflux` 复制到存放节点软件的目录中，并重新启动节点软件。
 
 ## 常见问题解答
 
-### How to Check the Version of the Node Software?
+### 如何确认节点软件的版本？
 
 ```shell
 /conflux --version
 conflux conflux-rust/v2.3.3-89f0ce5-20231215/x86_64-linux-gnu/rustc1.73.0
 ```
 
-### How to Know When the Node Software Releases the Latest Version?
+### 如何知道节点软件何时发布最新版本？
 
-We will notify node operators through forums, communities, and other channels. You can also check the latest version on the [Release page](https://github.com/Conflux-Chain/conflux-rust/releases).
+我们将通过论坛、社区和其他渠道通知节点运营者。 您还可以在[发布页面](https://github.com/Conflux-Chain/conflux-rust/releases)上检查最新版本。
 
-### What Happens if Nodes Do Not Upgrade After a New Version Release?
+### 如果节点在发布新版本后不升级会发生什么？
 
-If the released version is a hardfork version, not upgrading the nodes will result in the nodes being unable to synchronize blocks, thus causing the nodes to malfunction. For other versions, not upgrading will not have a significant impact, but it is recommended to upgrade, especially for bugfix versions.
+如果发布的版本是硬分叉版本，则没升级将导致节点无法同步区块，从而导致节点发生故障。 对于非硬分叉的更新，不升级不会产生重大影响，但建议升级，特别是对于bug修复版本。
 
-### After Restarting the Node, How Long Does It Take to Sync Block Data to the Latest?
+### 重新启动节点后，将区块数据同步到最新需要多长时间？
 
-If your node was already synchronized with the latest block before the upgrade, the node will sync from the last synchronized block after the upgrade. It usually takes several minutes to several tens of minutes.
+如果你的节点在升级前已与最新区块同步，那么节点将在升级后从上次同步的区块开始同步。 这一般需要几分钟到几十分钟。
 
-### How to Migrate Nodes?
+### 如何迁移节点？
 
-If the machine needs replacement or expansion, and you need to migrate the node data to a new machine, copy the entire node software directory to the new machine and start the node software.
+如果需要更换或扩展机器，并且需要将节点数据迁移到新机器上，请将整个节点软件目录复制到新机器上并启动节点软件。
 
-### How to Upgrade if Using Docker?
+### 如果使用Docker，如何升级？
 
-If you are using Docker, stop the Docker container first, then update the Docker image to the latest version, and finally, start the Docker container.
+如果您正在使用Docker，请首先停止Docker容器，然后将Docker镜像更新到最新版本，最后启动Docker容器。

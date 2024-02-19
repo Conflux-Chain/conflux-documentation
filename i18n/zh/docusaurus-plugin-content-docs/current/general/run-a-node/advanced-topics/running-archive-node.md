@@ -11,8 +11,8 @@ Conflux archive nodes store the entire history of the Conflux blockchain. This a
 #### Hardware Requirements for Archive Node
 
 * At least 32GB of RAM.
-* A minimum of 2TB free disk space (SSD is recommended).
-* A stable internet connection.
+* 至少2TB的可用磁盘空间（推荐使用SSD）。
+* 稳定的互联网网络连接。
 
 #### File Limit
 

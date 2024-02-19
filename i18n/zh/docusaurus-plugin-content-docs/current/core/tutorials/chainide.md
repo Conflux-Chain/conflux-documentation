@@ -111,6 +111,6 @@ Other tools in the right toolbox include:
 
 ![](./imgs/chainide/tool-address-converter.png)
 
-## Summary
+## 总结
 
 ChainIDE is a powerful IDE for smart contract development, offering convenience and suitability for beginners. It is an excellent tool for developing and deploying smart contracts on the Core Space Testnet.
