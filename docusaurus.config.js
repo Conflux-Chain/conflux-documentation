@@ -82,6 +82,13 @@ const config = {
             //  link en documentation to GitHub
             return `https://github.com/Conflux-Chain/conflux-documentation/edit/main/docs/${docPath}`;
           },  
+          exclude: [
+            '**/_*.{js,jsx,ts,tsx,md,mdx}',
+            '**/_*/**',
+            '**/*.test.{js,jsx,ts,tsx}',
+            '**/__tests__/**',
+            'templates/*.{md,mdx}',
+          ]
         },
         blog: {
           showReadingTime: true,

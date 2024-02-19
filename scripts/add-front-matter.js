@@ -1,3 +1,5 @@
+// This file is used to add front matter to specify which sidebar the file should be located
+
 const fs = require('fs');
 const path = require('path');
 const matter = require('gray-matter');
