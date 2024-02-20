@@ -14,6 +14,7 @@ The account address format in Core Space is in **base32 encoding**, which is dif
 
 * [User Guides](./getting-started/)
 * [Developer QuickStart](./core-developer-quickstart)
+* [QuickStart for Ethereum Developers](./build/quickstart-for-eth-devs)
 
 ## Tutorials
 

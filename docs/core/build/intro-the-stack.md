@@ -20,11 +20,11 @@ As a dapp developer, you don't need to know much about the VM other than it exis
 
 ## Level 2: Smart contracts
 
-[Smart contracts](./smart-contracts.md) are the executable programs that run on the Conflux Core blockchain.
+[Smart contracts](./smart-contracts) are the executable programs that run on the Conflux Core blockchain.
 
-Smart contracts are written using specific [programming languages](.) that compile to EVM bytecode (low-level machine instructions called opcodes).
+Smart contracts are written using specific programming languages(Solidity) that compile to EVM bytecode (low-level machine instructions called opcodes).
 
-Not only do smart contracts serve as open source libraries, they are essentially open API services that are always running and can't be taken down. Smart contracts provide public functions which users and applications ([dapps](.)) may interact with, without needing permission. Any application may integrate with deployed smart contracts to compose functionality, such as adding [data feeds](.) or to support token swaps. Additionally, anyone can deploy new smart contracts to Conflux in order to add custom functionality to meet their application's needs.
+Not only do smart contracts serve as open source libraries, they are essentially open API services that are always running and can't be taken down. Smart contracts provide public functions which users and applications (dapps) may interact with, without needing permission. Any application may integrate with deployed smart contracts to compose functionality, such as adding data feeds or to support token swaps. Additionally, anyone can deploy new smart contracts to Conflux in order to add custom functionality to meet their application's needs.
 
 As a dapp developer, you'll need to write smart contracts only if you want to add custom functionality on the Conflux Core blockchain. You may find you can achieve most or all of your project's needs by merely integrating with existing smart contracts, for instance if you want to support payments in stablecoins or enable decentralized exchange of tokens.
 
@@ -40,7 +40,7 @@ By connecting your application to an Conflux node (via the [JSON-RPC API](./json
 
 Many convenience libraries (built and maintained by Conflux's open source community) allow your applications to connect to and communicate with the Conflux blockchain.
 
-If your user-facing application is a web app, you may choose to `npm install` a [JavaScript API](.) directly in your frontend. Or perhaps you'll choose to implement this functionality server-side, using a [Python](.) or [Java](.) API.
+If your user-facing application is a web app, you may choose to `npm install` a JavaScript SDK directly in your frontend. Or perhaps you'll choose to implement this functionality server-side, using a Python or Java API.
 
 While these APIs are not a necessary piece of the stack, they abstract away much of the complexity of interacting directly with an Conflux node. They also provide utility functions (e.g. converting CFX to GDrip) so as a developer you can spend less time dealing with the intricacies of Conflux clients and more time focused on the functionality specific to your application.
 
@@ -49,10 +49,6 @@ While these APIs are not a necessary piece of the stack, they abstract away much
 At the top level of the stack are user-facing applications. These are the standard applications you regularly use and build today: primarily web and mobile apps.
 
 The way you develop these user interfaces remains essentially unchanged. Often users will not need to know the application they're using is built using a blockchain.
-
-## Ready to choose your stack?
-
-Check out our guide to [set up a local development environment](.) for your Conflux application.
 
 ## Further reading
 
