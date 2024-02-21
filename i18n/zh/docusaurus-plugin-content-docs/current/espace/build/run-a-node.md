@@ -18,19 +18,19 @@ public_evm_rpc_apis = "evm"
 
 eSpace 的 RPC 端点端口与 Core Space 不同，您**不能**在 **Core Space 的 RPC 端口**访问 eth RPC 接口。
 
-## Full State
+## 全状态
 
-To enable full state for eSpace, you need to set the `single_mpt_space` parameter to `evm` and run a archive node.
+为了启用完整的 eSpace，您需要将 `single_mpt_space` 参数设置为 `evm` 并运行一个归档节点。
 
 ```toml
-single_mpt_space = "evm"
+sinle_mpt_space = "evm"
 ```
 
-By enable full state, you can query the state of the contract or account **at any block height**.
+启用全状态后，您可以查询合约或账户**在任何区块高度**的状态。
 
-## eSpace Chain ID
+## eSpace 的链 ID
 
-The eSpace mainnet chain ID is 1030, testnet is 71. Normally you don't need to change this.
+eSpace 主网的链 ID 是 1030，测试网是 71。 通常情况下，您不需要更改这个设置。
 
 ```toml
 evm_chain_id = 1030
@@ -38,14 +38,14 @@ evm_chain_id = 1030
 
 ## 常见问题解答
 
-### the method eth_getTransactionCount does not exist/is not available
+### eth_getTransactionCount 方法不存在或不可用
 
-Please check if the RPC port is correct. The default RPC port of eSpace is 8545, is different with Core Space RPC port.
+请检查 RPC 端口是否正确。 eSpace 的默认的 RPC 端口是 8545，与 Core Space 的 RPC 端口不同。
 
-### Is eSpace use same node with Core Space ?
+### eSpace 是否与 Core Space 使用相同的节点？
 
-Yes
+是的
 
-### Does eSpace node have blockchain data snapshot?
+### eSpace 节点是否有区块链数据快照？
 
-Yes, same with Core Space.
+是的，与 Core Space 相同。

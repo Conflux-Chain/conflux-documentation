@@ -5,7 +5,7 @@ description: Conflux eSpace RPC endpoints
 displayed_sidebar: eSpaceSidebar
 ---
 
-## Confura
+## Public RPC Endpoints
 
 Confura, a public RPC service offered by the Conflux Foundation, is available for free use. However, to maintain the service's usability, there are rate limits in place for the free tier. For access to a higher tier of RPC service, you can make a purchase through the [Web3 Paywall](../general/build/tools/web3paywall.md), or you can apply directly to the Conflux Foundation by emailing [bd@confluxnetwork.org](mailto:bd@confluxnetwork.org).
 
@@ -22,7 +22,6 @@ Confura, a public RPC service offered by the Conflux Foundation, is available fo
 | ------------------- | ------------ | ------------------------------------------------------------------------------------------- | --------------------------------- |
 | [Mainnet](#mainnet) | 1030 (0x406) | *HTTP*: https://evm.confluxrpc.org<br/>*Websocket*: wss://evm.confluxrpc.org/ws       | https://evm.confluxscan.io        |
 | [Testnet](#testnet) | 71 (0x47)    | https://evmtestnet.confluxrpc.org<br/>*Websocket*: wss://evmtestnet.confluxrpc.org/ws | https://evmtestnet.confluxscan.io |
-
 
 ### Rate Limits
 
@@ -56,12 +55,12 @@ Reference for various fee tiers and their rate limits.
 
 </details>
 
+## Commercial RPC Service
+
+There are couple of commercial RPC service providers, you can check them [here](./build/infrastructure/RPC-Provider.md)
+
 ## FAQs
 
 ### How to get a Confura advanced API key?
 
 Confura is a public RPC service provided by Conflux Foundation, it is free to use. For using the free tier, you don't need an API key. To get a higher tier RPC service, you can buy it at [Web3 Paywall](../general/build/tools/web3paywall.md) or apply from Conflux foundation by sending email to [bd@confluxnetwork.org](bd@confluxnetwork.org)
-
-### Does eSpace have any other RPC service or Provider?
-
-Yes, you can check them [here](./build/infrastructure/RPC-Provider.md)

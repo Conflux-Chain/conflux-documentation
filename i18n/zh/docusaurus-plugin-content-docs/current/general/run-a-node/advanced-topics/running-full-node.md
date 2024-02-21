@@ -6,11 +6,11 @@ displayed_sidebar: generalSidebar
 
 ### 硬件要求
 
-* At least 16GB of RAM.
+* 至少16GB 内存。
 
 * A minimum of 1TB free disk space (SSD is recommended).
 
-* A stable internet connection.
+* 稳定的互联网网络连接。
 
 ## 配置 Conflux 全节点
 

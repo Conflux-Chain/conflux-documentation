@@ -101,4 +101,4 @@ For more possible reasons, please refer to the [Sending Transaction Errors](/doc
 
 ## Feedback
 
-Thank you for participating in and developing on the eSpace Testnet! If you encounter any issues, join our [Discord](https://discord.gg/conflux-network-707952293412339843) and ask us in it.
+Thank you for participating in and developing on the eSpace Testnet! If you encounter any issues, join our [Discord](https://discord.gg/conflux-network) and ask us in it.

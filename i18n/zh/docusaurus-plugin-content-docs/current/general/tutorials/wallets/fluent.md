@@ -15,11 +15,11 @@ displayed_sidebar: generalSidebar
 
 **Fluent**
 
-Fluent是专为Conflux网络构建的web3钱包，使用户能够安全轻松地与dApps互动并管理他们的资产。 With Fluent, users can easily manage their CFX and ERC-20 tokens, as well as interact with dApps on Conflux Network. It also provides a seamless and user-friendly experience for users looking to use Conflux Network and its ecosystem. The Fluent team is actively working to add new features and functionality to the wallet, making it an excellent choice for developers and users alike.
+Fluent是专为Conflux网络构建的web3钱包，使用户能够安全轻松地与dApps互动并管理他们的资产。 With Fluent, users can easily manage their CFX and ERC-20 tokens, as well as interact with dApps on Conflux Network. 它还为希望使用Conflux网络及其生态系统的用户提供了无缝且用户友好的体验。 Fluent团队正在积极努力为该钱包添加新功能和特征，使其成为开发人员和用户的理想选择。
 
-**Open Priority Connection**
+**打开优先连接**
 
-In DApps, you can connect to Fluent by clicking "Connect MetaMask", provided that "Priority Connection" is turned on in Fluent's advanced options.
+在DApps中，您可以通过点击"连接MetaMask"来连接到Fluent，前提是在Fluent的高级选项中打开了"优先连接"。
 
 
 ```mdx-code-block
@@ -39,11 +39,11 @@ import Image from '@theme/IdealImage';
 
 With "Priority Connection" enabled, Fluent will be the first option when connecting to any dApp using MetaMask.
 
-**Show Testnet**
+**显示测试网**
 
-Considering that the testnet is for professional users, Fluent hides the testnet by default.
+考虑到测试网是为专业用户准备的，Fluent默认隐藏了测试网。
 
-You can turn on "Show Testnet" in Fluent's advanced options.
+您可以在Fluent的高级选项中打开"显示测试网"。
 
 ```mdx-code-block
 
@@ -51,6 +51,6 @@ You can turn on "Show Testnet" in Fluent's advanced options.
 
 ```
 
-To learn how to install Fluent you can follow this guide:
+要了解如何安装Fluent，您可以跟随如下指南：
 
 - [起步](/docs/core/getting-started/installing-a-wallet)

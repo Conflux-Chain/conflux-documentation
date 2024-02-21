@@ -128,4 +128,4 @@ Hence, the returned gas can be adjusted manually, such as multiplying by `1.3`.
 
 ### 为什么与合约进行交互后余额没有改变，但交易燃气费已被支付？
 
-Conflux 网络具有赞助机制。 如果一个合约有赞助者，该合约与其他账户之间的交互所产生的燃气费用和存储费用将由赞助者支付。
+Conflux 网络具有赞助机制。 如果一个合约有代付方，该合约与其他账户之间的交互所产生的燃气费用和存储费用将由代付方支付。

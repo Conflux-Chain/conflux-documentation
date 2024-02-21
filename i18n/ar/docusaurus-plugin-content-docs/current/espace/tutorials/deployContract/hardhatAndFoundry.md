@@ -7,7 +7,7 @@ displayed_sidebar: eSpaceSidebar
 
 The eSpace Testnet allows anyone to deploy a smart contract on eSpace. In this tutorial, you will learn how to deploy a contract on eSpace Testnet using common tools for developing on Ethereum. This [demo repo](https://github.com/conflux-fans/espace-contract-guide) illustrates contract deployment with [Hardhat](https://hardhat.org/) and [Foundry](https://github.com/foundry-rs/foundry).
 
-Before you start deploying the contract, you need to request test tokens from a [eSpace faucet](https://efaucet.confluxnetwork.org/).
+Before you start deploying the contract, **you need to request test tokens** from a [eSpace faucet](https://efaucet.confluxnetwork.org/).
 
 ## Deploying smart contracts with Hardhat
 
@@ -89,6 +89,13 @@ import TabItem from '@theme/TabItem';
      --legacy contracts/Lock.sol:Lock
    ```
 
-## Questions and Feedback
+## FAQs
 
-Thank you for participating in and developing on the eSpace Testnet! If you encounter any issues, join our [Discord](https://discord.gg/conflux-network-707952293412339843) and ask us in it.
+### Invalid parameters: tx
+
+You may encounter error messages like `Invalid parameters: tx` when deploying a contract. Please make sure that your deploy account has enough test tokens to deploy the contract. You can request test tokens from the [eSpace faucet](https://efaucet.confluxnetwork.org/).
+For more possible reasons, please refer to the [Sending Transaction Errors](/docs/core/core-space-basics/transactions/send-tx-error) and [sendRawTransaction RPC method error messages](/docs/core/build/json-rpc/cfx_sendTransaction-errors)
+
+## Feedback
+
+Thank you for participating in and developing on the eSpace Testnet! If you encounter any issues, join our [Discord](https://discord.gg/conflux-network) and ask us in it.

@@ -159,6 +159,17 @@ Password for encrypting the POS private key, used to secure the POS private key.
 dev_pos_private_key_encryption_password="aaaa"
 ```
 
+### storage optimization
+
+Storage optimization related options.
+
+```toml
+# Use isolated database for MPT table
+# Setting it to true will reduce the disk usage
+# Was introduced in v2.3.4 https://github.com/Conflux-Chain/conflux-rust/releases/tag/v2.3.4
+use_isolated_db_for_mpt_table=true 
+```
+
 ## Configuration File Example
 
 For a more comprehensive configuration file example, you can refer to [hydra.toml](./configuration-files.md).

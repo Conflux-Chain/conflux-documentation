@@ -2,32 +2,33 @@
 sidebar_position: 3
 title: ConfluxScan API
 displayed_sidebar: eSpaceSidebar
+description: The block explorer for the Conflux network providing a RESTful API for accessing **aggregated** blockchain data.
 ---
 
-[ConfluxScan](https://evm.confluxscan.io/) is a block explorer for the Conflux network, just like Etherscan for Ethereum. It provides a [**RESTful API**](https://evmapi.confluxscan.io/doc) for developers to query **aggregated blockchain data**. The API is free to use and compatible with the [Etherscan API](https://etherscan.io/apis).
+[ConfluxScan](https://evm.confluxscan.io/) 是 Conflux 网络的区块链浏览器，就像 Etherscan 对于以太坊一样。 它提供了 [**RESTful API**](https://evmapi.confluxscan.io/doc) ，供开发者查询**聚合的区块链数据**。 该 API 可以免费使用，并且与 [Etherscan API](https://etherscan.io/apis) 兼容。
 
-## Usage Scenarios
+## 使用场景
 
-If you want get data like these:
+如果您想获取像这样的数据：
 
-- The transaction history of an address
-- The NFTs owned by an address or a contract
-- The ERC20 tokens owned by an address or a contract
-- The ERC20 token transfer history of an address or a contract
-- Verify the source code of a contract, get the ABI of a contract
-- Query block number by timestamp
+- 某个地址的交易历史
+- 某个地址或合约拥有的 NFT
+- 某个地址或合约拥有的 ERC20 代币
+- 某个地址或合约的 ERC20 代币转账历史
+- 验证合约的源代码，获取合约的 ABI
+- 通过时间戳查询区块号
 
-Then you can use the ConfluxScan API to get the data you want. For a complete list of API endpoints, see [API swagger doc](https://evmapi.confluxscan.io/doc).
+您可以使用 ConfluxScan API 来获取您想要的数据。 要查看完整的 API 端点列表，请参阅 [API swagger 文档](https://evmapi.confluxscan.io/doc)。
 
-## API Endpoints
+## API 端点
 
-The API endpoints are listed below:
+API 端点如下所示：
 
-- Mainnet: `https://evmapi.confluxscan.io`
-- Testnet: `https://evmapi-testnet.confluxscan.io`
+- 主网: `https://evmapi.confluxscan.io`
+- 测试网： `https://evmapi-testnet.confluxscan.io`
 
-Check API's rate limit, notes in it's [swagger doc](https://evmapi.confluxscan.io/doc).
+请在 [swagger 文档](https://evmapi.confluxscan.io/doc) 中查看 API 的速率限制。
 
-## API Key
+## API 密钥
 
-If the free quota is not enough for your usage, you can apply for an API key by contact us via email at [bd@confluxnetwork.org](mailto:bd@confluxnetwork.org) or make a purchase through the [Web3 Paywall](../../../general/build/tools/web3paywall)
+如果免费配额不足以满足您的使用需求，您可以通过向 [bd@confluxnetwork.org](mailto:bd@confluxnetwork.org) 发送电子邮件申请或通过 [Web3 Paywall](../../../general/build/tools/web3paywall) 购买 API 密钥。

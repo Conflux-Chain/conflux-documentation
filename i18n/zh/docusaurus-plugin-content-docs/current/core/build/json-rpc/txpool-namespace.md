@@ -17,7 +17,7 @@ These RPC methods require node's `public_rpc_apis` config set to `safe` or `all`
 
 ### txpool_nextNonce
 
-返回交易池中一个地址的下一个可用none。
+返回交易池中一个地址的下一个可用nonce。
 
 #### 参数
 
