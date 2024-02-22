@@ -31,32 +31,27 @@ import TabItem from '@theme/TabItem';
 <Tabs>
 
   <TabItem value="variables" label="Variables">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/M_uUHR9Ezfk?si=sYHGnbHhncQOZF-x" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/M_uUHR9Ezfk?si=sYHGnbHhncQOZF-x" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
   </TabItem>
 
   <TabItem value="conditionals" label="Conditional Statements">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/rvoBU77d1p4?si=VKGT4L6fenbscPTk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/rvoBU77d1p4?si=VKGT4L6fenbscPTk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
   </TabItem>
 
    <TabItem value="loops" label="Loops">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/6OZYrJSsrl0?si=gHdyazGoWRbdb4GS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/6OZYrJSsrl0?si=gHdyazGoWRbdb4GS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
   </TabItem>
 
   <TabItem value="arrays" label="Arrays">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/6RLn4_osP8Q?si=iNOcLaiSVEii2-80" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/6RLn4_osP8Q?si=iNOcLaiSVEii2-80" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
   </TabItem>
 
   <TabItem value="mappings" label="Mappings">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/7ojW9iJNxL0?si=gaT5TaTFV9baiaVo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/7ojW9iJNxL0?si=gaT5TaTFV9baiaVo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
   </TabItem>
 
   <TabItem value="functions" label="Functions">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/7ZszJrfnV24?si=YuewLUg440wWKJxE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/7ZszJrfnV24?si=YuewLUg440wWKJxE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
   </TabItem>
 
 </Tabs>
@@ -65,27 +60,23 @@ import TabItem from '@theme/TabItem';
 <Tabs>
 
   <TabItem value="enums" label="Enums & Structs">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/LqH-SSp_J24?si=qaxcQOeIUElF-gUZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/LqH-SSp_J24?si=qaxcQOeIUElF-gUZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
   </TabItem>
 
   <TabItem value="constructors" label="Constructors">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/ALQXL9BVc_I?si=G_vCwwmasfP_6cz9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/ALQXL9BVc_I?si=G_vCwwmasfP_6cz9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
   </TabItem>
 
    <TabItem value="inheritance" label="Inheritance">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/1hPMpxIWEvo?si=0u-CH7fkbIv8JvXY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/1hPMpxIWEvo?si=0u-CH7fkbIv8JvXY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
   </TabItem>
 
   <TabItem value="libraries" label="Libraries">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/U5CXH01dD_4?si=Wxn1t5xWohy-9ky8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/U5CXH01dD_4?si=Wxn1t5xWohy-9ky8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
   </TabItem>
 
   <TabItem value="events" label="Events">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/dbRDYul2Qv4?si=FnNXHYVyfutX1qk3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/dbRDYul2Qv4?si=FnNXHYVyfutX1qk3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
   </TabItem>
 
 </Tabs>
