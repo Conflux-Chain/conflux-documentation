@@ -1,20 +1,20 @@
 ---
-sidebar_position: 2
+sidebar_position: 3
 title: Token 标准
 displayed_sidebar: generalSidebar
 ---
 
-:::info
+Token standards are critical in blockchain ecosystems, providing a set of rules and guidelines for token implementation. They ensure interoperability and consistency across different applications and platforms. The main standards include:
 
-这个文档页面目前正在建设中。 作为一个开源项目，我们依靠贡献者的协作来创建全面和最新的内容。
+- **ERC-20**: The most common standard for fungible tokens, allowing for the creation of interchangeable tokens with uniform properties. It's widely used for ICOs and as a basis for other tokens.
 
-To track the progress of this page or get involved, please visit the corresponding GitHub issue: [Complete core/build/token-standards page](https://github.com/Conflux-Chain/conflux-documentation/issues/109). If you're interested in contributing to the completion of this page, feel free to **leave a comment under the issue**.
+- **ERC-721**: A standard for non-fungible tokens (NFTs), enabling the creation of unique tokens. Each token has distinct characteristics, ideal for collectibles and digital uniqueness.
 
-我们计划发放POAP NFT作为对帮助文档的贡献者的感谢。 您对项目的参与将得到认可和奖励。
+- **ERC-1155**: A multi-token standard allowing a single contract to manage multiple token types, both fungible and non-fungible. It's efficient for batch transfers and managing complex token ecosystems.
 
-感谢您对Conflux的关注。 我们期待与您分享完成的内容。
+- **CIP-1820**: Specific to Conflux, this standard focuses on interface detection, making it easier to identify and interact with contracts that follow specific interfaces.
 
-:::
+These standards are integral for developers to create tokens that are compatible and functional within the broader blockchain environment.
 
 ## Related Links
 
@@ -25,7 +25,7 @@ Here are some links relating to this topic:
 - [ERC-1155](https://eips.ethereum.org/EIPS/eip-1155)
 - [CIP-1820](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-1820.md)
 
-## Educational Videos
+## Videos
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
