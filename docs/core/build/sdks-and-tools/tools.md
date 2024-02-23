@@ -21,6 +21,6 @@ For more information about how to use ChainIDE, please check [this page](https:/
 
 ## Address Format Convert Tool
 
-ConfluxScan provide a [Online Address Converter](https://www.confluxscan.io/address-converter) which is very useful.
+ConfluxScan provides a [Online Address Converter](https://www.confluxscan.io/address-converter) which is very useful.
 
 ![](../../core-space-basics/img/scan-address-converter.png)
