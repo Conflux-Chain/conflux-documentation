@@ -10,7 +10,7 @@ A "smart contract" is simply a program that runs on the Conflux Core blockchain.
 
 Conflux Core has a built-in virtual machine (VM) that can execute smart contracts. The VM is almost entirely compatible with the Ethereum Virtual Machine (EVM), meaning that the majority of Ethereum smart contracts can be deployed and run directly on Conflux Core. Conflux Core smart contracts are also written in the **Solidity language**, and mainstream Solidity libraries can be used directly for developing Conflux Core smart contracts.
 
-To learn more about Solidity language see our [Into to Solidity](/docs/general/build/smart-contracts/solidity-basics) and it's [official documentation](https://docs.soliditylang.org/en/).
+To learn more about Solidity language see our [Intro to Solidity](/docs/general/build/smart-contracts/solidity-basics) and it's [official documentation](https://docs.soliditylang.org/en/).
 
 ## Compare to Ethereum Smart Contract
 
