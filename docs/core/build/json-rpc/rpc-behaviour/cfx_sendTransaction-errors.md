@@ -3,7 +3,19 @@ title: cfx_sendRawTransaction Errors
 sidebar_position: 7
 description: Common errors of cfx_sendRawTransaction
 displayed_sidebar: coreSidebar
+keywords:
+    - cfx_sendRawTransaction
+    - errors
+label:
+    - cfx_sendRawTransaction
+    - errors
 ---
+
+:::note
+
+These errors are defined by [conflux-rust](https://github.com/Conflux-Chain/conflux-rust), the official Rust implementation of Conflux protocol.
+
+:::
 
 When sending transactions in Conflux Core Space via the `cfx_sendRawTransaction` method, certain errors may arise due to incorrect transaction construction or other issues. This guide covers common errors and their solutions.
 
