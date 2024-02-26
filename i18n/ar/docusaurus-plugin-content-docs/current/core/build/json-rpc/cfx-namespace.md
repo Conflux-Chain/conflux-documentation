@@ -927,7 +927,7 @@ params: [
 
 #### Common Errors
 
-Check [send raw transaction errors](./cfx_sendTransaction-errors.md) for details.
+Check [send raw transaction errors](./rpc-behaviour/cfx_sendTransaction-errors.md) for details.
 
 ##### Example
 
@@ -947,7 +947,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"cfx_sendRawTransaction","params"
 
 ### cfx_call
 
-Virtually calls a contract, returns the output data. The transaction will not be added to the blockchain.
+Virtually calls a contract, returns the output data. The transaction will not be added to the blockchain. The error message of `cfx_call` is similar to `cfx_estimateGasAndCollateral` and error solutions can be found in [cfx_estimateGasAndCollateral behaviour#errors](./rpc-behaviour/cfx_estimateGasAndCollateral-behaviour.md#errors).
 
 #### Parameters
 
@@ -998,6 +998,8 @@ curl -X POST --data '{"method":"cfx_call","id":1,"jsonrpc":"2.0","params":[{"fro
 ### cfx_estimateGasAndCollateral
 
 Virtually executes a transaction, returns an estimate for the size of storage collateralized and the gas used by the transaction. The transaction will not be added to the blockchain.
+
+The response of the `cfx_estimateGasAndCollateral` interface is contingent on whether specific fields in the input are present or absent. Please refer to [cfx_estimateGasAndCollateral behaviour](./rpc-behaviour/cfx_estimateGasAndCollateral-behaviour.md) for the detailed information. The error reason and solution can also be found in [cfx_estimateGasAndCollateral behaviour#errors](./rpc-behaviour/cfx_estimateGasAndCollateral-behaviour.md#errors).
 
 #### Parameters
 
