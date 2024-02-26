@@ -927,7 +927,7 @@ params: [
 
 #### 常见错误
 
-Check [send raw transaction errors](./cfx_sendTransaction-errors.md) for details.
+Check [send raw transaction errors](./rpc-behaviour/cfx_sendTransaction-errors.md) for details.
 
 ##### 示例
 
@@ -947,7 +947,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"cfx_sendRawTransaction","params"
 
 ### cfx_call
 
-虚拟地调用一个合约，返回输出数据。 The transaction will not be added to the blockchain.
+虚拟地调用一个合约，返回输出数据。 The transaction will not be added to the blockchain. The error message of `cfx_call` is similar to `cfx_estimateGasAndCollateral` and error solutions can be found in [cfx_estimateGasAndCollateral behaviour#errors](./rpc-behaviour/cfx_estimateGasAndCollateral-behaviour.md#errors).
 
 #### 参数
 
@@ -998,6 +998,8 @@ curl -X POST --data '{"method":"cfx_call","id":1,"jsonrpc":"2.0","params":[{"fro
 ### cfx_estimateGasAndCollateral
 
 虚拟地执行一个交易，返回存储抵押和交易使用的gas的大小估计。 The transaction will not be added to the blockchain.
+
+The response of the `cfx_estimateGasAndCollateral` interface is contingent on whether specific fields in the input are present or absent. Please refer to [cfx_estimateGasAndCollateral behaviour](./rpc-behaviour/cfx_estimateGasAndCollateral-behaviour.md) for the detailed information. The error reason and solution can also be found in [cfx_estimateGasAndCollateral behaviour#errors](./rpc-behaviour/cfx_estimateGasAndCollateral-behaviour.md#errors).
 
 #### 参数
 
