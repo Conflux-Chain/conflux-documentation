@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkconflux_docs=self.webpackChunkconflux_docs||[]).push([[4121],{88070:e=>{e.exports=JSON.parse('[{"label":"cfx_estimateGasAndCollateral","permalink":"/es/docs/tags/cfx-estimate-gas-and-collateral","count":1},{"label":"errors","permalink":"/es/docs/tags/errors","count":1}]')}}]);
