@@ -14,13 +14,13 @@ Refer to [General-address](../../general/conflux-basics/accounts.md#address) for
 
 ## Hex and Base32 Addresses
 
-Before the release of `Conflux-rust v1.1.1`, Conflux addresses were exclusively presented as hex-encoded strings, such as `0x1292d4955bb47f5153b88ca12c7a9e4048f09839`. This format closely resembles addresses used by Ethereum and other EVM-compatible blockchains. However, Conflux employs a unique method to compute EOA addresses, which means that the address strings generated from the same private key will usually differ between Conflux and Ethereum. This similarity in appearance, combined with the difference in computation, makes it all too easy for users to confuse Conflux addresses with Ethereum addresses, potentially leading to the loss of assets.
+Before the release of `Conflux-rust v1.1.1`, Conflux addresses were exclusively presented as hex-encoded strings, such as `0x1292d4955bb47f5153b88ca12c7a9e4048f09839`. This format closely resembles addresses used by Ethereum and other EVM-compatible blockchains. However, Conflux employs a unique method to compute EOA addresses, which means that **the address strings generated from the same private key will usually differ between Conflux and Ethereum.** This similarity in appearance, combined with the difference in computation, makes it all too easy for users to confuse Conflux addresses with Ethereum addresses, potentially leading to the loss of assets.
 
-In order to address this issue, Conflux introduced a new base32-encoded address format in [CIP-37](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-37.md). The new format is derived directly from the original hex-encoded addresses including a distinctive prefix (such as "cfx"), an optional address type, and a checksum. As a result, the hex-encoded address mentioned earlier can be converted into a more easily recognizable base32 address, like `cfx:aakkfzezns4h8ymx1cgmcnd4x3aev6e2hexz250ym5`, or an alternative verbose format with an optional address type, such as `CFX:TYPE.USER:AAKKFZEZNS4H8YMX1CGMCND4X3AEV6E2HEXZ250YM5`. This new format minimizes the risk of confusion between Conflux and Ethereum addresses, offering a safer and more user-friendly experience.
+In order to address this issue, Conflux introduced a new base32-encoded address format in [CIP-37](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-37.md). The new format is **derived directly from the original hex-encoded addresses** including a **distinctive prefix** (such as "cfx"), an optional **address type**, and a **checksum**. As a result, the hex-encoded address mentioned earlier can be converted into a more easily recognizable base32 address, like `cfx:aakkfzezns4h8ymx1cgmcnd4x3aev6e2hexz250ym5`, or an alternative verbose format with an optional address type, such as `CFX:TYPE.USER:AAKKFZEZNS4H8YMX1CGMCND4X3AEV6E2HEXZ250YM5`. This new format minimizes the risk of confusion between Conflux and Ethereum addresses, offering a safer and more user-friendly experience.
 
 :::caution
 
-Base32 addresses are utilized throughout the Conflux core ecosystem, with the exception of smart contract `.sol` source code. In cases where a hardcoded [EIP-55](https://eips.ethereum.org/EIPS/eip-55) checksum address is necessary within `.sol` files, developers should opt for a Conflux hex-encoded address instead of the base32 format.
+Base32 addresses are utilized throughout the Conflux Core ecosystem, with the exception of smart contract `.sol` source code. In cases where a hardcoded [EIP-55](https://eips.ethereum.org/EIPS/eip-55) checksum address is necessary within `.sol` files, developers should opt for a Conflux hex-encoded address instead of the base32 format.
 
 :::
 
@@ -44,7 +44,7 @@ A Conflux hex address is a 20-byte hex value, represented as a 42-character stri
 
 #### EOA Hex Address Computation
 
-The computaion of EOA hex address is specified in [Conflux protocol specification](https://www.confluxnetwork.org/files/Conflux_Protocol_Specification.pdf) `3.1: Accounts`. The account address is a concatenation of a 4-bit type indicator and the rightmost 156-bit Keccak digest of the associated public key of the private key.
+The computation of EOA hex address is specified in [Conflux protocol specification](https://www.confluxnetwork.org/files/Conflux_Protocol_Specification.pdf) `3.1: Accounts`. The account address is a concatenation of a 4-bit type indicator and the rightmost 156-bit Keccak digest of the associated public key of the private key.
 
 #### Contract Address Computation
 
@@ -157,10 +157,28 @@ encode(0x1a2f80341409639ea6a35bbcab8299066109aa55, "cfx")
 
 The Conflux Core RPC methods only accept base32 address, so Conflux Core SDKs and wallets also use base32 address. Base32 is the most common address format in the Core Space.
 
-For Conflux Core Space contract development, Ethereum toolchains are used to compile contracts. So in Solidity smart contract `.sol` files, base32 format addresses would bring about compilation errors. If a specific address needs to be hardcoded in the contract code, it should be in hex format. This is the only situation that hex address is used in the Core Space.
+For Conflux Core Space contract development, Ethereum toolchains are used to compile contracts. So in Solidity smart contract `.sol` files, base32 format addresses would bring about compilation errors. If a specific address needs to be hardcoded in the contract code, it should be in hex format. **This is the only situation that hex address is used in the Core Space.**
 
 ## Address Format Convert Tool
 
 ConfluxScan provide a [Online Address Converter](https://www.confluxscan.io/address-converter) which is very useful.
 
 ![](./img/scan-address-converter.png)
+
+## FAQs
+
+### How to convert between base32 and hex addresses?
+
+Use the [Online Address Converter](https://www.confluxscan.io/address-converter) or the SDKs to convert between base32 and hex addresses.
+
+### When should I use hex addresses?
+
+In the Core Space, hex addresses are only used in Solidity smart contract `.sol` files. In other cases, base32 addresses are used.
+
+### Can I use Ethereum EOA addresses in Conflux Core Space?
+
+No. Ethereum EOA addresses are not all compatible with Conflux addresses. It's recommend use Conflux Wallet or SDKs to generate Conflux base32 addresses.
+
+### What's the [BIP-44 Coin Type](https://github.com/satoshilabs/slips/blob/master/slip-0044.md) for Conflux Core Space?
+
+The BIP-44 coin type for Conflux Core Space is `503`.

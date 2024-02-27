@@ -1,6 +1,6 @@
 ---
 sidebar_position: 9
-title: Contracts
+title: Smart Contracts
 displayed_sidebar: generalSidebar
 ---
 
@@ -42,3 +42,9 @@ If you're interested in **Smart Contracts Development on Conflux Network**, plea
 - [Token Standards](../build/smart-contracts/token-standards.md)
 
 :::
+
+## Further reading {#further-reading}
+
+- [Coinbase: What is a smart contract?](https://www.coinbase.com/learn/crypto-basics/what-is-a-smart-contract)
+- [Chainlink: What is a smart contract?](https://chain.link/education/smart-contracts)
+- [Video: Simply Explained - Smart Contracts](https://youtu.be/ZE2HxTmxfrI)

@@ -143,3 +143,7 @@ eth_getBlockByNumber(0x72819, true)
   ...
 }
 ```
+
+## Resources
+
+- [EVM opcodes reference](https://www.evm.codes/)
