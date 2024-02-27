@@ -55,6 +55,12 @@ Confura 是由 Conflux 基金会提供的公共 RPC 服务，可以免费使用�
 
 </details>
 
+import ConfuraError from '../templates/confura-error.md'
+
+<details>
+<summary>Confura Common Errors</summary>
+<ConfuraError basicUnitName="block" /> </details>
+
 ## Commercial RPC Service
 
 There are couple of commercial RPC service providers, you can check them [here](./build/infrastructure/RPC-Provider.md)
