@@ -135,6 +135,10 @@ eth_getBlockByNumber(0x72819, true)
 }
 ```
 
+## Resources
+
+- [EVM opcodes reference](https://www.evm.codes/)
+
 [Yellow Paper]: https://ethereum.github.io/yellowpaper/paper.pdf
 [EIP-152]: https://eips.ethereum.org/EIPS/eip-152
 [EIP-196]: https://eips.ethereum.org/EIPS/eip-196
