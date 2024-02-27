@@ -63,6 +63,12 @@ Reference for various fee tiers and their rate limits.
 
 </details>
 
+import ConfuraError from '../templates/confura-error.md'
+
+<details>
+<summary>Confura Common Errors</summary>
+<ConfuraError basicUnitName="epoch" /> </details>
+
 ## 2. Unifra
 
 Unifra is a Web3 developer platform focused on simplifying blockchain development. It has built a suite of developer tools, enhanced APIs, and a superior node infrastructure to seamlessly build and run blockchain applications. Unifra provide API services for multiple chains including Ethereum, BNB Smart Chain, Polygon and Conflux.
