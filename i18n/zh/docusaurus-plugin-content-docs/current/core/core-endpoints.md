@@ -63,6 +63,12 @@ Confura是Conflux网络上的一个与以太坊Infura等效的公共JSON-RPC服�
 
 </details>
 
+import ConfuraError from '../templates/confura-error.md'
+
+<details>
+<summary>Confura Common Errors</summary>
+<ConfuraError basicUnitName="epoch" /> </details>
+
 ## 2. Unifra
 
 Unifra是一个专注于简化区块链开发的Web3开发者平台。 它建立了一套开发者工具，增强了API，以及一个卓越的节点基础设施，以无缝构建和运行区块链应用程序。 Unifra 为多个链提供 API 服务，包括 以太坊、BNB 智能链、Polygon 和 Conflux。
