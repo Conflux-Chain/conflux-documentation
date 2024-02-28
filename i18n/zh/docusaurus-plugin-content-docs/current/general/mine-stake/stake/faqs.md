@@ -6,7 +6,7 @@ displayed_sidebar: generalSidebar
 
 ## Is Conflux PoS node and PoW node use the same client?
 
-Yes, the PoS node and PoW node use the same client. A conflux node works as a PoS node and a PoW node at the same time.
+Yes, the PoS node and PoW node use the same client. A conflux node works as a PoS node and a PoW node at the same time. And the snapshot data of the PoS and PoW also share the same data.
 
 ## 什么是“强制退休”？
 
@@ -28,3 +28,7 @@ The second scenario may occur if the `pos_config/pos_key` file of an existing no
 1. 在PoS节点上运行`./conflux RPC local pos stop_election`命令。 节点将返回`NULL`或未来的PoS区块号。 After running this command, the node will not apply to join the PoS committee in the next term.
 2. If the command returns a block number, keep the node running. Run the same command again after the PoS block of the returned block number has been generated (est. several hours later). At this point, the command should return `NULL`. The node will no longer receive PoS rewards after this block.
 3. Once the command returns `NULL`, the node can be safely stopped. The PoS voting process will resume to normal automatically after the node has been restarted (est. 2-3 hours to generate new PoS rewards).
+
+## On which chain are PoS rewards distributed?
+
+PoW chain.

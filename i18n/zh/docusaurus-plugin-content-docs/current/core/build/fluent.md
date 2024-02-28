@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2.5
+sidebar_position: 4
 title: 集成 Fluent 钱包
 displayed_sidebar: coreSidebar
 ---

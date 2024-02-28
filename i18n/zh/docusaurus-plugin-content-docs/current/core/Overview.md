@@ -12,8 +12,9 @@ Core Space 中的账户地址使用 **base32编码**，与以太坊不同。 它
 
 ## 快速入门
 
-- [用户指南](./getting-started/)
-- [开发者快速入门](./core-developer-quickstart)
+- [User Guides](./getting-started/)
+- [Developer QuickStart](./core-developer-quickstart)
+- [QuickStart for Ethereum Developers](./build/quickstart-for-eth-devs)
 
 ## 教程
 
@@ -27,8 +28,8 @@ Core Space 中的账户地址使用 **base32编码**，与以太坊不同。 它
 
 1. [Base32 地址](./core-space-basics/addses)
 2. [账户状态](./core-space-basics/account)
-3. [交易](./core-space-basics/transactions/overview.md)
-4. [Storage Collateral](./core-space-basics/storage)
+3. [Transaction explain](./core-space-basics/transactions/overview.md)
+4. [Storage Collateral Intro](./core-space-basics/storage)
 5. [虚拟机与 EVM 的差异](./core-space-basics/vm-difference)
 6. [内置合约相关解释](./core-space-basics/internal-contracts/)
 7. [代付机制](./core-space-basics/sponsor-mechanism)
@@ -37,7 +38,7 @@ Core Space 中的账户地址使用 **base32编码**，与以太坊不同。 它
 
 1. [测试网水龙头](https://faucet.confluxnetwork.org/)
 2. [如何运行节点](../general/run-a-node/Overview)
-3. Core Space SDKs: js, go, python, java
+3. [Core Space SDKs: js, go, python, java](./build/sdks-and-tools/sdks.md)
 
 ## 参考资料
 
@@ -46,3 +47,5 @@ Core Space 中的账户地址使用 **base32编码**，与以太坊不同。 它
 3. [内置合约 API ](./core-space-basics/internal-contracts/)
 
 ## 常见问题解答
+
+1. [常见问题解答](./FAQs.md)

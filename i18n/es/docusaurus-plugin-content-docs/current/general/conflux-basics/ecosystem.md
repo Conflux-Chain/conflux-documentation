@@ -1,44 +1,44 @@
 ---
 sidebar_position: 6
-title: Ecosystem
+title: Ecosistema
 displayed_sidebar: generalSidebar
 ---
 
-# Conflux Network Ecosystem
+# Ecosistema de Conflux Network
 
-Conflux Network represents a thriving blockchain ecosystem, distinguished by its unique tree-graph consensus mechanism that enhances scalability and efficiency. This ecosystem encompasses a wide range of projects, each contributing to the network's diversity and utility.
+Conflux Network representa un próspero ecosistema Blockchain, caracterizado por su único mecanismo de consenso tree-graph que mejora la escalabilidad y la eficiencia. Este ecosistema engloba una amplia gama de proyectos, cada uno contribuyendo a la diversidad y utilidad de la red.
 
 ## [Swappi (AMM/DEX)](https://swappi.io/)
 
-Swappi stands as a key decentralized exchange (DEX) within the Conflux Network, employing an Automated Market Maker (AMM) model. This platform facilitates seamless token swapping, offering users a decentralized and efficient trading experience.
+Swappi es un Exchange descentralizado (DEX) dentro de Conflux Network, utilizando un modelo de creación de mercado automatizada (AMM). Esta plataforma facilita el intercambio de tokens sin problemas, ofreciendo a los usuarios una experiencia de trading descentralizada y eficiente.
 
-## [Nucleon (Liquid Staking Derivative)](https://www.nucleon.space/)
+## [Nucleon (Derivado de Staking Líquido)](https://www.nucleon.space/)
 
-Nucleon introduces an innovative approach to staking in the form of a liquid staking derivative. This allows users to participate in network security while maintaining liquidity, a pivotal advancement in enhancing staking flexibility and utility.
+Nucleon introduce un enfoque innovador para hacer staking en forma de un derivado líquido. This allows users to participate in network security while maintaining liquidity, a pivotal advancement in enhancing staking flexibility and utility.
 
-## [Goledo (Lending and Borrowing)](https://www.goledo.cash/)
+## [Goledo (Lending y Borrowing)](https://www.goledo.cash/)
 
-Goledo serves the ecosystem by providing decentralized lending and borrowing services. This platform enables users to lend their assets for interest or borrow against collateral, thus enriching the financial services available on Conflux.
+Goledo sirve al ecosistema proporcionando servicios descentralizados de préstamo. Esta plataforma permite a los usuarios prestar sus activos por interés o préstamo de garantía, enriqueciendo así los servicios financieros disponibles en Conflux.
 
-## [Meson (Stablecoins Cross Chain Bridge)](https://meson.fi/)
+## [Meson (Puente entre cadenas de Stablecoins)](https://meson.fi/)
 
-Meson is a significant project in the Conflux ecosystem, providing a cross-chain bridge for stablecoins. This platform enables seamless and secure transactions between different blockchains, enhancing liquidity and connectivity in the decentralized finance (DeFi) space.
+Meson es un proyecto significativo en el ecosistema Conflux, proporcionando un puente entre cadenas para monedas estables. Esta plataforma permite transacciones perfectas y seguras entre diferentes blockchains, mejorando la liquidez y conectividad en el espacio de finanzas descentralizadas (DeFi).
 
-If you want to learn how to use Meson, you can follow [this](../tutorials/transferring-funds/across-chains/transfer-stablecoins-across-chains-using-meson.md) tutorial.
+Si quieres aprender a usar Meson, puedes seguir [este](../tutorials/transferring-funds/across-chains/transfer-stablecoins-across-chains-using-meson.md) tutorial.
 
-## [Zero Gravity (Cross Chain Bridge)](https://portal.zglabs.org/)
+## [Zero Gravity (Puente entre cadenas)](https://portal.zglabs.org/)
 
-With less than 1 second finality and coverage across most chains, Zero Gravity allows you to seamlessly and securely transfer your assets for a friction-free Web3.
+Con menos de 1 segundo final y cobertura en la mayoría de las cadenas, Zero Gravity permite transferir activos sin problemas y de forma segura por una Web3 sin fricciones.
 
-If you want to learn how to use Zero Gravity, you can follow [this](../tutorials/transferring-funds/across-chains/zero-gravity.md) tutorial.
+Si quieres aprender a usar Meson, puedes seguir [este](../tutorials/transferring-funds/across-chains/zero-gravity.md) tutorial.
 
-## [ConfluxHub (Cross-Space Bridge, CFX Staking & Governance)](https://confluxhub.io/)
+## [ConfluxHub (Puente entre cadenas, Staking de CFX y Governanza)](https://confluxhub.io/)
 
-Governance ConfluxHub is a vital component of the Conflux ecosystem, serving as a versatile platform for cross-space bridges, CFX staking, and governance.
+ConfluxHub es un componente vital del ecosistema de Conflux, que sirve como una plataforma versátil para los puentes transespaciales, la apuesta por CFX y la gobernanza.
 
-If you want to learn how to use Confluxhub, you can follow [this](../tutorials/transferring-funds/transfer-funds-across-spaces.md) tutorial.
+Si quieres aprender a usar ConfluxHub, puedes seguir [este](../tutorials/transferring-funds/transfer-funds-across-spaces.md) tutorial.
 
-## [PoS Validators](https://www.conflux-pos-validators.com/)
+## [Validadores PoS](https://www.conflux-pos-validators.com/)
 
 The Conflux Network employs a Proof of Stake (PoS) mechanism, and a comprehensive list of all Conflux PoS Validators can be found on this website.
 

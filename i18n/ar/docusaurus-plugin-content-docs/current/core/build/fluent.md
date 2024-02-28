@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2.5
+sidebar_position: 4
 title: Fluent Wallet Integration
 displayed_sidebar: coreSidebar
 ---

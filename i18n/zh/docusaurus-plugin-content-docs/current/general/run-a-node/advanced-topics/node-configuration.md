@@ -151,13 +151,30 @@ block_db_dir="./blockchain_data/blockchain_db"
 netconf_dir="./blockchain_data/net_config"
 ```
 
-### pos_key pwd
+### pos related options
+
+#### pos_key password
 
 Password for encrypting the POS private key, used to secure the POS private key. By default, this password is set interactively through the command line during the first node startup. You can set this password through the configuration file to avoid command line interaction.
 
 ```toml
 dev_pos_private_key_encryption_password="aaaa"
 ```
+
+#### pos config file
+
+Below are the default paths for the POS configuration file, initial nodes file, and private key file. You can modify these paths to customize the POS configuration.
+
+```toml
+# PoS config file path
+pos_config_path=./pos_config/pos_config.yaml
+# PoS initial nodes file path
+pos_initial_nodes_path=./pos_config/initial_nodes.json
+# PoS account private key file path
+pos_private_key_path=./pos_config/pos_key
+```
+
+The release package contains a default PoS configuration file, which can be found in the `pos_config` directory. The `pos_key` file will be generated automatically after the first node startup.
 
 ### storage optimization
 

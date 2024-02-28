@@ -4,7 +4,7 @@ title: Solidity Basics
 displayed_sidebar: generalSidebar
 ---
 
-# Solidity Basics
+## Intro
 
 Solidity is a high-level programming language designed for implementing smart contracts on blockchain platforms like Ethereum and Conflux Network. It's statically typed, supports inheritance, libraries, and complex user-defined types, making it a powerful tool for creating sophisticated contracts.
 
@@ -78,3 +78,16 @@ import TabItem from '@theme/TabItem';
   </TabItem>
 
 </Tabs>
+
+## 其他资源
+
+- [Solidity documentation](https://docs.soliditylang.org/)
+- [Solidity by example](https://solidity-by-example.org/)
+- [Ethereum's Smart Contract Documentation](https://ethereum.org/developers/docs/smart-contracts)
+
+## Libraries
+
+**OpenZeppelin Contracts -** **_Library for secure smart contract development._**
+
+- [openzeppelin.com/contracts/](https://openzeppelin.com/contracts/)
+- [GitHub](https://github.com/OpenZeppelin/openzeppelin-contracts)

@@ -12,8 +12,9 @@ The account address format in Core Space is in **base32 encoding**, which is dif
 
 ## Quick Start
 
-- [User Guide](./getting-started/)
-- [Developer Quickstart](./core-developer-quickstart)
+- [User Guides](./getting-started/)
+- [Developer QuickStart](./core-developer-quickstart)
+- [QuickStart for Ethereum Developers](./build/quickstart-for-eth-devs)
 
 ## Tutorials
 
@@ -27,8 +28,8 @@ The account address format in Core Space is in **base32 encoding**, which is dif
 
 1. [Base32 Address](./core-space-basics/addresses)
 2. [Account State](./core-space-basics/accounts)
-3. [Transaction](./core-space-basics/transactions/overview.md)
-4. [Storage Collateral](./core-space-basics/storage)
+3. [Transaction explain](./core-space-basics/transactions/overview.md)
+4. [Storage Collateral Intro](./core-space-basics/storage)
 5. [VM Differences with EVM](./core-space-basics/vm-difference)
 6. [Internal Contract explanation](./core-space-basics/internal-contracts/)
 7. [Sponsor mechanism](./core-space-basics/sponsor-mechanism)
@@ -37,7 +38,7 @@ The account address format in Core Space is in **base32 encoding**, which is dif
 
 1. [Testnet Faucet](https://faucet.confluxnetwork.org/)
 2. [How to run a node](../general/run-a-node/Overview)
-3. Core Space SDKs: js, go, python, java
+3. [Core Space SDKs: js, go, python, java](./build/sdks-and-tools/sdks.md)
 
 ## References
 
@@ -46,3 +47,5 @@ The account address format in Core Space is in **base32 encoding**, which is dif
 3. [Internal Contract APIs](./core-space-basics/internal-contracts/)
 
 ## FAQs
+
+1. [FAQs](./FAQs.md)

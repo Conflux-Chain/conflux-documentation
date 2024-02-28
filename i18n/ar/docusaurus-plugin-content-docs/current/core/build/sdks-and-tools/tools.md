@@ -17,3 +17,9 @@ Hardhat is the morden Solidity developer toolkit, which can also used to develop
 ChainIDE is a Cloud-Based Multi-Chain IDE. Developers don’t need to install extra tools while working on smart contracts. ChainIDE supports multi-chain development environments that include Conflux(core), Conflux(eSpace), Ethereum, BNB Chain, Polygon, Dfinity, Nervos, Flow, and it also supports consortium blockchains such as Chain33 and FiscoBcos. For more information about how to use ChainIDE, please check [this page](https://chainide.gitbook.io/chainide-english-1/ethereum-ide-1/4.-conflux-ide).
 
 ![Chainide](../image/chainide.png)
+
+## Address Format Convert Tool
+
+ConfluxScan provides a [Online Address Converter](https://www.confluxscan.io/address-converter) which is very useful.
+
+![](../../core-space-basics/img/scan-address-converter.png)
