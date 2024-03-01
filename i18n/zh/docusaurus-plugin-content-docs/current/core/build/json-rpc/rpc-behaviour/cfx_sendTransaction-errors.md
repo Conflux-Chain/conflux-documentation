@@ -33,7 +33,7 @@ When sending transactions in Conflux Core Space via the `cfx_sendRawTransaction`
 }
 ```
 
-## Nonce Errors
+## Nonce 错误
 
 ### Using an already executed nonce
 
