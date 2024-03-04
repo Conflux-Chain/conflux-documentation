@@ -105,68 +105,70 @@ log_conf="log.yaml"
 #
 # log_file="conflux.log"
 
-# `log_level` is the printed log level.
-# The value should be one of "error", "warn", "info", "debug", "trace", "off"
-#
+# `log_level` 是打印的日志级别。
+# 值应为 "error"、"warn"、"info"、"debug"、"trace"、"off" 中的一个
+
 # log_level="info"
 
-# -------------- Network Configuration -------------
+# -------------- 网络配置 -------------
 
-# `public_address` is the address of this node used for other nodes to connect to.
-# If not set, the process will try to find out the public IP with best effort, and use `tcp_port` as public port.
-# However, it's HIGHLY RECOMMENDED to set the value manually, especially for machines with IP translated by NAT.
+# `public_address` 是此节点的地址，用于其他节点连接。
+# 如果未设置，进程将尽力找出公网IP，并使用`tcp_port`作为公共端口。
+# 但是，强烈建议手动设置该值，特别是对于通过NAT转换的机器。
 #
 # public_address="1.1.1.1"
 
-# `tcp_port` is the TCP port that the process listens for P2P messages. The default is 32323.
+# `tcp_port` 是进程用于监听P2P消息的TCP端口。 默认为 32323。
 #
 # tcp_port=32323
 
-# `public_tcp_port` is the public TCP port that other nodes should connect to. It might be different from
-# the tcp_port in case the machine is behind a NAT. The default is as same as `tcp_port`.
+# `public_tcp_port` 是其他节点应该连接的公共TCP端口。 它可能与tcp_port不同
+# 如果机器位于NAT后面的话。 默认值与`tcp_port`相同。
 #
 # public_tcp_port=32323
 
 # `udp_port` is the UDP port used for node discovery.
-# If not set, it will be the same as `port`.
+# 如果未设置，它将与 `port` 相同。
 #
 # udp_port=32323
 
-# `jsonrpc_http_threads` is used to control how many threads to process HTTP rpc requests.
+# `jsonrpc_http_threads` 用于控制处理HTTP RPC请求的线程数。
 #
 # jsonrpc_http_threads=1
 
-# `jsonrpc_http_keep_alive` is used to control whether to set KeepAlive for rpc HTTP connections.
+# `jsonrpc_http_keep_alive` 用于控制是否为RPC HTTP连接设置KeepAlive。
 #
 # jsonrpc_http_keep_alive=false
 
-# `jsonrpc_cors` is used to control the rpc domain validation policies.
-# The value should be "none", "all", or a list string split by commas without space.
-# If not set, domain validation is disabled.
-# By default, the values are not set.
+# `jsonrpc_cors` 用于控制RPC域验证策略。
+#
+# jsonrpc_cors="none"
+
+# 值应为 "none"、"all" 或由逗号分隔的字符串列表（不包含空格）。
+# 如果未设置，将禁用域验证。
+# 默认情况下，值未设置。
 #
 # jsonrpc_cors="all"
 
-# The following parameters are the ports for the node to provide rpc service. If not set,
-# the node will not start rpc services. By default, the `jsonrpc_local_http_port` is set,
-# so as to support the Conflux CLI subcommands. What's provided here is the recommended
+# 以下参数是节点提供RPC服务的端口。 如果未设置，
+# 节点将不会启动RPC服务。 默认情况下，`jsonrpc_local_http_port`被设置，
+# 以支持Conflux CLI子命令。 What's provided here is the recommended
 # value if you want to start rpc services for other front-end applications.
-# Note that to serve transaction-related RPCs, `persist_tx_index` should also be set to `true` or
-# the node will only be able to handle very recent transactions.
+# 注意，为了提供与交易相关的RPC服务，`persist_tx_index`也应设置为`true`，
+# 否则节点只能处理最近的交易。
 #
 # jsonrpc_ws_port=12535
 # jsonrpc_tcp_port=12536
 # jsonrpc_http_port=12537
 # jsonrpc_local_tcp_port=12538
-jsonrpc_local_http_port=12539
+# jsonrpc_local_http_port=12539
 # jsonrpc_local_ws_port=12540
 # jsonrpc_http_eth_port=8545
 # jsonrpc_ws_eth_port=8546
 
-# Specify the APIs available through the public JSON-RPC interfaces (HTTP, TCP, WebSocket)
-# using a comma-delimited list of API names.
-# Possible names are: all, safe, cfx, pos, debug, pubsub, test, trace, txpool.
-# `safe` only includes `cfx` and `pubsub`, `txpool`.
+# 使用逗号分隔的API名称列表，指定通过公共JSON-RPC接口（HTTP、TCP、WebSocket）提供的API。
+# 可能的名称有：all, safe, cfx, pos, debug, pubsub, test, trace, txpool。
+# `safe` 只包括 `cfx`、`pubsub` 和 `txpool`。
 #
 # public_rpc_apis = "safe"
 # public_evm_rpc_apis = "evm"
@@ -181,87 +183,87 @@ jsonrpc_local_http_port=12539
 #
 # check_request_period_ms=5000
 
-# Chunk size for snapshot retrieval
+# 快照检索的块大小
 #
 # chunk_size_byte = 4194304
 
-# Control whether to demote peers to unstrusted
+# 控制是否降级对等节点为不可信任
 #
 # demote_peer_for_timeout = false
 
-# Maximum network queue size. When reached, the queue will refuse any new data.
-# The unit is MB.
+# 当达到最大网络队列大小大小时 队列将拒绝任何新的数据。
+# 单位是 MB。
 #
 # egress_queue_capacity = 256
 
-# Minimum queue size for throttling in manner of ratio.
-# The unit is MB.
+# 按比例进行限流的最小队列大小。
+# 单位是 MB。
 #
 # egress_min_throttle = 10
 
-# Maximum queue size for throttling in manner of ratio.
-# The unit is MB.
+# 按比例进行限流的最大队列大小。
+# 单位是 MB。
 #
 # egress_max_throttle = 10
 
-# Time interval to to garbage-collect not block-graph-ready blocks periodically.
+# 定期进行垃圾回收以清理不可用于块图的块的时间间隔。
 #
 # expire_block_gc_period_s = 900
 
-# Timeout for header-related requests (GetBlockHeaders)
+# 头部相关请求（GetBlockHeaders）的超时时间
 #
 # headers_request_timeout_ms=10_000
 
-# Time interval to broadcast Status as heartbeat periodically
+# 定期以心跳的形式广播状态的时间间隔
 #
 # heartbeat_period_interval_ms = 30_000
 
-# Time to maintain transaction digests inflight status.
+# 维护交易摘要在传输状态下的时间。
 #
 # inflight_pending_tx_index_maintain_timeout_ms = 30_000
 
-# Maximum number of timeout allowed in `timeout_observing_period_s`.
-# If the max is reached, the peer will be disconnected.
-# `demote_peer_for_timeout` controls if the peer will be demoted in this case.
+# 在`timeout_observing_period_s`中允许的最大超时次数。
+# 如果达到最大值，将断开与对等节点的连接。
+# `demote_peer_for_timeout` 控制在这种情况下是否降级对等节点。
 #
 # max_allowed_timeout_in_observing_period = 10
 
-# Maximum number of peers to download state chunks from.
+# 从中下载状态块的最大对等节点数。
 #
 # max_download_state_peers = 8
 
-# Maximum number of handshaking sessions at the same time.
+# 同时进行握手会话的最大数量。
 #
 # max_handshakes = 64
 
-# Maximum number of incoming connections.
+# 入站连接的最大数量。
 #
 # max_incoming_peers = 64
 
-# Maximum number of outgoing connections.
+# 出站连接的最大数量。
 #
 # max_outgoing_peers = 16
 
-# Maximum number of outgoing connections to archive nodes. 0 represents
-# not required to connect to archive nodes. E.g. light node or full node
-# need not to connect to archive nodes.
+# 与存档节点的出站连接的最大数量。 0表示
+# 不需要连接到存档节点。 例如， 轻节点或完整节点
+# 不需要连接到存档节点。
 #
 # max_outgoing_peers_archive = 0
 
-# Maximum number of inflight requests for each peer.
-# If the max is reached, requests will be buffered until inflight requests are responded or timeout.
+# 每个对等节点的传输中请求的最大数量。
+# 如果达到最大值，请求将被缓冲，直到传输中的请求得到响应或超时。
 #
 # max_inflight_request_count = 64
 
-# Maximum number of peers to broadcast transaction digests.
+# 广播交易摘要的最大节点数。
 #
 # max_peers_tx_propagation = 128
 
-# Maximum cached received block size waiting to be processed.
+# 等待处理的最大缓存接收块大小。
 #
 # max_unprocessed_block_size_mb = 128
 
-# Minimum number of peers to broadcast transaction digests.
+# 广播交易摘要的最小对等节点数。
 #
 # min_peers_tx_propagation = 8
 
@@ -439,7 +441,7 @@ jsonrpc_local_http_port=12539
 # block_db_dir = "./blockchain_data/blockchain_db"
 
 # Maximum size of cached ledger data (block, receipts, e.t.c.)
-# The unit is MB.
+# 单位是 MB。
 #
 # ledger_cache_size = 1024
 
