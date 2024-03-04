@@ -7,7 +7,7 @@ keywords:
   - transaction
 ---
 
-## Misc
+## 其他
 
 ### 如何发送交易？
 
