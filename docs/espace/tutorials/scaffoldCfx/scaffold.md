@@ -17,10 +17,9 @@ Watch this [video](https://youtu.be/33S0IjGGsQg) for full tutorial on how to cre
 
 ## Clone Scaffold Conflux
 
-In your visual studio terminal, run the following to clone the repo and install the dependencies.
+In your visual studio terminal, run the following to clone the repo and install the dependencies. 
 
 ```bash
-git clone https://github.com/intrepidcanadian/conflux-scaffold
 yarn install
 ```
 In the folder directory of `conflux-scaffold` you will have the following:
@@ -50,11 +49,11 @@ There are several files that are relevant when deploying.
 - The default deployment network is hardhat but you can change it to Conflux Espace or Conflux Testnet by doing the following
 
 ```bash
-yarn deploy --network ConfluxEspace
+yarn deploy --network confluxESpace
 ```
 
 ```bash
-yarn deploy --network confluxEspaceTest
+yarn deploy --network confluxESpaceTestnet
 ```
 
 :::tip
@@ -95,13 +94,13 @@ Once you have your front-end up and running, the fun begins on connecting your f
 In order to deploy a conflux app, we need to first deploy the contract into Conflux Espace and allow our wallet to connect to Conflux ESpace. In conflux-scaffold/packages/hardhat/.env.example, we need to change this to packages/hardhat/.env and include our private key in DEPLOYER_PRIVATE_KEY. This makes our private key as the deployer of the contract. In the solidity contract, we have also assigned the deployer as the owner of the contract.
 
 ```bash
-yarn deploy --network ConfluxEspace
+yarn deploy --network confluxESpace
 ```
 
 or 
 
 ```bash
-yarn deploy --network ConfluxEspaceTest
+yarn deploy --network confluxESpaceTestnet
 ```
 
 ## Remove Hardhat Wallet and Burner Wallet Connection to Espace Wallet Connection
