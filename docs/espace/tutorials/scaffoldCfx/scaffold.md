@@ -108,7 +108,7 @@ yarn deploy --network confluxESpaceTestnet
 Once the contract is deployed, we need to remove the wallet functionality to connect to hardhat and include Conflux Espace. You can specify the networks that you deployed into in conflux-scaffold/packages/nextjs/scaffold.config.ts by changing targetNetworks to 
 
 ```javascript
-targetNetworks: [chains.confluxEspace]
+targetNetworks: [chains.confluxESpace]
 ```
 
 or
