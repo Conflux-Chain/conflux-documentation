@@ -6,7 +6,7 @@ displayed_sidebar: generalSidebar
 
 Conflux是一组运行着特定软件的计算机（即节点）组成的分布式网络，该软件用于验证区块和交易数据。 该软件必须在你的计算机或服务器上运行，以将其转变为Conflux节点。
 
-A "node" is any instance of Conflux client software that is connected to other computers also running Conflux software, forming a network. A client is an implementation of Conflux that verifies data against the protocol rules and keeps the network secure.
+"节点"是任何一个Conflux客户端软件实例，它连接到其他同样运行Conflux软件的计算机，形成一个网络。 客户端是Conflux的一种实现，可以根据协议规则验证数据并保持网络安全。
 
 [Conflux-rust](https://github.com/conflux-chain/conflux-rust)是由Conflux基金会开发的用Rust语言实现的高性能Conflux协议客户端。 它是Conflux网络的核心组件，负责验证区块和交易数据。
 
