@@ -56,7 +56,7 @@ yarn deploy --network confluxESpace
 yarn deploy --network confluxESpaceTestnet
 ```
 
-:::tip
+:::note
 The deployer of the contract and thereby the owner of the contract can be changed by re-labelling the .env.example to .env and putting your private key in DEPLOYER_PRIVATE_KEY=. However, the default uses a default "public" private key for hardhat testing purposes.
 :::
 
