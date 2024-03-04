@@ -7,105 +7,101 @@ keywords:
 displayed_sidebar: generalSidebar
 ---
 
-Below is a mainnet node configuration file, it contains all the supported options along with some explanations in the comments. You can also find the latest version at [conflux-rust Github repository's run folder](https://github.com/Conflux-Chain/conflux-rust/tree/master/run). The file name is `hydra.toml` or `testnet.toml`. You can also find the log config file [`log.yaml`](https://github.com/Conflux-Chain/conflux-rust/blob/master/run/log.yaml) in the same folder.
+以下是一个主网节点配置文件，其中包含所有支持的选项以及一些在注释中的说明。 您也可以在[conflux-rust Github存储库的run文件夹](https://github.com/Conflux-Chain/conflux-rust/tree/master/run)中找到最新版本的配置文件。 文件名为`hydra.toml`或`testnet.toml`。 您还可以在相同的文件夹中找到日志配置文件[`log.yaml`](https://github.com/Conflux-Chain/conflux-rust/blob/master/run/log.yaml)。
 
-Note: from Conflux-rust v2.0 the mainnet's config file has renamed from `tethys.toml` to `hydra.toml`
+注意：从Conflux-rust v2.0版本开始，主网的配置文件已从`tethys.toml`更名为`hydra.toml`。
 
 ```toml
-# bootnodes is a list of nodes that a conflux node trusts, and will be used to sync the blockchain when a node starts. 
-# The value is a string divided by comma without space, and every entry is a node
-# A node is identified by cfxnode://NODEID@PUBLICIP:PORT
-# By default, no bootnodes are provided. What's provided here is a list of nodes that Conflux Team maintains across the world.
+# bootnodes是一个Conflux节点信任的节点列表，当节点启动时，将用于同步区块链。 
+# 该值是一个由逗号分隔的字符串，每个条目表示一个节点
+# 一个节点由cfxnode://NODEID@PUBLICIP:PORT标识
+# 默认情况下，没有提供任何bootnodes。 这里提供的是Conflux团队在全球范围内维护的节点列表。
 
 bootnodes="cfxnode://25265e1aa470d9d8667947820c4830a64e9f9678d6cb23ecde91e0447527f4926257b9637923a305ce91e15c929ed28164e6c32b76213764eb4a9624120ae1d7@39.97.180.246:32323,cfxnode://2b72adc3f52a80945db10fa35c3f6d02c73f65ff98b4a9eae4f7b244e8a51f01690e7dcef7a30bfb67fb07fcb2949e67c27487169623d40f6a9e55a8d04ca34f@39.107.143.220:32323,cfxnode://5da942ac58e392e9f68784876a1800ffe5756f8498aa1a7a9a869fe9370c2e838a114dfce33fff9674633700a0094aed8b46722fb6b03619842602a2473223de@39.97.170.199:32323,cfxnode://28d3cdf07b7deb41bb52dee0a952fc599f46f6b89cc513ecfd1020d5a66e73e7cfe68543e64962aefbcae7123a6c390a43144f5900f0bc181c3c89ffdf9ff81b@39.97.225.254:32323,cfxnode://49ff58db6b4c5f92c2145e69ea0625134cbe35885f0e5979191ba9c67e4c9374234ed7fbeb65f82d4d197568110a4f100f078bfbac896f391b362bec77be19ea@39.103.68.228:32323,cfxnode://97497107e94ac463f6bad526d74e0058d46154e97cbf758edaf3d360e2f3347ae5946ca337eb0d201df8f625e7ae5bfc32e8394d2ce37bd2dc35fa5a4bcecd01@8.131.69.64:32323,cfxnode://c22ad0736f5cc2cc3b11ce5f43345213c2e44994dfaa5e3b0cebe8bd9c78cc52e1a22949ff5953aea80476f648e42b502172e04629c172f4400a0af4caf97efb@8.131.68.192:32323,cfxnode://04cee414977f68a0c2f0215199dde4ec1c27350e447ea855ce000054336f4ccb1c43f0c5ebe8172ad51c7d7b88ac98c037a85ae949e79734449ac38a23fd1d60@106.14.64.36:32323,cfxnode://f1750b818c5828fc5f22667f4b45d4a39b17a1cf40f71ae8f74b6195485a93bf16892a3785bda36132ebae64b83b91b216eaccb7a02185a01f37c7ad89c513ad@101.132.133.254:32323,cfxnode://72a21ec3d2d7c5545b4a46656eaca6ab4ec3ac85628f665bd205e7c52273d345d1583efface277b967fca963a81fbf8b7a81ae97f0a46234cd5fb34853c95fd2@47.101.39.91:32323,cfxnode://b7aeba1f1b2b3e5dfdc7ac93df4281a440ccbdc89894444e094f15242ffa1578d90f9fd447b899be89a57542616e26a82180bd2bfb3b81f82a4dffdfe180f44e@8.210.110.149:32323,cfxnode://07faaf8be8bff4243b496363fb02bd0a21be97e291febcd9aabb29996de90d0a10065f3383beff09f05cb0bdfaa9655d90550c8abcbf97be0658ce6efd8f9b64@47.254.67.249:32323,cfxnode://b77e95cb41cae81dd82a29a07b776549ff37d93954b46214aa32036280c412cefee57350f3e1a4e9db21785ee5a4370961a55a856f7fcb664e511f2fb17f7881@35.171.101.208:32323,cfxnode://0f69308d246238e5a5a91769ab1757962e787bbdbf2c478a60cb6aed1cee8c57045d0402cdea5ee0227a884e92d72ede7742c6a3ac6f2eeb283e68ceb9503a7f@52.52.5.142:32323,cfxnode://cac5aed8c474dab7815d53a8c16434893d750455341252590e09353608106a6bc47c5e78409a47f740ca2c88be83140a660d20ceb665e8e6dd8d5ce57851a891@54.94.4.66:32323,cfxnode://e5189aed19303ee171be0a8cc206324fd7a5fe4a2a52a02aba5d869a01ba6a7865e6aeeab32db97b9bbd216e7b7ebc72bb1aed53df659cf13142a65c13cd3dd9@15.184.179.185:32323,cfxnode://70dba74973f9deac76fb6e3987c07f434d8d162cb3f5ae9db4aa717caf02c6f5c5fefac4e21b01635a697127ef9333465eeb5e2f3a539ffbcba786875c075433@18.132.169.41:32323,cfxnode://be27a2f6f4b06919ecc76fa1263b5beb067a1011746371747786ec1c75e1186254f26d7209ac3b7185109db208fcb098032f1d616cb93227bec750226f246f45@13.51.0.234:32323,cfxnode://838ee636dd6ebd18cbc50eb1448dc41b54fb9e7c2de679f2b119ef52df60fa23797d9cba41111c1431693b29aba9a3351c8ae29d3691ddb8261d677d7e1b7cd8@18.158.251.2:32323,cfxnode://b69865a15548528c3734f581294a022dc8f3c8a14e2d1fe82f5cbce63906316c5af321990c984c9ebe2c990b77d7991d389645d278e31e86c64a32b1f41f3a9a@18.136.130.20:32323,cfxnode://e7f13b08d8bd80cf62dff22bd57d423bade2aa8a87c7c5ad7332ccd57d7c642956a3dae898a9d56c3542200de1b696689f1105132196916cd5c82cf3e5a5c2a0@3.114.73.12:32323,cfxnode://c65a039e657bfe5ec6005feca4450a705f43cd36656ae45033d68425edc8c002983a9ec941e6eb2529580888fa7348934ccc9a5396c2fe3d0d5036ed4e806efd@3.37.149.79:32323,cfxnode://6d6d9c474f792bcb7fa68ec04e81831e9cb18407a3b3b37b9140e32f94403b820193920a281c97875717c01c3827429ee3eefef30dc0c65b1436228d065e8179@18.163.95.162:32323"
 
 # Set the node type to Full node, Archive node, or Light node.
-# Possible values are "full", "archive", or "light".
-# The command line parameter `--full`, `--archive`, or `--light` will overwrite this parameter.
+# 取值可以为 "full"（完整节点）、"archive"（归档节点）或 "light"（轻节点）。
+# 命令行参数 `--full`、`--archive` 或 `--light` 将覆盖此参数设置。
 #
 # node_type = "full"
 
-# Some preset develepment configurations.
-# It should not be set in production environment.
+# 一些预设的开发配置。
+# 在生产环境中不应该设置此参数。
 #
-# For both `test` and `dev` modes, we will
-#     * Set initial difficulty to 4
+# 对于`test`和`dev`模式，我们将：
+#     * 将初始难度设置为4
 #
-# `test` mode is for Conflux testing and debugging, we will
-#     * Add latency to peer connections
-#     * Skip handshake encryption check
-#     * Skip header timestamp verification
-#     * Handle NewBlockHash even in catch-up mode
-#     * Allow data propagation test
-#     * Allow setting genesis accounts and generate tx from secrets
+# `test`模式用于Conflux的测试和调试，我们将：
+#     * 增加与节点连接的延迟
+#     * 跳过握手加密检查
+#     * 跳过头部时间戳验证
+#     * 在catch-up模式下处理NewBlockHash事件
+#     * 允许数据传播测试
+#     * 允许设置创世账户并从密钥生成交易
 #
-# `dev` mode is for users to run a single node that automatically
-#     generates blocks with fixed intervals
-#     * You are expected to also set `jsonrpc_ws_port`, `jsonrpc_tcp_port`,
-#       and `jsonrpc_http_port` if you want RPC functionalities.
-#     * generate blocks without PoW (either after receiving a transaction or
-#       in fixed period, see ``dev_block_interval_ms'')
-#     * Skip catch-up mode even there is no peer
+# `dev`模式用于用户运行单个节点，自动生成具有固定间隔的区块
+#     * 如果您希望使用RPC功能，还需要设置`jsonrpc_ws_port`、`jsonrpc_tcp_port`和`jsonrpc_http_port`。
+#     * 在收到交易后或固定时间间隔内生成区块（参见`dev_block_interval_ms'`)
+#     * 即使没有节点，也跳过catch-up模式
 #
 # mode = ""
 
-# If you want to setup a single node running Conflux for development. You should
-# COMMENT the bootnodes setting and you should use the following parameters:
-#
-# mode = "dev"
+# 如果您想设置一个运行Conflux进行开发的单个节点。 您应该
+# 注释掉bootnodes设置，并使用以下参数：
 
-# ``dev_block_interval_ms'' controls the mining rate in the dev mode.
+mode = "dev"
+
+``dev_block_interval_ms''控制开发模式下的挖矿速率。
 #
-# If it's not set, blocks will only be generated after receiving a transaction.
-# Otherwise, blocks are automatically generated every ``dev_block_interval_ms'' ms.
+# 如果未设置，将仅在接收到交易后生成区块。
+# 否则，每隔``dev_block_interval_ms''毫秒自动生成区块。
 #
 # dev_block_interval_ms = 250
 
-# ----------------- Mining Configuration -----------------
+# ----------------- 挖矿配置 -----------------
 
-# `mining_author` is the address to receive mining rewards.
-# If set, `mining_type` will be "stratum" by default.
-# The value is a 40-digit hex string or a valid CIP-37 base32 address.
-# By default, the value is not set.
+# `mining_author`是接收挖矿奖励的地址。
+# 如果设置了，`mining_type`将默认为"stratum"。
+# 该值为一个40位十六进制字符串或有效的CIP-37 base32地址。
+# 默认情况下，该值未设置。
 #
 # mining_author="cfx:aarc9abycue0hhzgyrr53m6cxedgccrmmyybjgh4xg"
 
-# `mining_type` controls whether the mining process goes through the
-# stratum protocol, uses CPU-mining, or disable mining.
-# Possible values are "stratum", "cpu", and "disable".
-# The default value is "stratum" if `mining_author` is set.
-# If the value is set and not "disable", `mining_author` must be set.
+# `mining_type` 控制挖矿过程是否通过stratum协议、使用CPU挖矿，或禁用挖矿。
+# 可能的取值为 "stratum"、"cpu" 和 "disable"。
+# 如果设置了`mining_author`，则默认值为 "stratum"。
+# 如果设置了该值且不为 "disable"，则必须设置`mining_author`。
 #
 # mining_type = "stratum"
 
-# Listen address for stratum
+# Stratum的监听地址
 #
 # stratum_listen_address = "127.0.0.1"
 
-# Port for stratum.
+# Stratum的端口号。
 #
 # stratum_port = 32525
 
-# Window size for PoW manager
+# PoW管理器的窗口大小
 #
 # pow_problem_window_size = 1
 
-# Secret key for stratum.
-# The value is 64-digit hex string.
-# If not set, the RPC subscription will not check the authorization.
+# Stratum的密钥。
+# 值为64位十六进制字符串。
+# 如果未设置，RPC订阅将不会检查授权。
 #
 # stratum_secret = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
 
-# -------------- Log-related Configuration -------------
+# -------------- 与日志相关的配置 -------------
 
-# `log_conf` the path of the log4rs configuration file. The configuration in the file will overwrite the value set by `log_level`.
-# By default, the value is not set.
+# `log_conf` 是log4rs配置文件的路径。 文件中的配置将覆盖`log_level`设置的值。
+# 默认情况下，该值未设置。
 #
 log_conf="log.yaml"
 
-# `log_file` is the path of the log file"
-# If not set, the log will only be printed to stdout, and not persisted to files.
-# By default, the value is not set.
+# `log_file` 是日志文件的路径"
+# 如果未设置，日志只会打印到stdout，不会保存到文件中。
+# 默认情况下，该值未设置。
 #
 # log_file="conflux.log"
 
@@ -346,7 +342,7 @@ jsonrpc_local_http_port=12539
 # The value is a 64-digit hex string.
 # If not set, the node will try to read from the file "key" under the directory `netconf_dir`.
 # If the file is not found, the node will generate a random key.
-# By default, the value is not set.
+# 默认情况下，该值未设置。
 # If a node is restarted, it's suggested to keep the key unchanged.
 #
 # net_key="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
