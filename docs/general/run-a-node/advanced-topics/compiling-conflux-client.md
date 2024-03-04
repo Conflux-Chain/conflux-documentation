@@ -4,6 +4,8 @@ title: Compiling the Conflux Client
 displayed_sidebar: generalSidebar
 ---
 
+import { confluxNodeVersion } from '../../../templates/parameters.ts'
+
 Here is a step by step guide on how to build Conflux from the source code and get a node running.
 
 ## Install Build Dependencies
@@ -97,13 +99,13 @@ Make sure that these binaries are in your ```PATH``` (the instruction will be sh
 
 ## Build from Source Code
 
-After installing the dependencies mentioned above, now you can clone our repository and start building the executable binary:
+After installing the dependencies mentioned above, now you can clone our repository and start building the executable binary. The latest mainnet node version is **{confluxNodeVersion.mainnet}**.
 
 ```bash
 # download Conflux code
 git clone https://github.com/Conflux-Chain/conflux-rust
 cd conflux-rust
-git checkout v2.3.3  # checkout to the latest release version
+git checkout <latest-released-mainnet-version> # checkout to the latest release version
 
 # build in release mode
 cargo build --release
@@ -131,10 +133,10 @@ No, the mainnet and testnet client are not same.
 
 ### How to build the testnet client?
 
-Checkout to the latest testnet tag and build the source code:
+Checkout to the latest testnet tag and build the source code. The latest version of testnet is **{confluxNodeVersion.testnet}**.
 
 ```bash
-git checkout v2.3.3-testnet  # checkout to the latest testnet release version
+git checkout <latest-released-testnet-version>  # checkout to the latest testnet release version
 cargo build --release
 ```
 
