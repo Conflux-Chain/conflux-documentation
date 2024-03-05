@@ -35,7 +35,7 @@ import TabItem from '@theme/TabItem';
 - 我们提供Conflux客户端的[docker镜像](./advanced-topics/downloading-conflux-client#docker)
 - 使用[快照](./snapshot-tool.md)加速同步
 - 常见的[配置选项](./advanced-topics/node-configuration.md)解释
-- A [configuration file template](./advanced-topics/configuration-files.md) for mainnet, and [mainnet bootnodes list](./advanced-topics/official-bootnodes.md)
+- 用于主网的[配置文件模板](./advanced-topics/configuration-files.md)和[主网启动节点列表](./advanced-topics/official-bootnodes.md)
 - 如何[搭建私有链](./advanced-topics/running-independent-chain.md)
 
 如果您遇到任何问题，请查看[常见问题解答](./nodes-faqs.md)和[故障排除](./TroubleShooting)页面。

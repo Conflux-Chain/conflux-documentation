@@ -9,77 +9,77 @@ keywords:
 displayed_sidebar: generalSidebar
 ---
 
-Conflux CLI sub-commands is a collection of command line interfaces which allows you to interact with a local or remote Conflux node.
+Conflux CLI子命令是一个命令行接口集，允许你与本地或远程Conflux节点进行交互
 
-## Manage Accounts
-`account` sub-command allows you to manage accounts at local machine.
+## 管理账户（Account）
+`account`的若干子命令允许你在本地机器上管理账户。
 
 ### new
-Create a new account at local machine.
-#### Usage
+在本地机器上创建一个新账号。
+#### 用法
 ```text
 $ ./conflux account new --help
-Create a new account (and its associated key) for the given --chain (default conflux).
+为一个给定的 --chain （默认值为conflux）创建一个新账户（及其关联的密钥）。
 
-USAGE:
-    conflux account new [OPTIONS]
+用法:
+    conflux account new [OPTIONS] 
 
-FLAGS:
-    -h, --help       Prints help information
-    -V, --version    Prints version information
+标志:
+    -h, --help       打印帮助信息
+    -V, --version    打印版本信息
 
-OPTIONS:
-        --keys-iterations <NUM>    Specify the number of iterations to use when deriving key from the password (bigger is more secure). [default: 10240]
-        --password <FILE>          Provide a file containing a password for unlocking an account. Leading and trailing whitespace is trimmed.
+选项:
+    --keys-iterations <NUM>    指定从密码派成密钥时要使用的迭代次数（次数越多越安全） [默认值: 10240]
+    --password <FILE>          提供包含解锁账户密码的文件 前导和尾随的空格都会被删除。
 ```
 #### 示例
 `./conflux account new`
 
 ### list
-List all accounts at local machine.
-#### Usage
+列出本地机器上的所有账户。
+#### 用法
 ```text
 $ ./conflux account list --help
-List existing accounts of the given --chain (default conflux).
+列出一个给定的 --chain （默认值为conflux) 的现有账户
 
-USAGE:
+用法:
     conflux account list
 
-FLAGS:
-    -h, --help       Prints help information
-    -V, --version    Prints version information
+标志:
+    -h, --help       打印帮助信息
+    -V, --version    打印版本信息
 ```
 #### 示例
 `./conflux account list`
 
 ### import
-Import accounts from JSON UTC keystore files.
-#### Usage
+从JSON UTC keystore文件中导入账户。
+#### 用法
 ```text
 $ ./conflux account import --help
-Import accounts from JSON UTC keystore files to the specified --chain (default conflux)
+从JSON UTC keystore文件导入账户到指定的 --chain （默认为conflux）
 
-USAGE:
+用法:
     conflux account import --import-path <PATH>...
 
-FLAGS:
-    -h, --help       Prints help information
-    -V, --version    Prints version information
+标志:
+    -h, --help       打印帮助信息
+    -V, --version    打印版本信息
 
-OPTIONS:
-        --import-path <PATH>...    A list of file paths to import.
+选项:
+    --import-path <PATH>...    一个要导入的文件路径列表
 ```
 #### 示例
-`./conflux account import --import-path ./keystores`
+``
 
-## Public APIs
-Public API allows you to interact with a local or remote Conflux node via HTTP connection in JSON-RPC protocol. All public APIs are under `rpc` sub-command, and access to the JSON-RPC API at local machine with default `url` option.
+## 公共应用程序编程接口
+公共应用程序编程接口（简称公共API）允许你使用JSON-RPC 协议中的 HTTP 连接与本地或远程Conflux节点进行交互。 所有公共API都在`rpc`子命令下, 并通过默认的`url`选项访问本地机器上的JSON-RPC接口。
 
 ```text
-OPTIONS:
-        --url <url>    URL of RPC server [default: http://localhost:12539]
+选项:
+   --url <url>    URL of RPC server [默认: http://localhost:12539]
 ```
-To access JSON-RPC API of remote Conflux node, please specify the  correct `--url` option (e.g. http://10.1.5.6:12537). By default, JSON-RPC is enabled only for local access for security consideration. You can manually enable remote access by configuring `jsonrpc_http_port` in ***default.toml*** file.
+要访问远程Conflux 节点的JSON-RPC的API, 请指定正确的`--url`选项 (例如 http://10.1.5.6:12537)。 出于安全考虑，默认情况下JSON-RPC仅可本地访问。 你可以在***default.toml***文件中配置`jsonrpc_http_port` 来手动启用远程访问。
 
 ```toml
 # jsonrpc_tcp_port=12536
@@ -87,154 +87,154 @@ jsonrpc_http_port=12537
 # jsonrpc_local_tcp_port=12538
 jsonrpc_local_http_port=12539
 ```
-All available commands are as following:
+所有可用的命令如下：
 ```text
 $ ./conflux rpc --help
-RPC based subcommands to query blockchain information and send transactions
+基于RPC的子命令，用于查询区块链信息和发送交易
 
-USAGE:
+用法:
     conflux rpc [OPTIONS] <SUBCOMMAND>
 
-FLAGS:
-    -h, --help       Prints help information
-    -V, --version    Prints version information
+标志:
+    -h, --help       打印帮助信息
+    -V, --version    打印版本信息
 
-OPTIONS:
-        --url <url>    URL of RPC server [default: http://localhost:12539]
+选项:
+    --url <url>    RPC服务器的URL [默认值: http://localhost:12539]
 
-SUBCOMMANDS:
-    balance                  Get balance of specified account
-    best-block-hash          Get the best block hash
-    block-by-epoch           Get block by epoch
-    block-by-hash            Get block by hash
-    block-with-assumption    Get block by hash with pivot chain assumption
-    blocks                   Get blocks of specified epoch
-    call                     Executes a new message call immediately without creating a transaction
-    code                     Get bytecode of specified contract
-    local                    Local subcommands (requires jsonrpc_local_http_port configured)
-    epoch                    Get epoch number
-    estimate-gas             Executes a call request immediately without creating a transaction and returns the gas used
-    help                     Prints this message or the help of the given subcommand(s)
-    nonce                    Get nonce of specified account
-    price                    Get recent mean gas price
-    receipt                  Get receipt by transaction hash
-    send                     Send a signed transaction and return its hash
-    tx                       Get transaction by hash
+子命令:
+    balance                  获取指定账户的余额
+    best-block-hash          获取最新区块哈希
+    block-by-epoch          根据epoch获取区块
+    block-by-hash            根据哈希获取区块
+    block-with-assumption    假设使用主链，根据哈希获取区块
+    blocks                   获取指定epoch的区块
+    call                     立即执行新的消息调用，无需创建交易
+    code                     获取指定合约的字节码
+    local                    本地子命令 (需要配置jsonrpc_local_http_port)
+    epoch                    获取epoch号
+    estimate-gas             立即执行调用请求，无需创建交易并返回gas估算值
+    help                    打印此消息或给定子命令的帮助
+    nonce                    获取指定账户的nonce 
+    price                   获取最近的平均gas价格
+    receipt                  根据交易哈希获取收据 
+    send                     发送签署的交易并返回其哈希
+    tx                       根据哈希获取交易
 ```
 
-### Get balance
+### 获取账户余额
 `./conflux rpc balance --address cfx:type.user:aarc9abycue0hhzgyrr53m6cxedgccrmmyybjgh4xg`
 
-### Get nonce
+### 获取账户的nonce
 `./conflux rpc nonce --address cfx:type.user:aarc9abycue0hhzgyrr53m6cxedgccrmmyybjgh4xg`
 
-### Get current epoch number
+### 获取当前的epoch号
 `./conflux rpc epoch`
 
-### Get block(s)
-- Get Best block hash: `./conflux rpc best-block-hash`
-- Get block by epoch: `./conflux rpc block-by-epoch --epoch latest_state`
-- Get block by height: `./conflux rpc block-by-epoch --epoch 0x10`
-- Get blocks in epoch: `./conflux rpc blocks --epoch latest_state`
+### 获取区块
+- 获取最佳区块哈希: `./conflux rpc best-block-hash``</li>
+<li>按epoch获取区块: <code>./conflux rpc block-by-epoch --epoch latest_state`
+- 根据区块高度获取区块: `./conflux rpc block-by-epoch --epoch 0x10`
+- 获取epoch中的区块: `./conflux rpc blocks --epoch latest_state`
 
-### Get transaction
+### 获取交易
 `./conflux rpc tx --hash 0x718532fe76dbd8c4208c6c5a79588db35c0bf97e7d8a0faa5988ba66ad88b74c`
 
-### Get receipt
+### 获取收据
 `./conflux rpc receipt --hash 0x718532fe76dbd8c4208c6c5a79588db35c0bf97e7d8a0faa5988ba66ad88b74c`
 
-### Send signed transaction
-Send a signed transaction which encoded in HEX format. Generally, this API is used for Java-Script API to send encoded transaction. To send a transaction with CLI, suggest to use private API [send transaction](#send-transaction).
+### 发送已签名的交易
+发送一个以十六进制格式编码的已签名交易。 通常，此API用JavaScript API发送已编码的交易。 若要使用CLI发送交易，建议使用私有API[发送交易](#send-transaction)。
 
 `./conflux rpc send --raw-bytes 0x...`
 
-### Misc
-- Get contract code: `./conflux rpc code --address cfx:type.contract:acc7uawf5ubtnmezvhu9dhc6sghea0403y2dgpyfjp`
-- Get recent mean gas price: `./conflux rpc price`
+### 其他
+- 获取合约代码: `./conflux rpc code --address cfx:type.contract:acc7uawf5ubtnmezvhu9dhc6sghea0403y2dgpyfjp`
+- 获取最近的平均gas价格 : `./conflux rpc price`
 
-## Private APIs
-Private API allows you to interact with local Conflux node **only** via HTTP connection in JSON-RPC protocol. Private APIs are provided for user to manage the local Conflux node, and requires the `jsonrpc_local_http_port` configured in ***default.toml*** configuration file.
+## 私有应用程序编程接口
+私有应用程序编程接口(简称私有API)允许你**仅仅**使用JSON-RPC协议中的HTTP连接与本地Conflux节点进行交互。 用户使用私有APIs来管理本地Conflux节点，要求在 ***default.toml*** 配置文件中配置`jsonrpc_local_http_port` 。
 
-In addition, private APIs also helps developers to debug, test, and monitor the runtime of Conflux node.
+此外，私有API还帮助开发人员调试、测试和监视Conflux节点的运行时的状态和行为。
 
-All private APIs are under `local` sub-command, and access to the JSON-RPC API at local machine with default `url` option.
+所有的私有API都在本地`local`子命令下，可以通过默认的`url`选项访问本地机器上的JSON-RPC API。
 
 ```text
 $ ./conflux rpc local --help
-Debug subcommands (requires jsonrpc_local_http_port configured)
+调试子命令(需要配置 jsonrpc_local_http_port )
 
-USAGE:
-    conflux rpc local [OPTIONS] <SUBCOMMAND>
+用法:
+    conflux rpc local [选项] <SUBCOMMAND>
 
-FLAGS:
-    -h, --help       Prints help information
-    -V, --version    Prints version information
+标志:
+    -h, --help       打印帮助信息
+    -V, --version    打印版本信息
 
-OPTIONS:
-        --url <url>    URL of RPC server [default: http://localhost:12539]
+选项:
+        --url <url>    RPC 服务器的URL [默认值: http://localhost:12539]
 
-SUBCOMMANDS:
-    consensus-graph-state    Get the consensus graph state
-    help                     Prints this message or the help of the given subcommand(s)
-    net                      Network subcommands
-    send                     Send a transaction and return its hash
-    sync-phase               Get the current synchronization phase
-    test                     Test subcommands (used for test purpose only)
-    txpool                   Transaction pool subcommands
+子命令:
+    consensus-graph-state    获取共识图状态
+    help                     打印此消息或者给定子命令的帮助信息
+    net                      网络子命令
+    send                     发送交易并返回其哈希
+    sync-phase              获取当前同步阶段
+    test                     获取子命令（仅用于测试目的）
+    txpool                   交易池子命令
 ```
 ### net
-`net` sub-command helps you to inspect the P2P network status.
+`net` 子命令帮助你检查 P2P 网络状态。
 
 #### 示例
-- List all connected P2P nodes: `./conflux rpc local net session`
-- List a single P2P node: `./conflux rpc local net session --id <node_id>`
-- Check network egress: `./conflux rpc local net throttling`
+- 列出所有已连接的P2P节点: `./conflux rpc local net session`
+- 列出单个P2P节点: `./conflux rpc local net session --id <node_id>`
+- 检查网络出口: `./conflux rpc local net throttling`
 
 ### txpool
-`txpool` sub-command helps you to inspect the transaction pool.
+`txpool` 子命令帮助你检查交易池.
 
 #### 示例
-- List transaction pool status: `./conflux rpc local txpool status`
-- List transactions in details: `./conflux rpc local txpool content`
-- List summary of transactions: `./conflux rpc local txpool inspect`
-- Inspect a transaction in detail: `./conflux rpc local txpool inspect-one --hash <tx_hash>`
+- 列出交易池状态: `./conflux rpc local txpool status`
+- 列出交易的详细信息: `./conflux rpc local txpool content`
+- 列出交易摘要: `./conflux rpc local txpool inspect`
+- 检查一个交易的细节: `./conflux rpc local txpool inspect-one --hash <tx_hash>`
 
 ### sync-phase
-Get the synchronization phase of local conflux node.
+获取本地Conflux节点的同步阶段。
 
 `./conflux rpc local sync-phase`
 
-### Send transaction
-Send a transaction to local Conflux node.
+### send
+向本地Conflux节点发送一个交易。
 
-#### Usage
+#### 用法
 ```text
 $ ./conflux rpc local send --help
-Send a transaction and return its hash
+发送交易并返回其哈希值
 
-USAGE:
+用法:
     conflux rpc local send [OPTIONS] --from <ADDRESS> --value <HEX>
 
-FLAGS:
-    -h, --help       Prints help information
-    -V, --version    Prints version information
+标志:
+    -h, --help       打印帮助信息。
+    -V, --version    打印版本信息。
 
-OPTIONS:
-        --data <HEX>           Hash of the method signature and encoded parameters
-        --from <ADDRESS>       Transaction from address
-        --gas <HEX>            Gas provided for transaction execution [default: 0x5208]
-        --gas-price <HEX>      Transaction gas price [default: 0x2540BE400]
-        --nonce <HEX>          Transaction nonce
-        --to <ADDRESS>         Transaction to address (empty to create contract)
-        --url <url>            URL of RPC server [default: http://localhost:12537]
-        --value <HEX>          value sent with this transaction
+选项:
+    --data <HEX>           方法签名和编码参数的哈希
+    --from <ADDRESS>       交易发起地址
+    --gas <HEX>            用于交易执行的Gas [默认值: 0x5208]
+    --gas-price <HEX>      交易gas价格 [默认值: 0x2540BE400]
+    sync-phase--nonce <HEX>   交易 nonce
+    --to <ADDRESS>         交易目标地址(为空则创建合约)
+    --url <url>            RPC服务器的URL [默认值: http://localhost:12537]
+    --value <HEX>          与此交易一起发送的value
 ```
 
 #### 示例
-Alice transfer 5 Drip (1 CFX = 10^18 Drip) to Bob. Note, the address of Alice must exist at local machine, otherwise please [create](#new) account for alice at first.
+从 Alice 转移 5 Drip (1 CFX = 10^18 Drip) 给Bob。 请注意，Alice 的地址必须存在于本地机器上，否则请首先为 Alice [创建](#new)一个账户。
 
 `./conflux rpc local send --from <alice_address> --to <bob_address> --value 0x5 --password 123456`
 
-Alice create a contract with gas 3,000,000. You can use ***solc*** to compile contract to get the bytecodes.
+Alice使用300万gas创建了一个合约。 你可以使用***合约编译工具solc*** 编译合约来获取字节码。
 
 `./conflux rpc local send --from <alice_address> --value 0x0 --gas 0x2DC6C0 --data <HEX_contract_bytecodes> --password 123456`
