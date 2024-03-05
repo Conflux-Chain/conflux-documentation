@@ -9,7 +9,7 @@ keywords:
 displayed_sidebar: eSpaceSidebar
 ---
 
-[Scaffold Conflux](https://github.com/intrepidcanadian/conflux-scaffold) is an adaptation of Scaffold-ETH-2 (https://scaffoldeth.io/) whereby we have adjusted the template to allow you to deploy the contract on Conflux ESpace and leverage the components, integration of hardhat, and the quick deployment of Scaffold-ETH-2. In this tutorial, we will show you how to set-up Scaffold Conflux to better understand your smart contract and to leverage some of the beautiful react components available to quickly make your app on Conflux ESpace. 
+[Scaffold Conflux](https://github.com/conflux-fans/conflux-scaffold) is an adaptation of Scaffold-ETH-2 (https://scaffoldeth.io/) whereby we have adjusted the template to allow you to deploy the contract on Conflux ESpace and leverage the components, integration of hardhat, and the quick deployment of Scaffold-ETH-2. In this tutorial, we will show you how to set-up Scaffold Conflux to better understand your smart contract and to leverage some of the beautiful react components available to quickly make your app on Conflux ESpace. 
 
 Watch this [video](https://youtu.be/33S0IjGGsQg) for full tutorial on how to create an app from scratch and deploy it live on Conflux ESpace.
 
@@ -20,6 +20,7 @@ Watch this [video](https://youtu.be/33S0IjGGsQg) for full tutorial on how to cre
 In your visual studio terminal, run the following to clone the repo and install the dependencies. 
 
 ```bash
+git clone https://github.com/conflux-fans/conflux-scaffold
 yarn install
 ```
 In the folder directory of `conflux-scaffold` you will have the following:
