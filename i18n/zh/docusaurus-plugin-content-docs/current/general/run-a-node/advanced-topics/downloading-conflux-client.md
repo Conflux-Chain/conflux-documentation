@@ -4,13 +4,13 @@ title: 下载 Conflux 节点客户端
 displayed_sidebar: generalSidebar
 ---
 
-[Conflux-rust](https://github.com/conflux-chain/conflux-rust) is a high-performance implementation of the Conflux protocol developed by the foundation with the Rust language. Conflux-rust is a Conflux node that connects to other nodes on the Conflux network and provides an RPC interface that you can use to query and interact with the blockchain. It is also a command-line tool that manages local accounts and conducts RPC interaction with nodes. You can download the released package through any of the ways listed:
+[Conflux-rust](https://github.com/conflux-chain/conflux-rust)是Conflux基金会使用Rust语言开发的一个Conflux协议的高性能实现。 Conflux-rust 是一个连接到 Conflux 网络上其他节点的 Conflux 节点，并提供了一个 RPC 接口，你可以使用它来查询和与区块链交互。 它还是一个命令行工具，用于管理本地账户并与节点进行 RPC 交互。 你可以通过以下任何方式下载已发布的软件包：
 
-## Download pre-built binaries
+## 下载预构建的二进制文件
 
-The [**release page on the conflux-rust GitHub repository**](https://github.com/Conflux-Chain/conflux-rust/releases) providers pre-built binaries that you can download and run directly. There are two versions for the **mainnet** and the **testnet**: the mainnet version is Conflux `vx.x.x`, while the version for testnet is `Conflux vx.x.x-testnet` (which has a suffix of `testnet`). Each program will be provided for Linux, Windows10, and macOS.
+[**conflux-rust的github仓库的发行版页面**](https://github.com/Conflux-Chain/conflux-rust/releases)提供了预构建的二进制文件，你可以直接下载并运行。 Conflux-rust发行版有两个版本，分别是**主网**和**测试网**：主网版本是Conflux `vx.x.x` ，而测试网版本是`Conflux vx.x.x-testnet` (带有 `testnet`后缀)。 每个程序都提供了适用于Linux、Windows10和macOS的版本。
 
-On the Release page, each version will have a version update description and `Assets` that you can download. After selecting the corresponding platform, you can click the link to download the zip package. For example, when unzipping the `conflux_linux_v2.0.3.zip` file, a `run` folder that contains node programs, configuration files, and startup scripts will appear. The specific documents include:
+在发布页面上，每个版本都将有一个版本更新描述和你可以下载的`Assets` 。 在选择相应的平台后，你可以点击链接下载zip压缩包。 For example, when unzipping the `conflux_linux_v2.0.3.zip` file, a `run` folder that contains node programs, configuration files, and startup scripts will appear. The specific documents include:
 
 ```bash
 ➜  run tree
