@@ -9,9 +9,9 @@ keywords:
 displayed_sidebar: eSpaceSidebar
 ---
 
-[Scaffold Conflux](https://github.com/conflux-fans/conflux-scaffold) is an adaptation of Scaffold-ETH-2 (https://scaffoldeth.io/) whereby we have adjusted the template to allow you to deploy the contract on Conflux ESpace and leverage the components, integration of hardhat, and the quick deployment of Scaffold-ETH-2. In this tutorial, we will show you how to set-up Scaffold Conflux to better understand your smart contract and to leverage some of the beautiful react components available to quickly make your app on Conflux ESpace. 
+[Scaffold Conflux](https://github.com/conflux-fans/conflux-scaffold) is an adaptation of Scaffold-ETH-2 (https://scaffoldeth.io/) whereby we have adjusted the template to allow you to deploy the contract on Conflux eSpace and leverage the components, integration of hardhat, and the quick deployment of Scaffold-ETH-2. In this tutorial, we will show you how to set-up Scaffold Conflux to better understand your smart contract and to leverage some of the beautiful react components available to quickly make your app on Conflux eSpace. 
 
-Watch this [video](https://youtu.be/33S0IjGGsQg) for full tutorial on how to create an app from scratch and deploy it live on Conflux ESpace.
+Watch this [video](https://youtu.be/33S0IjGGsQg) for full tutorial on how to create an app from scratch and deploy it live on Conflux eSpace.
 
 [![Watch Tutorial](https://img.youtube.com/vi/33S0IjGGsQg/0.jpg)](https://www.youtube.com/watch?v=33S0IjGGsQg)
 
@@ -30,7 +30,7 @@ In the folder directory of `conflux-scaffold` you will have the following:
 The repository contains two main sections. The first section is for hardhat. 
 - You can adjust your smart contract solidity files in /conflux-scaffold/packages/hardhat/contracts 
 - For example, the current sample solidity file is "YourContract.sol" 
-- Start up your blockchain for testing purposes. We do this to easily create accounts and interact with the smart contract without deploying it on testnet (i.e. RPC limits) and Conflux Espace (i.e. gas fees)
+- Start up your blockchain for testing purposes. We do this to easily create accounts and interact with the smart contract without deploying it on testnet (i.e. RPC limits) and Conflux eSpace (i.e. gas fees)
 
 ```bash
 yarn chain
@@ -47,7 +47,7 @@ There are several files that are relevant when deploying.
 
 - One is the deployment script in /conflux-scaffold/packages/hardhat/deploy
 - The other is the configuration of which networks you are deploying on. /conflux-scaffold/packages/hardhat/hardhat.config.ts
-- The default deployment network is hardhat but you can change it to Conflux Espace or Conflux Testnet by doing the following
+- The default deployment network is hardhat but you can change it to Conflux eSpace or Conflux Testnet by doing the following
 
 ```bash
 yarn deploy --network confluxESpace
@@ -92,7 +92,7 @@ Once you have your front-end up and running, the fun begins on connecting your f
 
 ## Deployment of Conflux Contracts
 
-In order to deploy a conflux app, we need to first deploy the contract into Conflux Espace and allow our wallet to connect to Conflux ESpace. In conflux-scaffold/packages/hardhat/.env.example, we need to change this to packages/hardhat/.env and include our private key in DEPLOYER_PRIVATE_KEY. This makes our private key as the deployer of the contract. In the solidity contract, we have also assigned the deployer as the owner of the contract.
+In order to deploy a conflux app, we need to first deploy the contract into Conflux eSpace and allow our wallet to connect to Conflux eSpace. In conflux-scaffold/packages/hardhat/.env.example, we need to change this to packages/hardhat/.env and include our private key in DEPLOYER_PRIVATE_KEY. This makes our private key as the deployer of the contract. In the solidity contract, we have also assigned the deployer as the owner of the contract.
 
 ```bash
 yarn deploy --network confluxESpace
@@ -104,9 +104,9 @@ or
 yarn deploy --network confluxESpaceTestnet
 ```
 
-## Remove Hardhat Wallet and Burner Wallet Connection to Espace Wallet Connection
+## Remove Hardhat Wallet and Burner Wallet Connection to eSpace Wallet Connection
 
-Once the contract is deployed, we need to remove the wallet functionality to connect to hardhat and include Conflux Espace. You can specify the networks that you deployed into in conflux-scaffold/packages/nextjs/scaffold.config.ts by changing targetNetworks to 
+Once the contract is deployed, we need to remove the wallet functionality to connect to hardhat and include Conflux eSpace. You can specify the networks that you deployed into in conflux-scaffold/packages/nextjs/scaffold.config.ts by changing targetNetworks to 
 
 ```javascript
 targetNetworks: [chains.confluxESpace]
