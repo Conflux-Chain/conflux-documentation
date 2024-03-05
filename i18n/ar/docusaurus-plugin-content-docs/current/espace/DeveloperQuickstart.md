@@ -231,3 +231,7 @@ Next, in `packages/react-app/src/App.jsx` modify
 const initialNetwork = NETWORKS.eSpaceTestnet;
 ...
 ```
+
+### scaffold-eth-2
+
+[Scaffold Conflux](https://github.com/conflux-fans/conflux-scaffold) is an adaptation of [Scaffold-ETH-2](https://scaffoldeth.io/) whereby we have adjusted the template to allow you to deploy the contract on Conflux eSpace and leverage the components, integration of hardhat, and the quick deployment of Scaffold-ETH-2. You can visit our [tutorial](./tutorials/scaffoldCfx/scaffold.md) to learn how to set-up Scaffold Conflux to better understand your smart contract and to leverage some of the beautiful react components available to quickly make your dApp on Conflux eSpace.
