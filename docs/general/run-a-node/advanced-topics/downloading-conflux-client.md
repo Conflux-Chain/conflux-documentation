@@ -13,26 +13,32 @@ The [**release page on the conflux-rust GitHub repository**](https://github.com/
 On the Release page, each version will have a version update description and `Assets` that you can download. After selecting the corresponding platform, you can click the link to download the zip package. For example, when unzipping the `conflux_linux_v2.0.3.zip` file, a `run` folder that contains node programs, configuration files, and startup scripts will appear. The specific documents include:
 
 ```bash
-➜  run tree
 .
-├── conflux
-├── log.yaml
-├── start.bat
-├── start.sh
-├── hydra.toml
-├── pos_config
-└── throttling.toml
+└── run
+    ├── clear_state.bat
+    ├── clear_state.sh
+    ├── conflux
+    ├── hydra.toml
+    ├── log.yaml
+    ├── pos_config
+    │   ├── genesis_file
+    │   ├── initial_nodes.json
+    │   └── pos_config.yaml
+    ├── start.bat
+    ├── start.sh
+    └── throttling.toml
 
-0 directories, 6 files
+2 directories, 11 files
+
 ```
 
-* `conflux` Node program
-* `hydra.toml` Mainnet configuration file (If you download the testnet program, the configuration file is called `testnet.toml`)
-* `log.yaml` Log configuration file
-* `throttling.toml` Internet speed flow limit configuration file (used for development and testing)
-* `start.sh` Linux system startup script
-* `start.bat` Windows system startup script
-* `pos_config` Configuration files for the PoS consensus mechanism. Normally you don't need to edit it.
+* `conflux` Node program - This is the executable file for the Conflux node. You will use this to run the Conflux network node on your machine.
+* `hydra.toml` - This file serves as the main configuration for the Conflux network. If you're setting up a node for the testnet instead of the mainnet, you would use a file named `testnet.toml`. This file contains various settings that determine how your node interacts with the Conflux network.
+* `log.yaml` - This is the log configuration file. It defines how logging is handled by the node program, including log levels and log output locations. This is important for troubleshooting and monitoring the node's operation.
+* `throttling.toml` - The internet speed flow limit configuration file. This file is particularly useful during development and testing phases. It allows you to set limits on the node's use of internet bandwidth, which can be helpful for simulating different network conditions or for ensuring that the node does not exceed certain usage limits.
+* `start.sh` - The startup script for Linux systems. You would use this script to start the node program on a Linux machine. It simplifies the process of launching the node, setting up environment variables, and applying any necessary runtime configurations.
+* `start.bat` - Similar to `start.sh`, this is the startup script for Windows systems. It serves the same purpose but is designed to work in the Windows command line environment.
+* `pos_config` - This directory contains configuration files related to the Proof of Stake (PoS) consensus mechanism. Inside, you will find the `genesis_file`, which defines the initial state of the blockchain; `initial_nodes.json`, which lists the initial nodes participating in the network; and `pos_config.yaml`, which contains various settings for the PoS mechanism. Normally, you won't need to edit these files unless you are setting up a new network or making specific adjustments to the PoS mechanism.
 
 **Make sure you only run binaries downloaded from the official Conflux-Chain/conflux-rust GitHub repository.**
 
