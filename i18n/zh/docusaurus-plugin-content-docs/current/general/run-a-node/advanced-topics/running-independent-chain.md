@@ -53,24 +53,24 @@ $ cd run
 如果您是基于我们提供的hydra.toml进行编辑，需要注释掉bootnode条目。 否则节点将连接到现有的Conflux网络。
 ```
 
-3. Launch the bootnode, and find the node id in the console print out. The information for node id is `Self node id: $ID` where `$ID` is the 0x-prefixed node id of this bootnode. Remove the 0x prefix and you'll get the node id `$NODEID`. If you missed the line from the screen, you can look at the log file with:
+3. 启动bootnode，并在控制台打印中找到节点ID。 节点ID的信息为`Self node id: $ID`，其中`$ID`是此启动节点的0x前缀节点ID。 去掉0x前缀后，您将获得节点ID `$NODEID`。 如果您错过了屏幕上的行，可以使用以下命令查看日志文件：
 
 ```bash
 grep "Self node id" log/conflux.log|awk '{print $9}'|sed -e "s/^0x//"
 ```
-4. Now we have the `$IP`, `$PORT$`, and `$NODEID` of the boot node, we can get the url for this boot node with the format `cfxnode://$NODEID@$IP:$PORT`. Denote this as `$BOOTNODE_URL`.
+4. 现在我们有启动节点的`$IP`、`$PORT$`和`$NODEID`，我们可以使用格式`cfxnode://$NODEID@$IP:$PORT`获取此启动节点的URL。 记为`$BOOTNODE_URL`。
 
-5. Start other nodes by setting `bootnodes="$BOOTNODE_URL"` in their configuration.
+5. 通过在配置中设置`bootnodes="$BOOTNODE_URL"`启动其他节点。
 
-Note that with the instruction above, other nodes connected to the boot node will stay in untrusted state for a while (3 days by default), and untrusted nodes will not be broadcast in our discovery protocol. Thus, the network structure will be a star with the boot node in the center before other nodes are promoted to trusted state. You can change `node_table_promotion_timeout_s` in the configurations to make this period shorter.
+注意，根据上述指导，连接到启动节点的其他节点将在一段时间内（默认为3天）保持不受信任状态，并且在我们的发现协议中不受信任的节点不会被广播。 因此，在其他节点被提升为受信任状态之前，网络结构将是以启动节点为中心的星形。 You can change `node_table_promotion_timeout_s` in the configurations to make this period shorter.
 
-## Setting Multiple Bootnodes
+## 设置多个启动节点（Bootnodes）
 
-You can also setup multiple bootnodes at the very beginning. However, this cannot be done by simply replaying the boot node setup steps above multiple times, because you need to set `bootnodes` of every boot node before they are started.
+您也可以在一开始就设置多个启动节点。 然而，这不能通过简单地多次重复上述启动节点设置步骤来完成，因为您需要在启动每个启动节点之前设置它们的`启动节点`。
 
-One way to achieve this is to start these bootnodes and stop them immediately. Then gather their node ids, set their configuration, and restart them all.
+一种实现方法是启动这些启动节点然后立即停止它们。 然后收集它们的节点ID，设置它们的配置，并重新启动所有节点。
 
-Another better way is to generate their private keys seperately, and manually set their `net_key` to start. This can be done with the functions provided in our python test framework in the directory `test`.
+另一种更好的方法是分别生成它们的私钥，并手动设置它们的`net_key`以启动。 这可以通过我们的python测试框架中提供的函数来完成，在`test`目录下。
 
 ```js
 from conflux.utils import *
@@ -81,17 +81,17 @@ for _ in range(num_of_bootnodes):
     node_id = encode_hex(encode_int32(pub_key[0]) + encode_int32(pub_key[1]))
     print(encode_hex(pri_key), node_id)
 ```
-Then you can construct the bootnode url with the generated node id, and start each node by setting the `net_key="$NET_KEY"` field to the private key or pass it with the command line option `--net-key $NET_KEY`.
+然后您可以用生成的节点ID构建启动节点URL，并通过将`net_key="$NET_KEY"`字段设置为私钥或通过命令行选项`--net-key $NET_KEY`来启动每个节点。
 
-## Setting Genesis Accounts
+## 设置创世账户（Genesis Accounts）
 
-In a production environment, you can initialize the initial genesis state with your accounts by setting the `genesis_accounts` to an account file with formats like
+在生产环境中，您可以通过将`genesis_accounts`设置为一个帐户文件来初始化初始创世状态，格式如下：
 
 ```js
 0f947e34fc907008968ec99baa1dbb677b927531="1000000000000"
 ab4a32bca7500d94a2cc1f3150e12686c692c590="1000000000000"
 ```
 
-Every line is an account. The key is the account address, and the value is a string representing its balance in Drip. Note that `genesis_accounts` does not apply if `mode` is `test` or `dev`.
+每行是一个账户。 键是账户地址，值是表示其余额的字符串（单位为Drip）。 请注意，如果`mode`是`测试（test）`或`开发（dev）`，则`genesis_accounts`不适用。
 
-If the `mode` is `test` or `dev`, you can setup the genesis accounts with their secret keys by setting `genesis_secrets`. Each line is an account private key without 0x-prefix. The balance of each account is set to `10000000000000000000000` by default.
+如果`mode`是`test` 或 `dev`，您可以通过设置`genesis_secrets`来用它们的私钥设置初始账户。 每行是一个没有0x前缀的账户私钥。 The balance of each account is set to `10000000000000000000000` by default.

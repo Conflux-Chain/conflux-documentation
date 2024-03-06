@@ -98,10 +98,25 @@ ERC20 es un estándar para tokens en la blockchain de Ethereum. Especifica un co
 ERC721 is a standard for non-fungible tokens (NFTs) on the Ethereum blockchain. Unlike ERC20 tokens, which are identical to each other, each ERC721 token is unique. This makes them suitable for representing ownership of unique items or assets. Like ERC20, ERC721 tokens can also exist on the Conflux network, especially if they are transferred from the Ethereum network.
 
 ### **Fork**
-In blockchain, a fork is a change to the software that creates two separate versions of the blockchain with a shared history. Forks can be either "hard" or "soft", depending on whether the change is compatible with previous versions of the software. In the context of Conflux, forks are less common due to the Tree-Graph structure of the network, which allows for concurrent block production.
+
+A fork in a blockchain system denotes a split or divergence in the chain, originating from a common point with a shared history and creating two distinct paths. They can be implemented intentionally via software updates to either bring about significant changes (hard fork) or introduce backward-compatible alterations (soft fork). However, forks can also occur organically due to simultaneous block creation or as a result of network latencies and block propagation delays.
+
+Additionally, malicious activities aimed at disrupting the network, performing deceptive transactions, or double-spending can also force a fork in the system. These inadvertent forks are typically short-lived as subsequent block addition commonly results in the resolution of temporary branches. No matter the reason for their occurrence, forks are an inherent part of the dynamic and decentralized nature of blockchain technology, necessitating robust consensus mechanisms to manage and mitigate potential issues.
+
+> Refer to [Hard Forks](../hardforks/hardforks.md) for more information of Conflux history hard forks.
+
+Further reading:
+
+- [What is a fork?](https://www.coinbase.com/learn/crypto-basics/what-is-a-fork)
+- [Wikipedia: Fork(blockchain)](https://en.wikipedia.org/wiki/Fork_(blockchain))
 
 ### **Gas**
-In the context of blockchain, gas refers to the fee required to successfully conduct a transaction or execute a contract on the Ethereum blockchain. In Conflux, the concept of gas also exists, but with a unique twist: the gas fee for contract execution is paid by contract sponsors, not by users. This improves the user experience by allowing users to interact with smart contracts without worrying about gas fees.
+
+In the context of blockchain, "gas" is a term primarily associated with networks like Ethereum. Gas is a measure of computational effort required to execute specific operations. Each operation has a fixed amount of gas associated with it, related to the complexity of the operation.
+
+Gas must be paid when user initiate transactions or execute smart contracts, essentially serving as a transaction fee. The concept of gas incentivizes miners to validate and add transactions to the blockchain. Additionally, by attaching a cost to every operation, gas prevents spam on the network and discourages inefficient code, enhancing overall network security and efficiency.
+
+Gas is also required for transaction execution in either Conflux Core Space or eSpace. And in Core Space, besides gas, [collateral for storage](../../core/core-space-basics/storage.md) is also introduced as transaction fee.
 
 Refer to [Gas](./gas.md) for more information.
 
@@ -110,11 +125,11 @@ GHAST (Greedy Heaviest Adaptive SubTree) is the Conflux protocol's rule for sele
 
 Refer to [GHAST](../conflux-basics/consensus-mechanisms/proof-of-work/ghast.md) for more information.
 
-### **Hard Fork**
-A hard fork is a type of fork that creates a permanent divergence from the previous version of the blockchain. Nodes running the old version will not be accepted by the new version. This is a common concept in many blockchains, but due to the unique structure of Conflux, hard forks are less common.
-
 ### **Hash**
-A hash is a function that converts the input data into an encrypted output of a fixed length. In the context of blockchain, a hash function is used to secure data. Each block in a blockchain has a unique hash, and any change to the block's data will result in a different hash.
+
+A hash is a function that transforms input data into a fixed length output, also known as a "hash value". Various hash functions, such as the SHA-256 (Secure Hash Algorithm 256-bit) used primarily in Bitcoin and the Keccak-256 employed in Ethereum as well as Conflux, serve pivotal roles in assuring blockchain security. Hash function plays a crucial role in blockchain as they ensure a unique hash is generated for  every block within the blockchain has. For example, these hash functions are used in generating unique identifiers for blockchain blocks and in creating a secure linkage between blocks in a blockchain, with each block bearing a unique hash.
+
+Significant to note is the principle of hash invertibility. A hash function is considered as a 'one-way' function, meaning while data can be converted into a hash value, the process cannot be reversed. That is, it is computationally infeasible to derive the original input data solely from the hash value. The data held by the hash is, therefore, deemed to be secure, reinforcing the integrity and security of blockchains, hence making them a fundamental component in the technology. This uniqueness and inability to reverse engineer the original data from the hash, reinforces the integrity and security of the blockchain.
 
 ### **Internal Transactions**
 Internal transactions in blockchain refer to value transfers or operations within a smart contract. These transactions are triggered by external transactions and can involve actions such as transferring tokens, creating new tokens, executing function calls, or interacting with other smart contracts. These transactions are not recorded individually on the blockchain, but they can be tracked and displayed for analysis and visibility.
@@ -173,7 +188,8 @@ In the Conflux network, "Space" refers to a specific environment within the netw
 Refer to [Spaces](./spaces.md) for more information.
 
 ### **Sponsorship Mechanism**
-In Conflux, the transaction fee for contract execution can be paid by users but also by contract sponsors. This sponsorship mechanism allows DApp users on Conflux to not worry about gas fees, improving user experience. Sponsors can set up a sponsorship by depositing CFX into a contract.
+
+In Conflux **Core Space**, the transaction fee for contract execution can be paid by users but also by contract sponsors. This sponsorship mechanism allows DApp users on Conflux to not worry about gas fees, improving user experience. Sponsors can set up a sponsorship by depositing CFX into a contract.
 
 Refer to [Sponsor Mechanism](../../core/core-space-basics/sponsor-mechanism.md) for more information.
 
@@ -181,6 +197,12 @@ Refer to [Sponsor Mechanism](../../core/core-space-basics/sponsor-mechanism.md) 
 Staking in Conflux typically refers to the PoS staking, the process of participating in the network PoS consensus by locking up a certain amount of CFX. Stakers can earn rewards for their participation. This mechanism helps to secure the network and incentivize participation.
 
 Refer to [Staking FAQs](../mine-stake/stake/faqs.md) for more information.
+
+### **Collateral for Storage**
+
+Collateral for storage (CFS for short, or storage collateral) mechanism is introduced in Conflux **Core Space** as a pricing method for the usage of storage, which is more fair and reasonable than the one-off storage fee in Ethereum. In principle, this mechanism requires a fund being locked as collateral for any occupation of storage space. The collateral is locked until the corresponding storage is freed or overwritten by someone else, and the corresponding interest generated by the locked collateral is assigned directly to miners for the maintenance of storage. Thus, the cost of storage in Conflux also depends on the duration of space occupation.
+
+For more information, refer to [Storage Collateral](../../core/core-space-basics/storage.md).
 
 ### **Transactions**
 A Conflux transaction is a single instruction composed by an external actor with a Conflux account, and this instruction is cryptographically signed using the sender account's private key to prevent transaction forge. A transaction can involve a simple transfer of CFX (the native currency of Conflux), a transfer of tokens (such as ERC20 or ERC721), a deployment of a new smart contract, or an execution of a function on an existing smart contract. Transactions are the only way to store or update data on the blockchain.

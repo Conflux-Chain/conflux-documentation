@@ -6,7 +6,7 @@ displayed_sidebar: generalSidebar
 
 # 运行轻节点
 
-> Note: Currently, eSpace (EVM full-compatible space) RPC methods are not supported on the Conflux Light Node.
+> 注意：目前Conflux轻节点不支持eSpace(EVM完全兼容空间)的RPC方法。
 
 ## 概览
 **Node version: `conflux-rust v2.1.0`**.
@@ -17,35 +17,35 @@ Light nodes execute **GHAST** consensus on their local header graph and they als
 
 > The current light node implementation is still considered experimental therefore bugs are expected to exist. If you encounter any issues please let us know by opening an issue on the [conflux-rust](https://github.com/Conflux-Chain/conflux-rust/issues) repository.
 
-## Running a light node
+## 运行轻节点
 
-Light nodes can be enabled in the `hydra.toml` settings file (`testnet.toml` for testnet) in the `node_type` variable.
+轻节点可以在`hydra.toml`设置文件中启用（对于测试网是`testnet.toml`），在`node_type`变量中设置。
 
 ```bash
 node_type = "light"
 ```
 
-> Alternatively Light nodes can be enabled using the `--light` command line flag:
+> 或者，可以使用`--light`在命令行中启用轻节点：
 
-Start by downloading the latest release from the [conflux-rust](https://github.com/Conflux-Chain/conflux-rust/) repository or by building from source code following this guide. Then, you can simply run the node using these commands:
+首先从[conflux-rust](https://github.com/Conflux-Chain/conflux-rust/)仓库下载最新版本，或按照本指南从源代码构建。 然后，您可以使用这些命令运行节点：
 
 ```bash
 > cd run
 > ./conflux --config hydra.toml
 ```
 
-Similarly to full nodes you will know when your node is fully synced with the network once the `console` prints:
+与完整节点一样，一旦`控制台`打印出以下信息，您就会知道您的节点已经与网络完全同步了：
 
 ```bash+
 Catch-up mode: false
 ```
 
-## Interacting with a light node
+## 与轻节点交互
 
-Similarly to full and archive nodes, you can interact with a light node through an `HTTP`, `TCP`, or `WebSocket` connection. By default local HTTP queries are enabled through `port 12539`. For details, please refer to the JSON-RPC documentation.
+与全节点和归档节点一样，您可以通过`HTTP`、`TCP`或`WebSocket`连接与轻节点交互。 默认情况下，本地HTTP查询通过`端口12539`调用。 有关详细信息，请参阅JSON-RPC文档。
 
-### RPC queries
-Light nodes support most Conflux RPC APIs and support for the rest is also [on the way](https://github.com/Conflux-Chain/conflux-rust/issues/1461). As light nodes need to query their peers to fulfill RPC requests, the overall latency is slightly larger. (It is significantly larger for `cfx_getLogs`.)
+### RPC查询
+轻节点支持大多数Conflux RPC API，对于其他的API支持也[在开发中](https://github.com/Conflux-Chain/conflux-rust/issues/1461)。 由于轻节点需要查询它们的同伴节点来完成RPC请求，总体延迟略有增加。 （对于`cfx_getLogs`，延迟会显著增加。）
 
 ```bash
 > curl -X POST --data '{ "jsonrpc": "2.0", "method": "cfx_clientVersion", "id": 1 }' -H "Content-Type: application/json" localhost:12539
@@ -59,13 +59,13 @@ Light nodes support most Conflux RPC APIs and support for the rest is also [on t
 ```
 
 ### JavaScript
-Light nodes support most of the functionalities of the JavaScript SDK ([js-conflux-sdk](https://www.npmjs.com/package/js-conflux-sdk)). You can install the SDK using the following command:
+轻节点支持JavaScript SDK（[js-conflux-sdk](https://www.npmjs.com/package/js-conflux-sdk)）的大部分功能。 您可以使用以下命令安装SDK：
 
 ```bash
 npm install --save js-conflux-sdk
 ```
 
-Then, you can query the blockchain and send transactions:
+然后，您可以查询区块链和发送交易：
 
 ```js
 const { Conflux, Drip } = require('js-conflux-sdk');
@@ -114,21 +114,21 @@ async function main() {
 main();
 ```
 
-### Other SDKs
+### 其他SDK
 
-While it has not been tested, light nodes are expected to work with the [Java](https://github.com/Conflux-Chain/java-conflux-sdk), [Python](https://github.com/Conflux-Chain/python-conflux-sdk) and [Go](https://github.com/Conflux-Chain/go-conflux-sdk) SDKs as well.
+虽然尚未经过测试，但预期轻节点也能与[Java](https://github.com/Conflux-Chain/java-conflux-sdk)、[Python](https://github.com/Conflux-Chain/python-conflux-sdk)和[Go](https://github.com/Conflux-Chain/go-conflux-sdk) SDK适配。
 
-## Troubleshooting
-### Why do I get an error when calling a contract method?
+## 故障排除
+### 为什么在调用合约方法时出错？
 
-If you run the following code:
+如果您运行以下代码：
 
 ```js
 const admin = await cfx.InternalContract('AdminControl').getAdmin('cfx:type.contract:acc7uawf5ubtnmezvhu9dhc6sghea0403y2dgpyfjp');
 console.log('admin:', admin);
 ```
 
-...You will get this error:
+您将得到此错误：
 
 ```bash
 RPCError: This API is not implemented yet
@@ -142,9 +142,9 @@ RPCError: This API is not implemented yet
 }
 ```
 
-This is because contract calls use the `cfx_call` RPC API which is not yet supported on light nodes.
+这是因为合约调用使用`cfx_call` RPC API，而轻节点尚未支持此API。
 
-Suppose you would like to send a transaction to a smart contract:
+假设您想向智能合约发送交易：
 
 ```js
 conflux.InternalContract('AdminControl').setAdmin('cfx:type.contract:acc7uawf5ubtnmezvhu9dhc6sghea0403y2dgpyfjp', 'cfx:type.user:aarc9abycue0hhzgyrr53m6cxedgccrmmyybjgh4xg').sendTransaction({
@@ -152,7 +152,7 @@ conflux.InternalContract('AdminControl').setAdmin('cfx:type.contract:acc7uawf5ub
 }).executed();
 ```
 
-You will get a similar error. This is because for contract transactions, `js-conflux-sdk` will automatically attempt to estimate the gas limit and storage limit using the `cfx_estimateGasAndCollateral` RPC which is not yet supported on light nodes. You can address this by manually setting these parameters:
+您将得到一个类似的错误。 这是因为对于合约交易，`js-conflux-sdk`会自动尝试使用`cfx_estimateGasAndCollateral` RPC估算燃料限制和存储限制，而这在轻节点上尚未支持。 您可以通过手动设置这些参数来解决这个问题：
 
 ```js
 conflux.InternalContract('AdminControl').setAdmin('cfx:type.contract:acc7uawf5ubtnmezvhu9dhc6sghea0403y2dgpyfjp', 'cfx:type.user:aarc9abycue0hhzgyrr53m6cxedgccrmmyybjgh4xg').sendTransaction({
@@ -163,7 +163,7 @@ conflux.InternalContract('AdminControl').setAdmin('cfx:type.contract:acc7uawf5ub
 }).executed();
 ```
 
-If you encounter a `This API is not implemented yet` error, you can set the debug logger on the conflux object to find out which RPC is causing it.
+如果您遇到了`This API is not implemented yet`错误，您可以在conflux对象上设置debug日志记录器，以找出是哪个RPC造成了这个问题。
 
 ```js
 const cfx = new Conflux({
@@ -172,22 +172,22 @@ const cfx = new Conflux({
 });
 ```
 
-### Why do I see timeout instead of null
-For most operations, you might sometimes see a timeout error:
+### 为什么我看到超时而不是null？
+对于大多数操作，您有时可能会看到超时错误：
 
 ```bash
 RPCError: Operation timeout: "Timeout while retrieving transaction with hash 0x497755f45baef13a35347933c48c0b8940f2cc3347477b5ed9f165581b082699"
 ```
 
-This is because light nodes have to retrieve transactions and other items from their peers. If no peer responds within 4 seconds, you will get a timeout error. In most cases, retrying the query will succeed.
+这是因为轻节点必须从它们的同伴节点检索交易和其他项目。 如果没有同伴节点在4秒内响应，您将得到一个超时错误。 在大多数情况下，若重试查询，通常都会成功。
 
-You will also get a timeout if you call `conflux.getTransactionByHash` and pass a transaction hash that does not exist. This is because the "non-existence" or transactions is not something light nodes can verify, so returning `null` might be misleading. This behavior might change in the future.
+如果您调用`conflux.getTransactionByHash`并传递一个不存在的交易哈希值，您也会得到一个超时错误。 这是因为轻节点无法验证交易的“不存在”，因此返回`null`可能会产生误导。 此行为将来可能会更改。
 
-### I'm searching through event logs, why is it so slow?
+### 我在搜索事件日志，为什么这么慢？
 
-Log filtering is a very expensive operation on light nodes. For each epoch in the range you specify, the node needs to perform 1 to 3 queries. We recommend you make multiple queries with smaller epoch ranges.
+在轻节点上进行日志过滤是一个非常昂贵的操作。 对于您指定范围内的每个纪元，节点需要执行1到3次查询。 我们建议您使用更小的纪元范围进行多次查询。
 
-instead of:
+与其用下面这种交互方式
 
 ```js
 const fromEpoch = 110000;
@@ -198,7 +198,7 @@ const logs = await cfx.getLogs({ fromEpoch, toEpoch, address: 'cfx:type.contract
 console.log('logs:', logs);
 ```
 
-You are encouraged to do this:
+我们更推荐您使用这种交互方式
 
 ```js
 for (ii = 0; ii < 10; ++ii) {
@@ -209,39 +209,39 @@ for (ii = 0; ii < 10; ++ii) {
 }
 ```
 
-## RPC availability
+## RPC可用性
 
-| RPC                                                                                                                          | status              |
-| ---------------------------------------------------------------------------------------------------------------------------- | ------------------- |
-| [cfx_call](../../../core/build/json-rpc/cfx-namespace.md#cfx_call)                                                           | ❌ Not supported yet |
-| [cfx_checkBalanceAgainstTransaction](../../../core/build/json-rpc/cfx-namespace.md#cfx_checkbalanceagainsttransaction)       | ✅ Supported         |
-| [cfx_clientVersion](../../../core/build/json-rpc/cfx-namespace.md#cfx_clientversion)                                         | ✅ Supported         |
-| [cfx_epochNumber](../../../core/build/json-rpc/cfx-namespace.md#cfx_epochnumber)                                             | ✅ Supported         |
-| [cfx_estimateGasAndCollateral](../../../core/build/json-rpc/cfx-namespace.md#cfx_estimategasandcollateral)                   | ❌ Not supported yed |
-| [cfx_gasPrice](../../../core/build/json-rpc/cfx-namespace.md#cfx_gasprice)                                                   | ✅ Supported         |
-| [cfx_getAccount](../../../core/build/json-rpc/cfx-namespace.md#cfx_getaccount)                                               | ✅ Supported         |
-| [cfx_getAccumulateInterestRate](../../../core/build/json-rpc/cfx-namespace.md#cfx_getaccumulateinterestrate)                 | ✅ Supported         |
-| [cfx_getAdmin](../../../core/build/json-rpc/cfx-namespace.md#cfx_getadmin)                                                   | ✅ Supported         |
-| [cfx_getBalance](../../../core/build/json-rpc/cfx-namespace.md#cfx_getbalance)                                               | ✅ Supported         |
-| [cfx_getBestBlockHash](../../../core/build/json-rpc/cfx-namespace.md#cfx_getbestblockhash)                                   | ✅ Supported         |
-| [cfx_getBlockByEpochNumber](../../../core/build/json-rpc/cfx-namespace.md#cfx_getblockbyepochnumber)                         | ✅ Supported         |
-| [cfx_getBlockByHash](../../../core/build/json-rpc/cfx-namespace.md#cfx_getblockbyhash)                                       | ✅ Supported         |
-| [cfx_getBlockByHashWithPivotAssumption](../../../core/build/json-rpc/cfx-namespace.md#cfx_getblockbyhashwithpivotassumption) | ✅ Supported         |
-| [cfx_getBlockRewardInfo](../../../core/build/json-rpc/cfx-namespace.md#cfx_getblockrewardinfo)                               | ❌ Not supported yet |
-| [cfx_getBlocksByEpoch](../../../core/build/json-rpc/cfx-namespace.md#cfx_getblocksbyepoch)                                   | ✅ Supported         |
-| [cfx_getCode](../../../core/build/json-rpc/cfx-namespace.md#cfx_getcode)                                                     | ✅ Supported         |
-| [cfx_getCollateralForStorage](../../../core/build/json-rpc/cfx-namespace.md#cfx_getcollateralforstorage)                     | ✅ Supported         |
-| [cfx_getConfirmationRiskByHash](../../../core/build/json-rpc/cfx-namespace.md#cfx_getconfirmationriskbyhash)                 | ✅ Supported         |
-| [cfx_getInterestRate](../../../core/build/json-rpc/cfx-namespace.md#cfx_getinterestrate)                                     | ✅ Supported         |
-| [cfx_getLogs](../../../core/build/json-rpc/cfx-namespace.md#cfx_getlogs)                                                     | ✅ Supported         |
-| [cfx_getNextNonce](../../../core/build/json-rpc/cfx-namespace.md#cfx_getnextnonce)                                           | ✅ Supported         |
-| [cfx_getSkippedBlocksByEpoch](../../../core/build/json-rpc/cfx-namespace.md#cfx_getskippedblocksbyepoch)                     | ✅ Supported         |
-| [cfx_getSponsorInfo](../../../core/build/json-rpc/cfx-namespace.md#cfx_getsponsorinfo)                                       | ✅ Supported         |
-| [cfx_getStakingBalance](../../../core/build/json-rpc/cfx-namespace.md#cfx_getstakingbalance)                                 | ✅ Supported         |
-| [cfx_getStatus](../../../core/build/json-rpc/cfx-namespace.md#cfx_getstatus)                                                 | ✅ Supported         |
-| [cfx_getStorageAt](../../../core/build/json-rpc/cfx-namespace.md#cfx_getstorageat)                                           | ✅ Supported         |
-| [cfx_getStorageRoot](../../../core/build/json-rpc/cfx-namespace.md#cfx_getstorageroot)                                       | ✅ Supported         |
-| [cfx_getTransactionByHash](../../../core/build/json-rpc/cfx-namespace.md#cfx_gettransactionbyhash)                           | ✅ Supported         |
-| [cfx_getTransactionReceipt](../../../core/build/json-rpc/cfx-namespace.md#cfx_gettransactionreceipt)                         | ✅ Supported         |
-| [cfx_sendRawTransaction](../../../core/build/json-rpc/cfx-namespace.md#cfx_sendrawtransaction)                               | ✅ Supported         |
-| [cfx_getSupplyInfo](../../../core/build/json-rpc/cfx-namespace.md#cfx_getsupplyinfo)                                         | ❌ Not supported yet |
+| RPC                                                                                                                          | 状态     |
+| ---------------------------------------------------------------------------------------------------------------------------- | ------ |
+| [cfx_call](../../../core/build/json-rpc/cfx-namespace.md#cfx_call)                                                           | ❌ 暂不支持 |
+| [cfx_checkBalanceAgainstTransaction](../../../core/build/json-rpc/cfx-namespace.md#cfx_checkbalanceagainsttransaction)       | ✅ 支持   |
+| [cfx_clientVersion](../../../core/build/json-rpc/cfx-namespace.md#cfx_clientversion)                                         | ✅ 支持   |
+| [cfx_epochNumber](../../../core/build/json-rpc/cfx-namespace.md#cfx_epochnumber)                                             | ✅ 支持   |
+| [cfx_estimateGasAndCollateral](../../../core/build/json-rpc/cfx-namespace.md#cfx_estimategasandcollateral)                   | ❌ 暂不支持 |
+| [cfx_gasPrice](../../../core/build/json-rpc/cfx-namespace.md#cfx_gasprice)                                                   | ✅ 支持   |
+| [cfx_getAccount](../../../core/build/json-rpc/cfx-namespace.md#cfx_getaccount)                                               | ✅ 支持   |
+| [cfx_getAccumulateInterestRate](../../../core/build/json-rpc/cfx-namespace.md#cfx_getaccumulateinterestrate)                 | ✅ 支持   |
+| [cfx_getAdmin](../../../core/build/json-rpc/cfx-namespace.md#cfx_getadmin)                                                   | ✅ 支持   |
+| [cfx_getBalance](../../../core/build/json-rpc/cfx-namespace.md#cfx_getbalance)                                               | ✅ 支持   |
+| [cfx_getBestBlockHash](../../../core/build/json-rpc/cfx-namespace.md#cfx_getbestblockhash)                                   | ✅ 支持   |
+| [cfx_getBlockByEpochNumber](../../../core/build/json-rpc/cfx-namespace.md#cfx_getblockbyepochnumber)                         | ✅ 支持   |
+| [cfx_getBlockByHash](../../../core/build/json-rpc/cfx-namespace.md#cfx_getblockbyhash)                                       | ✅ 支持   |
+| [cfx_getBlockByHashWithPivotAssumption](../../../core/build/json-rpc/cfx-namespace.md#cfx_getblockbyhashwithpivotassumption) | ✅ 支持   |
+| [cfx_getBlockRewardInfo](../../../core/build/json-rpc/cfx-namespace.md#cfx_getblockrewardinfo)                               | ❌ 暂不支持 |
+| [cfx_getBlocksByEpoch](../../../core/build/json-rpc/cfx-namespace.md#cfx_getblocksbyepoch)                                   | ✅ 支持   |
+| [cfx_getCode](../../../core/build/json-rpc/cfx-namespace.md#cfx_getcode)                                                     | ✅ 支持   |
+| [cfx_getCollateralForStorage](../../../core/build/json-rpc/cfx-namespace.md#cfx_getcollateralforstorage)                     | ✅ 支持   |
+| [cfx_getConfirmationRiskByHash](../../../core/build/json-rpc/cfx-namespace.md#cfx_getconfirmationriskbyhash)                 | ✅ 支持   |
+| [cfx_getInterestRate](../../../core/build/json-rpc/cfx-namespace.md#cfx_getinterestrate)                                     | ✅ 支持   |
+| [cfx_getLogs](../../../core/build/json-rpc/cfx-namespace.md#cfx_getlogs)                                                     | ✅ 支持   |
+| [cfx_getNextNonce](../../../core/build/json-rpc/cfx-namespace.md#cfx_getnextnonce)                                           | ✅ 支持   |
+| [cfx_getSkippedBlocksByEpoch](../../../core/build/json-rpc/cfx-namespace.md#cfx_getskippedblocksbyepoch)                     | ✅ 支持   |
+| [cfx_getSponsorInfo](../../../core/build/json-rpc/cfx-namespace.md#cfx_getsponsorinfo)                                       | ✅ 支持   |
+| [cfx_getStakingBalance](../../../core/build/json-rpc/cfx-namespace.md#cfx_getstakingbalance)                                 | ✅ 支持   |
+| [cfx_getStatus](../../../core/build/json-rpc/cfx-namespace.md#cfx_getstatus)                                                 | ✅ 支持   |
+| [cfx_getStorageAt](../../../core/build/json-rpc/cfx-namespace.md#cfx_getstorageat)                                           | ✅ 支持   |
+| [cfx_getStorageRoot](../../../core/build/json-rpc/cfx-namespace.md#cfx_getstorageroot)                                       | ✅ 支持   |
+| [cfx_getTransactionByHash](../../../core/build/json-rpc/cfx-namespace.md#cfx_gettransactionbyhash)                           | ✅ 支持   |
+| [cfx_getTransactionReceipt](../../../core/build/json-rpc/cfx-namespace.md#cfx_gettransactionreceipt)                         | ✅ 支持   |
+| [cfx_sendRawTransaction](../../../core/build/json-rpc/cfx-namespace.md#cfx_sendrawtransaction)                               | ✅ 支持   |
+| [cfx_getSupplyInfo](../../../core/build/json-rpc/cfx-namespace.md#cfx_getsupplyinfo)                                         | ❌ 暂不支持 |

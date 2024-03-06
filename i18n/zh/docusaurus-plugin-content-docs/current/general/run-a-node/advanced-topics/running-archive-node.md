@@ -4,51 +4,51 @@ sidebar_position: 12
 displayed_sidebar: generalSidebar
 ---
 
-Conflux archive nodes store the entire history of the Conflux blockchain. This allows them to serve historical data to other nodes and applications.
+Conflux存档节点存储了Conflux区块链的完整历史记录。 这使它们能够向其他节点和应用程序提供历史数据。
 
 ### 1. 硬件要求
 
-#### Hardware Requirements for Archive Node
+#### 存档节点的硬件要求
 
-* At least 32GB of RAM.
-* 至少2TB的可用磁盘空间（推荐使用SSD）。
-* 稳定的互联网网络连接。
+* 至少32GB的RAM。
+* 至少2TB的可用磁盘空间(推荐使用SSD)。
+* 稳定的网络连接。
 
-#### File Limit
+#### 文件限制
 
-Open Files Limit: It's recommended to set the maximum number of open files to 10,000. On Linux, the default is 1,024, which may be insufficient. 您可以在Linux终端使用如下命令设置该参数。
+打开文件限制：建议将最大打开文件数设置为10,000。 在Linux上，默认值为1,024，可能不足够。 你可以在Linux终端使用如下命令设置该参数。
 
 ```shell
 ulimit -n 10000 
 ```
 
-### 2. Configuring the Node
+### 2. 配置节点
 
-Conflux nodes can be configured using either CLI options or a configuration file. If there's a discrepancy between the CLI flags and the config file, **the CLI takes precedence**.
+Conflux节点可以使用CLI选项或配置文件进行配置。 如果CLI标志和配置文件之间存在差异，则**CLI 优先**。
 
-#### 2.1 Using Configuration File
+#### 使用配置文件
 
-The configuration file follows the TOML format.
+配置文件采用TOML格式。
 
-The path for the configuration file can be set using the CLI option -config path/to/hydra.toml.
+使用CLI选项-config path/to/hydra.toml可以设置配置文件的路径。
 
-A default configuration file named **hydra.toml** is provided in the **run** directory, which can be used as a starting point for customization.
+在**run** 目录中提供了一个名为**hydra.toml** 的默认配置文件，可用作自定义的起点。
 
-Set the **node_type** parameter in the configuration file to "archive":
+在配置文件中将 **node_type** 参数设置为"archive"：
 
 ```toml
 node_type = "archive" 
 ```
 
-#### 2.2 CLI Options
+#### CLI选项
 
-List all CLI options by running $ ./conflux --help.
+运行$ ./conflux --help以列出所有CLI选项。
 
-Most CLI options map to a setting in the TOML file. For instance, -public-address 127.0.0.1:32323 can be set in the config file under public_address.
+大多数CLI的选项会映射到TOML文件的一个设置中。 例如，可以通过 -public-address 127.0.0.1:32323 覆写配置文件的 public_address 部分
 
-### 4. Running the Node
+### 4. 运行节点
 
-Start the node with the custom configuration file:
+使用自定义配置文件启动节点：
 
 ```shell
 conflux --config ./run/hydra.toml 
