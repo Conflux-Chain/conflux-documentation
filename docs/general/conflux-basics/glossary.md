@@ -106,6 +106,11 @@ Additionally, malicious activities aimed at disrupting the network, performing d
 
 > Refer to [Hard Forks](../hardforks/hardforks.md) for more information of Conflux history hard forks.
 
+Further reading:
+
+- [What is a fork?](https://www.coinbase.com/learn/crypto-basics/what-is-a-fork)
+- [Wikipedia: Fork(blockchain)](https://en.wikipedia.org/wiki/Fork_(blockchain))
+
 ### **Gas**
 
 In the context of blockchain, "gas" is a term primarily associated with networks like Ethereum. Gas is a measure of computational effort required to execute specific operations. Each operation has a fixed amount of gas associated with it, related to the complexity of the operation.
