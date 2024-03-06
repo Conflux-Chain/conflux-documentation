@@ -1,6 +1,6 @@
 name: "Feature Request / Improvement 建议新特性/改进"
 description: "Suggest a new feature, content, or improvement to the documentation 建议文档中的新特性/新内容/现有内容的改进"
-labels: ["enhancement", "dework"]
+labels: ["enhancement", "Dework"]
 
 body:
   - type: markdown
