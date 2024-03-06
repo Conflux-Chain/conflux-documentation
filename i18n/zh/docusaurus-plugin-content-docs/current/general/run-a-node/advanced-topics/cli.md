@@ -70,7 +70,7 @@ $ ./conflux account import --help
     --import-path <PATH>...    一个要导入的文件路径列表
 ```
 #### 示例
-``
+`./conflux account import --import-path ./keystores`
 
 ## 公共应用程序编程接口
 公共应用程序编程接口（简称公共API）允许你使用JSON-RPC 协议中的 HTTP 连接与本地或远程Conflux节点进行交互。 所有公共API都在`rpc`子命令下, 并通过默认的`url`选项访问本地机器上的JSON-RPC接口。
