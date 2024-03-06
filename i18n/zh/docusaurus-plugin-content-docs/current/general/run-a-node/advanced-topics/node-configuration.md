@@ -189,11 +189,11 @@ use_isolated_db_for_mpt_table=true
 
 ## 配置文件示例
 
-For a more comprehensive configuration file example, you can refer to [hydra.toml](./configuration-files.md).
+要获得更全面的配置文件示例，您可以参考[hydra.toml](./configuration-files.md)。
 
 ## 常见问题解答
 
-### I want to run a Core Space RPC node, what parameters do I need to configure?
+### 我想运行一个Core Space RPC节点，我需要配置哪些参数？
 
 ```toml
 node_type="archive"
@@ -204,7 +204,7 @@ persist_block_number_index=true
 persist_tx_index=true
 ```
 
-### I want to run an eSpace RPC node, what parameters do I need to configure?
+### 我想运行一个eSpace RPC节点，我需要配置哪些参数？
 
 ```toml
 node_type="archive"
@@ -215,20 +215,20 @@ persist_block_number_index=true
 persist_tx_index=true
 ```
 
-### After my node has been running for a while, I want to enable the `executive_trace` configuration. Do I need to resynchronize the data?
+### 我的节点运行了一段时间后，我想启用`executive_trace`配置。 我需要重新同步数据吗？
 
-Yes, you need to resynchronize the data.
+是的，您需要重新同步数据。
 
-### Does the archive node snapshot data provided by the official source include trace data?
+### 官方提供的归档节点快照数据是否包含trace数据？
 
-Yes, it does.
+是的，包含。
 
-### After the configuration is modified, do I need to clear the data then restart the node?
+### 修改配置后，我需要清除数据然后重启节点吗？
 
-Depending on the situation, sometimes it does, sometimes it doesn’t. If the configuration involves data store or data index, you need to restart the node if the configuration changes, for example:
+根据情况而定，有时需要，有时不需要。 如果配置涉及数据存储或数据索引，配置更改时需要重启节点，例如：
 
 - `persist_tx_index`
 - `executive_trace`
 - `persist_block_number_index`
 
-Other restart are generally not required.
+其他一般不需要重启。
