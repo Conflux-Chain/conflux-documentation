@@ -163,71 +163,56 @@ import { ethers } from "ethers"
 const provider = new ethers.providers.JsonRpcProvider("https://evmtestnet.confluxrpc.com")
 ```
 
-### scaffold-eth
+### scaffold-eth-2
 
-To deploy using Scaffold-eth, you’ll need to point both your Hardhat and React settings at the eSpace Testnet.
+[Scaffold Conflux](https://github.com/conflux-fans/conflux-scaffold) is an adaptation of [Scaffold-ETH-2](https://scaffoldeth.io/).
 
-#### Configure Hardhat
+- We have adjusted the template to allow you to deploy the contract on Conflux eSpace.
+- Conflux Scaffold offers users the ability to quickly leverage front-end react components that are commonly used to build web3 apps. These include pre-fabricated wallets with the ability to connect to Conflux eSpace, Conflux eSpace testnet, hardhat, etc. It also includes other components to display balance, and recieve address/value inputs.
+- Hooks are available on Scaffold Conflux to interact with the smart contracts built on hardhat. This simplifies the process of reading contracts, writing contracts, and subscribe to events emitted by the smart contract.
+- You can visit our [tutorial](./tutorials/scaffoldCfx/scaffold.md) for more in-depth discussion how to set-up Scaffold Conflux and use some of the hooks/components.
 
-In the `packages/hardhat/hardhat.config.js` file, you’ll add the network and select it as the default network.
+To deploy to Conflux eSpace using Scaffold-eth-2 (hardhat), specify the Conflux eSpace network when deploying.
 
-```jsx
-...
-//
-// Select the network you want to deploy to here:
-//
-const defaultNetwork = "eSpaceTestnet";
-...
-module.exports = {
-...
-	networks: {
-...
-          eSpaceTestnet: {
-            url: "https://evmtestnet.confluxrpc.com",
-            accounts: {
-              mnemonic: mnemonic(),
-            },
-          },
-	}
-...
-}
+```bash
+yarn deploy --network confluxESpace
 ```
 
-Be sure to fund the deployment wallet as well! Run `yarn generate` to create the wallet and `yarn account` to check its funds. Once funded, run `yarn deploy --network eSpaceTestnet` to deploy on the eSpace testnet.
-
-:::tip
-
-On some project forks, you'll want to disable the contract verification, which relies on Etherscan. This can be
-commented out in `packages/hardhat/deploy/00_deploy_your_contract.js`
-
+:::note
+The deployer of the contract and thereby the owner of the contract can be changed by re-labelling the `./packages/hardhat/.env.example` to `./packages/hardhat/.env` and putting your private key in DEPLOYER_PRIVATE_KEY=. However, the default uses a default "public" private key for hardhat testing purposes.
 :::
 
-#### Configure the Frontend
+#### Configure the Frontend Wallet
 
-To configure your frontend, you need to add the eSpace Testnet as a network option, then select it as default.
+To configure your frontend, you will need to change the default wallet connection to Conflux eSpace. Currently it is set up to connect to hardhat which allows you to use default burner wallets. Changing the below allows the wallet to switch to Conflux eSpace.
 
-To add the network, modify `packages/react-app/src/constants.js`.
+To add the network, modify `packages/nextjs/scaffold.config.ts`
+
+Change from
 
 ```jsx
-...
-export const NETWORKS = {
-...
-  eSpaceTestnet: {
-    name: "eSpaceTestnet",
-    color: "#e9d0b8",
-    chainId: 71,
-    rpcUrl: "https://evmtestnet.confluxrpc.com",
-    blockExplorer: "https://evmtestnet.confluxscan.io",
-  },
-...
-}
+const scaffoldConfig = {
+  targetNetworks: [chains.hardhat],
 ```
 
-Next, in `packages/react-app/src/App.jsx` modify
+to
 
 ```jsx
-...
-/// 📡 What chain are your contracts deployed to?
-const initialNetwork = NETWORKS.eSpaceTestnet;
-...
+const scaffoldConfig = {
+  targetNetworks: [chains.confluxESpace],
+```
+
+#### Deploy onto Vercel
+
+Preview the app. You should be able to connect to Conflux eSpace through your wallet.
+
+```bash
+nvm use 18
+yarn start
+```
+
+Once you are ready to deploy your app, simply run the following command.
+
+```bash
+yarn vercel
 ```

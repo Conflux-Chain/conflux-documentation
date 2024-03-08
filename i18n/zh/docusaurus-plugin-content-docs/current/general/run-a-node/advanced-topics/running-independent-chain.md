@@ -4,76 +4,73 @@ title: 运行私有链
 displayed_sidebar: generalSidebar
 ---
 
-# Run an Independent Chain
+# 运行私有链
 
-You may want to run Conflux on a single node chain to develop and test smart contracts. You can run Conflux as your independent chain with several machines.
+您可能希望在单节点链上运行Conflux以开发和测试智能合约。 您也可以使用多台计算机将Conflux作为私有链来运行。
 
-## Run Single Node Development Chain
+## 运行单节点开发链
 
-In order to run a single node Conflux chain for development, you can follow the following steps:
+为了运行一个单节点的Conflux链用于开发，您可以按照以下步骤进行：
 
-1. Get executable Conflux binary file (use precompiled binary or build from the latest source code). You can refer to the document [Downloading](./downloading-conflux-client.md).
+1. 获取可执行的Conflux二进制文件（使用预编译的二进制文件或从最新的源代码构建） 你可以参考 [下载Conflux客户端](./downloading-conflux-client.md) 文档
 
-2. Create a directory and prepare a configuration file `development.toml`. You can copy the `hydra.toml` provided in the directory and start from there following the guide [Configuration Files](./configuration-files.md).
+2. 创建一个目录并准备一个名为 `development.toml` 的配置文件。 可以复制目录中提供的`hydra.toml`文件，然后根据 [节点配置文件](./configuration-files.md) 的指导进行修改。
 
-3. Set the `bootnodes` parameter in the configuration file to empty (or comment the setting line).
+3. 将配置文件中的 bootnodes 参数设置为空（或将设置行注释掉）。
 
-4. Set the `mode` parameter to "dev". If you copy from `hydra.toml`, you should find the line being commented and you can uncomment it.
+4. 将配置文件中的 `mode` 参数设置为 "dev"。 如果您是从`hydra.toml`复制的，您应该会发现该行被注释了，您可以取消注释。
 
-5. Set the `dev_block_interval_ms` parameter to the block generation interval you want. In the development mode, Conflux will automatically generate a block in a fixed interval.
+5. 设置`dev_block_interval_ms`参数为您想要的区块生成间隔。 在开发模式下，Conflux会以固定间隔自动生成区块。
 
-6. Run Conflux binary with `development.toml` as the configuration file. 例如：
+6. 使用`development.toml`作为配置文件运行Conflux二进制文件。 例如：
 
 ```bash
 $ ./conflux --config development.toml
 ```
 
-## Run Multiple Node Production Chain
+## 运行多节点生产链
 
-To have your independent Conflux chain with multiple nodes in the production mode, you need to ensure that your nodes can be connected to other nodes in this chain, and will not connect to other chains (like our testnet).
+要拥有自己的Conflux链，并在生产模式下拥有多个节点，您需要确保您的节点可以连接到这个链中的其他节点，并且不会连接到其他链（如Conflux的测试网）。
 
-To achieve this, you should setup your own boot node, and let other nodes connect to it. Then they will connect to others with our discovery protocol.
+为此，您应该设置自己的启动节点，并让其他节点连接到它。 然后，它们将通过我们的发现协议连接到其他节点。
 
-You need the IP address, the port number, and the node id of the bootnode for others to connect. The node id is the public key corresponding the the node's unique private key for identification at the network layer. And here is an instruction to let the bootnode generate its private key automatically, and get the node id through the log file.
+您需要启动节点的IP地址、端口号和节点ID，以便其他节点连接。 节点ID是网络层用于识别的节点唯一私钥对应的公钥。 以下是让启动节点自动生成其私钥并通过日志文件获取节点ID的指导。
 
 ## A Simple Instruction
 
-1. Get executable Conflux binary file (use precompiled binary or build from the latest source code). You can refer to the document [Downloading](./downloading-conflux-client.md).
+1. 获取可执行的Conflux二进制文件（使用预编译的二进制文件或从最新的源代码构建） 你可以参考 [下载Conflux客户端](./downloading-conflux-client.md) 文档
 
-2. Create a directory and prepare a configuration file `bootnode.toml` for the bootnode (the default port is 32323 if not set). You can refer to [Configuration Files](./configuration-files.md).
+2. 创建一个目录，并为启动节点准备一个配置文件`bootnode.toml`（如果未设置，默认端口为32323）。 您可以参考[节点配置文件](./configuration-files.md)文档。
 
 ```bash
-Ensure that `bootnode.toml` does not contain the `bootnode` entry, and the
-log level for `network` is at least `debug`.
+确保 `bootnode.toml` 不包含 `bootnode` 条目，并且 `network` 的日志级别至少为 `debug` 。
 
 $ mkdir run
 $ cd run
-# Put Conflux executable `conflux` and the configuration file `bootnode.toml` under `run`
+# 将Conflux可执行文件`conflux`和配置文件`bootnode.toml`放在`run`下
 
 
-If you are editing based on our provided `hydra.toml`, you need to
-comment out the `bootnode` entry. Otherwise the node will connect to the
-existing Conflux net.
+如果您是基于我们提供的hydra.toml进行编辑，需要注释掉bootnode条目。 否则节点将连接到现有的Conflux网络。
 ```
 
-3. Launch the bootnode, and find the node id in the console print out. The information for node id is `Self node id: $ID` where `$ID` is the 0x-prefixed node id of this bootnode. Remove the 0x prefix and you'll get the node id `$NODEID`. If you missed the line from the screen, you can look at the log file with:
+3. 启动bootnode，并在控制台打印中找到节点ID。 节点ID的信息为`Self node id: $ID`，其中`$ID`是此启动节点的0x前缀节点ID。 去掉0x前缀后，您将获得节点ID `$NODEID`。 如果您错过了屏幕上的行，可以使用以下命令查看日志文件：
 
 ```bash
 grep "Self node id" log/conflux.log|awk '{print $9}'|sed -e "s/^0x//"
 ```
-4. Now we have the `$IP`, `$PORT$`, and `$NODEID` of the boot node, we can get the url for this boot node with the format `cfxnode://$NODEID@$IP:$PORT`. Denote this as `$BOOTNODE_URL`.
+4. 现在我们有启动节点的`$IP`、`$PORT$`和`$NODEID`，我们可以使用格式`cfxnode://$NODEID@$IP:$PORT`获取此启动节点的URL。 记为`$BOOTNODE_URL`。
 
-5. Start other nodes by setting `bootnodes="$BOOTNODE_URL"` in their configuration.
+5. 通过在配置中设置`bootnodes="$BOOTNODE_URL"`启动其他节点。
 
-Note that with the instruction above, other nodes connected to the boot node will stay in untrusted state for a while (3 days by default), and untrusted nodes will not be broadcast in our discovery protocol. Thus, the network structure will be a star with the boot node in the center before other nodes are promoted to trusted state. You can change `node_table_promotion_timeout_s` in the configurations to make this period shorter.
+注意，根据上述指导，连接到启动节点的其他节点将在一段时间内（默认为3天）保持不受信任状态，并且在我们的发现协议中不受信任的节点不会被广播。 因此，在其他节点被提升为受信任状态之前，网络结构将是以启动节点为中心的星形。 You can change `node_table_promotion_timeout_s` in the configurations to make this period shorter.
 
-## Setting Multiple Bootnodes
+## 设置多个启动节点（Bootnodes）
 
-You can also setup multiple bootnodes at the very beginning. However, this cannot be done by simply replaying the boot node setup steps above multiple times, because you need to set `bootnodes` of every boot node before they are started.
+您也可以在一开始就设置多个启动节点。 然而，这不能通过简单地多次重复上述启动节点设置步骤来完成，因为您需要在启动每个启动节点之前设置它们的`启动节点`。
 
-One way to achieve this is to start these bootnodes and stop them immediately. Then gather their node ids, set their configuration, and restart them all.
+一种实现方法是启动这些启动节点然后立即停止它们。 然后收集它们的节点ID，设置它们的配置，并重新启动所有节点。
 
-Another better way is to generate their private keys seperately, and manually set their `net_key` to start. This can be done with the functions provided in our python test framework in the directory `test`.
+另一种更好的方法是分别生成它们的私钥，并手动设置它们的`net_key`以启动。 这可以通过我们的python测试框架中提供的函数来完成，在`test`目录下。
 
 ```js
 from conflux.utils import *
@@ -84,17 +81,17 @@ for _ in range(num_of_bootnodes):
     node_id = encode_hex(encode_int32(pub_key[0]) + encode_int32(pub_key[1]))
     print(encode_hex(pri_key), node_id)
 ```
-Then you can construct the bootnode url with the generated node id, and start each node by setting the `net_key="$NET_KEY"` field to the private key or pass it with the command line option `--net-key $NET_KEY`.
+然后您可以用生成的节点ID构建启动节点URL，并通过将`net_key="$NET_KEY"`字段设置为私钥或通过命令行选项`--net-key $NET_KEY`来启动每个节点。
 
-## Setting Genesis Accounts
+## 设置创世账户（Genesis Accounts）
 
-In a production environment, you can initialize the initial genesis state with your accounts by setting the `genesis_accounts` to an account file with formats like
+在生产环境中，您可以通过将`genesis_accounts`设置为一个帐户文件来初始化初始创世状态，格式如下：
 
 ```js
 0f947e34fc907008968ec99baa1dbb677b927531="1000000000000"
 ab4a32bca7500d94a2cc1f3150e12686c692c590="1000000000000"
 ```
 
-Every line is an account. The key is the account address, and the value is a string representing its balance in Drip. Note that `genesis_accounts` does not apply if `mode` is `test` or `dev`.
+每行是一个账户。 键是账户地址，值是表示其余额的字符串（单位为Drip）。 请注意，如果`mode`是`测试（test）`或`开发（dev）`，则`genesis_accounts`不适用。
 
-If the `mode` is `test` or `dev`, you can setup the genesis accounts with their secret keys by setting `genesis_secrets`. Each line is an account private key without 0x-prefix. The balance of each account is set to `10000000000000000000000` by default.
+如果`mode`是`test` 或 `dev`，您可以通过设置`genesis_secrets`来用它们的私钥设置初始账户。 每行是一个没有0x前缀的账户私钥。 The balance of each account is set to `10000000000000000000000` by default.

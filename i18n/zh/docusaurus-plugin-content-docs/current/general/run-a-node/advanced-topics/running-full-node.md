@@ -8,7 +8,7 @@ displayed_sidebar: generalSidebar
 
 * 至少16GB 内存。
 
-* A minimum of 1TB free disk space (SSD is recommended).
+* 至少需要1TB的可用磁盘空间(建议使用SSD)。
 
 * 稳定的互联网网络连接。
 

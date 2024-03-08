@@ -1,6 +1,6 @@
 name: "Bug / Typo / Mistake Report 报告BUG/笔误/事实性错误"
 description: "Report a bug, typo, or incorrect information in the documentation 报告文档中的BUG/笔误/事实性错误"
-labels: ["bug"]
+labels: ["bug", "Dework"]
 
 body:
   - type: markdown

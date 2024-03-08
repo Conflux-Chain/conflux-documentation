@@ -98,10 +98,25 @@ ERC20是以太坊区块链上代币的标准。 它规定了代币合约必须�
 ERC721是以太坊区块链上非同质化代币（NFT）的标准。 与彼此相同的ERC20代币不同，每个ERC721代币都是独一无二的。 这使它们适合代表独特物品或资产的所有权。 像ERC20一样，ERC721代币也可以存在于Conflux网络上，尤其当它们是从以太坊网络转移过来的。
 
 ### **分叉**
-In blockchain, a fork is a change to the software that creates two separate versions of the blockchain with a shared history. Forks can be either "hard" or "soft", depending on whether the change is compatible with previous versions of the software. In the context of Conflux, forks are less common due to the Tree-Graph structure of the network, which allows for concurrent block production.
+
+A fork in a blockchain system denotes a split or divergence in the chain, originating from a common point with a shared history and creating two distinct paths. They can be implemented intentionally via software updates to either bring about significant changes (hard fork) or introduce backward-compatible alterations (soft fork). However, forks can also occur organically due to simultaneous block creation or as a result of network latencies and block propagation delays.
+
+Additionally, malicious activities aimed at disrupting the network, performing deceptive transactions, or double-spending can also force a fork in the system. These inadvertent forks are typically short-lived as subsequent block addition commonly results in the resolution of temporary branches. No matter the reason for their occurrence, forks are an inherent part of the dynamic and decentralized nature of blockchain technology, necessitating robust consensus mechanisms to manage and mitigate potential issues.
+
+> Refer to [Hard Forks](../hardforks/hardforks.md) for more information of Conflux history hard forks.
+
+Further reading:
+
+- [What is a fork?](https://www.coinbase.com/learn/crypto-basics/what-is-a-fork)
+- [Wikipedia: Fork(blockchain)](https://en.wikipedia.org/wiki/Fork_(blockchain))
 
 ### **燃气**
-In the context of blockchain, gas refers to the fee required to successfully conduct a transaction or execute a contract on the Ethereum blockchain. In Conflux, the concept of gas also exists, but with a unique twist: the gas fee for contract execution is paid by contract sponsors, not by users. 这通过允许用户在不担心燃气费用的情况下与智能合约互动，改善了用户体验。
+
+In the context of blockchain, "gas" is a term primarily associated with networks like Ethereum. Gas is a measure of computational effort required to execute specific operations. Each operation has a fixed amount of gas associated with it, related to the complexity of the operation.
+
+Gas must be paid when user initiate transactions or execute smart contracts, essentially serving as a transaction fee. The concept of gas incentivizes miners to validate and add transactions to the blockchain. Additionally, by attaching a cost to every operation, gas prevents spam on the network and discourages inefficient code, enhancing overall network security and efficiency.
+
+Gas is also required for transaction execution in either Conflux Core Space or eSpace. And in Core Space, besides gas, [collateral for storage](../../core/core-space-basics/storage.md) is also introduced as transaction fee.
 
 Refer to [Gas](./gas.md) for more information.
 
@@ -110,11 +125,11 @@ GHAST（贪婪最重适应子树 Greedy Heaviest Adaptive SubTree ）是Conflux�
 
 更多信息请参考[GHAST](../conflux-basics/consensus-mechanisms/proof-of-work/ghast.md)。
 
-### **硬分叉**
-硬分叉是一种分叉，它创建了与区块链之前版本的永久性分歧。 运行旧版本的节点将不会被新版本接受。 This is a common concept in many blockchains, but due to the unique structure of Conflux, hard forks are less common.
-
 ### **哈希**
-A hash is a function that converts the input data into an encrypted output of a fixed length. In the context of blockchain, a hash function is used to secure data. Each block in a blockchain has a unique hash, and any change to the block's data will result in a different hash.
+
+A hash is a function that transforms input data into a fixed length output, also known as a "hash value". Various hash functions, such as the SHA-256 (Secure Hash Algorithm 256-bit) used primarily in Bitcoin and the Keccak-256 employed in Ethereum as well as Conflux, serve pivotal roles in assuring blockchain security. Hash function plays a crucial role in blockchain as they ensure a unique hash is generated for  every block within the blockchain has. For example, these hash functions are used in generating unique identifiers for blockchain blocks and in creating a secure linkage between blocks in a blockchain, with each block bearing a unique hash.
+
+Significant to note is the principle of hash invertibility. A hash function is considered as a 'one-way' function, meaning while data can be converted into a hash value, the process cannot be reversed. That is, it is computationally infeasible to derive the original input data solely from the hash value. The data held by the hash is, therefore, deemed to be secure, reinforcing the integrity and security of blockchains, hence making them a fundamental component in the technology. This uniqueness and inability to reverse engineer the original data from the hash, reinforces the integrity and security of the blockchain.
 
 ### **内部交易**
 区块链中的内部交易指的是智能合约内部的价值转移或操作。 These transactions are triggered by external transactions and can involve actions such as transferring tokens, creating new tokens, executing function calls, or interacting with other smart contracts. These transactions are not recorded individually on the blockchain, but they can be tracked and displayed for analysis and visibility.
@@ -173,7 +188,8 @@ A smart contract is a self-executing contract with the terms of the agreement di
 Refer to [Spaces](./spaces.md) for more information.
 
 ### **赞助机制**
-在Conflux中，合约执行的交易费用可以由用户支付，也可以由代付方支付。 这种代付机制允许Conflux上的DApp用户不必担心燃气费用，从而改善用户体验。 代付方可以通过向合约存入CFX来设置代付。
+
+In Conflux **Core Space**, the transaction fee for contract execution can be paid by users but also by contract sponsors. 这种代付机制允许Conflux上的DApp用户不必担心燃气费用，从而改善用户体验。 代付方可以通过向合约存入CFX来设置代付。
 
 更多信息请参考[代付机制](../../core/core-space-basics/sponsor-mechanism.md)。
 
@@ -181,6 +197,12 @@ Refer to [Spaces](./spaces.md) for more information.
 Staking in Conflux typically refers to the PoS staking, the process of participating in the network PoS consensus by locking up a certain amount of CFX. Stakers can earn rewards for their participation. This mechanism helps to secure the network and incentivize participation.
 
 Refer to [Staking FAQs](../mine-stake/stake/faqs.md) for more information.
+
+### **Collateral for Storage**
+
+Collateral for storage (CFS for short, or storage collateral) mechanism is introduced in Conflux **Core Space** as a pricing method for the usage of storage, which is more fair and reasonable than the one-off storage fee in Ethereum. In principle, this mechanism requires a fund being locked as collateral for any occupation of storage space. The collateral is locked until the corresponding storage is freed or overwritten by someone else, and the corresponding interest generated by the locked collateral is assigned directly to miners for the maintenance of storage. Thus, the cost of storage in Conflux also depends on the duration of space occupation.
+
+For more information, refer to [Storage Collateral](../../core/core-space-basics/storage.md).
 
 ### **交易**
 Conflux交易是由一个拥有Conflux账户的外部参与者组成的单个指令，该指令使用发送者账户的私钥进行密码学签名，以防止交易伪造。 一笔交易可以涉及简单的CFX（Conflux的本地货币）转账、代币（如ERC20或ERC721）转账、新智能合约的部署或现有智能合约上的函数执行。 交易是在区块链上存储或更新数据的唯一方式。

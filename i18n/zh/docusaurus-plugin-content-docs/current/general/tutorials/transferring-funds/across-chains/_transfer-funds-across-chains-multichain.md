@@ -4,79 +4,79 @@ title: Transfer Funds Across Chains Using Multichain
 displayed_sidebar: generalSidebar
 ---
 
-:::note Note to Binance users and bCFX holders: Conflux on Binance is listed as wrapped ERC-20 token (bCFX), it is not native CFX. Conflux eSpace and BNB Chain use EVM-compatible addresses, but those addresses live in different chains.
+:::note 提醒币安用户和 bCFX 持有者：在币安上，Conflux 被列为封装的 ERC-20 代币(bCFX)，而不是原生的 CFX。 Conflux eSpace和BNB Chain使用兼容EVM的地址，但这些地址位于不同的区块链上。
 :::
 
-[Multichain](https://conflux.multichain.org/#/router) is a cross-chain bridge that supports multiple networks. With Multichain, you can bridge different tokens across different networks into Conflux eSpace, or from Conflux eSpace to other networks. In this guide, we'll bridge bCFX from BNB Chain to Conflux eSpace through Multichain.
+[Multichain](https://conflux.multichain.org/#/router)是支持多个网络的跨链桥。 通过 Multichain，您可以在不同的网络之间桥接不同的代币到 Conflux eSpace 或从 Conflux eSpace 到其他网络。 在本教程中，我们将通过Multichain将BNB Chain中的bCFX转移到Conflux eSpace。
 
 ## 前提条件
-- A BNB Chain account funded with bCFX and BNB.
-- For the purposes of this guide, we'll bridge bCFX from BNB Chain to Conflux eSpace. However, other chains and tokens are also supported.
+- 一个存有 bCFX 和 BNB 的 BNB Chain 账户。
+- 为了本教程的目的，我们将使用 Multichain 将 bCFX 从 BNB Chain 桥接到 Conflux eSpace。 然而，Multichain也支持其它链和代币。
 - 请确保你的MetaMask钱包已经连接到了Conflux eSpace网络。
 
-## Bridging bCFX to Conflux eSpace with Multichain
+## 通过Multichain将bCFX桥接到Conflux eSpace
 
-1. Go to [Multichain](https://conflux.multichain.org/#/router)
-2. Click the **Connect Wallet** button to start connecting your wallet.
+1. 请前往[Multichain](https://conflux.multichain.org/#/router)
+2. 点击**连接钱包**按钮开始连接你的钱包。
 
 ![Locale Dropdown](./img/connectWallet.png)
 
-3. In the Connect to a Wallet dialog, click **MetaMask**.
+3. 在“连接钱包”对话框中，点击 **MetaMask**。
 
 ![Locale Dropdown](./img/connectWallet-2.png)
 
-4. In the Connect With MetaMask notification, select the wallet(s) that you wish to connect and click **Next**.
+4. 在使用 MetaMask 连接对话框中，选择您希望连接的钱包，然后点击**Next**。
 
 ![Locale Dropdown](./img/connectWallet-3.png)
 
-5. Click **Connect** to confirm the connection to the site.
+5. 点击 **Connect** 确认连接到该网站。
 
 ![Locale Dropdown](./img/connectWallet-4.png)
 
-6. In the From box, switch to the **BNB CHAIN mainnet** network.
+6. 在 From 框中，切换到 **BNB CHAIN mainnet** 网络。
 
 ![Locale Dropdown](./img/connectWallet-5.png)
 
-7. In the token list, search for bCFX and click the **bCFX** token.
+7. 在代币列表中，搜索 bCFX 并点击 **bCFX** 代币。
 
 ![Locale Dropdown](./img/connectWallet-6.png)
 
-8. In the amount field, enter the amount of bCFX that you wish you transfer to Conflux eSpace.
+8. 在金额字段中，输入您希望转移到Conflux eSpace的bCFX数量。
 
 ![Locale Dropdown](./img/connectWallet-7.png)
 
-9. In the To box, switch to the **Conflux eSpace mainnet** network.
+9. 在 "To" 区域，切换到 **Conflux eSpace mainnet** 网络。
 
 ![Locale Dropdown](./img/connectWallet-8.png)
 
-10. Since Multichain only supports bridging bCFX from BNB Chain to Conflux as CFX, leave CFX as the token.
+10. 由于 Multichain 只支持将 BNB Chain 上的 bCFX 作为CFX桥接到Conflux ，因此请将代币选择为 CFX。
 
 ![Locale Dropdown](./img/connectWallet-9.png)
 
-11. Confirm the amount of CFX that you'll receive in Conflux.
+11. 确认您将在 Conflux 中收到的 CFX 数量。
 
 ![Locale Dropdown](./img/connectWallet-10.png)
 
-12. Click **Approve bCFX** to start bridging your tokens.
+12. 点击 **Approve bCFX** 开始桥接您的代币。
 
 ![Locale Dropdown](./img/connectWallet-11.png)
 
-13. In the Cross-Chain Router dialog, click **Approve bCFX** to start approving Multichain to transfer your tokens.
+13. 在跨链路由器对话框中，点击**Approve bCFX**，开始批准 Multichain 转移你的代币。
 
-14. In MetaMask, click **Confirm** to grant permission to Multichain to transfer your tokens.
+14. 请在MetaMask中点击**Confirm**，以授权Multichain转移您的代币。
 
 ![Locale Dropdown](./img/connectWallet-12.png)
 
-15. Once the transfer is approved, click Swap to start withdrawing your funds in Conflux eSpace.
+15. 一旦转账被批准，点击 Swap 按钮开始在 Conflux eSpace 中提取你的资金。
 
 ![Locale Dropdown](./img/connectWallet-14.png)
 
-16. In the Cross-Chain Router dialog, review and confirm the transaction details and click **Confirm**.
+16. 在跨链路由器对话框中，审查和确认交易详情，然后点击**Confirm**。
 
 ![Locale Dropdown](./img/connectWallet-15.png)
 
-17. In the MetaMask notification, click **Confirm** to confirm the transaction and bridge your assets.
-- **Note**: This transaction may take a few minutes.
+17. 在 MetaMask 的通知中，点击 **Confirm** 以确认交易并桥接您的资产。
+- **注意**: 此交易可能需要几分钟来完成。
 
 ![Locale Dropdown](./img/connectWallet-16.png)
 

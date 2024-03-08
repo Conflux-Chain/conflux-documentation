@@ -4,58 +4,58 @@ title: 配置节点
 displayed_sidebar: generalSidebar
 ---
 
-Conflux nodes offer a rich set of configuration options, allowing the adjustment of node behavior by modifying these settings. This document provides an overview of the node configuration options and their meanings.
+Conflux节点提供了丰富的配置选项，允许通过修改这些设置来调整节点行为。 本文档提供了节点配置选项及其含义的概述。
 
-## How to configure nodes.
+## 如何配置节点
 
-### Configuration File
+### 配置文件
 
-The configuration file for Conflux nodes is `hydra.toml`, and by default, it is located in the `run` directory where the node program is downloaded. By modifying the configuration options in this file, you can adjust the behavior of the node.
+Conflux节点的配置文件为`hydra.toml`，默认位于节点程序下载的`run`目录中。 通过修改此文件中的配置选项，您可以调整节点的行为。
 
-### Command Line Parameters
+### 命令行参数
 
-Nodes can also be configured using command line parameters, where the **priority of command line parameters is higher than that of the configuration file**. For example, the JSON-RPC port of the node can be specified using the `--jsonrpc-http-port` parameter.
+节点也可以使用命令行参数进行配置，**命令行参数的优先级高于配置文件**。 例如，可以使用`--jsonrpc-http-port`参数指定节点的JSON-RPC端口。
 
 ```shell
 ./conflux --jsonrpc-http-port 12537
 ```
 
-A detailed list of parameters can be viewed by running `./conflux -h`.
+可以通过运行`./conflux -h`查看参数的详细列表。
 
-## Introduction to Configuration File Options
+## 配置文件选项简介
 
-### node type
+### 节点类型
 
-Node types, with three possible values: `full`, `archive`, `light`. The default value is `full`.
+节点类型，有三个可能的值：`full（完整）`、`archive（归档）`、`light（轻）`。 默认值为`full`。
 
 ```toml
 node_type="full"
 ```
 
-### chain id
+### 链ID
 
-Chain ID, used to identify the Conflux network. The Chain ID for the Core Space mainnet is **1029**, and for the eSpace mainnet, it is **1030**. The testnets have Chain IDs of 1 and 71, respectively.
+链ID，用于识别Conflux网络。 核心空间（Core Space）主网的链ID为**1029**，eSpace主网的链ID为**1030**。 测试网的链ID分别为1和71。
 
 ```toml
 chain_id=1029
 evm_chain_id=1030
 ```
 
-Usually, this configuration option does not need to be modified unless you want to set up a local test network.
+通常，除非您想要设置本地测试网络，否则无需修改此配置选项。
 
 ### Core Space RPC
 
-Core Space RPC related options.
+Core Space RPC相关选项。
 
 ```toml
-jsonrpc_http_port=12537 # JSON-RPC HTTP port
-jsonrpc_ws_port=12535 # JSON-RPC WebSocket port
-public_rpc_apis='safe' # JSON-RPC API namespace list，Multiple namespaces are separated by commas, and using "all" represents enabling all APIs.
+jsonrpc_http_port=12537 # JSON-RPC HTTP端口
+jsonrpc_ws_port=12535 # JSON-RPC WebSocket端口
+public_rpc_apis='safe' # JSON-RPC API命名空间列表，多个命名空间用逗号分隔，使用"all"表示启用所有API。
 ```
 
 ### eSpace RPC
 
-eSpace RPC related options.
+eSpace RPC相关选项。
 
 ```toml
 jsonrpc_http_eth_port=8545
@@ -63,44 +63,44 @@ jsonrpc_ws_eth_port=8546
 public_evm_rpc_apis = "evm"
 ```
 
-### Data indexing
+### 数据索引
 
-RPC interfaces related to transactions (tx) and blocks do not support querying historical data by default. If you need to query historical data, you must enable data indexing.
+与交易（tx）和区块相关的RPC接口默认不支持查询历史数据。 如果需要查询历史数据，必须启用数据索引。
 
 ```toml
 persist_block_number_index=true
 persist_tx_index=true
 ```
 
-### transaction trace
+### 交易跟踪
 
-transaction trace related options.
+交易跟踪相关选项。
 
 ```toml
 executive_trace=true
 ```
 
-If you want to enable this configuration, you will need to resynchronize the data.
+如果想要启用此配置，需要重新同步数据。
 
-### fullstate
+### 全状态（fullstate）
 
-Fullstate mode supports querying the historical state of the blockchain.
+全状态模式支持查询区块链的历史状态。
 
-To enable the fullstate mode for a single Space, you can specify the Space name using the `single_mpt_space` configuration option.
+要为单个空间启用全状态模式，可以使用`single_mpt_space`配置选项指定空间名称。
 
 ```toml
-single_mpt_space = "evm" # core-space use "native"
+single_mpt_space = "evm" # 核心空间使用"native"
 ```
 
-Enabling the fullstate mode for dual spaces.
+启用双空间的全状态模式。
 
 ```toml
 enable_single_mpt_storage=true
 ```
 
-### cfx_getLogs/eth_getLogs related options
+### cfx_getLogs/eth_getLogs相关选项
 
-The `getLogs` RPC method imposes a significant performance overhead on the node. Excessive querying of data with this method can lead to high node loads. To mitigate this, adjust the following configuration option to limit the amount of data requested per `getLogs` request.
+`getLogs` RPC方法对节点造成了显著的性能负担。 过度查询此方法的数据可能导致节点负载高。 为了缓解这一点，调整以下配置选项以限制每个`getLogs`请求请求的数据量。
 
 ```toml
 get_logs_filter_max_limit=1000
@@ -109,19 +109,19 @@ get_logs_filter_max_epoch_range=1000
 get_logs_filter_max_block_number_range=2000
 ```
 
-### log
+### 日志
 
-Configuration options related to node logs.
+与节点日志相关的配置选项。
 
 ```toml
-log_conf="log.yaml" # log configuration file
+log_conf="log.yaml" # 日志配置文件
 log_file="conflux.log"
-log_level="info" # The value should be one of "error", "warn", "info", "debug", "trace", "off"
+log_level="info" # 值应为 "error"、"warn"、"info"、"debug"、"trace"、"off" 其中之一
 ```
 
-### pow mining
+### PoW挖矿
 
-Configuration options related to Proof-of-Work (PoW) mining.
+与工作量证明（PoW）挖矿相关的配置选项。
 
 ```toml
 mining_author="cfx:aarc9abycue0hhzgyrr53m6cxedgccrmmyybjgh4xg"
@@ -131,19 +131,19 @@ stratum_secret="aaaa"
 pow_problem_window_size=1
 ```
 
-### tx pool
+### 交易池
 
-Transaction pool-related configuration options.
+与交易池相关的配置选项。
 
 ```toml
-tx_pool_size=50000 # tx pool size
-tx_pool_min_native_tx_gas_price=1_000_000_000 # core space tx minimum gas price
-tx_pool_min_eth_tx_gas_price=20_000_000_000 # eSpace tx minimum gas price
+tx_pool_size=50000 # 交易池大小
+tx_pool_min_native_tx_gas_price=1_000_000_000 # 核心空间交易最低燃气价格
+tx_pool_min_eth_tx_gas_price=20_000_000_000 # eSpace交易最低燃气价格
 ```
 
-### storage directory
+### 存储目录
 
-Blockchain data storage directory configuration:
+区块链数据存储目录配置：
 
 ```toml
 conflux_data_dir="./blockchain_data"
@@ -187,13 +187,13 @@ Storage optimization related options.
 use_isolated_db_for_mpt_table=true 
 ```
 
-## Configuration File Example
+## 配置文件示例
 
-For a more comprehensive configuration file example, you can refer to [hydra.toml](./configuration-files.md).
+要获得更全面的配置文件示例，您可以参考[hydra.toml](./configuration-files.md)。
 
 ## 常见问题解答
 
-### I want to run a Core Space RPC node, what parameters do I need to configure?
+### 我想运行一个Core Space RPC节点，我需要配置哪些参数？
 
 ```toml
 node_type="archive"
@@ -204,7 +204,7 @@ persist_block_number_index=true
 persist_tx_index=true
 ```
 
-### I want to run an eSpace RPC node, what parameters do I need to configure?
+### 我想运行一个eSpace RPC节点，我需要配置哪些参数？
 
 ```toml
 node_type="archive"
@@ -215,20 +215,20 @@ persist_block_number_index=true
 persist_tx_index=true
 ```
 
-### After my node has been running for a while, I want to enable the `executive_trace` configuration. Do I need to resynchronize the data?
+### 我的节点运行了一段时间后，我想启用`executive_trace`配置。 我需要重新同步数据吗？
 
-Yes, you need to resynchronize the data.
+是的，您需要重新同步数据。
 
-### Does the archive node snapshot data provided by the official source include trace data?
+### 官方提供的归档节点快照数据是否包含trace数据？
 
-Yes, it does.
+是的，包含。
 
-### After the configuration is modified, do I need to clear the data then restart the node?
+### 修改配置后，我需要清除数据然后重启节点吗？
 
-Depending on the situation, sometimes it does, sometimes it doesn’t. If the configuration involves data store or data index, you need to restart the node if the configuration changes, for example:
+根据情况而定，有时需要，有时不需要。 如果配置涉及数据存储或数据索引，配置更改时需要重启节点，例如：
 
 - `persist_tx_index`
 - `executive_trace`
 - `persist_block_number_index`
 
-Other restart are generally not required.
+其他一般不需要重启。

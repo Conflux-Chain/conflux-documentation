@@ -275,125 +275,127 @@ log_conf="log.yaml"
 #
 # received_tx_index_maintain_timeout_ms = 300_000
 
-# Whether to request blocks with public key during catch-up to avoid recovering
-# the public keys for transactions.
+# 在追赶过程中是否使用公钥请求块，以避免恢复交易的公钥。
 #
 # request_block_with_public = false
 
-# Time interval to broadcast transaction digests periodically.
+# 定期广播交易摘要的时间间隔。
 #
 # send_tx_period_ms = 1300
 
-# Timeout for requesting snapshot candidate.
+# 请求快照候选项的超时时间。
 #
 # snapshot_candidate_request_timeout_ms = 10_000
 
-# Timeout for requesting snapshot chunks.
+# 请求快照块的超时时间。
 #
 # snapshot_chunk_request_timeout_ms = 30_000
 
-# Timeout for requesting snapshot manifests.
+# 请求快照清单的超时时间。
 #
 # snapshot_manifest_request_timeout_ms = 30_000
 
-# `throttling_conf` is configuration file in TOML format to throttle RPCs, P2P messages.
-# Throttling is enabled only when the parameter specified.
+# `throttling_conf` 是以TOML格式的配置文件，用于限制RPC、P2P消息。
+# 仅在指定了参数时才启用限流。
 #
 # throttling_conf="throttling.toml"
 
-# The time period to observe if a peers has too many timeouts.
+# 观察对等节点是否有过多超时的时间周期。
 #
 # timeout_observing_period_s = 600
 
-# Timeout for transaction requests.
+# 交易请求的超时时间。
 #
 # transaction_request_timeout_ms = 30_000
 
-# Time to maintain information of sent-out transactions for answering requests.
+# 维护已发送交易信息以回答请求的时间。
 #
 # tx_maintained_for_peer_timeout_ms = 600_000
 
-# --------------- Peer Management Parameters -------------
+# --------------- 对等节点管理参数 -------------
 
-# Timeout duration for refreshing discovery protocol when there are NOT enough outgoing connections.
+# 当没有足够的出站连接时，刷新发现协议的超时时长。
 #
 # discovery_fast_refresh_timeout_ms = 10_000
 
-# Timeout duration for initiating peer connection management.
+# 初始化节点连接管理的超时时长。
 #
 # discovery_housekeeping_timeout_ms = 1_000
 
-# Period between consecutive rounds of the same current discovery process.
+# 同一当前发现过程的连续轮之间的时间间隔。
 #
 # discovery_round_timeout_ms = 500
 
-# `enable_discovery` is used to control whether the node will ask its neighbors for new peers
-# and whether it will respond to other nodes' discovery requests.
+# `enable_discovery` 用于控制节点是否会向其邻居请求新的节点，
+# 以及是否会响应其他节点的发现请
 #
 # enable_discovery=true
 
-# `netconf_dir` is the directory to store network related persistent data, including `net_key`,
-# a list of trusted nodes and a list of untrusted nodes.
+# `netconf_dir` 是用于存储与网络相关的持久化数据的目录，
+# 包括 `net_key`、受信任节点列表和不受信任节点列表。
 #
-# By default, it is stored under the directory configured with `conflux_data_dir` with the directory name `net_config`.
-# If set, the directory path will not be related to `conflux_data_dir` anymore.
+# 默认情况下，它存储在配置了 `conflux_data_dir` 的目录下，目录名为 `net_config`。
+#
+# 如果设置了该参数，则目录路径将不再与 `conflux_data_dir` 相关。
 #
 # netconf_dir="./blockchain_data/net_config"
 
-# `net_key` is the 256-bit private key to generate a unique node id for this node.
-# The value is a 64-digit hex string.
-# If not set, the node will try to read from the file "key" under the directory `netconf_dir`.
-# If the file is not found, the node will generate a random key.
+# `net_key` 是生成该节点的唯一节点 Id 的 256 位私钥。
+# 值为64位十六进制字符串。
+#
+# 如果未设置，则节点将尝试从 `netconf_dir` 目录下的文件 "key" 中读取。
+#
+# 如果找不到该文件，则节点将生成一个随机的密钥。
 # 默认情况下，该值未设置。
-# If a node is restarted, it's suggested to keep the key unchanged.
+#
+# 如果节点重新启动，建议保持密钥不变。
 #
 # net_key="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
 
-# Timeout duration for persisting node table.
+# 持久化节点表的超时时长。
 #
 # node_table_timeout_s = 300
 
-# Connection lifetime threshold for promotion.
+# 提升的连接生命周期阈值。
 #
 # node_table_promotion_timeout_s = 259200
 
-
-# `session_ip_limits` limits the number of TCP connections per IP address or subnet for security consideration.
-# Its format is "n1,n2,n3,n4", where n1 is the quota of TCP connections for a single IP address, and n2/n3/n4
-# are the quotas for subnet a/b/c. The default value is "1,8,4,2", which means:
-#   1) Only 1 TCP connection allowed for a single IP address.
-#   2) 8 TCP connections allowd for subnet a, e.g. 192.xxx.xxx.xxx/8
-#   3) 4 TCP connections allowd for subnet b, e.g. 192.168.xxx.xxx/16
-#   4) 2 TCP connections allowd for subnet c, e.g. 192.169.0.xxx/24
-# Note, 0 represents unlimited.
+# `session_ip_limits` 限制每个 IP 地址或子网的 TCP 连接数，以确保安全性。
+#
+# 其格式为 "n1,n2,n3,n4"，其中 n1 是单个 IP 地址的 TCP 连接配额，n2/n3/n4 是子网 a/b/c 的配额。 默认值为 "1,8,4,2"，表示：
+#   1) 单个 IP 地址只允许 1 个 TCP 连接。
+#   2) 子网 a（例如 192.xxx.xxx.xxx/8）允许 8 个 TCP 连接。
+#   3) 子网 b（例如 192.168.xxx.xxx/16）允许 4 个 TCP 连接。
+#   4) 子网 c（例如 192.169.0.xxx/24）允许 2 个 TCP 连接。
+# 注意，0 表示无限制。
 #
 # session_ip_limits="1,8,4,2"
 
-# `subnet_quota` limits the number of nodes for a subnet B (e.g. 192.168.xxx.xxx/16) stored in database.
-# Nodes in database are used to establish outgoing TCP connections for P2P communications.
-# Note, 0 represents unlimited.
+# subnet_quota 限制存储在数据库中的子网 B（例如 192.168.xxx.xxx/16）的节点数量。
+# 数据库中的节点用于建立用于 P2P 通信的出站 TCP 连接。
+# 注意，0表示无限制。
 #
-# subnet_quota=32
+# 子网配额=32
 
-# ---------------- Block number index parameters -----------------
+# ---------------- 区块号索引参数 -----------------
 
-# Whether to persist block number indices.
-# This only needs to be enabled if you want to use RPCs that take block numbers as an input.
+# 是否持久化区块号索引。
+# 只有在您希望使用以区块号作为输入的RPC时才需要启用此选项。
 #
 # persist_block_number_index = true
 
-# ---------------- Transaction Cache Parameters -----------------
+# ---------------- 交易缓存参数 -----------------
 
-# Whether to persist transaction indices.
-# This only needs to be enabled if you want to reliably answer transaction-related RPCs.
+# 是否持久化交易索引。
+# 只有在您希望可靠地回答与交易相关的RPC时才需要启用此选项。
 #
 # persist_tx_index = false
 
-# Time to keep transactions in in-memory transaction cache.
+# 在内存交易缓存中保留交易的时间。
 #
 # tx_cache_index_maintain_timeout_ms = 300_000
 
-# Maximum number of transactions allowed in the transaction pool.
+# 交易池中允许的最大交易数。
 #
 # tx_pool_size = 50_000
 
@@ -405,14 +407,13 @@ log_conf="log.yaml"
 # ------------------ Storage Parameters ----------------------
 
 # The number of additional snapshot before the current stable checkpoint that we will maintain.
-# If it's 0, all snapshot before stable genesis will be deleted and the states are unavailable.
+# 如果为0，则所有稳定创世之前的快照将被删除，状态将不可用。
 #
 # additional_maintained_snapshot_count = 0
 
-# The additional number of epochs to keep different kinds of data before the current era genesis checkpoint.
-# For full/light nodes, the default value is 0, meaning all data before the era checkpoint will be removed.
-# For archive nodes, the default behavior is keeping all these data, while setting these parameters manually
-# will overwrite the default behavior of corresponding data types and garbage collect them accordingly.
+# 在当前epoch创世检查点之前，保留不同类型数据的额外epoch数。
+# 对于完整节点/轻节点，默认值为0，意味着检查点之前的所有数据将被删除。
+# 对于归档节点，保留所有这些数据是默认行为，而手动设置这些参数将覆盖相应数据类型的默认行为，并相应进行垃圾回收。
 #
 # additional_maintained_block_body_epoch_count = 0
 # additional_maintained_execution_result_epoch_count = 0
@@ -420,7 +421,7 @@ log_conf="log.yaml"
 # additional_maintained_trace_epoch_count = 0
 # additional_maintained_transaction_index_epoch_count = 0
 
-# Time interval to evict old data from in-memory data cache.
+# 从内存数据缓存中清除旧数据的时间间隔。
 #
 # block_cache_gc_period_ms = 5_000
 
@@ -436,7 +437,8 @@ log_conf="log.yaml"
 # The directory to store block-related data.
 #
 # By default, it is stored under the directory configured with `conflux_data_dir` with the directory name `blockchain_db`.
-# If set, the directory path will not be related to `conflux_data_dir` anymore.
+#
+# 如果设置了该参数，则目录路径将不再与 `conflux_data_dir` 相关。
 #
 # block_db_dir = "./blockchain_data/blockchain_db"
 
