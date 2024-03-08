@@ -4,6 +4,7 @@ title: Ledger
 displayed_sidebar: generalSidebar
 ---
 
+import { DiscordLink } from "../../../templates/links.tsx"
 
 :::tip
 
@@ -31,7 +32,7 @@ Before you start, make sure that you have done the following:
 **-**  Installed [Fluent Wallet](https://fluentwallet.com/) on a compatible desktop browser.
 
 
-If you encounter any issues, find us on [Discord](https://discord.com/invite/aCZkf2C) or [Telegram](https://t.me/Conflux_English), we are happy to help.
+If you encounter any issues, find us on <DiscordLink>Discord</DiscordLink> or [Telegram](https://t.me/Conflux_English), we are happy to help.
 
 ### Installation
 
@@ -126,7 +127,7 @@ After the transaction has been approved, it is now signed and sent to the Conflu
 
 You can learn more about Conflux at [confluxnetwork.org](https://confluxnetwork.org). You can check transaction and account details on [Conflux Scan](https://confluxscan.io).
 
-If you encounter any issues, find us on [Discord](https://discord.com/invite/aCZkf2C) or [Telegram](https://t.me/Conflux_English), we are happy to help.
+If you encounter any issues, find us on <DiscordLink>Discord</DiscordLink> or [Telegram](https://t.me/Conflux_English), we are happy to help.
 
 
 
@@ -146,7 +147,7 @@ Before you start, make sure that you have done the following:
 - Installed [Ledger Live](https://www.ledger.com/ledger-live) and updated it to the latest version.
 - Installed [MetaMask](https://MetaMask.io) on a compatible desktop browser.
 
-If you encounter any issues, find us on [Discord](https://discord.com/invite/aCZkf2C) or [Telegram](https://t.me/Conflux_English), we are happy to help.
+If you encounter any issues, find us on <DiscordLink>Discord</DiscordLink> or [Telegram](https://t.me/Conflux_English), we are happy to help.
 
 ### Installation
 
