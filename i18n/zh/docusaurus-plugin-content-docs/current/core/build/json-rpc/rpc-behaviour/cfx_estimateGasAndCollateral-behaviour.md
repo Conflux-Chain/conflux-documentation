@@ -12,7 +12,7 @@ tags:
   - errors
 ---
 
-The `cfx_estimateGasAndCollateral` interface is a critical component of the Conflux blockchain, as it allows users to estimate the gas and storage collateral required for their transactions. This document aims to clearly outline the functioning of the `cfx_estimateGasAndCollateral` interface, with a particular emphasis on its response to various parameter configurations.
+`cfx_estimateGasAndCollateral` 接口是 Conflux 区块链中的一个关键组成部分，该接口允许用户可在发起交易前，估算交互所需交易费用和存储抵押费用 本文档旨在清晰地概述 `cfx_estimateGasAndCollateral` 接口的功能，特别强调其对各种参数配置的响应。
 
 :::note
 
