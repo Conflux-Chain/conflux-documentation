@@ -69,7 +69,7 @@ The smart contract is a set of code (contract functions) and data (contract stat
 This contract is written in `solidity`, whose syntax is similar to `javascript`.
 
 - `pragma solidity ^0.8.0;` indicates that this contract needs to be compiled with a `>=0.8.0<0.9.0` compiler.
-- `contract VendingMachine` assigns the contract name as `VendingMachine` ;
+- contract `VendingMachine` assigns the contract name as `VendingMachine` ;
 - `address public owner;` defines a public state variable with the name `owner` and type `address`;
 - `event Purchase(address customer, uint amount);` defines the `event` with the name `Purchase`. event is similar to the logging function in other languages. Its role is mainly to record some important information when the contract is executed. For example, `Purchase` is an event that generates a purchase record when a customer purchases an item.
 - The `constructor` function is executed exactly once the contract is deployed.
