@@ -8,7 +8,7 @@ Welcome to our FAQ section, where we have compiled a list of frequently asked qu
 
 Whether you are a new user or a returning one, we hope that our FAQ section will help address any questions or concerns you may have. If you cannot find the answer you are looking for, please do not hesitate to contact in our community for further assistance.
 
-| **Topic**                                                                                           | **Description**                                              |
+| **Topic**                                                                                           | **描述**                                                       |
 | --------------------------------------------------------------------------------------------------- | ------------------------------------------------------------ |
 | [社区常见问题](community-faqs.md)                                                                         | Community related questions                                  |
 | [RPC Errors](/docs/core/build/json-rpc/common-rpc-errors.md)                                        | Questions related to RPC most common errors                  |

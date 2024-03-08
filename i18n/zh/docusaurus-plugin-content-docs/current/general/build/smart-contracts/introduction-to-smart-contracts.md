@@ -4,19 +4,19 @@ title: Smart Contracts Development
 displayed_sidebar: generalSidebar
 ---
 
-## Introduction to Smart Contracts Development on Conflux Network
+## Conflux 网络智能合约开发介绍
 
-[**Smart contracts**](../../conflux-basics/contracts.md) are an essential component of the Conflux Network, offering a powerful way to automate and execute code on the blockchain. These self-executing contracts consist of code that automatically implements the terms of an agreement based on predefined rules. This introduction will explore the key concepts, functionalities, and potential applications of smart contracts within the Conflux ecosystem.
+[**智能合约**](../../comflux-basics/contracts.md)是 Conflux 网络的一个重要组成部分，它为区块链上代码的自动执行提供了一种强大的方式。 这些自动执行的智能合约是由一系列代码组成的，这些代码能够自动执行基于预定规则的共识条款。 本篇将探讨 Conflux 生态系统内智能合约的关键概念、功能和潜在应用。
 
-### Getting Started with Smart Contracts on Conflux
+### Conflux 智能合约入门指南
 
-Developers can start by learning [**Solidity**](solidity-basics.md), understanding Conflux's unique features, and using tools like Conflux Studio for development and testing.
+开发者可以学习 [**Solidity**](solidity-basics.md) ，了解 Conflux 的独特特性，并使用 Conflux Studio 等工具进行开发和测试。
 
-For more detailed information and resources on smart contracts within the Conflux Network, you can explore the following videos and resources:
+想要了解更多关于 Conflux 网络中智能合约的详细信息和资料，您可以浏览以下视频和资源：
 
-## Example Vending Machine Smart Contract
+## 自动售货机智能合约示例
 
-Let's look at one of the simplest smart contract implementations of a vending machine.
+让我们看看一个最简单的自动售货机智能合约实现。
 
 ```js
 pragma solidity ^0.8.0;
@@ -64,55 +64,55 @@ contract VendingMachine {
 }
 ```
 
-This contract has two functions: method `refill` enables administrators to refill the products. Method `purchase` enables the customers to purchase products using CFX tokens. Just like how vending machines eliminate the need for salesmen, smart contracts can eliminate intermediaries in many industries.
+这个智能合约有两个函数：`refill` 函数允许管理员补充商品。 `purchase` 函数允许客户使用 CFX 代币购买商品。 就像自动售货机消除了销售员的需要一样，智能合约可以在许多行业消除中介。
 
-The smart contract is a set of code (contract functions) and data (contract state variables). For the line `mapping (address => uint) public cupcakeBalances;` , it declares a state variable named cupcakeBalances with type `mapping (address => uint)`. You can see it as a table in the database. Meanwhile, the contract methods `refill` and `purchase` are used to read or modify the state of the data in that database table. Also this state variable is `public` and this means it's [public-accessible](https://docs.soliditylang.org/en/latest/cheatsheet.html#function-visibility-specifiers).
+智能合约是一组代码（合约函数）和数据（合约状态变量）。 对于 `mapping (address => uint) public cupcakeBalances;` 这一行，它声明了一个名为 cupcakeBalances 的状态变量，类型为 `mapping (address => uint)`。 你可以把它看作数据库中的一个表。 同时，智能合约中的方法 `refill` 和 `purchase` 用于读取或修改该数据库表中数据的状态。 这个状态变量也是 `public` 类型的，这意味着它是 [在函数内部外部均可见](https://docs.soliditylang.org/enarage/cheatsheet.html#function-visibility-specifiers) 的。
 
-This contract is written in `solidity`, whose syntax is similar to `javascript`.
+这个智能合约是用 `solidity` 编写的，它的语法类似于 `javascript` 。
 
-- `pragma solidity ^0.8.0;` indicates that this contract needs to be compiled with a `>=0.8.0<0.9.0` compiler.
-- contract `VendingMachine` assigns the contract name as `VendingMachine` ;
-- `address public owner;` defines a public state variable with the name `owner` and type `address`;
-- `event Purchase(address customer, uint amount);` defines the `event` with the name `Purchase`. event is similar to the logging function in other languages. Its role is mainly to record some important information when the contract is executed. For example, `Purchase` is an event that generates a purchase record when a customer purchases an item.
-- The `constructor` function is executed exactly once the contract is deployed.
-- The `balanceOf` function marked with the `view` is a read-only function that can't be used to modify the contract state. All read-only functions must be declared as `view` or `pure` functions.
-- `refill` function is an ordinary function, can be called by sending a transaction. This function will change the contract state.
-- `require(msg.sender ==  owner, "Only the owner can refill");` indicates that only when the condition `msg.sender == owner` is fullfilled (that is, the caller is the contract admin), the state of contract variable `cupcakeBalances` can be modified to refill the products. If the condition is not fullfilled then a messaged will be returner (in this case `"Only the owner can refill"`) and the transaction will be reverted.
-- `purchase` function includes a `payable`, indicating you can send CFX at the same time the function is called. Since customers need to pay CFX to purchase it's marked as a `payable` function.
-- `require(msg.value >= amount 1 ether, "You must pay at least 1 CFX per cupcake")` indicates the full amount of CFX must be paid in order to complete the purchase. Otherwhise the function will be reverted and will return the `"You must pay at least 1 CFX per cupcake"` message.
+- `pragma solidity ^0.8.0;` 表示这个合约需要用一个 `>=0.8.0` 且 `<0.9.0` 的编译器来编译。
+- `contract VendingMachine` 定义了一个名为 `VendingMachine` 的智能合约；
+- `address public owner;` 声明了一个公开的状态变量，名称为 `owner` 和 `address`;
+- `event Purchase(address customer, uint amount);` 声明了一个名为 `Purchase` 的事件。 事件类似于其他语言中的日志记录功能。 它的作用主要是在智能合约执行时记录一些重要信息。 例如， `Purchase` 是一个在客户购买某个商品时生成购买记录的事件。
+- 一旦合约被部署， `constructor` 函数便会执行。
+- 以 `view` 修饰的 `balanceOf` 函数是一个只读函数，它不能用来修改合约状态。 所有只读函数必须声明为 `view` 或 `pure` 函数。
+- `refill` 函数是一个普通函数，可以通过发送交易调用。 此函数将更改合约状态。
+- `require(msg.sender ==  owner, "Only the owner can refill");`只有当条件 `msg.sender == owner` 满足时（即调用者是合约管理员）， 才能修改合约变量 `cupcakeBalances` 的状态来补充商品。 如果条件不满足，则会返回一条消息（在这个例子中是 `"Only the owner can refill"`），并且交易将被回滚。
+- `purchase` 函数包括一个 `payable` 修饰符，表明在调用该函数的同时，你可以发送 CFX。 由于顾客需要支付 CFX 来购买，因此它被标记为一个 `payable` 函数。
+- `require(msg.value >= amount 1 ether, "You must pay at least 1 CFX per cupcake")` 表明必须支付完整的 CFX 金额才能完成购买。 否则，函数将被回滚，并返回消息 `"You must pay at least 1 CFX per cupcake"` 。
 
-> **Solidity has built-in literal Ether Units**
+> **Solidity 内置了以太单位字面量**
 >
-> A literal number can take a suffix of `wei`, `gwei` or `ether` to specify a subdenomination of Ether, where Ether numbers without a postfix are assumed to be Wei. In **Conflux 1 ether = 1 CFX**.
+> 一个数字可以使用 `wei`, `gwei` 或 `ether` 作为后缀来指定以太的子单位，其中没有后缀的以太数字被默认为 Wei。 在 Conflux 中 **1 ether = 1 CFX**。
 >
 > - assert(1 wei == 1);
 > - assert(1 gwei == 1e9);
 > - assert(1 ether == 1e18);
 
-- The number of products in the vending machine decreases after a successful purchase and the number of goods owned by the customers (indicated by `cupcakeBalances[msg.sender]`) increases.
+- 顾客成功购买商品后，自动售货机中的商品数量会减少，而顾客拥有的商品数量（由 `cupcakeBalances[msg.sender]` 表示）会增加。
 
-After writing the smart contract, you need to compile it and then deploy it to the Conflux Network by sending a `transaction`. Then you can interact with the smart contract functions.
+在编写智能合约后，需要将其编译，并通过发送 `transaction` 将其部署到 Conflux 网络。 然后你便可以与智能合约的函数进行交互。
 
-## Compilation
+## 编译
 
-Smart contract compilation is the process of generating the elements required when deploying the contract from the contract code through the compiler. There are two main parts in the compilation result, `The Contract Application Binary Interface (abi)` and `bytecode`.
+智能合约的编译是指通过编译器从目标代码生成部署所需要的元素的过程。 编译结果有两个主要部分：`合约应用二进制接口（abi）` 和 `字节码`。
 
-- Bytecode: Smart contracts are executed on the Ethereum Virtual Machine (EVM). The bytecode is the hexadecimal value corresponding to the smart contract that the EVM can recognize.
-- ABI: ABI refers to the Application Binary Interface, which describes each function name, modifier, visibility, parameters name, and its type, returns value name and its type and description of events in the public interface of contract (in JSON format). When we call the contract function externally and encode it in a certain way based on the description of the function in the ABI, we can get a value that the EVM can recognize and display in hexadecimal format. You can use this value to interact with the smart contract.
+- 字节码：智能合约是在以太坊虚拟机（EVM）上执行的。 字节码是 EVM 可以识别的与智能合约对应的十六进制值。
+- ABI：ABI 指的是应用二进制接口，它描述了合约公开接口中每个函数的名称、修饰符、可见性、参数名称及其类型、返回值名称及其类型和事件的描述（以 JSON 格式）。 当我们从外部调用合约函数并根据 ABI 中的函数描述以某种方式编码时，我们可以得到一个 EVM 可以识别并以十六进制格式显示的值。 可以使用这个值与智能合约进行交互。
 
-You can use `solc`, or [hardhat](https://hardhat.org/) or [foundry](https://book.getfoundry.sh/) to compile the smart contract.
+您可以使用 `solc`、[hardhat](https://hardhat.org/) 或 [foundry](https://book.getfoundry.sh/) 来编译智能合约。
 
-Here we take `solc` as example.
+我们以 `solc` 为例。
 
-Install solc
+安装 solc
 
 ```sh
 npm install -g solc
 ```
 
-> Attention: The compiler version needs to match the version specified in the contract. To download the v0.8.1 version, use `npm install -g solc@v0.8.1`
+> 注意：编译器版本需要匹配合约中指定的版本。 请使用 `npm install -g solc@v0.8.1` 下载 v0.8.1 版本
 
-Compilation
+编译
 
 ```sh
 solcjs ./VendingMachine.sol --bin --abi
@@ -158,13 +158,13 @@ Generate the `bytecode` file `__...VendingMachine.bin` and the `ABI` file `__...
 ]
 ```
 
-## Deploy
+## 部署
 
-The smart contract deployment is creating a contract on the Conflux Network by sending a transaction with the `data` as `bytecode` and `to` left empty.
+智能合约的部署是通过发送一笔交易以在 Conflux 网络上创建一个合约，其中 `data` 为字节码，并且 `to` 字段留空。
 
-> If the constructor contains parameters, `data` should be a combination of `bytecode` and the ABI encoding of the `constructor`.
+> 如果构造函数包含参数，那么 `data` 应该是 `字节码` 和 `构造函数` 的 ABI 编码的组合。
 
-We will use `js-conflux-sdk` to demonstrate on Core Space:
+我们将使用 `js-conflux-sdk` 在 Core Space 上演示：
 
 ```javascript
 const { Conflux } = require("js-conflux-sdk");
@@ -189,7 +189,7 @@ const { Conflux } = require("js-conflux-sdk");
 })()
 ```
 
-As shown in the example above, the contract is deployed after sending a transaction with data as bytecode. The `contractCreated` field of the `transaction receipt` is the contract address after deployment.
+如上文例子所示，合约是在发送一笔以字节码为数据的交易之后部署的。 `transaction receipt` 中的 `contractCreated` 字段是部署后的合约地址。
 
 ```bash
 deploy tx receipt: {
@@ -214,18 +214,18 @@ deploy tx receipt: {
 }
 ```
 
-> The example directly sending transaction for demonstration purpose. If the contract constructor contains parameters, a better way is to use smart contract development tools as [hardhat](https://hardhat.org/) and [hardhat-conflux](https://github.com/conflux-chain/hardhat-conflux) (for Core Space) and [hardhat](https://hardhat.org/) (for eSpace) to develop, compile and deploy process.
+> 该示例直接发送交易以用于演示目的。 如果合约的构造函数包含参数，一个更好的方式是使用智能合约开发工具，如 [hardhat](https://hardhat.org/) 及 [hardhat-conflux](https://github.com/conflux-chain/hardhat-conflux)（用于Core Space）和 [hardhat](https://hardhat.org/)（用于eSpace），来进行开发、编译和部署过程。
 
-## Calling smart contract functions
+## 调用智能合约函数
 
-After the contract is deployed you can interact with the functions. There are two ways:
+您可以在合约部署后与函数进行交互。 有两种方式：
 
-- Calling through the RPC `cfx_call` (for Conflux Core) or `eth_call` (for Conflux eSpace): this type of contract calling is only executed in the EVM but does not actually change the state. This is usually used to call read-only contract functions or to simulate the execution of a transaction to see if it can be executed successfully.
-- Sending a transaction: this type of contract calling will change the contract state when executed.
+- 通过 `cfx_call` （对于Conflux Core）或 `eth_call` （对于Conflux eSpace）进行调用：这种类型的合约调用只在 EVM 中执行，但实际上不会改变状态。 这通常用于调用只读合约函数或模拟执行交易以查看它是否能成功执行。
+- 发送交易：这种类型的合约调用在执行时会改变合约状态。
 
-The data used when calling the contract is generated by [ABI](https://docs.soliditylang.org/en/latest/abi-spec.html) encoding based on the function information described by the ABI. The first 4 bytes are the function selector (the first 4 bytes of the `Keccak (SHA-3)` hash of the function signature), and the fifth byte starts with the ABI-encoded parameter.
+调用合约时使用的数据是基于 ABI 描述的函数信息通过 [ABI](https://docs.soliditylang.org/en/latest/abi-spec.html) 编码生成的。 前4个字节是函数选择器（函数签名的 `Keccak (SHA-3)` 哈希的前4个字节），第五个字节开始是 ABI 编码的参数。
 
-We will use js-conflux-sdk to demonstrate.
+我们将使用 `js-conflux-sdk` 在 Core Space 上演示：
 
 ```javascript
 const { Conflux } = require("js-conflux-sdk");
@@ -250,7 +250,7 @@ const { Conflux } = require("js-conflux-sdk");
 })()
 ```
 
-From the log, we can see that the corresponding RPC information of `contract.cupcakeBalances(me.address)` is as follows.
+从日志中，我们可以看到 `contract.cupcakeBalances(me.address)` 的相应 RPC 信息如下。
 
 ```bash
 {
@@ -271,11 +271,11 @@ From the log, we can see that the corresponding RPC information of `contract.cup
 }
 ```
 
-rpc method is `cfx_call`, data is the result of `function selector + ABI-encoded result of parameter list`. The first 4 bytes `0xe18a7b92` is the function selector of function `balanceOf`. The calculation takes keccak operation `keccak256("balanceOf(address)")` on the signature `balanceOf(address)` of `balanceOf` and then takes the first 4 bytes. `00000000000000000000000019f4bcf113e0b896d9b34294fd3da86b4adf0302` is the ABI-encoded value of paramter `0x19f4bcf113e0b896d9b34294fd3da86b4adf0302`.
+rpc 方法为 `cfx_call`，数据是 `函数选择器加上参数列表的 ABI 编码结果`。 前4个字节 `0xe18a7b92` 是函数 `balanceOf` 的函数选择器。 该计算对balanceOf的签名`balanceOf(address)`执行keccak操作`keccak256("balanceOf(address)")`，然后取其前4个字节。 `00000000000000000000000019f4bcf113e0b896d9b34294fd3da86b4adf0302`是参数 `0x19f4bcf113e0b896d9b34294fd3da86b4adf0302` 的 ABI 编码值。
 
-The returned value is `0x0000000000000000000000000000000000000000000000000000000000000000` wich is the result of ABI-encoded value 0 with the `uint256` type.
+返回的值是 `0x0000000000000000000000000000000000000000000000000000000000000000`，这是类型为 uint256 的 ABI 编码值 0 的结果。
 
-The RPC method for purchase is `cfx_sendRawTransaction`, which is sending transaction. This will change the state of the contract. The encoding method for the transaction's data is also `function selector + ABI-encoded result of parameter list`. You can check this through `getTransactionByHash`.
+购买的RPC方法是`cfx_sendRawTransaction`，即发送交易。 这将改变合约的状态。 交易数据的编码方法也是 `函数选择器加上参数列表的 ABI 编码结果`。 您可以通过 `getTransactionByHash` 检查这一点。
 
 ```bash
 {
@@ -291,7 +291,7 @@ The RPC method for purchase is `cfx_sendRawTransaction`, which is sending transa
 }
 ```
 
-We can see a record from the `logs` field of `transaction receipt`. `logs` indicate the event that happened in the transaction.
+我们可以从`交易收据`的 `logs` 字段看到一条记录。 `logs` 显示了交易中发生的事件。
 
 ```bash
 purchase receipt {
@@ -310,11 +310,11 @@ purchase receipt {
 }
 ```
 
-When analysing the result:
+分析结果表明：
 
-It indicates that one `Purchase` event happened, customer is `cfxtest:aap9kthvctunvf030rbkk9k7zbzyz12dajp1u3sp4g`, quantity is 2.
+发生了一次`购买`事件，顾客是 `cfxtest:aap9kthvctunvf030rbkk9k7zbzyz12dajp1u3sp4g`，数量是 2。
 
-After `purchase` is complete, `cupcakeBalances[0x19f4bcf113e0b896d9b34294fd3da86b4adf0302]` changed from 0 to 2. State has changed.
+`购买`完成后，`cupcakeBalances[0x19f4bcf113e0b896d9b34294fd3da86b4adf0302]` 从 0 变为 2。 状态已改变。
 
 ```bash
 {
@@ -329,18 +329,18 @@ After `purchase` is complete, `cupcakeBalances[0x19f4bcf113e0b896d9b34294fd3da86
 }
 ```
 
-> Attention: When deploying or calling contracts on the Conflux Core, if new storage space is occupied in the contract, some CFX will be collateralized for the occupied space; this will be refunded after the storage is released. For more information, please visit [storage collateral mechanism of Conflux Core](https://juejin.cn/post/6855551378123653127).
+> 注意：在 Conflux Core 上部署或调用合约时，如果在合约中占用了新的存储空间，一些 CFX 将会作为占用空间的抵押；当存储被释放后，CFX 将被退还。 欲了解更多信息，请访问 [Conflux Core 的存储抵押机制](https://juejin.cn/post/6855551378123653127)。
 
 ## Dev spaces
 
-Remember that when developing your smart contract and deploying it on the Conflux network you must select one of the two development [Conflux spaces](../../conflux-basics/spaces.md):
+记住，在 Conflux 网络上开发并部署你的智能合约时，您必须选择两个 [Conflux 空间](../../commanflux-basics/spaces.md) 中的一个：
 
 - Conflux Core
 - Conflux eSpace.
 
-Conflux eSpace is 100% compatible with the EVM ecosystem and you can use tools like [Remix](https://remix.ethereum.org/), [Hardat](https://hardhat.org/), [MetaMask](https://metamask.io/) and services like [Unifra](https://unifra.io/).
+Conflux eSpace是 100% 与 EVM 生态兼容的，您可以使用像 [Remix](https://remix.eferum)、[Hardat](https://hardhat.org/)、[MetaMask](https://metamask.io/) 这样的工具，以及像 [Unifra](https://unifra.io/) 这样的服务。
 
-## Video Content
+## 视频内容
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -353,14 +353,14 @@ import TabItem from '@theme/TabItem';
 
 </Tabs>
 
-## Additional resources
+## 其他资源
 
-In addition to Solidity you can use also Vyper for developing smart contracts.
+除了 Solidity，您也可以使用 Vyper 来开发智能合约。
 
 - [Solidity](https://docs.soliditylang.org/en/latest/)
 - [Vyper](https://vyper.readthedocs.io/en/stable/)
 
-Other
+其他
 
 - [Conflux Basics](../category/conflux-basics/)
 - [Ethereum's introduction of smart contract](https://ethereum.org/en/developers/docs/smart-contracts/)
