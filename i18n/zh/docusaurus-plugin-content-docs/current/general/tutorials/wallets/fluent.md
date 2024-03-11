@@ -15,7 +15,7 @@ displayed_sidebar: generalSidebar
 
 **Fluent**
 
-Fluent是专为Conflux网络构建的web3钱包，使用户能够安全轻松地与dApps互动并管理他们的资产。 With Fluent, users can easily manage their CFX and ERC-20 tokens, as well as interact with dApps on Conflux Network. 它还为希望使用Conflux网络及其生态系统的用户提供了无缝且用户友好的体验。 Fluent团队正在积极努力为该钱包添加新功能和特征，使其成为开发人员和用户的理想选择。
+Fluent是专为Conflux网络构建的web3钱包，使用户能够安全轻松地与dApps互动并管理他们的资产。 用户可以使用 Fluent 钱包轻松地管理他们的 CFX 和 ERC-20 代币，以及与 Conflux 网络上的 dApps 进行互动。 它还为希望使用Conflux网络及其生态系统的用户提供了无缝且用户友好的体验。 Fluent团队正在积极努力为该钱包添加新功能和特征，使其成为开发人员和用户的理想选择。
 
 **打开优先连接**
 
