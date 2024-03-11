@@ -7,9 +7,9 @@ displayed_sidebar: eSpaceSidebar
 
 ## 概览
 
-Conflux的eSpace是一个独立的空间，与 Conflux 网络上的Core Space在逻辑上隔离开来。 eSpace中的账户有自己的余额和状态。 To interact with the eSpace, you need to use hex40 addresses, which are different from [base32 addresses](../../core/core-space-basics/addresses.md) used for the Core space. You can transfer funds between your Core and eSpace wallets using a [bridge service](../../general/tutorials/transferring-funds/transfer-funds-across-spaces.md).
+Conflux的eSpace是一个独立的空间，与 Conflux 网络上的Core Space在逻辑上隔离开来。 eSpace中的账户有自己的余额和状态。 要与 eSpace 互动，您需要使用 hex40 地址，这与用于 Core 空间的 [base32 addresses](../../core/core-space-basics/addresses.md) 地址不同。 您可以使用[跨链桥](../../general/tutorials/transferring-funds/transfer-funds-across-spaces.md)服务在 Core 和 eSpace 钱包之间转移资金
 
-Conflux eSpace 是 Conflux Network 在其 V2 硬分叉中引入的新特性。 它是一个独立的空间，运行在与Core Space相同的底层基础设施上，但具有不同的规则和规范。 In the eSpace, accounts follow the Ethereum account model and use hex40 addresses instead of [base32 addresses](../../core/core-space-basics/addresses.md). 这意味着在Core Space和 eSpace 中使用相同的私钥是可以的，但是Core Space和 eSpace 中的账户将具有不同的地址，并且将拥有自己的余额和状态。
+Conflux eSpace 是 Conflux Network 在其 V2 硬分叉中引入的新特性。 它是一个独立的空间，运行在与Core Space相同的底层基础设施上，但具有不同的规则和规范。 eSpace 中的账户遵循以太坊账户模型，使用 hex40 地址而非 [base32 地址](../../core/core-space-basics/addresses.md)。 这意味着在Core Space和 eSpace 中使用相同的私钥是可以的，但是Core Space和 eSpace 中的账户将具有不同的地址，并且将拥有自己的余额和状态。
 
 Hex40 地址与以太坊地址兼容，这意味着用户可以轻松地将他们的以太坊钱包导入 Conflux eSpace，反之亦然。 在[以太坊账户](https://ethereum.org/en/developers/docs/accounts/)中了解更多关于 eSpace 账户和地址的基本模型。
 
@@ -35,7 +35,7 @@ function withdrawFromMapped(uint256 value) external;
 2. 对前一步中获得的字节进行 Keccak，得到哈希值。
 3. 取哈希值的最后 160 位，并转换为 hex40 格式，这就是映射的 eSpace 地址。
 
-`js-conflux-sdk v2.0` provides a method to get the mapped address of the base32 address:
+`js-conflux-sdk v2.0` 提供了一种方法来获取 base32 地址的映射地址：
 
 ```js
 const { address } = require('js-conflux-sdk');
@@ -44,7 +44,7 @@ const mappedAddress = address.cfxMappedEVMSpaceAddress(base32Address);
 // 0x12Bf6283CcF8Ad6ffA63f7Da63EDc217228d839A
 ```
 
-:::note
+:::附录
 
 关于映射地址的注意事项：
 
@@ -56,4 +56,4 @@ const mappedAddress = address.cfxMappedEVMSpaceAddress(base32Address);
 
 ## 相关主题
 
-* Cross space dApp tutorial: [Transferring Funds Across Spaces](../../general/tutorials/transferring-funds/transfer-funds-across-spaces.md)
+* 跨空间的 dApp 教程： [跨空间转移资金](../../general/tutorials/transferring-funds/transfer-funds-across-spaces.md)
