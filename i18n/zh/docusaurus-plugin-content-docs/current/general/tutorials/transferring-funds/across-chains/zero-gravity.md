@@ -10,7 +10,7 @@ displayed_sidebar: generalSidebar
 开始之前，我们建议设置两个钱包：Fluent 用于 Core Space 和 MetaMask 用于您选择的其他链。
 在本教程中，我们将解释从Conflux Core Space转移CFX到BNB Smart Chain的步骤。
 
-## Prerequisites for this tutorial
+## 在使用教程前，您需要准备
 
 - 拥有至少200 CFX的Fluent钱包。
 - MetaMask钱包。
