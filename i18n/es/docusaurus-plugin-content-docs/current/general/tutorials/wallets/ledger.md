@@ -209,7 +209,7 @@ You can import accounts from your Ledger device into your MetaMask wallet by fol
 
 Assuming your account on the Ledger device has some CFX tokens, the steps below show how to make a CFX transfer on Conflux eSpace.
 
-*Note: If you do not have CFX, you can purchase at one of the exchanges listed [here](../transferring-funds/from-exchanges).*
+*Note: If you do not have CFX, you can purchase at one of the exchanges listed [here](/docs/category/from-exchanges).*
 
 1. Make sure you have already imported your Ledger account into your MetaMask wallet by following the steps in the previous section. Quit Ledger Live if it is currently opened.
 2. Connect your Ledger Nano S or Ledger Nano X device to your computer through USB.
