@@ -4,9 +4,9 @@ title: QuickStart for Ethereum Developers
 displayed_sidebar: coreSidebar
 ---
 
-Conflux Core Space is a blockchain protocol based on an innovative tree graph ledger structure. It is compatible with both VM and EVM (Ethereum Virtual Machine), and its core concepts (accounts, transactions, smart contracts, etc.) are similar to Ethereum. If you are an Ethereum developer, you can quickly get started with Conflux Core Space development. This article will guide Ethereum developers on how to quickly dive into Conflux Core Space development.
+Conflux Core Space 是一个基于创新树图账本结构的区块链协议。 It is compatible with both VM and EVM (Ethereum Virtual Machine), and its core concepts (accounts, transactions, smart contracts, etc.) 与以太坊相似。 如果你是一个以太坊的开发者，你可以很快上手Conflux Core Space开发。 这篇文章将指导以太坊开发者们如何迅速上手Conflux Core Space的开发。
 
-If you are not familiar with Ethereum development, it is strongly recommended to learn Ethereum development first, as it has rich documentation, comprehensive development tools, and community support. This article will not cover the basics of Ethereum development.
+如果您不熟悉以太坊的开发，强烈建议先学习以太坊开发，因为它有丰富的文档、全面的开发工具和社区支持。 这篇文章不会涵盖有关以太坊开发的基础知识。
 
 ## Differences between Conflux Core Space and Ethereum
 

@@ -5,6 +5,8 @@ description: Deploying smart contracts using Hardhat and Foundry
 displayed_sidebar: eSpaceSidebar
 ---
 
+import { DiscordLink } from "../../../templates/links.tsx"
+
 The eSpace Testnet allows anyone to deploy a smart contract on eSpace. In this tutorial, you will learn how to deploy a contract on eSpace Testnet using common tools for developing on Ethereum. This [demo repo](https://github.com/conflux-fans/espace-contract-guide) illustrates contract deployment with [Hardhat](https://hardhat.org/) and [Foundry](https://github.com/foundry-rs/foundry).
 
 Before you start deploying the contract, **you need to request test tokens** from a [eSpace faucet](https://efaucet.confluxnetwork.org/).
@@ -98,4 +100,4 @@ For more possible reasons, please refer to the [Sending Transaction Errors](/doc
 
 ## Feedback
 
-Thank you for participating in and developing on the eSpace Testnet! If you encounter any issues, join our [Discord](https://discord.gg/conflux-network) and ask us in it.
+Thank you for participating in and developing on the eSpace Testnet! If you encounter any issues, join our <DiscordLink>Discord</DiscordLink> and ask us in it.

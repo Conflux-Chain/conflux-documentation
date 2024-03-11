@@ -4,6 +4,7 @@ title: Ledger
 displayed_sidebar: generalSidebar
 ---
 
+import { DiscordLink } from "../../../templates/links.tsx"
 
 :::tip
 
@@ -31,7 +32,7 @@ You can now use your **Ledger Nano S** or **Ledger Nano X** hardware wallet to s
 **-**  在兼容的桌面浏览器上安装[Fluent Wallet](https://fluentwallet.com/)。
 
 
-如果你遇到任何问题，可以在 [Discord](https://discord.com/invite/aCZkf2C) 或 [Telegram](https://t.me/Conflux_English)上找到我们。我们很乐意帮助。
+If you encounter any issues, find us on <DiscordLink>Discord</DiscordLink> or [Telegram](https://t.me/Conflux_English), we are happy to help.
 
 ### 安装
 
@@ -126,7 +127,7 @@ Conflux 应用就安装成功了。
 
 你可以在 [confluxnetwork.org](https://confluxnetwork.org) 了解更多关于Conflux的信息。 您可以在 [Conflux Scan](https://confluxscan.io) 上检查交易和帐户细节。
 
-如果你遇到任何问题，可以在 [Discord](https://discord.com/invite/aCZkf2C) 或 [Telegram](https://t.me/Conflux_English)上找到我们。我们很乐意帮助。
+If you encounter any issues, find us on <DiscordLink>Discord</DiscordLink> or [Telegram](https://t.me/Conflux_English), we are happy to help.
 
 
 
@@ -146,7 +147,7 @@ Conflux 应用就安装成功了。
 - 安装 [Ledger Live](https://www.ledger.com/ledger-live) 并将其更新到最新版本。
 - 在兼容的桌面浏览器上安装[MetaMask](https://metamask.io)。
 
-如果你遇到任何问题，可以在 [Discord](https://discord.com/invite/aCZkf2C) 或 [Telegram](https://t.me/Conflux_English)上找到我们。我们很乐意帮助。
+If you encounter any issues, find us on <DiscordLink>Discord</DiscordLink> or [Telegram](https://t.me/Conflux_English), we are happy to help.
 
 ### 安装
 
