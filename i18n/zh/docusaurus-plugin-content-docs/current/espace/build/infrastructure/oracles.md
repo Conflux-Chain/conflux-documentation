@@ -2,25 +2,25 @@
 sidebar_position: 4
 title: 预言机
 displayed_sidebar: eSpaceSidebar
-description: Oracles provide a bridge for off-chain data sources to be accessible within the blockchain, essential for smart contracts.
+description: 预言机为链下数据源提供了一个桥梁，使其能够在区块链内被访问，对于智能合约来说是必不可少的。
 ---
 
-Oracles are data feeds that enable smart contracts on the blockchain to access off-chain data sources. This functionality is crucial, as Ethereum-based smart contracts are inherently unable to access information stored outside the blockchain network by default. For further information, you can explore [Ethereum's Oracle documentation](https://ethereum.org/en/developers/docs/oracles/).
+预言机是一种数据提供服务，使得区块链上的智能合约能够访问链下数据源。 这一功能至关重要，因为基于以太坊的智能合约，默认情况下无法访问存储在区块链网络之外的信息。 想要了解更多信息，您可以查阅[以太坊的预言机文档](https://ethereum.org/en/developers/docs/oracles/)。
 
-There are already oracle services available on Conflux eSpace.
+Conflux eSpace 上已经有可用的预言机服务。
 
 ## [Pyth](https://pyth.network/)
 
-Pyth is a renowned oracle service in the industry, offering **Smarter Data for Smarter Contracts**. It ensures the security of your smart contracts by providing reliable, low-latency market data sourced from institutional-grade providers. Developers can build applications utilizing high-fidelity oracle feeds, specifically designed for mission-critical systems.
+Pyth 是业内知名的预言机服务，提供**更智能的数据用于更智能的合约**。 通过提供来自机构级供应商的可靠、低延迟市场数据，确保您智能合约的安全性。 开发者可以利用高保真度的预言机数据源构建应用程序，这些数据源专为关键任务系统设计。
 
-Pyth is already integrated in Conflux eSpace, you can use it directly. Check it's [documentation](https://docs.pyth.network/documentation/pythnet-price-feeds/evm#mainnets) for how to use it in your smart contracts.
+Pyth 已经集成在 Conflux eSpace 中，您可以直接使用。 请查看其[文档](https://docs.pyth.network/documentation/pythnet-price-feeds/evm#mainnets)了解如何在智能合约中使用它。
 
 ## [Witnet](https://witnet.io/)
 
-Witnet is a permissionless, decentralized, and censorship-resistant oracle helping smart contracts to react to real world events with strong crypto-economic guarantees.
+Witnet 是一个无需许可、去中心化且抗审查的预言机，可以帮助智能合约以强大的加密经济保障对现实世界事件做出反应。
 
 ## 常见问题解答
 
-### Does chainlink support Conflux?
+### Chainlink 支持 Conflux 吗？
 
-Currently Chainlink **is not integrated** in Conflux eSpace, we are working on it.
+目前 Chainlink 还**没有集成**在 Conflux eSpace 中，我们正在努力。
