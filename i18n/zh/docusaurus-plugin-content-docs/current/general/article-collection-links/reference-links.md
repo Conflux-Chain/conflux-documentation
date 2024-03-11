@@ -24,7 +24,7 @@ displayed_sidebar: references
 
 ## 智能合约
 
-- [Core Space 内部合约](../../core/core-space-basics/internal-contracts/internal-contracts)
+- [Core Space Internal Contracts](../../core/core-space-basics/internal-contracts/internal-contracts.mdx)
 - [eSpace 已部署的合约](../../espace/build/deployed-contracts)
 
 ## Migration from Ethereum
