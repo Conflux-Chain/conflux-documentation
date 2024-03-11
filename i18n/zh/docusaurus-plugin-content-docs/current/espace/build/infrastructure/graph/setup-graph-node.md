@@ -18,19 +18,19 @@ Graph Node（以及整个索引器堆栈）可以在裸机或云环境中运行�
 
 Graph Node 的主要存储库，其中存储了 Subgraph 数据，以及关于 Subgraph 的元数据和与 Subgraph 无关的网络数据，例如块缓存和 eth_call 缓存。
 
-### Network clients
+### 网络客户端
 
 为了对一个网络进行索引，Graph Node需要通过EVM兼容的JSON-RPC API访问网络客户端。 该 RPC 可能连接到单个客户端，也可能是更复杂的设置，跨多个客户端进行负载均衡。
 
 一些子图只需要一个全节点就能支持索引特性，而部分子图可能需要支持额外RPC功能的节点。 具体而言，作为索引的一部分进行`eth_calls`的子图将需要支持[EIP-1898](https://eips.ethereum.org/EIPS/eip-1898)的存档节点，而具有`callHandlers`、`blockHandlers`和`call`过滤器的子图则需要支持`trace_filter`（[请参见此处的跟踪模块文档](https://openethereum.github.io/JSONRPC-trace-module)）。
 
-### IPFS Nodes
+### IPFS 节点
 
 Subgraph 部署元数据存储在 IPFS 网络中。 Graph Node主要在子图部署期间访问IPFS节点，以获取子图清单和所有链接文件。 网络索引程序不需要托管自己的IPFS节点。 网络的IPFS节点托管在[https://ipfs.network.thegraph.com](https://ipfs.network.thegraph.com/)。
 
-### Getting started from source
+### 从源代码开始
 
-### Install prerequisites
+### 安装前置
 
 - **Rust**
 - **PostgreSQL**
