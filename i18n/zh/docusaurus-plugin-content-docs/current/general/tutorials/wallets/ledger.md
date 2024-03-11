@@ -14,10 +14,10 @@ import { DiscordLink } from "../../../templates/links.tsx"
 
 ## 简介
 
-You can now use your **Ledger Nano S** or **Ledger Nano X** hardware wallet to securely store your assets on both Core and eSpace. In this guide, we will show you how to interact with Conflux using your Ledger device and how to transfer assets.
+您现在可以使用 **Ledger Nano S** 或 **Ledger Nano X** 硬件钱包在 Core Space 和 eSpace 上安全地存储您的资产。 在这个指南中，我们将向您展示如何使用 Ledger 设备与 Conflux 互动以及如何转移资产。
 
 
-## Using Ledger on Core Space
+## 在 Conflux eSpace 上使用 Ledger
 
 ### 开始前的准备工作：
 
@@ -32,7 +32,7 @@ You can now use your **Ledger Nano S** or **Ledger Nano X** hardware wallet to s
 **-**  在兼容的桌面浏览器上安装[Fluent Wallet](https://fluentwallet.com/)。
 
 
-If you encounter any issues, find us on <DiscordLink>Discord</DiscordLink> or [Telegram](https://t.me/Conflux_English), we are happy to help.
+如果您遇到任何问题，请在 <DiscordLink>Discord</DiscordLink> 或者 [Telegram](https://t.me/Conflux_English) 上联系我们，我们很乐意提供帮助。
 
 ### 安装
 
@@ -109,7 +109,7 @@ Conflux 应用就安装成功了。
 
 **4.** 在 Fluent钱包中, 中选择您的 Ledger 账户(例如，"LedgerNanoS-1")。
 
-**5.** Click "Send" and enter the recipient address.
+**5.** 点击 "Send" 并输入收款地址。
 
 **6.** 在“代币和数量”下，输入CFX的转账金额，然后点击“下一步”。
 
@@ -127,15 +127,15 @@ Conflux 应用就安装成功了。
 
 你可以在 [confluxnetwork.org](https://confluxnetwork.org) 了解更多关于Conflux的信息。 您可以在 [Conflux Scan](https://confluxscan.io) 上检查交易和帐户细节。
 
-If you encounter any issues, find us on <DiscordLink>Discord</DiscordLink> or [Telegram](https://t.me/Conflux_English), we are happy to help.
+如果您遇到任何问题，请在 <DiscordLink>Discord</DiscordLink> 或者 [Telegram](https://t.me/Conflux_English) 上联系我们，我们很乐意提供帮助。
 
 
 
 
-## Using Ledger on eSpace
+## 在 Conflux eSpace 上使用 Ledger
 
 :::note
-**The Conflux eSpace Ledger app is not yet available in Ledger Live.**
+**Conflux eSpace 的 Ledger 应用程序目前尚未在 Ledger Live 中提供。**
 :::
 
 ### 开始前的准备工作：
@@ -147,20 +147,20 @@ If you encounter any issues, find us on <DiscordLink>Discord</DiscordLink> or [T
 - 安装 [Ledger Live](https://www.ledger.com/ledger-live) 并将其更新到最新版本。
 - 在兼容的桌面浏览器上安装[MetaMask](https://metamask.io)。
 
-If you encounter any issues, find us on <DiscordLink>Discord</DiscordLink> or [Telegram](https://t.me/Conflux_English), we are happy to help.
+如果您遇到任何问题，请在 <DiscordLink>Discord</DiscordLink> 或者 [Telegram](https://t.me/Conflux_English) 上联系我们，我们很乐意提供帮助。
 
 ### 安装
 
-You can install the **Ethereum app** on your Ledger device by following these steps:
+您可以通过以下步骤在您的 Ledger 设备上安装 **以太坊应用程序**：
 
 1. 通过 USB 将您的Ledger Nano S 或 Ledger Nano X 设备连接到您的计算机。
 1. 输入您的 PIN 码解锁您的设备。
 1. 打开 Ledger Live。
 1. 在左边的菜单中，点击“管理”打开Ledger Live 应用程序管理器。
 1. 当您的Ledger设备显示“允许Ledger管理器”时，请按下两个按钮以继续。
-1. Back in Ledger Live, under the "App catalog" tab, enter "Ethereum" in the search field.
-1. Once Ledger Live shows the Ethereum app, press "Install".
-1. The Ethereum app is now installed successfully.
+1. 回到 Ledger Live, 在 “App catalog” 选项卡下，在搜索字段中输入 “Conflux”。
+1. 当 Ledger Live 上显示 Conflux 应用程序时，请点击“安装”。
+1. 现在，以太坊应用程序就已经安装成功了。
 
 
 ### 设置 MetaMask
@@ -183,8 +183,8 @@ You can install the **Ethereum app** on your Ledger device by following these st
 - **Network Name**: Conflux eSpace
 - **New RPC URL**: https://evm.confluxrpc.com
 - **Chain ID**: 1030
-- **Currency Symbol**: CFX
-- **Block Explorer URL**: https://evm.confluxscan.net
+- **货币符号**：CFX
+- **区块链浏览器 URL**：https://evm.confluxscan.net
 
 
 #### 连接您的Ledger设备到MetaMask
@@ -209,7 +209,7 @@ You can install the **Ethereum app** on your Ledger device by following these st
 
 假设您在Ledger设备上的账户有一些CFX代币，以下步骤展示了如何在Conflux eSpace上进行CFX转账。
 
-*Note: If you do not have CFX, you can purchase at one of the exchanges listed [here](../transferring-funds/from-exchanges).*
+*Note: If you do not have CFX, you can purchase at one of the exchanges listed [here](/docs/category/from-exchanges).*
 
 1. 确认您已经通过上一节中的步骤将您的 Ledger 账户导入到 MetaMask 钱包中。 如果当前打开了Ledger Live，请退出。
 2. 通过 USB 将您的Ledger Nano S 或 Ledger Nano X 设备连接到您的计算机。
