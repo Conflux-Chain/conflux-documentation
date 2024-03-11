@@ -362,5 +362,5 @@ import TabItem from '@theme/TabItem';
 
 其他
 
-- [Conflux Basics](../category/conflux-basics/)
+- [Conflux Basics](../../conflux-basics/conflux-basics.mdx)
 - [Ethereum's introduction of smart contract](https://ethereum.org/en/developers/docs/smart-contracts/)
