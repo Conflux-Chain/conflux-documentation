@@ -121,7 +121,7 @@ The returned error message of `eth_sendRawTransaction` is different from Ethereu
   }
 ```
 
-The possible errors are same with [cfx_sendTransaction errors](../../core/build/json-rpc/cfx_sendTransaction-errors.md).
+The possible errors are same with [cfx_sendTransaction errors](../../core/build/json-rpc/rpc-behaviour/cfx_sendTransaction-errors.md).
 
 ## Data verifiability
 

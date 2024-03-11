@@ -2165,9 +2165,9 @@ Response
 
 Get filter changes since last retrieve. Return value depends on which type of filter id is provided. Filter id can be returned from current RPCs:
 
-* [cfx_newFilter](cfx_newFilter): new logs generated from newly executed transactions matching the filter. Noting that `from*` fields will be ignored by this RPC.
-* [cfx_newBlockFilter](cfx_newBlockFilter): new executed blocks.
-* [cfx_newPendingTransactionFilter](cfx_newPendingBlockFilter): new pending transactions which are **ready to execute**.
+* [cfx_newFilter](#cfx_newfilter): new logs generated from newly executed transactions matching the filter. Noting that `from*` fields will be ignored by this RPC.
+* [cfx_newBlockFilter](#cfx_newblockfilter): new executed blocks.
+* [cfx_newPendingTransactionFilter](#cfx_newpendingtransactionfilter): new pending transactions which are **ready to execute**.
 
 :::note
 
