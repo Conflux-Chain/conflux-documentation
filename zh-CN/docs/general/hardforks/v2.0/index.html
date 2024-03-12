@@ -12,7 +12,7 @@
 
 
 <script src="/js/clarity.js"></script><link rel="stylesheet" href="/zh-CN/assets/css/styles.7f56a68a.css">
-<script src="/zh-CN/assets/js/runtime~main.7a507db6.js" defer="defer"></script>
+<script src="/zh-CN/assets/js/runtime~main.1ec9bff4.js" defer="defer"></script>
 <script src="/zh-CN/assets/js/main.45c4688b.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -24,7 +24,7 @@
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="pos">PoS<a href="#pos" class="hash-link" aria-label="PoS的直接链接" title="PoS的直接链接">​</a></h2>
 <p>Through <a href="https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-43.md" target="_blank" rel="noopener noreferrer">CIP-43</a> Hydra has introduced a PoS system to improve the finality of the whole Network. CFX holders can stake their CFX to PoS to protect high-value transactions and also earn CFX rewards of participating the PoS. For detail information, check <a href="/zh-CN/docs/general/conflux-basics/consensus-mechanisms/proof-of-stake/pos_overview">PoS Overview</a> page.</p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="conflux-espace">Conflux eSpace<a href="#conflux-espace" class="hash-link" aria-label="Conflux eSpace的直接链接" title="Conflux eSpace的直接链接">​</a></h2>
-<p>The CIP-90 has introduced a new fully EVM-compatible space. The new space is called eSpace, and the current space is called Core Space. The eSpace follows the same rule as EVM and supports eth rpc like eth_getBalance, so the tools (web3.js, ethers.js, hardhat and so on) from ethereum ecosystem can be used on Conflux directly. Check <a href="/zh-CN/conflux-doc/docs/EVM-Space/intro_of_evm_space">eSpace documentation</a> for more info.</p>
+<p>The CIP-90 has introduced a new fully EVM-compatible space. The new space is called eSpace, and the current space is called Core Space. The eSpace follows the same rule as EVM and supports eth rpc like eth_getBalance, so the tools (web3.js, ethers.js, hardhat and so on) from ethereum ecosystem can be used on Conflux directly. Check <a href="/zh-CN/docs/espace/Overview">eSpace documentation</a> for more info.</p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="new-added-internalcontracts">New Added InternalContracts<a href="#new-added-internalcontracts" class="hash-link" aria-label="New Added InternalContracts的直接链接" title="New Added InternalContracts的直接链接">​</a></h2>
 <p>Hydra hardfork has intoduced three new <a href="/zh-CN/docs/core/core-space-basics/internal-contracts/">InternalContracts</a>:</p>
 <ul>
@@ -35,7 +35,7 @@
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="rpc-changes">RPC changes<a href="#rpc-changes" class="hash-link" aria-label="RPC changes的直接链接" title="RPC changes的直接链接">​</a></h2>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="cfx-namespace-rpc-change">cfx namespace RPC change<a href="#cfx-namespace-rpc-change" class="hash-link" aria-label="cfx namespace RPC change的直接链接" title="cfx namespace RPC change的直接链接">​</a></h3>
 <ul>
-<li>New added methods: <a href="/zh-CN/conflux-doc/docs/json_rpc#cfx_getposrewardbyepoch"><code>cfx_getPoSRewardByEpoch</code></a>, <a href="/zh-CN/conflux-doc/docs/json_rpc#cfx_openedmethodgroups"><code>cfx_openedMethodGroups</code></a>, <a href="/zh-CN/conflux-doc/docs/json_rpc#cfx_getposeconomics"><code>cfx_getPoSEconomics</code></a>.</li>
+<li>New added methods: <a href="/zh-CN/docs/core/build/json-rpc/cfx-namespace#cfx_getposrewardbyepoch"><code>cfx_getPoSRewardByEpoch</code></a>, <code>cfx_openedMethodGroups</code>, <a href="/zh-CN/docs/core/build/json-rpc/cfx-namespace#cfx_getposeconomics"><code>cfx_getPoSEconomics</code></a>.</li>
 <li>New added EpochNumber tag: <code>latest_finalized</code> indicating latest finalized (by PoS) epoch.</li>
 <li><code>cfx_getStatus</code> reponse have two new field: <code>latestFinalized</code>, <code>ethereumSpaceChainId</code></li>
 <li>Block header new added field: <code>posReference</code> which is the latest pos blockHash when the PoW block is mined.</li>
@@ -45,15 +45,15 @@
 <p><strong>Note: CIP-90 will break some block field&#x27;s verifiability for example: hash</strong></p>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="trace-rpc-breaking-change">trace RPC breaking change<a href="#trace-rpc-breaking-change" class="hash-link" aria-label="trace RPC breaking change的直接链接" title="trace RPC breaking change的直接链接">​</a></h3>
 <ul>
-<li><code>trace</code> RPC methods have some <a href="/zh-CN/conflux-doc/docs/RPCs/trace_rpc#v20-trace-breaking-change">big changes</a></li>
+<li><code>trace</code> RPC methods have some <a href="/zh-CN/docs/core/build/json-rpc/trace_rpc#v20-trace-breaking-change">big changes</a></li>
 </ul>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="new-added-namespace">New added namespace<a href="#new-added-namespace" class="hash-link" aria-label="New added namespace的直接链接" title="New added namespace的直接链接">​</a></h3>
 <ul>
-<li><a href="/zh-CN/conflux-doc/docs/RPCs/txpool_rpc"><code>txpool</code></a></li>
-<li><a href="/zh-CN/conflux-doc/docs/RPCs/pos_rpc"><code>pos</code></a></li>
+<li><a href="/zh-CN/docs/core/build/json-rpc/txpool_rpc"><code>txpool</code></a></li>
+<li><a href="/zh-CN/docs/core/build/json-rpc/pos_rpc"><code>pos</code></a></li>
 </ul>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="espace-eth-rpc">eSpace eth RPC<a href="#espace-eth-rpc" class="hash-link" aria-label="eSpace eth RPC的直接链接" title="eSpace eth RPC的直接链接">​</a></h3>
-<p>The eSpace has introduced the <code>eth</code> namespace RPC, check the <a href="/zh-CN/conflux-doc/docs/EVM-Space/evm_space_rpc_compatibility">RPC compatibility doc</a> for details</p>
+<p>The eSpace has introduced the <code>eth</code> namespace RPC, check the <a href="/zh-CN/docs/espace/build/jsonrpc-compatibility">RPC compatibility doc</a> for details</p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="conflux-rust-config-file">Conflux-rust config file<a href="#conflux-rust-config-file" class="hash-link" aria-label="Conflux-rust config file的直接链接" title="Conflux-rust config file的直接链接">​</a></h2>
 <p>The mainnet config file has been renamed from <code>tethys.toml</code> to <code>hydra.toml</code>, the <code>bootnodes</code> has changed and several options are added:</p>
 <ul>
@@ -88,7 +88,7 @@
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="cip-71">CIP-71<a href="#cip-71" class="hash-link" aria-label="CIP-71的直接链接" title="CIP-71的直接链接">​</a></h3>
 <p><a href="https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-71.md" target="_blank" rel="noopener noreferrer">Detail link</a></p>
 <p>Fully disable the anti-reentrancy for their contract.</p>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="cip-76">CIP-76<a href="#cip-76" class="hash-link" aria-label="CIP-76的直接链接" title="CIP-76的直接链接">​</a></h3>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="cip-76">CIP-76<a href="#cip-76" class="hash-link" aria-label="CIP-76的直接链接" title="CIP-76的 直接链接">​</a></h3>
 <p><a href="https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-76.md" target="_blank" rel="noopener noreferrer">Detail link</a></p>
 <p>We should remove VM-related constraints in syncing blocks, like requiring the transactions to have enough gas limit.</p>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="cip-78">CIP-78<a href="#cip-78" class="hash-link" aria-label="CIP-78的直接链接" title="CIP-78的直接链接">​</a></h3>

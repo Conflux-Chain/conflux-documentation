@@ -12,7 +12,7 @@
 
 
 <script src="/js/clarity.js"></script><link rel="stylesheet" href="/es/assets/css/styles.c3c19f96.css">
-<script src="/es/assets/js/runtime~main.10008d71.js" defer="defer"></script>
+<script src="/es/assets/js/runtime~main.51b65e8b.js" defer="defer"></script>
 <script src="/es/assets/js/main.bf82e63d.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -24,7 +24,7 @@
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="pos">PoS<a href="#pos" class="hash-link" aria-label="Enlace directo al PoS" title="Enlace directo al PoS">​</a></h2>
 <p>Through <a href="https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-43.md" target="_blank" rel="noopener noreferrer">CIP-43</a> Hydra has introduced a PoS system to improve the finality of the whole Network. CFX holders can stake their CFX to PoS to protect high-value transactions and also earn CFX rewards of participating the PoS. For detail information, check <a href="/es/docs/general/conflux-basics/consensus-mechanisms/proof-of-stake/pos_overview">PoS Overview</a> page.</p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="conflux-espace">Conflux eSpace<a href="#conflux-espace" class="hash-link" aria-label="Enlace directo al Conflux eSpace" title="Enlace directo al Conflux eSpace">​</a></h2>
-<p>The CIP-90 has introduced a new fully EVM-compatible space. The new space is called eSpace, and the current space is called Core Space. The eSpace follows the same rule as EVM and supports eth rpc like eth_getBalance, so the tools (web3.js, ethers.js, hardhat and so on) from ethereum ecosystem can be used on Conflux directly. Check <a href="/es/conflux-doc/docs/EVM-Space/intro_of_evm_space">eSpace documentation</a> for more info.</p>
+<p>The CIP-90 has introduced a new fully EVM-compatible space. The new space is called eSpace, and the current space is called Core Space. The eSpace follows the same rule as EVM and supports eth rpc like eth_getBalance, so the tools (web3.js, ethers.js, hardhat and so on) from ethereum ecosystem can be used on Conflux directly. Check <a href="/es/docs/espace/Overview">eSpace documentation</a> for more info.</p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="new-added-internalcontracts">New Added InternalContracts<a href="#new-added-internalcontracts" class="hash-link" aria-label="Enlace directo al New Added InternalContracts" title="Enlace directo al New Added InternalContracts">​</a></h2>
 <p>Hydra hardfork has intoduced three new <a href="/es/docs/core/core-space-basics/internal-contracts/">InternalContracts</a>:</p>
 <ul>
@@ -35,7 +35,7 @@
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="rpc-changes">RPC changes<a href="#rpc-changes" class="hash-link" aria-label="Enlace directo al RPC changes" title="Enlace directo al RPC changes">​</a></h2>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="cfx-namespace-rpc-change">cfx namespace RPC change<a href="#cfx-namespace-rpc-change" class="hash-link" aria-label="Enlace directo al cfx namespace RPC change" title="Enlace directo al cfx namespace RPC change">​</a></h3>
 <ul>
-<li>New added methods: <a href="/es/conflux-doc/docs/json_rpc#cfx_getposrewardbyepoch"><code>cfx_getPoSRewardByEpoch</code></a>, <a href="/es/conflux-doc/docs/json_rpc#cfx_openedmethodgroups"><code>cfx_openedMethodGroups</code></a>, <a href="/es/conflux-doc/docs/json_rpc#cfx_getposeconomics"><code>cfx_getPoSEconomics</code></a>.</li>
+<li>New added methods: <a href="/es/docs/core/build/json-rpc/cfx-namespace#cfx_getposrewardbyepoch"><code>cfx_getPoSRewardByEpoch</code></a>, <code>cfx_openedMethodGroups</code>, <a href="/es/docs/core/build/json-rpc/cfx-namespace#cfx_getposeconomics"><code>cfx_getPoSEconomics</code></a>.</li>
 <li>New added EpochNumber tag: <code>latest_finalized</code> indicating latest finalized (by PoS) epoch.</li>
 <li><code>cfx_getStatus</code> reponse have two new field: <code>latestFinalized</code>, <code>ethereumSpaceChainId</code></li>
 <li>Block header new added field: <code>posReference</code> which is the latest pos blockHash when the PoW block is mined.</li>
@@ -45,15 +45,15 @@
 <p><strong>Note: CIP-90 will break some block field&#x27;s verifiability for example: hash</strong></p>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="trace-rpc-breaking-change">trace RPC breaking change<a href="#trace-rpc-breaking-change" class="hash-link" aria-label="Enlace directo al trace RPC breaking change" title="Enlace directo al trace RPC breaking change">​</a></h3>
 <ul>
-<li><code>trace</code> RPC methods have some <a href="/es/conflux-doc/docs/RPCs/trace_rpc#v20-trace-breaking-change">big changes</a></li>
+<li><code>trace</code> RPC methods have some <a href="/es/docs/core/build/json-rpc/trace_rpc#v20-trace-breaking-change">big changes</a></li>
 </ul>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="new-added-namespace">New added namespace<a href="#new-added-namespace" class="hash-link" aria-label="Enlace directo al New added namespace" title="Enlace directo al New added namespace">​</a></h3>
 <ul>
-<li><a href="/es/conflux-doc/docs/RPCs/txpool_rpc"><code>txpool</code></a></li>
-<li><a href="/es/conflux-doc/docs/RPCs/pos_rpc"><code>pos</code></a></li>
+<li><a href="/es/docs/core/build/json-rpc/txpool_rpc"><code>txpool</code></a></li>
+<li><a href="/es/docs/core/build/json-rpc/pos_rpc"><code>pos</code></a></li>
 </ul>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="espace-eth-rpc">eSpace eth RPC<a href="#espace-eth-rpc" class="hash-link" aria-label="Enlace directo al eSpace eth RPC" title="Enlace directo al eSpace eth RPC">​</a></h3>
-<p>The eSpace has introduced the <code>eth</code> namespace RPC, check the <a href="/es/conflux-doc/docs/EVM-Space/evm_space_rpc_compatibility">RPC compatibility doc</a> for details</p>
+<p>The eSpace has introduced the <code>eth</code> namespace RPC, check the <a href="/es/docs/espace/build/jsonrpc-compatibility">RPC compatibility doc</a> for details</p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="conflux-rust-config-file">Conflux-rust config file<a href="#conflux-rust-config-file" class="hash-link" aria-label="Enlace directo al Conflux-rust config file" title="Enlace directo al Conflux-rust config file">​</a></h2>
 <p>The mainnet config file has been renamed from <code>tethys.toml</code> to <code>hydra.toml</code>, the <code>bootnodes</code> has changed and several options are added:</p>
 <ul>
