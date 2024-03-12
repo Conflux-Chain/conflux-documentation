@@ -1,7 +1,7 @@
 ---
 sidebar_position: 5
-title: CrossSpaceCall Contract
-description: Detail explain of CrossSpaceCall contract
+title: CrossSpaceCall 合约
+description: 对CrossSpaceCall合约的详细解释
 displayed_sidebar: eSpaceSidebar
 ---
 

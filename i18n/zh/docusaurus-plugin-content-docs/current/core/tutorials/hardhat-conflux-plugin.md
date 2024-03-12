@@ -95,7 +95,7 @@ function getContractAt(name: string, address: string): Promise<ConfluxSDK.Contra
 function getContractAt(abi: any[], address: string): Promise<ConfluxSDK.Contract>;
 ```
 
-## Usage
+## 用法
 
 Developers can write Hardhat scripts to deploy, interact with, and test contracts on Core Space.
 

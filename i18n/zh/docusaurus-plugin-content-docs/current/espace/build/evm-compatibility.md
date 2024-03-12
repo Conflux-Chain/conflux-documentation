@@ -1,32 +1,32 @@
 ---
 sidebar_position: 2
-title: EVM Compatibility
-description: EVM Compatibility of Conflux eSpace
+title: EVM兼容性
+description: Conflux eSpace 的 EVM 兼容性
 keywords:
   - EVM
-  - Compatibility
+  - 兼容性
 displayed_sidebar: eSpaceSidebar
 ---
 
 eSpace 实现了一个以太坊虚拟机 (EVM)。 以下是 eSpace 和以太坊之间的一些区别：
 
-## Transaction Type
+## 交易类型
 
-Currently eSpace only support **155 type** transaction. 1559 type transaction is not support.
+目前 eSpace 仅支持 **155 类型** 交易。 暂不支持 1559 类型交易。
 
-## EVM Opcodes
+## EVM 操作码
 
-* The `BLOCKHASH` opcode can only take `NUMBER-1` as input. (Unlike Ethereum, which takes any integer in `NUMBER-256` to `NUMBER-1` as input). This is the **only break opcode**.
+* `BLOCKHASH` 操作码只能接受 `NUMBER-1` 作为输入。 （与以太坊不同的是，以太坊可以接受 `NUMBER-256` 到 `NUMBER-1` 之间的任何整数作为输入）。 这是**唯一的中断操作码**.。
 
-## Block Time
+## 区块时间
 
 `NUMBER` opcode将返回树图`epoch number`。 因此，在 eSpace 合约中使用的 `block.number` 不会以稳定和可预测的速率增长，因此它可能不适合用于测量时间。
 
-Block generate rate is 1.25s per block (mainnet), is same as Core Space Epoch time.
+区块的生成速率是每个区块 1.25 秒（主网），与 Core Space Epoch 时间相同。
 
-## Contract Size
+## 合约大小
 
-Contract max code size is `49152` double as Ethereum
+合约最大代码大小是 `49152` ，是以太坊的两倍。
 
 ## Transaction Fees
 

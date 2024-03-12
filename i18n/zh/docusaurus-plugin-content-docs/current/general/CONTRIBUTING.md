@@ -9,7 +9,7 @@ toc_max_heading_level: 4
 :::info
 感谢您对我们文档站点的关注！ 我们非常珍视您的支持，并且很高兴能够听取社区的见解和专业知识。 本页面概述了贡献的指南、流程，以及您所付出的努力可能获得的奖励。
 
-If you are seeking funding from the Conflux Foundation for your projects, please refer to our [**Grants**](./build/grants.md) page.
+如果您正在寻求 Conflux 基金会对您的项目进行资助，请参考我们的 [**Grants**](./build/grants.md) 页面。
 
 :::
 

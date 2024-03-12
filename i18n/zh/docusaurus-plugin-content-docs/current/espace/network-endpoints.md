@@ -69,4 +69,4 @@ There are couple of commercial RPC service providers, you can check them [here](
 
 ### 如何获取 Confura 高级 API 密钥？
 
-Confura 是由 Conflux 基金会提供的公共 RPC 服务，可以免费使用。 对于免费级别，您不需要 API 密钥。 要获取更高级别的 RPC 服务，您可以在 [Web3 Paywall ](../general/build/tools/web3paywall.md) 上进行购买，或者发送邮件到 [bd@confluxnetwork.org](bd@confluxnetwork.org) 向 Conflux 基金会申请。
+Confura 是由 Conflux 基金会提供的公共 RPC 服务，可以免费使用。 对于免费级别，您不需要 API 密钥。 To get a higher tier RPC service, you can buy it at [Web3 Paywall](../general/build/tools/web3paywall.md) or apply from Conflux foundation by sending email to [bd@confluxnetwork.org](mailto:bd@confluxnetwork.org).

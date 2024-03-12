@@ -19,7 +19,7 @@ eSpace also uses CFX as its native currency, which will be needed to pay transac
 
 To start building on eSpace, we suggest you begin with using eSpace testnet. You'll first need to acquire some testnet CFX through [faucet](https://efaucet.confluxnetwork.org/).
 
-Once you're ready to deploy on eSpace's mainnet, if you only have Core CFX, you can bridge over CFX from Core Space using [our space bridge](./).
+Once you're ready to deploy on eSpace's mainnet, if you only have Core CFX, you can bridge over CFX from Core Space using [our space bridge](../general/tutorials/transferring-funds/transfer-funds-across-spaces.md).
 
 ## Network Configuration
 
@@ -47,8 +47,7 @@ Use the table below to configure your Ethereum tools to the eSpace Testnet.
 
 ## Configure your tooling
 
-For setting up tooling to verify a smart contract deployment, see Verifying Smart
-Contracts.
+For setting up tooling to verify a smart contract deployment, see [Verifying Smart Contracts](./tutorials/VerifyContracts.md).
 
 ### Hardhat
 

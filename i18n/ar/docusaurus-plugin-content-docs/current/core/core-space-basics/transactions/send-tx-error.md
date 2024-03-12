@@ -112,4 +112,4 @@ If there is a network issue, please wait for the network to recover or switch to
 
 ## Reference
 
-- [cfx_sendRawTransaction error list](/docs/core/build/json-rpc/cfx_sendTransaction-errors)
+- [cfx_sendRawTransaction error list](../../build/json-rpc/rpc-behaviour/cfx_sendTransaction-errors.md)

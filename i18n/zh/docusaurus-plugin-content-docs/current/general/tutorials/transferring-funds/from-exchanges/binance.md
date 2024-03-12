@@ -1,41 +1,41 @@
 ---
 sidebar_position: 1
-title: Binance
+title: 币安（Binance）
 displayed_sidebar: generalSidebar
 ---
 
 
-# Transferring CFX from Binance to Conflux Network
+# 将 CFX 从 Binance 转移到 Conflux 网络
 
 
 ## 前提条件
 
-- A Binance account.
+- 一个币安交易所账户
 
-- At least 0.1 CFX traded on Binance. You can trade using the CFX/ETH and CFX/USDT markets. To learn how to conduct spot trading on Binance, see: How to conduct spot trading.
+- At least 0.1 CFX traded on Binance. 您可以使用CFX/ETH和CFX/USDT交易对进行交易。 要了解如何在币安进行现货交易，请参阅：如何进行现货交易。
 
-- A MetaMask wallet connected to Conflux eSpace. To learn how to connect your MetaMask wallet to Conflux eSpace, see: How to connect MetaMask to Conflux eSpace.
+- 一个连接到Conflux eSpace的MetaMask钱包。 要了解如何将您的MetaMask钱包连接到Conflux eSpace，请参阅：如何将MetaMask连接到Conflux eSpace。
 
 
 
-## Transferring CFX from Binance to Fluent using Conflux Core Space
+## 通过Conflux Core Space将CFX从币安转移到Fluent。
 
 
 :::tip
 
-This tutorial focuses on Fluent, but you can use any other supported wallet such as Ledger devices. See Supported Wallets for more information.
+本教程侧重于Fluent，但您也可以使用其他支持的钱包，如Ledger设备。 请查阅支持的钱包以获取更多信息。
 
 :::
 
 
 
 
-1. Log in to your [Binance](https://www.binance.com/) account.
+1. 登陆您的 [币安](https://www.binance.com/) 账户。
 
 
 
 
-2. From the main menu, select "Wallet" and then click on "Withdraw."
+2. 从主菜单中选择"钱包"，然后点击"提款"。
 
 ```mdx-code-block
 
@@ -48,7 +48,7 @@ import Image from '@theme/IdealImage';
 
 
 
-3. In the cryptocurrency search field, type "CFX" and select "CFX - Conflux."
+3. 在加密货币搜索栏中，输入 "CFX" 并选择 "CFX - Conflux"。
 
 
 ```mdx-code-block
@@ -59,7 +59,7 @@ import Image from '@theme/IdealImage';
 
 
 
-4. In the destination wallet address field, copy the address of your Conflux Core account from Fluent.
+4. 在目标钱包地址栏中，复制您在 Fluent 中的 Conflux Core Space 账户的地址。
 
 
 ```mdx-code-block
@@ -70,7 +70,7 @@ import Image from '@theme/IdealImage';
 
 
 
-5. Select the Network.
+5. 选择网络。
 
 
 ```mdx-code-block
@@ -81,7 +81,7 @@ import Image from '@theme/IdealImage';
 
 
 
-6. Enter the amount of CFX you want to transfer in the "Amount" field.
+6. 在“金额”栏中输入您想要转账的 CFX 数量。
 
 
 ```mdx-code-block
@@ -92,7 +92,7 @@ import Image from '@theme/IdealImage';
 
 
 
-7. Click "Withdraw" to initiate the transfer.
+7. 点击“提款”开始转账。
 
 
 
@@ -113,12 +113,12 @@ import Image from '@theme/IdealImage';
 
 
 
-10. Wait for the transaction to be processed. It may take a few minutes before the CFX appears in your Fluent account on Conflux Core.
+10. 等待交易被处理。 可能需要几分钟让 CFX 显示在您的 Conflux Core 上的 Fluent 账户中。
 
 
 
 
-11. 恭喜！ You have successfully transferred CFX from Binance to your Fluent account on Conflux Core.
+11. 恭喜！ 您已成功地将 CFX 从币安转移到您在 Conflux Core Space 上的 Fluent 账户中。
 
 
 ```mdx-code-block
@@ -134,17 +134,17 @@ import Image from '@theme/IdealImage';
 
 :::tip
 
-This tutorial focuses on MetaMask, but you can use any other supported wallet such as Fluent and Ledger devices. See Supported Wallets for more information.
+本教程侧重于MetaMask，但您也可以使用其他支持的钱包，如Fluent和Ledger设备。 请查阅支持的钱包以获取更多信息。
 
 :::
 
 
-1. Log in to your [Binance](https://www.binance.com/) account.
+1. 登陆您的 [币安](https://www.binance.com/) 账户。
 
 
 
 
-2. From the main menu, select "Wallet" and then click on "Withdraw."
+2. 从主菜单中选择"钱包"，然后点击"提款"。
 
 
 ```mdx-code-block
@@ -156,7 +156,7 @@ This tutorial focuses on MetaMask, but you can use any other supported wallet su
 
 
 
-3. In the cryptocurrency search field, type "CFX" and select "CFX - Conflux."
+3. 在加密货币搜索栏中，输入 "CFX" 并选择 "CFX - Conflux"。
 
 
 ```mdx-code-block
@@ -167,7 +167,7 @@ This tutorial focuses on MetaMask, but you can use any other supported wallet su
 
 
 
-4. In the destination wallet address field, copy the address of your Conflux eSpace account from MetaMask.
+4. 在目标钱包地址栏中，复制您在 MetaMask 中的 Conflux eSpace 账户的地址。
 
 
 ```mdx-code-block
@@ -178,7 +178,7 @@ This tutorial focuses on MetaMask, but you can use any other supported wallet su
 
 
 
-5. Select the Network.
+5. 选择网络。
 
 
 ```mdx-code-block
@@ -189,7 +189,7 @@ This tutorial focuses on MetaMask, but you can use any other supported wallet su
 
 
 
-6. Enter the amount of CFX you want to transfer in the "Amount" field.
+6. 在“金额”栏中输入您想要转账的 CFX 数量。
 
 
 ```mdx-code-block
@@ -200,12 +200,12 @@ This tutorial focuses on MetaMask, but you can use any other supported wallet su
 
 
 
-7. Click "Withdraw" to initiate the transfer.
+7. 点击“提款”开始转账。
 
 
 
 
-8. Confirm the transaction details, including the fee and the destination address, and click "Continue" to complete the operation.
+8. 确认交易细节，包括费用和目的地址，然后点击“继续”以完成操作。
 
 ```mdx-code-block
 
@@ -225,12 +225,12 @@ This tutorial focuses on MetaMask, but you can use any other supported wallet su
 
 
 
-10. Wait for the transaction to be processed. It may take a few minutes before the CFX appears in your MetaMask account on Conflux eSpace.
+10. 等待交易被处理。 可能需要几分钟让 CFX 显示在您的 Conflux Core 上的 Fluent 账户中。
 
 
 
 
-11. 恭喜！ You have successfully transferred CFX from Binance to your MetaMask account on Conflux eSpace.
+11. 恭喜！ 您已成功将 CFX 从币安转移到您在 Conflux eSpace 上的 MetaMask 账户中。
 
 
 ```mdx-code-block

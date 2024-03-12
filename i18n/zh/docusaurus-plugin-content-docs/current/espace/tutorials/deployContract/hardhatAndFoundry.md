@@ -96,7 +96,7 @@ import TabItem from '@theme/TabItem';
 ### Invalid parameters: tx
 
 You may encounter error messages like `Invalid parameters: tx` when deploying a contract. Please make sure that your deploy account has enough test tokens to deploy the contract. You can request test tokens from the [eSpace faucet](https://efaucet.confluxnetwork.org/).
-For more possible reasons, please refer to the [Sending Transaction Errors](/docs/core/core-space-basics/transactions/send-tx-error) and [sendRawTransaction RPC method error messages](/docs/core/build/json-rpc/cfx_sendTransaction-errors)
+For more possible reasons, please refer to the [Sending Transaction Errors](/docs/core/core-space-basics/transactions/send-tx-error) and [sendRawTransaction RPC method error messages](/docs/core/build/json-rpc/rpc-behaviour/cfx_sendTransaction-errors.md)
 
 ## Feedback
 
