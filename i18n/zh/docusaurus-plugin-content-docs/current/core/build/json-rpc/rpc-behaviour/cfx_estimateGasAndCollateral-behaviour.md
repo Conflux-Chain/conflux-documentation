@@ -1,7 +1,7 @@
 ---
 title: cfx_estimateGasAndCollateral Behaviour
 sidebar_position: 8
-description: Behaviour of cfx_estimateGasAndCollateral
+description: cfx_estimateGasAndCollatory 的行为
 displayed_sidebar: coreSidebar
 keywords:
   - cfx_estimateGasAndCollateral
@@ -16,45 +16,45 @@ tags:
 
 :::note
 
-The behaviors described below are implemented by [conflux-rust](https://github.com/Conflux-Chain/conflux-rust), the official Rust implementation of the Conflux protocol.
+以下描述的行为是由 [conflux-rust](https://github.com/Conflux-Chain/conflux-rust) 实现的，这是Conflux协议的官方Rust实现。
 
 :::
 
-## Behavior in the Absence or Defaulting of Parameters
+## 参数缺失或默认情况下的行为
 
-The response of the interface is contingent on whether specific fields in the input are present or absent:
+接口的响应取决于输入中特定字段是否存在：
 
-1. **If `from` is Absent**: The interface will not perform any checks related to the `balance`. (However, execution might fail because `from` is absent).
-2. **If `gas_price` is Absent**: It skips the checks for gas-related transaction fees and the [Sponsor Gas Upper Bound](../../../core-space-basics/internal-contracts/sponsor-whitelist-control.md).
-3. **If `nonce` is Absent**: The interface automatically fills in the current correct nonce. Conversely, if `nonce` is provided, the transaction will proceed with the specified nonce and avoid failing due to nonce-related errors.
-4. **If `value` is Absent**: The default is set to a value of 0.
-5. **If `data` is Absent**: It defaults to empty.
-6. **If `to` is Absent**: The interface defaults to contract creation.
+1. **如果 `from` 字段缺失**：接口将不会执行与`余额`相关的检查。 （然而，因为`from`字段缺失，执行可能会失败）。
+2. **如果 `gas_price` 缺失**：则跳过与gas相关的交易费用检查和[代付gas上限](../../../core-space-basics/internal-contracts/sponsor-whitelist-control.md)检查。
+3. **如果 `nonce` 缺失**：接口自动填充当前正确的nonce。 相反，如果提供了 `nonce` ，交易将使用指定的nonce进行，避免由于与nonce相关的错误而失败。
+4. **如果 `value` 缺失**：默认设置为0。
+5. **如果 `data` 缺失**：默认为空。
+6. **如果 `to` 缺失**：接口默认为合约创建。
 
 :::note
 
-Typically, the `cfx_estimateGasAndCollateral` is invoked automatically by the Conflux SDK (e.g., `js-conflux-sdk`, `java-conflux-sdk`, etc.) when sending a transaction. If you are not directly invoking `cfx_estimateGasAndCollateral`, the presence or absence of the above parameters will depend on the behavior of the SDK you are using.
+通常，Conflux SDK（例如，js-conflux-sdk、java-conflux-sdk等）会自动调用 `cfx_estimateGasAndCollateral` ， 若要发起交易。 如果你没有直接调用 `cfx_estimateGasAndCollateral` ，上述参数的存在与否将取决于你使用的SDK的行为。
 
 :::
 
-### Handling Redundant Parameters
+### 处理多余的参数
 
-While the primary function of the `cfx_estimate` is to estimate gas and storage collateral, it also accepts user inputs for these parameters. This section delineates the logic applied in such scenarios:
+虽然 `cfx_estimate` 的主要功能是用于估算gas和存储抵押，但它也接受由用户输入这些参数。 本节概述了在这些情况下应用的逻辑：
 
-#### Gas is Specified
+#### 指定gas
 
-1. The transaction executes using the specified `gas`. This the only scenario for an `OutOfGas` error other than the gas consumption exceeds the 15 million limit.
-2. If both `from` and `gas_price` are specified, transaction fees are deducted during the estimation. Otherwise, fees are rechecked post-execution.
+1. 交易使用指定的 `gas` 执行。 这是除了 `gas` 消耗超过1500万限制之外，唯一可能出现 `OutOfGas` 错误的情况。
+2. 如果同时指定了 `from` 和 `gas_price` ，在估算过程中将扣除交易费用。 否则，费用将在执行后重新检查。
 
-#### Storage Limit is Specified
+#### 指定存储限制
 
-1. The specified `storage_limit` is disregarded during transaction execution estimation. After the estimation, it"s assessed whether the provided storage limit suffices.
+1. 在交易执行估算期间，指定的 `storage_limit` 会被忽略。 估算后，将评估所指定的存储限制是否足够。
 
-### Other Considerations
+### 其他考量
 
-**Sponsored Storage**: In cases where storage is sponsored, the `storage_limit` check is not performed, adhering to Conflux"s intrinsic logic.
+**存储代付**：在存储被代付的情况下，不执行 `storage_limit` 检查，遵循Conflux的内在逻辑。
 
-## Errors
+## 错误
 
 ### Estimation isn't accurate: transaction is reverted
 
@@ -66,9 +66,9 @@ While the primary function of the `cfx_estimate` is to estimate gas and storage 
 }
 ```
 
-Encountering this error means that the interface failed to return the estimation result because, because transaction was reverted ( contract method code failed to execute). There are various possible causes for this error, such as: insufficient balance of related ERC-20 tokens or NFTs; parameter errors for the contract method; lack of permission or authorization, and so on.
+遇到此错误意味着接口未能返回估算结果，因为交易被回滚（合约方法代码未能执行）。 这个错误可能有多种原因，例如：相关ERC-20代币或NFT的余额不足；合约方法的参数错误；缺乏权限或授权等。
 
-If an error message is thrown during contract execution, the specific reason for the contract execution failure can be seen in the RPC error message. For example, the following error occurred when transferring NFT (1155), indicating insufficient balance: `Estimation isn't accurate: transaction is reverted: ERC1155: insufficient balance for transfer. Innermost error is at xxxx: Vm reverted. ERC1155: insufficient balance for transfer`.
+如果在合约执行期间抛出错误消息，可以在RPC错误消息中看到合约执行失败的具体原因。 例如，当转移NFT（1155）时出现以下错误，表示余额不足：`Estimation isn't accurate: transaction is reverted: ERC1155: insufficient balance for transfer. Innermost error is at xxxx: Vm reverted. ERC1155: insufficient balance for transfer`.
 
 **Solution**: You should review the logic of the contract based on the error message. In specific scenarios (like when a **solidity custom error** is thrown), the error might not be shown in the error string. In such cases, using `cfx_call` with identical parameters will return the into the corresponding hex error string. You are advised to refer to [Custom Errors in Solidity](https://soliditylang.org/blog/2021/04/21/custom-errors/) or language-specific SDKs to understand how to resolve the hex error string.
 
