@@ -58,15 +58,6 @@ gasFee is the total gas fee paid for a transaction. It is calculated as ```gasFe
 
 Suppose there is a regular transfer of 1 CFX, the gas limit can be set to 21,000. If the gasPrice is set to 1GDrip, then the total cost of the transaction is ```1 + 21000 * 0.000000001 = 1.000021 CFX```, where 1 CFX is transferred to the recipient's account, and 0.000021 CFX is the reward for the miner.
 
-## How do I pay less gas?
-There are strategies you can use to reduce the cost:
-
-1.Gas prices go up and down every once in a while based on how congested Conflux is. When gas prices are high, waiting just a few minutes before making a transaction could see a significant drop in what you pay.
-
-2.If you are interacting with a contract on coreSpace, you can pay less gas if the contract has applied for gas payment. Conflux implements the Sponsorship Mechanism, a system that allows project owners or contract operators to cover transaction fees for users, thereby reducing the entry barrier of their projects. 
-
-3.The contract sponsorship application link is: https://confluxscan.io/sponsor. If you wish to discuss sponsorship-related issues with the Conflux Foundation, please send an email to: bd@confluxnetwork.org.
-
 
 ### gasUsed
 
@@ -83,6 +74,44 @@ In a Conflux transaction, if the ```gas limit``` is more than the actual amount 
 Suppose the gas limit for a regular CFX transfer is set to 100k and the actual execution consumed 21,000, since the gas limit for the transaction is set too high, at most 25,000 of the gas fee will be returned(25% of the gas limit). The gas used for the transaction will be ```0.000075 CFX```.
 
 If the gas limit setting of the transaction is not that high, take the same example as above but set the gas limit to 25000, which is 4000 more than the actual amount used, the exceeding part is not more than a quarter of the gas limit. This part will be returned fully, and the final amount of fees charged will still be ```0.000021 CFX```.
+
+
+## How to pay less gasFee？
+
+There are strategies you can use to reduce the cost:
+
+1.Gas prices go up and down every once in a while based on how congested Conflux is. When gas prices are high, waiting just a few minutes before making a transaction could see a significant drop in what you pay.
+
+2.If you are a smart contract developer, here are some tips to write your smart contracts and make gas bills lower:
+
+### Optimize Data Storage
+Use Tight Variable Packing: Group smaller data types together in a single storage slot to take advantage of Solidity's storage packing. For example, use uint8, uint16, or bool together in a struct to fit them into a single 32-byte storage slot.
+
+Minimize State Variables: Only store essential data on-chain. Consider off-chain storage solutions (like IPFS) for larger data, and store hashes on-chain if integrity is needed.
+
+Use bytes32 over string: If possible, use bytes32 for fixed-size strings, as it is more gas-efficient than the dynamically-sized string type.
+### Optimize Function Execution
+Use view and pure Functions: Mark functions that do not modify state with view (if they read the state) or pure (if they don't read the state) to reduce gas cost when called externally.
+
+Limit Visibility: Use the most restrictive visibility (private or internal) for functions and variables, as operations are cheaper when they are internal to a contract.
+
+Reuse Computed Values: Store computed values in local variables if they are used multiple times within a function to avoid redundant computation costs.
+### Efficient Loops and Conditions
+Avoid Loops When Possible: Loops can significantly increase gas costs, especially if their iteration count can grow. Consider alternatives like mapping for direct access.
+
+Short-Circuit Evaluation: In if statements and logical expressions, order conditions by likelihood or cost. Solidity evaluates conditions from left to right and stops as soon as the result is determined.
+### Use Libraries and Delegate Calls
+Libraries for Reusable Code: Deploy reusable code as libraries. Libraries can be deployed once and then used by many contracts, reducing the deployment and execution gas costs.
+Delegate Calls: Use delegate calls for modular architecture. This can reduce the amount of bytecode in a contract, lowering deployment and execution costs.
+### Efficient Event Logging
+Use Events for Data Not Requiring Immediate Retrieval: Instead of storing information that doesn't need to be immediately retrieved in storage variables, emit events. Logs cost significantly less gas than storage.
+### Testing and Optimization Tools
+Use Gas Reporting Tools: Tools like Hardhat and Truffle can report gas usage for contract functions. Identify high-gas functions for optimization.
+Use Remix IDE: It provides detailed gas consumption for transactions and can help identify expensive operations.
+### Upgradeable Contracts
+Consider Proxy Patterns: Using proxies allows for the logic contract to be upgraded without redeploying the entire contract, saving gas on deploying large contracts.
+
+**A series of tutorials will be added later on how to optimize gas.**
 
 ## Further Readings
 
