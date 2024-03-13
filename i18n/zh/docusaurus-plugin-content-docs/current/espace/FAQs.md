@@ -15,13 +15,13 @@ eSpace 与以太坊兼容，您可以使用与以太坊相同的 SDK。 因此�
 
 `js-conflux-sdk` 仅可用于开发 Conflux Core 上的 DApp，不兼容以太坊和 eSpace。
 
-## How to bridge CFX between eSpace and Core Space?
+## 如何在 eSpace 和 Core Space 之间桥接 CFX？
 
-You can use [Confluxhub Space Bridge](https://confluxhub.io/espace-bridge/cross-space) to bridge CFX between eSpace and Core Space.
+您可以使用 [Confluxhub Space Bridge](https://confluxhub.io/espace-bridge/cross-space) 在 eSpace 和 Core Space 之间桥接 CFX。
 
-## Can I use base32 address in eSpace?
+## 可以在 eSpace 中使用 base32 地址吗？
 
-[Base32 address](../core/core-space-basics/addresses.md) is only used in core space, and eSpace is not supported. You can use the hex address in eSpace.
+[Base32 地址](../core/core-space-basics/addresses.md)仅可在 Core Space 中使用，不支持 eSpace。 您可以在 eSpace 中使用十六进制地址。
 
 ## eSpace 的 TPS 是多少？
 
@@ -29,12 +29,12 @@ You can use [Confluxhub Space Bridge](https://confluxhub.io/espace-bridge/cross-
 
 ## 将以太坊 DApp 迁移到 eSpace 中容易吗？
 
-Yes, it is very easy, normally you only need to change the RPC endpoint url to the eSpace RPC endpoint url, and the DApp can run on eSpace.
+是的，非常容易，通常您只需要将 RPC 端点 URL 更改为 eSpace 的 RPC 端点 URL，就可以在 eSpace 上运行 DApp 。
 
-## What's the eSpace hardfork block number?
+## eSpace 硬分叉的区块号是多少？
 
-- Mainnet: EpochNumber 36935000, BlockNumber 92060600
-- Testnet: EpochNumber 61465000, BlockNumber 77340000
+- 主网：EpochNumber 36935000，BlockNumber 92060600。
+- 测试网： EpochNumber 61465000, BlockNumber 7734000
 
 ## 在 eSpace 中执行一笔交易需要多长时间？
 

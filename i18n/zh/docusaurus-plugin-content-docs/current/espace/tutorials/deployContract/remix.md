@@ -1,7 +1,7 @@
 ---
 sidebar_position: 2
 title: Remix IDE
-description: Deploying an ERC-20 Token using Remix IDE
+description: 使用 Remix 部署 ERC-20 代币
 displayed_sidebar: eSpaceSidebar
 ---
 
@@ -108,13 +108,13 @@ contract MyToken is ERC20 {
 
 ## 视频教程
 
-For an on-hands demonstration of how to deploy a smart contract using Remix IDE, please refer to the following video:
+您可以请参阅以下视频，观看如何使用 Remix IDE 部署智能合约的实操演示：
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 <Tabs>
   <TabItem value="youtube" label="Remix IDE Video Tutorial">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/WLbUXQ1FS8M?si=kJD-6-QN3ZqFf0_v" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/WLbUXQ1FS8M?si=kJD-6-QN3ZqFf0_v" title="YouTube 视频播放器" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
   </TabItem>
 </Tabs>

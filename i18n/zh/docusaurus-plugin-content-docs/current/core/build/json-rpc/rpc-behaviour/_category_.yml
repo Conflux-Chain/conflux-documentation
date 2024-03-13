@@ -1,4 +1,4 @@
 link:
   type: generated-index
-  description: Behaviours of specific JSON-RPC interface
-label: RPC Behaviour
+  description: JSON-RPC 特定接口的行为
+label: RPC 行为

@@ -24,10 +24,10 @@ displayed_sidebar: references
 
 ## 智能合约
 
-- [Core Space Internal Contracts](../../core/core-space-basics/internal-contracts/internal-contracts.mdx)
+- [Core Space 内置合约](../../core/core-space-basics/internal-contracts/internal-contracts.mdx)
 - [eSpace 已部署的合约](../../espace/build/deployed-contracts)
 
-## Migration from Ethereum
+## 从以太坊迁移
 
 - [eSpace JSON RPC 兼容性](../../espace/build/jsonrpc-compatibility)
 - [eSpace EVM 兼容性](../../espace/build/evm-compatibility)
@@ -36,5 +36,5 @@ displayed_sidebar: references
 
 - [节点配置文件](../run-a-node/advanced-topics/configuration-files.md)
 - [硬分叉](../hardforks/hardforks.md)
-- [CIPs](../conflux-basics/conflux-governance/cips.md)
-- [Papers](../conflux-basics/additional-resources/papers.md)
+- [CIP](../conflux-basics/conflux-governance/cips.md)
+- [论文](../conflux-basics/additional-resources/papers.md)
