@@ -1,26 +1,26 @@
 ---
 sidebar_position: 2
-title: Contract Verification
-description: How to verify your smart contracts on ConfluxScan
+title: 合约验证
+description: 如何在 ConfluxScan 上验证您的智能合约
 displayed_sidebar: eSpaceSidebar
 ---
 
-After deploying your smart contracts, it's important to verify your code on a block explorer. This can be done in an automated way using your developer tooling or the Web UI.
+部署智能合约之后，在区块链浏览器上验证代码是非常重要的。 这可以通过使用开发者工具或 Web UI 以自动化的方式完成。
 
-## Using Developer Tools
+## 使用开发者工具
 
-Most smart contract tooling has plugins for verifying your contracts easily on ConfluxScan.
+大多数智能合约工具都有插件，可以轻松地在 ConfluxScan 上验证合约。
 
-| 网络名称 | Scan API                                    |
+| 网络名称 | 区块链浏览器 API                                  |
 | ---- | ------------------------------------------- |
 | 主网   | https\://evmapi.confluxscan.io/api/         |
 | 测试网  | https\://evmapi-testnet.confluxscan.io/api/ |
 
 ### Hardhat
 
-Modify `hardhat.config.ts` to point to Conflux eSpace's RPC and block explorer API. A dummy `apiKey` value is required, but anything works for its value.
+修改 `hardhat.config.ts` 以指向 Conflux eSpace 的 RPC 和区块浏览器 API。 需要一个虚拟的 `apiKey` 值，但它的值可以是任何内容。
 
-For example, if you are using eSpace testnet, your config will look like this:
+例如，如果您使用的是 eSpace 测试网，您的配置将如下所示：
 
 ```javascript
 ...
@@ -58,13 +58,13 @@ const config: HardhatUserConfig = {
 ...
 ```
 
-Now you can verify the smart contract by running the following command.
+现在您可以通过运行以下命令来验证智能合约。
 
 ```solidity
 npx hardhat verify --network espaceTestnet <contract address> <space separated constructor parameters>
 ```
 
-For example, this is how a smart contract that receives two uint parameters in the constructor should look:
+例如，这是一个在构造函数中接收两个 uint 参数的智能合约的验证方式：
 
 ```solidity
 npx hardhat verify --network espaceTestnet 0xD9880690bd717189cC3Fbe7B9020F27fae7Ac76F 123 456
@@ -72,13 +72,13 @@ npx hardhat verify --network espaceTestnet 0xD9880690bd717189cC3Fbe7B9020F27fae7
 
 ### Foundry
 
-When using Foundry, the `verify-contract` command helps automate the process of verifying contracts. If your contract has constructor arguments, you can specify these in ABI-encoded form with the `--constructor-args` option. For example, if your constructor takes two `uint256` variables:
+在使用 Foundry 时，`verify-contract` 命令有助于自动化验证合约。 如果您的合约中包含构造函数参数，您可以使用 `--constructor-args` 选项以 ABI 编码形式指定它们。 例如，如果您的构造函数接受两个 `uint256` 变量：
 
 ```bash
  --constructor-args $(cast abi-encode "constructor(uint256,uint256)" 0 7)
 ```
 
-Refer to the [Foundry documentation](https://book.getfoundry.sh/reference/forge/forge-verify-contract) for further options you can specify.
+请参阅[Foundry documentation](https://book.getfoundry.sh/reference/forge/forge-verify-contract) 以获取更多的选项。
 
 ```bash
 forge verify-contract <contract address> <contract name> \
@@ -89,20 +89,20 @@ forge verify-contract <contract address> <contract name> \
 
 :::warning
 
-Do not specify the chain ID.
+不要指定链 ID。
 
 :::
 
-## Verify on Web UI Manually
+## 在 Web UI 上进行手动验证
 
-Any contract deployed on eSpace can be verified on the [ConfluxScan](https://evm.confluxscan.net/) block explorer's contract detail page. If contract is not verified, the contract detail page will show a entry to verify page.
+在 eSpace 上部署的任何合约都可以在 [ConfluxScan](https://evm.confluxscan.net/) 区块浏览器的合约详情页面上进行验证。 如果合约未被验证，合约详情页面将显示一个可以进入验证页面的入口。
 
 ![](./img/contract-verify-submit.png)
 
-Developer can use flatten tools (hardhat, foundry) to merge his contract and it's dependencies into one file. Then copy the flatten code into the editor. And fill in the contract name, compiler version, license. Finally, click the submit button to verify the contract.
+开发者可以使用 flatten 工具（hardhat、foundry）将合约及其依赖合并为一个文件。 然后将合并后的代码复制到编辑器中。 填写合约名称、编译器版本以及许可证。 最后，点击提交按钮验证合约。
 
-If the verification failed, maybe the **compiler version** or **optimization settings** or **evm version** are not correct. Please check the compiler version and optimization settings in the contract deployment configuration.
+如果合约验证失败，可能是**编译器版本**、**优化设置**或 **EVM 版本**设置的不正确。 请检查合约部署配置中的编译器版本和优化设置。
 
 ### 其他资源
 
-- [EVM Versions to Target](https://docs.soliditylang.org/en/v0.8.23/using-the-compiler.html#setting-the-evm-version-to-target)
+- [目标 EVM 版本](https://docs.soliditylang.org/en/v0.8.23/using-the-compiler.html#setting-the-evm-version-to-target)
