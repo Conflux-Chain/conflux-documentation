@@ -58,6 +58,16 @@ gasFee is the total gas fee paid for a transaction. It is calculated as ```gasFe
 
 Suppose there is a regular transfer of 1 CFX, the gas limit can be set to 21,000. If the gasPrice is set to 1GDrip, then the total cost of the transaction is ```1 + 21000 * 0.000000001 = 1.000021 CFX```, where 1 CFX is transferred to the recipient's account, and 0.000021 CFX is the reward for the miner.
 
+## How do I pay less gas?
+There are strategies you can use to reduce the cost:
+
+1.Gas prices go up and down every once in a while based on how congested Conflux is. When gas prices are high, waiting just a few minutes before making a transaction could see a significant drop in what you pay.
+
+2.If you are interacting with a contract on coreSpace, you can pay less gas if the contract has applied for gas payment. Conflux implements the Sponsorship Mechanism, a system that allows project owners or contract operators to cover transaction fees for users, thereby reducing the entry barrier of their projects. 
+
+3.The contract sponsorship application link is: https://confluxscan.io/sponsor. If you wish to discuss sponsorship-related issues with the Conflux Foundation, please send an email to: bd@confluxnetwork.org.
+
+
 ### gasUsed
 
 The actual gas consumed during transaction execution.
