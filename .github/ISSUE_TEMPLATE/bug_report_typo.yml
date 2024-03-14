@@ -5,7 +5,7 @@ labels: ["bug", "Dework"]
 body:
   - type: markdown
     attributes:
-      value: "Please fill out the following to the best of your ability."
+      value: "We will reward contributors with FC for your valuablue feedback. Please join our [Dework space](https://app.dework.xyz/i/1fyrskMH16J8p2NcKX2uqX) and connect with your Github account if you are willing to receive FC rewards, in which case we could track your contribution history with ease."
 
   - type: textarea
     attributes:
