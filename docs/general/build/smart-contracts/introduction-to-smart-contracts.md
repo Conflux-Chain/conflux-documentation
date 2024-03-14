@@ -1,7 +1,7 @@
 ---
 sidebar_position: 1
 title: Smart Contracts Development
-displayed_sidebar: generalSidebar
+# displayed_sidebar: generalSidebar
 ---
 
 ## Introduction to Smart Contracts Development on Conflux Network
