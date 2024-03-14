@@ -58,6 +58,7 @@ gasFee is the total gas fee paid for a transaction. It is calculated as ```gasFe
 
 Suppose there is a regular transfer of 1 CFX, the gas limit can be set to 21,000. If the gasPrice is set to 1GDrip, then the total cost of the transaction is ```1 + 21000 * 0.000000001 = 1.000021 CFX```, where 1 CFX is transferred to the recipient's account, and 0.000021 CFX is the reward for the miner.
 
+
 ### gasUsed
 
 The actual gas consumed during transaction execution.
@@ -73,6 +74,15 @@ In a Conflux transaction, if the ```gas limit``` is more than the actual amount 
 Suppose the gas limit for a regular CFX transfer is set to 100k and the actual execution consumed 21,000, since the gas limit for the transaction is set too high, at most 25,000 of the gas fee will be returned(25% of the gas limit). The gas used for the transaction will be ```0.000075 CFX```.
 
 If the gas limit setting of the transaction is not that high, take the same example as above but set the gas limit to 25000, which is 4000 more than the actual amount used, the exceeding part is not more than a quarter of the gas limit. This part will be returned fully, and the final amount of fees charged will still be ```0.000021 CFX```.
+
+
+## How to pay less gasFee？
+
+There are strategies you can use to reduce the cost:
+
+1.Gas prices go up and down every once in a while based on how congested Conflux is. When gas prices are high, waiting just a few minutes before making a transaction could see a significant drop in what you pay.
+
+2.If you're a smart contract developer aiming to reduce gas costs, start by optimizing data storage, improving function execution, and utilizing efficient loops, among others. For a deeper dive into these techniques and more, check out our dedicated [Gas Optimization](/docs/general/build/smart-contracts/gas-optimization/) tutorial.
 
 ## Further Readings
 
