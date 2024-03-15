@@ -18,7 +18,7 @@ Deployments:
 
 ## Contributing
 
-### How to Contribute
+### [How to Contribute](./docs/general/CONTRIBUTING/how-to-contribute.md)
 
 We welcome contributions in a variety of forms, including but not limited to:
 
@@ -32,12 +32,10 @@ We welcome contributions in a variety of forms, including but not limited to:
 
 To make a contribution, please take one of the following actions:
 
-- **Report an Issue**: If you spot a problem or is willing to suggest improvements, [create an issue](./docs/general/CONTRIBUTING.md#create-an-issue) to let us know.
-- **Submit Changes**: For direct contributions to content, [create a pull request](./docs/general/CONTRIBUTING.md#create-a-pull-request).
-- **Help with Translation**: To contribute translations, please follow our [translation guidelines](./docs/general/CONTRIBUTING.md#provide-translation).
+- **Report an Issue**: If you spot a problem or is willing to suggest improvements, [create an issue](./docs/general/CONTRIBUTING/how-to-contribute.md#create-an-issue) to let us know. You can also directly submit the issue via our [Conflux Documentation Issue Form](https://forms.office.com/r/pKVBywZwLY).
+- **Submit Changes**: For direct contributions to content, [create a pull request](./docs/general/CONTRIBUTING/how-to-contribute.md#create-a-pull-request).
+- **Help with Translation**: To contribute translations, please follow our [translation guidelines](./docs/general/CONTRIBUTING/how-to-contribute.md#provide-translation).
 
-### Contributor POAPs
+### Contributor Rewards and POAPs
 
-We issue poaps for document contributors every 3 months. As a token of appreciation, contributors can claim [FansCoin (FC)](https://confluxscan.io/token/cfx:achc8nxj7r451c223m18w2dwjnmhkd6rxawrvkvsy2) rewards for each POAP they own.
-
-Refer to [CONTRIBUTING](./docs/general/CONTRIBUTING.md) for how to contribute and how the poap issuing rule works.
+We distribute [FansCoin (FC)](https://confluxscan.io/token/cfx:achc8nxj7r451c223m18w2dwjnmhkd6rxawrvkvsy2) rewards and issue POAPs for our contributor as appreciation. For the [reward guidelines](./docs/general/CONTRIBUTING/reward-guidelines.md) and [contributors POAPs](./docs/general/CONTRIBUTING/contributor-poaps.md) to learn how the tokens are distributed.
