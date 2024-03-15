@@ -72,9 +72,7 @@ This article details how your contributions, categorized under 'Issues' and 'Pul
 
 ## How Rewards are Distributed
 
-Please [join our Dework space](https://app.dework.xyz/conflux/developer-portal-1958) if you are willing to receive FC rewards for your contribution.
-
-Dework will be used to track rewards history and we will distribute rewards once a quarter. So if you are willing to receive FC rewards for your contribution.
+Dework will be used to track rewards history and we will distribute rewards once a quarter. Just [join our Dework space](https://app.dework.xyz/conflux/developer-portal-1958) if you are willing to receive FC rewards for your contribution.
 
 ## Regular Review of Reward Guidelines
 
