@@ -99,7 +99,7 @@ ERC20 is a standard for tokens on the Ethereum blockchain. It specifies a set of
 ERC721 is a standard for non-fungible tokens (NFTs) on the Ethereum blockchain. Unlike ERC20 tokens, which are identical to each other, each ERC721 token is unique. This makes them suitable for representing ownership of unique items or assets. Like ERC20, ERC721 tokens can also exist on the Conflux network, especially if they are transferred from the Ethereum network.
 
 ### **ERC1155**
-ERC1155 is a Ethereum token standard that supports multiple token types, including fungible and non-fungible tokens, within a single contract. This reduces transaction costs by enabling batch transfers and offers complex access controls. ERC1155 tokens can also exist on the Conflux network, enhancing flexibility and interoperability for digital assets in gaming, art, and beyond.
+ERC1155 is an Ethereum token standard that supports multiple token types, including fungible and non-fungible tokens, within a single contract. This reduces transaction costs by enabling batch transfers and offers complex access controls. ERC1155 tokens can also exist on the Conflux network, enhancing flexibility and interoperability for digital assets in gaming, art, and beyond.
 
 ### **Fork**
 
