@@ -8,6 +8,10 @@ sidebar_position: 2
 
 2. `calldata`: Similar to memory, stored in memory and not persistent on the blockchain. The key difference is that calldata variables are immutable and commonly used for function parameters.
 
+
+Learn more:
+[Data location and assignment behavior](https://docs.soliditylang.org/en/latest/types.html#data-location)
+
 Below, we demonstrate how to write data using both `calldata` and `memory` 
 
 ```solidity
@@ -34,3 +38,5 @@ contract CalldataAndMemory {
 Recommendations for gas optimization:
 
 🌟 In practical situations, if it's possible to use calldata, it is recommended to use `calldata` instead of `memory`.
+
+
