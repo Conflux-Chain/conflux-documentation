@@ -29,7 +29,7 @@ Choosing a wallet depends on your specific needs. If you're a developer, you mig
 
 The Conflux Network supports several wallets, including but not limited to:
 
-- [Fluent](../tutorials/wallets/fluent.md): A browser extension wallet for Chrome, Firefox, and Edge, similar to MetaMask but for the Conflux Network. Supports both Core and eSpace.
+- [Fluent](../tutorials/wallets/fluent.md): A browser extension wallet for Chrome (most Chromium-based browsers) and Firefox, similar to MetaMask but for the Conflux Network. Supports both Core and eSpace.
 - [Ledger](../tutorials/wallets/ledger.md): A hardware wallet known for its security features. Supports both Core a eSpace.
 - [MetaMask](../../espace/UserGuide.md): A popular wallet that can also be configured to work with the Conflux Network eSpace.
 
