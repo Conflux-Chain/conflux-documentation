@@ -207,7 +207,7 @@ For more information, refer to [Storage Collateral](../../core/core-space-basics
 ### **交易**
 Conflux交易是由一个拥有Conflux账户的外部参与者组成的单个指令，该指令使用发送者账户的私钥进行密码学签名，以防止交易伪造。 一笔交易可以涉及简单的CFX（Conflux的本地货币）转账、代币（如ERC20或ERC721）转账、新智能合约的部署或现有智能合约上的函数执行。 交易是在区块链上存储或更新数据的唯一方式。
 
-Refer to [Transactions](./transactions.md) for more information.
+详细信息请参考 [交易](./transactions.md)。
 
 ### **树图**
 In the context of Conflux, the Tree-Graph is a novel consensus mechanism that allows for high throughput and low latency in large-scale decentralized networks. Unlike traditional blockchain systems that follow a linear chain, Conflux forms a tree-like structure of blocks, allowing for multiple blocks to be produced concurrently. This structure is key to Conflux's ability to process a high number of transactions per second.
