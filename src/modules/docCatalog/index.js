@@ -51,7 +51,7 @@ const CatalogueItem = ({ url, text, preview }) => {
 const Catalogue = ({ catalogue, items }) => {
   return (
     <div key={catalogue} className='mt-[40px]'>
-      <div className='text-[28px] font-medium mb-9'>{catalogue}</div>
+      <div className='text-[28px] font-medium mb-3 md:mb-6'>{catalogue}</div>
       <div>
         {items.map(item => { return <CatalogueItem key={item.text} url={item.url} text={item.text} preview={item.preview} /> })}
       </div>
