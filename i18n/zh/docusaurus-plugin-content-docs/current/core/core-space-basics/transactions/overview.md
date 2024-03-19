@@ -20,7 +20,7 @@ A transaction consists of multiple fields, each with its own meaning and purpose
 
 The `nonce` field in a transaction is crucial, as it determines the execution order of transactions. Nonce updates are not real-time, so understanding the [nonce](./nonce.md) is essential, especially when there is a need to quickly send transactions to the chain. Additional [nonce management guidelines](./nonce.md) are also provided for such cases.
 
-## Transaction Fees
+## 交易费用
 
 The `gas`, `gasPrice` as well as `storageLimit` fields in a transaction are also crucial. These fields are used to set the execution cost of the transaction. Setting `gas` too low may result in transaction failure, while setting it too high leads to unnecessary fees. The `gasPrice` field affects the transaction's priority in the block, particularly in congested networks. `storageLimit` is a unique field used to specify [storage collateral](../storage.md) could be used by a transaction. Understanding the [transaction fee](./transaction-fee.md) can help you set the fields more effectively.
 
