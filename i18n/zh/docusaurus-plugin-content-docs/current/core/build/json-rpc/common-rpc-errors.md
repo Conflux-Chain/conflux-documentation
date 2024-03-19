@@ -8,7 +8,7 @@ keywords:
 displayed_sidebar: coreSidebar
 ---
 
-## Common errors
+## 常见错误
 
 ### Method not found
 

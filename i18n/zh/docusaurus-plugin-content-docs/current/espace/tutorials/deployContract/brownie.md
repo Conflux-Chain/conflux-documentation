@@ -9,32 +9,32 @@ keywords:
 displayed_sidebar: eSpaceSidebar
 ---
 
-[Brownie](https://eth-brownie.readthedocs.io/en/stable/) is a Python-based development and testing framework for smart contracts targeting the Ethereum Virtual Machine. In this tutorial, we will guide you through configuring Brownie (or eth-brownie) for Conflux eSpace and demonstrate how to use Brownie scripts to deploy contracts on Conflux eSpace.
+[Brownie](https://eth-brownie.readthedocs.io/en/stable/) 是一个基于 Python 的开发和测试框架，用于针对以太坊虚拟机（EVM）的智能合约。 在本教程中，我们将指导您如何配置 Brownie（或 eth-brownie）以适应 Conflux eSpace，并将演示如何使用 Brownie 脚本在 Conflux eSpace 上部署合约。
 
 ## 安装 Brownie
 
 :::tip
 
-To avoid dependency conflicts, it is recommended to create virtual environments before installing `eth-brownie`. Tools like [venv](https://docs.python.org/3/library/venv.html) or [conda](https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#creating-an-environment-with-commands) can be used for this purpose.
+为避免依赖冲突，建议在安装 `eth-brownie` 之前创建虚拟环境。 可以使用 [venv](https://docs.python.org/3/library/venv.html) 和 [conda](https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#creating-an-environment-with-commands) 等工具实现。
 
 :::
 
 执行以下命令安装 Brownie：
 
 ```bash
-pip install eth-brownie # or pip3 install eth-brownie
+pip install eth-brownie # 或者 pip3 install eth-brownie
 ```
 
 ## 添加 Conflux eSpace 网络
 
-To add the Conflux eSpace networks to Brownie, execute these commands:
+要将 Conflux eSpace 网络添加到 Brownie 中，请执行以下命令：
 
 ```bash
 brownie networks add "Conflux eSpace" conflux-espace-main name=Mainnet host=https://evm.confluxrpc.com explorer=https://evm.confluxscan.io chainid=1030
 brownie networks add "Conflux eSpace" conflux-espace-test name=Testnet host=https://evmtestnet.confluxrpc.com explorer=https://evmtestnet.confluxscan.io chainid=71
 ```
 
-Alternatively, import the Conflux eSpace networks to Brownie using a `yaml` file:
+或者使用 yaml 文件将导入 Conflux eSpace 网络到 Brownie 中：
 
 ```yaml
 live:
@@ -58,7 +58,7 @@ live:
 brownie networks import ./network-config.yaml
 ```
 
-Upon successful addition, the networks will appear in the Brownie network list, as shown by running `brownie networks list`:
+成功添加后，您的网络将出现在 Brownie 网络列表中，可以通过运行 ` brownie networks list` 显示：
 
 ```bash
 ......
@@ -70,9 +70,9 @@ Conflux eSpace
 ......
 ```
 
-## Generate Template Token Project
+## 生成代币项目的模板
 
-To generate a template token project, run `brownie bake token`. The project will be created in the current folder. For this tutorial, we will place the project directly under the user directory:
+运行 `brownie bake token` 生成一个代币项目模板。 项目将在当前文件夹中创建。 在本教程中，我们将项目直接放在用户目录下：
 
 ```bash
 cd ~
@@ -80,21 +80,21 @@ brownie bake token
 cd token
 ```
 
-## Generate/Import Your Account
+## 生成和导入您的帐户
 
-You have the option to either generate a new account or import an existing one for Brownie.
+您可以选择生成一个新账户或导入现有账户到 Brownie 中。
 
-### Generate a New Account
+### 生成新账户
 
-To create a new account via the command line:
+通过此命令行创建新账户：
 
 ```bash
 brownie accounts generate <id>
 ```
 
-You will be prompted to set a password for the account. Brownie will then generate a random private key and make the account accessible as `<id>`. The address of the new account will be displayed in the terminal, which you will need in subsequent steps.
+您将被提示设置账户的密码。 Brownie 将生成一个随机私钥并使账户能以 `<id>` 的形式被访问。 新账户的地址将在终端中显示，您会在后续步骤中需要它。
 
-Here is an example output of the command:
+下面是命令的示例输出：
 
 ```bash
 Brownie v1.14.5 - Python development framework for Ethereum
@@ -105,17 +105,17 @@ Enter the password to encrypt this account with:
 SUCCESS: A new account '0x960ecb222F296C1D75a111D33094Cb393ab17b09' has been generated with the id 'new'
 ```
 
-### Import Your Account
+### 导入您的帐户
 
-If you already have an account, you can import it. To import your private key, run:
+如果您已有账户，您可以将其导入。 为了导入您的私钥，请运行一下命令：
 
 ```bash
-# id is the identifier of your account, used to specify the account in scripts
+# id 是您账户的标识符，用于在脚本中指定账户
 brownie accounts new <id>
-# for example, brownie accounts new dev
+# 例如，brownie accounts new dev
 ```
 
-Brownie will prompt you to enter your secret key and password:
+Brownie 将提示您输入您的私钥和密码：
 
 ```bash
 Brownie v1.14.5 - Python development framework for Ethereum
@@ -127,45 +127,44 @@ SUCCESS: A new account 'xxxxxxxxxxxx' has been generated with the id 'dev'
 
 ```
 
-It's also possible to import your keystore using:
+也可以使用以下方式导入您的密钥库：
 
 ```bash
 brownie accounts import <id> <path>
 ```
 
-For more information, refer to [account management](https://eth-brownie.readthedocs.io/en/stable/account-management.html#account-management).
+更多信息请查看[账户管理](https://eth-brownie.readthedocs.io/en/stable/account-management.html#account-management)。
 
-## Fund Your Account
+## 为您的账户充值
 
-To send transactions, you need to fund your account. The [Conflux's eSpace faucet](https://efaucet.confluxnetwork.org/) can assist with this.
+要发送交易，您需要为您的账户充值。 Conflux 的[ eSpace 水龙头](https://efaucet.confluxnetwork.org/)可以协助您实现这一点。
 
-After entering your account address, your account will receive funds on the eSpace testnet.
+输入您的账户地址之后，您的账户将收到 eSpace 测试网上的资金。
 
-## Modify Deployment Script
+## 修改部署脚本
 
-The default `scripts/token.py` in the template `token` project is not directly usable for the Conflux eSpace testnet. An extra line needs to be added to the default script:
+`代币`项目模板中默认的 `scripts/token.py` 在 Conflux eSpace 测试网上不能直接使用。 需要向默认脚本中添加额外的一行：
 
 ```py
 #!/usr/bin/python3
 
 from brownie import Token, accounts
 
-
 def main():
-    accounts.load("dev") # Specify which account to load here
+    accounts.load("dev") # 在这里指定要加载的账户
     return Token.deploy("Test Token", "TST", 18, 1e21, {'from': accounts[0]})
 
 ```
 
-## Deployment
+## 部署
 
-To deploy on the Conflux eSpace testnet, run the following command:
+要在 Conflux eSpace 测试网上进行部署，请运行以下命令：
 
 ```bash
 brownie run scripts/token.py --network conflux-espace-test
 ```
 
-Brownie will ask for your password. After entering it, the script will execute and the contract will be deployed:
+Brownie 会要求您输入密码。 输入密码后，脚本将自动执行并部署合约：
 
 ```bash
 Brownie v1.14.5 - Python development framework for Ethereum
@@ -182,16 +181,16 @@ Transaction sent: 0x547675979e80eccfe0665d2ab347cefc8ca3644dbdaddb0572b76cc7a62d
 
 ## 接下来是？
 
-Now that you've deployed your ERC-20 token on Conflux eSpace using Brownie, you can start building upon this foundation:
+目前您已经使用 Brownie 在 Conflux eSpace 部署了您的 ERC-20 代币，您可以开始在此基础上构建：
 
-1. **Explore the Template**: Familiarize yourself with the template project you've just deployed. Investigate the functions and structure of the ERC-20 token smart contract. Understanding this template is crucial for further development.
+1. **探索模板**：熟悉您刚刚部署的模板项目。 研究 ERC-20 代币智能合约的功能和结构。 理解这个模板对于您进一步的开发至关重要。
 
-2. **Customization**: Begin customizing the token contract. You might want to add unique features or modify the existing functionalities to suit your specific needs. This could include adjusting the token supply, implementing burning mechanisms, or adding voting capabilities.
+2. **定制化**：开始定制代币合约。 您可能想要添加独特的功能或修改现有的功能以适应您的特定需求。 这可能包括调整代币供应量、实现销毁机制或添加投票功能。
 
-3. **Develop Additional Scripts**: Consider developing additional Brownie scripts to automate tasks like distributing tokens, managing airdrops, or handling token allowances. These scripts can enhance your project's efficiency and functionality.
+3. **开发附加脚本**：您可以考虑开发附加的 Brownie 脚本以自动化任务，如分发代币、空投管理或处理代币授权。 这些脚本可以提高项目的效率和功能。
 
-4. **Basic Front-End Development**: If you're inclined, start working on a simple front-end interface. This can be a basic web application that allows users to interact with your token for tasks such as transferring tokens or checking their balance.
+4. **基础的前端开发**：如果您对此有兴趣，可以开始构建一个简单的前端界面。 这可以是一个非常基本的网页应用，允许用户与您的代币进行交互，如转移代币或检查余额等操作。
 
-By following these steps, you'll be well on your way to further developing your project on Conflux eSpace.
+遵循这些步骤，您将顺利地在 Conflux eSpace 上进一步开发您的项目。
 
-For more examples of using Brownie, explore [Brownie's documentation](https://eth-brownie.readthedocs.io/en/stable/index.html). You are also welcome to ask questions in our community or raise issues on our [GitHub repository](https://github.com/Conflux-Chain/conflux-documentation/issues/new/choose).
+要了解更多使用 Brownie 的示例，请访问 [Brownie 官方文档](https://eth-brownie.readthedocs.io/en/stable/index.html)。 You are also welcome to ask questions in our community or raise issues on our [GitHub repository](https://github.com/Conflux-Chain/conflux-documentation/issues/new/choose).

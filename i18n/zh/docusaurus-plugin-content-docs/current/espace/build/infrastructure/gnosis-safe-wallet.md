@@ -4,43 +4,43 @@ title: Gnosis Safe Wallet
 displayed_sidebar: eSpaceSidebar
 ---
 
-[Gnosis Safe Wallet](https://safe.global/) is a renowned multisignature wallet service in the blockchain sector, offering secure fund management solutions. It is particularly popular among Ethereum and EVM (Ethereum Virtual Machine)-compatible blockchain ecosystems. The entire source code for Gnosis Safe, including its smart contracts and both the front-end and back-end code, is open source, ensuring transparency and community trust. In its commitment to innovation, Gnosis Safe has introduced features like account abstraction, further enhancing user experience and security.
+[Gnosis Safe Wallet](https://safe.global/) 是区块链领域著名的多重签名钱包服务，提供安全的资金管理解决方案。 它在以太坊和 EVM（以太坊虚拟机）兼容的区块链生态系统中特别受欢迎。 Gnosis Safe 的全部源代码，包括其智能合约、前端和后端代码，都是开源的，确保了透明性与社区信任度。 Gnosis Safe 致力于创新，它引入了像账户抽象化这样的功能，进一步增强了用户体验并提高了安全性。
 
-Gnosis Safe Wallet is the chosen fund management tool for numerous DeFi (Decentralized Finance) projects, such as Uniswap, Chainlink, and MakerDAO, among others, highlighting its reliability and wide adoption within the industry.
+Gnosis Safe Wallet 是许多 DeFi（去中心化金融）项目选择的资金管理工具，例如 Uniswap、Chainlink 和 MakerDAO 等，这凸显了其可靠性和在行业内被广泛采用的特点。
 
-### Integration with eSpace
+### 与 eSpace 集成
 
-To support developers and DeFi projects within the eSpace ecosystem, eSpace has incorporated the Gnosis Safe Wallet into its infrastructure. [Versions 1.3.0](https://github.com/safe-global/safe-smart-account/blob/main/CHANGELOG.md#version-130-libs0) and [1.4.1](https://github.com/safe-global/safe-smart-account/blob/main/CHANGELOG.md#version-141) of the Safe contract have been deployed on both the eSpace mainnet and testnet, with their address can be found in the changelog. For mainnet users, a dedicated [Safe-Wallet-Web frontend](https://safe.conflux123.xyz/) is available, enabling the creation and management of multisignature accounts for CFX and ERC20 tokens.
+为了支持 eSpace 生态系统内的开发者和 DeFi 项目，eSpace 已将 Gnosis Safe Wallet 整合到了其基础设施中。 Safe 合约的 [1.3.0 版本](https://github.com/safe-global/safe-smart-account/blob/main/CHANGELOG.md#version-130-libs0) 和 [1.4.1 版本](https://github.com/safe-global/safe-smart-account/blob/main/CHANGELOG.md#version-141) 已在 eSpace 主网和测试网上部署，其地址可在变更日志中找到。 对于主网用户来说，提供专用的 [Safe-Wallet-Web frontend](https://safe.conflux123.xyz/) 前端，能够使用户创建并管理 CFX 和 ERC20 代币的多重签名账户。
 
 ![](./img/gnosis-safe-web-wallet.png)
 
 ## 常见问题解答
 
-### What is the URL for the Safe-Wallet-Web?
+### 访问 Safe-Wallet-Web 的 URL 是什么？
 
-The URL for accessing the Safe-Wallet-Web is [https://safe.conflux123.xyz/](https://safe.conflux123.xyz/).
+访问 Safe-Wallet-Web 的 URL 是 [https://safe.conflux123.xyz/](https://safe.conflux123.xyz/)。
 
-### Which version of the Safe contract is set as the default?
+### Safe 合约的默认版本是？
 
-The default version of the Safe contract currently deployed and in use on both eSpace's mainnet and testnet is version 1.3.0.
+当前在 eSpace 的主网和测试网上部署并使用的 Safe 合约的默认版本是 1.3.0。
 
-### Is there a Safe-Wallet-Web available for the testnet?
+### 是否为测试网提供了 Safe-Wallet-Web？
 
-As of now, a Safe-Wallet-Web frontend specific for the testnet has not been deployed. However, interactions with the testnet contracts can still be conducted using the [Safe-SDK](https://github.com/safe-global/safe-core-sdk) or [Safe CLI](https://github.com/safe-global/safe-cli).
+截至目前，尚未为测试网部署专用的 Safe-Wallet-Web 前端。 然而，仍然可以使用 [Safe-SDK](https://github.com/safe-global/safe-core-sdk) 或 [Safe CLI](https://github.com/safe-global/safe-cli) 与测试网合约进行交互。
 
-### Can the official Safe Web Wallet or App be used with eSpace?
+### Safe Web Wallet 或 App 的官方版本能用于 eSpace 吗？
 
-The official Safe Web Wallet or App is not compatible with eSpace at this time.
+Safe Web Wallet 或 App 的官方版本目前与 eSpace 不兼容。
 
-### Is there a mobile version of the Safe App for eSpace?
+### 是否有支持 eSpace 的 Safe App 移动版本？
 
-Currently, there is no mobile version of the Safe App available for eSpace.
+目前，没有支持 eSpace 的 Safe App 移动版本。
 
-### What should I do if I can't trigger the wallet connection popup when clicking the "Connect" button on the Welcome page?
+### 如果在点击“连接”按钮时无法触发钱包连接弹窗应该怎么办？
 
-If you're experiencing issues with the wallet connection popup not appearing, follow these steps:
+如果您遇到钱包连接弹窗未出现的问题，请按照以下步骤操作：
 
-- Make sure the MetaMask wallet extension is installed on your browser.
-- Ensure your computer's network connection is stable; using a VPN may be beneficial, especially in certain regions.
-- If this is your first visit to the welcome page, click the downward arrow in the upper right corner and select the **CFX** network.
-- Then, click the "Connect" button again. This should prompt the wallet selection popup to appear, where you can choose MetaMask to proceed.
+- 确保您的浏览器安装了 MetaMask 钱包扩展。
+- 确保您的计算机网络连接稳定；在某些地区，可能需要使用 VPN。
+- 如果这是您第一次访问欢迎页面，请点击右上角的向下箭头并选择 CFX 网络。
+- 然后，再次点击“连接”按钮。 This should prompt the wallet selection popup to appear, where you can choose MetaMask to proceed.

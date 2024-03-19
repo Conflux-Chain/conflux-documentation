@@ -1,0 +1,9 @@
+{
+  "label": "Build",
+  "position": 6,
+  "link": {
+    "type": "generated-index",
+    "description": "Documents for building in Conflux eSpace."
+  },
+  "collapsed": false
+}
