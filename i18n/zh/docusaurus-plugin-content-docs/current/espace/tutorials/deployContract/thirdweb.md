@@ -62,7 +62,7 @@ displayed_sidebar: eSpaceSidebar
 
 2. 从可用选项中选择您想要部署的合约类型：NFT、代币、市场等。
 
-3. Follow the on-screen prompts to configure and deploy your contract.
+3. 按照屏幕上的提示配置并部署您的合约。
 
 > 想要了解 Explore 上不同合约的更多信息，请查看 [thirdweb 文档](https://portal.thirdweb.com/pre-built-contracts)。
 
