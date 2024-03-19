@@ -4,7 +4,7 @@ title: Intro to the Stack
 displayed_sidebar: coreSidebar
 ---
 
-Like any software stack, the complete "Conflux Core Stack" will vary from project to project depending on your goals.
+像任何软件堆栈一样，完整的"Conflux核心堆栈"将根据你的目标因项目而异。
 
 There are, however, core components of Conflux that help provide a mental model for how software applications interact with the Conflux Core blockchain. Understanding the layers of the stack will help you understand the different ways that Conflux can be integrated into software projects.
 

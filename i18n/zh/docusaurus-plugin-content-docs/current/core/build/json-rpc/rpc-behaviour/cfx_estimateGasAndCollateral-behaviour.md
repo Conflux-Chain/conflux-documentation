@@ -1,5 +1,5 @@
 ---
-title: cfx_estimateGasAndCollateral Behaviour
+title: cfx_estimateGasAndCollatory 行为
 sidebar_position: 8
 description: cfx_estimateGasAndCollatory 的行为
 displayed_sidebar: coreSidebar
@@ -70,7 +70,7 @@ tags:
 
 如果在合约执行期间抛出错误消息，可以在RPC错误消息中看到合约执行失败的具体原因。 例如，当转移NFT（1155）时出现以下错误，表示余额不足：`Estimation isn't accurate: transaction is reverted: ERC1155: insufficient balance for transfer. Innermost error is at xxxx: Vm reverted. ERC1155: insufficient balance for transfer`.
 
-**Solution**: You should review the logic of the contract based on the error message. In specific scenarios (like when a **solidity custom error** is thrown), the error might not be shown in the error string. In such cases, using `cfx_call` with identical parameters will return the into the corresponding hex error string. You are advised to refer to [Custom Errors in Solidity](https://soliditylang.org/blog/2021/04/21/custom-errors/) or language-specific SDKs to understand how to resolve the hex error string.
+**解决方案**：你应该根据错误提示检查合约的逻辑。 在特定场景下（例如当抛出**solidity自定义错误**时），错误可能不会在错误字符串中显示。 在这种情况下，使用 `cfx_call` 与相同的参数将返回对应的十六进制错误字符串。 建议参考Solidity或特定语言的SDK中的[自定义错误](https://soliditylang.org/blog/2021/04/21/custom-errors/) ，了解如何解决十六进制错误字符串。
 
 ### Can not estimate: transaction execution failed, all gas will be charged
 
@@ -87,7 +87,7 @@ tags:
 }
 ```
 
-**Solution**: This error means `gas` is not enough for transaction execution and it typically means the gas exceeds the maximum amount for a single transaction, which is half of the block gas limit (15,000,000). There's a need to optimize the logic of your contract execution to reduce the gas consumption. Notably, if `gas` is specified in the estimation request, an `OutOfGas` error can still occur even though the required gas is less than 15 million.
+**解决方案**：此错误意味着 `gas` 不足以执行交易，通常意味着gas超过了单个交易的最大金额，即区块气体限制的一半（15,000,000）。 需要优化合约执行逻辑以减少gas消耗。 值得注意的是，如果在估算请求中指定了 `gas` ，即使所需gas少于1500万，仍然可能发生 `OutOfGas` 错误。
 
 #### NotEnoughCash
 
@@ -103,15 +103,15 @@ tags:
 }
 ```
 
-This error means the `from` account does not have enough balance to pay for transaction cost, including `value` + `gas cost` + `storage collateral`.
+此错误意味着 `from` 账户没有足够的余额来支付交易成本，包括 `value` + `gas` + `storage collateral`。
 
-**Solution**:
+**解决方案**：
 
-- If the `to` contract is not [sponsored](../../../core-space-basics/internal-contracts/sponsor-whitelist-control.md), ensure that `from` account is having enough CFX as balance.
-- If the `to` contract is sponsored, it is recommended to check why the sponsorship does not take effect by calling [cfx_checkBalanceAgainstTransaction](../cfx-namespace.md#cfx_checkbalanceagainsttransaction) RPC. And the actual reason could be:
-  - The `from` account is not in [sponsor whitelist](../../../core-space-basics/internal-contracts/sponsor-whitelist-control.md#whitelist-maintenance). Adding
-  - `SponsoredBalanceForGas` or `SponsoredBalanceForCollateral` is not enough to pay for transaction cost, which value can be get from [cfx_getSponsorInfo](../cfx-namespace.md#cfx_getsponsorinfo) RPC. In this case, appending sponsored balance will solve the issue.
-  - Transaction gas cost(`gas limit` \* `gas price`) exceeds the sponsorship `upperBound` setting, which value can be get from [cfx_getSponsorInfo](../cfx-namespace.md#cfx_getsponsorinfo) RPC. In this case, you need to call [setSponsorForGas](../../../core-space-basics/internal-contracts/sponsor-whitelist-control#setsponsorforgas-and-setsponsorforcollateral-behavior) to increase gas sponsorship uppper bound.
+- 如果 `to` 合约没有[代付](../../../core-space-basics/internal-contracts/sponsor-whitelist-control.md)，请确保 `from` 账户有足够的CFX余额。
+- 如果 `to` 合约被赞助，建议通过调用 [cfx_checkBalanceAgainstTransaction](../cfx-namespace.md#cfx_checkbalanceagainsttransaction) RPC检查为什么赞助没有生效。 实际原因可能是：
+  - `from` 账户不在[赞助白名单](../../../core-space-basics/internal-contracts/sponsor-whitelist-control.md#whitelist-maintenance)中。 增加
+  - `SpongoredBalanceForGas` 或 `SpongoredBalanceForboratoral` 不足以支付交易成本，其价值可以从 [cfx_getSponsorInfo](../cfx-namespace.md#cfx_getsponsorinfo) RPC得到。 在这种情况下，追加赞助余额将解决这个问题。
+  - 交易gas成本(`gas limit` \* `gas price`) 超过代付`upperBound`设置，它的价值可以从cfx_getSponsorInfo](../cfx-namespace.md#cfx_getsponsorinfo)中获得。 在这种情况下，您需要调用 [setSponsorForGas](../../../../core-space-basics/internal-contracts/sponsor-whitelist-control#setsponsorforgas-setsponsorfortor-behavior)来增加gas代付上限。
 
 #### ConflictAddress(0x...)
 
@@ -124,9 +124,9 @@ This error means the `from` account does not have enough balance to pay for tran
 }
 ```
 
-This means the operation being estimated will deploy the contract to an address with contract existed. The deployed contract address is determined by the deployer"s address, the deployer"s nonce and the contract"s bytecode. And this issue typically incurred because a nonce already used is specified.
+This means the operation being estimated will deploy the contract to an address with contract existed. 部署的合约地址由部署者地址、部署者的“nonce”和合约的字节代码决定。 而这个问题通常是由于指定了一个已经使用过的nonce。
 
-**Solution**: Check if the `nonce` specified in the estimation parameters is reused and use the correct `nonce` field.
+**解决方案**：检查估算参数中指定的 `nonce` 是否被重新使用并使用正确的 `nonce` 字段。
 
 #### VmError(BadInstruction 214)
 
@@ -139,6 +139,6 @@ This means the operation being estimated will deploy the contract to an address 
 }
 ```
 
-This means the `data` field contains bad instruction. This error typically occurs because the `to` field is missing so the `data` cannot be resolved as expected.
+这意味着`data`字段包含错误的指示。 这个错误的发生通常是因为缺少“to”字段，所以“data”无法按预期解析。
 
-**Solution**: Check if `to` field is missing from the estimation request and fill the right value.
+**解决方案**：检查估算请求中是否缺少`to`字段，并填写正确的值。

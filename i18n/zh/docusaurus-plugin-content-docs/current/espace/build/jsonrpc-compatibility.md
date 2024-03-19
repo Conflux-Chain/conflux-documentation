@@ -1,13 +1,13 @@
 ---
 sidebar_position: 3
-title: JSON-RPC Compatibility
-description: JSON-RPC compatibility with Ethereum
+title: JSON-RPC 的兼容性
+description: 与以太坊 JSON-RPC 的兼容性
 displayed_sidebar: eSpaceSidebar
 ---
 
-Conflux eSpace implements the Web3 JSON-RPC protocol.
+Conflux eSpace 实现了 Web3 JSON-RPC 协议。
 
-Check out the following video to get a quick overview of this topic:
+查看以下视频以快速了解这个主题：
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -15,86 +15,86 @@ import TabItem from '@theme/TabItem';
 
 <Tabs>
   <TabItem value="youtube" label="JSON-RPC Compatibility Video">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/svpqUAjzdk0?si=j6Ia3OEi8Go5DTPq" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/svpqUAjzdk0?si=j6Ia3OEi8Go5DTPq" title="YouTube 视频播放器" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
   </TabItem>
 </Tabs>
 
-## Methods
+## 方法
 
-| Method                                  | Status | Note                                                         |
-| --------------------------------------- | ------ | ------------------------------------------------------------ |
-| web3_clientVersion                      | ✅      |                                                              |
-| net_version                             | ✅      |                                                              |
-| eth_protocolVersion                     | ✅      |                                                              |
-| eth_chainId                             | ✅      |                                                              |
-| eth_gasPrice                            | ✅      |                                                              |
-| eth_blockNumber                         | ✅      |                                                              |
-| eth_getBalance                          | ✅      |                                                              |
-| eth_getStorageAt                        | ✅      |                                                              |
-| eth_getCode                             | ✅      |                                                              |
-| eth_getTransactionCount                 | ✅      |                                                              |
-| eth_sendRawTransaction                  | ✅      |                                                              |
-| eth_submitTransaction                   | ✅      |                                                              |
-| eth_call                                | ✅      |                                                              |
-| eth_estimateGas                         | ✅      |                                                              |
-| eth_getTransactionByHash                | ✅      |                                                              |
-| eth_getTransactionReceipt               | ✅      |                                                              |
-| eth_getLogs                             | ✅      | The max gap between fromBlock and toBlock is limited to 1000 |
-| eth_getBlockByHash                      | ✅      |                                                              |
-| eth_getBlockByNumber                    | ✅      |                                                              |
-| eth_getBlockTransactionCountByHash      | ✅      |                                                              |
-| eth_getBlockTransactionCountByNumber    | ✅      |                                                              |
-| eth_getTransactionByBlockHashAndIndex   | ✅      |                                                              |
-| eth_getTransactionByBlockNumberAndIndex | ✅      |                                                              |
-| eth_syncing                             | ✅      |                                                              |
-| eth_hashrate                            | ✅      |                                                              |
-| eth_coinbase                            | ✅      |                                                              |
-| eth_mining                              | ✅      |                                                              |
-| eth_maxPriorityFeePerGas                | ✅      |                                                              |
-| eth_accounts                            | ✅      |                                                              |
-| eth_submitHashrate                      | ✅      |                                                              |
-| eth_getUncleByBlockHashAndIndex         | ✅      |                                                              |
-| eth_getUncleByBlockNumberAndIndex       | ✅      |                                                              |
-| eth_getUncleCountByBlockHash            | ✅      |                                                              |
-| eth_getUncleCountByBlockNumber          | ✅      |                                                              |
-| parity_getBlockReceipts                 | ✅      |                                                              |
-| eth_pendingTransactions                 | 🚧      |                                                              |
-| web3_sha3                               | 🚧      |                                                              |
-| trace_block                             | ✅      | Parity RPC                                                   |
-| trace_filter                            | ✅      | Parity RPC                                                   |
-| trace_transaction                       | ✅      | Parity RPC                                                   |
-| eth_feeHistory                          | ❌      |                                                              |
-| eth_getFilterChanges                    | ✅      | Supported at v2.1.1                                          |
-| eth_getFilterLogs                       | ✅      | Supported at v2.1.1                                          |
-| eth_newBlockFilter                      | ✅      | Supported at v2.1.1                                          |
-| eth_newFilter                           | ✅      | Supported at v2.1.1                                          |
-| eth_newPendingTransactionFilter         | ✅      | Supported at v2.1.1                                          |
-| eth_uninstallFilter                     | ✅      | Supported at v2.1.1                                          |
-| net_listening                           | ❌      |                                                              |
-| net_peerCount                           | ❌      |                                                              |
-| eth_compileLLL                          | ❌      |                                                              |
-| eth_compileSerpent                      | ❌      |                                                              |
-| eth_compileSolidity                     | ❌      |                                                              |
-| eth_getCompilers                        | ❌      |                                                              |
-| eth_getProof                            | ❌      | EIP-1186                                                     |
-| eth_getWork                             | ❌      |                                                              |
-| db_*                                    | ❌      |                                                              |
-| shh_*                                   | ❌      |                                                              |
-|                                         |        |                                                              |
+| 方法                                     | 状态 | 备注                               |
+| -------------------------------------- | -- | -------------------------------- |
+| web3_clientVersion                     | ✅  |                                  |
+| net_version                            | ✅  |                                  |
+| eth_protocolVersion                    | ✅  |                                  |
+| eth_chainId                            | ✅  |                                  |
+| eth_gasPrice                           | ✅  |                                  |
+| eth_blocknumber                        | ✅  |                                  |
+| eth_getBalance                         | ✅  |                                  |
+| eth_getStorageAt                       | ✅  |                                  |
+| eth_getCode                            | ✅  |                                  |
+| eth_getTransactionCount                | ✅  |                                  |
+| eth_sendRawTransaction                 | ✅  |                                  |
+| eth_submitTransaction                  | ✅  |                                  |
+| eth_call                               | ✅  |                                  |
+| eth_estimateGas                        | ✅  |                                  |
+| eth_getTransactionByHash               | ✅  |                                  |
+| eth_getTransactionrecipt               | ✅  |                                  |
+| eth_getLogs                            | ✅  | fromBlock 与 toBlock 的差值最大限制为1000 |
+| eth_getBlockByHash                     | ✅  |                                  |
+| eth_getBlockBynumber                   | ✅  |                                  |
+| eth_getBlockTransactionCountByHash     | ✅  |                                  |
+| eth_getBlockTransactionCountBynumber   | ✅  |                                  |
+| eth_getTransactionBylockHashAndIndex   | ✅  |                                  |
+| eth_getTransactionBylockNumberAndIndex | ✅  |                                  |
+| eth_syncing                            | ✅  |                                  |
+| eth_hashrate                           | ✅  |                                  |
+| eth_coinbase                           | ✅  |                                  |
+| eth_mining                             | ✅  |                                  |
+| eth_maxPriorityFeePerGas               | ✅  |                                  |
+| eth_accounts                           | ✅  |                                  |
+| eth_submitHashrate                     | ✅  |                                  |
+| eth_getUncleByBlockHashAndIndex        | ✅  |                                  |
+| eth_getUncleByBlockNumberAndIndex      | ✅  |                                  |
+| eth_getUncleCountByBlockHash           | ✅  |                                  |
+| eth_getUncleCountByBlockNumber         | ✅  |                                  |
+| parity_getBlockReceipts                | ✅  |                                  |
+| eth_pendingTransactions                | 🚧  |                                  |
+| web3_sha3                              | 🚧  |                                  |
+| trace_block                            | ✅  | Parity RPC                       |
+| trace_filter                           | ✅  | Parity RPC                       |
+| trace_transaction                      | ✅  | Parity RPC                       |
+| eth_feeHistory                         | ❌  |                                  |
+| eth_getFilterChanges                   | ✅  | 支持 v2.1.1 版本                     |
+| eth_getFilterLogs                      | ✅  | 支持 v2.1.1 版本                     |
+| eth_newBlockFilter                     | ✅  | 支持 v2.1.1 版本                     |
+| eth_newFilter                          | ✅  | 支持 v2.1.1 版本                     |
+| eth_newPendingTransactionFilter        | ✅  | 支持 v2.1.1 版本                     |
+| eth_uninstallFilter                    | ✅  | 支持 v2.1.1 版本                     |
+| net_listening                          | ❌  |                                  |
+| net_peerCount                          | ❌  |                                  |
+| eth_compileLLL                         | ❌  |                                  |
+| eth_compileSerpent                     | ❌  |                                  |
+| eth_compileSolidity                    | ❌  |                                  |
+| eth_getCompilers                       | ❌  |                                  |
+| eth_getProof                           | ❌  | EIP-1186                         |
+| eth_getWork                            | ❌  |                                  |
+| db_*                                   | ❌  |                                  |
+| shh_*                                  | ❌  |                                  |
+|                                        |    |                                  |
 
-Legend: ❌ = not supported. 🚧 = work in progress. ✅ = supported.
+图例解释：❌ = 不支持。 🚧 = 开发中。 ✅ = 已支持。
 
 ## 备注
 
-* `eth_sendRawTransaction` only accept 155 transaction, `1559`, `2930` is not supported
-* Methods not listed here are also not supported.
-* There is no concept of uncle (aka ommer) blocks. The `eth_getUncleByBlockHashAndIndex` and `eth_getUncleByBlockNumberAndIndex` methods always return `null`. The `eth_getUncleCountByBlockHash` and `eth_getUncleCountByBlockNumber` methods return zero for valid block IDs and `null` for invalid block IDs. Additionally, uncle-related block metadata such as `sha3Uncles` is sha3 of empty hash array.
-* The nonstandard Geth tracing APIs are not supported at present
-* The nonstandard Parity tracing APIs are in progress
+* `eth_sendRawTransaction` 仅接受 155 类型交易，不支持 `1559`、 `2930` 类型交易。
+* 此处未列出的方法也不支持。
+* 没有所谓的 uncle（又称 ommer）区块。 `eth_getUncleByBlockHashAndIndex` 和 `eth_getUncleByBlockNumberAndIndex` 方法总是返回 `null`。 `eth_getUncleCountByBlockHash` 和 `eth_getUncleCountByBlockNumber` 方法对有效的区块 ID 返回零，对无效的区块 ID 返回 `null`。 此外，与 uncle 相关的区块元数据如 `sha3Uncles` 是空的哈希数组 sha3。
+* 目前不支持非标准的 Geth 跟踪 API
+* 非标准 Parity 跟踪 API 正在开发中
 
-### `pending` tag
+### `pending` 标签
 
-Only `eth_getTransactionCount` method has supported `pending` tag. Other method will treat `pending` tag as `latest`
+仅 `eth_getTransactionCount` 方法支持`pending` 标签。 其他方法将 `pending` 标签视为`latest`
 
 * eth_getTransactionCount ✅
 * eth_getBalance
@@ -102,11 +102,11 @@ Only `eth_getTransactionCount` method has supported `pending` tag. Other method 
 * eth_getStorageAt
 * eth_call
 
-Note: filter related methods also not support `pending` tag
+注意：过滤相关的方法也不支持 `pending` 标签
 
-### `eth_sendRawTransaction` errors
+### `eth_sendRawTransaction` 错误
 
-The returned error message of `eth_sendRawTransaction` is different from Ethereum. The following is the error message returned by Conflux client:
+`eth_sendRawTransaction` 返回的错误信息与以太坊不同。 以下是 Conflux 客户端返回的错误信息：
 
 ```js
 {
@@ -122,9 +122,9 @@ The returned error message of `eth_sendRawTransaction` is different from Ethereu
 
 The possible errors are same with [cfx_sendTransaction errors](../../core/build/json-rpc/rpc-behaviour/cfx_sendTransaction-errors.md).
 
-## Data verifiability
+## 数据可验证性
 
-Below fields can not guarantee the verifiability
+以下字段无法保证可验证性
 
 ### Block
 
@@ -138,15 +138,15 @@ Below fields can not guarantee the verifiability
 
 * logsBloom
 
-## pub/sub
+## 发布/订阅
 
-Starting from v2.1.0 `newHeads` and `logs` is supported
+从 v2.1.0 版本开始支持 `newHeads` 和 `logs`
 
-## ETH RPC docs
+## ETH RPC 文档
 
-* [Ethereum JSON-RPC Specification](https://playground.open-rpc.org/?schemaUrl=https://raw.githubusercontent.com/ethereum/eth1.0-apis/assembled-spec/openrpc.json&uiSchema%5BappBar%5D%5Bui:splitView%5D=false&uiSchema%5BappBar%5D%5Bui:input%5D=false&uiSchema%5BappBar%5D%5Bui:examplesDropdown%5D=false)
-* [ethereum/execution-apis](https://github.com/ethereum/execution-apis)
-* [Infura JSON-RPC doc](https://infura.io/docs/ethereum#tag/JSON-RPC-Methods)
+* [以太坊 JSON-RPC 规范](https://playground.open-rpc.org/?schemaUrl=https://raw.githubusercontent.com/ethereum/eth1.0-apis/assembled-spec/openrpc.json&uiSchema%5BappBar%5D%5Bui:splitView%5D=false&uiSchema%5BappBar%5D%5Bui:input%5D=false&uiSchema%5BappBar%5D%5Bui:examplesDropdown%5D=false)
+* [以太坊/执行 api](https://github.com/ethereum/execution-apis)
+* [Infura JSON-RPC 文档](https://infura.io/docs/ethereum#tag/JSON-RPC-Methods)
 * [eth RPC wiki](https://eth.wiki/json-rpc/API)
-* [geth RPC doc](https://geth.ethereum.org/docs/rpc/server)
-* [Parity RPC doc](https://openethereum.github.io/JSONRPC)
+* [geth RPC 文档](https://geth.ethereum.org/docs/rpc/server)
+* [Parity RPC 文档](https://openethereum.github.io/JSONRPC)

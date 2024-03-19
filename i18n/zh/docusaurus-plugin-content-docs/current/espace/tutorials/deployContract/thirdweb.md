@@ -9,24 +9,24 @@ displayed_sidebar: eSpaceSidebar
 
 想使用 thirdweb 命令行创建新的智能合约，请按照以下步骤操作：
 
-1. In your CLI run the following command:
+1. 在您的命令行界面运行以下命令：
 
    ```bash
    npx thirdweb create contract
    ```
 
-2. Input your preferences for the command line prompts:
-   1. Give your project a name
-   2. Choose your preferred framework: Hardhat or Foundry
-   3. Name your smart contract
-   4. Choose the type of base contract: Empty, [ERC20](https://portal.thirdweb.com/solidity/base-contracts/erc20base), [ERC721](https://portal.thirdweb.com/solidity/base-contracts/erc721base), or [ERC1155](https://portal.thirdweb.com/solidity/base-contracts/erc1155base)
-   5. Add any desired [extensions](https://portal.thirdweb.com/solidity/extensions)
+2. 根据命令行提示输入您的选择：
+   1. 给您的项目命名
+   2. 选择您偏好的框架：Hardhat 或 Foundry
+   3. 命名您的智能合约
+   4. 选择基础合约类型：空、[ERC20](https://portal.thirdweb.com/solidity/base-contracts/erc20base)、 [ERC721](https://portal.thirdweb.com/solidity/base-contracts/erc721base)、 或者 [ERC1155](https://portal.thirdweb.com/solidity/base-contracts/erc1155base)
+   5. 添加所需的[扩展](https://portal.thirdweb.com/solidity/extensions)
 
-3. Once created, navigate to your project’s directory and open in your preferred code editor.
+3. 创建完成后，将跳转到您项目的目录，并在您偏好的代码编辑器中打开。
 
-4. If you open the `contracts` folder, you will find your smart contract; this is your smart contract written in Solidity.
+4. 如果您打开 `contracts` 文件夹，您将在这找到您的智能合约；这是您用 Solidity 编写的智能合约。
 
-   The following is code for an ERC721Base contract without specified extensions. It implements all of the logic inside the [`ERC721Base.sol`](https://github.com/thirdweb-dev/contracts/blob/main/contracts/base/ERC721Base.sol) contract; which implements the [`ERC721A`](https://github.com/thirdweb-dev/contracts/blob/main/contracts/eip/ERC721A.sol) standard.
+   以下是没有指定扩展的 ERC721Base 合约的代码。 它实现了 [`ERC721Base.sol`](https://github.com/thirdweb-dev/contracts/blob/main/contracts/base/ERC721Base.sol) 合约内的所有逻辑；该合约实现了 [`ERC721A`](https://github.com/thirdweb-dev/contracts/blob/main/contracts/eip/ERC721A.sol) 标准。
 
    ```solidity
    // SPDX-License-Identifier: MIT
@@ -44,23 +44,23 @@ displayed_sidebar: eSpaceSidebar
    }
    ```
 
-   This contract inherits the functionality of ERC721Base through the following steps:
+   这个合约通过以下步骤继承了 ERC721Base 的功能：
 
-   - Importing the ERC721Base contract
-   - Inheriting the contract by declaring that our contract is an ERC721Base contract
-   - Implementing any required methods, such as the constructor.
+   - 导入 ERC721Base 合约
+   - 通过声明我们的合约是一个 ERC721Base 合约来继承合约
+   - 实现所需的方法，如构造函数。
 
-5. After modifying your contract with your desired custom logic, you may deploy it to Conflux using [Deploy](https://portal.thirdweb.com/deploy).
+5. 在使用所需的自定义逻辑修改完您的合约之后，可以使用 [Deploy](https://portal.thirdweb.com/deploy) 将其部署到 Conflux。
 
 ***
 
-Alternatively, you can deploy a prebuilt contract for NFTs, tokens, or marketplace directly from the thirdweb Explore page:
+或者您可以从 thirdweb Explore 页面直接部署预构建的合约，可以用于 NFT、代币或市场：
 
 1. 访问 thirdweb Explore 页面：https\://thirdweb.com/explore
 
    ![thirdweb Explore page](/img/thirdweb-explore.png)
 
-2. Choose the type of contract you want to deploy from the available options: NFTs, tokens, marketplace, and more.
+2. 从可用选项中选择您想要部署的合约类型：NFT、代币、市场等。
 
 3. Follow the on-screen prompts to configure and deploy your contract.
 
@@ -68,7 +68,7 @@ Alternatively, you can deploy a prebuilt contract for NFTs, tokens, or marketpla
 
 ## 部署合约
 
-Deploy allows you to deploy a smart contract to any EVM compatible network without configuring RPC URLs, exposing your private keys, writing scripts, and other additional setup such as verifying your contract.
+Deploy 让您无需配置 RPC URL、暴露私钥、编写脚本以及其他额外设置（如验证合约）就可以将智能合约部署到任何 EVM 兼容网络。
 
 1. 想要使用 deploy 部署您的智能合约，请导航至您项目的根目录并执行以下命令：
 
@@ -76,29 +76,29 @@ Deploy allows you to deploy a smart contract to any EVM compatible network witho
    npx thirdweb deploy
    ```
 
-   Executing this command will trigger the following actions:
+   执行这个命令后将触发以下操作：
 
    - 编译当前目录中的所有合约。
-   - Providing the option to select which contract(s) you wish to deploy.
-   - Uploading your contract source code (ABI) to IPFS.
+   - 提供了你可以选择部署哪些合约的选项。
+   - 将合约源代码（ABI）上传到 IPFS。
 
-2. When it is completed, it will open a dashboard interface to finish filling out the parameters.
-   - `_name`: contract name
-   - `_symbol`: symbol or "ticker"
-   - `_royaltyRecipient`: wallet address to receive royalties from secondary sales
-   - `_royaltyBps`: basis points (bps) that will be given to the royalty recipient for each secondary sale, e.g. 500 = 5%
+2. 完成后，它将打开仪表板界面以填写参数。
+   - `_name`：合约名称
+   - `_symbol`：符号或 "ticker"
+   - `_royaltyRecipient`：接收二次销售版税的钱包地址
+   - `_royaltyBps`：每次二次销售将给予版税接收者的基本点数 (bps)，例如 500 = 5%
 
-3. Select `TelosEvm` as the network
+3. 选择 `TelosEvm` 作为网络
 
-4. Manage additional settings on your contract’s dashboard as needed such as uploading NFTs, configuring permissions, and more.
+4. 根据需要管理您合约仪表板上的额外设置，例如上传 NFT、配置权限等。
 
-For additional information on Deploy, please reference [thirdweb’s documentation](https://portal.thirdweb.com/deploy).
+更多 Deploy 信息请参考 [thirdweb 文档](https://portal.thirdweb.com/deploy)。
 
 如果您在过程中有任何问题或遇到任何问题，请联系 thirdweb 寻求支持 [support.thirdweb.com](http://support.thirdweb.com/)。
 
 ## 视频教程
 
-In the following video, you can find a hands-on demonstration on how to use thirdweb to deploy smart contracts on Conflux eSpace:
+在下面的视频中，您可以找到如何使用 thirdweb 在 Conflux eSpace 部署智能合约的实操演示：
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';

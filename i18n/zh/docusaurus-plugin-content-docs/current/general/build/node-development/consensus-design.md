@@ -4,41 +4,24 @@ displayed_sidebar: generalSidebar
 
 # Conflux 共识层的设计与实现
 
-The Conflux consensus layer processes all incoming blocks received from the
-synchronization layer, produces the total order of blocks based on the Conflux
-GHAST consensus algorithm, and invokes the underlying **transaction execution
-engine** to run transactions in the determined order. It provides the
-information necessary to assist **block generator** to prepare the block skeleton of new
-blocks. It also notifies the **transaction pool** about processed transactions
-so that the pool can make better transaction selection decisions.
+Conflux 的共识层处理从同步层接收到的所有区块，根据 Conflux GHAST 共识算法产生区块的完整顺序，并调用底层的交易执行引擎以按确定的顺序运行交易。 它提供了必要的信息，以协助 **区块生成器** 准备新区块的骨架。 它还通知 **交易池(transaction pool)** 已处理好的交易，以便交易池可以做出更好的交易选择决策。
 
-This document is to provide a high-level overview for readers who want to
-understand the rust implementation of the Conflux consensus layer (in directory
-core/src/consensus). For more implementation details, see inlined comments in
-the code. For more information about the Conflux consensus algorithm, see
-Conflux Protocol Specification and Conflux paper (https\://arxiv.org/abs/1805.03870).
+本文档旨在为想要了解 Conflux 共识层（位于目录core/src/consensus中）的 Rust 实现的读者提供高级概述。 对于更多的实现细节，请查看代码中的内联注释。 对于 Conflux 共识算法的更多信息，请参阅 Conflux 协议规范和 Conflux 论文（https\://arxiv.org/abs/1805.03870）。
 
-## Design Goals
+## 设计目标
 
-The consensus layer has the following design goals.
+共识层有以下设计目标。
 
-1. Process new blocks in the background following the consensus algorithm
-   consistently.
+1. 在后台按照一致的共识算法处理新的区块
 
-2. We want to minimize the memory usage of each block in the consensus graph.
-   Even with the checkpoint mechanism, the graph will contain 300K-500K blocks in
-   the normal case and more than 1M blocks when facing liveness attacks. This may
-   stress the memory.
+2. 我们希望最小化共识图中每个块的内存使用。
+   即使有检查点机制，在正常情况下图中会包含 300K-500K 个块，在面对存活性攻击时可能会超过 1M 个块。 这可能会给内存带来压力。
 
-3. We want to process each block fast. Because full/archive nodes have to
-   process every block from the _original genesis_ when they catch up with the
-   network from scratch, fast block process is important to keep the catch up
-   period short.
+3. 我们想要快速处理每个区块。 因为全节点/归档节点在从零开始同步网络时必须处理从_初始创世区块_开始的之后每一个区块，因此快速处理区块对于缩短所需时间是非常重要的。
 
-4. Robust against potential attacks. Malicious attackers may generate bad
-   blocks at arbitrary positions in the TreeGraph.
+4. 面对潜在攻击时具有稳健性。 恶意攻击者可能会在TreeGraph的任意位置生成恶意区块。
 
-## Structures and Components
+## 结构与组成部分。
 
 ### ConsensusGraph
 

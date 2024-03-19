@@ -1,7 +1,7 @@
 ---
 sidebar_position: 4
 title: Scaffold Conflux
-description: Learn how to leverage Scaffold-Eth 2 components to make your Conflux App
+description: 了解如何利用 Scaffold-Eth 2 组件为您的 Conflux 应用提供支持
 keywords:
   - Hardhat
   - 智能合约
@@ -9,47 +9,47 @@ keywords:
 displayed_sidebar: eSpaceSidebar
 ---
 
-[Scaffold Conflux](https://github.com/conflux-fans/conflux-scaffold) is an adaptation of Scaffold-ETH-2 (https\://scaffoldeth.io/) whereby we have adjusted the template to allow you to deploy the contract on Conflux eSpace and leverage the components, integration of hardhat, and the quick deployment of Scaffold-ETH-2. In this tutorial, we will show you how to set-up Scaffold Conflux to better understand your smart contract and to leverage some of the beautiful react components available to quickly make your app on Conflux eSpace.
+[Scaffold Conflux](https://github.com/conflux-fans/conflux-scaffold) 是 Scaffold-ETH-2 (https\://scaffoldeth.io/) 的一个修改版本，我们调整了模板，允许您在 Conflux eSpace 上部署合约，并利用组件、集成 hardhat 和 Scaffold-ETH-2 的快速部署。 在本教程中，我们将向您展示如何设置 Scaffold Conflux，以更好地读取您的智能合约，并利用一些现成的 react 组件快速制作您的 Conflux eSpace 应用。
 
-Watch this [video](https://youtu.be/33S0IjGGsQg) for full tutorial on how to create an app from scratch and deploy it live on Conflux eSpace.
+观看这个[视频](https://youtu.be/33S0IjGGsQg)，它完整地展示了如何从零开始创建一个应用并将其部署在 Conflux eSpace 上。
 
 [![Watch Tutorial](https://img.youtube.com/vi/33S0IjGGsQg/0.jpg)](https://www.youtube.com/watch?v=33S0IjGGsQg)
 
-## Clone Scaffold Conflux
+## 克隆 Scaffold Conflux
 
-In your visual studio terminal, run the following to clone the repo and install the dependencies.
+在您的 visual studio 终端中，运行以下命令克隆仓库并安装依赖。
 
 ```bash
 git clone https://github.com/conflux-fans/conflux-scaffold
 yarn install
 ```
 
-In the folder directory of `conflux-scaffold` you will have the following:
+在 conflux-scaffold 的文件目录中，您将看到以下内容：
 
 ![Folder Directory](../img/CfxScaffoldFolderStructure.png)
 
-The repository contains two main sections. The first section is for hardhat.
+这个仓库包含两个主要部分。 第一部分是针对 hardhat 的。
 
-- You can adjust your smart contract solidity files in /conflux-scaffold/packages/hardhat/contracts
-- For example, the current sample solidity file is "YourContract.sol"
-- Start up your blockchain for testing purposes. We do this to easily create accounts and interact with the smart contract without deploying it on testnet (i.e. RPC limits) and Conflux eSpace (i.e. gas fees)
+- 您可以在 /conflux-scaffold/packages/hardhat/contracts 中调整您的智能合约Solidity文件
+- 例如，当前的 Solidity 样本文件是 "YourContract.sol"
+- 启动您的区块链以进行测试。 我们这样做是为了轻松创建账户并与智能合约进行交互，而不需要在测试网（即  RPC 限制）和 Conflux eSpace（即 Gas 费用）上部署
 
 ```bash
 yarn chain
 ```
 
-Once the chain is set up, open up a new terminal. You can test your smart contract and then deploy it
+当区块链设置完成后，需要打开一个新的终端。 您可以测试您的智能合约然后部署它
 
 ```bash
 yarn hardhat:test
 yarn deploy
 ```
 
-There are several files that are relevant when deploying.
+部署时有几个相关的文件。
 
-- One is the deployment script in /conflux-scaffold/packages/hardhat/deploy
-- The other is the configuration of which networks you are deploying on. /conflux-scaffold/packages/hardhat/hardhat.config.ts
-- The default deployment network is hardhat but you can change it to Conflux eSpace or Conflux Testnet by doing the following
+- 一个是在 /conflux-scaffold/packages/hardhat/deploy 中的部署脚本
+- 另一个是关于您部署在哪些网络的配置。 /conflux-scaffold/packages/hardhat/hardhat.config.ts
+- 默认部署网络是 hardhat，但您可以通过以下方式更改为 Conflux eSpace 或 Conflux 测试网
 
 ```bash
 yarn deploy --network confluxESpace
@@ -60,30 +60,30 @@ yarn deploy --network confluxESpaceTestnet
 ```
 
 :::note
-The deployer of the contract and thereby the owner of the contract can be changed by re-labelling the `./packages/hardhat/.env.example` to `./packages/hardhat/.env` and putting your private key in DEPLOYER_PRIVATE_KEY=. However, the default uses a default "public" private key for hardhat testing purposes.
+合约的部署者及所有者可以通过将 `./packages/hardhat/.env.example` 重命名为 `./packages/hardhat/.env` ，并在 DEPLOYER_PRIVATE_KEY= 中放入您的私钥来更改。 然而，默认使用一个默认的“公开”私钥用于 hardhat 测试目的。
 :::
 
-Once you have deployed the contract, you can start up your front-end to see how it interacts with the contracts. You should be able to see an interface like the following. The Contract Debug page is similar to other web deployment applications like Remix.
+一旦您部署了合约，您可以启动您的前端来查看它是如何与合约进行交互的。 您应该能看到类似于以下的界面。 合约调试页面类似于其他网页端部署应用，如 Remix。
 
 ![Front-end](../img/FrontEnd.png)
 
-What is powerful about Conflux Scaffold is that you can quickly deploy your contract in Hardhat and be able to see both the transactions on a block explorer and interact with the read/write functions of the contract
+Conflux Scaffold 的强大之处在于，您可以快速在 Hardhat 中部署您的合约，并能够看到区块浏览器上的交易以及与合约的读/写功能进行交互
 
 ![Contract](../img/ContractInteraction.png)
 
-## Front-End
+## 前端
 
-Once you have your front-end up and running, the fun begins on connecting your front-end with the contract. You can leverage beautiful react components.
+一旦您的前端运行起来，您便可以将您的前端与合约进行连接，并享受在您的前端操控智能合约的乐趣。 您可以充分利用功能丰富的 react 组件。
 
-- Navigate to conflux-scaffold/packages/nextjs/app/page.tsx
+- 跳转至 conflux-scaffold/packages/nextjs/app/page.tsx
 
 ![Import Libraries](../img/Components.png)
 
-- You can see here that components can be quickly imported from /components/scaffold-eth
-- For example, there is an Address, Balance, AddressInput component, etc. all which can be used quickly to add to your app. In the video tutorial, there is an example of how an AddressInput is quickly imported and rendered.
-- Additional components can be seen in the documentation https\://docs.scaffoldeth.io/components/
-- There are other hooks which are extremely important for reading and writing the contract (as well as setting up event subscription). These are the useScaffoldContractRead, useScaffoldContractWrite, etc. which are imported from "\~\~/hooks/scaffold-eth/index"
-- The arguments requirement for the hooks are all in the [documentation](https://docs.scaffoldeth.io/components/) but here are two examples of how easy it is to create a contract instance, read a function from the contract, and write into a function.
+- 您可以在这里了解到如何从 /components/scaffold-eth 快速导入组件
+- 例如，有地址、余额、地址输入组件等，所有这些都可以快速添加到您的应用中。 视频教程展示了一个如何快速导入和提取一个地址类型的输入的例子。
+- 更多组件可以在 https\://docs.scaffoldeth.io/components/ 中看到
+- 还有其他一些接口对于读取和写入合约（以及设置事件订阅）极其重要。 包括 useScaffoldContractRead, useScaffoldContractWrite 等，您可以从 "\~\~/hooks/scaffold-eth/index" 导入
+- 更多接口相关的参数要求都在 [文档](https://docs.scaffoldeth.io/components/) 中可以查阅到，在这里的两个例子展示了创建智能合约、从合约中读取一个函数和写入一个函数是一件非常容易的事情。
 
 ![Contract Instance](../img/ContractInstance.png)
 
@@ -91,42 +91,42 @@ Once you have your front-end up and running, the fun begins on connecting your f
 
 ![Contract Write](../img/ContractWrite.png)
 
-## Deployment of Conflux Contracts
+## Conflux 合约的部署
 
-In order to deploy a conflux app, we need to first deploy the contract into Conflux eSpace and allow our wallet to connect to Conflux eSpace. In conflux-scaffold/packages/hardhat/.env.example, we need to change this to packages/hardhat/.env and include our private key in DEPLOYER_PRIVATE_KEY. This makes our private key as the deployer of the contract. In the solidity contract, we have also assigned the deployer as the owner of the contract.
+为了部署一个 conflux 应用，我们需要首先将合约部署到 Conflux eSpace 上，并将我们的钱包连接至 Conflux eSpace。 In conflux-scaffold/packages/hardhat/.env.example, we need to change this to packages/hardhat/.env and include our private key in DEPLOYER_PRIVATE_KEY. This makes our private key as the deployer of the contract. 在 solidity 合约中，我们也将部署者指定为合约的所有者。
 
 ```bash
 yarn deploy --network confluxESpace
 ```
 
-or
+或者
 
 ```bash
 yarn deploy --network confluxESpaceTestnet
 ```
 
-## Remove Hardhat Wallet and Burner Wallet Connection to eSpace Wallet Connection
+## 移除 Hardhat 钱包、Burner 钱包和 eSpace 之间的连接
 
-Once the contract is deployed, we need to remove the wallet functionality to connect to hardhat and include Conflux eSpace. You can specify the networks that you deployed into in conflux-scaffold/packages/nextjs/scaffold.config.ts by changing targetNetworks to
+一旦合约部署完成，我们需要移除这钱包功能，以连接到 hardhat 并接入 Conflux eSpace。 您可以在 conflux-scaffold/packages/nextjs/scaffold.config.ts 中指定您想要部署到的网络，将 targetNetworks 更改为
 
 ```javascript
 targetNetworks: [chains.confluxESpace]
 ```
 
-or
+或者
 
 ```javascript
 targetNetworks: [chains.confluxESpaceTestnet]
 ```
 
-## Deploy App on Vercel
+## 在 Vercel 上部署应用
 
-And that's it! You are ready to deploy your app once you are happy with your smart contract and the front-end.
+就是这样！ 一旦您已经准备好智能合约和前端，您就可以开始部署您的应用了。
 
 ```bash
 yarn vercel
 ```
 
-Follow the instructions for deployment on vercel.
+按照 vercel 上的指示进行部署。
 
-If you have any questions, please refer to the video for full tutorial [video](https://youtu.be/33S0IjGGsQg). It includes how to verify your contract on confluxscan and the command for hardhat testing.
+如果您有任何问题，请参考完整的教程 [视频](https://youtu.be/33S0IjGGsQg)。 它包括如何在 confluxscan 上验证您的合约和在 hardhat 中进行测试的命令。
