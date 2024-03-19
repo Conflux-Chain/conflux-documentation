@@ -25,7 +25,7 @@ Conflux 要求 PoS 共识有限制地指定枢轴区块。 一个区块必须在
 
 ## PoS Account
 
-### Address
+### 地址
 
 Generally speaking, the account model on a blockchain is: a private key creates a public key, and a public key produces an address. The accounts on the PoS chain are similar, but there are two private keys called the BLS private key and the VRF private key, corresponding to the BLS public key and the VRF public key respectively. The two public keys are hashed to obtain the PoS address, which is currently 256-bit long.
 
