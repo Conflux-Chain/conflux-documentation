@@ -112,6 +112,7 @@ const config = {
         logo: {
           alt: 'Conflux Logo',
           src: 'img/logo.svg',
+          srcDark: 'img/logo_dark.svg',
         },
         items: [
           {
