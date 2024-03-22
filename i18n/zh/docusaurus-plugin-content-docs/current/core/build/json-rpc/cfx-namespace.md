@@ -306,8 +306,8 @@ Returns information about a block, identified by its hash.
 
 #### 参数
 
-1. `DATA`, 32 Bytes - hash of a block.
-2. `Boolean` - if `true`, it returns the full transaction objects. If `false`, only the hashes of the transactions are returned.
+1. `DATA`，32 字节 - 区块的哈希。
+2. `Boolean` - 如果 `true`，返回完整的交易对象 如果 `false`, 只返回交易的哈希值
 
 ```json
 params: [
@@ -318,11 +318,11 @@ params: [
 
 #### Returns
 
-`Object` - A block object, or `null` when no block was found:
+`Object` - 区块对象，或 `null`（当没有找到区块时）：
 
-* `adaptive`: `Boolean` - `true` if the weight of the block is adaptive under the GHAST rule.
-* `blame`: `QUANTITY` - if 0, then this block does not blame any blocks on its parent path. If it is `n > 0`, then this block blames its `n` predecessors on its parent path, e.g. when `n = 1`, then the block blames its parent but not its parent's parent.
-* `deferredLogsBloomHash`: `DATA`, 32 Bytes - the hash of the logs bloom after deferred execution at the block's epoch (assuming it is the pivot block).
+* `adaptive`: `Boolean` - `true` 则该区块在 GHAST 规则下的权重是自适应的。
+* `blame`: `QUANTITY` - 如果为 0，则该区块不责怪其父路径上的任何区块。 如果 `n > 0`, 则该区块责怪其父路径上的 `n` n 个前任，例如， 当 `n = 1`, 则该区块责怪其父区块，但不责怪其父区块的父区块。
+* `deferredLogsBloomHash`: `DATA`, 32 Bytes - 在该区块所在 epoch 的延迟执行后的事件地址和事件topic的布隆滤波器的哈希（假设它是主区块）。
 * `deferredReceiptsRoot`: `DATA`, 32 Bytes - the Merkle root of the receipts after deferred execution at the block's epoch (assuming it is the pivot block).
 * `deferredStateRoot`: `DATA`, 32 Bytes - the hash of the state trie root triplet after deferred execution at the block's epoch (assuming it is the pivot block).
 * `difficulty`: `QUANTITY` - the PoW difficulty of this block.
@@ -396,7 +396,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"cfx_getBlockByHash","params":["0
 #### 参数
 
 1. `QUANTITY|TAG` - the epoch number, or the string `"latest_mined"`, `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-default-epochnumber-parameter).
-2. `Boolean` - if `true`, it returns the full transaction objects. If `false`, only the hashes of the transactions are returned
+2. `Boolean` - 如果 `true`，返回完整的交易对象 If `false`, only the hashes of the transactions are returned
 
 ```json
 params: [
@@ -1834,7 +1834,7 @@ Returns information about a block, identified by its block number (block's tree-
 #### 参数
 
 1. `QUANTITY` - the block number.
-2. `Boolean` - if `true`, it returns the full transaction objects. If `false`, only the hashes of the transactions are returned
+2. `Boolean` - 如果 `true`，返回完整的交易对象 If `false`, only the hashes of the transactions are returned
 
 ```json
 params: [

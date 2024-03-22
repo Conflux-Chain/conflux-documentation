@@ -6,9 +6,9 @@ displayed_sidebar: coreSidebar
 
 像任何软件堆栈一样，完整的"Conflux核心堆栈"将根据你的目标因项目而异。
 
-There are, however, core components of Conflux that help provide a mental model for how software applications interact with the Conflux Core blockchain. Understanding the layers of the stack will help you understand the different ways that Conflux can be integrated into software projects.
+Conflux的核心组件提供了一个思维模型，这种模型说明了软件应用程序如何与Conflux核心区块链交互。 了解堆栈的分层将帮助你理解将Conflux集成到软件项目中的不同方法。
 
-## Level 1: Virtual Machine
+## 第一层：虚拟机
 
 The Virtual Machine is the runtime environment for smart contracts on Conflux Core Space. It is almost compatible with EVM. All smart contracts and state changes on the Conflux blockchain are executed by [transactions](../core-space-basics/transactions/overview.md). The VM handles all of the transaction processing on the Conflux Core Space.
 

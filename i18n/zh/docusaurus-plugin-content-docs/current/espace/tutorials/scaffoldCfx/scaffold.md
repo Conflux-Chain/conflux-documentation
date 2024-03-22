@@ -85,15 +85,15 @@ Conflux Scaffold 的强大之处在于，您可以快速在 Hardhat 中部署您
 - 还有其他一些接口对于读取和写入合约（以及设置事件订阅）极其重要。 包括 useScaffoldContractRead, useScaffoldContractWrite 等，您可以从 "\~\~/hooks/scaffold-eth/index" 导入
 - 更多接口相关的参数要求都在 [文档](https://docs.scaffoldeth.io/components/) 中可以查阅到，在这里的两个例子展示了创建智能合约、从合约中读取一个函数和写入一个函数是一件非常容易的事情。
 
-![Contract Instance](../img/ContractInstance.png)
+![合约实例](../img/ContractInstance.png)
 
-![Contract Read](../img/ContractRead.png)
+![合约读取](../img/ContractRead.png)
 
-![Contract Write](../img/ContractWrite.png)
+![合约写入](../img/ContractWrite.png)
 
 ## Conflux 合约的部署
 
-为了部署一个 conflux 应用，我们需要首先将合约部署到 Conflux eSpace 上，并将我们的钱包连接至 Conflux eSpace。 In conflux-scaffold/packages/hardhat/.env.example, we need to change this to packages/hardhat/.env and include our private key in DEPLOYER_PRIVATE_KEY. This makes our private key as the deployer of the contract. 在 solidity 合约中，我们也将部署者指定为合约的所有者。
+为了部署一个 conflux 应用，我们需要首先将合约部署到 Conflux eSpace 上，并将我们的钱包连接至 Conflux eSpace。 在 conflux-scaffold/packages/hardhat/.env.example 中，我们需要将其更改为 packages/hardhat/.env 并在 DEPLOYER_PRIVATE_KEY 中包含我们的私钥。 这使我们的私钥成为合约的部署者。 在 solidity 合约中，我们也将部署者指定为合约的所有者。
 
 ```bash
 yarn deploy --network confluxESpace

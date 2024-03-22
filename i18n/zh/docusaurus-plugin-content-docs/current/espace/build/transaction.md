@@ -1,12 +1,12 @@
 ---
 sidebar_position: 4
-title: Transaction
+title: 交易
 displayed_sidebar: eSpaceSidebar
 ---
 
 eSpace的交易与以太坊EIP-155的交易相同，这意味着开发人员可以使用相同的工具和库(ethers.js) 来构建和发送交易。 目前尚不支持以太坊EIP-1559和EIP-2718。
 
-The RPC's `eth_sendRawTransaction`'s possible errors are same as [Core Space sending transactions errors](/docs/core/build/json-rpc/rpc-behaviour/cfx_sendTransaction-errors).
+RPC 的 `eth_sendRawTransaction` 方法可能出现的错误与 [Core Space 发送交易时的错误](/docs/core/build/json-rpc/rpc-behaviour/cfx_sendTransaction-errors) 相同。
 
 交易生命周期也和Core空间[交易生命周期](/docs/core/core-space-basics/transactions/lifecycle)相同, 与 以太坊的交易生命周期 (以太坊交易不需要延迟5个区块才能执行)略有不同。
 

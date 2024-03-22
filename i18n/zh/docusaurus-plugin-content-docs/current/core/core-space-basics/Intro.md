@@ -1,6 +1,6 @@
 ---
 sidebar_position: 0
-title: Intro
+title: 介绍
 displayed_sidebar: coreSidebar
 ---
 
@@ -8,16 +8,16 @@ displayed_sidebar: coreSidebar
 
 ## Base32 地址
 
-Core Space 使用 Base32 地址而非十六进制地址。 The Base32 address is a base32-encoded string that starts with `cfx` or `cfxtest`. 例如：
+Core Space 使用 Base32 地址而非十六进制地址。 Base32 地址是以 `cfx` 或 `cfxtest` 开头的 base32 编码字符串。 例如：
 
 - cfx:aarc9abycue0hhzgyrr53m6cxedgccrmmyybjgh4xg
 - cfxtest:aarc9abycue0hhzgyrr53m6cxedgccrmmy8m50bu1p
 
-想要了解更多详情，请查看此[地址](./address)。 Additionally, the recommended wallet for Core Space is [Fluent](https://fluentwallet.com/).
+想要了解更多详情，请查看此[地址](./addresses)。 此外，Core Space 上推荐的钱包是 [Fluent](https://fluentwallet.com/)。
 
 ## CFX
 
-CFX is the native token of Core Space which can be used to pay for gas and storage. `Drip` 是 `CFX` 的最小单位。 1 CFX = 10^18 Drip。 `GDrip` 是 CFX 的中间单位。 1 CFX = 10^9 GDrip。
+CFX 是 Core Space 的原生代币，可用于支付燃气和存储费用。 `Drip` 是 `CFX` 的最小单位。 1 CFX = 10^18 Drip。 `GDrip` 是 CFX 的中间单位。 1 CFX = 10^9 GDrip。
 
 ## Gas & 存储
 

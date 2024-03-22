@@ -1,3 +1,7 @@
+---
+displayed_sidebar: generalSidebar
+---
+
 # Constant vs Immutable
 
 1. `constant`: Declares a constant that must be initialized at the time of declaration and cannot be altered thereafter.

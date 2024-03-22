@@ -111,7 +111,7 @@ tags:
 - 如果 `to` 合约被赞助，建议通过调用 [cfx_checkBalanceAgainstTransaction](../cfx-namespace.md#cfx_checkbalanceagainsttransaction) RPC检查为什么赞助没有生效。 实际原因可能是：
   - `from` 账户不在[赞助白名单](../../../core-space-basics/internal-contracts/sponsor-whitelist-control.md#whitelist-maintenance)中。 增加
   - `SpongoredBalanceForGas` 或 `SpongoredBalanceForboratoral` 不足以支付交易成本，其价值可以从 [cfx_getSponsorInfo](../cfx-namespace.md#cfx_getsponsorinfo) RPC得到。 在这种情况下，追加赞助余额将解决这个问题。
-  - 交易gas成本(`gas limit` \* `gas price`) 超过代付`upperBound`设置，它的价值可以从cfx_getSponsorInfo](../cfx-namespace.md#cfx_getsponsorinfo)中获得。 在这种情况下，您需要调用 [setSponsorForGas](../../../../core-space-basics/internal-contracts/sponsor-whitelist-control#setsponsorforgas-setsponsorfortor-behavior)来增加gas代付上限。
+  - 交易gas成本(`gas limit` \* `gas price`) 超过代付`upperBound`设置，它的价值可以从cfx_getSponsorInfo](../cfx-namespace.md#cfx_getsponsorinfo)中获得。 在这种情况下，您需要调用 [setSponsorForGas](../../../core-space-basics/internal-contracts/sponsor-whitelist-control#setsponsorforgas-and-setsponsorforcollateral-behavior) 来增加 gas 代付上限。
 
 #### ConflictAddress(0x...)
 
@@ -124,7 +124,7 @@ tags:
 }
 ```
 
-This means the operation being estimated will deploy the contract to an address with contract existed. 部署的合约地址由部署者地址、部署者的“nonce”和合约的字节代码决定。 而这个问题通常是由于指定了一个已经使用过的nonce。
+这意味着预估的交易将把合约部署到一个存在合约的地址。 部署的合约地址由部署者地址、部署者的“nonce”和合约的字节代码决定。 而这个问题通常是由于指定了一个已经使用过的nonce。
 
 **解决方案**：检查估算参数中指定的 `nonce` 是否被重新使用并使用正确的 `nonce` 字段。
 
