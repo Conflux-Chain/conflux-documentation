@@ -2,18 +2,18 @@
 displayed_sidebar: generalSidebar
 ---
 
-# Bitmap & Bitwise operations
+# Bitmap & Bitwise operation
 
 Storing data on the blockchain is extremely expensive. To decrease gas costs, innovative projects implement clever techniques. The method we're discussing today is often found in the source code of leading projects.
 
-Consider a `uint8`, represented in binary as `00000000`, where each bit can be either `0` or `1`. Traditionally, `1` is treated as true and `0` as false. This strategy allows for the effective and economical management of boolean values through bit manipulation.
+Consider a `uint8`, represented in binary as `00000000`, where each bit can be either `0` or `1`. Traditionally, `1` is treated as true and `0` as false. This strategy allows for the effective and economical management of boolean value through bitwise operation.
 
 In Solidity, `1 << n` represents a bit shift operation, moving the number `1` left by `n` bits, with the right-hand vacated bits filled with `0`. For example, if `n` is `2`, then `1 << 2` results in `100`.
 
 
 **Demo Code**
 
-The following demonstrates managing the same data using both a boolean array and bitwise operations.
+The following demonstrates managing the same data using both a boolean array and bitwise operation.
 
 ```solidity
 contract Bitmap {
