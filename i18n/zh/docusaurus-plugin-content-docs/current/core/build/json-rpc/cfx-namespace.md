@@ -176,7 +176,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"cfx_getBalance","params":["cfx:t
 
 以太坊和 Conflux 的一些 JSON-RPC 有对应关系。 即使 JSON-RPC 的细节可能有所不同，但以下映射表在从以太坊迁移到 Conflux 时可能会有所帮助：
 
-| Ethereum                    | Conflux                                                         |
+| 以太坊                         | Conflux                                                         |
 | --------------------------- | --------------------------------------------------------------- |
 | `eth_blockNumber`           | [`cfx_epochNumber`](#cfx_epochnumber)                           |
 | `eth_call`                  | [`cfx_call`](#cfx_call)                                         |
