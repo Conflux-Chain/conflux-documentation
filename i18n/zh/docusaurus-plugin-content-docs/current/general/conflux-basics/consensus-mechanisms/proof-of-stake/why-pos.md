@@ -8,7 +8,7 @@ keywords:
 displayed_sidebar: generalSidebar
 ---
 
-:::note
+:::注意
 
 This is an article written before the Ethereum Merge to explain why Conflux decides to introduce PoS.
 

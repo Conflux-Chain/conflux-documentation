@@ -82,7 +82,7 @@ In the case of a full transaction pool, and if the gasPrice of the sent transact
 "Failed imported to deferred pool: Transaction Pool is full"
 ```
 
-or
+或者
 
 ```json
 "txpool is full"

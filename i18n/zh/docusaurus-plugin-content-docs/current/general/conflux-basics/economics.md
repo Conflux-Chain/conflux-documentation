@@ -66,6 +66,8 @@ Conflux Network创世区块中预挖的代币数量为50亿CFX。 The pre-mined 
 - _Ecosystem Fund_: 40% of the genesis tokens will be offered to community developers supporting the DApps in the Conflux ecosystem. 这部分代币将在四年内解锁。
 - _Public Fund_: 0% of the genesis tokens will be allocated into the public fund account.
 
+![CFX Token Distribution](./img/CFX_Distribution.png)
+
 ### **Operational Phase CFX Distribution**
 
 在运营阶段，系统维护者受到激励，促进系统的持续升级；生态贡献者受到鼓励，不断为生态系统创造价值。 同时，通过系统资源的市场化，促进Conflux系统资源的自适应配置。

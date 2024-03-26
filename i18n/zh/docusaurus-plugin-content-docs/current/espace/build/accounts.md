@@ -1,7 +1,7 @@
 ---
 sidebar_position: 5
-title: eSpace Mapped Addresses(Cross Space)
-description: Mapped addresses in cross-space operations
+title: eSpace 映射地址（跨空间）
+description: 跨空间操作中的映射地址
 displayed_sidebar: eSpaceSidebar
 ---
 
