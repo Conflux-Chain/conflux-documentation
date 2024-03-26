@@ -31,16 +31,16 @@ displayed_sidebar: generalSidebar
 
 ## Create an Issue
 
-You can create an issue for the following purposes:
+您可以为以下目的创建一个问题：
 
 - 报告您发现的任何错误或打字/排版问题。
 - 请求新内容或对当前内容进行改进。
 
 您通常可以通过 [GitHub网页](https://github.com/Conflux-Chain/conflux-documentation/issues/new/choose) 直接创建一个问题。 在这里，您会找到各种模板来指导您的问题提交。
 
-![issue templates](../image/2023-04-13-15-16-53.png)
+![问题模板](../image/2023-04-13-15-16-53.png)
 
-If you're able to address the issue yourself, we encourage you to take the initiative. When creating an issue, you can indicate your willingness to resolve it. For bug reports, select the option “I'd be willing to fix this issue myself” in the BUG template. For feature requests, select “I'd be willing to contribute this feature myself” in the Feature Request template.
+如果您能够自行解决这个问题，我们鼓励您主动采取行动。 在创建问题时，您可以表明您愿意解决它。 For bug reports, select the option “I'd be willing to fix this issue myself” in the BUG template. For feature requests, select “I'd be willing to contribute this feature myself” in the Feature Request template.
 
 ```md
 
@@ -53,42 +53,42 @@ If you're able to address the issue yourself, we encourage you to take the initi
 
 另外，您也可以通过[ Conflux文档问题表单](https://forms.office.com/r/pKVBywZwLY) 提交您的问题。 如果您提交的问题被批准，它将在 GitHub 仓库中被创建。
 
-![Conflux Documentation Issue Form](../image/Conflux%20Documentation%20Issue%20Form.png)
+![Conflux 文档问题表单](../image/Conflux%20Documentation%20Issue%20Form.png)
 
 ## Create a Pull Request
 
-通过创建拉取请求（PR）对项目作出贡献是改进现有文档或代码十分有价值的方式。 This guide will walk you through the process step by step, ensuring clarity and ease of understanding, especially for those new to GitHub and git operations.
+通过创建拉取请求（PR）对项目作出贡献是改进现有文档或代码十分有价值的方式。 本指南将逐步引导您完成整个过程，确保清晰易懂，特别是对于那些对GitHub和git操作不熟悉的人。
 
-For complex operations, you can also check the [closed pull requests](https://github.com/Conflux-Chain/conflux-documentation/pulls?q=is%3Apr+is%3Aclosed) for grammar reference. For example,
+For complex operations, you can also check the [closed pull requests](https://github.com/Conflux-Chain/conflux-documentation/pulls?q=is%3Apr+is%3Aclosed) for grammar reference. 例如，
 
 - [Added Ecosystem Page + Video](https://github.com/Conflux-Chain/conflux-documentation/pull/392) shows how to add an article with video reference.
 - [feat: template example](https://github.com/Conflux-Chain/conflux-documentation/pull/410) shows how to make use of mdx's feature to create similar pages using template.
 
-:::注意
+:::note
 
-This process does not apply to [TRANSLATIONS](#provide-translation).
+此过程不适用于 [翻译](#provide-translation)。
 
 :::
 
 ### Minor Changes via Github Web UI
 
-For simple corrections or enhancements like typos or sentence improvements:
+对于简单的更正或完善，如拼写错误或句子改进：
 
-1. Navigate to the Page:
-   - Go to the **English version** of the page you wish to edit and click the "Edit this page" button. This button is typically found at the top or bottom of the page.
-     - ![Edit this page](../image/2024-01-04-17-09-22.png)
+1. 导航到页面：
+   - 前往您希望编辑的页面的**英文版本**并点击“编辑此页面”。 它通常位于页面的顶部或底部。
+     - ![编辑此页面](../image/2024-01-04-17-09-22.png)
 
-2. Forking the Repository:
-   - You'll be redirected to GitHub, where you might see a prompt saying, "You need to fork this repository to propose changes." Click "Fork this repository".
-     - ![Fork this repository](../image/2024-01-04-17-12-54.png)
+2. 分叉仓库：
+   - 您将被重定向到 GitHub，在那里您可能会看到一个提示，显示“您需要分叉这个仓库以提出更改”。 点击“分叉这个仓库”。
+     - ![分叉这个仓库](../image/2024-01-04-17-12-54.png)
 
-3. Making Edits:
-   - Once in the editor mode, make the necessary changes. After editing, scroll to the bottom where you'll find the "Commit changes" section. Fill in a brief description of your changes, then click "Propose changes".
+3. 进行编辑：
+   - 一旦进入编辑模式，您便可以进行必要的更改。 编辑内容后，滚动到底部，您会找到“提交更改”部分。 填写对于您更改的简短描述，然后点击“提交更改”。
 
-4. Submitting the Pull Request:
-   - After proposing changes, you'll be directed to a new page to initiate the pull request. Click "Create pull request". Double-check the changes and fill in any additional information if necessary, then finalize by clicking "Create pull request" again.
-     - Remember to check preflight checks by adding "x".
-     - ![preflight checks](../image/2024-01-04-17-36-59.png)
+4. 提交拉取请求：
+   - 提出更改后，您将被引导到一个新页面以发起拉取请求。 点击“创建拉取请求”。 仔细检查更改并填写任何必要的额外信息，然后再次点击“创建拉取请求”完成操作。
+     - 记得通过添加 "x" 以进行预检查核对。
+     - ![预检查](../image/2024-01-04-17-36-59.png)
 
 ### Local Development for Substantial Changes
 
@@ -98,23 +98,23 @@ For simple corrections or enhancements like typos or sentence improvements:
 
 :::
 
-For more significant contributions like adding a new page or extensive revisions:
+对于添加新页面或广泛的修订等更重大的贡献：
 
-1. Setting Up:
-   - Ensure you have [node.js](https://nodejs.org/en) (version `>= 18`) and [yarn](https://yarnpkg.com/getting-started/install) installed.
-   - Fork and clone the [documentation repository](https://github.com/Conflux-Chain/conflux-documentation). Detailed instructions for forking and cloning are available on GitHub's help pages.
+1. 设置：
+   - 确保您安装了[node.js](https://nodejs.org/en)（版本 `>= 18`）和 [yarn](https://yarnpkg.com/getting-started/install)。
+   - 分叉并克隆[文档仓库](https://github.com/Conflux-Chain/conflux-documentation)。 关于分叉和克隆的详细指南可在 GitHub 的帮助页面上找到。
 
-2. Making Changes Locally:
-   - Run `yarn && yarn start` in your terminal to preview the site at `http://localhost:3000`.
-   - Navigate to the `docs/**` folder in your cloned repository to make changes. Refresh your local server to see updates.
+2. 在本地进行更改：
+   - 在您的终端运行 `yarn && yarn start` 以在 `http://localhost:3000` 预览站点。
+   - 导航到您克隆仓库中的 `docs/**` 文件夹进行更改。 刷新您的本地服务器以查看更新。
 
-3. Submitting Your Changes:
-   - After making changes, run `yarn build` to ensure everything compiles correctly.
-   - Commit your changes with a meaningful message, then push to your forked repository. Initiate a pull request on GitHub by comparing your branch to the original repository.
+3. 提交您的更改：
+   - 进行更改后，运行 `yarn build` 确保一切正确编译。
+   - 确保您的更改是有价值的，然后将它推送到您的分叉仓库。 在 GitHub 上发起一个拉取请求，将您的分支与原始仓库进行比较。
 
-### Working on an Existing Issue
+### 处理现有问题
 
-To avoid overlapping efforts and streamline contributions, it is suggested to follow these steps:
+为了避免工作重叠并精简贡献流程，我们建议您遵循以下步骤：
 
 1. 检查已接受的问题：
    - 寻找标有类似于 “ACCEPTED” 等的表示准备好作出贡献的问题标签。 如果您对此不确定，您可以在问题评论中询问。
@@ -127,30 +127,30 @@ To avoid overlapping efforts and streamline contributions, it is suggested to fo
 
 ## 提供翻译
 
-:::注意
+:::note
 
 在 Github 仓库中提交的翻译拉取请求将不会被接受。
 
 :::
 
-We are using [Crowdin](https://crowdin.com/project/conflux) for document translation integration. Crowdin helps us to know whether translation strings are outdated after the source files are changed. Anyone can submit translation strings in Crowdin, and translation strings will be pushed to Github repo after they are reviewed.
+我们使用 [Crowdin](https://crowdin.com/project/conflux) 进行文档翻译集成。 Crowdin 能够帮助我们了解在源文件更改后已翻译内容是否需要变更。 任何人都可以在 Crowdin 中提交翻译，已翻译内容在审查后会被推送至文档的 Github 仓库。
 
-### Crowdin Tutorial
+### Crowdin 教程
 
-Visit our project page on Crowdin at either https://crowdin.com/project/conflux or https://zh.crowdin.com/project/conflux and select the language you wish to translate.
+访问我们在 Crowdin 上的项目页面，网址为 https://crowdin.com/project/conflux 或 https://zh.crowdin.com/project/conflux，并选择您想要翻译的语言。
 
-![languages](../image/2023-04-13-15-54-46.png)
+![语言](../image/2023-04-13-15-54-46.png)
 
-You will be able to select a file to begin translating.
+您可以选择一个文件并开始翻译。
 
-![files](../image/2023-04-13-15-57-59.png)
+![文件](../image/2023-04-13-15-57-59.png)
 
-In order to edit, you will need to be logged in. No need to fret though, you can easily log in with your Github account by clicking a few buttons.
+您需要登录才能编辑翻译。 不过不用担心，您只需要点击几个按钮，便可轻松地使用您的 Github 帐户登录。
 
-![login](../image/2023-04-13-16-01-17.png)
+![登录](../image/2023-04-13-16-01-17.png)
 
-Once you are in, you can start the translation process! Simply click on a source string on the left-hand panel and input the translation or edited string. Remember to click SAVE and wait for your translation to be reviewed.
+一旦登录，您就可以开始翻译过程了！ 只需点击左侧面板上的源字符串，然后输入翻译或编辑后的字符串。 记得点击保存，并等待您的翻译被审核。
 
-![translation](../image/2023-04-13-16-06-44.png)
+![翻译](../image/2023-04-13-16-06-44.png)
 
-Once reviewed, the translation string will be pushed to the Github repository and you can visit your translation on the official documentation site.
+一经审核通过，翻译字符串将被推送到 Github 仓库，您可以在官方文档网站上访问您的翻译。
