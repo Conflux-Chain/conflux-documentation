@@ -41,7 +41,7 @@ Refer to [general-address](./accounts.md#address), [core-address](../../core/cor
 区块链是一种去中心化和分布式的数字账本，可以跨多台计算机记录交易，使任何涉及的记录都无法在不更改所有后续区块的情况下被追溯性地更改。 这种技术是比特币和以太坊等加密货币的基础，也是Conflux网络的基础技术。
 
 ### **CFX**
-CFX是Conflux网络的原生货币。 It's used to incentivize the maintenance of the Conflux network and charge users for consumption of resources. CFX作为共识机制的奖励、每笔交易的交易费以及DAO投票的工具，在系统稳定性方面发挥着非常重要的作用。
+CFX是Conflux网络的原生货币。 它用于激励维护Conflux网络，并向用户收取资源消耗费用。 CFX作为共识机制的奖励、每笔交易的交易费以及DAO投票的工具，在系统稳定性方面发挥着非常重要的作用。
 
 最小的子单位称为Drip，Conflux处理的所有Drip的值都是整数。 一个Conflux定义为10^18 Drip。 Conflux常用的子单位如下：
 
@@ -60,12 +60,12 @@ CFX是Conflux网络的原生货币。 It's used to incentivize the maintenance o
 - [经济模型](./economics.md)
 
 ### **ChainId & NetworkId**
-`chainId`是一个数字，表示一笔交易打算在哪里执行。 它用于防止交易重放攻击。 The chainId of Conflux chains are constant, currently:
+`chainId`是一个数字，表示一笔交易打算在哪里执行。 它用于防止交易重放攻击。 Conflux 的 chainId 是一个常数，目前为：
 
-- Conflux Core Mainnet: `1029`
-- Conflux Core Testnet: `1`
-- Conflux eSpace Mainnet: `1030`
-- Conflux eSpace Testnet: `71`
+- Conflux Core 主网: `1029`
+- Conflux Core 测试网: `1`
+- Conflux eSpace 主网: `1030`
+- Conflux eSpace 测试网: `71`
 
 `networkId`用于在网络层区分不同的区块链。 目前Conflux主网/测试网的`networkId`与`chainId`相同。 你可以从`cfx_getStatus` RPC方法中获取这两个值。
 
@@ -104,11 +104,11 @@ The Ethereum Virtual Machine (EVM) is a powerful, sandboxed virtual stack embedd
 Finalization refers to the process by which transactions and blocks on the Conflux blockchain are considered definitive and irreversible. This process is critical for the network's security, as it prevents the possibility of double-spending attacks and ensures the blockchain's integrity. In the context of Conflux, PoS chain will periodically choose and refer to a PoW block which is created several minutes ago, thus providing finalization to all blocks (transactions) before the epoch of the specified block, ensuring they cannot be altered or removed subsequently.
 
 ### **分叉**
-A fork in a blockchain system denotes a split or divergence in the chain, originating from a common point with a shared history and creating two distinct paths. They can be implemented intentionally via software updates to either bring about significant changes (hard fork) or introduce backward-compatible alterations (soft fork). However, forks can also occur organically due to simultaneous block creation or as a result of network latencies and block propagation delays.
+在区块链系统中，分叉表示一条链的分裂或偏离，起源于一个具有共享历史的共同点，并创建两条不同的路径。 分叉可以通过软件更新有意实施，旨在引入重大变更（硬分叉）或引入向后兼容的更改（软分叉）。 然而，分叉也可以因为同时创建区块或由于网络延迟和区块传播延迟而自然发生。
 
-Additionally, malicious activities aimed at disrupting the network, performing deceptive transactions, or double-spending can also force a fork in the system. These inadvertent forks are typically short-lived as subsequent block addition commonly results in the resolution of temporary branches. No matter the reason for their occurrence, forks are an inherent part of the dynamic and decentralized nature of blockchain technology, necessitating robust consensus mechanisms to manage and mitigate potential issues.
+此外，旨在破坏网络、执行欺诈性交易或双花攻击的恶意活动也可以强制系统分叉。 这些无意的分叉通常是短暂的，因为随后的区块添加通常会解决临时分支。 无论分叉发生的原因如何，分叉是区块链技术动态和去中心化本质的固有部分，需要强大的共识机制来管理和缓解潜在问题。
 
-> Refer to [Hard Forks](../hardforks/hardforks.md) for more information of Conflux history hard forks.
+> 请参考[硬分叉](../hardforks/hardforks.md)以了解关于 Conflux 硬分叉历史的更多信息
 
 Further reading:
 
