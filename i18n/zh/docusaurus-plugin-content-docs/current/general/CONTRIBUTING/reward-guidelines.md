@@ -1,31 +1,31 @@
 ---
 displayed_sidebar: generalSidebar
-title: 奖励指南
-description: The reward guidelines for your contribution
+title: 奖励准则
+description: 贡献奖励准则
 sidebar_position: 2
 ---
 
 ## 简介
 
-Welcome to the Conflux Contribution Reward Guidelines. Our mission is to build a robust, accessible, and community-driven platform, and your contributions are integral to achieving this vision. Whether you are an experienced developer, a technical writer, a first-time contributor, or simply an enthusiast, your insights, ideas, and improvements can make a significant impact. Understanding that every effort put toward enhancing the Conflux environment deserves recognition, we've implemented a reward system based on FansCoin (FC).
+欢迎来到 Conflux 贡献奖励准则。 我们的使命是建立一个强大、可访问且由社区驱动的平台，而您的贡献对于实现这一愿景至关重要。 无论您是经验丰富的开发者、技术撰稿人、首次贡献者还是简单的爱好者，您的见解、想法和改进都能产生重大影响。 我们深知每一份为增强Conflux环境所做的努力都值得认可，因此我们已经实施了基于FansCoin（FC）的奖励制度。
 
 This article details how your contributions, categorized under 'Issues' and 'Pull Requests', are rewarded. You will learn how identifying problems or presenting enhancements in various aspects—ranging from formatting and readability to error identification—is rewarded. With your support, Conflux continues to evolve and improve by the day.
 
-## Guidelines
+## 准则
 
 ### Issues (16 \~ 80 FC)
 
-- If the individual who raised the issue also offers a solution, the reward will be doubled. Here are some examples:
-  - **Formatting**
-    - Identifying spelling or grammar errors: 16 FC
-    - Spotting broken links or obsolete details: 16 FC
-    - Highlighting issues with code blocks or other format-related problems: 16 FC
-    - Flagging issues with images, diagrams: 16 FC
-  - **Readability Enhancements**
-    - Proposing that existing explanations are unclear: 16 FC
-    - Recommending improved descriptions for certain issues: 16 FC
-    - Suggesting supplementary explanations for specific use-cases of features: 32 FC
-    - Indicating lack of contextual information causing comprehension difficulties: 32 FC
+- 如果在提出问题的同时提供了解决方案，奖励将加倍。 以下是一些示例：
+  - **格式化**
+    - 发现拼写或语法错误：16 FC
+    - 发现损坏的链接或过时的细节：16 FC
+    - 发现代码块等格式问题：16 FC
+    - 标记图片、图表相关问题：16 FC
+  - **增强可读性**
+    - 提出现有解释不清晰：16 FC
+    - 建议完善对某些问题的描述：16 FC
+    - 建议举出用例以使得对特定功能的解释更清晰：32 FC
+    - 指出因缺乏上下文语境而导致的理解困难：32 FC
     - Highlighting deficient tool/document links resulting in limited interactivity: 32 FC
     - Recommending creation or improvement of diagrams, charts, or visual aids: 32 FC
     - Requesting additional details on a specific topic: 48 FC
@@ -46,7 +46,7 @@ This article details how your contributions, categorized under 'Issues' and 'Pul
 - It's desirable to always raise an issue prior to creating a pull request. If the pull request fully resolves an issue, the reward is at least equivalent to that of the issue, regardless of the effort involved.
 - If the originator of the pull request solves an issue they raised, they receive an extra 25% reward.
 - Examples include :
-  - **Formatting**
+  - **格式化**
     - Fixing spelling or grammar errors: 16 FC.
     - Updating broken links or outdated information: 16 FC.
     - Resolving issues with code blocks or other formatting: 32 FC.
