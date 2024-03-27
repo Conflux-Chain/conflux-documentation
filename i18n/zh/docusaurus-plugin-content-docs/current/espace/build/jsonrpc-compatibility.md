@@ -120,7 +120,7 @@ import TabItem from '@theme/TabItem';
   }
 ```
 
-The possible errors are same with [cfx_sendTransaction errors](../../core/build/json-rpc/rpc-behaviour/cfx_sendTransaction-errors.md).
+可能的错误与 [cfx_sendTransaction 错误](../../core/build/json-rpc/rpc-behaviour/cfx_sendTransaction-errors.md) 相同。
 
 ## 数据可验证性
 

@@ -127,7 +127,7 @@ log_conf="log.yaml"
 #
 # public_tcp_port=32323
 
-# `udp_port` is the UDP port used for node discovery.
+# `udp_port` 是用于节点发现的UDP端口。
 # 如果未设置，它将与 `port` 相同。
 #
 # udp_port=32323
@@ -152,8 +152,8 @@ log_conf="log.yaml"
 
 # 以下参数是节点提供RPC服务的端口。 如果未设置，
 # 节点将不会启动RPC服务。 默认情况下，`jsonrpc_local_http_port`被设置，
-# 以支持Conflux CLI子命令。 What's provided here is the recommended
-# value if you want to start rpc services for other front-end applications.
+# 以支持Conflux CLI子命令。 这里提供的是推荐的
+# 值，如果您想为其他前端应用启动 rpc 服务。
 # 注意，为了提供与交易相关的RPC服务，`persist_tx_index`也应设置为`true`，
 # 否则节点只能处理最近的交易。
 #
@@ -173,13 +173,13 @@ log_conf="log.yaml"
 # public_rpc_apis = "safe"
 # public_evm_rpc_apis = "evm"
 
-# --------------- Performance-related Network Parameters ----------------------
+# --------------- 与性能相关的网络参数 ----------------------
 
-# Timeout for block-related requests (GetBlock, GetCmpctBlock, GetBlockTxn)
+# 区块相关请求的超时时间 (GetBlock, GetCmpctBlock, GetBlockTxn)
 #
 # blocks_request_timeout_ms = 20_000
 
-# Time interval to check timeout requests periodically.
+# 定期检查超时请求的时间间隔。
 #
 # check_request_period_ms=5000
 
@@ -467,7 +467,7 @@ log_conf="log.yaml"
 # storage_delta_mpts_node_map_vec_size=80000000
 # storage_delta_mpts_slab_idle_size=200000
 
-# Configure the maximal open MPT count. Open MPTs are maintained as an LRU cache, and we will close the database handle
+# 配置最大打开MPT 个数。 Open MPTs are maintained as an LRU cache, and we will close the database handle
 # for the evicted MPT once its usage finishes. Every MPT contains the data written in 2000 epochs.
 # Accessing a state involves opening both its delta MPT and intermediate MPT,
 # so setting this to 4 allows to access two states at the same time. A full node always needs one latest state to

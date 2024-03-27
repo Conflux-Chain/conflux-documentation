@@ -88,7 +88,7 @@ forge create ... --rpc-url=https://evmtestnet.confluxrpc.com --legacy
 
 现在，在“部署和运行交易”标签页中，使用“环境”下拉菜单并选择“Injected Provider - MetaMask”。
 
-![](./img/injectedProviderMM.avif)
+![](./img/injectedprovidermm.png)
 
 连接您的钱包并选择 Conflux eSpace 测试网。 您的账户应该会在 Remix 中被自动选择，并且您可以点击“部署”。 Remix 使用的完整工作流程在 [这里](./tutorials/deployContract/remix.md)展示。
 

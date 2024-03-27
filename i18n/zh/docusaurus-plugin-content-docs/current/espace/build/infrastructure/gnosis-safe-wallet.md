@@ -43,4 +43,4 @@ Safe Web Wallet 或 App 的官方版本目前与 eSpace 不兼容。
 - 确保您的浏览器安装了 MetaMask 钱包扩展。
 - 确保您的计算机网络连接稳定；在某些地区，可能需要使用 VPN。
 - 如果这是您第一次访问欢迎页面，请点击右上角的向下箭头并选择 CFX 网络。
-- 然后，再次点击“连接”按钮。 This should prompt the wallet selection popup to appear, where you can choose MetaMask to proceed.
+- 然后，再次点击“连接”按钮。 此时应该会出现钱包选择弹窗，您可以选择 MetaMask 并继续操作。

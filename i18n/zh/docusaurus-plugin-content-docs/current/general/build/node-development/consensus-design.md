@@ -23,22 +23,17 @@ Conflux 的共识层处理从同步层接收到的所有区块，根据 Conflux 
 
 ## 结构与组成部分。
 
-### ConsensusGraph
+### 共识图（ConsensusGraph）
 
-`ConsensusGraph` (core/src/consensus/mod.rs) is the main struct of the
-consensus layer. The synchronization layer constructs `ConsensusGraph` with a
-`BlockDataManager` which stores all block metadata information on disk.
-`ConsensusGraph::on_new_block()` is the key function to send new blocks to the
-`ConsensusGraph` struct to process. It also provides a set of public functions
-to query the status of blocks/transactions. This should be the main interface
+`ConsensusGraph`（core/src/consensus/mod.rs）是共识层的主要结构体。 同步层通过一个存储所有区块元数据信息的 `BlockDataManager` 来构建 `ConsensusGraph`。
+ConsensusGraph::on_new_block() 是将新区块发送给ConsensusGraph结构体进行处理的关键函数。 它还提供了一组公共函数，用于查询区块/交易的状态。 This should be the main interface
 with which other components interact.
 
-### ConsensusGraphInner
+### 共识图核心（ConsensusGraphInner）
 
 `ConsensusGraphInner` (core/src/consensus/consensus_inner/mod.rs) is the inner
 structure of `ConsensusGraph`. `ConsensusGraph::on_new_block()` acquires the
-write lock of the inner struct at the start of the function. The rest are
-query functions that only acquire read locks.
+write lock of the inner struct at the start of the function. 其余的查询函数只会获取读锁。
 
 The internal structure of `ConsensusGraphInner` is fairly complicated.
 Generally speaking, it maintains two kinds of information. The first kind of

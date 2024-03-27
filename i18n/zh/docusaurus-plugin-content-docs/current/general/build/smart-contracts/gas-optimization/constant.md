@@ -1,3 +1,7 @@
+---
+displayed_sidebar: generalSidebar
+---
+
 # Constant vs Immutable
 
 1. `constant`: Declares a constant that must be initialized at the time of declaration and cannot be altered thereafter.
@@ -9,20 +13,6 @@
 The following examples illustrate three variables defined with different modifiers.
 
 ```solidity
-// SPDX-License-Identifier: MIT
-pragma solidity ^0.8.4;
-
-contract ConstantExample {
-    uint256 public constant FIXED_VALUE = 100;
-}
-
-contract ImmutableExample {
-    uint256 public immutable SETUP_VALUE = 100;
-}
-
-contract VariableExample {
-    uint256 public dynamicValue = 100;
-}
 ```
 
 Recommendations for gas optimization:

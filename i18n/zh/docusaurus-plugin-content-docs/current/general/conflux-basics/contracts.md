@@ -4,25 +4,25 @@ title: 智能合约
 displayed_sidebar: generalSidebar
 ---
 
-# Introduction to Smart Contracts
+# 智能合约简介
 
-## What is a Smart Contract?
+## 什么是智能合约？
 
-The concept of smart contracts was first proposed by Nick Szabo in 1995. A Smart contract is a computer protocol designed to disseminate, verify or execute contracts in an informational manner. Smart contracts allow transactions to be executed without a trusted third party, and the transactions are traceable and irreversible.
+智能合约的概念最早由Nick Szabo在1995年提出。 智能合约是一种计算机协议，旨在以信息化的方式传播、验证或执行合约。 智能合约允许在没有可信第三方的情况下执行交易，而且交易是可追溯和不可逆的。
 
-Its purpose is to provide a secure method that outperforms traditional contracts and reduces other transaction costs associated with contracts.
+它的目的是提供一种比传统合约更安全的方法，并降低与合约相关的其他交易成本。
 
-For Conflux network, a *smart contract* is a simple program that runs on the Conflux Network. Each instance of a smart contract is a collection of code and data that resides at a specific address on the Conflux Network. Since the state on the blockchain is fully deterministic, operations on smart contracts are guaranteed to produce the same results on all blockchain nodes. Furthermore, since smart contracts run on the blockchain, the decentralization and non-tamperable characteristics of the blockchain ensure certainty and security in the operation of the contract. Therefore, a wide range of decentralized applications (dApps) are created based on smart contracts, including games, digital collectibles (NFT), online voting systems, financial products (DeFi), etc.
+对于Conflux网络，*智能合约*是一种运行在Conflux网络上的简单程序。 每个智能合约的实例都是一组代码和数据，它们存在于Conflux网络上的一个特定地址。 由于区块链上的状态是完全确定的，所以对智能合约的操作保证在所有区块链节点上产生相同的结果。 此外，由于智能合约运行在区块链上，区块链的去中心化和不可篡改的特性保证了合约操作的确定性和安全性。 因此，基于智能合约创建了各种去中心化应用（dApps），包括游戏、数字收藏品（NFT）、在线投票系统、金融产品（DeFi）等。
 
-There are two account types on the Conflux Network: user accounts and smart contract accounts. Once the smart contract is deployed, a corresponding smart contract account is created. Smart contract accounts have a CFX balance and they can also interact with other accounts. However, they are not controlled by users but by the program deployed on the network. User accounts are able to interact with smart contracts by submitting transactions that execute the functions defined on the smart contract. The smart contract enables us to define rules just like traditional contracts and automates the execution through codes.
+Conflux网络上有两种账户类型：用户账户和智能合约账户。 一旦智能合约被部署，就会创建一个相应的智能合约账户。 智能合约账户有一个CFX余额，它们也可以与其他账户进行交互。 但是，它们不受用户控制，而是受部署在网络上的程序控制。 用户账户可以通过提交执行智能合约上定义的函数的交易来与智能合约进行交互。 智能合约使我们能够像传统合约一样定义规则，并通过代码自动执行。
 
-Nick Szabo used the example of a vending machine to describe how real-world contractual obligations can be programmed into software and hardware systems. Each person simply puts the correct number of coins into the machine and can expect to receive a product in exchange. Similarly, on Conflux, a smart contract is able to perform a certain task and get a certain result under specified conditions.
+Nick Szabo用自动售货机的例子来描述了如何将现实世界的合约义务编程到软件和硬件系统中。 每个人只需将正确数量的硬币放入机器，就可以期望得到一件产品作为交换。 同样地，在Conflux上，智能合约能够在指定的条件下执行某个任务并得到某个结果。
 
-### Definition and Overview
-Smart contracts on Conflux are programs stored on the blockchain that run when predetermined conditions are met. They are immutable and distributed, meaning once deployed, they cannot be altered and are executed by the network.
+### 定义和概述
+Conflux 上的智能合约是存储在区块链上的程序，当预设条件满足时执行。 它们是不可变和分布式的，意味着一旦部署，就无法被更改，并且由网络执行。
 
-### How Smart Contracts Work
-These contracts are written in high-level programming languages like Solidity, similar to Ethereum. They interact with the blockchain to store, modify data, or send transactions, automating complex processes without intermediaries.
+### 智能合约如何工作
+这些合约是用类似于以太坊的高级编程语言如 Solidity 编写的。 它们与区块链交互，存储、修改数据或发送交易，自动化复杂过程而无需中介。
 
 ### Benefits in the Conflux Network
 Smart contracts in Conflux offer benefits like enhanced security, reduced transaction costs, and increased efficiency. Conflux's unique tree-graph structure facilitates higher throughput and lower fees, making it an ideal platform for deploying smart contracts.

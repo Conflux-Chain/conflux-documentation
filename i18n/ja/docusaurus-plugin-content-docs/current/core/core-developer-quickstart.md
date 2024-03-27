@@ -147,3 +147,4 @@ If your account does not have enough balance, you will encounter the following e
 2. Refer to [SDKs](./build/sdks-and-tools/sdks.md) for examples of other SDKs.
 3. [Core Space Faucet](https://faucet.confluxnetwork.org/)
 4. [Conflux Core Scan](https://confluxscan.io/)
+5. [use-wallet](../general/build/tools/use-wallet.md): a front-end perspective wallet hooks library providing rapid development support for lightweight dapps, with React and Vue3 support.

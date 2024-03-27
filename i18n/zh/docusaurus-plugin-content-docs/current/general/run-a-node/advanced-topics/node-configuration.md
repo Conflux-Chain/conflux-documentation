@@ -151,39 +151,39 @@ block_db_dir="./blockchain_data/blockchain_db"
 netconf_dir="./blockchain_data/net_config"
 ```
 
-### pos related options
+### pos 相关选项
 
-#### pos_key password
+#### pos_key 密码
 
-Password for encrypting the POS private key, used to secure the POS private key. By default, this password is set interactively through the command line during the first node startup. You can set this password through the configuration file to avoid command line interaction.
+用于加密PoS私钥的密码，用来保护PoS私钥。 默认情况下，这个密码是在节点首次启动时通过命令行交互设置的。 您可以通过配置文件设置此密码以避免命令行交互。
 
 ```toml
 dev_pos_private_key_encryption_password="aaaa"
 ```
 
-#### pos config file
+#### pos 配置文件
 
-Below are the default paths for the POS configuration file, initial nodes file, and private key file. You can modify these paths to customize the POS configuration.
+以下是 PoS 配置文件、初始节点文件和私钥文件的默认路径。 您可以修改这些路径来自定义 PoS 配置。
 
 ```toml
-# PoS config file path
+# PoS 配置文件路径
 pos_config_path=./pos_config/pos_config.yaml
-# PoS initial nodes file path
+# PoS 初始节点文件路径
 pos_initial_nodes_path=./pos_config/initial_nodes.json
-# PoS account private key file path
+# PoS 账户私钥文件路径
 pos_private_key_path=./pos_config/pos_key
 ```
 
-The release package contains a default PoS configuration file, which can be found in the `pos_config` directory. The `pos_key` file will be generated automatically after the first node startup.
+发布包含一个默认的 PoS 配置文件，可以在 `pos_config` 目录中找到。 `pos_key` 文件将在第一次节点启动后自动生成。
 
-### storage optimization
+### 存储优化
 
-Storage optimization related options.
+相关的存储优化选项。
 
 ```toml
-# Use isolated database for MPT table
-# Setting it to true will reduce the disk usage
-# Was introduced in v2.3.4 https://github.com/Conflux-Chain/conflux-rust/releases/tag/v2.3.4
+# 为 MPT 表使用独立数据库
+# 将其设置为 true 将减少磁盘使用量
+# 在 v2.3.4 中引入 https://github.com/Conflux-Chain/conflux-rust/releases/tag/v2.3.4
 use_isolated_db_for_mpt_table=true 
 ```
 

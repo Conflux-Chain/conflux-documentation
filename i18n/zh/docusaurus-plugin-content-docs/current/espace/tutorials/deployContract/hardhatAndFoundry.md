@@ -96,7 +96,7 @@ import TabItem from '@theme/TabItem';
 ### Invalid parameters: tx
 
 在部署合约时，您可能会遇到像 `Invalid parameters: tx` 这样的错误消息。 请确保您的部署账户有足够的测试代币来部署合约。 您可以从 [eSpace 水龙头](https://efaucet.confluxnetwork.org/) 请求测试代币。
-更多可能的原因，请参考 [发送交易错误](/docs/core/core-space-basics/transactions/send-tx-error) 和 [sendRawTransaction RPC方法错误](/docs/core/build/json-rpc/cfx_sendTransaction-errors) 的信息
+更多可能的原因，请参考 [发送交易错误](/docs/core/core-space-basics/transactions/send-tx-error) 和 [sendRawTransaction RPC方法错误](/docs/core/build/json-rpc/rpc-behaviour/cfx_sendTransaction-errors.md) 的信息
 
 ## 反馈
 

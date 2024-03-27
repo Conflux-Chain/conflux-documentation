@@ -193,4 +193,4 @@ Transaction sent: 0x547675979e80eccfe0665d2ab347cefc8ca3644dbdaddb0572b76cc7a62d
 
 遵循这些步骤，您将顺利地在 Conflux eSpace 上进一步开发您的项目。
 
-要了解更多使用 Brownie 的示例，请访问 [Brownie 官方文档](https://eth-brownie.readthedocs.io/en/stable/index.html)。 You are also welcome to ask questions in our community or raise issues on our [GitHub repository](https://github.com/Conflux-Chain/conflux-documentation/issues/new/choose).
+要了解更多使用 Brownie 的示例，请访问 [Brownie 官方文档](https://eth-brownie.readthedocs.io/en/stable/index.html)。 我们也非常欢迎您在我们的社区或 [GitHub 仓库](https://github.com/Conflux-Chain/conflux-documentation/issues/new/choose)中提出问题。

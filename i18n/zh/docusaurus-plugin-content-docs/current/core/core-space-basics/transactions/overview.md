@@ -6,7 +6,7 @@ keywords:
 displayed_sidebar: coreSidebar
 ---
 
-Transaction is an important concept in blockchain. If you are not familiar with the concept of transactions and would like to quickly understand it, you can read [Transaction Quick Intro](/docs/general/conflux-basics/transactions.md).
+Transaction is an important concept in blockchain. 如果你不熟悉交易的概念，并希望快速了解它,你可以阅读 [交易快速入门](../../zh-CN/docs/general/conflux-basics/transactions.md)。
 
 Typically, we use [wallets](../../../general/conflux-basics/wallets.md) or [SDKs](../../build/sdks-and-tools/sdks.md) to send transactions, and these tools will assist us in completing complex tasks such as constructing transactions, sending them to the network, and ultimately waiting for the transaction be confirmed or finalized, making the process relatively straightforward.
 

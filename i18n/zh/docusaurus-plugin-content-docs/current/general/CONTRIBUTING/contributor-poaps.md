@@ -11,7 +11,7 @@ Contributor POAPs operate distinctly from [FC reward guidelines](./reward-guidel
 
 :::
 
-After the end of each quarter, we issue a batch of Contributor POAPs (Proof of Attendance Protocol) to recognize individuals who have made contributions to our documentation site. 想要有资格铸造一个 POAP，您的贡献必须符合以下 “ACCEPTED” 的标准：
+在每季度结束后， 我们将会发行一批贡献者 POAPs (活动参与证明)，以表彰为我们的文档网站做出贡献的贡献者。 想要有资格铸造一个 POAP，您的贡献必须符合以下 “ACCEPTED” 的标准：
 
 - 创建了一个被仓库维护者标记为 “ACCEPTED” 的问题。
 - 将拉取请求成功合并到主分支。
@@ -30,11 +30,11 @@ After the end of each quarter, we issue a batch of Contributor POAPs (Proof of A
 
 ## POAP 持有者的 FC（FansCoin）奖励
 
-As a token of appreciation, contributors can claim [FansCoin (FC)](https://confluxscan.io/token/cfx:achc8nxj7r451c223m18w2dwjnmhkd6rxawrvkvsy2) rewards for each POAP they own. The amount of FC awarded varies depending on the specific POAP.
+为了表达我们的感谢，贡献者可以凭借他们拥有的每个 POAP 领取 FansCoin（FC）奖励。 不同的 POAP 获得的 FC 奖励数量也各不相同。
 
 这是与POAP相关联的附加奖励，并不影响与 [奖励指南](./reward-guidelines.md)相关的奖励。
 
-> Please note that the FC reward pool is located exclusively in Core Space at [cfx:achm6kb92by13rpvwd04zscn1127zuaseu25usm7sc](https://confluxscan.io/address/cfx:achm6kb92by13rpvwd04zscn1127zuaseu25usm7sc).
+> 请注意，FC 奖池位于 Core Space [cfx:achm6kb92by13rpvwd04zscn1127zuaseu25usm7sc](https://confluxscan.io/address/cfx:achm6kb92by13rpvwd04zscn1127zuaseu25usm7sc)。
 
 ## 对于 POAP 发放规则的定期审查
 

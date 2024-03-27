@@ -32,13 +32,13 @@ displayed_sidebar: generalSidebar
 
 ```
 
-* `conflux` Node program - This is the executable file for the Conflux node. You will use this to run the Conflux network node on your machine.
-* `hydra.toml` - This file serves as the main configuration for the Conflux network. If you're setting up a node for the testnet instead of the mainnet, you would use a file named `testnet.toml`. This file contains various settings that determine how your node interacts with the Conflux network.
-* `log.yaml` - This is the log configuration file. It defines how logging is handled by the node program, including log levels and log output locations. This is important for troubleshooting and monitoring the node's operation.
-* `throttling.toml` - The internet speed flow limit configuration file. This file is particularly useful during development and testing phases. It allows you to set limits on the node's use of internet bandwidth, which can be helpful for simulating different network conditions or for ensuring that the node does not exceed certain usage limits.
-* `start.sh` - The startup script for Linux systems. You would use this script to start the node program on a Linux machine. It simplifies the process of launching the node, setting up environment variables, and applying any necessary runtime configurations.
-* `start.bat` - Similar to `start.sh`, this is the startup script for Windows systems. It serves the same purpose but is designed to work in the Windows command line environment.
-* `pos_config` - This directory contains configuration files related to the Proof of Stake (PoS) consensus mechanism. Inside, you will find the `genesis_file`, which defines the initial state of the blockchain; `initial_nodes.json`, which lists the initial nodes participating in the network; and `pos_config.yaml`, which contains various settings for the PoS mechanism. Normally, you won't need to edit these files unless you are setting up a new network or making specific adjustments to the PoS mechanism.
+* `conflux` Node program - 这是 Conflux 节点的可执行文件。 您将使用它在您的机器上运行 Conflux 网络节点。
+* `hydra.toml` - 这个文件作为 Conflux 网络的主要配置文件。 如果您正在为测试网而不是主网设置节点，您将使用一个名为 `testnet.toml` 的文件。 这个文件包含各种设置，决定了您的节点如何与 Conflux 网络交互。
+* `log.yaml` - 这是日志配置文件。 它定义了节点程序如何处理日志，包括日志级别和日志输出位置。 这对于故障排除和进行节点监控非常重要。
+* `throttling.toml` - 互联网速度流量限制配置文件。 这个文件在开发和测试阶段特别有用。 它允许您设置节点使用互联网带宽的限制，这对于模拟不同的网络条件或确保节点不超过某些使用限制很有帮助。
+* `start.sh` - Linux 系统的启动脚本。 您将使用这个脚本在 Linux 机器上启动节点程序。 它简化了启动节点的过程，设置环境变量，并应用任何必要的运行时配置。
+* `start.bat` - 类似于 `start.sh`，这是 Windows 系统的启动脚本。 它具有相同的用途，但它被设计为在 Windows 命令行环境中工作。
+* `pos_config` - 这个目录包含与权益证明（PoS）共识机制相关的配置文件。 里面，您会找到 `genesis_file`——它定义了区块链的初始状态；`initial_nodes.json`——它列出了参与网络的初始节点；以及 `pos_config.yaml`，它包含了 PoS 机制的各种设置。 通常，除非您正在设置一个新网络或对 PoS 机制进行特定调整，否则您不需要编辑这些文件。
 
 **请确保您只运行从官方的Conflux-Chain/comflux-rust GitHub仓库下载的二进制文件。**
 
