@@ -1,6 +1,6 @@
 ---
 sidebar_position: 7
-title: Run an eSpace Node
+title: 运行 eSpace 节点
 displayed_sidebar: eSpaceSidebar
 ---
 

@@ -91,7 +91,7 @@ Returns the current status of the PoS chain.
 
 `Empty`
 
-#### Returns
+#### 返回值
 
 `Object` - PoS status object.
 
@@ -149,7 +149,7 @@ params: [
 ]
 ```
 
-#### Returns
+#### 返回值
 
 `Object` - the account object, or `null` (if the account corresponding to the address does not exist)
 
@@ -202,7 +202,7 @@ Get the current PoS committee information in default. It is also able to get the
 
 1. [`QUANTITY`]:  block number, optional for querying the committee information at a certain block height
 
-#### Returns
+#### 返回值
 
 * `currentCommittee`: `OBJECT` -  current committee members, see [CurrentCommittee](#currentcommittee) for more information
 * `elections`: `Array` - nodes who are running for election
@@ -305,7 +305,7 @@ params: [
 ]
 ```
 
-#### Returns
+#### 返回值
 
 * `epoch`: `QUANTITY` - the epoch that the block is in
 * `hash`: `HASH` - the hash value of the block
@@ -381,7 +381,7 @@ Get block information by its block number
 
 1. `QUANTITY|TAG`: block number or block TAG（`latest_committed`, `latest_voted`）
 
-#### Returns
+#### 返回值
 
 the same as [pos_getBlockByHash](#pos_getblockbyhash)
 
@@ -414,7 +414,7 @@ params: [
 ]
 ```
 
-#### Returns
+#### 返回值
 
 * `accountRewards`: `Array` of [AccountReward](#accountreward)
 * `powEpochHash`: `HASH` - the hash value of the PoW block when the rewards are made
@@ -478,7 +478,7 @@ params: [
 ]
 ```
 
-#### Returns
+#### 返回值
 
 交易详情
 

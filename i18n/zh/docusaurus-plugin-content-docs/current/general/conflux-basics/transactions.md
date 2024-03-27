@@ -54,7 +54,7 @@ Once the transaction has been submitted the following happens:
 3. A validator must pick your transaction and include it in a block in order to verify the transaction and consider it "successful".
 4. As time passes the block containing your transaction will be upgraded to "justified" then "finalized". These upgrades make it much more certain that your transaction was successful and will never be altered. Once a block is "finalized" it could only ever be changed by a network level attack that would cost many billions of dollars.
 
-For a more detailed understanding of the transaction lifecycle, you can refer to [Transaction Lifecycle](/docs/core/core-space-basics/transactions/lifecycle.md).
+为了更详细地了解交易生命周期，你可以参考 [交易生命周期](/docs/core/core-space-basics/transactions/lifecycle.md)。
 
 ## Transaction Status
 
@@ -68,7 +68,7 @@ In addition to this, the Receipt also includes other information about the trans
 
 ## Details
 
-If you want to learn details about transactions, you can refer to the transaction explanation in the [Core Space](/docs/core/core-space-basics/transactions/overview.md).
+如果你想了解交易详情，你可以参考 [Core 空间](/docs/core/core-space-basics/transactions/overview.md) 中的交易解释。
 
 ## Intro Video
 
@@ -77,6 +77,6 @@ import TabItem from '@theme/TabItem';
 
 <Tabs>
   <TabItem value="youtube" label="Transactions on Conflux Network">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/GIeD2khbbXs?si=cTRZo6DalLkLguXi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/GIeD2khbbXs?si=cTRZo6DalLkLguXi" title="YouTube 视频播放器" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
   </TabItem>
 </Tabs>

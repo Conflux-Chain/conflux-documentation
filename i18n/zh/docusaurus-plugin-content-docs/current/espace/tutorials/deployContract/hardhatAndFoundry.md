@@ -7,15 +7,15 @@ displayed_sidebar: eSpaceSidebar
 
 import { DiscordLink } from "../../../templates/links.tsx"
 
-The eSpace Testnet allows anyone to deploy a smart contract on eSpace. In this tutorial, you will learn how to deploy a contract on eSpace Testnet using common tools for developing on Ethereum. This [demo repo](https://github.com/conflux-fans/espace-contract-guide) illustrates contract deployment with [Hardhat](https://hardhat.org/) and [Foundry](https://github.com/foundry-rs/foundry).
+eSpace 测试网允许任何人在 eSpace 上部署智能合约。 在本教程中，您将学习使用针对以太坊的常用开发工具在 eSpace 测试网上部署合约。 在这个 [GitHub 仓库](https://github.com/conflux-fans/espace-contract-guide) 中展示了使用 [Hardhat](https://hardhat.org/) 和 [Foundry](https://github.com/foundry-rs/foundry)部署合约的过程。
 
-Before you start deploying the contract, **you need to request test tokens** from a [eSpace faucet](https://efaucet.confluxnetwork.org/).
+在开始部署合约之前，您需要先从[ eSpace 水龙头](https://efaucet.confluxnetwork.org/)获取测试代币。
 
 ## 使用 Hardhat 部署智能合约
 
-1. If you haven't already, install [nodejs](https://nodejs.org/en/download/) and [yarn](https://classic.yarnpkg.com/lang/en/docs/install).
+1. 如果您尚未安装，请先安装 [nodejs](https://nodejs.org/en/download/) 和 [yarn](https://classic.yarnpkg.com/lang/en/docs/install)。
 
-2. Clone the repo and install dependencies:
+2. 克隆仓库并安装依赖项：
 
    ```shell
    git clone https://github.com/conflux-fans/espace-contract-guide
@@ -23,17 +23,17 @@ Before you start deploying the contract, **you need to request test tokens** fro
    yarn install
    ```
 
-3. Create a `.env` file following the example `.env.example` in the root directory. Change `PRIVATE_KEY` to your own account private key in the `.env`.
+3. 按照根目录中的 `.env.example` 示例创建一个 `.env` 文件。 将 `.env` 中的 `PRIVATE_KEY` 更改为您自己账户的私钥。
 
-4. Run `yarn compile` to compile the contract.
+4. 运行 `yarn compile` 来编译合约。
 
-5. Run `yarn deploy:eSpaceTestnet` to deploy the contract on the eSpace Testnet.
+5. 运行 `yarn deploy:eSpaceTestnet` 在 eSpace 测试网上部署合约。
 
-6. Run `yarn test` for hardhat tests.
+6. 运行 `yarn test` 进行 hardhat 测试。
 
 ### 视频教程
 
-To learn more about smart contract deployment using Hardhat, please refer to the following videos:
+以下视频展示了如何使用 Hardhat 部署智能合约：
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -51,23 +51,23 @@ import TabItem from '@theme/TabItem';
 
 ## 使用 Foundry 部署智能合约
 
-1. Clone the repo:
+1. 克隆仓库：
 
    ```shell
    git clone https://github.com/conflux-fans/espace-contract-guide
    cd espace-contract-guide
    ```
 
-2. Install Foundry:
+2. 安装 Foundry：
 
    ```shell
    curl -L https://foundry.paradigm.xyz | bash
    foundryup
    ```
 
-3. Run `forge build` to build the project.
+3. 运行 `forge build` 来构建项目。
 
-4. Deploy your contract with Foundry:
+4. 使用 Foundry 部署您的合约：
 
    ```bash
    forge create --rpc-url https://evmtestnet.confluxrpc.com \
@@ -78,8 +78,8 @@ import TabItem from '@theme/TabItem';
      contracts/Lock.sol:Lock
    ```
 
-   - `<lock_amount>` is the amount of test `CFX` to be locked in the contract. Try setting this to some small amount, like `0.0000001ether`.\&#x20
-   - `<unlock_time>` is the Unix timestamp after which the funds locked in the contract will become available for withdrawal. Try setting this to some Unix timestamp in the future, like `1730390400` (this Unix timestamp corresponds to October 1, 2024).
+   - `<lock_amount> ` 是需要锁定在合约中的测试 CFX 数量。 尝试将其设置为一些小数额，比如 `0.0000001ether`。\&#x20
+   - `<unlock_time>` 是锁定在合约中的资金可供提取的 Unix 时间戳。 尝试将其设置为未来的某个 Unix 时间戳，比如 `1730390400`（这个 Unix 时间戳对应于 2024 年 10 月 1 日）。
 
    例如：
 
@@ -95,9 +95,9 @@ import TabItem from '@theme/TabItem';
 
 ### Invalid parameters: tx
 
-You may encounter error messages like `Invalid parameters: tx` when deploying a contract. Please make sure that your deploy account has enough test tokens to deploy the contract. You can request test tokens from the [eSpace faucet](https://efaucet.confluxnetwork.org/).
-For more possible reasons, please refer to the [Sending Transaction Errors](/docs/core/core-space-basics/transactions/send-tx-error) and [sendRawTransaction RPC method error messages](/docs/core/build/json-rpc/rpc-behaviour/cfx_sendTransaction-errors.md)
+在部署合约时，您可能会遇到像 `Invalid parameters: tx` 这样的错误消息。 请确保您的部署账户有足够的测试代币来部署合约。 您可以从 [eSpace 水龙头](https://efaucet.confluxnetwork.org/) 请求测试代币。
+更多可能的原因，请参考 [发送交易错误](/docs/core/core-space-basics/transactions/send-tx-error) 和 [sendRawTransaction RPC方法错误](/docs/core/build/json-rpc/rpc-behaviour/cfx_sendTransaction-errors.md) 的信息
 
-## Feedback
+## 反馈
 
-Thank you for participating in and developing on the eSpace Testnet! If you encounter any issues, join our <DiscordLink>Discord</DiscordLink> and ask us in it.
+感谢您参与并在 eSpace 测试网上进行开发！ 如果您遇到任何问题,请加入我们的 <DiscordLink>Discord</DiscordLink> 并在其中向我们提问。

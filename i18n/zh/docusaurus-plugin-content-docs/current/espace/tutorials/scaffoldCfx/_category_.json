@@ -1,8 +1,8 @@
 {
-    "label": "Scaffold for Developing Conflux Apps",
+    "label": "Conflux 应用程序开发工具 Scaffold",
     "position": 1,
     "link": {
         "type": "generated-index",
-        "description": "Tutorial on how to use a Scaffold for Developing Conflux Apps and Testing Contracts"
+        "description": "使用 Scaffold 开发 Conflux 应用并进行合约测试的教程"
     }
 }

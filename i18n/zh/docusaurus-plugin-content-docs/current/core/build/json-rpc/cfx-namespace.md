@@ -10,25 +10,25 @@ keywords:
 displayed_sidebar: coreSidebar
 ---
 
-## JSON-RPC Spec
+## JSON-RPC规范说明
 
-There is a [**JSON-RPC API spec**](https://open-rpc.org/) of cfx namespace on [GitHub](https://github.com/Conflux-Chain/jsonrpc-spec). You can view it in [open-rpc playground](https://playground.open-rpc.org/?schemaUrl=https://raw.githubusercontent.com/Conflux-Chain/jsonrpc-spec/main/src/cfx/cfx.json&uiSchema%5BappBar%5D%5Bui:splitView%5D=false&uiSchema%5BappBar%5D%5Bui:input%5D=false&uiSchema%5BappBar%5D)
+在[GitHub](https://github.com/Conflux-Chain/jsonrpc-spec)上有一个cfx命名空间的[**JSON-RPC API**](https://open-rpc.org/)规范。 您可以在[open-rpc playground](https://playground.open-rpc.org/?schemaUrl=https://raw.githubusercontent.com/Conflux-Chain/jsonrpc-spec/main/src/cfx/cfx.json&uiSchema%5BappBar%5D%5Bui:splitView%5D=false&uiSchema%5BappBar%5D%5Bui:input%5D=false&uiSchema%5BappBar%5D)中查看它。
 
-## CONVENTIONS
+## 惯例
 
 ### 十六进制值编码
 
-Two key data types get passed over JSON: unformatted byte arrays and quantities. Both are passed with a hex encoding but with different requirements for formatting.
+有两种关键的数据类型通过 JSON 传递：未格式化的字节数组和数量。 二者都使用十六进制编码传递，但对格式化有不同的要求。
 
-#### Quantities
+#### 数值
 
-When encoding **QUANTITIES** (integers, numbers): encode as hex using the most compact representation and prefix with `"0x"`. Zero should be represented as `"0x0"`. 例如：
+当编码**数值**（整数，数字）时：使用最紧凑的表示方式编码为十六进制，并加上`“0x”`前缀。 零应表示为`"0x0"`。 例如：
 
-* `0x41` (65 in decimal)
-* `0x400` (1024 in decimal)
-* **WRONG**: `0x` (should always have at least one digit - zero is `"0x0"`)
-* **WRONG**: `0x0400` (no leading zeroes allowed)
-* **WRONG**: `ff` (missing `0x` prefix)
+* `0x41`（十进制的 65）
+* `0x400`（十进制的 1024）
+* **错误样例**：`0x`（应该至少有一位数字 - 零是`“0x0”`）
+* **错误样例**：`0x0400`（不允许有前导零）
+* **错误样例：**：`ff`（缺少`0x`前缀）
 
 #### 未格式化的数据
 
@@ -37,12 +37,12 @@ When encoding **QUANTITIES** (integers, numbers): encode as hex using the most c
 * `0x41` (size 1, `"A"`)
 * `0x004200` (size 3, `"\0B\0"`)
 * `0x` (size 0, `""`)
-* **WRONG**: `0xf0f0f` (must be even number of digits)
-* **WRONG**: `004200` (missing `0x` prefix)
+* **错误**： `0xf0f0f`（必须是偶数位数）。
+* **错误**： `004200`（缺少`0x`前缀）。
 
 请注意，区块和交易的哈希值是用32个字节来表示的。
 
-### Base32 Address
+### Base32 地址
 
 `BASE32`：Base32 **地址**应该编码为一个ASCII字符串，包含42个字符加上网络前缀、分隔符和可选字段。 请注意以下关于base32地址作为RPC参数的限制条件：
 
@@ -50,7 +50,7 @@ When encoding **QUANTITIES** (integers, numbers): encode as hex using the most c
 * 无论包含还是省去地址类型都是可以接受的，例如：`cfx:aarc9abycue0hhzgyrr53m6cxedgccrmmyybjgh4xg`和`cfx:type.user:aarc9abycue0hhzgyrr53m6cxedgccrmmyybjgh4xg`是等价的。 但是，类型不正确的地址，例如：`cfx:type.contract:aarc9abycue0hhzgyrr53m6cxedgccrmmyybjgh4xg`，会被拒绝。
 * 全大写或者全小写地址都是可以接受的，例如：`cfx:aarc9abycue0hhzgyrr53m6cxedgccrmmyybjgh4xg`和`CFX:AARC9ABYCUE0HHZGYRR53M6CXEDGCCRMMYYBJGH4XG`都是有效的。 但混合大小写地址会被拒绝。
 
-Refer to [Addresses](../../core-space-basics/addresses.md) for more knowledge about Base32 addresses.
+为获取更多关于 Base32 地址的信息，请参阅 [地址](../../core-space-basics/addresses.md)。
 
 ### 默认的 epochNumber （纪元数） 参数
 
@@ -71,15 +71,15 @@ Epoch number指定了在一个时间点时，系统的相应状态，这些状�
 TODO: Add links to deferred execution documentation.
 -->
 
-请注意，由于性能优化，最新的已知epoch没有被执行，所以这些epoch没有可用的状态。 对于大多数与状态查询有关的RPC，推荐使用`"latest_state"`。 (Refer to [transaction lifecycle](../../../general/conflux-basics/transactions.md#transaction-lifecycle) for more information about transaction life cycle in Conflux).
+请注意，由于性能优化，最新的已知epoch没有被执行，所以这些epoch没有可用的状态。 对于大多数与状态查询有关的RPC，推荐使用`"latest_state"`。 （有关Conflux中交易生命周期的更多信息，请参考[交易生命周期](../../../general/conflux-basics/transactions.md#transaction-lifecycle)）
 
-#### EIP-1898 style Conflux epochNumber parameter
+#### 遵循 EIP-1898 的Conflux epochNumber 参数
 
-Conflux core space supports epoch number parameter in [EIP-1898](https://eips.ethereum.org/EIPS/eip-1898) style for certain RPCs. The [EIP-1898](https://eips.ethereum.org/EIPS/eip-1898) style epoch number parameter is an object with 3 optional fields:
+Conflux core space 支持纪元数参数在 [EIP-1898](https://eips.ethereum.org/EIPS/eip-1898) 样式中为某些RPC 服务。 [EIP-1898](https://eips.ethereum.org/EIPS/eip-1898) 样式的纪元参数是一个包含3个可选字段的对象：
 
-- `epochNumber`. Corresponding to EIP-1898 defined `blockNumber`
-- `blockHash`. Same as EIP-1898 `blockHash`
-- `requirePivot`. Corresponding to EIP-1898 `requireCanonical`. Defaults to `true`
+- `epochNumber`. 对应于EIP-1898定义的`blockNumber`。
+- `blockHash`. 与EIP-1898的`blockHash`相同。
+- `requirePivot`. 对应于EIP-1898的`requireCanonical`。 默认值为`true`
 
 例如：
 
@@ -90,7 +90,7 @@ Conflux core space supports epoch number parameter in [EIP-1898](https://eips.et
 }
 ```
 
-The EIP-1898 style epoch number parameter is now usable in following RPCs:
+EIP-1898中的纪元号参数现在可用于以下RPC：
 
 * [cfx_getBalance](#cfx_getbalance)
 * [cfx_getStorageAt](#cfx_getstorageat)
@@ -99,7 +99,7 @@ The EIP-1898 style epoch number parameter is now usable in following RPCs:
 * [cfx_getCode](#cfx_getcode)
 * [cfx_getEpochReceipts](#cfx_getepochreceipts)
 
-## CURL EXAMPLES
+## CURL 请求示例
 
 下面提供了通过向Conflux节点发出 [curl](https://curl.se/) 请求来使用 JSON_RPC 应用程序接口的示例。 每个示例都包括对特定端点、其参数、返回类型的描述，以及应该如何使用它的工作示例。
 
@@ -111,7 +111,7 @@ $ curl -H "Content-Type: application/json" -X POST --data '{"jsonrpc":"2.0","met
 
 本文档剩余部分的示例将使用 HTTP endpoint。
 
-## State and transaction availability
+## 状态和交易可用性
 
 Conflux的归档节点和全节点会删除历史状态树，以减少存储空间的占用。 全节点也会丢弃历史区块的交易和收据。 因此，一些RPC接口可能无法用于历史查询。
 
@@ -153,7 +153,7 @@ Conflux的归档节点和全节点会删除历史状态树，以减少存储空�
 | [`cfx_getVoteList`](#cfx_getvotelist)                                             | recent | recent |
 | [`cfx_sendRawTransaction`](#cfx_sendrawtransaction)                               |   OK   |   OK   |
 
-If you query a state entry that is unavailable on the node, you will get an error response:
+如果您查询的状态条目在节点上不可用，您将收到错误响应：
 
 ```json
 // Request
@@ -170,28 +170,28 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"cfx_getBalance","params":["cfx:t
 }
 ```
 
-In this example, we are told that the earliest available state is at epoch `9510001` (`0x911c71`).
+在这个例子中，我们被告知最早可用的状态是在纪元`9510001`（`0x911c71`）处。
 
 ### 从以太坊 JSON-RPC 迁移
 
 以太坊和 Conflux 的一些 JSON-RPC 有对应关系。 即使 JSON-RPC 的细节可能有所不同，但以下映射表在从以太坊迁移到 Conflux 时可能会有所帮助：
 
-| Ethereum                    | Conflux                                                         |
-| --------------------------- | --------------------------------------------------------------- |
-| `eth_blockNumber`           | [`cfx_epochNumber`](#cfx_epochnumber)                           |
-| `eth_call`                  | [`cfx_call`](#cfx_call)                                         |
-| `eth_estimateGas`           | [`cfx_estimateGasAndCollateral`](#cfx_estimategasandcollateral) |
-| `eth_gasPrice`              | [`cfx_gasPrice`](#cfx_gasprice)                                 |
-| `eth_getBalance`            | [`cfx_getBalance`](#cfx_getbalance)                             |
-| `eth_getBlockByHash`        | [`cfx_getBlockByHash`](#cfx_getblockbyhash)                     |
-| `eth_getBlockByNumber`      | [`cfx_getBlockByEpochNumber`](#cfx_getblockbyepochnumber)       |
-| `eth_getCode`               | [`cfx_getCode`](#cfx_getcode)                                   |
-| `eth_getLogs`               | [`cfx_getLogs`](#cfx_getlogs)                                   |
-| `eth_getStorageAt`          | [`cfx_getStorageAt`](#cfx_getstorageat)                         |
-| `eth_getTransactionByHash`  | [`cfx_getTransactionByHash`](#cfx_gettransactionbyhash)         |
-| `eth_getTransactionCount`   | [`cfx_getNextNonce`](#cfx_getnextnonce)                         |
-| `eth_getTransactionReceipt` | [`cfx_getTransactionReceipt`](#cfx_gettransactionreceipt)       |
-| `eth_sendRawTransaction`    | [`cfx_sendRawTransaction`](#cfx_sendrawtransaction)             |
+| 以太坊                        | Conflux                                                         |
+| -------------------------- | --------------------------------------------------------------- |
+| `eth_blockNumber`          | [`cfx_epochNumber`](#cfx_epochnumber)                           |
+| `eth_call`                 | [`cfx_call`](#cfx_call)                                         |
+| `eth_estimateGas`          | [`cfx_estimateGasAndCollateral`](#cfx_estimategasandcollateral) |
+| `eth_gasPrice`             | [`cfx_gasPrice`](#cfx_gasprice)                                 |
+| `eth_getBalance`           | [`cfx_getBalance`](#cfx_getbalance)                             |
+| `eth_getBlockByHash`       | [`cfx_getBlockByHash`](#cfx_getblockbyhash)                     |
+| `eth_getBlockByNumber`     | [`cfx_getBlockByEpochNumber`](#cfx_getblockbyepochnumber)       |
+| `eth_getCode`              | [`cfx_getCode`](#cfx_getcode)                                   |
+| `eth_getLogs`              | [`cfx_getLogs`](#cfx_getlogs)                                   |
+| `eth_getStorageAt`         | [`cfx_getStorageAt`](#cfx_getstorageat)                         |
+| `eth_getTransactionByHash` | [`cfx_getTransactionByHash`](#cfx_gettransactionbyhash)         |
+| `eth_getTransactionCount`  | [`cfx_getNextNonce`](#cfx_getnextnonce)                         |
+| `eth_getTransactionrecipt` | [`cfx_getTransactionReceipt`](#cfx_gettransactionreceipt)       |
+| `eth_sendRawTransaction`   | [`cfx_sendRawTransaction`](#cfx_sendrawtransaction)             |
 
 ## GOSSIP, STATE, HISTORY
 
@@ -218,22 +218,22 @@ In this example, we are told that the earliest available state is at epoch `9510
 
 ### History 方法
 
-获取从创世区块开始的每个区块的历史记录。 This is like one large append-only file, and includes all block headers, block bodies, and transaction receipts.
+获取从创世区块开始的每个区块的历史记录。 这就像一个大型的只追加文件，包括所有区块头、区块体和交易收据。
 
 * cfx_getBlockByHash
 * cfx_getBlockByEpochNumber
 * cfx_getTransactionByHash
 * cfx_getTransactionReceipt
 
-## JSON-RPC methods
+## JSON-RPC 方法
 
 ### cfx_getTransactionByHash
 
-Returns information about a transaction, identified by its hash.
+返回关于一个交易的信息，通过它的哈希来识别。
 
 #### 参数
 
-1. `DATA`, 32 Bytes - hash of a transaction
+1. `DATA`，32 字节 - 交易的哈希。
 
 ```json
 params: [
@@ -241,30 +241,30 @@ params: [
 ]
 ```
 
-#### Returns
+#### 返回值
 
-`Object` - a transaction object, or `null` when no transaction was found:
+`Object` - 交易对象，如果没有找到交易，则为 `null`：
 
-* `blockHash`: `DATA`, 32 字节 - 包含并执行了这个交易的区块的哈希。 `null` when the transaction is pending.
-* `chainId`: `QUANTITY` - the chain ID specified by the sender.
-* `contractCreated`: `BASE32` - 创建的合约的地址。 `null` when it is not a contract deployment transaction.
-* `data`: `DATA` - the data sent along with the transaction.
-* `epochHeight`: `QUANTITY` - the epoch proposed by the sender. Note that this is NOT the epoch of the block containing this transaction.
+* `blockHash`: `DATA`, 32 字节 - 包含并执行了这个交易的区块的哈希。 `null` 当交易是 pending 时为 null
+* `chainId`: `QUANTITY` - 发送者指定的链 ID
+* `contractCreated`: `BASE32` - 创建的合约的地址。 `null` 当它不是一个合约部署交易时为 null
+* `data`: `DATA` - 随交易发送的数据。
+* `epochHeight`: `QUANTITY` - 发送者指定的 epoch。 注意这不是包含这个交易的区块的 epoch。
 * `from`: `BASE32` - 发送者的地址。
-* `gas`: `QUANTITY` - gas provided by the sender.
-* `gasPrice`: `QUANTITY` - gas price provided by the sender in Drip.
-* `hash`: `DATA`, 32 Bytes - hash of the transaction.
-* `nonce`: `QUANTITY` - the number of transactions made by the sender prior to this one.
-* `r`: `DATA`, 32 Bytes - ECDSA signature r.
-* `s`: `DATA`, 32 Bytes - ECDSA signature s.
-* `status`: `QUANTITY` - 0 for success, 1 if an error occurred, 2 for skiped, `null` when the transaction is skipped or not packed.
-* `storageLimit`: `QUANTITY` - the storage limit specified by the sender.
+* `gas`: `QUANTITY` - 发送者提供的 gas。
+* `gasPrice`: `QUANTITY` - 发送者以 Drip 为单位提供的 gas 价格。
+* `hash`: `DATA`, 32 Bytes - 交易的哈希。
+* `nonce`: `QUANTITY` - 发送者在这之前发送的交易数量。
+* `r`: `DATA`, 32 字节 - ECDSA 签名 r
+* `s`: `DATA`, 32 字节 - ECDSA 签名 s
+* `status`: `QUANTITY` - 0 表示成功，1 表示发生错误，2 表示跳过, `null` null 表示交易被跳过或未打包
+* `storageLimit`: `QUANTITY` - 发送者指定的存储限制。
 * `to`: `BASE32` - 接收者的地址。 `null` when it is a contract deployment transaction.
-* `transactionIndex`: `QUANTITY` - the transaction's position in the block. `null` when the transaction is pending.
+* `transactionIndex`: `QUANTITY` - the transaction's position in the block. `null` 当交易是 pending 时为 null
 * `v`: `QUANTITY` - ECDSA recovery id.
 * `value`: `QUANTITY` - value transferred in Drip.
 
-Note that the fields `blockHash`, `contractCreated`, `status`, and `transactionIndex` are provided by the node as they depend on the transaction's position within the ledger. The rest of the fields are included in or derived from the original transaction.
+注意，字段 `blockHash`, `contractCreated`, `status` 和 `transactionIndex` 是由节点提供的，因为它们依赖于交易在账本中的位置。 其余的字段是包含在原始交易中或从原始交易中派生出来的。
 
 ##### 示例
 
@@ -302,12 +302,12 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"cfx_getTransactionByHash","param
 
 ### cfx_getBlockByHash
 
-Returns information about a block, identified by its hash.
+返回关于一个区块的信息，通过它的哈希来识别。
 
 #### 参数
 
-1. `DATA`, 32 Bytes - hash of a block.
-2. `Boolean` - if `true`, it returns the full transaction objects. If `false`, only the hashes of the transactions are returned.
+1. `DATA`，32 字节 - 区块的哈希。
+2. `Boolean` - 如果 `true`，返回完整的交易对象 如果 `false`, 只返回交易的哈希值
 
 ```json
 params: [
@@ -316,15 +316,15 @@ params: [
 ]
 ```
 
-#### Returns
+#### 返回值
 
-`Object` - A block object, or `null` when no block was found:
+`Object` - 区块对象，或 `null`（当没有找到区块时）：
 
-* `adaptive`: `Boolean` - `true` if the weight of the block is adaptive under the GHAST rule.
-* `blame`: `QUANTITY` - if 0, then this block does not blame any blocks on its parent path. If it is `n > 0`, then this block blames its `n` predecessors on its parent path, e.g. when `n = 1`, then the block blames its parent but not its parent's parent.
-* `deferredLogsBloomHash`: `DATA`, 32 Bytes - the hash of the logs bloom after deferred execution at the block's epoch (assuming it is the pivot block).
-* `deferredReceiptsRoot`: `DATA`, 32 Bytes - the Merkle root of the receipts after deferred execution at the block's epoch (assuming it is the pivot block).
-* `deferredStateRoot`: `DATA`, 32 Bytes - the hash of the state trie root triplet after deferred execution at the block's epoch (assuming it is the pivot block).
+* `adaptive`: `Boolean` - `true` 则该区块在 GHAST 规则下的权重是自适应的。
+* `blame`: `QUANTITY` - 如果为 0，则该区块不责怪其父路径上的任何区块。 如果 `n > 0`, 则该区块责怪其父路径上的 `n` n 个前任，例如， 当 `n = 1`, 则该区块责怪其父区块，但不责怪其父区块的父区块。
+* `deferredLogsBloomHash`: `DATA`, 32 Bytes - 在该区块所在 epoch 的延迟执行后的事件地址和事件topic的布隆滤波器的哈希（假设它是主区块）。
+* `deferredReceiptsRoot`: `DATA`, 32 Bytes - 在该区块所在 epoch 的延迟执行后的收据的 Merkle 根（假设它是枢轴区块）。
+* `deferredStateRoot`: `DATA`, 32 Bytes - 在该区块所在 epoch 的延迟执行后的状态 trie 根三元组的哈希（假设它是枢轴区块）。
 * `difficulty`: `QUANTITY` - the PoW difficulty of this block.
 * `epochNumber`: `QUANTITY` - the number of the epoch containing this block in the node's view of the ledger. `null` when the epoch number is not determined (e.g. the block is not in the best block's past set).
 * `gasLimit`: `QUANTITY` - the maximum gas allowed in this block.
@@ -395,8 +395,8 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"cfx_getBlockByHash","params":["0
 
 #### 参数
 
-1. `QUANTITY|TAG` - the epoch number, or the string `"latest_mined"`, `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-default-epochnumber-parameter).
-2. `Boolean` - if `true`, it returns the full transaction objects. If `false`, only the hashes of the transactions are returned
+1. `QUANTITY|TAG` - 纪元号，或字符串`"latest_mined"`、`"latest_state"`、`"latest_confirmed"`、"`latest_checkpoint"`或`"earliest"`，请参见[纪元号参数](#the-default-epochnumber-parameter)。
+2. `Boolean` - 如果 `true`，返回完整的交易对象 If `false`, only the hashes of the transactions are returned
 
 ```json
 params: [
@@ -405,7 +405,7 @@ params: [
 ]
 ```
 
-#### Returns
+#### 返回值
 
 See [cfx_getBlockByHash](#cfx_getblockbyhash).
 
@@ -416,7 +416,7 @@ See [cfx_getBlockByHash](#cfx_getblockbyhash).
 curl -X POST --data '{"jsonrpc":"2.0","method":"cfx_getBlockByEpochNumber","params":["latest_mined", false],"id":1}' -H "Content-Type: application/json" localhost:12539
 ```
 
-Result see [cfx_getBlockByHash](#cfx_getblockbyhash).
+结果参见 [cfx_getBlockByHash](#cfx_getblockbyhash).
 
 ---
 
@@ -426,9 +426,9 @@ Result see [cfx_getBlockByHash](#cfx_getblockbyhash).
 
 #### 参数
 
-None.
+无。
 
-#### Returns
+#### 返回值
 
 `DATA`, 32 Bytes - hash of the best block.
 
@@ -458,7 +458,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"cfx_getBestBlockHash","id":1}' -
 
 1. `TAG` - (optional, default: `"latest_mined"`) String `"latest_mined"`, `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-default-epochnumber-parameter).
 
-#### Returns
+#### 返回值
 
 `QUANTITY` - the integer epoch number corresponding to the given tag.
 
@@ -484,11 +484,11 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"cfx_epochNumber","params":["late
 
 #### 参数
 
-None.
+无。
 
-#### Returns
+#### 返回值
 
-`QUANTITY` - integer of the current gas price in Drip.
+`QUANTITY` - 当前 Gas 价格的整数表示，单位为 Drip。
 
 ##### 示例
 
@@ -512,11 +512,11 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"cfx_gasPrice","id":1}' -H "Conte
 
 #### 参数
 
-1. `QUANTITY|TAG` - the epoch number, or the string `"latest_mined"`, `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-default-epochnumber-parameter).
+1. `QUANTITY|TAG` - 纪元号，或字符串`"latest_mined"`、`"latest_state"`、`"latest_confirmed"`、"`latest_checkpoint"`或`"earliest"`，请参见[纪元号参数](#the-default-epochnumber-parameter)。
 
-#### Returns
+#### 返回值
 
-`Array` - array of block hashes, sorted by their execution (topological) order. Note that the last one is the pivot hash.
+`数组` - 区块哈希的数组，按照它们的执行（拓扑）顺序排序。 请注意，最后一个哈希值是主轴哈希。
 
 ##### 示例
 
@@ -561,9 +561,9 @@ params: [
 ]
 ```
 
-#### Returns
+#### 返回值
 
-`QUANTITY` - integer of the current balance in Drip.
+`QUANTITY` - 当前余额的整数表示，单位为 Drip。
 
 ##### 示例
 
@@ -587,8 +587,8 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"cfx_getBalance","params":["cfx:t
 
 #### 参数
 
-1. `BASE32` - address to check for staking balance.
-2. `QUANTITY|TAG` - (optional, default: `"latest_state"`) integer epoch number, or the string `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-default-epochnumber-parameter)
+1. `BASE32` - 用于检查质押余额的地址，采用 base32 编码。
+2. `QUANTITY|TAG` - （可选，默认为`"latest_state"`）整数纪元号，或字符串 `"latest_state"`、`"latest_confirmed"`、`"latest_checkpoint"` 或 `"earliest"`，详见 [纪元号参数](#the-default-epochnumber-parameter)。
 
 ```json
 params: [
@@ -597,7 +597,7 @@ params: [
 ]
 ```
 
-#### Returns
+#### 返回值
 
 `QUANTITY` - integer of the current staking balance in Drip.
 
@@ -624,8 +624,8 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"cfx_getStakingBalance","params":
 
 #### 参数
 
-1. `BASE32` - address to check for collateral storage.
-2. `QUANTITY|TAG` - (optional, default: `"latest_state"`) integer epoch number, or the string `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-default-epochnumber-parameter)
+1. `BASE32` - 要检查抵押存储的地址。
+2. `QUANTITY|TAG` - （可选，默认为`"latest_state"`）整数纪元号，或字符串 `"latest_state"`、`"latest_confirmed"`、`"latest_checkpoint"` 或 `"earliest"`，详见 [纪元号参数](#the-default-epochnumber-parameter)。
 
 ```json
 params: [
@@ -634,7 +634,7 @@ params: [
 ]
 ```
 
-#### Returns
+#### 返回值
 
 `QUANTITY` - integer of the collateral storage in Byte.
 
@@ -660,8 +660,8 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"cfx_getCollateralForStorage","pa
 
 #### 参数
 
-1. `BASE32` - address of the contract.
-2. `QUANTITY|TAG` - (optional, default: `"latest_state"`) integer epoch number, or the string `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-default-epochnumber-parameter)
+1. `BASE32` - 合约地址
+2. `QUANTITY|TAG` - （可选，默认为`"latest_state"`）整数纪元号，或字符串 `"latest_state"`、`"latest_confirmed"`、`"latest_checkpoint"` 或 `"earliest"`，详见 [纪元号参数](#the-default-epochnumber-parameter)。
 
 ```json
 params: [
@@ -670,7 +670,7 @@ params: [
 ]
 ```
 
-#### Returns
+#### 返回值
 
 `BASE32` - address of admin, or `null` if the contract does not exist.
 
@@ -702,8 +702,8 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"cfx_getAdmin","params":["cfx:typ
 
 #### 参数
 
-1. `BASE32` - address of the contract.
-2. `QUANTITY|TAG` - (optional, default: `"latest_state"`) integer epoch number, or the string `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-default-epochnumber-parameter)
+1. `BASE32` - 合约地址
+2. `QUANTITY|TAG` - （可选，默认为`"latest_state"`）整数纪元号，或字符串 `"latest_state"`、`"latest_confirmed"`、`"latest_checkpoint"` 或 `"earliest"`，详见 [纪元号参数](#the-default-epochnumber-parameter)。
 
 ```json
 params: [
@@ -712,7 +712,7 @@ params: [
 ]
 ```
 
-#### Returns
+#### 返回值
 
 `DATA` - byte code of the contract, or `0x` if the account has no code.
 
@@ -738,9 +738,9 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"cfx_getCode","params":["cfx:type
 
 #### 参数
 
-1. `BASE32` - address of the contract.
+1. `BASE32` - 合约地址
 2. `QUANTITY` - a storage position (see [here](https://solidity.readthedocs.io/en/v0.7.1/internals/layout_in_storage.html) for more info).
-3. `QUANTITY|TAG` - (optional, default: `"latest_state"`) integer epoch number, or the string `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-default-epochnumber-parameter)
+3. `QUANTITY|TAG` - （可选，默认为`"latest_state"`）整数纪元号，或字符串 `"latest_state"`、`"latest_confirmed"`、`"latest_checkpoint"` 或 `"earliest"`，详见 [纪元号参数](#the-default-epochnumber-parameter)。
 
 ```json
 params: [
@@ -750,7 +750,7 @@ params: [
 ]
 ```
 
-#### Returns
+#### 返回值
 
 `DATA` - 32 Bytes - the contents of the storage position, or `null` if the contract does not exist.
 
@@ -786,7 +786,7 @@ params: [
 ]
 ```
 
-#### Returns
+#### 返回值
 
 `Object` - A storage root object, or `null` if the contract does not exist:
 
@@ -837,7 +837,7 @@ params: [
 ]
 ```
 
-#### Returns
+#### 返回值
 
 `Object` - A sponsor info object. If the contract doesn't have a sponsor, then all fields in the object returned will be `0`:
 
@@ -888,7 +888,7 @@ params: [
 ]
 ```
 
-#### Returns
+#### 返回值
 
 `QUANTITY` - integer of the next nonce that should be used by the given address.
 
@@ -921,7 +921,7 @@ params: [
 ]
 ```
 
-#### Returns
+#### 返回值
 
 `DATA`, 32 Bytes - the transaction hash.
 
@@ -975,7 +975,7 @@ params: [
 ]
 ```
 
-#### Returns
+#### 返回值
 
 `DATA`, Bytes - the output data, or an execution error.
 
@@ -1018,7 +1018,7 @@ params: [
 ]
 ```
 
-#### Returns
+#### 返回值
 
 `Object` - an estimate result object:
    * `gasLimit`: `QUANTITY` - the recommended gas_limit.
@@ -1071,7 +1071,7 @@ params: [
 ]
 ```
 
-#### Returns
+#### 返回值
 
 `Array` - array of log objects corresponding to the matching logs:
 
@@ -1142,7 +1142,7 @@ params: [
 ]
 ```
 
-#### Returns
+#### 返回值
 
 `Object` - a transaction receipt object, or `null` when no transaction was found or the transaction was not executed yet:
 
@@ -1158,7 +1158,7 @@ params: [
 * `storageCollateralized`: `QUANTITY`, the amount of storage collateral this transaction required.
 * `storageCoveredBySponsor`: `Boolean`, true if this transaction's storage collateral was covered by the sponsor.
 * `storageReleased`: `Array`, array of storage change objects, each specifying an address and the corresponding amount of storage collateral released, e.g., `[{ 'address': 'CFX:TYPE.USER:AARC9ABYCUE0HHZGYRR53M6CXEDGCCRMMYYBJGH4XG', 'collaterals': '0x280' }]`
-* `contractCreated`: `BASE32` - 创建的合约的地址。 `null` when it is not a contract deployment transaction.
+* `contractCreated`: `BASE32` - 创建的合约的地址。 `null` 当它不是一个合约部署交易时为 null
 * `stateRoot`: `DATA`, 32 Bytes - hash of the state root after the execution of the corresponding block. `0` if the state root is not available.
 * `outcomeStatus`: `QUANTITY` - the outcome status code. `0x0` means success. `0x1` means failed. `0x2` means skipped
 * `logsBloom`: `DATA`, 256 Bytes - bloom filter for light clients to quickly retrieve related logs.
@@ -1224,7 +1224,7 @@ params: [
 ]
 ```
 
-#### Returns
+#### 返回值
 
 `Object` - the state of the given account:
 
@@ -1276,7 +1276,7 @@ params: [
 ]
 ```
 
-#### Returns
+#### 返回值
 
 `QUANTITY` - the interest rate at the given epoch.
 
@@ -1310,7 +1310,7 @@ params: [
 ]
 ```
 
-#### Returns
+#### 返回值
 
 `QUANTITY` - the accumulate interest rate at the given epoch.
 
@@ -1353,7 +1353,7 @@ params: [
 ]
 ```
 
-#### Returns
+#### 返回值
 
 * `isBalanceEnough`: `Boolean` - indicate balance is enough for gas fee and collateral storage
 * `willPayCollateral`: `Boolean` - false if the transaction is eligible for storage collateral sponsorship, true otherwise.
@@ -1392,7 +1392,7 @@ params: [
 ]
 ```
 
-#### Returns
+#### 返回值
 
 * `Array` of block hashes
 
@@ -1426,7 +1426,7 @@ params: [
 ]
 ```
 
-#### Returns
+#### 返回值
 
 * `QUANTITY`, the integer confirmation risk, or `null` if the block does not exist.
 
@@ -1452,9 +1452,9 @@ Returns the node status.
 
 #### 参数
 
-None.
+无。
 
-#### Returns
+#### 返回值
 
 * `bestHash`: `DATA` - hash of the latest epoch's pivot block
 * `blockNumber`: `QUANTITY` - total block number
@@ -1502,9 +1502,9 @@ Returns the conflux-rust version.
 
 #### 参数
 
-None.
+无。
 
-#### Returns
+#### 返回值
 
 * `STRING` - the client version
 
@@ -1539,7 +1539,7 @@ params: [
 
 Please note that reward calculation is delayed so it might not be available for the latest few epochs (including `"latest_state"`).
 
-#### Returns
+#### 返回值
 
 `Array` - array of reward info objects
 
@@ -1591,7 +1591,7 @@ params: [
 ]
 ```
 
-#### Returns
+#### 返回值
 See [cfx_getBlockByHash](#cfx_getblockbyhash).
 
 ##### 示例
@@ -1601,7 +1601,7 @@ See [cfx_getBlockByHash](#cfx_getblockbyhash).
 curl -X POST --data '{"jsonrpc":"2.0","method":"cfx_getBlockByHashWithPivotAssumption","params":["0x3912275cf09f8982a69735a876c14584dae95078762090c5d32fdf0dbec0647c", "0x3912275cf09f8982a69735a876c14584dae95078762090c5d32fdf0dbec0647c", "0xba28"],"id":1}' -H "Content-Type: application/json" localhost:12539
 ```
 
-Result see [cfx_getBlockByHash](#cfx_getblockbyhash).
+结果参见 [cfx_getBlockByHash](#cfx_getblockbyhash).
 
 ---
 
@@ -1621,7 +1621,7 @@ params: [
 ]
 ```
 
-#### Returns
+#### 返回值
 
 `Array` - array of deposit info objects:
 
@@ -1669,7 +1669,7 @@ params: [
 ]
 ```
 
-#### Returns
+#### 返回值
 
 `Array` - array of vote info objects:
 
@@ -1701,9 +1701,9 @@ Returns summary supply info of the entire chain.
 
 #### 参数
 
-None.
+无。
 
-#### Returns
+#### 返回值
 
 `Object` - Object include the supply summary info.
 
@@ -1746,7 +1746,7 @@ params: [
 ]
 ```
 
-#### Returns
+#### 返回值
 
 `Object` - Object include account's pending info.
 
@@ -1790,7 +1790,7 @@ params: [
 ]
 ```
 
-#### Returns
+#### 返回值
 
 `Object` - Object include account's pending transaction info.
 
@@ -1834,7 +1834,7 @@ Returns information about a block, identified by its block number (block's tree-
 #### 参数
 
 1. `QUANTITY` - the block number.
-2. `Boolean` - if `true`, it returns the full transaction objects. If `false`, only the hashes of the transactions are returned
+2. `Boolean` - 如果 `true`，返回完整的交易对象 If `false`, only the hashes of the transactions are returned
 
 ```json
 params: [
@@ -1843,7 +1843,7 @@ params: [
 ]
 ```
 
-#### Returns
+#### 返回值
 
 See [cfx_getBlockByHash](#cfx_getblockbyhash).
 
@@ -1854,7 +1854,7 @@ See [cfx_getBlockByHash](#cfx_getblockbyhash).
 curl -X POST --data '{"jsonrpc":"2.0","method":"cfx_getBlockByBlockNumber","params":["0x1000", false],"id":1}' -H "Content-Type: application/json" localhost:12539
 ```
 
-Result see [cfx_getBlockByHash](#cfx_getblockbyhash).
+结果参见 [cfx_getBlockByHash](#cfx_getblockbyhash).
 
 ---
 
@@ -1870,7 +1870,7 @@ Returns PoS economics summary info.
 
 1. [`QUANTITY`] - (optional, default: `"latest_state"`) integer epoch number, or the string `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-default-epochnumber-parameter)
 
-#### Returns
+#### 返回值
 
 * `distributablePosInterest`: `QUANTITY` Total distributable PoS interest (Unit is Drip)
 * `lastDistributeBlock`: `QUANTITY` Last block that distributable PoS interest
@@ -1919,7 +1919,7 @@ params: [
 ]
 ```
 
-#### Returns
+#### 返回值
 
 * `accountRewards`: `Array` of [AccountReward](#accountreward)
 * `powEpochHash`: `HASH` - the hash value of the PoW block when the rewards are made
@@ -1987,7 +1987,7 @@ params: [
 ]
 ```
 
-#### Returns
+#### 返回值
 
 * `powBaseReward`: `QUANTITY` - The PoW base reward amount
 * `interestRate`: `QUANTITY` - The PoS interest rate
@@ -2049,7 +2049,7 @@ params: [
 ]
 ```
 
-#### Returns
+#### 返回值
 
 `QUANTITY` - the id of the log filter object.
 
@@ -2086,9 +2086,9 @@ It is important to note that the filter object will expire after a certain perio
 
 #### 参数
 
-None.
+无。
 
-#### Returns
+#### 返回值
 
 `QUANTITY` - the id of the block filter object.
 
@@ -2131,9 +2131,9 @@ Besides, it is important to note that the filter object will expire after a cert
 
 #### 参数
 
-None.
+无。
 
-#### Returns
+#### 返回值
 
 `QUANTITY` - the id of the pending transaction filter object.
 
@@ -2186,7 +2186,7 @@ params: [
 ]
 ```
 
-#### Returns
+#### 返回值
 
 `Array` - array of log receipts (same format as [cfx_getLogs](#cfx_getlogs) return value), block hashes, or transaction hashes depending on the input.
 
@@ -2229,7 +2229,7 @@ params: [
 ]
 ```
 
-#### Returns
+#### 返回值
 
 `Array` - array of log receipts (same as [cfx_getLogs](#cfx_getlogs)).
 
@@ -2266,7 +2266,7 @@ params: [
 ]
 ```
 
-#### Returns
+#### 返回值
 
 `Boolean` - whether the uninstallation succeeds.
 
@@ -2317,7 +2317,7 @@ params: [
 ]
 ```
 
-#### Returns
+#### 返回值
 
 `Array` -  This is a two-dimensional array of [transaction receipts](#cfx_gettransactionreceipt). Each sub-array represents transactions within a block. Noting an extra field of `space` will be added to each transaction receipt if the second parameter is set to `true`. The value of `space` will be either `native` meaning this is a core space transaction receipt or `evm` meaning the transaction is from eSpace.
 
@@ -2386,7 +2386,7 @@ params: [
 ]
 ```
 
-#### Returns
+#### 返回值
 
 `Object` - The storage collateral info object of the chain.
 

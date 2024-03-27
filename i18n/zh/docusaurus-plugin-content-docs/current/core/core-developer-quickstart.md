@@ -147,3 +147,4 @@ main().catch(e => console.error(e));
 2. 参考 [SDKs](./build/sdks-and-tools/sdks.md) 了解其他 SDK 的示例。
 3. [Core Space 水龙头](https://faucet.confluxnetwork.org/)
 4. [Conflux Core 区块链浏览器](https://confluxscan.io/)
+5. [use-wallet](../general/build/tools/use-wallet.md): a front-end perspective wallet hooks library providing rapid development support for lightweight dapps, with React and Vue3 support.

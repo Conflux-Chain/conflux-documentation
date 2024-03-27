@@ -33,7 +33,7 @@ If you want to learn how to use Zero Gravity, you can follow [this](../tutorials
 
 ## [ConfluxHub (Cross-Space Bridge, CFX Staking & Governance)](https://confluxhub.io/)
 
-Governance ConfluxHub is a vital component of the Conflux ecosystem, serving as a versatile platform for cross-space bridges, CFX staking, and governance. 
+ConfluxHub is a vital component of the Conflux ecosystem, serving as a versatile platform for cross-space bridges, CFX staking, and governance. 
 
 If you want to learn how to use Confluxhub, you can follow [this](../tutorials/transferring-funds/transfer-funds-across-spaces.md) tutorial.
 

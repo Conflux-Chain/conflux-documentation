@@ -6,7 +6,7 @@ This guide will help user connect their metamask  wallet to Conflux {props.space
 
 ## 简介
 
-[MetaMask](https://metamask.io/) is a convenient UI for interacting with Ethereum-compatible blockchains (such as Conflux {props.space}).
+[MetaMask](https://metamask.io/)是一个便捷访问以太坊兼容链（如Conflux{props.space}）的应用接口
 基于本指南的目的，我们将假定您已熟悉 MetaMask 并已安装它。
 If you need help getting started with MetaMask itself, [check out Metamask documentation](https://metamask.io/faqs.html) and [Ethereum documentation](https://ethereum.org/en/).
 
