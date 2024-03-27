@@ -4,7 +4,7 @@ title: 账户
 displayed_sidebar: coreSidebar
 ---
 
-:::注意
+:::note
 
 本页面是为了提供有关 CORE SPACE ACCOUNTS 的信息。 Refer to [General-Accounts](../../general/conflux-basics/accounts.md) for the overall introduction of the concept of ACCOUNTS.
 
