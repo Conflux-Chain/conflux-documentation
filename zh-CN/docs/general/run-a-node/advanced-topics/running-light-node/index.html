@@ -12,7 +12,7 @@
 
 
 <script src="/js/clarity.js"></script><link rel="stylesheet" href="/zh-CN/assets/css/styles.1d0f6ede.css">
-<script src="/zh-CN/assets/js/runtime~main.ab8ccba7.js" defer="defer"></script>
+<script src="/zh-CN/assets/js/runtime~main.c06cf40e.js" defer="defer"></script>
 <script src="/zh-CN/assets/js/main.fd1e87d0.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -22,10 +22,10 @@
 </blockquote>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="概览">概览<a href="#概览" class="hash-link" aria-label="概览的直接链接" title="概览的直接链接">​</a></h2>
 <p><strong>Node version: <code>conflux-rust v2.1.0</code></strong>.</p>
-<p>Light nodes are special nodes in the Conflux network that store block headers only and retrieve everything else from their peers on-demand. This means that by default light nodes do not store transactions nor do they store state trees either. This can drastically reduce the disk and bandwidth use of light nodes compared to full and archive nodes, especially under high TPS. As a trade-off RPC queries have a higher latency on light nodes.</p>
-<p>Light nodes execute <strong>GHAST</strong> consensus on their local header graph and they also verify each item retrieved on-demand using Merkle proofs and other similar mechanisms. Items retrieved on-demand include accounts, bloom filters, transactions, and transaction receipts. While light nodes need to rely on their peers to fulfill RPC queries they do this in a trustless way.</p>
+<p>轻节点是Conflux网络中的特殊节点，该节点仅存储区块头，并按照需要从其他节点检索数据。 这就意味着默认的轻节点既不会存储交易也不会存储状态树。 与完整节点和存档节点相比，轻节点大大减少了磁盘和带宽使用，特别是在高TPS下。 作为权衡，轻节点上的RPC查询具有更高的延迟。</p>
+<p>轻节点在它们的头图 <strong>GHAST</strong>上执行共识，它们还使用Merkle证明和其他类似的机制对按需检索的每个项目进行验证。 按需检索的项目包括账户、布隆过滤器、交易和交易收据。 虽然轻节点需要依赖它们的对等节点来满足 RPC 查询，但它们以一种无需信任的方式进行这个过程。</p>
 <blockquote>
-<p>The current light node implementation is still considered experimental therefore bugs are expected to exist. If you encounter any issues please let us know by opening an issue on the <a href="https://github.com/Conflux-Chain/conflux-rust/issues" target="_blank" rel="noopener noreferrer">conflux-rust</a> repository.</p>
+<p>目前的轻节点实现仍然被认为是实验性的，因此预期存在错误。 如果您遇到任何问题，请通过在<a href="https://github.com/Conflux-Chain/conflux-rust/issues" target="_blank" rel="noopener noreferrer">conflux-rust</a>仓库上开启一个问题来告诉我们。</p>
 </blockquote>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="运行轻节点-1">运行轻节点<a href="#运行轻节点-1" class="hash-link" aria-label="运行轻节点的直接链接" title="运行轻节点的直接链接">​</a></h2>
 <p>轻节点可以在<code>hydra.toml</code>设置文件中启用（对于测试网是<code>testnet.toml</code>），在<code>node_type</code>变量中设置。</p>

@@ -12,7 +12,7 @@
 
 
 <script src="/js/clarity.js"></script><link rel="stylesheet" href="/zh-CN/assets/css/styles.1d0f6ede.css">
-<script src="/zh-CN/assets/js/runtime~main.ab8ccba7.js" defer="defer"></script>
+<script src="/zh-CN/assets/js/runtime~main.c06cf40e.js" defer="defer"></script>
 <script src="/zh-CN/assets/js/main.fd1e87d0.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -65,7 +65,7 @@
 <p>Returns the current status of the PoS chain.</p>
 <h4 class="anchor anchorWithStickyNavbar_LWe7" id="参数">参数<a href="#参数" class="hash-link" aria-label="参数的直接链接" title="参数的直接链接">​</a></h4>
 <p><code>Empty</code></p>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="returns">Returns<a href="#returns" class="hash-link" aria-label="Returns的直接链接" title="Returns的直接链接">​</a></h4>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="返回值">返回值<a href="#返回值" class="hash-link" aria-label="返回值的直接链接" title="返回值的直接链接">​</a></h4>
 <p><code>Object</code> - PoS status object.</p>
 <ul>
 <li><code>epoch</code>: <code>QUANTITY</code> - The current epoch number of the PoS chain.</li>
@@ -86,7 +86,7 @@
 <li>[<code>QUANTITY</code>]: block number, optional for querying the status of the account at a certain block height</li>
 </ol>
 <div class="language-json codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-json codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">params: [</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  &quot;0x88df016429689c079f3b2f6ad39fa052532c56795b733da78a91ebe6a713944b&quot;,</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  &quot;0x100&quot;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">]</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="复制代码到剪贴板" title="复制" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="returns-1">Returns<a href="#returns-1" class="hash-link" aria-label="Returns的直接链接" title="Returns的直接链接">​</a></h4>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="返回值-1">返回值<a href="#返回值-1" class="hash-link" aria-label="返回值的直接链接" title="返回值的直接链接">​</a></h4>
 <p><code>Object</code> - the account object, or <code>null</code> (if the account corresponding to the address does not exist)</p>
 <ul>
 <li><code>address</code>: <code>ADDRESS</code> - the account address</li>
@@ -104,7 +104,7 @@
 <ol>
 <li>[<code>QUANTITY</code>]:  block number, optional for querying the committee information at a certain block height</li>
 </ol>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="returns-2">Returns<a href="#returns-2" class="hash-link" aria-label="Returns的直接链接" title="Returns的直接链接">​</a></h4>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="返回值-2">返回值<a href="#返回值-2" class="hash-link" aria-label="返回值的直接链接" title="返回值的直接链接">​</a></h4>
 <ul>
 <li><code>currentCommittee</code>: <code>OBJECT</code> -  current committee members, see <a href="#currentcommittee">CurrentCommittee</a> for more information</li>
 <li><code>elections</code>: <code>Array</code> - nodes who are running for election</li>
@@ -141,7 +141,7 @@
 <li><code>HASH</code>: the hash value of the block</li>
 </ol>
 <div class="language-json codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-json codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">params: [</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  &quot;0x88df016429689c079f3b2f6ad39fa052532c56795b733da78a91ebe6a713944b&quot;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">]</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="复制代码到剪贴板" title="复制" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="returns-3">Returns<a href="#returns-3" class="hash-link" aria-label="Returns的直接链接" title="Returns的直接链接">​</a></h4>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="返回值-3">返回值<a href="#返回值-3" class="hash-link" aria-label="返回值的直接链接" title="返回值的直接链接">​</a></h4>
 <ul>
 <li><code>epoch</code>: <code>QUANTITY</code> - the epoch that the block is in</li>
 <li><code>hash</code>: <code>HASH</code> - the hash value of the block</li>
@@ -171,7 +171,7 @@
 <ol>
 <li><code>QUANTITY|TAG</code>: block number or block TAG（<code>latest_committed</code>, <code>latest_voted</code>）</li>
 </ol>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="returns-4">Returns<a href="#returns-4" class="hash-link" aria-label="Returns的直接链接" title="Returns的直接链接">​</a></h4>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="返回值-4">返回值<a href="#返回值-4" class="hash-link" aria-label="返回值的直接链接" title="返回值的直接链接">​</a></h4>
 <p>the same as <a href="#pos_getblockbyhash">pos_getBlockByHash</a></p>
 <h4 class="anchor anchorWithStickyNavbar_LWe7" id="示例-4">示例<a href="#示例-4" class="hash-link" aria-label="示例的直接链接" title="示例的直接链接">​</a></h4>
 <p>Request</p>
@@ -183,7 +183,7 @@
 <li><code>QUANTITY</code>: epoch number</li>
 </ol>
 <div class="language-json codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-json codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">params: [</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  &quot;0x4a&quot;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">]</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="复制代码到剪贴板" title="复制" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="returns-5">Returns<a href="#returns-5" class="hash-link" aria-label="Returns的直接链接" title="Returns的直接链接">​</a></h4>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="返回值-5">返回值<a href="#返回值-5" class="hash-link" aria-label="返回值的直接链接" title="返回值的直接链接">​</a></h4>
 <ul>
 <li><code>accountRewards</code>: <code>Array</code> of <a href="#accountreward">AccountReward</a></li>
 <li><code>powEpochHash</code>: <code>HASH</code> - the hash value of the PoW block when the rewards are made</li>
@@ -206,7 +206,7 @@
 <li><code>QUANTITY</code>: transaction number</li>
 </ol>
 <div class="language-json codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-json codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">params: [</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  &quot;0x4a&quot;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">]</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="复制代码到剪贴板" title="复制" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="returns-6">Returns<a href="#returns-6" class="hash-link" aria-label="Returns的直接链接" title="Returns的直接链接">​</a></h4>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="返回值-6">返回值<a href="#返回值-6" class="hash-link" aria-label="返回值的直接链接" title="返回值的直接链接">​</a></h4>
 <p>交易详情</p>
 <ul>
 <li><code>hash</code>: <code>HASH</code> - the hash value of the transaction</li>

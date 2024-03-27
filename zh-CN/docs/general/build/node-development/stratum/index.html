@@ -12,7 +12,7 @@
 
 
 <script src="/js/clarity.js"></script><link rel="stylesheet" href="/zh-CN/assets/css/styles.1d0f6ede.css">
-<script src="/zh-CN/assets/js/runtime~main.ab8ccba7.js" defer="defer"></script>
+<script src="/zh-CN/assets/js/runtime~main.c06cf40e.js" defer="defer"></script>
 <script src="/zh-CN/assets/js/main.fd1e87d0.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -67,14 +67,14 @@ nonce) to Conflux-Rust via calling <code>mining.submit</code> RPC calls.</p>
 <li>Secret, empty or 32-bytes, the secret that corresponds to the keccak result
 of the password in the configuration. Empty if password is not enabled.</li>
 </ol>
-<h5 class="anchor anchorWithStickyNavbar_LWe7" id="returns">Returns<a href="#returns" class="hash-link" aria-label="Returns的直接链接" title="Returns的直接链接">​</a></h5>
+<h5 class="anchor anchorWithStickyNavbar_LWe7" id="返回值">返回值<a href="#返回值" class="hash-link" aria-label="返回值的直接链接" title="返回值的直接链接">​</a></h5>
 <p><code>Bool</code> - <code>true</code> if successful, <code>false</code> if not.</p>
 <h5 class="anchor anchorWithStickyNavbar_LWe7" id="示例">示例<a href="#示例" class="hash-link" aria-label="示例的直接链接" title="示例的直接链接">​</a></h5>
 <div class="codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">// Request</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">&#x27;{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;method&quot;:&quot;mining.subscribe&quot;,&quot;params&quot;:[&quot;cfxmine&quot;, &quot;&quot;],&quot;id&quot;:1}&#x27;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">// Response</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">{</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  &quot;jsonrpc&quot;: &quot;2.0&quot;,</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  &quot;result&quot;: &quot;true&quot;,</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  &quot;id&quot;: 1</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">}</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="复制代码到剪贴板" title="复制" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
 <hr>
 <h4 class="anchor anchorWithStickyNavbar_LWe7" id="miningsubmit">mining.submit<a href="#miningsubmit" class="hash-link" aria-label="mining.submit的直接链接" title="mining.submit的直接链接">​</a></h4>
 <p>Submit a PoW solution to the stratum server</p>
-<h5 class="anchor anchorWithStickyNavbar_LWe7" id="参数-1">参数<a href="#参数-1" class="hash-link" aria-label="参数的直接链接" title="参数的直接链接">​</a></h5>
+<h5 class="anchor anchorWithStickyNavbar_LWe7" id="参数-1">参数<a href="#参数-1" class="hash-link" aria-label="参数的直接链接" title="参数的直接链接"> ​</a></h5>
 <ol>
 <li>WORKER_ID, string - the name of the miner</li>
 <li>JOB_ID, hex-string - the identifier of the job, which is typically same as
@@ -82,7 +82,7 @@ the hash of the PoW problem.</li>
 <li>NONCE, hex-string of 32-bytes - the nonce solution of the PoW problem</li>
 <li>HASH, hex-string of 32-bytes - the hash of the solved PoW problem.</li>
 </ol>
-<h5 class="anchor anchorWithStickyNavbar_LWe7" id="returns-1">Returns<a href="#returns-1" class="hash-link" aria-label="Returns的直接链接" title="Returns的直接链接">​</a></h5>
+<h5 class="anchor anchorWithStickyNavbar_LWe7" id="返回值-1">返回值<a href="#返回值-1" class="hash-link" aria-label="返回值的直接链接" title="返回值的直接链接">​</a></h5>
 <p><code>Array</code> - A single element of <code>true</code> if successful, the first element will be
 <code>false</code> if not and the second element will explain reasons in string.</p>
 <h5 class="anchor anchorWithStickyNavbar_LWe7" id="示例-1">示例<a href="#示例-1" class="hash-link" aria-label="示例的直接链接" title="示例的直接链接">​</a></h5>
