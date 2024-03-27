@@ -6,7 +6,7 @@ displayed_sidebar: generalSidebar
 
 ## Conflux 网络智能合约开发介绍
 
-[**智能合约**](../../comflux-basics/contracts.md)是 Conflux 网络的一个重要组成部分，它为区块链上代码的自动执行提供了一种强大的方式。 这些自动执行的智能合约是由一系列代码组成的，这些代码能够自动执行基于预定规则的共识条款。 本篇将探讨 Conflux 生态系统内智能合约的关键概念、功能和潜在应用。
+[**智能合约**](../../conflux-basics/contracts.md)是 Conflux 网络的一个重要组成部分，它为区块链上代码的自动执行提供了一种强大的方式。 这些自动执行的智能合约是由一系列代码组成的，这些代码能够自动执行基于预定规则的共识条款。 本篇将探讨 Conflux 生态系统内智能合约的关键概念、功能和潜在应用。
 
 ### Conflux 智能合约入门指南
 
@@ -333,7 +333,7 @@ purchase receipt {
 
 ## Dev spaces
 
-记住，在 Conflux 网络上开发并部署你的智能合约时，您必须选择两个 [Conflux 空间](../../commanflux-basics/spaces.md) 中的一个：
+记住，在 Conflux 网络上开发并部署你的智能合约时，您必须选择两个 [Conflux 空间](../../conflux-basics/spaces.md) 中的一个：
 
 - Conflux Core
 - Conflux eSpace.
@@ -362,5 +362,5 @@ import TabItem from '@theme/TabItem';
 
 其他
 
-- [Conflux Basics](../../conflux-basics/conflux-basics.mdx)
+- [Conflux 基础](../../conflux-basics/conflux-basics.mdx)
 - [Ethereum's introduction of smart contract](https://ethereum.org/en/developers/docs/smart-contracts/)

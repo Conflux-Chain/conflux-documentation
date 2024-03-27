@@ -65,12 +65,12 @@ const FeatureList = [
 
 const FeatureCards = ({ wrapperClassName }) => {
   return (
-    <div className={cx('max-w-[1920px] px-20 grid grid-cols-1 md:grid-cols-3 md:gap-8', wrapperClassName)} >
+    <div className={cx('max-w-[1920px] px-3 md:px-20 grid grid-cols-1 md:grid-cols-3 md:gap-8', wrapperClassName)} >
       {FeatureList.map((feature) => {
         return (
           // Wrap each Card component with a Link component
           <a href={feature.link} key={feature.title} style={{ textDecoration: 'none' }}  >
-            <Card {...feature} className='w-10/12 mx-auto lg:mx-0 md:w-full mb-20' />
+            <Card {...feature} className='w-10/12 mx-auto lg:mx-0 md:w-full mb-4 md:mb-20' />
           </a>
         );
       })}

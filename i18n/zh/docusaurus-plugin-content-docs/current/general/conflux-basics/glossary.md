@@ -41,7 +41,7 @@ Refer to [general-address](./accounts.md#address), [core-address](../../core/cor
 区块链是一种去中心化和分布式的数字账本，可以跨多台计算机记录交易，使任何涉及的记录都无法在不更改所有后续区块的情况下被追溯性地更改。 这种技术是比特币和以太坊等加密货币的基础，也是Conflux网络的基础技术。
 
 ### **CFX**
-CFX是Conflux网络的原生货币。 It's used to incentivize the maintenance of the Conflux network and charge users for consumption of resources. CFX作为共识机制的奖励、每笔交易的交易费以及DAO投票的工具，在系统稳定性方面发挥着非常重要的作用。
+CFX是Conflux网络的原生货币。 它用于激励维护Conflux网络，并向用户收取资源消耗费用。 CFX作为共识机制的奖励、每笔交易的交易费以及DAO投票的工具，在系统稳定性方面发挥着非常重要的作用。
 
 最小的子单位称为Drip，Conflux处理的所有Drip的值都是整数。 一个Conflux定义为10^18 Drip。 Conflux常用的子单位如下：
 
@@ -60,12 +60,12 @@ CFX是Conflux网络的原生货币。 It's used to incentivize the maintenance o
 - [经济模型](./economics.md)
 
 ### **ChainId & NetworkId**
-`chainId`是一个数字，表示一笔交易打算在哪里执行。 它用于防止交易重放攻击。 The chainId of Conflux chains are constant, currently:
+`chainId`是一个数字，表示一笔交易打算在哪里执行。 它用于防止交易重放攻击。 Conflux 的 chainId 是一个常数，目前为：
 
-- Conflux Core Mainnet: `1029`
-- Conflux Core Testnet: `1`
-- Conflux eSpace Mainnet: `1030`
-- Conflux eSpace Testnet: `71`
+- Conflux Core 主网: `1029`
+- Conflux Core 测试网: `1`
+- Conflux eSpace 主网: `1030`
+- Conflux eSpace 测试网: `71`
 
 `networkId`用于在网络层区分不同的区块链。 目前Conflux主网/测试网的`networkId`与`chainId`相同。 你可以从`cfx_getStatus` RPC方法中获取这两个值。
 
@@ -97,13 +97,18 @@ ERC20是以太坊区块链上代币的标准。 它规定了代币合约必须�
 ### **ERC721**
 ERC721是以太坊区块链上非同质化代币（NFT）的标准。 与彼此相同的ERC20代币不同，每个ERC721代币都是独一无二的。 这使它们适合代表独特物品或资产的所有权。 像ERC20一样，ERC721代币也可以存在于Conflux网络上，尤其当它们是从以太坊网络转移过来的。
 
+### **EVM (Ethereum Virtual Machine)**
+The Ethereum Virtual Machine (EVM) is a powerful, sandboxed virtual stack embedded within each full Ethereum node, responsible for executing contract bytecode. Contracts are written in high-level languages, like Solidity, then compiled into bytecode, which the EVM can read and execute. The EVM ensures that programs do not have access to each other's state, thus allowing for the safe execution of code without risking the network's security. It is pivotal for enabling the programmability and flexibility that smart contracts offer in the Ethereum ecosystem. In the context of Conflux, EVM compatibility allows developers to deploy Ethereum contracts on the Conflux network, benefiting from Conflux's scalability and efficiency while leveraging Ethereum's robust developer tooling and ecosystem.
+
+### **Finalization**
+Finalization refers to the process by which transactions and blocks on the Conflux blockchain are considered definitive and irreversible. This process is critical for the network's security, as it prevents the possibility of double-spending attacks and ensures the blockchain's integrity. In the context of Conflux, PoS chain will periodically choose and refer to a PoW block which is created several minutes ago, thus providing finalization to all blocks (transactions) before the epoch of the specified block, ensuring they cannot be altered or removed subsequently.
+
 ### **分叉**
+在区块链系统中，分叉表示一条链的分裂或偏离，起源于一个具有共享历史的共同点，并创建两条不同的路径。 分叉可以通过软件更新有意实施，旨在引入重大变更（硬分叉）或引入向后兼容的更改（软分叉）。 然而，分叉也可以因为同时创建区块或由于网络延迟和区块传播延迟而自然发生。
 
-A fork in a blockchain system denotes a split or divergence in the chain, originating from a common point with a shared history and creating two distinct paths. They can be implemented intentionally via software updates to either bring about significant changes (hard fork) or introduce backward-compatible alterations (soft fork). However, forks can also occur organically due to simultaneous block creation or as a result of network latencies and block propagation delays.
+此外，旨在破坏网络、执行欺诈性交易或双花攻击的恶意活动也可以强制系统分叉。 这些无意的分叉通常是短暂的，因为随后的区块添加通常会解决临时分支。 无论分叉发生的原因如何，分叉是区块链技术动态和去中心化本质的固有部分，需要强大的共识机制来管理和缓解潜在问题。
 
-Additionally, malicious activities aimed at disrupting the network, performing deceptive transactions, or double-spending can also force a fork in the system. These inadvertent forks are typically short-lived as subsequent block addition commonly results in the resolution of temporary branches. No matter the reason for their occurrence, forks are an inherent part of the dynamic and decentralized nature of blockchain technology, necessitating robust consensus mechanisms to manage and mitigate potential issues.
-
-> Refer to [Hard Forks](../hardforks/hardforks.md) for more information of Conflux history hard forks.
+> 请参考[硬分叉](../hardforks/hardforks.md)以了解关于 Conflux 硬分叉历史的更多信息
 
 Further reading:
 
@@ -143,6 +148,9 @@ Significant to note is the principle of hash invertibility. A hash function is c
 ### **默克尔树**
 在密码学和计算机科学中，默克尔树是一种树状结构，其中每个叶子节点都被赋予了一个数据块哈希值的标签，而每个非叶子节点的标签则是由其所有子节点的标签的值经过哈希计算得来的。 默克尔树在区块链中用于高效验证大型数据结构的内容。
 
+### **Mined**
+A "mined" block in the Conflux Network refers to a block in which transactions have been validated and added to the blockchain after successfully being processed through mining. This status indicates that the block has passed the network's consensus mechanism, ensuring its transactions are secured and immutable within the blockchain ledger. The term differentiates such blocks from those still awaiting validation.
+
 ### **挖矿**
 Mining is like a competition where people use powerful computers to solve puzzles. Each puzzle solved helps confirm new transactions and safely add them to the blockchain. Think of **miners** as special participants who use advanced equipment, like ASICs or high-performance GPUs, to take part in this puzzle-solving contest. The contest involves lots of trial and error to find a special code (hash value) that fits certain rules. When a miner finds the right code, it's like they win the round, allowing them to add a page (block) of confirmed transactions to the ledger. The first one to do this gets a prize in the form of digital money (cryptocurrency). In the Conflux network, this process helps to build a unique ledger structure known as the Tree-Graph, which organizes transactions in a special way.
 
@@ -165,6 +173,9 @@ In the context of blockchains and smart contracts, an oracle is an agent that fi
 
 ### **点对点网络（P2P）**
 A peer-to-peer network is one in which each computer in the network can act as a client or server for the other computers in the network, allowing shared access to files and peripherals without the need for a central server. Conflux, like other blockchain networks, operates as a peer-to-peer network, with each node communicating directly with others.
+
+### **Pivot Chain**
+The pivot chain is a selected sequence of blocks within Conflux's Tree-Graph structure, used to determine the total order of blocks and transactions. It acts as a backbone organizing and finalizing the transaction set, ensuring consistency and finality across the network. The pivot chain is chosen through an algorithm considering various factors, such as the accumulated proof-of-work (PoW), to maintain the system's security and stability.
 
 ### **权益证明（PoS）**
 Proof of Stake (PoS) is a type of consensus algorithm where block creators are chosen based on the number of tokens they hold or are willing to "stake". PoS is used in the Conflux network to prevent 51% attacks and to finalize blocks.
@@ -207,7 +218,7 @@ For more information, refer to [Storage Collateral](../../core/core-space-basics
 ### **交易**
 Conflux交易是由一个拥有Conflux账户的外部参与者组成的单个指令，该指令使用发送者账户的私钥进行密码学签名，以防止交易伪造。 一笔交易可以涉及简单的CFX（Conflux的本地货币）转账、代币（如ERC20或ERC721）转账、新智能合约的部署或现有智能合约上的函数执行。 交易是在区块链上存储或更新数据的唯一方式。
 
-Refer to [Transactions](./transactions.md) for more information.
+详细信息请参考 [交易](./transactions.md)。
 
 ### **树图**
 In the context of Conflux, the Tree-Graph is a novel consensus mechanism that allows for high throughput and low latency in large-scale decentralized networks. Unlike traditional blockchain systems that follow a linear chain, Conflux forms a tree-like structure of blocks, allowing for multiple blocks to be produced concurrently. This structure is key to Conflux's ability to process a high number of transactions per second.

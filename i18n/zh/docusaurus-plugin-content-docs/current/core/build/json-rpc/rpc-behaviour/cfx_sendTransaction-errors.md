@@ -1,7 +1,7 @@
 ---
 title: cfx_sendRawTransaction 接口错误
 sidebar_position: 7
-description: Common errors of cfx_sendRawTransaction
+description: Cfx_sendRawTransaction的常见错误
 displayed_sidebar: coreSidebar
 keywords:
   - cfx_sendRawTransaction
@@ -11,13 +11,11 @@ label:
   - errors
 ---
 
-:::note
-
-These errors are defined by [conflux-rust](https://github.com/Conflux-Chain/conflux-rust), the official Rust implementation of Conflux protocol.
+这些错误是由 Conflux 协议的官方实现 [conflux-rust](https://github.com/Conflux-Chain/conflux-rust)定义的。
 
 :::
 
-When sending transactions in Conflux Core Space via the `cfx_sendRawTransaction` method, certain errors may arise due to incorrect transaction construction or other issues. This guide covers common errors and their solutions.
+在Conflux Core空间中通过`cfx_sendRawTransaction` 方法发送交易时,可能会因为不正确的交易构建或其他问题而出现一些错误。 本指南涵盖了常见错误及其解决方法。
 
 ## 余额不足
 
@@ -35,7 +33,7 @@ When sending transactions in Conflux Core Space via the `cfx_sendRawTransaction`
 
 ## Nonce 错误
 
-### Using an already executed nonce
+### 使用已执行过的nonce
 
 ```js
 {
@@ -49,9 +47,9 @@ When sending transactions in Conflux Core Space via the `cfx_sendRawTransaction`
 }
 ```
 
-**Solution:** Change the nonce to the first unused one.
+**解决方案：**将nonce更改为第一个未使用的nonce。
 
-### Using a nonce already sent to the transaction pool
+### 使用一个已经发送到交易池的nonce
 
 ```js
 {
@@ -65,7 +63,7 @@ When sending transactions in Conflux Core Space via the `cfx_sendRawTransaction`
   }
 ```
 
-or
+或者
 
 ```js
 {
@@ -79,9 +77,9 @@ or
 }
 ```
 
-**Solution:** The transaction has already been sent to the transaction pool. To update or replace it, use the same nonce, modify the corresponding field, and resend it with a higher gasPrice value.
+**解决方案：**交易已经发送到交易池。 请使用相同的nonce更新或替换它，同时修改相应的字段，并使用更高的gasPrice值重新发送。
 
-### Using a too large nonce
+### 使用过大的nonce
 
 ```js
 {
@@ -95,9 +93,9 @@ or
   }
 ```
 
-**Solution:** Change the nonce to the first unused one.
+**解决方案：**将nonce更改为第一个未使用的nonce。
 
-## Gas-related Issues
+## 与gas相关的问题
 
 ### Gas too small (`<21000`) or too large (`>15m`)
 
@@ -113,7 +111,7 @@ or
 }
 ```
 
-**Solution:** Change the `gas` field to the right one.
+**解决方法:**将`gas`字段改为正确的字段。
 
 ```js
 {
@@ -127,11 +125,11 @@ or
 }
 ```
 
-**Solution:** Change the `gas` field to a smaller one. The maximum value is 15 million.
+**解决方法:**将`gas`字段改小一点。 最大值为1500万。
 
-## Invalid gasPrice
+## 无效的gasPrice
 
-### Gas price set to 0
+### GasPrice价格设置为0
 
 ```js
 {
@@ -145,9 +143,9 @@ or
 }
 ```
 
-**Solution:** Use return value from `cfx_gasPrice` as the `gasPrice`
+**解决方法:** 使用`cfx_gasPrice`的返回值作为`gasPrice`。
 
-### Gas price smaller than minimum gas price
+### GasPrice低于最低的gas价格
 
 ```js
 {
@@ -161,11 +159,11 @@ or
 }
 ```
 
-## Data Size Limit Exceeded
+## 超过数据大小限制
 
-The transaction has a size limit, with the maximum being 200k.
+交易的大小有限制，最大为 200K。
 
-## Incorrect epochHeight
+## epochHeight错误
 
 ```js
 {
@@ -179,9 +177,9 @@ The transaction has a size limit, with the maximum being 200k.
 }
 ```
 
-**Solution:** Use return value from `cfx_epochNumber` as the `epochHeight`
+**解决方法:**使用`cfx_epochNumber`的返回值作为`epochHeight`
 
-## Mismatched chainId
+## chainId不匹配
 
 ```js
 {
@@ -195,9 +193,9 @@ The transaction has a size limit, with the maximum being 200k.
 }
 ```
 
-**Solution:** Use `chainId` field from return value from `cfx_status` as the `chainId`
+**解决方法:** 使用`cfx_status`返回值中的`chainId`字段作为`chainId`。
 
-## Encoding or Signature Errors
+## 编码或者签名错误
 
 ```js
 {
@@ -235,9 +233,9 @@ The transaction has a size limit, with the maximum being 200k.
 }
 ```
 
-**Solution:** Making sure you are using the SDK in the right way
+**解决方法:** 确保你正确地使用SDK。
 
-## Full Transaction Pool
+## 交易池已满
 
 ```js
 {
@@ -251,7 +249,7 @@ The transaction has a size limit, with the maximum being 200k.
 }
 ```
 
-or
+或者
 
 ```js
 {
@@ -265,9 +263,9 @@ or
 }
 ```
 
-**Solution:** Wait for a while to resend the transaction and increase the gasPrice of the transaction to improve the chances of sending.
+**解决方案：**等待一段时间后重新发送交易，并提高交易的gasPrice以增加发送的机会。
 
-## Node in Catch-up Mode
+## 处于追赶模式的节点
 
 ```js
 {
@@ -281,9 +279,9 @@ or
 }
 ```
 
-**Solution:** Wait for the node data to sync to the latest before sending.
+**解决方案：**在发送之前，等待节点数据同步到最新。
 
-## Internal Error
+## 内部错误
 
 ```js
 {

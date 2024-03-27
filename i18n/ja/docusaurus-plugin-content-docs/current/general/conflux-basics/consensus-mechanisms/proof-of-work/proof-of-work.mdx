@@ -1,0 +1,31 @@
+---
+sidebar_position: 1
+title: Proof of Work
+displayed_sidebar: generalSidebar
+---
+
+## Concept of PoW
+
+The concept of Proof of Work (PoW)  was first introduced by Cynthia Dwork and Moni Naor in 1993 as a means to prevent spam emails. The concept was simple: require the email sender to solve a computational problem before sending. The computational problem is designed to be time-consuming, requiring certain amount of computational power to solve.  The receiver of the email would then verify that the sender had solved the computational problem before accepting the email. This verification process would ensure that only legitimate emails are accepted and that spammers are unable to flood the receiver's inbox with unsolicited emails.
+
+The idea behind this was to make it much more difficult and resource-intensive for spammers to send mass emails, while still allowing legitimate email senders to send their messages but with little inconvenience. While the concept of PoW for email spam prevention was sound, it was not widely adopted due to the inconvenience it posed to legitimate email senders. However, the concept of PoW was later adapted by Satoshi Nakamoto to create the peer-to-peer electronic cash system, or the blockchain "bitcoin".
+
+## Bitcoin's PoW Consensus
+
+Bitcoin uses PoW mechanism to determine who can mine new blocks on the blockchain. The process of mining a block involves repeatedly hashing the block header with a nonce value to find a hash that meets the current difficulty target set by the network. Miners compete to solve this puzzle, and the first miner to solve it is rewarded with newly minted bitcoins and any transaction fees associated with the transactions in the block.
+
+Besides, the **Longest Chain Rule** is is introduced to ensure that the network agrees on a single version of the blockchain. If two miners create blocks at the same time, a fork in the blockchain occurs, creating two competing versions of the blockchain. To determine which of the two forks is the valid one, the Longest Chain Rule is applied. This rule states that the valid fork is the one with the longest chain of blocks, i.e., the one with the most proof of work invested in it.
+
+By making it difficult and resource-intensive to create new blocks, PoW ensures that the network is secure and that no single entity can control the system unless it controls over 51% of the computing power. In addition, the reward system incentivizes miners to participate in and maintain the network. The introduction of PoW has revolutionized the way we think about decentralized systems and has paved the way for the development of many other cryptocurrencies and blockchain applications.
+
+## Conflux's PoW Consensus
+
+Conflux also uses the PoW consensus mechanism to secure its network. Combining the [Tree-Graph](https://arxiv.org/pdf/1805.03870.pdf) ledger structure and the [GHAST](https://confluxnetwork.medium.com/conflux-research-group-ghast-mechanism-adaptive-weight-ghast-explained-part-1-ffe8224a7282) chain selection rule,  it can achieve the same level of decentralization and security as Bitcoin and Ethereum but provide more than two orders of magnitude improvement on transaction throughput (TPS) and confirmation latency. 
+
+```mdx-code-block
+import DocCardList from '@theme/DocCardList';
+
+<DocCardList />
+```
+
+> Refer to the [Conflux Technical Presentation](https://confluxnetwork.org/files/Conflux_Technical_Presentation_20200309.pdf) page 45-47 for the most accurate description of Conflux's throughput.

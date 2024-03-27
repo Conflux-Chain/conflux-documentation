@@ -56,7 +56,7 @@ Start to subscribe the proof-of-work notification from the stratum server
 2. Secret, empty or 32-bytes, the secret that corresponds to the keccak result
    of the password in the configuration. Empty if password is not enabled.
 
-##### Returns
+##### 返回值
 
 `Bool` - `true` if successful, `false` if not.
 
@@ -88,7 +88,7 @@ Submit a PoW solution to the stratum server
 3. NONCE, hex-string of 32-bytes - the nonce solution of the PoW problem
 4. HASH, hex-string of 32-bytes - the hash of the solved PoW problem.
 
-##### Returns
+##### 返回值
 
 `Array` - A single element of `true` if successful, the first element will be
 `false` if not and the second element will explain reasons in string.

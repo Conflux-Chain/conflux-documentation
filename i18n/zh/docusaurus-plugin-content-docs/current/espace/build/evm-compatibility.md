@@ -28,7 +28,7 @@ eSpace 实现了一个以太坊虚拟机 (EVM)。 以下是 eSpace 和以太坊�
 
 合约最大代码大小是 `49152` ，是以太坊的两倍。
 
-## Transaction Fees
+## 交易费用
 
 * `SSTORE` 操作码和 `SUICIDE` opcode中不会退还gas。
 * 占用存储的操作有不同的gas消耗。
@@ -37,40 +37,40 @@ eSpace 实现了一个以太坊虚拟机 (EVM)。 以下是 eSpace 和以太坊�
   3. 通过 `CALL` 或 `SUICIDE` 创建新账户时，该操作消耗 50000 gas（而以太坊中为 25000 gas）。
 * 最多 `1/4` 的交易 `gasLimit` 可以被退还（如果未使用）
 
-## Transaction Gas limit
+## 交易的 Gas 上限
 
-Only the block whose block height is a multiple of `5` can pack Ethereum type transaction. The total gas limit of these transaction cannot exceed half of the block gas limit (15,000,000).
+只有区块高度是 `5` 的倍数的区块才能打包以太坊类型交易。 这些交易的总 gas 上限不能超过区块 gas 上限的一半（1500w）。
 
-## EVM Precompiles
+## EVM 预编译合约
 
-All standard precompiles are supported.
+支持所有标准预编译合约。
 
 <div class="compat-evm-precompiles-table"></div>
 
-| Address | ID          | 名称                                   | Spec             | Status |
-| ------- | ----------- | ------------------------------------ | ---------------- | ------ |
-| 0x01    | `ECRecover` | ECDSA public key recovery            | [Yellow Paper][] | ✅      |
-| 0x02    | `SHA256`    | SHA-2 256-bit hash function          | [Yellow Paper][] | ✅      |
-| 0x03    | `RIPEMD160` | RIPEMD 160-bit hash function         | [Yellow Paper][] | ✅      |
-| 0x04    | `Identity`  | Identity function                    | [Yellow Paper][] | ✅      |
-| 0x05    | `ModExp`    | Big integer modular exponentiation   | [EIP-198][]      | ✅      |
-| 0x06    | `BN128Add`  | Elliptic curve addition              | [EIP-196][]      | ✅      |
-| 0x07    | `BN128Mul`  | Elliptic curve scalar multiplication | [EIP-196][]      | ✅      |
-| 0x08    | `BN128Pair` | Elliptic curve pairing check         | [EIP-197][]      | ✅      |
-| 0x09    | `Blake2F`   | BLAKE2b `F` compression function     | [EIP-152][]      | ✅      |
+| 地址   | ID          | 名称               | 规范               | 状态 |
+| ---- | ----------- | ---------------- | ---------------- | -- |
+| 0x01 | `ECRecover` | ECDSA 公钥恢复       | [Yellow Paper][] | ✅  |
+| 0x02 | `SHA256`    | SHA-2 256 哈希函数   | [Yellow Paper][] | ✅  |
+| 0x03 | `RIPEMD160` | RIPEMD 160 哈希函数  | [Yellow Paper][] | ✅  |
+| 0x04 | `Identity`  | 身份函数             | [Yellow Paper][] | ✅  |
+| 0x05 | `ModExp`    | 大整数模幂运算          | [EIP-198][]      | ✅  |
+| 0x06 | `BN128Add`  | 椭圆曲线加法           | [EIP-196][]      | ✅  |
+| 0x07 | `BN128Mul`  | 椭圆曲线标量乘法         | [EIP-196][]      | ✅  |
+| 0x08 | `BN128Pair` | 椭圆曲线配对检查         | [EIP-197][]      | ✅  |
+| 0x09 | `Blake2F`   | BLAKE2b `F` 压缩函数 | [EIP-152][]      | ✅  |
 
-## Phantom transactions
+## 幽灵交易
 
-A *cross-space transaction* is a transaction in the Conflux core space that, at some point during its execution, calls one of the state-changing (i.e., not `view`) methods of the `CrossSpaceCall` internal contract. Such transactions can change CFX balances and contract storage in both spaces, core and eSpace.
+*跨空间交易*是在 Conflux 核心空间中的交易，它在执行过程中的某个时刻调用了 `CrossSpaceCall` 内置合约的状态更改方法（即非 `view`方法） 这样的交易可以更改 core 和 eSpace 两个空间中的 CFX 余额和合约存储。
 
-As EVM clients are not aware of Conflux space transactions (the two spaces use different transaction formats), we construct one or more *phantom* transactions (aka *virtual* transactions) for each call to the `CrossSpaceCall` internal contract. These phantom transactions are derived from the corresponding core space transaction, they do not exist in the ledger. Phantom transactions have the following special properties:
+由于 EVM 客户端不知道 Conflux 空间交易（两个空间使用不同的交易格式），我们为每次调用 `CrossSpaceCall` 内置合约构造一个或多个*幽灵*交易（又称*虚拟*交易）。 这些幽灵交易来自相应的 core space 交易，它们并不存在于账本中。 幽灵交易具有以下特殊属性：
 
 - 其中，`gas` 和 `gasPrice` 值均为 `0`。 跨空间交易的 gas 费用将在Core Space中收取。 因此，相应的 phantom 交易不会消耗任何 gas。
 - 无效的签名（`r`、`s`、`v`、`standardV`）。 Conflux 协议无法代表跨空间交易的发送者签名交易。 因此，phantom 交易使用一个伪造的签名，而这个签名无法通过 ECDSA 验证。
 
 ### 示例
 
-When we retrieve epoch `0x72819` in the Conflux core space, we see it contains a single Conflux transaction.
+当我们检索 Conflux 核心空间中的 epoch `0x72819` 时，我们发现其中包含一个 Conflux 交易。
 
 ```
 cfx_getBlockByEpochNumber(0x72819, true)
@@ -93,11 +93,10 @@ cfx_getBlockByEpochNumber(0x72819, true)
       ...
     }
   ],
-  ...
 }
 ```
 
-When we retrieve the corresponding block in the eSpace, we see it contains two phantom transactions.
+当我们检索 eSpace 中对应的区块时，我们发现它包含两个幽灵交易。
 
 ```
 eth_getBlockByNumber(0x72819, true)
@@ -131,13 +130,12 @@ eth_getBlockByNumber(0x72819, true)
       ...
     }
   ],
-  ...
 }
 ```
 
 ## 其他资源
 
-- [EVM opcodes reference](https://www.evm.codes/)
+- [EVM操作码参考](https://www.evm.codes/)
 
 [Yellow Paper]: https://ethereum.github.io/yellowpaper/paper.pdf
 [EIP-152]: https://eips.ethereum.org/EIPS/eip-152
