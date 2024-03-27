@@ -36,7 +36,7 @@ Reference for various fee tiers and their rate limits.
 **Notes** 
 - Maximum result-set size is 10,000 for `getLogs` call;
 - Old archived event logs may be inaccessible due to data prune;
-- Append your api key(get from [Web3 Paywall](../general/build/tools/web3paywall.md) or Conflux Foundation) to the endpoint for privileged access (eg., `https://evm.confluxrpc.com/<api-key>` or for testnet, `https://evmtestnet.confluxrpc.org/<api-key>`);
+- Append your api key(get from [Web3 Paywall](../general/build/tools/web3paywall.md) or Conflux Foundation) to the endpoint for privileged access (eg., `https://evm.confluxrpc.com/<mainnet-api-key>` or for testnet, `https://evmtestnet.confluxrpc.org/<testnet-api-key>`);
 - Rate limits are also imposed per RPC method, please check the following specification for more details.
 
 <details>
