@@ -7,67 +7,67 @@ keywords:
   - nonce
 ---
 
-In Conflux, each account has a nonce value, representing the number of transactions executed by that account. This value can be obtained using the RPC method [`cfx_getNextNonce`](/docs/core/build/json-rpc/cfx-namespace/#cfx_getnextnonce). The nonce field in a transaction is used to specify the execution order, with lower nonce values indicating earlier execution. Typically, you can directly use this value as the nonce for the next transaction.
+在Conflux中，每个账户都有一个nonce值，表示该账户执行的交易序号。 可以使用RPC方法[`cfx_getNextNonce`](/docs/core/build/json-rpc/cfx-namespace/#cfx_getnextnonce)获取此值。 交易中的nonce字段用于指定执行顺序，较低的nonce值表示较早地执行。 通常情况下，可以直接将这个值作为下一次交易的nonce。
 
-However, in scenarios with high network transaction volume (congestion) or when quick transaction submission is required, obtaining the nonce value becomes more complex. This article will provide a detailed explanation of the nonce update mechanism and how to manage transaction nonces in special circumstances.
+然而，在网络交易量高(拥堵)或需要快速提交交易的情况下，获取nonce值变得更为复杂。 本文将详细解释nonce更新机制以及如何在特殊情况下管理交易的nonce。
 
-## Nonce Mechanism
+## Nonce机制
 
-Here are some details about the **nonce mechanism**:
+这里是一些**nonce机制**的细节:
 
-1. The execution of transactions on the blockchain is in the order of account nonce from small to large.
+1. 在区块链上，交易的执行顺序是按照账户的nonce值从小到大的顺序执行的。
 2. Nonce 的初始值是 0，每执行一次交易，nonce 就增加 1。
 3. Nonce 不能重复使用。
-4. Nonce 不能跳过：假设一个账户的当前 nonce 是 n。 If the nonce of the transaction is m such that m > n, then the transaction **will not be executed** until all **transactions with nonce < m have been executed**.
-5. After the transaction is sent via the [`cfx_sendRawTransaction`](/docs/core/build/json-rpc/cfx-namespace#cfx_sendrawtransaction) method, it will **not be executed immediately**. 你必须等待矿工先打包它。 一旦打包，它将延迟 5 个 epoch 执行。 交易执行后，账户的 nonce 将增加一。
+4. Nonce 不能跳过：假设一个账户的当前 nonce 是 n。 如果交易的nonce值为m，且m > n, 那么该交易**不会被执行** 直到所有**nonce < m的交易都被执行**。
+5. 通过[`cfx_sendRawTransaction`](/docs/core/build/json-rpc/cfx-namespace#cfx_sendrawtransaction) 方法发送交易后, **不会立即执行**。 你必须等待矿工先打包它。 一旦打包，它将延迟 5 个 epoch 执行。 交易执行后，账户的 nonce 将增加一。
 
-## Issues Caused by Improper Nonce Usage
+## Nonce 使用不当引起的问题
 
-Setting the nonce incorrectly when sending transactions can result in transaction failures or getting stuck in the transaction pool, preventing it from being packaged and executed. Below are some common error messages and their corresponding solutions.
+用户在发送交易时设置 nonce 不正确可能会导致交易失败或在交易池中卡住，无法被打包和执行。 以下是一些常见的错误消息及其相应的解决方案。
 
-### Discarded Due to a Too Stale Nonce
+### 由于nonce值过时而被丢弃
 
-If the nonce of a newly sent transaction is less than the current nonce of the account, the transaction will be rejected, and an error message like the following will be returned:
+如果新发送的交易的nonce小于账户的当前nonce，则该交易将被拒绝，并返回如下的错误消息：
 
 ```json
 "\"Transaction 0x0101010110 is discarded due to a too stale nonce\""
 ```
 
-This error indicates that the nonce value used is outdated or has been reused, and it needs to be updated to the latest nonce value.
+此错误表示使用的nonce 值已经过时或已被重新使用，需要更新到最新的nonce值。
 
-### Tx With Same Nonce Already Inserted
+### 交易的nonce与交易池中的交易相同
 
-If a transaction is sent to the transaction pool but has not been executed yet, sending another transaction with the same nonce will result in an error message like:
+如果交易已发送到交易池但尚未执行，再发送具有相同nonce的交易将导致如下错误消息，比如：
 
 ```json
 "Tx with the same nonce already inserted. To replace it, you need to specify a gas price > {}""
 ```
 
-In this case, you should wait for the transaction in the pool to be executed. If you want to replace the transaction in the pool, you need to set a **higher gas price** and resend it.
+在这种情况下，你应该等待交易池中的交易被执行。 If you want to replace the transaction in the pool, you need to set a **higher gas price** and resend it.
 
-Sometimes, the error message may also be:
+有时，错误消息也可能是：
 
 ```json
 "\"tx already exist\""
 ```
 
-The handling is the same as above.
+处理方式与上面相同。
 
-### discarded due to in too distant future
+### 由于nonce值过大而被丢弃
 
-If the nonce value for a transaction is too large, exceeding the user's current nonce by more than 2000, an error message will be returned:
+如果交易的nonce值过大，比用户当前nonce值大2000以上，将返回如下错误消息：
 
 ```json
 "\"Transaction 0x0101010101010101 is discarded due to in too distant future\""
 ```
 
-Solution: Use the correct nonce value when sending the transaction.
+解决方案: 发送交易时使用正确的nonce值。
 
-In addition to nonce misconfiguration causing transaction failures, there are other scenarios as well. For more details, refer to [Sending Transaction Errors](./send-tx-error.md).
+除了nonce配置错误导致交易失败外，还会有一些其他情况。 欲了解更多详情，请参阅[发送交易错误](./send-tx-error.md)。
 
-### Unable to Retrieve Transaction Receipt After Sending
+### 发送交易后无法获取交易收据
 
-There is a situation where, after sending a transaction, the receipt cannot be obtained for an extended period. This is typically due to the transaction using non-consecutive nonces. In such cases, the transaction gets stuck in the transaction pool, awaiting the execution of prior transactions.
+有一种情况是，在发送交易后，在长时间内无法获取交易收据。 这通常是由于交易使用非连续的nonce值导致的。 在这种情况下，交易被卡在交易池内，等待先前交易的执行完成。
 
 For example, if the account's current nonce is 1 and you send a transaction with nonce 5, it will be stuck in the transaction pool, waiting for transactions with nonces 1, 2, 3, and 4 to be sent and executed.
 

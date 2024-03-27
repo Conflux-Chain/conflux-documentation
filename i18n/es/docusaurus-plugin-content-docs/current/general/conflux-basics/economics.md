@@ -66,6 +66,8 @@ The amount of pre-mined tokens in the genesis block of Conflux Network is 5 bill
 - _Ecosystem Fund_: 40% of the genesis tokens will be offered to community developers supporting the DApps in the Conflux ecosystem. This proportion of tokens will be unlocked within four years.
 - _Public Fund_: 0% of the genesis tokens will be allocated into the public fund account.
 
+![CFX Token Distribution](./img/CFX_Distribution.png)
+
 ### **Operational Phase CFX Distribution**
 
 In the operational phase, system maintainers are inspired to promote continuous system upgrading; ecosystem contributors are encouraged to constantly generate value for the ecosystem. Meanwhile, self-adaptive configuration of Conflux system resources is promoted through system resource marketization.

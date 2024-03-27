@@ -29,9 +29,9 @@ Pinata是一个web3媒体管理服务，允许用户在IPFS中托管、管理和
 
 一旦您的文件被固定到IPFS，您可以完全控制分享、分发、变现和分享您的文件。
 
-## Video Tutorial
+## 视频教程
 
-For a hands-on demonstration on how to use pinata to store your Web3 files, please check out the following video:
+关于如何使用 pinata 来存储您的 Web3 文件，您可以观看以下实操视频：
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -39,13 +39,13 @@ import TabItem from '@theme/TabItem';
 
 <Tabs>
   <TabItem value="youtube" label="Pinata Video Tutorial">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/9y2NK85Z6Hk?si=0TsnWNR40f9mz4Wo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/9y2NK85Z6Hk?si=0TsnWNR40f9mz4Wo" title="YouTube 视频播放器" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
   </TabItem>
 </Tabs>
 
 ## 准备好你的图片
 
-本指南将专注于创建单个NFT，也可以用同样的方式为更多NFT准备图片。 The image being used can be found here if you'd like to utilize it.
+本指南将专注于创建单个NFT，也可以用同样的方式为更多NFT准备图片。 如果您想使用，可以在此处找到正在使用的图像。
 
 ```mdx-code-block
 

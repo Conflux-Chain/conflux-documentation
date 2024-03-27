@@ -88,7 +88,7 @@ After compiling your contracts, the easiest way to deploy using Remix is by [set
 
 Now, in the “Deploy and Run Transactions” tab, use the “Environment” drop-down and select “Injected Provider - MetaMask.”
 
-![](./img/injectedProviderMM.avif)
+![](./img/injectedprovidermm.png)
 
 Connect your wallet and select the Conflux eSpace Testnet. Your account should be selected automatically in Remix, and you can click “Deploy.” A complete workflow for Remix usage is shown [here](./tutorials/deployContract/remix.md)
 

@@ -1,0 +1,63 @@
+---
+sidebar_position: 7
+title: Internal Contracts
+displayed_sidebar: coreSidebar
+---
+
+Conflux introduces several built-in internal contracts for better system maintenance and on-chain governance. Now Conflux has seven internal contracts. These contracts provide [`solidity interfaces defined here`](https://github.com/Conflux-Chain/conflux-rust/tree/master/internal_contract/contracts). These function can only be called via `CALL` or `STATICCALL` operation. Using operation `CALLCODE` or `DELEGATECALL` to interact with internal contracts will trigger an error.
+
+`AdminControl` contract, `SponsorWhitelistControl` contract and `Staking` contract are introduced from the beginning.
+
+`ConfluxContext`, `PoSRegister`, `ConfluxContext` are introduced at v2 hard-fork, 
+
+`ParamsControl` is introduced at v2.1 hard-fork. 
+
+The addresses of these 7 internal contracts are list as follows:
+
+## AdminControl:
+
+- hex40: `0x0888000000000000000000000000000000000000`
+- Mainnet base32: `cfxtest:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaaawby2s44d`
+- Testnet base32: `cfx:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaaa2mhjju8k`
+
+## SponsorWhitelistControl:
+
+- hex40: `0x0888000000000000000000000000000000000001`
+- Mainnet base32: `cfxtest:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaaeprn7v0eh`
+- Testnet base32: `cfx:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaaegg2r16ar`
+
+## Staking
+
+- hex40: `0x0888000000000000000000000000000000000002`
+- Mainnet base32: `cfxtest:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaajh3dw3ctn`
+- Testnet base32: `cfx:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaajrwuc9jnb`
+
+## ConfluxContext:
+
+- hex40: `0x0888000000000000000000000000000000000004`
+- Mainnet base32: `cfxtest:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaauv2xpkd3x`
+- Testnet base32: `cfx:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaau5xa6tk73`
+
+## PoSRegister:
+
+- hex40: `0x0888000000000000000000000000000000000005`
+- Mainnet base32: `cfxtest:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaaytypk0th1`
+- Testnet base32: `cfx:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaayf993ufd7`
+
+## CrossSpaceCall
+
+- hex40: `0x0888000000000000000000000000000000000006`
+- Mainnet base32: `cfxtest:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaa2eaeg85p5`
+- Testnet base32: `cfx:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaa2sn102vjv`
+
+## ParamsControl
+
+- hex40: `0x0888000000000000000000000000000000000007`
+- Mainnet base32: `cfxtest:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaa64p5db1w9`
+- Testnet base32: `cfx:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaa6uhjxh70z`
+
+```mdx-code-block
+import DocCardList from '@theme/DocCardList';
+
+<DocCardList />
+```

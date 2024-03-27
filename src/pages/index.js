@@ -36,7 +36,7 @@ const Home = () => {
         
         <FeatureCards wrapperClassName='mt-20 lg:mt-0 xl:-translate-y-14 xl:-translate-y-12 z-10' />
         
-        <div className='px-[78px] w-full max-w-[1920px]'>
+        <div className='px-9 md:px-[78px] w-full max-w-[1920px]'>
           <div className='text-[32px] font-semibold'>Explore the documentation</div>
           <DocCatalog />
         </div>

@@ -11,11 +11,11 @@ displayed_sidebar: generalSidebar
 ## 概览
 **Node version: `conflux-rust v2.1.0`**.
 
-Light nodes are special nodes in the Conflux network that store block headers only and retrieve everything else from their peers on-demand. This means that by default light nodes do not store transactions nor do they store state trees either. This can drastically reduce the disk and bandwidth use of light nodes compared to full and archive nodes, especially under high TPS. As a trade-off RPC queries have a higher latency on light nodes.
+轻节点是Conflux网络中的特殊节点，该节点仅存储区块头，并按照需要从其他节点检索数据。 这就意味着默认的轻节点既不会存储交易也不会存储状态树。 与完整节点和存档节点相比，轻节点大大减少了磁盘和带宽使用，特别是在高TPS下。 作为权衡，轻节点上的RPC查询具有更高的延迟。
 
-Light nodes execute **GHAST** consensus on their local header graph and they also verify each item retrieved on-demand using Merkle proofs and other similar mechanisms. Items retrieved on-demand include accounts, bloom filters, transactions, and transaction receipts. While light nodes need to rely on their peers to fulfill RPC queries they do this in a trustless way.
+轻节点在它们的头图 **GHAST**上执行共识，它们还使用Merkle证明和其他类似的机制对按需检索的每个项目进行验证。 按需检索的项目包括账户、布隆过滤器、交易和交易收据。 虽然轻节点需要依赖它们的对等节点来满足 RPC 查询，但它们以一种无需信任的方式进行这个过程。
 
-> The current light node implementation is still considered experimental therefore bugs are expected to exist. If you encounter any issues please let us know by opening an issue on the [conflux-rust](https://github.com/Conflux-Chain/conflux-rust/issues) repository.
+> 目前的轻节点实现仍然被认为是实验性的，因此预期存在错误。 如果您遇到任何问题，请通过在[conflux-rust](https://github.com/Conflux-Chain/conflux-rust/issues)仓库上开启一个问题来告诉我们。
 
 ## 运行轻节点
 
