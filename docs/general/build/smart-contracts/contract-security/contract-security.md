@@ -14,7 +14,7 @@ Ensuring the security of smart contracts is crucial as they directly handle and 
 ### Adhere to Known Best Practices
 - **Limit Permissions**: Ensure only authorized users can execute critical functions.
 - **Validate Inputs and Use Assertions**: Verify external inputs and contract states to ensure they meet expectations.
-- **Prevent Reentrancy Attacks**: Use mutexes (e.g., state variables) to prevent multiple calls within the same transaction.
+- **Prevent Reentrancy Attacks**: Use mutexes (e.g., state variables) or [modifier](https://docs.openzeppelin.com/contracts/5.x/api/utils#ReentrancyGuard) to prevent multiple calls within the same transaction.
 - **Use Verified Libraries and Contracts**: Reduce errors and vulnerabilities by using open-source libraries and contracts that have been extensively tested and audited.
 
 ### Avoid Common Security Pitfalls
