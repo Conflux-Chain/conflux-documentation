@@ -18,7 +18,7 @@ Ensuring the security of smart contracts is crucial as they directly handle and 
 - **Use Verified Libraries and Contracts**: Reduce errors and vulnerabilities by using open-source libraries and contracts that have been extensively tested and audited.
 
 ### Avoid Common Security Pitfalls
-- **Integer Overflow and Underflow**: Use safe math libraries to prevent these issues.
+- **Integer Overflow and Underflow**: Use safe math libraries to prevent these issues, for example, [openzepplin Math library](https://docs.openzeppelin.com/contracts/5.x/api/utils#math).
 - **Runtime Checks in Frontend**: Monitoring contract transactions through the frontend application can help detect abnormal behaviors early.
 - **Follow Coding Standards**: Adhering to coding standards, like Solidity's security guidelines, can minimize security risks.
 
@@ -27,7 +27,7 @@ Ensuring the security of smart contracts is crucial as they directly handle and 
 - **Regular Audits**: As contract logic and the ecosystem change, regular security audits are necessary.
 
 ### Prepare Contingency Plans
-- **Upgradability**: While contracts on the blockchain are immutable, you can implement contract upgradability through design patterns like the proxy pattern.
+- **Upgradability**: While contracts on the blockchain are immutable, you can implement contract upgradability through design patterns like the proxy pattern. Checkout [Using with Upgrades](https://docs.openzeppelin.com/contracts/5.x/upgradeable) for safe implementations.
 - **Incident Response**: Have a plan in place for potential security events, including notifying users and freezing contract operations.
 
 Security is an ongoing process, not a one-time task. Continuously updating and reviewing your smart contracts is vital for maintaining their security as blockchain technology evolves and new attack techniques emerge.
