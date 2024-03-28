@@ -4,7 +4,7 @@ title: Solidity Basics
 displayed_sidebar: generalSidebar
 ---
 
-## Intro
+## 介绍
 
 Solidity is a high-level programming language designed for implementing smart contracts on blockchain platforms like Ethereum and Conflux Network. It's statically typed, supports inheritance, libraries, and complex user-defined types, making it a powerful tool for creating sophisticated contracts.
 

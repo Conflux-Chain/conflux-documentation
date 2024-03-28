@@ -19,7 +19,7 @@ The gas fee for a transaction in Conflux is determined by two key fields: `gas` 
 
 The actual gas cost is calculated as `gasCharged` multiplied by `gasPrice`. It's important to note that `gasCharged` will not exceed the limit set by the `gas` field.
 
-For more detailed information about gas and its calculation in Conflux, please visit our [detailed documentation on gas](/docs/general/conflux-basics/gas.md).
+有关Conflux中燃气及其计算的更详细信息，请访问我们的 [关于燃气的详细文档](../../zh-CN/docs/general/conflux-basics/gas.md).。
 
 ### How to Set `gasPrice` field
 

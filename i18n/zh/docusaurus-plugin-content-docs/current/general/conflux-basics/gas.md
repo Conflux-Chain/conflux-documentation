@@ -58,6 +58,7 @@ gasFee是一笔交易支付的总gas费用。 It is calculated as `gasFee = gasC
 
 假设有一笔1 CFX的普通转账，gas限制可以设置为21,000。 如果gasPrice设置为1GDrip，那么交易的总成本是`1 + 21000 * 0.000000001 = 1.000021 CFX`，其中1 CFX转到收款人的账户，0.000021 CFX是矿工的奖励。
 
+
 ### gasUsed
 
 The actual gas consumed during transaction execution.
@@ -73,6 +74,15 @@ In a Conflux transaction, if the `gas limit` is more than the actual amount of g
 假设一笔普通CFX转账的gas限制设置为100k，实际执行消耗了21,000，由于交易的gas限制设置得太高，最多有25,000的gas费用会被退还（gas limit的25%）。 该交易使用的gas将是`0.000075 CFX`。
 
 如果交易的gas限制设置得不是那么高，以前面的例子为例，但将gas限制设置为25000，比实际使用的多4000，超出部分不超过gas限制的四分之一。 这部分将被完全退还，最终收取的费用仍然是`0.000021 CFX`。
+
+
+## How to pay less gasFee？
+
+There are strategies you can use to reduce the cost:
+
+1.Gas prices go up and down every once in a while based on how congested Conflux is. When gas prices are high, waiting just a few minutes before making a transaction could see a significant drop in what you pay.
+
+2.If you're a smart contract developer aiming to reduce gas costs, start by optimizing data storage, improving function execution, and utilizing efficient loops, among others. For a deeper dive into these techniques and more, check out our dedicated [Gas Optimization](/docs/general/build/smart-contracts/gas-optimization/) tutorial.
 
 ## 了解更多
 

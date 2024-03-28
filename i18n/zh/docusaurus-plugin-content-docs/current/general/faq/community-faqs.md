@@ -8,58 +8,58 @@ displayed_sidebar: generalSidebar
 
 ### **Do we need to pay attention to the `storageLimit` and `epochHeight` fields in regular transactions?**
 
-- When calling a contract, the SDK will automatically set **`storageLimit`** based on **`cfx_estmastGasAndCollateral`** and **`epochHeight`** based on **`cfx_getEpochNumber`**.
-- When transferring CFX, **`storageLimit`** is automatically set to 0, and **`epochHeight`** is set to the current epoch number.
+- 在调用合约时，SDK会根据**`cfx_estmastGasAndCollateral`**自动设置**`storageLimit`**，根据**`cfx_getEpochNumber`**自动设置**`epochHeight`**。
+- 在转移CFX时，**`storageLimit`**自动设置为0，**`epochHeight`**设置为当前纪元号。
 
-### **I want to send multiple transactions at once, but there's no method to set nonce. How can I solve this?**
+### **我想一次发送多个交易，但没有方法设置nonce。 我该如何解决？**
 
-You need to maintain the nonce yourself, adding one for each transaction.
+你需要自己维护nonce，每个交易加1。
 
-### **What does the error "ExceedStorageLimit" mean when sending a transaction?**
+### **发送交易时出现“ExceedStorageLimit”错误是什么意思？**
 
-The **`storagelimit`** value is set lower than the actual required value.
+**`storagelimit`**值设置得比实际需要的值低。
 
-### **How do I convert a private key into keystore format?**
+### **如何将私钥转换为keystore格式？**
 
-- In **`go-conflux-sdk`**, use **`AccountManager.ImportKey`** to import a private key into a keystore file.
-- In **`js-conflux-sdk`**, use **`sign.encrypt`** to generate a keystore object based on the private key.
+- 在**`go-conflux-sdk`**中，使用**`AccountManager.ImportKey`**将私钥导入keystore文件。
+- 在**`js-conflux-sdk`**中，使用**`sign.encrypt`**基于私钥生成keystore对象。
 
-### **Why do nodes need to re-sync data after changing configurations?**
+### **为什么节点在更改配置后需要重新同步数据？**
 
-Restarting the node program doesn't start syncing data from scratch. Instead, it restores data from the database and starts syncing from the last checkpoint. This is because the data of the last checkpoint is stored in memory, and when the program is closed, the data in memory is lost, making it seem like data is being re-synced.
+重启节点程序不会从头开始同步数据。 相反，它会从数据库恢复数据，并从上一个检查点开始同步。 这是因为最后一个检查点的数据存储在内存中，当程序关闭时，内存中的数据会丢失，使得看起来数据正在被重新同步。
 
 ### **Can the sponsor payment function be tested normally on the test chain?**
 
-Yes, it can.
+可以。
 
-### **Is CFX an ERC777 contract?**
+### **CFX是ERC777合约吗？**
 
-No, CFX is not a contract token. CFX is equivalent to Ethereum's ETH.
+CFX不是合约代币。 CFX相当于以太坊的ETH。
 
-### **Does Conflux support the Ethereum library OpenZeppelin?**
+### **Conflux支持以太坊库OpenZeppelin吗？**
 
-Yes, it's supported. You can directly reference it. However, note that the ERC1820 contract address on the Conflux chain is different from Ethereum. On Conflux, the ERC1820 contract address is: 0x88887ed889e776bcbe2f0f9932ecfabcdfcd1820.
+支持。 你可以直接引用它。 但请注意，Conflux链上的ERC1820合约地址与以太坊不同。 在Conflux上，ERC1820合约地址是：0x88887ed889e776bcbe2f0f9932ecfabcdfcd1820。
 
-### **Where is the testnet faucet?**
+### **测试网水龙头在哪里？**
 
-- To receive CFX test tokens, you can get them directly from the faucet portals.
-    - Core Space Testnet Faucet: https://faucet.confluxnetwork.org/
-    - eSpace Testnet Faucet: https://efaucet.confluxnetwork.org/
-    - Mainnet Faucets: https://conflux-faucets.com/
+- 要接收CFX测试代币，你可以直接从水龙头门户网站获取。
+    - 核心空间测试网水龙头：https://faucet.confluxnetwork.org/
+    - eSpace测试网水龙头：https://efaucet.confluxnetwork.org/
+    - 主网水龙头：https://conflux-faucets.com/
 
-### **Why does the value sometimes appear smaller when I use `latest_confirmed` to get the epoch?**
+### **为什么当我使用`latest_confirmed`获取纪元时，值有时会显得较小？**
 
-This can happen in cases of poor network connectivity, primarily due to high block synchronization delays.
+这可能发生在网络连接不佳的情况下，主要是由于高区块同步延迟造成的。
 
 ### **What settings do developers need to make when starting a node?**
 
-You can find all node related documentation on [THIS](../run-a-node/) section.
+你可以在[此处](../run-a-node/)找到所有与节点相关的文档。
 
-### **Does CFX have an API to query computing power?**
+### **CFX有查询计算能力的API吗？**
 
 https://www.confluxscan.io/v1/plot?interval=514&limit=10
 
-### **What is a pivot chain switch?**
+### **什么是枢轴链切换？**
 
 A pivot chain refers to a chain formed by connecting pivot blocks based on block hashes. When a non-pivot block B in a certain epoch has a subtree heavier than the previous pivot block A, B becomes the pivot block for that epoch. This is a pivot chain switch.
 
@@ -67,32 +67,32 @@ A pivot chain refers to a chain formed by connecting pivot blocks based on block
 
 When the old pivot chain switches to the new pivot chain, the latest mined epoch number will be a value not greater than the last obtained latest mined epoch number.
 
-As shown below, the latest epoch at the previous moment was 10, and the latest epoch at this moment is 9, indicating that the pivot block for epoch 9 has changed from 9A to 9B, and a pivot chain switch has occurred.
+如下所示，之前的最新纪元是10，此刻的最新纪元是9，表明纪元9的枢纽区块已从9A变为9B，发生了枢轴链切换。
 
 ```css
 cssCopy code
-[1]···[8]---[9A]---[10A] old pivot chain
+[1]···[8]---[9A]---[10A] 旧枢轴链
         \
           \
-            [9B] new pivot chain
+            [9B] 新枢轴链
 
 ```
 
 **How can developers monitor?**
 
-1. Start a full node (archive node) and enable the websocket RPC service.
-2. Subscribe to the **`latest mined epoch`** event using **`rpc_subscribeEpoch`**.
-3. Wait for the latest mined epoch B and compare it with the previously obtained latest mined epoch A.
-4. If `B <= A`, a pivot chain switch has occurred.
-5. Go to step 3.
+1. 启动一个完整节点（归档节点）并启用websocket RPC服务。
+2. 使用**`rpc_subscribeEpoch`**订阅**`最新挖掘纪元`**事件。
+3. 等待最新挖掘的纪元B，并与之前获得的最新挖掘纪元A进行比较。
+4. 如果`B <= A`，则发生了枢轴链切换。
+5. 回到步骤3。
 
-**How can developers synchronize block and transaction status?**
+**开发者如何同步区块和交易状态？**
 
 If local data needs to be kept up-to-date and accurate for blocks and transactions, then when a pivot chain switch occurs (assuming the latest mined epoch number changes from A to B, and `B <= A`):
 
-- Assume the latest state epoch number obtained when the latest mined epoch number was A is A'.
-- Assume the latest state epoch number obtained when the latest mined epoch number was B is B'.
-1. If B > A', update (A', B'] (i.e., this situation will not affect the executed blocks and transactions, process normally).
+- 假设在最新挖掘纪元号为A时获得的最新状态纪元号为A'。
+- 假设在最新挖掘纪元号为B时获得的最新状态纪元号为B'。
+1. 如果B > A'，更新(A', B']（即，这种情况不会影响已执行的区块和交易，正常处理）。
 
 ```css
 
@@ -101,7 +101,7 @@ If local data needs to be kept up-to-date and accurate for blocks and transactio
 
 ```
 
-1. If `B <= A'`, delete the data between [B, A'].
+1. 如果`B <= A'`，删除[B, A']之间的数据。
 
 ```css
 
@@ -110,20 +110,20 @@ If local data needs to be kept up-to-date and accurate for blocks and transactio
 
 ```
 
-1. Update [B', B].
-2. Go to step 1.
+1. 更新[B', B]。
+2. 回到步骤1。
 
-I hope this translation helps you understand the content better! If you have any further questions or need clarification on any points, please let me know.
+希望这个诠释能帮助您更好地理解内容！ If you have any further questions or need clarification on any points, please let me know.
 
-### What is storage collateral, and how is it calculated? For example, how many drips are required for 1kb storage?
+### 什么是存储抵押，它是如何计算的？ For example, how many drips are required for 1kb storage?
 
-Storage collateral refers to the need to collateralize a corresponding amount of cfx when adding new storage usage in a contract. For each storage entry, the last account that writes to this entry is called the owner of this storage entry. The storage collateral fee will be returned to the owner after the storage is released. Every 1kb of storage requires a collateral of 1cfx.
+存储抵押是指在合约中添加新的存储使用时需要抵押相应数量的cfx。 For each storage entry, the last account that writes to this entry is called the owner of this storage entry. The storage collateral fee will be returned to the owner after the storage is released. 每1kb的存储需要1cfx的抵押。
 
-> For more details, please refer to [THIS](../../core/core-space-basics/storage) section.
+> 更多详细信息，请参考[此部分](../../core/core-space-basics/storage)。
 
-### What fees are included in the GasFee returned by cfx_getTransactionReceipt? Does it include storage collateral fees?
+### cfx_getTransactionReceipt返回的GasFee包括哪些费用？ 它包括存储抵押费用吗？
 
-- Gasfee does not include storage fees. Gasfee = gasUsed * gasPrice, and the gasfee is spent after the transaction is executed.
+- Gasfee不包括存储费用。 Gasfee = gasUsed * gasPrice, and the gasfee is spent after the transaction is executed.
 - storageCollateralized represents the actual storage collateral fee used. The storage collateral fee will be returned when the storage is released.
 
 ### In a block, if a transaction has both blockHash and status as null, does it mean it has been processed in another block?
@@ -276,7 +276,7 @@ Reason: The constructor was invalid when deploying the contract; it is usually c
 
 ### **How do developers start a node?**
 
-You can find all node related documentation on [THIS](../run-a-node/) section.
+你可以在[此处](../run-a-node/)找到所有与节点相关的文档。
 
 
 ### **What is the Transactions Lifecycle?**

@@ -74,7 +74,7 @@ The [`cfx_estimateGasAndCollateral`](/docs/core/build/json-rpc/cfx-namespace/#cf
 
 The gas estimated by the [`cfx_estimateGasAndCollateral`](/docs/core/build/json-rpc/cfx-namespace/#cfx_estimategasandcollateral) method may not always be accurate and could be conservative. Therefore, when setting the transaction gas, it is common to multiply the value returned by this method by a factor, such as 1.3, for added safety.
 
-For more information on the usage, estimation, and charging of gas, refer to [Introduction to Gas](/docs/general/conflux-basics/gas.md).
+有关 gas 的使用、估算和收费的更多信息，请参考 [Gas 简介](/docs/general/conflux-basics/gas.md)。
 
 ### gasPrice
 

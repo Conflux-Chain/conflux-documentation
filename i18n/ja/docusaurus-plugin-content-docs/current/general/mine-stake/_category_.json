@@ -1,0 +1,9 @@
+{
+  "label": "Mining & Staking",
+  "position": "2.5",
+  "link": {
+    "type": "generated-index",
+    "description": "Tutorials for PoW and PoS miners. The higher hashrates and staking proportion will make Conflux safer."
+  },
+  "collapsed": false
+}

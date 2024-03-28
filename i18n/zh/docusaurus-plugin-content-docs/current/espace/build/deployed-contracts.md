@@ -11,12 +11,12 @@ displayed_sidebar: eSpaceSidebar
 
 - WCFX9: 0x14b2d3bc65e74dae1030eafd8ac30c533c976a9b
 - Multicall3: 0xEFf0078910f638cd81996cc117bccD3eDf2B072F
-- Gnosis Safe v1.3.0 (Deterministic Deployment Proxy): Check address at [Gnosis Safe](https://github.com/safe-global/safe-contracts/blob/main/CHANGELOG.md#version-130-libs0)
-- Gnosis Safe v1.4.1: Check address at [Gnosis Safe](https://github.com/safe-global/safe-contracts/blob/main/CHANGELOG.md#version-141)
+- Gnosis Safe v1.3.0 (确定性部署代理): 请在 [Gnosis Safe](https://github.com/safe-global/safe-contracts/blob/main/CHANGELOG.md#version-130-libs0) 中查询地址
+- Gnosis Safe v1.4.1: 请在 [Gnosis Safe](https://github.com/safe-global/safe-contracts/blob/main/CHANGELOG.md#version-141) 中查询地址
 
 ## eSpace 测试网
 
 - WCFX9: 0x2ed3dddae5b2f321af0806181fbfa6d049be47d8
 - Multicall3: 0xeff0078910f638cd81996cc117bccd3edf2b072f
-- Gnosis Safe v1.3.0 (Deterministic Deployment Proxy): Check address at [Gnosis Safe](https://github.com/safe-global/safe-contracts/blob/main/CHANGELOG.md#version-130-libs0)
-- Gnosis Safe v1.4.1: Check address at [Gnosis Safe](https://github.com/safe-global/safe-contracts/blob/main/CHANGELOG.md#version-141)
+- Gnosis Safe v1.3.0 (确定性部署代理): 请在 [Gnosis Safe](https://github.com/safe-global/safe-contracts/blob/main/CHANGELOG.md#version-130-libs0) 中查询地址
+- Gnosis Safe v1.4.1: 请在 [Gnosis Safe](https://github.com/safe-global/safe-contracts/blob/main/CHANGELOG.md#version-141) 中查询地址

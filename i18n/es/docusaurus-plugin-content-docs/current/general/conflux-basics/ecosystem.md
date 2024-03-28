@@ -34,7 +34,7 @@ Si quieres aprender a usar Meson, puedes seguir [este](../tutorials/transferring
 
 ## [ConfluxHub (Puente entre cadenas, Staking de CFX y Governanza)](https://confluxhub.io/)
 
-ConfluxHub es un componente vital del ecosistema de Conflux, que sirve como una plataforma versátil para los puentes transespaciales, la apuesta por CFX y la gobernanza.
+ConfluxHub is a vital component of the Conflux ecosystem, serving as a versatile platform for cross-space bridges, CFX staking, and governance.
 
 Si quieres aprender a usar ConfluxHub, puedes seguir [este](../tutorials/transferring-funds/transfer-funds-across-spaces.md) tutorial.
 
