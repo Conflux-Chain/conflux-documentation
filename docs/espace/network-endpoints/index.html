@@ -12,7 +12,7 @@
 
 
 <script src="/js/clarity.js"></script><link rel="stylesheet" href="/assets/css/styles.1d0f6ede.css">
-<script src="/assets/js/runtime~main.6c0bca35.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.5e6c6378.js" defer="defer"></script>
 <script src="/assets/js/main.c0e05a8a.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -29,7 +29,7 @@
 <ul>
 <li>Maximum result-set size is 10,000 for <code>getLogs</code> call;</li>
 <li>Old archived event logs may be inaccessible due to data prune;</li>
-<li>Append your api key(get from <a href="/docs/general/build/tools/web3paywall">Web3 Paywall</a> or Conflux Foundation) to the endpoint for privileged access (eg., <code>https://evm.confluxrpc.com/&lt;api-key&gt;</code>);</li>
+<li>Append your api key(get from <a href="/docs/general/build/tools/web3paywall">Web3 Paywall</a> or Conflux Foundation) to the endpoint for privileged access (eg., <code>https://evm.confluxrpc.com/&lt;mainnet-api-key&gt;</code> or for testnet, <code>https://evmtestnet.confluxrpc.org/&lt;testnet-api-key&gt;</code>);</li>
 <li>Rate limits are also imposed per RPC method, please check the following specification for more details.</li>
 </ul>
 <details class="details_lb9f alert alert--info details_b_Ee" data-collapsed="true"><summary>Rate Limit Specification</summary><div><div class="collapsibleContent_i85q"><table><thead><tr><th>RPC Method</th><th>Free tier</th><th>Standard Tier</th><th>Comment</th></tr></thead><tbody><tr><td>all</td><td>QPS &lt; 50; <br> daily total &lt; 100k</td><td>QPS &lt; 100; <br> daily total &lt; 1million</td><td>overall RPC requests</td></tr><tr><td>eth_getLogs</td><td>QPS &lt; 5</td><td>QPS &lt; 20</td><td>-</td></tr><tr><td>eth_call</td><td>QPS &lt; 5</td><td>QPS &lt; 50</td><td>-</td></tr><tr><td>eth_getBlockBy*</td><td>QPS &lt; 5</td><td>QPS &lt; 20</td><td>includes: <br> <code>eth_getBlockByHash</code>, <br><code>eth_getBlockByNumber</code></td></tr><tr><td>eth_getTransaction*</td><td>QPS &lt; 5</td><td>QPS &lt; 20</td><td>includes: <br> <code>eth_getTransactionByHash</code>, <br> <code>eth_getTransactionReceipt</code></td></tr><tr><td>debug RPC</td><td>not supported</td><td>QPS &lt; 20</td><td>includes: <br> <code>parity_getBlockReceipts</code> etc.</td></tr><tr><td>trace RPC</td><td>not supported</td><td>QPS &lt; 20</td><td>includes: <br> <code>trace_block</code>, <code>trace_filter</code>, <code>trace_transaction</code></td></tr><tr><td>filter API</td><td>not supported</td><td>supported</td><td>includes: <br> <code>eth_newFilter</code>, <code>eth_getFilterChanges</code> etc.</td></tr></tbody></table></div></div></details>
