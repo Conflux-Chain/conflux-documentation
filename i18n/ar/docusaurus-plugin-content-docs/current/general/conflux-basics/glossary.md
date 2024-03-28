@@ -97,6 +97,9 @@ ERC20 is a standard for tokens on the Ethereum blockchain. It specifies a set of
 ### **ERC721**
 ERC721 is a standard for non-fungible tokens (NFTs) on the Ethereum blockchain. Unlike ERC20 tokens, which are identical to each other, each ERC721 token is unique. This makes them suitable for representing ownership of unique items or assets. Like ERC20, ERC721 tokens can also exist on the Conflux network, especially if they are transferred from the Ethereum network.
 
+### **ERC1155**
+ERC1155 is an Ethereum token standard that supports multiple token types, including fungible and non-fungible tokens, within a single contract. By enabling batch transfers, it efficiently reduces transaction costs. ERC1155 tokens can also exist on the Conflux network, enhancing flexibility and interoperability for digital assets in gaming, art, and beyond.
+
 ### **EVM (Ethereum Virtual Machine)**
 The Ethereum Virtual Machine (EVM) is a powerful, sandboxed virtual stack embedded within each full Ethereum node, responsible for executing contract bytecode. Contracts are written in high-level languages, like Solidity, then compiled into bytecode, which the EVM can read and execute. The EVM ensures that programs do not have access to each other's state, thus allowing for the safe execution of code without risking the network's security. It is pivotal for enabling the programmability and flexibility that smart contracts offer in the Ethereum ecosystem. In the context of Conflux, EVM compatibility allows developers to deploy Ethereum contracts on the Conflux network, benefiting from Conflux's scalability and efficiency while leveraging Ethereum's robust developer tooling and ecosystem.
 
