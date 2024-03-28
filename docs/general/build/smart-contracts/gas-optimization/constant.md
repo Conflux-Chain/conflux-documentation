@@ -1,6 +1,5 @@
 ---
 displayed_sidebar: generalSidebar
-sidebar_position: 1
 
 ---
 
