@@ -97,6 +97,9 @@ ERC20是以太坊区块链上代币的标准。 它规定了代币合约必须�
 ### **ERC721**
 ERC721是以太坊区块链上非同质化代币（NFT）的标准。 与彼此相同的ERC20代币不同，每个ERC721代币都是独一无二的。 这使它们适合代表独特物品或资产的所有权。 像ERC20一样，ERC721代币也可以存在于Conflux网络上，尤其当它们是从以太坊网络转移过来的。
 
+### **ERC1155**
+ERC1155 is an Ethereum token standard that supports multiple token types, including fungible and non-fungible tokens, within a single contract. By enabling batch transfers, it efficiently reduces transaction costs. ERC1155 tokens can also exist on the Conflux network, enhancing flexibility and interoperability for digital assets in gaming, art, and beyond.
+
 ### **EVM (Ethereum Virtual Machine)**
 The Ethereum Virtual Machine (EVM) is a powerful, sandboxed virtual stack embedded within each full Ethereum node, responsible for executing contract bytecode. Contracts are written in high-level languages, like Solidity, then compiled into bytecode, which the EVM can read and execute. The EVM ensures that programs do not have access to each other's state, thus allowing for the safe execution of code without risking the network's security. It is pivotal for enabling the programmability and flexibility that smart contracts offer in the Ethereum ecosystem. In the context of Conflux, EVM compatibility allows developers to deploy Ethereum contracts on the Conflux network, benefiting from Conflux's scalability and efficiency while leveraging Ethereum's robust developer tooling and ecosystem.
 
