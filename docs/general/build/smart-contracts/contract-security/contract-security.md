@@ -19,7 +19,7 @@ Ensuring the security of smart contracts is crucial as they directly handle and 
 
 ### Avoid Common Security Pitfalls
 - **Integer Overflow and Underflow**: Use safe math libraries to prevent these issues, for example, [openzepplin Math library](https://docs.openzeppelin.com/contracts/5.x/api/utils#math).
-- **Runtime Checks in Frontend**: Monitoring contract transactions through the frontend application can help detect abnormal behaviors early.
+- **Runtime Checks in Frontend**: Monitoring contract transactions through the frontend application can help detect abnormal behaviors early. This will serve as an additional layer of security, helping to quickly identify unusual patterns or suspicious activities, but it should also be noted that attackers always have the ability to directly call your contract.
 - **Follow Coding Standards**: Adhering to coding standards, like Solidity's security guidelines, can minimize security risks.
 
 ### Stay Informed
