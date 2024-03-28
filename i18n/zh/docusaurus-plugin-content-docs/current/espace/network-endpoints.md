@@ -36,7 +36,7 @@ Confura 是由 Conflux 基金会提供的公共 RPC 服务，可以免费使用�
 **备注**
 - `getLogs`调用的结果集最大大小为10,000。
 - 由于数据裁剪，旧的存档事件日志可能无法访问。
-- 将您的 API 密钥（从 [Web3 Paywall](../general/build/tools/web3paywall.md) 或 Conflux 基金会获得）添加到端点以获得访问权限（例如，`https://evm.confluxrpc.com/<api-key>`）；
+- Append your api key(get from [Web3 Paywall](../general/build/tools/web3paywall.md) or Conflux Foundation) to the endpoint for privileged access (eg., `https://evm.confluxrpc.com/<mainnet-api-key>` or for testnet, `https://evmtestnet.confluxrpc.org/<testnet-api-key>`);
 - 每个RPC方法也有速率限制，请查阅以下规范以了解更多详细信息。
 
 <details>
