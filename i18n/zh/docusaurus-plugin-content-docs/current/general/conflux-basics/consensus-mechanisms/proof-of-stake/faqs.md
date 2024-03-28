@@ -17,7 +17,7 @@ Conflux将采用混合的工作量证明（PoW）-权益证明（PoS）链。 �
 
 ## Will the PoS upgrade break compatibility?
 
-Yes. Users running Conflux nodes will need to update their clients to be able to run the PoS chain.
+是。 Users running Conflux nodes will need to update their clients to be able to run the PoS chain.
 
 ## 如何成为权益证明（PoS）链的验证者？
 
