@@ -41,7 +41,8 @@ contract LogicOptimization {
 }
 ```
 
-## Gas Optimization Tips
+Recommendations for gas optimization: 
+
 🌟 Utilize **short-circuiting** to prevent unnecessary function calls or computations.
 
 🌟 Place functions or conditions likely to succeed (or that are less gas-consuming) **before** others in logical operations.
