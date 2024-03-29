@@ -1,8 +1,8 @@
 ---
 displayed_sidebar: generalSidebar
-sidebar_position: 1
 
 ---
+
 
 # Constant vs Immutable
 

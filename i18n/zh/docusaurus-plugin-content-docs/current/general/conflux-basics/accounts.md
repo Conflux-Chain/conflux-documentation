@@ -8,7 +8,7 @@ displayed_sidebar: generalSidebar
 
 Accounts in Conflux can be compared to "bank accounts", as they store CFX. 用户可以创建和管理他们的账户，存入CFX，并发送交易。 账户地址是一个标识账户的唯一的字符串，用于从Conflux VM的巨大表中检索账户信息，该表存储了账户内容和余额。
 
-:::注意
+:::note
 
 The account implementation, including the account content and address computing rule is slightly different in [core space](../../core/core-space-basics/accounts.md) and [espace](../../espace/build/accounts.md).
 

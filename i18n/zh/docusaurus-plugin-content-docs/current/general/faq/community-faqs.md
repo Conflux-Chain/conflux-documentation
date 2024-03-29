@@ -6,93 +6,93 @@ displayed_sidebar: generalSidebar
 
 # 社区常见问题
 
-### **Do we need to pay attention to the `storageLimit` and `epochHeight` fields in regular transactions?**
+### **关于常规交易中的`storageLimit`和`epochHeight`字段，我们需要注意什么？**
 
-- When calling a contract, the SDK will automatically set **`storageLimit`** based on **`cfx_estmastGasAndCollateral`** and **`epochHeight`** based on **`cfx_getEpochNumber`**.
-- When transferring CFX, **`storageLimit`** is automatically set to 0, and **`epochHeight`** is set to the current epoch number.
+- 在调用合约时，SDK会根据**`cfx_estmastGasAndCollateral`**自动设置**`storageLimit`**，根据**`cfx_getEpochNumber`**自动设置**`epochHeight`**。
+- 在转移CFX时，**`storageLimit`**自动设置为0，**`epochHeight`**设置为当前纪元号。
 
-### **I want to send multiple transactions at once, but there's no method to set nonce. How can I solve this?**
+### **我想一次发送多个交易，但没有方法设置nonce。 我该如何解决？**
 
-You need to maintain the nonce yourself, adding one for each transaction.
+你需要自己维护nonce，每个交易加1。
 
-### **What does the error "ExceedStorageLimit" mean when sending a transaction?**
+### **发送交易时出现“ExceedStorageLimit”错误是什么意思？**
 
-The **`storagelimit`** value is set lower than the actual required value.
+**`storagelimit`**值设置得比实际需要的值低。
 
-### **How do I convert a private key into keystore format?**
+### **如何将私钥转换为keystore格式？**
 
-- In **`go-conflux-sdk`**, use **`AccountManager.ImportKey`** to import a private key into a keystore file.
-- In **`js-conflux-sdk`**, use **`sign.encrypt`** to generate a keystore object based on the private key.
+- 在**`go-conflux-sdk`**中，使用**`AccountManager.ImportKey`**将私钥导入keystore文件。
+- 在**`js-conflux-sdk`**中，使用**`sign.encrypt`**基于私钥生成keystore对象。
 
-### **Why do nodes need to re-sync data after changing configurations?**
+### **为什么节点在更改配置后需要重新同步数据？**
 
-Restarting the node program doesn't start syncing data from scratch. Instead, it restores data from the database and starts syncing from the last checkpoint. This is because the data of the last checkpoint is stored in memory, and when the program is closed, the data in memory is lost, making it seem like data is being re-synced.
+重启节点程序不会从头开始同步数据。 相反，它会从数据库恢复数据，并从上一个检查点开始同步。 这是因为最后一个检查点的数据存储在内存中，当程序关闭时，内存中的数据会丢失，使得看起来数据正在被重新同步。
 
-### **Can the sponsor payment function be tested normally on the test chain?**
+### **代付功能是否可以在测试链上正常测试？**
 
-Yes, it can.
+可以。
 
-### **Is CFX an ERC777 contract?**
+### **CFX是ERC777合约吗？**
 
-No, CFX is not a contract token. CFX is equivalent to Ethereum's ETH.
+CFX不是合约代币。 CFX相当于以太坊的ETH。
 
-### **Does Conflux support the Ethereum library OpenZeppelin?**
+### **Conflux支持以太坊库OpenZeppelin吗？**
 
-Yes, it's supported. You can directly reference it. However, note that the ERC1820 contract address on the Conflux chain is different from Ethereum. On Conflux, the ERC1820 contract address is: 0x88887ed889e776bcbe2f0f9932ecfabcdfcd1820.
+支持。 你可以直接引用它。 但请注意，Conflux链上的ERC1820合约地址与以太坊不同。 在Conflux上，ERC1820合约地址是：0x88887ed889e776bcbe2f0f9932ecfabcdfcd1820。
 
-### **Where is the testnet faucet?**
+### **测试网水龙头在哪里？**
 
-- To receive CFX test tokens, you can get them directly from the faucet portals.
-    - Core Space Testnet Faucet: https://faucet.confluxnetwork.org/
-    - eSpace Testnet Faucet: https://efaucet.confluxnetwork.org/
-    - Mainnet Faucets: https://conflux-faucets.com/
+- 要接收CFX测试代币，你可以直接从水龙头门户网站获取。
+    - 核心空间测试网水龙头：https://faucet.confluxnetwork.org/
+    - eSpace测试网水龙头：https://efaucet.confluxnetwork.org/
+    - 主网水龙头：https://conflux-faucets.com/
 
-### **Why does the value sometimes appear smaller when I use `latest_confirmed` to get the epoch?**
+### **为什么当我使用`latest_confirmed`获取纪元时，值有时会显得较小？**
 
-This can happen in cases of poor network connectivity, primarily due to high block synchronization delays.
+这可能发生在网络连接不佳的情况下，主要是由于高区块同步延迟造成的。
 
-### **What settings do developers need to make when starting a node?**
+### **开发者在启动节点时需要进行什么设置？**
 
-You can find all node related documentation on [THIS](../run-a-node/) section.
+你可以在[此处](../run-a-node/)找到所有与节点相关的文档。
 
-### **Does CFX have an API to query computing power?**
+### **CFX有查询计算能力的API吗？**
 
 https://www.confluxscan.io/v1/plot?interval=514&limit=10
 
-### **What is a pivot chain switch?**
+### **什么是枢轴链切换？**
 
-A pivot chain refers to a chain formed by connecting pivot blocks based on block hashes. When a non-pivot block B in a certain epoch has a subtree heavier than the previous pivot block A, B becomes the pivot block for that epoch. This is a pivot chain switch.
+枢轴链指的是根据区块哈希连接主区块形成的链。 当某个纪元中的非主区块B的子树比先前的主区块A更重时，B成为该纪元的主区块。 这就是枢轴链切换。
 
-### **How to determine if a pivot chain switch has occurred?**
+### **如何确定枢轴链切换是否发生？**
 
-When the old pivot chain switches to the new pivot chain, the latest mined epoch number will be a value not greater than the last obtained latest mined epoch number.
+当旧的枢轴链切换到新的枢轴链时，最新挖掘的纪元号将是不大于上次获得的最新挖掘纪元号的值。
 
-As shown below, the latest epoch at the previous moment was 10, and the latest epoch at this moment is 9, indicating that the pivot block for epoch 9 has changed from 9A to 9B, and a pivot chain switch has occurred.
+如下所示，之前的最新纪元是10，此刻的最新纪元是9，表明纪元9的枢纽区块已从9A变为9B，发生了枢轴链切换。
 
 ```css
 cssCopy code
-[1]···[8]---[9A]---[10A] old pivot chain
+[1]···[8]---[9A]---[10A] 旧枢轴链
         \
           \
-            [9B] new pivot chain
+            [9B] 新枢轴链
 
 ```
 
-**How can developers monitor?**
+**开发者如何监控？**
 
-1. Start a full node (archive node) and enable the websocket RPC service.
-2. Subscribe to the **`latest mined epoch`** event using **`rpc_subscribeEpoch`**.
-3. Wait for the latest mined epoch B and compare it with the previously obtained latest mined epoch A.
-4. If `B <= A`, a pivot chain switch has occurred.
-5. Go to step 3.
+1. 启动一个完整节点（归档节点）并启用websocket RPC服务。
+2. 使用**`rpc_subscribeEpoch`**订阅**`最新挖掘纪元`**事件。
+3. 等待最新挖掘的纪元B，并与之前获得的最新挖掘纪元A进行比较。
+4. 如果`B <= A`，则发生了枢轴链切换。
+5. 回到步骤3。
 
-**How can developers synchronize block and transaction status?**
+**开发者如何同步区块和交易状态？**
 
-If local data needs to be kept up-to-date and accurate for blocks and transactions, then when a pivot chain switch occurs (assuming the latest mined epoch number changes from A to B, and `B <= A`):
+如果需要保持本地数据对区块和交易的最新和准确状态，那么当枢轴链切换发生时（假设最新挖掘纪元号从A变为B，且`B <= A`）：
 
-- Assume the latest state epoch number obtained when the latest mined epoch number was A is A'.
-- Assume the latest state epoch number obtained when the latest mined epoch number was B is B'.
-1. If B > A', update (A', B'] (i.e., this situation will not affect the executed blocks and transactions, process normally).
+- 假设在最新挖掘纪元号为A时获得的最新状态纪元号为A'。
+- 假设在最新挖掘纪元号为B时获得的最新状态纪元号为B'。
+1. 如果B > A'，更新(A', B']（即，这种情况不会影响已执行的区块和交易，正常处理）。
 
 ```css
 
@@ -101,7 +101,7 @@ If local data needs to be kept up-to-date and accurate for blocks and transactio
 
 ```
 
-1. If `B <= A'`, delete the data between [B, A'].
+1. 如果`B <= A'`，删除[B, A']之间的数据。
 
 ```css
 
@@ -110,34 +110,34 @@ If local data needs to be kept up-to-date and accurate for blocks and transactio
 
 ```
 
-1. Update [B', B].
-2. Go to step 1.
+1. 更新[B', B]。
+2. 回到步骤1。
 
-I hope this translation helps you understand the content better! If you have any further questions or need clarification on any points, please let me know.
+希望这个诠释能帮助您更好地理解内容！ If you have any further questions or need clarification on any points, please let me know.
 
-### What is storage collateral, and how is it calculated? For example, how many drips are required for 1kb storage?
+### 什么是存储抵押，它是如何计算的？ For example, how many drips are required for 1kb storage?
 
-Storage collateral refers to the need to collateralize a corresponding amount of cfx when adding new storage usage in a contract. For each storage entry, the last account that writes to this entry is called the owner of this storage entry. The storage collateral fee will be returned to the owner after the storage is released. Every 1kb of storage requires a collateral of 1cfx.
+存储抵押是指在合约中添加新的存储使用时需要抵押相应数量的cfx。 对于每个存储条目，最后写入此条目的账户称为此存储条目的拥有者。 The storage collateral fee will be returned to the owner after the storage is released. 每1kb的存储需要1cfx的抵押。
 
-> For more details, please refer to [THIS](../../core/core-space-basics/storage) section.
+> 更多详细信息，请参考[此部分](../../core/core-space-basics/storage)。
 
-### What fees are included in the GasFee returned by cfx_getTransactionReceipt? Does it include storage collateral fees?
+### cfx_getTransactionReceipt返回的GasFee包括哪些费用？ 它包括存储抵押费用吗？
 
-- Gasfee does not include storage fees. Gasfee = gasUsed * gasPrice, and the gasfee is spent after the transaction is executed.
-- storageCollateralized represents the actual storage collateral fee used. The storage collateral fee will be returned when the storage is released.
+- Gasfee不包括存储费用。 Gasfee = gasUsed * gasPrice，交易执行后gasfee被消耗。
+- storageCollateralized代表实际使用的存储抵押费用。 存储抵押费用将在释放存储时返还。
 
 ### In a block, if a transaction has both blockHash and status as null, does it mean it has been processed in another block?
 
-- Generally, yes. This is because the tx was not executed in this block. If a tx is packaged repeatedly, the tx will be executed in the block of the earliest epoch.
-- Another situation is that the block containing the transaction has been packaged but not yet executed. Every block is executed 5 seconds after being packaged.
+- 通常是的。 这是因为该交易没有在这个区块中执行。 如果一个交易被重复打包，交易将在最早纪元的区块中执行。
+- 另一种情况是包含交易的区块已被打包但尚未执行。 每个区块在打包后5秒钟执行。
 
-### Can an epoch have no blocks?
+### 一个纪元内是否可能没有区块？
 
-No, there will be at least one.
+不会，至少会有一个区块。
 
-### How does js-conflux-sdk decode function data?
+### js-conflux-sdk如何解码函数数据？
 
-Refer to the API documentation: [link](https://github.com/Conflux-Chain/js-conflux-sdk/blob/master/docs/api.md)
+请参考[API文档](https://github.com/Conflux-Chain/js-conflux-sdk/blob/master/docs/api.md)：
 
 ```csharp
 transaction = await conflux.getTransactionByHash('0x2055f3287f1a6ce77d91f5dfdf7517a531b3a560fee1265f27dc1ff92314530b');
@@ -145,73 +145,73 @@ contract.abi.decodeData(transaction.data)
 
 ```
 
-### Can an already deployed contract be replaced? Without creating a new contract?
+### 已部署的合约能否被替换， 而不是创建新合约？
 
-Contracts cannot be replaced or upgraded; you can only deploy a new one.
+合约不能被替换或升级；只能部署新的合约。
 
-### Is there any SDKs for Android?
+### 有没有适用于安卓的SDK？
 
-Android can use java-conflux-sdk.
+安卓可以使用java-conflux-sdk。
 
-### What versions of the conflux sdk are available?
+### conflux sdk有哪些版本可用？
 
-You can find all the Conflux SDKs in [THIS](../../core/build/sdks-and-tools/sdks) section
+所有Conflux SDK的信息可以在[这里](../../core/build/sdks-and-tools/sdks)找到。
 
-### Is the nonce in a block the same as the nonce in a transaction?
+### 区块中的nonce与交易中的nonce是否相同？
 
-The nonce of a transaction indicates the number of transactions from a specific address, while the nonce of a block refers to the random number used in PoW calculations.
+交易的nonce表示特定地址发出的交易数量，而区块的nonce指的是在PoW计算中使用的随机数。
 
-### What are the chainIds for the mainnet and testnet? How to query?
+### What are the chainIds for the mainnet and testnet? 如何查询？
 
-The mainnet is 1029, and the testnet is 1. You can obtain them using the rpc "cfx_getStatus" or the SDK's getStatus method.
+主网是1029，测试网是1。 可以使用rpc "cfx_getStatus" 或 SDK 的getStatus方法获取。
 
-### How to view the bootnode data of the node I'm running?
+### 如何查看我正在运行的节点的启动节点数据？
 
-- If it's a testnet or mainnet node, the bootnode list is the bootnodes configuration in the toml configuration file.
-- For a local node, it itself is the bootnode (or it doesn't have a bootnode).
+- 如果是测试网或主网节点，启动节点列表是toml配置文件中的bootnodes配置。
+- 对于本地节点，它本身就是启动节点（或者没有启动节点）。
 
-### What are the reasons for a transaction not being packaged?
+### 交易不被打包的原因有哪些？
 
-The following conditions can lead to a transaction not being packaged:
+以下情况可能导致交易不被打包：
 
-1. The balance must satisfy: balance >= value + gas * gasprice + storagelimit/1024
-2. The nonce must be consecutive. Only when a transaction with a lower nonce is packaged will a transaction with a higher nonce be packaged.
+1. 余额必须满足：balance >= value + gas * gasprice + storagelimit/1024 Nonce必须连续。
+2. Nonce必须连续。 只有当低nonce的交易被打包后，更高nonce的交易才会被打包。
 
-### How to view the actual fee deducted for each transaction?
+### 如何查看每笔交易扣除的实际费用？
 
-Check the gasFee in the transaction receipt.
+检查交易收据中的gasFee。
 
-### Is the epochHeight in Transaction the same as the epochNumber in TransactionReceipt?
+### 交易中的epochHeight是否与TransactionReceipt中的epochNumber相同？
 
-The epochHeight in a Transaction is used to specify the epoch range for tx execution as (epochHeight, epochHeight + 10000). The epochNumber in TransactionReceipt indicates the epoch number at which the transaction was executed.
+交易中的epochHeight用于指定交易执行的纪元范围为(epochHeight, epochHeight + 10000)。 TransactionReceipt中的epochNumber指示执行交易的纪元号。
 
-### How to determine if a block was mined by a specific miner? Is the first transaction in a Conflux block also a coinbase transaction, like in Bitcoin?
+### 如何确定某个特定矿工是否挖掘了一个区块？ Conflux区块中的第一笔交易是否也像比特币中的coinbase交易？
 
-Conflux doesn't have a coinbase transaction. You can determine the miner using block.miner.
+Conflux没有coinbase交易。 可以使用block.miner确定矿工。
 
-### **What is the transaction `0x2952a64d3afa6d39310c4928860abcd6bc097342dcc1b271b52f7809fd63f228` on the mainnet showing as contract creation, but the returned field `contractCreated` is null? How do you get the address of this contract at this time?**
+### **主网上显示为合约创建的交易`0x2952a64d3afa6d39310c4928860abcd6bc097342dcc1b271b52f7809fd63f228`，但返回的`contractCreated`字段为null？ 此时如何获取这个合约的地址？**
 
-This is a transaction from the genesis block. The transaction here is quite special. In the future, as long as it is a contract creation, **`contractCreated`** will have the contract's address.
+这是创世区块的交易。 这里的交易非常特殊。 未来只要是合约创建，**`contractCreated`**就会有合约地址。
 
-### **What's the difference between a full node and an archive node?**
+### **全节点与归档节点有什么区别？**
 
-A full node only saves all block headers and transactions from the most recent era. An archive node will save all block headers and transactions.
+全节点只保存最近一个时代的所有区块头和交易。 归档节点将保存所有区块头和交易。
 
-### **How to check the reason for transaction failure?**
+### **如何检查交易失败的原因？**
 
-The **`txExecErrorMsg`** in the transaction receipt provides the error information for the transaction.
+交易收据中的**`txExecErrorMsg`**提供了交易的错误信息。
 
-### **What are the situations for tx revert?**
+### **交易回退的情况有哪些？**
 
-Tx revert means the contract execution failed. Contract developers should use **`require`** with an error message where an exception might occur. This way, the contract execution error will be seen in the **`txExecErrorMsg`** of the transaction receipt.
+交易回退意味着合约执行失败。 合约开发者应该在可能发生异常的地方使用带有错误消息的**`require`**。 这样，交易收据的**`txExecErrorMsg`**中就会看到合约执行错误。
 
-### **What does this error mean? `Failed imported to deferred pool: Tx with same nonce already inserted. To replace it, you need to specify a gas price > 20000000000`**
+### **这个错误是什么意思？ `导入到延迟池失败：已插入具有相同nonce的交易。 要替换它，您需要指定的gas price > 20000000000`**
 
-There is already a transaction with the same nonce. Either wait for it to be packaged or send a new one with the same nonce, but you need to raise the gasPrice.
+已经有一个具有相同nonce的交易。 要么等待它被打包，要么发送一个新的具有相同nonce的交易，但需要提高gasPrice。
 
-### **Is there a method in js-conflux-sdk to parse the data in tx?**
+### **js-conflux-sdk中是否有方法解析tx中的数据？**
 
-First, initialize the contract using abi, then use **`contract.abi.decodeData()`**.
+首先，使用abi初始化合约，然后使用**`contract.abi.decodeData()`**。
 
 ### **Can the logger of the Conflux class in js-conflux-sdk use something other than console?**
 
@@ -219,26 +219,26 @@ Any object that has implemented the methods error, info, and log can be used.
 
 ### **If you use a sponsorship contract, does it mean that all users operate the contract, regardless of which method of the contract is called, are they all paid according to a unified standard?**
 
-Yes.
+是。
 
-### **Is there any information on the conflux sponsorship mode?**
+### **有关于conflux代付模式的更多信息吗？**
 
-[Here's the link](../../core/core-space-basics/sponsor-mechanism).
+[这里是链接。](../../core/core-space-basics/sponsor-mechanism)
 
-### **Are ERC20/ERC777 still called this way in the Conflux network?**
+### **在Conflux网络中，ERC20/ERC777是否仍以此方式命名？**
 
-Both can be used. They are still referred to as ERC20/ERC777, but in some contexts you can find them reffered as CRC20/CRC777.
+两者都可以使用。 它们仍被称为ERC20/ERC777，但在某些情况下，你也可以看到它们被称为CRC20/CRC777。
 
-### **What are the websocket service ports of the official nodes of the mainnet and testnet?**
+### **主网和测试网的官方节点的websocket服务端口是什么？**
 
-You can find all the Network Endpoints in the following pages:
+您可以在以下页面找到所有网络端点：
 
-- [Core Space Network Endpoints](../../core/conflux_rpcs)
-- [eSpace Network Endpoints](../../espace/network-endpoints.md)
+- [Core Space 网络端点](../../core/conflux_rpcs)
+- [eSpace网络端点](../../espace/network-endpoints.md)
 
-### **When `docker pull confluxchain/conflux-rust` prompts "no such file", how to solve it?**
+### **当`docker pull confluxchain/conflux-rust`提示“no such file”时，如何解决？**
 
-It might be a network issue. You can try setting a registry for docker:
+可能是网络问题。 你可以尝试为docker设置一个镜像：
 
 ```json
 
@@ -247,38 +247,39 @@ It might be a network issue. You can try setting a registry for docker:
     "https://at8ak49f.mirror.aliyuncs.com"
   ],
   "experimental": false,
-  "debug": true}
+  "debug": true
+}
 
 ```
 
-### **What is block height?**
+### **什么是区块高度？**
 
-A blockchain is a block followed by another block, continuously growing. Block height refers to the distance from this block to the genesis block.
+区块链是一个接一个的区块，不断增长。 区块高度指的是从这个区块到创世区块的距离。
 
-### **What is transaction signing?**
+### **什么是交易签名？**
 
-Transaction signing refers to a signature obtained from a transaction through a signing algorithm using a private key. The verifier can obtain the address corresponding to the private key through this signature and transaction information, thereby proving that the transaction was indeed initiated by this account address.
+交易签名是指使用私钥通过签名算法从交易中获得的签名。 验证者可以通过此签名和交易信息获得对应私钥的地址，从而证明交易确实是由该账户地址发起的。
 
-### **What are the measurement units in the conflux system and their conversion relationships?**
+### **Conflux系统中的计量单位及其转换关系是什么？**
 
-The smallest unit in conflux is drip.
+Conflux中最小的单位是drip。
 
 - 1cfx = 10^18 drip
 - 1gdrip = 10^9 drip
 
-### **What does the error `estimateGasAndColletral` mean? "Cannot estimate: transaction execution failed, all gas will be charged"**
+### **`estimateGasAndColletral`错误是什么意思？ "Cannot estimate: transaction execution failed, all gas will be charged"**
 
 ```
-Cannot estimate: transaction execution failed, all gas will be charged (execution error: VmError(BadInstruction { instruction: 169 }))
+无法估计：交易执行失败，所有燃气将被收取（执行错误：VmError(BadInstruction { instruction: 169 }））
 ```
 
-Reason: The constructor was invalid when deploying the contract; it is usually caused by forgetting to write the **`to`** address when calling the contract.
+原因：部署合约时构造函数无效；通常是由于在调用合约时忘记写入**`to`**地址引起的。
 
-### **How do developers start a node?**
+### **开发者如何启动节点？**
 
-You can find all node related documentation on [THIS](../run-a-node/) section.
+你可以在[此处](../run-a-node/)找到所有与节点相关的文档。
 
 
-### **What is the Transactions Lifecycle?**
+### **交易生命周期是什么？**
 
-You can find allthe details on the Transaction Lifecycle in [THIS](../../general/conflux-basics/transactions/#transaction-lifecycle) section.
+您可以在[此部分](../../general/conflux-basics/transactions/#transaction-lifecycle)找到关于交易生命周期的所有细节。

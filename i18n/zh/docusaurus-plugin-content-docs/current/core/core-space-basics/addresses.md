@@ -50,7 +50,7 @@ The computation of EOA hex address is specified in [Conflux protocol specificati
 
 可选的，合约可以通过 `create2` 操作码进行部署。
 
-:::注意
+:::note
 
 合约地址的计算方式与以太坊有很大不同。
 
