@@ -32,6 +32,6 @@ contract LocalVariablesExample {
 }
 ```
 
-Recommendations for gas optimization:
+关于 gas 优化的建议：
 
 🌟 For complex calculations, bypass direct storage variable manipulation to save on high gas costs. Instead, use local variables for interim modifications, then update storage variables in one go. This approach significantly reduces gas usage.
