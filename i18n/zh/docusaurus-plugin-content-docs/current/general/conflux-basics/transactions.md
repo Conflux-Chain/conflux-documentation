@@ -66,7 +66,7 @@ For Core transactions, you can check the execution status through the **outcomeS
 
 In addition to this, the Receipt also includes other information about the transaction execution, such as block information and event details.
 
-## Details
+## 详细信息
 
 如果你想了解交易详情，你可以参考 [Core 空间](/docs/core/core-space-basics/transactions/overview.md) 中的交易解释。
 
