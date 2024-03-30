@@ -4,7 +4,7 @@ displayed_sidebar: generalSidebar
 
 # Short-Circuiting
 
-In Solidity, where every blockchain-affecting operation requires gas, short-circuiting is a coding technique that evaluates the second argument of a logical operation only if the first doesn't conclusively determine the outcome, thus significantly reducing unnecessary gas consumption and enhancing efficiency.
+在Solidity中，每一个需要上链的操作都需要消耗gas，短路运算是一种编码技巧，它仅在第一个参数没有确定结果时才评估逻辑操作的第二个参数，从而显著减少不必要的gas消耗，提高效率。
 
 **代码演示**
 
