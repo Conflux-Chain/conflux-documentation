@@ -7,7 +7,9 @@ displayed_sidebar: generalSidebar
 In factory contracts, we often need to create several child contracts, and there are three common ways to do this:
 
 - Using `new` to create through an existing contract, the new keyword allows for the instantiation of child contracts directly through an existing contract's codebase. This approach involves incorporating the child contract's bytecode within the factory contract itself, necessitating its deployment simultaneously. This method is straightforward and intuitive but requires careful management to avoid bloating the factory contract, especially given the Ethereum network's contract size limitations.
+  
 - Using `create2` to create through creation code, this method requires loading the creation code into the factory contract before any child. A significant advantage of create2 is its predictability in generating contract addresses, which can be predetermined before the actual contract deployment, facilitating more complex deployment schemes and interactions.
+  
 - Using `clone` to clone an existing contract, the clone technique leverages the concept of minimal proxies as specified in EIP1167 to duplicate an already deployed contract. By cloning an existing contract, developers can significantly reduce the gas costs associated with deploying numerous contract instances. This method requires a pre-deployed copy of the child contract, from which clones are created with their own state but sharing the same codebase.
 
 **DemoCode**
