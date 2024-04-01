@@ -4,7 +4,13 @@ displayed_sidebar: generalSidebar
 
 # Re-entrancy Attacks
 
-One of the most prevalent vulnerabilities in Ethereum smart contracts is the re-entrancy attack. This type of attack may occur when a contract makes external calls before ensuring that its state is correctly updated. Attackers can exploit this by making the vulnerable contract invoke an attacker-controlled contract, which then re-invokes the original contract repeatedly. This repeated invocation can manipulate the contract's state before it's correctly updated, leading to potential loss of funds.
+Re-entrancy attacks are among the most common types of assaults on smart contracts, where attackers exploit contract vulnerabilities to recursively call the contract, enabling them to transfer assets out of the contract or mint a large number of tokens.
+
+In 2016, the DAO contract fell victim to a reentrancy attack, leading to the theft of 3,600,000 ETH from the contract. This incident resulted in the Ethereum network splitting into two chains: ETH and ETC (Ethereum Classic).
+
+In 2022, the algorithmic stablecoin project Fei was hit by a reentrancy attack, resulting in a theft of $80,000,000. More information can be found [here](https://rekt.news/fei-rari-rekt/).
+
+Reentrancy attack may occur when a contract makes external calls before ensuring that its state is correctly updated. Attackers can exploit this by making the vulnerable contract invoke an attacker-controlled contract, which then re-invokes the original contract repeatedly. This repeated invocation can manipulate the contract's state before it's correctly updated, leading to potential loss of funds.
 
 Consider a simplified `FinancialVault` contract that allows depositing and withdrawing ETH, analogous to a bank account:
 
