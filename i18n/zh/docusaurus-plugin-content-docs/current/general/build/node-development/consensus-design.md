@@ -26,20 +26,14 @@ Conflux 的共识层处理从同步层接收到的所有区块，根据 Conflux 
 ### 共识图（ConsensusGraph）
 
 `ConsensusGraph`（core/src/consensus/mod.rs）是共识层的主要结构体。 同步层通过一个存储所有区块元数据信息的 `BlockDataManager` 来构建 `ConsensusGraph`。
-ConsensusGraph::on_new_block() 是将新区块发送给ConsensusGraph结构体进行处理的关键函数。 它还提供了一组公共函数，用于查询区块/交易的状态。 This should be the main interface
-with which other components interact.
+`ConsensusGraph::on_new_block()` 是将新区块发送给 `ConsensusGraph` 结构体进行处理的关键函数。 它还提供了一组公共函数，用于查询区块/交易的状态。 这应该是其他组件与之交互的主要接口。
 
 ### 共识图核心（ConsensusGraphInner）
 
-`ConsensusGraphInner` (core/src/consensus/consensus_inner/mod.rs) is the inner
-structure of `ConsensusGraph`. `ConsensusGraph::on_new_block()` acquires the
-write lock of the inner struct at the start of the function. 其余的查询函数只会获取读锁。
+`ConsensusGraphInner` (core/src/consensus/consensus_inner/mod.rs)是 `ConsensusGraph` 的内部结构。 `ConsensusGraph::on_new_block()` 在函数开始时会获取内部结构的写入锁。 其余的查询函数只会获取读锁。
 
-The internal structure of `ConsensusGraphInner` is fairly complicated.
-Generally speaking, it maintains two kinds of information. The first kind of
-information is the state of the whole TreeGraph, i.e., the current _pivot
-chain_, _timer chain_, _difficulty_, etc.. The second kind of information is
-the state of each block (i.e., `ConsensusGraphNode` struct for each block).
+`ConsensusGraphInner` 的内部结构相当复杂。
+一般来说，它维护两种类型的信息。 第一种信息是整个TreeGraph的状态，即当前的_pivot chain_、_timer chain_、_difficulty_等等。 第二种信息是每个区块的状态(即每个区块的`ConsensusGraphNode`结构)。
 Each block corresponds to a `ConsensusGraphNode` struct for its information.
 When it first enters `ConsensusGraphInner`, it will be inserted into
 `ConsensusGraphInner::arena : Slab<ConsensusGraphNode>`. The index in the
