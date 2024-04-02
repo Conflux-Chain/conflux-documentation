@@ -35,6 +35,6 @@ contract CalldataAndMemory {
 }
 ```
 
-Recommendations for gas optimization:
+关于 gas 优化的建议：
 
 🌟 In practical situations, if it's possible to use calldata, it is recommended to use `calldata` instead of `memory`.

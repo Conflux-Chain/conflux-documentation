@@ -2,21 +2,21 @@
 displayed_sidebar: generalSidebar
 ---
 
-# Constant vs Immutable
+# 常量 vs 不可变量(Constant vs Immutable)
 
-1. `constant`: Declares a constant that must be initialized at the time of declaration and cannot be altered thereafter.
+1. `常量(constant)`: 声明一个常量，必须在声明时进行初始化,之后不能再被改变。
 
-2. `immutable`: Declares a constant that can be initialized either at the time of declaration or within the constructor, and cannot be altered after deployment.
+2. `不可变量(immutable)`：声明一个不可变量，可以在声明时或在构造函数中进行初始化，但在部署之后就不能再被改变。
 
-3. `variable`: Declares a variable that can be assigned and modified at any stage of the contract lifecycle.
+3. `变量(variable)`：声明一个变量，该变量可以在合约生命周期的任何阶段被赋值和修改。
 
-The following examples illustrate three variables defined with different modifiers.
+以下示例说明了用不同修饰符定义的三个变量。
 
 ```solidity
 ```
 
-Recommendations for gas optimization:
+关于 gas 优化的建议：
 
-🌟 Using variables consumes more gas, so avoid them if you can.
+🌟 使用变量会导致 gas 消耗增加，所以如果可能的话尽量避免使用。
 
-🌟 For constants that do not require modifications after deployment, **defining them as `immutable` is optimal both functionally and in terms of gas efficiency.**
+🌟 对于在部署后不需要修改的常量，**将它们定义为`不可变量`，这在功能和 gas 效率上都是最佳选择。**

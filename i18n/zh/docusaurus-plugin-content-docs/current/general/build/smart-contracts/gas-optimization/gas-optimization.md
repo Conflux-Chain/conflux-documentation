@@ -1,21 +1,21 @@
 ---
-title: Gas Optimization
+title: GAS 优化
 displayed_sidebar: generalSidebar
 ---
 
-## Some Tips to Make Gas Fee Lower
+## 降低 gas 费用的小窍门
 
-### Optimize Data Storage
+### 优化数据存储
 
-Use Tight Variable Packing: Group smaller data types together in a single storage slot to take advantage of Solidity's storage packing. For example, use uint8, uint16, or bool together in a struct to fit them into a single 32-byte storage slot.
+使用紧凑的变量打包(Use Tight Variable Packing)：将较小的数据类型组合到一个单一的存储槽中，以利用 Solidity 的存储打包的优势。 例如，在一个结构体中将 uint8、uint16 或 bool 型组合使用，使它们适应单个 32 字节的存储槽。
 
-Minimize State Variables: Only store essential data on-chain. Consider off-chain storage solutions (like IPFS) for larger data, and store hashes on-chain if integrity is needed.
+最小化状态变量：仅在链上存储必要的数据。 对于较大的数据，考虑使用链下存储解决方案（如 IPFS），并在链上存储其哈希值以保证数据的完整性。
 
 Use bytes32 over string: If possible, use bytes32 for fixed-size strings, as it is more gas-efficient than the dynamically-sized string type.
 
-### Optimize Function Execution
+### 优化函数执行
 
-Use view and pure Functions: Mark functions that do not modify state with view (if they read the state) or pure (if they don't read the state) to reduce gas cost when called externally.
+使用 view 和 pure 修饰的函数：将不修改状态的函数标记为 view(如果只需要读取状态)或 pure(如果不需要读取状态)，这样在外部调用时可以减少 gas 消耗。
 
 Limit Visibility: Use the most restrictive visibility (private or internal) for functions and variables, as operations are cheaper when they are internal to a contract.
 

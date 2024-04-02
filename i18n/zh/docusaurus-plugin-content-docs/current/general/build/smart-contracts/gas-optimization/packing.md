@@ -12,7 +12,7 @@ Although Solidity automatically tries to pack smaller basic types into the same 
 
 Learn More: [Layout of State Variables in Storage](https://docs.soliditylang.org/en/v0.8.25/internals/layout_in_storage.html)
 
-**DemoCode**
+**代码演示**
 
 Below, we demonstrate how to use packing in contracts to compare gas usage.
 
@@ -33,6 +33,6 @@ contract OptimizedPacking {
 }
 ```
 
-Recommendations for gas optimization:
+关于 gas 优化的建议：
 
 🌟Pay attention to variable packing when choosing data types. If it's possible to pack a variable with others into a single storage slot, opting for a smaller data type can be beneficial.

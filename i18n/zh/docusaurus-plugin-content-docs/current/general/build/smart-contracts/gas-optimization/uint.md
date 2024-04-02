@@ -8,7 +8,7 @@ It's a common belief that in Solidity, smaller integer types like `uint8`, `uint
 
 The Ethereum Virtual Machine (EVM) allocates a 256-bit slot for each stored variable. For instance, if we declare a variable of type `uint8`, the EVM fills the missing bits with zeros to fit it into a single slot. Additionally, during execution, the EVM converts `uintN` types to `uint256` for computations.
 
-**DemoCode**
+**代码演示**
 
 Let's test `uint8`, `uint32`, and `uint256` to observe their behavior in terms of writing data.
 
@@ -76,6 +76,6 @@ contract Uint256Example {
 
 As observed, in loop computations, `uint256` saves over 10,000 gas. Therefore, smaller variables don't necessarily equate to gas savings.
 
-Recommendations for gas optimization:
+关于 gas 优化的建议：
 
 🌟If variables cannot be packed together, using `uint` or `uint256` is the optimal choice.
