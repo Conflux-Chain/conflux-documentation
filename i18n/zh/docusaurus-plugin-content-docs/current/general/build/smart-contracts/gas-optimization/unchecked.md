@@ -37,6 +37,6 @@ contract UncheckedExample {
 }
 ```
 
-Recommendations for gas optimization:
+关于 gas 优化的建议：
 
 🌟 In situations where security is controllable, the unchecked block can be used to save gas.
