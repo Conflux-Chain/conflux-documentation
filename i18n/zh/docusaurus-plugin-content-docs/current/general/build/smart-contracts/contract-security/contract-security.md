@@ -1,13 +1,13 @@
 ---
-title: Smart Contract Security
+title: 智能合约安全
 displayed_sidebar: generalSidebar
 ---
 
 Ensuring the security of smart contracts is crucial as they directly handle and store value, and are difficult to modify once deployed on a blockchain. To secure your smart contracts, follow these key steps and best practices:
 
-### Comprehensive Testing and Auditing
+### 全面的测试与审计
 
-- **Unit Testing**: Write tests for every function in your contract to ensure it works as expected under various conditions.
+- **单元测试**：为合约中的每个函数编写测试，确保它们在各种条件下都能按照预期工作。
 - **Integration Testing**: Test the interactions between contracts.
 - **Fuzz Testing**: Use randomly generated input data to test your contracts, looking for vulnerabilities.
 - **Security Audits**: Conducted by professional third parties, these audits scrutinize your contract's code for security vulnerabilities and poor programming practices.

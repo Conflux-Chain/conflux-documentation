@@ -2,24 +2,24 @@
 displayed_sidebar: generalSidebar
 ---
 
-# Error
+# 错误
 
-In Solidity, developers can define errors in three main forms: `revert`, `require`, and `assert`. The main differences between these methods from a functional perspective are two-fold:
+在Solidity中，开发者可以以三种主要形式定义错误： `revert`、 `require` 和 `assert`。 从功能角度来看，这些方法的主要区别有两个：
 
-1. Whether they can throw developer-defined error reasons;
-2. Whether they can throw developer-defined errors carrying variables;
+1. 它们是否可以抛出开发者定义的错误原因；
+2. 它们是否可以抛出携带变量的开发者定义错误；
 
-The main differences are as follows:
+主要区别如下：
 
-| Type      | Custom Reason | Carries Variable | 示例                                                                                        |
-| --------- | ------------- | ---------------- | ----------------------------------------------------------------------------------------- |
-| `revert`  | ✅             | ✅                | Reason: UnauthorizedAccess(0x05D01CAF54524A610CCF187082201120757f7AE5) |
-| `require` | ✅             | ❌                | Reason: UnauthorizedAccess                                                                |
-| `assert`  | ❌             | ❌                | Reason: Assertion violated                                                                |
+| 类型        | 自定义原因 | 携带变量 | 示例                                                                                        |
+| --------- | ----- | ---- | ----------------------------------------------------------------------------------------- |
+| `revert`  | ✅     | ✅    | Reason: UnauthorizedAccess(0x05D01CAF54524A610CCF187082201120757f7AE5) |
+| `require` | ✅     | ❌    | 原因：UnauthorizedAccess                                                                     |
+| `assert`  | ❌     | ❌    | 原因： Assertion violated                                                                    |
 
-**DemoCode**
+**代码演示**
 
-Below, we use the three forms of errors to observe the changes in gas usage:
+下面，我们使用三种形式的错误来观察gas使用的变化：
 
 ```solidity
 contract Error {
@@ -42,10 +42,10 @@ contract Error {
 }
 ```
 
-the gas optimization suggestions are as follows:
+gas优化建议如下：
 
-🌟1. `revert` is the most recommended as it can throw error messages as well as related variables.
+🌟1. `revert` 最为推荐，因为它既可以抛出错误消息，也可以抛出相关变量。
 
-🌟2. The string in `require` is stored on-chain, which not only consumes more gas but also increases the contract size. It is recommended to choose based on actual needs.
+🌟2. `require` 中的字符串存储在链上，这不仅消耗更多的gas，还增加了合约大小。 建议根据实际需求选择。
 
-🌟3. If there's a scenario where `assert` is used, it's suggested to replace it with `revert`.
+🌟3. 如果有使用 `assert` 的场景，建议用 `revert` 替换。
