@@ -1,11 +1,11 @@
 name: "Feature Request / Improvement 建议新特性/改进"
 description: "Suggest a new feature, content, or improvement to the documentation 建议文档中的新特性/新内容/现有内容的改进"
-labels: ["enhancement", "Dework"]
+labels: ["enhancement"]
 
 body:
-  - type: markdown
-    attributes:
-      value: "We will reward contributors with FC for your valuablue feedback. Please join our [Dework space](https://app.dework.xyz/i/1fyrskMH16J8p2NcKX2uqX) and connect with your Github account if you are willing to receive FC rewards, in which case we could track your contribution history with ease."
+  # - type: markdown
+  #   attributes:
+  #     value: "We will reward contributors with FC for your valuablue feedback. Please join our [Dework space](https://app.dework.xyz/i/1fyrskMH16J8p2NcKX2uqX) and connect with your Github account if you are willing to receive FC rewards, in which case we could track your contribution history with ease."
 
   - type: textarea
     attributes:
