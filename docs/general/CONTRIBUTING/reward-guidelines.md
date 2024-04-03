@@ -40,8 +40,14 @@ This article details how your contributions, categorized under 'Issues' and 'Pul
     * Identifying incorrect feature descriptors: 80 FC
     * Spotting technical inaccuracies in the documentation: 80 FC
     * Highlighting current governance shortcomings: Determined case by case.
+  * **Document Website Code Issues**
+    * Front-end layout issues: 32 FC.
+    * Suggesting certain components for certain function: 48 FC.
+    * Other issues: case by case.
 
 ### Pull Requests (16 ~ 640 FC and much more)
+
+Most of the times, pull requests rewards is determined by the content and complexity. Please refer to [rewards evaluation](#rewards-evaluation-and-examples) to see how the value will be determined.
 
 * It's desirable to always raise an issue prior to creating a pull request. If the pull request fully resolves an issue, the reward is at least equivalent to that of the issue, regardless of the effort involved.
 * If the originator of the pull request solves an issue they raised, they receive an extra 25% reward.
@@ -58,9 +64,9 @@ This article details how your contributions, categorized under 'Issues' and 'Pul
     * Providing added context to enhance understanding: From 128 FC, up to 300 FC or more, determined by content and significance.
     * Increasing interactivity through addition of tool, document links, etc.: From 64 FC, up to 300 FC or more, determined by content and significance.
     * Creating or improving visual aids like diagrams, charts: From 100 FC, up to 300 FC or more, determined by significance.
-    * Providing detailed elaboration on a topic: From 60 FC, up to 300 FC or more, determined by content and significance.
-    * Crafting new articles on a Conflux topic, depending on complexity and community need: 300 FC, potentially more.
-    * Developing user guides for the basic usage of Conflux products: 300 FC, potentially more.
+    * Providing detailed elaboration on a topic either by adding contents to a certain page or creating new articles: From 60 FC, up to 300 FC or more, determined by content and significance.
+    * Crafting new articles on a **Conflux-specific** topic, depending on complexity and community need: 360 FC, potentially more.
+    * Developing user guides for the basic usage of Conflux products: 360 FC, potentially more.
   * **Error Resolution**
     * Offering correct concept explanations: From 60 FC, up to 300 FC or more, determined by content and significance.
     * Providing correct example results: From 30 FC, up to 300 FC or more, determined by content and significance.
@@ -69,14 +75,45 @@ This article details how your contributions, categorized under 'Issues' and 'Pul
     * Providing accurate feature descriptions: From 60 FC, up to 300 FC or more, depending on content and significance.
     * Correcting technical inaccuracies in documentation: From 60 FC, up to 300 FC or more, depending on significance.
     * Proposing corrections for governance deficiencies: Determined on a case-by-case basis.
+  * **Document Website Improvements**
+    * Determined case-by-case
+
+#### Rewards Evaluation and Examples
+
+As the rewards for pull requests are mostly determined case-by-case, we would like to let contributors know how rewards are evaluated.
+
+* Importance of the created contents. Here are contents we consider of higher significance
+  * Conflux-specific contents
+  * Contents developers are more likely to visit
+  * Code/project examples ready to use out of the box
+* Complexity and efforts made on the pull request
+  * More hours needed to complete the work (evaluated via content quality)
+  * (Runnable) code attached
+  * Higher techinical skill threshold
+  * Visual aids attached
+
+Several examples would be provided for reference:
+
+| Pull Request | Guideline <br/> Floor Reward| Expected Reward | Content|  Why |
+|-|-|-|-|-|
+|[PR#494](https://github.com/Conflux-Chain/conflux-documentation/pull/494)|80| 300*125% |New article regarding reentrancy Attack|+ important content (frequent security issue) <br/> + with code <br/> + resolving creator issue <br/> + new article stating clearly for the topc|
+|[PR#493](https://github.com/Conflux-Chain/conflux-documentation/pull/493)|80| 150*125% |New article regarding circuit logic gas cost|+ with code <br/> + resolving creator issue <br/> + new article stating clearly for the topic <br/> - less important content (negative readability impact and less common in development)|
+|[PR#473](https://github.com/Conflux-Chain/conflux-documentation/pull/485)|30| 80 | Suggesting how to use confura api key |+ important content(fixes)|
+|[PR #467](https://github.com/Conflux-Chain/conflux-documentation/pull/467)|-| 120*125% | Improves website display for mobile devices |+ front-end technique required <br/> + resolving creator issue|
+|[PR #425](https://github.com/Conflux-Chain/conflux-documentation/pull/425)|360|640|This PR creates |+ conflux-specific content <br/> + with code illustration <br/> + detailed explanation as well as video tutorial <br/> + with projects ready to deploy out of the box |
+
+:::note
+
+The `Expected Reward` serves as the evaluation of the FC to receive according to the **latest** reward guideline. However, as the creator might be our internal contributor or contribution guideline is changed, the actual reward distribution amount may vary.
+
+:::
 
 ## How Rewards are Distributed
 
-Dework will be used to track rewards history and we will distribute rewards once a quarter. Just [join our Dework space](https://app.dework.xyz/conflux/developer-portal-1958) if you are willing to receive FC rewards for your contribution.
+We are tracking rewards with an internal table and results will be periodically revealed in [Github discussions](https://github.com/Conflux-Chain/conflux-documentation/discussions).
 
 ## Regular Review of Reward Guidelines
 
 Please note that the reward guidelines are subject to review and possible changes every 3 months. This ensures that our guidelines remain relevant and effective in promoting and rewarding valuable contributions.
 
 We look forward to your contributions and thank you for helping us improve our documentation site! If you have any questions or need assistance, please feel free to create an issue in our Github repo.
-
