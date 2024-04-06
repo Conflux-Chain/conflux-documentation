@@ -220,15 +220,11 @@ const config = {
             items: [
               {
                 label: 'Discord',
-                to: 'https://discord.gg/conflux-network',
+                to: 'https://discord.gg/confluxnetwork',
               },
               {
                 label: 'Telegram',
                 to: 'https://t.me/Conflux_English',
-              },
-              {
-                label: 'DeWork',
-                to: 'https://app.dework.xyz/conflux',
               },
             ],
           },
