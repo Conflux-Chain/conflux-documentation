@@ -10,7 +10,7 @@ The first four bytes of calldata, known as the MethodId, identify the specific c
 
 We can optimize function names using this tool: [Online Function Name Optimizer](https://emn178.github.io/solidity-optimize-name/).
 
-**Demo Code**
+**代码演示**
 
 Below are examples of standard function calls and their optimized counterparts using **methodId optimization**.
 
