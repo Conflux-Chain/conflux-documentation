@@ -2,15 +2,15 @@
 displayed_sidebar: generalSidebar
 ---
 
-# Uint Types Gas Comparison
+# Uint 类型 Gas 比较
 
-It's a common belief that in Solidity, smaller integer types like `uint8`, `uint16`, `uint32`, `uint64`, `uint128`, and `uint256` might save gas due to their smaller size. However, this isn't always the case.
+在Solidity中，通常认为使用较小的整数类型如 `uint8`, `uint16`, `uint32`, `uint64`, `uint128`, 和 `uint256` 可能会因为它们的尺寸较小而节省gas。 然而，情况并非总是如此。
 
-The Ethereum Virtual Machine (EVM) allocates a 256-bit slot for each stored variable. For instance, if we declare a variable of type `uint8`, the EVM fills the missing bits with zeros to fit it into a single slot. Additionally, during execution, the EVM converts `uintN` types to `uint256` for computations.
+以太坊虚拟机（EVM）为每个存储变量分配一个256位的槽。 例如，如果我们声明了一个 `uint8` 类型的变量，EVM会用 `0` 填充缺失的位以适应一个单独的槽。 Additionally, during execution, the EVM converts `uintN` types to `uint256` for computations.
 
 **代码演示**
 
-Let's test `uint8`, `uint32`, and `uint256` to observe their behavior in terms of writing data.
+让我们测试 `uint8`, `uint32`, 和 `uint256` ，观察它们在写入数据时的行为。
 
 ```solidity
 // SPDX-License-Identifier: MIT
@@ -74,8 +74,8 @@ contract Uint256Example {
 
 ```
 
-As observed, in loop computations, `uint256` saves over 10,000 gas. Therefore, smaller variables don't necessarily equate to gas savings.
+如观察所见，在循环计算中，`uint256` 节省了超过10,000 gas。 因此，较小的变量并不一定等同于节省gas。
 
 关于 gas 优化的建议：
 
-🌟If variables cannot be packed together, using `uint` or `uint256` is the optimal choice.
+🌟如果变量不能被一起打包，使用 `uint` 或 `uint256` 是最佳选择。
