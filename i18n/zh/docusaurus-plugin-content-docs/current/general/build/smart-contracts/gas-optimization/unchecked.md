@@ -12,9 +12,9 @@ This also means that the check incurs additional gas costs. By using `unchecked`
 
 Learn more: [Checked or Unchecked Arithmetic](https://docs.soliditylang.org/en/v0.8.25/control-structures.html#checked-or-unchecked-arithmetic)
 
-**Demo Code**
+**代码演示**
 
-Below, we demonstrate using both a conventional for-loop and an `unchecked` for-loop. Note that since `iterations` is already of type `uint256`, there will not be an overflow issue.
+Below, we demonstrate using both a conventional for-loop and an `unchecked` for-loop. 请注意，由于 `iterations` 已经是 `uint256` 类型，因此不会有溢出问题。
 
 ```solidity
 contract UncheckedExample {
