@@ -13,11 +13,11 @@ Due to the function selector being only `4` bytes long, it's quite short and pro
 
 **Vulnerable Contract Example**
 
-Let's examine a vulnerable contract example. The `SelectorCollisionTest` contract has a state variable `isCompleted` initialized as `false`. The attacker needs to change it to `true`. The contract mainly has `2` functions.
+让我们通过一个具有漏洞的合约示例来学习一下。 `SelectorCollisionTest` 合约有一个状态变量 `isCompleted`，初始值为 `false`。 攻击者需要将其改为 `true`。 合约主要有 `2` 个函数。
 
-1. `activateKey()`: The attacker can call this function to change `isCompleted` to `true`, completing the attack. However, this function checks `msg.sender == address(this)`, meaning the caller must be the contract itself.
+1. `activateKey()`：攻击者可以调用这个函数将 `isCompleted` 改为 `true`，完成攻击。 然而，这个函数检查 `msg.sender == address(this)`，意味着调用者必须是合约本身。
 
-2. `triggerAction()`: It can call functions within the contract, but the function parameter types and the target function are not quite the same: the target function's parameters are `(bytes)`, while the function being called has parameters `(bytes,bytes,uint64)`.
+2. `triggerAction()`：它可以调用合约内的函数，但函数参数类型和目标函数不完全相同：目标函数的参数是 `(bytes)`，而被调用的函数的参数是 `(bytes,bytes,uint64)`。
 
 ```solidity
 contract SelectorCollisionTest {
@@ -42,8 +42,8 @@ contract SelectorCollisionTest {
 }
 ```
 
-**Attack Method**
+**攻击方法**
 
-By utilizing the `triggerAction()` function, it's possible to invoke the contract's `activateKey()` function, aiming for the specific selector `0x4bb3d55c`.
+通过利用 `triggerAction()` 函数，可以调用合约的 `activateKey()` 函数，目标是特定的选择器 `0x4bb3d55c`。
 
-Within the `triggerAction()` mechanism, the selector emerges from combining the `_action` parameter with the function signature `"(bytes,bytes,uint64)"`. Thus, selecting a fitting `_action` enables the calculated selector to match `0x4bb3d55c`, thereby achieving the objective of the attack.
+在 `triggerAction()` 机制中，选择器来自于将 `_action` 参数与函数签名 `"(bytes,bytes,uint64)"` 结合。 因此，选择一个合适的 `_action` 使得计算出的选择器匹配 `0x4bb3d55c`，从而实现攻击目标。
