@@ -15,7 +15,7 @@ This article details how your contributions, categorized under 'Issues' and 'Pul
 
 ### Issues Reward Guidelines
 
-Creating issues will let us know the community needs and how to improve. Created issues would be marked with `ACCEPTED` or `REJECTED` tag meaning if we consider this content suit for next step.
+Creating issues is an excellent way for us to understand the needs of the community and identify areas for improvement. Issues created will be tagged as either `ACCEPTED` or `REJECTED`, indicating our assessment of whether the content is suitable for further action.
 
 * **Formatting**
   * Identifying spelling or grammar errors: 16 FC
@@ -43,9 +43,9 @@ Creating issues will let us know the community needs and how to improve. Created
 
 ### Pull Requests Reward Guidelines
 
-Most of the times, pull requests rewards is determined by the content complexity and significance. Please refer to [rewards evaluation](#rewards-evaluation-and-examples) to see how the value will be determined.
+Reward values for pull requests are primarily determined by the complexity and significance of the content. Please refer to [rewards evaluation](#rewards-evaluation-and-examples) for more details on value determination..
 
-* If the originator of the pull request solves an issue they raised, they receive an extra 25% reward.
+* If the originator of the pull request solves an issue they raised, an additional reward of 25% is granted.
 * **Formatting**:
   * Fixing spelling or grammar errors: 16 FC.
   * Updating broken links: 16 FC.
