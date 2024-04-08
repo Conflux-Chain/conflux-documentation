@@ -2,13 +2,13 @@
 displayed_sidebar: generalSidebar
 ---
 
-# Re-entrancy Attacks
+# 重入攻击
 
-Re-entrancy attacks are among the most common types of assaults on smart contracts, where attackers exploit contract vulnerabilities to recursively call the contract, enabling them to transfer assets out of the contract or mint a large number of tokens.
+重入攻击是针对智能合约最常见的攻击类型之一，攻击者利用合约的漏洞递归调用合约，使其能够从合约中转移资产或者铸造大量的代币。
 
-In 2016, the DAO contract fell victim to a reentrancy attack, leading to the theft of 3,600,000 ETH from the contract. This incident resulted in the Ethereum network splitting into two chains: ETH and ETC (Ethereum Classic).
+2016年，DAO 合约遭到重入攻击，导致从合约中盗取了 3,600,000 ETH。 This incident resulted in the Ethereum network splitting into two chains: ETH and ETC (Ethereum Classic).
 
-In 2022, the algorithmic stablecoin project Fei was hit by a reentrancy attack, resulting in a theft of $80,000,000. More information can be found [here](https://rekt.news/fei-rari-rekt/).
+2022 年，算法稳定币项目 Fei 遭到重入攻击，导致损失 8000 万美元。 更多信息可以在 [此处](https://rekt.news/fei-rari-rekt/) 找到。
 
 Reentrancy attack may occur when a contract makes external calls before ensuring that its state is correctly updated. Attackers can exploit this by making the vulnerable contract invoke an attacker-controlled contract, which then re-invokes the original contract repeatedly. This repeated invocation can manipulate the contract's state before it's correctly updated, leading to potential loss of funds.
 
