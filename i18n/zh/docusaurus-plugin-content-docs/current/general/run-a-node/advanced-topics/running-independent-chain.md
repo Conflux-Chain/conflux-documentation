@@ -34,7 +34,7 @@ $ ./conflux --config development.toml
 
 为此，您应该设置自己的启动节点，并让其他节点连接到它。 然后，它们将通过我们的发现协议连接到其他节点。
 
-您需要启动节点的IP地址、端口号和节点ID，以便其他节点连接。 节点ID是网络层用于识别的节点唯一私钥对应的公钥。 以下是让启动节点自动生成其私钥并通过日志文件获取节点ID的指导。
+您需要启动节点的IP地址、端口号和节点ID，以便其他节点连接。 The node id is the public key corresponding the node's unique private key for identification at the network layer. 以下是让启动节点自动生成其私钥并通过日志文件获取节点ID的指导。
 
 ## A Simple Instruction
 
