@@ -6,7 +6,7 @@ displayed_sidebar: coreSidebar
 
 [CIP-90](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-90.md) 引入了一个新的内置合约：`CrossSpaceCall`. CrossSpaceCall enables **CFX and data** to be transferred between the two spaces.
 
-## Interface
+## 接口
 
 This contract's hex40 address is `0x0888000000000000000000000000000000000006` with interface:
 
