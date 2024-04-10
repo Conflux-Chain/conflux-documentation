@@ -30,7 +30,7 @@ To start using Cookbook in your smart contract development projects, follow thes
 
 
 ## Cookbook Tutorial
-This tutorial guides you through deploying a DeFi Token, based on [FEG](https://fegtoken.com/), with Token Reflection Mechanism and Deflationary Tokenomics, on the eSpace Testnet using [Remix IDE](../deployContract/remix.md). This comprehensive walkthrough covers the entire deployment process, ensuring you can deploy the contract efficiently from beginning to end.
+This tutorial guides you through deploying a DeFi Token, based on [FEG](https://fegtoken.com/), with Token Reflection Mechanism and Deflationary Tokenomics, on the eSpace Testnet using [Remix IDE](./deployContract/remix.md). This comprehensive walkthrough covers the entire deployment process, ensuring you can deploy the contract efficiently from beginning to end.
 
 Before initiating the deployment, confirm you have test tokens from an eSpace faucet to cover any necessary deployment fees.
 
@@ -38,43 +38,39 @@ Before initiating the deployment, confirm you have test tokens from an eSpace fa
 
 #### 1. Accessing the Deployment Interface
 - **Open Cookbook webpage**: Visit [cookbook.dev](https://www.cookbook.dev/) to explore various deployment options for your contract.
-![cookbook1](../img/1cb.png)
-![cookbook2](../img/2cb.png)
+![cookbook1](./img/1cb.png)
+![cookbook2](./img/2cb.png)
 - **Navigate to Deployment section**: In the "Get Cookin'" section, sift through to find the deployment method using Remix IDE. Select this option to proceed.
-![cookbook3](../img/3cb.png)
+![cookbook3](./img/3cb.png)
 #### 2. Remix IDE Set Up
 - **Open Remix IDE:** After choosing the Remix option on Cookbook.dev, Remix Ethereum IDE will open in a new tab. Wait for the interface to load completely.
 - **Grant Permission:** Remix might request permission for proper operation. Click "Accept" to proceed.
-![cookbook4](../img/4cb.png)
+![cookbook4](./img/4cb.png)
 - **Locate the Smart Contract File:** In Remix's "FILE EXPLORER" panel, find the FEG.sol file, typically located within a folder named FEG on the workspace's left side.
-![cookbook6](../img/6cb.png)
+![cookbook6](./img/6cb.png)
 #### 3. Modifying the Contract
 - **Update Token Details:** Within the FEG/FEG.sol contract, locate the lines defining the token's name and symbol, initially set to 'FEGtoken' and 'FEG'. Update these to your chosen values, for example, 'MyDeFiToken' and 'MDT', and save the changes.
-![cookbook7](../img/7cb.png)
-![cookbook8](../img/8cb.png)
-#### 4. Compiling and Deploying the Contract
-- **Compile the Contract:** Click the Solidity compiler icon in Remix IDE's left panel, ensure the compiler version aligns with the version stated in the selected smart contract, and compile the FEG.sol contract.
-![cookbook9](../img/9cb.png)
-- **Deployment**: Navigate to "Deploy & run transactions," select "Injected Provider - MetaMask" in the "ENVIRONMENT" dropdown, choose FEG-FEG/FEG.sol from the list, and click "DEPLOY".
-![cookbook10](../img/10cb.png)
-![cookbook11](../img/11cb.png)
-- **Transaction Confirmation:** MetaMask will prompt for transaction confirmation. Click "Confirm" to finalize the deployment.
-![cookbook12](../img/12cb.png)
-### Post-Deployment Steps
-#### Deployment Confirmation
-- After deployment, Remix will confirm the transaction. Your contract will appear under "Deployed Contracts".
-Adding the Token to MetaMask
-![cookbook13](../img/13cb.png)
-- Copy the deployed contract's address and add the new token to your MetaMask wallet through the "+ Import Tokens" process, ensuring the details match.
-![cookbook14](../img/14cb.png)
-#### Token Transfers
-To transfer tokens, use MetaMask's "Send" button, specify the recipient and amount, and confirm the transaction.
-![cookbook15](../img/15cb.png)
+![cookbook7](./img/7cb.png)
+![cookbook8](./img/8cb.png)
+#### 4. Compiling and Deploying the Contract using Remix IDE
+For this step, you can following the process already described in the [Remix IDE Tutorial](./deployContract/remix.md)
+
+For an on-hands demonstration of how to deploy a smart contract using Remix IDE, you can also refer to the following video:
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+  <TabItem value="youtube" label="Remix IDE Video Tutorial">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/WLbUXQ1FS8M?si=kJD-6-QN3ZqFf0_v" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  </TabItem>
+</Tabs>
+
 ### Additional Resources
 - [Cookbook Website](https://www.cookbook.dev/)
 - [Cookbook Docs](https://docs.cookbook.dev/)
 - [Remix IDE Website](https://remix.ethereum.org/)
-- [Remix IDE Tutorial](./remix.md)
+
 
 
 
