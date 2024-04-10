@@ -34,7 +34,7 @@ To have your independent Conflux chain with multiple nodes in the production mod
 
 To achieve this, you should setup your own boot node, and let other nodes connect to it. Then they will connect to others with our discovery protocol.
 
-You need the IP address, the port number, and the node id of the bootnode for others to connect. The node id is the public key corresponding the the node's unique private key for identification at the network layer. And here is an instruction to let the bootnode generate its private key automatically, and get the node id through the log file.
+You need the IP address, the port number, and the node id of the bootnode for others to connect. The node id is the public key corresponding the node's unique private key for identification at the network layer. And here is an instruction to let the bootnode generate its private key automatically, and get the node id through the log file.
 
 ## A Simple Instruction
 
