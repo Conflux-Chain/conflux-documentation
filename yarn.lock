@@ -1283,10 +1283,10 @@
   resolved "https://registry.npmmirror.com/@colors/colors/-/colors-1.5.0.tgz#bb504579c1cae923e6576a4f5da43d25f97bdbd9"
   integrity sha512-ooWCrlZP11i8GImSjTHYHLkvFDP48nS4+204nGb1RiX/WXYHmJA2III9/e2DWVabCESdW7hBAEzHRqUn9OUVvQ==
 
-"@cookbookdev/docsbot@^4.5.0":
-  version "4.5.0"
-  resolved "https://registry.yarnpkg.com/@cookbookdev/docsbot/-/docsbot-4.5.0.tgz#638de6c3f57799761ec09f75f8f155aec501584e"
-  integrity sha512-Oo2kmpDPtfab+Cd3vLMj0wTtClQeA6tBDZFBQljDpHT8+WYaYIrQOzkUf9gioiSSgT0/yHL5P8ir0r/TfvT6wg==
+"@cookbookdev/docsbot@^4.5.2":
+  version "4.5.2"
+  resolved "https://registry.yarnpkg.com/@cookbookdev/docsbot/-/docsbot-4.5.2.tgz#6a145489d618a13712dd736e183e02059e1f8ce5"
+  integrity sha512-AH1I7Ha2ZiyWTLz2ffgHSiGx7XUafdmaroKvmSoKW9OUYxH7T3PxPADLbXS0/qBa9pFBIXzfr6CO4vp+H3Up2A==
   dependencies:
     "@headlessui/react" "^1.7.18"
     clsx "^2.1.0"
