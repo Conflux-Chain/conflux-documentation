@@ -6,9 +6,9 @@ displayed_sidebar: coreSidebar
 
 Conflux实现了赞助机制，来补贴智能合约的使用。 这允许余额为零的新账户调用智能合约，前提是执行操作得到赞助（通常由Dapp运营者提供）。 内部的 `SponsorWhitelistControl` 合约记录了智能合约的赞助信息。
 
-## Interface
+## 接口
 
-SponsorWhitelistControl's hex40 address is `0x0888000000000000000000000000000000000001`, with interface:
+SponsorWhitelistControl's 合约的十六进制地址是 `0x0888000000000000000000000000000000000001`, 接口是:
 
 ```js
 pragma solidity >=0.4.15;
@@ -104,7 +104,7 @@ contract SponsorWhitelistControl {
 
 ## 如何赞助智能合约
 
-`SponsorWhitelistControl` 为每个用户建立的合约维护一个白名单，包含有资格获得补贴的账户。 首先，应该使用 `addPrivilege(address[] memory)` 或 `addPrivilegeByAdmin(address contractAddr, address[] memory addresses)` 将合格账户添加到白名单中。 Specially, if a **zero address** is added to the whitelist, any account will become eligible for subsidy.
+`SponsorWhitelistControl` 为每个用户建立的合约维护一个白名单，包含有资格获得补贴的账户。 首先，应该使用 `addPrivilege(address[] memory)` 或 `addPrivilegeByAdmin(address contractAddr, address[] memory addresses)` 将合格账户添加到白名单中。 值得一提的是，如果将**零地址**添加到白名单，那么任何账户都将有资格获得补贴。
 
 There are two resources that can be sponsored: gas consumption and storage collateral. 这两种资源可以通过 `payable` 接口 `setSponsorForGas(address contractAddr, uint upperBound)` 和 `setSponsorForCollateral(address contractAddr)` 分别进行赞助。
 
@@ -215,15 +215,15 @@ main().catch(
 )
 ```
 
-The example provided illustrates how to deploy and sponsor a test contract. The code is divided into five main sections:
+提供的示例说明了如何部署和赞助测试合约。 代码分为五个主要部分：
 
-- Setting Up Conflux Instance and Accounts
-- Deploying the Smart Contract
-- Interacting with the Deployed Contract
-- Sponsoring Gas and Storage
-- Sending a Transaction whose Gas and Storage are Sponsored
+- 设置Conflux实例和账户
+- 部署智能合约
+- 与已部署合约进行交互
+- 赞助Gas和存储
+- 发送Gas和存储被赞助的交易
 
-1. **Setting Up Conflux Instance and Accounts**:
+1. **设置Conflux实例和账户**：
 
     ```javascript
     const PRIVATE_KEY = '0x......';
@@ -235,9 +235,9 @@ The example provided illustrates how to deploy and sponsor a test contract. The 
     const randomAccount = cfx.wallet.addRandom();
     ```
 
-    - `PRIVATE_KEY`: A placeholder for the private key of the user. This is essential for deploying contracts and sending transactions. **You need to replace this value with your own private key with enough CFX**
-    - `account`: An account instance created using the provided private key. Will be used to deploy contract.
-    - `randomAccount`: A new random account instance. This account doesn't have any CFX (Conflux's native currency) by default.
+    - `PRIVATE_KEY`：用户私钥的占位符。 这对于部署合约和发送交易至关重要。 **You need to replace this value with your own private key with enough CFX**
+    - `account`：使用提供的私钥创建的账户实例。 将用于部署合约。
+    - `randomAccount`：一个新的随机账户实例。 这个账户默认没有任何CFX（Conflux的原生货币）。
 
 2. **Deploying the Smart Contract**:
 
