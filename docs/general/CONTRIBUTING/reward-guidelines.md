@@ -43,7 +43,7 @@ Creating issues is an excellent way for us to understand the needs of the commun
 
 ### Pull Requests Reward Guidelines
 
-Reward values for pull requests are primarily determined by the complexity and significance of the content. Please refer to [rewards evaluation](#rewards-evaluation-and-examples) for more details on value determination..
+Reward values for pull requests are primarily determined by the complexity and significance of the content. Please refer to [rewards evaluation](#rewards-evaluation-and-examples) for more details on value determination.
 
 * If the originator of the pull request solves an issue they raised, an additional reward of 25% is granted.
 * **Formatting**:
