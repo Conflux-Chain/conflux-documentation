@@ -259,10 +259,10 @@ params: [
 * `s`: `DATA`, 32 字节 - ECDSA 签名 s
 * `status`: `QUANTITY` - 0 表示成功，1 表示发生错误，2 表示跳过, `null` null 表示交易被跳过或未打包
 * `storageLimit`: `QUANTITY` - 发送者指定的存储限制。
-* `to`: `BASE32` - 接收者的地址。 `null` when it is a contract deployment transaction.
-* `transactionIndex`: `QUANTITY` - the transaction's position in the block. `null` 当交易是 pending 时为 null
-* `v`: `QUANTITY` - ECDSA recovery id.
-* `value`: `QUANTITY` - value transferred in Drip.
+* `to`: `BASE32` - 接收者的地址。 `null` 当它是一个合约部署交易时为 null
+* `transactionIndex`：`QUANTITY` - 表示区块中的交易索引位置。 `null` 当交易是 pending 时为 null
+* `v`：`QUANTITY` - ECDSA 恢复 ID
+* `value`：`QUANTITY` - 转移的价值，以 Drip 为单位。
 
 注意，字段 `blockHash`, `contractCreated`, `status` 和 `transactionIndex` 是由节点提供的，因为它们依赖于交易在账本中的位置。 其余的字段是包含在原始交易中或从原始交易中派生出来的。
 
@@ -325,16 +325,16 @@ params: [
 * `deferredLogsBloomHash`: `DATA`, 32 Bytes - 在该区块所在 epoch 的延迟执行后的事件地址和事件topic的布隆滤波器的哈希（假设它是主区块）。
 * `deferredReceiptsRoot`: `DATA`, 32 Bytes - 在该区块所在 epoch 的延迟执行后的收据的 Merkle 根（假设它是枢轴区块）。
 * `deferredStateRoot`: `DATA`, 32 Bytes - 在该区块所在 epoch 的延迟执行后的状态 trie 根三元组的哈希（假设它是枢轴区块）。
-* `difficulty`: `QUANTITY` - the PoW difficulty of this block.
-* `epochNumber`: `QUANTITY` - the number of the epoch containing this block in the node's view of the ledger. `null` when the epoch number is not determined (e.g. the block is not in the best block's past set).
-* `gasLimit`: `QUANTITY` - the maximum gas allowed in this block.
-* `gasUsed`: `QUANTITY` - the total gas used in this block. `null` when the block is pending.
-* `hash`: `DATA`, 32 Bytes - hash of the block.
-* `height`: `QUANTITY` - the height of the block.
-* `miner`: `BASE32` - the address of the beneficiary to whom the mining rewards were given.
-* `nonce`: `DATA`, 8 Bytes - hash of the generated proof-of-work.
-* `parentHash`: `DATA`, 32 Bytes - hash of the parent block.
-* `powQuality`: `DATA` - the PoW quality. `null` when the block is pending.
+* `difficulty`: `QUANTITY` - 该区块的 PoW 难度。
+* `epochNumber`: `QUANTITY` - 包含该区块的 epoch 的编号，在节点对账本的视图中。 `null` 当 epoch 编号未确定时为 null（例如，该区块不在最佳区块的过去集合中）。
+* `gasLimit`: `QUANTITY` - 该区块允许的最大 gas。
+* `gasUsed`: `QUANTITY` - 该区块使用的总 gas。 `null` 当区块是 pending 时为 null。
+* `hash`：`DATA`，32 字节 - 区块的哈希。
+* `height`: `QUANTITY` - 区块的高度。
+* `miner`: `BASE32` - 获得挖矿奖励的受益人地址。
+* `nonce`：`DATA`，8 字节 - 已生成的工作量证明的哈希。
+* `parentHash`：`DATA`，32 字节 - 父区块的哈希。
+* `powQuality`: `DATA` - PoW 质量。 `null` 当区块是 pending 时为 null。
 * `refereeHashes`: `Array` - array of referee block hashes.
 * `size`: `QUANTITY` - the size of this block in bytes, excluding the block header.
 * `timestamp`: `QUANTITY` - the unix timestamp for when the block was created.
@@ -1151,7 +1151,7 @@ params: [
 * `blockHash`: `DATA`, 32 字节 - 包含并执行了这个交易的区块的哈希。
 * `epochNumber`: `QUANTITY` - epoch number of the block where this transaction was in and got executed.
 * `from`: `BASE32` - 发送者的地址。
-* `to`: `BASE32` - 接收者的地址。 `null` when it is a contract deployment transaction.
+* `to`: `BASE32` - 接收者的地址。 `null` 当它是一个合约部署交易时为 null
 * `gasUsed`: `QUANTITY` - gas used for executing the transaction.
 * `gasFee`: `QUANTITY` - gas charged to the sender's account. If the provided gas (gas limit) is larger than the gas used, at most 1/4 of it is refunded.
 * `gasCoveredBySponsor`: `Boolean`, true if this transaction's gas fee was covered by the sponsor.
