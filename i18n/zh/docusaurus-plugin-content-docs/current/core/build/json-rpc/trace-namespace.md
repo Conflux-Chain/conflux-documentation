@@ -387,7 +387,7 @@ Get whole epoch transaction's trace by it's number
 
 #### 返回值
 
-TODO
+待实现
 
 ### trace_filter
 
