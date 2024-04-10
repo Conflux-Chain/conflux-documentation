@@ -16,7 +16,7 @@ displayed_sidebar: coreSidebar
 - `identifierToAddress` - 查询一个PoS账户绑定的PoW地址
 - `addressToIdentifier` - 查询一个PoW账户绑定的PoS地址
 
-## Interface
+## 接口
 
 `PoSRegister`的hex40合约地址是`0x0888000000000000000000000000000000000005`
 
