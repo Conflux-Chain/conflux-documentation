@@ -22,7 +22,7 @@ Screenshots in this tutorial are taken from the MetaMask browser extension versi
 
 You can add the Conflux {props.space} network to your MetaMask wallet by following these steps:
 
-1. 打开您的浏览器，访问 https\://chainlist.org。
+1. 打开您的浏览器，访问 https://chainlist.org。
 2. Search for "Conflux {props.space}".
 3. Click "Connect Wallet" under "Conflux {props.space}" to allow this site to send requests to Metamask.
 4. Click "Add to Metamask" under "Conflux {props.space}".
