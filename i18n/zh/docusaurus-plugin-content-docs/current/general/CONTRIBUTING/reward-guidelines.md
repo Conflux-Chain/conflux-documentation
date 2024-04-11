@@ -13,69 +13,96 @@ This article details how your contributions, categorized under 'Issues' and 'Pul
 
 ## 准则
 
-### 问题（Issue）：16 \~ 80 FC
+### Issues Reward Guidelines
 
-- 如果在提出问题的同时提供了解决方案，奖励将加倍。 以下是一些示例：
-  - **格式化**
-    - 发现拼写或语法错误：16 FC
-    - 发现损坏的链接或过时的细节：16 FC
-    - 发现代码块等格式问题：16 FC
-    - 标记图片、图表相关问题：16 FC
-  - **增强可读性**
-    - 提出现有解释不清晰：16 FC
-    - 建议完善对某些问题的描述：16 FC
-    - 建议举出用例以使得对特定功能的解释更清晰：32 FC
-    - 指出因缺乏上下文语境而导致的理解困难：32 FC
-    - 强调缺乏工具/文档链接等导致交互性受限：32 FC
-    - 建议创建或改进示例、图表或视觉辅助工具：32 FC
-    - 请求更多关于特定主题的详细信息：48 FC
-    - 建议编写与Conflux相关的新文章：48 FC
-    - 建议改进文档结构：48 FC
-    - 建议为Conflux的基本产品创建使用指南：48 FC
-  - **发现错误**
-    - 发现当前概念解释中的错误：64 FC
-    - 标记失败的示例：64 FC
-    - 发现代码中的逻辑错误：80 FC
-    - Pinpointing inaccuracies in API document parameters that hamper utility: 80 FC
-    - 发现不准确的功能描述：80 FC
-    - 发现文档中的技术错误：80 FC
-    - 指出当前治理方面的不足之处：奖励视情况而定。
+Creating issues is an excellent way for us to understand the needs of the community and identify areas for improvement. Issues created will be tagged as either `ACCEPTED` or `REJECTED`, indicating our assessment of whether the content is suitable for further action.
 
-### 拉取请求（Pull Request）：16 \~ 640 FC 甚至更多
+- **Formatting**
+  - Identifying spelling or grammar errors: 16 FC
+  - Spotting broken links: 16 FC
+  - Highlighting issues with code blocks, localization or other format-related problems: 32 FC
+  - Flagging **format** issues with images, diagrams: 24 FC, or 48 FC if a solution is proposed (not necessarily a pull request).
+- **发现错误**
+  - Spotting outdated product information: 32 FC.
+  - Discovering errors or incorrect information about technical or conceptual details: 80 FC. This encapsulates
+    - Issues with descriptions, such as explanatory concepts, API document parameters, characteristics of features, and so forth.
+    - Issues with code that can be reproduced on a general or specific platform, including failing sample code, unexpected code output, or failing commands.
+- **Suggesting Improvements**
+  - Recommending enhancements to certain topics to simplify understanding or provide more detail: From 32 FC to 64 FC depending on the issue significance and whether a solution is proposed (not necessarily a pull request). This encapsulates
+    - Highlighting unclear explanation
+    - Recommending creation or improvement of diagrams, charts, or visual aids
+    - Highlighting insufficient contextual information (explanations or examples) leading to comprehension issues
+    - Indicating a lack of detailed description of a feature, such as implementation or edge cases.
+  - Proposing the development of new articles on particular topics or product: From 32 FC to 64 FC depending on the issue significance.
+  - Suggesting improve the document structure: 32 FC for _valuable_, but not necessarily ACCEPTED solutions, or 64 FC if accepted. NOTE: We will carefully consider these issues.
+  - 指出当前治理方面的不足之处：奖励视情况而定。
+- **Document Website Code Issues**
+  - Front-end style issues including layout, font size, line spacing, etc: 48 FC, or 96 FC with a suggested solution (not necessarily a pull request)
+  - Recommending specific components for certain functions: 96 FC.
+  - Other issues: Determined case by case.
 
-- 在创建拉取请求之前，最好先提出一个问题。 如果拉取请求完全解决了一个问题，无论解决该问题所需的努力多少，您都将会获得至少与提出该问题相等的奖励。
-- 如果拉取请求的发起者解决了他们提出的问题，他们将额外获得25%的奖励。
-- 例如：
-  - **格式问题**
-    - 修复拼写或语法错误：16 FC
-    - 更新失效链接或过时信息：16 FC
-    - 解决代码块格式等格式相关问题：32 FC
-    - 纠正图片、图表的显示等问题：64 FC
-  - **改进**
-    - 为概念提供更好的解释：至少 30 FC，视内容和重要性而定，可达 100 FC 或更多。
-    - 优化对问题的描述：至少 30 FC，视内容和重要性而定，可达 100 FC 或更多。
-    - 为特定功能的用例添加解释：至少 128 FC，视内容和重要性而定，可达 300 FC 或更多。
-    - 添加上下文语境以易于理解：至少 128 FC，视内容和重要性而定，可达 300 FC 或更多。
-    - 添加工具、文档链接等增强交互性：至少 64 FC，视内容和重要性而定，可达 300 FC 或更多。
-    - 创建或改进示例、图表等视觉辅助工具：至少 100 FC，视内容和重要性而定，可达 300 FC 或更多。
-    - 提供关于某个主题的详细阐述：至少 60 FC，视内容和重要性而定，可达 300 FC 或更多。
-    - 撰写关于Conflux主题的新文章：300 FC，根据复杂性和社区需求可能更多。
-    - 为Conflux产品的基本使用编写用户指南：300 FC，可能更多。
-  - **解决错误**
-    - Offering correct concept explanations: From 60 FC, up to 300 FC or more, determined by content and significance.
-    - Providing correct example results: From 30 FC, up to 300 FC or more, determined by content and significance.
-    - Providing correct codes: From 60 FC, up to 600 FC or more, determined by complexity and significance.
-    - Correcting API document parameters: From 60 FC, up to 300 FC or more, depending on content and significance.
-    - Providing accurate feature descriptions: From 60 FC, up to 300 FC or more, depending on content and significance.
-    - Correcting technical inaccuracies in documentation: From 60 FC, up to 300 FC or more, depending on significance.
-    - Proposing corrections for governance deficiencies: Determined on a case-by-case basis.
+### Pull Requests Reward Guidelines
 
-## 奖励分发方式
+Reward values for pull requests are primarily determined by the complexity and significance of the content. Please refer to [rewards evaluation](#rewards-evaluation-and-examples) for more details on value determination.
 
-我们将使用 Dework 来跟踪奖励历史记录，并且我们将每季度分发一次奖励。 如果您想做出贡献并获得 FC 奖励，请加入[我们的 Dework 空间](https://app.dework.xyz/conflux/developer-portal-1958)。
+- If the originator of the pull request solves an issue they raised, an additional reward of 25% is granted.
+- **Formatting**:
+  - 修复拼写或语法错误：16 FC
+  - Updating broken links: 16 FC.
+  - 解决代码块格式等格式相关问题：32 FC
+  - Rectifying formatting issues with images, diagrams: 64 FC.
+- **解决错误**
+  - Updating outdated product information: 64 FC, up to 128 FC or more, determined by content and significance.
+  - Offering correct explanations, such as explanatory concepts, API document parameters, characteristics of features, and so forth: From 64 FC, up to 128 FC or more, determined by content and significance.
+  - Correcting code-related errors, which can be reproduced on a general or specific platform, including failing sample code, unexpected code output, or failing commands: From 64 FC, up to 320 FC or more, depending on content and significance.
+- **改进**
+  - Enhancements to certain topics to simplify understanding, e.g. providing clearer explanation or added examples: From 32 FC, up to 128 FC or even more, determined by content and significance.
+  - Creating or improving visual aids like diagrams, charts: From 128 FC, up to 256 FC or more, determined by content and significance.
+  - Adding lacked details of a feature or a topic, such as implementation or edge cases: From 80 FC, up to 320 FC or even more, determined by content and significance.
+  - Crafting new articles on certain topic, depending on complexity and community need: From 128 FC, up to 640 FC, determined by content and significance, potentially more for tremendous articles.
+    - if the article is about general concept or development practice, the reward will typically range from 128 FC to 320 FC.
+    - if the topic is **Conflux-specific** or the article is a development guide, the reward will range from 320 FC to 640 FC (or even higher).
+  - Crafting user guides for the basic usage of Conflux products: 320 FC, up to 480 FC or more, determined by content and significance.
+- **Document Website Improvements**
+  - With a minimum of 96 FC, determined case-by-case based on task complexity.
 
-## 奖励准则定期审查
+#### Rewards Evaluation and Examples
 
-请注意，奖励准则每3个月都将进行审查并有可能做出更改。 这将保证我们的本指导方针能足够有效地鼓励社区为文档建设作出贡献。
+With pull request rewards often being determined on a case-by-case basis, we believe it's important to provide contributors with a clear understanding of how these rewards are assessed.
 
-我们期待您的贡献，并感谢您帮助我们改进我们的文档网站！ 如果您有任何问题或需要帮助，欢迎随时在我们的 Github 仓库中创建Issue。
+- The significance of the content that has been created. In particular, we regard the following types of content as being of greater importance:
+  - Content specific to Conflux
+  - Content that developers are more likely to visit
+  - Development tutorials accompanied by ready-to-use code examples
+- The complexity of the pull request along with the effort invested also affect the reward:
+  - Content that required more time to create (evaluated based on content quality)
+  - Higher technical skills or understanding required
+  - Clear explanation, e.g., inclusion of code snippets or visual aids
+
+Several examples are provided below for your reference:
+
+| Pull Request                                                               | Guideline Base Reward | Anticipated Reward | Content                                                        | Justification                                                                                                                                                                          |
+| -------------------------------------------------------------------------- | --------------------- | ------------------ | -------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [PR#494](https://github.com/Conflux-Chain/conflux-documentation/pull/494)  | 128                   | 320\*125%          | New article on reentrancy attack                               | - Significant content (common security issue) <br/> + Includes code sample <br/> + Resolves issue raised by creator <br/> + Provides clear explanation on the topic |
+| [PR#493](https://github.com/Conflux-Chain/conflux-documentation/pull/493)  | 128                   | 196\*125%          | New article on circuit logic gas cost                          | * Includes code <br/> + Resolves issue raised by creator <br/> + Provides clear explanation on the topic <br/> - Content of less importance                                            |
+| [PR#473](https://github.com/Conflux-Chain/conflux-documentation/pull/485)  | 32                    | 80                 | Suggests usage of Confura API key                              | - Provides important clarification <br/> + Adds to frequently used content                                                                                                             |
+| [PR #467](https://github.com/Conflux-Chain/conflux-documentation/pull/467) | 96                    | 150\*125%          | Improves website display for mobile devices                    | * Requires front-end technique <br/> + Resolves issue raised by creator                                                                                                                |
+| [PR #425](https://github.com/Conflux-Chain/conflux-documentation/pull/425) | 320                   | 640                | Offers an out-of-the-box sample project for eSpace development | - Is Conflux-specific content <br/> + Includes code demonstration <br/> + Provides a detailed explanation and video tutorial <br/> + Offers a ready-to-use project out of the box      |
+
+:::note
+
+The 'Anticipated Reward' is an estimated figure of the FC that contributors might receive, according to our **most recent** reward guidelines. However, please keep in mind that the actual reward amount may vary. This variation could be due to the contributor being an internal member of our team, or due to changes made to our contribution guidelines.
+
+:::
+
+## Reward Distribution Process
+
+We track rewards using an internal Notion table and the results will be regularly posted in our [Github discussions](https://github.com/Conflux-Chain/conflux-documentation/discussions).
+
+Rewards are distributed on a regular basis, at least once every three months. We aim to refine our workflow to reduce this interval over time.
+
+## Regular Evaluation of Reward Guidelines
+
+It's important to note that our reward guidelines are reviewed, and potentially revised, after each round of reward distribution. This ensures that our guidelines remain up-to-date and effective in encouraging and rewarding useful contributions.
+
+We greatly appreciate your contributions and thank you for aiding us in enhancing our documentation site! If you have any queries or require support, please don't hesitate to open an issue in our Github repository.
