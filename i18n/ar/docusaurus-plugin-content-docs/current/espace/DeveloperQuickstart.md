@@ -27,22 +27,22 @@ Once you're ready to deploy on eSpace's mainnet, if you only have Core CFX, you 
 
 Use the table below to configure your Ethereum tools to the eSpace mainnet.
 
-| Network Name       | Conflux eSpace                                           |
-| ------------------ | -------------------------------------------------------- |
+| Network Name       | Conflux eSpace                                                                                           |
+| ------------------ | -------------------------------------------------------------------------------------------------------- |
 | RPC URL            | [https://evm.confluxrpc.com](https://evm.confluxrpc.com) |
-| Chain ID           | 1030                                                     |
-| Currency Symbol    | CFX                                                      |
+| Chain ID           | 1030                                                                                                     |
+| Currency Symbol    | CFX                                                                                                      |
 | Block Explorer URL | [https://evm.confluxscan.io](https://evm.confluxscan.io) |
 
 ### eSpace Testnet
 
 Use the table below to configure your Ethereum tools to the eSpace Testnet.
 
-| Network Name       | Conflux eSpace Testnet                                                 |
-| ------------------ | ---------------------------------------------------------------------- |
+| Network Name       | Conflux eSpace Testnet                                                                                                 |
+| ------------------ | ---------------------------------------------------------------------------------------------------------------------- |
 | RPC URL            | [https://evmtestnet.confluxrpc.com](https://evmtestnet.confluxrpc.com) |
-| Chain ID           | 71                                                                     |
-| Currency Symbol    | CFX                                                                    |
+| Chain ID           | 71                                                                                                                     |
+| Currency Symbol    | CFX                                                                                                                    |
 | Block Explorer URL | [https://evmtestnet.confluxscan.io](https://evmtestnet.confluxscan.io) |
 
 ## Configure your tooling
