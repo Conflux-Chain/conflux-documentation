@@ -99,8 +99,8 @@ $ RUST_BACKTRACE=full target/release/storage_bench run -g /path/to/foundation.js
 
 1. `fork_same_height_merge.py` 会创建一个不稳定的 TreeGraph，大约有 95000 个区块。 In the TreeGraph, it has three branches and in each branch there are
    star shape forks attached at a fixed height. It corresponds to one worst case
-   scenario for the consensus procesing engine. The expected speed is \~70 blocks/s
-   on MacBook Pro 2019 and \~45 blocks/s on m5a.xlarge.
+   scenario for the consensus procesing engine. The expected speed is ~70 blocks/s
+   on MacBook Pro 2019 and ~45 blocks/s on m5a.xlarge.
 
 2. `fork_same_height_hiding.py` tests the scenario where an attacker tries to
    actively mine at a fixed height, hides the mined blocks, and release them
