@@ -74,7 +74,7 @@ Start to subscribe the proof-of-work notification from the stratum server
 }
 ```
 
-***
+---
 
 #### mining.submit
 
@@ -113,7 +113,7 @@ Submit a PoW solution to the stratum server
 }
 ```
 
-***
+---
 
 ### Client-side Notification
 
