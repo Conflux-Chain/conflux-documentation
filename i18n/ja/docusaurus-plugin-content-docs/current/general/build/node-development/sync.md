@@ -26,7 +26,7 @@ Synchronization graph checks the validity of arriving blocks. The blocks that do
 12. Check whether the total size of the transactions in the block body is larger than the block size limit (800KB). If so, the block is invalid.
 13. Check whether the total gas limit of transactions in the block body is larger than the block gas limit. If so, the block is invalid.
 
-The validity checks 1\~9 only use information in block header. The validity checks 10\~13 use the information in block body. The checks 6\~9 require graph structure information like parent information and are conducted on a block when the headers of all its past blocks have entered the synchronization graph. To speed up the block relay process, when both the header and body of a block have entered the synchronization graph and the headers of all its past blocks have also entered, the block can be relayed to the peers. It is not needed to wait for the bodies of all the past blocks of a block to be received in order to relay the block. This may lead to relaying invalid blocks, but since all the relayed blocks already have valid difficulty and POW settings, the attackers who make this case also pay the corresponding cost of computation power.
+The validity checks 1~9 only use information in block header. The validity checks 10~13 use the information in block body. The checks 6~9 require graph structure information like parent information and are conducted on a block when the headers of all its past blocks have entered the synchronization graph. To speed up the block relay process, when both the header and body of a block have entered the synchronization graph and the headers of all its past blocks have also entered, the block can be relayed to the peers. It is not needed to wait for the bodies of all the past blocks of a block to be received in order to relay the block. This may lead to relaying invalid blocks, but since all the relayed blocks already have valid difficulty and POW settings, the attackers who make this case also pay the corresponding cost of computation power.
 
 ### Graph Structure Maintenance
 
@@ -93,14 +93,14 @@ The effects of these changes are fulfilled by conducting a BFS traversal from th
 During this traversal process, for each node,
 
 1. if it is invalid, all its descendants are invalid;
-2. if it is new to be `BLOCK_HEADER_GRAPH_READY`, some graph-related validity checks (6\~9) are applied on it.
+2. if it is new to be `BLOCK_HEADER_GRAPH_READY`, some graph-related validity checks (6~9) are applied on it.
    If it passes these checks, it is then checked whether its block body has already entered synchronization graph (by checking the `block_ready` field of the graph node).
    If so, this block is ready to be relayed. And this block may make some of its descendants become `BLOCK_HEADER_GRAPH_READY`.
    Note that this cannot make its descendants become `BLOCK_GRAPH_READY` since the original node (at the starting point of the BFS process) for the newly arrived block header can only be `BLOCK_HEADER_GRAPH_READY`;
 
 When a block body just enters the synchronization graph, the corresponding graph node should already exist in synchronization graph, otherwise, the block will be ignored (this may happen if it is garbage collected).
 The `block_ready` field of this node will be set as true now.
-The block then goes through the corresponding validity checks (10\~13).
+The block then goes through the corresponding validity checks (10~13).
 And similarly, this newly arrived block body will change the status of some of its descendants.
 This is also done by conducting a BFS traversal from this node.
 During this traversal process, for each node,
