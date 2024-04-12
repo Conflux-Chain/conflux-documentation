@@ -17,7 +17,7 @@ displayed_sidebar: generalSidebar
 
 ## 从Conflux Core转移CFX到BNB Smart Chain
 
-1. 访问Zero Gravity网页应用：https\://portal.zglabs.org/
+1. 访问Zero Gravity网页应用：https://portal.zglabs.org/
 
 2. 点击连接钱包将您的Fluent连接到Zero Gravity。
 
