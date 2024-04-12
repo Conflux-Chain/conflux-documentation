@@ -9,7 +9,7 @@ keywords:
 displayed_sidebar: eSpaceSidebar
 ---
 
-[Scaffold Conflux](https://github.com/conflux-fans/conflux-scaffold) 是 Scaffold-ETH-2 (https\://scaffoldeth.io/) 的一个修改版本，我们调整了模板，允许您在 Conflux eSpace 上部署合约，并利用组件、集成 hardhat 和 Scaffold-ETH-2 的快速部署。 在本教程中，我们将向您展示如何设置 Scaffold Conflux，以更好地读取您的智能合约，并利用一些现成的 react 组件快速制作您的 Conflux eSpace 应用。
+[Scaffold Conflux](https://github.com/conflux-fans/conflux-scaffold) 是 Scaffold-ETH-2 (https://scaffoldeth.io/) 的一个修改版本，我们调整了模板，允许您在 Conflux eSpace 上部署合约，并利用组件、集成 hardhat 和 Scaffold-ETH-2 的快速部署。 在本教程中，我们将向您展示如何设置 Scaffold Conflux，以更好地读取您的智能合约，并利用一些现成的 react 组件快速制作您的 Conflux eSpace 应用。
 
 观看这个[视频](https://youtu.be/33S0IjGGsQg)，它完整地展示了如何从零开始创建一个应用并将其部署在 Conflux eSpace 上。
 
@@ -81,8 +81,8 @@ Conflux Scaffold 的强大之处在于，您可以快速在 Hardhat 中部署您
 
 - 您可以在这里了解到如何从 /components/scaffold-eth 快速导入组件
 - 例如，有地址、余额、地址输入组件等，所有这些都可以快速添加到您的应用中。 视频教程展示了一个如何快速导入和提取一个地址类型的输入的例子。
-- 更多组件可以在 https\://docs.scaffoldeth.io/components/ 中看到
-- 还有其他一些接口对于读取和写入合约（以及设置事件订阅）极其重要。 包括 useScaffoldContractRead, useScaffoldContractWrite 等，您可以从 "\~\~/hooks/scaffold-eth/index" 导入
+- 更多组件可以在 https://docs.scaffoldeth.io/components/ 中看到
+- 还有其他一些接口对于读取和写入合约（以及设置事件订阅）极其重要。 包括 useScaffoldContractRead, useScaffoldContractWrite 等，您可以从 "~~/hooks/scaffold-eth/index" 导入
 - 更多接口相关的参数要求都在 [文档](https://docs.scaffoldeth.io/components/) 中可以查阅到，在这里的两个例子展示了创建智能合约、从合约中读取一个函数和写入一个函数是一件非常容易的事情。
 
 ![合约实例](../img/ContractInstance.png)
