@@ -17,7 +17,7 @@ In this tutorial, we will explain the steps to transfer CFX from Conflux Core Sp
 
 ## Transferring CFX from Conflux Core to BNB Smart Chain
 
-1. Go to the Zero Gravity web application: https\://portal.zglabs.org/
+1. Go to the Zero Gravity web application: https://portal.zglabs.org/
 
 2. Click Connect Wallet to connect your Fluent to Zero Gravity.
 
