@@ -6,7 +6,7 @@ displayed_sidebar: generalSidebar
 
 In many common DeFi projects, we frequently encounter various complex calculations that inevitably require defining many new local variables and updating existing global variables. It's well-known that modifying storage is significantly more expensive than making changes in memory.
 
-**Demo Code**
+**代码演示**
 
 Below, we present two different methods to modify storage variables and observe the gas difference.
 
