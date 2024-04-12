@@ -6,5 +6,6 @@
     "deploymentEnabled": {
       "l10n_main": false
     }
-  }
+  },
+  "trailingSlash": false
 }
