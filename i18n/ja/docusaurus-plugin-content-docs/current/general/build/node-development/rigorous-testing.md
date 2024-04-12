@@ -58,8 +58,8 @@ script. These numbers are default that we empirically find them useful for
 detecting bugs.
 
 The python script will also print out the processing speed of the consensus
-graph in the test. The expected speed is \~1000 blocks per second (on a Mac Book
-Pro 2019 laptop) and \~350 blocks per second on m5a.xlarge. If the reported
+graph in the test. The expected speed is ~1000 blocks per second (on a Mac Book
+Pro 2019 laptop) and ~350 blocks per second on m5a.xlarge. If the reported
 speed is significantly lower than expected, it typically means a potential
 performance issue. For every release, we execute this fuzzing for at least one
 hour using the default parameters.
@@ -120,7 +120,7 @@ $ ./one_click.sh key-pair-name 20 branch-name [repo-name]
 This will start 20 instances at the us-west-2 region together with a random
 transaction generator. It will take roughly 15 minutes to setup the experiments
 and then 20 minutes to finish the run. In the end, it will report the TPS
-performance. The expected good TPS number is \~4000TPS. If you get a TPS number
+performance. The expected good TPS number is ~4000TPS. If you get a TPS number
 much lower than the expectation, there is a performance regression at the
 transaction pool or at the storage layer. For every release, we run this script
 to test its performance.
@@ -130,7 +130,7 @@ to test its performance.
 The storage layer in Conflux is often the performance bottleneck.
 `core/benchmark/storage` therefore contains a benchmark tool to measure the
 performance of the storage layer, eliminating other layer from the execution.
-We also converted Ethereum network history payment transactions (first \~4m
+We also converted Ethereum network history payment transactions (first ~4m
 blocks) as the benchmark traces. Here are steps to run the storage benchmark
 test:
 
@@ -174,8 +174,8 @@ consensus performance under attack scenarios:
 1. `fork_same_height_merge.py` creates a unstable TreeGraph with roughly 95000
    blocks. In the TreeGraph, it has three branches and in each branch there are
    star shape forks attached at a fixed height. It corresponds to one worst case
-   scenario for the consensus procesing engine. The expected speed is \~70 blocks/s
-   on MacBook Pro 2019 and \~45 blocks/s on m5a.xlarge.
+   scenario for the consensus procesing engine. The expected speed is ~70 blocks/s
+   on MacBook Pro 2019 and ~45 blocks/s on m5a.xlarge.
 
 2. `fork_same_height_hiding.py` tests the scenario where an attacker tries to
    actively mine at a fixed height, hides the mined blocks, and release them
