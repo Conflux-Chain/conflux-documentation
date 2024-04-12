@@ -78,7 +78,7 @@ import TabItem from '@theme/TabItem';
      contracts/Lock.sol:Lock
    ```
 
-   - `<lock_amount>` is the amount of test `CFX` to be locked in the contract. Try setting this to some small amount, like `0.0000001ether`.\&#x20
+   - `<lock_amount>` is the amount of test `CFX` to be locked in the contract. Try setting this to some small amount, like `0.0000001ether`.&#x20
    - `<unlock_time>` is the Unix timestamp after which the funds locked in the contract will become available for withdrawal. Try setting this to some Unix timestamp in the future, like `1730390400` (this Unix timestamp corresponds to October 1, 2024).
 
    For example:

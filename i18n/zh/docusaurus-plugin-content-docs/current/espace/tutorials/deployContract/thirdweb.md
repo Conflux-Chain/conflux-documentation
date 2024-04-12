@@ -52,11 +52,11 @@ displayed_sidebar: eSpaceSidebar
 
 5. 在使用所需的自定义逻辑修改完您的合约之后，可以使用 [Deploy](https://portal.thirdweb.com/deploy) 将其部署到 Conflux。
 
-***
+---
 
 或者您可以从 thirdweb Explore 页面直接部署预构建的合约，可以用于 NFT、代币或市场：
 
-1. 访问 thirdweb Explore 页面：https\://thirdweb.com/explore
+1. 访问 thirdweb Explore 页面：https://thirdweb.com/explore
 
    ![thirdweb Explore page](/img/thirdweb-explore.png)
 

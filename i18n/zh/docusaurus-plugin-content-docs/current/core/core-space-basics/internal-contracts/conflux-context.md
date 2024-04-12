@@ -10,7 +10,7 @@ This contract can be used in `Solidity contract` to query Conflux Core network i
 - `posHeight` - PoS链的当前区块高度
 - `finalizedEpochNumber` - （由PoS链）最新确定的PoW纪元号
 
-## Interface
+## 接口
 
 `ConfluxContext`的hex40合约地址是`0x0888000000000000000000000000000000000004`
 

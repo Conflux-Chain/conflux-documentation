@@ -30,7 +30,7 @@ Conflux 引入了质押机制，有两个原因：第一，质押机制提供了
 
 在任何时候，每个锁定的 Drip 都会根据其解锁时间被分配一个从 0 到 1 的*投票权*。 在一年以上解锁的 Drip 将拥有完全的投票权。 更多细节请参见 [Conflux 协议规范](https://conflux-protocol.s3-ap-southeast-1.amazonaws.com/tech-specification.pdf)第 8.3.2 节。
 
-## Interface
+## 接口
 
 The address of the internal contract: `0x0888000000000000000000000000000000000002`
 

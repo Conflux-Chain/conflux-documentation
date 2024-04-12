@@ -6,7 +6,7 @@ displayed_sidebar: generalSidebar
 
 Conflux 的共识层处理从同步层接收到的所有区块，根据 Conflux GHAST 共识算法产生区块的完整顺序，并调用底层的交易执行引擎以按确定的顺序运行交易。 它提供了必要的信息，以协助 **区块生成器** 准备新区块的骨架。 它还通知 **交易池(transaction pool)** 已处理好的交易，以便交易池可以做出更好的交易选择决策。
 
-本文档旨在为想要了解 Conflux 共识层（位于目录core/src/consensus中）的 Rust 实现的读者提供高级概述。 对于更多的实现细节，请查看代码中的内联注释。 对于 Conflux 共识算法的更多信息，请参阅 Conflux 协议规范和 Conflux 论文（https\://arxiv.org/abs/1805.03870）。
+本文档旨在为想要了解 Conflux 共识层（位于目录core/src/consensus中）的 Rust 实现的读者提供高级概述。 对于更多的实现细节，请查看代码中的内联注释。 对于 Conflux 共识算法的更多信息，请参阅 Conflux 协议规范和 Conflux 论文（https://arxiv.org/abs/1805.03870）。
 
 ## 设计目标
 

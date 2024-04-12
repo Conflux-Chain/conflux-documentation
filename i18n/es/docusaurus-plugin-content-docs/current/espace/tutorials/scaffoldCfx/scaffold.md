@@ -9,7 +9,7 @@ keywords:
 displayed_sidebar: eSpaceSidebar
 ---
 
-[Scaffold Conflux](https://github.com/conflux-fans/conflux-scaffold) is an adaptation of Scaffold-ETH-2 (https\://scaffoldeth.io/) whereby we have adjusted the template to allow you to deploy the contract on Conflux eSpace and leverage the components, integration of hardhat, and the quick deployment of Scaffold-ETH-2. In this tutorial, we will show you how to set-up Scaffold Conflux to better understand your smart contract and to leverage some of the beautiful react components available to quickly make your app on Conflux eSpace.
+[Scaffold Conflux](https://github.com/conflux-fans/conflux-scaffold) is an adaptation of Scaffold-ETH-2 (https://scaffoldeth.io/) whereby we have adjusted the template to allow you to deploy the contract on Conflux eSpace and leverage the components, integration of hardhat, and the quick deployment of Scaffold-ETH-2. In this tutorial, we will show you how to set-up Scaffold Conflux to better understand your smart contract and to leverage some of the beautiful react components available to quickly make your app on Conflux eSpace.
 
 Watch this [video](https://youtu.be/33S0IjGGsQg) for full tutorial on how to create an app from scratch and deploy it live on Conflux eSpace.
 
@@ -81,8 +81,8 @@ Once you have your front-end up and running, the fun begins on connecting your f
 
 - You can see here that components can be quickly imported from /components/scaffold-eth
 - For example, there is an Address, Balance, AddressInput component, etc. all which can be used quickly to add to your app. In the video tutorial, there is an example of how an AddressInput is quickly imported and rendered.
-- Additional components can be seen in the documentation https\://docs.scaffoldeth.io/components/
-- There are other hooks which are extremely important for reading and writing the contract (as well as setting up event subscription). These are the useScaffoldContractRead, useScaffoldContractWrite, etc. which are imported from "\~\~/hooks/scaffold-eth/index"
+- Additional components can be seen in the documentation https://docs.scaffoldeth.io/components/
+- There are other hooks which are extremely important for reading and writing the contract (as well as setting up event subscription). These are the useScaffoldContractRead, useScaffoldContractWrite, etc. which are imported from "~~/hooks/scaffold-eth/index"
 - The arguments requirement for the hooks are all in the [documentation](https://docs.scaffoldeth.io/components/) but here are two examples of how easy it is to create a contract instance, read a function from the contract, and write into a function.
 
 ![Contract Instance](../img/ContractInstance.png)

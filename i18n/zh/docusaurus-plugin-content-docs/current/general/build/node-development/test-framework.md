@@ -75,12 +75,12 @@ This example tries to get the genesis block header from node 0 with P2P requests
 
 By default, tests will use the release version executable binary built by `cargo`. If you want to use a file at another path (e.g., a debug version binary), you can set the environment variable `CONFLUX` to the full path of the used binary file before running the tests.
 
-TODO
+待实现
 
 ## Utility Function List
 
-TODO
+待实现
 
 ## Introduction to Existing Python Tests
 
-TODO
+待实现

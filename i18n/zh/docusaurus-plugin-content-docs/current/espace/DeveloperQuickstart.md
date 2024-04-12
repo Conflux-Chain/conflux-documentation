@@ -27,22 +27,22 @@ eSpace 也使用 CFX 作为其原生货币，用于支付部署合约和与网�
 
 使用下表的配置将您的以太坊工具以连接到 eSpace 主网。
 
-| 网络名称      | Conflux eSpace                                           |
-| --------- | -------------------------------------------------------- |
+| 网络名称      | Conflux eSpace                                                                                           |
+| --------- | -------------------------------------------------------------------------------------------------------- |
 | RPC URL   | [https://evm.confluxrpc.com](https://evm.confluxrpc.com) |
-| 链 ID      | 1030                                                     |
-| 货币符号      | CFX                                                      |
+| 链 ID      | 1030                                                                                                     |
+| 货币符号      | CFX                                                                                                      |
 | 区块浏览器 URL | [https://evm.confluxscan.io](https://evm.confluxscan.io) |
 
 ### eSpace 测试网
 
 使用下表的配置将您的以太坊工具以连接到 eSpace 测试网。
 
-| 网络名称      | Conflux eSpace 测试网                                                     |
-| --------- | ---------------------------------------------------------------------- |
+| 网络名称      | Conflux eSpace 测试网                                                                                                     |
+| --------- | ---------------------------------------------------------------------------------------------------------------------- |
 | RPC URL   | [https://evmtestnet.confluxrpc.com](https://evmtestnet.confluxrpc.com) |
-| 链 ID      | 71                                                                     |
-| 货币符号      | CFX                                                                    |
+| 链 ID      | 71                                                                                                                     |
+| 货币符号      | CFX                                                                                                                    |
 | 区块浏览器 URL | [https://evmtestnet.confluxrpc.com](https://evmtestnet.confluxrpc.com) |
 
 ## 配置工具

@@ -78,7 +78,7 @@ import TabItem from '@theme/TabItem';
      contracts/Lock.sol:Lock
    ```
 
-   - `<lock_amount> ` 是需要锁定在合约中的测试 CFX 数量。 尝试将其设置为一些小数额，比如 `0.0000001ether`。\&#x20
+   - `<lock_amount> ` 是需要锁定在合约中的测试 CFX 数量。 尝试将其设置为一些小数额，比如 `0.0000001ether`。&#x20
    - `<unlock_time>` 是锁定在合约中的资金可供提取的 Unix 时间戳。 尝试将其设置为未来的某个 Unix 时间戳，比如 `1730390400`（这个 Unix 时间戳对应于 2024 年 10 月 1 日）。
 
    例如：

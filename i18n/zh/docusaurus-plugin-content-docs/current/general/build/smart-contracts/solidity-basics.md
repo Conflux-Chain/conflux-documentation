@@ -6,23 +6,23 @@ displayed_sidebar: generalSidebar
 
 ## 介绍
 
-Solidity is a high-level programming language designed for implementing smart contracts on blockchain platforms like Ethereum and Conflux Network. It's statically typed, supports inheritance, libraries, and complex user-defined types, making it a powerful tool for creating sophisticated contracts.
+Solidity 是为在以太坊和 Conflux 等区块链平台上编写智能合约而设计的高级编程语言。 它是静态类型的，支持继承、库以及复杂的用户定义类型，这些特性使其成为创建复杂合约的有力工具。
 
-- **Language Structure:** Solidity's syntax is similar to JavaScript, making it relatively accessible to new developers. It includes variables, functions, and control structures (like if-else, loops).
+- **语言结构**：Solidity 的语法类似于 JavaScript，使其对新开发者相对容易上手。 它包括变量、函数和控制结构（如 if-else、循环）。
 
-- **Smart Contracts in Solidity**: Contracts in Solidity are collections of code and data that reside at a specific address on the blockchain. They can define rules, store data, and automatically execute functions when conditions are met.
+- **Solidity 中的智能合约**：Solidity 中的合约是一组代码和数据的集合，位于区块链上的特定地址。 它们可以定义规则、存储数据，并在满足条件时自动执行函数。
 
-- **Variables and Types**: Solidity supports various data types including integers, booleans, and strings. It also supports complex types like arrays and structs, offering flexibility in data management.
+- **变量和类型**：Solidity 支持包括整数、布尔值和字符串在内的各种数据类型。 它还支持数组和结构体等复杂类型，使得对数据的管理更加灵活。
 
-- **Functions and Modifiers**: Functions are the executable units in a contract. Modifiers can be used to change the behavior of functions, often for access control.
+- **函数和修饰符**：函数是智能合约中的可执行单元。 修饰符可以用来改变函数的行为，通常用于访问控制。
 
-- **Inheritance and Libraries**: Solidity supports inheritance, allowing contracts to inherit properties from other contracts. Libraries provide reusable code that can be deployed independently.
+- **继承和库**：Solidity 支持继承，允许合约从其他合约继承属性。 库提供了可以独立部署的可重用代码。
 
-- **Gas and Optimization**: Understanding gas (the fee for executing operations) is crucial in Solidity. Writing efficient code can help in minimizing transaction costs.
+- **Gas 和优化**：理解 gas（执行操作的费用）在 Solidity 中至关重要。 编写高效的代码有助于降低交易成本。
 
-- **Deployment and Interactions**: After writing and testing, contracts are deployed to the blockchain. They can interact with other contracts and be called by external users.
+- **部署和交互**：在进行编写和测试之后，合约会被部署到区块链上。 它们可以与其他合约交互，也可以被外部用户调用。
 
-For a deeper understanding, we invite you to watch the following series of informative videos. These guides walk you through the fundamentals of Solidity, offering clear examples and detailed explanations to enhance your learning experience.
+为了更深入地理解 Solidity，我们邀请您观看以下一系列视频。 这些指导将带您深入了解 Solidity 的基础知识，提供清晰的示例和详细的解释，以增强您的学习体验。
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -87,7 +87,7 @@ import TabItem from '@theme/TabItem';
 
 ## Libraries
 
-**OpenZeppelin Contracts -** **_Library for secure smart contract development._**
+**OpenZeppelin Contracts -** **_用于智能合约安全开发的库。_**
 
 - [openzeppelin.com/contracts/](https://openzeppelin.com/contracts/)
 - [GitHub](https://github.com/OpenZeppelin/openzeppelin-contracts)

@@ -11,8 +11,8 @@ In Solidity, developers can define errors in three main forms: `revert`, `requir
 
 The main differences are as follows:
 
-| Type      | Custom Reason | Carries Variable | Example                                                                                   |
-| --------- | ------------- | ---------------- | ----------------------------------------------------------------------------------------- |
+| Type      | Custom Reason | Carries Variable | Example                                                                                                   |
+| --------- | ------------- | ---------------- | --------------------------------------------------------------------------------------------------------- |
 | `revert`  | ✅             | ✅                | Reason: UnauthorizedAccess(0x05D01CAF54524A610CCF187082201120757f7AE5) |
 | `require` | ✅             | ❌                | Reason: UnauthorizedAccess                                                                |
 | `assert`  | ❌             | ❌                | Reason: Assertion violated                                                                |

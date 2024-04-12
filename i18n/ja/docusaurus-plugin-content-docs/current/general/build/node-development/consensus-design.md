@@ -16,7 +16,7 @@ This document is to provide a high-level overview for readers who want to
 understand the rust implementation of the Conflux consensus layer (in directory
 core/src/consensus). For more implementation details, see inlined comments in
 the code. For more information about the Conflux consensus algorithm, see
-Conflux Protocol Specification and Conflux paper (https\://arxiv.org/abs/1805.03870).
+Conflux Protocol Specification and Conflux paper (https://arxiv.org/abs/1805.03870).
 
 ## Design Goals
 

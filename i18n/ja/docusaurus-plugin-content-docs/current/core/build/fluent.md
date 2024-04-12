@@ -10,7 +10,7 @@ Fluent Wallet provides [integration documentation](https://docs.fluentwallet.com
 
 :::tip
 
-Refer to https\://docs.fluentwallet.com/espace/ for eSpace integration tutorials. It is also recommended to refer to [use-wallet](../../general/build/tools/use-wallet.md) to simplify wallet integration.
+Refer to https://docs.fluentwallet.com/espace/ for eSpace integration tutorials. It is also recommended to refer to [use-wallet](../../general/build/tools/use-wallet.md) to simplify wallet integration.
 
 :::
 

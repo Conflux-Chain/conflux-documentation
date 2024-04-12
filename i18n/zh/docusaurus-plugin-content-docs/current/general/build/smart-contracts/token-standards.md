@@ -4,28 +4,28 @@ title: Token 标准
 displayed_sidebar: generalSidebar
 ---
 
-Token standards are critical in blockchain ecosystems, providing a set of rules and guidelines for token implementation. They ensure interoperability and consistency across different applications and platforms. The main standards include:
+区块链生态系统中的代币（Token）标准是至关重要的，它们为代币的实施提供了一套标准和指导原则。 这些标准确保了不同应用和平台间的互操作性和一致性。 主要标准包括：
 
-- **ERC-20**: The most common standard for fungible tokens, allowing for the creation of interchangeable tokens with uniform properties. It's widely used for ICOs and as a basis for other tokens.
+- **ERC-20**：最常用的同质化代币标准，允许创建具有统一属性的可交换代币。 它被广泛用于 ICO 并作为其他代币的基础。
 
-- **ERC-721**: A standard for non-fungible tokens (NFTs), enabling the creation of unique tokens. Each token has distinct characteristics, ideal for collectibles and digital uniqueness.
+- **ERC-721**：非同质化代币（NFT）的标准，它保证了创建的代币具有唯一性。 每个代币都有不同的特性，非常适合收藏品以及代表数码独特性。
 
-- **ERC-1155**: A multi-token standard allowing a single contract to manage multiple token types, both fungible and non-fungible. It's efficient for batch transfers and managing complex token ecosystems.
+- **ERC-1155**：一种多代币标准，允许一个合约管理多种类型的代币，包括同质化代币和非同质化代币。 它对于批量转移和管理复杂的代币生态系统非常有效。
 
-- **CIP-1820**: Specific to Conflux, this standard focuses on interface detection, making it easier to identify and interact with contracts that follow specific interfaces.
+- **CIP-1820**：一种 Conflux 特有的标准，专用于接口检测，它使得和与使用特定接口的合约的识别和交互更加容易。
 
-These standards are integral for developers to create tokens that are compatible and functional within the broader blockchain environment.
+这些标准对于开发者来说至关重要，它们的存在使得发行的代币能够兼容更复杂的区块链环境并且使得它们功能齐全。
 
-## Related Links
+## 相关链接
 
-Here are some links relating to this topic:
+以下是与此主题相关的一些链接：
 
 - [ERC-20](https://eips.ethereum.org/EIPS/eip-20)
 - [ERC-721](https://eips.ethereum.org/EIPS/eip-721)
 - [ERC-1155](https://eips.ethereum.org/EIPS/eip-1155)
 - [CIP-1820](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-1820.md)
 
-## Videos
+## 视频
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';

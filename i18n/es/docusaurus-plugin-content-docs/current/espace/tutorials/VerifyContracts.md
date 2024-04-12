@@ -11,10 +11,10 @@ After deploying your smart contracts, it's important to verify your code on a bl
 
 Most smart contract tooling has plugins for verifying your contracts easily on ConfluxScan.
 
-| Network | Scan API                                    |
-| ------- | ------------------------------------------- |
-| Mainnet | https\://evmapi.confluxscan.io/api/         |
-| Testnet | https\://evmapi-testnet.confluxscan.io/api/ |
+| Network | Scan API                                                                                   |
+| ------- | ------------------------------------------------------------------------------------------ |
+| Mainnet | https://evmapi.confluxscan.io/api/         |
+| Testnet | https://evmapi-testnet.confluxscan.io/api/ |
 
 ### Hardhat
 

@@ -13,69 +13,96 @@ This article details how your contributions, categorized under 'Issues' and 'Pul
 
 ## 准则
 
-### 问题（Issue）：16 \~ 80 FC
+### 问题奖励准则
 
-- 如果在提出问题的同时提供了解决方案，奖励将加倍。 以下是一些示例：
-  - **格式化**
-    - 发现拼写或语法错误：16 FC
-    - 发现损坏的链接或过时的细节：16 FC
-    - 发现代码块等格式问题：16 FC
-    - 标记图片、图表相关问题：16 FC
-  - **增强可读性**
-    - 提出现有解释不清晰：16 FC
-    - 建议完善对某些问题的描述：16 FC
-    - 建议举出用例以使得对特定功能的解释更清晰：32 FC
-    - 指出因缺乏上下文语境而导致的理解困难：32 FC
-    - 强调缺乏工具/文档链接等导致交互性受限：32 FC
-    - 建议创建或改进示例、图表或视觉辅助工具：32 FC
-    - 请求更多关于特定主题的详细信息：48 FC
-    - 建议编写与Conflux相关的新文章：48 FC
-    - 建议改进文档结构：48 FC
-    - 建议为Conflux的基本产品创建使用指南：48 FC
-  - **发现错误**
-    - 发现当前概念解释中的错误：64 FC
-    - 标记失败的示例：64 FC
-    - 发现代码中的逻辑错误：80 FC
-    - Pinpointing inaccuracies in API document parameters that hamper utility: 80 FC
-    - 发现不准确的功能描述：80 FC
-    - 发现文档中的技术错误：80 FC
-    - 指出当前治理方面的不足之处：奖励视情况而定。
+Creating issues is an excellent way for us to understand the needs of the community and identify areas for improvement. Issues created will be tagged as either `ACCEPTED` or `REJECTED`, indicating our assessment of whether the content is suitable for further action.
 
-### 拉取请求（Pull Request）：16 \~ 640 FC 甚至更多
+- **格式问题**
+  - 发现拼写或语法错误：16 FC
+  - 发现失效链接：16FC
+  - Highlighting issues with code blocks, localization or other format-related problems: 32 FC
+  - Flagging **format** issues with images, diagrams: 24 FC, or 48 FC if a solution is proposed (not necessarily a pull request).
+- **发现错误**
+  - 指出产品信息需要更新：32 FC。
+  - 发现技术或概念细节方面的错误或不准确的信息：80 FC。 这包括：
+    - 描述问题：概念解释、API 文档参数、功能特性等。
+    - 代码问题：要求能够在通用或特定平台上复现，包括失败的示例代码、意外的代码输出、失败的命令等。
+- **Suggesting Improvements**
+  - 建议对某些主题进行完善，以简化理解或提供更多细节：根据问题的重要性及是否提出解决方案（不一定是拉取请求），奖励从 32 FC 到 64 FC 不等。 这包括：
+    - 指出解释的模糊之处
+    - 建议增加或完善图表、图解或视觉辅助工具
+    - 指出缺乏背景信息（解释或示例），导致描述难以理解
+    - 指出对功能的描述不够详细，如缺乏实现方法或对极端情况的讨论
+  - 建议增加针对特定主题的新文章：根据问题的重要性，奖励从 32 FC 到 64 FC 不等。
+  - 建议改进文档结构：对有价值但不一定被接受的解决方案给予 32 FC，若被接受则给予 64 FC。 注意：我们将仔细考虑这些问题。
+  - 指出当前治理方面的不足之处：奖励视情况而定。
+- **文档页面代码问题**
+  - 前端样式问题：包括布局、字体大小、行间距等：48 FC，若有解决方案（不一定是拉取请求）给予 96 FC
+  - 建议针对特定功能引入特定组件：96 FC。
+  - 其他问题：根据具体情况确定。
 
-- 在创建拉取请求之前，最好先提出一个问题。 如果拉取请求完全解决了一个问题，无论解决该问题所需的努力多少，您都将会获得至少与提出该问题相等的奖励。
-- 如果拉取请求的发起者解决了他们提出的问题，他们将额外获得25%的奖励。
-- 例如：
-  - **格式问题**
-    - 修复拼写或语法错误：16 FC
-    - 更新失效链接或过时信息：16 FC
-    - 解决代码块格式等格式相关问题：32 FC
-    - 纠正图片、图表的显示等问题：64 FC
-  - **改进**
-    - 为概念提供更好的解释：至少 30 FC，视内容和重要性而定，可达 100 FC 或更多。
-    - 优化对问题的描述：至少 30 FC，视内容和重要性而定，可达 100 FC 或更多。
-    - 为特定功能的用例添加解释：至少 128 FC，视内容和重要性而定，可达 300 FC 或更多。
-    - 添加上下文语境以易于理解：至少 128 FC，视内容和重要性而定，可达 300 FC 或更多。
-    - 添加工具、文档链接等增强交互性：至少 64 FC，视内容和重要性而定，可达 300 FC 或更多。
-    - 创建或改进示例、图表等视觉辅助工具：至少 100 FC，视内容和重要性而定，可达 300 FC 或更多。
-    - 提供关于某个主题的详细阐述：至少 60 FC，视内容和重要性而定，可达 300 FC 或更多。
-    - 撰写关于Conflux主题的新文章：300 FC，根据复杂性和社区需求可能更多。
-    - 为Conflux产品的基本使用编写用户指南：300 FC，可能更多。
-  - **解决错误**
-    - Offering correct concept explanations: From 60 FC, up to 300 FC or more, determined by content and significance.
-    - Providing correct example results: From 30 FC, up to 300 FC or more, determined by content and significance.
-    - Providing correct codes: From 60 FC, up to 600 FC or more, determined by complexity and significance.
-    - Correcting API document parameters: From 60 FC, up to 300 FC or more, depending on content and significance.
-    - Providing accurate feature descriptions: From 60 FC, up to 300 FC or more, depending on content and significance.
-    - Correcting technical inaccuracies in documentation: From 60 FC, up to 300 FC or more, depending on significance.
-    - Proposing corrections for governance deficiencies: Determined on a case-by-case basis.
+### 拉取请求奖励指南
 
-## 奖励分发方式
+拉取请求的奖励值主要由内容的复杂度和重要性决定。 具体的评估方法，请参考 [奖励评估](#rewards-evaluation-and-examples) 。
 
-我们将使用 Dework 来跟踪奖励历史记录，并且我们将每季度分发一次奖励。 如果您想做出贡献并获得 FC 奖励，请加入[我们的 Dework 空间](https://app.dework.xyz/conflux/developer-portal-1958)。
+- 如果拉取请求的发起者解决了他们提出的问题，将额外获得 25% 的奖励。
+- **格式问题**:
+  - 修复拼写或语法错误：16 FC
+  - 更新失效链接：16 FC。
+  - 解决代码块格式等格式相关问题：32 FC
+  - 修正图像、图表的格式问题：64 FC。
+- **解决错误**
+  - 更新过时的产品信息：64 FC，最高可达 128 FC 或更多，具体由内容和重要性决定。
+  - 提供正确的解释：如解释性概念、API 文档参数、功能特性等：从 64 FC 开始，最高可达 128 FC 或更多，具体由内容和重要性决定。
+  - 纠正代码相关错误：要求能够在通用或特定平台上复现，包括失败的示例代码、意外的代码输出或失败的命令：从 64 FC 开始，最高可达 320 FC 或更多，具体由内容和重要性决定。
+- **改进**
+  - 对某些主题进行完善以易于理解，例如提供更清晰的解释或增加示例：从 32 FC 开始，最高可达 128 FC 或更多，具体由内容和重要性决定。
+  - 添加或完善视觉辅助工具，如图表、图解：从 128 FC 开始，最高可达 256 FC 或更多，具体由内容和重要性决定。
+  - 添加对功能或主题的详细描述，如实现方法或极端情况分析：从 80 FC 开始，最高可达 320 FC 或更多，具体由内容和重要性决定。
+  - 编写关于某个主题的新文章：根据复杂度和社区需求，从 128 FC 开始，最高可达 640 FC，具体由内容和重要性决定，对于非常出色的文章可能更多。
+    - 如果文章涉及常见概念或开发实践，奖励通常在 128 FC 到 320 FC 之间。
+    - 如果文章主题是 **基于 Conflux** 的，或文章为开发指南，奖励将在 320 FC 到 640 FC（甚至更高）之间。
+  - 编写 Conflux 产品的用户手册：320 FC，最高可达 480 FC 或更多，具体由内容和重要性决定。
+- **文档页面改进**
+  - 最低 96 FC，具体由任务复杂度决定。
+
+#### 奖励评估方法与示例
+
+拉取请求的奖励通常由具体情况而决定，我们认为将这些奖励的评估思想清晰地告知贡献者是非常重要的。
+
+- 创建新内容具有重要的意义。 我们尤其重视以下类型的内容：
+  - 特定于 Conflux 的内容
+  - 对开发者更有帮助的内容
+  - 附带现成代码示例的开发教程
+- 拉取请求的复杂度及投入的努力也会影响奖励：
+  - 创建内容所需的时间更长（基于内容质量评估）
+  - 需要更高的技术技能或理解
+  - 清晰的解释，比如像代码片段或视觉辅助工具
+
+下面提供几个参考示例：
+
+| 拉取请求                                                                       | 基础奖励 | 预期奖励      | 贡献内容                                  | 评判标准                                                                         |
+| -------------------------------------------------------------------------- | ---- | --------- | ------------------------------------- | ---------------------------------------------------------------------------- |
+| [PR#494](https://github.com/Conflux-Chain/conflux-documentation/pull/494)  | 128  | 320\*125% | 关于重入攻击的新文章                            | - 内容重要（常见的安全问题） <br/> + 包含代码示例 <br/> + 解决了创建者提出的问题 <br/> + 对主题提供了清晰的解释       |
+| [PR#493](https://github.com/Conflux-Chain/conflux-documentation/pull/493)  | 128  | 196\*125% | New article on circuit logic gas cost | * 包含代码 <br/> + 解决了创建者提出的问题 <br/> + 对主题提供了清晰的解释 <br/> - 内容较为次要                |
+| [PR#473](https://github.com/Conflux-Chain/conflux-documentation/pull/485)  | 32   | 80        | 建议使用 Confura API 密钥                   | - 为经常使用的内容增加了清晰度 <br/> + 增加了经常使用的内容                                          |
+| [PR #467](https://github.com/Conflux-Chain/conflux-documentation/pull/467) | 96   | 150\*125% | 改进了网页在移动设备上的显示                        | * 需要前端技术 <br/> + 解决了创建者提出的问题                                                 |
+| [PR #425](https://github.com/Conflux-Chain/conflux-documentation/pull/425) | 320  | 640       | 提供了一个即插即用的 eSpace 开发示例项目              | - 是特定于 Conflux 的内容 <br/> + 包含代码演示 <br/> + 提供了详细的解释和视频教程 <br/> + 提供了一个开箱即用的项目 |
+
+:::note
+
+“预期奖励”是根据我们 **最新** 的奖励准则预估的贡献者可能收到的 FC 数额。 然而，请注意实际的奖励金额可能会有所不同。 这种变化可能是因为贡献者是我们团队的内部成员，或者是由于贡献指南已经产生了更改。
+
+:::
+
+## 奖励发放过程
+
+我们使用内部的 Notion 表格追踪奖励，结果将定期在我们的 [Github 讨论](https://github.com/Conflux-Chain/conflux-documentation/discussions) 中发布。
+
+奖励定期发放，至少每三个月一次。 我们旨在精简我们的工作流程，以缩短这一时间间隔。
 
 ## 奖励准则定期审查
 
-请注意，奖励准则每3个月都将进行审查并有可能做出更改。 这将保证我们的本指导方针能足够有效地鼓励社区为文档建设作出贡献。
+值得一提的是，每一轮奖励发放后，我们的奖励准则都会进行审查，并可能进行修订。 这确保了我们的准则可以处于最新版本，并能够准确地对有用的贡献做出鼓励与奖励。
 
-我们期待您的贡献，并感谢您帮助我们改进我们的文档网站！ 如果您有任何问题或需要帮助，欢迎随时在我们的 Github 仓库中创建Issue。
+我们非常感谢您的贡献及对我们的文档网站做出的改善！ 如果您有任何疑问或需要帮助，请不要犹豫并在我们的 Github 仓库中创建一个问题。

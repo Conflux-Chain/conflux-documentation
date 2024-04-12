@@ -52,11 +52,11 @@ To create a new smart contract using thirdweb CLI, follow these steps:
 
 5. After modifying your contract with your desired custom logic, you may deploy it to Conflux using [Deploy](https://portal.thirdweb.com/deploy).
 
-***
+---
 
 Alternatively, you can deploy a prebuilt contract for NFTs, tokens, or marketplace directly from the thirdweb Explore page:
 
-1. Go to the thirdweb Explore page: https\://thirdweb.com/explore
+1. Go to the thirdweb Explore page: https://thirdweb.com/explore
 
    ![thirdweb Explore page](/img/thirdweb-explore.png)
 
