@@ -4,7 +4,12 @@ title: Remix IDE
 description: Deploying an ERC-20 Token using Remix IDE
 displayed_sidebar: eSpaceSidebar
 ---
+## Introduction
 
+Remix IDE is a powerful online development environment specifically designed for building, deploying, and debugging smart contracts for the Ethereum network and other EVM-compatible blockchains like Conflux eSpace. This tutorial will guide you through the process of deploying an ERC20 token smart contract on Conflux eSpace using Remix IDE. 
+If you're looking to deploy a different smart contract, you can use [Cookbook](../cookbook.md) to access a comprehensive library of pre-written Solidity code, allowing you to find and utilize the specific smart contract functionalities you need. 
+
+## Deploying an ERC-20 Token on Conflux eSpace using Remix IDE
 In a new tab, open the Remix IDE at [remix.ethereum.org](https://remix.ethereum.org).
 It might take a minute to load, but once it has, create a new file `ERC20Token.sol` in the workspace panel on the left:
 
