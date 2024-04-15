@@ -5,7 +5,7 @@ displayed_sidebar: generalSidebar
 
 ## Signature Replay Attacks
 
-The signature replay attack that led to the theft of 20 million $OP tokens from Wintermute exposes critical vulnerabilities in the management of digital signatures on blockchain platforms. This incident was primarily triggered by a signature replay but was compounded by an additional transactional error with Optimism, a Layer-2 Ethereum scaling solution. In this case, the tokens were mistakenly sent to a multisignature wallet address that had not yet been properly initialized on the Optimism network. 
+The signature replay attack that led to the theft of 20 million $OP tokens from Wintermute exposes critical vulnerabilities in the management of digital signatures on blockchain platforms. This incident was primarily triggered by a signature replay but was compounded by an additional transactional error with Optimism, a Layer-2 Ethereum scaling solution. In this case, the tokens were mistakenly sent to a multisignature wallet address that had not yet been properly initialized on the Optimism network.
 
 For a more detailed report on this incident, you can read further on Blockworks and Decrypt:
 
@@ -62,7 +62,7 @@ To prevent signature replay attacks, you can use the following methods:
 
    ```solidity
    // Record the minted addresses
-   mapping(address => bool) public alreadyMinted; 
+   mapping(address => bool) public alreadyMinted;
 
    function secureMint(address recipient, uint amount, bytes memory signature) public {
        require(!alreadyMinted[recipient], "Tokens already minted for this address");
@@ -88,3 +88,30 @@ To prevent signature replay attacks, you can use the following methods:
    }
    ```
 
+3. **Using EIP-712 for Structured Data**:
+Implement EIP-712 to create a more secure and structured data signing experience, which helps prevent signature replays across different contexts and contracts.
+
+   ```solidity
+   // Utilizing EIP-712 to create a typed structured data signature
+   using EIP712 for bytes32;
+
+   function eip712Mint(address recipient, uint amount, bytes memory signature) public {
+       bytes32 structHash = keccak256(abi.encode(
+           keccak256("Mint(address recipient,uint256 amount,uint256 nonce)"),
+           recipient,
+           amount,
+           nonce
+       ));
+       bytes32 digest = _hashTypedDataV4(structHash);
+       require(ECDSA.recover(digest, signature) == authorizedSigner, "Invalid EIP-712 signature!");
+       _mint(recipient, amount);
+       nonce++;
+   }
+   ```
+
+You can find more detailed implementation guidelines and tools in [OpenZeppelin's EIP-712 documentation](https://docs.openzeppelin.com/contracts/5.x/api/utils#EIP712).
+
+4.**Implementing CIP-23 for Cross-Chain Safety**:
+CIP-23 is an adaptation of Ethereum's EIP-712, designed to enhance security in cross-chain operations. It introduces specific measures to prevent replay attacks by including a unique chainId in the signature data, ensuring that signatures are only valid on their intended chain. 
+
+More information and detailed guidelines can be found on the [Conflux CIP-23](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-23.md)
