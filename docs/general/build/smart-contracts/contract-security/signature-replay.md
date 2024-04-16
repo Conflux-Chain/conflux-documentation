@@ -112,6 +112,6 @@ Implement EIP-712 to create a more secure and structured data signing experience
 You can find more detailed implementation guidelines and tools in [OpenZeppelin's EIP-712 documentation](https://docs.openzeppelin.com/contracts/5.x/api/utils#EIP712).
 
 4.**Implementing CIP-23 for Cross-Chain Safety**:
-CIP-23 is an adaptation of Ethereum's EIP-712, designed to enhance security in cross-chain operations. It introduces specific measures to prevent replay attacks by including a unique chainId in the signature data, ensuring that signatures are only valid on their intended chain. 
+CIP-23 is an adaptation of Ethereum's EIP-712 for **Conflux core space**, designed to enhance security in cross-chain operations. It introduces specific measures to prevent replay attacks, ensuring that signatures for EVM-compatible chains cannot be replayed for Conflux core space, and vice versa. 
 
 More information and detailed guidelines can be found on the [Conflux CIP-23](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-23.md)
