@@ -28,6 +28,8 @@ npx create-next-app web3modal-conflux-nextjs
 cd web3modal-conflux-nextjs
 ```
 
+When setting up your Next.js project using `create-next-app`, you'll be prompted with a few configuration options. For the purposes of this tutorial, you can proceed with all the default settings provided by the setup. This will configure your project with optimal defaults for most applications, including a basic file structure and configuration settings.
+
 ## Step 2: Install Necessary Packages
 
 Web3Modal SDK has support for Wagmi, which will help you interact with wallets and smart contracts.
@@ -81,6 +83,16 @@ export const config = createConfig({
   }),
 });
 ```
+
+For the project to access environment variables such as `projectId`, you need to set them up in a `.env.local` file in the root of your project. Here's how you can do it:
+
+Create a file named `.env.local` and add the following line:
+
+```typescript
+NEXT_PUBLIC_PROJECT_ID = your_project_id_here;
+```
+
+Replace your_project_id_here with the actual project ID you get from https://cloud.walletconnect.com.
 
 ## Step 4: Context Provide
 
