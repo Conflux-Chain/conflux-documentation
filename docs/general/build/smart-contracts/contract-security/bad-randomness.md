@@ -56,6 +56,6 @@ The function `executeMint()` takes a `FlawedRandomizer` contract address as a pa
 
 ## Prevention
 
-We usually use off-chain random numbers provided by oracle projects to prevent this type of vulnerability, such as Chainlink VRF. These random numbers are generated off-chain and uploaded to the blockchain, ensuring they are unpredictable. For more information, read [WTF Solidity Tutorial, Lesson 39: Pseudo-Random Numbers](https://github.com/AmazingAng/WTF-Solidity/tree/main/39_Random).
+We usually use off-chain random numbers provided by oracle projects to prevent this type of vulnerability, such as Chainlink VRF. These random numbers are generated off-chain and uploaded to the blockchain, ensuring they are unpredictable. 
 
 This lesson introduced the bad randomness vulnerability and a simple prevention method: using off-chain random numbers provided by oracle projects. NFT and GameFi projects should avoid using on-chain pseudo-random numbers for lotteries to prevent exploitation by hackers.
