@@ -1,6 +1,6 @@
 ---
 sidebar_position: 2
-title: Encoding & Signing
+title: 编码和签名
 displayed_sidebar: coreSidebar
 keywords:
   - transaction
@@ -8,18 +8,18 @@ keywords:
   - encoding
 ---
 
-After every field of a transaction is prepared, following steps are required before it can be sent to network (don't worry, these steps are already implemented by wallets or SDKs):
+在交易的每个字段都准备好后，需要按照以下步骤，才能将其发送到网络 (别担心， 这些步骤已经由钱包或SDK实现)：
 
-1. Prepare hash for signing: do [RLP encoding](https://ethereum.org/en/developers/docs/data-structures-and-encoding/rlp/) in the order of `[nonce, gasPrice, gas, to, value, storageLimit, epochHeight, chainId, data]` and then apply the `keccak256` operation to the encoded result to obtain a hash.
-2. Signing: sign the hash obtained in the previous step using the **private key of the sending account** and perform the ecdsaSign signature operation to obtain the values for `r, s, v`.
-3. Transaction Encoding: Do RLP encoding in the order of `[[nonce, gasPrice, gas, to, value, storageLimit, epochHeight, chainId, data], v, r, s]` and convert it into a hexadecimal string.
+1. 准备签名哈希: 按照`[nonce, gasPrice, gas, to, value, storageLimit, epochHeight, chainId, data]` 的顺序进行[RLP编码](https://ethereum.org/en/developers/docs/data-structures-and-encoding/rlp/) ，然后将`keccak256`操作应用到编码结果上，以获取哈希。
+2. 签名：使用发送账户的私钥对上一步获得的哈希进行签名，并执行ecdsaSign签名操作，得到 r、s、v 的值。
+3. 交易编码: 按照 `[[nonce, gasPrice, gas, to, value, storageLimit, epochHeight, chainId, data], v, r, s]` 的顺序进行RLP编码，并将其转换为十六进制字符串。
 
-### Broadcast to the network
+### 广播到网络
 
-After completing the above steps, you will obtain a hex-encoded rawTx. You can then use the [`cfx_sendRawTransaction`](../../build/json-rpc/cfx-namespace.md#cfx_sendrawtransaction) method to send it to the network. Upon a successful invocation of this method, a transaction hash will be returned, which can be used to query the status of the transaction.
+完成上述步骤后，你将获得一个十六进制编码的原始交易 （rawTx）。 你可以使用 [`cfx_sendRawTransaction`](../../build/json-rpc/cfx-namespace.md#cfx_sendrawtransaction) 方法将其发送到网络。 成功调用此方法后，将返回一个交易哈希，可用来查询交易状态。
 
-### Reference
+### 参考
 
-- [Elliptic Curve Digital Signature Algorithm (ECDSA)](https://fitsaleem.medium.com/ethereums-elliptic-curve-digital-signature-algorithm-ecdsa-88e1659f4879#:~:text=ECDSA%20is%20used%20in%20Ethereum,included%20in%20the%20transaction%20data.)
-- [keccak256 hashing](https://ethereum.org/en/glossary/#keccak-256)
+- [椭圆曲线数字签名算法(ECDSA)](https://fitsaleem.medium.com/ethereums-elliptic-curve-digital-signature-algorithm-ecdsa-88e1659f4879#:~:text=ECDSA%20is%20used%20in%20Ethereum,included%20in%20the%20transaction%20data.)
+- [keccak256哈希](https://ethereum.org/en/glossary/#keccak-256)
 - [Recursive Length Prefix (RLP) serialization](https://ethereum.org/en/developers/docs/data-structures-and-encoding/rlp/)
