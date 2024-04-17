@@ -2,12 +2,41 @@
 sidebar_position: 5
 title: Network RPC Endpoints
 description: Conflux eSpace RPC endpoints
+keywords:
+  - network endpoints
+  - Conflux eSpace
 displayed_sidebar: eSpaceSidebar
 ---
 
-## Public RPC Endpoints
+## Confura
 
-Confura, a public RPC service offered by the Conflux Foundation, is available for free use. However, to maintain the service's usability, there are rate limits in place for the free tier. For access to a higher tier of RPC service, you can make a purchase through the [Web3 Paywall](../general/build/tools/web3paywall.md), or you can apply directly to the Conflux Foundation by emailing [bd@confluxnetwork.org](mailto:bd@confluxnetwork.org).
+Confura, a public RPC service offered by the Conflux Foundation, is available for free use.
+
+### Public Endpoints
+
+The Confura public RPC services are located in different regions globally. We would recommend users to choose RPC endpoints basing on their geographical location.
+
+#### China
+
+| Network | Chain ID | RPC Endpoint | Type |
+| -------- | -------- | -------- | --- |
+| Mainnet | 1029 | https://evm.confluxrpc.com | HTTP |
+| Mainnet | 1029 | https://evmmain-china.confluxrpc.com | HTTP |
+| Mainnet | 1029 | wss://evm.confluxrpc.com/ws | Websocket |
+| Testnet | 1 | https://evmtestnet.confluxrpc.com | HTTP |
+| Testnet | 1 | https://evmtest.confluxrpc.com (both for China and global) | HTTP |
+| Testnet | 1 | wss://evmtestnet.confluxrpc.com/ws | Websocket |
+
+#### Global
+
+| Network | Chain ID | RPC Endpoint | Type |
+| -------- | -------- | -------- | --- |
+| Mainnet | 1029 | https://evm.confluxrpc.org | HTTP |
+| Mainnet | 1029 | https://evmmain-global.confluxrpc.com | HTTP |
+| Mainnet | 1029 | wss://evm.confluxrpc.org/ws | Websocket |
+| Testnet | 1 | https://evmtestnet.confluxrpc.org | HTTP |
+| Testnet | 1 | https://evmtest.confluxrpc.com (both for China and global) | HTTP |
+| Testnet | 1 | wss://evmtestnet.confluxrpc.org/ws | Websocket |
 
 ### Hong Kong
 
@@ -25,7 +54,9 @@ Network  | Chain ID                | RPC Endpoint URL | Explorer
 
 ### Rate Limits
 
-Reference for various fee tiers and their rate limits.
+To maintain the service's usability, there are rate limits in place for the free tier. For access to a higher tier of RPC service, you can make a purchase through the [Web3 Paywall](../general/build/tools/web3paywall.md), or you can apply directly to the Conflux Foundation by emailing [bd@confluxnetwork.org](mailto:bd@confluxnetwork.org).
+
+Here are references for various fee tiers and their rate limits.
 
 | Fee Tier | Price | Rate Limits | Buy Links |
 |--|--|--|--|

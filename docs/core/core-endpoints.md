@@ -3,37 +3,48 @@ id: conflux_rpcs
 title: Network RPC Endpoints
 sidebar_position: 4
 keywords:
-  - endpoints
+  - network endpoints
+  - Conflux core space
 displayed_sidebar: coreSidebar
 ---
 
 Public available Conflux Core Space network RPC endpoints
 
-## 1. Confura
+## Confura
 
 Confura is an Ethereum Infura equivalent public JSON-RPC service on Conflux network, which is developed and maintained by Conflux foundation.
 
-Our public RPC services are located in different regions globally. By utilizing geographic DNS routing, developers can request the regional RPC services which are physically closest to them.
-
 ### Public Endpoint
 
-#### Hong Kong
+The Confura public RPC services are located in different regions globally. We would recommend users to choose RPC endpoints basing on their geographical location.
 
-| Network | Chain ID | Explorer | RPC Endpoint | 
-| -------- | -------- | --------| -------- |
-| Mainnet | 1029 | https://confluxscan.net | *HTTP*: https://main.confluxrpc.com<br/>*Websocket*: wss://main.confluxrpc.com/ws |
-| Testnet | 1 | https://testnet.confluxscan.net | *HTTP*: https://test.confluxrpc.com<br/>*Websocket*: wss://test.confluxrpc.com/ws |
+#### China
 
-#### US East
+| Network | Chain ID | RPC Endpoint | Type |
+| -------- | -------- | -------- | --- |
+| Mainnet | 1029 | https://main.confluxrpc.com | HTTP |
+| Mainnet | 1029 | https://cfxmain-china.confluxrpc.com | HTTP |
+| Mainnet | 1029 | wss://main.confluxrpc.com/ws | Websocket |
+| Testnet | 1 | https://test.confluxrpc.com | HTTP |
+| Testnet | 1 | https://cfxtest.confluxrpc.com (both for China and global) | HTTP |
+| Testnet | 1 | wss://test.confluxrpc.com/ws | Websocket |
 
-| Network | Chain ID | Explorer | RPC Endpoint | 
-| -------- | -------- | --------| -------- |
-| Mainnet | 1029 | https://confluxscan.io | *HTTP*: https://main.confluxrpc.org<br/>*Websocket*: wss://main.confluxrpc.org/ws |
-| Testnet | 1 | https://testnet.confluxscan.io | *HTTP*: https://test.confluxrpc.org<br/>*Websocket*: wss://test.confluxrpc.org/ws |
+#### Global
+
+| Network | Chain ID | RPC Endpoint | Type |
+| -------- | -------- | -------- | --- |
+| Mainnet | 1029 | https://main.confluxrpc.org | HTTP |
+| Mainnet | 1029 | https://cfxmain-global.confluxrpc.com | HTTP |
+| Mainnet | 1029 | wss://main.confluxrpc.org/ws | Websocket |
+| Testnet | 1 | https://test.confluxrpc.org | HTTP |
+| Testnet | 1 | https://cfxtest.confluxrpc.com (both for China and global) | HTTP |
+| Testnet | 1 | wss://test.confluxrpc.org/ws | Websocket |
 
 ### Rate Limits
 
-Reference for various fee tiers and their rate limits.
+To maintain the service's usability, there are rate limits in place for the free tier. For access to a higher tier of RPC service, you can make a purchase through the [Web3 Paywall](../general/build/tools/web3paywall.md), or you can apply directly to the Conflux Foundation by emailing [bd@confluxnetwork.org](mailto:bd@confluxnetwork.org).
+
+Here are references for various fee tiers and their rate limits.
 
 | Fee Tier | Price | Rate Limits | Buy Links |
 |--|--|--|--|
