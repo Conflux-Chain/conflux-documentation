@@ -10,15 +10,15 @@ Conflux 引入了质押机制，有两个原因：第一，质押机制提供了
 
 从高层次来看，Conflux 实现了一个内置的**Staking**合约，用于记录所有账户的质押信息，包括普通地址和智能合约。 通过向这个合约发送交易，用户（包括外部用户和智能合约）可以存入/取出资金，这也被称为在合约中的质押。
 
-## Deposit and Withdraw
+## 质押与取回
 
-用户（或合约）可以通过调用 `deposit(uint amount)` 来存入余额进行质押，然后 `amount` Drip 将从其`balance`转移到 `stakingBalance`。 Notice that this function is non-payable, the user only needs to specify the amount to be staked without transferring any funds to internal contract and the **minimum deposit amount is 1 CFX**.
+用户（或合约）可以通过调用 `deposit(uint amount)` 来存入余额进行质押，然后 `amount` Drip 将从其`balance`转移到 `stakingBalance`。 请注意，这个函数是无需支付的，用户只需要指定要质押的金额，无需将任何资金转移到内部合约，且**最低存款金额为1 CFX**。
 
 用户还可以通过 `withdraw(uint amount) `来提取余额。 调用者可以调用这个函数从 Staking 合约中提取一些代币。 质押本金将及时转移到用户的余额中。
 
-## Locking and Vote Power
+## 锁定与投票权
 
-通过锁定质押余额（stakingBalance），用户可以获得*投票权*，进而进行链上治理。 With function `voteLock(uint amount, uint unlock_block_number)`, the account makes a promise that "My `stakingBalance` will always have at least `amount` Drip before the block with block number `unlock_block_number`". 账户可以做出多个承诺，比如“我今年总是至少有 10 CFX，明年总是至少有 5 CFX。”  **一旦做出了承诺，就没有办法取消它！**但是账户可以通过锁定更多的余额来覆盖旧的承诺。 每当账户试图提取 `stakingBalance` 时，内部合约将检查剩余的余额是否符合锁定的承诺。
+通过锁定质押余额（stakingBalance），用户可以获得*投票权*，进而进行链上治理。 通过函数 `voteLock(uint amount, uint unlock_block_number)`，账户做出承诺："在区块号为 `unlock_block_number` 的区块之前，我的 `stakingBalance` 将始终至少有 `amount` Drip。" 账户可以做出多个承诺，比如“我今年总是至少有 10 CFX，明年总是至少有 5 CFX。”  **一旦做出了承诺，就没有办法取消它！**但是账户可以通过锁定更多的余额来覆盖旧的承诺。 每当账户试图提取 `stakingBalance` 时，内部合约将检查剩余的余额是否符合锁定的承诺。
 
 在这里，我们通过举几个例子来介绍锁定余额的详细逻辑。 假设当前的区块号是 `base`，Conflux 在今年剩余的时间内大约会生成 `x` 个区块，在明年会生成 `y` 个区块。 由于 Conflux 每秒生成两个区块，`y` 大约等于 `2 * 60 * 60 * 24 * 365`. 而 `x` 的值取决于你阅读这篇文章的时间。
 
@@ -32,7 +32,7 @@ Conflux 引入了质押机制，有两个原因：第一，质押机制提供了
 
 ## 接口
 
-The address of the internal contract: `0x0888000000000000000000000000000000000002`
+这个内部合约的地址为： `0x088800000000000000000000000000000000000002`
 
 ```js
 pragma solidity >=0.4.15;

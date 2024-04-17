@@ -19,24 +19,24 @@ keywords:
 
 交易无法取消，但可以用价值为0的交易替换。 这是一种达到与取消交易相同结果的方法。
 
-### Why is a transaction packaged into multiple blocks simultaneously?
+### 为什么一笔交易会同时打包到多个区块中？
 
-This is due to the concurrent block emission caused by the tree chart ledger structure. Although a transaction may be packaged into multiple blocks, it will ultimately be executed in only one block.
+这是由树状图账本结构引起的并发区块生成。（这是由于树状账本结构引起的并发区块发射所致。） 尽管一笔交易可能被打包到多个区块中，但最终它只会在一个区块中执行。
 
-### What types of transactions does Core Space support?
+### Core Space支持哪种类型的交易？
 
-There is only one type, similar to Ethereum 155 transactions.
+只支持一种类型，类似于以太坊的155 交易。
 
-### Does Core Space support EIP-1559 transactions or EIP-2718?
+### Core Space支持EIP-1559交易或EIP-2718吗？
 
-No, it does not support them.
+不，它不支持。
 
-### What's the differences between Ethereum 155 Transaction and Core Space Transaction
+### 以太坊155交易和Conflux Core Space交易之间的区别是什么：
 
-Compared to Ethereum `155 transaction`, transactions through Conflux Core Space have several differences:
+与以太坊155交易相比，通过Conflux Core Space的交易有以下几点不同：
 
-- Fields are different: with 2 more field `storageLimit`, and `epochHeight`.
+- 字段不同: 增加了两个字段 `storageLimit`, and `epochHeight`。
 - 编码交易时的差异：
-  1. The RLP structure to compute transaction hash is `[nonce, gasPrice, gas, to, value, storageLimit, epochHeight, chainId, data]`
-  2. The RLP structure of a rawTx is `[[nonce, gasPrice, gas, to, value, storageLimit, epochHeight, chainId, data], v, r, s]`
-- The `v` value signed by ecdsaSign will not be specifically modified in Conflux Core Space, while in Ethereum, there will be some special treatments to the v value.
+  1. 计算交易哈希的 RLP 结构为：[nonce, gasPrice, gas, to, value, storageLimit, epochHeight, chainId, data]\`
+  2. RawTx 的 RLP 结构为：[[nonce, gasPrice, gas, to, value, storageLimit, epochHeight, chainId, data], v, r, s]\`
+- 在Conflux Core Space中，由ecdsaSign签名的`v`值不会被特别修改，而在以太坊中，对v值会进行一些特殊处理。

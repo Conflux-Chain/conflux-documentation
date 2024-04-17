@@ -43,7 +43,7 @@ keywords:
 "Tx with the same nonce already inserted. To replace it, you need to specify a gas price > {}""
 ```
 
-在这种情况下，你应该等待交易池中的交易被执行。 If you want to replace the transaction in the pool, you need to set a **higher gas price** and resend it.
+在这种情况下，你应该等待交易池中的交易被执行。 如果想替换交易池中的交易，则需要设置更高的燃气价格并重新发送。
 
 有时，错误消息也可能是：
 
@@ -69,52 +69,52 @@ keywords:
 
 有一种情况是，在发送交易后，在长时间内无法获取交易收据。 这通常是由于交易使用非连续的nonce值导致的。 在这种情况下，交易被卡在交易池内，等待先前交易的执行完成。
 
-For example, if the account's current nonce is 1 and you send a transaction with nonce 5, it will be stuck in the transaction pool, waiting for transactions with nonces 1, 2, 3, and 4 to be sent and executed.
+例如，如果账户的当前nonce为1，而你发送一个带有nonce为5的交易，它将被卡在交易池中，等待发送和执行nonce为1、2、3和4的交易。
 
-To ensure the execution of this transaction, you need to send transactions with nonces 1, 2, 3, and 4 to the transaction pool. Once these transactions are packaged, the transaction with nonce 5 will automatically be included and executed.
+为确保执行此交易，你需要将nonce为1、2、3和4的交易发送到交易池。 一旦这些交易被打包，nonce 5 的交易将自动被包含和执行。
 
-For more information on pending transactions, refer to [Transaction Pending](./why-transaction-is-pending.md).
+有关待处理交易的更多信息，请参考[交易待定](./why-transaction-is-pending.md)。
 
-## Rapid Transaction Processing through Manual Nonce Management
+## 通过手动nonce管理实现快速交易处理
 
-In most situations, transactions are sent sequentially: sending one transaction, waiting for it to be executed, and then sending the next. In such cases, `cfx_getNextNonce` can be used directly to obtain the nonce for each transaction. However, this method has a slower processing time, typically averaging around 15 seconds per transaction.
+在大多数情况下，交易是按顺序发送的：发送一笔交易，等待其执行，然后发送下一笔交易。 在这种情况下, `cfx_getNextNonce` 可以直接获取每笔交易的nonce。 然而，这种方法处理时间较慢，通常每笔交易平均15秒左右。
 
-For rapid transaction processing, managing nonce values manually is essential. The general steps for this approach are:
+为了快速处理交易，手动管理nonce值至关重要。 这种办法的一般步骤是：
 
-1. **Initial Nonce Retrieval**: Obtain the current nonce of your account, referred to as `nextNonce`, before beginning the transaction process.
+1. **初始Nonce获取**：在开始交易过程之前，获取你账户当前的nonce，称为 `nextNonce`。
 
-2. **Transaction Submission**: For each transaction:
-   - Use `nextNonce` for the transaction.
-   - After transaction is successful sent to RPC nodes, increment `nextNonce`.
-   - Record the hash and nonce of each transaction.
+2. **交易提交**：对于每笔交易:
+   - 使用`nextNonce`进行交易。
+   - 交易成功发送到 RPC 节点后，`next Nonce`递增加一 。
+   - 记录每笔交易的哈希和nonce。
 
-3. **Repeated Execution**: Continue step 2 for multiple transactions.
+3. **重复执行**：对多笔交易继续执行步骤2。
 
-4. **Transaction Monitoring**:
-   - Use `cfx_getTransactionByHash` and `cfx_getTransactionReceipt` for transaction status updates.
-   - If a receipt is confirmed, stop monitoring that transaction.
-   - If a transaction is dropped or reverted, resend it using the same nonce.
-   - For delayed transactions, possibly due to network congestion, consider increasing `gasPrice` and resending them.
+4. **交易监控**：
+   - 使用`cfx_getTransactionByHash` 和`cfx_getTransactionReceipt`进行交易状态更新。
+   - 如果收据得到确认，则停止监测该交易。
+   - 如果交易被丢弃或回滚，则使用相同的nonce重新发送。
+   - 对于可能由于网络拥堵造成的延迟交易，考虑增加`gasPrice`并将其重新发送。
 
-**Additional Considerations**:
+**其他注意事项**:
 
-- **Pending Transaction Management**: Aim to keep pending transactions in the pool to a manageable number, ideally between 100-200. Exceeding this can complicate handling if transactions are delayed or reverted.
+- **待处理交易管理**：目标是将待处理交易保持在可管理的范围内，理想情况下在100-200之间。 超过这个范围可能会在交易延迟或回滚时使处理变得复杂。
 
-- **Sufficient Funds**: Ensure the account has adequate CFX for both the transfer amount and transaction fees to prevent transaction processing delays.
+- **足够的资金**: 确保账户有足够的CFX，既能支付转账金额，又能支付交易费用，以防止交易处理的延迟。
 
-- **Multiple Accounts for Increased Speed (for certain situations)**: Using several accounts in parellel for transactions can further enhance processing speed.
+- **使用多账户以提高速度（在某些情况下）**: 可以并行使用多个账户进行交易，以进一步提高处理速度。
 
 ## 常见问题解答
 
 ### 如何获得正确的nonce？
 
-Through the  [`cfx_getNextNonce`](/docs/core/build/json-rpc/cfx-namespace/#cfx_getnextnonce) RPC, the next available nonce of an account can be obtained. 使用过的 nonce 值不能再次使用。 如果使用一个大于当前 nonce 值的 nonce，交易将无法被打包。
+通过[`cfx_getNextNonce`](/docs/core/build/json-rpc/cfx-namespace/#cfx_getnextnonce) RPC, 可以获取账户的下一个可用的nonce。 使用过的 nonce 值不能再次使用。 如果使用一个大于当前 nonce 值的 nonce，交易将无法被打包。
 
-### How and When Does the Nonce Value Change in Transactions?
+### 交易中的nonce值何时以及如何变化？
 
-The nonce value in a transaction increments by 1 upon the transaction's execution, regardless of whether the transaction succeeds or fails. If you query the nonce using [`cfx_getNextNonce`](/docs/core/build/json-rpc/cfx-namespace/#cfx_getnextnonce) after sending a transaction, it may appear unchanged. This unchanged status occurs because the transaction is either still in the transaction pool pending inclusion in a block, or it has been included in a block but is in a 'defer' state awaiting execution.
+交易中的nonce值在交易执行时递增加一，无论交易成功与否。 如果想在发送交易之后查询 [`cfx_getNextNonce`](/docs/core/build/json-rpc/cfx-namespace/#cfx_getnextnonce) , 它可能看起来没有变化。 这种状态未改变的原因是，要么交易还在交易池中等待被打包进区块，要么已经被打包到区块中，但处于'延迟'状态等待执行。
 
-Refer to [nonce mechanism](./nonce.md#nonce-mechanism) for more example.
+请参阅 [nonce机制](./nonce.md#nonce-mechanism) 获取更多示例。
 
 ### 如果您想批量发送交易，如何管理 nonce？
 
@@ -122,6 +122,6 @@ Refer to [nonce mechanism](./nonce.md#nonce-mechanism) for more example.
 在这种情况下，如果有一个交易失败，导致它的 nonce 没有被使用，您需要手动调整交易参数并重新发送该交易。
 因此，在批量发送交易时，您需要保留所有交易的哈希值，并监控这些交易的状态。
 
-### Why doesn't the account's nonce increase immediately after transaction is packed into a block?
+### 为什么账户的nonce在交易被打包进区块后不会立即增加呢？
 
-The account's nonce does not increase immediately after a transaction appears on chain. Instead, the nonce increases after the transaction is packaged and executed.
+账户的nonce并不会在交易出现在区块链上后立即增加。 相反，在交易被打包并执行后，nonce才会增加。

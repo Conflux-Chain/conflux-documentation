@@ -2063,7 +2063,7 @@ curl --location --request POST 'http://localhost:12537' \
 --data-raw '{
     "id": 1,
     "jsonrpc": "2.0",
-    "method": "cfx_getParamsFromVote",
+    "method": "cfx_newFilter",
     "params": ["fromEpoch": "0x873e12"]
 }'
 ```

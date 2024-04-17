@@ -8,7 +8,7 @@ displayed_sidebar: coreSidebar
 
 `AdminControl` 合约是一个用于合约开发调试的工具。  当在一个交易中创建一个合约时，当前交易的发送方将自动成为合约的管理员。
 
-`admin`地址可以通过调用接口`setAdmin(address contractAddr, address newAdmin)`将管理员权限转移给其他**普通地址**或**零地址**。 **A contract can never be an admin**.
+`admin`地址可以通过调用接口`setAdmin(address contractAddr, address newAdmin)`将管理员权限转移给其他**普通地址**或**零地址**。 **合约永远不能被设置为admin地址**.
 
 管理员在合约中有多种管理员权限。 它可以调用接口 `destroy(address contractAddr)` 来销毁合约，就像合约调用 `suicide()` 函数一样。 SponsorWhitelist 内部合约提供了一些只能被管理员地址调用的功能。 这些函数可以更新赞助人机制中的白名单。 他们稍后会被介绍。
 
@@ -22,11 +22,11 @@ ConfluxScan 可能会将具有非零管理员地址的合约标记为调试模�
 **边界情况：**
 1. 管理员在合约创建时就被设置了。 因此，如果发送方 `A` 创建合约 `B` 并在合约构造期间将管理员设置为 `C`，则合约部署时管理员将为 `C`。
 2. 然而，如果发送者 `A` 调用合约 `B`，然后合约 `B` 创建合约 `C` 并在合约构造期间将管理员设置为 `D`，那么该设置将失败，因为 `C` 的管理员是 `A`，而创建 `C` 的发送者是 `B`。
-3. 但是，Conflux 引入了一种特殊策略。 在情况2中，如果 `D` 是零地址，则设置管理员会成功。 **This means that a contract can declare "I don't need admin" during contract creation.**
+3. 但是，Conflux 引入了一种特殊策略。 在情况2中，如果 `D` 是零地址，则设置管理员会成功。 **这意味着合约可以在创建时声明“不需要管理员”**
 
 ## 接口
 
-AdminControl's hex40 address is `0x0888000000000000000000000000000000000000`, with interface:
+管理员控制合约的十六进制地址是 `0x0888000000000000000000000000000000000000`, 接口如下:
 
 ```js
 pragma solidity >=0.4.15;
@@ -34,13 +34,13 @@ pragma solidity >=0.4.15;
 contract AdminControl {
     /*** Query Functions ***/
     /**
-     * @dev get admin of specific contract
-     * @param contractAddr The address of specific contract
+     * @dev 得到特定合约的管理员
+     * @param contractAddr 特定合约的地址
      */
     function getAdmin(address contractAddr) public view returns (address) {}
 
     /**
-     * @dev Contract admin set the administrator of contract `contractAddr` to `newAdmin`.
+     * @dev 合约管理员设定设定 `contractAddr`为新的管理员 `newAdmin`.
      * @param contractAddr The address of the contract
      * @param newAdmin The new admin address
      */
@@ -56,7 +56,7 @@ contract AdminControl {
 
 ## JS 示例
 
-Consider you have deployed a contract whose address is `contractAddr`. The administrator can call `AdminControl.setAdmin(contractAddr, new_admin)` to change the administrator and call `AdminControl.destroy(contractAddr)` to kill the contract.
+假设你已经部署了一个地址为 `contractAddr`的合约。 管理员可以通过调用 `AdminControl.setAdmin(contractAddr, new_admin)`来更改管理员，并调用`AdminControl.destroy(contractAddr)`销毁合约。
 
 ```javascript
 const { Conflux } = require('js-conflux-sdk');
