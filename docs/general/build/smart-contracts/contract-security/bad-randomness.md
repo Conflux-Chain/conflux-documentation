@@ -7,11 +7,11 @@ displayed_sidebar: generalSidebar
 
 ## Pseudo-Random Numbers
 
-Many applications on Ethereum, such as NFT random tokenId draws, blind box openings, and GameFi combat outcomes, rely on random numbers. However, since all data on Ethereum is public and deterministic, traditional random generation methods like `random()` are not available. Instead, projects often use pseudo-random number generators such as `blockhash()` and `keccak256()`. This approach, known as the Bad Randomness Vulnerability, allows attackers to predict outcomes, enabling them to manipulate results like minting specific rare NFTs.
+Many applications on Ethereum, such as NFT random tokenId draws, blind box openings, and GameFi combat outcomes, rely on random numbers. However, since all data on Ethereum is public and deterministic, traditional random generation methods like `random()` are not available.
 
-This vulnerability is common in NFT and GameFi projects, including Meebits, Loots, and Wolf Game. It has led to significant financial losses, such as the SmartBillions Lottery exploit where attackers used predictable outcomes to win over 400 ETH. For more detailed information on this case, you can visit [ImmuneBytes](https://www.immunebytes.com/blog/bad-randomness-in-solidity-smart-contracts/).
+Instead, projects often use pseudo-random number generators such as `blockhash()` and `keccak256()`. This approach, known as the Bad Randomness Vulnerability, allows attackers to predict outcomes, enabling them to manipulate results like minting specific rare NFTs.
 
-Another related risk, although not due to randomness, was The DAO Hack, which resulted in a loss of around $60 million worth of Ether and led to a controversial hard fork of the Ethereum blockchain. For a comprehensive review of The DAO Hack and its implications on the Ethereum community, check out [CoinDesk](https://www.coindesk.com/consensus-magazine/2023/05/09/coindesk-turns-10-how-the-dao-hack-changed-ethereum-and-crypto/).
+This vulnerability is common in NFT and GameFi projects, including Meebits, Loots, and Wolf Game. It has led to significant financial losses, such as the SmartBillions Lottery exploit where attackers used predictable outcomes to win over 400 ETH. More information is available in the article, [The Blockchain Lottery SmartBillions Was Hacked for $120,000](https://crypto.news/blockchain-lottery-smartbillions-hacked-for-120000/).
 
 ## Example of a Bad Randomness Vulnerability
 
@@ -54,8 +54,6 @@ contract Exploit {
 
 The function `executeMint()` takes a `FlawedRandomizer` contract address as a parameter. Here, we calculate the `predictedNumber` and then pass it to the `mintIfLucky()` function to execute the attack. Since both `executeMint()` and `mintIfLucky()` are called in the same block, the `blockhash` and `block.timestamp` are the same, making the generated random number predictable.
 
-## Prevention
+## Prevention Strategy
 
-We usually use off-chain random numbers provided by oracle projects to prevent this type of vulnerability, such as Chainlink VRF. These random numbers are generated off-chain and uploaded to the blockchain, ensuring they are unpredictable. 
-
-This lesson introduced the bad randomness vulnerability and a simple prevention method: using off-chain random numbers provided by oracle projects. NFT and GameFi projects should avoid using on-chain pseudo-random numbers for lotteries to prevent exploitation by hackers.
+Use off-chain random numbers provided by oracle projects to prevent this type of vulnerability, such as Chainlink VRF. These random numbers are generated off-chain and uploaded to the blockchain, ensuring they are unpredictable.
