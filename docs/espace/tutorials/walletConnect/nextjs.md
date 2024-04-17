@@ -11,7 +11,7 @@ displayed_sidebar: eSpaceSidebar
 
 # Integrating WalletConnect with Next.js Project on Conflux eSpace
 
-This tutorial provides a comprehensive guide on how to integrate WalletConnect with Web3Modal in a Next.js project, specifically targeting the Conflux eSpace network.
+This tutorial provides a comprehensive guide on how to integrate WalletConnect with Web3Modal in a Next.js project, specifically targeting the Conflux eSpace network. For a hands-on example, check out the GitHub repository [web3modal-conflux-nextjs](https://github.com/ConfluxDAO/web3modal-conflux-nextjs).
 
 ## Prerequisites
 
@@ -179,7 +179,7 @@ export default function RootLayout({
 }
 ```
 
-### Step 5: Connect Conflux eSpace Network
+## Step 5: Connect Conflux eSpace Network
 
 Create a new component, `ConnectButton.tsx`, in your project, to open ConnectWallet Modal
 
