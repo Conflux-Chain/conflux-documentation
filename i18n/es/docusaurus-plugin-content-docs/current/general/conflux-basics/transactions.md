@@ -6,69 +6,75 @@ keywords:
 displayed_sidebar: generalSidebar
 ---
 
-A transaction is a single instruction composed by an external actor with a Conflux account, and this instruction is cryptographically signed using the sender account’s private key. A transaction can involve a **simple transfer of CFX** (the native currency of Conflux), a **transfer of tokens** (such as ERC20 or ERC721), a **deployment of a new smart contract**, or an **execution of a function on an existing smart contract**. Transactions are the only way to store or update data on the blockchain.
+Una transacción es una única instrucción compuesta por un actor externo con una cuenta de Conflux, y esta instrucción está firmada criptográficamente usando la clave privada de la cuenta del remitente. Una transacción puede implicar una **transferencia simple de CFX** (la moneda nativa de Conflux), una **transferencia de tokens** (como ERC20 o ERC721), un **despliegue de un nuevo contrato inteligente**, o una **ejecución de una función en un contrato inteligente existente**. Las transacciones son la única forma de almacenar o actualizar datos en la cadena de bloques.
 
-## Prerequisites
+## Prerrequisitos
 
-To help you better understand this page, we recommend you first read [Accounts](./accounts.md).
+Para ayudarte a entender mejor esta página, te recomendamos que leas primero [Cuentas](./accounts.md).
 
-## What's a Transaction?
+## ¿Qué es una transacción?
 
-An transaction refers to an action initiated by an externally-owned account, in other words an account managed by a human, not a contract. For example, if Bob sends Alice 1 CFX, Bob's account must be debited and Alice's must be credited. This state-changing action takes place within a transaction.
+Una transacción se refiere a una acción iniciada por una cuenta de propiedad externa, en otras palabras, una cuenta administrada por un ser humano, no un contrato. Por ejemplo, si Bob envía Alice 1 CFX, la cuenta de Bobs debe ser debitada y Alice debe ser acreditada. Esta acción que cambia el estado tiene lugar dentro de una transacción.
 
 ![](./img/tx.png)
 
-Transactions, which change the state of the EVM, need to be broadcast to the whole network. Any node can broadcast a request for a transaction to be executed on the EVM; after this happens, a validator will execute the transaction and propagate the resulting state change to the rest of the network.
+Las transacciones que cambian el estado de la EVM, deben transmitirse a toda la red. Cualquier nodo puede emitir una solicitud para que una transacción se ejecute en el EVM; después de que esto suceda, un validador ejecutará la transacción y propagará el cambio de estado resultante al resto de la red.
 
-A submitted transaction includes the following information:
+Una transacción enviada incluye la siguiente información:
 
-* from – the address of the sender, that will be signing the transaction. This will be an externally-owned account as contract accounts cannot send transactions.
-* recipient – the receiving address (if an externally-owned account, the transaction will transfer value. If a contract account, the transaction will execute the contract code)
-* signature – the identifier of the sender. This is generated when the sender's private key signs the transaction and confirms the sender has authorized this transaction
-* nonce - a sequentially incrementing counter which indicates the transaction number from the account
-* value – amount of CFX to transfer from sender to recipient (denominated in Drip, where 1CFX equals 1e+18Drip)
-* input data – optional field to include arbitrary data
-* gasLimit – the maximum amount of gas units that can be consumed by the transaction. The EVM specifies the units of gas required by each computational step
-* gasPrice - the price of the consumed gas to be included as a tip to the validator
-* chainId - the id of the blockchain, which is used to prevent replay attacks
+* from – la dirección del remitente, que firmará la transacción. Esta será una cuenta de propiedad externa, ya que las cuentas de contrato no pueden enviar transacciones.
+* recipient (destinatario) – la dirección de recepción (si es una cuenta de propiedad externa, la transacción transferirá el valor. Si es una cuenta de contrato, la transacción ejecutará el código del contrato)
+* signature (firma) – el identificador del remitente. Esto se genera cuando la clave privada del remitente firma la transacción y confirma que el remitente ha autorizado esta transacción
+* nonce - un contador de secuencia que indica el número de transacción de la cuenta
+* value/valor - cantidad de CFX para transferir del remitente al destinatario (denominada en Drip, donde 1CFX es igual a 1e+18Drip)
+* input data (datos de entrada) - campo opcional para incluir datos arbitrarios
+* gasLimit – la cantidad máxima de unidades de gas que puede ser consumida por la transacción. La EVM especifica las unidades de gas requeridas por cada paso computacional
+* gasPrice - el precio del gas utilizado a ser incluido como una propina para el validador
+* chainId - el id del blockchain, que se utiliza para prevenir ataques de doble gasto
 
-The Core Space transaction includes the following additional information:
+La transacción del Core Spacel incluye la siguiente información adicional:
 
-* storageLimit - the maximum amount of storage space that can be consumed by the transaction.
-* epochHeight - the epoch number of the blockchain, which is used to sets an expiration time for the transaction
+* storageLimit - la cantidad máxima de espacio de almacenamiento que puede ser consumido por la transacción.
+* epochHeight - el número de epoch de la blockchain, que se utiliza para establecer un tiempo de caducidad para la transacción
 
-## Gas Fee
+## Tarifa de gas (Gas Fee)
 
-Transactions require a fee and must be included in a validated block. The fee is paid in CFX and is calculated by multiplying the gasCharged by the gasPrice.
+Las transacciones requieren una comisión y deben incluirse en un bloque validado. La tarifa se paga en CFX y se calcula multiplicando el gasCharged por el precio del gas.
 
-Gas fees are used to compensate miners, motivating them to package, validate blocks, and maintain the security of the blockchain.
+Las comisiones de gas se utilizan para compensar a los mineros, motivándolos a empaquetar, validar bloques y mantener la seguridad de la cadena de bloques.
 
-For specific calculation details, please refer to [Transaction Fee](./gas.md).
+Para detalles específicos de cálculo, por favor consulte [Comisión de transacción](./gas.md).
 
-## Transaction Lifecycle
+## Ciclo de vida de la transacción
 
-Once the transaction has been submitted the following happens:
+Una vez que la transacción ha sido enviada ocurre lo siguiente:
 
 1. A transaction hash is cryptographically generated: 0x97d99bc7729211111a21b12c933c949d4f31684f1d6954ff477d0477538ff017
-2. The transaction is then broadcasted to the network and added to a transaction pool consisting of all other pending network transactions.
-3. A validator must pick your transaction and include it in a block in order to verify the transaction and consider it "successful".
-4. As time passes the block containing your transaction will be upgraded to "justified" then "finalized". These upgrades make it much more certain that your transaction was successful and will never be altered. Once a block is "finalized" it could only ever be changed by a network level attack that would cost many billions of dollars.
+2. La transacción se transmite a la red y se agrega a una pool de transacciones que consiste en todas las demás transacciones de red pendientes.
+3. Un validador debe elegir su transacción e incluirla en un bloque para verificar la transacción y considerarla "exitosa".
+4. A medida que pase el tiempo, el bloque que contiene su transacción se actualizará a "justificado" y luego "finalizado". Estas actualizaciones hacen que sea mucho más seguro que su transacción fue exitosa y nunca se modificará. Una vez que un bloque es "finalizado" sólo podría ser cambiado por un ataque a nivel de red que costaría muchos miles de millones de dólares.
 
-For a more detailed understanding of the transaction lifecycle, you can refer to [Transaction Lifecycle](/docs/core/core-space-basics/transactions/lifecycle.md).
+Para una comprensión más detallada del ciclo de vida de la transacción, puede referirse a [ciclo de vida de la transacción](/docs/core/core-space-basics/transactions/lifecycle.md).
 
-## Transaction Status
+## Estado de la Transacción
 
-The transactions that are included in a block will eventually be executed, generating a [transaction **Receipt**](/docs/core/core-space-basics/transactions/receipt.md). However, not all transactions will be executed successfully; typically, transactions can have two states: **Success** or **Failure**.
+Las transacciones que se incluyan en un bloque se ejecutarán finalmente, generando un </a> **Recibo** de transacción
 
-For eSpace transactions, you can determine the execution status through the **status** field in the Receipt, where **1 represents success, and 0 represents failure**.
+. Sin embargo, no todas las transacciones se ejecutarán con éxito; normalmente, las transacciones pueden tener dos estados: **Éxito** o **Fallo**.</p> 
 
-For Core transactions, you can check the execution status through the **outcomeStatus** field in the Receipt, where **0 represents success, and 1 represents failure**.
+Para las transacciones de eSpace, puede determinar el estado de ejecución a través del campo **status** del Recibo, donde **1 representa éxito, y 0 representa fracaso**.
 
-In addition to this, the Receipt also includes other information about the transaction execution, such as block information and event details.
+Para las transacciones de Core Space, puede determinar el estado de ejecución a través del campo **status** del Recibo, donde **1 representa éxito, y 0 representa fracaso**.
 
-## Details
+Además, el recibo también incluye más información sobre la ejecución de la transacción, como información del bloque y los detalles de los eventos.
 
-If you want to learn details about transactions, you can refer to the transaction explanation in the [Core Space](/docs/core/core-space-basics/transactions/overview.md).
+
+
+## Detalles
+
+Si quieres aprender más sobre las transacciones, puedes referirte a la explicación de la transacción en la [Core Space](/docs/core/core-space-basics/transactions/overview.md).
+
+
 
 ## Intro Video
 
