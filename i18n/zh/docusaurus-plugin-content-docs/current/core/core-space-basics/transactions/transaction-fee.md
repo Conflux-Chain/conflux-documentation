@@ -8,16 +8,16 @@ keywords:
   - 存储抵押
 ---
 
-In the Conflux Core Space, transactions are processed by miners who charge a fee for their service. 这个费用激励矿工参与网络并保持其顺畅运行。 The fees are paid in CFX and are specified by the transaction initiator through the `gas`, `gasPrice` and `storageLimit` fields in the transaction.
+在Conflux网络的核心空间中，交易由矿工处理，矿工为其服务收费。 这个费用激励矿工参与网络并保持其顺畅运行。 这些费用是用CFX支付的，并由交易发起者通过交易中的`gas`, `gasPrice` and `storageLimit` 字段指定。
 
-## Gas Fee in Transactions
+## 交易中的燃气费
 
-The gas fee for a transaction in Conflux is determined by two key fields: `gas` and `gasPrice`.
+在Conflux中，交易的燃气费由两个关键字段确定：`gas` and `gasPrice`。
 
-- **`gas`**: This field specifies the maximum amount of computing power that a transaction can consume.
-- **`gasPrice`**: Indicates your willingness to pay per unit of computing power.
+- **`gas`**: 该字段指定了交易可以消耗的最大计算能力。
+- **`gasPrice`**:表示您愿意支付的每单位计算能力。
 
-The actual gas cost is calculated as `gasCharged` multiplied by `gasPrice`. It's important to note that `gasCharged` will not exceed the limit set by the `gas` field.
+实际的燃气成本计算为 `gasCharged`乘以`gasPrice`。 需要注意，`gasCharged`不会超过 `gas` 字段设定的限制。
 
 有关Conflux中燃气及其计算的更详细信息，请访问我们的 [关于燃气的详细文档](../../zh-CN/docs/general/conflux-basics/gas.md).。
 
