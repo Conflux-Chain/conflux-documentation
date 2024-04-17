@@ -90,7 +90,7 @@ contract SponsorWhitelistControl {
     function addPrivilege(address[] memory) public {}
 
     // ------------------------------------------------------------------------
-    // Remove commission privilege for address `user` from some contract.
+    // 从一些合约的地址`user`中移除佣金特权。
     // ------------------------------------------------------------------------
     function removePrivilege(address[] memory) public {}
 
@@ -106,7 +106,7 @@ contract SponsorWhitelistControl {
 
 `SponsorWhitelistControl` 为每个用户建立的合约维护一个白名单，包含有资格获得补贴的账户。 首先，应该使用 `addPrivilege(address[] memory)` 或 `addPrivilegeByAdmin(address contractAddr, address[] memory addresses)` 将合格账户添加到白名单中。 值得一提的是，如果将**零地址**添加到白名单，那么任何账户都将有资格获得补贴。
 
-There are two resources that can be sponsored: gas consumption and storage collateral. 这两种资源可以通过 `payable` 接口 `setSponsorForGas(address contractAddr, uint upperBound)` 和 `setSponsorForCollateral(address contractAddr)` 分别进行赞助。
+有两种资源可以被赞助：gas消耗和存储抵押。 这两种资源可以通过 `payable` 接口 `setSponsorForGas(address contractAddr, uint upperBound)` 和 `setSponsorForCollateral(address contractAddr)` 分别进行赞助。
 
 :::note
 
@@ -235,11 +235,11 @@ main().catch(
     const randomAccount = cfx.wallet.addRandom();
     ```
 
-    - `PRIVATE_KEY`：用户私钥的占位符。 这对于部署合约和发送交易至关重要。 **You need to replace this value with your own private key with enough CFX**
+    - `PRIVATE_KEY`：用户私钥的占位符。 这对于部署合约和发送交易至关重要。 **您需要用您自己的私钥替换这个值，并且确保有足够的 CFX**
     - `account`：使用提供的私钥创建的账户实例。 将用于部署合约。
     - `randomAccount`：一个新的随机账户实例。 这个账户默认没有任何CFX（Conflux的原生货币）。
 
-2. **Deploying the Smart Contract**:
+2. **部署智能合约**：
 
     ```javascript
     const testContract = cfx.Contract({
@@ -252,9 +252,9 @@ main().catch(
     console.log(`contract deployed at ${contract_addr}`);
     ```
 
-    - `testContract`: A new contract instance is created using the ABI and bytecode.
+    - `testContract`：使用ABI和字节码创建的新合约实例。
 
-3. **Interacting with the Deployed Contract**:
+3. **与已部署合约进行交互**：
 
     ```javascript
     testContract.address = contract_addr;
@@ -264,10 +264,10 @@ main().catch(
     console.log(`random address ${randomAccount.address} added to whitelist`);
     ```
 
-    - The address of the deployed contract is set to the `testContract` instance.
-    - A transaction is sent to the contract to add the random account's address to a whitelist.
+    - 将部署合约的地址设置给`testContract`实例。
+    - 向合约发送交易，将随机账户的地址添加到白名单中。
 
-4. **Sponsoring Gas and Storage**:
+4. **赞助Gas和存储**：
 
     ```javascript
     const sponsor_contract = cfx.InternalContract('SponsorWhitelistControl');
@@ -290,10 +290,10 @@ main().catch(
     console.log("Storage collateral is sponsored");
     ```
 
-    - The code sets an upper bound for gas sponsorship and calculates its equivalent in CFX. It makes sure if the gas sponsorship value is at least 1000 times the upper bound. If not, an error is thrown. (This is the requirement of the `SponsorWhitelistControl` interface)
-    - The code then sponsors gas and storage for the deployed contract. This means users interacting with the contract won't have to pay for gas or storage, as it's covered by the sponsor.
+    - 代码设置了gas赞助的上限，并计算其等值的CFX。 确保如果gas赞助值至少是上限的1000倍。 如果不是，抛出错误。 这是`SponsorWhitelistControl`接口的要求）
+    - 然后，代码为部署的合约赞助gas和存储。 这意味着与合约交互的用户无需支付gas或存储费用，因为这些费用由赞助方承担。
 
-5. **Sending a Transaction whose Gas and Storage are Sponsored**:
+5. **发送Gas和存储被赞助的交易**：
 
     ```javascript
     const receipt = await testContract.par_add(1, 3).sendTransaction({
@@ -303,26 +303,26 @@ main().catch(
     console.log(`gas and storage covered by sponsor: ${receipt.gasCoveredBySponsor && receipt.storageCoveredBySponsor}`);
     ```
 
-    - A transaction is sent to the contract, calling the `par_add` function with arguments `1` and `3`.
-    - Log the transaction's hash and whether its gas and storage were covered using the transaction receipt.
+    - 向合约发送交易，调用`par_add`函数，参数为`1`和`3`。
+    - 记录交易的哈希值以及其gas和存储是否通过交易收据被赞助方支付。
 
-## Specification
+## 规范
 
-Conflux keeps the following information for each user-established contract:
+Conflux为每个用户建立的合约保留以下信息：
 
-- `sponsor_for_gas`: this is the account that provides the subsidy for gas consumption, and can be accessed via `SponsorWhitelistControl` or `getSponsorInfo` RPC;
-- `sponsor_for_collateral`: this is the account that provides the subsidy for collateral for storage, and can be accessed via `SponsorWhitelistControl` or `getSponsorInfo` RPC;
-- `sponsor_balance_for_gas`: this is the balance of subsidy available for gas consumption, and can be accessed via `SponsorWhitelistControl` or `getSponsorInfo` RPC;
-- `sponsor_balance_for_collateral`: *refundable* balance of subsidy available for collateral for storage, and can be accessed via `SponsorWhitelistControl` or `getSponsorInfo` RPC;
-- `availableStoragePoints`: storage points available for storage collateral, and can be accessed via `SponsorWhitelistControl` or `getSponsorInfo` RPC;
-- `usedStoragePoints`: storage points available for storage collateral, can be accessed via `getSponsorInfo` RPC, can only be accessed via `getSponsorInfo` RPC;
-- `sponsor_limit_for_gas_fee`: this is the upper bound for the gas fee subsidy paid for every sponsored transaction, and can be accessed via `SponsorWhitelistControl` or `getSponsorInfo` RPC;
-- `whitelist`: 这是有资格获得补贴的普通账户列表，其中一个特殊的全零地址指代所有普通账户。 只有合约本身和管理员有权更改这个列表。 The elements of whitelist cannot be accessed directly, instead, `isWhitelisted` interface of `SponsorWhitelistControl` can tell if an address is whitelisted.
+- `sponsor_for_gas`：为gas消耗提供补贴的账户，可通过`SponsorWhitelistControl`或`getSponsorInfo` RPC访问；
+- `sponsor_for_collateral`：为存储抵押提供补贴的账户，可通过`SponsorWhitelistControl`或`getSponsorInfo` RPC访问；
+- `sponsor_balance_for_gas`：用于gas消耗的补贴余额，可通过`SponsorWhitelistControl`或`getSponsorInfo RPC`访问；
+- `sponsor_balance_for_collateral`：用于存储抵押的 *可退款* 赞助余额，可以通过 `SponsorWhitelistControl` 或 `getSponsorInfo` RPC访问。
+- `availableStoragePoints`: 用于存储抵押的可用存储点，可以通过 `SponsorWhitelistControl` 或 `getSponsorInfo` RPC访问；
+- `usedStoragePoints`: 用于存储抵押的已使用存储点，能且只能通过 `getSponsorInfo` RPC 访问；
+- `sponsor_limit_for_gas_fee` : 这是为每个受赞助的交易支付的燃气费补贴的上限，可以通过 `SponsorWhitelistControl` 或 `getSponsorInfo RPC` 访问；
+- `whitelist`: 这是有资格获得补贴的普通账户列表，其中一个特殊的全零地址指代所有普通账户。 只有合约本身和管理员有权更改这个列表。 白名单的元素不能直接访问，而是通过 `SponsorWhitelistControl` 的 `isWhitelisted` 接口来判断一个地址是否在白名单中。
 
-There are two resources that can be sponsored: gas consumption and storage collateral.
+有两种资源可以被赞助：gas消耗和存储抵押。
 
-- *For gas consumption*: If a transaction calls a contract with non-empty `sponsor_for_gas` and the sender is in the `whitelist` of the contract and the gas fee specified by the transaction is within the `sponsor_limit_for_gas_fee`, the gas consumption of the transaction is paid from the `sponsor_balance_for_gas` of the contract (if it is sufficient) rather than from the sender’s balance. 否则，发送者应该支付gas消耗。
-- *For storage collateral*: If a transaction calls a contract with non-empty `available_storage_points` or `sponsor_for_collateral` and the sender is in the `whitelist` of the contract, the collateral for storage incurred in the execution of the transaction is deducted from `sponsor_for_collateral`(with priority) or `available_storage_points` of the contract, and the owner of those modified storage entries is set to the contract address accordingly. 否则，发送者应该支付交易执行过程中产生的存储抵押。
+- 如果交易调用了一个有非空 `sponsor_for_gas` 的合约，且发送者在合约的 `白名单` 中，且交易指定的燃气费在 `sponsor_limit_for_gas_fee` 内，则交易的燃气消耗从合约的 `sponsor_balance_for_gas` 支付（如果足够），而不是从发送者的余额中支付。 否则，发送者应该支付gas消耗。
+- *For storage collateral*如果交易调用了一个有非空 `available_storage_points` 或 `sponsor_for_collateral` 的合约，且发送者在合约的 `白名单` 中，则在执行交易过程中产生的存储抵押从合约的 `sponsor_for_collateral` （优先）或 `available_storage_points` 中扣除，且这些被修改的存储条目的所有者相应地设置为合约地址。 否则，发送者应该支付交易执行过程中产生的存储抵押。
 
 当消息调用发生时，Conflux不会重新检查赞助。 例如，如果普通地址 `A` 调用合约 `B` ，合约 `B` 调用合约`C` ，Conflux 只会检查地址 `A` 是否得到合约 `B` 的赞助。 如果`A`被赞助，`B`将承担交易执行过程中的所有gas和/或存储抵押，包括从`B`到`C`的消息调用。 换句话说，只有一个交易发送者才能被赞助。
 
@@ -348,13 +348,13 @@ There are two resources that can be sponsored: gas consumption and storage colla
   - 新 `upperBound` 的值应不低于旧 `upperBound` ，除非当前 `sponsor_balance_for_gas` 负担不起旧 `sponsor_limit_for_gas_fee` 。 但如果赞助从未设置，这条规则将被忽略。
   - 此外，转移资金应不低于新限制的1000倍，这意味着赞助至少应支持1000次调用。
   - 以drip为单位计算的的转移价值将被添加到 `sponsor_balance_for_gas` 。
-- 对于 `setSponsorForCollateral(address contractAddr)` ，没有额外要求。 提供的剩余CFX的 `p` 比例（即p * tx.value）将被烧毁并转换为 storage_points 。 The rest (`(1-p) * tx.value`) will be added to `sponsor_balance_for_collateral`.
+- 对于 `setSponsorForCollateral(address contractAddr)` ，没有额外要求。 提供的剩余CFX的 `p` 比例（即p * tx.value）将被烧毁并转换为 storage_points 。 剩余的部分( `(1-p) * tx.value` )将被加到 `sponsor_balance_for_collateral` （存储抵押的赞助余额）中。
 
 #### 赞助替换
 
-##### Gas Sponsor Replacement
+##### 燃气赞助替换
 
-To replace the gas sponsor of a contract, the new sponsor must meet specific conditions：
+要替换合约的燃气赞助商，新的赞助商必须满足特定条件：
 
 1. 转移的资金应该大于合约当前的`sponsor_balance_for_gas`。
 2. 新的`sponsor_limit_for_gas_fee`（由`upperBound`参数指定）应该不低于旧赞助者的限制，除非旧的`sponsor_balance_for_gas`不能负担旧的`sponsor_limit_for_gas_fee`。
@@ -362,20 +362,20 @@ To replace the gas sponsor of a contract, the new sponsor must meet specific con
 
 如果满足以上条件，剩余的`sponsor_balance_for_gas`将退还给旧的`sponsor_for_gas`，而被转移到内部合约的资金将加到合约的`sponsor_balance_for_gas`中。 然后，根据新赞助者的指定，更新`sponsor_for_gas`和`sponsor_limit_for_gas_fee`。 否则，将触发一个异常。
 
-##### Collateral Sponsor Replacement
+##### 抵押赞助者替换
 
-The replacement of collateral sponsorship is similar but more complex due to storage points. As a proportion of CFX is burnt, the new sponsor should transfer a fund more than the refundable CFX provided by the current sponsor for collateral of the contract, whereas,
+抵押赞助的替换类似但更为复杂，因为涉及到存储点。 由于一部分 CFX 会被燃烧，新的赞助商应转移的资金超过当前赞助商为合约的抵押提供的可退款 CFX，其中，
 
-`refundable storage collateral = sponsor_balance_for_collateral + (collateral_for_storage - use_storage_points / 1024)`
+`可退款的存储抵押 = sponsor_balance_for_collateral + (collateral_for_storage - use_storage_points / 1024)`
 
-The origin sponsor will be refunded with the above CFX immediately after the sponsor replacement. The `collateral_for_storage` refers to storage collateral already sponsored, accessible via `cfx_getAccount` RPC with contract's address as parameter.
+赞助替换后，原赞助商将立即退还上述 CFX。 `collateral_for_storage` 指的是已赞助的存储抵押，可以通过 `cfx_getAccount RPC` 访问，参数为合约地址。
 
-`p` proportion of the surplus CFX provided will be burnt and converted into storage_points, whereas,
+提供的剩余 CFX 的 `p` 比例部分将被燃烧并转换成存储点，其中，
 
 ```
-surplus storage points
-= p * (surplus CFX provided) * 1024
-= p * (tx.value - previous refundable collateral) * 1024
+剩余存储点
+= p * (提供的剩余 CFX ) * 1024
+= p * (tx.value - 之前的可退款抵押) * 1024
 = p * (tx.value - (sponsor_balance_for_collateral + (collateral_for_storage - use_storage_points / 1024))) * 1024
 ```
 
