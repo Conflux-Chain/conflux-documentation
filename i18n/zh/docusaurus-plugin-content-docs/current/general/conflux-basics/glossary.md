@@ -19,7 +19,7 @@ displayed_sidebar: generalSidebar
 Conflux的全局状态是用一个账户模型来描述的，基本的存储组件称为账户。 每一个能够与Conflux世界交互的参与者，无论是人还是实体，都有其必要的信息以[地址](#address)和相应状态的键/值对的形式存储在一个账户α中。 详细信息请参考[general-accounts](./accounts.md)。
 
 ### **地址**
-An address in Conflux is the identifier of an [account](#account). It's a unique string of characters that represents the account on the blockchain. The format of the address can differ in different Conflux [spaces](./spaces.md). There are different formats for espace addresses and Core Space addresses.
+在 Conflux 网络中，地址是[账户](#account)的标识符。 它是一串独特的字符，代表着区块链上的账户。 不同 Conflux [空间](./spaces.md)中的地址格式可能会有所不同。 espace 地址和 Core Space 有着不同的格式。
 
 例如：
 
@@ -70,19 +70,19 @@ CFX是Conflux网络的原生货币。 它用于激励维护Conflux网络，并�
 `networkId`用于在网络层区分不同的区块链。 目前Conflux主网/测试网的`networkId`与`chainId`相同。 你可以从`cfx_getStatus` RPC方法中获取这两个值。
 
 ### **Conflux生态系统**
-The Conflux Ecosystem refers to the various projects, applications, platforms, and services that are built on or integrated with the Conflux network. This includes decentralized applications (DApps), decentralized finance (DeFi) platforms, wallet services, and more. The Conflux Ecosystem is a vibrant and growing community of developers, users, and organizations that contribute to the Conflux network.
+Conflux生态系统指的是在Conflux网络上构建或集成的各种项目、应用、平台和服务。 这包括去中心化应用（DApps）、去中心化金融（DeFi）平台、钱包服务等。 Conflux生态系统是一个充满活力且不断增长的开发者、用户和组织社区，他们为Conflux网络做出贡献。
 
 ### **Conflux Scan**
-[Conflux Scan](https://confluxscan.io/) is the official blockchain explorer for the Conflux network. It provides a user-friendly, details-driven interface for users to view, confirm, and inspect transactions and contracts on the Conflux network. With Conflux Scan, users can track the status of their transactions, view the balance of their accounts, explore smart contracts, and much more.
+[Conflux Scan](https://confluxscan.io/)是Conflux网络的官方区块链浏览器。 它为用户提供一个友好、详细驱动的界面，用于查看、确认和检查Conflux网络上的交易和合约。 通过Conflux Scan，用户可以追踪其交易的状态、查看账户余额、探索智能合约等等。
 
 ### **共识算法**
-A consensus algorithm is a process in computer science used to achieve agreement on a single data value among distributed processes or systems. In the context of blockchain, it's used to agree on the (total) order of transactions. Conflux uses a unique consensus algorithm based on a Tree-Graph structure, which allows for high throughput and low latency in large-scale decentralized networks.
+共识算法是计算机科学中用于在分布式进程或系统中就单个数据值达成一致的过程。 在区块链中，它用于就交易的（总体）顺序达成一致。 Conflux使用基于树图（Tree-Graph）结构的独特共识算法，该算法允许在大规模去中心化网络中实现高吞吐量和低延迟。
 
 ### **DAG（有向无环图）**
-In the context of Conflux, DAG is used to represent the block structure of the Conflux network. Unlike traditional blockchain systems that follow a linear chain, Conflux forms a DAG structure of blocks, allowing for multiple blocks to be produced concurrently. This structure is key to Conflux's ability to achieve high throughput and low latency.
+在Conflux里，DAG用于表示Conflux网络的区块结构。 与遵循线性链的传统区块链系统不同，Conflux形成了区块的DAG结构，允许同时产生多个区块。 这种结构是Conflux实现高吞吐量和低延迟的关键。
 
 ### **去中心化应用（DApp）**
-A decentralized application (DApp) is a computer application that runs on a distributed computing system such as a blockchain. Unlike traditional applications that run on centralized servers, DApps leverage the power of blockchain's peer-to-peer network to provide transparency, immutability, and resistance to censorship. The typical framework of a DApp includes 2 layers: the front-end or user interface, and the smart contracts running on the blockchain acting as the back-end logic. The front-end, developed using standard languages like HTML, CSS, and JavaScript, interacts with the blockchain through smart contracts. These smart contracts, written in languages like Solidity, define the rules and logic of the DApp, and are stored and executed on the blockchain, ensuring consistent and trustless operation.
+去中心化应用（DApp）是一种运行在分布式计算系统（如区块链）上的计算机应用。 与在中心化服务器上运行的传统应用不同，DApps利用区块链的点对点网络的力量提供透明度、不可更改性和抗审查性。 DApp的典型框架包括2层：前端或用户界面，以及作为后端逻辑在区块链上运行的智能合约。 前端使用标准语言（如HTML、CSS和JavaScript）开发，通过智能合约与区块链交互。 These smart contracts, written in languages like Solidity, define the rules and logic of the DApp, and are stored and executed on the blockchain, ensuring consistent and trustless operation.
 
 ### **双花**
 Double spending is a potential flaw in a digital cash scheme in which a single digital token can be spent more than once. This is possible because a digital token consists of a digital file that can be duplicated or falsified. The Conflux network, like other blockchain networks, uses a consensus mechanism to prevent double spending.
