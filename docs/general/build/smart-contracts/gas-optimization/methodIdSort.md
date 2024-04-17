@@ -1,3 +1,6 @@
+---
+displayed_sidebar: generalSidebar
+---
 
 # MethodId Sort Optimization
 

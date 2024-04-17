@@ -1,16 +1,16 @@
 ---
-displayed_sidebar: blockchainSidebar
+displayed_sidebar: generalSidebar
 ---
 
-# Denial of Service (DoS) Attack
+# Denial of Service Attacks
+
+In April 2022, a popular NFT project called Akutar conducted a successful [Dutch auction](https://en.wikipedia.org/wiki/Dutch_auction) to raise funds, amassing 11,539.5 ETH. However, when processing refunds for previous community pass holders, a flaw in their smart contract prevented operations, locking all funds within the contract due to a DoS vulnerability. 
+
+You can find more detailed information in [EXPLAINED: THE AKUTARS NFT INCIDENT (APRIL 2022)](https://www.halborn.com/blog/post/explained-the-akutars-nft-incident-april-2022)
 
 Denial of Service (DoS) attacks in the Web2 context typically involve overwhelming a server with excessive traffic, rendering it unable to serve legitimate requests. In the Web3 realm, such attacks exploit vulnerabilities to disrupt smart contract operations.
 
-In April 2022, a popular NFT project called Akutar conducted a successful [Dutch auction](https://en.wikipedia.org/wiki/Dutch_auction) to raise funds, amassing 11,539.5 ETH. However, when processing refunds for previous community pass holders, a flaw in their smart contract prevented operations, locking all funds within the contract due to a DoS vulnerability.
-
-you can find more detail information from [EXPLAINED: THE AKUTARS NFT INCIDENT (APRIL 2022)](https://www.halborn.com/blog/post/explained-the-akutars-nft-incident-april-2022)
-
-## Vulnerability Example
+#### Vulnerability Example
 
 Let’s explore a simplified contract, `GameOfFunds`, that demonstrates this type of vulnerability. The contract allows players to deposit ETH at the beginning and intends to refund these deposits once the game concludes.
 
@@ -67,16 +67,7 @@ contract Malicious {
 
 ## Prevention Strategies
 
-Smart contract developers must be vigilant to prevent logical errors that lead to DoS vulnerabilities. Here are crucial considerations:
+1. Ensure external contract calls, including fallback functions, do not interfere with or halt critical operations, allowing processes like refunds to continue even if individual transactions fail.
+2. Maintain contract functionality even if key participants are permanently absent, and allow users to withdraw refunds themselves rather than distributing them in batches.
+3. Prevent contracts from unintentionally self-destructing and avoid infinite loops to ensure stable and secure contract operations.
 
-1. Ensure external contract calls, like `call`, do not halt critical functions, such as allowing refunds to continue even if one fails.
-2. Prevent contracts from unintentionally self-destructing.
-3. Avoid infinite loops.
-4. Correctly set parameters for `require` and `assert`.
-5. Allow users to withdraw refunds themselves rather than sending them in batches.
-6. Ensure fallback functions do not interfere with contract operations.
-7. Maintain contract functionality even if key participants, like `owners`, are permanently absent.
-
-## Conclusion
-
-This lesson has covered the susceptibility of smart contracts to DoS attacks, exemplified by Akutar's significant loss of over 10,000 ETH. Developers must meticulously implement safeguards, such as enabling users to pull their refunds, to avoid such vulnerabilities.
