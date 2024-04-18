@@ -2,7 +2,7 @@
 displayed_sidebar: generalSidebar
 ---
 
-# Efficient Constructor Usage
+# Payable Constructor
 
 In Solidity, the way you write constructors can influence the deployment cost of your contracts, particularly with respect to gas usage. The Ethereum Virtual Machine (EVM) requires gas for all operations, including contract deployment.
 
