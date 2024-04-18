@@ -8,49 +8,44 @@ keywords:
 displayed_sidebar: eSpaceSidebar
 ---
 
+:::tip
+
+This page lists the public RPC endpoints for Conflux eSpace. Public RPC endpoints for **Conflux Core Space** is provided [here](../core/core-endpoints.md).
+
+:::
+
 ## Confura
 
 Confura, a public RPC service offered by the Conflux Foundation, is available for free use.
 
 ### Public Endpoints
 
-The Confura public RPC services are located in different regions globally. We would recommend users to choose RPC endpoints basing on their geographical location.
+Confura provides several available RPC endpoints for the mainnet and testnet. We have sorted them by selected priority and provided brief descriptions. If you are unsure which one to choose, please select an RPC endpoint near the top of the list.
 
-#### China
+#### Mainnet
 
-| Network | Chain ID | RPC Endpoint | Type |
-| -------- | -------- | -------- | --- |
-| Mainnet | 1029 | https://evm.confluxrpc.com | HTTP |
-| Mainnet | 1029 | https://evmmain-china.confluxrpc.com | HTTP |
-| Mainnet | 1029 | wss://evm.confluxrpc.com/ws | Websocket |
-| Testnet | 1 | https://evmtestnet.confluxrpc.com | HTTP |
-| Testnet | 1 | https://evmtest.confluxrpc.com (both for China and global) | HTTP |
-| Testnet | 1 | wss://evmtestnet.confluxrpc.com/ws | Websocket |
+Chain ID for Conflux eSpace Mainnet is `1030(0x406)`. The corresponding blockchain explorer URL is https://evm.confluxscan.io.
 
-#### Global
+| RPC Endpoint | Type | Notes |
+| -------- | -------- | -------- |
+| https://evm.confluxrpc.com | HTTP |
+| https://evmmain-china.confluxrpc.com | HTTP | RPC Service for China Users |
+| https://evmmain-global.confluxrpc.com | HTTP | RPC Service for Global Users |
+| https://evm.confluxrpc.org | HTTP | Backup RPC Service |
+| wss://evm.confluxrpc.com/ws | Websocket |
+| wss://evm.confluxrpc.org/ws | Websocket | Backup RPC Service |
 
-| Network | Chain ID | RPC Endpoint | Type |
-| -------- | -------- | -------- | --- |
-| Mainnet | 1029 | https://evm.confluxrpc.org | HTTP |
-| Mainnet | 1029 | https://evmmain-global.confluxrpc.com | HTTP |
-| Mainnet | 1029 | wss://evm.confluxrpc.org/ws | Websocket |
-| Testnet | 1 | https://evmtestnet.confluxrpc.org | HTTP |
-| Testnet | 1 | https://evmtest.confluxrpc.com (both for China and global) | HTTP |
-| Testnet | 1 | wss://evmtestnet.confluxrpc.org/ws | Websocket |
+#### Testnet
 
-### Hong Kong
+Chain ID for Conflux eSpace Mainnet is `71(0x47)`. The corresponding blockchain explorer URL is https://evmtestnet.confluxscan.io.
 
-Network  | Chain ID                | RPC Endpoint URL | Explorer 
--------- | ----------------------- | ------------ |------------ 
-[Mainnet](#mainnet) | 1030 (0x406) | *HTTP*: https://evm.confluxrpc.com<br/> *Websocket*: wss://evm.confluxrpc.com/ws | https://evm.confluxscan.net
-[Testnet](#testnet) | 71 (0x47) | *HTTP*: https://evmtestnet.confluxrpc.com<br/>*Websocket*: wss://evmtestnet.confluxrpc.com/ws | https://evmtestnet.confluxscan.net
-
-### US East
-
-Network  | Chain ID                | RPC Endpoint URL | Explorer 
--------- | ----------------------- | ------------ |------------ 
-[Mainnet](#mainnet) | 1030 (0x406) | *HTTP*: https://evm.confluxrpc.org<br/>*Websocket*: wss://evm.confluxrpc.org/ws | https://evm.confluxscan.io
-[Testnet](#testnet) | 71 (0x47) | https://evmtestnet.confluxrpc.org<br/>*Websocket*: wss://evmtestnet.confluxrpc.org/ws | https://evmtestnet.confluxscan.io
+| RPC Endpoint | Type | Notes |
+| -------- | --- | --- |
+| https://evmtestnet.confluxrpc.com | HTTP ||
+| https://evmtest.confluxrpc.com | HTTP ||
+| https://evmtestnet.confluxrpc.org | HTTP | Backup RPC Service |
+| wss://evmtestnet.confluxrpc.com/ws | Websocket ||
+| wss://evmtestnet.confluxrpc.org/ws | Websocket | Backup RPC Service |
 
 ### Rate Limits
 

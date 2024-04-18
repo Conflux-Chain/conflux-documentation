@@ -10,35 +10,44 @@ displayed_sidebar: coreSidebar
 
 Public available Conflux Core Space network RPC endpoints
 
-## Confura
+:::tip
 
-Confura is an Ethereum Infura equivalent public JSON-RPC service on Conflux network, which is developed and maintained by Conflux foundation.
+Public RPC endpoints for **Conflux eSpace** is provided [here](../espace/network-endpoints.md).
+
+:::
+
+## 1. Confura
+
+Confura is an Ethereum Infura equivalent public JSON-RPC service on Conflux network, which is developed and maintained by Conflux foundation and is available for free use.
 
 ### Public Endpoint
 
-The Confura public RPC services are located in different regions globally. We would recommend users to choose RPC endpoints basing on their geographical location.
+Confura provides several available RPC endpoints for the mainnet and testnet. We have sorted them by selected priority and provided brief descriptions. If you are unsure which one to choose, please select an RPC endpoint near the top of the list.
 
-#### China
+#### Mainnet
 
-| Network | Chain ID | RPC Endpoint | Type |
-| -------- | -------- | -------- | --- |
-| Mainnet | 1029 | https://main.confluxrpc.com | HTTP |
-| Mainnet | 1029 | https://cfxmain-china.confluxrpc.com | HTTP |
-| Mainnet | 1029 | wss://main.confluxrpc.com/ws | Websocket |
-| Testnet | 1 | https://test.confluxrpc.com | HTTP |
-| Testnet | 1 | https://cfxtest.confluxrpc.com (both for China and global) | HTTP |
-| Testnet | 1 | wss://test.confluxrpc.com/ws | Websocket |
+Chain ID for Conflux Core Space Mainnet is `1029(0x405)`. The corresponding blockchain explorer URL is https://confluxscan.io.
 
-#### Global
+| RPC Endpoint | Type | Notes |
+| -------- | -------- | --- |
+| https://main.confluxrpc.com | HTTP | |
+| https://cfxmain-china.confluxrpc.com | HTTP | RPC Service for China Users |
+| https://cfxmain-global.confluxrpc.com | HTTP | RPC Service for Global Users |
+| https://main.confluxrpc.org | HTTP | Backup RPC Service |
+| wss://main.confluxrpc.com/ws | Websocket | |
+| wss://main.confluxrpc.org/ws | Websocket | Backup RPC Service |
 
-| Network | Chain ID | RPC Endpoint | Type |
-| -------- | -------- | -------- | --- |
-| Mainnet | 1029 | https://main.confluxrpc.org | HTTP |
-| Mainnet | 1029 | https://cfxmain-global.confluxrpc.com | HTTP |
-| Mainnet | 1029 | wss://main.confluxrpc.org/ws | Websocket |
-| Testnet | 1 | https://test.confluxrpc.org | HTTP |
-| Testnet | 1 | https://cfxtest.confluxrpc.com (both for China and global) | HTTP |
-| Testnet | 1 | wss://test.confluxrpc.org/ws | Websocket |
+#### Testnet
+
+Chain ID for Conflux Core Space Testnet is `1(0x1)`. The corresponding blockchain explorer URL is https://test.confluxscan.io.
+
+| RPC Endpoint | Type | Notes |
+| -------- | --- | --- |
+| https://test.confluxrpc.com | HTTP ||
+| https://cfxtest.confluxrpc.com | HTTP ||
+| https://test.confluxrpc.org | HTTP | Backup RPC Service |
+| wss://test.confluxrpc.org/com | Websocket ||
+| wss://test.confluxrpc.org/ws | Websocket | Backup RPC Service |
 
 ### Rate Limits
 
