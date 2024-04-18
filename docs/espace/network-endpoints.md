@@ -45,7 +45,7 @@ Chain ID for Conflux eSpace Mainnet is `71(0x47)`. The corresponding blockchain 
 | https://evmtest.confluxrpc.com | HTTP ||
 | https://evmtestnet.confluxrpc.org | HTTP | Backup RPC Service |
 | wss://evmtestnet.confluxrpc.com/ws | Websocket ||
-| wss://evmtestnet.confluxrpc.org/ws | Websocket | Backup RPC Service |
+| wss://evmtestnet.confluxrpc.org/ws | Websocket ||
 
 ### Rate Limits
 
