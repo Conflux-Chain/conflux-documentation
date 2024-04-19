@@ -2,30 +2,56 @@
 sidebar_position: 5
 title: Network RPC Endpoints
 description: Conflux eSpace RPC endpoints
+keywords:
+  - network endpoints
+  - Conflux eSpace
 displayed_sidebar: eSpaceSidebar
 ---
 
-## Public RPC Endpoints
+:::tip
 
-Confura, a public RPC service offered by the Conflux Foundation, is available for free use. However, to maintain the service's usability, there are rate limits in place for the free tier. For access to a higher tier of RPC service, you can make a purchase through the [Web3 Paywall](../general/build/tools/web3paywall.md), or you can apply directly to the Conflux Foundation by emailing [bd@confluxnetwork.org](mailto:bd@confluxnetwork.org).
+This page lists the public RPC endpoints for Conflux eSpace. Public RPC endpoints for **Conflux Core Space** is provided [here](../core/core-endpoints.md).
 
-### Hong Kong
+:::
 
-Network  | Chain ID                | RPC Endpoint URL | Explorer 
--------- | ----------------------- | ------------ |------------ 
-[Mainnet](#mainnet) | 1030 (0x406) | *HTTP*: https://evm.confluxrpc.com<br/> *Websocket*: wss://evm.confluxrpc.com/ws | https://evm.confluxscan.net
-[Testnet](#testnet) | 71 (0x47) | *HTTP*: https://evmtestnet.confluxrpc.com<br/>*Websocket*: wss://evmtestnet.confluxrpc.com/ws | https://evmtestnet.confluxscan.net
+## Confura
 
-### US East
+Confura, a public RPC service offered by the Conflux Foundation, is available for free use.
 
-Network  | Chain ID                | RPC Endpoint URL | Explorer 
--------- | ----------------------- | ------------ |------------ 
-[Mainnet](#mainnet) | 1030 (0x406) | *HTTP*: https://evm.confluxrpc.org<br/>*Websocket*: wss://evm.confluxrpc.org/ws | https://evm.confluxscan.io
-[Testnet](#testnet) | 71 (0x47) | https://evmtestnet.confluxrpc.org<br/>*Websocket*: wss://evmtestnet.confluxrpc.org/ws | https://evmtestnet.confluxscan.io
+### Public Endpoints
+
+Confura provides several available RPC endpoints for the mainnet and testnet. We have sorted them by selected priority and provided brief descriptions. If you are unsure which one to choose, please select an RPC endpoint near the top of the list.
+
+#### Mainnet
+
+Chain ID for Conflux eSpace Mainnet is `1030(0x406)`. The corresponding blockchain explorer URL is https://evm.confluxscan.io.
+
+| RPC Endpoint | Type | Notes |
+| -------- | -------- | -------- |
+| https://evm.confluxrpc.com | HTTP |
+| https://evmmain-china.confluxrpc.com | HTTP | RPC Service for China Users |
+| https://evmmain-global.confluxrpc.com | HTTP | RPC Service for Global Users |
+| https://evm.confluxrpc.org | HTTP | Backup RPC Service |
+| wss://evm.confluxrpc.com/ws | Websocket |
+| wss://evm.confluxrpc.org/ws | Websocket | Backup RPC Service |
+
+#### Testnet
+
+Chain ID for Conflux eSpace Mainnet is `71(0x47)`. The corresponding blockchain explorer URL is https://evmtestnet.confluxscan.io.
+
+| RPC Endpoint | Type | Notes |
+| -------- | --- | --- |
+| https://evmtestnet.confluxrpc.com | HTTP ||
+| https://evmtest.confluxrpc.com | HTTP ||
+| https://evmtestnet.confluxrpc.org | HTTP | Backup RPC Service |
+| wss://evmtestnet.confluxrpc.com/ws | Websocket ||
+| wss://evmtestnet.confluxrpc.org/ws | Websocket ||
 
 ### Rate Limits
 
-Reference for various fee tiers and their rate limits.
+To maintain the service's usability, there are rate limits in place for the free tier. For access to a higher tier of RPC service, you can make a purchase through the [Web3 Paywall](../general/build/tools/web3paywall.md), or you can apply directly to the Conflux Foundation by emailing [bd@confluxnetwork.org](mailto:bd@confluxnetwork.org).
+
+Here are references for various fee tiers and their rate limits.
 
 | Fee Tier | Price | Rate Limits | Buy Links |
 |--|--|--|--|

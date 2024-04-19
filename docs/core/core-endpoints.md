@@ -3,37 +3,57 @@ id: conflux_rpcs
 title: Network RPC Endpoints
 sidebar_position: 4
 keywords:
-  - endpoints
+  - network endpoints
+  - Conflux core space
 displayed_sidebar: coreSidebar
 ---
 
 Public available Conflux Core Space network RPC endpoints
 
+:::tip
+
+Public RPC endpoints for **Conflux eSpace** is provided [here](../espace/network-endpoints.md).
+
+:::
+
 ## 1. Confura
 
-Confura is an Ethereum Infura equivalent public JSON-RPC service on Conflux network, which is developed and maintained by Conflux foundation.
-
-Our public RPC services are located in different regions globally. By utilizing geographic DNS routing, developers can request the regional RPC services which are physically closest to them.
+Confura is an Ethereum Infura equivalent public JSON-RPC service on Conflux network, which is developed and maintained by Conflux foundation and is available for free use.
 
 ### Public Endpoint
 
-#### Hong Kong
+Confura provides several available RPC endpoints for the mainnet and testnet. We have sorted them by selected priority and provided brief descriptions. If you are unsure which one to choose, please select an RPC endpoint near the top of the list.
 
-| Network | Chain ID | Explorer | RPC Endpoint | 
-| -------- | -------- | --------| -------- |
-| Mainnet | 1029 | https://confluxscan.net | *HTTP*: https://main.confluxrpc.com<br/>*Websocket*: wss://main.confluxrpc.com/ws |
-| Testnet | 1 | https://testnet.confluxscan.net | *HTTP*: https://test.confluxrpc.com<br/>*Websocket*: wss://test.confluxrpc.com/ws |
+#### Mainnet
 
-#### US East
+Chain ID for Conflux Core Space Mainnet is `1029(0x405)`. The corresponding blockchain explorer URL is https://confluxscan.io.
 
-| Network | Chain ID | Explorer | RPC Endpoint | 
-| -------- | -------- | --------| -------- |
-| Mainnet | 1029 | https://confluxscan.io | *HTTP*: https://main.confluxrpc.org<br/>*Websocket*: wss://main.confluxrpc.org/ws |
-| Testnet | 1 | https://testnet.confluxscan.io | *HTTP*: https://test.confluxrpc.org<br/>*Websocket*: wss://test.confluxrpc.org/ws |
+| RPC Endpoint | Type | Notes |
+| -------- | -------- | --- |
+| https://main.confluxrpc.com | HTTP | |
+| https://cfxmain-china.confluxrpc.com | HTTP | RPC Service for China Users |
+| https://cfxmain-global.confluxrpc.com | HTTP | RPC Service for Global Users |
+| https://main.confluxrpc.org | HTTP | Backup RPC Service |
+| wss://main.confluxrpc.com/ws | Websocket | |
+| wss://main.confluxrpc.org/ws | Websocket | Backup RPC Service |
+
+#### Testnet
+
+Chain ID for Conflux Core Space Testnet is `1(0x1)`. The corresponding blockchain explorer URL is https://test.confluxscan.io.
+
+| RPC Endpoint | Type | Notes |
+| -------- | --- | --- |
+| https://test.confluxrpc.com | HTTP ||
+| https://cfxtest.confluxrpc.com | HTTP ||
+| https://test.confluxrpc.org | HTTP | Backup RPC Service |
+| wss://test.confluxrpc.org/com | Websocket ||
+| wss://test.confluxrpc.org/ws | Websocket ||
 
 ### Rate Limits
 
-Reference for various fee tiers and their rate limits.
+To maintain the service's usability, there are rate limits in place for the free tier. For access to a higher tier of RPC service, you can make a purchase through the [Web3 Paywall](../general/build/tools/web3paywall.md), or you can apply directly to the Conflux Foundation by emailing [bd@confluxnetwork.org](mailto:bd@confluxnetwork.org).
+
+Here are references for various fee tiers and their rate limits.
 
 | Fee Tier | Price | Rate Limits | Buy Links |
 |--|--|--|--|
