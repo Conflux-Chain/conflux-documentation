@@ -40,6 +40,12 @@ Refer to [general-address](./accounts.md#address), [core-address](../../core/cor
 ### **区块链**
 区块链是一种去中心化和分布式的数字账本，可以跨多台计算机记录交易，使任何涉及的记录都无法在不更改所有后续区块的情况下被追溯性地更改。 这种技术是比特币和以太坊等加密货币的基础，也是Conflux网络的基础技术。
 
+### **Blockchain Explorer**
+
+A blockchain explorer is a tool or website that allows individuals to search and analyze the real-time and historical data of a blockchain. It functions like a search engine for blockchain transactions, blocks, and addresses. Users can view detailed information about individual transactions, including the amount transferred, the addresses involved, transaction fees, and the block in which the transaction was recorded. Blockchain explorers are essential for verifying transactions, understanding blockchain activity, and conducting audits, making them invaluable resources for users, developers, and analysts interested in the specifics of blockchain operations.
+
+The official blockchain explorer for Conflux is [ConfluxScan](#confluxscan).
+
 ### **CFX**
 CFX是Conflux网络的原生货币。 它用于激励维护Conflux网络，并向用户收取资源消耗费用。 CFX作为共识机制的奖励、每笔交易的交易费以及DAO投票的工具，在系统稳定性方面发挥着非常重要的作用。
 
@@ -72,8 +78,17 @@ CFX是Conflux网络的原生货币。 它用于激励维护Conflux网络，并�
 ### **Conflux生态系统**
 Conflux生态系统指的是在Conflux网络上构建或集成的各种项目、应用、平台和服务。 这包括去中心化应用（DApps）、去中心化金融（DeFi）平台、钱包服务等。 Conflux生态系统是一个充满活力且不断增长的开发者、用户和组织社区，他们为Conflux网络做出贡献。
 
-### **Conflux Scan**
-[Conflux Scan](https://confluxscan.io/)是Conflux网络的官方区块链浏览器。 它为用户提供一个友好、详细驱动的界面，用于查看、确认和检查Conflux网络上的交易和合约。 通过Conflux Scan，用户可以追踪其交易的状态、查看账户余额、探索智能合约等等。
+### **ConfluxScan**
+ConfluxScan is the official blockchain explorer for the Conflux network. 它为用户提供一个友好、详细驱动的界面，用于查看、确认和检查Conflux网络上的交易和合约。 通过Conflux Scan，用户可以追踪其交易的状态、查看账户余额、探索智能合约等等。
+
+Links:
+
+- Mainnet
+  - Core Space: https://confluxscan.io or https://confluxscan.net
+  - eSpace: https://evm.confluxscan.io or https://evm.confluxscan.net
+- 测试网
+  - Core Space: https://testnet.confluxscan.io or https://testnet.confluxscan.net
+  - eSpace: https://evmtestnet.confluxscan.io or https://evmtestnet.confluxscan.net
 
 ### **共识算法**
 共识算法是计算机科学中用于在分布式进程或系统中就单个数据值达成一致的过程。 在区块链中，它用于就交易的（总体）顺序达成一致。 Conflux使用基于树图（Tree-Graph）结构的独特共识算法，该算法允许在大规模去中心化网络中实现高吞吐量和低延迟。
