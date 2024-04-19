@@ -58,9 +58,7 @@ Para una comprensión más detallada del ciclo de vida de la transacción, puede
 
 ## Estado de la Transacción
 
-Las transacciones que se incluyan en un bloque se ejecutarán finalmente, generando un </a> **Recibo** de transacción
-
-. Sin embargo, no todas las transacciones se ejecutarán con éxito; normalmente, las transacciones pueden tener dos estados: **Éxito** o **Fallo**.</p> 
+Las transacciones que se incluyan en un bloque se ejecutarán finalmente, generando un [ **Recibo** de transacción](/docs/core/core-space-basics/transactions/receipt.md). Sin embargo, no todas las transacciones se ejecutarán con éxito; normalmente, las transacciones pueden tener dos estados: **Éxito** o **Fallo**.
 
 Para las transacciones de eSpace, puede determinar el estado de ejecución a través del campo **status** del Recibo, donde **1 representa éxito, y 0 representa fracaso**.
 
@@ -68,13 +66,9 @@ Para las transacciones de Core Space, puede determinar el estado de ejecución a
 
 Además, el recibo también incluye más información sobre la ejecución de la transacción, como información del bloque y los detalles de los eventos.
 
-
-
 ## Detalles
 
 Si quieres aprender más sobre las transacciones, puedes referirte a la explicación de la transacción en la [Core Space](/docs/core/core-space-basics/transactions/overview.md).
-
-
 
 ## Intro Video
 
