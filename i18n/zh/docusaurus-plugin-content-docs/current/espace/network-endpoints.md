@@ -2,30 +2,56 @@
 sidebar_position: 5
 title: 网络 RPC 端点
 description: Conflux eSpace RPC 端点
+keywords:
+  - network endpoints
+  - Conflux eSpace
 displayed_sidebar: eSpaceSidebar
 ---
 
-## 公共 RPC 端点
+:::tip
 
-Confura 是由 Conflux 基金会提供的公共 RPC 服务，可以免费使用。 但为了维持服务的可用性，免费级别的服务有速率限制。 如果你需要更高级别的 RPC 服务，你可以通过 [Web3 Paywall](../general/build/tools/web3paywall.md) 进行购买，或者可以直接发送邮件到 [bd@confluxnetwork.org](mailto:bd@confluxnetwork.org) 向 Conflux 基金会申请。
+This page lists the public RPC endpoints for Conflux eSpace. Public RPC endpoints for **Conflux Core Space** is provided [here](../core/core-endpoints.md).
 
-### 香港
+:::
 
-| 网络名称            | 链 ID         | RPC 端点 URL                                                                                          | 浏览器网址                              |
-| --------------- | ------------ | --------------------------------------------------------------------------------------------------- | ---------------------------------- |
-| [主网](#mainnet)  | 1030 (0x406) | *HTTP*: https://evm.confluxrpc.com<br/> *Websocket*: wss://evm.confluxrpc.com/ws              | https://evm.confluxscan.net        |
-| [测试网](#testnet) | 71 (0x47)    | *HTTP*: https://evmtestnet.confluxrpc.com<br/>*Websocket*: wss://evmtestnet.confluxrpc.com/ws | https://evmtestnet.confluxscan.net |
+## Confura
 
-### 美国东部
+Confura 是由 Conflux 基金会提供的公共 RPC 服务，可以免费使用。
 
-| 网络名称            | 链 ID         | RPC 端点 URL                                                                                  | 浏览器网址                             |
-| --------------- | ------------ | ------------------------------------------------------------------------------------------- | --------------------------------- |
-| [主网](#mainnet)  | 1030 (0x406) | *HTTP*: https://evm.confluxrpc.org<br/>*Websocket*: wss://evm.confluxrpc.org/ws       | https://evm.confluxscan.io        |
-| [测试网](#testnet) | 71 (0x47)    | https://evmtestnet.confluxrpc.org<br/>*Websocket*: wss://evmtestnet.confluxrpc.org/ws | https://evmtestnet.confluxscan.io |
+### Public Endpoints
+
+Confura provides several available RPC endpoints for the mainnet and testnet. We have sorted them by selected priority and provided brief descriptions. If you are unsure which one to choose, please select an RPC endpoint near the top of the list.
+
+#### Mainnet
+
+Chain ID for Conflux eSpace Mainnet is `1030(0x406)`. The corresponding blockchain explorer URL is https://evm.confluxscan.io.
+
+| RPC 端点                                | 类型        | 备注                           |
+| ------------------------------------- | --------- | ---------------------------- |
+| https://evm.confluxrpc.com            | HTTP      |                              |
+| https://evmmain-china.confluxrpc.com  | HTTP      | RPC Service for China Users  |
+| https://evmmain-global.confluxrpc.com | HTTP      | RPC Service for Global Users |
+| https://evm.confluxrpc.org            | HTTP      | Backup RPC Service           |
+| wss://evm.confluxrpc.com/ws           | Websocket |                              |
+| wss://evm.confluxrpc.org/ws           | Websocket | Backup RPC Service           |
+
+#### 测试网
+
+Chain ID for Conflux eSpace Mainnet is `71(0x47)`. The corresponding blockchain explorer URL is https://evmtestnet.confluxscan.io.
+
+| RPC 端点                             | 类型        | 备注                 |
+| ---------------------------------- | --------- | ------------------ |
+| https://evmtestnet.confluxrpc.com  | HTTP      |                    |
+| https://evmtest.confluxrpc.com     | HTTP      |                    |
+| https://evmtestnet.confluxrpc.org  | HTTP      | Backup RPC Service |
+| wss://evmtestnet.confluxrpc.com/ws | Websocket |                    |
+| wss://evmtestnet.confluxrpc.org/ws | Websocket |                    |
 
 ### 速率限制
 
-不同费率档次和其速率限制的参考。
+To maintain the service's usability, there are rate limits in place for the free tier. 如果你需要更高级别的 RPC 服务，你可以通过 [Web3 Paywall](../general/build/tools/web3paywall.md) 进行购买，或者可以直接发送邮件到 [bd@confluxnetwork.org](mailto:bd@confluxnetwork.org) 向 Conflux 基金会申请。
+
+Here are references for various fee tiers and their rate limits.
 
 | 付费级别 | 价格                          | 速率限制                          | 购买链接                                                                                                                                                                                                                                         |
 | ---- | --------------------------- | ----------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
