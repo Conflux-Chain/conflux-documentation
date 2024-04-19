@@ -99,11 +99,11 @@ import "./web3ModalSetup";
       <img
         src="./assets/wallet-connect-logo.svg"
         class="logo"
-        alt="Vite logo"
+        alt="WalletConnect Logo"
       />
     </a>
     <a href="https://confluxnetwork.org/" target="_blank">
-      <img src="./assets/conflux-logo.svg" class="logo vue" alt="Vue logo" />
+      <img src="./assets/conflux-logo.svg" class="logo vue" alt="Conflux Logo" />
     </a>
   </div>
   <HelloWorld msg="WalletConnect + Conflux" />
