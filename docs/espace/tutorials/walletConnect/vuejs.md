@@ -8,7 +8,7 @@ keywords:
 displayed_sidebar: eSpaceSidebar
 ---
 
-# Integrating Web3Modal with WalletConnect in a Vue.js Project
+# Integrating WalletConnect with Vue.js Project on Conflux eSpace
 
 This tutorial guides you through the process of integrating WalletConnect with Web3Modal in a Vue.js project, specifically targeting the Conflux eSpace network.
 For a hands-on example, check out the GitHub repository [Web3modal-Conflux-Vue](https://github.com/ConfluxDAO/web3modal-conflux-vue).
