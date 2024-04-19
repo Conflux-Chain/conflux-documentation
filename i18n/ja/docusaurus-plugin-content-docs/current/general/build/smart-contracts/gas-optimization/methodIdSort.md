@@ -1,3 +1,7 @@
+---
+displayed_sidebar: generalSidebar
+---
+
 # MethodId Sort Optimization
 
 In the contract, all functions are organized into an array and systematically sorted by their MethodID, a unique identifier for each function. This organization not only streamlines the management of function calls but also facilitates quick access by imposing a structured order that can be efficiently searched during function executions.
