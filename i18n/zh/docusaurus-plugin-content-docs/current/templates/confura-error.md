@@ -39,14 +39,14 @@ getLogs 相关错误：
 | 要查询的结果集太大，超过 10000 条日志，请缩小筛选条件                                                                                                                                               |    |
 | 未找到筛选器                                                                                                                                                                       |    |
 
-service errors:
+服务错误：
 
-| 消息                                         | 注释 |
-| ------------------------------------------ | -- |
-| no full node available                     |    |
-| subscription proxy error                   |    |
-| query timeout with duration exceeds 3s     |    |
-| server is too busy, please try again later |    |
-| RPC middleware crashed                     |    |
+| 消息              | 注释 |
+| --------------- | -- |
+| 没有可用的全节点        |    |
+| 订阅代理错误          |    |
+| 查询超时，持续时间超过 3 秒 |    |
+| 服务器繁忙，请稍后再试     |    |
+| RPC 中间件崩溃       |    |
 
-This type of error indicates an issue with the Confura service. Please try again later or contact the service provider.
+此类错误表明存在由 Confura 服务引起的问题。 请稍后再试或联系服务提供者。
