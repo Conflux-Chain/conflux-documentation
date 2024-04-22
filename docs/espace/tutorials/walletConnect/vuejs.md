@@ -83,7 +83,7 @@ Replace `"YOUR_PROJECT_ID"` with your actual project ID.
 
 Make sure that the url from the metadata matches your domain and subdomain. This will later be used by the [Verify API](https://docs.walletconnect.com/cloud/verify) to tell wallets if your application has been verified or not.
 
-## Step 4: Connect Conflux eSpace Network
+## Step 4: Using `Web3ModalSetup` in your Application
 
 In your `App.vue`, import the `web3ModalSetup` instance and use it to connect to the wallet. Here’s how you can do it in your `App.vue`:
 
@@ -113,7 +113,9 @@ import "./web3ModalSetup";
 
 ```
 
-Create a new component, `ConnectWallet.tsx`, in your project, to open ConnectWallet Modal
+## Step 5: Connecting Conflux eSpace Network
+
+Create a new component, `ConnectWallet.vue`, in your project, to open ConnectWallet Modal
 
 ```javascript
 <template>
@@ -130,6 +132,41 @@ const modal = useWeb3Modal();
 
 <style lang="scss" scoped>
 </style>
+```
+
+In `HelloWorld.vue` or any other component, use the `ConnectWallet` component to connect to wallets on the Conflux eSpace
+
+```javascript
+<script setup>
+import { ref } from "vue";
+
+import ConnectWallet from "./ConnectWallet.vue";
+
+defineProps({
+  msg: String,
+});
+const count = ref(0);
+</script>
+
+<template>
+  <h1>{{ msg }}</h1>
+
+  <div class="card">
+    <ConnectWallet />
+    <p>Using Web3Modal on Conflux eSpace Dapp</p>
+  </div>
+
+  <p class="read-the-docs">
+    Click on the WalletConnect and Conflux logos to learn more
+  </p>
+</template>
+
+<style scoped>
+.read-the-docs {
+  color: #888;
+}
+</style>
+
 ```
 
 You now have a basic setup for integrating Web3Modal with WalletConnect in your Vue.js project using Vite. This setup allows users to connect their wallets from a Vue.js application, enabling interactions with Conflux eSpace.
