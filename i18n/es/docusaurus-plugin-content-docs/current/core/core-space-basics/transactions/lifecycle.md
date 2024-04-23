@@ -1,6 +1,6 @@
 ---
 sidebar_position: 5
-title: Transaction Lifecycle
+title: Ciclo de vida de la transacción
 displayed_sidebar: coreSidebar
 keywords:
   - transaction

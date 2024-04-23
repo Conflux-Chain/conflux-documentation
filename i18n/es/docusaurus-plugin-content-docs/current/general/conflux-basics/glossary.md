@@ -40,6 +40,12 @@ En la tecnología blockchain, un bloque es un conjunto de transacciones. Es como
 ### **Cadena de bloques**
 Una blockchain es un registro digital descentralizado y distribuido que registra transacciones en muchas computadoras para que cualquier registro involucrado no pueda ser modificado retroactivamente, sin la alteración de todos los bloques posteriores. Esta tecnología sustenta criptomonedas como Bitcoin y Ethereum, y es la tecnología fundamental para la red Conflux.
 
+### **Blockchain Explorer**
+
+A blockchain explorer is a tool or website that allows individuals to search and analyze the real-time and historical data of a blockchain. It functions like a search engine for blockchain transactions, blocks, and addresses. Users can view detailed information about individual transactions, including the amount transferred, the addresses involved, transaction fees, and the block in which the transaction was recorded. Blockchain explorers are essential for verifying transactions, understanding blockchain activity, and conducting audits, making them invaluable resources for users, developers, and analysts interested in the specifics of blockchain operations.
+
+The official blockchain explorer for Conflux is [ConfluxScan](#confluxscan).
+
 ### **CFX**
 CFX es la moneda nativa de la red Conflux. Es usado para incentivar el mantenimiento de la red Conflux y cobrar a los usuarios por el consumo de recursos. CFX juega un papel muy importante en la estabilidad del sistema, trabaja como recompensa por los mecanismos de consenso, las comisiones (fees) de cada transacción, y para la votación en la DAO.
 
@@ -72,8 +78,17 @@ Para más información sobre la creación, distribución y lanzamiento de CFX, p
 ### **Ecosistema de Conflux**
 El ecosistema de Conflux se refiere a los diversos proyectos, aplicaciones, plataformas y servicios que han sido construidos o están integrados con la red Conflux. Esto incluye aplicaciones descentralizadas (DApps), plataformas de finanzas descentralizadas (DeFi), billeteras y más. El ecosistema de Conflux es una vibrante y creciente comunidad de desarrolladores, usuarios y organizaciones que contribuyen a la red Conflux.
 
-### **Conflux Scan**
-[Conflux Scan](https://confluxscan.io/) es el explorador oficial de blockchain para la red Conflux. Proporciona una interfaz fácil de usar, basada en detalles para que los usuarios puedan ver, confirmar e inspeccionar transacciones y contratos en la red Conflux. Con Conflux Scan, los usuarios pueden rastrear el estado de sus transacciones, ver el saldo de sus cuentas, explorar contratos inteligentes y mucho más.
+### **ConfluxScan**
+ConfluxScan is the official blockchain explorer for the Conflux network. Proporciona una interfaz fácil de usar, basada en detalles para que los usuarios puedan ver, confirmar e inspeccionar transacciones y contratos en la red Conflux. Con Conflux Scan, los usuarios pueden rastrear el estado de sus transacciones, ver el saldo de sus cuentas, explorar contratos inteligentes y mucho más.
+
+Links:
+
+- Mainnet
+  - Core Space: https://confluxscan.io or https://confluxscan.net
+  - eSpace: https://evm.confluxscan.io or https://evm.confluxscan.net
+- Testnet
+  - Core Space: https://testnet.confluxscan.io or https://testnet.confluxscan.net
+  - eSpace: https://evmtestnet.confluxscan.io or https://evmtestnet.confluxscan.net
 
 ### **Algoritmo de consenso**
 Un algoritmo de consenso es un proceso en ciencias de la computación usado para alcanzar un acuerdo sobre un único valor de datos entre los procesos o sistemas distribuidos. En el contexto de blockchain, se utiliza para acordar el (total) orden de las transacciones. Conflux utiliza un algoritmo de consenso único basado en la estructura Tree-Graph, que permite un alto rendimiento y baja latencia en redes descentralizadas a gran escala.

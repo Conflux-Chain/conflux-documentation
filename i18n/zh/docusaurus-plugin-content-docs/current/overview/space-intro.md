@@ -1,6 +1,6 @@
 ---
 sidebar_position: 2
-title: Conflux Spaces
+title: Conflux 多空间
 displayed_sidebar: overviewSidebar
 ---
 

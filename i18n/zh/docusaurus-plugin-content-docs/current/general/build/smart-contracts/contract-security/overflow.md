@@ -2,11 +2,11 @@
 displayed_sidebar: generalSidebar
 ---
 
-# Integer Overflow
+# 整数溢出
 
-One of the most significant incidents involving an integer overflow vulnerability occurred with the BeautyChain (BEC) token in April 2018. This exploit allowed attackers to generate an astronomical number of BEC tokens from thin air, leading to a substantial financial loss and undermining the token's value.
+2018年4月，BeautyChain（BEC）代币上发生了一起涉及整数溢出漏洞的重大事件。 该漏洞使攻击者能够凭空生成大量的BEC代币，导致了巨额财务损失，并削弱了该代币的价值。
 
-For more detailed information on the BeautyChain incident, you can visit the following resources:
+有关BeautyChain事件的更详细信息，您可以访问以下资源：
 
 - An overview of the vulnerability can be found on the [CVE-2018-10299 page at Tenable](https://www.tenable.com/cve/CVE-2018-10299).
 - Detailed discussions of the event and its implications on smart contract security are available on [PeckShield's blog](https://peckshield.com/2018/04/22/batchOverflow/) and in a [Medium article](https://medium.com/secbit-media/a-disastrous-vulnerability-found-in-smart-contracts-of-beautychain-bec-dbf24ddbc30e).

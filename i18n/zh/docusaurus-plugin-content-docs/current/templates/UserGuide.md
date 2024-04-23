@@ -6,14 +6,14 @@ This guide will help user connect their metamask  wallet to Conflux {props.space
 
 ## 简介
 
-[MetaMask](https://metamask.io/)是一个便捷访问以太坊兼容链（如Conflux{props.space}）的应用接口
+[MetaMask](https://metamask.io/) is a convenient UI for interacting with Ethereum-compatible blockchains (such as Conflux {props.space}).
 基于本指南的目的，我们将假定您已熟悉 MetaMask 并已安装它。
-If you need help getting started with MetaMask itself, [check out Metamask documentation](https://metamask.io/faqs.html) and [Ethereum documentation](https://ethereum.org/en/).
+如果你需要寻求 Metamask 官方的帮助，请查询 [Metamask 文档](https://metamask.io/faqs.html) 和 [以太坊文档](https://ethereum.org/en/)。
 
 In this tutorial we will walk through connecting MetaMask to the Conflux {props.space} Testnet.
 
 :::note
-Screenshots in this tutorial are taken from the MetaMask browser extension version 10.8.1.
+本教程所使用的屏幕截图取自 MetaMask 浏览器插件，版本号为 10.8.1。
 :::
 
 ## Connecting MetaMask to Conflux {props.space}
@@ -65,5 +65,5 @@ The rest of this guide will assume your MetaMask is connected to _Conflux {props
 
 ## 水龙头
 
-To interact with our testnet, you first need to receive testnet CFX on {props.space} Testnet. You can get testnet CFX from our <Faucet />.
-Paste your wallet address in the address input box, input the captcha and click `Claim` to receive testnet CFX.
+To interact with our testnet, you first need to receive testnet CFX on {props.space} Testnet. 您可以从我们的 <Faucet /> 获取测试网CFX。
+粘贴您的钱包地址到输入框中，输入验证码并点击 `Claim` （认领）按钮以接收测试网CFX。

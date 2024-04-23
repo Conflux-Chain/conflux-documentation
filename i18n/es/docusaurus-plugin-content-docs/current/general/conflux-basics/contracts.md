@@ -1,50 +1,50 @@
 ---
 sidebar_position: 9
-title: Smart Contracts
+title: Contratos Inteligentes
 displayed_sidebar: generalSidebar
 ---
 
-# Introduction to Smart Contracts
+# Introducción a los contratos inteligentes
 
-## What is a Smart Contract?
+## ¿Qué es un Smart Contract?
 
-The concept of smart contracts was first proposed by Nick Szabo in 1995. A Smart contract is a computer protocol designed to disseminate, verify or execute contracts in an informational manner. Smart contracts allow transactions to be executed without a trusted third party, and the transactions are traceable and irreversible.
+El concepto de contratos inteligentes fue propuesto por primera vez por Nick Szabo en 1995. Un contrato inteligente es un protocolo de computación diseñado para difundir, verificar o ejecutar contratos de manera informativa. Los contratos inteligentes permiten ejecutar transacciones sin un tercero de confianza, y las transacciones son rastreables e irreversibles.
 
-Its purpose is to provide a secure method that outperforms traditional contracts and reduces other transaction costs associated with contracts.
+Su propósito es proporcionar un método seguro que supere a los contratos tradicionales y reduzca otros costes de transacción asociados con los contratos.
 
-For Conflux network, a *smart contract* is a simple program that runs on the Conflux Network. Each instance of a smart contract is a collection of code and data that resides at a specific address on the Conflux Network. Since the state on the blockchain is fully deterministic, operations on smart contracts are guaranteed to produce the same results on all blockchain nodes. Furthermore, since smart contracts run on the blockchain, the decentralization and non-tamperable characteristics of the blockchain ensure certainty and security in the operation of the contract. Therefore, a wide range of decentralized applications (dApps) are created based on smart contracts, including games, digital collectibles (NFT), online voting systems, financial products (DeFi), etc.
+Para Conflux Network, un *contrato inteligente* es un programa simple que se ejecuta en la red de Conflux. Cada instancia de un contrato inteligente es una colección de código y datos que reside en una dirección específica de la red de Conflux. Dado que el estado de la cadena de bloques es totalmente determinado, se garantiza que las operaciones de los contratos inteligentes produzcan los mismos resultados en todos los nodos de la cadena de bloques. Además, dado que los contratos inteligentes se ejecutan en la cadena de bloques, la descentralización y las características no manipulables de la blockchain garantizan certeza y seguridad en el funcionamiento del contrato. Por lo tanto, una amplia gama de aplicaciones descentralizadas (dApps) se crean en base a contratos inteligentes, incluyendo juegos, coleccionables digitales (NFT), sistemas de votación en línea, productos financieros (DeFi), etc.
 
-There are two account types on the Conflux Network: user accounts and smart contract accounts. Once the smart contract is deployed, a corresponding smart contract account is created. Smart contract accounts have a CFX balance and they can also interact with other accounts. However, they are not controlled by users but by the program deployed on the network. User accounts are able to interact with smart contracts by submitting transactions that execute the functions defined on the smart contract. The smart contract enables us to define rules just like traditional contracts and automates the execution through codes.
+Hay dos tipos de cuentas en Conflux Network: cuentas de usuario y cuentas de contratos inteligentes. Una vez que el contrato inteligente es implementado, se crea una cuenta de contrato inteligente correspondiente. Las cuentas inteligentes de contrato tienen un saldo CFX y también pueden interactuar con otras cuentas. Sin embargo, no están controlados por usuarios, sino por el programa desplegado en la red. Las cuentas de usuario pueden interactuar con contratos inteligentes enviando transacciones que ejecuten las funciones definidas en el contrato inteligente. El contrato inteligente nos permite definir reglas como los contratos tradicionales y automatizar la ejecución a través de códigos.
 
-Nick Szabo used the example of a vending machine to describe how real-world contractual obligations can be programmed into software and hardware systems. Each person simply puts the correct number of coins into the machine and can expect to receive a product in exchange. Similarly, on Conflux, a smart contract is able to perform a certain task and get a certain result under specified conditions.
+Nick Szabo utilizó el ejemplo de una máquina expendedora para describir cómo las obligaciones contractuales del mundo real pueden programarse en sistemas de software y hardware. Cada persona simplemente pone el número correcto de monedas en la máquina y puede esperar recibir un producto a cambio. Del mismo modo, en Conflux, un contrato inteligente es capaz de realizar una determinada tarea y obtener un resultado determinado en condiciones específicas.
 
-### Definition and Overview
-Smart contracts on Conflux are programs stored on the blockchain that run when predetermined conditions are met. They are immutable and distributed, meaning once deployed, they cannot be altered and are executed by the network.
+### Definición y Resumen
+Los contratos inteligentes en Conflux son programas almacenados en la blockchain que se ejecutan cuando se cumplen condiciones predeterminadas. Son inmutables y distribuidos, lo que significa que una vez desplegados, no pueden ser alterados y ejecutados por la red.
 
-### How Smart Contracts Work
-These contracts are written in high-level programming languages like Solidity, similar to Ethereum. They interact with the blockchain to store, modify data, or send transactions, automating complex processes without intermediaries.
+### Cómo funcionan los contratos inteligentes
+Estos contratos están escritos en lenguajes de programación de alto nivel como Solididy, similar a Ethereum. Interactúan con el blockchain para almacenar, modificar datos o enviar transacciones, automatizando procesos complejos sin intermediarios.
 
-### Benefits in the Conflux Network
-Smart contracts in Conflux offer benefits like enhanced security, reduced transaction costs, and increased efficiency. Conflux's unique tree-graph structure facilitates higher throughput and lower fees, making it an ideal platform for deploying smart contracts.
+### Billeteras en Conflux Network
+Los contratos inteligentes en Conflux ofrecen beneficios como una mayor seguridad, menores costos de transacción y una mayor eficiencia. La estructura única Tree-Graph de Conflux facilita un mayor rendimiento y tarifas más bajas, convirtiéndola en una plataforma ideal para desplegar contratos inteligentes.
 
-### Use Cases
-The applications are diverse, ranging from decentralized finance (DeFi) and token creation to supply chain management and gaming. Smart contracts serve as the backbone for DApps (Decentralized Applications) on Conflux, enabling innovative business models and services.
+### Casos de Uso
+Las aplicaciones son diversas, desde las finanzas descentralizadas (DeFi) y la creación de tokens hasta la gestión de la cadena de suministro y juegos. Los contratos inteligentes sirven como columna vertebral para DApps (aplicaciones descentralizadas) en Conflux, lo que permite modelos y servicios de negocio innovadores.
 
-### Security Considerations
-Security in smart contracts is paramount. Despite their immutability, vulnerabilities in code can be exploited. Conflux Network emphasizes best practices in smart contract development, including thorough testing and audits.
+### Consideraciones de seguridad
+La seguridad en los contratos inteligentes es primordial. A pesar de su inmutabilidad, se pueden explotar vulnerabilidades en los códigos. Conflux Network enfatiza las mejores prácticas en el desarrollo de contratos inteligentes, incluyendo pruebas y auditorías exhaustivas.
 
 :::tip
 
-If you're interested in **Smart Contracts Development on Conflux Network**, please check out the following pages:
+Si estás interesado en el **Desarrollo inteligente de contratos en Conflux Network**, por favor revisa las siguientes páginas:
 
-- [Introduction to Smart Contract Development on Conflux Network](../build/smart-contracts/introduction-to-smart-contracts.md)
-- [Solidity Basics](../build/smart-contracts/solidity-basics.md)
-- [Token Standards](../build/smart-contracts/token-standards.md)
+- [Introducción al desarrollo de contratos inteligentes en la red de Conflux](../build/smart-contracts/introduction-to-smart-contracts.md)
+- [Bases de Solidity](../build/smart-contracts/solidity-basics.md)
+- [Estándares de Tokens](../build/smart-contracts/token-standards.md)
 
 :::
 
-## Further reading {#further-reading}
+## Lectura adicional {#further-reading}
 
-- [Coinbase: What is a smart contract?](https://www.coinbase.com/learn/crypto-basics/what-is-a-smart-contract)
-- [Chainlink: What is a smart contract?](https://chain.link/education/smart-contracts)
-- [Video: Simply Explained - Smart Contracts](https://youtu.be/ZE2HxTmxfrI)
+- [Coinbase: ¿Qué es un contrato inteligente?](https://www.coinbase.com/learn/crypto-basics/what-is-a-smart-contract)
+- [Chainlink: ¿Qué es un contrato inteligente?](https://chain.link/education/smart-contracts)
+- [Video: Explicación Sencilla - Contratos Inteligentes](https://youtu.be/ZE2HxTmxfrI)

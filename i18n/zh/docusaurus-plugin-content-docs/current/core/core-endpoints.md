@@ -3,37 +3,57 @@ id: conflux_rpcs
 title: 网络 RPC 端点
 sidebar_position: 4
 keywords:
-  - 端点
+  - network endpoints
+  - Conflux core space
 displayed_sidebar: coreSidebar
 ---
 
 公开可用的 Conflux Core 空间网络 RPC 端点
 
+:::tip
+
+Public RPC endpoints for **Conflux eSpace** is provided [here](../espace/network-endpoints.md).
+
+:::
+
 ## 1. Confura
 
-Confura是Conflux网络上的一个与以太坊Infura等效的公共JSON-RPC服务，由Conflux基金会开发和维护。
-
-我们的公共RPC服务位于全球不同的地区。 通过利用地理DNS路由，开发者可以请求与他们物理距离最近的区域RPC服务。
+Confura is an Ethereum Infura equivalent public JSON-RPC service on Conflux network, which is developed and maintained by Conflux foundation and is available for free use.
 
 ### 公共端点
 
-#### 香港
+Confura provides several available RPC endpoints for the mainnet and testnet. We have sorted them by selected priority and provided brief descriptions. If you are unsure which one to choose, please select an RPC endpoint near the top of the list.
 
-| 网络名称 | 链 ID | 浏览器网址                           | RPC 端点                                                                                  |
-| ---- | ---- | ------------------------------- | --------------------------------------------------------------------------------------- |
-| 主网   | 1029 | https://confluxscan.net         | *HTTP*: https://main.confluxrpc.com<br/>*Websocket*: wss://main.confluxrpc.com/ws |
-| 测试网  | 1    | https://testnet.confluxscan.net | *HTTP*: https://main.confluxrpc.com<br/>*Websocket*: wss://test.confluxrpc.com/ws |
+#### Mainnet
 
-#### 美国东部
+Chain ID for Conflux Core Space Mainnet is `1029(0x405)`. The corresponding blockchain explorer URL is https://confluxscan.io.
 
-| 网络名称 | 链 ID | 浏览器网址                          | RPC 端点                                                                                  |
-| ---- | ---- | ------------------------------ | --------------------------------------------------------------------------------------- |
-| 主网   | 1029 | https://confluxscan.io         | *HTTP*: https://main.confluxrpc.org<br/>*Websocket*: wss://main.confluxrpc.org/ws |
-| 测试网  | 1    | https://testnet.confluxscan.io | *HTTP*: https://test.confluxrpc.org<br/>*Websocket*: wss://test.confluxrpc.org/ws |
+| RPC 端点                                | 类型        | 说明                           |
+| ------------------------------------- | --------- | ---------------------------- |
+| https://main.confluxrpc.com           | HTTP      |                              |
+| https://cfxmain-china.confluxrpc.com  | HTTP      | RPC Service for China Users  |
+| https://cfxmain-global.confluxrpc.com | HTTP      | RPC Service for Global Users |
+| https://main.confluxrpc.org           | HTTP      | Backup RPC Service           |
+| wss://main.confluxrpc.com/ws          | Websocket |                              |
+| wss://main.confluxrpc.org/ws          | Websocket | Backup RPC Service           |
+
+#### 测试网
+
+Chain ID for Conflux Core Space Testnet is `1(0x1)`. The corresponding blockchain explorer URL is https://test.confluxscan.io.
+
+| RPC 端点                         | 类型        | 备注                 |
+| ------------------------------ | --------- | ------------------ |
+| https://test.confluxrpc.com    | HTTP      |                    |
+| https://cfxtest.confluxrpc.com | HTTP      |                    |
+| https://test.confluxrpc.org    | HTTP      | Backup RPC Service |
+| wss://test.confluxrpc.org/com  | Websocket |                    |
+| wss://test.confluxrpc.org/ws   | Websocket |                    |
 
 ### 速率限制
 
-不同费率档次和其速率限制的参考。
+To maintain the service's usability, there are rate limits in place for the free tier. 如果你需要更高级别的 RPC 服务，你可以通过 [Web3 Paywall](../general/build/tools/web3paywall.md) 进行购买，或者可以直接发送邮件到 [bd@confluxnetwork.org](mailto:bd@confluxnetwork.org) 向 Conflux 基金会申请。
+
+Here are references for various fee tiers and their rate limits.
 
 | 付费级别 | 价格                          | 速率限制                          | 购买链接                                                                                                                                                                                                                                         |
 | ---- | --------------------------- | ----------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -41,7 +61,7 @@ Confura是Conflux网络上的一个与以太坊Infura等效的公共JSON-RPC服�
 | 标准   | 150 美元/月                    | 每秒 100 次调用，每天最多 1,000,000 次调用 | [mainnet](https://confluxhub.io/payment/consumer/app/subscription/0x33A9451ee070d750a077C93f71D2cFcD0180Fa7D) <br/> [testnet](https://test.confluxhub.io/payment/consumer/app/subscription/0x4805C5B2741088B8458ed781083eA8940186E477) |
 | 企业用户 | 请发邮件至 bd@confluxnetwork.org | 按需定制                          | -                                                                                                                                                                                                                                            |
 
-**说明**
+**备注**
 - `getLogs`调用的结果集最大大小为10,000。
 - 由于数据裁剪，旧的存档事件日志可能无法访问。
 - 请将您的 Api 密钥附加到端点上以获取特权访问（例如：`https://main.confluxrpc.com/<api-key>`）。
