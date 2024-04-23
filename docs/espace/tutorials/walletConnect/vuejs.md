@@ -81,6 +81,8 @@ createWeb3Modal({
 
 Replace `"YOUR_PROJECT_ID"` with your actual project ID.
 
+For details on how to obtain `ProjectId`, please refer to this [article](/docs/espace/tutorials/walletConnect/project-creation).
+
 Make sure that the url from the metadata matches your domain and subdomain. This will later be used by the [Verify API](https://docs.walletconnect.com/cloud/verify) to tell wallets if your application has been verified or not.
 
 ## Step 4: Using `Web3ModalSetup` in your Application
