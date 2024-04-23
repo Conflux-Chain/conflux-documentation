@@ -14,14 +14,14 @@ Web3.py and Web3.js are a set of libraries that facilitate the interaction of de
 To start, first create a directory where all the relevant files generated throughout this guide can be stored. Execute this task with the following command: 
 
 
-```
+```shell
 mkdir web3-examples && cd web3-examples 
 
 ```
 
 For the successful implementation of the upcoming sections, you'll need to install the Web3 library and the Solidity compiler. To obtain both packages, execute the following command: 
  
-```
+```shell
 pip3 install web3 py-solc-x 
 ```
  
@@ -29,15 +29,12 @@ pip3 install web3 py-solc-x
  
  
 Prepare your Web3 HTTP connection to align with any evm-powered network. To synchronize your project, you must secure an endpoint and API key of your own. Here's how you can get started with each network, step by step. 
- 
-Import Web3 library into your project: 
-```
-from web3 import Web3 
-```
 
-Then, to configure the HTTP connection to your RPC endpoint, insert the provided RPC URL into this code: 
- 
-``` 
+```python
+# Import Web3 library into your project: 
+from web3 import Web3 
+
+# Configure the HTTP connection to your RPC endpoint: 
 web3 = Web3(Web3.HTTPProvider('RPC-API-ENDPOINT-HERE')) 
 ```
 
@@ -55,27 +52,21 @@ In this section, you will learn how to create two scripts in order to send a tra
 To begin with the first script, you need to create a file called "balances.py" using the command "vim balances.py". In this file, you will set up the Web3 provider, define the variables "sender_address" and "recipient_address", and retrieve the balances of these accounts using the "web3.eth.get_balance" function. You will then format the results using the "web3.fromWei" function and print the balances in your terminal using the "print" function. 
 To run the balances script, enter the command "python3 balances.py" in your terminal. The balances for the sender and recipient addresses will be displayed in your terminal in CFX. 
  
+```python
  
-Set up the Web3 provider 
-```
+# Set up the Web3 provider 
 from web3 import Web3 
 web3 = Web3(Web3.HTTPProvider('RPC-API-ENDPOINT-HERE')) 
-```
 
-Define address variables 
-```
+# Define address variables 
 sender_address = "SENDER-ADDRESS-HERE" 
 recipient_address = "RECIPIENT-ADDRESS-HERE" 
-``` 
-
-Retrieve balance data 
-```
+ 
+# Retrieve balance data 
 balance_sender = web3.fromWei(web3.eth.get_balance(sender_address), "ether") 
 balance_recipient = web3.fromWei(web3.eth.get_balance(recipient_address), "ether") 
-``` 
 
-Display balances in the terminal 
-```
+# Display balances in the terminal 
 print(f"The balance of { sender_address } is: { balance_sender } CFX") 
 print(f"The balance of { recipient_address } is: { balance_recipient } CFX") 
 ``` 
@@ -85,49 +76,40 @@ print(f"The balance of { recipient_address } is: { balance_recipient } CFX")
 To begin with the second script, you need to create a "transaction.py" file using the command "vim transaction.py". Within this file, you will import "rpc_gas_price_strategy" to obtain the gas price for the transaction. Then you will establish the Web3 provider, define the "sender" and "receiver" variables (including the private key for the "sender" account), establish the gas price strategy using the "web3.eth.set_gas_price_strategy" function, create and sign the transaction using the "web3.eth.account.sign_transaction" function, and send the transaction using the "web3.eth.send_raw_transaction" function. You will then wait for the transaction receipt using the "web3.eth.wait_for_transaction_receipt" function and print the transaction hash in your terminal. 
 
 To execute the transaction script, run the command "python3 transaction.py" in your terminal. If the transaction is successful, the transaction hash will be displayed in your terminal. You can also use the balances script to verify that the balances for the origin and receiving accounts have changed. 
- 
-Import the gas strategy 
-```
-from web3.gas_strategies.rpc import rpc_gas_price_strategy 
-```
 
-Put the Web3 provider snippet here 
-```
+```python
+
+# Import the gas strategy 
+from web3.gas_strategies.rpc import rpc_gas_price_strategy 
+
+# Put the Web3 provider snippet here 
 from web3 import Web3 
 web3 = Web3(Web3.HTTPProvider('RPC-API-ENDPOINT-HERE')) 
-```
 
-Define variables for addresses 
-```
+# Define variables for addresses 
 sender = { 
 "private_key": "YOUR-PRIVATE-KEY-HERE", 
 "address": "PUBLIC-ADDRESS-OF-PK-HERE", 
 } 
 receiver = "ADDRESS-TO-HERE" 
 print(f'Attempting to send transaction from { sender["address"] } to { receiver}') 
-``` 
  
-Establish the gas price strategy 
-```
+# Establish the gas price strategy 
 web3.eth.set_gas_price_strategy(rpc_gas_price_strategy) 
-``` 
  
-Sign transaction with private key 
-```
+# Sign transaction with private key 
 tx_create = web3.eth.account.sign_transaction( 
 { 
-"nonce": web3.eth.get_transaction_count(sender["address"]), 
-"gasPrice": web3.eth.generate_gas_price(), 
-"gas": 21000, 
-"to": receiver, 
-"value": web3.toWei("1", "ether"), 
+    "nonce": web3.eth.get_transaction_count(sender["address"]), 
+    "gasPrice": web3.eth.generate_gas_price(), 
+    "gas": 21000, 
+    "to": receiver, 
+    "value": web3.toWei("1", "ether"), 
 }, 
 sender["private_key"], 
 ) 
-```
  
-Send transaction and wait for receipt 
-```
+# Send transaction and wait for receipt 
 tx_hash = web3.eth.send_raw_transaction(tx_create.rawTransaction) 
 tx_receipt = web3.eth.wait_for_transaction_receipt(tx_hash) 
 print(f"Transaction successful with hash: { tx_receipt.transactionHash.hex() }") 
@@ -138,27 +120,27 @@ print(f"Transaction successful with hash: { tx_receipt.transactionHash.hex() }")
 ### Initialize a Smart Contract 
  
 Within the following sections, you will be initializing and executing a straightforward incremental contract named Incrementer.sol. You may commence the process by generating a file for the contract: 
-vim Incrementer.sol 
+
+```shell
+vim Incrementer.sol
+```
+
 Once you have created the file, the subsequent step is to input the Solidity code into the file: 
 
-``` 
+```solidity
 // SPDX-License-Identifier: MIT 
 pragma solidity ^0.8.0; 
 contract Incrementer { 
-uint256 public numericVal; 
-constructor(uint256 _startVal) { 
-		
-	
-numericVal = _startVal; 
-} 
-function increaseVal(uint256 _inputVal) public { 
-numericVal = numericVal + _inputVal; 
-} 
-function resetVal() public { 
-		
-	
-numericVal = 0; 
-} 
+  uint256 public numericVal; 
+  constructor(uint256 _startVal) { 
+    numericVal = _startVal; 
+  } 
+  function increaseVal(uint256 _inputVal) public { 
+    numericVal = numericVal + _inputVal; 
+  } 
+  function resetVal() public { 
+    numericVal = 0; 
+  } 
 } 
 ``` 
  
@@ -169,24 +151,17 @@ When the contract is deployed, the constructor function executes and assigns the
 This section will guide you through the process of building a script that leverages the Solidity compiler to produce the ABI and bytecode for the Incrementer.sol contract. Start by generating a compile.py and fill it as bellow: 
 
 
-
-Import the compiler library 
-``` 
+```python
+# Import the compiler library 
 import solcx 
-``` 
-If you have already installed the Solidity compiler, comment next line 
  
-```
-solcx.install_solc() 
-```
+# If you have already installed the Solidity compiler, comment next line 
+ solcx.install_solc() 
 
-Compile contract 
-```
+# Compile contract 
 comp_output = solcx.compile_files('Incrementer.sol') 
-``` 
  
-Export contract dat 
-```
+# Export contract data 
 abi = comp_output['Incrementer.sol:Incrementer']['abi'] 
 bytecode = comp_output['Incrementer.sol:Incrementer']['bin'] 
 ``` 
@@ -195,8 +170,7 @@ bytecode = comp_output['Incrementer.sol:Incrementer']['bin']
  
 To deploy the Incrementer.sol contract, you need to first compile the contract using a script and then create a deployment script file called deploy.py. The deployment script file must complete several steps, including importing the ABI and bytecode, setting up the Web3 provider, defining the account_from with the private_key, creating a contract instance, building a constructor transaction, signing the transaction, sending it using web3.eth.send_raw_transaction function, and waiting for the transaction receipt by using web3.eth.wait_for_transaction_receipt function. It's essential to note that the private key should never be stored in a Python file. With these steps completed, you can successfully deploy the Incrementer.sol contract. 
 
-
-```
+```python
 from compile import abi, bytecode 
  
 from web3 import Web3 
@@ -233,7 +207,7 @@ When you interact with a contract through call methods, the contract's storage r
 
 Note that this is only for example purposes, and you should never store your private keys in a Python file. After that, create a contract instance using the web3.eth.contract function and passing in the ABI and address of the deployed contract. Finally, use the contract instance to call the number function. 
  
-``` 
+```python
 from compile import abi 
  
 from web3 import Web3 
@@ -257,7 +231,7 @@ Next, create a contract instance using web3.eth.contract function by passing in 
 
 Finally, send the signed transaction using web3.eth.send_raw_transaction function and wait for the transaction receipt by calling web3.eth.wait_for_transaction_receipt function. 
  
-``` 
+```python
 from compile import abi 
 from web3 import Web3 
 web3 = Web3(Web3.HTTPProvider('RPC-API-ENDPOINT-HERE')) 
@@ -286,31 +260,6 @@ tx_hash = web3.eth.send_raw_transaction(tx_create.rawTransaction)
 tx_receipt = web3.eth.wait_for_transaction_receipt(tx_hash) 
 print(f'Tx successful with hash: { tx_receipt.transactionHash.hex() }') 
 ```
-
-
-## Educational Videos:
-
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
-<Tabs>
-    <TabItem value="youtube1" label="Set Up the HTTP Connection">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/obglGyOnXyo?si=GMSBsedyVGAzZrGj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-    </TabItem>
-    <TabItem value="youtube2" label="Send a Transaction & Check Balances">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/Q3Ts7kCirUU?si=wzjUIGUR2qB-waTB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-    </TabItem>
-    <TabItem value="youtube3" label="Deploying a Contract">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/O9OGGmwOLKM?si=YZQfEn3Swag62pew" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-    </TabItem>
-    <TabItem value="youtube4" label="Call & Send Methods">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/yYTIR7cGics?si=aWbCw3BE_4mXBd6T" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-    </TabItem>
-    <TabItem value="youtube6" label="web3.js Demo">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/DZTl38-aNn8?si=PXKEpqknSUPfdOAy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-    </TabItem>
-</Tabs>
-
 
 ## Additional Resources:
 - [**Web3.py Documentation**](https://web3py.readthedocs.io/) 

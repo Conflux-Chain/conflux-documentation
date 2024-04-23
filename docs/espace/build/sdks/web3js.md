@@ -14,30 +14,33 @@ Web3.py and Web3.js are a set of libraries that facilitate the interaction of de
 To start, first create a directory where all the relevant files generated throughout this guide can be stored. Execute this task with the following command: 
 
 
-```
+```shell
 mkdir web3-examples && cd web3-examples 
 
 ```
 
 For the successful implementation of the upcoming sections, you'll need to install the Web3 library and the Solidity compiler. To obtain both packages, execute the following command: 
 
-```
+```shell
 npm install web3 solc@0.8.0 
 ``` 
  
 ## Setup the HTTP connection 
  
  
-Prepare your Web3 HTTP connection to align with any evm-powered network. To synchronize your project, you must secure an endpoint and API key of your own. Here's how you can get started with each network, step by step. 
- 
-Utilize the following code to create a Web3 instance: 
-```
+Prepare your Web3 HTTP connection to align with any evm-powered network. To synchronize your project, you must secure an endpoint and API key of your own. 
+
+Here's how you can get started: 
+
+```javascript 
+// Create a Web3 instance: 
+
 const Web3 = require('web3'); 
-```
  
-Insert your RPC URL into this code snippet to establish an HTTP connection to your RPC endpoint:
-```
+// Insert your RPC URL to establish an HTTP connection to your RPC endpoint:
+
 const web3 = new Web3('RPC-API-ENDPOINT-HERE'); 
+
 ```
 You can find Conflux eSpace Network Endpoints [**here**](../../network-endpoints.md). 
  
@@ -50,53 +53,50 @@ In this section, you will learn how to create two scripts in order to send a tra
  
 ### Check the balances 
   
-To check the account balances before and after the transaction, you just need to create a single file. You can start by creating a balances.js file by executing: 
+To check the account balances before and after the transaction, you just need to create a single file. 
+You can start by creating a balances.js file by executing: 
 
-``` 
+```shell 
+
 vim balances.js 
 ``` 
  
 After that, you can create the script for the file.
 
 Here's the code for the script: 
- 
-Add the Web3 provider snippet 
-```
+
+```javascript 
+// Add the Web3 provider snippet 
+
 const Web3 = require('web3'); 
 const web3 = new Web3('RPC-API-ENDPOINT-HERE'); 
-```
 
-Create address variables 
-```
+// Create address variables 
+
 const sender_address = 'ADDRESS-FROM-HERE'; 
 const recipient_address = 'ADDRESS-TO-HERE'; 
-```
-
  
-Create balances function 
-```
+// Create balances function 
+
 const balances = async () => { 
-``` 
- 
-Get balance info 
-```
-const balance_sender = web3.utils.fromWei(await web3.eth.getBalance(sender_address), 'ether'); 
-const balance_recipient = web3.utils.fromWei(await web3.eth.getBalance(recipient_address), 'ether'); 
-console.log(The balance of ${sender_address} is: ${balance_sender} CFX); 
-console.log(The balance of ${recipient_address} is: ${balance_recipient} CFX); 
-}; 
-```
- 
- 
-Call balances function 
 
-```
+// Get balance info 
+
+  const balance_sender = web3.utils.fromWei(await web3.eth.getBalance(sender_address), 'ether'); 
+  const balance_recipient = web3.utils.fromWei(await web3.eth.getBalance(recipient_address), 'ether'); 
+  console.log(The balance of ${sender_address} is: ${balance_sender} CFX); 
+  console.log(The balance of ${recipient_address} is: ${balance_recipient} CFX); 
+}; 
+ 
+// Call balances function 
+
 balances(); 
 ```
  
  
 To fetch the account balances, simply run the following command: 
-```
+
+```shell
 node balances.js 
 ``` 
  
@@ -107,30 +107,25 @@ If successful, the balances for the origin and receiving addresses will be displ
 
 Create a .js file by "vim transaction.js" and fill it with the code below. By "node transaction.js" you can execute it. 
  
-Add the Web3 provider snippet 
-
-```
+```javascript
+// Add the Web3 provider snippet 
 const Web3 = require('web3'); 
 const web3 = new Web3('RPC-API-ENDPOINT-HERE'); 
-```
 
-Create account variables 
-```
+
+/// Create account variables 
 const sender = { 
   privateKey: 'YOUR-PRIVATE-KEY-HERE', 
   address: 'PUBLIC-ADDRESS-OF-PK-HERE', 
 }; 
 const receiver = 'ADDRESS-TO-HERE'; 
-``` 
+
  
-Create send function 
-```
+// Create send function 
 const send = async () => { 
   console.log(`Attempting to send transaction from ${sender.address} to ${receiver}`); 
-``` 
  
-Sign tx with PK 
-```
+// Sign tx with PK 
   const createTransaction = await web3.eth.accounts.signTransaction( 
 	{ 
   	gas: 21000, 
@@ -139,18 +134,13 @@ Sign tx with PK
 	}, 
 	sender.privateKey 
   ); 
-```
  
-Send tx and wait for receipt
-```
+/// Send tx and wait for receipt
   const createReceipt = await web3.eth.sendSignedTransaction(createTransaction.rawTransaction); 
   console.log(`Transaction successful with hash: ${createReceipt.transactionHash}`); 
-}; 
-```
+};  
  
- 
-Call send function 
-```
+// Call send function 
 send(); 
 ``` 
  
@@ -158,28 +148,28 @@ send();
  
 ### Initialize a Smart Contract 
  
-Within the following sections, you will be initializing and executing a straightforward incremental contract named Incrementer.sol. You may commence the process by generating a file for the contract: 
-vim Incrementer.sol 
+Within the following sections, you will be initializing and executing a straightforward incremental contract named Incrementer.sol. You may commence the process by generating a file for the contract:
+
+```shell
+vim Incrementer.sol
+```
+
 Once you have created the file, the subsequent step is to input the Solidity code into the file: 
 
-``` 
+```solidity
 // SPDX-License-Identifier: MIT 
 pragma solidity ^0.8.0; 
 contract Incrementer { 
-uint256 public numericVal; 
-constructor(uint256 _startVal) { 
-		
-	
-numericVal = _startVal; 
-} 
-function increaseVal(uint256 _inputVal) public { 
-numericVal = numericVal + _inputVal; 
-} 
-function resetVal() public { 
-		
-	
-numericVal = 0; 
-} 
+  uint256 public numericVal; 
+  constructor(uint256 _startVal) { 
+    numericVal = _startVal; 
+  } 
+  function increaseVal(uint256 _inputVal) public { 
+    numericVal = numericVal + _inputVal; 
+  } 
+  function resetVal() public { 
+    numericVal = 0; 
+  } 
 } 
 ``` 
  
@@ -189,18 +179,18 @@ When the contract is deployed, the constructor function executes and assigns the
  
 This section will guide you through the process of building a script that leverages the Solidity compiler to produce the ABI and bytecode for the Incrementer.sol contract. Start by generating a compile.js and fill it as bellow: 
 
-Import packages 
-``` 
+```javascript
+// Import packages 
 const fs = require('fs'); 
 const solc = require('solc'); 
-``` 
-Load contract 
-```
-const source = fs.readFileSync('Incrementer.sol', 'utf8'); 
-``` 
  
-Create input 
-```
+// Load contract 
+
+const source = fs.readFileSync('Incrementer.sol', 'utf8'); 
+ 
+ 
+// Create input 
+
 const inputObject = { 
    language: 'Solidity', 
    sources: { 
@@ -216,15 +206,12 @@ const inputObject = {
   	}, 
    }, 
 }; 
-``` 
  
-Compile the contract 
-```
+// Compile the contract 
 const compOutput = JSON.parse(solc.compile(JSON.stringify(inputObject))); 
 const contract = compOutput.contracts['Incrementer.sol']['Incrementer']; 
-``` 
-Export contract data 
-``` 
+ 
+// Export contract data  
 module.exports = contract; 
 ``` 
  
@@ -234,7 +221,7 @@ module.exports = contract;
 To deploy the Incrementer.sol contract, you need to first compile the contract using a script and then create a deployment script file called deploy.js. The deployment script file must complete several steps, including importing the ABI and bytecode, setting up the Web3 provider, defining the account_from with the private_key, creating a contract instance, building a constructor transaction, signing the transaction, sending it using web3.eth.send_raw_transaction function, and waiting for the transaction receipt by using web3.eth.wait_for_transaction_receipt function. 
 
 
-```
+```javascript
 const contractFile = require('./compile'); 
  
 const Web3 = require('web3'); 
@@ -284,7 +271,7 @@ When you interact with a contract through call methods, the contract's storage r
 Note that this is only for example purposes, and you should never store your private keys in a JS file. After that, create a contract instance using the web3.eth.contract function and passing in the ABI and address of the deployed contract. Finally, use the contract instance to call the number function. 
  
 
-``` 
+```javascript
 const { abi } = require('./compile'); 
 const Web3 = require('web3'); 
 const web3 = new Web3('RPC-API-ENDPOINT-HERE'); 
@@ -313,7 +300,7 @@ Next, create a contract instance using web3.eth.contract function by passing in 
 
 Finally, send the signed transaction using web3.eth.send_raw_transaction function and wait for the transaction receipt by calling web3.eth.wait_for_transaction_receipt function. 
 
-``` 
+```javascript
 const { abi } = require('./compile'); 
  
 const Web3 = require('web3'); 
@@ -359,18 +346,6 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 <Tabs>
-    <TabItem value="youtube1" label="Set Up the HTTP Connection">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/obglGyOnXyo?si=GMSBsedyVGAzZrGj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-    </TabItem>
-    <TabItem value="youtube2" label="Send a Transaction & Check Balances">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/Q3Ts7kCirUU?si=wzjUIGUR2qB-waTB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-    </TabItem>
-    <TabItem value="youtube3" label="Deploying a Contract">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/O9OGGmwOLKM?si=YZQfEn3Swag62pew" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-    </TabItem>
-    <TabItem value="youtube4" label="Call & Send Methods">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/yYTIR7cGics?si=aWbCw3BE_4mXBd6T" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-    </TabItem>
     <TabItem value="youtube6" label="web3.js Demo">
     <iframe width="560" height="315" src="https://www.youtube.com/embed/DZTl38-aNn8?si=PXKEpqknSUPfdOAy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     </TabItem>
