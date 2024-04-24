@@ -101,6 +101,8 @@ export function Web3ModalProvider({ children }: { children: ReactNode }) {
 
 ```
 
+For details on how to obtain `ProjectId`, please refer to this [article](/docs/espace/tutorials/walletConnect/project-creation).
+
 ## Step 4:  Use the Web3ModalProvider in Your Application
 
 At your application's entry point, typically in the index.tsx, use the `Web3ModalProvider` component to wrap your application.

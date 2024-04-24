@@ -1,5 +1,5 @@
 ---
-sidebar_position: 3
+sidebar_position: 4
 title: JSON-RPC Compatibility
 description: JSON-RPC compatibility with Ethereum
 displayed_sidebar: eSpaceSidebar
