@@ -29,7 +29,7 @@ description: 本教程将向您展示如何使用 js-conflux-sdk 发送交易。
 
 ## 安装
 
-To use it, the [Node.js](https://nodejs.org/en) environment is required. 您可以通过 npm 安装：
+您需要在 [Node.js](https://nodejs.org/en) 环境下使用它。 您可以通过 npm 安装：
 
 ```shell
 npm install js-conflux-sdk 
@@ -39,7 +39,7 @@ npm install js-conflux-sdk
 
 ### 导入并创建 Conflux 实例
 
-Import class `Conflux` from `js-conflux-sdk` and set a Conflux provider. 对于 Conflux Core 测试网，您可以直接使用公共 RPC 端点 `https://test.confluxrpc.com`。 A "provider" in this context refers to a service or node that allows your application to communicate with the Conflux blockchain. 它也可以改为任何其他Conflux节点，甚至是你自己的。
+从 `js-conflux-sdk` 导入 `Conflux` 类并设置 Conflux 服务提供者。 对于 Conflux Core 测试网，您可以直接使用公共 RPC 端点 `https://test.confluxrpc.com`。 这里的“提供者”指的是允许您的应用程序与 Conflux 区块链通信的服务或节点。 它也可以改为任何其他Conflux节点，甚至是你自己的。
 
 ```javascript
 const { Conflux } = require('js-conflux-sdk');
@@ -147,4 +147,4 @@ main().catch(e => console.error(e));
 2. 参考 [SDKs](./build/sdks-and-tools/sdks.md) 了解其他 SDK 的示例。
 3. [Core Space 水龙头](https://faucet.confluxnetwork.org/)
 4. [Conflux Core 区块链浏览器](https://confluxscan.io/)
-5. [use-wallet](../general/build/tools/use-wallet.md): a front-end perspective wallet hooks library providing rapid development support for lightweight dapps, with React and Vue3 support.
+5. [use-wallet](../general/build/tools/use-wallet.md)：一个面向前端的钱包钩子库，为轻量级 dApp 提供快速开发支持，支持 React 和 Vue3。
