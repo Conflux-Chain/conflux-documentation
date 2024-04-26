@@ -1,40 +1,32 @@
-## Price Oracle Security Overview
+---
+displayed_sidebar: generalSidebar
+---
 
-### Introduction to Ethereum and Oracles
+# Oracle Manipulation
 
 The Ethereum Virtual Machine (EVM) is a closed, isolated environment for security reasons. While smart contracts on the EVM can access on-chain data, they cannot directly fetch off-chain information, which is crucial for decentralized applications.
 
-Oracles bridge this gap by retrieving data from off-chain sources and making it available on-chain, with price oracles being a common type. They fetch market data from various sources, critical for applications like:
+Oracles play a crucial role in connecting blockchain smart contracts with the outside world by providing them with external data, crucial for their operations. However, if these oracles are not implemented correctly by developers, they can become a significant security vulnerability.
 
-- Decentralized lending platforms (e.g., AAVE) use oracles to determine when borrowers reach liquidation thresholds.
-- Synthetic asset platforms (e.g., Synthetix) rely on oracles for up-to-date asset pricing, facilitating zero-slippage trades.
-- Platforms like MakerDAO use price oracles to ascertain collateral values and issue stablecoins like $DAI.
 
-### The Risks with Price Oracles
+The inherent trust that smart contracts place in oracles for accurate data can lead to significant security risks if this data is manipulated. Here are refined descriptions of some notable incidents:
 
-Improper use of oracles can pose significant security risks:
+1. **[Cream Finance Exploit (October 2021)](https://rekt.news/cream-rekt-2/)**: Cream Finance on the BNB Chain experienced a massive $130 million loss due to an oracle exploit that involved manipulating price feeds. This allowed attackers to borrow significantly more than their collateral's worth, highlighting vulnerabilities when relying on limited data sources.
 
-- In October 2021, Cream Finance on the BNB Chain suffered a $130 million loss due to an oracle exploit ([source](https://rekt.news/cream-rekt-2/)).
-- In May 2022, Mirror Protocol on the Terra chain was exploited for $115 million because of an oracle vulnerability ([source](https://rekt.news/mirror-rekt/)).
-- In October 2022, Mango Markets on Solana faced a $115 million loss due to an oracle issue ([source](https://rekt.news/mango-markets-rekt/)).
+2. **[Mirror Protocol Vulnerability (May 2022)](https://rekt.news/mirror-rekt/)**: Mirror Protocol was compromised, resulting in a $115 million loss when attackers exploited insecure price data fetch mechanisms, enabling them to manipulate market prices and siphon funds.
 
-### Case Study: The `oUSD` Contract Vulnerability
+3. **[Mango Markets Incident (October 2022)](https://rekt.news/mango-markets-rekt/)**: In this case, attackers artificially inflated collateral values via oracle price manipulation on Mango Markets, leading to unauthorized loans and a substantial financial loss of $115 million.
 
-The `oUSD` contract is a stablecoin following the ERC20 standard, similar to platforms like Synthetix. It allows users to swap `ETH` for `oUSD` (Oracle USD) at zero slippage. The swap price is determined by a custom oracle (`getPrice()` function) using the instant price from the Uniswap V2 `WETH-BUSD` pool, which is susceptible to manipulation.
 
-#### Contract Overview
+#### Vulnerable Contract Example
 
-The `oUSD` contract stores state variables for addresses of `BUSD`, `WETH`, the Uniswap V2 factory, and the `WETH-BUSD` pair contract. It includes:
+This example is a stablecoin contract following the ERC20 standard. It allows users to swap `ETH` for `OracleUSD`. The swap price is determined by a custom oracle (`fetchPrice()` function) using the instant price from the Uniswap V2 `WETH-BUSD` pool, which is susceptible to manipulation.
 
-- Constructor: Initializes the ERC20 token name and symbol.
+The `OracleUSD` contract stores state variables for addresses of `BUSD`, `WETH`, the Uniswap V2 factory, and the `WETH-BUSD` pair contract. It includes:
+
+- `constructor()`: Initializes the ERC20 token name and symbol.
 - `fetchPrice()`: The price oracle function retrieving the instantaneous price from the Uniswap V2 `WETH-BUSD` pair.
-  ```solidity
-  function fetchPrice() public view returns (uint256 price) {
-      (uint112 reserve0, uint112 reserve1, ) = pair.getReserves();
-      price = reserve0 / reserve1;
-  }
-  ```
-- `exchange()`: Allows swapping `ETH` for `oUSD` at the oracle's price.
+- `exchange()`: Allows swapping `ETH` for `OracleUSD` at the oracle's price.
 
 ```solidity
 contract OracleUSD is ERC20{
@@ -63,20 +55,15 @@ contract OracleUSD is ERC20{
 }
 ```
 
-### Attack Strategy
+Attacker can exploit the `fetchPrice()` function by manipulating the `WETH-BUSD` pair's balance using:
 
-The attack exploits the `fetchPrice()` function by manipulating the `WETH-BUSD` pair's balance using:
-
-1. Large-scale `BUSD` purchases of `WETH` from the Uniswap V2 pool.
-2. Swapping `ETH` for a massively inflated amount of `oUSD` using the manipulated price.
+1. Large-scale purchases of `WETH` using `BUSD` in the Uniswap V2 pool can disrupt the balance of token ratios, leading to a temporary spike in `WETH` prices.
+1. Swapping `ETH` for a massively inflated amount of `OracleUSD` using the manipulated price.
 
 ### Prevention Techniques
 
-Blockchain security expert `samczsun` outlines several prevention strategies in a [blog post](https://www.paradigm.xyz/2020/11/so-you-want-to-use-a-price-oracle):
-
-1. Avoid using low-liquidity pools as price oracles.
-2. Refrain from using spot/instant prices; incorporate delays like Time Weighted Average Price (TWAP).
-3. Utilize decentralized oracles.
-4. Employ multiple data sources, selecting the median-priced sources to counteract extreme manipulations.
-5. Validate the returned data from oracle querying functions like latestRoundData().
-6. Thoroughly review the documentation and parameters of third-party oracles.
+1. **Avoid using low-liquidity pools as price oracles.**
+2. **Refrain from using spot/instant prices, incorporate delays like Time Weighted Average Price ([TWAP](https://chain.link/education-hub/twap-vs-vwap)).**
+3. **Employ multiple data sources, selecting the median-priced sources to counteract extreme manipulations.**
+4. Validate the returned data from oracle querying functions like `latestRoundData()`.
+5. Thoroughly review the documentation and parameters of third-party oracles.
