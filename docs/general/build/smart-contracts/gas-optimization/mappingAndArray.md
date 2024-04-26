@@ -60,12 +60,10 @@ contract UseArray {
 }
 ```
 
-**Mapping**: These are ideal for cases where the association between keys and values is critical. They are very efficient in gas consumption for insertion and retrieval, making them suitable for large datasets where the access pattern is unpredictable.
+**Mapping**: These are ideal for cases where the association between keys and values is critical. They are very efficient in gas consumption for insertion and retrieval, making them suitable for large datasets where the access pattern is unpredictable. Unlike arrays, mappings do not perform bounds checking, which saves gas when accessing elements but requires careful handling to avoid errors in reading non-existent keys.
 
-**Dynamic Array**: They offer flexibility but can be costly in gas, especially during operations that shift elements, such as deletions. Each `push` operation also carries a cost that might escalate with the array's size due to resizing.
+**Dynamic Array**: They offer flexibility but can be costly in gas, especially during operations that shift elements, such as deletions. Each `push` operation also carries a cost that might escalate with the array's size due to resizing. Arrays in Solidity have built-in bounds checking which, although ensures safety against out-of-bounds access, comes with a gas overhead.
 
 Recommendations for gas optimization:
 
-🌟 Use mappings when you need efficient, cost-effective storage and retrieval by keys.
-
-🌟 Dynamic arrays are better suited for ordered storage and when elements need to be iterated over or managed sequentially.
+🌟 When you need to store a collection of items that require specific ordering and access via a predetermined key or index, opt for mappings to achieve efficient and economical storage and retrieval by key.
