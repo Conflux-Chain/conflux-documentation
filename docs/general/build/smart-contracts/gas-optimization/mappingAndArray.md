@@ -2,15 +2,15 @@
 displayed_sidebar: generalSidebar
 ---
 
-# Using Mappings vs Dynamic Arrays in Solidity
+# Mapping vs Dynamic Array
 
-In Solidity, different data structures can significantly impact the gas costs associated with contract operations. This tutorial explores the differences in gas usage between **mappings** and **dynamic arrays** when performing typical operations like insertions, deletions, and retrievals. Understanding these differences can help developers optimize their smart contracts for both functionality and cost.
+In Solidity, different data structures can significantly impact the gas costs associated with contract operations. This article explores the differences in gas usage between **mapping** and **dynamic array** when performing typical operations like insertions, deletions, and retrievals. Understanding these differences can help developers optimize their smart contracts for both functionality and cost.
 
-Solidity provides mappings and dynamic arrays as flexible data structures. Mappings offer a highly efficient key-value storage mechanism, usually costing less gas for operations compared to dynamic arrays, which may have variable sizes and require more complex management.
+Solidity provides mapping and dynamic array as flexible data structures. Mapping offers a highly efficient key-value storage mechanism, usually costing less gas for operations compared to dynamic array, which may have variable sizes and require more complex management.
 
 **Demo Code**
 
-Below are two contracts demonstrating typical uses of mappings and dynamic arrays. These examples illustrate the operational gas costs associated with each.
+Below are two contracts demonstrating typical uses of mapping and dynamic array. These examples illustrate the operational gas costs associated with each.
 
 ```solidity
 // SPDX-License-Identifier: MIT
@@ -60,13 +60,12 @@ contract UseArray {
 }
 ```
 
-**Mappings**: These are ideal for cases where the association between keys and values is critical. They are very efficient in gas consumption for insertion and retrieval, making them suitable for large datasets where the access pattern is unpredictable.
+**Mapping**: These are ideal for cases where the association between keys and values is critical. They are very efficient in gas consumption for insertion and retrieval, making them suitable for large datasets where the access pattern is unpredictable.
 
-**Dynamic Arrays**: They offer flexibility but can be costly in gas, especially during operations that shift elements, such as deletions. Each `push` operation also carries a cost that might escalate with the array's size due to resizing.
+**Dynamic Array**: They offer flexibility but can be costly in gas, especially during operations that shift elements, such as deletions. Each `push` operation also carries a cost that might escalate with the array's size due to resizing.
 
 Recommendations for gas optimization:
 
 🌟 Use mappings when you need efficient, cost-effective storage and retrieval by keys.
-🌟 Dynamic arrays are better suited for ordered storage and when elements need to be iterated over or managed sequentially.
 
-By considering these aspects, developers can better design their smart contracts to balance functionality and operational costs effectively.
+🌟 Dynamic arrays are better suited for ordered storage and when elements need to be iterated over or managed sequentially.
