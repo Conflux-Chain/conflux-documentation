@@ -2,19 +2,19 @@
 displayed_sidebar: generalSidebar
 ---
 
-# Variable Packing
+# 变量打包
 
-The Ethereum Virtual Machine (EVM) stores variables in consecutive 32-bytes slots. When we place multiple variables within a single slot, this is referred to as variable packing.
+以太坊虚拟机（EVM）以连续的 32 字节槽存储变量。 当我们将多个变量放在单个槽中时，这称为变量打包。
 
-If the variables we try to pack exceed the 32-bytes limit of the current slot, they will be stored in a new slot. It's crucial to determine which variables are best grouped together to minimize wasted space.
+如果我们试图打包的变量超过了当前槽的 32 字节限制，它们将被存储在一个新的槽中。 确定变量之间最优的组合方式，以最大化地减少空间浪费非常重要。
 
-Although Solidity automatically tries to pack smaller basic types into the same slot, poor struct member ordering can prevent the compiler from doing so.
+尽管 Solidity 会自动尝试将较小的基本类型打包到同一个槽中，但不良的结构成员排序可能会阻止编译器这样做。
 
-Learn More: [Layout of State Variables in Storage](https://docs.soliditylang.org/en/v0.8.25/internals/layout_in_storage.html)
+了解更多：[存储中的状态变量分布](https://docs.soliditylang.org/en/v0.8.25/internals/layout_in_storage.html)
 
 **代码演示**
 
-Below, we demonstrate how to use packing in contracts to compare gas usage.
+以下，我们演示了如何在合约中使用打包，并对比了 gas 使用情况。
 
 ```solidity
 
@@ -35,4 +35,4 @@ contract OptimizedPacking {
 
 关于 gas 优化的建议：
 
-🌟Pay attention to variable packing when choosing data types. If it's possible to pack a variable with others into a single storage slot, opting for a smaller data type can be beneficial.
+🌟在选择数据类型时注意变量打包。 尽可能将不同的变量打包到一个存储槽中，并尽可能选择使用更小的数据类型。
