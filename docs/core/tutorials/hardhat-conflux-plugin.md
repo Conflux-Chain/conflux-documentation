@@ -125,9 +125,8 @@ async function main() {
         return;
     }
 
-    const contractAddress = receipt.contract
+    const contractAddress = receipt.contractCreated;
 
-Created;
     console.log(`Newly deployed contract address: ${contractAddress}`);
 }
 
