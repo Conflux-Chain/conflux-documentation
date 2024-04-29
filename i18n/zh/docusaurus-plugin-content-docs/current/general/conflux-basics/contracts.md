@@ -38,7 +38,7 @@ Security in smart contracts is paramount. Despite their immutability, vulnerabil
 If you're interested in **Smart Contracts Development on Conflux Network**, please check out the following pages:
 
 - [Introduction to Smart Contract Development on Conflux Network](../build/smart-contracts/introduction-to-smart-contracts.md)
-- [Solidity Basics](../build/smart-contracts/solidity-basics.md)
+- [Solidity 基础](../build/smart-contracts/solidity-basics.md)
 - [Token 标准](../build/smart-contracts/token-standards.md)
 
 :::
