@@ -4,14 +4,14 @@ displayed_sidebar: generalSidebar
 
 # Payable Constructor
 
-In Solidity, the way you write constructors can influence the deployment cost of your contracts, particularly with respect to gas usage. The Ethereum Virtual Machine (EVM) requires gas for all operations, including contract deployment.
+在 Solidity 中，编写构造函数的方式可能会影响合约的部署成本，特别是在 gas 使用方面。 以太坊虚拟机（EVM）需要为包括合约部署在内的所有操作支付 gas。
 
 **代码演示**
 
-Below, we have two simple contracts, `BasicConstructor` and `AdvancedConstructor`. Both are minimal, but they differ in whether the constructor is marked as `payable`.
+下面有两个简单的合约，`BasicConstructor` 和 `AdvancedConstructor`。 它们都很简单，唯一的区别是构造函数是否被标记为 `payable`。
 
-- `BasicConstructor` has a non-payable constructor.
-- `AdvancedConstructor` has a payable constructor, allowing it to receive Ether during deployment.
+- `BasicConstructor` 没有使用 `payable` 修饰。
+- `AdvancedConstructor` 使用 `payable` 修饰，它可以在部署时接收以太币。
 
 ```solidity
 // SPDX-License-Identifier: MIT
@@ -26,10 +26,10 @@ contract AdvancedConstructor {
 }
 ```
 
-When deployed, the `AdvancedConstructor` uses less gas (67,102 gas) compared to the `BasicConstructor` (67,161 gas). Although the difference is minor, marking a constructor as `payable` does not necessarily increase deployment costs and in this case, it marginally reduces them.
+部署时，`AdvancedConstructor` 使用的 gas（67102）比 `BasicConstructor`（67161）少。 在这种情况下，被标记为 `payable` 的构造函数稍微减少了 gas。尽管差异很小，但也说明了使用 `payable` 修饰构造函数会在一定程度上减少部署开销。
 
-The difference in gas cost can be attributed to how the EVM handles the deployment bytecode. The `payable` modifier might influence the constructor's bytecode slightly differently than a non-payable one, potentially due to optimizations in how storage access and function accessibility are handled during deployment.
+gas 消耗的差异可以归因于 EVM 处理部署字节码的方式。 `payable` 修饰符可能会使构造函数的字节码有略微不同，这可能是由于在部署期间对存储访问和函数访问方式的优化。
 
-Recommendations for Gas Optimization:
+燃气优化建议：
 
-🌟 Using a `payable` modifier in a constructor will slightly reduce gas costs during contract deployment.
+🌟 在构造函数中使用 `payable` 修饰符会略微减少部署合约时的 gas 成本。
