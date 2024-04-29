@@ -2,15 +2,15 @@
 displayed_sidebar: generalSidebar
 ---
 
-# Low-Cost Reentrancy Guard
+# 低成本重入保护
 
-Using a modifier for re-entrancy checks in smart contracts boosts security by confirming if the contract is currently executing. Typically, a boolean flag controls access, allowing functions to run only if the contract is not already active.
+在智能合约中使用修饰符进行重入检查可以通过确认合约当前是否正在执行来提升安全性。 通常，布尔型标志用于控制访问权限，只有当合约尚未激活时才允许函数运行。
 
-Switching to a uint variable for the lock mechanism can be more gas-efficient. This method leverages different numeric values to indicate the contract's state, providing a flexible way to manage execution flow and potentially reducing gas costs for frequent operations.
+如果使用 uint 型变量作为锁定机制可以更加节省 gas。 这种方法利用不同的数值来指示合约的状态，提供了一种灵活的方式来管理执行流程，并可能减少频繁操作的 gas 成本。
 
 **代码演示**
 
-The demonstration below compares three approaches for re-entrancy protection: using a Boolean flag, utilizing a uint variable toggled between 0 and 1, and employing a uint variable shifted between 1 and 2.
+下面的演示比较了三种防止重入攻击的方法：使用布尔标志、使用在 0 和 1 之间切换的 uint 型变量，和使用在 1 和 2 之间切换的 uint 型变量。
 
 ```solidity
 contract ReentrancyGuardBool {
@@ -49,4 +49,4 @@ contract ReentrancyGuardUint12 {
 
 关于 gas 优化的建议：
 
-🌟 For re-entrancy guard, the efficiency of different methods varies significantly. The Boolean method, which uses two bytes for boolean values, requires more gas due to the EVM's 32-byte word handling. Given that re-entrancy guard modifiers are generally called multiple times, it is recommended to use the Uint 1-2 method for its gas savings.
+🌟 对于重入保护而言，不同方法的效率差异显著。 布尔方法使用两个字节表示布尔值，因为 EVM 处理 32 字节字的方式而导致了更多的 gas 消耗。 考虑到重入保护修饰符通常会被多次调用，推荐使用 Uint 1-2 方法，因为它可以有效节省 gas。
