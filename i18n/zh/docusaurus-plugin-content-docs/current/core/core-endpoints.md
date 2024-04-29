@@ -3,7 +3,7 @@ id: conflux_rpcs
 title: 网络 RPC 端点
 sidebar_position: 4
 keywords:
-  - network endpoints
+  - 网络端点
   - Conflux core space
 displayed_sidebar: coreSidebar
 ---
@@ -12,48 +12,48 @@ displayed_sidebar: coreSidebar
 
 :::tip
 
-Public RPC endpoints for **Conflux eSpace** is provided [here](../espace/network-endpoints.md).
+**Conflux eSpace** 的公共 RPC 端点信息可在[此处](../espace/network-endpoints.md)获取。
 
 :::
 
 ## 1. Confura
 
-Confura is an Ethereum Infura equivalent public JSON-RPC service on Conflux network, which is developed and maintained by Conflux foundation and is available for free use.
+Confura是Conflux网络上的一个类似于Ethereum Infura的公共JSON-RPC服务，由Conflux基金会开发和维护，并可免费使用。
 
 ### 公共端点
 
-Confura provides several available RPC endpoints for the mainnet and testnet. We have sorted them by selected priority and provided brief descriptions. If you are unsure which one to choose, please select an RPC endpoint near the top of the list.
+Confura为主网和测试网提供了多个可用的RPC端点。 我们按照“优先选择前者”的原则对它们进行了排序，并提供了简要描述。 如果您不确定选择哪一个，请优先选择列表顶部的 RPC 端点。
 
-#### Mainnet
+#### 主网
 
-Chain ID for Conflux Core Space Mainnet is `1029(0x405)`. The corresponding blockchain explorer URL is https://confluxscan.io.
+Conflux Core space 主网的链 ID 是 `1029(0x405)`。 相应的区块链浏览器 URL 是 https://confluxscan.io。
 
-| RPC 端点                                | 类型        | 说明                           |
-| ------------------------------------- | --------- | ---------------------------- |
-| https://main.confluxrpc.com           | HTTP      |                              |
-| https://cfxmain-china.confluxrpc.com  | HTTP      | RPC Service for China Users  |
-| https://cfxmain-global.confluxrpc.com | HTTP      | RPC Service for Global Users |
-| https://main.confluxrpc.org           | HTTP      | Backup RPC Service           |
-| wss://main.confluxrpc.com/ws          | Websocket |                              |
-| wss://main.confluxrpc.org/ws          | Websocket | Backup RPC Service           |
+| RPC 端点                                | 类型        | 说明             |
+| ------------------------------------- | --------- | -------------- |
+| https://main.confluxrpc.com           | HTTP      |                |
+| https://cfxmain-china.confluxrpc.com  | HTTP      | 面向中国用户的 RPC 服务 |
+| https://cfxmain-global.confluxrpc.com | HTTP      | 面向全球用户的 RPC 服务 |
+| https://main.confluxrpc.org           | HTTP      | 备用 RPC 服务      |
+| wss://main.confluxrpc.com/ws          | Websocket |                |
+| wss://main.confluxrpc.org/ws          | Websocket | 备用 RPC 服务      |
 
 #### 测试网
 
-Chain ID for Conflux Core Space Testnet is `1(0x1)`. The corresponding blockchain explorer URL is https://test.confluxscan.io.
+Conflux Core Space 测试网的链 ID 是 `1(0x1)`。 相应的区块链浏览器 URL 是 https://test.confluxscan.io。
 
-| RPC 端点                         | 类型        | 备注                 |
-| ------------------------------ | --------- | ------------------ |
-| https://test.confluxrpc.com    | HTTP      |                    |
-| https://cfxtest.confluxrpc.com | HTTP      |                    |
-| https://test.confluxrpc.org    | HTTP      | Backup RPC Service |
-| wss://test.confluxrpc.org/com  | Websocket |                    |
-| wss://test.confluxrpc.org/ws   | Websocket |                    |
+| RPC 端点                         | 类型        | 备注        |
+| ------------------------------ | --------- | --------- |
+| https://test.confluxrpc.com    | HTTP      |           |
+| https://cfxtest.confluxrpc.com | HTTP      |           |
+| https://test.confluxrpc.org    | HTTP      | 备用 RPC 服务 |
+| wss://test.confluxrpc.org/com  | Websocket |           |
+| wss://test.confluxrpc.org/ws   | Websocket |           |
 
 ### 速率限制
 
-To maintain the service's usability, there are rate limits in place for the free tier. 如果你需要更高级别的 RPC 服务，你可以通过 [Web3 Paywall](../general/build/tools/web3paywall.md) 进行购买，或者可以直接发送邮件到 [bd@confluxnetwork.org](mailto:bd@confluxnetwork.org) 向 Conflux 基金会申请。
+为了保持服务的可用性，免费版本设有访问频率限制。 如果你需要更高级别的 RPC 服务，你可以通过 [Web3 Paywall](../general/build/tools/web3paywall.md) 进行购买，或者可以直接发送邮件到 [bd@confluxnetwork.org](mailto:bd@confluxnetwork.org) 向 Conflux 基金会申请。
 
-Here are references for various fee tiers and their rate limits.
+这里提供了各种费用等级及其访问速率限制的参考信息。
 
 | 付费级别 | 价格                          | 速率限制                          | 购买链接                                                                                                                                                                                                                                         |
 | ---- | --------------------------- | ----------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
