@@ -4,7 +4,7 @@ displayed_sidebar: generalSidebar
 
 # Payable Constructor
 
-在 Solidity 中，编写构造函数的方式可能会影响合约的部署成本，特别是在 gas 使用方面。 以太坊虚拟机（EVM）需要为包括合约部署在内的所有操作支付 gas。
+在 Solidity 中，编写构造函数的方式可能会影响合约的部署成本，特别是在 gas 使用方面。 以太坊虚拟机（EVM）中包括部署合约等的所有操作都需要 gas。
 
 **代码演示**
 
