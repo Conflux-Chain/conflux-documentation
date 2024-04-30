@@ -4,9 +4,9 @@ title: 集成 Fluent 钱包
 displayed_sidebar: coreSidebar
 ---
 
-[Fluent Wallet](https://fluentwallet.com/) is a browser extension wallet supported by the Conflux Foundation, designed to provide convenient and secure digital asset management services for Conflux users. Fluent Wallet supports Conflux Core Space and eSpace while also offering connectivity to other EVM-compatible chains.
+[Fluent钱包](https://fluentwallet.com/)是一个由Conflux基金会支持的浏览器扩展钱包，旨在为Conflux用户提供方便且安全的数字资产管理服务。 Fluent 钱包支持 Conflux 的 Core Space 和 eSpace 空间，同时也可连接到其他的 EVM 兼容链。
 
-Fluent Wallet provides [integration documentation](https://docs.fluentwallet.com/conflux/) for Conflux Core Space dApp developers, which includes use cases for connecting wallets and RPC API content. Developers can complete the integration process by following the relevant documentation.
+Fluent 钱包为 dApp 开发人员提供了[集成文档](https://docs.fluentwallet.com/conflux)，内容包括连接钱包和 RPC API 的用例。 Developers can complete the integration process by following the relevant documentation.
 
 :::tip
 
