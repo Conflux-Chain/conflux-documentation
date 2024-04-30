@@ -2,21 +2,13 @@
 displayed_sidebar: generalSidebar
 ---
 
-# Oracle Manipulation
+# Price Manipulation
 
-The Ethereum Virtual Machine (EVM) is a closed, isolated environment for security reasons. While smart contracts on the EVM can access on-chain data, they cannot directly fetch off-chain information, which is crucial for decentralized applications.
+Price manipulation poses a significant risk to smart contracts that utilize decentralized exchanges (DEXs) like Uniswap, where asset prices are influenced by the liquidity within trading pools. These pools are vulnerable to manipulation by well-resourced entities capable of altering market balances to artificially influence prices. Such manipulative actions can severely undermine the functionality and security of financial applications that rely on this pricing data for essential operations.
 
-Oracles play a crucial role in connecting blockchain smart contracts with the outside world by providing them with external data, crucial for their operations. However, if these oracles are not implemented correctly by developers, they can become a significant security vulnerability.
+**[Mango Markets Incident (October 2022)](https://rekt.news/mango-markets-rekt/)**: In this notable case, attackers manipulated the oracle prices linked to Mango Markets' on-chain data. By inflating the value of collateral artificially, they were able to take out unauthorized loans, leading to significant financial losses estimated at $115 million.
 
-
-The inherent trust that smart contracts place in oracles for accurate data can lead to significant security risks if this data is manipulated. Here are refined descriptions of some notable incidents:
-
-1. **[Cream Finance Exploit (October 2021)](https://rekt.news/cream-rekt-2/)**: Cream Finance on the BNB Chain experienced a massive $130 million loss due to an oracle exploit that involved manipulating price feeds. This allowed attackers to borrow significantly more than their collateral's worth, highlighting vulnerabilities when relying on limited data sources.
-
-2. **[Mirror Protocol Vulnerability (May 2022)](https://rekt.news/mirror-rekt/)**: Mirror Protocol was compromised, resulting in a $115 million loss when attackers exploited insecure price data fetch mechanisms, enabling them to manipulate market prices and siphon funds.
-
-3. **[Mango Markets Incident (October 2022)](https://rekt.news/mango-markets-rekt/)**: In this case, attackers artificially inflated collateral values via oracle price manipulation on Mango Markets, leading to unauthorized loans and a substantial financial loss of $115 million.
-
+This incident highlights the urgent need for robust safeguards to prevent the manipulation of on-chain price data. Ensuring the accuracy and reliability of such data is crucial to maintaining the security and functionality of smart contracts that depend on it.
 
 #### Vulnerable Contract Example
 
@@ -65,5 +57,3 @@ Attacker can exploit the `fetchPrice()` function by manipulating the `WETH-BUSD`
 1. **Avoid using low-liquidity pools as price oracles.**
 2. **Refrain from using spot/instant prices, incorporate delays like Time Weighted Average Price ([TWAP](https://chain.link/education-hub/twap-vs-vwap)).**
 3. **Employ multiple data sources, selecting the median-priced sources to counteract extreme manipulations.**
-4. Validate the returned data from oracle querying functions like `latestRoundData()`.
-5. Thoroughly review the documentation and parameters of third-party oracles.
