@@ -256,7 +256,7 @@ params: [
 * `nonce`: `QUANTITY` - the number of transactions made by the sender prior to this one.
 * `r`: `DATA`, 32 Bytes - ECDSA signature r.
 * `s`: `DATA`, 32 Bytes - ECDSA signature s.
-* `status`: `QUANTITY` - 0 for success, 1 if an error occurred, 2 for skiped, `null` when the transaction is skipped or not packed.
+* `status`: `QUANTITY` - 0 for success, 1 if an error occurred, 2 for skipped, `null` when the transaction is skipped or not packed.
 * `storageLimit`: `QUANTITY` - the storage limit specified by the sender.
 * `to`: `BASE32` - address of the receiver. `null` when it is a contract deployment transaction.
 * `transactionIndex`: `QUANTITY` - the transaction's position in the block. `null` when the transaction is pending.
