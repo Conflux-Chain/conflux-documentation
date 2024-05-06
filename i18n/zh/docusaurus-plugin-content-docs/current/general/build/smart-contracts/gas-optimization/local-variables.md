@@ -2,13 +2,13 @@
 displayed_sidebar: generalSidebar
 ---
 
-# Local Variables
+# 局部变量
 
-In many common DeFi projects, we frequently encounter various complex calculations that inevitably require defining many new local variables and updating existing global variables. It's well-known that modifying storage is significantly more expensive than making changes in memory.
+在许多常见的DeFi项目中，我们经常遇到需要定义许多新的局部变量和更新现有全局变量的各种复杂计算。 众所周知，修改存储比在内存中进行更改的成本要高得多。
 
 **代码演示**
 
-Below, we present two different methods to modify storage variables and observe the gas difference.
+下面，我们展示了两种不同的方法来修改存储变量，并观察gas差异。
 
 ```solidity
 contract LocalVariablesExample {
@@ -34,4 +34,4 @@ contract LocalVariablesExample {
 
 关于 gas 优化的建议：
 
-🌟 For complex calculations, bypass direct storage variable manipulation to save on high gas costs. Instead, use local variables for interim modifications, then update storage variables in one go. This approach significantly reduces gas usage.
+🌟 对于复杂的计算，建议避免直接操纵存储变量以节省高昂的gas成本。 相反，推荐使用局部变量作为过渡进行修改，然后一次性更新存储变量。 这种方法显著减少了gas使用。

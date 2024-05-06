@@ -41,4 +41,4 @@ contract Optimizer {
 
 关于 gas 优化的建议：
 
-🌟 By sorting functions based on the frequency of calls, and placing the most called function at the top of the array, we can reduce the gas cost, especially for high-frequency operations.
+🌟 通过根据函数调用频率对函数进行排序，并将调用次数最多的函数放在数组的顶部，我们可以降低 gas 成本，并且这种优化对高频操作尤为明显。

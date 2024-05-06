@@ -44,4 +44,4 @@ contract Bitmap {
 
 ### Gas优化建议：
 
-🌟Considering practical scenarios, bitwise operators can be used for managing certain variables to save gas.
+🌟考虑到实际情况，可以使用位运算符来管理特定变量以节省gas。

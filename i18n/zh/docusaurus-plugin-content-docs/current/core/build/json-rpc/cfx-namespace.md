@@ -257,7 +257,7 @@ params: [
 * `nonce`: `QUANTITY` - 发送者在这之前发送的交易数量。
 * `r`: `DATA`, 32 字节 - ECDSA 签名 r
 * `s`: `DATA`, 32 字节 - ECDSA 签名 s
-* `status`: `QUANTITY` - 0 表示成功，1 表示发生错误，2 表示跳过, `null` null 表示交易被跳过或未打包
+* `status`: `QUANTITY` - 0 for success, 1 if an error occurred, 2 for skipped, `null` when the transaction is skipped or not packed.
 * `storageLimit`: `QUANTITY` - 发送者指定的存储限制。
 * `to`: `BASE32` - 接收者的地址。 `null` 当它是一个合约部署交易时为 null
 * `transactionIndex`：`QUANTITY` - 表示区块中的交易索引位置。 `null` 当交易是 pending 时为 null

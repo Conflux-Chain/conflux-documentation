@@ -21,16 +21,16 @@ CFX 是 Core Space 的原生代币，可用于支付燃气和存储费用。 `Dr
 
 ## Gas & 存储
 
-Core Space incorporates a gas mechanism, akin to the one used in Ethereum, detailed further in the [gas mechanism overview](../../general/conflux-basics/gas). Additionally, it employs a storage collateral mechanism that serves as a pricing strategy for utilizing contract storage space. For more in-depth information, refer to the [storage specification](./storage).
+Core Space 采用了类似于 Ethereum 中使用的 Gas 机制，更多细节请参见 [Gas 机制概述](../../general/conflux-basics/gas)。 此外，它采用了存储抵押机制，作为使用合约存储空间的定价策略。 想要获取更深入的信息，请参阅 [存储规范](./storage)。
 
-## Sponsorship
+## 代付
 
-Core Space features a unique sponsorship mechanism. This system enables users to cover the gas fees as well as storage collateral for other users, facilitating a more collaborative environment. For an in-depth understanding of this mechanism, please refer to [Sponsorship](./sponsor-mechanism).
+Core Space 特有一个独特的代付机制。 该系统允许用户为其他用户支付燃气费用以及存储抵押费用，从而促进了一个更具协作性的环境。 为了深入理解这一机制，请参阅 [代付](./sponsor-mechanism)。
 
 ## CVM
 
-At the heart of Core Space is the Conflux Virtual Machine (CVM). While it largely aligns with the Ethereum Virtual Machine (EVM), there are notable differences. To explore these distinctions in detail, visit [CVM Differences](./vm-difference).
+Core Space 的核心是 Conflux 虚拟机（CVM）。 虽然它在很大程度上与以太坊虚拟机（EVM）保持一致，但存在一些显著的差异。 要详细了解这些差异，请访问 [CVM差异](./vm-difference)。
 
 ## 内置合约
 
-Core Space is equipped with several internal contracts. These contracts are integral in providing foundational functions for the platform. For comprehensive information about these contracts, please consult [Internal Contracts](./internal-contracts) for more details.
+Core Space 配备了几个内部合约。 这些合约在为平台提供基础功能方面起着不可或缺的作用。 想要全面地了解这些合约的信息，请查阅 [内部合约](./internal-contracts) 以获取更多信息。

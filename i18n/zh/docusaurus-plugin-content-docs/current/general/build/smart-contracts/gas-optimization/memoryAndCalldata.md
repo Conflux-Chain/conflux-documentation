@@ -3,16 +3,15 @@ displayed_sidebar: generalSidebar
 sidebar_position: 2
 ---
 
-# Memory vs Calldata
+# Memory 与 Calldata
 
-1. `memory`: Typically used for function parameters and temporary variables within functions. Stored in memory and not persistent on the blockchain.
+1. `memory` : 通常用于修饰函数参数和函数内的临时变量。 此类变量存储在内存中，不会永久保存在区块链上。
 
-2. `calldata`: Similar to memory, stored in memory and not persistent on the blockchain. The key difference is that calldata variables are immutable and commonly used for function parameters.
+2. `calldata` : 与 memory 类似，存储在内存中而不会永久保存在区块链上。 主要区别是 calldata 变量是不可变的，常用于修饰函数参数。
 
-Learn more:
-[Data location and assignment behavior](https://docs.soliditylang.org/en/latest/types.html#data-location)
+了解更多：[数据存储位置和赋值行为](https://docs.soliditylang.org/en/latest/types.html#data-location)
 
-Below, we demonstrate how to write data using both `calldata` and `memory`
+以下，我们演示了如何使用 `calldata` 和 `memory` 写入数据
 
 ```solidity
 contract CalldataAndMemory {
@@ -37,4 +36,4 @@ contract CalldataAndMemory {
 
 关于 gas 优化的建议：
 
-🌟 In practical situations, if it's possible to use calldata, it is recommended to use `calldata` instead of `memory`.
+🌟 在实际情况中，如果可以使用 `calldata`，建议使用 `calldata` 而不是 `memory`。

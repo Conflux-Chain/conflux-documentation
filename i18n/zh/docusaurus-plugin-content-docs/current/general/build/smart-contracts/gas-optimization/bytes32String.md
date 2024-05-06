@@ -2,7 +2,7 @@
 displayed_sidebar: generalSidebar
 ---
 
-# Bytes32 vs String
+# Bytes32 与 String
 
 In Solidity, the type of data storage you choose can affect the gas cost of your contract operations, especially when storing or modifying state variables. The Ethereum Virtual Machine (EVM) charges gas for all operations, and the choice between using `bytes32` and `string` types can impact these costs.
 

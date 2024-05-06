@@ -4,7 +4,7 @@ title: 开发工具
 displayed_sidebar: coreSidebar
 ---
 
-import useBaseUrl from '@docusaurus/useBaseUrl';
+从 '@docusaurus/useBaseUrl' 导入useBaseUrl;
 
 Conflux 提供的工具可以帮助开发者快速构建 dapp。
 
@@ -18,8 +18,8 @@ ChainIDE 是基于云的多链 IDE。 在开发智能合约时，开发人员无
 
 ![Chainide](../image/chainide.png)
 
-## Address Format Convert Tool
+## 地址格式转换工具
 
-ConfluxScan provides a [Online Address Converter](https://www.confluxscan.io/address-converter) which is very useful.
+ConfluxScan 提供了一个高效的 [在线地址转换器](https://www.confluxscan.io/address-converter) 。
 
 ![](../../core-space-basics/img/scan-address-converter.png)

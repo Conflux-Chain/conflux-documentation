@@ -62,7 +62,7 @@ After the transaction execution, you can query the contract's sponsor info again
 
 ![](./imgs/sponsor/query-sponsor-gas-balance.png)
 
-## Whitelist
+## 白名单
 
 Finally, add the zero address to the whitelist to use the contract without paying a gas fee.
 
@@ -94,4 +94,4 @@ Several reasons might cause the transaction to fail:
 
 1. The upper bound is too small.
 2. The sponsor balance is insufficient.
-3. The whitelist is not set correctly.
+3. 白名单设置不正确。

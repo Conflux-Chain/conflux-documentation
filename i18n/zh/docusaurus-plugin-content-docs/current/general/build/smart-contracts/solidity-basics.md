@@ -1,6 +1,6 @@
 ---
 sidebar_position: 2
-title: Solidity Basics
+title: Solidity 基础
 displayed_sidebar: generalSidebar
 ---
 
@@ -81,11 +81,11 @@ import TabItem from '@theme/TabItem';
 
 ## 其他资源
 
-- [Solidity documentation](https://docs.soliditylang.org/)
-- [Solidity by example](https://solidity-by-example.org/)
-- [Ethereum's Smart Contract Documentation](https://ethereum.org/developers/docs/smart-contracts)
+- [Solidity 开发文档](https://docs.soliditylang.org/)
+- [Solidity 示例](https://solidity-by-example.org/)
+- [以太坊智能合约开发文档](https://ethereum.org/developers/docs/smart-contracts)
 
-## Libraries
+## 相关的库
 
 **OpenZeppelin Contracts -** **_用于智能合约安全开发的库。_**
 
