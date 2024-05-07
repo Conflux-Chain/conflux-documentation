@@ -2,29 +2,21 @@
 displayed_sidebar: generalSidebar
 ---
 
-# Advanced Gas Optimization in Ethereum Smart Contracts: SSTORE2
+# SSTORE2
 
-The cost of executing transactions on the Ethereum network can be significantly high, especially when interacting with smart contract storage using the SSTORE opcode. To mitigate these costs, developers can leverage alternative methods like SSTORE2 for more efficient data handling.
-
-## Understanding SSTORE
+The cost of executing transactions on the Ethereum network can be very high, especially when interacting with smart contract storage using the `SSTORE` opcode. To mitigate these costs, developers can leverage alternative methods like SSTORE2 for more efficient data handling.
 
 The `SSTORE` opcode is used to store data in Ethereum's contract storage. It writes data to a specific location identified by a key. Both the key and value are 32 bytes. However, this operation is costly in terms of gas:
 
 - **Writing**: 22,100 gas for 32 bytes, approximately 690 gas per byte.
 - **Reading**: The `SLOAD` opcode is similarly expensive.
 
-## Exploring SSTORE2
-
-SSTORE2 optimizes data storage by leveraging the immutability of contract bytecode. Instead of using standard storage, it stores data as part of a contract's bytecode.
-
-**Key Features of SSTORE2:**
+SSTORE2 is not a new opcode, its a more gas effective method of storing information on Ethereum. SSTORE2 optimizes data storage by leveraging the immutability of contract bytecode. Instead of using standard contract storage, it stores data as part of a contract's bytecode. The key features of SSTORE2 are as follows:
 
 - **Single Write**: Data is written once using the `CREATE` opcode instead of `SSTORE`.
 - **Reading**: Uses the `EXTCODECOPY` opcode to extract data from the bytecode.
 
 **Demo Code**
-
-**Writing Data Example:**
 
 The following example demonstrates how to store data using SSTORE2.
 
@@ -49,8 +41,6 @@ function deployDataStorageContract(bytes memory data) public returns (address) {
 }
 ```
 
-**Reading Data Example:**
-
 To read the stored data, determine the deployed address and extract the bytecode.
 
 ```solidity
@@ -67,6 +57,9 @@ function readStoredData(address dataAddress) public view returns (bytes memory) 
 }
 ```
 
-## Conclusion
+- You can find out more details [here](https://github.com/Vectorized/solady/blob/main/src/utils/SSTORE2.sol)
+- You can read more about the gas costs savings [here](https://github.com/0xsequence/sstore2)
 
-Using SSTORE2 reduce the gas costs associated with storing and retrieving large data sets in Ethereum smart contracts. These methods leverage the immutability and execution efficiency of Ethereum's contract mechanics, providing developers with powerful tools to optimize their applications.
+Recommendations for gas optimization:
+
+🌟 Using SSTORE2 reduce the gas costs associated with storing and retrieving large data sets in Ethereum smart contracts.
