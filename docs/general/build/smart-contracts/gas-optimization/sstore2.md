@@ -6,6 +6,8 @@ displayed_sidebar: generalSidebar
 
 The cost of executing transactions on the Ethereum network can be very high, especially when interacting with smart contract storage using the `SSTORE` opcode. To mitigate these costs, developers can leverage alternative methods like SSTORE2 for more efficient data handling.
 
+**Note:** While the following discusses the use of SSTORE2 in the context of Ethereum's standard execution environment, it's important to note that in the Conflux Core Space, the storage and pricing models differ significantly from those described below. Although the techniques described can be applied in Core Space, the cost implications may vary.
+
 The `SSTORE` opcode is used to store data in Ethereum's contract storage. It writes data to a specific location identified by a key. Both the key and value are 32 bytes. However, this operation is costly in terms of gas:
 
 - **Writing**: 22,100 gas for 32 bytes, approximately 690 gas per byte.
