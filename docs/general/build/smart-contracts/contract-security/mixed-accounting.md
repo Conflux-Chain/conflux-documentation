@@ -1,5 +1,5 @@
 ---
-title: Mixed Accounting
+title: Balance Accounting
 displayed_sidebar: generalSidebar
 ---
 
