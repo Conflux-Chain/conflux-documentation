@@ -12,7 +12,7 @@ displayed_sidebar: generalSidebar
 
 尽管 Solidity 会自动尝试将较小的基本类型打包到同一个槽中，但不良的结构成员排序可能会阻止编译器这样做。
 
-了解更多：[存储中的状态变量分布](https://docs.soliditylang.org/en/v0.8.25/internals/layout_in_storage.html)
+了解更多：[存储状态变量的布局](https://docs.soliditylang.org/en/v0.8.25/internals/layout_in_storage.html)
 
 **代码演示**
 
@@ -37,7 +37,7 @@ contract OptimizedPacking {
 
 关于 gas 优化的建议：
 
-🌟在选择数据类型时注意变量打包。 尽可能将不同的变量打包到一个存储槽中，并尽可能选择使用更小的数据类型。
+🌟在选择数据类型时注意变量打包。 如果可能将变量与其他变量打包到单个存储槽中，那么选择较小的数据类型可能会有利。
 
 ### Struct Packing
 
