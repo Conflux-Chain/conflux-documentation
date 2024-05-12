@@ -2,7 +2,7 @@
 id: cfx-namespace
 sidebar_position: 1
 title: cfx 命名空间
-description: The core JSON-RPC API of Conflux.
+description: Conflux的核心JSON-RPC API
 keywords:
   - conflux
   - json-rpc
@@ -335,16 +335,16 @@ params: [
 * `nonce`：`DATA`，8 字节 - 已生成的工作量证明的哈希。
 * `parentHash`：`DATA`，32 字节 - 父区块的哈希。
 * `powQuality`: `DATA` - PoW 质量。 `null` 当区块是 pending 时为 null。
-* `refereeHashes`: `Array` - array of referee block hashes.
-* `size`: `QUANTITY` - the size of this block in bytes, excluding the block header.
-* `timestamp`: `QUANTITY` - the unix timestamp for when the block was created.
-* `transactions`: `Array` - array of transaction objects, or 32-byte transaction hashes, depending on the second parameter.
-* `transactionsRoot`: `DATA`, 32 Bytes - the Merkle root of the transactions in this block.
-* `custom`: `Array`- customized information. Note from v2.0 `custom`'s type has changed from array of `number array` to array of `hex string`.
-* `blockNumber`: `QUANTITY` - the number of this block's total order in the tree-graph. `null` when the order is not determined. Added from `Conflux-rust v1.1.5`
-* `posReference`: `DATA`, 32 Bytes - the hash of the PoS newest committed block. Added from `Conflux-rust v2.0.0`
+* `refereeHashes`: `Array` - 裁判区块哈希数组。
+* `size`: `QUANTITY` - 该区块的字节大小，不包括区块头。
+* `timestamp`: `QUANTITY` - 该区块创建的 unix 时间戳。
+* `transactions`: `Array` - 交易对象数组，或者 32 字节的交易哈希，取决于第二个参数。
+* `transactionsRoot`: `DATA`, 32 字节 - 该区块中交易的 Merkle 根。
+* `custom`: `Array`- 自定义信息。 注意从 v2.0 开始，`custom` 的类型已经从`数字数组`的数组变成了`十六进制字符串`的数组。
+* `blockNumber`: `QUANTITY` - 该区块在树图中的总顺序编号。 `null` 当顺序未确定时为 null。 添加自` Conflux-rust v1.1.5 `
+* `posReference`: `DATA`, 32 字节 - PoS 最新提交区块的哈希。 添加自` Conflux-rust v2.0.0 `
 
-Note that the fields `epochNumber` and `gasUsed` are provided by the node as they depend on the ledger. The rest of the fields are included in or derived from the block header directly.
+注意，字段 `epochNumber `和 `gasUsed `是由节点提供的，因为它们依赖于账本。 其余的字段是直接包含在区块头中或从区块头中派生出来的。
 
 ##### 示例
 
@@ -396,7 +396,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"cfx_getBlockByHash","params":["0
 #### 参数
 
 1. `QUANTITY|TAG` - 纪元号，或字符串`"latest_mined"`、`"latest_state"`、`"latest_confirmed"`、"`latest_checkpoint"`或`"earliest"`，请参见[纪元号参数](#the-default-epochnumber-parameter)。
-2. `Boolean` - 如果 `true`，返回完整的交易对象 If `false`, only the hashes of the transactions are returned
+2. `Boolean` - 如果为 `true`，它会返回完整的交易对象。 如果为 `false`，只会返回交易的哈希值。
 
 ```json
 params: [
@@ -407,7 +407,7 @@ params: [
 
 #### 返回值
 
-See [cfx_getBlockByHash](#cfx_getblockbyhash).
+查看 [cfx_getBlockByhash](#cfx_getblockbyhash)。
 
 ##### 示例
 
@@ -430,7 +430,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"cfx_getBlockByEpochNumber","para
 
 #### 返回值
 
-`DATA`, 32 Bytes - hash of the best block.
+`DATA`, 32 Bytes - 最佳区块的哈希值。
 
 ##### 示例
 
@@ -456,11 +456,11 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"cfx_getBestBlockHash","id":1}' -
 
 #### 参数
 
-1. `TAG` - (optional, default: `"latest_mined"`) String `"latest_mined"`, `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-default-epochnumber-parameter).
+1. `TAG` - (可选，默认为 `"latest_mined"`) 字符串 `"latest_mined"`, `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, 详见[纪元号参数](#the-default-epochnumber-parameter)。
 
 #### 返回值
 
-`QUANTITY` - the integer epoch number corresponding to the given tag.
+`QUANTITY` - 与给定标签对应的整数纪元号。
 
 ##### 示例
 
@@ -551,8 +551,8 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"cfx_getBlocksByEpoch","params":[
 
 #### 参数
 
-1. `BASE32` - address to check for balance.
-2. `QUANTITY|TAG` - (optional, default: `"latest_state"`) integer epoch number, or the string `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-default-epochnumber-parameter)
+1. `BASE32` - 用于检查余额的地址，采用 base32 编码。
+2. `QUANTITY|TAG` - （可选，默认为`"latest_state"`）整数纪元号，或字符串 `"latest_state"`、`"latest_confirmed"`、`"latest_checkpoint"` 或 `"earliest"`，详见 [纪元号参数](#the-default-epochnumber-parameter)。
 
 ```json
 params: [
@@ -599,7 +599,7 @@ params: [
 
 #### 返回值
 
-`QUANTITY` - integer of the current staking balance in Drip.
+`QUANTITY` - 当前抵押金余额的整数表示，以Drip为单位。
 
 ##### 示例
 
@@ -636,7 +636,7 @@ params: [
 
 #### 返回值
 
-`QUANTITY` - integer of the collateral storage in Byte.
+`QUANTITY` - 以字节为单位的抵押存储的整数。
 
 ##### 示例
 
@@ -672,11 +672,11 @@ params: [
 
 #### 返回值
 
-`BASE32` - address of admin, or `null` if the contract does not exist.
+`BASE32` - 管理员地址，合约不存在时为 `null`。
 
 :::note
 
-Although meaningless, it is also possible to use user address as the input parameter of `cfx_getAdmin` method. In this case, the return value will be zero address if the input user address exists in the world state, else `null` will be returned.
+虽然没有意义，但也可以使用用户地址作为 `cfx_getAdmin` 方法的输入参数。 在这种情况下，如果输入用户地址存在于世界状态，返回值将为零地址。 否则将返回 `null`。
 
 :::
 
@@ -714,7 +714,7 @@ params: [
 
 #### 返回值
 
-`DATA` - byte code of the contract, or `0x` if the account has no code.
+`DAT` - 合约的字节码，如果账户没有代码则为 `0x`。
 
 ##### 示例
 
@@ -739,7 +739,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"cfx_getCode","params":["cfx:type
 #### 参数
 
 1. `BASE32` - 合约地址
-2. `QUANTITY` - a storage position (see [here](https://solidity.readthedocs.io/en/v0.7.1/internals/layout_in_storage.html) for more info).
+2. `QUANTITY` - 存储位置 (查看 [这里](https://solidity.readthedocs.io/en/v0.7.1/internals/layout_in_storage.html) 获取更多信息)。
 3. `QUANTITY|TAG` - （可选，默认为`"latest_state"`）整数纪元号，或字符串 `"latest_state"`、`"latest_confirmed"`、`"latest_checkpoint"` 或 `"earliest"`，详见 [纪元号参数](#the-default-epochnumber-parameter)。
 
 ```json
@@ -752,7 +752,7 @@ params: [
 
 #### 返回值
 
-`DATA` - 32 Bytes - the contents of the storage position, or `null` if the contract does not exist.
+`DATA` - 32字节 - 存储位置的内容，如果合约不存在则为`null`。
 
 ##### 示例
 
@@ -776,8 +776,8 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"cfx_getStorageAt","params":["cfx
 
 #### 参数
 
-1. `BASE32` - address of the contract.
-2. `QUANTITY|TAG` - (optional, default: `"latest_state"`) integer epoch number, or the string `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-default-epochnumber-parameter)
+1. `BASE32` - 合约地址
+2. `QUANTITY|TAG` - （可选，默认为`"latest_state"`）整数纪元号，或字符串 `"latest_state"`、`"latest_confirmed"`、`"latest_checkpoint"` 或 `"earliest"`，详见 [纪元号参数](#the-default-epochnumber-parameter)。
 
 ```json
 params: [
@@ -788,13 +788,13 @@ params: [
 
 #### 返回值
 
-`Object` - A storage root object, or `null` if the contract does not exist:
+`Object` - 存储根对象，如果合约不存在则为`null`：
 
-* `delta`: `DATA`, 32 Bytes - the storage root in the delta trie, or the string `"TOMBSTONE"`, or `null`.
-* `intermediate`: `DATA`, 32 Bytes - storage root in the intermediate trie, or the string `"TOMBSTONE"`, or `null`.
-* `snapshot`: `DATA`, 32 Bytes - storage root in the snapshot, or the string `"TOMBSTONE"`, or `null`.
+* `delta`: `DATA`，32字节 - 增量字典树中的存储根对象，或字符串 `"TOMBSTONE"`，或 `null`。
+* `intermediate`: `DATA`，32字节 - 中间字典树中的存储根对象，或字符串`"TOMBSTONE"`，或 `null`。
+* `snapshot`: `DATA`，32字节 - 快照中的存储根对象，或字符串 `"TOMBSTONE"`，或 `null`。
 
-If all three of these fields match for two invocations of this RPC, the contract's storage is guaranteed to be identical. If they do not match, storage has likely changed (or the system transitioned into a new era).
+如果两次调用此 RPC 的三个字段完全匹配，则保证合同的存储是相同的。 如果它们不匹配，则存储很可能已更改（或系统转移到了新的纪元）。
 
 
 <!---
@@ -827,8 +827,8 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"cfx_getStorageRoot","params":["c
 
 #### 参数
 
-1. `BASE32` - address of the contract.
-2. `QUANTITY|TAG` - (optional, default: `"latest_state"`) integer epoch number, or the string `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-default-epochnumber-parameter)
+1. `BASE32` - 合约地址
+2. `QUANTITY|TAG` - （可选，默认为`"latest_state"`）整数纪元号，或字符串 `"latest_state"`、`"latest_confirmed"`、`"latest_checkpoint"` 或 `"earliest"`，详见 [纪元号参数](#the-default-epochnumber-parameter)。
 
 ```json
 params: [
@@ -839,7 +839,7 @@ params: [
 
 #### 返回值
 
-`Object` - A sponsor info object. If the contract doesn't have a sponsor, then all fields in the object returned will be `0`:
+` Object ` - 代付方信息对象。 如果合同没有代付方，则返回对象中的所有字段将是 `0`：
 
 * `sponsorBalanceForCollateral`: `QUANTITY` - the sponsored balance for storage.
 * `sponsorBalanceForGas`: `QUANTITY` - the sponsored balance for gas.
@@ -849,7 +849,7 @@ params: [
 * `usedStoragePoints`: `QUANTITY` - storage points already used.
 * `availableStoragePoints`: `QUANTITY` - the storage points available for sponsorship.
 
-[Hard fork v2.3](../../../general/hardforks/v2.3.md#cip-107) provides the introduction for storage points. Refer to [CIP-107](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-107.md) for the detailed explanation.
+[Hard fork v2.3](../../../general/hardforks/v2.3.md#cip-107) 提供了存储点的介绍。 详见 [CIP-107](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-107.md)
 
 ##### 示例
 
@@ -878,8 +878,8 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"cfx_getSponsorInfo","params":["c
 
 #### 参数
 
-1. `BASE32` - address of the account.
-2. `QUANTITY|TAG` - (optional, default: `"latest_state"`) integer epoch number, or the string `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-default-epochnumber-parameter)
+1. `BASE32` - 账户地址。
+2. `QUANTITY|TAG` - (可选，默认为`"latest_state"`)整数纪元号，或字符串 `"latest_state"`、`"latest_confirmed"`、`"latest_checkpoint"` 或 `"earliest"`，详见 [纪元号参数](#the-default-epochnumber-parameter)。
 
 ```json
 params: [
@@ -890,7 +890,7 @@ params: [
 
 #### 返回值
 
-`QUANTITY` - integer of the next nonce that should be used by the given address.
+`QUANTITY` - 下一个应被指定地址使用的nonce。
 
 ##### 示例
 
@@ -913,7 +913,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"cfx_getNextNonce","params":["cfx
 
 #### 参数
 
-1. `DATA`, the signed transaction data.
+1. `DATA`，签名的交易数据。
 
 ```json
 params: [
@@ -923,11 +923,11 @@ params: [
 
 #### 返回值
 
-`DATA`, 32 Bytes - the transaction hash.
+`DAT`, 32 字节 - 交易哈希。
 
 #### 常见错误
 
-Check [send raw transaction errors](./rpc-behaviour/cfx_sendTransaction-errors.md) for details.
+检查 [发送原始交易错误](./rpc-behaviour/cfx_sendTransaction-errors.md) 了解详情。
 
 ##### 示例
 
@@ -947,20 +947,20 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"cfx_sendRawTransaction","params"
 
 ### cfx_call
 
-虚拟地调用一个合约，返回输出数据。 The transaction will not be added to the blockchain. The error message of `cfx_call` is similar to `cfx_estimateGasAndCollateral` and error solutions can be found in [cfx_estimateGasAndCollateral behaviour#errors](./rpc-behaviour/cfx_estimateGasAndCollateral-behaviour.md#errors).
+虚拟地调用一个合约，返回输出数据。 该交易不会被添加到区块链中。 `cfx_call` 的错误信息类似于 `cfx_estimateGasAndCollatory` 错误解决方案可以在 [cfx_estimateGasAndCollatory behaviour#error](./rpc-behaviour/cfx_estimateGasAndCollateral-behaviour.md#errors) 中找到。
 
 #### 参数
 
-1. `Object` - a call request object:
-    * `from`: `BASE32` - (optional, default: random address) address of sender.
-    * `to`: `BASE32` - (optional, default: `null` for contract creation) address of receiver.
-    * `gasPrice`: `QUANTITY` - (optional, default: `0`) gas price provided by the sender in Drip.
-    * `gas`: `QUANTITY` - (optional, default: `500000000`) gas provided by the sender.
-    * `value`: `QUANTITY` - (optional, default: `0`) value transferred in Drip.
-    * `data`: `DATA` - (optional, default: `0x`) the data send along with the transaction.
-    * `nonce`: `QUANTITY` - (optional, default: `0`) the number of transactions made by the sender prior to this one.
+1. `object` - 呼叫请求对象：
+    * `from`：`BASE32` - 发送者地址 (可选，默认：随机地址)。
+    * `to`: `BASE32` - (可选，默认： `null` 用于合约创建) 接收者地址。
+    * `gasPrice`: `QUANTITY` - 发送者以 Drip 为单位提供的 gas 价格(可选, 默认: `0`)。
+    * `gas`: `QUANTITY` - 发送者以 Drip 为单位提供的 gas 价格(可选，默认: `500000000`)。
+    * `value`: `QUANTITY` - 发送者以 Drip 为单位提供的 gas 价格(可选，默认: `0`)。
+    * `data`: `DATA` - (可选, 默认: `0x`) 与交易一起发送的数据。
+    * `nonce`: `QUANTITY` - (可选, 默认: `0`)发送者在此次交易之前所进行的交易数量。
 
-2. `QUANTITY|TAG` - (optional, default: `"latest_state"`) integer epoch number, or the string `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-default-epochnumber-parameter)
+2. `QUANTITY|TAG` - （可选，默认为`"latest_state"`）整数纪元号，或字符串 `"latest_state"`、`"latest_confirmed"`、`"latest_checkpoint"` 或 `"earliest"`，详见 [纪元号参数](#the-default-epochnumber-parameter)。
 
 ```json
 params: [
@@ -977,7 +977,7 @@ params: [
 
 #### 返回值
 
-`DATA`, Bytes - the output data, or an execution error.
+`DATA`, 字节- 输出数据或执行错误。
 
 ##### 示例
 
@@ -997,13 +997,13 @@ curl -X POST --data '{"method":"cfx_call","id":1,"jsonrpc":"2.0","params":[{"fro
 
 ### cfx_estimateGasAndCollateral
 
-虚拟地执行一个交易，返回存储抵押和交易使用的gas的大小估计。 The transaction will not be added to the blockchain.
+虚拟地执行一个交易，返回存储抵押和交易使用的gas的大小估计。 该交易不会被添加到区块链中。
 
-The response of the `cfx_estimateGasAndCollateral` interface is contingent on whether specific fields in the input are present or absent. Please refer to [cfx_estimateGasAndCollateral behaviour](./rpc-behaviour/cfx_estimateGasAndCollateral-behaviour.md) for the detailed information. The error reason and solution can also be found in [cfx_estimateGasAndCollateral behaviour#errors](./rpc-behaviour/cfx_estimateGasAndCollateral-behaviour.md#errors).
+`cfx_estimateGasAndCollatory` 接口的响应取决于输入中是否存在特定字段。 详情请参阅 [cfx_estimateGasAndCollatory](./rpc-behaviour/cfx_estimateGasAndCollateral-behaviour.md)。 错误原因和解决方案也可以在 [cfx_estimateGasAndCollatory behaviour#errors](./rpc-behaviour/cfx_estimateGasAndCollateral-behaviour.md#errors) 中找到。
 
 #### 参数
 
-See [cfx_call](#cfx_call).
+详见 [cfx_call](#cfx_call)。
 
 ```json
 params: [
@@ -1020,10 +1020,10 @@ params: [
 
 #### 返回值
 
-`Object` - an estimate result object:
-   * `gasLimit`: `QUANTITY` - the recommended gas_limit.
-   * `gasUsed`: `QUANTITY` - gas used during execution.
-   * `storageCollateralized`: `QUANTITY` - size of storage collateralized, in bytes.
+`object` - 估算结果对象：
+   * `gasLimit`: `QUANTITY` - 推荐的gas限制。
+   * `gasUsed`: `QUANTITY` - 用于执行交易的 gas 。
+   * `storageCollateralized`: `QUANTITY`，该交易所需的存储抵押金额。
 
 ##### 示例
 
@@ -1051,12 +1051,12 @@ curl -X POST --data '{"method":"cfx_estimateGasAndCollateral","id":1,"jsonrpc":"
 
 #### 参数
 
-1. `Object` - A log filter object:
-    * `fromEpoch`: `QUANTITY|TAG` - (optional, default: `"latest_checkpoint"`) the epoch number, or the string `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-default-epochnumber-parameter). Search will be applied from this epoch number.
-    * `toEpoch`: `QUANTITY|TAG` - (optional, default: `"latest_state"`) the epoch number, or the string `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-default-epochnumber-parameter). Search will be applied up until (and including) this epoch number.
-    * `fromBlock`: `QUANTITY` - (optional, default: `null`). Search will be applied from this specified block.
-    * `toBlock`: `QUANTITY` - (optional, default: `null`). Search will be applied untial (and including) this specified block.
-    * `blockHashes`: `Array` of `DATA` - (optional, default: `null`) Array of up to 128 block hashes that the search will be applied to. This will override from/to epoch fields if it's not `null`.
+1. `object` - 日志过滤对象：
+    * `fromEpoch`: `QUANTITY|TAG` - (可选，默认为: `"latest_checkpoint"`) 纪元号，或字符串 `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, 详见 [纪元号参数](#the-default-epochnumber-parameter)。 搜索将从这个纪元号开始应用。
+    * `toEpoch`: `QUANTITY|TAG` - (可选，默认为: `"latest_state"`) 纪元号，或字符串 `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, 详见 [纪元号参数](#the-default-epochnumber-parameter)。 搜索将持续到(包括)这个纪元数。
+    * `fromBlock`: `QUANTITY` - (可选，默认为: `null`)。 搜索将从这个的区块号开始应用。
+    * `toBlock`: `QUANTITY` - (可选， 默认为: `null`)。 搜索将被应用持续到(包括) 此指定区块。
+    * `blockHashes`: `Array` `DATA` - (可选，默认为: `null`)搜索会被应用到最多128个区块哈希的数组。 This will override from/to epoch fields if it's not `null`.
     * `address`: `Array` of `BASE32` - (optional, default: `null`) Search contract addresses. If `null`, match all. If specified, the log must be produced by one of these contracts.
     * `topics`: `Array` - (optional, default: `null`) 32-byte earch topics. Logs can have `4` topics: the event signature and up to `3` indexed event arguments. The elements of `topics` match the corresponding log topics. Example: `["0xA", null, ["0xB", "0xC"], null]` matches logs with `"0xA"` as the 1st topic AND (`"0xB"` OR `"0xC"`) as the 3rd topic. If `null`, match all.
 
@@ -1214,8 +1214,8 @@ Returns an account, identified by its address.
 
 #### 参数
 
-1. `BASE32` - address of the account.
-2. `QUANTITY|TAG` - (optional, default: `"latest_state"`) integer epoch number, or the string `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-default-epochnumber-parameter)
+1. `BASE32` - 账户地址。
+2. `QUANTITY|TAG` - （可选，默认为`"latest_state"`）整数纪元号，或字符串 `"latest_state"`、`"latest_confirmed"`、`"latest_checkpoint"` 或 `"earliest"`，详见 [纪元号参数](#the-default-epochnumber-parameter)。
 
 ```json
 params: [
@@ -1268,7 +1268,7 @@ curl --data '{"jsonrpc":"2.0","method":"cfx_getAccount","params":["cfx:type.cont
 
 #### 参数
 
-1. `QUANTITY|TAG` - (optional, default: `"latest_state"`) integer epoch number, or the string `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-default-epochnumber-parameter)
+1. `QUANTITY|TAG` - （可选，默认为`"latest_state"`）整数纪元号，或字符串 `"latest_state"`、`"latest_confirmed"`、`"latest_checkpoint"` 或 `"earliest"`，详见 [纪元号参数](#the-default-epochnumber-parameter)。
 
 ```json
 params: [
@@ -1302,7 +1302,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"cfx_getInterestRate","params":["
 
 #### 参数
 
-1. `QUANTITY|TAG` - (optional, default: `"latest_state"`) integer epoch number, or the string `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-default-epochnumber-parameter)
+1. `QUANTITY|TAG` - （可选，默认为`"latest_state"`）整数纪元号，或字符串 `"latest_state"`、`"latest_confirmed"`、`"latest_checkpoint"` 或 `"earliest"`，详见 [纪元号参数](#the-default-epochnumber-parameter)。
 
 ```json
 params: [
@@ -1592,7 +1592,7 @@ params: [
 ```
 
 #### 返回值
-See [cfx_getBlockByHash](#cfx_getblockbyhash).
+查看 [cfx_getBlockByhash](#cfx_getblockbyhash)。
 
 ##### 示例
 
@@ -1611,8 +1611,8 @@ Returns the deposit list of the given account, identified by its address.
 
 #### 参数
 
-1. `BASE32` - address of the account.
-2. `QUANTITY|TAG` - (optional, default: `"latest_state"`) integer epoch number, or the string `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-default-epochnumber-parameter)
+1. `BASE32` - 账户地址。
+2. `QUANTITY|TAG` - （可选，默认为`"latest_state"`）整数纪元号，或字符串 `"latest_state"`、`"latest_confirmed"`、`"latest_checkpoint"` 或 `"earliest"`，详见 [纪元号参数](#the-default-epochnumber-parameter)。
 
 ```json
 params: [
@@ -1659,8 +1659,8 @@ Returns the vote list of the given account, identified by its address.
 
 #### 参数
 
-1. `BASE32` - address of the account.
-2. `QUANTITY|TAG` - (optional, default: `"latest_state"`) integer epoch number, or the string `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-default-epochnumber-parameter)
+1. `BASE32` - 账户地址。
+2. `QUANTITY|TAG` - （可选，默认为`"latest_state"`）整数纪元号，或字符串 `"latest_state"`、`"latest_confirmed"`、`"latest_checkpoint"` 或 `"earliest"`，详见 [纪元号参数](#the-default-epochnumber-parameter)。
 
 ```json
 params: [
@@ -1738,7 +1738,7 @@ Returns transaction pool pending info of one account
 
 #### 参数
 
-1. `BASE32` - address of the account.
+1. `BASE32` - 账户地址。
 
 ```json
 params: [
@@ -1780,7 +1780,7 @@ Returns pending transactions in pool of one account
 
 #### 参数
 
-1. `BASE32` - address of the account.
+1. `BASE32` - 账户地址。
 2. [`QUANTITY`] - Optional start nonce to return
 3. [`QUANTITY`] - Optional `limit` of pending transactions to return
 
@@ -1834,7 +1834,7 @@ Returns information about a block, identified by its block number (block's tree-
 #### 参数
 
 1. `QUANTITY` - the block number.
-2. `Boolean` - 如果 `true`，返回完整的交易对象 If `false`, only the hashes of the transactions are returned
+2. `Boolean` - 如果 `true`，返回完整的交易对象 如果为 `false`，只会返回交易的哈希值。
 
 ```json
 params: [
@@ -1845,7 +1845,7 @@ params: [
 
 #### 返回值
 
-See [cfx_getBlockByHash](#cfx_getblockbyhash).
+查看 [cfx_getBlockByhash](#cfx_getblockbyhash)。
 
 #### 示例
 
@@ -2029,12 +2029,12 @@ It is important to note that the filter object will expire after a certain perio
 
 #### 参数
 
-1. `Object` - A log filter object:
-    * `fromEpoch`: `QUANTITY|TAG` - (optional, default: `"latest_checkpoint"`) the epoch number, or the string `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-default-epochnumber-parameter). The start epoch to search. Noting that [cfx_getFilterChanges] will ignore this parameter.
-    * `toEpoch`: `QUANTITY|TAG` - (optional, default: `"latest_state"`) the epoch number, or the string `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-default-epochnumber-parameter). Search will be applied up until (and including) this epoch number.
-    * `fromBlock`: `QUANTITY` - (optional, default: `null`). The start block to search. Noting that [cfx_getFilterChanges] will ignore this parameter.
-    * `toBlock`: `QUANTITY` - (optional, default: `null`). Search will be applied untial (and including) this specified block.
-    * `blockHashes`: `Array` of `DATA` - (optional, default: `null`) Array of up to 128 block hashes that the search will be applied to. This will override from/to epoch fields if it's not `null`.
+1. `object` - 日志过滤对象：
+    * `fromEpoch`: `QUANTITY|TAG` - (可选，默认为: `"latest_checkpoint"`) 纪元号，或字符串 `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, 详见 [纪元号参数](#the-default-epochnumber-parameter)。 The start epoch to search. Noting that [cfx_getFilterChanges] will ignore this parameter.
+    * `toEpoch`: `QUANTITY|TAG` - (可选，默认为: `"latest_state"`) 纪元号，或字符串 `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, 详见 [纪元号参数](#the-default-epochnumber-parameter)。 搜索将持续到(包括)这个纪元数。
+    * `fromBlock`: `QUANTITY` - (可选，默认为: `null`)。 The start block to search. Noting that [cfx_getFilterChanges] will ignore this parameter.
+    * `toBlock`: `QUANTITY` - (可选， 默认为: `null`)。 搜索将被应用持续到(包括) 此指定区块。
+    * `blockHashes`: `Array` `DATA` - (可选，默认为: `null`)搜索会被应用到最多128个区块哈希的数组。 This will override from/to epoch fields if it's not `null`.
     * `address`: `Array` of `BASE32` - (optional, default: `null`) Search contract addresses. If `null`, match all. If specified, the log must be produced by one of these contracts.
     * `topics`: `Array` - (optional, default: `null`) 32-byte earch topics. Logs can have `4` topics: the event signature and up to `3` indexed event arguments. The elements of `topics` match the corresponding log topics. Example: `["0xA", null, ["0xB", "0xC"], null]` matches logs with `"0xA"` as the 1st topic AND (`"0xB"` OR `"0xC"`) as the 3rd topic. If `null`, match all.
 
