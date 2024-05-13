@@ -3,7 +3,7 @@ sidebar_position: 5
 title: 网络 RPC 端点
 description: Conflux eSpace RPC 端点
 keywords:
-  - network endpoints
+  - 网络端点
   - Conflux eSpace
 displayed_sidebar: eSpaceSidebar
 ---
@@ -20,38 +20,38 @@ Confura 是由 Conflux 基金会提供的公共 RPC 服务，可以免费使用�
 
 ### Public Endpoints
 
-Confura provides several available RPC endpoints for the mainnet and testnet. We have sorted them by selected priority and provided brief descriptions. If you are unsure which one to choose, please select an RPC endpoint near the top of the list.
+Confura为主网和测试网提供了多个可用的RPC端点。 我们按照“优先选择前者”的原则对它们进行了排序，并提供了简要描述。 如果您不确定选择哪一个，请优先选择列表顶部的 RPC 端点。
 
-#### Mainnet
+#### 主网
 
 Chain ID for Conflux eSpace Mainnet is `1030(0x406)`. The corresponding blockchain explorer URL is https://evm.confluxscan.io.
 
-| RPC 端点                                | 类型        | 备注                           |
-| ------------------------------------- | --------- | ---------------------------- |
-| https://evm.confluxrpc.com            | HTTP      |                              |
-| https://evmmain-china.confluxrpc.com  | HTTP      | RPC Service for China Users  |
-| https://evmmain-global.confluxrpc.com | HTTP      | RPC Service for Global Users |
-| https://evm.confluxrpc.org            | HTTP      | Backup RPC Service           |
-| wss://evm.confluxrpc.com/ws           | Websocket |                              |
-| wss://evm.confluxrpc.org/ws           | Websocket | Backup RPC Service           |
+| RPC 端点                                | 类型        | 备注             |
+| ------------------------------------- | --------- | -------------- |
+| https://evm.confluxrpc.com            | HTTP      |                |
+| https://evmmain-china.confluxrpc.com  | HTTP      | 面向中国用户的 RPC 服务 |
+| https://evmmain-global.confluxrpc.com | HTTP      | 面向全球用户的 RPC 服务 |
+| https://evm.confluxrpc.org            | HTTP      | 备用 RPC 服务      |
+| wss://evm.confluxrpc.com/ws           | Websocket |                |
+| wss://evm.confluxrpc.org/ws           | Websocket | 备用 RPC 服务      |
 
 #### 测试网
 
 Chain ID for Conflux eSpace Mainnet is `71(0x47)`. The corresponding blockchain explorer URL is https://evmtestnet.confluxscan.io.
 
-| RPC 端点                             | 类型        | 备注                 |
-| ---------------------------------- | --------- | ------------------ |
-| https://evmtestnet.confluxrpc.com  | HTTP      |                    |
-| https://evmtest.confluxrpc.com     | HTTP      |                    |
-| https://evmtestnet.confluxrpc.org  | HTTP      | Backup RPC Service |
-| wss://evmtestnet.confluxrpc.com/ws | Websocket |                    |
-| wss://evmtestnet.confluxrpc.org/ws | Websocket |                    |
+| RPC 端点                             | 类型        | 备注        |
+| ---------------------------------- | --------- | --------- |
+| https://evmtestnet.confluxrpc.com  | HTTP      |           |
+| https://evmtest.confluxrpc.com     | HTTP      |           |
+| https://evmtestnet.confluxrpc.org  | HTTP      | 备用 RPC 服务 |
+| wss://evmtestnet.confluxrpc.com/ws | Websocket |           |
+| wss://evmtestnet.confluxrpc.org/ws | Websocket |           |
 
 ### 速率限制
 
-To maintain the service's usability, there are rate limits in place for the free tier. 如果你需要更高级别的 RPC 服务，你可以通过 [Web3 Paywall](../general/build/tools/web3paywall.md) 进行购买，或者可以直接发送邮件到 [bd@confluxnetwork.org](mailto:bd@confluxnetwork.org) 向 Conflux 基金会申请。
+为了保持服务的可用性，免费版本设有访问频率限制。 如果你需要更高级别的 RPC 服务，你可以通过 [Web3 Paywall](../general/build/tools/web3paywall.md) 进行购买，或者可以直接发送邮件到 [bd@confluxnetwork.org](mailto:bd@confluxnetwork.org) 向 Conflux 基金会申请。
 
-Here are references for various fee tiers and their rate limits.
+这里提供了各种费用等级及其访问速率限制的参考信息。
 
 | 付费级别 | 价格                          | 速率限制                          | 购买链接                                                                                                                                                                                                                                         |
 | ---- | --------------------------- | ----------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

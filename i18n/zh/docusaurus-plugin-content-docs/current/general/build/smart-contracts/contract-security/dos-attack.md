@@ -2,7 +2,7 @@
 displayed_sidebar: generalSidebar
 ---
 
-# Denial of Service Attacks
+# 拒绝服务攻击
 
 In April 2022, a popular NFT project called Akutar conducted a successful [Dutch auction](https://en.wikipedia.org/wiki/Dutch_auction) to raise funds, amassing 11,539.5 ETH. However, when processing refunds for previous community pass holders, a flaw in their smart contract prevented operations, locking all funds within the contract due to a DoS vulnerability.
 

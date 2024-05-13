@@ -397,10 +397,10 @@ Returns all traces matching the provided filter.
 
 1. `Object` - A trace filter object:
     * `fromEpoch`: `QUANTITY|TAG` - (optional) the epoch number, or the string `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-default-epochnumber-parameter) Search will be applied from this epoch number.
-    * `toEpoch`: `QUANTITY|TAG` - (optional) the epoch number, or the string `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-default-epochnumber-parameter). Search will be applied up until (and including) this epoch number.
+    * `toEpoch`: `QUANTITY|TAG` - (optional) the epoch number, or the string `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-default-epochnumber-parameter). 搜索将持续到(包括)这个纪元数。
     * `fromAddress`: `BASE32` - (optional).
     * `toAddres`: `BASE32` - (optional).
-    * `blockHashes`: `Array` of `DATA` - (optional, default: `null`) Array of up to 128 block hashes that the search will be applied to. This will override from/to epoch fields if it's not `null`.
+    * `blockHashes`: `Array` `DATA` - (可选，默认为: `null`)搜索会被应用到最多128个区块哈希的数组。 This will override from/to epoch fields if it's not `null`.
     * `actionTypes`: `Array` of action type enum - (optional) If None, match all. If specified, trace must match one of these action types.
     * `after`: `QUANTITY` - (optional) The offset trace number.
     * `count`: `QUANTITY` - (optional) The number of traces to display in a batch.
