@@ -55,3 +55,11 @@ For more detailed usage and API information, please refer to the official docume
 - [**Demo Page**](https://use-wallet.fluentwallet.dev/#/demo)
 
 - [**Repository**](https://github.com/Conflux-Chain/use-wallet)
+
+## Demo Projects
+
+The [use-wallet Github repository](https://github.com/Conflux-Chain/use-wallet/tree/main/examples) provides several sample projects to demonstrate how to use `use-wallet` in a minimal manner.
+
+- [React Demo](https://github.com/Conflux-Chain/use-wallet/tree/main/examples/ReactDemo)
+- [Vue.js Demo](https://github.com/Conflux-Chain/use-wallet/tree/main/examples/Vue3Demo)
+- [Pure Javascript Demo (no extra frontend framework)](https://github.com/Conflux-Chain/use-wallet/tree/main/examples/VanillaDemo)
