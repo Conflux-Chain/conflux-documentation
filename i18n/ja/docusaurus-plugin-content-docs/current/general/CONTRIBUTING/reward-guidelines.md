@@ -56,6 +56,7 @@ Reward values for pull requests are primarily determined by the complexity and s
   - Offering correct explanations, such as explanatory concepts, API document parameters, characteristics of features, and so forth: From 64 FC, up to 128 FC or more, determined by content and significance.
   - Correcting code-related errors, which can be reproduced on a general or specific platform, including failing sample code, unexpected code output, or failing commands: From 64 FC, up to 320 FC or more, depending on content and significance.
 - **Improvements**
+  - Improvements relating to issues with `LONG TERM` label, for example, adding glossaries, article labels, article keywords, etc: From 32 FC, determined by content and significance.
   - Enhancements to certain topics to simplify understanding, e.g. providing clearer explanation or added examples: From 32 FC, up to 128 FC or even more, determined by content and significance.
   - Creating or improving visual aids like diagrams, charts: From 128 FC, up to 256 FC or more, determined by content and significance.
   - Adding lacked details of a feature or a topic, such as implementation or edge cases: From 80 FC, up to 320 FC or even more, determined by content and significance.

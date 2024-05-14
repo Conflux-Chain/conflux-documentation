@@ -56,6 +56,7 @@ Creating issues is an excellent way for us to understand the needs of the commun
   - 提供正确的解释：如解释性概念、API 文档参数、功能特性等：从 64 FC 开始，最高可达 128 FC 或更多，具体由内容和重要性决定。
   - 纠正代码相关错误：要求能够在通用或特定平台上复现，包括失败的示例代码、意外的代码输出或失败的命令：从 64 FC 开始，最高可达 320 FC 或更多，具体由内容和重要性决定。
 - **改进**
+  - Improvements relating to issues with `LONG TERM` label, for example, adding glossaries, article labels, article keywords, etc: From 32 FC, determined by content and significance.
   - 对某些主题进行完善以易于理解，例如提供更清晰的解释或增加示例：从 32 FC 开始，最高可达 128 FC 或更多，具体由内容和重要性决定。
   - 添加或完善视觉辅助工具，如图表、图解：从 128 FC 开始，最高可达 256 FC 或更多，具体由内容和重要性决定。
   - 添加对功能或主题的详细描述，如实现方法或极端情况分析：从 80 FC 开始，最高可达 320 FC 或更多，具体由内容和重要性决定。
