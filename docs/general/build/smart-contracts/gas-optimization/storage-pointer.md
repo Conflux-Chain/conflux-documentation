@@ -1,5 +1,5 @@
 ---
-**Displayed Sidebar**: generalSidebar
+displayed_sidebar: generalSidebar
 ---
 
 # Efficient Use of Storage Pointers in Solidity
