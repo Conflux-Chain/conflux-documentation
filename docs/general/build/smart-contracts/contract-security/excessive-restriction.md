@@ -8,7 +8,7 @@ Excessive function restrictions in smart contracts can lead to critical issues s
 
 For further reading on the details of the accident, you can refer to the detailed [analysis](https://twitter.com/0xInuarashi/status/1517674505975394304)
 
-## Example of a Problematic Contract
+#### Example of a Problematic Contract
 
 Consider a hypothetical NFT auction contract designed to hold funds until certain conditions are met, such as all refunds being processed. The contract might include a mechanism that prevents any withdrawal until these conditions are fulfilled. Below is a simplified version of such a contract:
 
@@ -42,7 +42,7 @@ contract NFTAuction {
 
 This example shows a strict condition that could inadvertently lock funds if the `refundCompleted` flag is not set due to a bug or oversight, mimicking the real-life scenario with the Akutars NFT.
 
-## Prevention Measures
+#### Prevention Measures
 
 To prevent such issues while maintaining necessary security measures, consider the following strategies:
 
@@ -53,7 +53,3 @@ To prevent such issues while maintaining necessary security measures, consider t
 3. **Regular Audits and Bug Bounties**: Ensure the contract is regularly audited by third-party security experts and consider running bug bounty programs to detect and resolve vulnerabilities early.
 
 4. **Incremental Implementation**: Roll out contract features incrementally with thorough testing at each stage, particularly for critical features like fund management and withdrawal permissions.
-
-By carefully designing smart contracts to balance security and flexibility, developers can mitigate risks associated with excessive function restrictions. This approach helps ensure that security measures do not inadvertently become hindrances to the proper functioning of the contract.
-
----
