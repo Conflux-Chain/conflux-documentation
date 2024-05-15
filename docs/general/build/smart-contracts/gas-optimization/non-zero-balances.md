@@ -2,15 +2,13 @@
 displayed_sidebar: generalSidebar
 ---
 
-# Avoid Zero to One Writes and Maintain Non-Zero Balances
+# Non-Zero Balances
 
-This guide delves into specific gas optimization techniques to manage ERC20 token balances and storage variables effectively in Solidity, particularly emphasizing the need to avoid zero to one writes.
+Initializing a storage variable from zero to a non-zero value is one of the most gas-intensive operations a contract can perform. It requires a total of 22,100 gas, including 20,000 gas for changing the value from zero to non-zero and 2,100 gas for cold storage access.
 
-## Avoiding Zero to One Storage Writes
+This is why the OpenZeppelin reentrancy guard marks functions as active or inactive using 1 and 2 instead of 0 and 1. Changing a storage variable from one non-zero value to another only costs 5,000 gas.
 
-**Why It Matters**: Initializing a storage variable from zero to non-zero is one of the most gas-intensive operations a contract can perform. It requires 22,100 gas in total, which includes 20,000 gas for changing the value from zero to non-zero and 2,100 gas for cold storage access.
-
-**OpenZeppelin's Approach**: OpenZeppelin utilizes values of 1 and 2 to indicate inactive and active states, respectively, rather than 0 and 1. This practice reduces the cost significantly, as changing between non-zero values costs only 5,000 gas.
+In practical applications of ERC20, you should avoid having ERC20 token balances drop to zero. Always keep a small amount in the balance. This approach can help achieve a similar effect. If an address frequently empties and reloads its account balance, it will lead to many zero-to-one writes, which are costly in terms of gas.
 
 **DemoCode**
 
@@ -45,9 +43,8 @@ contract BalanceManagement {
 }
 ```
 
-## Key Recommendations for Gas Optimization:
+Recommendations for gas optimization:
 
-1. **Prevent Zero Balances**: Ensure that token balances do not drop to zero. Implement logic to reset the balance to a small positive value if it ever reaches zero.
-2. **Optimize Storage Initialization**: Start storage variables at a non-zero value to avoid costly initializations and manage subsequent updates carefully to keep modifications within non-zero values.
+🌟1. **Use Zero Balances**: Ensure that token balances do not drop to zero. Implement logic to reset the balance to a small positive value if it ever reaches zero.
 
-Understanding these optimization techniques and integrating them effectively can help reduce transaction costs and improve the efficiency of your smart contracts.
+🌟2. **Optimize Storage Initialization**: Start storage variables at a non-zero value to avoid costly initializations and manage subsequent updates carefully to keep modifications within non-zero values.
