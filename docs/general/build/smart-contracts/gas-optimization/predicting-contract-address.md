@@ -1,6 +1,6 @@
 displayed_sidebar: generalSidebar
 
-# Gas Optimization Through Predictive Contract Address Calculation in Solidity
+# Predicting Smart Contract Addresses Using Account Nonce
 
 In Solidity, predicting contract addresses before their deployment can save significant amounts of gas, especially when deploying interdependent contracts. This method eliminates the need for setter functions and storage variables, which are costly in terms of gas usage. We will use the `LibRLP` library from Solady to deterministically compute the addresses based on the deployer's nonce.
 
