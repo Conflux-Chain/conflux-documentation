@@ -3,43 +3,30 @@ sidebar_position: 1
 title: CRC20 Tokens Cross Space
 displayed_sidebar: coreSidebar
 ---
-This tutorial outlines the process of transferring any CRC20 token from Core Space to eSpace, using FansCoin (FC) as an example:
 
-**Problem**: How to transfer a CRC20 token (A) issued on Core to become an ERC20 token (eA) in eSpace?
+This tutorial guides developers on transferring any CRC20 token from Core Space to eSpace, using [FansCoin (FC)](https://confluxscan.io/token/cfx:achc8nxj7r451c223m18w2dwjnmhkd6rxawrvkvsy2) as an example. The goal is to transfer a CRC20 token (A) issued on coreSpace to become an ERC20 token (eA) in eSpace. Currently, if there is no corresponding token in eSpace, it's not possible to use the official [cross-space bridge](https://confluxhub.io/espace-bridge/cross-space) directly.
 
-(At this time, there is no corresponding token in eSpace, so it's not possible to use the official cross-chain bridge directly.)
+<!-- [image1](image1) -->
 
-[image1](image1)
-
-### Official Cross-Space Contract Deployment
+[![Can not cross space](../image/cannot-cross-space.jpg)](../image/cannot-cross-space.png)
 
 Before initiating cross-space operations, let's review several key contracts associated with the cross-space bridge:
 
-On Core Space:
+**On CoreSpace:**
 
-BeaconProxy Proxy Contract:
+- BeaconProxy Proxy Contract: `cfx:acfcrckktgx99scxwr6jtjx81yhm4ggsfatprwzb3x`
+- BeaconProxy Logic Contract - ConfluxSide: `cfx:acc7gpd3380pv6v112s5c2y3g3g6jvm32egm5mhnk7`
 
-Address: `cfx:acfcrckktgx99scxwr6jtjx81yhm4ggsfatprwzb3x`
+**On eSpace:**
 
-BeaconProxy Logic Contract, ConfluxSide:
+- BeaconProxy Proxy Contract: `0x4f9e3186513224cf152016ccd86019e7b9a3c809`
+- BeaconProxy Logic Contract - EvmSide: `0x4fa28072bd5b551dde70213aa02cb05bd022e34b`
 
-Address: `cfx:acc7gpd3380pv6v112s5c2y3g3g6jvm32egm5mhnk7`
+## Cross-Space Methods
 
-On eSpace:
+### Step 1: Registering a Core Space ERC20 Token to eSpace
 
-BeaconProxy Proxy Contract:
-
-Address: `0x4fa28072bd5b551dde70213aa02cb05bd022e34b`
-
-BeaconProxy Logic Contract, EvmSide: `0x4fa28072bd5b551dde70213aa02cb05bd022e34b`
-
-Debank Address: `0xcc5ad7b5e64e3fcbb42c6f42ad06a94a49134e05` creates BeaconProxy's proxy and logic contracts.
-
-### Cross-Space Methods
-
-#### Registering a Core Space ERC20 Token to eSpace
-
-1. First, call the `registerMetadata` method in the BeaconProxy on Core Space, passing the token address `Address_A`. This function invokes the crossSpaceCall contract for cross-space operations, registering the A contract in the EVM space. The code is as follows:
+First, call the `registerMetadata` method (Write as Proxy) in the BeaconProxy proxy contract on coreSpace, passing the token address `Address_A`. This function invokes the crossSpaceCall contract for cross-space operations, registering the A contract in the EVM space. The code is as follows:
 
 ```solidity
 // Register token metadata to EVM space
@@ -63,11 +50,19 @@ function registerMetadata(IERC20 _token) public override {
 }
 ```
 
+[![call the `registerMetadata` method](../image/call-beacon-proxy-core.jpg)](../image/call-beacon-proxy-core.jpg)
+
 After registration, the `crc20Metadata` function in eSpace's BeaconProxy contract can retrieve the CRC20 token's metadata in eSpace as `name (string), symbol (string), decimals (uint8), registered (bool)`.
 
-### Creating Token Mapping
+[![metadata](../image/fanscoin-metadata.jpg)](../image/fanscoin-metadata.png)
 
-2. In eSpace's BeaconProxy contract, call the `createMappedToken` method, passing the CRC20 token address.
+### Step 2: Creating Token Mapping
+
+In eSpace's BeaconProxy contract, call the `createMappedToken` method, passing the CRC20 token address.
+
+[![create map token](../image/create-map-token.jpg)](../image/create-map-token.png)
+
+The internal implementation is as follows:
 
 ```solidity
 function createMappedToken(address _crc20) public override {
@@ -75,7 +70,6 @@ function createMappedToken(address _crc20) public override {
     TokenMetadata memory d = crc20Metadata[_crc20];
     _deploy(_crc20, d.name, d.symbol, d.decimals);
 }
-
 ...
 
 function _deploy(
@@ -110,20 +104,25 @@ This operation creates a new `BeaconProxy` contract and deploys an `UpgradeableE
 
 At this point, the CRC20 and ERC20 tokens on both Core Space and eSpace are fully paired.
 
-#### Using the Official Cross-Space Bridge for Transfer
+### Step 3: Using the Official Cross-Space Bridge
 
-3. Now you can perform cross-space operations through the official cross-chain bridge at https://confluxhub.io/espace-bridge/cross-space, which involves calling the
+Now you can perform cross-space operations through the official [cross-space bridge](https://confluxhub.io/espace-bridge/cross-space), which involves calling the
+`crossToEVM` function in coreSpace's BeaconProxy contract (after first approving the CRC20 token to the BeaconProxy contract).
 
- `crossToEVM` function in Core Space's BeaconProxy contract (after first approving the CRC20 token to the BeaconProxy contract).
+[![use cross space](../image/use-cross-space.jpg)](../image/use-cross-space.png)
 
-### Updating Logo and Token Tag Information
+### Step 4: Updating Logo and Token Tag Information
 
-4. The remaining issue is that after crossing to eSpace, the token lacks logo and tag information. This might require official action through the Announcement contract.
+The remaining issue is that after crossing to eSpace, the token lacks logo and tag information. This might require official action through the Announcement contract.
 
-### Display on the Conflux Cross-Space Bridge
+[![add logo](../image/add-logo.jpg)](../image/add-logo.jpg)
 
-5. To be displayed on the official cross-chain bridge, modify the `native_token_list_mainnet.json` file and submit a pull request to the repository at [https://github.com/Conflux-Chain/conflux-evm-bridge/](https://github.com/Conflux-Chain/conflux-evm-bridge/commits?author=posaggen), requesting to add your token to the default display.
+### Step 5: Displaying on Cross-Space Bridge
 
-You can also visit the community-deployed version at bridge.fanscoin.org, or submit a PR at [https://github.com/ConfluxDAO/conflux-evm-bridge/](https://github.com/Conflux-Chain/conflux-evm-bridge/commits?author=posaggen) to directly display your token on the community cross-space bridge.
-```
+To be displayed on the official cross-chain bridge, modify the `native_token_list_mainnet.json` file and submit a pull request to the [conflux-evm-bridge](https://github.com/Conflux-Chain/conflux-evm-bridge) repository, requesting to add your token to the default display.
 
+[![default display](../image/default-display.png)](../image/default-display.png)
+
+You can also visit the community-deployed version at [community cross-space bridge](https://bridge.fanscoin.org), or submit a PR at this [repository](https://github.com/ConfluxDAO/conflux-evm-bridge/) to directly display your token on the community cross-space bridge.
+
+[![community default display](../image/fanscoin-bridge.png)](../image/fanscoin-bridge.png)
