@@ -2,11 +2,8 @@
 displayed_sidebar: generalSidebar
 ---
 
-# Efficient Use of Storage Pointers in Solidity
-
-Solidity smart contracts can significantly benefit from optimal storage use, which can directly impact the gas costs associated with contract operations. This tutorial explores how using storage pointers instead of copying data to memory can result in substantial gas savings. Storage pointers allow developers to directly reference storage without unnecessary copying of data, leading to more efficient smart contract execution.
-
-**Context and Optimization**
+# Efficient Use of Storage Pointers
+This tutorial explores how using storage pointers instead of copying data to memory can result in substantial gas savings. Storage pointers allow developers to directly reference storage without unnecessary copying of data, leading to more efficient smart contract execution.
 
 In Solidity, the default behavior when interacting with complex data types like structs from mappings is to copy them into memory. However, this can be inefficient when only a subset of the data is needed. By using storage pointers, we can directly reference and manipulate these data types in storage, thus avoiding the gas costs associated with memory operations.
 
@@ -59,15 +56,14 @@ contract UserActivityOptimized {
 }
 ```
 
-**Explanation of the Optimization**
-
 The optimized contract demonstrates an approximate gas saving of 5,000 units compared to the unoptimized version. The key change here is the use of a storage pointer (`User storage user = users[userId]`) instead of copying the User struct to memory. This method significantly reduces the number of storage operations performed:
 
-- **Unoptimized Version**: Copies entire struct from storage to memory, involving multiple storage reads.
-- **Optimized Version**: Directly references the struct in storage using a storage pointer, minimizing the storage access to only what is necessary.
+- Unoptimized Version: Copies entire struct from storage to memory, involving multiple storage reads.
+- Optimized Version: Directly references the struct in storage using a storage pointer, minimizing the storage access to only what is necessary.
 
 **Recommendations for Gas Optimization**
 
 🌟 Use storage pointers to manipulate or read data directly in storage when only a specific part of the data structure is needed, avoiding unnecessary copying to memory.
+
 🌟 Understand the context and access patterns of your data to determine when storage pointers are more beneficial than memory copies.
 
