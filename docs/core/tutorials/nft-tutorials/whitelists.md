@@ -25,12 +25,14 @@ npx hardhat
 
 When prompted, choose the default project setup by pressing Enter for all questions. This will create a basic Hardhat project setup with all the necessary configurations.
 
+[![Create Project](../imgs/nft-tutorials/whitelist-hardhat-create-project.png)](../imgs/nft-tutorials/whitelist-hardhat-create-project.png)
+
 ## Step 2: Installing Dependencies
 
-Install OpenZeppelin contracts, which provide a secure, audited implementation of ERC721 tokens, And Install Hardhat-Conflux-Plugin, which is built on top of js-conflux-sdk, making its usage for deployment and interaction very similar to that of js-conflux-sdk:
+Install OpenZeppelin contracts for a secure, audited implementation of ERC721 tokens. Next, install the Hardhat-Conflux-Plugin, which is built on top of js-conflux-sdk, providing a similar interface for deployment and interaction. Finally, install merkletreejs and keccak256 to create a Merkle Tree from your whitelist addresses.
 
 ```bash
-npm install @openzeppelin/contracts hardhat-conflux js-conflux-sdk
+npm install @openzeppelin/contracts hardhat-conflux js-conflux-sdk keccak256 merkletreejs
 ```
 
 ## Step 3: Configuring Hardhat
@@ -71,6 +73,7 @@ Create a new file `MerkleTreeNFT.sol` in the `contracts` directory:
 pragma solidity ^0.8.4;
 
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
+import "./MerkleTreeProof.sol";
 
 contract MerkleTreeNFT is ERC721 {
    bytes32 public immutable merkleRoot;
@@ -93,84 +96,168 @@ contract MerkleTreeNFT is ERC721 {
    }
 
    function _verify(bytes32 leaf, bytes32[] memory proof) internal view returns (bool) {
-       return MerkleVerification.verify(proof, merkleRoot, leaf);
+       return MerkleProof.verify(proof, merkleRoot, leaf);
    }
 }
 ```
 
-You will need to create or find an implementation for `MerkleVerification` that suits your needs.
+Create a new file `MerkleProof` library in the `contracts` directory:
+
+```solidity
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.4;
+
+library MerkleProof {
+    /**
+     * @dev Returns `true` when a `root` reconstructed from a `proof` and `leaf` equals the given `root`, indicating valid data.
+     * In the reconstruction, leaf pairs and element pairs are sorted.
+     */
+    function verify(
+        bytes32[] memory proof,
+        bytes32 root,
+        bytes32 leaf
+    ) internal pure returns (bool) {
+        return processProof(proof, leaf) == root;
+    }
+
+    /**
+     * @dev Returns the `root` computed from a Merkle tree using `leaf` and `proof`. The `proof` is only valid if the reconstructed `root` matches the given `root`.
+     * In the reconstruction, leaf pairs and element pairs are sorted.
+     */
+    function processProof(bytes32[] memory proof, bytes32 leaf) internal pure returns (bytes32) {
+        bytes32 computedHash = leaf;
+        for (uint256 i = 0; i < proof.length; i++) {
+            computedHash = _hashPair(computedHash, proof[i]);
+        }
+        return computedHash;
+    }
+
+    // Sorted Pair Hash
+    function _hashPair(bytes32 a, bytes32 b) private pure returns (bytes32) {
+        return a < b ? keccak256(abi.encodePacked(a, b)) : keccak256(abi.encodePacked(b, a));
+    }
+}
+
+```
+
+You will need to create or find an implementation for `MerkleProof` that suits your needs.
 
 Run `npx hardhat compile` in your terminal.
 
-### Step 5: Generating a Merkle Tree
+## Step 5: Generating a Merkle Tree
 
-1. **Generate the Merkle Tree:**
+Create a new script `generateTree.js` in the `scripts` directory to deploy your contract.
 
-   Use a JavaScript script to create a Merkle Tree from your whitelist addresses. You can use libraries like `merkletreejs` and `keccak256`.
+Use a JavaScript script to create a Merkle Tree from your whitelist addresses. You can use libraries like `merkletreejs` and `keccak256`.
 
-   ```javascript
-   const { MerkleTree } = require("merkletreejs");
-   const keccak256 = require("keccak256");
-   const whitelist = ["0x...", "0x..."]; // List of addresses
-   const leaves = whitelist.map((addr) => keccak256(addr));
-   const tree = new MerkleTree(leaves, keccak256, { sortPairs: true });
-   const root = tree.getRoot().toString("hex");
-   ```
+```javascript
+const { MerkleTree } = require("merkletreejs");
+const keccak256 = require("keccak256");
+const { format } = require("js-conflux-sdk");
 
-   Save this root in your smart contract deployment script.
+// List of addresses
+const whitelist = ["cfxtest:...", "cfxtest:..."];
+
+// Helper function to encode the address as Solidity would
+function solidityKeccak256(address) {
+  // Convert Conflux address to hex format address (without "0x" prefix)
+  const hexAddress = format.hexAddress(address).toLowerCase();
+  // Encode the address and compute keccak256 hash
+  return keccak256(Buffer.from(hexAddress.slice(2), "hex"));
+}
+
+// Convert addresses to hash (leaf nodes) using the helper function
+const leaves = whitelist.map(solidityKeccak256);
+
+// Create the Merkle tree
+const tree = new MerkleTree(leaves, keccak256, {
+  sortPairs: true,
+});
+
+// Get the Merkle tree root
+const root = tree.getHexRoot();
+
+// Get the proof for a specific address
+const addressToProof = whitelist[0]; // Replace with the address you need the proof for
+const leaf = solidityKeccak256(addressToProof);
+const proof = tree.getProof(leaf).map((x) => x.data.toString("hex"));
+
+// Display the complete Merkle tree
+const layers = tree
+  .getLayers()
+  .map((layer) => layer.map((x) => x.toString("hex")));
+
+console.log("Merkle tree layers:");
+layers.forEach((layer, index) => {
+  console.log(`Layer ${index}:`, layer);
+});
+
+console.log("merkle tree root:", root);
+console.log("merkle tree proof for address", addressToProof, ":", proof);
+```
+
+You will see the following message after successful deployment
+[![Generate Success](../imgs/nft-tutorials/generate-merkletree.png)](../imgs/nft-tutorials/generate-merkletree.png)
+Save this root in your smart contract deployment script.
 
 ## Step 6: Deploying the Contract
 
-1. **Write the Deployment Script:**
+Create a new script in the `scripts` directory to deploy your contract.
 
-   Create a new script in the `scripts` directory to deploy your contract.
+```javascript
+const hre = require("hardhat");
 
-   ```javascript
-   const hre = require("hardhat");
+async function main() {
+  const signers = await hre.conflux.getSigners();
+  const defaultAccount = signers[0];
 
-   async function main() {
-     const signers = await hre.conflux.getSigners();
-     const defaultAccount = signers[0];
+  const MerkleTreeNFT = await hre.conflux.getContractFactory("MerkleTreeNFT");
 
-     const ConfluxCRC721NFT = await hre.conflux.getContractFactory(
-       "MerkleTreeNFT"
-     );
-     const receipt = await ConfluxCRC721NFT.constructor("Confi", "Confi", "0x123..."); // Use your Merkle root)
-       .sendTransaction({
-         from: defaultAccount.address,
-       })
-       .executed();
+  const root = "YOUR_MERKLE_TREE_ROOT";
 
-     console.log(
-       `Contract deployment ${
-         receipt.outcomeStatus === 0 ? "succeeded" : "failed"
-       }`
-     );
+  const receipt = await MerkleTreeNFT.constructor(
+    "Confi MerkleTree",
+    "Confi",
+    root
+  )
+    .sendTransaction({
+      from: defaultAccount.address,
+    })
+    .executed();
 
-     console.log("MerkleTreeNFT deployed to:", receipt.contractCreated);
-   }
+  console.log(
+    `Contract deployment ${
+      receipt.outcomeStatus === 0 ? "succeeded" : "failed"
+    }`
+  );
 
-   main()
-     .then(() => process.exit(0))
-     .catch((error) => {
-       console.error(error);
-       process.exit(1);
-     });
-   ```
+  console.log("MerkleTreeNFT deployed to:", receipt.contractCreated);
+}
 
-Run your script with Hardhat to Deploy to Conflux CoreSpace
-
-```bash
-npx hardhat run scripts/deploy.js --network confluxCore
+main()
+  .then(() => process.exit(0))
+  .catch((error) => {
+    console.error(error);
+    process.exit(1);
+  });
 ```
 
-## Step 6: Minting an NFT with Whitelist
+Run your script with Hardhat to Deploy to Conflux CoreSpace Testnet
 
-To mint an NFT, you can use a script that interacts directly with the `mint` function in your smart contract. This script will mint an NFT to a specified address.
+```bash
+npx hardhat run scripts/deploy.js --network cfxTestnet
+```
+
+You will see the following message after successful deployment
+[![Deploy Success](../imgs/nft-tutorials/whitelist-deploy-success.png)](../imgs/nft-tutorials/whitelist-deploy-success.png)
+
+## Step 6: Minting an NFT with a Whitelist
+
+To mint an NFT, you can use a script that interacts directly with the `mint` function in your smart contract. This script will mint an NFT to a specified address with proof.
 
 Create another script in the `scripts` folder and name it `mintNFT.js`:
 
-This script sets the URI of a specific token, where `YOUR_CONTRACT_ADDRESS` is the address of your deployed NFT contract and `NFT_RECEIVER_ADDRESS` is the address of the NFT you want mint to.
+This script mints an NFT with the tokenId and a specific proof, where `YOUR_CONTRACT_ADDRESS` is the address of your deployed NFT contract, `NFT_RECEIVER_ADDRESS` is the address of the NFT you want mint to, and `YOUR_PROOF` is the merkle tree proof for your `NFT_RECEIVER_ADDRESS` address
 
 ```javascript
 const hre = require("hardhat");
@@ -181,15 +268,16 @@ async function main() {
 
   const contractAddress = "YOUR_CONTRACT_ADDRESS";
   const recipientAddress = "NFT_RECEIVER_ADDRESS"; // Address to receive the NFT
-  const tokenURI =
-    "https://raw.githubusercontent.com/conflux-fans/dual-space-nft-metadata/main/2023040104"; //  Replace the example tokenURI with the actual metadata URI for the NFT
+  const tokenId = 1;
 
-  const ConfluxCRC721NFT = await hre.conflux.getContractAt(
+  const MerkleTreeNFT = await hre.conflux.getContractAt(
     "MerkleTreeNFT",
     contractAddress
   );
 
-  const receipt = await ConfluxCRC721NFT.mint(recipientAddress, tokenURI)
+  const proof = "YOUR_PROOF_HERE";
+
+  const receipt = await MerkleTreeNFT.mint(recipientAddress, tokenId, proof)
     .sendTransaction({
       from: defaultAccount.address,
     })
@@ -206,13 +294,15 @@ main().catch((error) => {
 });
 ```
 
-Replace `YOUR_CONTRACT_ADDRESS` with your contract's address and `RECIPIENT_WALLET_ADDRESS` with the address of the wallet that should receive the NFT.
+Replace `YOUR_CONTRACT_ADDRESS` with your contract's address, `RECIPIENT_WALLET_ADDRESS` with the address of the wallet that should receive the NFT, and `YOUR_PROOF` is the merkle tree proof for your `NFT_RECEIVER_ADDRESS` address
 
-These steps and scripts allow you to manage the lifecycle of your NFT, from minting to setting metadata, directly through Hardhat scripts. Adjust the `tokenURI` in both scripts to match your NFT's metadata location.
+```bash
+npx hardhat run scripts/mintNFT.js --network cfxTestnet
+```
 
-You will see the following message after successful deployment
-[![Deploy Success](../imgs/nft-tutorials/deploy-success.png)](../imgs/nft-tutorials/deploy-success.png)
+You will see the following message after successful mint
+[![Deploy Success](../imgs/nft-tutorials/whitelist-mint-success.png)](../imgs/nft-tutorials/whitelist-mint-success.png)
 
-### Conclusion
+## Conclusion
 
 This setup provides a cost-efficient way to distribute NFTs to a whitelist of addresses using a Merkle Tree. Each step is essential for ensuring the security and efficiency of your NFT distribution. Be sure to test thoroughly in a test environment before deploying to the main network.
