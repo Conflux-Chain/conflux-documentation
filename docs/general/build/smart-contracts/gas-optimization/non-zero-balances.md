@@ -10,7 +10,15 @@ This is why the OpenZeppelin reentrancy guard marks functions as active or inact
 
 In practical applications of ERC20, you should avoid having ERC20 token balances drop to zero. Always keep a small amount in the balance. This approach can help achieve a similar effect. If an address frequently empties and reloads its account balance, it will lead to many zero-to-one writes, which are costly in terms of gas.
 
-**DemoCode**
+**Difference Between Conflux Core Space and eSpace**
+
+Conflux provides two different environments for smart contracts: Core Space and eSpace. Core Space is optimized for high throughput and low latency, while eSpace is compatible with Ethereum, allowing for easy porting of Ethereum-based contracts.
+
+In Core Space, the gas cost for storage operations is generally lower due to its unique consensus mechanism. eSpace, being Ethereum-compatible, follows a similar gas cost structure to Ethereum, but there are subtle differences due to the underlying Conflux blockchain architecture. Specific gas costs for the `SSTORE` opcode in eSpace might differ slightly from Ethereum's due to these optimizations.
+
+For instance, while Ethereum charges 20,000 gas for a zero-to-non-zero storage write, eSpace might have slight variations based on the latest protocol updates. 
+
+### Improved Contract Implementation
 
 Below, we provide an improved contract implementation to manage balance updates efficiently:
 
@@ -43,8 +51,8 @@ contract BalanceManagement {
 }
 ```
 
-Recommendations for gas optimization:
+### Recommendations for Gas Optimization
 
-🌟1. **Use Zero Balances**: Ensure that token balances do not drop to zero. Implement logic to reset the balance to a small positive value if it ever reaches zero.
+🌟1. **Use Non-Zero Balances**: Ensure that token balances do not drop to zero. Implement logic to reset the balance to a small positive value if it ever reaches zero.
 
 🌟2. **Optimize Storage Initialization**: Start storage variables at a non-zero value to avoid costly initializations and manage subsequent updates carefully to keep modifications within non-zero values.
