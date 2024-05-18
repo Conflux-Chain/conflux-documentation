@@ -5,11 +5,17 @@ displayed_sidebar: coreSidebar
 
 # Merkle Tree NFT Whitelist on CoreSpace using Hardhat
 
-### Requirements
+This tutorial will guide you through the steps to create, write, and deploy an ERC721 NFT smart contract with a Merkle Tree whitelist on Conflux CoreSpace using Hardhat. It will also show you how to use merkletreejs to create the Merkle Tree whitelist. For a practical example, please refer to the [Conflux-NFT-MerkleTree-Whitelist](https://github.com/ConfluxDAO/Conflux-NFT-MerkleTree-Whitelist) repository.
 
-- Node.js installed on your system.
-- A Conflux CoreSpace wallet and access to ConfluxPortal.
-- Hardhat setup on your machine.
+If you are not familiar with Hardhat, please refer to the [Hardhat documentation](https://hardhat.org/getting-started/).
+
+### Prerequisites
+
+Before you start, ensure you have the following:
+
+- Node.js installed on your system & Hardhat setup on your machine.
+- A Conflux CoreSpace wallet
+- A basic understanding of smart contract development and the Solidity programming language.
 
 ## Step 1: Setting Up Your Environment
 
