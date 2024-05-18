@@ -6,8 +6,6 @@ displayed_sidebar: coreSidebar
 
 This tutorial guides developers on transferring any CRC20 token from Core Space to eSpace, using [FansCoin (FC)](https://confluxscan.io/token/cfx:achc8nxj7r451c223m18w2dwjnmhkd6rxawrvkvsy2) as an example. The goal is to transfer a CRC20 token (A) issued on coreSpace to become an ERC20 token (eA) in eSpace. Currently, if there is no corresponding token in eSpace, it's not possible to use the official [cross-space bridge](https://confluxhub.io/espace-bridge/cross-space) directly.
 
-<!-- [image1](image1) -->
-
 [![Can not cross space](../image/cannot-cross-space.jpg)](../image/cannot-cross-space.png)
 
 Before initiating cross-space operations, let's review several key contracts associated with the cross-space bridge:
@@ -28,28 +26,6 @@ Before initiating cross-space operations, let's review several key contracts ass
 
 First, call the `registerMetadata` method (Write as Proxy) in the BeaconProxy proxy contract on coreSpace, passing the token address `Address_A`. This function invokes the crossSpaceCall contract for cross-space operations, registering the A contract in the EVM space. The code is as follows:
 
-```solidity
-// Register token metadata to EVM space
-function registerMetadata(IERC20 _token) public override {
-    require(
-        sourceTokens[address(_token)] == address(0),
-        "ConfluxSide: token is mapped from EVM space"
-    );
-    // Cross-space call to EVM contract EvmSide, which is the BeaconProxy proxy contract in eSpace
-    crossSpaceCall.callEVM(
-        bytes20(evmSide),
-        abi.encodeWithSelector(
-            // Calls eSpace's BeaconProxy contract's registerCRC20 to register the current token address in eSpace contract
-            IEvmSide.registerCRC20.selector,
-            address(_token),
-            _token.name(),
-            _token.symbol(),
-            _token.decimals()
-        )
-    );
-}
-```
-
 [![call the `registerMetadata` method](../image/call-beacon-proxy-core.jpg)](../image/call-beacon-proxy-core.jpg)
 
 After registration, the `crc20Metadata` function in eSpace's BeaconProxy contract can retrieve the CRC20 token's metadata in eSpace as `name (string), symbol (string), decimals (uint8), registered (bool)`.
@@ -61,44 +37,6 @@ After registration, the `crc20Metadata` function in eSpace's BeaconProxy contrac
 In eSpace's BeaconProxy contract, call the `createMappedToken` method, passing the CRC20 token address.
 
 [![create map token](../image/create-map-token.jpg)](../image/create-map-token.png)
-
-The internal implementation is as follows:
-
-```solidity
-function createMappedToken(address _crc20) public override {
-    require(crc20Metadata[_crc20].registered, "EvmSide: not registered");
-    TokenMetadata memory d = crc20Metadata[_crc20];
-    _deploy(_crc20, d.name, d.symbol, d.decimals);
-}
-...
-
-function _deploy(
-        address _token,
-        string memory _name,
-        string memory _symbol,
-        uint8 _decimals
-    ) internal returns (address mappedToken) {
-        if (mappedTokens[_token] == address(0)) {
-            mappedToken = address(
-                new BeaconProxy{salt: keccak256(abi.encodePacked(_token))}(
-                    beacon,
-                    ""
-                )
-            );
-            UpgradeableERC20(mappedToken).initialize(
-                _name,
-                _symbol,
-                _decimals,
-                owner()
-            );
-            mappedTokens[_token] = mappedToken;
-            sourceTokens[mappedToken] = _token;
-            mappedTokenList.push(_token);
-        } else {
-            mappedToken = mappedTokens[_token];
-        }
-    }
-```
 
 This operation creates a new `BeaconProxy` contract and deploys an `UpgradeableERC20` contract, setting the new `BeaconProxy` contract address as the corresponding `mappedToken` for the CRC20 token.
 
