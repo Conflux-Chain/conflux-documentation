@@ -1,18 +1,16 @@
+---
 displayed_sidebar: generalSidebar
+---
 
-# Predicting Smart Contract Addresses Using Account Nonce
+# Predicting Contract Addresses Using Account Nonce
 
-In Solidity, predicting contract addresses before their deployment can save significant amounts of gas, especially when deploying interdependent contracts. This method eliminates the need for setter functions and storage variables, which are costly in terms of gas usage. We will use the `LibRLP` library from Solady to deterministically compute the addresses based on the deployer's nonce.
-
-## Background
+In Solidity, predicting contract addresses before their deployment can save substantial gas, especially when deploying interdependent contracts. This method eliminates the need for setter functions and storage variables, which are costly in terms of gas usage. We can use the [LibRLP](https://github.com/Vectorized/solady/blob/6c54795ef69838e233020e9ab29f3f6288efdf06/src/utils/LibRLP.sol#L27) library from Solady to deterministically compute the addresses based on the deployer's nonce.
 
 In scenarios where two contracts are interdependent, like a `DataStorage` contract and a `DataWriter` contract, managing their addresses effectively is crucial. Typically, after deploying both contracts, you would set the address of one contract in the other using a setter function. However, this approach involves multiple transactions and storage operations, which are expensive.
 
-## Optimized Implementation Using LibRLP
+**DemoCode**
 
-Instead of using setter functions, we can compute the address of each contract before deployment and pass these addresses to the constructors, significantly reducing gas costs.
-
-Below is the optimized code, demonstrating this technique:
+Instead of using setter functions, we can compute the address of each contract before deployment and pass these addresses to the constructors, reducing gas costs.
 
 ```solidity
 // SPDX-License-Identifier: MIT
@@ -60,10 +58,9 @@ contract DeploymentManager {
 }
 ```
 
-## Gas Savings
+By precomputing addresses and using immutable storage for contract references, we can reduce the gas cost of writeValue(). This method not only lowers gas consumption but also simplifies the deployment process by eliminating the need for post-deployment setup calls.
 
-By precomputing the addresses and using immutable storage for contract references, we have reduced the gas cost of `writeValue()` from 49k to 47k, saving over 2k gas per call.
 
-## Conclusion
+Recommendations for gas optimization:
 
-This method not only reduces gas consumption but also simplifies the deployment process by removing the need for post-deployment setup calls. Such techniques are essential for optimizing contract interactions on blockchains where gas costs can significantly impact the usability and feasibility of smart contracts.
+🌟 Use the account nonce to predict the addresses of interdependent smart contracts, reducing gas consumption and simplifying deployment by avoiding storage variables and post-deployment setup calls.
