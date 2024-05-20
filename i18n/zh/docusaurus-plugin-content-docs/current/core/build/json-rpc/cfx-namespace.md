@@ -698,7 +698,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"cfx_getAdmin","params":["cfx:typ
 
 ### cfx_getCode
 
-返回指定合约的代码。 如果合约不存在，将返回`0x0`。
+返回指定合约的代码。 If contract not exist will return `0x`
 
 #### 参数
 
