@@ -698,7 +698,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"cfx_getAdmin","params":["cfx:typ
 
 ### cfx_getCode
 
-Returns the code of the specified contract. If contract not exist will return `0x0`
+Returns the code of the specified contract. If contract not exist will return `0x`
 
 #### Parameters
 
