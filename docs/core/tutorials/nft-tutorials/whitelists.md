@@ -5,6 +5,8 @@ displayed_sidebar: coreSidebar
 
 # Merkle Tree NFT Whitelist on CoreSpace using Hardhat
 
+Using a Merkle Tree whitelist provides a cost-efficient way to distribute NFTs to a predefined list of addresses. It ensures that only whitelisted addresses can mint the NFTs, enhancing security and efficiency. Storing a whitelist with thousands of addresses in a smart contract would incur high gas fees for each update. However, since in the Merkle Tree verification process, leaf nodes and proofs can be stored off-chain while only the root value needs to be stored on-chain, this method significantly saves on gas costs.
+
 This tutorial will guide you through the steps to create, write, and deploy an ERC721 NFT smart contract with a Merkle Tree whitelist on Conflux CoreSpace using Hardhat. It will also show you how to use merkletreejs to create the Merkle Tree whitelist. For a practical example, please refer to the [Conflux-NFT-MerkleTree-Whitelist](https://github.com/ConfluxDAO/Conflux-NFT-MerkleTree-Whitelist) repository.
 
 If you are not familiar with Hardhat, please refer to the [Hardhat documentation](https://hardhat.org/getting-started/).
