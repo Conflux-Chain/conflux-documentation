@@ -21,7 +21,7 @@ Select the snapshot download link based on the node type and location:
 
 ```shell
 # Beijing
-wget https://conflux-blockchain-data.oss-cn-beijing.aliyuncs.com/archivenode-db/M/download.sh
+wget https://conflux-blockchain-bj.oss-cn-beijing.aliyuncs.com/archivenode-db/M/download.sh
 # US West
 wget https://conflux-blockchain-data-us.s3.us-west-1.amazonaws.com/archivenode-db/M/download.sh
 # EU Central
@@ -34,7 +34,7 @@ bash download.sh
 
 ```shell
 # Beijing
-wget https://conflux-blockchain-data.oss-cn-beijing.aliyuncs.com/archivenode-db/M/download.bat
+wget https://conflux-blockchain-bj.oss-cn-beijing.aliyuncs.com/archivenode-db/M/download.bat
 # US West
 wget https://conflux-blockchain-data-us.s3.us-west-1.amazonaws.com/archivenode-db/M/download.bat
 # EU Central
@@ -46,7 +46,7 @@ download.bat
 3. For Linux & Mac - Mainnet - Full Node:
 ```shell
 # Beijing
-wget https://conflux-blockchain-data.oss-cn-beijing.aliyuncs.com/fullnode-db/M/download.sh
+wget https://conflux-blockchain-bj.oss-cn-beijing.aliyuncs.com/fullnode-db/M/download.sh
 # US West
 wget https://conflux-blockchain-data-us.s3.us-west-1.amazonaws.com/fullnode-db/M/download.sh
 
@@ -55,13 +55,13 @@ bash download.sh
   
 4. For Linux & Mac - Testnet - Archive Node:
 ```shell
-wget https://conflux-blockchain-data.oss-cn-beijing.aliyuncs.com/archivenode-db/T/download.sh
+wget https://conflux-blockchain-bj.oss-cn-beijing.aliyuncs.com/archivenode-db/T/download.sh
 bash download.sh 
 ```
 
 5. For Windows - Testnet - Archive Node: 
 ```shell
-wget https://conflux-blockchain-data.oss-cn-beijing.aliyuncs.com/archivenode-db/T/download.bat
+wget https://conflux-blockchain-bj.oss-cn-beijing.aliyuncs.com/archivenode-db/T/download.bat
 download.bat 
 ```
 
