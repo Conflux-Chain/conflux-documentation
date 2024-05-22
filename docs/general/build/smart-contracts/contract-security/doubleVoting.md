@@ -3,13 +3,11 @@ title: Addressing Double Voting in ERC20 Tokens
 displayed_sidebar: generalSidebar
 ---
 
-# Addressing Double Voting in ERC20 Tokens
-
-## Overview
+# Double Voting in ERC20 Tokens
 
 The use of ERC20 tokens or NFTs as voting tickets presents a significant vulnerability in decentralized applications (DApps). This is due to the potential for double voting, where attackers can vote with one address, transfer their tokens to another address, and vote again, effectively manipulating the voting outcome.
 
-This problem is exacerbated in simple voting contracts that do not implement measures to prevent token transfer or account for changes in token ownership between votes. Here, we explore a typical scenario where this vulnerability can be exploited and propose a solution using ERC20 snapshots.
+This problem is exacerbated in simple voting contracts that do not implement measures to prevent token transfer or account for changes in token ownership between votes.
 
 ## Example of a Vulnerable Voting Contract
 
@@ -66,13 +64,3 @@ contract SecureVoting {
     }
 }
 ```
-
-## Prevention Strategy
-
-When designing token-based voting systems, consider the following:
-
-1. Implement snapshot mechanisms to freeze token balances at the time of vote.
-2. Ensure transparency and fairness in the voting process by allowing token holders to verify the snapshot used.
-3. Regularly audit and test your smart contracts to address potential vulnerabilities related to token-based voting.
-
-By adopting these practices, developers can create more secure and reliable voting mechanisms within their applications, protecting against common exploits like double voting.
