@@ -1,5 +1,5 @@
 ---
-sidebar_position: 4
+sidebar_position: 1
 title: Retrieve Random Numbers
 description: Learn how to Use Pyth Oracle on Conflux eSpace to Retrieve Random Numbers
 keywords:
