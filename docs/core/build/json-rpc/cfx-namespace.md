@@ -2034,7 +2034,7 @@ It is important to note that the filter object will expire after a certain perio
     * `fromBlock`: `QUANTITY` - (optional, default: `null`). The start block to search. Noting that [cfx_getFilterChanges] will ignore this parameter.
     * `toBlock`: `QUANTITY` - (optional, default: `null`). Search will be applied untial (and including) this specified block.
     * `blockHashes`: `Array` of `DATA` - (optional, default: `null`) Array of up to 128 block hashes that the search will be applied to. This will override from/to epoch fields if it's not `null`.
-    * `address`: `Array` of `BASE32` - (optional, default: `null`) Search contract addresses. If `null`, match all. If specified, the log must be produced by one of these contracts.
+    * `address`: `BASE32`｜`Array` of `BASE32` - (optional, default: `null`) Search contract addresses. If `null`, match all. If specified, the log must be produced by one of these contracts.
     * `topics`: `Array` - (optional, default: `null`) 32-byte earch topics. Logs can have `4` topics: the event signature and up to `3` indexed event arguments. The elements of `topics` match the corresponding log topics. Example: `["0xA", null, ["0xB", "0xC"], null]` matches logs with `"0xA"` as the 1st topic AND (`"0xB"` OR `"0xC"`) as the 3rd topic. If `null`, match all.
 
 ```json
