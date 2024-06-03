@@ -4,7 +4,7 @@ title: Transaction
 displayed_sidebar: eSpaceSidebar
 ---
 
-eSpace's transaction is same as Ethereum 155 transaction, which means developers can use the same tools and libraries(ethers.js) to construct and send transaction. Currently Ethereum 1559 and EIP-2718 are not supported.
+eSpace initially only supports transactions in the Ethereum 155 format. Transactions in the 2930 and 1559 formats are supported starting from Conflux v2.4.0. The mainstream Ethereum SDKs and tools are seamlessly compatible.
 
 The RPC's `eth_sendRawTransaction`'s possible errors are same as [Core Space sending transactions errors](/docs/core/build/json-rpc/rpc-behaviour/cfx_sendTransaction-errors).
 
@@ -17,3 +17,7 @@ If your eSpace transactions are pending or have failed to execute, you can utili
 ### How many block confirmations are required for a transaction to be considered final?
 
 The confirmation block number is 100 blocks, and finalized block number is 400 blocks.
+
+### Does eSpace support EIP-4844?
+
+No

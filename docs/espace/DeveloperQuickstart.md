@@ -117,6 +117,8 @@ True # should return True
 
 It should be noted that the latest version of `web3.py` populates `maxFeePerGas` and `maxPriorityFeePerGas` for transactions by default, while Conflux eSpace only supports the legacy transaction type prior to EIP-1559. Therefore, developers need to specify the `gas_price` field in transactions or use the [gas price API](https://web3py.readthedocs.io/en/stable/gas_price.html).
 
+Note: Conflux eSpace start support EIP-1559 from v2.4.0. EIP-4844 still not supprted.
+
 ```python
 from web3 import Web3
 from web3.middleware.signing import construct_sign_and_send_raw_middleware
