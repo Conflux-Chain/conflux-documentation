@@ -12,7 +12,7 @@ The eSpace implements an Ethereum Virtual Machine (EVM). Below are some differen
 
 ## Transaction Type
 
-Currently eSpace only support **155 type** transaction before v2.4.0; 2930 & 1559 type transaction after v2.4.0.
+eSpace initially only supports **155 type** transaction, after v2.4.0 `2930` & `1559` type transactions are also supported.
 
 4844 transaction is not supported.
 
