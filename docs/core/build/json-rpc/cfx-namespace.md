@@ -12,7 +12,7 @@ displayed_sidebar: coreSidebar
 
 ## JSON-RPC Spec
 
-There is a [**JSON-RPC API spec**](https://open-rpc.org/) of cfx namespace on [GitHub](https://github.com/Conflux-Chain/jsonrpc-spec). You can view it in [open-rpc playground](https://playground.open-rpc.org/?schemaUrl=https://raw.githubusercontent.com/Conflux-Chain/jsonrpc-spec/main/src/cfx/cfx.json&uiSchema%5BappBar%5D%5Bui:splitView%5D=false&uiSchema%5BappBar%5D%5Bui:input%5D=false&uiSchema%5BappBar%5D)
+There is a [**JSON-RPC API spec**](https://open-rpc.org/) of cfx namespace on [GitHub](https://github.com/Conflux-Chain/jsonrpc-spec). You can view it in [open-rpc playground](https://playground.open-rpc.org/?schemaUrl=https://raw.githubusercontent.com/Conflux-Chain/jsonrpc-spec/main/src/cfx/cfx.json&uiSchema%5BappBar%5D%5Bui:splitView%5D=false&uiSchema%5BappBar%5D%5Bui:input%5D=false&uiSchema%5BappBar%5D). Check [Conflux-Rust RPC changelog](https://github.com/Conflux-Chain/conflux-rust/blob/master/changelogs/JSONRPC.md) for changes history.
 
 ## CONVENTIONS
 
@@ -244,6 +244,7 @@ params: [
 
 `Object` - a transaction object, or `null` when no transaction was found:
 
+* `type`: `QUANTITY` - the type of the transaction. `0` for legacy transactions, `1` for EIP-2930 transactions, `2` for EIP-1559 transactions.
 * `blockHash`: `DATA`, 32 Bytes - hash of the block where this transaction was in and got executed. `null` when the transaction is pending.
 * `chainId`: `QUANTITY` - the chain ID specified by the sender.
 * `contractCreated`: `BASE32` - address of the contract created. `null` when it is not a contract deployment transaction.
@@ -262,8 +263,14 @@ params: [
 * `transactionIndex`: `QUANTITY` - the transaction's position in the block. `null` when the transaction is pending.
 * `v`: `QUANTITY` - ECDSA recovery id.
 * `value`: `QUANTITY` - value transferred in Drip.
+* `maxGasFeePerGas`: `QUANTITY` - The maximum total fee per gas the sender is willing to pay (includes the network / base fee and miner / priority fee) in Drip.
+* `maxPriorityFeePerGas`: `QUANTITY` - Maximum fee per gas the sender is willing to pay to miners in Drip.
+* `accessList`: `ARRAY` - EIP-2930 access list
+* `yParity`: `QUANTITY` - The parity (0 for even, 1 for odd) of the y-value of the secp256k1 signature.
 
 Note that the fields `blockHash`, `contractCreated`, `status`, and `transactionIndex` are provided by the node as they depend on the transaction's position within the ledger. The rest of the fields are included in or derived from the original transaction.
+
+Note that the fields `type`, `maxGasFeePerGas`, `maxPriorityFeePerGas`, `yParity`, and `accessList` are included in the response from `Conflux-rust v2.4.0`.
 
 ##### Example
 
@@ -275,6 +282,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"cfx_getTransactionByHash","param
 {
   "jsonrpc": "2.0",
   "result": {
+     "type": "0x2",
     "blockHash": "0x564750c06c7afb10de8beebcf24411cc73439295d5abb1264d2c9b90eee5606f",
     "chainId": "0x2",
     "contractCreated": null,
@@ -292,11 +300,16 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"cfx_getTransactionByHash","param
     "to": "CFX:TYPE.CONTRACT:ACC7UAWF5UBTNMEZVHU9DHC6SGHEA0403Y2DGPYFJP",
     "transactionIndex": "0x0",
     "v": "0x1",
-    "value": "0x3635c9adc5dea00000"
+    "value": "0x3635c9adc5dea00000",
+    "accessList": [],
+    "maxFeePerGas": "0x4a817c800",
+    "maxPriorityFeePerGas": "0x4a817c800",
+    "yParity": "0x0"
   },
   "id": 1
 }
 ```
+
 ---
 
 ### cfx_getBlockByHash
@@ -305,7 +318,7 @@ Returns information about a block, identified by its hash.
 
 #### Parameters
 
-1. `DATA`, 32 Bytes - hash of a block.
+1. `DATA` - 32 Bytes - hash of a block.
 2. `Boolean` - if `true`, it returns the full transaction objects. If `false`, only the hashes of the transactions are returned.
 
 ```json
@@ -342,6 +355,7 @@ params: [
 * `custom`: `Array`- customized information. Note from v2.0 `custom`'s type has changed from array of `number array` to array of `hex string`.
 * `blockNumber`: `QUANTITY` - the number of this block's total order in the tree-graph. `null` when the order is not determined. Added from `Conflux-rust v1.1.5`
 * `posReference`: `DATA`, 32 Bytes - the hash of the PoS newest committed block. Added from `Conflux-rust v2.0.0`
+* `baseFeePerGas`: `QUANTITY` - the base fee per gas in the block. Added from `Conflux-rust v2.4.0`
 
 Note that the fields `epochNumber` and `gasUsed` are provided by the node as they depend on the ledger. The rest of the fields are included in or derived from the block header directly.
 
@@ -381,6 +395,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"cfx_getBlockByHash","params":["0
     "custom": ["0x12"],
     "transactionsRoot": "0xfb245dae4539ea49812e822adbffa9dd2ee9b3de8f3d9a7d186d351dcc9a6ed4",
     "posReference": "0xd1c2ff79834f86eb4bc98e0e526de475144a13719afba6385cf62a4023c02ae3",
+    "baseFeePerGas": "0x4a817c800"
   },
   "id": 1
 }
@@ -500,6 +515,108 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"cfx_gasPrice","id":1}' -H "Conte
     "jsonrpc" : "2.0",
     "result" : "0x09184e72a000",
     "id" : 1
+}
+```
+
+---
+
+### cfx_maxPriorityFeePerGas
+
+Returns the current priority fee per gas in Drip.
+
+#### Parameters
+
+None.
+
+#### Returns
+
+`QUANTITY` - integer of the current priority fee per gas in Drip.
+
+##### Example
+
+```json
+// Request
+curl -X POST --data '{"jsonrpc":"2.0","method":"cfx_maxPriorityFeePerGas","id":1}' -H "Content-Type: application/json" localhost:12539
+
+// Result
+{
+    "jsonrpc" : "2.0",
+    "result" : "0x09184e72a000",
+    "id" : 1
+}
+```
+
+---
+
+### cfx_feeHistory
+
+Returns transaction base fee per gas and effective priority fee per gas for the requested/supported block range.
+
+Added from `Conflux-rust v2.4.0`.
+
+#### Parameters
+
+1. `QUANTITY` - the number of blocks to query.
+2. `QUANTITY|TAG` - the block number or the string `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-default-epochnumber-parameter).
+3. `Array` - A monotonically increasing list of percentile values. For each block in the requested range, the transactions will be sorted in ascending order by effective tip per gas and the coresponding effective tip for the percentile will be determined, accounting for gas consumed.
+
+#### Returns
+
+- `baseFeePerGas`: `Array` - An array of block base fees per gas. This includes the next block after the newest of the returned range, because this value can be derived from the newest block. Zeroes are returned for pre-EIP-1559 blocks.
+- `gasUsedRatio`: `Array` - An array of block gas used ratios. These are calculated as the ratio of tx gasLimit sum and block gasLimit.
+- `oldestBlock`: `QUANTITY` -  Lowest block number of returned range.
+- `reward`: `Array` - A two-dimensional array of effective priority fees per gas at the requested block percentiles.
+
+##### Example
+
+```json
+// Request
+curl -X POST --data '{"jsonrpc":"2.0","method":"cfx_feeHistory", "params": ["0x5", "latest_state", [20, 30]],"id":1}' -H "Content-Type: application/json" localhost:12537
+
+// Result
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "baseFeePerGas": [
+            "0x3b9aca00",
+            "0x3b9aca00",
+            "0x3b9aca00",
+            "0x3b9aca00",
+            "0x3b9aca00",
+            "0x3b9aca00"
+        ],
+        "gasUsedRatio": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+        ],
+        "oldestBlock": "0x2a8d0",
+        "reward": [
+            [
+                "0x0",
+                "0x0"
+            ],
+            [
+                "0x0",
+                "0x0"
+            ],
+            [
+                "0x0",
+                "0x0"
+            ],
+            [
+                "0x0",
+                "0x0"
+            ],
+            [
+                "0x0",
+                "0x0"
+            ]
+        ]
+    },
+    "id": "15922956697249514502"
 }
 ```
 
@@ -958,6 +1075,10 @@ Virtually calls a contract, returns the output data. The transaction will not be
     * `value`: `QUANTITY` - (optional, default: `0`) value transferred in Drip.
     * `data`: `DATA` - (optional, default: `0x`) the data send along with the transaction.
     * `nonce`: `QUANTITY` - (optional, default: `0`) the number of transactions made by the sender prior to this one.
+    * `type`: `QUANTITY` - (optional, default: `0`) the type of the transaction, `0` for legacy, `1` for EIP-2930, `2` for EIP-1559. Added from `Conflux-rust v2.4.0`
+    * `accessList`: `ARRAY` - (optional, default: `[]`) the eip-2930 access list. Added from `Conflux-rust v2.4.0`
+    * `maxFeePerGas`: `QUANTITY` - (optional, default: `0`) the max fee per gas in Drip. Added from `Conflux-rust v2.4.0`
+    * `maxPriorityFeePerGas`: `QUANTITY` - (optional, default: `0`) the max priority fee per gas in Drip. Added from `Conflux-rust v2.4.0`
 
 2. `QUANTITY|TAG` - (optional, default: `"latest_state"`) integer epoch number, or the string `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-default-epochnumber-parameter)
 
@@ -1145,6 +1266,7 @@ params: [
 
 `Object` - a transaction receipt object, or `null` when no transaction was found or the transaction was not executed yet:
 
+* `type`: `QUANTITY` - the type of the transaction, `0` for legacy, `1` for EIP-2930, `2` for EIP-1559. Added from `Conflux-rust v2.4.0`
 * `transactionHash`: `DATA`, 32 Bytes - hash of the given transaction.
 * `index`: `QUANTITY` - transaction index within the block.
 * `blockHash`: `DATA`, 32 Bytes - hash of the block where this transaction was in and got executed.
@@ -1163,6 +1285,8 @@ params: [
 * `logsBloom`: `DATA`, 256 Bytes - bloom filter for light clients to quickly retrieve related logs.
 * `logs`: `Array` - array of log objects that this transaction generated, see [cfx_getLogs](#cfx_getlogs).
 * `txExecErrorMsg`: `String`, tx exec fail message, if transaction exec success this will be null.
+* `effectiveGasPrice`: `QUANTITY` - the effective gas price of the transaction. Added from `Conflux-rust v2.4.0`
+* `burntGasFee`: `QUANTITY` - the burnt gas fee of the transaction. Added from `Conflux-rust v2.4.0`
 
 
 ##### Example
@@ -1991,6 +2115,7 @@ params: [
 * `powBaseReward`: `QUANTITY` - The PoW base reward amount
 * `interestRate`: `QUANTITY` - The PoS interest rate
 * `storagePointProp`: `QUANTITY` - The proportion of sponsored storage will transfer to storage point
+* `baseFeeShareProp`: `QUANTITY` - The proportion of transaction base fee will reward to miner. Added in Conflux-Rust v2.4.0
 
 ##### Example
 
@@ -2015,6 +2140,8 @@ Response
     "result": {
         "powBaseReward": "0x1",
         "interestRate": "0x2",
+        "baseFeeShareProp": "0xde0b6b3a7640000",
+        "storagePointProp": "0xde0b6b3a7640000",
     },
     "id": 1
 }
@@ -2419,6 +2546,32 @@ Response
     "convertedStoragePoints": "0x485ec66",
     "usedStoragePoints": "0x290bc0"
   }
+}
+```
+
+### cfx_getFeeBurnt
+
+Returns the total burnt tx gas fee by 1559. Added in Conflux-Rust v2.4.0.
+
+#### Parameters
+
+None.
+
+#### Returns
+
+`QUANTITY` - the total burnt tx gas fee by 1559 in Drip.
+
+##### Example
+
+```json
+// Request
+curl -X POST --data '{"jsonrpc":"2.0","method":"cfx_getFeeBurnt","id":1}' -H "Content-Type: application/json" localhost:12539
+
+// Result
+{
+    "jsonrpc" : "2.0",
+    "result" : "0x09184e72a000",
+    "id" : 1
 }
 ```
 
