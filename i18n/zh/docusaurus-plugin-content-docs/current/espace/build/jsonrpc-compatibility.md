@@ -63,13 +63,16 @@ import TabItem from '@theme/TabItem';
 | trace_block                            | ✅  | Parity RPC                       |
 | trace_filter                           | ✅  | Parity RPC                       |
 | trace_transaction                      | ✅  | Parity RPC                       |
-| eth_feeHistory                         | ❌  |                                  |
+| eth_feeHistory                         | ✅  | Supported at v2.4.0              |
 | eth_getFilterChanges                   | ✅  | 支持 v2.1.1 版本                     |
 | eth_getFilterLogs                      | ✅  | 支持 v2.1.1 版本                     |
 | eth_newBlockFilter                     | ✅  | 支持 v2.1.1 版本                     |
 | eth_newFilter                          | ✅  | 支持 v2.1.1 版本                     |
 | eth_newPendingTransactionFilter        | ✅  | 支持 v2.1.1 版本                     |
 | eth_uninstallFilter                    | ✅  | 支持 v2.1.1 版本                     |
+| debug_traceTransaction                 | ✅  | Supported at v2.4.0              |
+| debug_traceBlockByHash                 | ✅  | Supported at v2.4.0              |
+| debug_traceBlockByNumber               | ✅  | Supported at v2.4.0              |
 | net_listening                          | ❌  |                                  |
 | net_peerCount                          | ❌  |                                  |
 | eth_compileLLL                         | ❌  |                                  |
@@ -86,11 +89,17 @@ import TabItem from '@theme/TabItem';
 
 ## 备注
 
-* `eth_sendRawTransaction` 仅接受 155 类型交易，不支持 `1559`、 `2930` 类型交易。
+* `eth_sendRawTransaction` supports legacy(EIP-155), type-1(EIP-2930) and type-2(EIP-1559) transactions. Type-3 transactions (EIP-4844) transactions are not supported yet.
 * 此处未列出的方法也不支持。
 * 没有所谓的 uncle（又称 ommer）区块。 `eth_getUncleByBlockHashAndIndex` 和 `eth_getUncleByBlockNumberAndIndex` 方法总是返回 `null`。 `eth_getUncleCountByBlockHash` 和 `eth_getUncleCountByBlockNumber` 方法对有效的区块 ID 返回零，对无效的区块 ID 返回 `null`。 此外，与 uncle 相关的区块元数据如 `sha3Uncles` 是空的哈希数组 sha3。
 * 目前不支持非标准的 Geth 跟踪 API
 * 非标准 Parity 跟踪 API 正在开发中
+
+### extra `burntGasFee` field of transaction receipts
+
+The implementation of 1559 in Conflux eSpace differs slightly from Ethereum. The base fee of the transaction is not entirely burned; instead, it is partially burned according to a certain ratio, with the remaining part still serving as the miner's revenue. An additional field `burntGasFee` is added to the transaction receipt (e.g. got from `eth_getTransactionReceipt` RPC) to record the amount of fees that is burned.
+
+For more information, please refer to [CIP-137](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-137.md).
 
 ### `pending` 标签
 
