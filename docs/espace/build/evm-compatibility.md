@@ -12,15 +12,14 @@ The eSpace implements an Ethereum Virtual Machine (EVM). Below are some differen
 
 ## Transaction Type
 
-eSpace initially only supports **155 type** transaction, after v2.4.0 `2930` & `1559` type transactions are also supported.
-
-4844 transaction is not supported.
+- eSpace initially only supports **155 type** transaction (legacy transactions)
+- [EIP-2930](https://eips.ethereum.org/EIPS/eip-2930) (type 1) & [EIP-1559](https://eips.ethereum.org/EIPS/eip-1559) (type 2) transactions are supported after hardfork v2.4.0.
+- [EIP-4844](https://eips.ethereum.org/EIPS/eip-4844) (type 3) transactions are not supported.
 
 ## EVM Opcodes
 
-* **Before v2.4.0** the `BLOCKHASH` opcode can only take `NUMBER-1` as input. (Unlike Ethereum, which takes any integer in `NUMBER-256` to `NUMBER-1` as input). After v2.4.0 it is fully compatible with Ethereum.
+* **Before v2.4.0** the `BLOCKHASH` opcode can only take `NUMBER-1` as input. (Unlike Ethereum, which takes any integer in `NUMBER-256` to `NUMBER-1` as input). After v2.4.0 it is fully compatible with Ethereum with an advanced input range up to 65536 blocks (implemented by [CIP-133](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-133.md)).
 * The 4844 opcode `BLOBHASH` `BLOBBASEFEE` is not supprted.
-* The `BASEFEE`, `MCOPY`, `TLOAD`, `TSTORE` opcodes are introduced from v2.4.0.
 
 ## Block Time
 
