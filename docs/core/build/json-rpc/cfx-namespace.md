@@ -244,7 +244,7 @@ params: [
 
 `Object` - a transaction object, or `null` when no transaction was found:
 
-* `type`: `QUANTITY` - the type of the transaction. `0` for legacy transactions, `1` for EIP-2930 transactions, `2` for EIP-1559 transactions.
+* `type`: `QUANTITY` - the type of the transaction. `0x0` for legacy transactions, `0x1` for CIP-2930 transactions, `0x2` for CIP-1559 transactions.
 * `blockHash`: `DATA`, 32 Bytes - hash of the block where this transaction was in and got executed. `null` when the transaction is pending.
 * `chainId`: `QUANTITY` - the chain ID specified by the sender.
 * `contractCreated`: `BASE32` - address of the contract created. `null` when it is not a contract deployment transaction.
@@ -282,7 +282,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"cfx_getTransactionByHash","param
 {
   "jsonrpc": "2.0",
   "result": {
-     "type": "0x2",
+    "type": "0x2",
     "blockHash": "0x564750c06c7afb10de8beebcf24411cc73439295d5abb1264d2c9b90eee5606f",
     "chainId": "0x2",
     "contractCreated": null,
@@ -339,7 +339,7 @@ params: [
 * `deferredStateRoot`: `DATA`, 32 Bytes - the hash of the state trie root triplet after deferred execution at the block's epoch (assuming it is the pivot block).
 * `difficulty`: `QUANTITY` - the PoW difficulty of this block.
 * `epochNumber`: `QUANTITY` - the number of the epoch containing this block in the node's view of the ledger. `null` when the epoch number is not determined (e.g. the block is not in the best block's past set).
-* `gasLimit`: `QUANTITY` - the maximum gas allowed in this block.
+* `gasLimit`: `QUANTITY` - determines the gas limit of the block. from `Conflux-rust v2.4.0`, [a factor `0.9`](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-1559.md#independent-gas-limit-calculation) is multiplied to get the core space block gas limit. For example, if the `gasLimit` field value is `60,000,000`, the actual maximum of the sum of the transaction gas limit is `54,000,000`.
 * `gasUsed`: `QUANTITY` - the total gas used in this block. `null` when the block is pending.
 * `hash`: `DATA`, 32 Bytes - hash of the block.
 * `height`: `QUANTITY` - the height of the block.
@@ -550,21 +550,21 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"cfx_maxPriorityFeePerGas","id":1
 
 ### cfx_feeHistory
 
-Returns transaction base fee per gas and effective priority fee per gas for the requested/supported block range.
+Returns transaction base fee per gas and effective priority fee per gas for the requested/supported epoch range.
 
 Added from `Conflux-rust v2.4.0`.
 
 #### Parameters
 
-1. `QUANTITY` - the number of blocks to query.
-2. `QUANTITY|TAG` - the block number or the string `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-default-epochnumber-parameter).
-3. `Array` - A monotonically increasing list of percentile values. For each block in the requested range, the transactions will be sorted in ascending order by effective tip per gas and the coresponding effective tip for the percentile will be determined, accounting for gas consumed.
+1. `QUANTITY` - the number of epochs to query.
+2. `QUANTITY|TAG` - the epoch number or the string `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-default-epochnumber-parameter).
+3. `Array` - A monotonically increasing float list of percentile values. For each block in the requested range, the transactions will be sorted in ascending order by effective tip per gas and the coresponding effective tip for the percentile will be determined, accounting for gas consumed.
 
 #### Returns
 
-- `baseFeePerGas`: `Array` - An array of block base fees per gas. This includes the next block after the newest of the returned range, because this value can be derived from the newest block. Zeroes are returned for pre-EIP-1559 blocks.
+- `baseFeePerGas`: `Array` - An array of block base fees per gas. This array will include an extra element.
 - `gasUsedRatio`: `Array` - An array of block gas used ratios. These are calculated as the ratio of tx gasLimit sum and block gasLimit.
-- `oldestBlock`: `QUANTITY` -  Lowest block number of returned range.
+- `oldestEpoch`: `QUANTITY` -  Lowest epoch number of returned range.
 - `reward`: `Array` - A two-dimensional array of effective priority fees per gas at the requested block percentiles.
 
 ##### Example
@@ -592,7 +592,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"cfx_feeHistory", "params": ["0x5
             0.0,
             0.0
         ],
-        "oldestBlock": "0x2a8d0",
+        "oldestEpoch": "0x2a8d0",
         "reward": [
             [
                 "0x0",
@@ -1075,7 +1075,7 @@ Virtually calls a contract, returns the output data. The transaction will not be
     * `value`: `QUANTITY` - (optional, default: `0`) value transferred in Drip.
     * `data`: `DATA` - (optional, default: `0x`) the data send along with the transaction.
     * `nonce`: `QUANTITY` - (optional, default: `0`) the number of transactions made by the sender prior to this one.
-    * `type`: `QUANTITY` - (optional, default: `0`) the type of the transaction, `0` for legacy, `1` for EIP-2930, `2` for EIP-1559. Added from `Conflux-rust v2.4.0`
+    * `type`: `QUANTITY` - (optional, default: `0x0`) the type of the transaction, `0x0` for legacy, `0x1` for EIP-2930, `0x2` for EIP-1559. Added from `Conflux-rust v2.4.0`
     * `accessList`: `ARRAY` - (optional, default: `[]`) the eip-2930 access list. Added from `Conflux-rust v2.4.0`
     * `maxFeePerGas`: `QUANTITY` - (optional, default: `0`) the max fee per gas in Drip. Added from `Conflux-rust v2.4.0`
     * `maxPriorityFeePerGas`: `QUANTITY` - (optional, default: `0`) the max priority fee per gas in Drip. Added from `Conflux-rust v2.4.0`
@@ -1266,7 +1266,7 @@ params: [
 
 `Object` - a transaction receipt object, or `null` when no transaction was found or the transaction was not executed yet:
 
-* `type`: `QUANTITY` - the type of the transaction, `0` for legacy, `1` for EIP-2930, `2` for EIP-1559. Added from `Conflux-rust v2.4.0`
+* `type`: `QUANTITY` - the type of the transaction, `0x0` for legacy, `0x1` for EIP-2930, `0x2` for EIP-1559. Added from `Conflux-rust v2.4.0`
 * `transactionHash`: `DATA`, 32 Bytes - hash of the given transaction.
 * `index`: `QUANTITY` - transaction index within the block.
 * `blockHash`: `DATA`, 32 Bytes - hash of the block where this transaction was in and got executed.
