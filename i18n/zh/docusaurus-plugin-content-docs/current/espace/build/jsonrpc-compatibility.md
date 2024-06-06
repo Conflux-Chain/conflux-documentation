@@ -64,12 +64,12 @@ import TabItem from '@theme/TabItem';
 | trace_filter                           | ✅  | Parity RPC                       |
 | trace_transaction                      | ✅  | Parity RPC                       |
 | eth_feeHistory                         | ✅  | Supported at v2.4.0              |
-| eth_getFilterChanges                   | ✅  | 支持 v2.1.1 版本                     |
-| eth_getFilterLogs                      | ✅  | 支持 v2.1.1 版本                     |
-| eth_newBlockFilter                     | ✅  | 支持 v2.1.1 版本                     |
-| eth_newFilter                          | ✅  | 支持 v2.1.1 版本                     |
-| eth_newPendingTransactionFilter        | ✅  | 支持 v2.1.1 版本                     |
-| eth_uninstallFilter                    | ✅  | 支持 v2.1.1 版本                     |
+| eth_getFilterChanges                   | ✅  | 在v2.1.1版本中支持                     |
+| eth_getFilterLogs                      | ✅  | 在v2.1.1版本中支持                     |
+| eth_newBlockFilter                     | ✅  | 在v2.1.1版本中支持                     |
+| eth_newFilter                          | ✅  | 在v2.1.1版本中支持                     |
+| eth_newPendingTransactionFilter        | ✅  | 在v2.1.1版本中支持                     |
+| eth_uninstallFilter                    | ✅  | 在v2.1.1版本中支持                     |
 | debug_traceTransaction                 | ✅  | Supported at v2.4.0              |
 | debug_traceBlockByHash                 | ✅  | Supported at v2.4.0              |
 | debug_traceBlockByNumber               | ✅  | Supported at v2.4.0              |
