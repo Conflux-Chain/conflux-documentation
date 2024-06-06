@@ -246,10 +246,10 @@ params: [
 `Object` - 交易对象，如果没有找到交易，则为 `null`：
 
 * `type`: `QUANTITY` - the type of the transaction. `0x0` for legacy transactions, `0x1` for CIP-2930 transactions, `0x2` for CIP-1559 transactions.
-* `blockHash`: `DATA`, 32 字节 - 包含并执行了这个交易的区块的哈希。 `null` 当交易是 pending 时为 null
+* `blockHash`: `DATA`，32 字节，包含并执行了这个交易的区块的哈希。 `null` 当交易是 pending 时为 null
 * `chainId`: `QUANTITY` - 发送者指定的链 ID
-* `contractCreated`: `BASE32` - 创建的合约的地址。 `null` 当它不是一个合约部署交易时为 null
-* `data`: `DATA` - 随交易发送的数据。
+* `contractCreated`: `BASE32`，创建的合约的地址。 `null` 当它不是一个合约部署交易时为 null
+* `data`: `DATA`，随交易发送的数据。
 * `epochHeight`: `QUANTITY` - 发送者指定的 epoch。 注意这不是包含这个交易的区块的 epoch。
 * `from`: `BASE32` - 发送者的地址。
 * `gas`: `QUANTITY` - 发送者提供的 gas。
@@ -320,7 +320,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"cfx_getTransactionByHash","param
 #### 参数
 
 1. `DATA` - 32 Bytes - hash of a block.
-2. `Boolean` - 如果 `true`，返回完整的交易对象 如果 `false`, 只返回交易的哈希值
+2. `Boolean` - 如果 `true`，返回完整的交易对象。 如果 `false`, 只返回交易的哈希值
 
 ```json
 params: [
@@ -1270,7 +1270,7 @@ params: [
 * `type`: `QUANTITY` - the type of the transaction, `0x0` for legacy, `0x1` for EIP-2930, `0x2` for EIP-1559. Added from `Conflux-rust v2.4.0`
 * `transactionHash`: `DATA`, 32 Bytes - hash of the given transaction.
 * `index`: `QUANTITY` - transaction index within the block.
-* `blockHash`: `DATA`, 32 字节 - 包含并执行了这个交易的区块的哈希。
+* `blockHash`: `DATA`，32 字节，包含并执行了这个交易的区块的哈希。
 * `epochNumber`: `QUANTITY` - epoch number of the block where this transaction was in and got executed.
 * `from`: `BASE32` - 发送者的地址。
 * `to`: `BASE32` - 接收者的地址。 `null` 当它是一个合约部署交易时为 null
@@ -1280,7 +1280,7 @@ params: [
 * `storageCollateralized`: `QUANTITY`, the amount of storage collateral this transaction required.
 * `storageCoveredBySponsor`: `Boolean`, true if this transaction's storage collateral was covered by the sponsor.
 * `storageReleased`: `Array`, array of storage change objects, each specifying an address and the corresponding amount of storage collateral released, e.g., `[{ 'address': 'CFX:TYPE.USER:AARC9ABYCUE0HHZGYRR53M6CXEDGCCRMMYYBJGH4XG', 'collaterals': '0x280' }]`
-* `contractCreated`: `BASE32` - 创建的合约的地址。 `null` 当它不是一个合约部署交易时为 null
+* `contractCreated`: `BASE32`，创建的合约的地址。 `null` 当它不是一个合约部署交易时为 null
 * `stateRoot`: `DATA`, 32 Bytes - hash of the state root after the execution of the corresponding block. `0` if the state root is not available.
 * `outcomeStatus`: `QUANTITY` - the outcome status code. `0x0` means success. `0x1` means failed. `0x2` means skipped
 * `logsBloom`: `DATA`, 256 Bytes - bloom filter for light clients to quickly retrieve related logs.
@@ -1958,7 +1958,7 @@ Returns information about a block, identified by its block number (block's tree-
 #### 参数
 
 1. `QUANTITY` - the block number.
-2. `Boolean` - 如果 `true`，返回完整的交易对象 如果为 `false`，只会返回交易的哈希值。
+2. `Boolean` - 如果 `true`，返回完整的交易对象。 如果为 `false`，只会返回交易的哈希值。
 
 ```json
 params: [
