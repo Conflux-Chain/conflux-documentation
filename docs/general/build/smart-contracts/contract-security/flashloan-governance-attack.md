@@ -36,7 +36,7 @@ contract GovernanceExploit {
 
         // Transfer tokens to the caller temporarily
         token.transfer(msg.sender, amount);
-        
+
         // Caller participates in governance
         IGovernanceParticipant(msg.sender).participateInGovernance();
 
@@ -52,9 +52,16 @@ contract GovernanceExploit {
 
 In this contract, `exploitFlashLoan()` allows the borrower to use the tokens as they wish, including participating in a vote, before they are returned. This vulnerability can be exploited to swing governance decisions.
 
+#### Real-World Examples
+
+**MakerDAO Governance Attack Attempt**
+
+In 2020, there was an attempted governance attack on MakerDAO using a flashloan. The attacker tried to borrow a significant number of MKR tokens to influence a governance vote. Although this attempt was unsuccessful, it highlighted the potential risks and vulnerabilities in DeFi governance systems. [Learn more](https://www.theblock.co/post/82721/makerdao-issues-warning-after-a-flash-loan-is-used-to-pass-a-governance-vote).
+
 ## Prevention Strategies
 
 To prevent such attacks, it's crucial to design governance mechanisms that are resistant to large, sudden changes in token balances. Some potential strategies include:
+
 - **Using a longer snapshot history**: Instead of taking snapshots close to voting events, use historical balances to determine voting power.
 - **Locking periods**: Require that tokens be held for a certain period before they can be used to vote.
 - **Disabling flashloan transactions**: Identify and block transactions that involve flashloans during critical governance events.
