@@ -60,6 +60,6 @@ To be displayed on the official cross-chain bridge, modify the `native_token_lis
 
 ![default display](./imgs/cross-space/default-display.png)
 
-You can also visit the community-deployed version at [community cross-space bridge](https://bridge.fanscoin.org), or submit a PR at this [repository](https://github.com/ConfluxDAO/conflux-evm-bridge/) to directly display your token on the community cross-space bridge.
+The frontend code of ConfluxHub is hosted at [conflux-dapps](https://github.com/Conflux-Chain/conflux-dapps). You can also customize your own version of token list as you wish by modifying the parameter [innerTokenListUrl(in dapps/cross-space/src/components/TokenList/tokenListStore.ts)](https://github.com/Conflux-Chain/conflux-dapps/blob/dev/dapps/cross-space/src/components/TokenList/tokenListStore.ts) and then deploy it.
 
 ![community default display](./imgs/cross-space/fanscoin-bridge.png)
