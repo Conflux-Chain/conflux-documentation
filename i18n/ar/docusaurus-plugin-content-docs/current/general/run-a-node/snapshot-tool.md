@@ -7,7 +7,7 @@ displayed_sidebar: generalSidebar
 
 ## Introduction
 
-The Conflux Blockchain Data Snapshot Tool (aka Archive-Tool) is designed to help users quickly set up a Conflux node from a snapshot. This tool provides the download links, and by default, it downloads the DB snapshot data of the current day. The Snapshot tool can help save weeks of time required to download and sync all the blockchain data at the moment of running a node. Using this tool is optional, **but highly recommended**. The tool supports **resuming downloads** from breakpoints using the curl command. If an error occurs during the process, users are advised to follow the script prompts.
+The Conflux Blockchain Data [Snapshot Tool (aka Archive-Tool)](https://github.com/conflux-fans/archive-tool) is designed to help users quickly set up a Conflux node from a snapshot. This tool provides the download links, and by default, it downloads the DB snapshot data of the current day. The Snapshot tool can help save weeks of time required to download and sync all the blockchain data at the moment of running a node. Using this tool is optional, **but highly recommended**. The tool supports **resuming downloads** from breakpoints using the curl command. If an error occurs during the process, users are advised to follow the script prompts.
 
 ## Prerequisites
 
@@ -17,11 +17,13 @@ Ensure you have curl installed on your system. If not, you can download and inst
 
 Select the snapshot download link based on the node type and location:
 
+### Mainnet Archive Node
+
 1. For Linux & Mac - Mainnet - Archive Node:
 
 ```shell
 # Beijing
-wget https://conflux-blockchain-data.oss-cn-beijing.aliyuncs.com/archivenode-db/M/download.sh
+wget https://conflux-blockchain-bj.oss-cn-beijing.aliyuncs.com/archivenode-db/mainnet/download.sh
 # US West
 wget https://conflux-blockchain-data-us.s3.us-west-1.amazonaws.com/archivenode-db/M/download.sh
 # EU Central
@@ -34,7 +36,7 @@ bash download.sh
 
 ```shell
 # Beijing
-wget https://conflux-blockchain-data.oss-cn-beijing.aliyuncs.com/archivenode-db/M/download.bat
+wget https://conflux-blockchain-bj.oss-cn-beijing.aliyuncs.com/archivenode-db/mainnet/download.bat
 # US West
 wget https://conflux-blockchain-data-us.s3.us-west-1.amazonaws.com/archivenode-db/M/download.bat
 # EU Central
@@ -43,25 +45,32 @@ wget https://conflux-blockchain-data-eu.s3.eu-central-1.amazonaws.com/archivenod
 download.bat 
 ```
 
-3. For Linux & Mac - Mainnet - Full Node:
+### Mainnet Full Node
+
+For Linux & Mac - Mainnet - Full Node:
+
 ```shell
 # Beijing
-wget https://conflux-blockchain-data.oss-cn-beijing.aliyuncs.com/fullnode-db/M/download.sh
+wget https://conflux-blockchain-bj.oss-cn-beijing.aliyuncs.com/fullnode-db/mainnet/download.sh
 # US West
 wget https://conflux-blockchain-data-us.s3.us-west-1.amazonaws.com/fullnode-db/M/download.sh
 
 bash download.sh 
 ```
 
-4. For Linux & Mac - Testnet - Archive Node:
+### Testnet Archive Node
+
+1. For Linux & Mac - Testnet - Archive Node:
+
 ```shell
-wget https://conflux-blockchain-data.oss-cn-beijing.aliyuncs.com/archivenode-db/T/download.sh
+wget https://conflux-blockchain-bj.oss-cn-beijing.aliyuncs.com/archivenode-db/testnet/download.sh
 bash download.sh 
 ```
 
-5. For Windows - Testnet - Archive Node:
+2. For Windows - Testnet - Archive Node:
+
 ```shell
-wget https://conflux-blockchain-data.oss-cn-beijing.aliyuncs.com/archivenode-db/T/download.bat
+wget https://conflux-blockchain-bj.oss-cn-beijing.aliyuncs.com/archivenode-db/testnet/download.bat
 download.bat 
 ```
 
