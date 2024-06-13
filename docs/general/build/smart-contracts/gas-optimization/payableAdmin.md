@@ -26,9 +26,6 @@ contract Admin {
         // Admin specific logic here
     }
 
-    function withdraw() external onlyAdmin {
-        payable(admin).transfer(address(this).balance);
-    }
 }
 
 contract AdminPayable {
@@ -48,9 +45,6 @@ contract AdminPayable {
         // Admin specific logic here
     }
 
-    function withdraw() external onlyAdmin {
-        payable(admin).transfer(address(this).balance);
-    }
 }
 
 ```
