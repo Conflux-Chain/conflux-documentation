@@ -2,7 +2,7 @@
 displayed_sidebar: generalSidebar
 ---
 
-# Multicall Implementation in Router-like Contracts
+# Implement multicall in router-like contracts
 
 In Solidity, implementing multicall functionality in router-like contracts can significantly reduce gas costs by batching multiple calls into a single transaction. This is a common feature in contracts like the Uniswap Router and the Compound Bulker. Multicall allows users to execute a sequence of calls within a single transaction, thereby optimizing gas usage and improving efficiency.
 
