@@ -65,7 +65,7 @@ contract MulticallExample {
 }
 ```
 
-### Gas Optimization Analysis
+**Gas Optimization Analysis**
 
 The primary advantage of using multicall is the reduction in gas costs by avoiding multiple transaction overheads. Here’s a comparison of gas usage between individual transactions and a single multicall:
 
