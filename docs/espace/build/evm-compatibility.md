@@ -12,11 +12,14 @@ The eSpace implements an Ethereum Virtual Machine (EVM). Below are some differen
 
 ## Transaction Type
 
-Currently eSpace only support **155 type** transaction. 1559 type transaction is not support.
+- eSpace initially only supports **155 type** transaction (legacy transactions)
+- [EIP-2930](https://eips.ethereum.org/EIPS/eip-2930) (type 1) & [EIP-1559](https://eips.ethereum.org/EIPS/eip-1559) (type 2) transactions are supported after hardfork v2.4.0.
+- [EIP-4844](https://eips.ethereum.org/EIPS/eip-4844) (type 3) transactions are not supported.
 
 ## EVM Opcodes
 
-* The `BLOCKHASH` opcode can only take `NUMBER-1` as input. (Unlike Ethereum, which takes any integer in `NUMBER-256` to `NUMBER-1` as input). This is the **only break opcode**.
+* **Before v2.4.0** the `BLOCKHASH` opcode can only take `NUMBER-1` as input. (Unlike Ethereum, which takes any integer in `NUMBER-256` to `NUMBER-1` as input). After v2.4.0 it is fully compatible with Ethereum with an advanced input range up to 65536 blocks (implemented by [CIP-133](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-133.md)).
+* The 4844 opcode `BLOBHASH` `BLOBBASEFEE` is not supprted.
 
 ## Block Time
 
@@ -47,23 +50,25 @@ All standard precompiles are supported.
 
 <div class="compat-evm-precompiles-table"></div>
 
-Address | ID          | Name                                 | Spec           | Status
-------- | ----------- | ------------------------------------ | -------------- | ------
-0x01    | `ECRecover` | ECDSA public key recovery            | [Yellow Paper] | ✅
-0x02    | `SHA256`    | SHA-2 256-bit hash function          | [Yellow Paper] | ✅
-0x03    | `RIPEMD160` | RIPEMD 160-bit hash function         | [Yellow Paper] | ✅
-0x04    | `Identity`  | Identity function                    | [Yellow Paper] | ✅
-0x05    | `ModExp`    | Big integer modular exponentiation   | [EIP-198]      | ✅
-0x06    | `BN128Add`  | Elliptic curve addition              | [EIP-196]      | ✅
-0x07    | `BN128Mul`  | Elliptic curve scalar multiplication | [EIP-196]      | ✅
-0x08    | `BN128Pair` | Elliptic curve pairing check         | [EIP-197]      | ✅
-0x09    | `Blake2F`   | BLAKE2b `F` compression function     | [EIP-152]      | ✅
+Address | ID          | Name                                 | Spec           | Status | Version
+------- | ----------- | ------------------------------------ | -------------- | ------ |------
+0x01    | `ECRecover` | ECDSA public key recovery            | [Yellow Paper] | ✅ | 
+0x02    | `SHA256`    | SHA-2 256-bit hash function          | [Yellow Paper] | ✅ | 
+0x03    | `RIPEMD160` | RIPEMD 160-bit hash function         | [Yellow Paper] | ✅ | 
+0x04    | `Identity`  | Identity function                    | [Yellow Paper] | ✅ | 
+0x05    | `ModExp`    | Big integer modular exponentiation   | [EIP-198]      | ✅ | 
+0x06    | `BN128Add`  | Elliptic curve addition              | [EIP-196]      | ✅ | 
+0x07    | `BN128Mul`  | Elliptic curve scalar multiplication | [EIP-196]      | ✅ | 
+0x08    | `BN128Pair` | Elliptic curve pairing check         | [EIP-197]      | ✅ | 
+0x09    | `Blake2F`   | BLAKE2b `F` compression function     | [EIP-152]      | ✅ | 
+0x0a    | `PointEvaluation`| Verify p(z) = y given commitment that corresponds to the polynomial p(x) and a KZG proof| [EIP-4844]      | ✅ | V2.4.0
 
 [Yellow Paper]: https://ethereum.github.io/yellowpaper/paper.pdf
 [EIP-152]:      https://eips.ethereum.org/EIPS/eip-152
 [EIP-196]:      https://eips.ethereum.org/EIPS/eip-196
 [EIP-197]:      https://eips.ethereum.org/EIPS/eip-197
 [EIP-198]:      https://eips.ethereum.org/EIPS/eip-198
+[EIP-4844]:     https://eips.ethereum.org/EIPS/eip-4844#point-evaluation-precompile
 
 ## Phantom transactions
 

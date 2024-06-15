@@ -115,26 +115,6 @@ pip install web3 # 或 pip3 install web3
 True # 应该返回 True
 ```
 
-应当注意的是，`web3.py` 的最新版本会默认为交易填充 `maxFeePerGas` 和 `maxPriorityFeePerGas` 字段，而 Conflux eSpace 只支持 EIP-1559 之前的传统交易类型。 因此，开发者需要在交易中指定 `gas_price` 字段或使用 [gas 价格 API](https://web3py.readthedocs.io/en/stable/gas_price.html)。
-
-```python
-from web3 import Web3
-from web3.middleware.signing import construct_sign_and_send_raw_middleware
-from web3.gas_strategies.rpc import rpc_gas_price_strategy
-
-w3 = Web3(Web3.HTTPProvider("https://evmtestnet.confluxrpc.com"))
-assert w3.is_connected()
-acct = w3.eth.account.from_key("xxxxxx") # your secret key
-
-w3.middleware_onion.add(construct_sign_and_send_raw_middleware(acct))
-w3.eth.default_account = acct.address
-
-# Set gas price strategy
-w3.eth.set_gas_price_strategy(rpc_gas_price_strategy)
-
-w3.eth.send_transaction({"from": acct.address, "value": 0, "to": acct.address})
-```
-
 ### Brownie
 
 [Brownie](https://eth-brownie.readthedocs.io/en/stable/) 是一个基于 Python 的开发和测试框架，用于针对以太坊虚拟机（EVM）的智能合约。 将 Conflux eSpace 网络添加到 Brownie 中需要运行以下命令：
