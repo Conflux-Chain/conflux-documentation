@@ -39,7 +39,7 @@ Chain ID for Conflux Core Space Mainnet is `1029(0x405)`. The corresponding bloc
 
 #### Testnet
 
-Chain ID for Conflux Core Space Testnet is `1(0x1)`. The corresponding blockchain explorer URL is https://test.confluxscan.io.
+Chain ID for Conflux Core Space Testnet is `1(0x1)`. The corresponding blockchain explorer URL is https://testnet.confluxscan.io.
 
 | RPC Endpoint | Type | Notes |
 | -------- | --- | --- |

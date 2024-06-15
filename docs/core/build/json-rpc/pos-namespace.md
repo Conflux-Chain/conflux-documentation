@@ -56,8 +56,8 @@ Unlike the format of the PoW address, the PoS account address is a 256-bit hash 
 
 ### AccountStatus
 
-After an account registers to participate in PoS consensus, or adds staking to votes, the votes will first go into the `inQueue` state and then become `locked` after `seven days`.
-When the user makes an unlock command, the votes to be unlocked will first go into the `outQueue` state. Then it also takes `seven days` to become `unlocked`.
+After an account registers to participate in PoS consensus, or adds staking to votes, the votes will first go into the `inQueue` state and then become `locked` after `13 days`.
+When the user makes an unlock command, the votes to be unlocked will first go into the `outQueue` state. Then it takes `1 day` to become `unlocked`.
 
 
 * `availableVotes`: `QUANTITY` - the number of votes currently available for the account. Equals to `sum inQueue` + `locked`
