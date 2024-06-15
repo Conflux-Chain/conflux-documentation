@@ -4,7 +4,7 @@ displayed_sidebar: generalSidebar
 
 # Use Monolithic Contract Architecture
 
-This tutorial explores how making the architecture of your smart contracts monolithic, rather than having several contracts that communicate with each other, can result in significant gas savings. Inter-contract calls can be expensive, and by consolidating logic into a single contract, you can avoid these costs, albeit with some trade-offs in terms of complexity and modularity.
+This tutorial explores how making the architecture of your smart contracts monolithic, rather than having several contracts that communicate with each other, can result in gas savings. Inter-contract calls can be expensive, and by consolidating logic into a single contract, you can avoid these costs, albeit with some trade-offs in terms of complexity and modularity.
 
 **Introduction**
 
