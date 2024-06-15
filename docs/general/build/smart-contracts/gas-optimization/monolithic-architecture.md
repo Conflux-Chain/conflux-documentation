@@ -6,8 +6,6 @@ displayed_sidebar: generalSidebar
 
 This tutorial explores how making the architecture of your smart contracts monolithic, rather than having several contracts that communicate with each other, can result in gas savings. Inter-contract calls can be expensive, and by consolidating logic into a single contract, you can avoid these costs, albeit with some trade-offs in terms of complexity and modularity.
 
-**Introduction**
-
 In Solidity, the default approach might be to modularize your code into multiple contracts that interact with each other. While this is great for maintainability and separation of concerns, it can lead to increased gas costs due to the overhead of contract calls. By designing a monolithic architecture, where most of the logic resides within a single contract, you can reduce these gas costs.
 
 **Demo Code**
