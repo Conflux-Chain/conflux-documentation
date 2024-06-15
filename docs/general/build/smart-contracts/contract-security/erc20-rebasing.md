@@ -2,9 +2,10 @@
 displayed_sidebar: generalSidebar
 ---
 
-# Handling Rebasing Tokens in Smart Contracts
+# Handling Rebasing Tokens
 
-Rebasing tokens, such as those popularized by Olympus DAO’s sOhm token and Ampleforth’s AMPL token, pose unique challenges to smart contract developers. These tokens automatically adjust their supply, which can lead to unexpected behaviors if not handled properly. Coingecko maintains a list of rebasing ERC20 tokens.
+Rebasing tokens, such as those popularized by [Olympus DAO’s sOhm token](https://docs.olympusdao.finance/main/user-guides/using-website/staking/) and [Ampleforth’s AMPL token](https://www.ampleforth.org/), pose unique challenges to smart contract developers. These tokens automatically adjust their supply based on demand, which can lead to unexpected behaviors if not handled properly.
+
 
 When a token rebases, the total supply changes and everyone’s balance increases or decreases depending on the rebase direction. This behavior can break smart contracts that are not designed to handle such changes.
 
@@ -43,38 +44,33 @@ To safely handle rebasing tokens, the contract should check the actual balance o
 contract SafeRebasing {
     mapping(address => uint256) public balanceHeld;
     IERC20 private rebasingToken;
+    uint256 public totalDeposited;
 
     function deposit(uint256 amount) external {
-        balanceHeld[msg.sender] = amount;
+        balanceHeld[msg.sender] = balanceHeld[msg.sender] + amount;
+        totalDeposited = totalDeposited + amount;
         rebasingToken.transferFrom(msg.sender, address(this), amount);
     }
 
-    function withdraw() external {
-        uint256 amount = balanceHeld[msg.sender];
-        delete balanceHeld[msg.sender];
+    function withdraw(uint256 amount) external {
+        uint256 userBalance = balanceHeld[msg.sender];
+        require(amount <= userBalance, "Withdraw amount exceeds balance");
 
+        // Update user and contract balance
+        balanceHeld[msg.sender] = userBalance - amount;
+        totalDeposited = totalDeposited - amount;
+
+        // Calculate the actual balance held by the contract
         uint256 contractBalance = rebasingToken.balanceOf(address(this));
-        if (amount > contractBalance) {
-            amount = contractBalance;
-        }
+        // Calculate the actual token amount user should receive
+        uint256 actualAmount = (contractBalance * amount) / totalDeposited;
 
-        rebasingToken.transfer(msg.sender, amount);
+        rebasingToken.transfer(msg.sender, actualAmount);
     }
 }
 ```
+**Key Changes and Benefits:**
 
-### Key Changes and Benefits
+1. **Tracking Total Deposits:** Added a `totalDeposited` variable to track the total deposits by all users in the contract.
+2. **Proportional Withdrawals:** Calculate the actual withdrawal amount based on the user's deposit proportion and the contract's actual token balance.
 
-1. **Checking Actual Balance:** Before transferring tokens back to the user, the contract checks the actual balance of the token held by the contract (`rebasingToken.balanceOf(address(this))`). This ensures that it does not attempt to transfer more tokens than it holds.
-
-2. **Adjusting Transfer Amount:** If the user’s requested withdrawal amount exceeds the contract’s balance, the contract adjusts the transfer amount to the actual balance. This prevents transfer failures due to insufficient balance.
-
-### Best Practices
-
-1. **Avoid Using Rebasing Tokens:** If possible, avoid using rebasing tokens in your contracts, as they introduce complexity and potential risks.
-
-2. **Regular Audits:** Regularly audit your contracts to ensure they handle all edge cases, including changes in token supply due to rebasing.
-
-3. **Thorough Testing:** Perform thorough testing, including scenarios where the token supply changes, to ensure your contract behaves as expected under all conditions.
-
-By implementing these changes and following best practices, you can create more robust and secure smart contracts that handle rebasing tokens effectively.
