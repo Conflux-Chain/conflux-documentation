@@ -13,11 +13,13 @@ contract ERC20 {
     // internally called by transfer() and transferFrom()
     // balance and approval checks happen in the caller
     function _transfer(address from, address to, uint256 amount) internal returns (bool) {
-        uint256 fee = amount * 100 / 99;
-        balanceOf[from] -= to;
-        balanceOf[to] += (amount - fee);
+        uint256 fee = amount / 100; // 1% fee
+        uint256 amountAfterFee = amount - fee;
+        balanceOf[from] -= amount;
+        balanceOf[to] += amountAfterFee;
         balanceOf[TREASURY] += fee;
-        emit Transfer(msg.sender, to, (amount - fee));
+        emit Transfer(from, to, amountAfterFee);
+        emit Transfer(from, TREASURY, fee);
         return true;
     }
 }
@@ -31,7 +33,10 @@ Here is an example of a staking contract that does not account for the fee on tr
 
 ```solidity
 contract Stake {
+    IERC20 public token;
     mapping(address => uint256) public balancesInContract;
+
+    ...
 
     function stake(uint256 amount) public {
         token.transferFrom(msg.sender, address(this), amount);
@@ -49,12 +54,10 @@ contract Stake {
 }
 ```
 
-### Prevention Techniques
+### Prevention Technique
 
-To secure smart contracts interacting with fee-on-transfer tokens, consider the following approaches:
+To secure smart contracts interacting with fee-on-transfer tokens, accurately track transferred amounts by always checking the actual amount received or sent during transfers.
 
-1. **Accurately Track Transferred Amounts**: Always check the actual amount received or sent during transfers.
-2. **Use Safe Transfer Functions**: Utilize functions that can handle fee deductions internally and adjust balances accordingly.
 
 #### Secure Contract Example
 
@@ -85,7 +88,3 @@ contract SecureStake {
 ```
 
 By tracking the actual amounts transferred and received, the contract ensures that it correctly handles tokens with transfer fees, preventing unexpected reverts and safeguarding user funds.
-
-### Conclusion
-
-Handling ERC20 tokens with transfer fees requires careful consideration to ensure accurate balance tracking and prevent unexpected errors. Always verify the actual transferred amounts and implement safeguards to handle potential fees correctly.
