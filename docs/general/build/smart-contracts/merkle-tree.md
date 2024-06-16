@@ -4,7 +4,7 @@ title: Merkle Tree
 displayed_sidebar: generalSidebar
 ---
 
-## Merkle Tree
+## Basic Concepts
 
 A Merkle Tree, also referred to as a hash tree, is an essential cryptographic structure in blockchain technology. It is widely implemented in blockchains such as Bitcoin and Ethereum. The construction of a Merkle Tree begins from the bottom, with each leaf node representing the hash of a data block. The non-leaf nodes are formed by hashing the combination of their two child nodes. This hierarchical structure ensures efficient and secure verification of large datasets, making Merkle Trees a critical component of blockchain integrity and security.
 
@@ -23,15 +23,10 @@ Here, we'll use the webpage to generate a `Merkle Tree` with 4 addresses as leaf
 ```solidity
 
 [
-
-"cfx:aanx6yaz8dpzkaxae9whk5dwnv3ht70p22kmbn53h3",
-
-"cfx:aaryn9u88jt23wehbwryrm52ntrfvscs62zu50kdj2",
-
-"cfx:aaryn9u88jt23wehbwryrm52ntrfvscs62zu50kdj2",
-
-"cfx:aathwrjf2j9565fkumk1unrdvhn3v7e36umd4x19eg"
-
+    "cfx:aanx6yaz8dpzkaxae9whk5dwnv3ht70p22kmbn53h3",
+    "cfx:aamfjckr0t4egdymymjw475pz5jdng154yw4a0hcf6",
+    "cfx:aaryn9u88jt23wehbwryrm52ntrfvscs62zu50kdj2",
+    "cfx:aathwrjf2j9565fkumk1unrdvhn3v7e36umd4x19eg"
 ]
 
 ```
@@ -41,27 +36,29 @@ Here, we'll use the webpage to generate a `Merkle Tree` with 4 addresses as leaf
 Select the options `Keccak-256`, `hashLeaves`, and `sortPairs` from the menu, and then click `Compute` to generate the `Merkle Tree`. The expanded `Merkle Tree` looks like this:
 
 ```
-└─ Root: 3feed4f7cfb49827608c4258efc809f3e27974d2a847994f47bf9c7708aa8577
-   ├─ 94305a302419b3c151d5b7c245ff84b378dad8b71c029778db3efcb592e90a1a
-   │  ├─ Leaf0: a5f45399dc49dae9f9281ed725c4ad02c0368ec94e1ec70020d46a27e96f3eb3
-   │  └─ Leaf1: 5119b53b5927b759eeb3bc8c199b3e60abd0d21b1ec98be559c41a261c9f78ed
-   └─ 64f96d6c9416af8ac853ee5c3c728793e26c78fcbe3040a7d1b1dbc02a32c14d
-      ├─ Leaf2: 5119b53b5927b759eeb3bc8c199b3e60abd0d21b1ec98be559c41a261c9f78ed
-      └─ Leaf3: 2045f6fd5cf771d18ca0701676d1431a9642c87b42f2f4b1154736295ef8d929
+└─ Root: 7c673c5ecb8433fe9c80facbb70c2d229594098cdee84e4ec0fd5bc1acd4c176
+   ├─ 8d4991806718c7ea7b0f068bb9d2edd409ef2345b5bd5ec3153051b03a5d35b7
+   │  ├─ Leaf0: 80fb605c5563c3225af42a18df921edcabe19e0e6e22066024cce4b14bbc06ec
+   │  └─ Leaf1: 3d086ece86f43ea620356709c6867a3662f54f8d51ce1f85b8e5125242c75a6d
+   └─ 11f6b7dca7ed5f46ac3fa990b370f130f3db3dcfcde770a6958e676449348d97
+      ├─ Leaf2: bed238de7f62b0198a0a969b9d4ed809a036b4882740d2125b81dc9fc0da1d25
+      └─ Leaf3: adac58c9ca5c47917367d64baa67a6ba7ce3e67145fb19fb82b83c7766298130
 ```
 
 ## Merkle Proof Verification
 
-Using the website, we can obtain the `proof` for address 0, which consists of the hash values of the blue nodes in the second diagram:
+Using the website, we can obtain the `proof` for `address 0`: `cfx:aanx6yaz8dpzkaxae9whk5dwnv3ht70p22kmbn53h3`, which consists of the hash values of the blue nodes in the second diagram:
 
 ```solidity
 [
-  "0x999bf57501565dbd2fdcea36efa2b9aef8340a8901e3459f4a4c926275d36cdb",
-  "0x4726e4102af77216b09ccd94f40daa10531c87c4d60bba7f3b3faf5ff9f19b3c"
+  "0x3d086ece86f43ea620356709c6867a3662f54f8d51ce1f85b8e5125242c75a6d",
+  "0x11f6b7dca7ed5f46ac3fa990b370f130f3db3dcfcde770a6958e676449348d97"
 ]
 ```
 
 ![Merkle Proof](../../image/merkle-tree-proof.png)
+
+In our smart contract, we can use `MerkleVerification` library below to verify the proof.
 
 ```solidity
 library MerkleVerification {
@@ -104,4 +101,8 @@ The `MerkleVerification` library contains three functions:
 
 3. `hashPair()`: Computes the hash of a pair of nodes using `keccak256()` after sorting them.
 
-By inputting the hash of address 0, the `root`, and the corresponding `proof` into the `verify()` function, it returns `true`. This confirms that the hash of address 0 is in the `Merkle Tree` with the given `root`, and the `proof` is correct. Changing any of these values will return `false`.
+By inputting the hash of `address 0`, the `root`, and the corresponding `proof` into the `verify()` function, it returns `true`. This confirms that the hash of `address 0` is in the `Merkle Tree` with the given `root`, and the `proof` is correct. Changing any of these values will return `false`.
+
+## Using Merkle Tree for NFT
+
+if you want to use merkle tree to issue whitelisted NFT on conflux coreSpcae, please refer to this article [Merkle Tree NFT Whitelist on CoreSpace using Hardhat](docs/core/tutorials/nft-tutorials/whitelists).
