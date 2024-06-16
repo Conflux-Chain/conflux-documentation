@@ -63,13 +63,16 @@ import TabItem from '@theme/TabItem';
 | trace_block                             | ✅      | Parity RPC                                                   |
 | trace_filter                            | ✅      | Parity RPC                                                   |
 | trace_transaction                       | ✅      | Parity RPC                                                   |
-| eth_feeHistory                          | ❌      |                                                              |
+| eth_feeHistory                          | ✅      | Supported at v2.4.0                                          |
 | eth_getFilterChanges                    | ✅      | Supported at v2.1.1                                          |
 | eth_getFilterLogs                       | ✅      | Supported at v2.1.1                                          |
 | eth_newBlockFilter                      | ✅      | Supported at v2.1.1                                          |
 | eth_newFilter                           | ✅      | Supported at v2.1.1                                          |
 | eth_newPendingTransactionFilter         | ✅      | Supported at v2.1.1                                          |
 | eth_uninstallFilter                     | ✅      | Supported at v2.1.1                                          |
+| debug_traceTransaction                  | ✅      | Supported at v2.4.0                                          |
+| debug_traceBlockByHash                  | ✅      | Supported at v2.4.0                                          |
+| debug_traceBlockByNumber                | ✅      | Supported at v2.4.0                                          |
 | net_listening                           | ❌      |                                                              |
 | net_peerCount                           | ❌      |                                                              |
 | eth_compileLLL                          | ❌      |                                                              |
@@ -86,11 +89,17 @@ Legend: ❌ = not supported. 🚧 = work in progress. ✅ = supported.
 
 ## Notes
 
-* `eth_sendRawTransaction` only accept 155 transaction, `1559`, `2930` is not supported
+* `eth_sendRawTransaction` supports legacy(EIP-155), type-1(EIP-2930) and type-2(EIP-1559) transactions. Type-3 transactions (EIP-4844) transactions are not supported yet.
 * Methods not listed here are also not supported.
 * There is no concept of uncle (aka ommer) blocks. The `eth_getUncleByBlockHashAndIndex` and `eth_getUncleByBlockNumberAndIndex` methods always return `null`. The `eth_getUncleCountByBlockHash` and `eth_getUncleCountByBlockNumber` methods return zero for valid block IDs and `null` for invalid block IDs. Additionally, uncle-related block metadata such as `sha3Uncles` is sha3 of empty hash array.
 * The nonstandard Geth tracing APIs are not supported at present
 * The nonstandard Parity tracing APIs are in progress
+
+### extra `burntGasFee` field of transaction receipts
+
+The implementation of 1559 in Conflux eSpace differs slightly from Ethereum. The base fee of the transaction is not entirely burned; instead, it is partially burned according to a certain ratio, with the remaining part still serving as the miner's revenue. An additional field `burntGasFee` is added to the transaction receipt (e.g. got from `eth_getTransactionReceipt` RPC) to record the amount of fees that is burned.
+
+For more information, please refer to [CIP-137](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-137.md).
 
 ### `pending` tag
 

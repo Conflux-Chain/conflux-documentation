@@ -7,7 +7,7 @@ displayed_sidebar: generalSidebar
 
 ## 简介
 
-Conflux区块链数据快照工具(也称为归档工具)旨在帮助用户从快照中快速建立一个Conflux节点。 该工具提供了下载链接，且默认情况下会下载当天的数据库快照数据。 快照工具在运行一个节点时可以节省用于下载和同步所有区块链数据所需的数周时间。 此工具是可选的，但**强烈建议使用**。 此工具支持使用curl命令的**断点续传** 。 如果在此过程中发生错误，建议用户跟随脚本提示操作。
+The Conflux Blockchain Data [Snapshot Tool (aka Archive-Tool)](https://github.com/conflux-fans/archive-tool) is designed to help users quickly set up a Conflux node from a snapshot. 该工具提供了下载链接，且默认情况下会下载当天的数据库快照数据。 快照工具在运行一个节点时可以节省用于下载和同步所有区块链数据所需的数周时间。 此工具是可选的，但**强烈建议使用**。 此工具支持使用curl命令的**断点续传** 。 如果在此过程中发生错误，建议用户跟随脚本提示操作。
 
 ## 先决条件
 
@@ -17,14 +17,16 @@ Conflux区块链数据快照工具(也称为归档工具)旨在帮助用户从�
 
 根据节点类型和您的地理位置选择快照下载链接：
 
+### Mainnet Archive Node
+
 1. Linux & Mac - 主网 - 归档节点:
 
 ```shell
-# 北京
-wget https://conflux-blockchain-data.oss-cn-beijing.aliyuncs.com/archivenode-db/M/download.sh
-# 美国西部
+# Beijing
+wget https://conflux-blockchain-bj.oss-cn-beijing.aliyuncs.com/archivenode-db/mainnet/download.sh
+# US West
 wget https://conflux-blockchain-data-us.s3.us-west-1.amazonaws.com/archivenode-db/M/download.sh
-# 欧洲中部
+# EU Central
 wget https://conflux-blockchain-data-eu.s3.eu-central-1.amazonaws.com/archivenode-db/M/download.sh
 
 bash download.sh 
@@ -33,35 +35,42 @@ bash download.sh
 2. Windows - 主网 - 归档节点 :
 
 ```shell
-# 北京
-wget https://conflux-blockchain-data.oss-cn-beijing.aliyuncs.com/archivenode-db/M/download.bat
-# 美国西部
+# Beijing
+wget https://conflux-blockchain-bj.oss-cn-beijing.aliyuncs.com/archivenode-db/mainnet/download.bat
+# US West
 wget https://conflux-blockchain-data-us.s3.us-west-1.amazonaws.com/archivenode-db/M/download.bat
-# 欧洲中部
+# EU Central
 wget https://conflux-blockchain-data-eu.s3.eu-central-1.amazonaws.com/archivenode-db/M/download.bat
 
 download.bat 
 ```
 
-3. Linux & Mac - 主网 - 全节点 :
+### Mainnet Full Node
+
+Linux & Mac - 主网 - 全节点 :
+
 ```shell
 # Beijing
-wget https://conflux-blockchain-data.oss-cn-beijing.aliyuncs.com/fullnode-db/M/download.sh
+wget https://conflux-blockchain-bj.oss-cn-beijing.aliyuncs.com/fullnode-db/mainnet/download.sh
 # US West
 wget https://conflux-blockchain-data-us.s3.us-west-1.amazonaws.com/fullnode-db/M/download.sh
 
 bash download.sh 
 ```
 
-4. Linux & Mac - 测试网 - 归档节点:
+### Testnet Archive Node
+
+1. Linux & Mac - 测试网 - 归档节点:
+
 ```shell
-wget https://conflux-blockchain-data.oss-cn-beijing.aliyuncs.com/archivenode-db/T/download.sh
+wget https://conflux-blockchain-bj.oss-cn-beijing.aliyuncs.com/archivenode-db/testnet/download.sh
 bash download.sh 
 ```
 
-5. For Windows - 测试网 - 归档节点:
+2. For Windows - 测试网 - 归档节点:
+
 ```shell
-wget https://conflux-blockchain-data.oss-cn-beijing.aliyuncs.com/archivenode-db/T/download.bat
+wget https://conflux-blockchain-bj.oss-cn-beijing.aliyuncs.com/archivenode-db/testnet/download.bat
 download.bat 
 ```
 
