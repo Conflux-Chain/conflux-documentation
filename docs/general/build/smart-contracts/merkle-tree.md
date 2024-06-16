@@ -4,7 +4,7 @@ title: Merkle Tree
 displayed_sidebar: generalSidebar
 ---
 
-## Basic Concepts
+## Basic Concept
 
 A Merkle Tree, also referred to as a hash tree, is an essential cryptographic structure in blockchain technology. It is widely implemented in blockchains such as Bitcoin and Ethereum. The construction of a Merkle Tree begins from the bottom, with each leaf node representing the hash of a data block. The non-leaf nodes are formed by hashing the combination of their two child nodes. This hierarchical structure ensures efficient and secure verification of large datasets, making Merkle Trees a critical component of blockchain integrity and security.
 
@@ -58,7 +58,7 @@ Using the website, we can obtain the `proof` for `address 0`: `cfx:aanx6yaz8dpzk
 
 ![Merkle Proof](../../image/merkle-tree-proof.png)
 
-In our smart contract, we can use `MerkleVerification` library below to verify the proof.
+In our smart contract, we can use the `MerkleVerification` library to verify proofs.
 
 ```solidity
 library MerkleVerification {
@@ -105,4 +105,4 @@ By inputting the hash of `address 0`, the `root`, and the corresponding `proof` 
 
 ## Using Merkle Tree for NFT
 
-if you want to use merkle tree to issue whitelisted NFT on conflux coreSpcae, please refer to this article [Merkle Tree NFT Whitelist on CoreSpace using Hardhat](docs/core/tutorials/nft-tutorials/whitelists).
+If you want to use a Merkle tree to issue whitelisted NFTs on Conflux Core Space, please refer to this article: [Merkle Tree NFT Whitelist on CoreSpace using Hardhat](docs/core/tutorials/nft-tutorials/whitelists).
