@@ -11,7 +11,7 @@ displayed_sidebar: eSpaceSidebar
 
 # Retrieve Random Numbers
 
-This tutorial will guide you through building a project on Conflux eSpace using Hardhat and retrieving random numbers through the Pyth oracle.
+This tutorial will guide you through building a project on Conflux eSpace using Hardhat and retrieving random numbers through the Pyth Oracle.
 
 ## Prerequisites
 
@@ -28,10 +28,11 @@ First, we need to create a new Hardhat project.
 ```bash
 mkdir conflux-pyth-random
 cd conflux-pyth-random
-npx hardhat
+npm init -y
+npx hardhat init
 ```
 
-Follow the prompts to create a basic JavaScript project and install the required dependencies.
+Follow the prompts and choose the default options to create a basic JavaScript project and install the required dependencies.
 
 ## Step 2: Install Necessary Dependencies
 
