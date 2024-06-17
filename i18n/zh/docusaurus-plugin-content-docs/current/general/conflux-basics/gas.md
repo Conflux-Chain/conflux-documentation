@@ -1,95 +1,102 @@
 ---
 sidebar_position: 10
-title: 燃气
+title: Gas and Fees
 displayed_sidebar: generalSidebar
 ---
 
-Conflux users(both Core Space and eSpace) usually see fields like `gasFee`, `gas`, and `gasPrice` when they are sending transactions using their wallets (Fluent) or SDK. This article is going to explain in detail about what these concepts mean.
+## What is Gas?
 
-![Sign Transaction](./img/gas1.png)
+In blockchain technology, the concept of "gas" is analogous to gasoline in vehicles. Just as cars consume gasoline to drive, with more gasoline needed the further they travel, in Conflux, "gas" represents a **unit of measurement for computational effort** needed to perform operations. The greater the computational requirement of a transaction, the more gas it consumes.
 
-## gasFee
+To elaborate, all transactions on Conflux are processed in its virtual machine, encompassing both regular CFX transfers and smart contract method calls. Each transaction involves a series of operations executed sequentially, represented by different opcodes, with varying computational demands for each opcode. The list of opcodes for the Ethereum Virtual Machine (EVM), which is relevant here, can be found [here](https://ethereum.org/en/developers/docs/evm/opcodes/).
 
-在现实生活中，当我们在银行向别人汇款时，我们通常要支付交易费用。 在区块链（比特币、以太坊、Conflux）中发送交易也是一样的。 `gasFee`是发送交易的费用。 通常，它需要用链的原生代币来支付。 以Conflux为例，需要用CFX来支付交易费用（gas费用）。
+:::note
 
-![tx gas charged](./img/tx-gas-charged.jpeg)
-
-## 为什么要支付费用
-
-众所周知，区块链实际上是一个去中心化的账本，由矿工维护。 矿工存储数据和生成区块（计算哈希）有一定的成本。 因此，为了激励矿工积极参与链维护和保护网络安全，区块链共识系统被设计为包含一个对矿工的奖励机制，而交易费就是矿工的奖励之一，它将支付给参与生成区块的矿工。 这个机制可以保证整个去中心化网络的可持续性。
-
-另外，gas费用机制也可以防止滥用交易，从而提高区块链利用效率。
-
-## 什么是Gas
-
-Gas的概念借鉴了现实中的“汽油”。 汽车消耗汽油来行驶。 汽车行驶得越远，消耗的汽油就越多。 在EVM区块链中，gas表示执行一笔交易所需的工作总量。 Therefore, it is a **unit that measures the amount of computation** required to perform certain operations.
-
-具体来说，所有Conflux的交易都是由EVM执行的，包括普通的CFX转账和智能合约方法调用。 当这些操作被执行时，它们被编译成单个OPCode。 执行每个OPCode所需的工作量不同。 关于OPCode gas费用的更多信息可以在[这里](https://ethereum.org/en/developers/docs/evm/opcodes/)找到。
-
-通常，一笔普通的CFX转账所消耗的gas为`21000`。 一笔智能合约交易通常需要更多，具体取决于合约执行的复杂度。
-
-## Gas Limit
-
-在构造一笔交易时，`gas`字段非常重要，因为该字段本身表示交易执行所能消耗的`gas的上限`。
-
-正确填写gas字段非常重要。 如果燃料限制设置为小于实际所需gas量的值，交易将失败。 如果gas限制设置得太高，你可能会支付比你实际需要的更多的gas。
-
-:::info
-
-It should be mentioned that transaction will typically fail if the gas limit is exactly set to gas consumption due to [EIP-150](https://eips.ethereum.org/EIPS/eip-150).
+In Conflux's cSpace, [storage collateral](../../core/core-space-basics/storage) is used as another resource other than gas for storing data required during transaction execution.
 
 :::
 
-Conflux网络中单笔交易的最大gas限制是15M。 这确保了交易不会过度消耗EVM资源。
+## Gas Limit, Gas Used, and Gas Charged
 
-## gasPrice
+Just like a vehicle has a limited fuel tank size, blockchain transactions have a limit on the amount of computational gas they can use. Each transaction includes a `gas` field also know as `gas limit` specifying the maximum gas it can consume. This limit prevents transactions from getting stuck in infinite loops: if the transaction uses up all its specified gas without completing, it fails. The gas limit is essential because we use Turing-complete languages for programming, making it theoretically impossible to predict a transaction's success before executing it due to the [Halting Problem](https://en.wikipedia.org/wiki/Halting_problem).
 
-交易的gasPrice由交易发送者指定，表示该人愿意支付的每单位gas的费用。 The unit of gasPrice is GDrip, where 1 GDrip is equal to 0.000000001 CFX (10**-9 CFX).
+Typically, a transaction will use only part of its gas limit, referred to as `gas used`. In Conflux, if the `gas limit` is set **appropriately**, unused gas will be fully refunded to the user ensuring no extra cost. However, if the `gas limit` is set too high, the user may not receive a full refund for unused gas.
 
-交易的gasPrice值影响了交易被矿工打包的速度，因为矿工会优先打包gasPrice较高的交易，以获得更多的利润。 当网络不拥堵时，将gasPrice设置为1Gdrip就足以正常打包。 然而，当网络拥堵时，更多的交易在等待打包。 这时，如果gasPrice设置得比大多数其他交易低，它将不会被打包，而是一直等待。
+The `gas charged` is the actual amount billed to the user, calculated using the formula: `gasCharged = max(gasUsed, 3/4*gasLimit)`. Therefore, it’s crucial to set this limit correctly to avoid unnecessary costs. If the limit is too low, the transaction will fail; if too high, you may overpay.
 
-因此，如果你想让交易快速打包，你可以将gasPrice设置得高一些。 通常在Conflux中将其设置为10G-1000G就足够高，以确保它快速执行。
+Here is an example illustrating the relationships among `gas limit`, `gas used`, and `gas charged`:
 
-注意：不要将gasPrice设置得太高。 它可能导致天价的交易费用。 如果gasPrice设置为1CFX，那么一笔普通转账的费用是21000 CFX，这对于一笔交易来说是相当多的。
+![Gas Charged Calculation Example](./img/gas.drawio.svg)
 
-## 如何计算gasFee
+Consider a regular CFX transfer with a gas cost of 21,000:
 
-gasFee是一笔交易支付的总gas费用。 It is calculated as `gasFee = gasCharged * gasPrice`. gasFee采用CFX的最小单位Drip。
+1. If the `gas limit` is set to 100,000, `gas charged` will be 75,000 (`max(21000, 100,000*3/4)`), leading to a refund of only 25,000 gas, at an extra cost of 54,000 gas compared to the `gas used`.
+2. If the `gas limit` is set to 28,000, `gas charged` will match the actual gas used at 21,000, resulting in no extra cost.
 
-假设有一笔1 CFX的普通转账，gas限制可以设置为21,000。 如果gasPrice设置为1GDrip，那么交易的总成本是`1 + 21000 * 0.000000001 = 1.000021 CFX`，其中1 CFX转到收款人的账户，0.000021 CFX是矿工的奖励。
+### Setting the Transaction Gas Limit
 
+Most users need not worry about these details as wallets(Fluent Wallet, Metamask, etc) typically manage gas settings effectively to minimize costs.
 
-### gasUsed
+For developers, SDKs will also choose an appropriate gas limit if not sepcified. Developers can also use the [cfx_estimateGasAndCollateral](../../core/build/json-rpc/cfx-namespace.md#cfx_estimategasandcollateral) to find the proper gas limit for their transactions.
 
-The actual gas consumed during transaction execution.
+:::info
 
-### gasCharged
+It should be mentioned that transaction might fail if the gas limit is exactly set to gas used due to [EIP-150](https://eips.ethereum.org/EIPS/eip-150).
 
-The charged amount of gas. **The `gasCharged` may be greater than `gasUsed`, because not all unused gas will be refunded.**
+:::
 
-In a Conflux transaction, if the `gas limit` is more than the actual amount of gas consumed (`gasUsed`), the exceeding part will be returned. The returning amount of gas **can only be up to** a quarter of the `gas limit`.
+## Gas Fee
 
-### 示例
+Each transaction on a blockchain requires computational resources for execution. To compensate for these resources and protect the network from spam, users must pay a gas fee. This fee is calculated as `gasCharged * feePerGas`. The way to specify the `feePerGas` will be discussed after introducing the `baseFeePerGas` concept.
 
-假设一笔普通CFX转账的gas限制设置为100k，实际执行消耗了21,000，由于交易的gas限制设置得太高，最多有25,000的gas费用会被退还（gas limit的25%）。 该交易使用的gas将是`0.000075 CFX`。
+### Base Gas Fee and Priority Fee
 
-如果交易的gas限制设置得不是那么高，以前面的例子为例，但将gas限制设置为25000，比实际使用的多4000，超出部分不超过gas限制的四分之一。 这部分将被完全退还，最终收取的费用仍然是`0.000021 CFX`。
+The transaction gas fee consists of two components: the **base fee** and the **priority fee** (tip).
 
+1. **Base Fee:** In each Conflux epoch, the pivot block includes a `baseFeePerGas` field, which sets the minimum fee required for transaction inclusion in the block. If the specified transaction fee is lower than this base fee, the transaction will not be included in the block. The `baseFeePerGas` adjusts based on on-chain congestion: following the Conflux v2.4 hardfork, the maximum block size—and consequently the sum of the transaction gas limits—doubled. This change allows the network to handle higher payloads temporarily. If transactions exceed the original block gas limit, now referred to as the `gas target`, the base fee per gas for the current block increases. This system ensures users pay a higher fee during periods of high demand.
 
-## How to pay less gasFee？
+2. **Priority Fee:** This is an additional fee users can opt to pay to incentivize miners to prioritize their transactions. A higher priority fee can lead to faster execution of transactions as miners are encouraged to include them sooner.
 
-There are strategies you can use to reduce the cost:
+Understanding these fees is crucial for effectively interacting with the blockchain and ensuring transactions are processed in a timely manner.
 
-1.Gas prices go up and down every once in a while based on how congested Conflux is. When gas prices are high, waiting just a few minutes before making a transaction could see a significant drop in what you pay.
+Here's a revised version of the section on Fixed Fee and Dynamic Fee in Conflux, aimed at enhancing clarity and simplicity:
 
-2.If you're a smart contract developer aiming to reduce gas costs, start by optimizing data storage, improving function execution, and utilizing efficient loops, among others. For a deeper dive into these techniques and more, check out our dedicated [Gas Optimization](/docs/general/build/smart-contracts/gas-optimization/) tutorial.
+### Fixed Fee and Dynamic Fee
+
+:::note
+
+To simplify this explanation, we are omitting a specific edge case related to [CIP-137 Base Fee Sharing in CIP-1559](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-137.md).
+
+:::
+
+Users have two options for specifying the fees they are willing to pay for their transactions:
+
+#### Fixed Fee
+
+Users can set the `gasPrice` directly in the transaction. The total gas fee is calculated as `gasPrice * gasCharged`. The priority fee paid to the miner is the difference between the `gasPrice` and the `baseFeePerGas`, multiplied by the `gasCharged`, which is `(gasPrice - baseFeePerGas) * gasCharged`.
+
+#### Dynamic Fee
+
+This method allows for more precise control over the gas fees:
+
+- **`maxFeePerGas`**: This is the maximum total fee per gas unit that the user is willing to pay. It includes both the `baseFeePerGas` and the `priorityFeePerGas`.
+- **`maxPriorityFeePerGas`**: This specifies the maximum priority fee per gas unit the user is willing to pay directly to the miner. The actual `priorityFeePerGas` paid is the lesser of `maxFeePerGas - baseFeePerGas` and `maxPriorityFeePerGas`. This ensures that if the base fee takes up most of the `maxFeePerGas`, the remaining amount will go towards the priority fee.
+
+To illustrate, consider the following example where `maxFeePerGas` is set to 10 GDrip and `maxPriorityFeePerGas` is 5 GDrip:
+
+![Priority Fee and Base Fee Interaction](./img/gasfee.drawio.svg)
+
+- In the first scenario, the `baseFeePerGas` is low enough that both the base fee and the maximum priority fee fit within the `maxFeePerGas`, allowing the `priorityFeePerGas` to be 5 GDrip.
+- In the second scenario, when the `baseFeePerGas` increases to 6 GDrip, the total `maxFeePerGas` is insufficient to cover both the base fee and the full `maxPriorityFeePerGas`. In this case, the transaction still processes, but the entirety of the remaining fee (after deducting the base fee from the max fee) is used as the priority fee.
+
+## How to Pay Less in Gas Fees?
+
+To minimize your gas fees, consider these strategies:
+
+1. **Opt for Lower Fee Per Gas:** The `baseFeePerGas` fluctuates based on network congestion. By setting a lower `maxFeePerGas`, your transaction will process when the `baseFeePerGas` drops below this threshold. Timing your transactions during periods of lower activity can lead to significant savings.
+
+2. **Reduce Gas Consumption:** If you are a smart contract developer, reducing gas costs is crucial. Focus on optimizing your contract's data storage, refining function executions, and using efficient looping practices. For comprehensive guidance on reducing gas usage, visit our [Gas Optimization](/docs/general/build/smart-contracts/gas-optimization/) tutorial.
 
 ## 了解更多
 
 - [Ethereum Developer Documentation: Gas and Fees](https://ethereum.org/en/developers/docs/gas/)
-
-## 常见问题解答
-
-### 1. Conflux网络中有没有符合EIP-1559标准的交易？
-
-目前，在Conflux网络中，只有符合EIP-155标准的交易。
