@@ -21,14 +21,10 @@ We can use [this webpage](https://lab.miguelmota.com/merkletreejs/example/) or t
 Here, we'll use the webpage to generate a `Merkle Tree` with 4 addresses as leaf nodes. Input the leaf nodes as follows:
 
 ```solidity
-
-[
-    "cfx:aanx6yaz8dpzkaxae9whk5dwnv3ht70p22kmbn53h3",
-    "cfx:aamfjckr0t4egdymymjw475pz5jdng154yw4a0hcf6",
-    "cfx:aaryn9u88jt23wehbwryrm52ntrfvscs62zu50kdj2",
-    "cfx:aathwrjf2j9565fkumk1unrdvhn3v7e36umd4x19eg"
-]
-
+0x173e5015f0D954826027e474EC725C7277F6ccc6
+0x1454092Db3F4430E8aa2912D776CAEd0359afBd5
+0x1b45fE1eF21F8cc8870C9b46ab785bDA58B84Ee6
+0x1e793505C23FbE6Ca98293782DA389D798F499E4
 ```
 
 ![Merkle Proof](../../image/merkle-tree-tool.png)
@@ -36,23 +32,23 @@ Here, we'll use the webpage to generate a `Merkle Tree` with 4 addresses as leaf
 Select the options `Keccak-256`, `hashLeaves`, and `sortPairs` from the menu, and then click `Compute` to generate the `Merkle Tree`. The expanded `Merkle Tree` looks like this:
 
 ```
-└─ Root: 7c673c5ecb8433fe9c80facbb70c2d229594098cdee84e4ec0fd5bc1acd4c176
-   ├─ 8d4991806718c7ea7b0f068bb9d2edd409ef2345b5bd5ec3153051b03a5d35b7
-   │  ├─ Leaf0: 80fb605c5563c3225af42a18df921edcabe19e0e6e22066024cce4b14bbc06ec
-   │  └─ Leaf1: 3d086ece86f43ea620356709c6867a3662f54f8d51ce1f85b8e5125242c75a6d
-   └─ 11f6b7dca7ed5f46ac3fa990b370f130f3db3dcfcde770a6958e676449348d97
-      ├─ Leaf2: bed238de7f62b0198a0a969b9d4ed809a036b4882740d2125b81dc9fc0da1d25
-      └─ Leaf3: adac58c9ca5c47917367d64baa67a6ba7ce3e67145fb19fb82b83c7766298130
+└─ Root:bd03a754a3ce4f3a7fde0905f483667a3b7e4fbe045fb9d64a6332ac370edc0d
+   ├─ 3fa79a5abffff5fb4a81bc7fcbb897b4f8614e904dadadea75e3aa61683411ad
+   │  ├─ Leaf0: ff3f6126c8b4b3772966d420b119bc1d53b1b4b0cf120d6a8a4a8c00d1a2678c
+   │  └─ Leaf1: 40ce145f30cfc8d1a2f78bdfde3bde5b17795dc585be594857bca48b77610e5d
+   └─ 3909e5d3da324e8cbb43aef02ba5a865e93d71166c44dfda908b761a5b3c81f3
+      ├─ Leaf2: 1007ff1353d00afa8cab69db454edb27a5d3701206f8a561f7cf61987ed53a52
+      └─ Leaf3: 675dd8032657ba91f22c38b195b236fd0392475765cb348702fd5fe2b273becd
 ```
 
 ## Merkle Proof Verification
 
-Using the website, we can obtain the `proof` for `address 0`: `cfx:aanx6yaz8dpzkaxae9whk5dwnv3ht70p22kmbn53h3`, which consists of the hash values of the blue nodes in the second diagram:
+Using the website, we can obtain the `proof` for `address 0`: `0x173e5015f0D954826027e474EC725C7277F6ccc6`, which consists of the hash values of the blue nodes in the second diagram:
 
 ```solidity
 [
-  "0x3d086ece86f43ea620356709c6867a3662f54f8d51ce1f85b8e5125242c75a6d",
-  "0x11f6b7dca7ed5f46ac3fa990b370f130f3db3dcfcde770a6958e676449348d97"
+  "0x40ce145f30cfc8d1a2f78bdfde3bde5b17795dc585be594857bca48b77610e5d",
+  "0x3909e5d3da324e8cbb43aef02ba5a865e93d71166c44dfda908b761a5b3c81f3"
 ]
 ```
 
@@ -105,4 +101,6 @@ By inputting the hash of `address 0`, the `root`, and the corresponding `proof` 
 
 ## Using Merkle Tree for NFT
 
-If you want to use a Merkle tree to issue whitelisted NFTs on Conflux Core Space, please refer to this article: [Merkle Tree NFT Whitelist on CoreSpace using Hardhat](docs/core/tutorials/nft-tutorials/whitelists).
+Merkle Trees can be effectively used to manage whitelists for NFT issuance. By leveraging Merkle Trees, you can efficiently verify if an address is part of the whitelist without needing to store the entire list on-chain. This method ensures security and reduces gas costs.
+
+If you are interested in using a Merkle Tree to issue whitelisted NFTs on Conflux Core Space, please refer to this detailed tutorial: [Merkle Tree NFT Whitelist on CoreSpace using Hardhat](docs/core/tutorials/nft-tutorials/whitelists). This guide provides step-by-step instructions on setting up a Merkle Tree, generating proofs, and integrating them into your smart contracts using the Hardhat development environment.
