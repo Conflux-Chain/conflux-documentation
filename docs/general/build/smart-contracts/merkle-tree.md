@@ -32,7 +32,7 @@ Here, we'll use the webpage to generate a `Merkle Tree` with 4 addresses as leaf
 Select the options `Keccak-256`, `hashLeaves`, and `sortPairs` from the menu, and then click `Compute` to generate the `Merkle Tree`. The expanded `Merkle Tree` looks like this:
 
 ```
-└─ Root:bd03a754a3ce4f3a7fde0905f483667a3b7e4fbe045fb9d64a6332ac370edc0d
+└─ Root: bd03a754a3ce4f3a7fde0905f483667a3b7e4fbe045fb9d64a6332ac370edc0d
    ├─ 3fa79a5abffff5fb4a81bc7fcbb897b4f8614e904dadadea75e3aa61683411ad
    │  ├─ Leaf0: ff3f6126c8b4b3772966d420b119bc1d53b1b4b0cf120d6a8a4a8c00d1a2678c
    │  └─ Leaf1: 40ce145f30cfc8d1a2f78bdfde3bde5b17795dc585be594857bca48b77610e5d
