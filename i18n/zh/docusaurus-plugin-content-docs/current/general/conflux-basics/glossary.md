@@ -166,6 +166,8 @@ Significant to note is the principle of hash invertibility. A hash function is c
 ### **默克尔树**
 在密码学和计算机科学中，默克尔树是一种树状结构，其中每个叶子节点都被赋予了一个数据块哈希值的标签，而每个非叶子节点的标签则是由其所有子节点的标签的值经过哈希计算得来的。 默克尔树在区块链中用于高效验证大型数据结构的内容。
 
+Refer to [Merkle Tree](docs/general/build/smart-contracts/merkle-tree.md) for more information.
+
 ### **Mined**
 A "mined" block in the Conflux Network refers to a block in which transactions have been validated and added to the blockchain after successfully being processed through mining. This status indicates that the block has passed the network's consensus mechanism, ensuring its transactions are secured and immutable within the blockchain ledger. The term differentiates such blocks from those still awaiting validation.
 
