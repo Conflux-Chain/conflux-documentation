@@ -107,6 +107,10 @@ git clone https://github.com/Conflux-Chain/conflux-rust
 cd conflux-rust
 git checkout <latest-released-mainnet-version> # checkout to the latest release version
 
+# Usually, you just need the latest source code without the complete history. You can speed up the cloning process with the following command.
+git clone -b <latest-released-mainnet-version> --single-branch --depth 1 https://github.com/Conflux-Chain/conflux-rust.git
+cd conflux-rust
+
 # build in release mode
 cargo build --release
 ```
