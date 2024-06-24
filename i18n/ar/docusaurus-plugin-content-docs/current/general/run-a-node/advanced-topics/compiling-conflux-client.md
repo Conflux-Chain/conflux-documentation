@@ -107,6 +107,10 @@ git clone https://github.com/Conflux-Chain/conflux-rust
 cd conflux-rust
 git checkout <latest-released-mainnet-version> # checkout to the latest release version
 
+# Usually, you just need the latest source code without the complete history. You can speed up the cloning process with the following command.
+git clone -b <latest-released-mainnet-version> --single-branch --depth 1 https://github.com/Conflux-Chain/conflux-rust.git
+cd conflux-rust
+
 # build in release mode
 cargo build --release
 ```
@@ -117,6 +121,11 @@ Note, when compiling a crate and you receive errors, it's in most cases your out
 
 ```shell
 cargo clean && cargo update
+```
+When you compiling on Linux system，By default cc is linked to gcc, you need to export the cc environment variable to point to clang
+
+```shell
+CC=clang CXX=clang++ cargo build --release
 ```
 
 To start running a Conflux full node, you can follow the instructions at [Running Conflux Full Node](./running-full-node.md).
