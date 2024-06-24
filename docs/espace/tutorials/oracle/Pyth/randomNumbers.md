@@ -1,14 +1,6 @@
 ---
-sidebar_position: 4
-title: Retrieve Random Numbers
-description: Learn how to Use Pyth Oracle on Conflux eSpace to Retrieve Random Numbers
-keywords:
-  - Hardhat
-  - Smart Contracts
-  - Oracle
 displayed_sidebar: eSpaceSidebar
 ---
-
 # Retrieve Random Numbers
 
 This tutorial will guide you through building a project on Conflux eSpace using Hardhat and retrieving random numbers through the Pyth Oracle.
@@ -34,12 +26,14 @@ npx hardhat init
 
 Follow the prompts and choose the default options to create a basic JavaScript project and install the required dependencies.
 
+![Create Project](../../img/pyth-random-create.png)
+
 ## Step 2: Install Necessary Dependencies
 
 Install the Pyth client library and Conflux-related dependencies.
 
 ```bash
-npm install @pythnetwork/client conflux-sdk ethers
+npm install @pythnetwork/pyth-sdk-solidity @pythnetwork/entropy-sdk-solidity dotenv
 ```
 
 ## Step 3: Configure Hardhat
@@ -47,13 +41,14 @@ npm install @pythnetwork/client conflux-sdk ethers
 Configure the Conflux eSpace network in `hardhat.config.js`.
 
 ```javascript
-require("@nomiclabs/hardhat-waffle");
+require("@nomicfoundation/hardhat-toolbox");
+require("dotenv").config();
 
 module.exports = {
   solidity: "0.8.4",
   networks: {
     conflux: {
-      url: "https://evm.confluxrpc.com",
+      url: "https://evmtestnet.confluxrpc.com",
       accounts: [process.env.PRIVATE_KEY],
     },
   },
@@ -68,24 +63,51 @@ Create a file named `RandomNumber.sol` in the `contracts` directory and add the 
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.4;
 
-import "@pythnetwork/client/PythClient.sol";
+import "@pythnetwork/entropy-sdk-solidity/IEntropyConsumer.sol";
+import "@pythnetwork/entropy-sdk-solidity/IEntropy.sol";
 
-contract RandomNumber {
-    PythClient private pythClient;
+contract RandomNumber is IEntropyConsumer {
+    IEntropy private entropy;
 
-    constructor(address _pythClient) {
-        pythClient = PythClient(_pythClient);
+    constructor(address _entropy) {
+        entropy = IEntropy(_entropy);
     }
 
-    function getRandomNumber(bytes32 jobId) public view returns (uint256) {
-        // Get oracle data
-        bytes memory result = pythClient.getPythData(jobId);
-        // Assume result is a bytes array containing a random number
-        uint256 randomNumber = abi.decode(result, (uint256));
-        return randomNumber;
+    // This method is required by the IEntropyConsumer interface.
+    // It returns the address of the entropy contract which will call the callback.
+    function getEntropy() internal view override returns (address) {
+        return address(entropy);
+    }
+
+    // It is called by the entropy contract when a random number is generated.
+    function entropyCallback(
+        uint64 sequenceNumber,
+        // If your app uses multiple providers, you can use this argument to
+        // distinguish which one is calling the app back.
+        address provider,
+        bytes32 randomNumber
+    ) internal override {
+        // Implement your callback logic here.
+        uint256 randomNum = uint256(randomNumber);
+
+        // Use the random number
+    }
+
+    function getRandomNumber() public payable {
+        address provider = entropy.getDefaultProvider();
+        uint fee = entropy.getFee(provider);
+        // This method returns a sequence number and emits a RequestedWithCallback event.
+        uint64 sequenceNumber = entropy.requestWithCallback{value: fee}(
+            provider,
+            keccak256(abi.encodePacked(block.timestamp))
+        );
+        // You can store this sequence number to identify the request in next step.
     }
 }
+
 ```
+
+When the final random number is ready to use, the entropyCallback function will be called by the Entropy contract. This will happen in a separate transaction submitted by the requested provider. The entropyCallback function should be implemented in the same contract that is requesting the random number.
 
 ## Step 5: Deploy the Smart Contract
 
@@ -97,12 +119,15 @@ async function main() {
 
   console.log("Deploying contracts with the account:", deployer.address);
 
-  const PythClientAddress = "PythClient contract address"; // Replace with the actual PythClient contract address
+  // eSpace Testnet
+  const entropyAddress = "0xdF21D137Aadc95588205586636710ca2890538d5"; // Replace with the actual Entropy contract address
 
   const RandomNumber = await ethers.getContractFactory("RandomNumber");
-  const randomNumber = await RandomNumber.deploy(PythClientAddress);
+  const randomNumber = await RandomNumber.deploy(entropyAddress);
 
-  console.log("RandomNumber contract deployed to:", randomNumber.address);
+  await randomNumber.waitForDeployment(); // Ensure the contract is deployed
+
+  console.log("RandomNumber contract deployed to:", randomNumber.target);
 }
 
 main()
@@ -111,7 +136,10 @@ main()
     console.error(error);
     process.exit(1);
   });
+
 ```
+
+You can consult the current [Entropy contract addresses](https://docs.pyth.network/entropy/contract-addresses) to find the address on Conflux eSpace, which is `0xdF21D137Aadc95588205586636710ca2890538d5`.
 
 ## Step 6: Run the Deployment Script
 
@@ -130,11 +158,15 @@ async function main() {
   const [deployer] = await ethers.getSigners();
 
   const RandomNumber = await ethers.getContractFactory("RandomNumber");
-  const randomNumber = RandomNumber.attach("RandomNumber contract address"); // Replace with the actual contract address
+  const randomNumber = RandomNumber.attach(
+    "0x9807945B3f004B7b9812FDd4E131693176749e12"
+  ); // Replace with the actual contract address
 
-  const jobId = "Pyth oracle job ID"; // Replace with the actual job ID
-  const randomNumberResult = await randomNumber.getRandomNumber(jobId);
-  console.log("Random Number:", randomNumberResult.toString());
+  // Request a random number
+  const tx = await randomNumber.getRandomNumber({
+    value: ethers.parseEther("0.01"),
+  }); // Adjust the value based on the required fee
+  await tx.wait();
 }
 
 main()
@@ -143,6 +175,7 @@ main()
     console.error(error);
     process.exit(1);
   });
+
 ```
 
 Run the script using the following command:
@@ -153,4 +186,4 @@ npx hardhat run scripts/interact.js --network conflux
 
 ## Summary
 
-Through this tutorial, you have learned how to build a project on Conflux eSpace using Hardhat and retrieve random numbers through the Pyth oracle. For more information, refer to the [Pyth Oracle official documentation](https://docs.pyth.network/).
+Through this tutorial, you have learned how to build a project on Conflux eSpace using Hardhat and retrieve random numbers through the Pyth Oracle. For more information, refer to the [Pyth Oracle official documentation](https://docs.pyth.network/).
