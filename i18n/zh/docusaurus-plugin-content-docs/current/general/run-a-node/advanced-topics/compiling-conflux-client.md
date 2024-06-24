@@ -107,6 +107,10 @@ git clone https://github.com/Conflux-Chain/conflux-rust
 cd conflux-rust
 git checkout <latest-released-mainnet-version> # checkout to the latest release version
 
+# Usually, you just need the latest source code without the complete history. You can speed up the cloning process with the following command.
+git clone -b <latest-released-mainnet-version> --single-branch --depth 1 https://github.com/Conflux-Chain/conflux-rust.git
+cd conflux-rust
+
 # build in release mode
 cargo build --release
 ```
@@ -117,6 +121,11 @@ cargo build --release
 
 ```shell
 cargo clean && cargo update
+```
+When you compiling on Linux system，By default cc is linked to gcc, you need to export the cc environment variable to point to clang
+
+```shell
+CC=clang CXX=clang++ cargo build --release
 ```
 
 要开始运行Conflux完整节点，您可以按照[运行Conflux完整节点](./running-full-node.md)的说明进行操作。
