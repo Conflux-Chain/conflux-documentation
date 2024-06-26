@@ -2114,8 +2114,8 @@ params: [
 
 * `powBaseReward`: `QUANTITY` - The PoW base reward amount
 * `interestRate`: `QUANTITY` - The PoS interest rate
-* `storagePointProp`: `QUANTITY` - The proportion of sponsored storage will transfer to storage point
-* `baseFeeShareProp`: `QUANTITY` - The proportion of transaction base fee will reward to miner. Added in Conflux-Rust v2.4.0
+* `storagePointProp`: `QUANTITY` - The integer parameter determining the proportion of sponsored storage which will transfer to storage point. The proportion is calculated as `storagePointProp / (storagePointProp + 10**18)`.
+* `baseFeeShareProp`: `QUANTITY` - The integer parameter determining the proportion of transaction base fee which will reward to miner. Added in Conflux-Rust v2.4.0. The proportion is calculated as `baseFeeShareProp / (baseFeeShareProp + 10**18)`.
 
 ##### Example
 
