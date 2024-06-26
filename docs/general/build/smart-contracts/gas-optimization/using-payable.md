@@ -89,4 +89,4 @@ In this example, the `adminFunction` is payable, which can help save gas costs.
 
 🌟 Using a `payable` modifier in a constructor will slightly reduce gas costs during contract deployment.
 
-🌟 Consider making admin functions payable to reduce gas costs associated with value checks by the compiler, ensuring proper access controls are in place to restrict payable functions to authorized addresses only.
+🌟 Consider making admin functions payable to reduce gas costs associated with value checks by the compiler.
