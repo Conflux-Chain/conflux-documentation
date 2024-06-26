@@ -126,6 +126,9 @@ Finalization refers to the process by which transactions and blocks on the Confl
 ### **Faucet**
 A service that provides free tokens or cryptocurrency to users. Faucets are often used to distribute small amounts of cryptocurrency to new users, allowing them to test transactions and interact with decentralized applications (dApps) without needing to purchase tokens. They are commonly used on testnets and for promotional purposes to increase the adoption and usage of a particular blockchain, dispensing funds in the form of free test tokens that can be used on a testnet of its corresponding blockchain.
 
+- [Conflux Core Space Testnet Faucet](https://faucet.confluxnetwork.org/)
+- [Conflux eSpace Testnet Faucet](https://efaucet.confluxnetwork.org/)
+
 ### **Fork**
 A fork in a blockchain system denotes a split or divergence in the chain, originating from a common point with a shared history and creating two distinct paths. They can be implemented intentionally via software updates to either bring about significant changes (hard fork) or introduce backward-compatible alterations (soft fork). However, forks can also occur organically due to simultaneous block creation or as a result of network latencies and block propagation delays.
 
