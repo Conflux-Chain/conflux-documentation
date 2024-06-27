@@ -60,3 +60,29 @@ interface ParamsControl {
     event RevokeVote(uint64 indexed vote_round, address indexed addr, uint16 indexed topic_index, uint256[3] votes);
 }
 ```
+
+### topic_index
+
+The `topic_index` in the `Vote` struct is used to specify which chain parameter is being voted on. Here is the structure of the `Vote`:
+
+```solidity
+struct Vote {
+    uint16 topic_index;
+    uint256[3] votes;
+}
+```
+
+Currently, there are four chain parameters available for voting:
+
+- **powBaseReward**:
+  - Determines the base reward of a Proof of Work (PoW) block.
+- **interestRate**:
+  - Determines the base interest rate for Proof of Stake (PoS).
+- **storagePointProp**:
+  - This integer parameter defines the proportion of sponsored storage that will be converted to storage points.
+  - The proportion is calculated using the formula: `storagePointProp / (storagePointProp + 10**18)`.
+- **baseFeeShareProp**:
+  - This integer parameter determines the proportion of the transaction [**base fee**](../../../general/conflux-basics/basefee.md) that will be rewarded to the miner.
+  - The proportion is calculated using the formula: `baseFeeShareProp / (baseFeeShareProp + 10**18)`.
+
+These parameters allow the community to participate in the governance of the Conflux network by voting on key operational metrics.
