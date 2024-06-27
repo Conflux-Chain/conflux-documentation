@@ -121,6 +121,13 @@ The Ethereum Virtual Machine (EVM) is a powerful, sandboxed virtual stack embedd
 ### **Finalization**
 Finalization refers to the process by which transactions and blocks on the Conflux blockchain are considered definitive and irreversible. This process is critical for the network's security, as it prevents the possibility of double-spending attacks and ensures the blockchain's integrity. In the context of Conflux, PoS chain will periodically choose and refer to a PoW block which is created several minutes ago, thus providing finalization to all blocks (transactions) before the epoch of the specified block, ensuring they cannot be altered or removed subsequently.
 
+
+### **水龙头**
+A service that provides free tokens or cryptocurrency to users. Faucets are often used to distribute small amounts of cryptocurrency to new users, allowing them to test transactions and interact with decentralized applications (dApps) without needing to purchase tokens. They are commonly used on testnets and for promotional purposes to increase the adoption and usage of a particular blockchain, dispensing funds in the form of free test tokens that can be used on a testnet of its corresponding blockchain.
+
+- [Conflux Core Space Testnet Faucet](https://faucet.confluxnetwork.org/)
+- [Conflux eSpace Testnet Faucet](https://efaucet.confluxnetwork.org/)
+
 ### **分叉**
 在区块链系统中，分叉表示一条链的分裂或偏离，起源于一个具有共享历史的共同点，并创建两条不同的路径。 分叉可以通过软件更新有意实施，旨在引入重大变更（硬分叉）或引入向后兼容的更改（软分叉）。 然而，分叉也可以因为同时创建区块或由于网络延迟和区块传播延迟而自然发生。
 
