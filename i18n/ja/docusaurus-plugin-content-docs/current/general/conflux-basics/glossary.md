@@ -166,6 +166,8 @@ Related links:
 ### **Merkle Tree**
 A Merkle tree, in cryptography and computer science, is a tree in which every leaf node is labelled with the hash of a data block, and every non-leaf node is labelled with the cryptographic hash of the labels of its child nodes. Merkle trees are used in blockchains to efficiently verify the contents of large data structures.
 
+Refer to [Merkle Tree](docs/general/build/smart-contracts/merkle-tree.md) for more information.
+
 ### **Mined**
 A "mined" block in the Conflux Network refers to a block in which transactions have been validated and added to the blockchain after successfully being processed through mining. This status indicates that the block has passed the network's consensus mechanism, ensuring its transactions are secured and immutable within the blockchain ledger. The term differentiates such blocks from those still awaiting validation.
 
