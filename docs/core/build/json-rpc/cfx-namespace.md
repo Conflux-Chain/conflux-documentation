@@ -2128,7 +2128,7 @@ curl --location --request POST 'http://localhost:12537' \
     "id": 1,
     "jsonrpc": "2.0",
     "method": "cfx_getParamsFromVote",
-    "params": ["0x4a"]
+    "params": []
 }'
 ```
 
@@ -2138,10 +2138,10 @@ Response
 {
     "jsonrpc": "2.0",
     "result": {
-        "powBaseReward": "0x1",
-        "interestRate": "0x2",
-        "baseFeeShareProp": "0xde0b6b3a7640000",
+        "powBaseReward": "0xdeeb372cab9eb32",
+        "interestRate": "0x9f69",
         "storagePointProp": "0xde0b6b3a7640000",
+        "baseFeeShareProp": "0xde0b6b3a7640000"
     },
     "id": 1
 }
