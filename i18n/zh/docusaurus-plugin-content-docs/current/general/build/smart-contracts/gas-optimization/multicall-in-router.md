@@ -1,6 +1,6 @@
 ---
-
-## displayed_sidebar: generalSidebar
+displayed_sidebar: generalSidebar
+---
 
 # Implement multicall in router-like contracts
 
