@@ -22,9 +22,47 @@ eSpace对于以太坊的开发者和用户来说非常容易使用，就像BSC�
 
 ## **两个空间之间的关系**
 
-Core Space和eSpace是两个逻辑上独立的空间，它们有自己的交易、账户状态和合约。 它们共享同一个账本（链）作为底层数据存储。 一个区块可能包含来自两个空间的交易，当交易被执行时，它们只根据交易类型进行区分。 每个space只会影响自己space内的账户状态。
+Core Space and eSpace share the same ledger for underlying data storage. A single block can contain transactions from both spaces, which are distinguished by their transaction encoding. However, they function as two logically independent spaces, each with its own transactions, account statuses, and contracts.
 
-要与Conflux Core Space互动，请使用兼容Conflux的钱包（如Fluent）、SDK（*-conflux-SDK）和开发工具（如chainIDE、hardhat）。 要直接与eSpace互动，使用以太坊生态系统中现有的工具和产品，如Metamask、Hardhat、Ethers.js等，只需将工具的RPC网络设置为**[Conflux eSpace RPC](../../espace/network-endpoints.md)**即可。
+From a dApp developer's perspective, Core Space and eSpace can be seen as two separate chains with an internal bridge that allows for specific atomic calls. Transactions in each space only affect the account status within that particular space unless cross-space calls are made.
+
+### eSpace Transaction Packing
+
+In Conflux, eSpace transactions are only included in blocks if the block height is a multiple of 5. Since the [v2.4 hardfork](../hardforks/v2.4.md), including eSpace transactions does not affect the packing of Core Space transactions. As a result, the maximum block size can be larger at block heights that are multiples of 5 compared to those that are not.
+
+### Graph Illustration
+
+![spaces view from hardfork v2.4](./img/space.drawio.svg)
+
+The graph above illustrates the relationship between the actual blocks in the ledger and the views from cSpace and eSpace. The text `H=..` indicates the block height.
+
+#### Actual Blocks
+
+In the Conflux ledger, blocks are organized as a Directed Acyclic Graph (DAG) and divided into epochs. For blocks whose height is a multiple of 5, eSpace transactions can be included, utilizing the isolated block space.
+
+The parameter `block.gasLimit` represents the **expected** block size for overall Conflux blocks and is set to 60,000,000. This value can be retrieved using the [cfx_getBlockByHash](../../core/build/json-rpc/cfx-namespace.md) or similar RPC methods. The `cSpace.gasLimit` is set to 90% of `block.gasLimit` (54,000,000), while the `eSpace.gasLimit` is 50% of `block.gasLimit` (30,000,000).
+
+Consequently, for blocks whose height is a multiple of 5, their size can reach up to `1.4 * block.gasLimit`, while for those that are not, their maximum size is `0.9 * block.gasLimit`.
+
+:::note
+
+Miners can adjust the block gas limit by 1% higher or lower for each block, but it is typically set to a constant value.
+
+:::
+
+#### cSpace View
+
+From the Core perspective, the view is nearly the same as the actual block structure, except for the eSpace transactions. Blocks are organized as a DAG and divided into epochs, with each block having the same gas limit.
+
+#### eSpace View
+
+The eSpace view differs significantly from the actual block structure as it simulates the Ethereum ledger structure. Each Conflux epoch is mapped into an eSpace block. From the eSpace perspective, transactions in the epoch are included in the corresponding block. This means the maximum size of the block from the eSpace view is not fixed; it can be zero or more than twice the `eSpace.gasLimit`, depending on the blocks included in the original epoch.
+
+In the **eSpace view** shown in the graph, empty blocks are present at heights 99, 101, 103, and 104. At heights 100 and 105, the blocks are of size equal to the `eSpace.gasLimit`. At height 102, the block size is `2 * eSpace.gasLimit`.
+
+## Development
+
+要与Conflux Core Space互动，请使用兼容Conflux的钱包（如Fluent）、SDK（*-conflux-SDK）和开发工具（如chainIDE、hardhat）。 To interact with eSpace directly, use the existing tools and products from the Ethereum ecosystem, such as Metamask, Hardhat, Ethers.js, etc. (by simply setting the RPC network of the tool to **[Conflux eSpace RPC](../../espace/network-endpoints.md)**).
 
 ## **如何在Space之间通信**
 
