@@ -2,13 +2,13 @@
 displayed_sidebar: generalSidebar
 ---
 
-# Implement multicall in router-like contracts
+# 在路由器类合约中实现多调用
 
-In Solidity, implementing multicall functionality in router-like contracts can significantly reduce gas costs by batching multiple state-modifying calls into a single transaction. This technique is invaluable in contracts similar to those used by platforms like Uniswap and Compound.
+在 Solidity 中，可以通过将多个状态修改调用批量处理为单个交易，以在路由器类合约中实现多调用功能，显著降低燃气成本。 这种技术在像 Uniswap 和 Compound 平台的合约中非常有价值。
 
 **代码演示**
 
-Below, we have a sample contract `MulticallRouter` that demonstrates how to implement multicall functionality with state-modifying operations. This contract includes a `multicall` function that executes an array of encoded function calls, modifying contract state in an efficient manner.
+下面的示例合约 `MulticallRouter` 展示了如何通过状态修改操作实现多调用功能。 该合约包含一个 `multicall` 函数，该函数用于执行一组已编码的函数调用，以高效地修改合约状态。
 
 ```solidity
 // SPDX-License-Identifier: MIT
@@ -37,7 +37,7 @@ contract MulticallRouter {
 }
 ```
 
-To verify the functionality and efficiency of the `MulticallRouter`, here is the corresponding testing script:
+下面的测试脚本验证了 `MulticallRouter` 的功能和效率：
 
 ```solidity
 // SPDX-License-Identifier: MIT
@@ -94,17 +94,17 @@ contract MulticallTest is Test {
 }
 ```
 
-By running the tests in the Foundry project, we found that `testIndividualCalls()` consumes `166259` gas, while `testMulticall()` consumes `139753` gas, indicating that using Multicall can save gas to some extent.
+通过在 Foundry 项目中运行测试，我们发现 `testIndividualCalls()` 消耗了 `166259` 燃气，而 `testMulticall()` 消耗了 `139753` 燃气，表明使用多调用功能可以在一定程度上节省燃气。
 
-**Gas Optimization Analysis**
+**燃气优化分析**
 
-The primary advantage of using multicall is the reduction in gas costs by avoiding multiple transaction overheads. Here’s a comparison of gas usage between individual transactions and a single multicall:
+使用多调用的主要优势是通过避免多次交易开销来减少燃气成本。 以下是执行单个交易和一次多调用之间的燃气使用对比：
 
-- **Individual Transactions**: Each call incurs base transaction costs plus the gas for executing the function.
-- **Single Multicall**: Incurs only one base transaction cost plus the gas for executing each function within a loop.
+- **单个交易**：每次调用都会产生基础交易成本加上执行函数所需的燃气花费。
+- **一次多调用**：仅产生一个基础交易成本，加上在循环中执行每个函数所需的燃气花费。
 
-By batching calls, multicall can significantly reduce the cumulative gas cost, especially when performing multiple operations.
+通过批量处理调用，多调用功能可以显著减少累计的燃气成本，在执行多个操作时尤其显著。
 
-**Recommendations for Gas Optimization**
+**燃气优化建议**
 
-Implementing multicall in router-like contracts can save gas by reducing the number of transactions and leveraging the lower cumulative gas cost of executing multiple operations in a single transaction.
+在路由器类合约中实现多调用功能可以通过减少交易数量，并利用在单个交易中执行多次操作的方法，产生较低的累计燃气花费以节省燃气。
