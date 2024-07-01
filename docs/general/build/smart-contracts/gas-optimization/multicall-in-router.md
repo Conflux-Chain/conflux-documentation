@@ -1,4 +1,3 @@
-
 ---
 displayed_sidebar: generalSidebar
 ---
