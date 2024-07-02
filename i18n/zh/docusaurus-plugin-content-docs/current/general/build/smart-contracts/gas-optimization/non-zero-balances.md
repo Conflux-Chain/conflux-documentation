@@ -10,7 +10,7 @@ This is why the OpenZeppelin reentrancy guard marks functions as active or inact
 
 In practical applications of ERC20, you should avoid having ERC20 token balances drop to zero. Always keep a small amount in the balance. This approach can help achieve a similar effect. If an address frequently empties and reloads its account balance, it will lead to many zero-to-one writes, which are costly in terms of gas.
 
-**Difference Between Conflux Core Space and eSpace**
+**Conflux Core Space 和 eSpace 的区别**
 
 Conflux provides two different environments for smart contracts: Core Space and eSpace. Core Space is optimized for high throughput and low latency, while eSpace is compatible with Ethereum, allowing for easy porting of Ethereum-based contracts.
 

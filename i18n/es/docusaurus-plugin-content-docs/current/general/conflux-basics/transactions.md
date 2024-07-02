@@ -66,6 +66,10 @@ Para las transacciones de Core Space, puede determinar el estado de ejecución a
 
 Además, el recibo también incluye más información sobre la ejecución de la transacción, como información del bloque y los detalles de los eventos.
 
+### Edge Case: Failure without Bumping Nonce
+
+Typically, a failed transaction will still increase the sender's nonce, and the user will need to pay gas fees. However, the v2.4 hardfork introduces an edge case: in a non-pivot block, if the transaction fee setting is insufficient to cover the burnt fee, the transaction will fail, but the sender's nonce will not increase. For a detailed illustration, check the [base fee](./basefee.md#minimum-fee-per-gas-during-transaction-execution).
+
 ## Detalles
 
 Si quieres aprender más sobre las transacciones, puedes referirte a la explicación de la transacción en la [Core Space](/docs/core/core-space-basics/transactions/overview.md).

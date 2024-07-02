@@ -66,6 +66,10 @@ For Core transactions, you can check the execution status through the **outcomeS
 
 In addition to this, the Receipt also includes other information about the transaction execution, such as block information and event details.
 
+### Edge Case: Failure without Bumping Nonce
+
+Typically, a failed transaction will still increase the sender's nonce, and the user will need to pay gas fees. However, the v2.4 hardfork introduces an edge case: in a non-pivot block, if the transaction fee setting is insufficient to cover the burnt fee, the transaction will fail, but the sender's nonce will not increase. For a detailed illustration, check the [base fee](./basefee.md#minimum-fee-per-gas-during-transaction-execution).
+
 ## 详细信息
 
 如果你想了解交易详情，你可以参考 [Core 空间](/docs/core/core-space-basics/transactions/overview.md) 中的交易解释。
