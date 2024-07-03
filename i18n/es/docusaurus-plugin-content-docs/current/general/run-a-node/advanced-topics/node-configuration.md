@@ -51,6 +51,7 @@ Core Space RPC related options.
 jsonrpc_http_port=12537 # JSON-RPC HTTP port
 jsonrpc_ws_port=12535 # JSON-RPC WebSocket port
 public_rpc_apis='safe' # JSON-RPC API namespace list，Multiple namespaces are separated by commas, and using "all" represents enabling all APIs.
+poll_lifetime_in_seconds=60 # To open filter related methods
 ```
 
 ### eSpace RPC
