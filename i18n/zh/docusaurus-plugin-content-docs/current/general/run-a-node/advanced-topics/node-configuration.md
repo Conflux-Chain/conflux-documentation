@@ -48,9 +48,10 @@ evm_chain_id=1030
 Core Space RPC相关选项。
 
 ```toml
-jsonrpc_http_port=12537 # JSON-RPC HTTP端口
-jsonrpc_ws_port=12535 # JSON-RPC WebSocket端口
-public_rpc_apis='safe' # JSON-RPC API命名空间列表，多个命名空间用逗号分隔，使用"all"表示启用所有API。
+jsonrpc_http_port=12537 # JSON-RPC HTTP port
+jsonrpc_ws_port=12535 # JSON-RPC WebSocket port
+public_rpc_apis='safe' # JSON-RPC API namespace list，Multiple namespaces are separated by commas, and using "all" represents enabling all APIs.
+poll_lifetime_in_seconds=60 # To open filter related methods
 ```
 
 ### eSpace RPC
