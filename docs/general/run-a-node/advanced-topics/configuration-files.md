@@ -575,3 +575,25 @@ hydra_transition_height = 36935000
 cip43_init_end_number = 92751800
 pos_reference_enable_height = 37400000
 ```
+
+
+# v2.1
+dao_vote_transition_number = 8
+dao_vote_transition_height = 8
+cip43_init_end_number = 8
+cip78_patch_transition_number = 8
+cip90_transition_height = 8
+cip90_transition_number = 8
+cip105_transition_number = 8
+
+# v2.3
+cip107_transition_number=6
+cip112_transition_height=6
+cip118_transition_number=6
+cip119_transition_number=6
+
+# v2.4 cips: 1559, 137 and others
+next_hardfork_transition_number=10  # cip131, cip132, cip133b, cip137, cip144, cip145
+next_hardfork_transition_height=10  # cip130, cip133
+cip1559_transition_height=10
+cancun_opcodes_transition_number=10
