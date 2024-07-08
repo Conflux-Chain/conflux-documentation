@@ -96,7 +96,7 @@ const { Conflux, Drip } = require('js-conflux-sdk');
 
 const conflux = new Conflux({
   url: 'https://main.confluxrpc.com',
-  chainId: 1029,
+  networkId: 1029,
 });
 
 const account = conflux.wallet.addPrivateKey(process.env.PRIVATE_KEY);
@@ -109,13 +109,13 @@ async function main() {
     const receipt = await crossSpaceCall.transferEVM(eSpaceAddress)
         .sendTransaction({
             from: account,
-            value: Drip.fromCFX(1),  // 转移 1 CFX，金额由 value 指定
+            value: Drip.fromCFX(1),  // transfer 1 CFX, the amount is specify by value
         }).executed();
 
-    console.log(`转移到 ${eSpaceAddress} ${receipt.outcomeStatus === 0 ?  'succeed' : 'failed'}`);
+    console.log(`Transfer to ${eSpaceAddress} ${receipt.outcomeStatus === 0 ? 'succeed' : 'failed'}`);
 }
 
-main();
+main()
 ```
 
 ### 从 eSpace 到 Core Space
