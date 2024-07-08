@@ -113,24 +113,6 @@ For more information, please refer to [CIP-137](https://github.com/Conflux-Chain
 
 注意：过滤相关的方法也不支持 `pending` 标签
 
-### `eth_sendRawTransaction` 错误
-
-`eth_sendRawTransaction` 返回的错误信息与以太坊不同。 以下是 Conflux 客户端返回的错误信息：
-
-```js
-{
-    "jsonrpc": "2.0",
-    "id": "15922956697249514502",
-    "error": {
-        "code": -32602,
-        "message": "Invalid parameters: tx",
-        "data": "\"tx already exist\""
-    }
-  }
-```
-
-可能的错误与 [cfx_sendTransaction 错误](../../core/build/json-rpc/rpc-behaviour/cfx_sendTransaction-errors.md) 相同。
-
 ## 数据可验证性
 
 以下字段无法保证可验证性
