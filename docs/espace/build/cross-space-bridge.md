@@ -97,7 +97,7 @@ const { Conflux, Drip } = require('js-conflux-sdk');
 
 const conflux = new Conflux({
   url: 'https://main.confluxrpc.com',
-  chainId: 1029,
+  networkId: 1029,
 });
 
 const account = conflux.wallet.addPrivateKey(process.env.PRIVATE_KEY);
