@@ -113,24 +113,6 @@ Only `eth_getTransactionCount` method has supported `pending` tag. Other method 
 
 Note: filter related methods also not support `pending` tag
 
-### `eth_sendRawTransaction` errors
-
-The returned error message of `eth_sendRawTransaction` is different from Ethereum. The following is the error message returned by Conflux client:
-
-```js
-{
-    "jsonrpc": "2.0",
-    "id": "15922956697249514502",
-    "error": {
-        "code": -32602,
-        "message": "Invalid parameters: tx",
-        "data": "\"tx already exist\""
-    }
-  }
-```
-
-The possible errors are same with [cfx_sendTransaction errors](../../core/build/json-rpc/rpc-behaviour/cfx_sendTransaction-errors.md).
-
 ## Data verifiability
 
 Below fields can not guarantee the verifiability
