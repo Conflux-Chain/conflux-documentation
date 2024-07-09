@@ -79,7 +79,7 @@ $ ./conflux account import --help
 选项:
    --url <url>    URL of RPC server [默认: http://localhost:12539]
 ```
-要访问远程Conflux 节点的JSON-RPC的API, 请指定正确的`--url`选项 (例如 http://10.1.5.6:12537)。 出于安全考虑，默认情况下JSON-RPC仅可本地访问。 你可以在***default.toml***文件中配置`jsonrpc_http_port` 来手动启用远程访问。
+要访问远程Conflux 节点的JSON-RPC的API, 请指定正确的`--url`选项 (例如 http://10.1.5.6:12537 )。 出于安全考虑，默认情况下JSON-RPC仅可本地访问。 你可以在***default.toml***文件中配置`jsonrpc_http_port` 来手动启用远程访问。
 
 ```toml
 # jsonrpc_tcp_port=12536
