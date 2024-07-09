@@ -25,7 +25,7 @@ The second scenario may occur if the `pos_config/pos_key` file of an existing no
 
 为了防止在重新启动PoS节点时发生强制退休，建议按照以下步骤进行操作：
 
-1. 在PoS节点上运行`./conflux RPC local pos stop_election`命令。 节点将返回`NULL`或未来的PoS区块号。 After running this command, the node will not apply to join the PoS committee in the next term.
+1. Run `./conflux rpc local pos stop_election` on the PoS node. 节点将返回`NULL`或未来的PoS区块号。 After running this command, the node will not apply to join the PoS committee in the next term.
 2. If the command returns a block number, keep the node running. Run the same command again after the PoS block of the returned block number has been generated (est. several hours later). At this point, the command should return `NULL`. The node will no longer receive PoS rewards after this block.
 3. Once the command returns `NULL`, the node can be safely stopped. The PoS voting process will resume to normal automatically after the node has been restarted (est. 2-3 hours to generate new PoS rewards).
 
