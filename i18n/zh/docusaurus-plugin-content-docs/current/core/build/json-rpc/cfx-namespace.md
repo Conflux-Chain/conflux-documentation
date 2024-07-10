@@ -12,7 +12,7 @@ displayed_sidebar: coreSidebar
 
 ## JSON-RPC规范说明
 
-在[GitHub](https://github.com/Conflux-Chain/jsonrpc-spec)上有一个cfx命名空间的[**JSON-RPC API**](https://open-rpc.org/)规范。 You can view it in [open-rpc playground](https://playground.open-rpc.org/?schemaUrl=https://raw.githubusercontent.com/Conflux-Chain/jsonrpc-spec/main/src/cfx/cfx.json&uiSchema%5BappBar%5D%5Bui:splitView%5D=false&uiSchema%5BappBar%5D%5Bui:input%5D=false&uiSchema%5BappBar%5D). Check [Conflux-Rust RPC changelog](https://github.com/Conflux-Chain/conflux-rust/blob/master/changelogs/JSONRPC.md) for changes history.
+在[GitHub](https://github.com/Conflux-Chain/jsonrpc-spec)上有一个cfx命名空间的[**JSON-RPC API**](https://open-rpc.org/)规范。 你可以在 [open-rpc 测试平台](https://playground.open-rpc.org/?schemaUrl=https://raw.githubusercontent.com/Conflux-Chain/jsonrpc-spec/main/src/cfx/cfx.json&uiSchema%5BappBar%5D%5Bui:splitView%5D=false&uiSchema%5BappBar%5D%5Bui:input%5D=false&uiSchema%5BappBar%5D)中查看它。 查看 [Conflux-Rust RPC 的更新日志](https://github.com/Conflux-Chain/conflux-rust/blob/master/changelogs/JSONRPC.md) 以了解更多。
 
 ## 惯例
 
@@ -245,7 +245,7 @@ params: [
 
 `Object` - 交易对象，如果没有找到交易，则为 `null`：
 
-* `type`: `QUANTITY` - the type of the transaction. `0x0` for legacy transactions, `0x1` for CIP-2930 transactions, `0x2` for CIP-1559 transactions.
+* `type`: `QUANTITY`，交易的类型。 `0x0` 表示传统交易，`0x1` 表示 CIP-2930 交易，`0x2` 表示 CIP-1559 交易。
 * `blockHash`: `DATA`，32 字节，包含并执行了这个交易的区块的哈希。 `null` 当交易是 pending 时为 null
 * `chainId`: `QUANTITY` - 发送者指定的链 ID
 * `contractCreated`: `BASE32`，创建的合约的地址。 `null` 当它不是一个合约部署交易时为 null
@@ -258,20 +258,20 @@ params: [
 * `nonce`: `QUANTITY` - 发送者在这之前发送的交易数量。
 * `r`: `DATA`, 32 字节 - ECDSA 签名 r
 * `s`: `DATA`, 32 字节 - ECDSA 签名 s
-* `status`: `QUANTITY` - 0 for success, 1 if an error occurred, 2 for skipped, `null` when the transaction is skipped or not packed.
+* `status`: `QUANTITY` - 0表示成功，1表示发生错误，2表示跳过， `null`表示交易被跳过或未被打包。
 * `storageLimit`: `QUANTITY` - 发送者指定的存储限制。
 * `to`: `BASE32` - 接收者的地址。 `null` 当它是一个合约部署交易时为 null
 * `transactionIndex`：`QUANTITY` - 表示区块中的交易索引位置。 `null` 当交易是 pending 时为 null
 * `v`：`QUANTITY` - ECDSA 恢复 ID
 * `value`：`QUANTITY` - 转移的价值，以 Drip 为单位。
-* `maxGasFeePerGas`: `QUANTITY` - The maximum total fee per gas the sender is willing to pay (includes the network / base fee and miner / priority fee) in Drip.
-* `maxPriorityFeePerGas`: `QUANTITY` - Maximum fee per gas the sender is willing to pay to miners in Drip.
-* `accessList`: `ARRAY` - EIP-2930 access list
-* `yParity`: `QUANTITY` - The parity (0 for even, 1 for odd) of the y-value of the secp256k1 signature.
+* `maxGasFeePerGas`: `QUANTITY` ，发送者愿意支付的每单位燃气的最大总费用（包括网络/基础费用和矿工/优先费用），以Drip为单位。
+* `maxPriorityFeePerGas`: `QUANTITY` ，发送者愿意支付给矿工的每单位燃气的最大费用，以Drip为单位。
+* `accessList`: `ARRAY` ，EIP-2930访问列表。
+* `yParity`: `QUANTITY` ，secp256k1签名中y值的奇偶性（0表示偶数，1表示奇数）。
 
 注意，字段 `blockHash`, `contractCreated`, `status` 和 `transactionIndex` 是由节点提供的，因为它们依赖于交易在账本中的位置。 其余的字段是包含在原始交易中或从原始交易中派生出来的。
 
-Note that the fields `type`, `maxGasFeePerGas`, `maxPriorityFeePerGas`, `yParity`, and `accessList` are included in the response from `Conflux-rust v2.4.0`.
+请注意，字段 `type`，`maxGasFeePerGas`，`maxPriorityFeePerGas`，`yParity`和 `accessList` 包含在 `Conflux-rust v2.4.0` 的响应中。
 
 ##### 示例
 
@@ -319,7 +319,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"cfx_getTransactionByHash","param
 
 #### 参数
 
-1. `DATA` - 32 Bytes - hash of a block.
+1. `DATA`：32 字节，区块的哈希值。
 2. `Boolean` - 如果 `true`，返回完整的交易对象。 如果 `false`, 只返回交易的哈希值
 
 ```json

@@ -97,7 +97,7 @@ label:
 
 ## 与gas相关的问题
 
-### Gas too small (`<21000`) or too large (`>15m`)
+### Gas设置过小 (`<21000`) 或者过大 (`>15m`)
 
 ```js
 {
