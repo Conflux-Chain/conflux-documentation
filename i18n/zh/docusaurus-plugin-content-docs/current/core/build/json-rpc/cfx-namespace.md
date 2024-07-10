@@ -1177,9 +1177,9 @@ curl -X POST --data '{"method":"cfx_estimateGasAndCollateral","id":1,"jsonrpc":"
     * `toEpoch`: `QUANTITY|TAG` - (可选，默认为: `"latest_state"`) 纪元号，或字符串 `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, 详见 [纪元号参数](#the-default-epochnumber-parameter)。 搜索将持续到(包括)这个纪元数。
     * `fromBlock`: `QUANTITY` - (可选，默认为: `null`)。 搜索将从这个的区块号开始应用。
     * `toBlock`: `QUANTITY` - (可选， 默认为: `null`)。 搜索将被应用持续到(包括) 此指定区块。
-    * `blockHashes`: `Array` `DATA` - (可选，默认为: `null`)搜索会被应用到最多128个区块哈希的数组。 This will override from/to epoch fields if it's not `null`.
-    * `address`: `Array` of `BASE32` - (optional, default: `null`) Search contract addresses. If `null`, match all. If specified, the log must be produced by one of these contracts.
-    * `topics`: `Array` - (optional, default: `null`) 32-byte earch topics. Logs can have `4` topics: the event signature and up to `3` indexed event arguments. The elements of `topics` match the corresponding log topics. Example: `["0xA", null, ["0xB", "0xC"], null]` matches logs with `"0xA"` as the 1st topic AND (`"0xB"` OR `"0xC"`) as the 3rd topic. If `null`, match all.
+    * `blockHashes`: `Array` `DATA` - (可选，默认为: `null`)搜索会被应用到最多128个区块哈希的数组。 如果不是`null`，则会覆盖 from/to 纪元 字段。
+    * `address`: `Array` of `BASE32` - (可选, 默认为: `null`) 搜索合约地址。 如果为 `null`, 匹配所有。 如果指定了，日志必须由这些合约中的一个生成。
+    * `topics`: `Array` - (可选, 默认值: `null`) 每个主题32个字节。 日志可以有 `4` 个主题：事件签名和最多 `3` 个索引事件参数。 `topics` 的元素与相应的日志主题匹配。 示例： `["0xA", null, ["0xB", "0xC", 空]` 将日志与 `"0xA"` 匹配为第一个主题和 (`"0xB"` 或 `"0xC"`)为第三个主题。 如果 `null`, 匹配所有。
 
 ```json
 params: [
@@ -1194,17 +1194,17 @@ params: [
 
 #### 返回值
 
-`Array` - array of log objects corresponding to the matching logs:
+`Array` - 匹配日志对象的数组：
 
-   * `address`: `BASE32` - address of the contract that emitted the log.
-   * `topics`: `Array` of `DATA` - array of 32-byte event topics.
-   * `data`: `DATA` - data of log.
-   * `blockHash`: `DATA` - 32 Bytes - hash of the block containing the log.
-   * `epochNumber`: `QUANTITY` - epoch number of the block containing the log.
-   * `transactionHash`: `DATA`, 32 Bytes - hash of the transaction that created the log.
-   * `transactionIndex`: `QUANTITY` - transaction index in the block.
-   * `logIndex`: `QUANTITY` - log index in block.
-   * `transactionLogIndex`: `QUANTITY` - log index in transaction.
+   * `address`: `BASE32` - 发送日志的合约地址。
+   * `topics` `Array` of `DATA` - 32字节事件主题数组。
+   * `data`: `DATA` - 日志数据。
+   * `blockHash`: `DATA` - 32 Bytes - 包含日志的区块哈希。
+   * `epochNumber`: `QUANTITY` - 包含日志的区块的纪元号
+   * `transactionHash`: `DATA`，32 字节 - 创建此日志的交易的哈希。
+   * `transactionIndex`：`QUANTITY` - 区块中的交易索引位置。
+   * `logIndex`: `QUANTITY` - 区块内的日志索引。
+   * `transactionLogIndex`: `QUANTITY` - 交易中的日志索引。
 
 ##### 示例
 
@@ -1255,7 +1255,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"cfx_getLogs","params":[{ "fromEp
 
 #### 参数
 
-1. DATA, 32 Bytes - hash of a transaction
+1. DATA，32 字节 - 交易的哈希。
 
 ```json
 params: [
@@ -1265,29 +1265,29 @@ params: [
 
 #### 返回值
 
-`Object` - a transaction receipt object, or `null` when no transaction was found or the transaction was not executed yet:
+`Object` - 交易收据对象，当没有发现交易或交易尚未执行时为 `null` ：
 
-* `type`: `QUANTITY` - the type of the transaction, `0x0` for legacy, `0x1` for EIP-2930, `0x2` for EIP-1559. 添加自 `Conflux-rust v2.4.0` 。
-* `transactionHash`: `DATA`, 32 Bytes - hash of the given transaction.
-* `index`: `QUANTITY` - transaction index within the block.
+* `type`：`QUANTITY` ， 交易的类型，`0x0` 表示传统交易，`0x1` 表示 EIP-2930，`0x2`表示 EIP-1559。 添加自 `Conflux-rust v2.4.0` 。
+* `transactionHash`: `DATA`，32 字节 - 给定交易的哈希值。
+* `index`：`QUANTITY` - 交易在块中的索引。
 * `blockHash`: `DATA`，32 字节，包含并执行了这个交易的区块的哈希。
-* `epochNumber`: `QUANTITY` - epoch number of the block where this transaction was in and got executed.
+* `epochNumber`：`QUANTITY` - 包含该交易的块所在的epoch编号，该交易在该epoch中被执行。
 * `from`: `BASE32` - 发送者的地址。
 * `to`: `BASE32` - 接收者的地址。 `null` 当它是一个合约部署交易时为 null
-* `gasUsed`: `QUANTITY` - gas used for executing the transaction.
-* `gasFee`: `QUANTITY` - gas charged to the sender's account. If the provided gas (gas limit) is larger than the gas used, at most 1/4 of it is refunded.
-* `gasCoveredBySponsor`: `Boolean`, true if this transaction's gas fee was covered by the sponsor.
-* `storageCollateralized`: `QUANTITY`, the amount of storage collateral this transaction required.
-* `storageCoveredBySponsor`: `Boolean`, true if this transaction's storage collateral was covered by the sponsor.
-* `storageReleased`: `Array`, array of storage change objects, each specifying an address and the corresponding amount of storage collateral released, e.g., `[{ 'address': 'CFX:TYPE.USER:AARC9ABYCUE0HHZGYRR53M6CXEDGCCRMMYYBJGH4XG', 'collaterals': '0x280' }]`
+* `gasUsed`: `QUANTITY` - 用于执行交易的 gas 用量。
+* `gasFee`: `QUANTITY` - 消息发送者账户被收取的 gas 费用。 如果提供的 gas（gas limit）大于使用的 gas，则最多可以退还其中的 1/4。
+* `gasCoveredBySponsor`: `Boolean`，如果该交易的gas费被代付，则为true。
+* `storageCollateralized`: `QUANTITY`，该交易所需的存储抵押金额。
+* `storageCoveredBySponsor`: `Boolean`，如果此交易的存储抵押已被代付，则为真。
+* `storageReleased`: `Array`，包含多个存储释放的对象，每个对象包含一个地址和相应的存储抵押品数量，例如：`[{ 'address': 'CFX:TYPE.USER:AARC9ABYCUE0HHZGYRR53M6CXEDGCCRMMYYBJGH4XG', 'collaterals': '0x280' }]`。
 * `contractCreated`: `BASE32`，创建的合约的地址。 `null` 当它不是一个合约部署交易时为 null
-* `stateRoot`: `DATA`, 32 Bytes - hash of the state root after the execution of the corresponding block. `0` if the state root is not available.
-* `outcomeStatus`: `QUANTITY` - the outcome status code. `0x0` means success. `0x1` means failed. `0x2` means skipped
-* `logsBloom`: `DATA`, 256 Bytes - bloom filter for light clients to quickly retrieve related logs.
-* `logs`: `Array` - array of log objects that this transaction generated, see [cfx_getLogs](#cfx_getlogs).
-* `txExecErrorMsg`: `String`, tx exec fail message, if transaction exec success this will be null.
-* `effectiveGasPrice`: `QUANTITY` - the effective gas price of the transaction. 添加自 `Conflux-rust v2.4.0` 。
-* `burntGasFee`: `QUANTITY` - the burnt gas fee of the transaction. 添加自 `Conflux-rust v2.4.0` 。
+* `stateRoot`: `DATA`，32字节 - 在对应区块执行之后的状态根的哈希值。 如果状态根不可用，即为`0` 。
+* `outcomeStatus`: `QUANTITY` - 结果状态代码 `0x0` 表示成功。 `0x1` 表示失败。 `0x2` 表示已被跳过
+* `logsBloom`：`DATA`，256 字符 - 轻节点用于快速检索相关日志的布隆过滤器。
+* `logs`: `Array` - 交易生成的日志对象数组，见 [cfx_getLogs](#cfx_getlogs)。
+* `txExecErrorMsg`: `String`, 交易执行故障消息，如果交易执行成功将为空。
+* `effectiveGasPrice`：`QUANTITY`，交易的有效燃气价格。 添加自 `Conflux-rust v2.4.0` 。
+* `burntGasFee`：`QUANTITY`，交易的烧毁燃气费用。 添加自 `Conflux-rust v2.4.0` 。
 
 
 ##### 示例
@@ -1334,7 +1334,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"cfx_getTransactionReceipt","para
 
 ### cfx_getAccount
 
-Returns an account, identified by its address.
+返回一个账户，由它的地址标识。
 
 #### 参数
 
@@ -1350,16 +1350,16 @@ params: [
 
 #### 返回值
 
-`Object` - the state of the given account:
+`Object` - 给定账户的状态：
 
-* `address`: `BASE32` - address of the account.
-* `balance`: `QUANTITY` - the balance of the account.
-* `nonce`: `QUANTITY` - the nonce of the account's next transaction.
-* `codeHash`: `DATA` - the code hash of the account.
-* `stakingBalance`: `QUANTITY` - the staking balance of the account.
-* `collateralForStorage`: `QUANTITY` - the collateral storage of the account.
-* `accumulatedInterestReturn`: `QUANTITY` - accumulated interest return of the account.
-* `admin`: `BASE32` - admin of the account.
+* `from`: `BASE32` - 账户地址。
+* `balance`: `QUANTITY` - 账户余额。
+* `nonce`: `QUANTITY` - 帐户下一次交易的随机数。
+* `codeHash`: `DATA` - 账户的字节码哈希。
+* `stakingBalance`: `QUANTITY` - 账户质押余额。
+* `collateralForStorage`: `QUANTITY` - 账户的抵押存储。
+* `accumulatedInterestReturn`: `QUANTITY` - 账户累计的利息回报。
+* `admin`: `BASE32` - 账户的管理员。
 
 ##### 示例
 
@@ -1402,7 +1402,7 @@ params: [
 
 #### 返回值
 
-`QUANTITY` - the interest rate at the given epoch.
+`QUANTITY` - 在给定纪元的利率。
 
 ##### 示例
 
@@ -1436,7 +1436,7 @@ params: [
 
 #### 返回值
 
-`QUANTITY` - the accumulate interest rate at the given epoch.
+`QUANTITY` - 在给定纪元的累计利率。
 
 ##### 示例
 
@@ -1459,12 +1459,12 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"cfx_getAccumulateInterestRate","
 
 #### 参数
 
-1. `BASE32`, account address
-2. `BASE32`, contract address
-3. `QUANTITY`, gas limit
-4. `QUANTITY`, gas price
-5. `QUANTITY`, storage limit
-6. `QUANTITY|TAG`, (optional, default: `"latest_state"`) integer epoch number, or the string `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-default-epochnumber-parameter).
+1. `BASE32`, 帐户地址
+2. `BASE32`, 合约地址
+3. `QUANTITY`, 交易的燃气上限
+4. `QUANTITY`, 燃气价格
+5. `QUANTITY`, 存储限制
+6. `QUANTITY|TAG` - (可选，默认为`"latest_state"`) 为整数纪元号，或字符串如 `"latest_state"`、`"latest_confirmed"`、`"latest_checkpoint"` 或 `"earliest"`，详见 [纪元号参数](#the-default-epochnumber-parameter)。
 
 ```json
 params: [
@@ -1479,9 +1479,9 @@ params: [
 
 #### 返回值
 
-* `isBalanceEnough`: `Boolean` - indicate balance is enough for gas fee and collateral storage
-* `willPayCollateral`: `Boolean` - false if the transaction is eligible for storage collateral sponsorship, true otherwise.
-* `willPayTxFee`: `Boolean` - false if the transaction is eligible for gas sponsorship, true otherwise.
+* `isBalanceEnough`: `Boolean` - 表示余额足以支付燃气费和抵押存储。
+* `willPayCollateral`: `Boolean` - 如果交易符合存储抵押代付的条件，则为false；否则为true。
+* `willPayTxFee`: `Boolean` - 如果交易符合燃气代付的条件，则为false；否则为true。
 
 ##### 示例
 
@@ -1504,11 +1504,11 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"cfx_checkBalanceAgainstTransacti
 
 ### cfx_getSkippedBlocksByEpoch
 
-Returns the list of non-executed blocks in an epoch. By default, Conflux only executes the last 200 blocks in each epoch (note that under normal circumstances, epochs should be much smaller).
+返回一个纪元中未执行的区块列表。 默认情况下，Conflux每个纪元只执行最后200个区块（请注意，在正常情况下，纪元应该要小得多）。
 
 #### 参数
 
-1. `QUANTITY|TAG` - integer epoch number, or the string `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-default-epochnumber-parameter)
+1. `QUANTITY|TAG` - 整数纪元号，或字符串如`"latest_mined"`、`"latest_state"`、`"latest_confirmed"`、"`latest_checkpoint"`或<0>"earliest"</0>，请参见[纪元号参数](#the-default-epochnumber-parameter)。
 
 ```json
 params: [
@@ -1518,7 +1518,7 @@ params: [
 
 #### 返回值
 
-* `Array` of block hashes
+* `Array` - 区块哈希
 
 ##### 示例
 
@@ -1538,11 +1538,11 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"cfx_getSkippedBlocksByEpoch","pa
 
 ### cfx_getConfirmationRiskByHash
 
-Returns the confirmation risk of a given block, identified by its hash.
+返回给定区块的确认风险，该区块通过其哈希值标识。
 
 #### 参数
 
-1. `DATA`, 32 Bytes - the block hash.
+1. `DATA`, 32 字节 - 区块哈希。
 
 ```json
 params: [
@@ -1552,7 +1552,7 @@ params: [
 
 #### 返回值
 
-* `QUANTITY`, the integer confirmation risk, or `null` if the block does not exist.
+* `QUANTITY`, 以整形返回的给定区块确认风险, 若区块不存在即返回 `null` 。
 
 ##### 示例
 
@@ -1572,7 +1572,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"cfx_getConfirmationRiskByHash","
 
 ### cfx_getStatus
 
-Returns the node status.
+返回节点状态。
 
 #### 参数
 
@@ -1580,17 +1580,17 @@ Returns the node status.
 
 #### 返回值
 
-* `bestHash`: `DATA` - hash of the latest epoch's pivot block
-* `blockNumber`: `QUANTITY` - total block number
-* `chainId`: `QUANTITY` - chainId
-* `networkId`: `QUANTITY` - networkId
-* `ethereumSpaceChainId`: `QUANTITY` - eSpace's chainId (Added from v2.0)
-* `epochNumber`: `QUANTITY` - latest epoch number
-* `latestCheckpoint`: `QUANTITY` - latest checkpoint epoch number
-* `latestConfirmed`: `QUANTITY` - latest confirmed epoch number
+* `bestHash`: `DATA` - 最新纪元主区块的哈希
+* `blockNumber`: `QUANTITY` - 区块总数
+* `chainId`: `QUANTITY` - 链ID
+* `networkId`: `QUANTITY` - 网络ID
+* `ethereumSpaceChainId`: `QUANTITY` - eSpace的链ID（从v2.0添加）
+* `epochNumber`: `QUANTITY` - 最新纪元编号
+* `latestCheckpoint`: `QUANTITY` - 最新检查点纪元编号
+* `latestConfirmed`: `QUANTITY` - 最新确认纪元编号
 * `latestFinalized`: `QUANTITY` - latest finallized epoch number (Added from v2.0)
-* `latestState`: `QUANTITY` - latest state epoch number
-* `pendingTxNumber`: `QUANTITY` - current pending transaction count
+* `latestState`: `QUANTITY` - 最新状态纪元编号
+* `pendingTxNumber`: `QUANTITY` - 当前待处理纪元数
 
 ##### 示例
 
@@ -1622,7 +1622,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"cfx_getStatus","id":1}' -H "Cont
 
 ### cfx_clientVersion
 
-Returns the conflux-rust version.
+返回conflux-rust版本。
 
 #### 参数
 
@@ -1630,7 +1630,7 @@ Returns the conflux-rust version.
 
 #### 返回值
 
-* `STRING` - the client version
+* `STRING` - 客户端版本
 
 ##### 示例
 
@@ -1649,11 +1649,11 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"cfx_clientVersion","id":1}' -H "
 
 ### cfx_getBlockRewardInfo
 
-Returns the reward info for all executed blocks in the specified epoch.
+返回指定纪元中所有已执行区块的奖励信息。
 
 #### 参数
 
-1. `QUANTITY|TAG` - integer epoch number, or the string `"latest_checkpoint"`, see the [epoch number parameter](#the-default-epochnumber-parameter)
+1. `QUANTITY|TAG` - 整数纪元编号，或字符串 `"latest_checkpoint"`, 参见 [纪元编号参数](#the-default-epochnumber-parameter)
 
 ```json
 params: [
@@ -2161,9 +2161,9 @@ It is important to note that the filter object will expire after a certain perio
     * `toEpoch`: `QUANTITY|TAG` - (可选，默认为: `"latest_state"`) 纪元号，或字符串 `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, 详见 [纪元号参数](#the-default-epochnumber-parameter)。 搜索将持续到(包括)这个纪元数。
     * `fromBlock`: `QUANTITY` - (可选，默认为: `null`)。 The start block to search. Noting that [cfx_getFilterChanges] will ignore this parameter.
     * `toBlock`: `QUANTITY` - (可选， 默认为: `null`)。 搜索将被应用持续到(包括) 此指定区块。
-    * `blockHashes`: `Array` `DATA` - (可选，默认为: `null`)搜索会被应用到最多128个区块哈希的数组。 This will override from/to epoch fields if it's not `null`.
-    * `address`: `Array` of `BASE32` - (optional, default: `null`) Search contract addresses. If `null`, match all. If specified, the log must be produced by one of these contracts.
-    * `topics`: `Array` - (optional, default: `null`) 32-byte earch topics. Logs can have `4` topics: the event signature and up to `3` indexed event arguments. The elements of `topics` match the corresponding log topics. Example: `["0xA", null, ["0xB", "0xC"], null]` matches logs with `"0xA"` as the 1st topic AND (`"0xB"` OR `"0xC"`) as the 3rd topic. If `null`, match all.
+    * `blockHashes`: `Array` `DATA` - (可选，默认为: `null`)搜索会被应用到最多128个区块哈希的数组。 如果不是`null`，则会覆盖 from/to 纪元 字段。
+    * `address`: `Array` of `BASE32` - (可选, 默认为: `null`) 搜索合约地址。 如果为 `null`, 匹配所有。 如果指定了，日志必须由这些合约中的一个生成。
+    * `topics`: `Array` - (可选, 默认值: `null`) 每个主题32个字节。 日志可以有 `4` 个主题：事件签名和最多 `3` 个索引事件参数。 `topics` 的元素与相应的日志主题匹配。 示例： `["0xA", null, ["0xB", "0xC", 空]` 将日志与 `"0xA"` 匹配为第一个主题和 (`"0xB"` 或 `"0xC"`)为第三个主题。 如果为 `null`, 匹配所有。
 
 ```json
 params: [
