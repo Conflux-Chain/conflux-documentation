@@ -340,7 +340,7 @@ params: [
 * `deferredStateRoot`: `DATA`, 32 Bytes - 在该区块所在 epoch 的延迟执行后的状态 trie 根三元组的哈希（假设它是枢轴区块）。
 * `difficulty`: `QUANTITY` - 该区块的 PoW 难度。
 * `epochNumber`: `QUANTITY` - 包含该区块的 epoch 的编号，在节点对账本的视图中。 `null` 当 epoch 编号未确定时为 null（例如，该区块不在最佳区块的过去集合中）。
-* `gasLimit`: `QUANTITY` - determines the gas limit of the block. from `Conflux-rust v2.4.0`, [a factor `0.9`](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-1559.md#independent-gas-limit-calculation) is multiplied to get the core space block gas limit. For example, if the `gasLimit` field value is `60,000,000`, the actual maximum of the sum of the transaction gas limit is `54,000,000`.
+* `gasLimit`：`QUANTITY`， 决定区块的燃气限制。 从 `Conflux-rust v2.4.0`开始，乘以[系数`0.9`](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-1559.md#independent-gas-limit-calculation)以计算出Core Space区块的燃气限制。 例如，如果 `gasLimit` 字段值为 `60,000,000`，则交易Gas限制总和的实际最大值为 `54,000,000`。
 * `gasUsed`: `QUANTITY` - 该区块使用的总 gas。 `null` 当区块是 pending 时为 null。
 * `hash`：`DATA`，32 字节 - 区块的哈希。
 * `height`: `QUANTITY` - 区块的高度。
@@ -356,7 +356,7 @@ params: [
 * `custom`: `Array`- 自定义信息。 注意从 v2.0 开始，`custom` 的类型已经从`数字数组`的数组变成了`十六进制字符串`的数组。
 * `blockNumber`: `QUANTITY` - 该区块在树图中的总顺序编号。 `null` 当顺序未确定时为 null。 添加自` Conflux-rust v1.1.5 `
 * `posReference`: `DATA`, 32 字节 - PoS 最新提交区块的哈希。 添加自` Conflux-rust v2.0.0 `
-* `baseFeePerGas`: `QUANTITY` - the base fee per gas in the block. Added from `Conflux-rust v2.4.0`
+* `baseFeePerGas`：`QUANTITY`，区块中的每单位燃气的基础费用。 添加自 `Conflux-rust v2.4.0` 。
 
 注意，字段 `epochNumber `和 `gasUsed `是由节点提供的，因为它们依赖于账本。 其余的字段是直接包含在区块头中或从区块头中派生出来的。
 
@@ -523,7 +523,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"cfx_gasPrice","id":1}' -H "Conte
 
 ### cfx_maxPriorityFeePerGas
 
-Returns the current priority fee per gas in Drip.
+返回当前每单位燃气的优先费用，以Drip为单位。
 
 #### 参数
 
@@ -531,7 +531,7 @@ Returns the current priority fee per gas in Drip.
 
 #### 返回值
 
-`QUANTITY` - integer of the current priority fee per gas in Drip.
+`QUANTITY` ，当前每单位燃气的优先费用的整数值，以Drip为单位。
 
 ##### 示例
 
@@ -551,22 +551,22 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"cfx_maxPriorityFeePerGas","id":1
 
 ### cfx_feeHistory
 
-Returns transaction base fee per gas and effective priority fee per gas for the requested/supported epoch range.
+返回交易的每单位燃气基础费用和有效优先费用，用于请求/支持的纪元范围。
 
-Added from `Conflux-rust v2.4.0`.
+添加自 `Conflux-rust v2.4.0` 。
 
 #### 参数
 
-1. `QUANTITY` - the number of epochs to query.
-2. `QUANTITY|TAG` - the epoch number or the string `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-default-epochnumber-parameter).
-3. `Array` - A monotonically increasing float list of percentile values. For each block in the requested range, the transactions will be sorted in ascending order by effective tip per gas and the coresponding effective tip for the percentile will be determined, accounting for gas consumed.
+1. `QUANTITY`：要查询的纪元数量。
+2. `QUANTITY|TAG`：纪元编号或字符如`"latest_state"`，`"latest_confirmed"`，`"latest_checkpoint"` 或者`"earliest"`，见 [纪元编号参数](#the-default-epochnumber-parameter)。
+3. `Array`：单调递增的浮点百分位值列表。 对于请求范围内的每个区块，按每单位燃气的有效小费升序排序交易，并确定相应百分位的有效小费，同时考虑消耗的燃气。
 
 #### 返回值
 
-- `baseFeePerGas`: `Array` - An array of block base fees per gas. This array will include an extra element.
-- `gasUsedRatio`: `Array` - An array of block gas used ratios. These are calculated as the ratio of tx gasLimit sum and block gasLimit.
-- `oldestEpoch`: `QUANTITY` -  Lowest epoch number of returned range.
-- `reward`: `Array` - A two-dimensional array of effective priority fees per gas at the requested block percentiles.
+- `baseFeePerGas`：`Array`-每单位燃气的区块基础费用数组。 此数组将包含一个额外的元素。
+- `gasUsedRatio`：`Array`- 一个包含区块燃气使用比率的数组。 内容为交易GasLimit总和与区块GasLimit的比率。
+- `oldestEpoch`：`QUANTITY`-返回范围内最小的纪元编号。
+- `reward`：`Array` -请求区块百分位的每单位燃气有效优先费用的二维数组。
 
 ##### 示例
 
@@ -815,7 +815,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"cfx_getAdmin","params":["cfx:typ
 
 ### cfx_getCode
 
-返回指定合约的代码。 If contract not exist will return `0x`
+返回指定合约的代码。 如果合约不存在，将返回`0x0`。
 
 #### 参数
 
@@ -958,13 +958,13 @@ params: [
 
 ` Object ` - 代付方信息对象。 如果合同没有代付方，则返回对象中的所有字段将是 `0`：
 
-* `sponsorBalanceForCollateral`: `QUANTITY` - the sponsored balance for storage.
-* `sponsorBalanceForGas`: `QUANTITY` - the sponsored balance for gas.
-* `sponsorGasBound`: `QUANTITY` - the max gas that could be sponsored for one transaction.
-* `sponsorForCollateral`: `BASE32` - the address of the storage sponsor.
-* `sponsorForGas`: `BASE32` - the address of the gas sponsor.
-* `usedStoragePoints`: `QUANTITY` - storage points already used.
-* `availableStoragePoints`: `QUANTITY` - the storage points available for sponsorship.
+* `sponsorBalanceForCollateral`: `QUANTITY` - 用于存储的代付余额。
+* `sponsorBalanceForGas`: `QUANTITY` - 燃气的代付余额。
+* `sponsorGasBound`: `QUANTITY` - 可以为一次交易代付的最大燃气。
+* `sponsorForCollateral`: `BASE32` - 存储代付方的地址。
+* `sponsorForGas`: `BASE32` - 燃气代付方的地址。
+* `usedStoragePoints`: `QUANTITY` - 已被使用的存储点。
+* `availableStoragePoints`: `QUANTITY` - 可供代付的存储点
 
 [Hard fork v2.3](../../../general/hardforks/v2.3.md#cip-107) 提供了存储点的介绍。 详见 [CIP-107](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-107.md)
 
@@ -1076,10 +1076,10 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"cfx_sendRawTransaction","params"
     * `value`: `QUANTITY` - 发送者以 Drip 为单位提供的 gas 价格(可选，默认: `0`)。
     * `data`: `DATA` - (可选, 默认: `0x`) 与交易一起发送的数据。
     * `nonce`: `QUANTITY` - (可选, 默认: `0`)发送者在此次交易之前所进行的交易数量。
-    * `type`: `QUANTITY` - (optional, default: `0x0`) the type of the transaction, `0x0` for legacy, `0x1` for EIP-2930, `0x2` for EIP-1559. Added from `Conflux-rust v2.4.0`
-    * `accessList`: `ARRAY` - (optional, default: `[]`) the eip-2930 access list. Added from `Conflux-rust v2.4.0`
-    * `maxFeePerGas`: `QUANTITY` - (optional, default: `0`) the max fee per gas in Drip. Added from `Conflux-rust v2.4.0`
-    * `maxPriorityFeePerGas`: `QUANTITY` - (optional, default: `0`) the max priority fee per gas in Drip. Added from `Conflux-rust v2.4.0`
+    * `type`：`QUANTITY` -（可选，默认值：0x0）交易的类型，`0x0` 表示传统交易，`0x1` 表示 EIP-2930，`0x2` 表示 EIP-1559。 添加自 `Conflux-rust v2.4.0` 。
+    * `accessList`：`ARRAY` -（可选，默认值：`[]`）EIP-2930 访问列表。 添加自 `Conflux-rust v2.4.0` 。
+    * `maxFeePerGas`：`QUANTITY` -（可选，默认值：`0`)）每单位燃气的最大费用，以 Drip 为单位。 添加自 `Conflux-rust v2.4.0` 。
+    * `maxPriorityFeePerGas`：`QUANTITY` -可选，默认值：`0`）每单位燃气的最大优先费用，以 Drip 为单位。 添加自 `Conflux-rust v2.4.0` 。
 
 2. `QUANTITY|TAG` - （可选，默认为`"latest_state"`）整数纪元号，或字符串 `"latest_state"`、`"latest_confirmed"`、`"latest_checkpoint"` 或 `"earliest"`，详见 [纪元号参数](#the-default-epochnumber-parameter)。
 
@@ -1267,7 +1267,7 @@ params: [
 
 `Object` - a transaction receipt object, or `null` when no transaction was found or the transaction was not executed yet:
 
-* `type`: `QUANTITY` - the type of the transaction, `0x0` for legacy, `0x1` for EIP-2930, `0x2` for EIP-1559. Added from `Conflux-rust v2.4.0`
+* `type`: `QUANTITY` - the type of the transaction, `0x0` for legacy, `0x1` for EIP-2930, `0x2` for EIP-1559. 添加自 `Conflux-rust v2.4.0` 。
 * `transactionHash`: `DATA`, 32 Bytes - hash of the given transaction.
 * `index`: `QUANTITY` - transaction index within the block.
 * `blockHash`: `DATA`，32 字节，包含并执行了这个交易的区块的哈希。
@@ -1286,8 +1286,8 @@ params: [
 * `logsBloom`: `DATA`, 256 Bytes - bloom filter for light clients to quickly retrieve related logs.
 * `logs`: `Array` - array of log objects that this transaction generated, see [cfx_getLogs](#cfx_getlogs).
 * `txExecErrorMsg`: `String`, tx exec fail message, if transaction exec success this will be null.
-* `effectiveGasPrice`: `QUANTITY` - the effective gas price of the transaction. Added from `Conflux-rust v2.4.0`
-* `burntGasFee`: `QUANTITY` - the burnt gas fee of the transaction. Added from `Conflux-rust v2.4.0`
+* `effectiveGasPrice`: `QUANTITY` - the effective gas price of the transaction. 添加自 `Conflux-rust v2.4.0` 。
+* `burntGasFee`: `QUANTITY` - the burnt gas fee of the transaction. 添加自 `Conflux-rust v2.4.0` 。
 
 
 ##### 示例
