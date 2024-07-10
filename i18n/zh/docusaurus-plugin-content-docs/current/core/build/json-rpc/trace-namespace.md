@@ -200,7 +200,7 @@ Get transaction's trace by it's hash
 
 #### 参数
 
-1. DATA, 32 Bytes - hash of a transaction
+1. DATA，32 字节 - 交易的哈希。
 
 #### 返回值
 
@@ -400,7 +400,7 @@ Returns all traces matching the provided filter.
     * `toEpoch`: `QUANTITY|TAG` - (optional) the epoch number, or the string `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-default-epochnumber-parameter). 搜索将持续到(包括)这个纪元数。
     * `fromAddress`: `BASE32` - (optional).
     * `toAddres`: `BASE32` - (optional).
-    * `blockHashes`: `Array` `DATA` - (可选，默认为: `null`)搜索会被应用到最多128个区块哈希的数组。 This will override from/to epoch fields if it's not `null`.
+    * `blockHashes`: `Array` `DATA` - (可选，默认为: `null`)搜索会被应用到最多128个区块哈希的数组。 如果不是`null`，则会覆盖 from/to 纪元 字段。
     * `actionTypes`: `Array` of action type enum - (optional) If None, match all. If specified, trace must match one of these action types.
     * `after`: `QUANTITY` - (optional) The offset trace number.
     * `count`: `QUANTITY` - (optional) The number of traces to display in a batch.
