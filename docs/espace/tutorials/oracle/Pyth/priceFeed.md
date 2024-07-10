@@ -1,180 +1,206 @@
 ---
 sidebar_position: 1
-title: Get Real-time Price Data
-description: Learn how to Use Pyth Oracle on Conflux eSpace to Get Real-time Price Data
+title: Retrieve CFX Price
+description: Learn how to Use Pyth Oracle on Conflux eSpace to Retrieve CFX Price
 keywords:
   - Hardhat
   - Smart Contracts
   - Oracle
+  - Pyth
+  - CFX Price
 displayed_sidebar: eSpaceSidebar
 ---
 
-# Using Pyth Oracle on Conflux eSpace to Get Real-time CFX/USD Price Data
+# Retrieve CFX Price using Pyth on Conflux eSpace
 
-This tutorial will guide you on how to use the Pyth oracle on Conflux eSpace to get real-time CFX/USD price data. We will use Hardhat to build the project.
+This tutorial will guide you through building a project on Conflux eSpace using Hardhat and retrieving the CFX price through the Pyth oracle.
 
 ## Prerequisites
 
-Before you start, make sure you have the following software installed:
+Before starting, ensure you have the following software installed:
 
-- Node.js
-- npm
-- Git
+1. Node.js and npm
+2. Hardhat
+3. A Conflux network wallet address
 
-## Step 1: Create and Set Up the Project
+## Step 1: Create a Hardhat Project
 
-1. Open the terminal and create a new project folder:
+First, create a new Hardhat project:
 
-   ```bash
-   mkdir pyth-conflux
-   cd pyth-conflux
-   ```
+```bash
+mkdir conflux-pyth-cfx-price
+cd conflux-pyth-cfx-price
+npx hardhat
+```
 
-2. Initialize a new npm project:
+Follow the prompts to create a basic JavaScript project.
 
-   ```bash
-   npm init -y
-   ```
+## Step 2: Install Necessary Dependencies
 
-3. Install Hardhat:
+Install the Pyth SDK and other required dependencies:
 
-   ```bash
-   npm install --save-dev hardhat
-   ```
-
-4. Create a new Hardhat project:
-
-   ```bash
-   npx hardhat
-   ```
-
-   Select “Create a basic sample project” and follow the prompts to complete the initialization.
-
-5. Install the necessary dependencies for Conflux eSpace and Pyth:
-
-   ```bash
-   npm install --save @confluxproject/conflux-sdk pyth-sdk-solidity
-   ```
-
-## Step 2: Write the Smart Contract
-
-1. Create a new contract file `PythPriceConsumer.sol` in the `contracts` folder:
-
-   ```solidity
-   // SPDX-License-Identifier: MIT
-   pragma solidity ^0.8.0;
-
-   import "pyth-sdk-solidity/Pyth.sol";
-
-   contract PythPriceConsumer {
-       Pyth public pyth;
-
-       constructor(address pythContract) {
-           pyth = Pyth(pythContract);
-       }
-
-       function getCFXUSDPrice(bytes32 priceID) public view returns (int64) {
-           Pyth.Price memory price = pyth.getPrice(priceID);
-           return price.price;
-       }
-   }
-   ```
-
-2. Create a deployment script `deploy.js` in the `scripts` folder:
-
-   ```javascript
-   const { Conflux } = require("js-conflux-sdk");
-   const hre = require("hardhat");
-
-   async function main() {
-     // Get the Pyth contract address
-     const pythAddress = "PYTH_CONTRACT_ADDRESS"; // Replace with the actual address
-
-     // Deploy the PythPriceConsumer contract
-     const PythPriceConsumer = await hre.ethers.getContractFactory(
-       "PythPriceConsumer"
-     );
-     const pythPriceConsumer = await PythPriceConsumer.deploy(pythAddress);
-
-     await pythPriceConsumer.deployed();
-
-     console.log("PythPriceConsumer deployed to:", pythPriceConsumer.address);
-   }
-
-   main()
-     .then(() => process.exit(0))
-     .catch((error) => {
-       console.error(error);
-       process.exit(1);
-     });
-   ```
+```bash
+npm install @pythnetwork/pyth-sdk-solidity @pythnetwork/pyth-evm-js dotenv
+```
 
 ## Step 3: Configure Hardhat
 
-1. Open `hardhat.config.js` and add the Conflux eSpace network configuration:
+Update `hardhat.config.js` to include the Conflux eSpace Testnet:
 
-   ```javascript
-   require("@nomiclabs/hardhat-waffle");
+```javascript
+require("@nomicfoundation/hardhat-toolbox");
 
-   module.exports = {
-     solidity: "0.8.4",
-     networks: {
-       conflux: {
-         url: "https://evm.confluxrpc.com",
-         accounts: [`0x${process.env.PRIVATE_KEY}`],
-       },
-     },
-   };
-   ```
+/** @type import('hardhat/config').HardhatUserConfig */
+module.exports = {
+  solidity: "0.8.24",
+  networks: {
+    confluxTestnet: {
+      url: "https://evmtestnet.confluxrpc.com",
+      accounts: [process.env.PRIVATE_KEY], // Your private key here
+    },
+  },
+};
+```
 
-   Make sure you set the `PRIVATE_KEY` environment variable in a `.env` file.
+Make sure to set your private key as an environment variable for security.
 
-## Step 4: Fetch Pyth Oracle Data
+## Step 4: Write the Smart Contract
 
-1. Create a script `getPrice.js` in the `scripts` folder to fetch the CFX/USD price:
+Create `CFXPrice.sol` in the `contracts` directory:
 
-   ```javascript
-   const { ethers } = require("hardhat");
+```solidity
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.18;
 
-   async function main() {
-     const pythPriceConsumerAddress = "PYTH_PRICE_CONSUMER_ADDRESS"; // Replace with the actual address
-     const priceID = "CFX_USD_PRICE_ID"; // Replace with the actual price ID
+import "@pythnetwork/pyth-sdk-solidity/IPyth.sol";
+import "@pythnetwork/pyth-sdk-solidity/PythStructs.sol";
 
-     const PythPriceConsumer = await ethers.getContractFactory(
-       "PythPriceConsumer"
-     );
-     const pythPriceConsumer = await PythPriceConsumer.attach(
-       pythPriceConsumerAddress
-     );
+contract CFXPrice {
+    IPyth pyth;
+    bytes32 constant CFX_USD_PRICE_ID = 0x8879170230c9603342f3837cf9a8e76c61791198fb1271bb2552c9af7b33c933;
 
-     const price = await pythPriceConsumer.getCFXUSDPrice(priceID);
-     console.log("CFX/USD Price:", price.toString());
-   }
+    constructor(address pythContract) {
+        pyth = IPyth(pythContract);
+    }
 
-   main()
-     .then(() => process.exit(0))
-     .catch((error) => {
-       console.error(error);
-       process.exit(1);
-     });
-   ```
+    function getCFXPrice(bytes[] calldata priceUpdateData) public payable returns (int64, uint) {
+        uint fee = pyth.getUpdateFee(priceUpdateData);
+        pyth.updatePriceFeeds{value: fee}(priceUpdateData);
 
-## Step 5: Run Deployment and Query Scripts
+        PythStructs.Price memory price = pyth.getPrice(CFX_USD_PRICE_ID);
+        return (price.price, price.conf);
+    }
+}
+```
 
-1. Deploy the smart contract:
+## Step 5: Deploy the Smart Contract
 
-   ```bash
-   npx hardhat run scripts/deploy.js --network conflux
-   ```
+Create `deploy.js` in the `scripts` directory:
 
-2. Fetch the real-time CFX/USD price data:
+```javascript
+const hre = require("hardhat");
 
-   ```bash
-   npx hardhat run scripts/getPrice.js --network conflux
-   ```
+async function main() {
+  const pythContractAddress = "0xDd24F84d36BF92C65F92307595335bdFab5Bbd21"; // Pyth contract address on Conflux eSpace Testnet
 
-You should now be able to see the real-time CFX/USD price data.
+  const CFXPrice = await hre.ethers.getContractFactory("CFXPrice");
+  const cfxPrice = await CFXPrice.deploy(pythContractAddress);
 
-## Conclusion
+  await cfxPrice.waitForDeployment();
 
-Congratulations! You have successfully used the Pyth oracle on Conflux eSpace to get real-time CFX/USD price data. For more details about the Pyth oracle, please visit the [Pyth documentation](https://docs.pyth.network/).
+  console.log("CFXPrice deployed to:", await cfxPrice.getAddress());
+}
+
+main().catch((error) => {
+  console.error(error);
+  process.exit(1);
+});
+```
+
+## Step 6: Run the Deployment Script
+
+Deploy the contract using:
+
+```bash
+npx hardhat run scripts/deploy.js --network confluxTestnet
+```
+
+## Step 7: Interact with the Contract
+
+Create `interact.js` in the `scripts` directory:
+
+```javascript
+const hre = require("hardhat");
+const { EvmPriceServiceConnection } = require("@pythnetwork/pyth-evm-js");
+
+async function main() {
+  const CFXPrice = await hre.ethers.getContractFactory("CFXPrice");
+  const cfxPrice = await CFXPrice.attach("YOUR_DEPLOYED_CONTRACT_ADDRESS"); // Replace with your actual deployed address
+
+  const connection = new EvmPriceServiceConnection(
+    "https://hermes.pyth.network" // Use Hermes price service
+  );
+
+  const priceIds = [
+    "0x8879170230c9603342f3837cf9a8e76c61791198fb1271bb2552c9af7b33c933", // CFX/USD price feed ID
+  ];
+
+  try {
+    const priceUpdateData = await connection.getPriceFeedsUpdateData(priceIds);
+    
+    // Estimate gas
+    const gasEstimate = await cfxPrice.getCFXPrice.estimateGas(priceUpdateData, {
+      value: hre.ethers.parseEther("0.01"), // Send some CFX to pay for the update fee, adjust as needed
+    });
+
+    console.log("Estimated gas:", gasEstimate.toString());
+
+    // Call getCFXPrice function
+    const tx = await cfxPrice.getCFXPrice(priceUpdateData, {
+      value: hre.ethers.parseEther("0.01"), // Send some CFX to pay for the update fee, adjust as needed
+    });
+
+    console.log("Transaction sent:", tx.hash);
+
+    // Wait for transaction confirmation
+    const receipt = await tx.wait();
+
+    console.log("Transaction confirmed in block:", receipt.blockNumber);
+
+    // Get the price directly using staticCall
+    const [price, confidence] = await cfxPrice.getCFXPrice.staticCall(priceUpdateData, {
+      value: hre.ethers.parseEther("0.01"),
+    });
+
+    console.log("CFX/USD Price:", hre.ethers.formatUnits(price, 8)); // Pyth prices are usually in 8 decimals
+    console.log("Confidence:", hre.ethers.formatUnits(confidence, 8));
+
+  } catch (error) {
+    console.error("Error occurred:", error);
+  }
+}
+
+main().catch((error) => {
+  console.error(error);
+  process.exit(1);
+});
+```
+
+Run the interaction script:
+
+```bash
+npx hardhat run scripts/interact.js --network confluxTestnet
+```
+
+## Summary
+
+This tutorial demonstrates how to deploy a smart contract on Conflux eSpace Testnet that fetches the CFX/USD price using Pyth Network. Key points:
+
+1. We use the correct CFX/USD price feed ID for Pyth.
+2. The contract is deployed on Conflux eSpace Testnet.
+3. We use the Hermes price service for fetching update data.
+4. The interaction script estimates gas, sends a transaction to update the price, and then retrieves the latest price.
+
+Remember to always use testnet tokens and addresses when testing. For production use, you'd switch to mainnet addresses and endpoints.
+
+For more information, refer to the [Pyth Network documentation](https://docs.pyth.network/)
