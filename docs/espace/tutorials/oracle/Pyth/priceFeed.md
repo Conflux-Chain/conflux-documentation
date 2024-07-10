@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-title: Retrieve CFX Price
+title: Retrieve Price
 description: Learn how to Use Pyth Oracle on Conflux eSpace to Retrieve CFX Price
 keywords:
   - Hardhat
@@ -11,7 +11,7 @@ keywords:
 displayed_sidebar: eSpaceSidebar
 ---
 
-# Retrieve CFX Price using Pyth on Conflux eSpace
+# Retrieve Price
 
 This tutorial will guide you through building a project on Conflux eSpace using Hardhat and retrieving the CFX price through the Pyth oracle.
 
@@ -21,7 +21,7 @@ Before starting, ensure you have the following software installed:
 
 1. Node.js and npm
 2. Hardhat
-3. A Conflux network wallet address
+3. Conflux wallet extension
 
 ## Step 1: Create a Hardhat Project
 
@@ -191,6 +191,8 @@ Run the interaction script:
 ```bash
 npx hardhat run scripts/interact.js --network confluxTestnet
 ```
+
+![Get CFX Price Success](../../img/get-cfx-price-success.png)
 
 ## Summary
 
