@@ -1665,13 +1665,13 @@ Please note that reward calculation is delayed so it might not be available for 
 
 #### 返回值
 
-`Array` - array of reward info objects
+`Array` - 奖励信息对象的数组
 
-* `blockHash`: `DATA` - the block hash
-* `author`: `BASE32` - the address of block miner
-* `totalReward`: `QUANTITY` - total reward of the block including base reward, tx fee, staking reward
-* `baseReward`: `QUANTITY` - base reward
-* `txFee`: `QUANTITY` - tx fee
+* `blockHash`: `DATA` - 区块哈希
+* `author`: `BASE32` - 挖得区块的矿工地址
+* `totalReward`: `QUANTITY` - 区块的总奖励，包括基础奖励、交易费、质押奖励
+* `baseReward`: `QUANTITY` - 基础奖励
+* `txFee`: `QUANTITY` - 交易费
 
 ##### 示例
 
@@ -1699,13 +1699,13 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"cfx_getBlockRewardInfo","params"
 
 ### cfx_getBlockByHashWithPivotAssumption
 
-Returns the requested block if the provided pivot hash is correct, returns an error otherwise.
+如果提供的主区块哈希正确，则返回请求的区块；否则返回错误。
 
 #### 参数
 
-* `DATA`, block hash
-* `DATA`, assumed pivot hash
-* `QUANTITY`, integer epoch number.
+* `DATA`, 区块哈希
+* `DATA`, 提供的主区块哈希
+* `QUANTITY`, 整数纪元号
 
 ```json
 params: [
