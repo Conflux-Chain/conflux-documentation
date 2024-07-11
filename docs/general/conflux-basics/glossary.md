@@ -221,6 +221,11 @@ Refer to [PoW](../conflux-basics/consensus-mechanisms/proof-of-work/proof-of-wor
 ### **Public/Private Key**
 A public key is a cryptographic code that allows a user to receive cryptocurrencies into his or her account. The private key is used to sign transactions or digital messages and the public key is used to verify the signature. In the context of Conflux, users have a pair of public and private keys that they use to interact with the network.
 
+
+### **Bytecode**
+Bytecode is a numeric representation of smart contract instructions, enabling efficient interpretation by the virtual machine. It serves as an intermediate form between the Solidity source code and the machine code executed on the blockchain.
+
+
 ### **Smart Contract**
 A smart contract is a self-executing contract with the terms of the agreement directly written into code. They run on the blockchain, so they are stored on a public database and cannot be changed. In the Conflux network, users can create and interact with smart contracts, which can automate a wide range of applications and processes.
 
