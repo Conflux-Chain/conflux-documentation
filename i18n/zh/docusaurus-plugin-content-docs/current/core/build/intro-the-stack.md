@@ -10,21 +10,21 @@ Conflux的核心组件提供了一个思维模型，这种模型说明了软件�
 
 ## 第一层：虚拟机
 
-The Virtual Machine is the runtime environment for smart contracts on Conflux Core Space. It is almost compatible with EVM. All smart contracts and state changes on the Conflux blockchain are executed by [transactions](../core-space-basics/transactions/overview.md). The VM handles all of the transaction processing on the Conflux Core Space.
+虚拟机是Conflux Core Space上智能合约的运行环境。 它与EVM几乎兼容。 Conflux区块链上的所有智能合约和状态改变都通过[交易](../core-space-basics/transactions/overview.md)执行。 虚拟机处理Conflux Core Space上的所有交易处理。
 
-As with any virtual machine, the VM creates a level of abstraction between the executing code and the executing machine (an Conflux node). Currently, the VM is running on thousands of nodes distributed across the world.
+与任何虚拟机一样，虚拟机在执行代码和执行机器(Conflux节点)之间创建抽象层。 目前，虚拟机正在全球范围内的数千个节点上运行。
 
-Under the hood, the VM uses a set of opcode instructions to execute specific tasks. These (140 unique) opcodes allow the VM to be [Turing-complete](https://en.wikipedia.org/wiki/Turing_completeness), which means the VM is able to compute just about anything, given enough resources.
+在底层，虚拟机使用一组操作码指令来执行特定任务。 这些(共140个)操作码使虚拟机成为[图灵完备](https://zh.wikipedia.org/wiki/%E5%9C%96%E9%9D%88%E5%AE%8C%E5%82%99%E6%80%A7), 这意味着只要提供足够的资源，虚拟机几乎可以计算任何东西。
 
-As a dapp developer, you don't need to know much about the VM other than it exists and that it reliably powers all applications on Conflux without downtime.
+作为去中心化应用程序的开发者，你不需要了解更多关于虚拟机的信息，就可以在Conflux上畅通无阻地授权所有应用程序。
 
-## Level 2: Smart contracts
+## 第二层：智能合约
 
-[Smart contracts](./smart-contracts) are the executable programs that run on the Conflux Core blockchain.
+[智能合约](./smart-contracts)是在Conflux Core链上运行的可执行程序。
 
-Smart contracts are written using specific programming languages(Solidity) that compile to EVM bytecode (low-level machine instructions called opcodes).
+智能合约是使用特定的编程语言(Solidity)编写的，可以编译为EVM字节码(称为操作码的低级机器语言)。
 
-Not only do smart contracts serve as open source libraries, they are essentially open API services that are always running and can't be taken down. Smart contracts provide public functions which users and applications (dapps) may interact with, without needing permission. Any application may integrate with deployed smart contracts to compose functionality, such as adding data feeds or to support token swaps. Additionally, anyone can deploy new smart contracts to Conflux in order to add custom functionality to meet their application's needs.
+智能合约不仅是开源库，而且他们实质上是始终运行且永不关闭的开放API服务。 智能合约提供公共函数，用户和应用程序(dapps)无需许可就可以与之交互。 Any application may integrate with deployed smart contracts to compose functionality, such as adding data feeds or to support token swaps. Additionally, anyone can deploy new smart contracts to Conflux in order to add custom functionality to meet their application's needs.
 
 As a dapp developer, you'll need to write smart contracts only if you want to add custom functionality on the Conflux Core blockchain. You may find you can achieve most or all of your project's needs by merely integrating with existing smart contracts, for instance if you want to support payments in stablecoins or enable decentralized exchange of tokens.
 
