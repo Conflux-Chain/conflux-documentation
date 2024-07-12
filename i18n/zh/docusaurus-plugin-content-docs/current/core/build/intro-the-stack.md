@@ -24,7 +24,7 @@ Conflux的核心组件提供了一个思维模型，这种模型说明了软件�
 
 智能合约是使用特定的编程语言(Solidity)编写的，可以编译为EVM字节码(称为操作码的低级机器语言)。
 
-智能合约不仅是开源库，而且他们实质上是始终运行且永不关闭的开放API服务。 智能合约提供公共函数，用户和应用程序(dapps)无需许可就可以与之交互。 Any application may integrate with deployed smart contracts to compose functionality, such as adding data feeds or to support token swaps. Additionally, anyone can deploy new smart contracts to Conflux in order to add custom functionality to meet their application's needs.
+智能合约不仅是开源库，而且他们实质上是始终运行且永不关闭的开放API服务。 智能合约提供公共函数，用户和应用程序(dapps)无需许可就可以与之交互。 任何应用程序都可以与已部署的智能合约集成，以组成功能，例如添加数据源或通证交换。 Additionally, anyone can deploy new smart contracts to Conflux in order to add custom functionality to meet their application's needs.
 
 As a dapp developer, you'll need to write smart contracts only if you want to add custom functionality on the Conflux Core blockchain. You may find you can achieve most or all of your project's needs by merely integrating with existing smart contracts, for instance if you want to support payments in stablecoins or enable decentralized exchange of tokens.
 
