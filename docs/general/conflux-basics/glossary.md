@@ -223,7 +223,7 @@ A public key is a cryptographic code that allows a user to receive cryptocurrenc
 
 
 ### **Bytecode**
-Bytecode is a numeric representation of smart contract instructions, enabling efficient interpretation by the virtual machine. It serves as an intermediate form between the Solidity source code and the machine code executed on the blockchain.
+Bytecode is a numeric representation of smart contract instructions, enabling efficient interpretation by the virtual machine. It serves as an intermediate form between the source code (Such as Solidity) and the machine code executed on the blockchain.
 
 
 ### **Smart Contract**
