@@ -6,11 +6,28 @@ const { themes } = require('prism-react-renderer');
 const lightCodeTheme = themes.github
 const darkCodeTheme = themes.dracula
 
+// see: https://github.com/facebook/docusaurus/discussions/9558
+function getConfigI18n({ en, "zh-CN": zh }) {
+  switch (process.env.DOCUSAURUS_CURRENT_LOCALE) {
+    case "zh-CN":
+      return zh;
+
+    default:
+      return en;
+  }
+}
+
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Conflux Docs',
-  tagline: 'Developer resources for building on Conflux. By developers, for developers.',
-  url: 'https://doc.confluxnetwork.org/',
+  title: getConfigI18n({
+    en: "Conflux Documentation",
+    "zh-CN": "Conflux 文档",
+  }),
+  tagline:
+    getConfigI18n({
+      en: "Developer resources for building on Conflux. By developers, for developers.",
+      "zh-CN": "在Conflux上构建的开发者资源。由开发者提供，面向开发者。",
+    }),url: 'https://doc.confluxnetwork.org/',
   baseUrl: '/',
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
