@@ -16,6 +16,6 @@ Fluent 钱包为 dApp 开发人员提供了[集成文档](https://docs.fluentwal
 
 ## 其他资源
 
-- [Fluent Integration Quick Start](https://docs.fluentwallet.com/conflux/get-started/set-up-dev-environment/)
-- [React Tutorial](https://docs.fluentwallet.com/conflux/category/tutorials/)
+- [Fluent 钱包集成快速入门](https://docs.fluentwallet.com/conflux/get-started/set-up-dev-environment/)
+- [React 指南](https://docs.fluentwallet.com/conflux/category/tutorials/)
 - [Conflux Provider API](https://docs.fluentwallet.com/conflux/reference/provider-api/)
