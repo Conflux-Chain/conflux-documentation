@@ -19,7 +19,7 @@ displayed_sidebar: coreSidebar
 
 ## 赞助规则
 
-无差别存储抵押赞助：1 * 10 cfx。 Undifferentiated gas sponsorship: 5 * 1 Gdrip, upper bound 500,000 drip (roughly Gas with price 1 and Gas limit of no more than 500,000)
+无差别存储抵押赞助：1 * 10 cfx。 无差别的燃气赞助：5 * 1 Gdrip，上限 500,000 drip（大致相当于价格为 1 的燃气和燃气限额不超过 500,000）。
 
 赞助申请需要针对每个项目单独协商（目前自助服务未开放），项目组请完成以下两个步骤并等待审核。 在Confluxscan上完成合约验证，修复项目中的警告信息，并将内置合约Admin（注意：不是合约管理中的admin）设置为零地址。 完成第1项后，联系 scan@confluxnetwork.org 并附带以下细节：合约：项目名称。 用途：（燃气代付/存储代付）。 合约地址。 联系方式。
 
