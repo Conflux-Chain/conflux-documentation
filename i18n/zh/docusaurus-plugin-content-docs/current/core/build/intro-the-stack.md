@@ -48,8 +48,8 @@ Conflux 节点是运行一个Conflux 客户端软件的计算机。 客户端是
 
 在栈的顶层是面向用户的应用程序。 These are the standard applications you regularly use and build today: primarily web and mobile apps.
 
-The way you develop these user interfaces remains essentially unchanged. Often users will not need to know the application they're using is built using a blockchain.
+开发这些用户界面的方式基本上保持不变。 通常用户不需要知道他们所使用的应用程序是使用区块链构建的。
 
-## Further reading
+## 了解更多
 
-- [The Architecture of a Web 3.0 application](https://www.preethikasireddy.com/post/the-architecture-of-a-web-3-0-application) - _Preethi Kasireddy_
+- [Web 3.0应用程序的构架](https://www.preethikasireddy.com/post/the-architecture-of-a-web-3-0-application) - _Preethi Kasireddy_
