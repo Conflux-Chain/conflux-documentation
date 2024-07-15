@@ -1,8 +1,9 @@
 // import Link from "@docusaurus/Link";
 // import img from "@site/static/img/docusaurus.png";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import styles from "./styles.module.css";
+import Translate from "@docusaurus/Translate";
 
 function getWindowDimensions() {
   const { innerWidth: width, innerHeight: height } = window;
@@ -13,7 +14,10 @@ function getWindowDimensions() {
 }
 
 export function useWindowDimensions() {
-  const [windowDimensions, setWindowDimensions] = useState({ width: 0, height: 0 });
+  const [windowDimensions, setWindowDimensions] = useState({
+    width: 0,
+    height: 0,
+  });
 
   useEffect(() => {
     setWindowDimensions(getWindowDimensions());
@@ -33,8 +37,16 @@ export default function HomeQuickStartBanner() {
   return (
     <div className={styles.card}>
       <div className={styles.cardContent}>
-        <h3>General Knowledge of Conflux Network</h3>
-        <p>Common concepts and knowledge for both Core Space and eSpace</p>
+        <h3>
+          <Translate id="overview.banner.title">
+            General Knowledge of Conflux Network
+          </Translate>
+        </h3>
+        <p>
+          <Translate id="overview.banner.description">
+            Common concepts and knowledge for both Core Space and eSpace
+          </Translate>
+        </p>
         {/* <Link to="/quick-start">
           <button type="button" className={styles.ctaBtn}>
             Quick Start
