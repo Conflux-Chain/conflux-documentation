@@ -1,5 +1,5 @@
 ---
-title: `msg.value` in Loops
+title: msg.value in Loops
 displayed_sidebar: generalSidebar
 ---
 
