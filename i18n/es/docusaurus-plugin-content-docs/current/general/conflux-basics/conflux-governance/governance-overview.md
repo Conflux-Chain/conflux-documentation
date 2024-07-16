@@ -1,64 +1,64 @@
 ---
 sidebar_position: 1
-title: Governance Overview
+title: Vista general de la gobernanza
 displayed_sidebar: generalSidebar
 ---
 
-## **Governance Model — CFX Voting**
+## **Modelo de Gobernanza — Votación CFX**
 
-All protocol changes and funds that are used to develop the ecosystem will be ultimately governed by the DAO. All Conflux ecosystem participants can obtain voting rights by locking up their tokens for a certain period of time. The voting rights will be awarded as such:
+Todos los cambios de protocolo y los fondos que se utilizan para desarrollar el ecosistema se regirán en última instancia por la DAO. Todos los participantes del ecosistema Conflux pueden obtener derechos de voto bloqueando sus tokens durante un cierto período de tiempo. Los derechos de voto se concederán como sigue:
 
-> number of quarters × number of tokens × 0.25
+> número de trimestres × número de tokens × 0.25
 
-For instance:
+Por ejemplo:
 
-- Locking maturity less than a quarter: No voting rights
-- Locking maturity more than a quarter: One CFX has 0.25 vote
-- Locking maturity more than half a year: One CFX has 0.5 vote
-- Locking maturity more than a year: One CFX has 1 vote
+- Vencimiento de bloqueo inferior a un trimestre: Sin derecho a voto
+- Vencimiento de bloqueo mayor a un trimestre: Cada CFX tiene 0,25 votos
+- Vencimiento de bloqueo mayor a medio año: Cada CFX tiene 0,5 votos
+- Vencimiento de bloqueo mayor a un año: Cada CFX tiene 1 voto
 
-While tokens are locked to obtain votes, users retain the right to staking interest. They cannot withdraw the tokens or decrease the locking duration once tokens are locked up.
+Mientras que los tokens están bloqueados para obtener votos, los usuarios conservan el derecho a intereses de staking. No pueden retirar los tokens ni disminuir la duración del bloqueo una vez que los tokens estén bloqueados.
 
-CFX voting website: [https://www.confluxhub.io/](https://www.confluxhub.io/)
+Sitio web de votación de CFX: [https://www.confluxhub.io/](https://www.confluxhub.io/)
 
-## Staking CFX in Confluxhub Governance Platform
+## Staking de CFX en la plataforma de governanza de Confluxhub
 
-1 - Go to [https://www.confluxhub.io/](https://www.confluxhub.io/)
+1 - Dirígete a [https://www.confluxhub.io/](https://www.confluxhub.io/)
 
-2 - Click on the Governance icon in the left hand project bar to go to the Governance Dashboard
+2 - Haz clic en el icono de Gobernanza en la barra de la izquierda para ir al Panel de Control de la Gobernanza
 
 ![https://forum.conflux.fun/uploads/default/optimized/2X/8/8bf7e1428d382ca1c9dc60075dae9916b3fc3c1f_2_527x500.jpeg](https://forum.conflux.fun/uploads/default/optimized/2X/8/8bf7e1428d382ca1c9dc60075dae9916b3fc3c1f_2_527x500.jpeg)
 
-3 - Click on Connect Wallet in the top right hand corner to link to the wallet
+3 - Haga clic en Connect Wallet en la esquina superior derecha para conectar la billetera
 
 ![https://forum.conflux.fun/uploads/default/optimized/2X/a/ae404ed42470537a78f18aad7c2d3e4a41da5f34_2_690x339.png](https://forum.conflux.fun/uploads/default/optimized/2X/a/ae404ed42470537a78f18aad7c2d3e4a41da5f34_2_690x339.png)
 
-4 - Enter the number of CFX to be staked and click Stake to complete the stake
+4 - Introduzca el número de CFX a stakear y haga clic en Stake para completar el staking
 
 ![https://forum.conflux.fun/uploads/default/optimized/2X/a/a130c233c13e8e3605c8bb69276429e80aaf5edc_2_690x410.png](https://forum.conflux.fun/uploads/default/optimized/2X/a/a130c233c13e8e3605c8bb69276429e80aaf5edc_2_690x410.png)
 
-5 - Click Lock for lock operation and enter the number of locked cfx to exchange for voting rights. Voting rights will be granted according to: number of quarters x number of tokens x 0.25
+5 - Haga clic en Lock para la operación de bloqueo e introduzca el número de cfx a bloquear para intercambiar por derechos de voto. Los derechos de voto se concederán según: número de trimestres x número de tokens x 0.25
 
 ![https://forum.conflux.fun/uploads/default/optimized/2X/a/a8bf5aaa24c5023222a7cc0931b603b77b6db46d_2_502x500.jpeg](https://forum.conflux.fun/uploads/default/optimized/2X/a/a8bf5aaa24c5023222a7cc0931b603b77b6db46d_2_502x500.jpeg)
 
-6 - Selecting a lock-in period. CFX lock-up periods are available for one quarter, six months and one year. The shortest period is one quarter (91 days) and the longest period is one year. Number of quarters x number of tokens x 0.25 = voting rights
+6 - Selecciona un período de bloqueo. Los periodos de bloqueo de CFX están disponibles para un trimestre, seis meses y un año. El período más corto es de un trimestre (91 días) y el período más largo es de un año. Número de trimestres x número de tokens x 0.25 = derechos de voto
 
 ![https://forum.conflux.fun/uploads/default/optimized/2X/a/a70227c18490590fca1a692b90850cc9cf3a8da0_2_464x500.jpeg](https://forum.conflux.fun/uploads/default/optimized/2X/a/a70227c18490590fca1a692b90850cc9cf3a8da0_2_464x500.jpeg)
 
-7 - Click Lock to finish locking and get voting rights after successful locking
+7 - Haga clic en Lock para terminar de bloquear y obtener derechos de voto después de bloquear con éxito
 
 ![https://forum.conflux.fun/uploads/default/optimized/2X/9/98ba41095e5a587ecf7796bfdcf0ec2676e77137_2_690x455.jpeg](https://forum.conflux.fun/uploads/default/optimized/2X/9/98ba41095e5a587ecf7796bfdcf0ec2676e77137_2_690x455.jpeg)
 
-8 - Click on extend locking period to increase voting rights by extending the locking period and click on add locking amount to increase the number of cfx pledges and increase voting rights.
+8 - Haga clic en Extend locking period para aumentar los derechos de voto mediante la ampliación del período de bloqueo y haga clic en Add locking amount para aumentar el número de cfx comprometidos y aumentar los derechos de voto.
 
 ![https://forum.conflux.fun/uploads/default/optimized/2X/9/9c254079c90208f9b694db70d7ecadafda3f4b85_2_541x500.jpeg](https://forum.conflux.fun/uploads/default/optimized/2X/9/9c254079c90208f9b694db70d7ecadafda3f4b85_2_541x500.jpeg)
 
-### Caution
+### Precaución
 
-- Once a lock has been applied, subsequent locking can only be done [by increasing the number of tickets] or [by extending the time].
-- You cannot reduce the last commit time or the number of cfx, so you can only increase the number of votes by locking them for a longer period.(If I have locked for 1 year, I cannot change /reduce the lock period)
-- After locking, there are only two independent actions that can be taken afterwards.
-    1. increase the number of tickets only, without extending the time
-    2. add time without adding votes
+- Una vez que se ha aplicado un bloqueo, el bloqueo posterior sólo se puede hacer [aumentando el número de billetes] o [extendiendo el tiempo].
+- No se puede reducir el tiempo del último asignado o el número de cfx, así que sólo puede aumentar el número de votos bloqueándolos por un período más largo. (Si tengo bloqueado por 1 año, no puedo cambiar o reducir el período de bloqueo)
+- Después de bloquear, sólo hay dos acciones independientes que se pueden llevar a cabo.
+    1. incrementar solo el número de tokens, sin extender el tiempo
+    2. añadir tiempo sin añadir tokens
 
-> Therefore, if you want to participate in multiple rounds of voting for a project, it is recommended that you use separate wallet addresses for different projects or multiple votes for a single project.
+> Por lo tanto, si quieres participar en múltiples rondas de votación de un proyecto, se recomienda que utilice direcciones de billeteras separadas para diferentes proyectos o múltiples votos para un solo proyecto.
