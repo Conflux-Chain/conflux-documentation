@@ -1,8 +1,7 @@
 ---
+title: `msg.value` in Loops
 displayed_sidebar: generalSidebar
 ---
-
-# `msg.value` in Loops
 
 When developing smart contracts, security is one of the most critical considerations. This tutorial will delve into a common but dangerous pattern: using `msg.value` within loops. We'll explain why this is dangerous and provide some best practices to avoid related vulnerabilities.
 
