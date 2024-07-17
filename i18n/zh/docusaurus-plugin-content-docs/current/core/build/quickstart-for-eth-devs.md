@@ -8,53 +8,53 @@ Conflux Core Space 是一个基于创新树图账本结构的区块链协议。 
 
 如果您不熟悉以太坊的开发，强烈建议先学习以太坊开发，因为它有丰富的文档、全面的开发工具和社区支持。 这篇文章不会涵盖有关以太坊开发的基础知识。
 
-## Differences between Conflux Core Space and Ethereum
+## Conflux Core Space和以太坊的区别
 
-Conflux's underlying ledger structure is a tree graph, which differs from Ethereum. It is recommended to first understand [Conflux's tree graph ledger structure](/docs/general/conflux-basics/consensus-mechanisms/proof-of-work/tree-graph). This will involve new concepts such as [Epoch](/docs/general/conflux-basics/glossary#epoch).
+不同于以太坊，Conflux的基础账本结构是一个树图。 建议先了解 [Conflux 的树图账本结构](/docs/general/conflux-basics/consensus-mechanisms/proof-of-work/tree-graph)。 这将涉及新的概念，例如 [Epoch](/docs/general/conflux-basics/glossary#epoch)。
 
-Conflux Core Space has two types of accounts, similar to Ethereum: external accounts and contract accounts. However, the account addresses in Conflux Core Space are different, with distinct generation methods and encoding rules. For details, refer to [Conflux Core Addresses](/docs/core/core-space-basics/addresses). If you prefer not to delve into the details, you can directly use the Fluent wallet or Core Space SDK to obtain addresses.
+Conflux Core Space有两种类似于以太坊的账户：外部账户和合约账户。 然而，Conflux Core Space中的账户地址是不同的，有不同的生成方法和编码规则。 详见[Conflux Core 地址](/docs/core/core-space-basics/address)。 如果你不想深入了解太多，你可以直接使用Fluent Wallet或Core Space SDK来获取地址。
 
-Due to differences in address and ledger structure, Conflux Core Space's RPC (Remote Procedure Call) interface also has some variations. For details, see [Conflux Core RPC](/docs/core/build/json-rpc/cfx-namespace). In summary, the core RPC methods of Conflux Core Space are similar to Ethereum, with the only change being the prefix from `eth_` to `cfx_`. Additionally, there are some new methods and slight differences in parameters and return structures.
+由于地址和账本结构不同，Conflux Core Space的RPC(远程过程调用)接口也有一些区别。 详见[Conflux Core RPC](/docs/core/build/json-rpc/cfx-namespace)。 总之，Conflux Core Space的核心RPC方法与以太坊相似，唯一的变化是从`eth_`到`cfx_`前缀。 此外，在参数和返回结构方面也有一些新的方法和小差别。
 
-The transaction structure in Conflux Core Space is almost the same as Ethereum's 155-type transactions, including core transaction information and gas fees. However, Conflux Core Space's transaction structure also includes some additional fields. Refer to [Conflux Core Transactions](/docs/core/core-space-basics/transactions/overview) and [Transaction Comparison](/docs/core/core-space-basics/transactions/faqs#whats-the-differences-between-ethereum-155-transaction-and-core-space-transaction) for details.
+Conflux Core Space的交易结构与以太坊的155类交易几乎相同，包括核心交易信息和Gas费。 然而，Conflux Core Space的交易结构也包括一些额外的内容。 详见[Conflux Core Transactions](/docs/core/core-space-basics/transactions/overview)和 [Transaction Comparison](/docs/core/core-space-basics/transactions/faqs#whats-the-differences-between-ethereum-155-transaction-and-core-space-transaction)。
 
-Conflux Core Space's VM is compatible with EVM, meaning that most Ethereum smart contracts can be deployed directly on Conflux Core Space. Popular Solidity libraries (e.g., OpenZeppelin) and tools can also be used directly, with some subtle differences in contract address calculation rules and the 1820 contract address. See [VM Difference](/docs/core/core-space-basics/vm-difference) for more information.
+Conflux Core Space的虚拟机基本可以完全兼容以太坊虚拟机，这意味着绝大多数以太坊智能合约都可以在 Conflux Core Space上直接部署并运行。 热门的Solidity库(例如OpenZeppelin)和工具也可以被直接使用，只是在合约地址计算规则和 1820 合约地址上有一些细微差别。 详见[VM difference](/docs/core/core-space-basics/vm-difference)。
 
-## Innovations in Conflux Core Space
+## Conflux Core Space的创新
 
-As a next-generation blockchain protocol, Conflux Core Space introduces some innovative features, such as:
+作为下一代区块链协议，Conflux Core Space 引入了一些创新功能，例如：
 
-1. Beyond transaction gas fees, it proposes a more reasonable storage fee. Details can be found in [Storage Fees](/docs/core/core-space-basics/storage), where storage fees are in the form of collateral, refundable after storage release.
+1. 除了交易燃料费用，它提出了更合理的存储费用方案。 可以在[存储费用](/docs/core/core-space-basics/storage)中找到更多详细内容，其中存储费用以抵押品的形式出现，存储释放后可退还。
 
-2. The most significant innovation is the implementation of a transaction fee [sponsorship mechanism](/docs/core/core-space-basics/sponsor-mechanism). This mechanism allows contracts to be sponsored, meaning that sponsored contracts do not require users to pay gas fees during interactions; instead, the sponsor covers the fees. This mechanism significantly lowers user entry barriers and allows contract developers more flexibility in designing contracts.
+2. 最重大的创新是交易费用[代付机制](/docs/core/core-space-basics/sponsor-mechanism)的实施。 该机制允许合约得到代付，意味着被代付的合约在互动时不需要用户支付燃料费；相反，代付方承担费用。 这种机制显著降低了用户的入门门槛，并允许合约开发者在设计合约时更加灵活。
 
-In addition, Conflux Core Space provides several built-in contracts for governance, sponsorship, cross-space functionality, etc. See [Internal Contracts](https://doc.confluxnetwork.org/docs/core/core-space-basics/internal-contracts/) for details.
+此外，Conflux Core Space 提供了几个内置合约，用于治理、代付、跨Space功能等。 详见[内置合约](https://doc.confluxnetwork.org/docs/core/core-space-basics/internal-contracts/) 。
 
-## Getting Started Quickly
+## 快速入门
 
-Ethereum developers can quickly get started with Conflux Core Space development through the following steps:
+以太坊开发者可以通过以下步骤快速开始 Conflux Core Space 开发：
 
-1. Install the Fluent wallet, the official wallet for Conflux Core Space, supporting all its features. See [Fluent Wallet](https://fluentwallet.com/).
+1. 您可以安装 Fluent 钱包，这是 Conflux Core Space 的官方钱包，支持其所有功能。 参见 [Fluent 钱包](https://fluentwallet.com/)。
 
-2. Switch the network to the testnet and claim test CFX through the Core Space faucet. Refer to [Faucet](https://faucet.confluxnetwork.org/).
+2. 切换网络到测试网，并通过 Core Space 水龙头领取测试 CFX。 参考 [水龙头](https://faucet.confluxnetwork.org/)。
 
-3. Quickly familiarize yourself with Conflux Core's [js-conflux-sdk](/docs/core/core-developer-quickstart), a SDK similar to web3.js or ethers.js, with some usage differences.
+3. 快速熟悉 Conflux Core Space 的 [js-conflux-sdk](/docs/core/core-developer-quickstart)，一个类似于 web3.js 或 ethers.js 的 SDK，但使用上有一些差异。
 
-4. Use Hardhat with [hardhat-conflux](/docs/core/tutorials/hardhat-conflux-plugin) plugin for contract development. The contract development experience is identical to Ethereum, with deployment and interaction scripts written using js-conflux-sdk.
+4. 使用 Hardhat 并使用 [hardhat-conflux](/docs/core/tutorials/hardhat-conflux-plugin) 插件进行合约开发。 合约开发体验与以太坊相同，部署和交互脚本使用 js-conflux-sdk 编写。
 
-5. For backend services, use [SDKs in other languages](/docs/core/build/sdks-and-tools/sdks), including Golang, Python, Java, etc.
+5. 对于后端服务，使用[其他语言的 SDK](/docs/core/build/sdks-and-tools/sdks)，包括 Golang、Python、Java 等。
 
-## Migrating Ethereum Dapps to Conflux Core Space
+## 迁移以太坊 Dapps 到 Conflux Core Space
 
-If you already have an Ethereum Dapp and want to migrate it to Conflux Core Space, follow these steps:
+如果您已经有了以太坊Dapp并想要将其迁移到Conflux Core Space，遵循这些步骤：
 
-1. Deploy the contracts (usually requiring no modification to the contract code) to Conflux Core Space using Hardhat with the hardhat-conflux plugin or directly using js-conflux-sdk.
+1. 部署合约(通常不需要修改合约代码)到Conflux Core Space，使用Hardhat与Hardhat-conflux插件或直接使用 js-conflux-sdk。
 
-2. Replace the Ethereum SDK in the Dapp's frontend code with js-conflux-sdk, and switch the wallet to the Fluent wallet.
+2. 用 js-conflux-sdk 替换Dapp前端代码中的以太坊 SDK，并将钱包切换到 Fluent 钱包。
 
-## Other Resources
+## 其他资源
 
-- [Official Public RPC Endpoint](/docs/core/conflux_rpcs)
-- [Blockchain Explorer](https://confluxscan.io/)
-- [How to Sponsor a Contract](/docs/core/tutorials/how-to-sponsor-contract)
-- [FAQs](/docs/core/FAQs)
+- [官方的公开RPC 端点](/docs/core/conflux_rpcs)
+- [区块链浏览器](https://confluxscan.io/)
+- [如何为合约提供代付](/docs/core/tutorials/how-to-sponsor-contract)
+- [常见问题](/docs/core/FAQs)
