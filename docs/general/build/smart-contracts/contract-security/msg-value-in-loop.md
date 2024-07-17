@@ -14,6 +14,7 @@ function processBatch(address[] memory recipients, uint256[] memory amounts) pub
     require(recipients.length == amounts.length, "Arrays must have the same length");
 
     for (uint i = 0; i < recipients.length; i++) {
+        require(msg.value >= amounts[i], "Insufficient funds");
         (bool success, ) = recipients[i].call{value: amounts[i]}("");
         require(success, "Transfer failed");
     }
@@ -39,23 +40,36 @@ In 2020, the decentralized options protocol Opyn fell victim to this type of att
 2. **Use an accumulator**: If you must handle payments in a loop, use an accumulator to keep track of the amount processed.
 
    ```solidity
-   uint256 totalProcessed = 0;
-   for (uint i = 0; i < recipients.length; i++) {
-       totalProcessed += amounts[i];
-       require(totalProcessed <= msg.value, "Insufficient funds");
-       (bool success, ) = recipients[i].call{value: amounts[i]}("");
-       require(success, "Transfer failed");
-   }
+    function processBatch(address[] memory recipients, uint256[] memory amounts) public payable {
+        require(recipients.length == amounts.length, "Arrays must have the same length");
+        
+        uint256 totalProcessed = 0;
+        for (uint i = 0; i < recipients.length; i++) {
+            totalProcessed += amounts[i];
+            require(totalProcessed <= msg.value, "Insufficient funds");
+            (bool success, ) = recipients[i].call{value: amounts[i]}("");
+            require(success, "Transfer failed");
+        }
+    }
    ```
 
 3. **Check total amount upfront**: Verify that the total amount equals `msg.value` before starting any transfers.
 
    ```solidity
-   uint256 totalAmount = 0;
-   for (uint i = 0; i < amounts.length; i++) {
-       totalAmount += amounts[i];
-   }
-   require(totalAmount == msg.value, "Incorrect total amount");
+   function processBatch(address[] memory recipients, uint256[] memory amounts) public payable {
+        require(recipients.length == amounts.length, "Arrays must have the same length");
+        
+        uint256 totalAmount = 0;
+        for (uint i = 0; i < amounts.length; i++) {
+            totalAmount += amounts[i];
+        }
+        require(totalAmount == msg.value, "Incorrect total amount");
+        
+        for (uint i = 0; i < recipients.length; i++) {
+            (bool success, ) = recipients[i].call{value: amounts[i]}("");
+            require(success, "Transfer failed");
+        }
+    }
    ```
 
 4. **Use the Pull Payments pattern**: Let users withdraw funds themselves instead of sending directly. This can avoid many problems associated with direct transfers.
