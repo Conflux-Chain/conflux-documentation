@@ -4,7 +4,7 @@ title: ConfluxContext
 displayed_sidebar: coreSidebar
 ---
 
-This contract can be used in `Solidity contract` to query Conflux Core network info including:
+此合约可用于 `Solidity合约` 中，用以查询 Conflux Core 网络信息，包括：
 
 - `epochNumber` - 当前纪元号
 - `posHeight` - PoS链的当前区块高度
