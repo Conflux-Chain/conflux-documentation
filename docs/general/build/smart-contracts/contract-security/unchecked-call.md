@@ -12,7 +12,7 @@ A notable example of this was the "King of Ether" game, which became infamous in
 
 For an in-depth analysis of what went wrong and the lessons learned, you can review the detailed [King of Ether postmortem](https://www.kingoftheether.com/postmortem.html).
 
-## Example of a Vulnerable Contract
+### Unchecked `send()` Vulnerabilities
 
 Here is a simple bank contract that includes functions to deposit and withdraw Ethereum, it involves operations that are vulnerable to attacks due to unchecked low-level call:
 
@@ -81,8 +81,67 @@ contract Exploit {
     }
 }
 ```
-
 Unchecked low-level calls can lead to unstable and insecure contract behavior. By implementing strict checks and using verified libraries for handling funds, developers can significantly reduce risks.
+
+
+### Unchecked `call()` Vulnerabilities
+
+The `call()` method is often used for making external calls to other contracts. Similar to `send()`, the `call()` method returns a boolean value indicating the success or failure of the call. If this return value is not checked, it can lead to serious security issues where failures are silently ignored.
+
+Here's an example to illustrate the potential problem:
+
+```solidity
+contract ExampleContract {
+    uint256 public y;
+    function setY(uint256 _y) external {
+        require(_y > 10, "y must be greater than 10");
+        y = _y;
+    }
+}
+
+interface IExampleContract {
+    function setY(uint256 _y) external;
+}
+
+contract VulnerableCaller {
+    function setYUsingInterface(IExampleContract example, uint256 _y) external {
+        example.setY(_y);
+    }
+
+    function setYUsingCall(address example, uint256 _y) external {
+        (bool success, ) = example.call(abi.encodeWithSignature("setY(uint256)", _y));
+        // success is not checked!
+    }
+}
+```
+
+In this example:
+
+- `ExampleContract`: Contains a simple function `setY()` that updates a state variable `y`. The function includes a requirement that `_y` must be greater than 10.
+  
+- `VulnerableCaller`: Has two functions to call `setY()` on `ExampleContract`.
+  
+- `setYUsingInterface()` uses an interface to call the function, which will revert if the requirement is not met.
+
+- `setYUsingCall()` uses a low-level call to invoke `setY()`. If the requirement is not met, the call will fail, but the transaction will not revert because the return value is not checked.
+
+Here’s a revised version of `VulnerableCaller` with proper handling of the return value:
+
+```solidity
+contract SecureCaller {
+    function setYUsingInterface(IExampleContract example, uint256 _y) external {
+        example.setY(_y);
+    }
+
+    function setYUsingCall(address example, uint256 _y) external {
+        (bool success, ) = example.call(abi.encodeWithSignature("setY(uint256)", _y));
+        require(success, "Call to setY failed");
+    }
+}
+```
+
+By checking the return value of the `call()` method and reverting the transaction if the call fails, you can ensure that the contract behaves correctly and securely.
+
 
 ## Prevention Measures
 
