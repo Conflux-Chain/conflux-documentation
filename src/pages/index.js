@@ -4,10 +4,10 @@ import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
 import DocCatalog from "@site/src/modules/docCatalog";
 import FeatureCards from "@site/src/modules/featureCards";
-import CFX from "@site/static/img/conflux.svg";
+import conflux from "@site/static/img/conflux.png";
 import styles from "./index.module.css";
 import Translate, { translate } from "@docusaurus/Translate";
-
+console.log(conflux);
 const Home = () => {
   const { siteConfig } = useDocusaurusContext();
 
@@ -33,8 +33,8 @@ const Home = () => {
                 </button>
               </a>
             </div>
-            <CFX
-              role="img"
+            <img
+              src={conflux.src}
               className="w-10/12 lg:w-[43.3%] h-auto order-1 lg:order-2"
             />
           </div>
