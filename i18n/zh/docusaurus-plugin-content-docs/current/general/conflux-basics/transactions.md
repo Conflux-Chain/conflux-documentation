@@ -2,7 +2,7 @@
 title: 交易
 sidebar_position: 9
 keywords:
-  - transaction
+  - 交易
 displayed_sidebar: generalSidebar
 ---
 
