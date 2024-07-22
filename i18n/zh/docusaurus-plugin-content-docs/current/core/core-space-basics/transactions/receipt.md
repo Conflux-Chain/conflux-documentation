@@ -1,32 +1,32 @@
 ---
 sidebar_position: 6
-title: Transaction Receipt
+title: 交易收据
 displayed_sidebar: coreSidebar
 keywords:
-  - transaction
+  - 交易
 ---
 
-Transaction receipt is the data structure that contains information about the transaction execution result.
+交易收据是一个包含有关交易执行结果信息的数据结构。
 
-## Transaction Receipt
+## 交易收据
 
-The receipt can be obtained through the RPC method [`cfx_getTransactionReceipt`](/docs/core/build/json-rpc/cfx-namespace#cfx_gettransactionreceipt). This method takes the transaction hash as a parameter and returns `null` if the transaction has not been executed, or a Receipt object after execution is completed.
+收据可以通过RPC方法[`cfx_getTransactionReceipt`](/docs/core/build/json-rpc/cfx-namespace#cfx_gettransactionreceipt)获得。 这个方法将交易哈希作为参数，并在交易未执行时返回`null`，或在执行完成后返回一个收据对象。
 
-## Receipt Fields
+## 收据字段
 
-The Receipt contains the following types of information:
+收据包含以下类型的信息：
 
-- Basic transaction information: `transactionHash`, `from`, `to`
-- On-chain transaction information: `blockHash`, `epochNumber`, `index`
-- Transaction execution result: `outcomeStatus` (`0` for success, `1` for failure)
-- Gas & storage fee information: `gasUsed`, `gasFee`, `storageCollateralized`, `gasCoveredBySponsor`, `storageCoveredBySponsor`, `storageReleased`
-- Deployed contract address: `contractCreated` (if it is a contract deployment transaction)
-- Contract execution logs: `logs`
-- Execution error information: `txExecErrorMsg` (if the transaction execution fails)
+- 基本交易信息：`transactionHash`, `from`, `to`
+- 链上交易信息：`blockHash`、`epochNumber`、`index`
+- 交易执行结果：`outcomeStatus` (成功为`0` ,失败为 `1`)
+- Gas和存储费用信息：`gasUsed`、`gasFee`、`storageCollateralized`、`gasCoveredBySponsor`、`storageCoveredBySponsor`、`storageReleased`
+- 部署合约地址：`contractCreated` (如果是一个部署交易的合约)
+- 合约执行日志: `logs`
+- 执行错误信息：`txExecErrorMsg` (如果交易执行失败)
 
-For detailed information about each field, you can refer to the API documentation for [`cfx_getTransactionReceipt`](/docs/core/build/json-rpc/cfx-namespace#cfx_gettransactionreceipt).
+如果想了解每个字段的详细信息, 请参阅[`cfx_getTransactionReceipt`](/docs/core/build/json-rpc/cfx-namespace#cfx_gettransactionreceipt)的API文档。
 
-### logs
+### 日志
 
 The logs field in the Receipt is an array containing all the logs generated during the transaction execution process. When interacting with a contract, the contract can produce logs or events using emit statements. After the transaction is executed, these logs are recorded in the transaction receipt. In Solidity, [Events](https://docs.soliditylang.org/en/v0.8.23/contracts.html#events) are designed to log information about the execution of contract methods, providing detailed information about contract execution through events.
 
