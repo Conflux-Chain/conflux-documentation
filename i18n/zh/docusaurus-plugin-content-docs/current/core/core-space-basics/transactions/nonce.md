@@ -3,7 +3,7 @@ sidebar_position: 4
 title: Nonce Management
 displayed_sidebar: coreSidebar
 keywords:
-  - transaction
+  - 交易
   - nonce
 ---
 
