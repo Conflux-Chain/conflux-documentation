@@ -3,7 +3,7 @@ sidebar_position: 5
 title: 交易生命周期
 displayed_sidebar: coreSidebar
 keywords:
-  - transaction
+  - 交易
   - lifecycle
   - stage
   - confirmation
