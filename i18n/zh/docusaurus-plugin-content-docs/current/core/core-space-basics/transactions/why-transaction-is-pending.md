@@ -2,7 +2,7 @@
 sidebar_position: 7
 title: Why TX is Pending?
 keywords:
-  - transaction
+  - 交易
 displayed_sidebar: coreSidebar
 ---
 
