@@ -1,26 +1,26 @@
 ---
 sidebar_position: 7
-title: Send Transaction Errors
+title: 发送交易错误
 displayed_sidebar: coreSidebar
 toc_max_heading_level: 4
 keywords:
   - errors
 ---
 
-When using SDK or the Fluent wallet to send transactions, you may encounter some errors. This document outlines some common errors and their solutions.
+当使用 SDK 或 Fluent 钱包发送交易时，可能会遇到一些错误。 本文概述了一些常见错误及其解决方案。
 
-## Errors from RPC endpoint
+## RPC端点错误
 
-### Errors from Estimation
+### 估算时出错
 
-During the construction of a transaction, it is necessary to estimate the gas fee using the `estimateGas` method. If it is an interaction with a contract, the `estimateGas` method may fail for various reasons, such as:
+在构建交易时，需要使用`estimateGas`方法估算gas费用。 如果与合约进行交互，`estimateGas`方法可能因以下各种原因而失败，比如：
 
-- Incorrect contract method call parameters, calling a non-existent method
-- The caller lacks permission
-- Insufficient balance of the caller
-- Exceptional errors within the contract method: e.g., division by zero, array out of bounds, overflow, etc.
+- 不正确的合约方法调用参数，调用不存在的方法
+- 调用者没有权限
+- 调用者余额不足
+- 合约方法内部发生异常错误，例如除零，数组越界，溢出等。
 
-If the `estimateGas` method fails, it will return an error, for example:
+如果'estimatteGas'方法失败，它会返回一个错误，例如：
 
 ```json
 {
@@ -30,53 +30,53 @@ If the `estimateGas` method fails, it will return an error, for example:
 }  
 ```
 
-Sometimes, the error message contains obvious information about the error, making it easy to identify the cause. In some cases, it may only show `Vm reverted`. In such cases, you may need to locate the error through repeated code verification and trials, or by using trace data to assist in finding the error.
+有时，错误消息中包含明显错误信息，可以很容易确定错误原因。 但在某些情况下，错误消息可能只显示`Vm reverted`。 在这种情况下，你可能需要通过多次代码验证和尝试，或者使用跟踪数据来协助查找错误。
 
-### `cfx_sendRawTransaction` Failure
+### `cfx_sendRawTransaction`失败
 
-After assembling the transaction, it needs to be sent using the [`cfx_sendRawTransaction`](/docs/core/build/json-rpc/cfx-namespace#cfx_sendrawtransaction) method, which may fail for various reasons.
+在组装交易之后，需要使用[`cfx_sendRawTransaction`](/docs/core/build/json-rpc/cfx-namespace#cfx_sendrawtransaction)方法发送，但由于各种原因，可能会导致发送失败。
 
-#### Balance not Enough
+#### 余额不足
 
-If the sender's balance is insufficient, an error will be returned (found in the `error.data` field of the RPC response):
+如果发送方余额不足，将返回错误 (可以在RPC响应的`error.data`字段中找到):
 
 ```json
 "\"Transaction 0xtxhashxxxx is discarded due to out of balance, needs 9000000000420000000000000 but account balance is 90095849479680000000000\""
 ```
 
-#### Nonce Error
+#### 随机数错误（Nonce Error）
 
-If the nonce is set too large, too small, or reused, it can also lead to transaction sending failure. Specific failure situations can be seen in [nonce management](./nonce.md).
+如果随机数（nonce）设置得过大，过小或重复使用，都会导致交易发送失败。 具体的失败情况可以在[随机数管理](./nonce.md)中看到。
 
-#### gasPrice Error
+#### gasPrice错误
 
-`gasPrice` cannot be set to 0 or too small; otherwise, you may encounter an error like:
+`gasPrice`不能设置为0或者太小；否则, 你可能会遇到如下错误:
 
 ```json
 "\"transaction gas price 1 less than the minimum value 20000000000\""
 ```
 
-Currently, the minimum `gasPrice` in Core Space is 1 Gdrip, equivalent to 0.000000001 CFX. In eSpace, it is 20 Gdrip, equivalent to 0.00000002 CFX.
+目前，Core Space中`gasPrice`最低为1 Gdrip，相当于0.0000001 CFX。 在eSpace中，最低为20 Gdrip，相当于0.00000002 CFX。
 
-#### gas Error
+#### gas错误
 
-If `gas` is set too low, it may result in an OutOfGas problem, causing the transaction to fail, for example:
+如果`Gas`设置得过低, 可能会导致 OutOfGas 问题, 从而导致交易失败，例如：
 
 ```json
 "VmError(OutOfGas)"
 ```
 
-In this case, you can resolve the issue by increasing the gas.
+在这种情况下，你可以通过增加gas来解决这个问题。
 
-The `gas` value cannot be set too high either; the maximum allowed value is 15 million. Exceeding this value will result in an error like:
+`Gas`值也不能设置过高；允许的最大值是1,500万。 超出此值将导致如下错误：
 
 ```json
 "\"transaction gas 20000000 exceeds the maximum value 15000000, the half of pivot block gas limit\""
 ```
 
-#### Transaction Pool is Full
+#### 交易池已满
 
-In the case of a full transaction pool, and if the gasPrice of the sent transaction is lower than the lowest gasPrice in the transaction pool, you may encounter errors like:
+如果交易池已满，并且发送交易的gasPrice低于交易池中的最低gasPrice，你可能会遇到如下错误：
 
 ```json
 "Failed imported to deferred pool: Transaction Pool is full"
@@ -88,28 +88,28 @@ In the case of a full transaction pool, and if the gasPrice of the sent transact
 "txpool is full"
 ```
 
-In this situation, you can solve the problem by increasing the gasPrice. You can check the current network gasPrice in the upper right corner of Scan.
+在这种情况下，你可以通过增加gasPrice来解决这个问题。 你可以在ConfluxScan页面右上角检查当前网络的gasPrice。
 
-## Fluent Wallet Error
+## Fluent钱包错误
 
-When users use the Fluent wallet to send transactions, essentially, they are also sending transactions by calling the [`cfx_sendRawTransaction`](/docs/core/build/json-rpc/cfx-namespace/#cfx_sendrawtransaction) method. Therefore, they may encounter the above errors, for example:
+当用户使用Fluent钱包发送交易时，本质上也是通过调用[`cfx_sendRawTransaction`](/docs/core/build/json-rpc/cfx-namespace/#cfx_sendrawtransaction) 方法来发送交易。 因此，他们可能会遇到上述的错误，例如：
 
-![Fluent Wallet Error](./img/same-nonce-already-inserted.jpg)
+![Fluent 钱包错误](./img/same-nonce-already-inserted.jpg)
 
-In such cases, follow the corresponding processing method.
+在这种情况下，请按照相应的处理方法进行操作。
 
-Additionally, using an unavailable RPC node in the Fluent wallet can also lead to transaction sending failure, for example:
+此外，在Fluent钱包中使用不可用的RPC节点也可能导致交易发送失败，例如：
 
 ```json
 "failed after 0 retries: timeout"
 ```
 
-In this case, you can try switching the RPC node or wait for the RPC node to recover before resending the transaction.
+在这种情况下，您可以尝试切换RPC节点或等待RPC节点恢复后再重新发送交易。
 
 ## 总结
 
-If there is a network issue, please wait for the network to recover or switch to a different RPC node before resubmitting the transaction. If you encounter a full transaction pool, increase the gasPrice when sending the transaction. For other errors, it is likely that there is an issue with the settings of certain transaction fields. Please follow the methods introduced earlier to correctly set the fields and resend the transaction.
+如果遇到网络问题，请等待网络恢复或在重新提交交易之前切换到不同的RPC节点。 如果遇到交易池已满的情况，请在发送交易时增加gasPrice。 对于其他错误，很可能是某些交易字段的设置存在问题。 请按照之前介绍的方法正确设置字段并重新发送交易。
 
-## Reference
+## 参考
 
-- [cfx_sendRawTransaction error list](../../build/json-rpc/rpc-behaviour/cfx_sendTransaction-errors.md)
+- [cfx_sendRawTransaction 错误列表](../../build/json-rpc/rpc-behaviour/cfx_sendTransaction-errors.md)
