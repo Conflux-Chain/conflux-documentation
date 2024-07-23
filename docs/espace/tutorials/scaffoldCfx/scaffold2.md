@@ -56,6 +56,7 @@ yarn deploy --network confluxESpace
 ```bash
 yarn deploy --network confluxESpaceTestnet
 ```
+
 To verify the contract on the Conflux testnet, simply run the following command with the Contract Address. If there were any constructors, you will need to pass them in as well after the contract address.
 
 ```sh
