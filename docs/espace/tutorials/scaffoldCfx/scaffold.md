@@ -1,6 +1,6 @@
 ---
 sidebar_position: 4
-title: Scaffold Conflux
+title: Scaffold Conflux General
 description: Learn how to leverage Scaffold-Eth 2 components to make your Conflux App
 keywords:
   - Hardhat
