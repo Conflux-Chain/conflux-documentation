@@ -56,6 +56,13 @@ yarn deploy --network confluxESpace
 ```bash
 yarn deploy --network confluxESpaceTestnet
 ```
+To verify the contract on the Conflux testnet, simply run the following command with the Contract Address. If there were any constructors, you will need to pass them in as well after the contract address.
+
+```sh
+npx hardhat verify --network confluxESpaceTestnet [Contract Address] 
+```     
+
+The added instructions onto hardhat are in the packages/hardhat/hardhat.config.ts file where etherscan is adjusted to include the the block explorer url.
 
 :::note
 The deployer of the contract and thereby the owner of the contract can be changed by re-labelling the `./packages/hardhat/.env.example` to `./packages/hardhat/.env` and putting your private key in DEPLOYER_PRIVATE_KEY=. However, the default uses a default "public" private key for hardhat testing purposes.
