@@ -16,9 +16,9 @@ displayed_sidebar: eSpaceSidebar
 
 In this tutorial, we go more in-depth of how the solidity contract is used and interact with the ERC721 contract to mint NFTs on Conflux eSpace that can be transfered to other wallets.
 
-Watch this [video](https://youtu.be/sj2ph_ctQUg) for full tutorial on how to create an app from scratch and deploy it live on Conflux eSpace.
+## Video Conflux
 
-[![Watch Tutorial](https://i9.ytimg.com/vi/sj2ph_ctQUg/mqdefault.jpg?sqp=CJzh_LQG-oaymwEmCMACELQB8quKqQMa8AEB-AH-CIAC0AWKAgwIABABGA8gZSheMA8=&rs=AOn4CLBxt_-7LEkb3ZgldLVUtQJ0oIoLdQ)](https://youtu.be/sj2ph_ctQUg)
+Watch this [video](https://youtu.be/sj2ph_ctQUg) for full tutorial on how to create an app from scratch and deploy it live on Conflux eSpace.
 
 ## Clone Scaffold Conflux
 
@@ -103,7 +103,7 @@ In each of these pages, the contract instance is set up to either read or write 
 
 ## Deploy App on Vercel
 
-And that's it! You are ready to deploy your app once you are happy with your smart contract and the front-end.
+And that's it! You are ready to deploy your app once you are happy with your smart contract and the front-end. Ensure in the front end that /packages/nextjs/scaffold.config.ts the chains.hardhat is removed if you no longer are using hardhat for testing purposes and would like to interact with contracts deployed on Conflux eSpace or Conflux Testnet.
 
 ```bash
 yarn vercel
