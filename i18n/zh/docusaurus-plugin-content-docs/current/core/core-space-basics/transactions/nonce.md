@@ -1,6 +1,6 @@
 ---
 sidebar_position: 4
-title: Nonce Management
+title: Nonce 管理
 displayed_sidebar: coreSidebar
 keywords:
   - 交易
