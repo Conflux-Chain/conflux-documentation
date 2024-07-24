@@ -3,9 +3,9 @@ sidebar_position: 2
 title: 编码和签名
 displayed_sidebar: coreSidebar
 keywords:
-  - transaction
-  - signing
-  - encoding
+  - 交易
+  - 签名
+  - 编码
 ---
 
 在交易的每个字段都准备好后，需要按照以下步骤，才能将其发送到网络 (别担心， 这些步骤已经由钱包或SDK实现)：
@@ -22,4 +22,4 @@ keywords:
 
 - [椭圆曲线数字签名算法(ECDSA)](https://fitsaleem.medium.com/ethereums-elliptic-curve-digital-signature-algorithm-ecdsa-88e1659f4879#:~:text=ECDSA%20is%20used%20in%20Ethereum,included%20in%20the%20transaction%20data.)
 - [keccak256哈希](https://ethereum.org/en/glossary/#keccak-256)
-- [Recursive Length Prefix (RLP) serialization](https://ethereum.org/en/developers/docs/data-structures-and-encoding/rlp/)
+- [递归长度前缀(RLP)序列化](https://ethereum.org/en/developers/docs/data-structures-and-encoding/rlp/)
