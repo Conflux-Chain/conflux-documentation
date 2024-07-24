@@ -1,7 +1,7 @@
 ---
 sidebar_position: 6
-title: Complete NFT Tutorial
-description: This is a complete guide for NFT on Conflux coreSpace
+title: 完整的 NFT 教程
+description: 这是一个关于 Conflux coreSpace 上 NFT 的完整指南。
 displayed_sidebar: coreSidebar
 ---
 
