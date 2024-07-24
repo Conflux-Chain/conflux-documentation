@@ -8,7 +8,7 @@ Conflux实现了赞助机制，来补贴智能合约的使用。 这允许余额
 
 ## 接口
 
-SponsorWhitelistControl's 合约的十六进制地址是 `0x0888000000000000000000000000000000000001`, 接口是:
+SponsorWhitelistControl 合约的十六进制地址是 `0x0888000000000000000000000000000000000001`, 接口是:
 
 ```js
 pragma solidity >=0.4.15;
@@ -148,7 +148,7 @@ contract CommissionPrivilegeTest {
 }
 ```
 
-The following javascript code shows how to deploy and sponsor the provided test contract.
+提供的示例说明了如何部署和赞助测试合约。
 
 ```javascript
 "use strict"
