@@ -40,8 +40,8 @@ Using ethers v6, creating and verifying ECDSA signatures is straightforward. Her
 ```javascript
 const ethers = require('ethers');
 
-// Create a signer (using a random private key in this example)
-const signer = new ethers.Wallet(ethers.id("test"));
+// Create a signer (using a random wallet in this example)
+const signer = new ethers.Wallet.createRandom()
 console.log("Signer's address:", signer.address);
 
 // Message to be signed
@@ -53,29 +53,45 @@ console.log("Signature:", signature);
 ```
 
 This example demonstrates:
-1. How to create a signer (using a random private key)
+1. How to create a signer (using a random wallet)
 2. How to sign a message
-3. How to verify a signature and recover the signer's address
 
 Note: The `signMessage` method automatically handles message preprocessing (adding a prefix and hashing), so you don't need to perform these steps manually.
 
 ## ECDSA Signatures in Allowlists and Airdrops
 
-### Why Replace Merkle Trees with ECDSA Signatures?
+### Comparing ECDSA Signatures with Merkle Trees
 
-While Merkle trees are useful in many scenarios, they can lead to higher gas costs in certain situations:
+Both ECDSA signatures and Merkle trees are useful techniques in blockchain applications, particularly for allowlists and airdrops. Let's compare their characteristics:
 
-1. They use a considerable amount of calldata
-2. The size of Merkle proofs increases with the size of the tree
-3. Verifying Merkle proofs requires multiple hash operations
+#### Merkle Trees:
+1. **Efficiency for Large Datasets**: Excellent for verifying membership in large datasets.
+2. **Gas Costs**: Can lead to higher gas costs in certain situations:
+   - Use considerable amount of calldata
+   - Size of Merkle proofs increases with the size of the tree
+   - Verifying Merkle proofs requires multiple hash operations
+3. **On-chain Storage**: Requires storing the Merkle root on-chain
+4. **Flexibility**: Allows efficient updates to large datasets by only changing the affected branches
 
-In contrast, ECDSA signatures typically offer better gas efficiency.
+#### ECDSA Signatures:
+1. **Fixed Size**: The signature length remains constant regardless of the dataset size
+2. **Lower Verification Cost**: Only one ECDSA recovery operation is needed
+3. **Less On-chain Storage**: No need to store tree roots
+4. **Simplicity**: Can be easier to implement and understand
 
-### Advantages of ECDSA Signatures
+#### Gas Cost Comparison
 
-1. Fixed size: The signature length remains constant regardless of the dataset size
-2. Lower verification cost: Only one ECDSA recovery operation is needed
-3. Less on-chain storage: No need to store tree roots
+Here's a rough comparison of gas costs:
+
+- Merkle tree verification: About 50,000-100,000 gas (depending on tree depth)
+- ECDSA signature verification: About 3,000-6,000 gas
+
+This means using ECDSA signatures can save approximately 90% in gas costs!
+
+#### Considerations:
+- **Dataset Size**: For very large datasets, Merkle trees might be more efficient as they don't require individual signatures for each element
+- **Update Frequency**: If the dataset changes frequently, ECDSA signatures might require more off-chain computation to generate new signatures
+- **Gas Efficiency**: In many cases, ECDSA signatures offer better gas efficiency, especially for smaller datasets or when verifying individual elements
 
 ### Implementation Example
 
@@ -125,7 +141,6 @@ async function signAllowlistMessage(signer, userAddress, amount) {
     return signature;
 }
 
-// Usage example
 const privateKey = 'YOUR_PRIVATE_KEY';
 const signer = new ethers.Wallet(privateKey);
 const userAddress = 'USER_ADDRESS';
@@ -136,18 +151,10 @@ signAllowlistMessage(signer, userAddress, amount).then(signature => {
 });
 ```
 
-### Gas Cost Comparison
-
-Here's a rough comparison of gas costs:
-
-- Merkle tree verification: About 50,000-100,000 gas (depending on tree depth)
-- ECDSA signature verification: About 3,000-6,000 gas
-
-This means using ECDSA signatures can save approximately 90% in gas costs!
 
 
-## 4. Conclusion
+## Conclusion
 
 ECDSA signatures provide a powerful tool for optimizing gas costs, especially when dealing with large allowlists or frequent airdrop operations. By using ECDSA signatures instead of Merkle trees, you can significantly reduce gas costs and improve contract efficiency. However, be sure to weigh the pros and cons for your specific use case before making a decision.
 
-The flexibility and efficiency of ECDSA signatures make them a valuable tool in various blockchain applications beyond just allowlists and airdrops. As you become more comfortable with these concepts, you can explore more advanced use cases such as meta-transactions, multi-sig wallets, and decentralized identity systems.
+The flexibility and efficiency of ECDSA signatures make them a valuable tool in various blockchain applications beyond just allowlists and airdrops. As you become more comfortable with these concepts, you can explore more advanced use cases such as multi-sig wallets and decentralized identity systems.
