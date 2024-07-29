@@ -103,6 +103,9 @@ A decentralized application (DApp) is a computer application that runs on a dist
 ### **Decentralized Finance (DeFi)**
 Decentralized finance (DeFi) uses blockchain smart contracts to eliminate third parties and centralized institutions like banks from financial transactions. This allows for a range of financial services, such as lending, borrowing, and trading, to be conducted transparently and efficiently without intermediaries. 
 
+### **Digital Signature**
+A digital signature is a mathematical scheme used to verify the authenticity and integrity of digital messages or documents. It employs asymmetric cryptography, using a private key for signing and a public key for verification. Digital signatures ensure that a document was signed by the known sender and has not been altered, providing security, authenticity, and non-repudiation. Commonly used in software distribution, financial transactions, and contract management, digital signatures are more secure than traditional handwritten signatures and can include features like timestamps for added security.
+
 ### **Double Spending**
 Double spending is a potential flaw in a digital cash scheme in which a single digital token can be spent more than once. This is possible because a digital token consists of a digital file that can be duplicated or falsified. The Conflux network, like other blockchain networks, uses a consensus mechanism to prevent double spending.
 
