@@ -102,6 +102,9 @@ Una aplicación descentralizada (DApp) es una aplicación de computadora que se 
 ### **Decentralized Finance (DeFi)**
 Decentralized finance (DeFi) uses blockchain smart contracts to eliminate third parties and centralized institutions like banks from financial transactions. This allows for a range of financial services, such as lending, borrowing, and trading, to be conducted transparently and efficiently without intermediaries.
 
+### **Digital Signature**
+A digital signature is a mathematical scheme used to verify the authenticity and integrity of digital messages or documents. It employs asymmetric cryptography, using a private key for signing and a public key for verification. Digital signatures ensure that a document was signed by the known sender and has not been altered, providing security, authenticity, and non-repudiation. Commonly used in software distribution, financial transactions, and contract management, digital signatures are more secure than traditional handwritten signatures and can include features like timestamps for added security.
+
 ### **Doble gasto**
 El doble gasto es un defecto potencial en un sistema de dinero digital en el que se puede gastar más de una vez un solo token digital. Esto es posible porque un token digital consiste en un archivo digital que puede ser duplicado o falsificado. La red Conflux, al igual que otras redes de blockchain, utiliza un mecanismo de consenso para prevenir el doble gasto.
 
