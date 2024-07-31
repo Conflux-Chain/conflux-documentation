@@ -192,7 +192,7 @@ const DocCatalogFeckData = [
     catalogue: <Translate id="home.catalog.general">General</Translate>,
     items: [
       {
-        url: "docs/general/conflux-basics",
+        url: "/docs/general/conflux-basics",
         text: (
           <Translate id="home.catalog.general.base.title">
             Conflux Basics
@@ -216,7 +216,7 @@ const DocCatalogFeckData = [
         ),
       },
       {
-        url: "docs/category/mining--staking",
+        url: "/docs/category/mining--staking",
         text: (
           <Translate id="home.catalog.mining&staking.title">
             Mining & Staking
@@ -229,7 +229,7 @@ const DocCatalogFeckData = [
         ),
       },
       {
-        url: "docs/general/build",
+        url: "/docs/general/build",
         text: (
           <Translate id="home.catalog.general.build.title">Build</Translate>
         ),
@@ -240,7 +240,7 @@ const DocCatalogFeckData = [
         ),
       },
       {
-        url: "docs/general/faq",
+        url: "/docs/general/faq",
         text: <Translate id="home.catalog.general.faq.title">FAQ</Translate>,
         preview: (
           <Translate id="home.catalog.general.faq.preview">
