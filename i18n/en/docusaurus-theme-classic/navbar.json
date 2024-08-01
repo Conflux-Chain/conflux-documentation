@@ -1,0 +1,30 @@
+{
+  "logo.alt": {
+    "message": "Conflux Logo",
+    "description": "The alt text of navbar logo"
+  },
+  "item.label.Overview": {
+    "message": "Overview",
+    "description": "Navbar item with label Overview"
+  },
+  "item.label.eSpace": {
+    "message": "eSpace",
+    "description": "Navbar item with label eSpace"
+  },
+  "item.label.Core Space": {
+    "message": "Core Space",
+    "description": "Navbar item with label Core Space"
+  },
+  "item.label.General": {
+    "message": "General",
+    "description": "Navbar item with label General"
+  },
+  "item.label.Concepts": {
+    "message": "Concepts",
+    "description": "Navbar item with label Concepts"
+  },
+  "item.label.References": {
+    "message": "References",
+    "description": "Navbar item with label References"
+  }
+}

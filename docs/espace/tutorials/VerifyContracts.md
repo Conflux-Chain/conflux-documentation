@@ -29,7 +29,7 @@ const config: HardhatUserConfig = {
   solidity: "0.8.19",
   networks: {
     espaceTestnet: {
-      url: "https://evm.confluxrpc.com",
+      url: "https://evmtestnet.confluxrpc.com",
       accounts:
         process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
     },

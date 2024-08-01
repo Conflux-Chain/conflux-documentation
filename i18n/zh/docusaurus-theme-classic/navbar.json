@@ -1,0 +1,30 @@
+{
+  "logo.alt": {
+    "message": "Conflux Logo",
+    "description": "The alt text of navbar logo"
+  },
+  "item.label.Overview": {
+    "message": "概述",
+    "description": "Navbar item with label Overview"
+  },
+  "item.label.eSpace": {
+    "message": "eSpace",
+    "description": "Navbar item with label eSpace"
+  },
+  "item.label.Core Space": {
+    "message": "Core Space",
+    "description": "Navbar item with label Core Space"
+  },
+  "item.label.General": {
+    "message": "常规",
+    "description": "Navbar item with label General"
+  },
+  "item.label.Concepts": {
+    "message": "概念",
+    "description": "Navbar item with label Concepts"
+  },
+  "item.label.References": {
+    "message": "参考",
+    "description": "Navbar item with label References"
+  }
+}

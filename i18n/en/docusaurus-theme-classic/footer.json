@@ -1,0 +1,74 @@
+{
+  "link.title.Quick Links": {
+    "message": "Quick Links",
+    "description": "The title of the footer links column with title=Quick Links in the footer"
+  },
+  "link.title.Resources": {
+    "message": "Resources",
+    "description": "The title of the footer links column with title=Resources in the footer"
+  },
+  "link.title.Community": {
+    "message": "Community",
+    "description": "The title of the footer links column with title=Community in the footer"
+  },
+  "link.title.Developers": {
+    "message": "Developers",
+    "description": "The title of the footer links column with title=Developers in the footer"
+  },
+  "link.item.label.eSpace RPC Endpoints": {
+    "message": "eSpace RPC Endpoints",
+    "description": "The label of footer link with label=eSpace RPC Endpoints linking to /docs/espace/network-endpoints"
+  },
+  "link.item.label.Core Space RPC Endpoints": {
+    "message": "Core Space RPC Endpoints",
+    "description": "The label of footer link with label=Core Space RPC Endpoints linking to /docs/core/conflux_rpcs"
+  },
+  "link.item.label.Conflux Website": {
+    "message": "Conflux Website",
+    "description": "The label of footer link with label=Conflux Website linking to https://confluxnetwork.org"
+  },
+  "link.item.label.Conflux Forum": {
+    "message": "Conflux Forum",
+    "description": "The label of footer link with label=Conflux Forum linking to https://forum.conflux.fun"
+  },
+  "link.item.label.Github": {
+    "message": "Github",
+    "description": "The label of footer link with label=Github linking to https://github.com/Conflux-Chain"
+  },
+  "link.item.label.Fluent Docs": {
+    "message": "Fluent Docs",
+    "description": "The label of footer link with label=Fluent Docs linking to https://docs.fluentwallet.com/"
+  },
+  "link.item.label.Discord": {
+    "message": "Discord",
+    "description": "The label of footer link with label=Discord linking to https://discord.gg/confluxnetwork"
+  },
+  "link.item.label.Telegram": {
+    "message": "Telegram",
+    "description": "The label of footer link with label=Telegram linking to https://t.me/Conflux_English"
+  },
+  "link.item.label.ConfluxDevs Twitter": {
+    "message": "ConfluxDevs Twitter",
+    "description": "The label of footer link with label=ConfluxDevs Twitter linking to https://twitter.com/ConfluxDevs"
+  },
+  "link.item.label.ConfluxDevs Telegram": {
+    "message": "ConfluxDevs Telegram",
+    "description": "The label of footer link with label=ConfluxDevs Telegram linking to https://t.me/ConfluxDevs"
+  },
+  "link.item.label.Open Technical Grants": {
+    "message": "Open Technical Grants",
+    "description": "The label of footer link with label=Open Technical Grants linking to https://forum.conflux.fun/t/open-technical-grants/14399"
+  },
+  "link.item.label.Contribute (Github)": {
+    "message": "Contribute (Github)",
+    "description": "The label of footer link with label=Contribute (Github) linking to https://github.com/Conflux-Chain/conflux-documentation"
+  },
+  "copyright": {
+    "message": "Copyright © 2024 ConfluxNetwork, Org.",
+    "description": "The footer copyright"
+  },
+  "logo.alt": {
+    "message": "Conflux Copyright Logo",
+    "description": "The alt text of footer logo"
+  }
+}

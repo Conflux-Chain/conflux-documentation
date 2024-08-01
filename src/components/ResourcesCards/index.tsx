@@ -1,26 +1,52 @@
+import React from "react";
 import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 
 import styles from "./styles.module.css";
+import Translate from "@docusaurus/Translate";
 
 export default function QuickNavigation() {
   const { siteConfig } = useDocusaurusContext();
   const { baseUrl } = siteConfig;
   return (
     <div className={styles.container}>
-      <h2 className={styles.heading}>What is Conflux</h2>
+      <h2 className={styles.heading}>
+        <Translate id="overview.title">What is Conflux</Translate>
+      </h2>
       <p>
-        Conflux Network is a state-of-the-art public blockchain system designed to address the common issues of scalability, security, and decentralization that challenge many existing blockchain networks. At its core, Conflux utilizes a unique consensus mechanism known as Tree-Graph. This mechanism allows for the parallel processing of blocks and transactions, reducing the time and resources needed for consensus and increasing the overall capacity of the network.
+        <Translate id="overview.description">
+          Conflux Network is a state-of-the-art public blockchain system
+          designed to address the common issues of scalability, security, and
+          decentralization that challenge many existing blockchain networks. At
+          its core, Conflux utilizes a unique consensus mechanism known as
+          Tree-Graph. This mechanism allows for the parallel processing of
+          blocks and transactions, reducing the time and resources needed for
+          consensus and increasing the overall capacity of the network.
+        </Translate>
       </p>
-      <h2 className={styles.heading}>Resources</h2>
+      <h2 className={styles.heading}>
+        <Translate id="overview.resources.title">Resources</Translate>
+      </h2>
       <p>
-        We have a varied collection of guides, references and examples to help you around anywhere with your Conflux Integration. Deep dive into the
-        different aspects of Conflux Network and make your own customized integration.
+        <Translate id="overview.resources.description">
+          We have a varied collection of guides, references and examples to help
+          you around anywhere with your Conflux Integration. Deep dive into the
+          different aspects of Conflux Network and make your own customized
+          integration.
+        </Translate>
       </p>
       <div className={styles.cardContainer}>
-        <Link className={styles.card} to={`${baseUrl}docs/general/conflux-basics/`}>
+        <Link
+          className={styles.card}
+          to={`${baseUrl}docs/general/conflux-basics/`}
+        >
           <div className={styles.cardIconContainer}>
-            <svg viewBox="0 0 67 67" fill="none" xmlns="http://www.w3.org/2000/svg" className={styles.cardIcon}>
+            <svg
+              viewBox="0 0 67 67"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              className={styles.cardIcon}
+            >
               <path
                 fillRule="evenodd"
                 clipRule="evenodd"
@@ -30,13 +56,29 @@ export default function QuickNavigation() {
             </svg>
           </div>
           <div className={styles.cardContent}>
-            <h5>Conflux Basics</h5>
-            <p>Introducing the basic concept and design of Conflux network.</p>
+            <h5>
+              <Translate id="overview.resources.cards.basic.title">
+                Conflux Basics
+              </Translate>
+            </h5>
+            <p>
+              <Translate id="overview.resources.cards.basic.description">
+                Introducing the basic concept and design of Conflux network.
+              </Translate>
+            </p>
           </div>
         </Link>
-        <Link className={styles.card} to={`${baseUrl}docs/category/mining--staking`}>
+        <Link
+          className={styles.card}
+          to={`${baseUrl}docs/category/mining--staking`}
+        >
           <div className={styles.cardIconContainer}>
-            <svg className={styles.cardIcon} viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg
+              className={styles.cardIcon}
+              viewBox="0 0 20 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
               <path
                 fillRule="evenodd"
                 clipRule="evenodd"
@@ -46,15 +88,31 @@ export default function QuickNavigation() {
             </svg>
           </div>
           <div className={styles.cardContent}>
-            <h5>Mining & Staking</h5>
-            <p>Providing tutorials for mining / staking in Conflux.</p>
+            <h5>
+              <Translate id="overview.resources.cards.mine.title">
+                Mining & Staking
+              </Translate>
+            </h5>
+            <p>
+              <Translate id="overview.resources.cards.mine.description">
+                Providing tutorials for mining / staking in Conflux.
+              </Translate>
+            </p>
           </div>
         </Link>
       </div>
       <div className={styles.cardContainer}>
-        <Link className={styles.card} to={`${baseUrl}docs/general/run-a-node/Overview`}>
+        <Link
+          className={styles.card}
+          to={`${baseUrl}docs/general/run-a-node/Overview`}
+        >
           <div className={styles.cardIconContainer}>
-            <svg className={styles.cardIcon} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg
+              className={styles.cardIcon}
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
               <path
                 fillRule="evenodd"
                 clipRule="evenodd"
@@ -64,13 +122,26 @@ export default function QuickNavigation() {
             </svg>
           </div>
           <div className={styles.cardContent}>
-            <h5>Run a Node</h5>
-            <p>Introducing how to run a node for Conflux network.</p>
+            <h5>
+              <Translate id="overview.resources.cards.node.title">
+                Run a Node
+              </Translate>
+            </h5>
+            <p>
+              <Translate id="overview.resources.cards.node.description">
+                Introducing how to run a node for Conflux network.
+              </Translate>
+            </p>
           </div>
         </Link>
         <Link className={styles.card} to={`${baseUrl}docs/general/build/`}>
           <div className={styles.cardIconContainer}>
-            <svg viewBox="0 0 67 67" fill="none" xmlns="http://www.w3.org/2000/svg" className={styles.cardIcon}>
+            <svg
+              viewBox="0 0 67 67"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              className={styles.cardIcon}
+            >
               <path
                 fillRule="evenodd"
                 clipRule="evenodd"
@@ -80,15 +151,28 @@ export default function QuickNavigation() {
             </svg>
           </div>
           <div className={styles.cardContent}>
-            <h5>Build</h5>
-            <p>Documents for Conflux node developer.</p>
+            <h5>
+              <Translate id="overview.resources.cards.build.title">
+                Build
+              </Translate>
+            </h5>
+            <p>
+              <Translate id="overview.resources.cards.build.description">
+                Documents for Conflux node developer.
+              </Translate>
+            </p>
           </div>
         </Link>
       </div>
       <div className={styles.cardContainer}>
         <Link className={styles.card} to={`${baseUrl}docs/general/faq/`}>
           <div className={styles.cardIconContainer}>
-            <svg viewBox="0 0 67 67" fill="none" xmlns="http://www.w3.org/2000/svg" className={styles.cardIcon}>
+            <svg
+              viewBox="0 0 67 67"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              className={styles.cardIcon}
+            >
               <path
                 fillRule="evenodd"
                 clipRule="evenodd"
@@ -102,15 +186,29 @@ export default function QuickNavigation() {
             </svg>
           </div>
           <div className={styles.cardContent}>
-            <h5>FAQs</h5>
+            <h5>
+              <Translate id="overview.resources.cards.faq.title">
+                FAQs
+              </Translate>
+            </h5>
             <p>
-              Common Asked Questions about Conflux Network.
+              <Translate id="overview.resources.cards.faq.description">
+                Common Asked Questions about Conflux Network.
+              </Translate>
             </p>
           </div>
         </Link>
-        <Link className={styles.card} to={`${baseUrl}docs/general/tutorials/transferring-funds/`}>
+        <Link
+          className={styles.card}
+          to={`${baseUrl}docs/general/tutorials/transferring-funds/`}
+        >
           <div className={styles.cardIconContainer}>
-            <svg viewBox="0 0 57 56" fill="none" xmlns="http://www.w3.org/2000/svg" className={styles.cardIcon}>
+            <svg
+              viewBox="0 0 57 56"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              className={styles.cardIcon}
+            >
               <path
                 fillRule="evenodd"
                 clipRule="evenodd"
@@ -126,8 +224,16 @@ export default function QuickNavigation() {
             </svg>
           </div>
           <div className={styles.cardContent}>
-            <h5>Guides</h5>
-            <p>Guides for some common operation in Conflux Network</p>
+            <h5>
+              <Translate id="overview.resources.cards.guide.title">
+                Guides
+              </Translate>
+            </h5>
+            <p>
+              <Translate id="overview.resources.cards.guide.description">
+                Guides for some common operation in Conflux Network
+              </Translate>
+            </p>
           </div>
         </Link>
       </div>
