@@ -23,15 +23,18 @@ contract SimpleECDSAExample {
     using ECDSA for bytes32;
 
     function verifySignature(bytes32 message, bytes memory signature, address signer) public pure returns (bool) {
-        return message.toEthSignedMessageHash().recover(signature) == signer;
+        return message.recover(signature) == signer;
     }
 }
 ```
 
+
 This contract demonstrates the basic usage of ECDSA for signature verification. It uses OpenZeppelin's ECDSA library to:
-1. Convert the message to an Ethereum signed message hash
-2. Recover the signer's address from the signature
-3. Compare the recovered address with the provided signer address
+1. Recover the signer's address from the signature
+2. Compare the recovered address with the provided signer address
+
+Note: This example uses OpenZeppelin v5.0.0. If you're using an earlier version, you may need to adjust the code accordingly.
+
 
 ## Creating and Verifying ECDSA Signatures
 
@@ -102,10 +105,9 @@ Here's a smart contract example using ECDSA signatures to verify an allowlist:
 pragma solidity ^0.8.0;
 
 import "@openzeppelin/contracts/utils/cryptography/ECDSA.sol";
+import "@openzeppelin/contracts/utils/cryptography/MessageHashUtils.sol";
 
 contract ECDSAAllowlist {
-    using ECDSA for bytes32;
-
     address public signer;
 
     constructor(address _signer) {
@@ -114,14 +116,16 @@ contract ECDSAAllowlist {
 
     function isAllowed(address user, uint256 amount, bytes memory signature) public view returns (bool) {
         bytes32 messageHash = keccak256(abi.encodePacked(user, amount));
-        bytes32 ethSignedMessageHash = messageHash.toEthSignedMessageHash();
-        address recoveredSigner = ethSignedMessageHash.recover(signature);
+        bytes32 ethSignedMessageHash = MessageHashUtils.toEthSignedMessageHash(messageHash);
+        address recoveredSigner = ECDSA.recover(ethSignedMessageHash, signature);
         return recoveredSigner == signer;
     }
 
     // Other contract functionalities...
 }
 ```
+
+Note: This example uses OpenZeppelin v5.0.0. If you're using an earlier version, you may need to adjust the code accordingly.
 
 ### Generating Signatures
 
