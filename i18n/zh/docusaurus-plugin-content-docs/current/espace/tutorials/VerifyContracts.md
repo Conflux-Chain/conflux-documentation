@@ -70,6 +70,8 @@ npx hardhat verify --network espaceTestnet <contract address> <space separated c
 npx hardhat verify --network espaceTestnet 0xD9880690bd717189cC3Fbe7B9020F27fae7Ac76F 123 456
 ```
 
+Note: If the above does not work, try verifying with the following instead: apiURL: 'https://evmapi-testnet.confluxscan.net/api/', and browserURL: 'https://evmtestnet.confluxscan.net/'.
+
 ### Foundry
 
 在使用 Foundry 时，`verify-contract` 命令有助于自动化验证合约。 如果您的合约中包含构造函数参数，您可以使用 `--constructor-args` 选项以 ABI 编码形式指定它们。 例如，如果您的构造函数接受两个 `uint256` 变量：
