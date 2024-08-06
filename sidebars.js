@@ -185,7 +185,7 @@ const sidebars = {
     },
     {
       type: "link",
-      label: "Core Space JSON RPC(Experimental)",
+      label: "Core Space JSON RPC(Interactive)",
       href: "/docs/core/rpc/cfx_gasprice",
     },
     {
