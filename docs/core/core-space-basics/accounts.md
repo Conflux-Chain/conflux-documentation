@@ -55,7 +55,7 @@ A Conflux account state includes five parts:
 The basic status of the account consists of eight fields as follows:
 
 - ```Nonce``` is a counter to keep track of the number of transactions sent by an account. It is also used to ensure that each transaction can only be executed once. For contract accounts, this value indicates the number of ```contracts created by this contract```.
-- ```Balance``` is the number of CFX of the address in Drip. Drip is the smallest unit of CFX, where 1CFX=1018 Drip.
+- ```Balance``` is the number of CFX of the address in Drip. Drip is the smallest unit of CFX, where 1CFX=10^18 Drip.
 - ```CodeHash``` is the hash of the code of the contract account. The user can reference the contract code, the code cannot be modified after the contract is created. The code will be executed when the contract receives a message call. For external accounts, codeHash is a hash of an empty string.
 - ```StakingBalance``` is the balance of the staked amount. Similarly, the unit is Drip.
 - ```Admin``` is the administrator address of the ```contract account``` recorded in the AdminControl internal contract. In default, the contract administrator is set to the account which deployed this contract when it is created. The administrator can destroy the contract it manages through the internal contract AdminControl, or give the administrator role to another account. The administrator address of an external account is itself.
