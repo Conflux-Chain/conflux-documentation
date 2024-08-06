@@ -195,7 +195,7 @@ const sidebars = {
     },
     {
       type: "link",
-      label: "eSpace JSON RPC(Experimental)",
+      label: "eSpace JSON RPC(Interactive)",
       href: "/docs/espace/rpc/web3_clientversion",
     },
     {
