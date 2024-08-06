@@ -1508,7 +1508,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"cfx_checkBalanceAgainstTransacti
 
 #### 参数
 
-1. `QUANTITY|TAG` - 整数纪元号，或字符串如`"latest_mined"`、`"latest_state"`、`"latest_confirmed"`、"`latest_checkpoint"`或<0>"earliest"</0>，请参见[纪元号参数](#the-default-epochnumber-parameter)。
+1. `QUANTITY|TAG` - 整数纪元号，或字符串如`"latest_mined"`、`"latest_state"`、`"latest_confirmed"`、`"latest_checkpoint"`或<0>"earliest"</0>，请参见[纪元号参数](#the-default-epochnumber-parameter)。
 
 ```json
 params: [
