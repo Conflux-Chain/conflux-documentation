@@ -1,0 +1,28 @@
+#method select, #method input, #interactive-box select, #interactive-box input {
+  border-radius: var(--ifm-global-radius);
+  border: 2px solid var(--ifm-toc-border-color);
+  font: var(--ifm-font-size-base) var(--ifm-font-family-base);
+  padding: 0.8rem;
+  background: var(--docsearch-searchbox-focus-background);
+  color: var(--docsearch-text-color);
+  transition: border var(--ifm-transition-fast) ease;
+}
+
+#interactive-box input {
+  width: 100%
+}
+
+#interactive-box .form-group {
+  margin-top: 0.25rem !important;
+  margin-bottom: 0.25rem !important;
+}
+
+.method section {
+  margin-bottom: var(--ifm-heading-margin-bottom);
+}
+
+#interactive-box fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+}

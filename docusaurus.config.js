@@ -17,8 +17,8 @@ function getConfigI18n({ en, "zh-CN": zh }) {
 }
 
 /**
- * 
- * @returns {import('@docusaurus/types').Config} 
+ *
+ * @returns {import('@docusaurus/types').Config}
  *  */
 function getConfig() {
   return {
@@ -80,6 +80,24 @@ function getConfig() {
           min: 640, // min resized image's size. if original is lower, use that size.
           steps: 2, // the max number of images generated between min and max (inclusive)
           disableInDev: false,
+        },
+      ],
+      [
+        "./plugins/openrpc/index.ts",
+        {
+          id: "cspace",
+          path: "/docs/core/rpc",
+          openrpcDocument: "./plugins/openrpc/src/rpc/cfx.json", // path or url to openrpc document.
+          defaultEndpoint: "https://test.confluxrpc.com",
+        },
+      ],
+      [
+        "./plugins/openrpc/index.ts",
+        {
+          id: "espace",
+          path: "/docs/espace/rpc",
+          openrpcDocument: "./plugins/openrpc/src/rpc/Eth.json", // path or url to openrpc document.
+          defaultEndpoint: "https://evmtestnet.confluxrpc.com",
         },
       ],
     ],

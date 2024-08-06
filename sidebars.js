@@ -184,9 +184,19 @@ const sidebars = {
       ]
     },
     {
+      type: "link",
+      label: "Core Space JSON RPC(Interactive)",
+      href: "/docs/core/rpc/cfx_gasprice",
+    },
+    {
       type: "doc",
       label: "eSpace JSON RPC",
       id: "espace/build/jsonrpc-compatibility",
+    },
+    {
+      type: "link",
+      label: "eSpace JSON RPC(Interactive)",
+      href: "/docs/espace/rpc/web3_clientversion",
     },
     {
       type: 'html',
