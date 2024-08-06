@@ -3,8 +3,8 @@ title: 常见问题解答
 sidebar_position: 15
 displayed_sidebar: coreSidebar
 keywords:
-  - faq
-  - transaction
+  - 常见问题与解答
+  - 交易
 ---
 
 ## 其他

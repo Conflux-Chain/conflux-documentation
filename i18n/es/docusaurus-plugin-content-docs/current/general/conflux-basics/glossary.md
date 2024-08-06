@@ -99,6 +99,12 @@ En el contexto de Conflux, DAG se utiliza para representar la estructura de bloq
 ### **Aplicación descentralizada (DApp)**
 Una aplicación descentralizada (DApp) es una aplicación de computadora que se ejecuta en un sistema de cómputo distribuido como una cadena de bloques. A diferencia de las aplicaciones tradicionales que funcionan en servidores centralizados, las DApps aprovechan el poder de la red peer-to-peer de la blockchain para proporcionar transparencia, inmutabilidad y resistencia a la censura. El framework típico de un DApp incluye 2 capas: el front-end o interfaz de usuario, y los contratos inteligentes que se ejecutan en la blockchain actuando como la lógica del back-end. El front-end, desarrollado usando lenguajes estándar como HTML, CSS y JavaScript, interactúa con la cadena de bloques a través de contratos inteligentes. Estos contratos inteligentes, escritos en idiomas como Solidity, definen las reglas y la lógica de la DApp, y se almacenan y ejecutan en la cadena de bloques, asegurando una operación consistente y de confianza.
 
+### **Decentralized Finance (DeFi)**
+Decentralized finance (DeFi) uses blockchain smart contracts to eliminate third parties and centralized institutions like banks from financial transactions. This allows for a range of financial services, such as lending, borrowing, and trading, to be conducted transparently and efficiently without intermediaries.
+
+### **Digital Signature**
+A digital signature is a mathematical scheme used to verify the authenticity and integrity of digital messages or documents. It employs asymmetric cryptography, using a private key for signing and a public key for verification. Digital signatures ensure that a document was signed by the known sender and has not been altered, providing security, authenticity, and non-repudiation. Commonly used in software distribution, financial transactions, and contract management, digital signatures are more secure than traditional handwritten signatures and can include features like timestamps for added security.
+
 ### **Doble gasto**
 El doble gasto es un defecto potencial en un sistema de dinero digital en el que se puede gastar más de una vez un solo token digital. Esto es posible porque un token digital consiste en un archivo digital que puede ser duplicado o falsificado. La red Conflux, al igual que otras redes de blockchain, utiliza un mecanismo de consenso para prevenir el doble gasto.
 
@@ -198,6 +204,7 @@ In transaction, nonce is the execution sequence number of transactions sent from
 ### **Oracles**
 In the context of blockchains and smart contracts, an oracle is an agent that finds and verifies real-world occurrences and submits this information to a blockchain to be used by smart contracts. Oracles are used in the Conflux network to bring external information into smart contracts, enabling them to interact with the outside world.
 
+
 ### **TWAP**
 TWAP stands for “time-weighted average price”. It’s a pricing algorithm used to calculate the average price of an asset over a set period.In DeFi, a type of decentralized exchange (DEX) known as an automated market maker (AMM) can be used to generate TWAP prices that can be used in other protocols. TWAP can also refer to a trading strategy used to execute a large-volume order by breaking it into equal parts across a set period in order to minimize slippage and signaling.
 
@@ -219,6 +226,11 @@ Refer to [PoW](../conflux-basics/consensus-mechanisms/proof-of-work/proof-of-wor
 
 ### **Public/Private Key**
 A public key is a cryptographic code that allows a user to receive cryptocurrencies into his or her account. The private key is used to sign transactions or digital messages and the public key is used to verify the signature. In the context of Conflux, users have a pair of public and private keys that they use to interact with the network.
+
+
+### **Bytecode**
+Bytecode is a numeric representation of smart contract instructions, enabling efficient interpretation by the virtual machine. It serves as an intermediate form between the source code (Such as Solidity) and the machine code executed on the blockchain.
+
 
 ### **Smart Contract**
 A smart contract is a self-executing contract with the terms of the agreement directly written into code. They run on the blockchain, so they are stored on a public database and cannot be changed. In the Conflux network, users can create and interact with smart contracts, which can automate a wide range of applications and processes.

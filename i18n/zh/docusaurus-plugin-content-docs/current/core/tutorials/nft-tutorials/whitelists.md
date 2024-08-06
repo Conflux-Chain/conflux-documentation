@@ -1,25 +1,25 @@
 ---
-title: Merkle Tree Whitelist
+title: 默克尔树白名单
 displayed_sidebar: coreSidebar
 ---
 
-# Merkle Tree NFT Whitelist on CoreSpace using Hardhat
+# 在CoreSpace使用Hardhat的默克尔树NFT白名单
 
 Using a Merkle Tree whitelist provides a cost-efficient way to distribute NFTs to a predefined list of addresses. It ensures that only whitelisted addresses can mint the NFTs, enhancing security and efficiency. Writing a whitelist of thousands of addresses directly within a smart contract would result in significant gas costs, and additionally, due to the maximum transaction gas limit restriction, it might be impractical to update such a large whitelist in a single transaction. However, since in the Merkle Tree verification process, leaf nodes and proofs can be stored off-chain while only the root value needs to be stored on-chain, this method significantly saves on gas costs and enables whitelist setup with only one transaction.
 
 This tutorial will guide you through the steps to create, write, and deploy an ERC721 NFT smart contract with a Merkle Tree whitelist on Conflux CoreSpace using Hardhat. It will also show you how to use merkletreejs to create the Merkle Tree whitelist. For a practical example, please refer to the [Conflux-NFT-MerkleTree-Whitelist](https://github.com/ConfluxDAO/Conflux-NFT-MerkleTree-Whitelist) repository.
 
-If you are not familiar with Hardhat, please refer to the [Hardhat documentation](https://hardhat.org/getting-started/).
+如果您不熟悉 Hardhat，请参考 [Hardhat 文档](https://hardhat.org/getting-started/)。
 
 ### 前提条件
 
-Before you start, ensure you have the following:
+在开始之前，请确保您已经具备以下条件：
 
 - Node.js installed on your system & Hardhat setup on your machine.
 - A Conflux CoreSpace wallet
 - A basic understanding of smart contract development and the Solidity programming language.
 
-## Step 1: Setting Up Your Environment
+## 第1步：设置您的环境
 
 Open your terminal and run:
 
@@ -35,7 +35,7 @@ When prompted, choose the default project setup by pressing Enter for all questi
 
 [![Create Project](../imgs/nft-tutorials/whitelist-hardhat-create-project.png)](../imgs/nft-tutorials/whitelist-hardhat-create-project.png)
 
-## Step 2: Installing Dependencies
+## 步骤2: 安装相关程序
 
 Install OpenZeppelin contracts for a secure, audited implementation of ERC721 tokens. Next, install the Hardhat-Conflux-Plugin, which is built on top of js-conflux-sdk, providing a similar interface for deployment and interaction. Finally, install merkletreejs and keccak256 to create a Merkle Tree from your whitelist addresses.
 
@@ -311,6 +311,6 @@ npx hardhat run scripts/mintNFT.js --network cfxTestnet
 You will see the following message after successful mint
 [![Deploy Success](../imgs/nft-tutorials/whitelist-mint-success.png)](../imgs/nft-tutorials/whitelist-mint-success.png)
 
-## Conclusion
+## 结论
 
 This setup provides a cost-efficient way to distribute NFTs to a whitelist of addresses using a Merkle Tree. Each step is essential for ensuring the security and efficiency of your NFT distribution. Be sure to test thoroughly in a test environment before deploying to the main network.

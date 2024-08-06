@@ -30,7 +30,7 @@ const config: HardhatUserConfig = {
   solidity: "0.8.19",
   networks: {
     espaceTestnet: {
-      url: "https://evm.confluxrpc.com",
+      url: "https://evmtestnet.confluxrpc.com",
       accounts:
         process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
     },
@@ -69,6 +69,8 @@ npx hardhat verify --network espaceTestnet <contract address> <space separated c
 ```solidity
 npx hardhat verify --network espaceTestnet 0xD9880690bd717189cC3Fbe7B9020F27fae7Ac76F 123 456
 ```
+
+Note: If the above does not work, try verifying with the following instead: apiURL: 'https://evmapi-testnet.confluxscan.net/api/', and browserURL: 'https://evmtestnet.confluxscan.net/'.
 
 ### Foundry
 

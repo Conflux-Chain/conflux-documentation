@@ -4,23 +4,23 @@ title: Base32 地址
 displayed_sidebar: coreSidebar
 ---
 
-In Conflux, every [account](../../general/conflux-basics/accounts.md) is associated with a pair of public and private keys, and is identified by an address. 本页面介绍地址在core space中的表示和计算方式。
+在 Conflux 网络中，每个 [账户](../../general/conflux-basics/accounts.md) 都与一对公钥和私钥相关联，并通过一个地址来识别。 本页面介绍地址在core space中的表示和计算方式。
 
 :::info
 
-Refer to [General-address](../../general/conflux-basics/accounts.md#address) for the basic concepts about addresses.
+关于地址的基本概念，请参阅 [General-address](../../general/conflux-basics/accounts.md#address)。
 
 :::
 
 ## Hex地址 和 Base32 地址
 
-在 `Conflux-rust v1.1.1`发布之前，Conflux 地址完全以十六进制编码字符串形式呈现，例如 `0x1292d4955b47f5153b88c12c7a94048f09839` 此格式与Etherum和其他兼容的EVM区块链使用的地址非常相似。 However, Conflux employs a unique method to compute EOA addresses, which means that **the address strings generated from the same private key will usually differ between Conflux and Ethereum.** This similarity in appearance, combined with the difference in computation, makes it all too easy for users to confuse Conflux addresses with Ethereum addresses, potentially leading to the loss of assets.
+在 `Conflux-rust v1.1.1`发布之前，Conflux 地址完全以十六进制编码字符串形式呈现，例如 `0x1292d4955b47f5153b88c12c7a94048f09839` 此格式与Etherum和其他兼容的EVM区块链使用的地址非常相似。 然而，Conflux 采用了独特的方法来计算 EOA 地址，这意味着 **从相同的私钥生成的地址字符串在 Conflux 和 Ethereum 之间通常会有所不同。**这种外观上的相似性，加上计算上的差异，很容易让用户将 Conflux 地址与 Ethereum 地址混淆，可能导致资产的损失。
 
-为了解决这个问题，Conflux在 [CIP-37](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-37.md) 中引入了一个新的基于 base32 编码地址格式。 The new format is **derived directly from the original hex-encoded addresses** including a **distinctive prefix** (such as "cfx"), an optional **address type**, and a **checksum**. 因此，上文提到的Hex编码地址可以转换成更容易识别的base32地址。例如 `cfx:aakkfzezns4h8ymx1cgmcnd4x3aev6e2hexz250ym5`, 可选的，也可以表示为详细格式地址，详细格式包含了非必须的地址类型信息, 例如 `CFX:TYPE .USER：AAKKFZEZNS4H8YMX1CGMCN4X3AEV6E2HEXZ250YM5`. 这种新格式最大限度地减少了Conflux 和 Etherum地址之间混淆的风险，提供了更安全和更方便的用户体验。
+为了解决这个问题，Conflux在 [CIP-37](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-37.md) 中引入了一个新的基于 base32 编码地址格式。 新格式 **直接从原始的十六进制编码地址派生**，包括一个**独特的前缀**（如"cfx"）、一个可选的**地址类型**和一个**校验和**。 因此，上文提到的Hex编码地址可以转换成更容易识别的base32地址。例如 `cfx:aakkfzezns4h8ymx1cgmcnd4x3aev6e2hexz250ym5`, 可选的，也可以表示为详细格式地址，详细格式包含了非必须的地址类型信息, 例如 `CFX:TYPE .USER：AAKKFZEZNS4H8YMX1CGMCN4X3AEV6E2HEXZ250YM5`. 这种新格式最大限度地减少了Conflux 和 Etherum地址之间混淆的风险，提供了更安全和更方便的用户体验。
 
 :::caution
 
-Base32 addresses are utilized throughout the Conflux Core ecosystem, with the exception of smart contract `.sol` source code. 在`.sol`文件中需要硬编码[EIP-55](https://eips.ethereum.org/EIPS/eip-55) 校验和地址的情况下，开发人员应该选择使用Conflux的十六进制编码地址，而不是Base32格式。
+Base32 地址在 Conflux Core 生态系统中被广泛使用，智能合约 `.sol` 源代码除外。 在`.sol`文件中需要硬编码[EIP-55](https://eips.ethereum.org/EIPS/eip-55) 校验和地址的情况下，开发人员应该选择使用Conflux的十六进制编码地址，而不是Base32格式。
 
 :::
 
@@ -44,7 +44,7 @@ Conflux 十六进制地址是一个20字节的十六进制值，以“0x”开�
 
 #### EOA 十六进制地址计算
 
-The computation of EOA hex address is specified in [Conflux protocol specification](https://www.confluxnetwork.org/files/Conflux_Protocol_Specification.pdf) `3.1: Accounts`. 将账户公钥进行Keccak运算得到摘要，账户地址由4位类型标识和该摘要的最右侧156位串联而成。
+EOA 十六进制地址的计算在 [Conflux 协议规范](https://www.confluxnetwork.org/files/Conflux_Protocol_Specification.pdf) `3.1：账户`中有具体说明。 将账户公钥进行Keccak运算得到摘要，账户地址由4位类型标识和该摘要的最右侧156位串联而成。
 
 #### 合约地址计算
 
@@ -124,8 +124,8 @@ Conflux的 base32 地址指由 [CIP-37](https://github.com/Conflux-Chain/CIPs/bl
 
 #### 校验和(Checksum)
 
-1. 准备输入校验和输入： `data` 被用作校验和函数的输入。 It contains:
-   - The lower 5 bits of each character of the `network-prefix`, e.g. `"cfx..."` becomes `0x03, 0x06, 0x18, ...`
+1. 准备输入校验和输入： `data` 被用作校验和函数的输入。 它包含：
+   - `网络前缀`每个字符的低 5 位，例如 `"cfx..."` 变成 `0x03, 0x06, 0x18, ...`
    - 分隔符（5比特0）。
    - 5位一组将载荷分块。 如果需要，使用0在载荷的最右侧进行填充，以便恰好将载荷分为5位1组。
    - 八个零作为校验和的"模板"。
@@ -153,32 +153,32 @@ encode(0x1a2f80341409639ea6a35bbcab8299066109aa55, "cfx")
 5. concatenated result: "cfx:type.user:aarc9abycue0hhzgyrr53m6cxedgccrmmyybjgh4xg"
 ```
 
-## Use Cases for Base32 and Hex Addresses
+## Base32 和十六进制地址的使用场景
 
-The Conflux Core RPC methods only accept base32 address, so Conflux Core SDKs and wallets also use base32 address. Base32 is the most common address format in the Core Space.
+Conflux Core RPC 方法仅接受 base32 地址，因此 Conflux Core SDK 和钱包也使用 base32 地址。 Base32 是 Core Space 中最常见的地址格式。
 
-For Conflux Core Space contract development, Ethereum toolchains are used to compile contracts. So in Solidity smart contract `.sol` files, base32 format addresses would bring about compilation errors. If a specific address needs to be hardcoded in the contract code, it should be in hex format. **This is the only situation that hex address is used in the Core Space.**
+对于 Conflux Core Space 合约开发，可以使用 Ethereum 工具链编译合约。 因此，在 Solidity 智能合约 `.sol` 文件中，base32 格式地址会导致编译错误。 如果需要在合约代码中硬编码特定地址，它应该使用十六进制格式。 **这是在 Core Space 中使用十六进制地址的唯一情况。**
 
-## Address Format Convert Tool
+## 地址格式转换工具
 
-ConfluxScan provide a [Online Address Converter](https://www.confluxscan.io/address-converter) which is very useful.
+ConfluxScan 提供了一个[在线地址转换器](https://www.confluxscan.io/address-converter)，非常实用。
 
 ![](./img/scan-address-converter.png)
 
 ## 常见问题解答
 
-### How to convert between base32 and hex addresses?
+### 如何在 base32 和十六进制地址之间转换？
 
-Use the [Online Address Converter](https://www.confluxscan.io/address-converter) or the SDKs to convert between base32 and hex addresses.
+使用[在线地址转换器](https://www.confluxscan.io/address-converter)或 SDK 可以实现 base32 和十六进制地址之间的转换。
 
-### When should I use hex addresses?
+### 我什么时候应该使用十六进制地址？
 
-In the Core Space, hex addresses are only used in Solidity smart contract `.sol` files. In other cases, base32 addresses are used.
+在 Core Space 中，十六进制地址仅在 Solidity 智能合约 `.sol` 文件中使用。 在其他情况下，使用 base32 地址。
 
-### Can I use Ethereum EOA addresses in Conflux Core Space?
+### 我可以在 Conflux Core Space 中使用 Ethereum EOA 地址吗？
 
-No. Ethereum EOA addresses are not all compatible with Conflux addresses. It's recommend use Conflux Wallet or SDKs to generate Conflux base32 addresses.
+不能。 Ethereum EOA 地址并不完全兼容 Conflux 地址。 建议使用 Conflux 钱包或 SDK 生成 Conflux base32 地址。
 
-### What's the [BIP-44 Coin Type](https://github.com/satoshilabs/slips/blob/master/slip-0044.md) for Conflux Core Space?
+### Conflux Core Space 的 [BIP-44](https://github.com/satoshilabs/slips/blob/master/slip-0044.md) 币种类型是什么？
 
-The BIP-44 coin type for Conflux Core Space is `503`.
+Conflux Core Space 的 BIP-44 币种类型是 `503`。

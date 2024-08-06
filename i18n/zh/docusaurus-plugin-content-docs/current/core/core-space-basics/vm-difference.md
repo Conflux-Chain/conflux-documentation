@@ -4,35 +4,35 @@ title: 虚拟机的差异
 displayed_sidebar: coreSidebar
 ---
 
-The Core Space VM is compatible with the EVM in most cases, but there are some differences. This page lists the differences between the two.
+Core Space 的虚拟机在大多数情况下与 EVM 兼容，但存在一些差异。 本页列出了两者之间的差异。
 
-## Address Calculation
+## 地址的计算
 
-The contract address calculation is different from Ethereum. Check [Core Address](addresses#contract-address-computation) for more details.
+Core Space 的合约地址的计算方式与以太坊不同。 更多详情请查看 [Core 地址](addresses#contract-address-computation) 。
 
-## 1820 Registry
+## 1820 注册表
 
-The 1820 registry is a contract that stores the addresses of other contracts that implement certain interfaces. It is used to implement the EIP-1820 standard. The 1820 registry is deployed at Core Space hex40 address `0x88887eD889e776bCBe2f0f9932EcFaBcDfCd1820`
+1820 注册表是一个存储了实现某些接口的其他合约地址的合约 它用于实现 EIP-1820 标准。 1820 注册表部署在 Core Space hex40 地址 `0x88887eD889e776bCBe2f0f9932EcFaBcDfCd1820`
 
-## Opcode
+## 操作码
 
-- The `BLOCKHASH` opcode can only take `NUMBER-1` as input. (Unlike Ethereum, which takes any integer in `NUMBER-256` to `NUMBER-1` as input). This is the **only break opcode**.
+- `区块哈希`操作码只能以 `NUMBER-1` 作为输入。 （与以太坊不同，以太坊可以接受 `NUMBER-256` 到 `NUMBER-1` 之间的任何整数作为输入）。 这是唯一的**中断操作码**。
 
-Which means the Solidity built-in function `blockhash` can only take `block.number - 1` as input.
+这意味着 Solidity 内置函数 `blockhash` 只能以 `block.number - 1` 作为输入。
 
-## Block Gas Limit
+## 区块的 Gas 限制
 
-The block gas limit is fixed at 30000000.
+区块的 gsa 限制固定为 30000000。
 
-## block.number
+## 区块编号（block.number）
 
-The `block.number` is the sequence number in whole tree-graph.
+`block.number ` 是整个树图的序列号。
 
 ## 内置合约
 
-Core Space has some built-in [internal contracts](./internal-contracts/) that are not in Ethereum.
+Core Space 拥有一些在以太坊中并不存在的[内置合约](./internal-contracts/) 。
 
-## 燃气
+## Gas
 
-1. Gas used and refund: Conflux requires less gas in `SSTORE` operation but no longer refunds resetting storage and contract destruction.
-2. Gas Fee Refund: In Ethereum, if a transaction's gas limit exceeds the actual gas cost, the remaining gas is fully refunded. In contrast, Conflux refunds a maximum of 1/4 of the **gas limit**. Setting an excessively high gas limit in Conflux can lead to additional transaction fee costs. However, no extra fees are incurred if the gas limit is set to less than 4/3 of the actual cost. Therefore, providing an accurate gas estimate for a transaction is crucial for optimizing transaction fees.
+1. Gas 的使用与返还：Conflux 在 `SSTORE` 操作中需要的 gas 较少，但不再返还重置存储和合约销毁的 gas。
+2. Gas 费的返还：在以太坊，如果交易的 gas 限制超过了实际 gas 花费，剩下的 gas 会被完全返还。 而在 Conflux 中，只会返还最多 1/4 的 **gas 限制**。 在 Conflux 设置过高的 gas 限制可能会增加额外的交易费用。 但是，如果 gas 限制设置为低于实际花费的 4/3，则不会产生额外费用。 因此，为交易提供准确的 gas 估计是优化交易费用的关键。

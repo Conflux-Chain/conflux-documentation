@@ -4,38 +4,38 @@ title: 智能合约
 displayed_sidebar: coreSidebar
 ---
 
-A "smart contract" is simply a program that runs on the Conflux Core blockchain. It's a collection of code (its functions) and data (its state) that resides at a specific address on the Conflux Core blockchain. To learn more about smart contracts, see our [Introduction to Smart Contracts](/docs/general/conflux-basics/contracts).
+智能合约可以理解为一个运行在Conflux Core 链上的程序。 它是位于 Conflux Core 链上的一个特定地址的一系列代码(函数)和数据(状态)的集合。 想要进一步了解智能合约，请参考我们的[智能合约介绍](/docs/general/conflux-basics/contracts)。
 
-## Smart contract in Conflux Core
+## Conflux Core 上的智能合约
 
-Conflux Core has a built-in virtual machine (VM) that can execute smart contracts. The VM is almost entirely compatible with the Ethereum Virtual Machine (EVM), meaning that the majority of Ethereum smart contracts can be deployed and run directly on Conflux Core. Conflux Core smart contracts are also written in the **Solidity language**, and mainstream Solidity libraries can be used directly for developing Conflux Core smart contracts.
+Conflux Core 拥有一个用来执行智能合约的内置虚拟机(VM)。 Conflux 的虚拟机几乎完全兼容以太坊虚拟机(EVM)， 这意味着绝大多数以太坊智能合约都可以在 Conflux Core 上直接部署并运行。 Conflux Core 上的智能合约同样使用**Solidity 语言**进行编写，主流的 Solidity 库都可以直接用于 Conflux Core 上的智能合约开发。
 
-To learn more about Solidity language see our [Intro to Solidity](/docs/general/build/smart-contracts/solidity-basics) and it's [official documentation](https://docs.soliditylang.org/en/).
+想要进一步了解 Solidity 语言，请参阅我们的[ Solidity 简介](/docs/general/build/smart-contracts/solidity-basics)和它的[官方文件](https://docs.soliditylang.org/en/)。
 
-## Compare to Ethereum Smart Contract
+## 对比以太坊智能合约
 
-Conflux's VM is almost entirely compatible with EVM, meaning that the majority of Ethereum smart contracts can be deployed and run directly on Conflux Core. Conflux Core smart contracts are also written in the Solidity language, and mainstream Solidity libraries can be used directly for developing Conflux Core smart contracts.
+Conflux 的虚拟机几乎完全兼容以太坊虚拟机(EVM)， 这意味着绝大多数以太坊智能合约都可以在 Conflux Core 上直接部署并运行。 Conflux Core 上的智能合约同样使用**Solidity 语言**进行编写，主流的 Solidity 库都可以直接用于 Conflux Core 上的智能合约开发。
 
-However, there are two points to note for Ethereum smart contract developers:
+然而，Ethereum 智能合约开发者有两点需要注意：
 
-1. The calculation rules for Conflux Core contract addresses are different from Ethereum. If there are any instances of address calculations in Solidity code or interaction logic, it is important to check whether modifications are needed.
-2. The 1820 contract address in Conflux Core is different from Ethereum. The Ethereum 1820 contract address is `0x1820a4B7618BdE71Dce8cdc73aAB6C95905faD24`, while the Conflux Core 1820 contract address is `0x88887eD889e776bCBe2f0f9932EcFaBcDfCd1820`.
+1. Conflux Core 合约地址的计算规则不同于以太坊。 如果在 Solidity 代码或交互逻辑中有任何地址计算的例子，请务必检查代码是否需要修改。
+2. 在Conflux Core中，应用ERC-1820标准的合约地址与以太坊的不同。 以太坊的ERC-1820合约地址为`0x1820a4B7618BdE71Dce8cdc73aAB6C95905faD24`，而Conflux Core的ERC-1820合约地址为`0x88887eD889e776bCBe2f0f9932EcFaBcDfCd1820`。
 
-Check [Differences between Conflux VM and EVM](../core-space-basics/vm-difference.md) for more details.
+请阅读 [Conflux VM 和 EVM 之间的差异](../core-space-basics/vm-diffce.md) 了解更多详情。
 
-We also provide a Solidity library called [conflux-contracts](https://github.com/conflux-fans/conflux-contracts) which include source code of Conflux's Internal Contracts and address utilities.
+我们还提供了一个叫做 [conflux-contracts](https://github.com/conflux-fans/conflux-contracts)的 Solidity 库，其中包括 Conflux 的内部合约和地址工具的源码。
 
-## Core Space contract dev tools {#smart-contract-development-tools}
+## Core Space 智能合约开发工具 {#smart-contract-development-tools}
 
-It's recommended to use the following tools for smart contract development:
+推荐使用以下工具开发智能合约：
 
-- Hardhat + [Conflux Network plugin](https://github.com/conflux-chain/hardhat-conflux) - A popular Ethereum development environment for smart contracts
-- [ChainIDE](https://chainide.com/) - A Remix like web-based IDE for smart contract development
+- Hardhat + [Conflux Network 插件](https://github.com/conflux-chain/hardhat-conflux) - 一个流行的以太坊智能合约开发环境
+- [ChainIDE](https://chainide.com/) - 一个类似 Remix 的基于 Web 的智能合约开发 IDE
 
-### Scan contract read write tool
+### Conflux Scan上的合约读写工具
 
-Conflux Scan provides a tool to read and write smart contracts. You can use it to interact with smart contracts on the Conflux network.
+Conflux Scan 提供了一个读写智能合约的工具。 您可以使用它来与 Conflux 网络上的智能合约交互。
 
 ![](../tutorials/imgs/sponsor/sponsor-read-methods.png)
 
-Any contract on the Conflux network that has been verified on Conflux Scan can be interacted with using this tool. You can read the contract's state, call its methods, and send transactions to it.
+任何在 Conflux Scan 上经过验证的 Conflux 智能合约都可以使用此工具进行交互。 您可以查看合约的状态，调用它的方法并向它发送交易。

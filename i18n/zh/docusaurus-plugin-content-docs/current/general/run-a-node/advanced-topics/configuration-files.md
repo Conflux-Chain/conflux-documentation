@@ -46,25 +46,24 @@ bootnodes="cfxnode://25265e1aa470d9d8667947820c4830a64e9f9678d6cb23ecde91e044752
 #
 # mode = ""
 
-# 如果您想设置一个运行Conflux进行开发的单个节点。 您应该
-# 注释掉bootnodes设置，并使用以下参数：
-
+# 如果您想设置一个运行Conflux进行开发的单个节点。 You should
+# COMMENT the bootnodes setting and you should use the following parameters:
+#
 # mode = "dev"
 
-# ''dev_block_interval_ms''控制开发模式下的挖矿速率。
+# ''dev_block_interval_ms'' controls the mining rate in the dev mode.
 #
 # 如果未设置，将仅在接收到交易后生成区块。
 # 否则，每隔``dev_block_interval_ms''毫秒自动生成区块。
 #
 # dev_block_interval_ms = 250
 
-# 如果设置的节点模式为 dev 并且不想节点自动生成块，那么可以设置 dev_pack_tx_immediately 的值为false，并且
-# 注释 dev_block_interval_ms 
+# If you set the mode to "dev" and do not want auto-generation of blocks, you can set the
+# value to false and unset dev_block_interval_ms.
 # dev_pack_tx_immediately = true
+# ----------------- Mining Configuration -----------------
 
-# ----------------- 挖矿配置 -----------------
-
-# `mining_author`是接收挖矿奖励的地址。
+# `mining_author` is the address to receive mining rewards.
 # 如果设置了，`mining_type`将默认为"stratum"。
 # 该值为一个40位十六进制字符串或有效的CIP-37 base32地址。
 # 默认情况下，该值未设置。

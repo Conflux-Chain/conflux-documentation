@@ -99,6 +99,12 @@ Links:
 ### **去中心化应用（DApp）**
 去中心化应用（DApp）是一种运行在分布式计算系统（如区块链）上的计算机应用。 与在中心化服务器上运行的传统应用不同，DApps利用区块链的点对点网络的力量提供透明度、不可更改性和抗审查性。 DApp的典型框架包括2层：前端或用户界面，以及作为后端逻辑在区块链上运行的智能合约。 前端使用标准语言（如HTML、CSS和JavaScript）开发，通过智能合约与区块链交互。 These smart contracts, written in languages like Solidity, define the rules and logic of the DApp, and are stored and executed on the blockchain, ensuring consistent and trustless operation.
 
+### **Decentralized Finance (DeFi)**
+Decentralized finance (DeFi) uses blockchain smart contracts to eliminate third parties and centralized institutions like banks from financial transactions. This allows for a range of financial services, such as lending, borrowing, and trading, to be conducted transparently and efficiently without intermediaries.
+
+### **Digital Signature**
+A digital signature is a mathematical scheme used to verify the authenticity and integrity of digital messages or documents. It employs asymmetric cryptography, using a private key for signing and a public key for verification. Digital signatures ensure that a document was signed by the known sender and has not been altered, providing security, authenticity, and non-repudiation. Commonly used in software distribution, financial transactions, and contract management, digital signatures are more secure than traditional handwritten signatures and can include features like timestamps for added security.
+
 ### **双花**
 Double spending is a potential flaw in a digital cash scheme in which a single digital token can be spent more than once. This is possible because a digital token consists of a digital file that can be duplicated or falsified. The Conflux network, like other blockchain networks, uses a consensus mechanism to prevent double spending.
 
@@ -198,6 +204,7 @@ In transaction, nonce is the execution sequence number of transactions sent from
 ### **预言机**
 In the context of blockchains and smart contracts, an oracle is an agent that finds and verifies real-world occurrences and submits this information to a blockchain to be used by smart contracts. Oracles are used in the Conflux network to bring external information into smart contracts, enabling them to interact with the outside world.
 
+
 ### **TWAP**
 TWAP stands for “time-weighted average price”. It’s a pricing algorithm used to calculate the average price of an asset over a set period.In DeFi, a type of decentralized exchange (DEX) known as an automated market maker (AMM) can be used to generate TWAP prices that can be used in other protocols. TWAP can also refer to a trading strategy used to execute a large-volume order by breaking it into equal parts across a set period in order to minimize slippage and signaling.
 
@@ -219,6 +226,11 @@ Refer to [PoW](../conflux-basics/consensus-mechanisms/proof-of-work/proof-of-wor
 
 ### **公钥/私钥**
 A public key is a cryptographic code that allows a user to receive cryptocurrencies into his or her account. The private key is used to sign transactions or digital messages and the public key is used to verify the signature. In the context of Conflux, users have a pair of public and private keys that they use to interact with the network.
+
+
+### **Bytecode**
+Bytecode is a numeric representation of smart contract instructions, enabling efficient interpretation by the virtual machine. It serves as an intermediate form between the source code (Such as Solidity) and the machine code executed on the blockchain.
+
 
 ### **智能合约**
 A smart contract is a self-executing contract with the terms of the agreement directly written into code. They run on the blockchain, so they are stored on a public database and cannot be changed. In the Conflux network, users can create and interact with smart contracts, which can automate a wide range of applications and processes.

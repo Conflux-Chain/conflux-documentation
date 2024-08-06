@@ -43,7 +43,7 @@ If you're interested in **Smart Contracts Development on Conflux Network**, plea
 
 :::
 
-## Further reading {#further-reading}
+## 了解更多 {#further-reading}
 
 - [Coinbase: What is a smart contract?](https://www.coinbase.com/learn/crypto-basics/what-is-a-smart-contract)
 - [Chainlink: What is a smart contract?](https://chain.link/education/smart-contracts)

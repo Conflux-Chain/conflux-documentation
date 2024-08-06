@@ -11,7 +11,7 @@ Developers can use Hardhat to compile Solidity code and the Hardhat-Conflux plug
 
 The Hardhat-Conflux plugin is built on top of `js-conflux-sdk`, making its usage for deployment and interaction very similar to that of `js-conflux-sdk`.
 
-If you are not familiar with Hardhat, please refer to the [Hardhat documentation](https://hardhat.org/getting-started/).
+如果您不熟悉 Hardhat，请参考 [Hardhat 文档](https://hardhat.org/getting-started/)。
 
 ## 安装
 
@@ -196,7 +196,7 @@ If your contracts do not use any Conflux-specific features (like Internal Contra
 
 ### Can I use the Hardhat fork feature on Conflux Core?
 
-No. The Hardhat fork feature is not supported on Conflux Core.
+没有。 The Hardhat fork feature is not supported on Conflux Core.
 
 ### When I use helper methods in TypeScript, it shows an error like `Property 'getContractFactory' does not exist on 'hre.conflux'`
 

@@ -54,13 +54,16 @@ bootnodes="cfxnode://25265e1aa470d9d8667947820c4830a64e9f9678d6cb23ecde91e044752
 #
 # mode = "dev"
 
-# ``dev_block_interval_ms'' controls the mining rate in the dev mode.
+# ''dev_block_interval_ms'' controls the mining rate in the dev mode.
 #
 # If it's not set, blocks will only be generated after receiving a transaction.
 # Otherwise, blocks are automatically generated every ``dev_block_interval_ms'' ms.
 #
 # dev_block_interval_ms = 250
 
+# If you set the mode to "dev" and do not want auto-generation of blocks, you can set the
+# value to false and unset dev_block_interval_ms.
+# dev_pack_tx_immediately = true
 # ----------------- Mining Configuration -----------------
 
 # `mining_author` is the address to receive mining rewards.

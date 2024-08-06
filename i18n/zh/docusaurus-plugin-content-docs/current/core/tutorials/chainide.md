@@ -5,25 +5,25 @@ description: 使用 ChainIDE 在 Core 空间部署智能合约
 displayed_sidebar: coreSidebar
 ---
 
-[ChainIDE](https://chainide.com/) is a web-based IDE tailored for blockchain smart contract development. It offers a comprehensive solution for developing, testing, debugging, and deploying smart contracts. Comparable to Ethereum's Remix, ChainIDE is more versatile, supporting multiple blockchains including Conflux Core Space.
+[ChainIDE]](https://chainide.com/) 是一个针对区块链智能合约开发定制的基于 Web 的集成开发环境（IDE）。 它为智能合约的开发、测试、调试和部署提供了全面的解决方案。 与以太坊的 Remix 相比，ChainIDE 功能更强大，支持包括 Conflux Core Space 在内的多个区块链。
 
 ![](./imgs/chainide/chainide.png)
 
-This tutorial will guide you through using ChainIDE to develop and deploy a smart contract on Core Space.
+这个教程将教您如何使用 ChainIDE 在 Core Space 上开发和部署智能合约。
 
-## Creating a Project
+## 创建项目
 
-To start, create a project on ChainIDE. Select `Conflux` from the left-hand chain list, then choose a template from the right. For this tutorial, we will use the **Storage** template.
+首先，在 ChainIDE 上创建一个项目。 在左侧的链列表里选中 `Conflux`，然后从右侧选择一个模板。 在本教程中，我们将使用 **Storage** 模板。
 
 ![](./imgs/chainide/create-project.png)
 
-## Workspace Overview
+## 工作区概览
 
-Once you create a project, you'll see ChainIDE's workspace, reminiscent of VSCode. It features a file explorer on the left, an editor on the right, and a terminal at the bottom.
+创建项目后，您会看到 ChainIDE 的工作区，由此可以联想到 VSCode。 左侧是文件资源管理器，右侧是编辑器，底部是终端。
 
 ![](./imgs/chainide/overview.jpg)
 
-The example Solidity code is:
+Solidity 示例代码如下：
 
 ```solidity
 // SPDX-License-Identifier: MIT
@@ -56,56 +56,56 @@ contract Storage {
 
 ```
 
-## Compiling the Contract
+## 编译合约
 
-In the right-side toolbox, the first option is **Solidity Compiler**. Here, you can select the compiler version and then click the **Compile** button to compile your contract.
+右侧工具箱中的第一个选项是 **Solidity 编译器**。 您可以在这里选择编译器版本，然后点击“编译”按钮来编译您的合约。
 
-After compilation, you will get the `ABI` and `BYTECODE`.
+编译完成后，您将获得 `ABI` 和 `BYTECODE`。
 
 ![](./imgs/chainide/compile.png)
 
-## Connecting Fluent Wallet
+## 连接 Fluent 钱包
 
-Before deploying this contract to the Core Space Testnet, connect your Fluent Wallet. Click the **Connect Wallet** button at the top right of the window.
+在将此合约部署到 Core Space 测试网之前，需要先连接您的 Fluent 钱包。 点击窗口右上角的**连接钱包**按钮。
 
-Then, in the popup window, select **Injected Web3 Provider**.
+然后，在弹出窗口中选择**连接到自定义节点**。
 
 ![](./imgs/chainide/connect-wallet-1.png)
 
-Next, choose the Fluent Wallet, as we aim to deploy the contract to Core Space.
+接下来选择 Fluent 钱包，因为我们的目标是将合约部署到 Core Space。
 
 ![](./imgs/chainide/connect-wallet-2.png)
 
-Finally, click **approve** in the wallet popup window. You will then see the wallet connection status (top right) as **Connected**, along with the connected account address and balance at the bottom right.
+最后，在钱包弹出窗口中点击**批准**。 然后您将在右上角看到钱包连接状态为**已连接**，以及右下角的已连接账户的地址和余额。
 
-Remember to switch the network to **Conflux Testnet** in Fluent.
+记得要在 Fluent 中切换到 Conflux 测试网。
 
-## Deploying the Contract
+## 部署合约
 
-Click on **Deploy & Interaction** in the right toolbox, select a contract, and hit the **Deploy** button. A deployment confirmation popup will appear; click **Confirm**. This action sends a transaction to the Core Space Testnet and deploys the contract upon execution.
+在右侧工具箱中点击**部署与交互**，选择一个合约，然后点击**部署**按钮。 随后将出现一个部署确认弹窗；点击**确认**。 这个操作将向 Core Space 测试网发送一笔交易，并在执行交易时部署该合约。
 
 ![](./imgs/chainide/contract-deploy.png)
 
-The **Output** area will display the deployment progress, including the transaction hash.
+**输出区域**将显示合约部署的进度，包括交易哈希。
 
-Once deployed, a new contract will appear in the **Interact** area.
+部署完成后，新合约将出现在“交互”区域。
 
 ![](./imgs/chainide/contract-interact.jpg)
 
-## Interacting with the Contract
+## 与合约交互
 
-The Interact tool lists all public functions of the contract. For read-only functions, click the **Get** button. If the function requires parameters, enter them in the input box.
+交互工具中列出了合约的所有公共函数。 对于只读函数，可以点击**获取**按钮。 如果函数需要输入参数，请在输入框中进行输入。
 
-For state-changing functions, click the **Submit** button to send a transaction to the Core Space Testnet. The result will appear in the **Output** area after the transaction executes.
+对于状态改变的函数，点击**提交**按钮向 Core Space 测试网发送交易。 交易执行后，结果将出现在**输出区域**。
 
 ![](./imgs/chainide/interact-contract-change-state.png)
 
-## Additional Tools
+## 其它工具
 
-Other tools in the right toolbox include:
+右侧工具箱中的其他工具包括：
 
-1. Contract Verifier: Verifies contract source code on ConfluxScan.
-2. Address Converter
+1. 合约验证器：在 ConfluxScan 上验证合约的源代码。
+2. 地址转换器
 
 ![](./imgs/chainide/contract-verifier.jpg)
 
@@ -113,4 +113,4 @@ Other tools in the right toolbox include:
 
 ## 总结
 
-ChainIDE is a powerful IDE for smart contract development, offering convenience and suitability for beginners. It is an excellent tool for developing and deploying smart contracts on the Core Space Testnet.
+ChainIDE 是一个强大的智能合约开发 IDE，为初学者提供了便利和适用性。 它是在 Core Space 测试网上开发和部署智能合约的绝佳工具。

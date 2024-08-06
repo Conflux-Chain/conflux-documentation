@@ -73,6 +73,6 @@ contract SafeDowncasting {
 }
 ```
 
-## Conclusion
+## 结论
 
 Even though Solidity 0.8.0 and later versions include built-in overflow checks, downcasting still requires careful handling to ensure explicitness and prevent potential vulnerabilities. By leveraging the `SafeCast` library, you can enhance the readability and safety of your downcasting operations, protecting your smart contracts from potential risks. Always prioritize security and adopt safe coding practices in your Solidity development.

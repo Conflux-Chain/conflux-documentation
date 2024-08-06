@@ -2,7 +2,7 @@
 title: 交易
 sidebar_position: 9
 keywords:
-  - transaction
+  - 交易
 displayed_sidebar: generalSidebar
 ---
 
@@ -22,13 +22,13 @@ Transactions, which change the state of the EVM, need to be broadcast to the who
 
 A submitted transaction includes the following information:
 
-* from – the address of the sender, that will be signing the transaction. This will be an externally-owned account as contract accounts cannot send transactions.
-* recipient – the receiving address (if an externally-owned account, the transaction will transfer value. If a contract account, the transaction will execute the contract code)
-* signature – the identifier of the sender. This is generated when the sender's private key signs the transaction and confirms the sender has authorized this transaction
+* from – the address of the sender, that will be signing the transaction. 这将是一个外部拥有账户（EOA），因为合约账户不能发送交易。
+* recipient – the receiving address (if an externally-owned account, the transaction will transfer value. 如果是合约账户，则交易将执行合约代码）。
+* signature – the identifier of the sender. 这是在发送者的私钥签署交易并确认发送者已经授权该交易时生成的。
 * nonce - a sequentially incrementing counter which indicates the transaction number from the account
 * value – amount of CFX to transfer from sender to recipient (denominated in Drip, where 1CFX equals 1e+18Drip)
 * input data – optional field to include arbitrary data
-* gasLimit – the maximum amount of gas units that can be consumed by the transaction. The EVM specifies the units of gas required by each computational step
+* gasLimit – the maximum amount of gas units that can be consumed by the transaction. EVM 指定了每个计算步骤所需的gas单位量。
 * gasPrice - the price of the consumed gas to be included as a tip to the validator
 * chainId - the id of the blockchain, which is used to prevent replay attacks
 
