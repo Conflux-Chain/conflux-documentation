@@ -3,7 +3,7 @@ displayed_sidebar: generalSidebar
 ---
 # Security Advice for Creating a Wallet
 
-The first step into the blockchain world is creating a secure wallet. This guide provides crucial security advice for creating and managing your wallet.
+The first step into the blockchain world is creating a secure wallet. This guide provides crucial security advice for creating your wallet.
 
 ## 1. Understanding the Essence of Wallets
 
@@ -16,7 +16,15 @@ Remember: Whoever holds the private key controls the assets in the wallet.
 
 ## 2. Choosing the Right Wallet Type for Your Needs
 
-There are various wallet types, including desktop, mobile, and hardware wallets. Consider the following factors when choosing:
+There are various wallet types, including:
+
+- PC wallets
+- Browser extension wallets
+- Mobile wallets
+- Hardware wallets
+- Web wallets
+
+Consider the following factors when choosing:
 
 - Frequency of use
 - Amount to be stored
