@@ -1,4 +1,7 @@
-# Blockchain Wallet Security Guide: Key Points for Creating a Secure Wallet
+---
+displayed_sidebar: generalSidebar
+---
+# Security Advice for Creating a Wallet
 
 The first step into the blockchain world is creating a secure wallet. This guide provides crucial security advice for creating and managing your wallet.
 
