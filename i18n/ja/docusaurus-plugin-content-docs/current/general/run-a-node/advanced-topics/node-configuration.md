@@ -162,6 +162,8 @@ Password for encrypting the POS private key, used to secure the POS private key.
 dev_pos_private_key_encryption_password="aaaa"
 ```
 
+Or you can pass it through environment variable: `CFX_POS_KEY_ENCRYPTION_PASSWORD`.
+
 #### pos config file
 
 Below are the default paths for the POS configuration file, initial nodes file, and private key file. You can modify these paths to customize the POS configuration.
