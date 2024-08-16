@@ -162,6 +162,8 @@ netconf_dir="./blockchain_data/net_config"
 dev_pos_private_key_encryption_password="aaaa"
 ```
 
+Or you can pass it through environment variable: `CFX_POS_KEY_ENCRYPTION_PASSWORD`.
+
 #### pos 配置文件
 
 以下是 PoS 配置文件、初始节点文件和私钥文件的默认路径。 您可以修改这些路径来自定义 PoS 配置。
