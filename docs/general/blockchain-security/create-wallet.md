@@ -12,7 +12,7 @@ A blockchain wallet is essentially a tool for managing your private keys. The pr
 - Private key: A seemingly random string of characters
 - Mnemonic phrase: Usually 12-24 easy-to-remember words
 
-Remember: Whoever holds the private key controls the assets in the wallet.
+Remember: Whoever holds the private key controls the assets in the wallet, so never tell it to anyone else or expose it on Internet.
 
 ## 2. Choosing the Right Wallet Type for Your Needs
 
