@@ -103,11 +103,11 @@ from conflux_web3 import Web3
 
 # ensure salt is a bytes32 to avoid unmatched result caused by encoding approach
 def compute_address_using_salt(
-    salt: bytes, bytecode_hash: bytes, create2FactoryAddress: str
+    salt: bytes, bytecode_hash: bytes, create2_factory_address: str
 ):
     core_part = Web3.solidity_keccak(
         ["bytes1", "address", "bytes32", "bytes32"],
-        ["0xff", create2FactoryAddress, salt, bytecode_hash],
+        ["0xff", create2_factory_address, salt, bytecode_hash],
     )
     return "0x8" + core_part.hex()[-39:]
 
@@ -115,12 +115,12 @@ def compute_address_using_salt(
 if __name__ == "__main__":
     salt = (1111).to_bytes(32)
     bytecode_hash = Web3.solidity_keccak(["bytes"], [bytecode])
-    create2FactoryAddress = "0x8A3A92281Df6497105513B18543fd3B60c778E40"
+    create2_factory_address = "0x8A3A92281Df6497105513B18543fd3B60c778E40"
 
     address = compute_address_using_salt(
         salt=salt,
         bytecode_hash=bytecode_hash,
-        create2FactoryAddress=create2FactoryAddress,
+        create2_factory_address=create2_factory_address,
     )
     print(address) # 0x80ac53cc16c0b58dc5bde5af47f5ef9e84693fe4
 
