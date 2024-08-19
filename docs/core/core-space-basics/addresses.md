@@ -3,6 +3,8 @@ sidebar_position: 1
 title: Base32 Addresses
 displayed_sidebar: coreSidebar
 ---
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
 
 In Conflux, every [account](../../general/conflux-basics/accounts.md) is associated with a pair of public and private keys, and is identified by an address. This page is about how address is presented and computed in core space. 
 
@@ -48,7 +50,39 @@ The computation of EOA hex address is specified in [Conflux protocol specificati
 
 #### Contract Address Computation
 
-An contract can be deployed via `create2` opcode or not.
+There is an example.
+<Tabs>
+    <TabItem label="Abi" value="AbiExampleData">
+```js
+[{
+   "inputs": [
+      {
+         "internalType": "uint256",
+         "name": "inputValue",
+         "type": "uint256"
+      }
+   ],
+   "name": "increment",
+   "outputs": [
+      {
+         "internalType": "uint256",
+         "name": "",
+         "type": "uint256"
+      }
+   ],
+   "stateMutability": "pure",
+   "type": "function"
+}]
+```
+    </TabItem>
+    <TabItem label="Bytecode" value="bytecodeExampleData">
+```
+0x608060405234801561001057600080fd5b506101a1806100206000396000f3fe608060405234801561001057600080fd5b506004361061002b5760003560e01c80637cf5dab014610030575b600080fd5b61004a600480360381019061004591906100b1565b610060565b60405161005791906100ed565b60405180910390f35b600060018261006f9190610137565b9050919050565b600080fd5b6000819050919050565b61008e8161007b565b811461009957600080fd5b50565b6000813590506100ab81610085565b92915050565b6000602082840312156100c7576100c6610076565b5b60006100d58482850161009c565b91505092915050565b6100e78161007b565b82525050565b600060208201905061010260008301846100de565b92915050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052601160045260246000fd5b60006101428261007b565b915061014d8361007b565b925082820190508082111561016557610164610108565b5b9291505056fea26469706673582212208eb410cb79fbf08652e19d496e31d076d04be7ed242c64a44aec4c5af0f2533b64736f6c63430008130033
+```
+    </TabItem>
+</Tabs>
+
+An contract can be deployed via `create2` opcode or not. 
 
 :::note
 
@@ -56,37 +90,123 @@ The contract address computation is quite different from that of Ethereum.
 
 :::
 
-If `create2` is used, the deployed address of can be computed as the following Python code described:
+If `create2` is used, the deployed address of can be computed as the following code described:
 
+The `Create2Factory` has been deployed via [CIP-31](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-31.md), so you can use the `0x8a3a92281df6497105513b18543fd3b60c778e40` contract or deploy your own Create2Factory.
+
+<Tabs>
+    <TabItem label="Python" value="PythonCreate2Example">
 ```python
 # using web3.py is also viable
 # from web3 import Web3
 from conflux_web3 import Web3
 
 # ensure salt is a bytes32 to avoid unmatched result caused by encoding approach
-def compute_address_using_salt(salt: bytes, bytecode_hash: bytes, hex_deployer_address: str):
-    core_part = Web3.solidityKeccak(
+def compute_address_using_salt(
+    salt: bytes, bytecode_hash: bytes, create2_factory_address: str
+):
+    core_part = Web3.solidity_keccak(
         ["bytes1", "address", "bytes32", "bytes32"],
-        ["0xff", hex_deployer_address, salt, bytecode_hash]
+        ["0xff", create2_factory_address, salt, bytecode_hash],
     )
-    return "0x8"+ core_part.hex()[-39:]
+    return "0x8" + core_part.hex()[-39:]
+
+
+if __name__ == "__main__":
+    salt = (1111).to_bytes(32)
+    bytecode_hash = Web3.solidity_keccak(["bytes"], [bytecode])
+    create2_factory_address = "0x8A3A92281Df6497105513B18543fd3B60c778E40"
+
+    address = compute_address_using_salt(
+        salt=salt,
+        bytecode_hash=bytecode_hash,
+        create2_factory_address=create2_factory_address,
+    )
+    print(address) # 0x80ac53cc16c0b58dc5bde5af47f5ef9e84693fe4
+
 ```
+    </TabItem>
+        <TabItem label="Javascript" value="JavascriptCreate2Example">
+```javascript
+import { solidityPackedKeccak256, toBeHex } from "ethers"; // ethers v6
+
+function computeAddressUsingSalt(
+salt,
+bytecode,
+create2FactoryAddress = "0x8A3A92281Df6497105513B18543fd3B60c778E40"
+) {
+   const hash = solidityPackedKeccak256(
+      ["bytes1", "address", "bytes32", "bytes32"],
+      [
+         "0xff",
+         create2FactoryAddress,
+         toBeHex(salt, 32),
+         solidityPackedKeccak256(["bytes"], [bytecode]),
+      ]
+   );
+   return `0x8${hash.slice(-39)}`;
+}
+computeAddressUsingSalt(1111, bytecode) // 0x80ac53cc16c0b58dc5bde5af47f5ef9e84693fe4
+```
+    </TabItem>
+
+</Tabs>
+
 
 If `create2` is not used:
 
+<Tabs>
+    <TabItem label="Python" value="PythonExample">
 ```python
 # using web3.py is also viable
 # from web3 import Web3
 from conflux_web3 import Web3
-
-def compute_address_using_nonce(nonce: int, bytecode_hash: bytes, hex_deployer_address: str):
-    core_part = Web3.solidityKeccak(
+def compute_address_using_nonce(
+    nonce: int, bytecode_hash: bytes, hex_deployer_address: str
+):
+    core_part = Web3.solidity_keccak(
         ["bytes1", "address", "bytes32", "bytes32"],
-        ["0x00", hex_deployer_address, nonce.to_bytes(32, "little"), bytecode_hash]
+        ["0x00", hex_deployer_address, nonce.to_bytes(32, "little"), bytecode_hash],
     )
-    return "0x8"+ core_part.hex()[-39:]
-```
+    return "0x8" + core_part.hex()[-39:]
 
+
+if __name__ == "__main__":
+    nonce = 1
+    bytecode_hash = Web3.solidity_keccak(["bytes"], [bytecode])
+    # The address of the transaction sender "cfx:aamz08kfa8wsu69jhhcgrwkjkh69p85wj6222847yp" in hex is 0x155B792507a4E873e839c466C92849f9F67b7247.
+    hex_deployer_address = "0x155B792507a4E873e839c466C92849f9F67b7247"
+
+    address = compute_address_using_nonce(
+        nonce=nonce,
+        bytecode_hash=bytecode_hash,
+        hex_deployer_address=hex_deployer_address,
+    )
+    print(address) # 0x837f77a1e8da5b860905a07bc1921e43fbfb04ef
+```
+    </TabItem>
+
+    <TabItem label="Javascript" value="JavascriptExample">
+```javascript
+import { hexlify, solidityPackedKeccak256, toBeArray, zeroPadBytes } from "ethers";
+function computeAddressUsingNonce(nonce, bytecode, hexDeployerAddress) {
+  const hash = solidityPackedKeccak256(
+    ["bytes1", "address", "bytes32", "bytes32"],
+    [
+      "0x00",
+      hexDeployerAddress,
+      hexlify(zeroPadBytes(toBeArray(nonce).reverse(), 32)),
+      solidityPackedKeccak256(["bytes"], [bytecode]),
+    ]
+  );
+  return `0x8${hash.slice(-39)}`;
+}
+computeAddressUsingNonce(1,bytecode,"0x155B792507a4E873e839c466C92849f9F67b7247") // 0x837f77a1e8da5b860905a07bc1921e43fbfb04ef
+
+```
+    </TabItem>
+
+</Tabs>
 ### Base32 Address Computation
 
 Conflux base32 address is a network-prefixed Conflux base32-checksum address defined in [CIP-37](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-37.md). The address consists of a network-prefix indicating the network on which this address is valid, a colon (`":"`), and a base32-encoded payload indicating the destination of the address and containing a checksum, e.g. `cfx:aarc9abycue0hhzgyrr53m6cxedgccrmmyybjgh4xg`. Optionally, the address can contain a list of key value pairs in the format `key.value` between the network-prefix and the payload, separated by colons, e.g. `cfx:type.user:aarc9abycue0hhzgyrr53m6cxedgccrmmyybjgh4xg`. 
