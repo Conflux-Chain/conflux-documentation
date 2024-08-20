@@ -111,7 +111,7 @@ Double spending is a potential flaw in a digital cash scheme in which a single d
 
 
 ### **Encryption**
-Encryption is a cryptographic process of transforming information (plaintext) into an alternative form (ciphertext) that ideally only authorized parties can decode. This process involves combining the plaintext with a shorter string of data, called a key, to produce the ciphertext. The ciphertext can be "decrypted" back into the original plaintext by someone who possesses the correct key, but extremely difficult and time-consuming to decrypt for anyone without the key. 
+Encryption is the cryptographic process of transforming information (plaintext) into an alternative form (ciphertext) that ideally can only be decoded by authorized parties through a process called decryption. This process involves combining the plaintext with a specific piece of data known as a key to produce the ciphertext. The ciphertext can be decrypted back into the original plaintext by anyone who possesses the corresponding key, but it is extremely difficult to decrypt without the key. The difficulty of decryption without the key depends on the encryption algorithm and the length of the key used. Therefore, it is crucial to choose the appropriate encryption algorithm and key length to ensure data security.
 
 ### **Epoch**
 
