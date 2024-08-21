@@ -18,7 +18,7 @@ Type 2 transactions benefit from the `maxFeePerGas` and `maxPriorityFeePerGas` f
 
 ## Calculation of `baseFeePerGas`
 
-The `baseFeePerGas` for each block is based on the previous block's `baseFeePerGas` and the block's gas usage, calculated as `sum(transaction gas limit) / gas target`. The gas target is 50% of the space gas limit. For example, the core space gas limit is typically set to 54,000,000, making the gas target 27,000,000. In eSpace, the gas limit is typically set to 30,000,000, with a gas target of 15,000,000.
+The `baseFeePerGas` for each block is based on the previous block's `baseFeePerGas` and current block's gas usage, calculated as `sum(transaction gas limit) / gas target`. The gas target is 50% of the space gas limit. For example, the core space gas limit is typically set to 54,000,000, making the gas target 27,000,000. In eSpace, the gas limit is typically set to 30,000,000, with a gas target of 15,000,000.
 
 If the sum of the transaction gas limits exceeds the gas target, the `baseFeePerGas` increases; otherwise, it decreases. The maximum rate of change for `baseFeePerGas` per block is 12.5%. An empty block results in a 12.5% decrease, while a full block results in a 12.5% increase.
 
