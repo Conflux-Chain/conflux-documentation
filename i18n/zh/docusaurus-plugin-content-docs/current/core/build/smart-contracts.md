@@ -36,6 +36,6 @@ Conflux 的虚拟机几乎完全兼容以太坊虚拟机(EVM)， 这意味着绝
 
 Conflux Scan 提供了一个读写智能合约的工具。 您可以使用它来与 Conflux 网络上的智能合约交互。
 
-![](../tutorials/imgs/sponsor/sponsor-read-methods.png)
+![](../imgs/sponsor/sponsor-read-methods.png)
 
 任何在 Conflux Scan 上经过验证的 Conflux 智能合约都可以使用此工具进行交互。 您可以查看合约的状态，调用它的方法并向它发送交易。
