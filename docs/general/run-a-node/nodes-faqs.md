@@ -9,7 +9,7 @@ displayed_sidebar: generalSidebar
 
 ### How long does it take to synchronize the data from beginning?
 
-It takes about 3 weeks to synchronize the data from beginning.
+It takes about 3 weeks to synchronize the data from beginning. As blockchain data grows, the time required for syncing from scratch will increase.
 
 ### How to synchronize data quickly to run an archive node?
 

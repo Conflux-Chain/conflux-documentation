@@ -125,6 +125,10 @@ This is the famous library for secure smart contract development. Build on a sol
 
 ## Community developed SDKs
 
+### [Cive](https://cive.zyx.ee/)
+
+Cive is a **Typescript** interface for the Conflux Core Space. It is built on [`viem`](https://viem.sh/). It inherits all the advantages of Viem, such as being `lightweight`, `modular`, `high-performance`, and `type-safe`, making it suitable for developing applications and various tools.
+
 ### [thirdweb SDK](https://portal.thirdweb.com/sdk)
 
 The SDK covers all aspects of the web3 development stack, including connecting to user’s wallets, interacting with the blockchain and smart contracts, decentralized storage, authentication, and more; enabling you to build scalable and performant web3 applications on any EVM-compatible blockchain.
