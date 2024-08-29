@@ -4,7 +4,7 @@ title: Scaffold Conflux
 description: Learn how to leverage Scaffold-Eth 2 components to make your Conflux App
 keywords:
   - Hardhat
-  - Smart Contracts
+  - Contratos Inteligentes
   - Scaffold
 displayed_sidebar: eSpaceSidebar
 ---
