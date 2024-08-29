@@ -43,7 +43,7 @@ If the released version is a hardfork version, not upgrading the nodes will resu
 
 ### After Restarting the Node, How Long Does It Take to Sync Block Data to the Latest?
 
-If your node was already synchronized with the latest block before the upgrade, the node will sync from the last synchronized block after the upgrade. It usually takes several minutes to several tens of minutes.
+If your node was already synchronized with the latest block before the upgrade, the node will sync from the last synchronized block after the upgrade. It usually takes `several minutes to 30 of minutes`. If not then it may take a `few hours to 2 days` to sync to the latest block.
 
 ### How to Migrate Nodes?
 
