@@ -125,6 +125,10 @@ w3.cfx.send_transaction(transaction)
 
 ## 社区开发的 SDK
 
+### [Cive](https://cive.zyx.ee/)
+
+Cive is a **Typescript** interface for the Conflux Core Space. It is built on [`viem`](https://viem.sh/). It inherits all the advantages of Viem, such as being `lightweight`, `modular`, `high-performance`, and `type-safe`, making it suitable for developing applications and various tools.
+
 ### [thirdweb SDK](https://portal.thirdweb.com/sdk)
 
 SDK覆盖了Web3开发堆栈的各个方面，包括连接用户钱包、与区块链和智能合约交互、去中心化存储、身份验证等，使您能够在任何EVM兼容的区块链上构建可扩展且高性能的Web3应用程序。
