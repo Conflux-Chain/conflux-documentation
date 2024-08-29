@@ -4,7 +4,7 @@ title: Retrieve Price
 description: Learn how to Use Pyth Oracle on Conflux eSpace to Retrieve CFX Price
 keywords:
   - Hardhat
-  - Smart Contracts
+  - Contratos Inteligentes
   - Oracle
   - Pyth
   - CFX Price
