@@ -4,7 +4,7 @@ title: Brownie
 description: Learn how to deploy an ERC-20 Token using Brownie.
 keywords:
   - Brownie
-  - Smart Contracts
+  - Contratos Inteligentes
   - Python
 displayed_sidebar: eSpaceSidebar
 ---
