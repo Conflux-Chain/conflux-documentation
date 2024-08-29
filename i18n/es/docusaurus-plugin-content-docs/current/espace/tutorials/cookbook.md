@@ -4,7 +4,7 @@ title: Cookbook
 description: Learn how to leverage Cookbook for smart contracts development.
 keywords:
   - Cookbook
-  - Smart Contracts
+  - Contratos Inteligentes
   - Library
 displayed_sidebar: eSpaceSidebar
 ---
