@@ -13,20 +13,19 @@ You may want to run Conflux on a single node chain to develop and test smart con
 In order to run a single node Conflux chain for development, you can follow the following steps:
 
 1. Get executable Conflux binary file (use precompiled binary or build from the latest source code). You can refer to the document [Downloading](./downloading-conflux-client.md).
-
-2. Create a directory and prepare a configuration file `development.toml`. You can copy the `hydra.toml` provided in the directory and start from there following the guide [Configuration Files](./configuration-files.md).
-
+2. Create a directory and prepare a configuration file `devnode.toml`. You can copy the `hydra.toml` provided in the directory and start from there following the guide [Configuration Files](./configuration-files.md).
 3. Set the `bootnodes` parameter in the configuration file to empty (or comment the setting line).
-
 4. Set the `mode` parameter to "dev". If you copy from `hydra.toml`, you should find the line being commented and you can uncomment it.
-
 5. Set the `dev_block_interval_ms` parameter to the block generation interval you want. In the development mode, Conflux will automatically generate a block in a fixed interval.
-
-6. Run Conflux binary with `development.toml` as the configuration file. Por ejemplo:
+6. Generate PoS related configurations according [this guide](https://github.com/Conflux-Chain/conflux-docker/blob/master/docs/about-dev-node-config.md#how-to-generate-pos_config-files)
+7. Set history CIPs enable height to make sure the history CIPs are enabled. Check [here for an example](https://github.com/Conflux-Chain/conflux-docker/blob/master/docs/about-dev-node-config.md#how-to-enable-cips).
+8. Run Conflux binary with `devnode.toml` as the configuration file. Por ejemplo:
 
 ```bash
-$ ./conflux --config development.toml
+$ ./conflux --config devnode.toml
 ```
+
+You can download all sample configuration file [here](https://github.com/Conflux-Chain/conflux-docker/tree/master/fullnode-configs/dev-node)
 
 ## Run Multiple Node Production Chain
 
