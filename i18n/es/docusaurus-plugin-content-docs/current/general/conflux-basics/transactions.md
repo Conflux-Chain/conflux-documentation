@@ -1,5 +1,5 @@
 ---
-title: Transactions
+title: Transacciones
 sidebar_position: 9
 keywords:
   - transaction
