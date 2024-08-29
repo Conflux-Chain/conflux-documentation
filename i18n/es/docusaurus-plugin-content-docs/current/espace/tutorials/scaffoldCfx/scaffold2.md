@@ -4,7 +4,7 @@ title: Mint NFTs on Conflux
 description: Make NFTS using Conflux Scaffold
 keywords:
   - Hardhat
-  - Smart Contracts
+  - Contratos Inteligentes
   - Scaffold
   - NFT
   - ERC721
