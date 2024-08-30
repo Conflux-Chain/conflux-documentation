@@ -10,7 +10,7 @@ Here is a step by step guide on how to build Conflux from the source code and ge
 
 ## Install Build Dependencies
 
-Conflux requires **Rust 1.62.0**, `clang`, and `sqlite` to build.
+Conflux requires **Rust 1.77.2**, `clang`, and `sqlite` to build.
 
 We recommend installing Rust through [rustup](https://rustup.rs/). If you don't already have `rustup` or `clang`, you can install them like this:
 
@@ -26,14 +26,15 @@ rustup install 1.62.0
 
 Other dependencies including `clang`, `cmake (version >= 3.12)` and `sqlite (version >= 3.8.3)` can be installed with:
 
-- Ubuntu 18.04:
+- Ubuntu 18.04-22.04:
 
 ```bash
 # The latest cmake version on Ubuntu 18.04 is 3.10, so you'll need to install it from the Kitware repository.
+# This step is not required on Ubuntu 22.04
 wget -O - https://apt.kitware.com/keys/kitware-archive-latest.asc 2>/dev/null | gpg --dearmor - | sudo tee /usr/share/keyrings/kitware-archive-keyring.gpg >/dev/null
 echo 'deb [signed-by=/usr/share/keyrings/kitware-archive-keyring.gpg] https://apt.kitware.com/ubuntu/ bionic main' | sudo tee /etc/apt/sources.list.d/kitware.list >/dev/null
-sudo apt-get update
 
+sudo apt-get update
 sudo apt-get install clang libsqlite3-dev pkg-config libssl-dev cmake
 ```
 
