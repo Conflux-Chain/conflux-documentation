@@ -1,7 +1,7 @@
 ---
-sidebar_position: 2
+sidebar_position: 1
 title: Deploying Upgradeable Contracts using Hardhat
-description: Learn how to use Web3Modal in a Next.js project
+description: Learn how to deploy upgradeable contracts on Conflux eSpace using Hardhat
 keywords:
   - Upgrade
   - Hardhat
