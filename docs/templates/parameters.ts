@@ -1,6 +1,6 @@
 const confluxNodeVersion = {
-    mainnet: "v2.3.5",
-    testnet: "v2.3.5-testnet",
+    mainnet: "v2.4.0",
+    testnet: "v2.4.0-testnet-fix3",
 }
 
 export {
