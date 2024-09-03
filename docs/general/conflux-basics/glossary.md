@@ -181,6 +181,11 @@ Related links:
 
 - [trace JSON-RPC API](../../core/build/json-rpc/trace-namespace.md)
 
+
+### **Keccack-256**
+The keccak-256 algorithm computes the hash of an input to a fixed length output. The input can be a variable length string or number, but the result will always be a fixed bytes32 data type. It is a one-way cryptographic hash function, which cannot be decoded in reverse.
+
+
 ### **Merkle Tree**
 A Merkle tree, in cryptography and computer science, is a tree in which every leaf node is labelled with the hash of a data block, and every non-leaf node is labelled with the cryptographic hash of the labels of its child nodes. Merkle trees are used in blockchains to efficiently verify the contents of large data structures.
 
