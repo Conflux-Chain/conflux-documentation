@@ -16,6 +16,7 @@ displayed_sidebar: eSpaceSidebar
 Before diving into the tutorial, let's briefly explain the basic principles of implementing upgradeable contracts:
 
 1. **Separation of Concerns**: Contract logic is separated from storage using two contracts:
+
    - A Proxy contract that holds the state and receives user interactions.
    - A Logic contract (Implementation contract) that contains the actual code logic.
 
@@ -93,6 +94,44 @@ Create a contracts directory and add the following contracts:
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.24;
 
+contract SimpleUpgrade {
+    // Address of the current implementation contract
+    address public implementation;
+    // Address of the admin who can upgrade the contract
+    address public admin;
+    // A string variable to demonstrate state changes
+    string public words;
+
+    // Constructor sets the initial implementation and admin
+    constructor(address _implementation) {
+        admin = msg.sender;
+        implementation = _implementation;
+    }
+
+    // Fallback function to delegate calls to the implementation contract
+    fallback() external payable {
+        (bool success, ) = implementation.delegatecall(msg.data);
+        require(success, "Delegatecall failed");
+    }
+
+    // Receive function to accept Ether
+    receive() external payable {
+    }
+
+    // Function to upgrade the implementation contract
+    // Only the admin can call this function
+    function upgrade(address newImplementation) external {
+        require(msg.sender == admin, "Only admin can upgrade");
+        implementation = newImplementation;
+    }
+}
+```
+
+```solidity
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.24;
+
+
 contract Logic1 {
     // Address of the current implementation contract
     address public implementation;
@@ -164,8 +203,8 @@ const hre = require("hardhat");
 
 async function main() {
   // Address of the deployed proxy contract
-  const proxyAddress = 'YOUR_PROXY_CONTRACT_ADDRESS';
-  
+  const proxyAddress = "YOUR_PROXY_CONTRACT_ADDRESS";
+
   // Deploy Logic2 contract
   const Logic2 = await hre.ethers.getContractFactory("Logic2");
   const logic2 = await Logic2.deploy();
@@ -175,7 +214,7 @@ async function main() {
   // Attach to the existing proxy contract
   const SimpleUpgrade = await hre.ethers.getContractFactory("SimpleUpgrade");
   const proxy = SimpleUpgrade.attach(proxyAddress);
-  
+
   // Log current contract information
   console.log("Admin address:", await proxy.admin());
   console.log("Current implementation:", await proxy.implementation());
@@ -188,8 +227,8 @@ async function main() {
   // Upgrade the proxy to point to the new implementation
   await proxy.upgrade(await logic2.getAddress(), {
     gasLimit: 1000000,
-    maxFeePerGas: ethers.parseUnits('20', 'gwei'),
-    maxPriorityFeePerGas: ethers.parseUnits('2', 'gwei')
+    maxFeePerGas: ethers.parseUnits("20", "gwei"),
+    maxPriorityFeePerGas: ethers.parseUnits("2", "gwei"),
   });
   console.log("Proxy upgraded to Logic2");
 }
@@ -211,7 +250,7 @@ const hre = require("hardhat");
 
 async function main() {
   // Address of the deployed proxy contract
- const proxyAddress = 'YOUR_PROXY_CONTRACT_ADDRESS';
+  const proxyAddress = "YOUR_PROXY_CONTRACT_ADDRESS";
 
   // Attach to the proxy contract using Logic1 ABI
   const Logic1 = await hre.ethers.getContractFactory("Logic1");
@@ -244,37 +283,44 @@ The content of testAfterUpgrade.js is similar to testBeforeUpgrade.js, but you n
 ## 7. Deployment and Upgrade Process
 
 1. Compile the contracts:
+
 ```
 npx hardhat compile
 ```
 
 2. Deploy the initial contract:
+
 ```
 npx hardhat run scripts/deploy.js --network eSpaceTestnet
 ```
 
 3. Run the pre-upgrade test:
+
 ```
 npx hardhat run scripts/testBeforeUpgrade.js --network eSpaceTestnet
 ```
 
 Expected output:
+
 ```
 Words after calling Logic1's foo(): old
 Current implementation address: 0x...(Logic1's address)
 ```
 
 4. Upgrade the contract:
+
 ```
 npx hardhat run scripts/upgrade.js --network eSpaceTestnet
 ```
 
 5. Run the post-upgrade test:
+
 ```
 npx hardhat run scripts/testAfterUpgrade.js --network eSpaceTestnet
 ```
 
 Expected output:
+
 ```
 Words after calling Logic2's foo(): new
 Current implementation address: 0x...(Logic2's address)
