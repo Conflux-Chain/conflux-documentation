@@ -14,7 +14,7 @@ Swappi es un Exchange descentralizado (DEX) dentro de Conflux Network, utilizand
 
 ## [Nucleon (Derivado de Staking Líquido)](https://www.nucleon.space/)
 
-Nucleon introduce un enfoque innovador para hacer staking en forma de un derivado líquido. This allows users to participate in network security while maintaining liquidity, a pivotal advancement in enhancing staking flexibility and utility.
+Nucleon introduce un enfoque innovador para hacer staking en forma de un derivado líquido. Esto permite a los usuarios participar en la seguridad de la red manteniendo la liquidez, un avance fundamental para mejorar la flexibilidad y utilidad del Staking.
 
 ## [Goledo (Lending y Borrowing)](https://www.goledo.cash/)
 
@@ -40,9 +40,9 @@ Si quieres aprender a usar ConfluxHub, puedes seguir [este](../tutorials/transfe
 
 ## [Validadores PoS](https://www.conflux-pos-validators.com/)
 
-The Conflux Network employs a Proof of Stake (PoS) mechanism, and a comprehensive list of all Conflux PoS Validators can be found on this website.
+La red de Conflux emplea un mecanismo de prueba de participación (PoS) y una lista completa de todos los Validadores PoS de Conflux se puede encontrar en este sitio web.
 
-To gain a deeper understanding of the Conflux ecosystem and its various facets, you are encouraged to watch the following YouTube video that delves into this topic:
+Para conseguir una comprensión más profunda del ecosistema de Conflux y sus diversas facetas, te animamos a ver el siguiente vídeo de YouTube que profundiza en este tema:
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';

@@ -261,7 +261,7 @@ Collateral for storage (CFS for short, or storage collateral) mechanism is intro
 
 For more information, refer to [Storage Collateral](../../core/core-space-basics/storage.md).
 
-### **Transactions**
+### **Transacciones**
 A Conflux transaction is a single instruction composed by an external actor with a Conflux account, and this instruction is cryptographically signed using the sender account's private key to prevent transaction forge. A transaction can involve a simple transfer of CFX (the native currency of Conflux), a transfer of tokens (such as ERC20 or ERC721), a deployment of a new smart contract, or an execution of a function on an existing smart contract. Transactions are the only way to store or update data on the blockchain.
 
 Refer to [Transactions](./transactions.md) for more information.

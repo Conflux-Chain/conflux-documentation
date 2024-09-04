@@ -4,9 +4,9 @@ title: Intro to the Stack
 displayed_sidebar: coreSidebar
 ---
 
-Like any software stack, the complete "Conflux Core Stack" will vary from project to project depending on your goals.
+Como cualquier paquete de software, las herramientas y tecnologías de desarrollo de "Conflux Core" variarán de un proyecto a otro, dependiendo de sus objetivos.
 
-There are, however, core components of Conflux that help provide a mental model for how software applications interact with the Conflux Core blockchain. Understanding the layers of the stack will help you understand the different ways that Conflux can be integrated into software projects.
+Sin embargo, existen componentes básicos de Conflux que ayudan a proporcionar un modelo mental de cómo las aplicaciones de los software interactúan con la blockchain de Conflux Core. Understanding the layers of the stack will help you understand the different ways that Conflux can be integrated into software projects.
 
 ## Level 1: Virtual Machine
 

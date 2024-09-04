@@ -19,7 +19,7 @@ keywords:
 
 实际的燃气成本计算为 `gasCharged`乘以`gasPrice`。 需要注意，`gasCharged`不会超过 `gas` 字段设定的限制。
 
-有关Conflux中燃气及其计算的更详细信息，请访问我们的 [关于燃气的详细文档](../../zh-CN/docs/general/conflux-basics/gas.md).。
+有关Conflux中燃气及其计算的更详细信息，请访问我们的 [关于燃气的详细文档](/docs/general/conflux-basics/gas.md).。
 
 ### 如何设置`gasPrice`字段
 

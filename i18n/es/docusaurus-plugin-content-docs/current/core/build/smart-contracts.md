@@ -1,6 +1,6 @@
 ---
 sidebar_position: 2
-title: Smart Contracts
+title: Contratos Inteligentes
 displayed_sidebar: coreSidebar
 ---
 

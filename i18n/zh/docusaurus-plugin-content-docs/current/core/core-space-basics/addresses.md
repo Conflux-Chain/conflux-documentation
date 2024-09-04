@@ -153,7 +153,7 @@ computeAddressUsingSalt(1111, bytecode) // 0x80ac53cc16c0b58dc5bde5af47f5ef9e846
 
 </Tabs>
 
-如果 `create2` 未被使用：
+如果不使用 `create2` 部署合约：
 
 <Tabs>
     <TabItem label="Python" value="PythonExample">

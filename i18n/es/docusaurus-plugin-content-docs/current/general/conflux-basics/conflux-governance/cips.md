@@ -6,33 +6,33 @@ displayed_sidebar: generalSidebar
 
 # CIPs
 
-## Overview
+## Información general
 
-As a decentralized network, major changes to the Conflux protocol need to reach consensus before they can be enacted. Such changes are proposed in the form of a **Conflux Improvement Proposal**, or CIP for short. After a CIP is discussed, the specification is finalized, and popular support is achieved, a set of CIPs is implemented and rolled out as a network upgrade, also known as a hard fork.
+Como red descentralizada, los cambios importantes en el protocolo de Conflux deben llegar a un consenso antes de que se puedan promulgar. Tales cambios se proponen en forma de **Propuesta de Mejora de Conflux**o CIP para abreviar. Una vez que se debate un CIP, se finaliza la especificación y se consigue el apoyo popular, se implanta un conjunto de CIPs y se despliega como una actualización de la red, también conocida como hard fork.
 
-The process of submitting a CIP is described in [CIP-1](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-1.md). CIPs have the following stages:
+El proceso para presentar un CIP se describe en [CIP-1](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-1.md). Los CIPs tienen las siguientes etapas:
 
 ```
-[ IDEA ] -> [ DRAFT ] -> [ LAST CALL ] -> [ ACCEPTED ] -> [ FINAL ]
+[ IDEA ] -> [ BORRADOR ] -> [ ÙLTIMO LLAMADO ] -> [ ACEPTADO ] -> [ FINAL ]
 ```
 
-For more details, please refer to [CIP-1](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-1.md).
+Para obtener más información, consulte [CIP-1](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-1.md).
 
-## Highlighted CIPs
+## CIPs destacados
 
-Below are some of the most impactful CIPs since the launch of the Conflux mainnet.
+A continuación figuran algunos de los CIPs más significativos desde el lanzamiento de la red principal de Conflux.
 
-- [CIP-23](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-23.md): **Typed structured data hashing and signing**. This CIP defined Conflux signature standards, based on Ethereum’s [EIP-712](https://eips.ethereum.org/EIPS/eip-712).
-- [CIP-37](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-37.md): **Introduce Base32 Checksum Addresses**. The Core Space address format that you’re familiar with from [Fluent](https://fluentwallet.com/) and other wallets was defined in CIP-37.
-- [CIP-40](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-40.md): **Reduce block base reward to 2 CFX**. In the first hard fork upgrade after mainnet launch, the block base reward was reduced from 7 CFX to 2 CFX. This was also the first CIP that was confirmed in a [governance vote](https://governance.confluxnetwork.org/en/governance/).
-- [CIP-43](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-43.md): **Introduce Finality via Voting Among Staked**. This CIP introduced the idea of the hybrid PoW-PoS consensus, implemented in the Hydra hard fork.
-- [CIP-90](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-90.md): **A Space Fully EVM compatible**. The other major update in the Hydra hard fork was the introduction of [Conflux eSpace](https://medium.com/conflux-network/conflux-espace-a-high-level-overview-cdca29bc422a), defined in this CIP.
-- [CIP-94](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-94.md): **On-chain DAO Vote for Chain Parameters**. On-chain mechanism for community governance, to be rolled out in an upcoming network upgrade.
+- [CIP-23](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-23.md): **Firma y hash de datos estructurados tipificados**. Este CIP define los estándares de firma de Conflux, basados en [EIP-712](https://eips.ethereum.org/EIPS/eip-712) de Ethereum.
+- [CIP-37](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-37.md): **Introduce Direcciones de suma de verificación Base32**. El formato de dirección Core Space que conoces de [Fluent](https://fluentwallet.com/) y otras billetear se definió en CIP-37.
+- [CIP-40](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-40.md): **Reducir recompensas base de bloque a 2 CFX**. En la primera actualización del hard fork tras el lanzamiento de la mainnet, la recompensa base de los bloques se redujo de 7 CFX a 2 CFX. Este fue también el primer CIP que se confirmó en una [votación de gobernanza](https://governance.confluxnetwork.org/en/governance/).
+- [CIP-43](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-43.md): **Introducir la finalización a través de la votación entre participantes de Staking**. Este CIP introdujo la idea del consenso híbrido PoW-PoS, implementado en el hard fork Hydra.
+- [CIP-90](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-90.md): **Un espacio completamente compatible con EVM**. La otra actualización importante en el hard fork Hydra fue la introducción de [Conflux eSpace](https://medium.com/conflux-network/conflux-espace-a-high-level-overview-cdca29bc422a), definida en este CIP.
+- [CIP-94](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-94.md): **Votación DAO On-chain para parámetros de la red**. El mecanismo on-chain para la gobernanza de la comunidad, que se pondrá en marcha en una próxima actuaización de la red.
 
-## How can I submit a CIP?
+## ¿Cómo puedo enviar un CIP?
 
-If you want to submit a Conflux Improvement Proposal, you should start by copying the [CIP Markdown template](https://github.com/Conflux-Chain/CIPs/blob/master/cip-template.md) and filling some basic information in the preamble, such as the title of this CIP, the list of authors, and the type of the change that. you are proposing. After this, you can proceed to fill all the sections: `Simple Summary`, `Abstract`, `Motivation`, `Specification`, `Rationale`, `Backwards Compatibility`, `Test Cases`, `Implementation`, `Security Considerations`. Once your CIP draft is ready for its initial publication, submit it to the [CIPs GitHub repository](https://github.com/Conflux-Chain/CIPs) in a new [PR](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request).
+Si desea enviar una propuesta de mejora de Conflux, debe empezar por copiar la plantilla [CIP Markdown](https://github.com/Conflux-Chain/CIPs/blob/master/cip-template.md) y rellenar algunos datos básicos en el preámbulo, como el título de este CIP, la lista de autores y el tipo de cambio que está proponiendo. Después de esto, puedes proceder a rellenar todas las secciones: `Sumario simple`, `Resúmen`, `Motivación`, `Especificación`, `Justificación`, `Retrocompatibilidad`, `Casos de Prueba`, `Implementación`, `Consideraciones de Seguridad`. Una vez que su borrador de CIP esté listo para su publicación inicial, envíelo a [CIPs GitHub repositoey](https://github.com/Conflux-Chain/CIPs) en un nuevo [PR](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request).
 
-## Next steps
+## Siguientes pasos
 
-Once your CIP draft has been submitted, the CIP editors will review it and address any editorial issues. At this point, you should share the CIP with the Conflux community, start a discussion, find and address issues, and work to achieve popular support for the proposed change or improvement.
+Una vez que su borrador CIP ha sido enviado, los editores CIP lo revisarán y abordarán cualquier cuestión de edición. En este punto, debe compartir el PIC con la comunidad Conflux, iniciar un debate, encontrar y abordar los problemas, y trabajar para lograr el apoyo popular al cambio o mejora propuestos.

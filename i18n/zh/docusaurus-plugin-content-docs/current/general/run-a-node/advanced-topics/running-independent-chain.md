@@ -12,21 +12,20 @@ displayed_sidebar: generalSidebar
 
 为了运行一个单节点的Conflux链用于开发，您可以按照以下步骤进行：
 
-1. 获取可执行的Conflux二进制文件（使用预编译的二进制文件或从最新的源代码构建） 你可以参考 [下载Conflux客户端](./downloading-conflux-client.md) 文档
-
-2. 创建一个目录并准备一个名为 `development.toml` 的配置文件。 可以复制目录中提供的`hydra.toml`文件，然后根据 [节点配置文件](./configuration-files.md) 的指导进行修改。
-
-3. 将配置文件中的 bootnodes 参数设置为空（或将设置行注释掉）。
-
-4. 将配置文件中的 `mode` 参数设置为 "dev"。 如果您是从`hydra.toml`复制的，您应该会发现该行被注释了，您可以取消注释。
-
-5. 设置`dev_block_interval_ms`参数为您想要的区块生成间隔。 在开发模式下，Conflux会以固定间隔自动生成区块。
-
-6. 使用`development.toml`作为配置文件运行Conflux二进制文件。 例如：
+1. Get executable Conflux binary file (use precompiled binary or build from the latest source code). You can refer to the document [Downloading](./downloading-conflux-client.md).
+2. Create a directory and prepare a configuration file `devnode.toml`. You can copy the `hydra.toml` provided in the directory and start from there following the guide [Configuration Files](./configuration-files.md).
+3. Set the `bootnodes` parameter in the configuration file to empty (or comment the setting line).
+4. Set the `mode` parameter to "dev". If you copy from `hydra.toml`, you should find the line being commented and you can uncomment it.
+5. Set the `dev_block_interval_ms` parameter to the block generation interval you want. In the development mode, Conflux will automatically generate a block in a fixed interval.
+6. Generate PoS related configurations according [this guide](https://github.com/Conflux-Chain/conflux-docker/blob/master/docs/about-dev-node-config.md#how-to-generate-pos_config-files)
+7. Set history CIPs enable height to make sure the history CIPs are enabled. Check [here for an example](https://github.com/Conflux-Chain/conflux-docker/blob/master/docs/about-dev-node-config.md#how-to-enable-cips).
+8. Run Conflux binary with `devnode.toml` as the configuration file. 例如：
 
 ```bash
-$ ./conflux --config development.toml
+$ ./conflux --config devnode.toml
 ```
+
+You can download all sample configuration file [here](https://github.com/Conflux-Chain/conflux-docker/tree/master/fullnode-configs/dev-node)
 
 ## 运行多节点生产链
 
@@ -38,7 +37,7 @@ $ ./conflux --config development.toml
 
 ## A Simple Instruction
 
-1. 获取可执行的Conflux二进制文件（使用预编译的二进制文件或从最新的源代码构建） 你可以参考 [下载Conflux客户端](./downloading-conflux-client.md) 文档
+1. Get executable Conflux binary file (use precompiled binary or build from the latest source code). You can refer to the document [Downloading](./downloading-conflux-client.md).
 
 2. 创建一个目录，并为启动节点准备一个配置文件`bootnode.toml`（如果未设置，默认端口为32323）。 您可以参考[节点配置文件](./configuration-files.md)文档。
 

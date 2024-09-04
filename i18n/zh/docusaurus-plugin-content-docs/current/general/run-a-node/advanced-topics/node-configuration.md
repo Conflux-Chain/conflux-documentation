@@ -75,7 +75,7 @@ persist_tx_index=true
 
 ### 交易跟踪
 
-交易跟踪相关选项。
+Parity style transaction trace related options.
 
 ```toml
 executive_trace=true
@@ -235,3 +235,9 @@ persist_tx_index=true
 - `persist_block_number_index`
 
 其他一般不需要重启。
+
+### I want to access Core Space debug/test RPC methods, what parameters do I need to configure?
+
+```toml
+jsonrpc_local_http_port=12539 # this is the port for debug/test RPC methods
+```

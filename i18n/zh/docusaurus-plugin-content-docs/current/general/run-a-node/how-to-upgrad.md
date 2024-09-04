@@ -43,7 +43,7 @@ conflux conflux-rust/v2.3.3-89f0ce5-20231215/x86_64-linux-gnu/rustc1.73.0
 
 ### 重新启动节点后，将区块数据同步到最新需要多长时间？
 
-如果你的节点在升级前已与最新区块同步，那么节点将在升级后从上次同步的区块开始同步。 这一般需要几分钟到几十分钟。
+如果你的节点在升级前已与最新区块同步，那么节点将在升级后从上次同步的区块开始同步。 It usually takes `several minutes to 30 of minutes`. If not then it may take a `few hours to 2 days` to sync to the latest block.
 
 ### 如何迁移节点？
 

@@ -133,7 +133,14 @@ conflux --config ./run/hydra.toml
 例如:
 
 ```shell
-curl -H "Content-Type: application/json" -X POST –data '{"jsonrpc":"2.0","method":"cfx_clientVersion","params":[],"id":67}' 127.0.0.1:12537
+curl --location 'http://localhost:12537' \
+--header 'Content-Type: application/json' \
+--data '{
+    "jsonrpc": "2.0",
+    "id": "15922956697249514502",
+    "method": "cfx_clientVersion",
+    "params": []
+  }'
 ```
 
 ### 步骤6：保持节点更新

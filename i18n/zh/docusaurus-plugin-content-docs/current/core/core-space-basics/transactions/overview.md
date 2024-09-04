@@ -6,7 +6,7 @@ keywords:
 displayed_sidebar: coreSidebar
 ---
 
-交易是区块链中的一个重要概念。 如果你不熟悉交易的概念，并希望快速了解它,你可以阅读 [交易快速入门](../../zh-CN/docs/general/conflux-basics/transactions.md)。
+交易是区块链中的一个重要概念。 如果你不熟悉交易的概念，并希望快速了解它,你可以阅读 [交易快速入门](/docs/general/conflux-basics/transactions.md)。
 
 通常, 我们使用[钱包](../../../general/conflux-basics/wallets.md)或 [SDKs](../../build/sdks-and-tools/sdks.md) 发送交易，这些工具将帮助我们完成复杂的任务，例如构建交易、将其发送到网络，并最终等待交易被确认或完成，这些工具的存在使整个过程相对简单。
 

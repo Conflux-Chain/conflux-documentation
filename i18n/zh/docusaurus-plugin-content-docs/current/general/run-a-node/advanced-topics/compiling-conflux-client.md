@@ -10,7 +10,7 @@ import { confluxNodeVersion } from '../../../templates/parameters.ts'
 
 ## 安装构建依赖
 
-构建Conflux需要安装**Rust 1.62.0**、`clang`和`sqlite`。
+Conflux requires **Rust 1.77.2**, `clang`, and `sqlite` to build.
 
 我们推荐通过[rustup](https://rustup.rs/)来安装Rust。 如果您还没有安装`rustup`或`clang`，可以这样安装它们：
 
@@ -26,14 +26,15 @@ rustup install 1.62.0
 
 其他依赖包括`clang`、`cmake（版本 >= 3.12）`和`sqlite（版本 >= 3.8.3）`可以这样安装：
 
-- Ubuntu 18.04:
+- Ubuntu 18.04-22.04:
 
 ```bash
 # Ubuntu 18.04上最新的cmake版本是3.10，因此您需要从Kitware仓库安装它。
+# This step is not required on Ubuntu 22.04
 wget -O - https://apt.kitware.com/keys/kitware-archive-latest.asc 2>/dev/null | gpg --dearmor - | sudo tee /usr/share/keyrings/kitware-archive-keyring.gpg >/dev/null
 echo 'deb [signed-by=/usr/share/keyrings/kitware-archive-keyring.gpg] https://apt.kitware.com/ubuntu/ bionic main' | sudo tee /etc/apt/sources.list.d/kitware.list >/dev/null
-sudo apt-get update
 
+sudo apt-get update
 sudo apt-get install clang libsqlite3-dev pkg-config libssl-dev cmake
 ```
 

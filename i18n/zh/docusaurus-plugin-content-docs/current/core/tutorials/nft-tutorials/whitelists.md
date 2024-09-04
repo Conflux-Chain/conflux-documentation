@@ -17,7 +17,7 @@ This tutorial will guide you through the steps to create, write, and deploy an E
 
 - Node.js installed on your system & Hardhat setup on your machine.
 - A Conflux CoreSpace wallet
-- A basic understanding of smart contract development and the Solidity programming language.
+- 对智能合约开发和Solidity编程语言有基本的了解。
 
 ## 第1步：设置您的环境
 
@@ -31,7 +31,7 @@ npm install --save-dev hardhat
 npx hardhat
 ```
 
-When prompted, choose the default project setup by pressing Enter for all questions. This will create a basic Hardhat project setup with all the necessary configurations.
+在提示时，请在所有问题上按Enter键选择默认项目设置。 这将创建一个带有所有必要配置的基本Hardhat项目设置。
 
 [![Create Project](../imgs/nft-tutorials/whitelist-hardhat-create-project.png)](../imgs/nft-tutorials/whitelist-hardhat-create-project.png)
 
