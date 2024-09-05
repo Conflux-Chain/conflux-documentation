@@ -183,7 +183,14 @@ Related links:
 
 
 ### **Keccack-256**
-The keccak-256 algorithm computes the [hash](#hash) of an input to a fixed length output. The input can be a variable length string or number, but the result will always be a fixed bytes32 data type. It is a one-way cryptographic hash function, which cannot be decoded in reverse.
+Keccak-256 is a cryptographic [hash](#hash) function that computes a fixed-length output (32 bytes) from an input of arbitrary length. It is widely used in EVM-based blockchains like Ethereum and Conflux for various purposes, including:
+
+1. Hash computations within Solidity smart contracts
+2. Generation of block hashes
+3. Calculation of transaction hashes
+4. Address generation
+
+Keccak-256 is a one-way function, meaning it's computationally infeasible to reverse-engineer the original input from the hash value. 
 
 
 ### **Merkle Tree**
