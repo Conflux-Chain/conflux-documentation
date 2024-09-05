@@ -168,7 +168,7 @@ Refer to [GHAST](../conflux-basics/consensus-mechanisms/proof-of-work/ghast.md) 
 
 ### **Hash**
 
-A hash is a function that transforms input data into a fixed length output, also known as a "hash value". Various hash functions, such as the SHA-256 (Secure Hash Algorithm 256-bit) used primarily in Bitcoin and the Keccak-256 employed in Ethereum as well as Conflux, serve pivotal roles in assuring blockchain security. Hash function plays a crucial role in blockchain as they ensure a unique hash is generated for  every block within the blockchain has. For example, these hash functions are used in generating unique identifiers for blockchain blocks and in creating a secure linkage between blocks in a blockchain, with each block bearing a unique hash.
+A hash is a function that transforms input data into a fixed length output, also known as a "hash value". Various hash functions, such as the SHA-256 (Secure Hash Algorithm 256-bit) used primarily in Bitcoin and the [Keccak-256](#keccack-256) employed in Ethereum as well as Conflux, serve pivotal roles in assuring blockchain security. Hash function plays a crucial role in blockchain as they ensure a unique hash is generated for  every block within the blockchain has. For example, these hash functions are used in generating unique identifiers for blockchain blocks and in creating a secure linkage between blocks in a blockchain, with each block bearing a unique hash.
 
 Significant to note is the principle of hash invertibility. A hash function is considered as a 'one-way' function, meaning while data can be converted into a hash value, the process cannot be reversed. That is, it is computationally infeasible to derive the original input data solely from the hash value. The data held by the hash is, therefore, deemed to be secure, reinforcing the integrity and security of blockchains, hence making them a fundamental component in the technology. This uniqueness and inability to reverse engineer the original data from the hash, reinforces the integrity and security of the blockchain.
 
@@ -183,7 +183,7 @@ Related links:
 
 
 ### **Keccack-256**
-The keccak-256 algorithm computes the hash of an input to a fixed length output. The input can be a variable length string or number, but the result will always be a fixed bytes32 data type. It is a one-way cryptographic hash function, which cannot be decoded in reverse.
+The keccak-256 algorithm computes the [hash](#hash) of an input to a fixed length output. The input can be a variable length string or number, but the result will always be a fixed bytes32 data type. It is a one-way cryptographic hash function, which cannot be decoded in reverse.
 
 
 ### **Merkle Tree**
