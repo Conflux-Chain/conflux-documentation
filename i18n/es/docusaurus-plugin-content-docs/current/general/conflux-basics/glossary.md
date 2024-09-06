@@ -167,7 +167,7 @@ Refer to [GHAST](../conflux-basics/consensus-mechanisms/proof-of-work/ghast.md) 
 
 ### **Hash**
 
-A hash is a function that transforms input data into a fixed length output, also known as a "hash value". Various hash functions, such as the SHA-256 (Secure Hash Algorithm 256-bit) used primarily in Bitcoin and the Keccak-256 employed in Ethereum as well as Conflux, serve pivotal roles in assuring blockchain security. Hash function plays a crucial role in blockchain as they ensure a unique hash is generated for  every block within the blockchain has. For example, these hash functions are used in generating unique identifiers for blockchain blocks and in creating a secure linkage between blocks in a blockchain, with each block bearing a unique hash.
+A hash is a function that transforms input data into a fixed length output, also known as a "hash value". Various hash functions, such as the SHA-256 (Secure Hash Algorithm 256-bit) used primarily in Bitcoin and the [Keccak-256](#keccack-256) employed in Ethereum as well as Conflux, serve pivotal roles in assuring blockchain security. Hash function plays a crucial role in blockchain as they ensure a unique hash is generated for  every block within the blockchain has. For example, these hash functions are used in generating unique identifiers for blockchain blocks and in creating a secure linkage between blocks in a blockchain, with each block bearing a unique hash.
 
 Significant to note is the principle of hash invertibility. A hash function is considered as a 'one-way' function, meaning while data can be converted into a hash value, the process cannot be reversed. That is, it is computationally infeasible to derive the original input data solely from the hash value. The data held by the hash is, therefore, deemed to be secure, reinforcing the integrity and security of blockchains, hence making them a fundamental component in the technology. This uniqueness and inability to reverse engineer the original data from the hash, reinforces the integrity and security of the blockchain.
 
@@ -179,6 +179,18 @@ Internal transactions in blockchain refer to value transfers or operations withi
 Related links:
 
 - [trace JSON-RPC API](../../core/build/json-rpc/trace-namespace.md)
+
+
+### **Keccack-256**
+Keccak-256 is a cryptographic [hash](#hash) function that computes a fixed-length output (32 bytes) from an input of arbitrary length. It is widely used in EVM-based blockchains like Ethereum and Conflux for various purposes, including:
+
+1. Hash computations within Solidity smart contracts
+2. Generation of block hashes
+3. Calculation of transaction hashes
+4. Address generation
+
+Keccak-256 is a one-way function, meaning it's computationally infeasible to reverse-engineer the original input from the hash value.
+
 
 ### **Merkle Tree**
 A Merkle tree, in cryptography and computer science, is a tree in which every leaf node is labelled with the hash of a data block, and every non-leaf node is labelled with the cryptographic hash of the labels of its child nodes. Merkle trees are used in blockchains to efficiently verify the contents of large data structures.
