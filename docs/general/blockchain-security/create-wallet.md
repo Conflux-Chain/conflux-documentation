@@ -6,7 +6,7 @@ sidebar_position: 1
 
 The first step into the blockchain world is creating a secure wallet. This guide provides crucial security advice for creating your wallet.
 
-## 1. Understanding the Essence of Wall ets
+## 1. Understanding the Essence of Wallets
 
 Before diving into wallet creation, it's crucial to understand what a blockchain wallet is and how it works.
 
