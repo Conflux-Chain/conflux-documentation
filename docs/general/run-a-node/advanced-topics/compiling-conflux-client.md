@@ -21,7 +21,7 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 # you might need to run 
 # source "$HOME/.cargo/env"
 # to configure your shell
-rustup install 1.62.0
+rustup install 1.77.2
 ```
 
 Other dependencies including ```clang```, ```cmake (version >= 3.12)``` and ```sqlite (version >= 3.8.3)``` can be installed with:
