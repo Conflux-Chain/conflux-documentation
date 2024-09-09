@@ -143,7 +143,7 @@ main().catch(e => console.error(e));
 
 ## 其他资源
 
-1. 查看 [js-conflux-sdk的文档](https://docs.confluxnetwork.org/js-conflux-sdk/) 了解更多详情
+1. Check [js-conflux-sdk's documentation](https://confluxnetwork.gitbook.io/js-conflux-sdk) for more details
 2. 参考 [SDKs](./build/sdks-and-tools/sdks.md) 了解其他 SDK 的示例。
 3. [Core Space 水龙头](https://faucet.confluxnetwork.org/)
 4. [Conflux Core 区块链浏览器](https://confluxscan.io/)
