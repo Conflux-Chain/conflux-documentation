@@ -167,7 +167,7 @@ GHAST（贪婪最重适应子树 Greedy Heaviest Adaptive SubTree ）是Conflux�
 
 ### **哈希**
 
-A hash is a function that transforms input data into a fixed length output, also known as a "hash value". Various hash functions, such as the SHA-256 (Secure Hash Algorithm 256-bit) used primarily in Bitcoin and the Keccak-256 employed in Ethereum as well as Conflux, serve pivotal roles in assuring blockchain security. Hash function plays a crucial role in blockchain as they ensure a unique hash is generated for  every block within the blockchain has. For example, these hash functions are used in generating unique identifiers for blockchain blocks and in creating a secure linkage between blocks in a blockchain, with each block bearing a unique hash.
+A hash is a function that transforms input data into a fixed length output, also known as a "hash value". Various hash functions, such as the SHA-256 (Secure Hash Algorithm 256-bit) used primarily in Bitcoin and the [Keccak-256](#keccack-256) employed in Ethereum as well as Conflux, serve pivotal roles in assuring blockchain security. Hash function plays a crucial role in blockchain as they ensure a unique hash is generated for  every block within the blockchain has. For example, these hash functions are used in generating unique identifiers for blockchain blocks and in creating a secure linkage between blocks in a blockchain, with each block bearing a unique hash.
 
 Significant to note is the principle of hash invertibility. A hash function is considered as a 'one-way' function, meaning while data can be converted into a hash value, the process cannot be reversed. That is, it is computationally infeasible to derive the original input data solely from the hash value. The data held by the hash is, therefore, deemed to be secure, reinforcing the integrity and security of blockchains, hence making them a fundamental component in the technology. This uniqueness and inability to reverse engineer the original data from the hash, reinforces the integrity and security of the blockchain.
 
@@ -179,6 +179,18 @@ Significant to note is the principle of hash invertibility. A hash function is c
 相关链接:
 
 - [trace JSON-RPC API](../../core/build/json-rpc/trace-namespace.md)
+
+
+### **Keccack-256**
+Keccak-256 is a cryptographic [hash](#hash) function that computes a fixed-length output (32 bytes) from an input of arbitrary length. It is widely used in EVM-based blockchains like Ethereum and Conflux for various purposes, including:
+
+1. Hash computations within Solidity smart contracts
+2. Generation of block hashes
+3. Calculation of transaction hashes
+4. Address generation
+
+Keccak-256 is a one-way function, meaning it's computationally infeasible to reverse-engineer the original input from the hash value.
+
 
 ### **默克尔树**
 在密码学和计算机科学中，默克尔树是一种树状结构，其中每个叶子节点都被赋予了一个数据块哈希值的标签，而每个非叶子节点的标签则是由其所有子节点的标签的值经过哈希计算得来的。 默克尔树在区块链中用于高效验证大型数据结构的内容。

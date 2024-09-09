@@ -18,10 +18,10 @@ Conflux requires **Rust 1.77.2**, `clang`, and `sqlite` to build.
 
 ```shell
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-# 您可能需要运行
+# you might need to run 
 # source "$HOME/.cargo/env"
-# 来配置您的shell
-rustup install 1.62.0
+# to configure your shell
+rustup install 1.77.2
 ```
 
 其他依赖包括`clang`、`cmake（版本 >= 3.12）`和`sqlite（版本 >= 3.8.3）`可以这样安装：
