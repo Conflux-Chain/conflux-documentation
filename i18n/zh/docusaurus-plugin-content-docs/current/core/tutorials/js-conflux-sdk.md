@@ -15,7 +15,7 @@ displayed_sidebar: coreSidebar
 - 单位换算
 - 哈希和签名
 
-更多细节和示例，请参考 [js-conflux-sdk 文档](https://docs.confluxnetwork.org/js-conflux-sdk/)。
+For further details and examples, please refer to the [js-conflux-sdk documentation](https://confluxnetwork.gitbook.io/js-conflux-sdk).
 
 ## 账户生成
 
@@ -126,7 +126,7 @@ async function main() {
 }
 ```
 
-查看 sdk 部分的[合约交互指南](https://docs.confluxnetwork.org/js-conflux-sdk/docs/interact_with_contract)获取更多信息。
+Consult the sdk's [Contract interaction guide](https://confluxnetwork.gitbook.io/js-conflux-sdk/docs/interact_with_contract) for more information.
 
 ## 常用工具
 
