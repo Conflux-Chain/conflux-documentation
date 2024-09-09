@@ -15,7 +15,7 @@ The [Developer Quickstart](../core-developer-quickstart.md) demonstrates how to 
 * Unit Conversion
 * Hashing and Signing
 
-For further details and examples, please refer to the [js-conflux-sdk documentation](https://docs.confluxnetwork.org/js-conflux-sdk/).
+For further details and examples, please refer to the [js-conflux-sdk documentation](https://confluxnetwork.gitbook.io/js-conflux-sdk).
 
 ## Account Generation
 
@@ -126,7 +126,7 @@ async function main() {
 }
 ```
 
-Consult the sdk's [Contract interaction guide](https://docs.confluxnetwork.org/js-conflux-sdk/docs/interact_with_contract) for more information.
+Consult the sdk's [Contract interaction guide](https://confluxnetwork.gitbook.io/js-conflux-sdk/docs/interact_with_contract) for more information.
 
 ## Common Utilities
 
