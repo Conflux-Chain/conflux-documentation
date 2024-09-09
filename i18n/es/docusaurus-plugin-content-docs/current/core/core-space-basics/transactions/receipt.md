@@ -30,7 +30,7 @@ For detailed information about each field, you can refer to the API documentatio
 
 The logs field in the Receipt is an array containing all the logs generated during the transaction execution process. When interacting with a contract, the contract can produce logs or events using emit statements. After the transaction is executed, these logs are recorded in the transaction receipt. In Solidity, [Events](https://docs.soliditylang.org/en/v0.8.23/contracts.html#events) are designed to log information about the execution of contract methods, providing detailed information about contract execution through events.
 
-You can retrieve logs using the [cfx_getLogs](/docs/core/build/json-rpc/cfx-namespace#cfx_getlogs) method and decode the log data using the [abi.decode](https://docs.soliditylang.org/en/v0.8.23/contracts.html#events) method. Conflux SDKs also provide methods to help decoding the logs, for example, [javascript](https://docs.confluxnetwork.org/js-conflux-sdk/docs/interact_with_contract#how-to-decode-log) and [python](https://python-conflux-sdk.readthedocs.io/en/latest/examples/05-interact_with_contracts_and_process_logs.html#process-logs).
+You can retrieve logs using the [cfx_getLogs](/docs/core/build/json-rpc/cfx-namespace#cfx_getlogs) method and decode the log data using the [abi.decode](https://docs.soliditylang.org/en/v0.8.23/contracts.html#events) method. Conflux SDKs also provide methods to help decoding the logs, for example, [javascript](https://confluxnetwork.gitbook.io/js-conflux-sdk/docs/interact_with_contract#how-to-decode-log) and [python](https://python-conflux-sdk.readthedocs.io/en/latest/examples/05-interact_with_contracts_and_process_logs.html#process-logs).
 
 ## Execution Failure
 
