@@ -143,7 +143,7 @@ If your account does not have enough balance, you will encounter the following e
 
 ## Resources
 
-1. Check [js-conflux-sdk's documentation](https://docs.confluxnetwork.org/js-conflux-sdk/) for more details
+1. Check [js-conflux-sdk's documentation](https://confluxnetwork.gitbook.io/js-conflux-sdk) for more details
 2. Refer to [SDKs](./build/sdks-and-tools/sdks.md) for examples of other SDKs.
 3. [Core Space Faucet](https://faucet.confluxnetwork.org/)
 4. [Conflux Core Scan](https://confluxscan.io/)
