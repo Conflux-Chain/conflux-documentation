@@ -4,7 +4,7 @@ sidebar_position: 2
 ---
 # Security Advice for Wallet Backup
 
-## 1. Security Advice on Mnemonic Phrases/Private Keys
+## 1. Mnemonic Phrases/Private Keys Backup
 
 ### Plaintext Mnemonic Phrases
 
@@ -18,7 +18,7 @@ Mnemonic phrases typically consist of 12 or 24 English words, following the BIP3
 
 ### Mnemonic Phrases with Passphrase
 
-Also known as "passphrase" or "25th word", based on the [PBKDF2](https://en.wikipedia.org/wiki/PBKDF2) function, it integrates the password into the seed generation process, significantly increasing the difficulty of brute-force attacks. A mnemonic phrase can be accompanied by a passphrase, resulting in a different seed used to derive a series of private keys, public keys, and corresponding addresses; therefore, it's important to back up both the mnemonic phrase and the passphrase.
+Passphrase, sometimes referred to as the “25th word,” enhances security by adding an extra layer of protection to the seed generation process, making brute-force attacks significantly more challenging. It’s crucial to back up both the mnemonic phrase and the passphrase securely.
 
 #### Security Recommendations:
 
@@ -26,27 +26,6 @@ Also known as "passphrase" or "25th word", based on the [PBKDF2](https://en.wiki
 - Consider using a password manager to generate and store the password
 - Example: Use [1Password](https://1password.com/) to generate a strong password like `"X2$9Pz#mK@Lq"`
 
-### Multi-signature Wallets
-
-Multi-signature wallets require multiple private keys to jointly authorize transactions, with common configurations like 2-of-3 and 3-of-5, supporting various multi-signature schemes such as Bitcoin's [P2SH](https://en.bitcoin.it/wiki/Pay_to_script_hash) and Ethereum's smart contract multi-signature.
-
-#### Security Recommendations:
-
-- Carefully plan the signing strategy, balancing security and usability
-- Consider geographical distribution to avoid single points of failure
-- Use hardware wallets as part of the multi-signature setup to enhance security
-- Example: 3-of-5 configuration, 2 keys on hardware wallets, 2 on paper backups, 1 in encrypted cloud storage
-
-### Shamir's Secret Sharing (SSS)
-
-Divides the secret (e.g., seed) into multiple shares, requiring a predetermined number of shares to reconstruct the secret.
-
-#### Security Recommendations:
-
-- Implement using features like Trezor's Shamir Backup
-- Carefully choose the number of shares and recovery threshold, such as a 5-of-8 configuration
-- Securely distribute shares, considering different storage methods and locations
-- Example: 3 shares kept in secure locations, 2 given to trusted family members, 3 encrypted and stored in different cloud services
 
 ## 2. Advanced Backup Strategies
 
@@ -88,34 +67,7 @@ Use waterproof, fireproof paper and consider steganography techniques to further
 - Enable advanced security features, such as Ledger's anti-phishing word verification
 - Consider using multiple hardware wallets stored in different locations
 
-#### Security Enhancement Measures:
-
-- Regularly review memorized content
-- Combine with other backup methods, don't rely solely on memory
-- Example: Create a story with 12 scenes, each representing a mnemonic word
-
 ## 3. Backup Security Principles and Practices
-
-### Apply Zero Trust Model
-
-Assume all networks are insecure and implement the principle of least privilege
-
-#### Implementation Suggestions:
-
-- Use virtual machines or [Tails OS](https://tails.boum.org/) to handle sensitive information
-- Generate and recover wallets in offline environments
-- Use hardware wallets to sign all transactions
-
-### Multi-layered Defense Strategy
-
-Implement a multi-layered security approach to ensure comprehensive protection
-
-#### Implementation Example:
-
-1. Store main funds in hardware wallets
-2. Use hot wallets (e.g., mobile apps) for small daily transactions
-3. Use multi-signature wallets for team or large funds
-4. Regularly transfer funds from hot wallets to cold storage
 
 ### Regular Security Audits
 
