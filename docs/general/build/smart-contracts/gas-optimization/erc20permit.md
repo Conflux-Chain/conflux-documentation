@@ -33,6 +33,22 @@ This approach not only increases gas costs but also diminishes user experience. 
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.20;
 
+import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
+
+// Standard ERC20 implementation
+contract StandardToken is ERC20 {
+    constructor() ERC20("StandardToken", "STD") {
+        _mint(msg.sender, 1000000 * 10**decimals());
+    }
+}
+```
+
+#### Optimized Implementation Using ERC20Permit
+
+```solidity
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
 import "@openzeppelin/contracts/token/ERC20/extensions/ERC20Permit.sol";
 import "@openzeppelin/contracts/utils/cryptography/ECDSA.sol";
 
