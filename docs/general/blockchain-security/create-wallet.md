@@ -1,5 +1,6 @@
 ---
 displayed_sidebar: generalSidebar
+sidebar_position: 1
 ---
 # Security Advice for Creating a Wallet
 
