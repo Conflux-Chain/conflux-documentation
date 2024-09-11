@@ -75,6 +75,69 @@ contract OptimizedToken is ERC20Permit {
 }
 ```
 
+#### Frontend Implementation
+
+Example of implementing ERC20 Permit signature using Ethers.js v6:
+
+```javascript
+import { ethers } from "ethers";
+
+async function signERC20Permit(contract, owner, spender, value, deadline, nonce) {
+  const provider = new ethers.BrowserProvider(window.ethereum);
+  const signer = await provider.getSigner();
+  
+  const domain = {
+    name: await contract.name(),
+    version: '1',
+    chainId: (await provider.getNetwork()).chainId,
+    verifyingContract: await contract.getAddress()
+  };
+
+  const types = {
+    Permit: [
+      { name: 'owner', type: 'address' },
+      { name: 'spender', type: 'address' },
+      { name: 'value', type: 'uint256' },
+      { name: 'nonce', type: 'uint256' },
+      { name: 'deadline', type: 'uint256' }
+    ]
+  };
+
+  const message = {
+    owner,
+    spender,
+    value,
+    nonce,
+    deadline
+  };
+
+  const signature = await signer.signTypedData(domain, types, message);
+  const { v, r, s } = ethers.Signature.from(signature);
+
+  return { v, r, s };
+}
+
+// Usage example
+const abi = [
+  "function transferWithPermit(address owner, address spender, uint256 value, uint256 deadline, uint8 v, bytes32 r, bytes32 s)"
+];
+
+const provider = new ethers.BrowserProvider(window.ethereum);
+const signer = await provider.getSigner();
+const contract = new ethers.Contract(tokenAddress, abi, signer);
+
+const owner = await signer.getAddress();
+const spender = '0x...'; // Address to be authorized
+const value = ethers.parseUnits('100', 18); // Amount to authorize
+const deadline = Math.floor(Date.now() / 1000) + 60 * 60; // Expires in 1 hour
+const nonce = await contract.nonces(owner);
+
+const { v, r, s } = await signERC20Permit(contract, owner, spender, value, deadline, nonce);
+
+// Call the transferWithPermit function of the contract
+await contract.transferWithPermit(owner, spender, value, deadline, v, r, s);
+```
+
 
 ### Advantages of ERC20Permit
 
