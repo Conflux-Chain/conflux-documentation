@@ -46,7 +46,7 @@ Chain ID for Conflux Core Space Testnet is `1(0x1)`. The corresponding blockchai
 | https://test.confluxrpc.com    | HTTP      |                    |
 | https://cfxtest.confluxrpc.com | HTTP      |                    |
 | https://test.confluxrpc.org    | HTTP      | Backup RPC Service |
-| wss://test.confluxrpc.org/com  | Websocket |                    |
+| wss://test.confluxrpc.com/ws   | Websocket |                    |
 | wss://test.confluxrpc.org/ws   | Websocket |                    |
 
 ### Rate Limits

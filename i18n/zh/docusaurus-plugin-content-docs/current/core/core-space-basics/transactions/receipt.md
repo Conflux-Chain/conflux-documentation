@@ -30,7 +30,7 @@ keywords:
 
 Receipt(收据)中的日志字段(logs)是一个数组，其包含在交易执行过程中生成的所有日志。 当与合约交互时，合约可以使用emit语句生成日志或事件。 交易执行后，这些日志被记录在交易收据中。 在Solidity中，[事件](https://docs.soliditylang.org/en/v0.8.23/contracts.html#events) 被设计用于记录有关合约方法执行的信息，通过事件提供有关合约执行的详细信息。
 
-你可以使用 [cfx_getLogs](/docs/core/build/json-rpc/cfx-namespace#cfx_getlogs) 方法检索日志，并使用 [abi.decode](https://docs.soliditylang.org/en/v0.8.23/contracts.html#events) 方法解码日志数据。 Conflux SDKs也提供了帮助解码日志的方法，例如[javascript-sdk](https://docs.confluxnetwork.org/js-conflux-sdk/docs/interact_with_contract#how-to-decode-log)和[python-sdk](https://python-conflux-sdk.readthedocs.io/en/latest/examples/05-interact_with_contracts_and_process_logs.html#process-logs)。
+你可以使用 [cfx_getLogs](/docs/core/build/json-rpc/cfx-namespace#cfx_getlogs) 方法检索日志，并使用 [abi.decode](https://docs.soliditylang.org/en/v0.8.23/contracts.html#events) 方法解码日志数据。 Conflux SDKs also provide methods to help decoding the logs, for example, [javascript](https://confluxnetwork.gitbook.io/js-conflux-sdk/docs/interact_with_contract#how-to-decode-log) and [python](https://python-conflux-sdk.readthedocs.io/en/latest/examples/05-interact_with_contracts_and_process_logs.html#process-logs).
 
 ## 执行失败
 
