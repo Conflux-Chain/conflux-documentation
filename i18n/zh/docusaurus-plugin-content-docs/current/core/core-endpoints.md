@@ -46,7 +46,7 @@ Conflux Core Space 测试网的链 ID 是 `1(0x1)`。 The corresponding blockcha
 | https://test.confluxrpc.com    | HTTP      |           |
 | https://cfxtest.confluxrpc.com | HTTP      |           |
 | https://test.confluxrpc.org    | HTTP      | 备用 RPC 服务 |
-| wss://test.confluxrpc.org/com  | Websocket |           |
+| wss://test.confluxrpc.com/ws   | Websocket |           |
 | wss://test.confluxrpc.org/ws   | Websocket |           |
 
 ### 速率限制
