@@ -1,6 +1,6 @@
 ---
 sidebar_position: 10
-title: Run a Core Node
+title: 运行一个Core节点
 displayed_sidebar: coreSidebar
 ---
 
