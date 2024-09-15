@@ -39,7 +39,7 @@ Conflux Core space 主网的链 ID 是 `1029(0x405)`。 相应的区块链浏览
 
 #### 测试网
 
-Conflux Core Space 测试网的链 ID 是 `1(0x1)`。 The corresponding blockchain explorer URL is https://testnet.confluxscan.io.
+Conflux Core Space 测试网的链 ID 是 `1(0x1)`。 相应的区块链浏览器 URL 是 https://testnet.confluxscan.io。
 
 | RPC 端点                         | 类型        | 备注        |
 | ------------------------------ | --------- | --------- |
