@@ -2,5 +2,5 @@ position: 5
 link:
   type: generated-index
   description: Conflux core space 的基本概念和机制。
-label: Core Space Basics
+label: Core Space 基础
 collapsed: false
