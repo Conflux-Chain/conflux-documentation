@@ -1,12 +1,15 @@
-# Deploying Upgradeable Contracts using Transparent Proxies with Hardhat
+---
+displayed_sidebar: eSpaceSidebar
+---
+# Deploying Upgradeable Contracts using Transparent Proxy with Hardhat
 
-## Introduction to Transparent Proxies and Selector Conflicts
+## Introduction to Transparent Proxy and Selector Conflicts
 
-Before diving into the tutorial, let's briefly introduce the concepts of transparent proxies and selector conflicts:
+Before diving into the tutorial, let's briefly introduce the concepts of transparent proxy and selector conflicts:
 
-### Transparent Proxies
+### Transparent Proxy
 
-Transparent proxies are a special type of proxy contract that addresses selector conflict issues by separating management functions from user functions. Key features include:
+Transparent proxy is a special type of proxy contract that addresses selector conflict issues by separating management functions from user functions. Key features include:
 
 - **Separation of Management Functions**: The proxy contract contains specific management functions (such as upgrades) that can only be called by the administrator.
 - **Transparency**: For regular users, the existence of the proxy contract is "transparent," allowing them to interact with it as if they were directly interacting with the logic contract.
@@ -18,14 +21,14 @@ Selector conflicts refer to issues that may arise when there are functions with 
 
 - If both the proxy and logic contracts have a function named `upgrade()`, it becomes unclear which contract's function should be executed when a user calls `upgrade()`.
 
-Transparent proxies resolve this issue by:
+Transparent proxy resolve this issue by:
 
 - Executing the function in the proxy contract (if it exists) when the caller is the administrator.
 - Always delegating the call to the logic contract when the caller is not the administrator.
 
 This approach ensures the security of management functions while providing a seamless experience for regular users.
 
-Next, we will learn how to implement and deploy upgradeable contracts using transparent proxies on Conflux eSpace.
+Next, we will learn how to implement and deploy upgradeable contracts using transparent proxy on Conflux eSpace.
 
 ## Project Setup
 
@@ -284,4 +287,4 @@ main()
    Final value: 25
    ```
 
-By following these steps, you can deploy and upgrade upgradeable contracts using transparent proxies on Conflux eSpace, which not only allows you to update contract logic without changing the contract address but also effectively addresses selector conflicts by separating management functions from user functions.
+By following these steps, you can deploy and upgrade upgradeable contracts using transparent proxy on Conflux eSpace, which not only allows you to update contract logic without changing the contract address but also effectively addresses selector conflicts by separating management functions from user functions.
