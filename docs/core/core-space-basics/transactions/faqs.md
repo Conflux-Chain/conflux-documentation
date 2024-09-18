@@ -27,10 +27,6 @@ This is due to the concurrent block emission caused by the tree chart ledger str
 
 There is only one type, similar to Ethereum 155 transactions.
 
-### Does Core Space support EIP-1559 transactions or EIP-2718?
-
-No, it does not support them.
-
 ### What's the differences between Ethereum 155 Transaction and Core Space Transaction
 
 Compared to Ethereum `155 transaction`, transactions through Conflux Core Space have several differences:
@@ -40,3 +36,7 @@ Compared to Ethereum `155 transaction`, transactions through Conflux Core Space 
   1. The RLP structure to compute transaction hash is `[nonce, gasPrice, gas, to, value, storageLimit, epochHeight, chainId, data]`
   2. The RLP structure of a rawTx is `[[nonce, gasPrice, gas, to, value, storageLimit, epochHeight, chainId, data], v, r, s]`
 * The `v` value signed by ecdsaSign will not be specifically modified in Conflux Core Space, while in Ethereum, there will be some special treatments to the v value.
+
+### Does Core Space support EIP-1559 transactions or EIP-2718?
+
+Core space supports typed transaction as well as `maxFeePerGas`, `maxPriorityFeePerGas` transaction fields as described in EIP-1559. But it should be noticed Conflux Core Space adopts a different RLP structure to implement typed transaction, just similar to the difference between Ethereum 155 transaction and Core Space legacy transaction.
