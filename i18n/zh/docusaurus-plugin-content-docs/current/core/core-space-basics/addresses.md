@@ -51,7 +51,7 @@ EOA 十六进制地址的计算在 [Conflux 协议规范](https://www.confluxnet
 
 #### 合约地址计算
 
-There is an example.
+参见下面的示例。
 <Tabs>
     <TabItem label="Abi" value="AbiExampleData">
 ```js
@@ -91,9 +91,9 @@ There is an example.
 
 :::
 
-If `create2` is used, the deployed address of can be computed as the following code described:
+如果使用 `create2` 那么可以按照下面的代码进行计算合约地址:
 
-The `Create2Factory` has been deployed via [CIP-31](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-31.md), so you can use the `0x8a3a92281df6497105513b18543fd3b60c778e40` contract or deploy your own Create2Factory.
+`Create2Factory` 合约已经通过 [CIP-31](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-31.md) 部署， 您可以使用 `0x8a3a92281df6497105513b18543fd3b60c778e40` 合同或部署您自己的 Create2Factory 合约。
 
 <Tabs>
     <TabItem label="Python" value="PythonCreate2Example">

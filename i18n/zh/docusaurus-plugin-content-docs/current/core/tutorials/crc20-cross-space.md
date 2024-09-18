@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-title: CRC20 Tokens Cross Space
+title: CRC20 代币跨空间(Cross Space)转移
 displayed_sidebar: coreSidebar
 ---
 

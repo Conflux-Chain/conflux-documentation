@@ -1,6 +1,6 @@
 ---
 sidebar_position: 0
-title: Intro to the Stack
+title: 堆栈简介
 displayed_sidebar: coreSidebar
 ---
 

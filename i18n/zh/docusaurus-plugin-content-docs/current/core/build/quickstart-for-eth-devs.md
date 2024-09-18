@@ -1,6 +1,6 @@
 ---
 sidebar_position: 5
-title: QuickStart for Ethereum Developers
+title: Ethereum 开发者的快速入门
 displayed_sidebar: coreSidebar
 ---
 

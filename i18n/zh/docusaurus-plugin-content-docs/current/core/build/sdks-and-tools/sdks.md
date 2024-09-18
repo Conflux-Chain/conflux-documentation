@@ -87,7 +87,7 @@ public class App {
 `python-conflux-sdk` (也称为`conflux_web3`)是Conflux Core Space的官方Python SDK。 它基于[web3.py v6](https://github.com/ethereum/web3.py) 构建, 其大部分API与`web3.py`一致，为希望将其Python代码从Ethereum迁移的开发人员提供了便利。 例如：
 
 ```python
-# modified from https://web3py.readthedocs.io/en/stable/middleware.html#signing
+# 修改自 https://web3py.readthedocs.io/en/stable/middleware.html#signing
 from conflux_web3 import Web3
 w3 = Web3("https://test.confluxrpc.com")
 from conflux_web3.middleware import construct_sign_and_send_raw_middleware
@@ -127,7 +127,7 @@ w3.cfx.send_transaction(transaction)
 
 ### [Cive](https://cive.zyx.ee/)
 
-Cive is a **Typescript** interface for the Conflux Core Space. It is built on [`viem`](https://viem.sh/). It inherits all the advantages of Viem, such as being `lightweight`, `modular`, `high-performance`, and `type-safe`, making it suitable for developing applications and various tools.
+Cive 是一个用于 Conflux Core Space 的 **Typescript** 接口， 基于 [`viem`](https://viem.sh/) 实现。 它继承了Viem的优点，如 `轻量化`、 `模块化`， `高性能`以及 `类型安全`，适用于开发应用以及各类工具。
 
 ### [thirdweb SDK](https://portal.thirdweb.com/sdk)
 
