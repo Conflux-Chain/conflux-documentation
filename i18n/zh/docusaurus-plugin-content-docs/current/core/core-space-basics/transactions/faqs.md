@@ -27,10 +27,6 @@ keywords:
 
 只支持一种类型，类似于以太坊的155 交易。
 
-### Core Space支持EIP-1559交易或EIP-2718吗？
-
-不，它不支持。
-
 ### 以太坊155交易和Conflux Core Space交易之间的区别是什么：
 
 与以太坊155交易相比，通过Conflux Core Space的交易有以下几点不同：
@@ -40,3 +36,7 @@ keywords:
   1. 计算交易哈希的 RLP 结构为：[nonce, gasPrice, gas, to, value, storageLimit, epochHeight, chainId, data]\`
   2. RawTx 的 RLP 结构为：[[nonce, gasPrice, gas, to, value, storageLimit, epochHeight, chainId, data], v, r, s]\`
 - 在Conflux Core Space中，由ecdsaSign签名的`v`值不会被特别修改，而在以太坊中，对v值会进行一些特殊处理。
+
+### Core Space支持EIP-1559交易或EIP-2718吗？
+
+Core space supports typed transaction as well as `maxFeePerGas`, `maxPriorityFeePerGas` transaction fields as described in EIP-1559. But it should be noticed Conflux Core Space adopts a different RLP structure to implement typed transaction, just similar to the difference between Ethereum 155 transaction and Core Space legacy transaction.
