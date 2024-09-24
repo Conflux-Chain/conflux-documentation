@@ -42,6 +42,25 @@ A 0.30% fee is taken from each trade and added to the reserves, increasing the t
 
 Since Uniswap is on-chain, prices can change between transaction signing and block inclusion. Traders can limit price fluctuations by setting minimum buy amounts or maximum sell amounts, acting as limit orders that cancel if not filled. Transaction deadlines can also be set to cancel orders if not executed quickly.
 
+## Advantages and Limitations
+
+### Advantages
+
+- **Trustless**: Users can trade without trusting any intermediaries.
+- **Open**: Anyone can create new trading pairs and provide liquidity.
+- **Transparent**: All transactions and liquidity information are publicly visible.
+- **Low Barrier to Entry**: Users can join or exit liquidity pools at any time without complex procedures.
+
+### Limitations
+
+- **Slippage**: Large trades can cause significant price slippage.
+- **Liquidity Risk**: Liquidity providers may face impermanent loss.
+- **Limited Features**: Compared to later versions, Uniswap V1 has limited features, such as no direct ERC-20 to ERC-20 trading support.
+
+## Development History
+
+Uniswap V1 was launched in November 2018 as the first version of the Uniswap protocol. Its success laid the foundation for subsequent versions. As the DeFi ecosystem continues to evolve, Uniswap has iterated and released V2 and V3 versions, offering more features and improvements.
+
 ## Related Links
 
 - [Uniswap GitHub Repository](https://github.com/Uniswap/uniswap-v1)
