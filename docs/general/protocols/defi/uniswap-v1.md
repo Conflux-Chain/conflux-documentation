@@ -21,9 +21,6 @@ Uniswap is open source and functions as a public good, with no central token or 
 - **Join Liquidity Pools**: Users can participate in liquidity pools to earn fees on ETH-ERC20 pairs.
 - **Liquidity-Sensitive Automated Pricing**: Pricing is automatically adjusted using the constant product formula.
 - **Trade ETH Directly**: Users can trade any ERC20 token directly with ETH without needing to wrap it.
-- **Single Transaction ERC20 to ERC20**: Users can exchange ERC20 tokens in a single transaction.
-- **Single Transaction and Transfer**: Users can trade and transfer tokens to another address in one transaction.
-- **Lowest Gas Fees**: Uniswap V1 offers the lowest gas fees among decentralized exchanges.
 - **Support for Private and Custom Uniswap Exchanges**: Users can create their own private or custom Uniswap exchanges.
 - **Partially Verified Smart Contracts**: The smart contracts are written in Vyper and have partial verification.
 - **Funded by the Ethereum Foundation**: The project is supported by funding from the Ethereum Foundation.
