@@ -8,7 +8,7 @@ When designing upgradable smart contracts, gas efficiency is critical for users 
 
 The transparent upgradeable proxy requires the contract to check whether the caller (`msg.sender`) is the admin on every transaction, even when an upgrade is not taking place. This extra comparison consumes additional gas. On the other hand, the **UUPS pattern** restricts the admin check only to the upgrade function, reducing the gas overhead on user transactions.
 
-### Key Differences:
+#### Key Differences:
 - **Transparent Upgradeable Proxy**: Admin checks are performed on every transaction, increasing gas costs.
 - **UUPS Proxy**: Admin checks occur only during the upgrade process, leading to reduced gas usage for non-upgrade functions.
 
@@ -17,52 +17,98 @@ The transparent upgradeable proxy requires the contract to check whether the cal
 The example below shows how both proxy patterns compare in gas usage for a basic function call:
 
 ```solidity
-// Transparent Upgradeable Proxy
-contract TransparentProxyExample {
-    address private admin;
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+// Simplified Transparent Proxy
+contract TransparentProxy {
+    address public implementation;
+    address public admin;
     
-    modifier onlyAdmin() {
-        require(msg.sender == admin, "Not admin");
-        _;
+    constructor(address _implementation) {
+        implementation = _implementation;
+        admin = msg.sender;
     }
-
-    function upgrade(address newImplementation) external onlyAdmin {
-        // Upgrade logic
+    
+    // The fallback() function includes an admin check on every call.
+    // This results in higher gas costs for every transaction due to the admin check.
+    fallback() external payable {
+        // Admin check on every call
+        if (msg.sender == admin) {
+            // Admin functions
+        } else {
+            // Delegate call to implementation
+            (bool success, ) = implementation.delegatecall(msg.data);
+            require(success, "Call failed");
+        }
     }
+    
+    receive() external payable {}
+}
 
-    function userFunction() external {
-        // Each call checks if the sender is the admin
-        // Gas: Higher due to repeated admin checks
+// Simplified UUPS Proxy
+contract UUPSProxy {
+    address public implementation;
+    
+    constructor(address _implementation) {
+        implementation = _implementation;
+    }
+    
+    // The fallback() function directly delegates the call to the implementation without any admin check.
+    fallback() external payable {
+        // No admin check, directly delegate call
+        (bool success, ) = implementation.delegatecall(msg.data);
+        require(success, "Call failed");
+    }
+    
+    receive() external payable {}
+}
+
+// Logic Contract for Transparent Proxy
+contract TransparentLogic {
+    uint256 public value;
+    
+    function setValue(uint256 _value) external {
+        value = _value;
+    }
+    
+    function getValue() external view returns (uint256) {
+        return value;
     }
 }
 
-// UUPS Proxy
-contract UUPSProxyExample {
-    address private admin;
-
-    modifier onlyAdmin() {
-        require(msg.sender == admin, "Not admin");
-        _;
+// Logic Contract for UUPS Proxy
+contract UUPSLogic {
+    uint256 public value;
+    address public owner;
+    
+    constructor() {
+        owner = msg.sender;
     }
-
-    function upgrade(address newImplementation) external onlyAdmin {
-        // Upgrade logic
-        // Admin check only occurs here
+    
+    function setValue(uint256 _value) external {
+        value = _value;
     }
-
-    function userFunction() external {
-        // No admin check, gas: lower for normal function calls
+    
+    function getValue() external view returns (uint256) {
+        return value;
+    }
+    
+    //  Admin checks only occur during the upgrade process in the UUPS pattern.
+    function upgrade(address newImplementation) external {
+        require(msg.sender == owner, "Not authorized");
+        // Upgrade logic here
     }
 }
 ```
 
-### Gas Analysis:
+#### Gas Analysis:
 
 | Proxy Pattern          | Gas Consumption per Call |
 |------------------------|--------------------------|
 | Transparent Proxy       | Higher due to repeated `msg.sender == admin` checks |
 | UUPS Proxy              | Lower, as admin checks occur only during upgrade |
 
-### Recommendations for Gas Optimization:
+#### Recommendations for Gas Optimization:
 
-🌟 For upgradable smart contracts, **UUPS proxies** are preferred for their gas efficiency during standard function calls, as they avoid unnecessary admin checks. This reduction in overhead can be significant, especially in contracts with frequent user interactions.
+🌟 For upgradable smart contracts, **UUPS Proxy** are preferred for their gas efficiency during standard function calls, as they avoid unnecessary admin checks. This reduction in overhead can be significant, especially in contracts with frequent user interactions.
