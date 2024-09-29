@@ -4,9 +4,6 @@ displayed_sidebar: eSpaceSidebar
 
 # Deploying Upgradeable Contracts using UUPS with Hardhat
 
-## Introduction to UUPS (Universal Upgradeable Proxy Standard)
-
-Before diving into the tutorial, let's briefly introduce the concept of UUPS and compare it with other proxy patterns:
 
 ### UUPS (Universal Upgradeable Proxy Standard)
 
@@ -97,27 +94,43 @@ pragma solidity ^0.8.24;
 import "@openzeppelin/contracts-upgradeable/proxy/utils/UUPSUpgradeable.sol";
 import "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol";
 
+// An upgradeable counter contract with UUPS pattern
 contract Counter is UUPSUpgradeable, OwnableUpgradeable {
+    // Counter value
     uint256 private count;
 
+    // Event emitted when count changes
     event CountChanged(uint256 count);
 
+    // Initializes the contract, setting up ownership and upgrade capabilities
+    // This function replaces the constructor and can only be called once due to the initializer modifier
     function initialize() public initializer {
+        // Initialize the Ownable module
+        // This function sets up the contract's ownership, making msg.sender the initial owner
+        // It's part of the OwnableUpgradeable contract from OpenZeppelin
         __Ownable_init(msg.sender);
+
+        // Initialize the UUPSUpgradeable module
+        // This sets up the necessary state variables for the UUPS (Universal Upgradeable Proxy Standard) pattern
+        // It's part of the UUPSUpgradeable contract from OpenZeppelin
         __UUPSUpgradeable_init();
     }
 
+    // Increments the counter by 1
     function increment() public {
         count += 1;
         emit CountChanged(count);
     }
 
+    // Returns the current count
     function getCount() public view returns (uint256) {
         return count;
     }
 
+    // Authorizes an upgrade (only owner can call)
     function _authorizeUpgrade(address newImplementation) internal override onlyOwner {}
 }
+
 ```
 
 2. Create the upgraded CounterV2 contract in `contracts/CounterV2.sol`:
@@ -129,31 +142,46 @@ pragma solidity ^0.8.24;
 import "@openzeppelin/contracts-upgradeable/proxy/utils/UUPSUpgradeable.sol";
 import "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol";
 
+// An upgradeable counter contract with UUPS pattern
 contract CounterV2 is UUPSUpgradeable, OwnableUpgradeable {
+    // Counter value
     uint256 private count;
 
+    // Event emitted when count changes
     event CountChanged(uint256 count);
 
+    // Initializes the contract, setting up ownership and upgrade capabilities
+    // This function replaces the constructor and can only be called once due to the initializer modifier
     function initialize() public initializer {
+        // Initialize the Ownable module
+        // This function sets up the contract's ownership, making msg.sender the initial owner
+        // It's part of the OwnableUpgradeable contract from OpenZeppelin
         __Ownable_init(msg.sender);
+
+        // Initialize the UUPSUpgradeable module
+        // This sets up the necessary state variables for the UUPS (Universal Upgradeable Proxy Standard) pattern
+        // It's part of the UUPSUpgradeable contract from OpenZeppelin
         __UUPSUpgradeable_init();
     }
 
-    function increment() public {
+    // Increments the counter by 1
+    function increment() public { 
         count += 1;
         emit CountChanged(count);
     }
 
+    // Returns the current count
     function getCount() public view returns (uint256) {
         return count;
     }
 
-    // New function added in V2
+    // Resets the counter to 0
     function reset() public {
         count = 0;
         emit CountChanged(count);
     }
 
+    // Authorizes an upgrade (only owner can call)
     function _authorizeUpgrade(address newImplementation) internal override onlyOwner {}
 }
 ```
@@ -172,8 +200,8 @@ async function main() {
     initializer: "initialize",
     kind: "uups",
   });
-  await counter.waitForDeployment();
-  console.log("Counter deployed to:", await counter.getAddress());
+  await counter.waitForDeployment(); // Use waitForDeployment instead of deployed
+  console.log("Counter deployed to:", await counter.getAddress()); // Use getAddress to get the contract address
 }
 
 main()
@@ -182,6 +210,7 @@ main()
     console.error(error);
     process.exit(1);
   });
+
 ```
 
 ## Upgrade Script
@@ -316,11 +345,3 @@ main()
    ```
 
 By following these steps, you can deploy and upgrade contracts using the UUPS pattern on Conflux eSpace. This approach allows you to update contract logic without changing the contract address, while providing better gas efficiency and security compared to other proxy patterns.
-
-Key differences from the transparent proxy pattern:
-
-1. The upgrade logic is in the implementation contract (`_authorizeUpgrade` function).
-2. The proxy contract is simpler and doesn't need to check the caller's identity on every function call.
-3. The implementation contracts inherit from `UUPSUpgradeable` and `OwnableUpgradeable`.
-
-These characteristics make UUPS a popular choice for upgradeable contracts, especially in gas-sensitive environments.
