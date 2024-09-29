@@ -2,29 +2,29 @@
 displayed_sidebar: generalSidebar
 ---
 
-# Alternatives to OpenZeppelin for Gas Optimization
+# Alternatives to OpenZeppelin
 
 While OpenZeppelin is a widely used and respected smart contract library, there are alternative libraries that offer improved gas efficiency. Two notable examples are **Solmate** and **Solady**. These libraries have been tested and recommended by developers for their focus on gas optimization.
 
-## Library Introductions
-
-### OpenZeppelin
+#### OpenZeppelin
 
 [OpenZeppelin](https://www.openzeppelin.com/contracts) is a library for secure smart contract development. It provides implementations of standards like ERC20 and ERC721 which you can deploy as-is or extend to suit your needs, as well as Solidity components to build custom contracts and more complex decentralized systems.
 
-**GitHub**: [OpenZeppelin Contracts](https://github.com/OpenZeppelin/openzeppelin-contracts)
-
-### Solmate
+#### Solmate
 
 [Solmate](https://github.com/transmissions11/solmate) is a gas-optimized smart contract library created by Rari Capital. It provides highly optimized contract implementations for common use cases in Ethereum development, with a focus on minimalism and gas efficiency.
 
-**GitHub**: [Solmate](https://github.com/transmissions11/solmate)
+- Minimalist and gas-efficient implementations
+- Fewer safety checks, assuming developers will implement their own
+- Optimized for common DeFi patterns
 
-### Solady
+#### Solady
 
 [Solady](https://github.com/Vectorized/solady) is a gas-optimized Solidity library that prioritizes using assembly for core operations. It's designed for projects that require extreme gas optimization and are willing to trade off some readability for efficiency.
 
-**GitHub**: [Solady](https://github.com/Vectorized/solady)
+- Extreme gas optimization using assembly
+- Unchecked arithmetic operations where safe
+- Specialized functions for bit manipulation and other low-level operations
 
 #### Key Differences:
 
@@ -91,35 +91,12 @@ Here's an estimated gas comparison for common ERC20 operations:
 | Approve      | ~46,000      | ~44,000  | ~40,000  |
 | TransferFrom | ~60,000      | ~54,000  | ~50,000  |
 
-Note: These gas estimates are approximate and may vary based on the specific Solidity compiler version, optimization settings, and the exact implementation details. Always benchmark your specific use case for accurate comparisons.
+Solady consistently uses the least gas across all operations, Solmate offers significant gas savings compared to OpenZeppelin but not as much as Solady, and the deployment cost shows the most significant difference with Solady being about 66% cheaper to deploy than OpenZeppelin.
 
-Key Observations:
+Note: These gas estimates are approximate and may vary based on the specific Solidity compiler version, optimization settings, and the exact implementation details. 
 
-1. Solady consistently uses the least gas across all operations.
-2. Solmate offers significant gas savings compared to OpenZeppelin, but not as much as Solady.
-3. The deployment cost shows the most significant difference, with Solady being about 66% cheaper to deploy than OpenZeppelin.
 
-#### Key Features of Alternative Libraries:
 
-1. **Solmate**:
+**Recommendations for Gas Optimization:**
 
-   - Minimalist and gas-efficient implementations
-   - Fewer safety checks, assuming developers will implement their own
-   - Optimized for common DeFi patterns
-
-2. **Solady**:
-   - Extreme gas optimization using assembly
-   - Unchecked arithmetic operations where safe
-   - Specialized functions for bit manipulation and other low-level operations
-
-#### Recommendations for Gas Optimization:
-
-🌟1. **Consider Use Case**: For high-volume or gas-sensitive applications, consider using Solmate or Solady instead of OpenZeppelin.
-
-🌟2. **Balance Security and Efficiency**: While these alternatives offer gas savings, ensure you understand and account for any safety checks they might omit.
-
-🌟3. **Benchmark Your Specific Use Case**: Gas savings can vary, so benchmark these libraries with your specific contract to determine the best fit.
-
-🌟4. **Stay Updated**: These libraries are actively developed. Keep an eye on updates and new features that might further optimize your contracts.
-
-By leveraging these alternative libraries, developers can significantly reduce gas costs in their smart contracts, especially in high-frequency or complex DeFi applications. However, it's crucial to thoroughly understand and test any new library before deploying it in a production environment.
+🌟 For high-volume or gas-sensitive applications, consider using Solmate or Solady instead of OpenZeppelin. While these alternatives offer gas savings, ensure you understand and account for any safety checks they might omit.
