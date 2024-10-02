@@ -25,7 +25,7 @@ Watch this [video](https://youtu.be/sj2ph_ctQUg) for full tutorial on how to cre
 In your visual studio terminal, run the following to clone the repo and install the dependencies. 
 
 ```bash
-git clone git@github.com:intrepidcanadian/conflux-scaffold-nft-example.git
+git clone git@github.com:conflux-fans/conflux-scaffold-nft-example.git
 yarn install
 ```
 
