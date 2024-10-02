@@ -24,6 +24,8 @@ The example repository we'll be using is available at [https://github.com/intrep
 
 You can watch a video tutorial of this process [here](https://www.loom.com/share/859bf23a98c7467292f52c0ce949e4e1).
 
+![Indexer Tutorial Screenshot](../img/IndexerTutorial.png)
+
 ## Prerequisites
 
 Before starting, make sure you have:
