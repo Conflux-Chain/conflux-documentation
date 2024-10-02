@@ -1,7 +1,7 @@
 ---
 sidebar_position: 4
-title: Create an indexer for Conflux contracts
-description: Tutorial on how to read logs and events emitted by blockchain and create your own indexer
+title: Create an indexer for Conflux
+description: Read logs and events emitted 
 keywords:
   - Events
   - Ethers.js
@@ -72,10 +72,7 @@ Before starting, make sure you have:
 
 ## Understanding the Code
 
-The main script connects to the Conflux network, listens for specific events, decodes the event data, and stores it in the Supabase database. Here's a breakdown of the key components:
-// ... existing content ...
-
-## Understanding the Code
+The main script connects to the Conflux network, listens for specific events, decodes the event data, and stores it in the Supabase database. 
 
 Let's break down the key components of the indexer script:
 
