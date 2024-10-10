@@ -2,6 +2,26 @@
 sidebar_position: 1
 title: 节点配置
 displayed_sidebar: eSpaceSidebar
+tags:
+  - The Graph
+  - Graph Node
+  - Indexing
+  - GraphQL API
+  - PostgreSQL
+  - Network Clients
+  - IPFS
+  - Rust
+  - 容器(Docker)
+  - 以太坊
+  - Ubuntu
+  - 安装
+  - Configuration
+  - Database Setup
+  - Source Build
+  - Docker Compose
+  - JSON-RPC API
+  - EVM兼容性
+  - Subgraph Deployment
 ---
 
 Graph Node是索引子图并通过 GraphQL API 提供查询结果数据的组件。 因此，它是索引器堆栈的核心，Graph Node的正确操作对于运行成功的索引器至关重要。
