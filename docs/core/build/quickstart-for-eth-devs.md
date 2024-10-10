@@ -2,6 +2,10 @@
 sidebar_position: 5
 title: QuickStart for Ethereum Developers
 displayed_sidebar: coreSidebar
+tags:
+    - ethereum
+    - quickstart
+    - migration
 ---
 
 Conflux Core Space is a blockchain protocol based on an innovative tree graph ledger structure. It is compatible with both VM and EVM (Ethereum Virtual Machine), and its core concepts (accounts, transactions, smart contracts, etc.) are similar to Ethereum. If you are an Ethereum developer, you can quickly get started with Conflux Core Space development. This article will guide Ethereum developers on how to quickly dive into Conflux Core Space development.

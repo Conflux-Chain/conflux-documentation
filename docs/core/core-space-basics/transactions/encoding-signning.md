@@ -6,6 +6,19 @@ keywords:
     - transaction
     - signing
     - encoding
+tags:
+    - Transaction Signing
+    - Transaction Encoding
+    - RLP Encoding
+    - keccak256 Hashing
+    - ECDSA Signature
+    - Private Key
+    - Raw Transaction
+    - Transaction Hash
+    - cfx_sendRawTransaction
+    - Cryptographic Process
+    - Blockchain Security
+    - Transaction Broadcast
 ---
 
 After every field of a transaction is prepared, following steps are required before it can be sent to network (don't worry, these steps are already implemented by wallets or SDKs):

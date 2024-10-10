@@ -2,6 +2,21 @@
 sidebar_position: 1
 title: Base32 Addresses
 displayed_sidebar: coreSidebar
+tags:
+  - Base32 Address
+  - Hex Address
+  - Address Conversion
+  - CIP-37
+  - Network Prefix
+  - Address Type
+  - Checksum
+  - EOA Address
+  - Contract Address
+  - Internal Contract
+  - Address Computation
+  - Create2
+  - Address Converter
+  - BIP-44
 ---
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";

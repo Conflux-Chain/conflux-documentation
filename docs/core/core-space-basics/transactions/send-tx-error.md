@@ -5,6 +5,21 @@ displayed_sidebar: coreSidebar
 toc_max_heading_level: 4
 keywords:
     - errors
+tags:
+    - Transaction Errors
+    - RPC Errors
+    - estimateGas
+    - cfx_sendRawTransaction
+    - Gas Estimation
+    - Balance Errors
+    - Nonce Errors
+    - Gas Price Errors
+    - Out of Gas
+    - Transaction Pool
+    - Fluent Wallet
+    - Error Handling
+    - Transaction Submission
+    - Network Issues
 ---
 
 When using SDK or the Fluent wallet to send transactions, you may encounter some errors. This document outlines some common errors and their solutions.

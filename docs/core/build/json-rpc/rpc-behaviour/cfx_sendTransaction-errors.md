@@ -9,6 +9,32 @@ keywords:
 label:
     - cfx_sendRawTransaction
     - errors
+tags:
+    - cfx_sendRawTransaction
+    - errors
+    - json-rpc
+    - transaction-execution
+    - troubleshooting
+    - balance
+    - nonce
+    - gas
+    - gasPrice
+    - epochHeight
+    - chainId
+    - transaction-pool
+    - encoding
+    - signature
+    - catch-up-mode
+    - error-handling
+    - debugging
+    - transaction-validation
+    - network-issues
+    - node-synchronization
+    - transaction-replacement
+    - gas-estimation
+    - transaction-size
+    - rlp-encoding
+    - transaction-pool-management
 ---
 
 :::note

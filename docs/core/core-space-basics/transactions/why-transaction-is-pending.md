@@ -4,6 +4,22 @@ title: Why TX is Pending?
 keywords:
   - transaction
 displayed_sidebar: coreSidebar
+tags:
+  - Pending Transactions
+  - Transaction Pool
+  - Network Congestion
+  - Nonce Issues
+  - Epoch Height
+  - Gas Price
+  - Transaction Resending
+  - cfx_getAccountPendingTransactions
+  - Scan
+  - Transaction Troubleshooting
+  - Wrong Nonce
+  - Stale Epoch Height
+  - Internal Error
+  - Ready to Pack
+  - Transaction Prioritization
 ---
 
 Because today’s blockchain systems may have problems such as low throughput and high entry barriers, it is inevitable that some transactions will not be packaged when sent through the blockchain. Take Conflux as an example, the Conflux network normally produces two blocks per second. After a transaction `is successfully sent`, it should be packaged and executed within `20 seconds` depending on the network congestion level. If the transaction is not packaged for a long time, it’s very likely that something went wrong, and requires the sender to manually intervene.

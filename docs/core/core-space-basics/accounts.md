@@ -2,6 +2,25 @@
 sidebar_position: 2
 title: Accounts
 displayed_sidebar: coreSidebar
+tags:
+  - Accounts
+  - Core Space
+  - Account Address
+  - Account State
+  - cfx_getAccount
+  - Basic State
+  - Storage State
+  - Code Information
+  - Staking Deposit List
+  - Staking Vote Lock List
+  - Nonce
+  - Balance
+  - CodeHash
+  - StakingBalance
+  - Admin
+  - SponsorInfo
+  - StorageCollateral
+  - AccumulatedInterestReturn
 ---
 
 :::note
