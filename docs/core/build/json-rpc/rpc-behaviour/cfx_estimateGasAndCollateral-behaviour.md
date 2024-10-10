@@ -10,7 +10,20 @@ toc_max_heading_level: 4
 tags:
     - cfx_estimateGasAndCollateral
     - errors
+    - json-rpc
+    - gas-estimation
+    - transaction-execution
+    - troubleshooting
+    - parameter-handling
+    - sponsored-transactions
+    - contract-execution
+    - balance-checks
+    - storage-collateral
+    - nonce-handling
+    - contract-deployment
+    - error-handling
 ---
+
 
 The `cfx_estimateGasAndCollateral` interface is a critical component of the Conflux blockchain, as it allows users to estimate the gas and storage collateral required for their transactions. This document aims to clearly outline the functioning of the `cfx_estimateGasAndCollateral` interface, with a particular emphasis on its response to various parameter configurations.
 

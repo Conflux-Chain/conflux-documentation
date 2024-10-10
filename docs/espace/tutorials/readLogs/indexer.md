@@ -8,6 +8,32 @@ keywords:
   - Logs
   - Indexer
 displayed_sidebar: eSpaceSidebar
+tags:
+  - Conflux eSpace
+  - Indexer
+  - Smart Contracts
+  - Event Logging
+  - Ethers.js
+  - Supabase
+  - Node.js
+  - JavaScript
+  - Blockchain Data
+  - Database
+  - RPC
+  - Environment Variables
+  - ABI Decoding
+  - Transaction Hash
+  - Block Timestamp
+  - Tutorial
+  - GitHub Repository
+  - SQL
+  - Web3 Development
+  - dApp
+  - EVM Compatibility
+  - Data Retrieval
+  - Off-chain Storage
+  - Liquidity Positions
+  - Uniswap V3
 ---
 # Creating an Indexer for Conflux Contracts
 

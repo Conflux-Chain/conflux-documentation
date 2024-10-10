@@ -4,6 +4,22 @@ title: Transaction Receipt
 displayed_sidebar: coreSidebar
 keywords:
     - transaction
+tags:
+    - Transaction Receipt
+    - cfx_getTransactionReceipt
+    - Execution Result
+    - Gas Usage
+    - Storage Collateral
+    - Sponsorship
+    - Contract Deployment
+    - Transaction Logs
+    - Execution Errors
+    - OutOfGas
+    - StorageLimit
+    - Contract Revert
+    - Transaction Confirmation
+    - Event Logs
+    - Transaction Status
 ---
 
 Transaction receipt is the data structure that contains information about the transaction execution result.

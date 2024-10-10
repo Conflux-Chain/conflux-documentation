@@ -6,6 +6,34 @@ keywords:
   - EVM
   - Compatibility
 displayed_sidebar: eSpaceSidebar
+tags:
+  - Conflux eSpace
+  - EVM Compatibility
+  - Transaction Types
+  - EVM Opcodes
+  - Block Time
+  - Contract Size
+  - Transaction Fees
+  - Gas Limit
+  - Precompiles
+  - Phantom Transactions
+  - Cross-Space Transactions
+  - BLOCKHASH
+  - SSTORE
+  - SUICIDE
+  - ECRecover
+  - SHA256
+  - RIPEMD160
+  - ModExp
+  - BN128Add
+  - BN128Mul
+  - BN128Pair
+  - Blake2F
+  - PointEvaluation
+  - Gas Refund
+  - Storage Costs
+  - CrossSpaceCall
+  - Virtual Transactions
 ---
 
 The eSpace implements an Ethereum Virtual Machine (EVM). Below are some differences between eSpace and Ethereum:

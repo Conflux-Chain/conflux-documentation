@@ -7,6 +7,35 @@ keywords:
   - Smart Contracts
   - Scaffold
 displayed_sidebar: eSpaceSidebar
+tags:
+  - Conflux eSpace
+  - Scaffold-ETH-2
+  - Smart Contracts
+  - Hardhat
+  - React
+  - Frontend Development
+  - Solidity
+  - JavaScript
+  - TypeScript
+  - Yarn
+  - Git
+  - Deployment
+  - Vercel
+  - Testing
+  - Contract Interaction
+  - Blockchain
+  - Web3 Development
+  - dApp
+  - EVM Compatibility
+  - NextJS
+  - Environment Variables
+  - Contract Verification
+  - Wallet Integration
+  - Video Tutorial
+  - GitHub Repository
+  - Component Library
+  - Hooks
+  - Network Configuration
 ---
 
 [Scaffold Conflux](https://github.com/conflux-fans/conflux-scaffold) is an adaptation of Scaffold-ETH-2 (https://scaffoldeth.io/) whereby we have adjusted the template to allow you to deploy the contract on Conflux eSpace and leverage the components, integration of hardhat, and the quick deployment of Scaffold-ETH-2. In this tutorial, we will show you how to set-up Scaffold Conflux to better understand your smart contract and to leverage some of the beautiful react components available to quickly make your app on Conflux eSpace. 

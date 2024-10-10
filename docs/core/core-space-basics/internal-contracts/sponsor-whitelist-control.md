@@ -1,6 +1,15 @@
 ---
 sidebar_position: 2
 title: SponsorWhitelistControl
+tags:
+    - Transaction Encoding
+    - RLP Serialization
+    - Transaction Fields
+    - Keccak256 Hash
+    - ECDSA Signing
+    - Raw Transaction
+    - Transaction Signature
+    - Hex Encoding
 displayed_sidebar: coreSidebar
 ---
 

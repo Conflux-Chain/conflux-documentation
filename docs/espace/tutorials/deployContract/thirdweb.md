@@ -3,6 +3,31 @@ sidebar_position: 3
 title: thirdweb
 description: Deploying contract using thirdweb
 displayed_sidebar: eSpaceSidebar
+tags:
+  - Conflux eSpace
+  - thirdweb
+  - Smart Contracts
+  - Deployment
+  - Tutorial
+  - CLI
+  - ERC20
+  - ERC721
+  - ERC1155
+  - Solidity
+  - IPFS
+  - NFTs
+  - Tokens
+  - Marketplace
+  - EVM Compatibility
+  - Contract Compilation
+  - Contract Verification
+  - Hardhat
+  - Foundry
+  - Dashboard Interface
+  - Video Tutorial
+  - Prebuilt Contracts
+  - Contract Extensions
+  - Royalties
 ---
 
 ## Create Contract
