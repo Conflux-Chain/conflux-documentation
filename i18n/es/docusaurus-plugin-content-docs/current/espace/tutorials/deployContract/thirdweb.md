@@ -3,6 +3,31 @@ sidebar_position: 3
 title: thirdweb
 description: Deploying contract using thirdweb
 displayed_sidebar: eSpaceSidebar
+tags:
+  - Conflux eSpace
+  - thirdweb
+  - Contratos Inteligentes
+  - Deployment
+  - Tutorial
+  - CLI
+  - ERC20
+  - ERC721
+  - ERC1155
+  - Solidity
+  - IPFS
+  - NFTs
+  - Tokens
+  - Marketplace
+  - EVM Compatibility
+  - Contract Compilation
+  - Contract Verification
+  - Hardhat
+  - Foundry
+  - Dashboard Interface
+  - Video Tutorial
+  - Prebuilt Contracts
+  - Contract Extensions
+  - Royalties
 ---
 
 ## Create Contract
@@ -88,7 +113,7 @@ Deploy allows you to deploy a smart contract to any EVM compatible network witho
    - `_royaltyRecipient`: wallet address to receive royalties from secondary sales
    - `_royaltyBps`: basis points (bps) that will be given to the royalty recipient for each secondary sale, e.g. 500 = 5%
 
-3. Select `TelosEvm` as the network
+3. Select `Conflux eSpace` as the network
 
 4. Manage additional settings on your contract’s dashboard as needed such as uploading NFTs, configuring permissions, and more.
 

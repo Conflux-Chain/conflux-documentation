@@ -2,6 +2,21 @@
 sidebar_position: 6
 title: VM Differences
 displayed_sidebar: coreSidebar
+tags:
+  - VM Differences
+  - EVM Compatibility
+  - Address Calculation
+  - 1820 Registry
+  - BLOCKHASH Opcode
+  - Block Gas Limit
+  - block.number
+  - Internal Contracts
+  - Gas Usage
+  - Gas Fee Refund
+  - Core Space
+  - Ethereum
+  - Smart Contracts
+  - Solidity
 ---
 
 The Core Space VM is compatible with the EVM in most cases, but there are some differences. This page lists the differences between the two.

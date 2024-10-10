@@ -3,6 +3,27 @@ sidebar_position: 4
 title: 预言机
 displayed_sidebar: eSpaceSidebar
 description: 预言机为链下数据源提供了一个桥梁，使其能够在区块链内被访问，对于智能合约来说是必不可少的。
+tags:
+  - 预言机
+  - 智能合约
+  - Off-chain Data
+  - 区块链
+  - eSpace
+  - Pyth
+  - Witnet
+  - Data Feeds
+  - 以太坊
+  - Decentralized Oracle
+  - Market Data
+  - Price Feeds
+  - Chainlink
+  - DeFi
+  - EVM Compatible
+  - Real-world Data
+  - Oracle Integration
+  - Blockchain Infrastructure
+  - 智能合约安全
+  - Decentralized Applications
 ---
 
 预言机是一种数据提供服务，使得区块链上的智能合约能够访问链下数据源。 这一功能至关重要，因为基于以太坊的智能合约，默认情况下无法访问存储在区块链网络之外的信息。 想要了解更多信息，您可以查阅[以太坊的预言机文档](https://ethereum.org/en/developers/docs/oracles/)。

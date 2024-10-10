@@ -3,6 +3,19 @@ sidebar_position: 2
 title: 领取测试网代币
 description: 如何获取测试网上的 CFX
 displayed_sidebar: coreSidebar
+tags:
+  - 测试网
+  - CFX
+  - 水龙头
+  - Fluent Wallet
+  - Claim Tokens
+  - ConfluxScan
+  - Network Switching
+  - Testnet CFX
+  - FC Token
+  - cUSDT Token
+  - Wallet Connection
+  - Transaction Hash
 ---
 
 您是 Conflux 区块链的新用户吗？ 或者您是一名计划在Conflux上开发Dapp的开发者吗？ 那么你可能需要一些CFX与Conflux网络进行交互。 我们提供了测试网 CFX 水龙头 的 dApp，用户可以通过它领取测试网 CFX，并在 Conflux 的测试网环境中进行体验。

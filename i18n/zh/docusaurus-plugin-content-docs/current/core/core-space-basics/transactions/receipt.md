@@ -4,6 +4,22 @@ title: 交易收据
 displayed_sidebar: coreSidebar
 keywords:
   - 交易
+tags:
+  - 交易收据
+  - cfx_getTransactionReceipt
+  - Execution Result
+  - Gas Usage
+  - 存储抵押
+  - 代付
+  - Contract Deployment
+  - Transaction Logs
+  - Execution Errors
+  - OutOfGas
+  - StorageLimit
+  - Contract Revert
+  - Transaction Confirmation
+  - Event Logs
+  - Transaction Status
 ---
 
 交易收据是一个包含有关交易执行结果信息的数据结构。

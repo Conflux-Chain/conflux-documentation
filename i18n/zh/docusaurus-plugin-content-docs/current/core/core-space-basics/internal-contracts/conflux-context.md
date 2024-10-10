@@ -1,6 +1,25 @@
 ---
 sidebar_position: 4
 title: ConfluxContext
+eywords:
+  - conflux
+  - context
+  - 内置合约
+  - epoch number
+  - pos height
+  - finalized epoch
+  - network info
+tags:
+  - ConfluxContext
+  - 内置合约
+  - Epoch Number
+  - PoS Height
+  - Finalized Epoch
+  - Network Info
+  - Blockchain State
+  - Query Functions
+  - PoW-PoS Hybrid
+  - Chain Finality
 displayed_sidebar: coreSidebar
 ---
 

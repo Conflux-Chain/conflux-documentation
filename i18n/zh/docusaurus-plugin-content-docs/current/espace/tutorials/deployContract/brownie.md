@@ -7,6 +7,28 @@ keywords:
   - 智能合约
   - Python
 displayed_sidebar: eSpaceSidebar
+tags:
+  - Conflux eSpace
+  - Brownie
+  - Python
+  - 智能合约
+  - ERC-20 Token
+  - 部署
+  - 教程
+  - eth-brownie
+  - Virtual Environment
+  - 网络配置
+  - Account Management
+  - 水龙头
+  - 测试网
+  - 主网
+  - YAML
+  - Private Key
+  - Gas Price
+  - 交易
+  - Customization
+  - Front-End Development
+  - Scripting
 ---
 
 [Brownie](https://eth-brownie.readthedocs.io/en/stable/) 是一个基于 Python 的开发和测试框架，用于针对以太坊虚拟机（EVM）的智能合约。 在本教程中，我们将指导您如何配置 Brownie（或 eth-brownie）以适应 Conflux eSpace，并将演示如何使用 Brownie 脚本在 Conflux eSpace 上部署合约。

@@ -6,6 +6,19 @@ keywords:
   - 交易
   - 签名
   - 编码
+tags:
+  - Transaction Signing
+  - Transaction Encoding
+  - RLP Encoding
+  - keccak256 Hashing
+  - ECDSA Signature
+  - Private Key
+  - Raw Transaction
+  - Transaction Hash
+  - cfx_sendRawTransaction
+  - Cryptographic Process
+  - Blockchain Security
+  - Transaction Broadcast
 ---
 
 在交易的每个字段都准备好后，需要按照以下步骤，才能将其发送到网络 (别担心， 这些步骤已经由钱包或SDK实现)：

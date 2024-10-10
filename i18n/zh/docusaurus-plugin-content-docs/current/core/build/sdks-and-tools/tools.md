@@ -1,6 +1,46 @@
 ---
 sidebar_position: 2
 title: 开发工具
+keywords:
+  - conflux
+  - tools
+  - hardhat
+  - hardhat-conflux
+  - chainide
+  - address converter
+  - dapp development
+  - smart contracts
+  - multi-chain
+  - js-conflux-sdk
+  - development environment
+  - blockchain tools
+  - contract compilation
+  - testing framework
+  - deployment automation
+tags:
+  - Development Tools
+  - Hardhat
+  - ChainIDE
+  - 地址转换器
+  - Dapp
+  - 智能合约
+  - Multi-Chain
+  - Blockchain Development
+  - Solidity
+  - Contract Compilation
+  - Testing Framework
+  - Deployment Automation
+  - Cloud-Based IDE
+  - js-conflux-sdk
+  - Plugin
+  - Address Format
+  - Development Environment
+  - Contract Interaction
+  - Debugging
+  - GAS 优化
+  - Security Analysis
+  - 合约验证
+  - Network Management
 displayed_sidebar: coreSidebar
 ---
 

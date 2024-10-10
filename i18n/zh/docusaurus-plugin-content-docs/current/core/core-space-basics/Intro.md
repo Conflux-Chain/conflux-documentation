@@ -2,6 +2,20 @@
 sidebar_position: 0
 title: 介绍
 displayed_sidebar: coreSidebar
+tags:
+  - Core Space
+  - Base32 地址
+  - CFX
+  - 燃气
+  - Storage
+  - 代付
+  - CVM
+  - 内置合约
+  - Smart Contract Platform
+  - Ethereum Compatibility
+  - Fluent Wallet
+  - Drip
+  - GDrip
 ---
 
 我们将为您快速介绍 Core Space。 它是一个类似于以太坊的智能合约平台。 如果您熟悉以太坊，这个指南将帮助您快速理解 Core Space。

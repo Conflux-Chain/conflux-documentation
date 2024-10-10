@@ -1,6 +1,33 @@
 ---
 sidebar_position: 1
 title: AdminControl
+keywords:
+  - conflux
+  - admincontrol
+  - contrato interno
+  - contract administration
+  - smart contracts
+  - debug tool
+  - contract destruction
+tags:
+  - AdminControl
+  - Internal Contracts
+  - Core
+  - Contract Administration
+  - Debug Tool
+  - Contratos Inteligentes
+  - Contract Destruction
+  - Admin Rights
+  - Contract Deployment
+  - Contract Lifecycle
+  - Sponsor Mechanism
+  - Contract Security
+  - Governance
+  - Contract Ownership
+  - Address Management
+  - Zero Address
+  - Contract Upgrades
+  - Development Mode
 displayed_sidebar: coreSidebar
 ---
 

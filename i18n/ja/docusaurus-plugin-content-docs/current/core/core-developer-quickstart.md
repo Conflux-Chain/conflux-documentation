@@ -3,6 +3,24 @@ sidebar_position: 3
 title: Developer Quickstart
 displayed_sidebar: coreSidebar
 description: This tutorial will show you how to send a transaction using the js-conflux-sdk.
+tags:
+  - js-conflux-sdk
+  - Core Space
+  - Transaction
+  - JavaScript
+  - SDK
+  - Quickstart
+  - Conflux Address
+  - Account Balance
+  - Private Key
+  - RPC Endpoint
+  - CFX
+  - Drip
+  - Transaction Sending
+  - Error Handling
+  - Testnet
+  - Faucet
+  - ConfluxScan
 ---
 
 To send a transaction on Conflux Core Space, you need to use it's own SDKs. This tutorial will show you how to send a transaction using the js-conflux-sdk.

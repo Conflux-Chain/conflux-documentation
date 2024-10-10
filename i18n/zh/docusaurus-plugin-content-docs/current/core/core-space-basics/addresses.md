@@ -2,6 +2,21 @@
 sidebar_position: 1
 title: Base32 地址
 displayed_sidebar: coreSidebar
+tags:
+  - Base32 地址
+  - Hex Address
+  - Address Conversion
+  - CIP-37
+  - 网络前缀（Network Prefix）
+  - 地址类型（Address Type）
+  - 校验和(Checksum)
+  - EOA Address
+  - Contract Address
+  - Internal Contract
+  - 地址计算
+  - Create2
+  - 地址转换器
+  - BIP-44
 ---
 
 import Tabs from "@theme/Tabs";

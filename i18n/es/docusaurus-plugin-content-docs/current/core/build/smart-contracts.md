@@ -1,6 +1,22 @@
 ---
 sidebar_position: 2
 title: Contratos Inteligentes
+keywords:
+  - conflux
+  - smart contracts
+  - solidity
+  - EVM compatibility
+  - blockchain development
+  - dapp
+  - virtual machine
+  - contract address
+  - 1820 contract
+tags:
+  - Contratos Inteligentes
+  - Solidity
+  - Core
+  - Development
+  - EVM
 displayed_sidebar: coreSidebar
 ---
 

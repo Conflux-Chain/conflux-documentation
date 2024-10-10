@@ -2,6 +2,22 @@
 sidebar_position: 7
 title: Internal Contracts
 displayed_sidebar: coreSidebar
+tags:
+  - Internal Contracts
+  - AdminControl
+  - SponsorWhitelistControl
+  - Staking
+  - ConfluxContext
+  - PoSRegister
+  - CrossSpaceCall
+  - ParamsControl
+  - System Maintenance
+  - On-Chain Governance
+  - Core Space
+  - Contract Addresses
+  - Solidity Interfaces
+  - Base32 Addresses
+  - Hex40 Addresses
 ---
 
 Conflux introduces several built-in internal contracts for better system maintenance and on-chain governance. Now Conflux has seven internal contracts. These contracts provide [`solidity interfaces defined here`](https://github.com/Conflux-Chain/conflux-rust/tree/master/internal_contract/contracts). These function can only be called via `CALL` or `STATICCALL` operation. Using operation `CALLCODE` or `DELEGATECALL` to interact with internal contracts will trigger an error.

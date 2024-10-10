@@ -2,6 +2,22 @@
 sidebar_position: 5
 title: 代付机制
 displayed_sidebar: coreSidebar
+tags:
+  - 赞助机制
+  - 智能合约
+  - Gas Fees
+  - 存储抵押
+  - SponsorWhitelistControl
+  - Sponsor Balance
+  - 白名单
+  - 燃气费赞助
+  - 关于存储的赞助
+  - 交易费用
+  - User Adoption
+  - Contract Deployment
+  - Sponsor Replacement
+  - 存储点
+  - CIP-107
 ---
 
 Conflux Core 空间实现了代付机制，来补贴智能合约的使用。 这允许余额为零的新账户调用智能合约，前提是执行操作得到代付（通常由Dapp运营者提供）。 这个机制旨在降低新用户的入门门槛。
@@ -56,7 +72,7 @@ Conflux Core 空间实现了代付机制，来补贴智能合约的使用。 这
 2. `getSponsorForCollateral`：查询合约存储的赞助者。
 3. `getAvailableStoragePoints`：查询合约的存储点的剩余余额。
 
-类似的，如果在调用 `setSponsorForCollateral` 时合约已经有了赞助者，且新赞助者与当前赞助者相同，则合约的赞助余额将增加。 如果新的赞助者发生变动，合约的赞助余额将被替换。 在这种情况下，新的代付金额需要大于 `currentSponsorBalance + currentCollateral`。 前一个赞助者的余额和抵押物将被退还，剩余金额将会作为更换代付方后的代付余额(其中一部分将转换为存储点)。
+类似的，如果在调用 `setSponsorForCollateral` 时合约已经有了赞助者，且新赞助者与当前赞助者相同，则合约的赞助余额将增加。 如果新的赞助者发生变动，合约的赞助余额将被被替换。 在这种情况下，新的代付金额需要大于 `currentSponsorBalance + currentCollateral`。 前一个赞助者的余额和抵押物将被退还，剩余金额将会作为更换代付方后的代付余额(其中一部分将转换为存储点)。
 
 ### 白名单
 

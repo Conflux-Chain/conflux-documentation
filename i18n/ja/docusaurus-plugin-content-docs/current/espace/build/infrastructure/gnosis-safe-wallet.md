@@ -2,6 +2,27 @@
 sidebar_position: 9
 title: Gnosis Safe Wallet
 displayed_sidebar: eSpaceSidebar
+tags:
+  - Gnosis Safe
+  - Multisignature Wallet
+  - eSpace
+  - DeFi
+  - Smart Contracts
+  - Account Abstraction
+  - Fund Management
+  - EVM Compatible
+  - Open Source
+  - Safe-Wallet-Web
+  - CFX
+  - ERC20 Tokens
+  - Safe-SDK
+  - Safe CLI
+  - MetaMask
+  - Blockchain Security
+  - Mainnet
+  - Testnet
+  - Wallet Integration
+  - Troubleshooting
 ---
 
 [Gnosis Safe Wallet](https://safe.global/) is a renowned multisignature wallet service in the blockchain sector, offering secure fund management solutions. It is particularly popular among Ethereum and EVM (Ethereum Virtual Machine)-compatible blockchain ecosystems. The entire source code for Gnosis Safe, including its smart contracts and both the front-end and back-end code, is open source, ensuring transparency and community trust. In its commitment to innovation, Gnosis Safe has introduced features like account abstraction, further enhancing user experience and security.

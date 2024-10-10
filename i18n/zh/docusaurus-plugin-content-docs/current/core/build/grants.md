@@ -1,6 +1,21 @@
 ---
 sidebar_position: 9
 title: 基金会补助
+keywords:
+  - conflux
+  - grants
+  - funding
+  - developer support
+  - ecosystem growth
+  - blockchain projects
+  - open source
+  - community contribution
+tags:
+  - 基金会补助
+  - Funding
+  - Developer Support
+  - Ecosystem
+  - Open Source
 displayed_sidebar: coreSidebar
 ---
 

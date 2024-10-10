@@ -3,6 +3,34 @@ sidebar_position: 2
 title: web3.py
 displayed_sidebar: eSpaceSidebar
 description: This page is meant to guide you through the basics on how to use web3.py when developing on Conflux eSpace.
+tags:
+  - web3.py
+  - Python
+  - Conflux eSpace
+  - 智能合约
+  - 交易
+  - Blockchain Interaction
+  - Solidity
+  - ABI
+  - Bytecode
+  - HTTP Connection
+  - Account Balance
+  - Contract Deployment
+  - Contract Methods
+  - Call Methods
+  - Send Methods
+  - Gas Estimation
+  - Transaction Signing
+  - pip
+  - RPC 端点
+  - Private Key
+  - Incrementer Contract
+  - 编译
+  - Web3 Provider
+  - Contract Instance
+  - 交易收据
+  - solc-x
+  - Gas Price Strategy
 ---
 
 Web3.py and Web3.js are a set of libraries that facilitate the interaction of developers with Conflux nodes via the HTTP, IPC, or WebSocket communication protocols, using the Python and JavaScript programming languages respectively. This guide will provide you with the expertise to leverage the [**Web3.py**](https://web3py.readthedocs.io/) library for transmitting transactions and deploying smart contracts.

@@ -9,6 +9,33 @@ keywords:
   - Pyth
   - CFX Price
 displayed_sidebar: eSpaceSidebar
+tags:
+  - Conflux eSpace
+  - Pyth Network
+  - Oracle
+  - Price Feed
+  - 智能合约
+  - Hardhat
+  - JavaScript
+  - Solidity
+  - CFX Price
+  - 测试网
+  - EVM
+  - Web3 Development
+  - 区块链
+  - 教程
+  - 部署
+  - Contract Interaction
+  - Gas Estimation
+  - Transaction Confirmation
+  - Environment Variables
+  - NPM
+  - Node.js
+  - Ethereum Compatibility
+  - Pyth SDK
+  - IPyth Interface
+  - Price Update
+  - Hermes Price Service
 ---
 
 # Retrieve Price

@@ -1,6 +1,22 @@
 ---
 sidebar_position: 2
 title: Smart Contracts
+keywords:
+  - conflux
+  - smart contracts
+  - solidity
+  - EVM compatibility
+  - blockchain development
+  - dapp
+  - virtual machine
+  - contract address
+  - 1820 contract
+tags:
+  - Smart Contracts
+  - Solidity
+  - Core
+  - Development
+  - EVM
 displayed_sidebar: coreSidebar
 ---
 

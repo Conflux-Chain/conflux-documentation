@@ -3,6 +3,25 @@ sidebar_position: 5
 title: How to Sponsor a Contract
 description: Use the ConfluxScan Read&Write Tool to sponsor a contract.
 displayed_sidebar: coreSidebar
+tags:
+  - Sponsorship
+  - ConfluxScan
+  - Read&Write Tool
+  - Smart Contracts
+  - Fluent Wallet
+  - Testnet
+  - Gas Sponsorship
+  - Storage Sponsorship
+  - Whitelist
+  - SponsorWhitelistControl
+  - Contract Interaction
+  - CFX
+  - Transaction Execution
+  - Sponsor Balance
+  - Storage Points
+  - Zero Address
+  - Contract Verification
+  - Sponsored Transactions
 ---
 
 Conflux Core [Sponsorship](../core-space-basics/sponsor-mechanism.md) offers a user-friendly feature for new blockchain users. This tutorial will guide you on how to use the [ConfluxScan Read&Write Tool](https://www.confluxscan.io/address/cfx:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaaegg2r16ar?tab=contract-viewer) to sponsor a contract.

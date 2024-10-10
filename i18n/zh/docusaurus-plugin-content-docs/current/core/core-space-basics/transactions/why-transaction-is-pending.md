@@ -4,6 +4,22 @@ title: 为什么交易处于挂起状态？
 keywords:
   - 交易
 displayed_sidebar: coreSidebar
+tags:
+  - 待处理交易
+  - Transaction Pool
+  - Network Congestion
+  - Nonce Issues
+  - Epoch Height
+  - Gas Price
+  - Transaction Resending
+  - cfx_getAccountPendingTransactions
+  - Scan
+  - Transaction Troubleshooting
+  - 错误的 nonce
+  - 过时的 Epoch 高度
+  - 内部错误
+  - 准备打包
+  - Transaction Prioritization
 ---
 
 由于当前的区块链系统可能存在吞吐量低和准入门槛高等问题，因此通过区块链发送的某些交易可能无法被打包确认。 以 Conflux 为例，Conflux 网络通常每秒可以产生两个区块。 在交易` 成功发送后 `，它应该在约` 20 秒 `内被打包并执行，具体时间取决于网络拥塞程度。 如果交易长时间未被打包，很可能出现了问题，需要发送者进行手动干预。

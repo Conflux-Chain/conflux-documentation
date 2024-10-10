@@ -1,6 +1,22 @@
 ---
 sidebar_position: 2
 title: 智能合约
+keywords:
+  - conflux
+  - smart contracts
+  - solidity
+  - EVM compatibility
+  - blockchain development
+  - dapp
+  - virtual machine
+  - contract address
+  - 1820 contract
+tags:
+  - 智能合约
+  - Solidity
+  - Core
+  - Development
+  - EVM
 displayed_sidebar: coreSidebar
 ---
 

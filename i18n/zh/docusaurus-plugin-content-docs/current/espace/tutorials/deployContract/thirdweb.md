@@ -3,6 +3,31 @@ sidebar_position: 3
 title: thirdweb
 description: 使用 thirdweb 部署合约
 displayed_sidebar: eSpaceSidebar
+tags:
+  - Conflux eSpace
+  - thirdweb
+  - 智能合约
+  - 部署
+  - 教程
+  - CLI
+  - ERC20
+  - ERC721
+  - ERC1155
+  - Solidity
+  - IPFS
+  - 非同质化代币（NFTs）
+  - Tokens
+  - Marketplace
+  - EVM兼容性
+  - Contract Compilation
+  - 合约验证
+  - Hardhat
+  - Foundry
+  - Dashboard Interface
+  - 视频教程
+  - Prebuilt Contracts
+  - Contract Extensions
+  - Royalties
 ---
 
 ## Create Contract
@@ -88,7 +113,7 @@ Deploy 让您无需配置 RPC URL、暴露私钥、编写脚本以及其他额�
    - `_royaltyRecipient`：接收二次销售版税的钱包地址
    - `_royaltyBps`：每次二次销售将给予版税接收者的基本点数 (bps)，例如 500 = 5%
 
-3. 选择 `TelosEvm` 作为网络
+3. Select `Conflux eSpace` as the network
 
 4. 根据需要管理您合约仪表板上的额外设置，例如上传 NFT、配置权限等。
 

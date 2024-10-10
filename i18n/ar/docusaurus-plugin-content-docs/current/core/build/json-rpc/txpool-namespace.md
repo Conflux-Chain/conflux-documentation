@@ -5,7 +5,36 @@ title: txpool Namespace
 keywords:
   - conflux
   - txpool-rpc
+  - transaction pool
+  - pending transactions
+  - nextNonce
   - sdk
+  - mempool
+  - transaction queue
+  - unconfirmed transactions
+  - transaction management
+tags:
+  - RPC
+  - txpool
+  - Transactions
+  - API
+  - Blockchain
+  - Transaction-Pool
+  - Pending-Transactions
+  - Next-Nonce
+  - Mempool
+  - Transaction-Queue
+  - Unconfirmed-Transactions
+  - Transaction-Management
+  - Node-Configuration
+  - Gas-Price
+  - Transaction-Prioritization
+  - Network-Congestion
+  - Transaction-Replacement
+  - Transaction-Monitoring
+  - Block-Production
+  - Transaction-Validation
+  - Transaction-Propagation
 displayed_sidebar: coreSidebar
 ---
 

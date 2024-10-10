@@ -2,6 +2,24 @@
 sidebar_position: 2
 title: Creating Subgraphs
 displayed_sidebar: eSpaceSidebar
+tags:
+  - The Graph
+  - Subgraphs
+  - GraphQL
+  - Graph CLI
+  - Subgraph Manifest
+  - Schema Definition
+  - AssemblyScript
+  - Contratos Inteligentes
+  - Data Indexing
+  - Blockchain Data
+  - Subgraph Studio
+  - Ethereum
+  - ABI
+  - Event Handling
+  - Entity Creation
+  - Data Sources
+  - Subgraph Deployment
 ---
 
 

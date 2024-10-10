@@ -2,6 +2,24 @@
 sidebar_position: 2
 title: 创建子图
 displayed_sidebar: eSpaceSidebar
+tags:
+  - The Graph
+  - Subgraphs
+  - GraphQL
+  - Graph CLI
+  - Subgraph Manifest
+  - Schema Definition
+  - AssemblyScript
+  - 智能合约
+  - Data Indexing
+  - Blockchain Data
+  - Subgraph Studio
+  - 以太坊
+  - ABI
+  - Event Handling
+  - Entity Creation
+  - Data Sources
+  - Subgraph Deployment
 ---
 
 

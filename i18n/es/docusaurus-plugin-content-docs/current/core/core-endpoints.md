@@ -5,6 +5,24 @@ sidebar_position: 4
 keywords:
   - network endpoints
   - Conflux core space
+tags:
+  - RPC Endpoints
+  - Conflux Core Space
+  - Mainnet
+  - Testnet
+  - Confura
+  - Unifra
+  - Chain ID
+  - HTTP Endpoints
+  - WebSocket Endpoints
+  - Rate Limits
+  - API Key
+  - Fee Tiers
+  - Error Handling
+  - Public RPC Services
+  - Blockchain Explorer
+  - Web3 Development
+  - JSON-RPC
 displayed_sidebar: coreSidebar
 ---
 

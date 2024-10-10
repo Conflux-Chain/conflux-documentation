@@ -3,6 +3,25 @@ sidebar_position: 10
 title: Deployed Contracts
 description: Useful utilities contract addresses for Conflux eSpace
 displayed_sidebar: eSpaceSidebar
+tags:
+  - Conflux eSpace
+  - Deployed Contracts
+  - Contract Addresses
+  - WCFX9
+  - Multicall3
+  - Gnosis Safe
+  - Mainnet
+  - Testnet
+  - Utility Contracts
+  - Wrapped CFX
+  - Deterministic Deployment
+  - Smart Contracts
+  - Blockchain Infrastructure
+  - DeFi
+  - Multisig Wallets
+  - Cross-chain Compatibility
+  - EVM Compatibility
+  - Developer Resources
 ---
 
 In this article you’ll find useful contract addresses for Conflux eSpace and commonly used protocols

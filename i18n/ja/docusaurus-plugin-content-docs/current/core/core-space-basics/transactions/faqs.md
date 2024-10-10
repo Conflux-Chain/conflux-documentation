@@ -5,6 +5,17 @@ displayed_sidebar: coreSidebar
 keywords:
   - faq
   - transaction
+tags:
+  - Transaction
+  - Sending Transactions
+  - Transaction Cancellation
+  - Transaction Replacement
+  - Transaction Types
+  - Gas Price
+  - EIP-1559
+  - EIP-2718
+  - Tree Graph
+  - Concurrent Block Emission
 ---
 
 ## Misc

@@ -1,6 +1,25 @@
 ---
 title: 默克尔树白名单
 displayed_sidebar: coreSidebar
+tags:
+  - NFT
+  - 白名单
+  - 默克尔树
+  - 智能合约
+  - Hardhat
+  - Conflux CoreSpace
+  - ERC721
+  - GAS 优化
+  - merkletreejs
+  - keccak256
+  - OpenZeppelin
+  - Solidity
+  - Contract Deployment
+  - Minting
+  - Transaction Verification
+  - js-conflux-sdk
+  - Proof Generation
+  - Whitelist Management
 ---
 
 # 在CoreSpace使用Hardhat的默克尔树NFT白名单

@@ -1,6 +1,18 @@
 ---
 sidebar_position: 10
 title: 运行一个Core节点
+keywords:
+  - conflux
+  - core node
+  - node setup
+  - blockchain
+  - network participation
+  - decentralization
+  - 全节点
+tags:
+  - Core
+  - 节点
+  - Infrastructure
 displayed_sidebar: coreSidebar
 ---
 

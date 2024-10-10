@@ -3,6 +3,23 @@ sidebar_position: 0
 title: 概览
 keywords:
   - 交易
+tags:
+  - 交易
+  - Core Space
+  - 交易字段
+  - 交易随机序号(Nonce)
+  - 燃气
+  - Gas Price
+  - Storage Limit
+  - 交易费用
+  - Encoding
+  - Signing
+  - 交易生命周期
+  - 交易收据
+  - 待处理交易
+  - cfx_sendRawTransaction
+  - 钱包
+  - SDKs
 displayed_sidebar: coreSidebar
 ---
 
@@ -16,7 +33,7 @@ displayed_sidebar: coreSidebar
 
 交易由多个字段组成，每个字段有其自身的含义和目的。 要理解它们的含义以及如何正确设置这些字段，请参阅[交易字段](./tx-fields.md)。 如果一笔交易发送失败或在被卡住而未被打包，那可能是由于某些交易字段的设置不正确。
 
-## 交易随机序号(Nonce)
+## Nonce
 
 交易中的`nonce`字段至关重要，因为它决定了交易的执行顺序。 Nonce更新不是实时的，因此了解 [nonce](./nonce.md) 是至关重要的，特别是在需要快速向链上发送交易时。 这种情况下提供了额外的[nonce管理指南](./nonce.md) 。
 
