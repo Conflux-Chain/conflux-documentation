@@ -9,6 +9,32 @@ keywords:
 label:
   - cfx_sendRawTransaction
   - errors
+tags:
+  - cfx_sendRawTransaction
+  - errors
+  - json-rpc
+  - transaction-execution
+  - troubleshooting
+  - balance
+  - nonce
+  - gas
+  - gasPrice
+  - epochHeight
+  - chainId
+  - transaction-pool
+  - 编码
+  - signature
+  - catch-up-mode
+  - error-handling
+  - debugging
+  - transaction-validation
+  - network-issues
+  - node-synchronization
+  - transaction-replacement
+  - gas-estimation
+  - transaction-size
+  - rlp-encoding
+  - transaction-pool-management
 ---
 
 这些错误是由 Conflux 协议的官方实现 [conflux-rust](https://github.com/Conflux-Chain/conflux-rust)定义的。
