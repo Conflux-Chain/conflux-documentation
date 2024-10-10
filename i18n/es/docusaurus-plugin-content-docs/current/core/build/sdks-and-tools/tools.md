@@ -1,6 +1,46 @@
 ---
 sidebar_position: 2
 title: Tools
+keywords:
+  - conflux
+  - tools
+  - hardhat
+  - hardhat-conflux
+  - chainide
+  - address converter
+  - dapp development
+  - smart contracts
+  - multi-chain
+  - js-conflux-sdk
+  - development environment
+  - blockchain tools
+  - contract compilation
+  - testing framework
+  - deployment automation
+tags:
+  - Development Tools
+  - Hardhat
+  - ChainIDE
+  - Address Converter
+  - Dapp
+  - Contratos Inteligentes
+  - Multi-Chain
+  - Blockchain Development
+  - Solidity
+  - Contract Compilation
+  - Testing Framework
+  - Deployment Automation
+  - Cloud-Based IDE
+  - js-conflux-sdk
+  - Plugin
+  - Address Format
+  - Development Environment
+  - Contract Interaction
+  - Debugging
+  - Gas Optimization
+  - Security Analysis
+  - Contract Verification
+  - Network Management
 displayed_sidebar: coreSidebar
 ---
 
