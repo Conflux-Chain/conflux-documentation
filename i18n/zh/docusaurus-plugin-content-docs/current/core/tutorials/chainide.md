@@ -3,6 +3,23 @@ sidebar_position: 4
 title: 使用 ChainIDE 开发智能合约
 description: 使用 ChainIDE 在 Core 空间部署智能合约
 displayed_sidebar: coreSidebar
+tags:
+  - ChainIDE
+  - Smart Contract Development
+  - Web-based IDE
+  - Solidity
+  - Contract Deployment
+  - Contract Interaction
+  - Conflux Network
+  - Core Space
+  - eSpace
+  - Multi-chain Support
+  - Debugging
+  - Testing
+  - 编译
+  - Remix
+  - Development Environment
+  - No-setup Development
 ---
 
 [ChainIDE]](https://chainide.com/) 是一个针对区块链智能合约开发定制的基于 Web 的集成开发环境（IDE）。 它为智能合约的开发、测试、调试和部署提供了全面的解决方案。 与以太坊的 Remix 相比，ChainIDE 功能更强大，支持包括 Conflux Core Space 在内的多个区块链。
