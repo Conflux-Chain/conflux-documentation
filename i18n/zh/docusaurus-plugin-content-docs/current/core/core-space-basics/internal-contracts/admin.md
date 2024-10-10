@@ -1,6 +1,33 @@
 ---
 sidebar_position: 1
 title: AdminControl
+keywords:
+  - conflux
+  - admincontrol
+  - 内置合约
+  - contract administration
+  - smart contracts
+  - debug tool
+  - contract destruction
+tags:
+  - AdminControl
+  - 内置合约
+  - Core
+  - Contract Administration
+  - Debug Tool
+  - 智能合约
+  - Contract Destruction
+  - Admin Rights
+  - Contract Deployment
+  - Contract Lifecycle
+  - Sponsor Mechanism
+  - Contract Security
+  - Governance
+  - Contract Ownership
+  - Address Management
+  - Zero Address
+  - Contract Upgrades
+  - Development Mode
 displayed_sidebar: coreSidebar
 ---
 
