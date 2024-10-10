@@ -5,6 +5,17 @@ displayed_sidebar: coreSidebar
 keywords:
   - 常见问题与解答
   - 交易
+tags:
+  - 交易
+  - Sending Transactions
+  - Transaction Cancellation
+  - Transaction Replacement
+  - Transaction Types
+  - Gas Price
+  - EIP-1559
+  - EIP-2718
+  - Tree Graph
+  - Concurrent Block Emission
 ---
 
 ## 其他
