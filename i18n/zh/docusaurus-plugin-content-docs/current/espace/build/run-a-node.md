@@ -2,6 +2,28 @@
 sidebar_position: 7
 title: 运行 eSpace 节点
 displayed_sidebar: eSpaceSidebar
+tags:
+  - Conflux eSpace
+  - Node Operation
+  - RPC Configuration
+  - 全状态
+  - 链 ID
+  - JSON-RPC
+  - WebSocket
+  - EVM
+  - 归档节点
+  - State Query
+  - 主网
+  - 测试网
+  - Configuration
+  - TOML
+  - Blockchain Data
+  - Snapshot
+  - Core Space
+  - Shared Node
+  - Port Configuration
+  - eth_getTransactionCount
+  - 故障排除
 ---
 
 eSpace 和 Core Space 共用一个节点程序，请参考 [Core Space 节点操作指南](/docs/category/run-a-node) 来运行节点。 以下是一些特定于 eSpace 的配置。
