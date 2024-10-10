@@ -2,6 +2,17 @@
 sidebar_position: 3
 title: Staking
 displayed_sidebar: coreSidebar
+tags:
+  - Staking
+  - Internal Contracts
+  - Storage Occupation
+  - Voting Power
+  - Deposit
+  - Withdraw
+  - Vote Lock
+  - CFX
+  - Governance
+  - Stakingbalance
 ---
 
 ## Overview
