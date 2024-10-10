@@ -5,6 +5,21 @@ displayed_sidebar: coreSidebar
 keywords:
   - transaction
   - nonce
+tags:
+  - Nonce
+  - Transaction
+  - cfx_getNextNonce
+  - Transaction Execution Order
+  - Nonce Mechanism
+  - Transaction Pool
+  - Network Congestion
+  - Transaction Failure
+  - Transaction Replacement
+  - Rapid Transaction Processing
+  - Manual Nonce Management
+  - Transaction Monitoring
+  - Pending Transactions
+  - Account Management
 ---
 
 In Conflux, each account has a nonce value, representing the number of transactions executed by that account. This value can be obtained using the RPC method [`cfx_getNextNonce`](/docs/core/build/json-rpc/cfx-namespace/#cfx_getnextnonce). The nonce field in a transaction is used to specify the execution order, with lower nonce values indicating earlier execution. Typically, you can directly use this value as the nonce for the next transaction.
