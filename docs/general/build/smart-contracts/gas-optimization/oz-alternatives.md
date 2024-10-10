@@ -45,25 +45,25 @@ import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 
 contract OpenZeppelinToken is ERC20 {
     constructor(uint256 initialSupply) ERC20("OpenZeppelinToken", "OZT") {
-        mint(msg.sender, initialSupply);
+        _mint(msg.sender, initialSupply);
     }
 }
 
 // Solmate Implementation
-import {ERC20} from "solmate/tokens/ERC20.sol";
+import {ERC20 as SolmateERC20} from "solmate/tokens/ERC20.sol";
 
-contract SolmateToken is ERC20 {
+contract SolmateToken is SolmateERC20 {
     constructor(uint256 initialSupply) ERC20("SolmateToken", "SMT", 18) {
-        mint(msg.sender, initialSupply);
+        _mint(msg.sender, initialSupply);
     }
 }
 
 // Solady Implementation
-import {ERC20} from "solady/tokens/ERC20.sol";
+import {ERC20 as SoladyERC20} from "solady/tokens/ERC20.sol";
 
-contract SoladyToken is ERC20 {
+contract SoladyToken is SoladyERC20 {
     constructor(uint256 initialSupply) {
-        mint(msg.sender, initialSupply);
+        _mint(msg.sender, initialSupply);
     }
 
     function name() public pure override returns (string memory) {
@@ -93,9 +93,7 @@ Here's an estimated gas comparison for common ERC20 operations:
 
 Solady consistently uses the least gas across all operations, Solmate offers significant gas savings compared to OpenZeppelin but not as much as Solady, and the deployment cost shows the most significant difference with Solady being about 66% cheaper to deploy than OpenZeppelin.
 
-Note: These gas estimates are approximate and may vary based on the specific Solidity compiler version, optimization settings, and the exact implementation details. 
-
-
+Note: These gas estimates are approximate and may vary based on the specific Solidity compiler version, optimization settings, and the exact implementation details.
 
 **Recommendations for Gas Optimization:**
 
