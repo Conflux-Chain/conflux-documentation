@@ -3,6 +3,23 @@ sidebar_position: 0
 title: Overview
 keywords:
   - transaction
+tags:
+  - Transacciones
+  - Core Space
+  - Transaction Fields
+  - Nonce
+  - Gas
+  - Gas Price
+  - Storage Limit
+  - Transaction Fees
+  - Encoding
+  - Signing
+  - Ciclo de vida de la transacción
+  - Transaction Receipt
+  - Pending Transactions
+  - cfx_sendRawTransaction
+  - Wallets (billeteras)
+  - SDKs
 displayed_sidebar: coreSidebar
 ---
 
