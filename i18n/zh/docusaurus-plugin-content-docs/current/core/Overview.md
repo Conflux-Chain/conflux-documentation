@@ -2,6 +2,26 @@
 sidebar_position: 1
 title: 概览
 displayed_sidebar: coreSidebar
+tags:
+  - Core Space
+  - 树图
+  - 智能合约
+  - Solidity
+  - Transaction Sponsorship
+  - PoS Staking
+  - Cross-Space Communication
+  - On-chain Governance
+  - Base32 Encoding
+  - JSON-RPC
+  - Fluent Wallet
+  - js-conflux-sdk
+  - Developer Resources
+  - 教程
+  - 技术细节
+  - 测试网
+  - Node Operation
+  - SDKs
+  - 常见问题解答
 ---
 
 Conflux Core Space 是 Conflux 网络的原生空间。 得益于 Conflux 创新的树图账本结构以及共识算法，Core Space 在不牺牲去中心化的前提下拥有远超比特币和以太坊的性能。 这为 Conflux 生态系统的发展提供了有力支持。
