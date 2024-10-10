@@ -3,6 +3,25 @@ sidebar_position: 5
 title: 如何赞助智能合约
 description: 使用 ConfluxScan的读取/写入工具赞助合约。
 displayed_sidebar: coreSidebar
+tags:
+  - 代付
+  - ConfluxScan
+  - Read&Write Tool
+  - 智能合约
+  - Fluent Wallet
+  - 测试网
+  - 燃气费赞助
+  - 关于存储的赞助
+  - 白名单
+  - SponsorWhitelistControl
+  - Contract Interaction
+  - CFX
+  - Transaction Execution
+  - Sponsor Balance
+  - 存储点
+  - Zero Address
+  - 合约验证
+  - Sponsored Transactions
 ---
 
 Conflux Core [Sponsorship](../core-space-basics/sponsor-mechanism.md) offers a user-friendly feature for new blockchain users. This tutorial will guide you on how to use the [ConfluxScan Read&Write Tool](https://www.confluxscan.io/address/cfx:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaaegg2r16ar?tab=contract-viewer) to sponsor a contract.
