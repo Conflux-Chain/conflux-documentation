@@ -36,7 +36,6 @@ tags:
   - Blockchain Development
   - Rate Limits
   - Network Configuration
-displayed_sidebar: eSpaceSidebar
 ---
 
 :::tip
