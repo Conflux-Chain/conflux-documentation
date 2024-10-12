@@ -2,6 +2,25 @@
 sidebar_position: 2
 title: OKX
 displayed_sidebar: generalSidebar
+keywords:
+  - OKX
+  - Conflux Network
+  - CFX
+  - Transfer
+  - Core Space
+  - eSpace
+  - Fluent
+  - MetaMask
+  - Cryptocurrency exchange
+tags:
+  - okx
+  - fund-transfer
+  - conflux-network
+  - core-space
+  - espace
+  - fluent-wallet
+  - metamask
+  - exchange-withdrawal
 ---
 
 

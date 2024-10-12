@@ -6,7 +6,16 @@ keywords:
   - WalletConnect
   - Web3Modal
   - Dapp
+  - ProjectId
+  - Project Creation
+  - WalletConnect Cloud
 displayed_sidebar: eSpaceSidebar
+tags:
+  - WalletConnect
+  - ProjectId
+  - Setup
+  - Integration
+  - Dapp Development
 ---
 
 # Creating a WalletConnect Project and Obtaining a `ProjectId`

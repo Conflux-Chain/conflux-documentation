@@ -1,6 +1,26 @@
 ---
 displayed_sidebar: generalSidebar
 sidebar_position: 2
+keywords:
+  - wallet backup
+  - mnemonic phrase
+  - private key
+  - passphrase
+  - cold storage
+  - hardware wallet
+  - cloud storage
+  - paper backup
+  - security audit
+  - social engineering
+tags:
+  - wallet-security
+  - backup-strategies
+  - mnemonic-phrases
+  - cold-storage
+  - hardware-wallets
+  - encryption
+  - security-audit
+  - phishing-prevention
 ---
 # Security Advice for Wallet Backup
 

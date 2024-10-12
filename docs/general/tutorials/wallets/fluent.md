@@ -4,6 +4,16 @@ title: Fluent
 keywords:
   - Fluent
   - Wallet
+tags:
+  - wallet
+  - fluent
+  - conflux-network
+  - web3
+  - dapp-integration
+  - core-space
+  - espace
+  - priority-connection
+  - testnet
 displayed_sidebar: generalSidebar
 ---
 

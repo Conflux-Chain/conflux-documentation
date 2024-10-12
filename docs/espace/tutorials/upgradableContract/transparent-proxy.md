@@ -1,5 +1,12 @@
 ---
 displayed_sidebar: eSpaceSidebar
+tags:
+  - tutorial
+  - smart contracts
+  - upgradeable contracts
+  - transparent proxy
+  - Hardhat
+  - eSpace
 ---
 # Deploying Upgradeable Contracts using Transparent Proxy with Hardhat
 

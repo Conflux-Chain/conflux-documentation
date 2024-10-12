@@ -1,5 +1,16 @@
 ---
 displayed_sidebar: generalSidebar
+tags: 
+  - smart-contracts
+  - security
+  - excessive-restrictions
+  - fund-locking
+  - akutars-nft
+  - solidity
+  - prevention
+  - audits
+  - escape-hatches
+  - flexible-control
 ---
 
 # Excessive Function Restrictions

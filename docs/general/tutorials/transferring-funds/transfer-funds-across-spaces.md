@@ -2,6 +2,24 @@
 sidebar_position: 1
 title: Across Spaces
 displayed_sidebar: generalSidebar
+keywords:
+  - Conflux Network
+  - ConfluxHub
+  - Cross-space transfer
+  - Core Space
+  - eSpace
+  - Fluent wallet
+  - MetaMask
+  - ERC20 tokens
+tags:
+  - cross-space-transfer
+  - confluxhub
+  - core-space
+  - espace
+  - fluent-wallet
+  - metamask
+  - token-transfer
+  - bridge
 ---
 
 # Transferring Funds Across Spaces

@@ -1,6 +1,17 @@
 ---
 title: Improper Input Validation
 displayed_sidebar: generalSidebar
+tags: 
+  - smart-contracts
+  - security
+  - input-validation
+  - vulnerabilities
+  - sushiswap
+  - exploit
+  - solidity
+  - access-control
+  - require-statements
+  - prevention
 ---
 
 # Improper Input Validation

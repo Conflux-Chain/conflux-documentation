@@ -2,6 +2,28 @@
 sidebar_position: 2
 title: Ledger
 displayed_sidebar: generalSidebar
+keywords:
+  - Ledger
+  - Hardware wallet
+  - Conflux Network
+  - Core Space
+  - eSpace
+  - Nano S
+  - Nano X
+  - Fluent Wallet
+  - MetaMask
+  - CFX
+  - ERC-20
+tags:
+  - ledger
+  - hardware-wallet
+  - conflux-network
+  - core-space
+  - espace
+  - wallet-integration
+  - security
+  - fluent-wallet
+  - metamask
 ---
 
 import { DiscordLink } from "../../../templates/links.tsx"

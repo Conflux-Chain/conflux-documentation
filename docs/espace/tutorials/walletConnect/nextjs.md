@@ -7,6 +7,12 @@ keywords:
   - Web3Modal
   - Dapp
 displayed_sidebar: eSpaceSidebar
+tags:
+  - tutorial
+  - web3
+  - frontend
+  - nextjs
+  - walletconnect
 ---
 
 # Integrating WalletConnect with Next.js Project on Conflux eSpace

@@ -1,5 +1,19 @@
 ---
 displayed_sidebar: generalSidebar
+tags: 
+  - smart-contracts
+  - security
+  - vulnerabilities
+  - unchecked-calls
+  - low-level-calls
+  - solidity
+  - send
+  - call
+  - delegatecall
+  - staticcall
+  - king-of-ether
+  - gas-limit
+  - prevention
 ---
 
 # Unchecked Low-Level Calls

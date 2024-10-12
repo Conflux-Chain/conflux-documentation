@@ -7,6 +7,18 @@ keywords:
   - Smart Contracts
   - Library
 displayed_sidebar: eSpaceSidebar
+tags:
+  - Cookbook
+  - Smart Contracts
+  - Solidity
+  - EVM
+  - Developer Tools
+  - DeFi
+  - Token Deployment
+  - Remix IDE
+  - Conflux eSpace
+  - Blockchain Development
+  - Tutorial
 ---
 
 [**Cookbook**](https://www.cookbook.dev/) is an essential resource for developers working with Solidity on EVM-compatible blockchains. This guide offers an overview of what Cookbook is, who it's for, and how it can facilitate the development of smart contracts.

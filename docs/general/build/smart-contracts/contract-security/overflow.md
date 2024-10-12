@@ -1,5 +1,17 @@
 ---
 displayed_sidebar: generalSidebar
+tags: 
+  - smart-contracts
+  - security
+  - vulnerabilities
+  - integer-overflow
+  - beautychain
+  - bec
+  - solidity
+  - safeMath
+  - arithmetic-operations
+  - evm
+  - prevention
 ---
 # Integer Overflow
 

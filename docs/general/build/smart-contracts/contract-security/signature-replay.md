@@ -1,6 +1,20 @@
 ---
 title: Signature Replay Attacks
 displayed_sidebar: generalSidebar
+tags: 
+  - smart-contracts
+  - security
+  - vulnerabilities
+  - signature-replay
+  - wintermute
+  - optimism
+  - ecdsa
+  - eip-712
+  - cip-23
+  - solidity
+  - prevention
+  - nonce
+  - chainid
 ---
 
 ## Signature Replay Attacks

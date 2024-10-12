@@ -1,5 +1,23 @@
 ---
 displayed_sidebar: generalSidebar
+keywords:
+  - Conflux Network
+  - test framework
+  - node testing
+  - Python tests
+  - P2P messages
+  - blockchain testing
+  - RPC testing
+  - network simulation
+tags:
+  - test-framework
+  - node-testing
+  - python-tests
+  - p2p-messaging
+  - rpc-testing
+  - network-simulation
+  - blockchain-development
+  - quality-assurance
 ---
 # Test Framework
 

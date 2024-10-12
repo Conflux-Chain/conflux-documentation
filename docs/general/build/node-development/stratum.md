@@ -1,5 +1,23 @@
 ---
 displayed_sidebar: generalSidebar
+keywords:
+  - Conflux Network
+  - Stratum protocol
+  - solo mining
+  - Conflux-Rust
+  - mining protocol
+  - proof-of-work
+  - RPC interface
+  - blockchain mining
+tags:
+  - stratum-protocol
+  - solo-mining
+  - conflux-rust
+  - mining-protocol
+  - proof-of-work
+  - rpc-interface
+  - node-development
+  - blockchain-mining
 ---
 # Stratum Protocol in Conflux-Rust
 

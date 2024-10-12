@@ -7,6 +7,13 @@ keywords:
   - Hardhat
   - Smart Contracts
 displayed_sidebar: eSpaceSidebar
+tags:
+  - tutorial
+  - smart contracts
+  - upgradeable contracts
+  - Hardhat
+  - eSpace
+  - proxy pattern
 ---
 
 # Deploying Upgradeable Contracts on Conflux eSpace using Hardhat

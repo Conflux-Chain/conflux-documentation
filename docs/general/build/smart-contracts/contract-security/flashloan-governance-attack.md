@@ -1,6 +1,17 @@
 ---
 title: Flashloan Governance Attacks
 displayed_sidebar: generalSidebar
+tags: 
+  - smart-contracts
+  - security
+  - flashloans
+  - governance-attacks
+  - defi
+  - erc20
+  - voting
+  - makerdao
+  - solidity
+  - prevention-strategies
 ---
 
 # Flashloan Governance Attacks

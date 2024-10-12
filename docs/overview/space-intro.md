@@ -2,6 +2,19 @@
 sidebar_position: 2
 title: Conflux Spaces
 displayed_sidebar: overviewSidebar
+keywords:
+  - Conflux
+  - Spaces
+  - eSpace
+  - Core Space
+  - blockchain
+  - Ethereum compatibility
+tags:
+  - conflux-network
+  - spaces
+  - espace
+  - core-space
+  - ethereum-compatible
 ---
 
 The Conflux Network features a unique design known as [Conflux Spaces](/docs/general/conflux-basics/spaces). A Space in the Conflux Network can be understood as a specific area or akin to an individual blockchain. Currently, there are two Spaces on the Conflux Network: **eSpace** and **Core Space**.

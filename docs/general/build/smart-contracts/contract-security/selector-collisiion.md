@@ -1,7 +1,19 @@
 ---
 title: Selector Collision Attack
 displayed_sidebar: generalSidebar
+tags: 
+  - smart-contracts
+  - security
+  - vulnerabilities
+  - selector-collision
+  - poly-network-hack
+  - solidity
+  - function-selectors
+  - cross-chain-bridge
+  - prevention
+  - keccak256
 ---
+
 The **selector collision attack** was one of the key reasons behind the hacking of the Poly Network cross-chain bridge.
 
 In August 2021, the cross-chain bridge contracts of Poly Network on ETH, BSC, and Polygon were hacked, resulting in losses of up to $611 million. This was the largest blockchain hack of 2021 and ranked second in the history of stolen amounts, we can learn more about the detailed attack incidents from [this article](https://rekt.news/polynetwork-rekt/).

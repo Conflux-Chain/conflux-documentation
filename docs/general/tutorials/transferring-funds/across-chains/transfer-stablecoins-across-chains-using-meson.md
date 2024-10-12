@@ -2,6 +2,26 @@
 sidebar_position: 2
 title: Meson
 displayed_sidebar: generalSidebar
+keywords:
+  - Meson
+  - Stablecoins
+  - Cross-chain transfer
+  - Conflux Network
+  - eSpace
+  - USDC
+  - USDT
+  - BNB Chain
+  - MetaMask
+tags:
+  - meson-protocol
+  - stablecoin-transfer
+  - cross-chain
+  - espace
+  - usdc
+  - usdt
+  - bnb-chain
+  - metamask
+  - bridging
 ---
 
 # Transfer Stablecoins Across Chains Using Meson

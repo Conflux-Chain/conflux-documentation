@@ -1,5 +1,17 @@
 ---
 displayed_sidebar: generalSidebar
+tags: 
+  - smart-contracts
+  - security
+  - vulnerabilities
+  - dos
+  - denial-of-service
+  - ethereum
+  - solidity
+  - refunds
+  - fallback-function
+  - prevention
+  - gameoffunds
 ---
 
 # Denial of Service Attacks

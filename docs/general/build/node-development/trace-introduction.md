@@ -1,5 +1,24 @@
 ---
 displayed_sidebar: generalSidebar
+keywords:
+  - Conflux Network
+  - transaction traces
+  - debugging
+  - smart contracts
+  - Call traces
+  - CallResult
+  - Create traces
+  - CreateResult
+  - InternalTransferAction
+tags:
+  - transaction-traces
+  - debugging
+  - smart-contracts
+  - call-traces
+  - create-traces
+  - internal-transfers
+  - node-development
+  - blockchain-operations
 ---
 # Introduction to Transaction Traces
 

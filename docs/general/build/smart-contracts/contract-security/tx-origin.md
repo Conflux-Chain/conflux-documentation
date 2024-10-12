@@ -1,6 +1,17 @@
 ---
 title: Tx Origin Attacks
 displayed_sidebar: generalSidebar
+tags: 
+  - smart-contracts
+  - security
+  - vulnerabilities
+  - tx-origin
+  - phishing-attacks
+  - solidity
+  - authentication
+  - msg-sender
+  - prevention
+  - simple-bank
 ---
 
 A transaction origin attack is form of phising attack that can drain a contract of all funds.In Solidity, `tx.origin` retrieves the address of the transaction originator, distinguishing it from `msg.sender`.
