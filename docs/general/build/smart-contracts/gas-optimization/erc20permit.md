@@ -1,5 +1,17 @@
 ---
 displayed_sidebar: generalSidebar
+tags:
+  - smart-contracts
+  - ERC20
+  - ERC20Permit
+  - gas-optimization
+  - Solidity
+  - approve
+  - transferFrom
+  - off-chain-signatures
+  - Ethereum
+  - OpenZeppelin
+  - Ethers.js
 ---
 
 # ERC20Permit

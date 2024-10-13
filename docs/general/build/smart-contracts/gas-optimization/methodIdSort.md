@@ -1,6 +1,18 @@
 ---
 displayed_sidebar: generalSidebar
+tags:
+  - smart-contracts
+  - Solidity
+  - gas-optimization
+  - MethodId
+  - function-sorting
+  - EVM
+  - function-calls
+  - Optimizer
+  - gas-efficiency
+  - function-array
 ---
+
 
 # MethodId Sort Optimization
 

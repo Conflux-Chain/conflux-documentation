@@ -1,5 +1,15 @@
 ---
 displayed_sidebar: generalSidebar
+tags:
+  - smart-contracts
+  - Solidity
+  - gas-optimization
+  - variable-initialization
+  - default-values
+  - deployment-cost
+  - EVM
+  - state-variables
+  - uint256
 ---
 
 # Efficient Initialization

@@ -1,6 +1,18 @@
 ---
 title: Gas Optimization
 displayed_sidebar: generalSidebar
+tags:
+  - smart-contracts
+  - gas-optimization
+  - Solidity
+  - EVM
+  - storage
+  - data-types
+  - variable-packing
+  - loops
+  - functions
+  - libraries
+  - delegate-calls
 ---
 
 ## Some Tips to Make Gas Fee Lower

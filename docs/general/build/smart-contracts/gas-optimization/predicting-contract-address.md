@@ -1,5 +1,17 @@
 ---
 displayed_sidebar: generalSidebar
+tags:
+  - smart-contracts
+  - gas-optimization
+  - Solidity
+  - contract-deployment
+  - address-prediction
+  - account-nonce
+  - LibRLP
+  - Solady
+  - DataStorage
+  - DataWriter
+  - DeploymentManager
 ---
 
 # Predicting Contract Addresses Using Account Nonce

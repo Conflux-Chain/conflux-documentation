@@ -5,6 +5,18 @@ keywords:
   - faq
 sidebar_position: 3
 displayed_sidebar: generalSidebar
+tags:
+  - Conflux-Network
+  - Proof-of-Stake
+  - PoS
+  - PoW
+  - hybrid-consensus
+  - security
+  - transaction-finality
+  - CIP-43
+  - validators
+  - staking
+  - 51-attack
 ---
 
 ## What is the new Proof-of-Stake chain for Conflux?

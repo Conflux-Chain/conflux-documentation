@@ -2,6 +2,18 @@
 sidebar_position: 1
 title: Smart Contracts Development
 displayed_sidebar: generalSidebar
+tags:
+  - smart-contracts
+  - Conflux-Network
+  - Solidity
+  - EVM
+  - contract-development
+  - vending-machine
+  - bytecode
+  - ABI
+  - deployment
+  - function-calls
+  - gas-optimization
 ---
 
 ## Introduction to Smart Contracts Development on Conflux Network

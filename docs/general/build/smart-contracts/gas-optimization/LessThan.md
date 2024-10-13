@@ -1,5 +1,16 @@
 ---
 displayed_sidebar: generalSidebar
+tags:
+  - smart-contracts
+  - Solidity
+  - gas-optimization
+  - comparison-operators
+  - EVM
+  - less-than
+  - less-than-or-equal-to
+  - iszero
+  - opcode
+  - DemoCode
 ---
 
 # Comparison Operators

@@ -1,5 +1,14 @@
 ---
 displayed_sidebar: generalSidebar
+tags:
+  - smart-contracts
+  - gas-optimization
+  - Solidity
+  - selfdestruct
+  - constructor
+  - one-time-use-contracts
+  - contract-deployment
+  - storage-reclamation
 ---
 
 # Using selfdestruct in Constructors

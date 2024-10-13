@@ -2,6 +2,19 @@
 sidebar_position: 5
 title: Grants
 displayed_sidebar: generalSidebar
+tags:
+  - Conflux-Network
+  - ecosystem-grants
+  - technical-grants
+  - growth-grants
+  - funding
+  - application-process
+  - grant-tiers
+  - grant-onboarding
+  - grant-delivery
+  - committee-responsibilities
+  - no-sale-rule
+  - public-reporting
 ---
 
 # **Conflux Ecosystem Grants Overview**

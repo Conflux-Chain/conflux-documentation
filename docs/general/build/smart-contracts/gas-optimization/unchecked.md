@@ -1,6 +1,16 @@
 ---
 displayed_sidebar: generalSidebar
-
+tags:
+  - smart-contracts
+  - gas-optimization
+  - Solidity
+  - unchecked
+  - arithmetic-operations
+  - overflow
+  - SafeMath
+  - for-loop
+  - UncheckedExample
+  - gas-efficiency
 ---
 # Unchecked
 

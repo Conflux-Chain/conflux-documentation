@@ -1,5 +1,17 @@
 ---
 displayed_sidebar: generalSidebar
+tags:
+  - smart-contracts
+  - gas-optimization
+  - OpenZeppelin
+  - Solmate
+  - Solady
+  - ERC20
+  - ERC721
+  - Solidity
+  - assembly
+  - DeFi
+  - gas-efficiency
 ---
 
 # Alternatives to OpenZeppelin

@@ -1,5 +1,16 @@
 ---
 displayed_sidebar: generalSidebar
+tags:
+  - smart-contracts
+  - Solidity
+  - gas-optimization
+  - data-structures
+  - mapping
+  - dynamic-array
+  - EVM
+  - storage-efficiency
+  - UseMapping
+  - UseArray
 ---
 
 # Mapping vs Dynamic Array

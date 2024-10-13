@@ -2,6 +2,22 @@
 sidebar_position: 2
 title: The Tree-Graph
 displayed_sidebar: generalSidebar
+tags:
+  - Conflux-Network
+  - Tree-Graph
+  - GHAST
+  - consensus-mechanism
+  - distributed-ledger
+  - forks
+  - longest-chain-rule
+  - scalability
+  - security
+  - parent-edge
+  - reference-edges
+  - pivot-chain
+  - DAG
+  - transaction-ordering
+  - block-creation-rate
 ---
 
 # The Tree-Graph

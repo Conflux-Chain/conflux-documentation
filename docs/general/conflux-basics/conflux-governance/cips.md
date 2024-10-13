@@ -2,6 +2,21 @@
 sidebar_position: 2
 title: CIPs
 displayed_sidebar: generalSidebar
+tags:
+  - Conflux-Network
+  - CIPs
+  - Conflux-Improvement-Proposals
+  - governance
+  - protocol-changes
+  - network-upgrades
+  - hard-forks
+  - community-voting
+  - EIP-712
+  - Base32-Checksum-Addresses
+  - block-rewards
+  - PoW-PoS-consensus
+  - eSpace
+  - on-chain-DAO
 ---
 
 # CIPs

@@ -1,5 +1,16 @@
 ---
 displayed_sidebar: generalSidebar
+tags:
+  - smart-contracts
+  - gas-optimization
+  - bitmap
+  - bitwise-operations
+  - Solidity
+  - uint8
+  - boolean-array
+  - AND-operation
+  - bit-shift
+  - gas-efficiency
 ---
 
 # Bytes32 vs String

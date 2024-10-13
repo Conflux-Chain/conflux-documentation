@@ -1,5 +1,18 @@
 ---
 displayed_sidebar: generalSidebar
+tags:
+  - smart-contracts
+  - gas-optimization
+  - Solidity
+  - reentrancy-guard
+  - security
+  - modifiers
+  - uint-variable
+  - boolean-flag
+  - EVM
+  - ReentrancyGuardBool
+  - ReentrancyGuardUint01
+  - ReentrancyGuardUint12
 ---
 
 # Low-Cost Reentrancy Guard

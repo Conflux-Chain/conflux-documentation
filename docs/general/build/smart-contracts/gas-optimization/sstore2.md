@@ -1,5 +1,17 @@
 ---
 displayed_sidebar: generalSidebar
+tags:
+  - smart-contracts
+  - gas-optimization
+  - Solidity
+  - SSTORE2
+  - storage-optimization
+  - bytecode-storage
+  - CREATE-opcode
+  - EXTCODECOPY
+  - Ethereum
+  - Conflux
+  - Core-Space
 ---
 
 # SSTORE2

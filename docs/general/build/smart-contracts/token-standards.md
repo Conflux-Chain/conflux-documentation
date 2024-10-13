@@ -2,6 +2,19 @@
 sidebar_position: 3
 title: Token Standards
 displayed_sidebar: generalSidebar
+tags:
+  - smart-contracts
+  - token-standards
+  - ERC-20
+  - ERC-721
+  - ERC-1155
+  - CIP-1820
+  - fungible-tokens
+  - non-fungible-tokens
+  - NFTs
+  - ICOs
+  - interface-detection
+  - Conflux
 ---
 
 Token standards are critical in blockchain ecosystems, providing a set of rules and guidelines for token implementation. They ensure interoperability and consistency across different applications and platforms. The main standards include:

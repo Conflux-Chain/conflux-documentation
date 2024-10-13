@@ -1,5 +1,16 @@
 ---
 displayed_sidebar: generalSidebar
+tags:
+  - smart-contracts
+  - Solidity
+  - gas-optimization
+  - MethodId
+  - calldata
+  - EVM
+  - function-names
+  - zero-bytes
+  - function-selectors
+  - ExampleContract
 ---
 # MethodId Optimization
 

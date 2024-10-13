@@ -1,5 +1,15 @@
 ---
 displayed_sidebar: generalSidebar
+tags:
+  - smart-contracts
+  - gas-optimization
+  - Solidity
+  - short-circuiting
+  - logical-operations
+  - boolean-logic
+  - LogicOptimization
+  - function-ordering
+  - gas-efficiency
 ---
 
 # Short-Circuiting

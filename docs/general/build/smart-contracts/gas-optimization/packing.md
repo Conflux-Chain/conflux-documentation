@@ -1,5 +1,17 @@
 ---
 displayed_sidebar: generalSidebar
+tags:
+  - smart-contracts
+  - gas-optimization
+  - Solidity
+  - variable-packing
+  - struct-packing
+  - storage-slots
+  - EVM
+  - uint64
+  - uint256
+  - address
+  - gas-efficiency
 ---
 
 # Packing

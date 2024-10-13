@@ -1,6 +1,16 @@
 ---
 displayed_sidebar: generalSidebar
 sidebar_position: 2
+tags:
+  - smart-contracts
+  - Solidity
+  - gas-optimization
+  - memory
+  - calldata
+  - data-location
+  - EVM
+  - function-parameters
+  - CalldataAndMemory
 ---
 # Memory vs Calldata 
 

@@ -6,6 +6,15 @@ keywords:
   - pos
   - why
 displayed_sidebar: generalSidebar
+tags:
+  - Conflux-Network
+  - Proof-of-Stake
+  - PoS
+  - Proof-of-Work
+  - PoW
+  - 51-attack
+  - hybrid-consensus
+  - security
 ---
 
 :::note

@@ -6,6 +6,21 @@ keywords:
   - overview
 sidebar_position: 2
 displayed_sidebar: generalSidebar
+tags:
+  - Conflux-Network
+  - Proof-of-Stake
+  - PoS
+  - consensus-mechanism
+  - 51-attack
+  - PoW-chain
+  - pivot-block
+  - voting-committee
+  - BLS
+  - VRF
+  - staking
+  - CFX
+  - incentive-plan
+  - security
 ---
 
 This document is to introduce Conflux PoS Finality without practical details. It is to help readers understand PoS in general, and it is essential for reading other technical documents.

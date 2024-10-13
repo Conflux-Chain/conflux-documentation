@@ -1,6 +1,18 @@
 ---
 displayed_sidebar: generalSidebar
+tags:
+  - smart-contracts
+  - Solidity
+  - gas-optimization
+  - monolithic-architecture
+  - contract-design
+  - inter-contract-calls
+  - modularity
+  - ContractA
+  - ContractB
+  - MonolithicContract
 ---
+
 
 # Use Monolithic Contract Architecture
 

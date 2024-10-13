@@ -1,6 +1,16 @@
 ---
 displayed_sidebar: generalSidebar
-
+tags:
+  - smart-contracts
+  - gas-optimization
+  - Solidity
+  - constant
+  - immutable
+  - variable
+  - deployment
+  - initialization
+  - SLOAD
+  - gas-efficiency
 ---
 
 

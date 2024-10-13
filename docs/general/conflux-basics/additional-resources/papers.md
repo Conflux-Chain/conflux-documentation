@@ -6,6 +6,18 @@ keywords:
   - conflux
   - papers
 displayed_sidebar: generalSidebar
+tags:
+  - Conflux-Protocol
+  - research-papers
+  - yellow-paper
+  - consensus-mechanism
+  - Tree-Graph
+  - GHAST
+  - high-throughput
+  - fast-confirmation
+  - decentralized-blockchain
+  - adaptive-weighted-blocks
+  - technical-presentation
 ---
 
 The Conflux Protocol is defined and analyzed in a number of research papers.
