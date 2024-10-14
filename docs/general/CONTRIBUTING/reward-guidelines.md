@@ -3,6 +3,22 @@ displayed_sidebar: generalSidebar
 title: Reward Guidelines
 description: The reward guidelines for your contribution
 sidebar_position: 2
+tags: 
+- Conflux Network
+- documentation
+- contributing
+- reward guidelines
+- FansCoin
+- FC rewards
+- issue rewards
+- pull request rewards
+- formatting
+- error identification
+- improvements
+- website code issues
+- reward evaluation
+- reward distribution
+- community involvement
 ---
 
 ## Introduction
