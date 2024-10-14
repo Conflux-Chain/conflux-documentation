@@ -116,7 +116,6 @@ For developers looking to interact with or build on Uniswap V2, the following re
 - [Uniswap V2 Documentation](https://docs.uniswap.org/contracts/v2/overview): Official documentation for Uniswap V2
 - [Uniswap V2 Core](https://github.com/Uniswap/uniswap-v2-core): Core smart contracts for Uniswap V2
 - [Uniswap V2 Periphery](https://github.com/Uniswap/uniswap-v2-periphery): Peripheral smart contracts for Uniswap V2
-- [Uniswap SDK](https://github.com/Uniswap/uniswap-sdk): JavaScript SDK for interacting with Uniswap
-- [Uniswap SDK Core](https://github.com/Uniswap/uniswap-sdk-core): Core primitives for the Uniswap SDK
+- [Uniswap V2 SDK](https://github.com/Uniswap/sdks/tree/main/sdks/v2-sdk): JavaScript SDK for interacting with Uniswap
 
 The Uniswap SDK can assist developers in interacting with the Uniswap V2 Protocol, providing helpful utilities and abstractions.
