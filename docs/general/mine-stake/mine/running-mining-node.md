@@ -2,6 +2,7 @@
 sidebar_position: 1
 title: Running a Mining Node
 displayed_sidebar: generalSidebar
+tags: [Conflux Network, mining, PoW, GPU mining, NVIDIA GPU, mining node, fullnode, cfxmine, Hydra network, Windows mining, Linux mining, mining configuration, mining wallet, remote mining, stratum protocol]
 ---
 
 ## Conflux Network PoW - GPU Mining Instruction

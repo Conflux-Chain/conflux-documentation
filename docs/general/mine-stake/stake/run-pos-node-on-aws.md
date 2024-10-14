@@ -2,6 +2,7 @@
 sidebar_position: 5
 title: Run a PoS Node on AWS
 displayed_sidebar: generalSidebar
+tags: [Conflux Network, PoS, AWS, EC2 instance, Ubuntu Server, node setup, SSH, key pair, server configuration, Conflux client, archive node snapshot, node synchronization, PoW block, PoS block, hydra.toml, PoS encryption password]
 ---
 
 This tutorial will help you set up a Conflux node on AWS.

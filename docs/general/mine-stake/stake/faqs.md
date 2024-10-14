@@ -2,6 +2,7 @@
 sidebar_position: 6
 title: FAQs
 displayed_sidebar: generalSidebar
+tags: [Conflux Network, PoS, PoW, hybrid consensus, node operation, forced retirement, node restart, PoS rewards, Core Space, eSpace, PoS committee, voting power, node synchronization, pos_config, pos_db, secure_storage, stop_election, PoS block generation]
 ---
 
 ## Is Conflux PoS node and PoW node use the same client?
