@@ -19,7 +19,7 @@ tags:
 - ConfluxHub
 - CFX staking
 - governance
--PoS validators
+- PoS validators
 ---
 
 
