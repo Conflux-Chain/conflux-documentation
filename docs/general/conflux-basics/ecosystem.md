@@ -2,7 +2,26 @@
 sidebar_position: 6
 title: Ecosystem
 displayed_sidebar: generalSidebar
+tags: 
+- Conflux Network
+- blockchain ecosystem
+- Swappi
+- AMM
+- DEX
+- Nucleon
+- liquid staking
+- lending
+- borrowing
+- Meson
+- stablecoins
+- cross-chain bridge
+- Zero Gravity
+- ConfluxHub
+- CFX staking
+- governance
+-PoS validators
 ---
+
 
 # Conflux Network Ecosystem
 
@@ -14,10 +33,6 @@ Swappi stands as a key decentralized exchange (DEX) within the Conflux Network, 
 ## [Nucleon (Liquid Staking Derivative)](https://www.nucleon.space/)
 
 Nucleon introduces an innovative approach to staking in the form of a liquid staking derivative. This allows users to participate in network security while maintaining liquidity, a pivotal advancement in enhancing staking flexibility and utility.
-
-## [Goledo (Lending and Borrowing)](https://www.goledo.cash/)
-
-Goledo serves the ecosystem by providing decentralized lending and borrowing services. This platform enables users to lend their assets for interest or borrow against collateral, thus enriching the financial services available on Conflux.
 
 ## [Meson (Stablecoins Cross Chain Bridge)](https://meson.fi/)
 

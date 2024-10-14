@@ -2,6 +2,24 @@
 sidebar_position: 8
 title: Wallets
 displayed_sidebar: generalSidebar
+tags: 
+- Conflux Network
+- wallets
+- digital assets
+- private keys
+- public keys
+- addresses
+- Fluent
+- Ledger
+- MetaMask
+- hardware wallets
+- software wallets
+- Core Space
+- eSpace
+- DApps
+- CFX
+- security
+- key management
 ---
 
 This guide will help you understand the basics of wallets, their purpose, and their role in the Conflux Network.

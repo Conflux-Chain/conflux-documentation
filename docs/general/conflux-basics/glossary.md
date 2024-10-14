@@ -2,7 +2,25 @@
 sidebar_position: 5
 title: Glossary
 displayed_sidebar: generalSidebar
+tags: 
+- Conflux Network
+- blockchain terminology
+- consensus mechanisms
+- cryptography
+- smart contracts
+- tokens
+- wallets
+- mining
+- staking
+- governance
+- network architecture
+- transaction processing
+- security
+- decentralized finance
+- NFTs
+
 ---
+
 ## Introduction
 
 Welcome to the Glossary section of the Conflux documentation. This section is designed to provide you with clear and concise definitions of key terms and concepts used within Conflux and the broader blockchain industry.

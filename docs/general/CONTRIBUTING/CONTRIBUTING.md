@@ -3,6 +3,18 @@
 displayed_sidebar: generalSidebar
 toc_max_heading_level: 4
 title: CONTRIBUTING
+tags: 
+- Conflux Network
+- documentation
+- contributing
+- community involvement
+- FansCoin
+- FC rewards
+- POAPs
+- issue reporting
+- translations
+- visual aids
+- content creation
 ---
 
 
