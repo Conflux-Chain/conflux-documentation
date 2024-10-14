@@ -1,6 +1,6 @@
 {
-    "label": "How to create your own indexer",
-    "position": 1,
+    "label": "Indexing",
+    "position": 8,
     "link": {
       "type": "generated-index",
       "description": "Tutorial on how to read logs and events emitted by blockchain and create your own indexer"

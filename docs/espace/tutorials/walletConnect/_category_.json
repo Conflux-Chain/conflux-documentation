@@ -1,6 +1,6 @@
 {
-    "label": "How to use WalletConnect",
-    "position": 1,
+    "label": "WalletConnect",
+    "position": 9,
     "link": {
       "type": "generated-index",
       "description": "WalletConnect provides a suite of SDKs to help you build your dapp or wallet. For Dapp developers, Web3Modal is recommended, and our tutorials focus on how to use Web3Modal on Conflux eSpace. For different frameworks, we will give different detailed tutorials."
