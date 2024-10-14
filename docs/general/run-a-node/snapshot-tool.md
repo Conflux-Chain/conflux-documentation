@@ -3,6 +3,7 @@ sidebar_position: 3
 title: Snapshot Tool
 description: Learn how to use the Conflux Snapshot Tool to quickly set up a Conflux node from a snapshot.
 displayed_sidebar: generalSidebar
+tags: [Conflux Network, snapshot tool, archive tool, node setup, blockchain data, download links, resuming downloads, curl, mainnet, testnet, archive node, full node, data unzip, pos_config, Linux, Mac, Windows]
 ---
 
 ## Introduction

@@ -2,6 +2,7 @@
 sidebar_position: 4
 title: Upgrade a Node
 displayed_sidebar: generalSidebar
+tags: [Conflux Network, node upgrade, software update, node operation, Conflux-Rust, release version, PoS node, forced retirement, node restart, version check, Docker upgrade, block synchronization, node migration, Linux commands]
 ---
 
 When the node software releases a new version, node operators need to upgrade the node software to ensure its proper functioning.
