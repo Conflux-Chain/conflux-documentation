@@ -2,6 +2,19 @@
 title: FAQ
 sidebar_position: 5
 displayed_sidebar: generalSidebar
+tags: 
+- Conflux Network
+- FAQs
+- community questions
+- RPC errors
+- Core Space
+- eSpace
+- sponsorship mechanism
+- storage
+- gas
+- conflux-hardhat
+- network endpoints
+- oracles
 ---
 
 Welcome to our FAQ section, where we have compiled a list of frequently asked questions and their corresponding answers for your convenience. Our FAQ section is divided into several sub-sections, making it easy for you to find the information you need quickly and efficiently.

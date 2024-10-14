@@ -1,6 +1,17 @@
 ---
 sidebar_position: 3
 displayed_sidebar: generalSidebar
+tags: 
+- Conflux Network
+- hard forks
+- network upgrades
+- protocol changes
+- backward compatibility
+- node updates
+- blockchain split
+- community consensus
+- network participants
+
 ---
 
 # Hard Forks
