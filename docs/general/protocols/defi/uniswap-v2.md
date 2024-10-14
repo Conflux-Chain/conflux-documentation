@@ -104,10 +104,6 @@ This separation allows for a more modular and secure architecture. The core cont
 
 Uniswap V2 laid the groundwork for further innovations in the DeFi space. Its improvements over V1 demonstrated the rapid evolution of decentralized exchange protocols. The introduction of a potential protocol fee (currently set to 0) also opened discussions about sustainable funding for decentralized protocols.
 
-## Conclusion
-
-Uniswap V2 represents a significant step forward in the development of decentralized exchanges. By addressing limitations of V1 and introducing new features, it has further solidified Uniswap's position as a leading DEX protocol in the Ethereum ecosystem.
-
 ## Developer Resources and Related Links
 
 For developers looking to interact with or build on Uniswap V2, the following resources are available:
@@ -119,3 +115,7 @@ For developers looking to interact with or build on Uniswap V2, the following re
 - [Uniswap V2 SDK](https://github.com/Uniswap/sdks/tree/main/sdks/v2-sdk): JavaScript SDK for interacting with Uniswap
 
 The Uniswap SDK can assist developers in interacting with the Uniswap V2 Protocol, providing helpful utilities and abstractions.
+
+## Conclusion
+
+Uniswap V2 represents a significant step forward in the development of decentralized exchanges. By addressing limitations of V1 and introducing new features, it has further solidified Uniswap's position as a leading DEX protocol in the Ethereum ecosystem.
