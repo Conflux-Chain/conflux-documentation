@@ -6,12 +6,6 @@ displayed_sidebar: coreSidebar
 keywords:
     - cfx_sendRawTransaction
     - errors
-label:
-    - cfx_sendRawTransaction
-    - errors
-tags:
-    - cfx_sendRawTransaction
-    - errors
     - json-rpc
     - transaction-execution
     - troubleshooting
@@ -35,6 +29,10 @@ tags:
     - transaction-size
     - rlp-encoding
     - transaction-pool-management
+label:
+    - cfx_sendRawTransaction
+    - errors
+tags: [transaction errors, troubleshooting]
 ---
 
 :::note

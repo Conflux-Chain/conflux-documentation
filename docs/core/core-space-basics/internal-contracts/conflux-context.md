@@ -9,17 +9,7 @@ eywords:
   - pos height
   - finalized epoch
   - network info
-tags:
-  - ConfluxContext
-  - Internal Contracts
-  - Epoch Number
-  - PoS Height
-  - Finalized Epoch
-  - Network Info
-  - Blockchain State
-  - Query Functions
-  - PoW-PoS Hybrid
-  - Chain Finality
+tags: [Internal Contracts, ConfluxContext]
 displayed_sidebar: coreSidebar
 ---
 

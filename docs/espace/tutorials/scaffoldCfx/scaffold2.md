@@ -3,15 +3,7 @@ sidebar_position: 4
 title: Mint NFTs on Conflux 
 description: Make NFTS using Conflux Scaffold
 keywords:
-  - Hardhat
-  - Smart Contracts
-  - Scaffold
-  - NFT
-  - ERC721
-  - IPFS
-displayed_sidebar: eSpaceSidebar
-tags:
-  - Conflux eSpace
+- Conflux eSpace
   - Scaffold-ETH-2
   - NFT
   - ERC721
@@ -47,6 +39,9 @@ tags:
   - Minting
   - Token Transfer
   - Event Logging
+displayed_sidebar: eSpaceSidebar
+tags: [Scaffold, Tutorial, NFT]
+  
 ---
 
 [Scaffold Conflux NFT Example](https://github.com/conflux-fans/conflux-scaffold-nft-example) is an adaptation of Scaffold-ETH-2 (https://scaffoldeth.io/) whereby we have adjusted the template to allow you to deploy a ERC721 contract on Conflux eSpace and leverage the components, integration of hardhat, and the quick deployment of Scaffold-ETH-2. 

@@ -3,7 +3,7 @@ sidebar_position: 1
 title: Hardhat and Foundry
 description: Deploying smart contracts using Hardhat and Foundry
 displayed_sidebar: eSpaceSidebar
-tags:
+keywords:
   - Conflux eSpace
   - Smart Contracts
   - Deployment
@@ -30,6 +30,8 @@ tags:
   - Gas Fees
   - Contract Compilation
   - Testing
+tags: [Hardhat, Foundry, Tutorial]
+ 
 ---
 
 import { DiscordLink } from "../../../templates/links.tsx"

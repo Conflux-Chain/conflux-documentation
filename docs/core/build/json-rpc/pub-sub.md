@@ -18,32 +18,7 @@ keywords:
   - blockchain events
   - real-time updates
   - chain reorganization
-tags:
-  - API
-  - PubSub
-  - WebSocket
-  - TCP
-  - Real-Time
-  - NewHeads
-  - Epochs
-  - Logs
-  - Subscription
-  - Event-Streaming
-  - Blockchain-Events
-  - Real-Time-Updates
-  - Chain-Reorganization
-  - Node-Communication
-  - Data-Streaming
-  - Block-Notifications
-  - Transaction-Notifications
-  - Log-Filtering
-  - Epoch-Tracking
-  - Pivot-Chain-Updates
-  - Subscription-Management
-  - Event-Driven-Architecture
-  - Asynchronous-Notifications
-  - Continuous-Data-Feed
-  - State-Synchronization
+tags: [subscriptions real-time updates, publish-subscribe]
 displayed_sidebar: coreSidebar
 ---
 

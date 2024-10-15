@@ -2,6 +2,22 @@
 sidebar_position: 10
 title: Gas and Fees
 displayed_sidebar: generalSidebar
+keywords: 
+- Conflux Network
+- gas
+- transaction fees
+- computational effort
+- gas limit
+- gas used
+- gas charged
+- base fee
+- priority fee
+- EVM opcodes
+- storage collateral
+- fixed fee
+- dynamic fee
+- fee optimization
+tags: [Gas]
 ---
 
 ## What is Gas?

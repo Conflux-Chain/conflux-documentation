@@ -2,7 +2,27 @@
 sidebar_position: 6
 title: Ecosystem
 displayed_sidebar: generalSidebar
+keywords: 
+- Conflux Network
+- blockchain ecosystem
+- Swappi
+- AMM
+- DEX
+- Nucleon
+- liquid staking
+- lending
+- borrowing
+- Meson
+- stablecoins
+- cross-chain bridge
+- Zero Gravity
+- ConfluxHub
+- CFX staking
+- governance
+- PoS validators
+tags: [Ecosystem]
 ---
+
 
 # Conflux Network Ecosystem
 

@@ -2,6 +2,19 @@
 sidebar_position: 3
 title: GHAST
 displayed_sidebar: generalSidebar
+keywords:
+  - Conflux-Network
+  - GHAST
+  - Greedy-Heaviest-Adaptive-SubTree
+  - consensus-mechanism
+  - liveness-attack
+  - heaviest-chain-rule
+  - block-weight
+  - Tree-Graph-structure
+  - special-blocks
+  - normal-blocks
+  - mining-difficulty
+tags: [Proof-of-Work, GHAST]
 ---
 
 GHAST (Greedy-Heaviest-Adaptive-SubTree)

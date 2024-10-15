@@ -3,7 +3,7 @@ sidebar_position: 3
 title: thirdweb
 description: Deploying contract using thirdweb
 displayed_sidebar: eSpaceSidebar
-tags:
+keywords: 
   - Conflux eSpace
   - thirdweb
   - Smart Contracts
@@ -28,6 +28,8 @@ tags:
   - Prebuilt Contracts
   - Contract Extensions
   - Royalties
+tags: [thirdwebm Tutorial]
+  
 ---
 
 ## Create Contract

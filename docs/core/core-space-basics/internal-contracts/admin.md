@@ -9,25 +9,7 @@ keywords:
   - smart contracts
   - debug tool
   - contract destruction
-tags:
-  - AdminControl
-  - Internal Contracts
-  - Core
-  - Contract Administration
-  - Debug Tool
-  - Smart Contracts
-  - Contract Destruction
-  - Admin Rights
-  - Contract Deployment
-  - Contract Lifecycle
-  - Sponsor Mechanism
-  - Contract Security
-  - Governance
-  - Contract Ownership
-  - Address Management
-  - Zero Address
-  - Contract Upgrades
-  - Development Mode
+tags: [Internal Contracts, AdminControl]
 displayed_sidebar: coreSidebar
 ---
 

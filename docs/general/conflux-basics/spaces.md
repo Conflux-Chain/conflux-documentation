@@ -2,8 +2,20 @@
 sidebar_position: 7
 title: Spaces
 displayed_sidebar: generalSidebar
+keywords: 
+- Conflux Network
+- Spaces
+- Core Space
+- eSpace
+- CIP-90
+- Hydra upgrade
+- Ethereum compatibility
+- virtual chain
+- transaction encoding
+- cross-space calls
+- CFX transfer
+tags: [Spaces]
 ---
-
 ## **Introduction to Spaces**
 
 In the Conflux v2.0 (Hydra) upgrade, a new feature called Spaces was introduced through **[CIP-90](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-90.md)**. Spaces is an abstract concept that is used to distinguish Conflux-format transactions from Ethereum-format transactions. Spaces is a way to virtually create a sub-chain of the original Conflux network, known as **`eSpace`**.

@@ -4,7 +4,7 @@ sidebar_position: 4
 title: Using ChainIDE for Smart Contract Development
 description: Deploy contracts on Core Space with ChainIDE
 displayed_sidebar: coreSidebar
-tags:
+keywords:
   - ChainIDE
   - Smart Contract Development
   - Web-based IDE
@@ -21,6 +21,8 @@ tags:
   - Remix
   - Development Environment
   - No-setup Development
+tags: [ChainIDE]
+
 ---
 
 [ChainIDE](https://chainide.com/) is a web-based IDE tailored for blockchain smart contract development. It offers a comprehensive solution for developing, testing, debugging, and deploying smart contracts. Comparable to Ethereum's Remix, ChainIDE is more versatile, supporting multiple blockchains including Conflux Core Space.

@@ -2,8 +2,19 @@
 sidebar_position: 9
 title: Smart Contracts
 displayed_sidebar: generalSidebar
+keywords: 
+- smart contracts
+- Conflux Network
+- Solidity
+- EVM
+- decentralized applications
+- dApps
+- NFTs
+- DeFi
+- ICOs
+- user accounts
+tags: [Smart Contracts]
 ---
-
 # Introduction to Smart Contracts
 
 ## What is a Smart Contract?

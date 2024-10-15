@@ -1,6 +1,8 @@
 ---
 displayed_sidebar: generalSidebar
 sidebar_position: 1
+keywords: [Uniswap V1, DeFi, decentralized trading protocol]
+tags: [Protocols]
 ---
 # Uniswap V1
 

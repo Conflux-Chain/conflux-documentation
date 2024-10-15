@@ -5,7 +5,6 @@ sidebar_position: 4
 keywords:
   - network endpoints
   - Conflux core space
-tags:
   - RPC Endpoints
   - Conflux Core Space
   - Mainnet
@@ -23,6 +22,7 @@ tags:
   - Blockchain Explorer
   - Web3 Development
   - JSON-RPC
+tags: [Network Endpoints]
 displayed_sidebar: coreSidebar
 ---
 

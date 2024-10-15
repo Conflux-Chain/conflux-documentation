@@ -2,8 +2,8 @@
 sidebar_position: 0
 title: Intro
 displayed_sidebar: coreSidebar
-tags:
-  - Core Space
+keywords:
+ - Core Space
   - Base32 Address
   - CFX
   - Gas
@@ -16,6 +16,8 @@ tags:
   - Fluent Wallet
   - Drip
   - GDrip
+tags: [Base32 Addresses, Addresses, Conflux Addresses, Accounts, Core Space]
+ 
 ---
 
 We will give you a quick introduction to Core Space. It is a smart contract platform kind of like Ethereum. If you are familiar with Ethereum, this guide will help you understand Core Space quickly.

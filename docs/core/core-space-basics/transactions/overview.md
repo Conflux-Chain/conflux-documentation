@@ -2,8 +2,6 @@
 sidebar_position: 0
 title: Overview
 keywords:
-  - transaction
-tags:
     - Transactions
     - Core Space
     - Transaction Fields
@@ -19,7 +17,9 @@ tags:
     - Pending Transactions
     - cfx_sendRawTransaction
     - Wallets
-    - SDKs
+    - SDKs 
+tags: [Transactions, Transaction Fields, Transaction Lifecycle]
+
 displayed_sidebar: coreSidebar
 ---
 

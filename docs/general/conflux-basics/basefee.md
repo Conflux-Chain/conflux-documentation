@@ -2,6 +2,22 @@
 sidebar_position: 11
 title: Base Fee
 displayed_sidebar: generalSidebar
+keywords: 
+- Conflux Network
+- base fee
+- gas price
+- transaction fees
+- EIP-1559
+- CIP-1559
+- CIP-137
+- blockchain congestion
+- fee burning
+- eSpace
+- Core Space
+- pivot block
+- non-pivot blocks
+- transaction execution
+tags: [Base Fee]
 ---
 
 In Conflux, the block data queried from the RPC includes a `baseFeePerGas` field, which indicates the network's congestion status and determines the minimum fee per gas required for a transaction. This mechanism, introduced in the [Conflux v2.4 hardfork](../hardforks/v2.4.md) as part of [CIP-1559](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-1559.md), is based on Ethereum's base fee model but adapted for Conflux's tree-graph block structure. Details of this adaptation are documented in [CIP-1559](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-1559.md) and [CIP-137](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-137.md).

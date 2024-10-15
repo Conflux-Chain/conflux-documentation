@@ -2,6 +2,8 @@
 sidebar_position: 2
 title: Staking Through a PoS Pool
 displayed_sidebar: generalSidebar
+keywords: [Conflux Network, PoS pools, staking, CFX token, node operation, Conflux PoS Validators, community-driven, Core Space, eSpace, PHX V2, Nucelon, PHX V1, ABC PoS Pool, hydrasf Pool, Lido-like pools, staking risks, rewards distribution]
+tags: [Staking]
 ---
 
 A PoS pool is a staking pool that allows users to stake their CFX and receive rewards without having to run a node. The pool operator runs the node and distributes the rewards to the users. 

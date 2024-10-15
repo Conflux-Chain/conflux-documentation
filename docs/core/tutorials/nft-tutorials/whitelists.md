@@ -1,7 +1,7 @@
 ---
 title: Merkle Tree Whitelist
 displayed_sidebar: coreSidebar
-tags:
+keywords:
   - NFT
   - Whitelist
   - Merkle Tree
@@ -20,6 +20,7 @@ tags:
   - js-conflux-sdk
   - Proof Generation
   - Whitelist Management
+tags: [NFT, Whitelist, Tutorial]
 ---
 
 # Merkle Tree NFT Whitelist on CoreSpace using Hardhat

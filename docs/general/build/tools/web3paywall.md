@@ -2,6 +2,19 @@
 sidebar_position: 2
 title: Web3 Paywall
 displayed_sidebar: generalSidebar
+keywords:
+  - Web3-Paywall
+  - Conflux-eSpace
+  - cryptocurrency-payments
+  - smart-contracts
+  - Metamask
+  - Fluent-Wallet
+  - CFX
+  - USDT
+  - Confura-RPC
+  - ConfluxScan-API
+tags: [Web3 Paywall]
+
 ---
 # Web3 Paywall
 

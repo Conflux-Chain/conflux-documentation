@@ -2,12 +2,9 @@
 sidebar_position: 3
 title: EVM Compatibility
 description: EVM Compatibility of Conflux eSpace
-keywords:
-  - EVM
-  - Compatibility
 displayed_sidebar: eSpaceSidebar
-tags:
-  - Conflux eSpace
+keywords:
+ - Conflux eSpace
   - EVM Compatibility
   - Transaction Types
   - EVM Opcodes
@@ -34,6 +31,8 @@ tags:
   - Storage Costs
   - CrossSpaceCall
   - Virtual Transactions
+tags: [eSpace]
+ 
 ---
 
 The eSpace implements an Ethereum Virtual Machine (EVM). Below are some differences between eSpace and Ethereum:
