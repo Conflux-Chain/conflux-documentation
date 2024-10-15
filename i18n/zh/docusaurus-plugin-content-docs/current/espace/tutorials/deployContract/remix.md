@@ -3,6 +3,29 @@ sidebar_position: 2
 title: Remix IDE
 description: 使用 Remix 部署 ERC-20 代币
 displayed_sidebar: eSpaceSidebar
+tags:
+  - Conflux eSpace
+  - Remix IDE
+  - 智能合约
+  - ERC-20 Token
+  - 部署
+  - 教程
+  - Solidity
+  - MetaMask
+  - Web3
+  - OpenZeppelin
+  - Token Transfer
+  - Ethereum Compatibility
+  - Injected Web3
+  - Gas Price
+  - Transaction Confirmation
+  - Contract Compilation
+  - Contract Interaction
+  - Token Balance
+  - 视频教程
+  - Cookbook
+  - EVM
+  - 区块链
 ---
 
 ## 简介

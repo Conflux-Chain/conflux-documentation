@@ -2,6 +2,25 @@
 sidebar_position: 2
 title: 账户
 displayed_sidebar: coreSidebar
+tags:
+  - 账户
+  - Core Space
+  - 账户地址
+  - 账户状态
+  - cfx_getAccount
+  - Basic State
+  - Storage State
+  - Code Information
+  - Staking Deposit List
+  - Staking Vote Lock List
+  - Nonce
+  - Balance
+  - CodeHash
+  - StakingBalance
+  - Admin
+  - SponsorInfo
+  - StorageCollateral
+  - AccumulatedInterestReturn
 ---
 
 :::note

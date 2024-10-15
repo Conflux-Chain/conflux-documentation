@@ -5,6 +5,49 @@ title: pos 命名空间
 description: The `pos` namespace includes RPCs related to PoS consensus.
 keywords:
   - pos-rpc
+  - proof-of-stake
+  - consensus
+  - committee
+  - epoch
+  - block
+  - 交易
+  - rewards
+  - voting power
+  - PoS chain
+  - finality
+  - pivot decision
+  - account status
+  - committee election
+tags:
+  - PoS 共识机制
+  - RPC
+  - API
+  - 共识
+  - 区块链
+  - Proof-of-Stake
+  - Committee
+  - 纪元（Epoch）
+  - Block
+  - 交易
+  - Rewards
+  - Voting-Power
+  - PoS-Chain
+  - Finality
+  - Pivot-Decision
+  - Account-Status
+  - Committee-Election
+  - Node-Status
+  - Block-Retrieval
+  - Transaction-Retrieval
+  - Reward-Distribution
+  - Staking
+  - Voting
+  - PoS-Address
+  - PoS-Transactions
+  - PoS-Blocks
+  - Consensus-Mechanism
+  - Chain-Finalization
+  - PoW-PoS-Interaction
 displayed_sidebar: coreSidebar
 ---
 

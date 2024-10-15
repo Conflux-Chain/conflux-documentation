@@ -3,6 +3,33 @@ sidebar_position: 1
 title: Hardhat 和 Foundry
 description: 使用 Hardhat 和 Foundry 部署智能合约
 displayed_sidebar: eSpaceSidebar
+tags:
+  - Conflux eSpace
+  - 智能合约
+  - 部署
+  - Hardhat
+  - Foundry
+  - 教程
+  - 测试网
+  - NodeJS
+  - Yarn
+  - Environment Variables
+  - Private Key
+  - 水龙头
+  - Test Tokens
+  - CLI
+  - RPC URL
+  - Unix Timestamp
+  - 故障排除
+  - 视频教程
+  - GitHub Repository
+  - Ethereum Compatibility
+  - JavaScript
+  - Solidity
+  - Rust
+  - Gas Fees
+  - Contract Compilation
+  - Testing
 ---
 
 import { DiscordLink } from "../../../templates/links.tsx"

@@ -3,6 +3,24 @@ sidebar_position: 3
 title: 开发者快速入门
 displayed_sidebar: coreSidebar
 description: 本教程将向您展示如何使用 js-conflux-sdk 发送交易。
+tags:
+  - js-conflux-sdk
+  - Core Space
+  - 交易
+  - JavaScript
+  - SDK
+  - 快速入门
+  - Conflux 地址
+  - Account Balance
+  - Private Key
+  - RPC 端点
+  - CFX
+  - Drip
+  - Transaction Sending
+  - Error Handling
+  - 测试网
+  - 水龙头
+  - ConfluxScan
 ---
 
 为了在 Conflux Core Space 上发送交易，您需要使用其特有的 SDK。 本教程将向您展示如何使用 js-conflux-sdk 发送交易。

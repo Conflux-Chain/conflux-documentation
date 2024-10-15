@@ -2,6 +2,17 @@
 sidebar_position: 3
 title: Staking
 displayed_sidebar: coreSidebar
+tags:
+  - Staking
+  - 内置合约
+  - Storage Occupation
+  - Voting Power
+  - Deposit
+  - Withdraw
+  - Vote Lock
+  - CFX
+  - Governance
+  - Stakingbalance
 ---
 
 ## 概览

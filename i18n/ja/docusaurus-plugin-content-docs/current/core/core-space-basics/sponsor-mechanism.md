@@ -2,6 +2,22 @@
 sidebar_position: 5
 title: Sponsorship Mechanism
 displayed_sidebar: coreSidebar
+tags:
+  - Sponsorship Mechanism
+  - Smart Contracts
+  - Gas Fees
+  - Storage Collateral
+  - SponsorWhitelistControl
+  - Sponsor Balance
+  - Whitelist
+  - Gas Sponsorship
+  - Storage Sponsorship
+  - Transaction Fees
+  - User Adoption
+  - Contract Deployment
+  - Sponsor Replacement
+  - Storage Points
+  - CIP-107
 ---
 
 Conflux Core Space implements a sponsorship mechanism to subsidize the usage of smart contracts. Thus, a new account with zero balance is able to call smart contracts as long as the execution is sponsored (usually by the operator of Dapps). This mechanism is designed to reduce the barrier of entry for new users.

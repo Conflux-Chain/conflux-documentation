@@ -3,6 +3,22 @@ title: 接下来是？
 sidebar: 3
 description: 熟悉 Fluent 钱包之后的下一步。
 displayed_sidebar: coreSidebar
+tags:
+  - 起步
+  - Conflux生态系统
+  - Core Space
+  - Governance
+  - Community Participation
+  - Node Operation
+  - 挖矿
+  - Staking
+  - Development
+  - 智能合约
+  - DApps
+  - SDKs
+  - 开发工具
+  - Documentation
+  - Learning Resources
 ---
 
 import { DiscordLink } from "../../templates/links.tsx"

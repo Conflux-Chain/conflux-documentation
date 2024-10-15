@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2
+sidebar_position: 10
 title: Contract Verification
 description: How to verify your smart contracts on ConfluxScan
 displayed_sidebar: eSpaceSidebar

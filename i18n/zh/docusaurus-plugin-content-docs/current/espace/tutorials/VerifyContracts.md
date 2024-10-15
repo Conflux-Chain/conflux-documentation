@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2
+sidebar_position: 10
 title: 合约验证
 description: 如何在 ConfluxScan 上验证您的智能合约
 displayed_sidebar: eSpaceSidebar

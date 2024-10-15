@@ -1,6 +1,6 @@
 {
-    "label": "How to use Oracle",
-    "position": 1,
+    "label": "Oracles",
+    "position": 4,
     "link": {
       "type": "generated-index",
       "description": "Tutorial on how to use Oracle on Conflux eSpace"
