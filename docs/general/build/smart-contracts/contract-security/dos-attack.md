@@ -1,6 +1,6 @@
 ---
 displayed_sidebar: generalSidebar
-tags: 
+keywords: 
   - smart-contracts
   - security
   - vulnerabilities
@@ -12,6 +12,7 @@ tags:
   - fallback-function
   - prevention
   - gameoffunds
+tags: [Denial of Service, Security, Smart Contracts]
 ---
 
 # Denial of Service Attacks

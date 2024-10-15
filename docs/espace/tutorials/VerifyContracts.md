@@ -3,7 +3,7 @@ sidebar_position: 10
 title: Contract Verification
 description: How to verify your smart contracts on ConfluxScan
 displayed_sidebar: eSpaceSidebar
-tags:
+keywords:
   - Conflux eSpace
   - Contract Verification
   - Developer Tools
@@ -14,6 +14,8 @@ tags:
   - Web UI
   - API Integration
   - Blockchain Development
+tags: [Tutorial, Contract Verification]
+
 ---
 
 After deploying your smart contracts, it's important to verify your code on a block explorer. This can be done in an automated way using your developer tooling or the Web UI.

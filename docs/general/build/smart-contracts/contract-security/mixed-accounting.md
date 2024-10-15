@@ -1,7 +1,7 @@
 ---
 title: Balance Accounting
 displayed_sidebar: generalSidebar
-tags: 
+keywords:
   - smart-contracts
   - security
   - balance-accounting
@@ -12,6 +12,8 @@ tags:
   - solidity
   - prevention
   - introspection
+tags: [Balance Accounting, Security, Smart Contracts]
+
 ---
 
 Smart contracts often maintain state variables that track balances. However, direct transfers not mediated by contract functions (like direct Ether sends to a contract address or `transfer` calls for ERC20 tokens that bypass the contract's logic) can create discrepancies between the actual balance held by the contract and the balance recorded in the contract’s internal state variables.

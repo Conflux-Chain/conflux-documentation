@@ -6,17 +6,6 @@ keywords:
   - MetaMask
   - EVMSpace
 displayed_sidebar: eSpaceSidebar
-tags:
-  - eSpace
-  - Conflux
-  - MetaMask
-  - wallet setup
-  - EVM
-  - CFX
-  - RPC
-  - blockchain
-  - testnet
-  - mainnet
 ---
 
 import UserGuide from '../templates/UserGuide.md';

@@ -10,15 +10,7 @@ keywords:
   - Create traces
   - CreateResult
   - InternalTransferAction
-tags:
-  - transaction-traces
-  - debugging
-  - smart-contracts
-  - call-traces
-  - create-traces
-  - internal-transfers
-  - node-development
-  - blockchain-operations
+tags: [Transaction Traces]
 ---
 # Introduction to Transaction Traces
 

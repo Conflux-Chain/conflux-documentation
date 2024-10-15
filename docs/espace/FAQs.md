@@ -6,9 +6,6 @@ displayed_sidebar: eSpaceSidebar
 keywords:
   - Conflux eSpace
   - FAQs
-tags:
-  - Conflux eSpace
-  - FAQs
   - Node Operation
   - Development Tools
   - Cross-Space Bridge
@@ -17,6 +14,8 @@ tags:
   - Blockchain Basics
   - Smart Contracts
   - DApp Development
+tags: [Node Operation]
+
 ---
 
 ## How to run eSpace node?

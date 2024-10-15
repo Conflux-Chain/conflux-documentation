@@ -5,11 +5,6 @@ description: Learn how to leverage Cookbook for smart contracts development.
 keywords:
   - Cookbook
   - Smart Contracts
-  - Library
-displayed_sidebar: eSpaceSidebar
-tags:
-  - Cookbook
-  - Smart Contracts
   - Solidity
   - EVM
   - Developer Tools
@@ -19,6 +14,9 @@ tags:
   - Conflux eSpace
   - Blockchain Development
   - Tutorial
+displayed_sidebar: eSpaceSidebar
+tags: [Tutorial, Cookbook, Contract Development]
+
 ---
 
 [**Cookbook**](https://www.cookbook.dev/) is an essential resource for developers working with Solidity on EVM-compatible blockchains. This guide offers an overview of what Cookbook is, who it's for, and how it can facilitate the development of smart contracts.

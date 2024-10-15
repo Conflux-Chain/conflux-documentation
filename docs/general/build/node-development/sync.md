@@ -9,15 +9,7 @@ keywords:
   - validity checks
   - garbage collection
   - peer-to-peer
-tags:
-  - block-synchronization
-  - synchronization-graph
-  - validity-checks
-  - garbage-collection
-  - node-development
-  - peer-to-peer
-  - blockchain-architecture
-  - consensus-mechanism
+tags: [Synchronization]
 ---
 # Block Synchronization Process
 

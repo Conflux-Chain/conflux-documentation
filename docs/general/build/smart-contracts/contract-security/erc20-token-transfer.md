@@ -1,6 +1,6 @@
 ---
 displayed_sidebar: generalSidebar
-tags: 
+keywords: 
   - smart-contracts
   - erc20
   - token-transfer
@@ -11,6 +11,7 @@ tags:
   - solady
   - openzeppelin
   - safe-transfer-libraries
+tags: [ERC20 Transfer, Security, Smart Contracts]
 ---
 
 # ERC20 Transfer Issues

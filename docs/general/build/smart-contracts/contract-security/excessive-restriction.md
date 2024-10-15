@@ -1,6 +1,6 @@
 ---
 displayed_sidebar: generalSidebar
-tags: 
+keywords:
   - smart-contracts
   - security
   - excessive-restrictions
@@ -11,6 +11,8 @@ tags:
   - audits
   - escape-hatches
   - flexible-control
+tags: [Excessive Restrictions, Security, Smart Contracts]
+
 ---
 
 # Excessive Function Restrictions

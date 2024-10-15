@@ -25,17 +25,7 @@ keywords:
   - Public RPC service
   - Enterprise solutions
 displayed_sidebar: eSpaceSidebar
-tags:
-  - Conflux eSpace
-  - RPC Endpoints
-  - Confura
-  - Mainnet
-  - Testnet
-  - API
-  - Web3 Infrastructure
-  - Blockchain Development
-  - Rate Limits
-  - Network Configuration
+tags: [Network Endpoints]
 ---
 
 :::tip

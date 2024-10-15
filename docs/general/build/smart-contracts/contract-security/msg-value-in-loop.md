@@ -1,7 +1,7 @@
 ---
 title: msg.value in Loops
 displayed_sidebar: generalSidebar
-tags: 
+keywords:
   - smart-contracts
   - security
   - solidity
@@ -12,6 +12,8 @@ tags:
   - best-practices
   - pull-payments
   - accumulator-pattern
+tags: [Msg.value in Loops, Security, Smart Contracts]
+
 ---
 
 When developing smart contracts, security is one of the most critical considerations. This tutorial will delve into a common but dangerous pattern: using `msg.value` within loops. We'll explain why this is dangerous and provide some best practices to avoid related vulnerabilities.

@@ -11,15 +11,7 @@ keywords:
   - decentralized storage
   - content pinning
   - metadata
-tags:
-  - pinata
-  - ipfs
-  - nft-storage
-  - file-upload
-  - decentralized-storage
-  - content-pinning
-  - metadata-management
-  - web3-media
+tags: [IPFS, NFT, Pinata]
 displayed_sidebar: generalSidebar
 ---
 

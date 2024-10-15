@@ -1,9 +1,9 @@
 ---
 title: Bad Randomness
 displayed_sidebar: generalSidebar
-tags: 
-- smart contracts
-- security
+keywords:
+  - smart contracts
+  - security
   - vulnerabilities
   - randomness
   - nft
@@ -14,6 +14,7 @@ tags:
   - blockhash
   - keccak256
   - chainlink-vrf
+tags: [Bad Randomness, Security, Smart Contracts]
 ---
 
 # Bad Randomness

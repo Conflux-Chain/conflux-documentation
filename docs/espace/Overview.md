@@ -32,17 +32,6 @@ keywords:
   - Blockchain Explorer
   - Faucet
   - Node Operation
-tags:
-  - Conflux eSpace
-  - EVM Compatibility
-  - Blockchain Development
-  - Smart Contracts
-  - dApps
-  - Web3
-  - Cross-Space
-  - Developer Resources
-  - User Guides
-  - Technical Documentation
 ---
 
 Conflux eSpace is a fully **EVM-compatible** space(chain) of Conflux with much lower gas fee and higher TPS than Ethereum, it is independent from [Core](../core/Overview.md) space.

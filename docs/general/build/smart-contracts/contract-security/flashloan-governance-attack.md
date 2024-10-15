@@ -1,7 +1,7 @@
 ---
 title: Flashloan Governance Attacks
 displayed_sidebar: generalSidebar
-tags: 
+keywords:
   - smart-contracts
   - security
   - flashloans
@@ -12,6 +12,8 @@ tags:
   - makerdao
   - solidity
   - prevention-strategies
+tags: [Flashloan, Governance Attacks, Security, Smart Contracts]
+
 ---
 
 # Flashloan Governance Attacks

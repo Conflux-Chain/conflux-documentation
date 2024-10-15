@@ -12,15 +12,7 @@ keywords:
   - paper backup
   - security audit
   - social engineering
-tags:
-  - wallet-security
-  - backup-strategies
-  - mnemonic-phrases
-  - cold-storage
-  - hardware-wallets
-  - encryption
-  - security-audit
-  - phishing-prevention
+tags: [Wallet]
 ---
 # Security Advice for Wallet Backup
 

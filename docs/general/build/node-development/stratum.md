@@ -9,15 +9,7 @@ keywords:
   - proof-of-work
   - RPC interface
   - blockchain mining
-tags:
-  - stratum-protocol
-  - solo-mining
-  - conflux-rust
-  - mining-protocol
-  - proof-of-work
-  - rpc-interface
-  - node-development
-  - blockchain-mining
+tags: [Stratum Protocol]
 ---
 # Stratum Protocol in Conflux-Rust
 

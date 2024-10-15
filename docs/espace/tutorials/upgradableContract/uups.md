@@ -1,12 +1,14 @@
 ---
 displayed_sidebar: eSpaceSidebar
-tags:
+keywords:
   - tutorial
   - smart contracts
   - upgradeable contracts
   - UUPS
   - Hardhat
   - eSpace
+tags: [Tutorial, Upgradeable Contracts]
+
 ---
 
 # Deploying Upgradeable Contracts using UUPS with Hardhat

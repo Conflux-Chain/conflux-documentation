@@ -10,15 +10,7 @@ keywords:
   - pivot chain
   - timer chain
   - adaptive weight
-tags:
-  - consensus-layer
-  - ghast-algorithm
-  - treegraph
-  - pivot-chain
-  - timer-chain
-  - adaptive-weight
-  - node-development
-  - blockchain-architecture
+tags: [Consensus Layer]
 ---
 # The Conflux Consensus Layer Design and Implementation
 

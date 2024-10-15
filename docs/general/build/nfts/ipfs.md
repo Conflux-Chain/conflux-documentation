@@ -10,14 +10,7 @@ keywords:
   - content addressing
   - distributed file system
   - blockchain
-tags:
-  - ipfs
-  - nft-storage
-  - decentralized-storage
-  - content-addressing
-  - distributed-file-system
-  - blockchain-storage
-  - pinata
+tags: [IPFS, NFT]
 displayed_sidebar: generalSidebar
 ---
 

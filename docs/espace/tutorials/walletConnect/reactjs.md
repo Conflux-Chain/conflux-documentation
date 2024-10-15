@@ -6,18 +6,16 @@ keywords:
   - WalletConnect
   - Web3Modal
   - Dapp
-displayed_sidebar: eSpaceSidebar
-tags:
-  - WalletConnect
-  - Web3Modal
   - React
   - JavaScript
   - TypeScript
   - Wagmi
   - Viem
-  - Dapp
   - Tutorial
   - eSpace
+displayed_sidebar: eSpaceSidebar
+tags: [Tutorial, WalletConnect]
+
 ---
 
 # Integrating WalletConnect with Your React App on Conflux Chain

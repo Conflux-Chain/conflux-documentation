@@ -1,7 +1,7 @@
 ---
 title: Improper Input Validation
 displayed_sidebar: generalSidebar
-tags: 
+keywords:
   - smart-contracts
   - security
   - input-validation
@@ -12,6 +12,8 @@ tags:
   - access-control
   - require-statements
   - prevention
+tags: [Input Validation, Security, Smart Contracts]
+
 ---
 
 # Improper Input Validation

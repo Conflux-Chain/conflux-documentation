@@ -9,15 +9,7 @@ keywords:
   - blockchain testing
   - RPC testing
   - network simulation
-tags:
-  - test-framework
-  - node-testing
-  - python-tests
-  - p2p-messaging
-  - rpc-testing
-  - network-simulation
-  - blockchain-development
-  - quality-assurance
+tags:[Testing]
 ---
 # Test Framework
 

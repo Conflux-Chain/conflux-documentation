@@ -12,16 +12,7 @@ keywords:
   - multi-wallet strategy
   - keyless wallet
   - cold storage
-tags:
-  - wallet-creation
-  - security-measures
-  - mnemonic-phrases
-  - private-keys
-  - hardware-wallets
-  - software-wallets
-  - multi-wallet-strategy
-  - cold-storage
-  - risk-mitigation
+tags: [Wallet]
 ---
 # Security Advice for Creating a Wallet
 
