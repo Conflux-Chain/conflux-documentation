@@ -2,9 +2,6 @@
 sidebar_position: 3
 title: EVM Compatibility
 description: EVM Compatibility of Conflux eSpace
-keywords:
-  - EVM
-  - Compatibility
 displayed_sidebar: eSpaceSidebar
 keywords:
  - Conflux eSpace
