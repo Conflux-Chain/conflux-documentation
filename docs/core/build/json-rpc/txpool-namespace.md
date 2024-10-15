@@ -13,28 +13,7 @@ keywords:
   - transaction queue
   - unconfirmed transactions
   - transaction management
-tags:
-  - RPC
-  - txpool
-  - Transactions
-  - API
-  - Blockchain
-  - Transaction-Pool
-  - Pending-Transactions
-  - Next-Nonce
-  - Mempool
-  - Transaction-Queue
-  - Unconfirmed-Transactions
-  - Transaction-Management
-  - Node-Configuration
-  - Gas-Price
-  - Transaction-Prioritization
-  - Network-Congestion
-  - Transaction-Replacement
-  - Transaction-Monitoring
-  - Block-Production
-  - Transaction-Validation
-  - Transaction-Propagation
+tags: [transaction pool, mempool]
 displayed_sidebar: coreSidebar
 ---
 

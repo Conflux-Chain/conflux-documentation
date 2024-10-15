@@ -11,32 +11,7 @@ keywords:
   - trace filter
   - debug
   - conflux
-tags:
-  - RPC
-  - Trace
-  - Debugging
-  - Transactions
-  - Blockchain
-  - Transaction-Tracing
-  - Execution-Details
-  - Block-Traces
-  - Epoch-Traces
-  - Trace-Filter
-  - Debug-Tools
-  - Smart-Contract-Interaction
-  - Gas-Usage-Analysis
-  - State-Changes
-  - Internal-Transactions
-  - Call-Stack
-  - EVM-Execution
-  - Transaction-Replay
-  - Error-Diagnosis
-  - Performance-Optimization
-  - Forensic-Analysis
-  - Contract-Deployment
-  - Contract-Execution
-  - Storage-Changes
-  - Event-Logs
+tags: [transaction tracing, debugging]
 displayed_sidebar: coreSidebar
 ---
 

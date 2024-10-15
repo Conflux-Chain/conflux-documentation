@@ -6,10 +6,6 @@ displayed_sidebar: coreSidebar
 keywords:
     - cfx_estimateGasAndCollateral
     - errors
-toc_max_heading_level: 4
-tags:
-    - cfx_estimateGasAndCollateral
-    - errors
     - json-rpc
     - gas-estimation
     - transaction-execution
@@ -22,6 +18,8 @@ tags:
     - nonce-handling
     - contract-deployment
     - error-handling
+toc_max_heading_level: 4
+tags: [gas estimation, transaction execution]
 ---
 
 
