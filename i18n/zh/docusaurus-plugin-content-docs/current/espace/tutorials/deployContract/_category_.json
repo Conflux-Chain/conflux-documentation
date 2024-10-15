@@ -1,8 +1,8 @@
 {
-  "label": "如何部署合约",
-  "position": 1,
+  "label": "部署",
+  "position": 2,
   "link": {
     "type": "generated-index",
-    "description": "使用常见工具在 eSpace 上部署合约的教程。"
+    "description": "Tutorials for deploying smart contracts on eSpace with common tools."
   }
 }
