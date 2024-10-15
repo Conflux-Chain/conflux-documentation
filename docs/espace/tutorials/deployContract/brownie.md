@@ -25,7 +25,7 @@ keywords:
   - Front-End Development
   - Scripting
 displayed_sidebar: eSpaceSidebar
-tags: [Brownie]
+tags: [Brownie, Tutorial]
  
 ---
 

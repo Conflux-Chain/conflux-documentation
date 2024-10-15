@@ -1,6 +1,6 @@
 ---
 displayed_sidebar: eSpaceSidebar
-tags:
+keywords:
   - Conflux eSpace
   - ECDSA
   - Digital Signatures
@@ -25,6 +25,8 @@ tags:
   - Contract Efficiency
   - Decentralized Identity
   - Multi-sig Wallets
+tags: [ECDSA, Tutorial]
+
 ---
 # How to use ECDSA Signature
 
