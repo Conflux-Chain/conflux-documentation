@@ -12,15 +12,6 @@ keywords:
   - Fluent
   - MetaMask
   - Cryptocurrency exchange
-tags:
-  - okx
-  - fund-transfer
-  - conflux-network
-  - core-space
-  - espace
-  - fluent-wallet
-  - metamask
-  - exchange-withdrawal
 ---
 
 :::note Note to Binance users and bCFX holders: Conflux on Binance is listed as wrapped ERC-20 token (bCFX), it is not native CFX. Conflux eSpace and BNB Chain use EVM-compatible addresses, but those addresses live in different chains.

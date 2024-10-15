@@ -12,16 +12,6 @@ keywords:
   - USDT
   - BNB Chain
   - MetaMask
-tags:
-  - meson-protocol
-  - stablecoin-transfer
-  - cross-chain
-  - espace
-  - usdc
-  - usdt
-  - bnb-chain
-  - metamask
-  - bridging
 ---
 
 # Transfer Stablecoins Across Chains Using Meson

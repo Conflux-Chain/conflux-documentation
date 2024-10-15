@@ -4,7 +4,8 @@ title: Running a Node
 description: Quick guide for running a Conflux node.
 toc_max_heading_level: 4
 displayed_sidebar: generalSidebar
-tags: [Conflux Network, node setup, full node, hardware requirements, Conflux client, compilation, snapshot tool, node configuration, hydra.toml, RPC interaction, node update, troubleshooting, Linux, macOS, Windows, Docker]
+keywords: [Conflux Network, node setup, full node, hardware requirements, Conflux client, compilation, snapshot tool, node configuration, hydra.toml, RPC interaction, node update, troubleshooting, Linux, macOS, Windows, Docker]
+tags: [node]
 ---
 
 Conflux Network is a scalable blockchain platform that aims to achieve high throughput and security. Running a Conflux node allows you to participate in the network, validate transactions, and interact with the Conflux blockchain.  

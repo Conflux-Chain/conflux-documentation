@@ -11,15 +11,6 @@ keywords:
   - CFX
   - Fluent Wallet
   - MetaMask
-tags:
-  - zero-gravity
-  - cross-chain-transfer
-  - core-space
-  - bnb-smart-chain
-  - cfx
-  - fluent-wallet
-  - metamask
-  - bridging
 ---
 
 # Transfer Assets Across Chains Using Zero Gravity

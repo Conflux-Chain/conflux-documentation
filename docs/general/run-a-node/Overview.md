@@ -2,7 +2,8 @@
 title: Overview
 sidebar_position: 0
 displayed_sidebar: generalSidebar
-tags: [Conflux Network, node operation, decentralization, PoW mining, PoS staking, RPC node, Conflux-rust, client software, network security, transaction validation, block verification, node types, node setup, node configuration, snapshot tool, troubleshooting]
+keywords: [Conflux Network, node operation, decentralization, PoW mining, PoS staking, RPC node, Conflux-rust, client software, network security, transaction validation, block verification, node types, node setup, node configuration, snapshot tool, troubleshooting]
+tags: [node]
 ---
 
 Conflux is a distributed network of computers (known as nodes) running software that can verify blocks and transaction data. The software must be run on your computer or server to turn it into an Conflux node.

@@ -14,13 +14,6 @@ keywords:
   - Cryptocurrency exchange
 tags:
   - binance
-  - fund-transfer
-  - conflux-network
-  - core-space
-  - espace
-  - fluent-wallet
-  - metamask
-  - exchange-withdrawal
 ---
 
 

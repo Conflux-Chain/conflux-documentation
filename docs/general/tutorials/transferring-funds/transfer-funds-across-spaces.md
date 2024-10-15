@@ -12,14 +12,7 @@ keywords:
   - MetaMask
   - ERC20 tokens
 tags:
-  - cross-space-transfer
-  - confluxhub
-  - core-space
-  - espace
-  - fluent-wallet
-  - metamask
-  - token-transfer
-  - bridge
+  - CrossSpaceCall
 ---
 
 # Transferring Funds Across Spaces
