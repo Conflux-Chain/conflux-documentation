@@ -2,7 +2,7 @@
 sidebar_position: 1
 title: Base32 Addresses
 displayed_sidebar: coreSidebar
-tags:
+keywords:  
   - Base32 Address
   - Hex Address
   - Address Conversion
@@ -17,6 +17,8 @@ tags:
   - Create2
   - Address Converter
   - BIP-44
+tags: [Base32 Addresses, Addresses]
+
 ---
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";

@@ -2,7 +2,7 @@
 sidebar_position: 1
 title: Transaction Fields
 displayed_sidebar: coreSidebar
-tags:
+keywords:
     - Transaction Fields
     - from
     - to
@@ -23,6 +23,7 @@ tags:
     - Replay Protection
     - Transaction Expiration
     - RLP Encoding
+tags: [Transaction Fields, Transactions]
 ---
 
 In order to encode a Core Space transaction, the following fields are required:

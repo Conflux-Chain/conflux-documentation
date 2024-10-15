@@ -2,7 +2,7 @@
 sidebar_position: 6
 title: VM Differences
 displayed_sidebar: coreSidebar
-tags:
+keywords:
   - VM Differences
   - EVM Compatibility
   - Address Calculation
@@ -17,6 +17,8 @@ tags:
   - Ethereum
   - Smart Contracts
   - Solidity
+tags: [VM Differences]
+
 ---
 
 The Core Space VM is compatible with the EVM in most cases, but there are some differences. This page lists the differences between the two.

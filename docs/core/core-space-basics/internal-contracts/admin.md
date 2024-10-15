@@ -9,7 +9,7 @@ keywords:
   - smart contracts
   - debug tool
   - contract destruction
-tags: [contract administration, internal contracts]
+tags: [Internal Contracts, AdminControl]
 displayed_sidebar: coreSidebar
 ---
 

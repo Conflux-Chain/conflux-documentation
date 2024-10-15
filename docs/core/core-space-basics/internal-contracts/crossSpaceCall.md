@@ -9,7 +9,7 @@ keywords:
   - espace
   - cross-space transfer
   - CFX transfer
-tags: [cross-space communication, internal contracts]
+tags: [CrossSpaceCall, Internal Contracts]
 displayed_sidebar: coreSidebar
 ---
 

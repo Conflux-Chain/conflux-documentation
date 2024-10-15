@@ -2,7 +2,7 @@
 sidebar_position: 1
 title: Overview
 displayed_sidebar: coreSidebar
-tags:
+keywords:
   - Core Space
   - Tree-Graph
   - Smart Contracts
@@ -21,7 +21,7 @@ tags:
   - Testnet
   - Node Operation
   - SDKs
-  - FAQs
+  - FAQs 
 ---
 
 Conflux Core Space is the native space of the Conflux network. Thanks to Conflux's innovative Tree-Graph ledger structure and consensus algorithm, Core Space achieves performance far surpassing that of Bitcoin and Ethereum without sacrificing decentralization. This provides strong support for the development of the Conflux ecosystem.

@@ -2,7 +2,7 @@
 sidebar_position: 3
 title: Staking
 displayed_sidebar: coreSidebar
-tags:
+keyword:
     - Staking
     - Internal Contracts
     - Storage Occupation
@@ -13,6 +13,8 @@ tags:
     - CFX
     - Governance
     - Stakingbalance
+tags: [Internal Contracts, Staking]
+
 ---
 
 ## Overview

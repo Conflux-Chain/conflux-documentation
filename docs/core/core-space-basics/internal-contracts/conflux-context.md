@@ -9,7 +9,7 @@ eywords:
   - pos height
   - finalized epoch
   - network info
-tags: [network state, core space, query internal state]
+tags: [Internal Contracts, ConfluxContext]
 displayed_sidebar: coreSidebar
 ---
 

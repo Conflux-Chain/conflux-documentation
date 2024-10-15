@@ -3,8 +3,6 @@ sidebar_position: 6
 title: Transaction Receipt
 displayed_sidebar: coreSidebar
 keywords:
-    - transaction
-tags:
     - Transaction Receipt
     - cfx_getTransactionReceipt
     - Execution Result
@@ -20,6 +18,8 @@ tags:
     - Transaction Confirmation
     - Event Logs
     - Transaction Status
+tags: [Transaction Receipt, Transactions, Execution Failure Error Messages]
+
 ---
 
 Transaction receipt is the data structure that contains information about the transaction execution result.
