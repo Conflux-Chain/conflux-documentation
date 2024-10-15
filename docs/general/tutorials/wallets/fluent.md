@@ -6,14 +6,7 @@ keywords:
   - Wallet
 tags:
   - wallet
-  - fluent
-  - conflux-network
-  - web3
-  - dapp-integration
-  - core-space
-  - espace
-  - priority-connection
-  - testnet
+  - fluent wallet
 displayed_sidebar: generalSidebar
 ---
 

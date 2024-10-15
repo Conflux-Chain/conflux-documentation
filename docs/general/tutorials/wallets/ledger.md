@@ -15,15 +15,8 @@ keywords:
   - CFX
   - ERC-20
 tags:
-  - ledger
-  - hardware-wallet
-  - conflux-network
-  - core-space
-  - espace
-  - wallet-integration
-  - security
-  - fluent-wallet
-  - metamask
+  - wallet
+  - hardware wallet
 ---
 
 import { DiscordLink } from "../../../templates/links.tsx"
