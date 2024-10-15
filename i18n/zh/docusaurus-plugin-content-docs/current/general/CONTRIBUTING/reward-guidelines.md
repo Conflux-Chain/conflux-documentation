@@ -84,11 +84,11 @@ Creating issues is an excellent way for us to understand the needs of the commun
 
 | 拉取请求                                                                       | 基础奖励 | 预期奖励      | 贡献内容                                  | 评判标准                                                                         |
 | -------------------------------------------------------------------------- | ---- | --------- | ------------------------------------- | ---------------------------------------------------------------------------- |
-| [PR#494](https://github.com/Conflux-Chain/conflux-documentation/pull/494)  | 128  | 320\*125% | 关于重入攻击的新文章                            | - 内容重要（常见的安全问题） <br/> + 包含代码示例 <br/> + 解决了创建者提出的问题 <br/> + 对主题提供了清晰的解释       |
-| [PR#493](https://github.com/Conflux-Chain/conflux-documentation/pull/493)  | 128  | 196\*125% | New article on circuit logic gas cost | * 包含代码 <br/> + 解决了创建者提出的问题 <br/> + 对主题提供了清晰的解释 <br/> - 内容较为次要                |
-| [PR#473](https://github.com/Conflux-Chain/conflux-documentation/pull/485)  | 32   | 80        | 建议使用 Confura API 密钥                   | - 为经常使用的内容增加了清晰度 <br/> + 增加了经常使用的内容                                          |
-| [PR #467](https://github.com/Conflux-Chain/conflux-documentation/pull/467) | 96   | 150\*125% | 改进了网页在移动设备上的显示                        | * 需要前端技术 <br/> + 解决了创建者提出的问题                                                 |
-| [PR #425](https://github.com/Conflux-Chain/conflux-documentation/pull/425) | 320  | 640       | 提供了一个即插即用的 eSpace 开发示例项目              | - 是特定于 Conflux 的内容 <br/> + 包含代码演示 <br/> + 提供了详细的解释和视频教程 <br/> + 提供了一个开箱即用的项目 |
+| [PR#494](https://github.com/Conflux-Chain/conflux-documentation/pull/494)  | 128  | 320\*125% | 关于重入攻击的新文章                            | + 内容重要（常见的安全问题） <br/> + 包含代码示例 <br/> + 解决了创建者提出的问题 <br/> + 对主题提供了清晰的解释       |
+| [PR#493](https://github.com/Conflux-Chain/conflux-documentation/pull/493)  | 128  | 196\*125% | New article on circuit logic gas cost | + 包含代码 <br/> + 解决了创建者提出的问题 <br/> + 对主题提供了清晰的解释 <br/> - 内容较为次要                |
+| [PR#473](https://github.com/Conflux-Chain/conflux-documentation/pull/485)  | 32   | 80        | 建议使用 Confura API 密钥                   | + 为经常使用的内容增加了清晰度 <br/> + 增加了经常使用的内容                                          |
+| [PR #467](https://github.com/Conflux-Chain/conflux-documentation/pull/467) | 96   | 150\*125% | 改进了网页在移动设备上的显示                        | + 需要前端技术 <br/> + 解决了创建者提出的问题                                                 |
+| [PR #425](https://github.com/Conflux-Chain/conflux-documentation/pull/425) | 320  | 640       | 提供了一个即插即用的 eSpace 开发示例项目              | + 是特定于 Conflux 的内容 <br/> + 包含代码演示 <br/> + 提供了详细的解释和视频教程 <br/> + 提供了一个开箱即用的项目 |
 
 :::note
 
