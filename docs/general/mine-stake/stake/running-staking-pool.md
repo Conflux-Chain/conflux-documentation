@@ -2,9 +2,9 @@
 sidebar_position: 4
 title: Running a PoS Staking Pool
 displayed_sidebar: generalSidebar
-tags: [Conflux Network, PoS, staking pool, node setup, full node, archive node, conflux-fans/pos-pool, PoS Pool contract, PoS Pool interface, web server, infrastructure, dApp, community-driven, open source, CFX holders, technical configuration]
+keywords: [Conflux Network, PoS, staking pool, node setup, full node, archive node, conflux-fans/pos-pool, PoS Pool contract, PoS Pool interface, web server, infrastructure, dApp, community-driven, open source, CFX holders, technical configuration]
+tags: [Staking]
 ---
-
 
 In this section we present a guide for how to deploy, configure and manage a **POS Pool** that will allow CFX holders to join to the PoS protocol just interacting with the front-end application of the PoS Pool and without dealing with the technical complexities. 
 

@@ -1,6 +1,6 @@
 ---
 displayed_sidebar: generalSidebar
-tags:
+keywords:
   - smart-contracts
   - gas-optimization
   - Solidity
@@ -12,6 +12,7 @@ tags:
   - uint256
   - address
   - gas-efficiency
+tags: [Packing, Gas Optimization, Smart Contracts]
 ---
 
 # Packing

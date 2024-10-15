@@ -1,6 +1,6 @@
 ---
 displayed_sidebar: generalSidebar
-tags:
+keywords:
   - smart-contracts
   - Solidity
   - gas-optimization
@@ -11,6 +11,7 @@ tags:
   - ContractA
   - ContractB
   - MonolithicContract
+tags: [Monolithic Architecture, Gas Optimization, Smart Contracts]
 ---
 
 

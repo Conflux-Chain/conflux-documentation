@@ -1,7 +1,7 @@
 ---
 title: Signature Replay Attacks
 displayed_sidebar: generalSidebar
-tags: 
+keywords: 
   - smart-contracts
   - security
   - vulnerabilities
@@ -15,6 +15,7 @@ tags:
   - prevention
   - nonce
   - chainid
+tags: [Signature Replay, Security, Smart Contracts]
 ---
 
 ## Signature Replay Attacks

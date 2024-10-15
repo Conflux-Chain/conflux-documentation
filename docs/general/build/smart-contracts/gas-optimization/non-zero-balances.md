@@ -1,6 +1,7 @@
 ---
 displayed_sidebar: generalSidebar
-tags: [smart contracts, gas optimization, Solidity, ERC20, non-zero balances, storage variables, Conflux, Core Space, eSpace, SSTORE, OpenZeppelin, reentrancy guard]
+keywords: [smart contracts, gas optimization, Solidity, ERC20, non-zero balances, storage variables, Conflux, Core Space, eSpace, SSTORE, OpenZeppelin, reentrancy guard]
+tags: [Non-Zero Balances, Gas Optimization, Smart Contracts]
 ---
 
 # Non-Zero Balances

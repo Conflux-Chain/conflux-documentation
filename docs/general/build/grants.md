@@ -2,7 +2,7 @@
 sidebar_position: 5
 title: Grants
 displayed_sidebar: generalSidebar
-tags:
+keywords:
   - Conflux-Network
   - ecosystem-grants
   - technical-grants
@@ -15,6 +15,8 @@ tags:
   - committee-responsibilities
   - no-sale-rule
   - public-reporting
+tags: [Grants]
+
 ---
 
 # **Conflux Ecosystem Grants Overview**

@@ -2,7 +2,7 @@
 sidebar_position: 5
 title: Glossary
 displayed_sidebar: generalSidebar
-tags: 
+keywords: 
 - Conflux Network
 - blockchain terminology
 - consensus mechanisms
@@ -18,7 +18,7 @@ tags:
 - security
 - decentralized finance
 - NFTs
-
+tags: [Glossary]
 ---
 
 ## Introduction

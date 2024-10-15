@@ -1,6 +1,6 @@
 ---
 displayed_sidebar: generalSidebar
-tags:
+keywords:
   - smart-contracts
   - ERC20
   - ERC20Permit
@@ -12,6 +12,7 @@ tags:
   - Ethereum
   - OpenZeppelin
   - Ethers.js
+tags: [ERC20Permit, Gas Optimization, Smart Contracts]
 ---
 
 # ERC20Permit

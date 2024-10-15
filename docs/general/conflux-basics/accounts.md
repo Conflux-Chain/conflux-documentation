@@ -2,7 +2,7 @@
 sidebar_position: 10
 title: Accounts and Addresses
 displayed_sidebar: generalSidebar
-tags:
+keyworks:
   - Conflux-Network
   - accounts
   - addresses
@@ -14,6 +14,7 @@ tags:
   - Tree-Graph
   - GHAST
   - transaction-validation
+tags: [Accounts]
 ---
 ## Overview
 

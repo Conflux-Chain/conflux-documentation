@@ -3,7 +3,7 @@ displayed_sidebar: generalSidebar
 title: Contributor POAPs
 sidebar_position: 3
 description: Contributor POAPs are issued to contributors for their continuous participation.
-tags: 
+keywords: 
 - Conflux Network
 - Contributor POAPs
 - community recognition

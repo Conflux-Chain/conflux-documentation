@@ -1,6 +1,6 @@
 ---
 displayed_sidebar: generalSidebar
-tags:
+keywords:
   - smart-contracts
   - gas-optimization
   - Solidity
@@ -14,6 +14,7 @@ tags:
   - UUPSProxy
   - TransparentLogic
   - UUPSLogic
+tags: [UUPS vs Transparent Proxy, Gas Optimization, Smart Contracts]
 ---
 
 # UUPS vs Transparent Proxy

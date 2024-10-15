@@ -1,6 +1,6 @@
 ---
 displayed_sidebar: generalSidebar
-tags:
+keywords:
   - smart-contracts
   - Solidity
   - gas-optimization
@@ -11,6 +11,7 @@ tags:
   - iszero
   - opcode
   - DemoCode
+tags: [LessThan, Gas Optimization, Smart Contracts]
 ---
 
 # Comparison Operators

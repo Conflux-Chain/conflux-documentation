@@ -1,6 +1,6 @@
 ---
 displayed_sidebar: generalSidebar
-tags:
+keywords:
   - smart-contracts
   - gas-optimization
   - Solidity
@@ -14,6 +14,7 @@ tags:
   - Uint8Example
   - Uint32Example
   - Uint256Example
+tags: [Uint Types, Gas Comparison, Smart Contracts]
 ---
 
 

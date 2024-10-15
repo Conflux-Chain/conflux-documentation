@@ -3,7 +3,7 @@ displayed_sidebar: generalSidebar
 title: Reward Guidelines
 description: The reward guidelines for your contribution
 sidebar_position: 2
-tags: 
+keywords: 
 - Conflux Network
 - documentation
 - contributing
@@ -19,6 +19,7 @@ tags:
 - reward evaluation
 - reward distribution
 - community involvement
+tags: [Community Contribution]
 ---
 
 ## Introduction

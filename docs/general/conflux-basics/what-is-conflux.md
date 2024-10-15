@@ -2,7 +2,7 @@
 sidebar_position: 1
 title: What is Conflux?
 displayed_sidebar: generalSidebar
-tags: 
+keywords: 
 - Conflux Network
 - blockchain
 - consensus mechanism
@@ -17,6 +17,7 @@ tags:
 - Core Space
 - eSpace
 - cross-space communication
+tags: [What is Conflux]
 ---
 
 Conflux stands out as a public blockchain with superior performance, a unique consensus mechanism, and an innovative dual-space design. These features enable Conflux to deliver a fast, secure, and decentralized platform that is well-suited for various applications, including decentralized finance and gaming.

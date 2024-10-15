@@ -2,7 +2,7 @@
 sidebar_position: 3
 title: Token Standards
 displayed_sidebar: generalSidebar
-tags:
+keywords:
   - smart-contracts
   - token-standards
   - ERC-20
@@ -15,6 +15,8 @@ tags:
   - ICOs
   - interface-detection
   - Conflux
+tags: [Token Standards]
+
 ---
 
 Token standards are critical in blockchain ecosystems, providing a set of rules and guidelines for token implementation. They ensure interoperability and consistency across different applications and platforms. The main standards include:

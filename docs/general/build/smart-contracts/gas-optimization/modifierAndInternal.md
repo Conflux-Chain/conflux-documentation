@@ -1,6 +1,6 @@
 ---
 displayed_sidebar: generalSidebar
-tags:
+keywords:
   - smart-contracts
   - Solidity
   - gas-optimization
@@ -11,6 +11,7 @@ tags:
   - runtime-gas-costs
   - UsingModifiers
   - UsingInternalFunctions
+tags: [Modifiers vs Internal Functions, Gas Optimization, Smart Contracts]
 ---
 
 # Modifiers vs Internal Functions

@@ -1,6 +1,6 @@
 ---
 displayed_sidebar: generalSidebar
-tags:
+keywords:
   - smart-contracts
   - gas-optimization
   - Solidity
@@ -11,6 +11,7 @@ tags:
   - for-loop
   - UncheckedExample
   - gas-efficiency
+tags: [Unchecked, Gas Optimization, Smart Contracts]
 ---
 # Unchecked
 

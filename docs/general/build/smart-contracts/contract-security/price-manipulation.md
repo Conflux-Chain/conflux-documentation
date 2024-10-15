@@ -1,6 +1,6 @@
 ---
 displayed_sidebar: generalSidebar
-tags: 
+keywords: 
   - smart-contracts
   - security
   - price-manipulation
@@ -12,6 +12,7 @@ tags:
   - erc20
   - twap
   - prevention
+tags: [Price Manipulation, Security, Smart Contracts]
 ---
 
 

@@ -3,7 +3,7 @@ title: How to Contribute
 sidebar_position: 1
 description: How to contribute to our documentation site
 displayed_sidebar: generalSidebar
-tags: 
+keywords: 
 - Conflux Network
 - documentation
 - contributing

@@ -1,7 +1,7 @@
 ---
 sidebar_position: 3
 displayed_sidebar: generalSidebar
-tags: 
+keywords: 
 - Conflux Network
 - hard forks
 - network upgrades
@@ -11,7 +11,7 @@ tags:
 - blockchain split
 - community consensus
 - network participants
-
+tags: [Hard Forks]
 ---
 
 # Hard Forks

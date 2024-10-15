@@ -2,7 +2,7 @@
 sidebar_position: 1
 title: Become a Solo Validator
 displayed_sidebar: generalSidebar
-tags: 
+keywords: 
 - Conflux Network
 - PoS
 - solo validator
@@ -15,6 +15,7 @@ tags:
 - PoW stake
 - PoS votes
 - validator rewards
+tags: [Staking]
 ---
 
 To become a solo validator, you’ll need to:

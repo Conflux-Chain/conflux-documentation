@@ -2,7 +2,7 @@
 sidebar_position: 6
 title: Ecosystem
 displayed_sidebar: generalSidebar
-tags: 
+keywords: 
 - Conflux Network
 - blockchain ecosystem
 - Swappi
@@ -20,6 +20,7 @@ tags:
 - CFX staking
 - governance
 - PoS validators
+tags: [Ecosystem]
 ---
 
 

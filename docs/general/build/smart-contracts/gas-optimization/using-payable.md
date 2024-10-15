@@ -1,6 +1,6 @@
 ---
 displayed_sidebar: generalSidebar
-tags:
+keywords:
   - smart-contracts
   - gas-optimization
   - Solidity
@@ -12,6 +12,7 @@ tags:
   - AdvancedConstructor
   - Admin
   - AdminPayable
+tags: [Using Payable, Gas Optimization, Smart Contracts]
 ---
 
 # Using Payable

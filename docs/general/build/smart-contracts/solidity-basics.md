@@ -2,7 +2,7 @@
 sidebar_position: 2
 title: Solidity Basics
 displayed_sidebar: generalSidebar
-tags:
+keywords:
   - smart-contracts
   - Solidity
   - programming-language
@@ -14,6 +14,7 @@ tags:
   - libraries
   - gas-optimization
   - deployment
+tags: [Solidity]
 ---
 
 ## Intro

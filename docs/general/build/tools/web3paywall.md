@@ -2,7 +2,7 @@
 sidebar_position: 2
 title: Web3 Paywall
 displayed_sidebar: generalSidebar
-tags:
+keywords:
   - Web3-Paywall
   - Conflux-eSpace
   - cryptocurrency-payments
@@ -13,6 +13,8 @@ tags:
   - USDT
   - Confura-RPC
   - ConfluxScan-API
+tags: [Web3 Paywall]
+
 ---
 # Web3 Paywall
 

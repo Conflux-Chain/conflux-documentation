@@ -3,10 +3,6 @@ sidebar_position: 2
 title: Why Introducing PoS?
 id: why_pos
 keywords:
-  - pos
-  - why
-displayed_sidebar: generalSidebar
-tags:
   - Conflux-Network
   - Proof-of-Stake
   - PoS
@@ -15,6 +11,9 @@ tags:
   - 51-attack
   - hybrid-consensus
   - security
+displayed_sidebar: generalSidebar
+tags: [Proof-of-Stake]
+
 ---
 
 :::note

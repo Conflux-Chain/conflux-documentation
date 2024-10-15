@@ -1,6 +1,6 @@
 ---
 displayed_sidebar: generalSidebar
-tags: 
+keywords: 
   - smart-contracts
   - security
   - vulnerabilities
@@ -12,6 +12,7 @@ tags:
   - arithmetic-operations
   - evm
   - prevention
+tags: [Integer Overflow, Security, Smart Contracts]
 ---
 # Integer Overflow
 

@@ -1,7 +1,7 @@
 ---
 title: Gas Optimization
 displayed_sidebar: generalSidebar
-tags:
+keywords:
   - smart-contracts
   - gas-optimization
   - Solidity
@@ -13,6 +13,7 @@ tags:
   - functions
   - libraries
   - delegate-calls
+tags: [Gas Optimization, Smart Contracts]
 ---
 
 ## Some Tips to Make Gas Fee Lower

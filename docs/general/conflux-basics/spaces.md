@@ -2,7 +2,7 @@
 sidebar_position: 7
 title: Spaces
 displayed_sidebar: generalSidebar
-tags: 
+keywords: 
 - Conflux Network
 - Spaces
 - Core Space
@@ -14,6 +14,7 @@ tags:
 - transaction encoding
 - cross-space calls
 - CFX transfer
+tags: [Spaces]
 ---
 ## **Introduction to Spaces**
 

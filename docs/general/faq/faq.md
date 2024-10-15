@@ -2,7 +2,7 @@
 title: FAQ
 sidebar_position: 5
 displayed_sidebar: generalSidebar
-tags: 
+keywords: 
 - Conflux Network
 - FAQs
 - community questions

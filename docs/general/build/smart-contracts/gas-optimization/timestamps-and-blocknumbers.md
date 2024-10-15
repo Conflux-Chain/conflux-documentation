@@ -1,7 +1,7 @@
 ---
 title: Optimize Timestamps and Block Numbers
 displayed_sidebar: generalSidebar
-tags:
+keywords:
   - smart-contracts
   - gas-optimization
   - Solidity
@@ -12,6 +12,7 @@ tags:
   - uint32
   - storage-efficiency
   - EfficientStorage
+tags: [Timestamps and Block Numbers, Gas Optimization, Smart Contracts]
 ---
 
 In Solidity, the way data is stored can significantly impact the gas costs associated with deploying and interacting with smart contracts. Gas costs can quickly become a major concern, especially in applications that handle a large number of transactions.

@@ -3,7 +3,7 @@
 displayed_sidebar: generalSidebar
 toc_max_heading_level: 4
 title: CONTRIBUTING
-tags: 
+keywords: 
 - Conflux Network
 - documentation
 - contributing

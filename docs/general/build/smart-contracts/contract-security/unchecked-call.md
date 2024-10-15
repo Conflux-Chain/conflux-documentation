@@ -1,6 +1,6 @@
 ---
 displayed_sidebar: generalSidebar
-tags: 
+keywords: 
   - smart-contracts
   - security
   - vulnerabilities
@@ -14,6 +14,7 @@ tags:
   - king-of-ether
   - gas-limit
   - prevention
+tags: [Unchecked Low-Level Calls, Security, Smart Contracts]
 ---
 
 # Unchecked Low-Level Calls

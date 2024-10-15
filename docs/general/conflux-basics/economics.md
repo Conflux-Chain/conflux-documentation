@@ -2,7 +2,7 @@
 sidebar_position: 6
 title: Economics
 displayed_sidebar: generalSidebar
-tags: 
+keywords: 
 - Conflux Network
 - economic model
 - CFX token
@@ -14,6 +14,7 @@ tags:
 - token issuance
 - token burning
 - DAO governance
+tags: [Tokenomics]
 ---
 
 

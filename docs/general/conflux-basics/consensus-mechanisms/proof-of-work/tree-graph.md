@@ -2,7 +2,7 @@
 sidebar_position: 2
 title: The Tree-Graph
 displayed_sidebar: generalSidebar
-tags:
+keywords:
   - Conflux-Network
   - Tree-Graph
   - GHAST
@@ -18,6 +18,7 @@ tags:
   - DAG
   - transaction-ordering
   - block-creation-rate
+tags: [Proof-of-Work]
 ---
 
 # The Tree-Graph

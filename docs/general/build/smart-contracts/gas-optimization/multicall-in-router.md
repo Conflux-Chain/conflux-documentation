@@ -1,6 +1,6 @@
 ---
 displayed_sidebar: generalSidebar
-tags:
+keywords:
   - smart-contracts
   - Solidity
   - gas-optimization
@@ -12,6 +12,7 @@ tags:
   - delegatecall
   - MulticallRouter
   - Foundry
+tags: [Multicall in Router, Gas Optimization, Smart Contracts]
 ---
 
 # Implement multicall in router-like contracts

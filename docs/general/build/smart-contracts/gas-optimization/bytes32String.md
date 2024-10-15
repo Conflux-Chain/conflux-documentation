@@ -1,6 +1,6 @@
 ---
 displayed_sidebar: generalSidebar
-tags:
+keywords:
   - smart-contracts
   - gas-optimization
   - bitmap
@@ -11,6 +11,7 @@ tags:
   - AND-operation
   - bit-shift
   - gas-efficiency
+tags: [Bytes32 vs String, Gas Optimization, Smart Contracts]
 ---
 
 # Bytes32 vs String

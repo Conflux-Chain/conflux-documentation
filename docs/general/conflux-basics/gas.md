@@ -2,7 +2,7 @@
 sidebar_position: 10
 title: Gas and Fees
 displayed_sidebar: generalSidebar
-tags: 
+keywords: 
 - Conflux Network
 - gas
 - transaction fees
@@ -17,7 +17,7 @@ tags:
 - fixed fee
 - dynamic fee
 - fee optimization
-
+tags: [Gas]
 ---
 
 ## What is Gas?

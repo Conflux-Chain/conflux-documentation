@@ -1,6 +1,6 @@
 ---
 displayed_sidebar: generalSidebar
-tags:
+keywords:
   - smart-contracts
   - Solidity
   - gas-optimization
@@ -10,6 +10,7 @@ tags:
   - arithmetic-operations
   - comparison
   - DemoCode
+tags: [Increment, Gas Optimization, Smart Contracts]
 ---
 # Better Increment
 

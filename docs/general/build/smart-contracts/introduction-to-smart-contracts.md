@@ -2,7 +2,7 @@
 sidebar_position: 1
 title: Smart Contracts Development
 displayed_sidebar: generalSidebar
-tags:
+keywords:
   - smart-contracts
   - Conflux-Network
   - Solidity
@@ -14,6 +14,7 @@ tags:
   - deployment
   - function-calls
   - gas-optimization
+tags: [Smart Contracts, Tutorial]
 ---
 
 ## Introduction to Smart Contracts Development on Conflux Network

@@ -1,6 +1,6 @@
 ---
 displayed_sidebar: generalSidebar
-tags:
+keywords:
   - smart-contracts
   - Solidity
   - gas-optimization
@@ -11,6 +11,7 @@ tags:
   - storage-efficiency
   - UseMapping
   - UseArray
+tags: [Mapping vs Dynamic Array, Gas Optimization, Smart Contracts]
 ---
 
 # Mapping vs Dynamic Array

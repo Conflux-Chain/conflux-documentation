@@ -2,7 +2,7 @@
 sidebar_position: 3
 title: GHAST
 displayed_sidebar: generalSidebar
-tags:
+keywords:
   - Conflux-Network
   - GHAST
   - Greedy-Heaviest-Adaptive-SubTree
@@ -14,6 +14,7 @@ tags:
   - special-blocks
   - normal-blocks
   - mining-difficulty
+tags: [Proof-of-Work, GHAST]
 ---
 
 GHAST (Greedy-Heaviest-Adaptive-SubTree)

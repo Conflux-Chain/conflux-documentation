@@ -1,6 +1,6 @@
 ---
 displayed_sidebar: generalSidebar
-tags: 
+keywords: 
   - smart-contracts
   - security
   - vulnerabilities
@@ -11,6 +11,7 @@ tags:
   - prevention
   - checks-effects-interactions
   - reentrancy-guard
+tags: [Reentrancy Attacks, Security, Smart Contracts]
 ---
 
 # Re-entrancy Attacks

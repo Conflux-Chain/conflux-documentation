@@ -1,7 +1,7 @@
 ---
 title: Selector Collision Attack
 displayed_sidebar: generalSidebar
-tags: 
+keywords: 
   - smart-contracts
   - security
   - vulnerabilities
@@ -12,6 +12,7 @@ tags:
   - cross-chain-bridge
   - prevention
   - keccak256
+tags: [Selector Collision, Security, Smart Contracts]
 ---
 
 The **selector collision attack** was one of the key reasons behind the hacking of the Poly Network cross-chain bridge.

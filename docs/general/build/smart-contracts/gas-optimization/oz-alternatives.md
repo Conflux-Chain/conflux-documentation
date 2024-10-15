@@ -1,6 +1,6 @@
 ---
 displayed_sidebar: generalSidebar
-tags:
+keywords:
   - smart-contracts
   - gas-optimization
   - OpenZeppelin
@@ -12,6 +12,7 @@ tags:
   - assembly
   - DeFi
   - gas-efficiency
+tags: [Alternatives to OpenZeppelin, Gas Optimization, Smart Contracts]
 ---
 
 # Alternatives to OpenZeppelin

@@ -1,6 +1,6 @@
 ---
 displayed_sidebar: generalSidebar
-tags:
+keywords:
   - smart-contracts
   - gas-optimization
   - clone
@@ -12,6 +12,7 @@ tags:
   - Solidity
   - deployment-strategies
   - gas-efficiency
+tags: [Clone vs New/Create2, Gas Optimization, Smart Contracts]
 ---
 
 # Clone vs New/Create2

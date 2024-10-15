@@ -1,10 +1,7 @@
 ---
 title: Transactions
 sidebar_position: 9
-keywords:
-  - transaction
-displayed_sidebar: generalSidebar
-tags: 
+keywords: 
 - Conflux Network
 - transactions
 - CFX transfer 
@@ -21,6 +18,8 @@ tags:
 - epochHeight
 - transaction receipt
 - base fee
+displayed_sidebar: generalSidebar
+tags: [Transactions]
 ---
 
 A transaction is a single instruction composed by an external actor with a Conflux account, and this instruction is cryptographically signed using the sender account’s private key. A transaction can involve a **simple transfer of CFX** (the native currency of Conflux), a **transfer of tokens** (such as ERC20 or ERC721), a **deployment of a new smart contract**, or an **execution of a function on an existing smart contract**. Transactions are the only way to store or update data on the blockchain.

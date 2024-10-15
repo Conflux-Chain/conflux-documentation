@@ -6,7 +6,7 @@ keywords:
   - conflux
   - papers
 displayed_sidebar: generalSidebar
-tags:
+keywords:
   - Conflux-Protocol
   - research-papers
   - yellow-paper
@@ -18,6 +18,7 @@ tags:
   - decentralized-blockchain
   - adaptive-weighted-blocks
   - technical-presentation
+tags: [Conflux Papers]
 ---
 
 The Conflux Protocol is defined and analyzed in a number of research papers.

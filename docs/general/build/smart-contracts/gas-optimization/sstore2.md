@@ -1,6 +1,6 @@
 ---
 displayed_sidebar: generalSidebar
-tags:
+keywords:
   - smart-contracts
   - gas-optimization
   - Solidity
@@ -12,6 +12,7 @@ tags:
   - Ethereum
   - Conflux
   - Core-Space
+tags: [SSTORE2, Gas Optimization, Smart Contracts]
 ---
 
 # SSTORE2

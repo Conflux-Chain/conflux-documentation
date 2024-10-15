@@ -1,6 +1,6 @@
 ---
 displayed_sidebar: generalSidebar
-tags:
+keywords:
   - smart-contracts
   - gas-optimization
   - Solidity
@@ -10,6 +10,7 @@ tags:
   - LogicOptimization
   - function-ordering
   - gas-efficiency
+tags: [Short-Circuiting, Gas Optimization, Smart Contracts]
 ---
 
 # Short-Circuiting

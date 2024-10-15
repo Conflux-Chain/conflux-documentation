@@ -1,6 +1,6 @@
 ---
 displayed_sidebar: generalSidebar
-tags:
+keywords:
   - smart-contracts
   - gas-optimization
   - Solidity
@@ -12,6 +12,7 @@ tags:
   - DataStorage
   - DataWriter
   - DeploymentManager
+tags: [Predicting Contract Addresses, Gas Optimization, Smart Contracts]
 ---
 
 # Predicting Contract Addresses Using Account Nonce

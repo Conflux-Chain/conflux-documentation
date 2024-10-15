@@ -2,7 +2,7 @@
 sidebar_position: 2
 title: CIPs
 displayed_sidebar: generalSidebar
-tags:
+keywords:
   - Conflux-Network
   - CIPs
   - Conflux-Improvement-Proposals
@@ -17,6 +17,8 @@ tags:
   - PoW-PoS-consensus
   - eSpace
   - on-chain-DAO
+tags: [CIPs]
+
 ---
 
 # CIPs

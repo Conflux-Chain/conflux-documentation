@@ -1,6 +1,6 @@
 ---
 displayed_sidebar: generalSidebar
-tags:
+keywords:
   - smart-contracts
   - Solidity
   - gas-optimization
@@ -11,6 +11,7 @@ tags:
   - ArrayGasOpt
   - push-operation
   - storage-efficiency
+tags: [Fixed-Size/Dynamic Arrays, Gas Optimization, Smart Contracts]
 ---
 
 # Fixed-Size/Dynamic Arrays

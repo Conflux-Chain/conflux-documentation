@@ -1,11 +1,6 @@
 ---
 title: FAQs
 keywords:
-  - pos
-  - faq
-sidebar_position: 3
-displayed_sidebar: generalSidebar
-tags:
   - Conflux-Network
   - Proof-of-Stake
   - PoS
@@ -17,6 +12,9 @@ tags:
   - validators
   - staking
   - 51-attack
+sidebar_position: 3
+displayed_sidebar: generalSidebar
+tags: [Proof-of-Stake]
 ---
 
 ## What is the new Proof-of-Stake chain for Conflux?

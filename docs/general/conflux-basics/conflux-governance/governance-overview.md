@@ -2,7 +2,7 @@
 sidebar_position: 1
 title: Governance Overview
 displayed_sidebar: generalSidebar
-tags:
+keywords:
   - Conflux-Network
   - governance
   - decentralization
@@ -12,6 +12,7 @@ tags:
   - hard-forks
   - PoS
   - staking
+tags: [Governance Overview]
 ---
 
 ## **Governance Model — CFX Voting**

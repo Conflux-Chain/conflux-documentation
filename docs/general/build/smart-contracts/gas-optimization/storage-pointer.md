@@ -1,6 +1,6 @@
 ---
 displayed_sidebar: generalSidebar
-tags:
+keywords:
   - smart-contracts
   - gas-optimization
   - Solidity
@@ -11,6 +11,7 @@ tags:
   - UserActivityUnoptimized
   - UserActivityOptimized
   - EVM
+tags: [Storage Pointers, Gas Optimization, Smart Contracts]
 ---
 
 # Efficient Use of Storage Pointers

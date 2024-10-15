@@ -1,6 +1,6 @@
 ---
 displayed_sidebar: generalSidebar
-tags:
+keywords:
   - smart-contracts
   - gas-optimization
   - Solidity
@@ -13,6 +13,7 @@ tags:
   - ReentrancyGuardBool
   - ReentrancyGuardUint01
   - ReentrancyGuardUint12
+tags: [Reentrancy Guard, Gas Optimization, Smart Contracts]
 ---
 
 # Low-Cost Reentrancy Guard

@@ -2,7 +2,7 @@
 sidebar_position: 2
 title: Merkle Tree
 displayed_sidebar: generalSidebar
-tags:
+keywords:
   - smart-contracts
   - Merkle-Tree
   - cryptography
@@ -14,6 +14,7 @@ tags:
   - whitelist
   - Solidity
   - MerkleVerification
+tags: [Merkle Tree]
 ---
 
 ## Basic Concept
