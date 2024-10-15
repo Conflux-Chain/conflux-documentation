@@ -3,6 +3,33 @@ sidebar_position: 1
 title: Hardhat and Foundry
 description: Deploying smart contracts using Hardhat and Foundry
 displayed_sidebar: eSpaceSidebar
+tags:
+  - Conflux eSpace
+  - Contratos Inteligentes
+  - Deployment
+  - Hardhat
+  - Foundry
+  - Tutorial
+  - Testnet
+  - NodeJS
+  - Yarn
+  - Environment Variables
+  - Private Key
+  - Faucet
+  - Test Tokens
+  - CLI
+  - RPC URL
+  - Unix Timestamp
+  - Troubleshooting
+  - Video Guides
+  - GitHub Repository
+  - Ethereum Compatibility
+  - JavaScript
+  - Solidity
+  - Rust
+  - Gas Fees
+  - Contract Compilation
+  - Testing
 ---
 
 import { DiscordLink } from "../../../templates/links.tsx"

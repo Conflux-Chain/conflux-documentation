@@ -1,6 +1,22 @@
 ---
 sidebar_position: 0
 title: 堆栈简介
+keywords:
+  - conflux
+  - blockchain stack
+  - virtual machine
+  - smart contracts
+  - nodes
+  - client APIs
+  - dapps
+  - web3
+  - development
+tags:
+  - Architecture
+  - Blockchain Stack
+  - 智能合约
+  - Nodes
+  - dApp Development
 displayed_sidebar: coreSidebar
 ---
 

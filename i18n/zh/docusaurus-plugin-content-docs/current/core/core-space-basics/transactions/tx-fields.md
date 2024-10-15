@@ -2,6 +2,27 @@
 sidebar_position: 1
 title: 交易字段
 displayed_sidebar: coreSidebar
+tags:
+  - 交易字段
+  - from
+  - to
+  - value
+  - nonce
+  - data
+  - gas
+  - gasPrice
+  - storageLimit
+  - chainId
+  - epochHeight
+  - CFX Transfer
+  - Smart Contract Interaction
+  - Contract Deployment
+  - Transaction Encoding
+  - Gas Fee
+  - Storage Fee
+  - Replay Protection
+  - Transaction Expiration
+  - RLP Encoding
 ---
 
 在编码 Conflux Core Space 交易时，以下字段是必需的：

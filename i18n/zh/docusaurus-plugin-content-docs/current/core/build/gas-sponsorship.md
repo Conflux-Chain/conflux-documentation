@@ -1,6 +1,21 @@
 ---
 sidebar_position: 4
 title: 基金会 Gas 赞助
+keywords:
+  - conflux
+  - gas sponsorship
+  - foundation
+  - developer support
+  - contract deployment
+  - 存储抵押
+  - application process
+  - confluxscan
+tags:
+  - 燃气费赞助
+  - Foundation
+  - Developer Support
+  - Contract Deployment
+  - ConfluxScan
 displayed_sidebar: coreSidebar
 ---
 

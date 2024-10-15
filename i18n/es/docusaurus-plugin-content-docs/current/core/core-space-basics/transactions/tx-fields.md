@@ -2,6 +2,27 @@
 sidebar_position: 1
 title: Transaction Fields
 displayed_sidebar: coreSidebar
+tags:
+  - Transaction Fields
+  - from
+  - to
+  - value
+  - nonce
+  - data
+  - gas
+  - gasPrice
+  - storageLimit
+  - chainId
+  - epochHeight
+  - CFX Transfer
+  - Smart Contract Interaction
+  - Contract Deployment
+  - Transaction Encoding
+  - Tarifa de gas (Gas Fee)
+  - Storage Fee
+  - Replay Protection
+  - Transaction Expiration
+  - RLP Encoding
 ---
 
 In order to encode a Core Space transaction, the following fields are required:

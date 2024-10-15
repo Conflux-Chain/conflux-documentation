@@ -1,6 +1,21 @@
 ---
 sidebar_position: 9
 title: Grants
+keywords:
+  - conflux
+  - grants
+  - funding
+  - developer support
+  - ecosystem growth
+  - blockchain projects
+  - open source
+  - community contribution
+tags:
+  - Grants
+  - Funding
+  - Developer Support
+  - Ecosystem
+  - Open Source
 displayed_sidebar: coreSidebar
 ---
 

@@ -2,6 +2,22 @@
 sidebar_position: 7
 title: ParamsControl
 displayed_sidebar: coreSidebar
+tags:
+  - ParamsControl
+  - Internal Contracts
+  - Chain Parameters
+  - DAO Voting
+  - Governance
+  - Testnet
+  - Mainnet
+  - cfx_getParamsFromVote
+  - Voting Interface
+  - powBaseReward
+  - interestRate
+  - storagePointProp
+  - baseFeeShareProp
+  - Voting Rounds
+  - PoS Stake
 ---
 
 `ParamsControl` is a smart contract at address `0x0888000000000000000000000000000000000007` that allows participation in the chain parameter DAO vote on the Conflux network. Below are the addresses for both the Testnet and Mainnet environments, where you can interact with this contract:

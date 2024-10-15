@@ -1,5 +1,5 @@
 ---
-sidebar_position: 5
+sidebar_position: 11
 title: Cookbook
 description: Learn how to leverage Cookbook for smart contracts development.
 keywords:

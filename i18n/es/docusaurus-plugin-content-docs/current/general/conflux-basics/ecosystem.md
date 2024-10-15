@@ -16,10 +16,6 @@ Swappi es un Exchange descentralizado (DEX) dentro de Conflux Network, utilizand
 
 Nucleon introduce un enfoque innovador para hacer staking en forma de un derivado líquido. Esto permite a los usuarios participar en la seguridad de la red manteniendo la liquidez, un avance fundamental para mejorar la flexibilidad y utilidad del Staking.
 
-## [Goledo (Lending y Borrowing)](https://www.goledo.cash/)
-
-Goledo sirve al ecosistema proporcionando servicios descentralizados de préstamo. Esta plataforma permite a los usuarios prestar sus activos por interés o préstamo de garantía, enriqueciendo así los servicios financieros disponibles en Conflux.
-
 ## [Meson (Puente entre cadenas de Stablecoins)](https://meson.fi/)
 
 Meson es un proyecto significativo en el ecosistema Conflux, proporcionando un puente entre cadenas para monedas estables. Esta plataforma permite transacciones perfectas y seguras entre diferentes blockchains, mejorando la liquidez y conectividad en el espacio de finanzas descentralizadas (DeFi).

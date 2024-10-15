@@ -2,6 +2,21 @@
 sidebar_position: 1
 title: Base32 Addresses
 displayed_sidebar: coreSidebar
+tags:
+  - Base32 Address
+  - Hex Address
+  - Address Conversion
+  - CIP-37
+  - Network Prefix
+  - Address Type
+  - Checksum
+  - EOA Address
+  - Contract Address
+  - Internal Contract
+  - Address Computation
+  - Create2
+  - Address Converter
+  - BIP-44
 ---
 
 import Tabs from "@theme/Tabs";
@@ -153,7 +168,9 @@ computeAddressUsingSalt(1111, bytecode) // 0x80ac53cc16c0b58dc5bde5af47f5ef9e846
 
 </Tabs>
 
-If `create2` is not used:
+If `create2` is not used, for example, deploy a contract by sending a transaction with no "to" field, the deployed address is computed as the following code described:
+
+> The transaction `data` is the bytecode of the contract in the aforementioned case. The `bytecode_hash` needed for computing the address is the Keccak-256 hash of the contract bytecode.
 
 <Tabs>
     <TabItem label="Python" value="PythonExample">
@@ -207,6 +224,8 @@ computeAddressUsingNonce(1,bytecode,"0x155B792507a4E873e839c466C92849f9F67b7247"
     </TabItem>
 
 </Tabs>
+
+It should be noted that in Ethereum, the contract bytecode is not taken as the input of the address computation, but only the `nonce` and the sender's address are taken as the input.
 
 ### Base32 Address Computation
 

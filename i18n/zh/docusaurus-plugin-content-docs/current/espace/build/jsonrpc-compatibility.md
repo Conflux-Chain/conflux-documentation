@@ -3,6 +3,32 @@ sidebar_position: 4
 title: JSON-RPC 的兼容性
 description: 与以太坊 JSON-RPC 的兼容性
 displayed_sidebar: eSpaceSidebar
+tags:
+  - Conflux eSpace
+  - JSON-RPC
+  - Ethereum Compatibility
+  - Web3
+  - RPC Methods
+  - API
+  - EVM
+  - Transaction Types
+  - Block Data
+  - Transaction Receipts
+  - Gas Price
+  - Filters
+  - Tracing
+  - Parity RPC
+  - Debug Methods
+  - Pub/Sub
+  - Data Verifiability
+  - EIP-155
+  - EIP-2930
+  - EIP-1559
+  - EIP-4844
+  - Burnt Gas Fee
+  - 待处理交易
+  - Uncle Blocks
+  - CIP-137
 ---
 
 Conflux eSpace 实现了 Web3 JSON-RPC 协议。

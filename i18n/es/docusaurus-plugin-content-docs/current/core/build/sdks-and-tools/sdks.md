@@ -1,6 +1,55 @@
 ---
 sidebar_position: 1
 title: SDKs
+kkeywords:
+  - conflux
+  - sdk
+  - javascript
+  - golang
+  - java
+  - python
+  - cpp
+  - .net
+  - swift
+  - solidity
+  - thirdweb
+  - cive
+  - development
+  - smart contracts
+  - blockchain integration
+  - web3 development
+  - cross-platform
+  - client libraries
+tags:
+  - SDK
+  - Development
+  - API
+  - Programming
+  - Contratos Inteligentes
+  - JavaScript
+  - Golang
+  - Java
+  - Python
+  - CPP
+  - .NET
+  - Swift
+  - Solidity
+  - ThirdWeb
+  - Cive
+  - Web3
+  - Blockchain-Integration
+  - Cross-Platform
+  - Client-Libraries
+  - RPC-Interaction
+  - Account-Management
+  - Transaction-Signing
+  - Contract-Deployment
+  - Contract-Interaction
+  - Wallet-Integration
+  - Gas-Estimation
+  - Event-Listening
+  - Node-Communication
+  - Conflux-Network
 displayed_sidebar: coreSidebar
 ---
 
