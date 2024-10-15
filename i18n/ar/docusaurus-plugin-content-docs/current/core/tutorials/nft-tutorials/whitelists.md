@@ -1,6 +1,25 @@
 ---
 title: Merkle Tree Whitelist
 displayed_sidebar: coreSidebar
+tags:
+  - NFT
+  - Whitelist
+  - Merkle Tree
+  - Smart Contract
+  - Hardhat
+  - Conflux CoreSpace
+  - ERC721
+  - Gas Optimization
+  - merkletreejs
+  - keccak256
+  - OpenZeppelin
+  - Solidity
+  - Contract Deployment
+  - Minting
+  - Transaction Verification
+  - js-conflux-sdk
+  - Proof Generation
+  - Whitelist Management
 ---
 
 # Merkle Tree NFT Whitelist on CoreSpace using Hardhat

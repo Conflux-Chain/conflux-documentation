@@ -1,6 +1,22 @@
 ---
 sidebar_position: 0
 title: Intro to the Stack
+keywords:
+  - conflux
+  - blockchain stack
+  - virtual machine
+  - smart contracts
+  - nodes
+  - client APIs
+  - dapps
+  - web3
+  - development
+tags:
+  - Architecture
+  - Blockchain Stack
+  - Smart Contracts
+  - Nodes
+  - dApp Development
 displayed_sidebar: coreSidebar
 ---
 

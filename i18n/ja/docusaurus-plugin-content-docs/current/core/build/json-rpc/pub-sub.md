@@ -6,7 +6,44 @@ sidebar_position: 6
 keywords:
   - conflux
   - pubsub
-  - sdk
+  - publish-subscribe
+  - websocket
+  - tcp
+  - real-time
+  - newHeads
+  - epochs
+  - logs
+  - subscription
+  - event streaming
+  - blockchain events
+  - real-time updates
+  - chain reorganization
+tags:
+  - API
+  - PubSub
+  - WebSocket
+  - TCP
+  - Real-Time
+  - NewHeads
+  - Epochs
+  - Logs
+  - Subscription
+  - Event-Streaming
+  - Blockchain-Events
+  - Real-Time-Updates
+  - Chain-Reorganization
+  - Node-Communication
+  - Data-Streaming
+  - Block-Notifications
+  - Transaction-Notifications
+  - Log-Filtering
+  - Epoch-Tracking
+  - Pivot-Chain-Updates
+  - Subscription-Management
+  - Event-Driven-Architecture
+  - Asynchronous-Notifications
+  - Continuous-Data-Feed
+  - State-Synchronization
 displayed_sidebar: coreSidebar
 ---
 

@@ -4,6 +4,39 @@ sidebar_position: 5
 title: trace Namespace
 keywords:
   - trace-rpc
+  - transaction tracing
+  - execution details
+  - block traces
+  - epoch traces
+  - trace filter
+  - debug
+  - conflux
+tags:
+  - RPC
+  - Trace
+  - Debugging
+  - Transacciones
+  - Cadena de bloques
+  - Transaction-Tracing
+  - Execution-Details
+  - Block-Traces
+  - Epoch-Traces
+  - Trace-Filter
+  - Debug-Tools
+  - Smart-Contract-Interaction
+  - Gas-Usage-Analysis
+  - State-Changes
+  - Internal-Transactions
+  - Call-Stack
+  - EVM-Execution
+  - Transaction-Replay
+  - Error-Diagnosis
+  - Performance-Optimization
+  - Forensic-Analysis
+  - Contract-Deployment
+  - Contract-Execution
+  - Storage-Changes
+  - Event-Logs
 displayed_sidebar: coreSidebar
 ---
 

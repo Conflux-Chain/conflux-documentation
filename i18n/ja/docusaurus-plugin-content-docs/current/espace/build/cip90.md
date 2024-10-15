@@ -2,6 +2,32 @@
 sidebar_position: 20
 title: CIP-90
 displayed_sidebar: eSpaceSidebar
+tags:
+  - CIP-90
+  - Conflux eSpace
+  - Conflux Core
+  - EVM Compatibility
+  - Transaction Format
+  - Address Generation
+  - dApp Portability
+  - Ethereum Ecosystem
+  - MetaMask
+  - Remix
+  - Hardhat
+  - web3.js
+  - ethers.js
+  - CIP-37
+  - EIP-155
+  - EIP-55
+  - Base32 Addresses
+  - Hex Addresses
+  - CrossSpaceCall
+  - Internal Contract
+  - Cross-Space Operations
+  - Atomic Operations
+  - Layer-1 Security
+  - RPC Methods
+  - eth_getBalance
 ---
 
 Conflux has a virtual machine that is similar to the EVM. However, there are still some considerable differences between Conflux and Ethereum. Conflux uses a different transaction format and a different rule for generating addresses from public keys. These differences often make it hard to port EVM compatible dApps to Conflux. Replacing CIP-72 and CIP-80, [CIP-90](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-90.md) introduces a transaction execution environment called the **Conflux eSpace**. eSpace achieves full EVM compatibility without changing the existing accounts and transactions.

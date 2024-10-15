@@ -1,6 +1,21 @@
 ---
 sidebar_position: 4
 title: Patrocinio de gas
+keywords:
+  - conflux
+  - gas sponsorship
+  - foundation
+  - developer support
+  - contract deployment
+  - storage collateral
+  - application process
+  - confluxscan
+tags:
+  - Gas Sponsorship
+  - Foundation
+  - Developer Support
+  - Contract Deployment
+  - ConfluxScan
 displayed_sidebar: coreSidebar
 ---
 

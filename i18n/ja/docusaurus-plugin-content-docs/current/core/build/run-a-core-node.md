@@ -1,6 +1,18 @@
 ---
 sidebar_position: 10
 title: Run a Core Node
+keywords:
+  - conflux
+  - core node
+  - node setup
+  - blockchain
+  - network participation
+  - decentralization
+  - full node
+tags:
+  - Core
+  - Node
+  - Infrastructure
 displayed_sidebar: coreSidebar
 ---
 

@@ -102,7 +102,7 @@ Replace your_project_id_here with the actual project ID you get from https://clo
 
 For details on how to obtain `ProjectId`, please refer to this [article](/docs/espace/tutorials/walletConnect/project-creation).
 
-## Step 4: Context Provide
+## Step 4: Context Provider
 
 We'll now set up a context provider to encapsulate our application and handle the initialization of Web3Modal. It’s important to remember that `createWeb3Modal` should be called from within a React Client Component file.
 

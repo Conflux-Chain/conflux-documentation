@@ -2,6 +2,30 @@
 sidebar_position: 4
 title: Transaction
 displayed_sidebar: eSpaceSidebar
+tags:
+  - Conflux eSpace
+  - Transacciones
+  - Ethereum Compatibility
+  - EIP-155
+  - EIP-2930
+  - EIP-1559
+  - EIP-4844
+  - Ciclo de vida de la transacción
+  - Block Confirmation
+  - Transaction Finality
+  - Safe Transactions
+  - Finalized Transactions
+  - Transaction Errors
+  - Pending Transactions
+  - eth_sendRawTransaction
+  - Troubleshooting
+  - PoW
+  - PoS
+  - Hardfork
+  - Legacy Transactions
+  - Type-1 Transactions
+  - Type-2 Transactions
+  - Type-3 Transactions
 ---
 
 Conflux eSpace initially supports transactions in the Ethereum 155 format (legacy transactions). After the v2.4.0 hardfork, it starts to accept type-1 (EIP-2930) and type-2 (EIP-1559) format transactions. This compatibility enables seamless transition for mainstream Ethereum SDKs and tools. Type-3 transactions (EIP-4844) are currently not supported.

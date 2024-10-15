@@ -3,6 +3,30 @@ sidebar_position: 5
 title: eSpace Mapped Addresses(Cross Space)
 description: Mapped addresses in cross-space operations
 displayed_sidebar: eSpaceSidebar
+tags:
+  - Conflux eSpace
+  - Conflux Core
+  - Mapped Addresses
+  - Cross-Space Operations
+  - Hex40 Addresses
+  - Base32 Addresses
+  - Account Model
+  - Ethereum Compatibility
+  - CrossSpaceCall
+  - Internal Contract
+  - CFX Transfer
+  - V2 Hard Fork
+  - js-conflux-sdk
+  - Address Conversion
+  - Keccak Hash
+  - Bridge Service
+  - Atomic Operations
+  - Account Balance
+  - Private Keys
+  - Wallet Compatibility
+  - transferEVM
+  - mappedBalance
+  - withdrawFromMapped
 ---
 
 ## Overview

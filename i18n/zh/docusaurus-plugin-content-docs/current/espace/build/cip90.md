@@ -2,6 +2,32 @@
 sidebar_position: 20
 title: CIP-90
 displayed_sidebar: eSpaceSidebar
+tags:
+  - CIP-90
+  - Conflux eSpace
+  - Conflux Core
+  - EVM兼容性
+  - Transaction Format
+  - Address Generation
+  - dApp Portability
+  - Ethereum Ecosystem
+  - MetaMask
+  - Remix
+  - Hardhat
+  - web3.js
+  - ethers.js
+  - CIP-37
+  - EIP-155
+  - EIP-55
+  - Base32 地址
+  - Hex Addresses
+  - CrossSpaceCall
+  - Internal Contract
+  - Cross-Space Operations
+  - Atomic Operations
+  - Layer-1 Security
+  - RPC Methods
+  - eth_getBalance
 ---
 
 Conflux 有一个类似于 EVM 的虚拟机。 然而，Conflux 和以太坊之间仍然有一些相当大的区别。 Conflux 使用不同的交易格式，其从公钥生成地址的规则也与以太坊不同。 这些差异通常使得将 EVM 兼容的 dApps 移植到 Conflux 变得困难。 [CIP-90](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-90.md) 用 Conflux eSpace 替换了 CIP-72 和 CIP-80，引入了一个称为 **Conflux eSpace** 的交易执行环境。 eSpace 实现了完全的 EVM 兼容性，而不改变现有的账户和交易。

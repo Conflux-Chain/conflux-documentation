@@ -3,6 +3,29 @@ sidebar_position: 2
 title: Remix IDE
 description: Deploying an ERC-20 Token using Remix IDE
 displayed_sidebar: eSpaceSidebar
+tags:
+  - Conflux eSpace
+  - Remix IDE
+  - Smart Contracts
+  - ERC-20 Token
+  - Deployment
+  - Tutorial
+  - Solidity
+  - MetaMask
+  - Web3
+  - OpenZeppelin
+  - Token Transfer
+  - Ethereum Compatibility
+  - Injected Web3
+  - Gas Price
+  - Transaction Confirmation
+  - Contract Compilation
+  - Contract Interaction
+  - Token Balance
+  - Video Tutorial
+  - Cookbook
+  - EVM
+  - Blockchain
 ---
 
 ## Introduction

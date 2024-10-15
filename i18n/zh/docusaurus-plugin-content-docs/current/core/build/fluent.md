@@ -1,6 +1,31 @@
 ---
 sidebar_position: 4
 title: 集成 Fluent 钱包
+keywords:
+  - conflux
+  - fluent wallet
+  - wallet integration
+  - dapp
+  - core space
+  - espace
+  - evm-compatible
+  - browser extension
+  - use-wallet
+tags:
+  - 钱包
+  - Integration
+  - Fluent
+  - dApp
+  - Core Space
+  - eSpace
+  - Browser Extension
+  - EVM-Compatible
+  - Wallet Connection
+  - RPC API
+  - Web3 Provider
+  - Blockchain Interaction
+  - User Authentication
+  - Account Management
 displayed_sidebar: coreSidebar
 ---
 

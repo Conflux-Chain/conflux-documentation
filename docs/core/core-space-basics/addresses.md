@@ -168,7 +168,9 @@ computeAddressUsingSalt(1111, bytecode) // 0x80ac53cc16c0b58dc5bde5af47f5ef9e846
 </Tabs>
 
 
-If `create2` is not used:
+If `create2` is not used, for example, deploy a contract by sending a transaction with no "to" field, the deployed address is computed as the following code described:
+
+> The transaction `data` is the bytecode of the contract in the aforementioned case. The `bytecode_hash` needed for computing the address is the Keccak-256 hash of the contract bytecode.
 
 <Tabs>
     <TabItem label="Python" value="PythonExample">
@@ -222,6 +224,9 @@ computeAddressUsingNonce(1,bytecode,"0x155B792507a4E873e839c466C92849f9F67b7247"
     </TabItem>
 
 </Tabs>
+
+It should be noted that in Ethereum, the contract bytecode is not taken as the input of the address computation, but only the `nonce` and the sender's address are taken as the input.
+
 ### Base32 Address Computation
 
 Conflux base32 address is a network-prefixed Conflux base32-checksum address defined in [CIP-37](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-37.md). The address consists of a network-prefix indicating the network on which this address is valid, a colon (`":"`), and a base32-encoded payload indicating the destination of the address and containing a checksum, e.g. `cfx:aarc9abycue0hhzgyrr53m6cxedgccrmmyybjgh4xg`. Optionally, the address can contain a list of key value pairs in the format `key.value` between the network-prefix and the payload, separated by colons, e.g. `cfx:type.user:aarc9abycue0hhzgyrr53m6cxedgccrmmyybjgh4xg`. 

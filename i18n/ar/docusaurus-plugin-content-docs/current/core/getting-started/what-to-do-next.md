@@ -3,6 +3,22 @@ title: What to Do Next?
 sidebar: 3
 description: What to do after familiar using Fluent wallet.
 displayed_sidebar: coreSidebar
+tags:
+  - Getting Started
+  - Conflux Ecosystem
+  - Core Space
+  - Governance
+  - Community Participation
+  - Node Operation
+  - Mining
+  - Staking
+  - Development
+  - Smart Contracts
+  - DApps
+  - SDKs
+  - Tools
+  - Documentation
+  - Learning Resources
 ---
 
 import { DiscordLink } from "../../templates/links.tsx"
