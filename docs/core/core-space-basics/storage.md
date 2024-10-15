@@ -1,8 +1,6 @@
 ---
 sidebar_position: 3
 title: Storage Collateral
-keywords:
-  - storage
 displayed_sidebar: coreSidebar
 keywords:   
   - Storage Collateral

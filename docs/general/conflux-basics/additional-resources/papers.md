@@ -2,9 +2,6 @@
 sidebar_position: 1
 id: conflux_papers
 title: Papers
-keywords:
-  - conflux
-  - papers
 displayed_sidebar: generalSidebar
 keywords:
   - Conflux-Protocol

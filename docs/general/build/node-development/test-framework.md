@@ -9,7 +9,7 @@ keywords:
   - blockchain testing
   - RPC testing
   - network simulation
-tags:[Testing]
+tags: [Testing]
 ---
 # Test Framework
 
