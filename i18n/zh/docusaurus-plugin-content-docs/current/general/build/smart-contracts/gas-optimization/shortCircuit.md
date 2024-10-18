@@ -1,5 +1,19 @@
 ---
 displayed_sidebar: generalSidebar
+keywords:
+  - smart-contracts
+  - gas-optimization
+  - Solidity
+  - short-circuiting
+  - logical-operations
+  - boolean-logic
+  - LogicOptimization
+  - function-ordering
+  - gas-efficiency
+tags:
+  - 短路运算
+  - GAS 优化
+  - 智能合约
 ---
 
 # 短路运算
