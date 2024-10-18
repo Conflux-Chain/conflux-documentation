@@ -1,5 +1,20 @@
 ---
 displayed_sidebar: generalSidebar
+keywords:
+  - smart-contracts
+  - Solidity
+  - gas-optimization
+  - modifiers
+  - internal-functions
+  - bytecode
+  - deployment-size
+  - runtime-gas-costs
+  - UsingModifiers
+  - UsingInternalFunctions
+tags:
+  - Modifiers vs Internal Functions
+  - GAS 优化
+  - 智能合约
 ---
 
 # Modifiers vs Internal Functions
