@@ -2,6 +2,8 @@
 sidebar_position: 4
 title: 下载 Conflux 节点客户端
 displayed_sidebar: generalSidebar
+tags:
+  - node
 ---
 
 [Conflux-rust](https://github.com/conflux-chain/conflux-rust)是Conflux基金会使用Rust语言开发的一个Conflux协议的高性能实现。 Conflux-rust 是一个连接到 Conflux 网络上其他节点的 Conflux 节点，并提供了一个 RPC 接口，你可以使用它来查询和与区块链交互。 它还是一个命令行工具，用于管理本地账户并与节点进行 RPC 交互。 你可以通过以下任何方式下载已发布的软件包：
