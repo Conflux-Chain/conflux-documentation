@@ -2,6 +2,21 @@
 sidebar_position: 1
 title: Become a Solo Validator
 displayed_sidebar: generalSidebar
+keywords:
+  - Conflux Network
+  - PoS 共识机制
+  - solo validator
+  - staking
+  - node setup
+  - Conflux node
+  - PoS registration
+  - Fluent Wallet
+  - ConfluxHub
+  - PoW stake
+  - PoS votes
+  - validator rewards
+tags:
+  - Staking
 ---
 
 To become a solo validator, you’ll need to:
