@@ -10,7 +10,7 @@ keywords:
   - committee
   - epoch
   - block
-  - transaction
+  - transacción
   - rewards
   - voting power
   - PoS chain
@@ -20,34 +20,7 @@ keywords:
   - committee election
 tags:
   - PoS
-  - RPC
-  - API
-  - Consenso
-  - Cadena de bloques
-  - Proof-of-Stake
-  - Committee
-  - Epoch
-  - Block
-  - Transaction
-  - Rewards
-  - Voting-Power
-  - PoS-Chain
-  - Finality
-  - Pivot-Decision
-  - Account-Status
-  - Committee-Election
-  - Node-Status
-  - Block-Retrieval
-  - Transaction-Retrieval
-  - Reward-Distribution
-  - Staking
-  - Voting
-  - PoS-Address
-  - PoS-Transactions
-  - PoS-Blocks
-  - Consensus-Mechanism
-  - Chain-Finalization
-  - PoW-PoS-Interaction
+  - JSON-RPC
 displayed_sidebar: coreSidebar
 ---
 
