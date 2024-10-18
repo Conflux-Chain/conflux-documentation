@@ -1,5 +1,19 @@
 ---
 displayed_sidebar: generalSidebar
+keywords:
+  - smart-contracts
+  - Solidity
+  - gas-optimization
+  - variable-initialization
+  - default-values
+  - deployment-cost
+  - EVM
+  - state-variables
+  - uint256
+tags:
+  - Initialization
+  - GAS 优化
+  - 智能合约
 ---
 
 # Efficient Initialization
