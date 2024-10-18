@@ -2,6 +2,20 @@
 sidebar_position: 2
 title: 默克尔树
 displayed_sidebar: generalSidebar
+keywords:
+  - smart-contracts
+  - Merkle-Tree
+  - cryptography
+  - blockchain
+  - data-verification
+  - 以太坊
+  - Bitcoin
+  - NFT
+  - whitelist
+  - Solidity
+  - MerkleVerification
+tags:
+  - 默克尔树
 ---
 
 ## Basic Concept
