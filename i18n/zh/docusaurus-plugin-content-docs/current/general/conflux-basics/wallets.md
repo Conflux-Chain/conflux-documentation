@@ -2,6 +2,26 @@
 sidebar_position: 8
 title: 钱包
 displayed_sidebar: generalSidebar
+keywords:
+  - Conflux Network
+  - wallets
+  - digital assets
+  - private keys
+  - public keys
+  - addresses
+  - Fluent
+  - Ledger
+  - MetaMask
+  - hardware wallets
+  - software wallets
+  - Core Space
+  - eSpace
+  - DApps
+  - CFX
+  - security
+  - key management
+tags:
+  - 钱包
 ---
 
 这份指南将帮助您了解钱包的基础知识，它们的目的以及它们在Conflux网络中的作用。
