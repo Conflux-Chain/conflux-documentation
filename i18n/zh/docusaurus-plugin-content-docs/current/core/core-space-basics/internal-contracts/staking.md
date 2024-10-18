@@ -2,7 +2,7 @@
 sidebar_position: 3
 title: Staking
 displayed_sidebar: coreSidebar
-tags:
+keyword:
   - Staking
   - 内置合约
   - Storage Occupation
@@ -13,6 +13,9 @@ tags:
   - CFX
   - Governance
   - Stakingbalance
+tags:
+  - 内置合约
+  - Staking
 ---
 
 ## 概览
