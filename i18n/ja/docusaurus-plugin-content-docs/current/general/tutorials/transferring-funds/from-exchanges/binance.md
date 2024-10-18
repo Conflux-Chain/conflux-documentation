@@ -2,6 +2,18 @@
 sidebar_position: 1
 title: Binance
 displayed_sidebar: generalSidebar
+keywords:
+  - Binance
+  - Conflux Network
+  - CFX
+  - Transfer
+  - Core Space
+  - eSpace
+  - Fluent
+  - MetaMask
+  - Cryptocurrency exchange
+tags:
+  - binance
 ---
 
 
