@@ -11,6 +11,7 @@ keywords:
   - blockchain mining
 tags: [Stratum Protocol]
 ---
+
 # Stratum Protocol in Conflux-Rust
 
 ## Design Goal

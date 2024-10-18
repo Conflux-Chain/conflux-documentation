@@ -17,7 +17,7 @@ keywords:
   - Create2
   - Address Converter
   - BIP-44
-tags: [Base32 Addresses, Addresses]
+tags: [Base32 Addresses, Addresses, Conflux Addresses]
 
 ---
 import Tabs from "@theme/Tabs";
