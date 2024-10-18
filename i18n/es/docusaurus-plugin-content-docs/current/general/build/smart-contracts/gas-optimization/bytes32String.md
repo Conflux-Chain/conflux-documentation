@@ -1,5 +1,20 @@
 ---
 displayed_sidebar: generalSidebar
+keywords:
+  - smart-contracts
+  - gas-optimization
+  - bitmap
+  - bitwise-operations
+  - Solidity
+  - uint8
+  - boolean-array
+  - AND-operation
+  - bit-shift
+  - gas-efficiency
+tags:
+  - Bytes32 vs String
+  - Gas Optimization
+  - Contratos Inteligentes
 ---
 
 # Bytes32 vs String
