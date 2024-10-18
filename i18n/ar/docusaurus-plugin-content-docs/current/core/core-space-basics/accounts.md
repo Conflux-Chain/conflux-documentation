@@ -2,7 +2,7 @@
 sidebar_position: 2
 title: Accounts
 displayed_sidebar: coreSidebar
-tags:
+keywords:
   - Accounts
   - Core Space
   - Account Address
@@ -21,6 +21,8 @@ tags:
   - SponsorInfo
   - StorageCollateral
   - AccumulatedInterestReturn
+tags:
+  - Accounts
 ---
 
 :::note
