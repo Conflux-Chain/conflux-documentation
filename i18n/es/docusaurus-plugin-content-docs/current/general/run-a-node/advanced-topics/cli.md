@@ -7,6 +7,8 @@ keywords:
   - cli
   - sdk
 displayed_sidebar: generalSidebar
+tags:
+  - node
 ---
 
 Conflux CLI sub-commands is a collection of command line interfaces which allows you to interact with a local or remote Conflux node.
