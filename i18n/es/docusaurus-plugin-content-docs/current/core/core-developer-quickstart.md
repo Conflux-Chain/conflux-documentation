@@ -3,7 +3,7 @@ sidebar_position: 3
 title: Developer Quickstart
 displayed_sidebar: coreSidebar
 description: This tutorial will show you how to send a transaction using the js-conflux-sdk.
-tags:
+keywords:
   - js-conflux-sdk
   - Core Space
   - Transaction
@@ -21,6 +21,8 @@ tags:
   - Testnet
   - Faucet
   - ConfluxScan
+tags:
+  - js-conflux-sdk
 ---
 
 To send a transaction on Conflux Core Space, you need to use it's own SDKs. This tutorial will show you how to send a transaction using the js-conflux-sdk.
