@@ -4,6 +4,9 @@ title: Fluent
 keywords:
   - Fluent
   - 钱包
+tags:
+  - wallet
+  - fluent wallet
 displayed_sidebar: generalSidebar
 ---
 
