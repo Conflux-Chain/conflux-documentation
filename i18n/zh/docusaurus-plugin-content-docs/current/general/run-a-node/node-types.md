@@ -3,6 +3,24 @@ sidebar_position: 2
 title: 节点类型
 description: 了解Conflux 网络中不同类型的节点。
 displayed_sidebar: generalSidebar
+keywords:
+  - Conflux Network
+  - node types
+  - 全节点
+  - 归档节点
+  - light node
+  - storage requirements
+  - hardware requirements
+  - RPC service
+  - mining
+  - staking
+  - transaction index
+  - persist_tx_index
+  - Exchange requirements
+  - node configuration
+  - hydra.toml
+tags:
+  - node
 ---
 
 在 Conflux 网络中，你可以运行三种不同类型的节点，每种类型都有不同的目的和不同的硬件要求。 这三类分别是：**归档节点，全节点和轻节点**。
