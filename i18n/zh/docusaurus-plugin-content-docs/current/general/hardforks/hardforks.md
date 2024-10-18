@@ -1,6 +1,18 @@
 ---
 sidebar_position: 3
 displayed_sidebar: generalSidebar
+keywords:
+  - Conflux Network
+  - hard forks
+  - network upgrades
+  - protocol changes
+  - backward compatibility
+  - node updates
+  - blockchain split
+  - community consensus
+  - network participants
+tags:
+  - 硬分叉
 ---
 
 # 硬分叉
