@@ -2,6 +2,24 @@
 sidebar_position: 2
 title: 树图账本结构
 displayed_sidebar: generalSidebar
+keywords:
+  - Conflux-Network
+  - 树图
+  - GHAST
+  - consensus-mechanism
+  - distributed-ledger
+  - forks
+  - longest-chain-rule
+  - scalability
+  - security
+  - parent-edge
+  - reference-edges
+  - pivot-chain
+  - DAG
+  - transaction-ordering
+  - block-creation-rate
+tags:
+  - Proof-of-Work
 ---
 
 # 树图账本结构
