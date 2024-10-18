@@ -2,6 +2,19 @@
 sidebar_position: 9
 title: Contratos Inteligentes
 displayed_sidebar: generalSidebar
+keywords:
+  - smart contracts
+  - Conflux Network
+  - Solidity
+  - EVM
+  - decentralized applications
+  - dApps
+  - NFTs
+  - DeFi
+  - ICOs
+  - user accounts
+tags:
+  - Contratos Inteligentes
 ---
 
 # Introducción a los contratos inteligentes
