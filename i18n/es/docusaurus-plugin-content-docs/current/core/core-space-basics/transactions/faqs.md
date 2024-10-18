@@ -3,9 +3,6 @@ title: FAQs
 sidebar_position: 15
 displayed_sidebar: coreSidebar
 keywords:
-  - faq
-  - transaction
-tags:
   - Transaction
   - Sending Transactions
   - Transaction Cancellation
@@ -16,6 +13,10 @@ tags:
   - EIP-2718
   - Tree Graph
   - Concurrent Block Emission
+tags:
+  - 155 transaction
+  - Core Space transaction differences with Ethereum
+  - Transacciones
 ---
 
 ## Misc
