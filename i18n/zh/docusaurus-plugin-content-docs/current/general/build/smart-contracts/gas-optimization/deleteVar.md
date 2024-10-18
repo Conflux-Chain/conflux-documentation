@@ -1,5 +1,20 @@
 ---
 displayed_sidebar: generalSidebar
+keywords:
+  - smart-contracts
+  - gas-optimization
+  - Solidity
+  - delete-keyword
+  - state-variables
+  - default-values
+  - SSTORE
+  - ResetVariable
+  - gas-costs
+  - comparison
+tags:
+  - ResetVariable
+  - GAS 优化
+  - 智能合约
 ---
 
 # ResetVariable
