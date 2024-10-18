@@ -2,6 +2,20 @@
 sidebar_position: 6
 title: 经济模型
 displayed_sidebar: generalSidebar
+keywords:
+  - Conflux Network
+  - economic model
+  - CFX token
+  - token distribution
+  - incentives mechanism
+  - PoW mining
+  - PoS staking
+  - transaction fees
+  - token issuance
+  - token burning
+  - DAO governance
+tags:
+  - Tokenomics
 ---
 
 Conflux 的经济模型旨在鼓励用户参与和网络发展，同时确保技术的稳定性。 一个精心设计的经济模型对于一个去中心化的系统有效运行是必不可少的。 Blockchain technology establishes trust and promotes efficient relationships among cooperators, accelerating the transfer of value.
