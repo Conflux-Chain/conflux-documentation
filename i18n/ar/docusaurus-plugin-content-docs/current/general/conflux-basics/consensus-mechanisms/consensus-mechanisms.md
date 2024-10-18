@@ -2,6 +2,22 @@
 sidebar_position: 2
 title: Consensus
 displayed_sidebar: generalSidebar
+keywords:
+  - Conflux-Network
+  - consensus-mechanism
+  - blockchain
+  - distributed-ledger
+  - Proof-of-Work
+  - Proof-of-Stake
+  - hybrid-consensus
+  - Tree-Graph
+  - GHAST
+  - transaction-validation
+  - decentralization
+  - security
+  - scalability
+tags:
+  - Consensus Mechanisms
 ---
 
 In blockchain, **consensus** refers to the process by which all nodes in the network agree on the current state of the ledger. To achieve consensus, each node in the network must validate and confirm that new transactions added to the blockchain are valid and follow the rules of the protocol. This process is typically achieved through a consensus algorithm, such as Proof of Work or Proof of Stake, which incentivizes nodes to maintain the consistency and availability of the blockchain.
