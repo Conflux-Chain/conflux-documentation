@@ -6,6 +6,15 @@ keywords:
   - conflux
   - pinata
   - ipfs
+  - nft storage
+  - file upload
+  - decentralized storage
+  - content pinning
+  - metadata
+tags:
+  - IPFS
+  - NFT
+  - Pinata
 displayed_sidebar: generalSidebar
 ---
 
