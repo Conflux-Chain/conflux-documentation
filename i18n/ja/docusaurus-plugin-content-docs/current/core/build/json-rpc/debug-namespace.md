@@ -15,26 +15,8 @@ keywords:
   - gas usage
   - event logs
 tags:
-  - Debug
-  - RPC
-  - API
-  - Epoch
-  - Receipts
-  - cfx_getEpochReceipts
-  - Transaction-Receipts
-  - Blockchain-Analysis
-  - Smart-Contract-Debugging
-  - Gas-Usage
-  - Event-Logs
-  - Debugging-Tools
-  - JSON-RPC-Methods
-  - Block-Exploration
-  - Transaction-Tracing
-  - State-Inspection
-  - Performance-Analysis
-  - Error-Diagnosis
-  - Network-Monitoring
-  - Node-Debugging
+  - debugging
+  - JSON-RPC
 displayed_sidebar: coreSidebar
 ---
 
