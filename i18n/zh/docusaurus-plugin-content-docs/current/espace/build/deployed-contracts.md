@@ -3,15 +3,15 @@ sidebar_position: 10
 title: 已部署合约
 description: Conflux eSpace 中实用工具的合约地址
 displayed_sidebar: eSpaceSidebar
-tags:
+keywords:
   - Conflux eSpace
   - 已部署合约
   - Contract Addresses
   - WCFX9
   - Multicall3
   - Gnosis Safe
-  - 主网
-  - 测试网
+  - Mainnet
+  - Testnet
   - Utility Contracts
   - Wrapped CFX
   - Deterministic Deployment
@@ -22,6 +22,8 @@ tags:
   - Cross-chain Compatibility
   - EVM兼容性
   - Developer Resources
+tags:
+  - Contract Addresses
 ---
 
 您将在本页面中找到 Conflux eSpace 及常用协议的有用的合约地址。
