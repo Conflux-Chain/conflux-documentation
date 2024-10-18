@@ -3,10 +3,6 @@ sidebar_position: 2
 title: 编码和签名
 displayed_sidebar: coreSidebar
 keywords:
-  - 交易
-  - 签名
-  - 编码
-tags:
   - Transaction Signing
   - Transaction Encoding
   - RLP Encoding
@@ -19,6 +15,10 @@ tags:
   - Cryptographic Process
   - Blockchain Security
   - Transaction Broadcast
+tags:
+  - Transaction Encoding
+  - 交易生命周期
+  - 交易
 ---
 
 在交易的每个字段都准备好后，需要按照以下步骤，才能将其发送到网络 (别担心， 这些步骤已经由钱包或SDK实现)：
