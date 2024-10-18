@@ -10,9 +10,7 @@ keywords:
   - decentralization
   - 全节点
 tags:
-  - Core
   - 节点
-  - Infrastructure
 displayed_sidebar: coreSidebar
 ---
 
