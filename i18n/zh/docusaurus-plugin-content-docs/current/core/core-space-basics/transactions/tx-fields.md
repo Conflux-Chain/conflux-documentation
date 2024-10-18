@@ -2,7 +2,7 @@
 sidebar_position: 1
 title: 交易字段
 displayed_sidebar: coreSidebar
-tags:
+keywords:
   - 交易字段
   - from
   - to
@@ -23,6 +23,9 @@ tags:
   - Replay Protection
   - Transaction Expiration
   - RLP Encoding
+tags:
+  - 交易字段
+  - 交易
 ---
 
 在编码 Conflux Core Space 交易时，以下字段是必需的：
