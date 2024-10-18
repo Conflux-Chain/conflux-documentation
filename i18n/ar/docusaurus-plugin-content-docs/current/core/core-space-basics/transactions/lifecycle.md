@@ -3,12 +3,6 @@ sidebar_position: 5
 title: Transaction Lifecycle
 displayed_sidebar: coreSidebar
 keywords:
-  - transaction
-  - lifecycle
-  - stage
-  - confirmation
-  - finalization
-tags:
   - Transaction Lifecycle
   - Transaction Stages
   - Transaction Construction
@@ -23,6 +17,8 @@ tags:
   - Nonce
   - Gas Price
   - Mempool
+tags:
+  - Transaction Lifecycle
 ---
 
 Transactions go through several stages from the time they are constructed to the time they are finally confirmed on the chain. A good understanding of these stages will help users and developers better identify problems with sending transactions and ultimately ensure that transactions are successfully confirmed or even finalized.
