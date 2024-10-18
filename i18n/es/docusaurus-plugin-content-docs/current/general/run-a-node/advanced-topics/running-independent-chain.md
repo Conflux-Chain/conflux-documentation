@@ -2,6 +2,8 @@
 sidebar_position: 13
 title: Running an Independent Chain
 displayed_sidebar: generalSidebar
+tags:
+  - node
 ---
 
 # Run an Independent Chain
