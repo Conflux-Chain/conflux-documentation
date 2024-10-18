@@ -3,34 +3,12 @@ sidebar_position: 5
 title: CrossSpaceCall 合约
 description: 对CrossSpaceCall合约的详细解释
 displayed_sidebar: eSpaceSidebar
-tags:
-  - CIP-90
-  - Conflux eSpace
-  - Conflux Core
-  - EVM兼容性
+keywords:
   - CrossSpaceCall
-  - Internal Contract
-  - Cross-Space Operations
-  - CFX Transfer
-  - 智能合约
-  - Mapped Addresses
-  - Ethereum Compatibility
-  - Transaction Format
-  - Address Generation
-  - Base32 地址
-  - Hex Addresses
-  - EIP-155
-  - CIP-37
-  - EIP-55
-  - Atomic Operations
-  - Layer-1 Security
-  - js-conflux-sdk
-  - Solidity
-  - RPC Methods
-  - Blockchain Interoperability
-  - Cross-Chain Communication
-  - Contract Deployment
-  - Contract Interaction
+  - 内置合约
+tags:
+  - CrossSpaceCall
+  - 内置合约
 ---
 
 Conflux eSpace 和 Core Space 是两个独立的 space，您不能直接将 CFX 从 base32 地址发送到十六进制地址。 您只能使用 [Confluxhub Space Bridge](https://confluxhub.io/espace-bridge/cross-space) 在 eSpace 和 Core Space 之间转移 CFX。
