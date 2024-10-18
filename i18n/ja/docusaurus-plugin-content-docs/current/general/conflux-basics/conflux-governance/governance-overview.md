@@ -2,6 +2,18 @@
 sidebar_position: 1
 title: Governance Overview
 displayed_sidebar: generalSidebar
+keywords:
+  - Conflux-Network
+  - governance
+  - decentralization
+  - community-voting
+  - CIPs
+  - network-upgrades
+  - hard-forks
+  - PoS
+  - staking
+tags:
+  - Governance Overview
 ---
 
 ## **Governance Model — CFX Voting**
