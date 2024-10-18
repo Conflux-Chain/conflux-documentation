@@ -2,6 +2,20 @@
 sidebar_position: 2
 title: Solidity Basics
 displayed_sidebar: generalSidebar
+keywords:
+  - smart-contracts
+  - Solidity
+  - programming-language
+  - Ethereum
+  - Conflux-Network
+  - variables
+  - functions
+  - inheritance
+  - libraries
+  - gas-optimization
+  - deployment
+tags:
+  - Solidity
 ---
 
 ## Intro
