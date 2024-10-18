@@ -1,5 +1,21 @@
 ---
 displayed_sidebar: generalSidebar
+keywords:
+  - smart-contracts
+  - security
+  - vulnerabilities
+  - integer-overflow
+  - beautychain
+  - bec
+  - solidity
+  - safeMath
+  - arithmetic-operations
+  - evm
+  - prevention
+tags:
+  - 整数溢出
+  - Security
+  - 智能合约
 ---
 
 # 整数溢出
