@@ -2,6 +2,8 @@
 title: 运行归档节点
 sidebar_position: 12
 displayed_sidebar: generalSidebar
+tags:
+  - node
 ---
 
 Conflux存档节点存储了Conflux区块链的完整历史记录。 这使它们能够向其他节点和应用程序提供历史数据。

@@ -2,6 +2,18 @@
 sidebar_position: 1
 title: 币安（Binance）
 displayed_sidebar: generalSidebar
+keywords:
+  - 币安（Binance）
+  - Conflux Network
+  - CFX
+  - Transfer
+  - Core Space
+  - eSpace
+  - Fluent
+  - MetaMask
+  - Cryptocurrency exchange
+tags:
+  - binance
 ---
 
 

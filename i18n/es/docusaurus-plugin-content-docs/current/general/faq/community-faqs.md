@@ -2,6 +2,33 @@
 title: Community FAQs
 sidebar_position: 2
 displayed_sidebar: generalSidebar
+keywords:
+  - Conflux Network
+  - FAQs
+  - community questions
+  - storageLimit
+  - epochHeight
+  - transaction nonce
+  - ExceedStorageLimit error
+  - keystore format
+  - node synchronization
+  - sponsor payment
+  - CFX token
+  - OpenZeppelin
+  - testnet faucet
+  - cadena pivote
+  - base fee
+  - full node
+  - archive node
+  - transaction failure
+  - tx revert
+  - websocket service
+  - docker
+  - block height
+  - transaction signing
+  - gas units
+  - EVM opcodes
+  - transaction lifecycle
 ---
 
 # Community FAQs

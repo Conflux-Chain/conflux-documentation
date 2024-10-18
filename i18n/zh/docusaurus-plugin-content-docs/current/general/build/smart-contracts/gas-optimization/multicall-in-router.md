@@ -1,5 +1,21 @@
 ---
 displayed_sidebar: generalSidebar
+keywords:
+  - smart-contracts
+  - Solidity
+  - gas-optimization
+  - multicall
+  - router-contracts
+  - batching-transactions
+  - Uniswap
+  - Compound
+  - delegatecall
+  - MulticallRouter
+  - Foundry
+tags:
+  - Multicall in Router
+  - GAS 优化
+  - 智能合约
 ---
 
 # 在路由器类合约中实现多调用

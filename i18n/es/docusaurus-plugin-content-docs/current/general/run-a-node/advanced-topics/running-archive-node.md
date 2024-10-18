@@ -2,6 +2,8 @@
 title: Running an Archive Node
 sidebar_position: 12
 displayed_sidebar: generalSidebar
+tags:
+  - node
 ---
 
 Conflux archive nodes store the entire history of the Conflux blockchain. This allows them to serve historical data to other nodes and applications.

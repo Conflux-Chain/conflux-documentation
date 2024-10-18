@@ -2,6 +2,8 @@
 sidebar_position: 10
 title: 运行轻节点
 displayed_sidebar: generalSidebar
+tags:
+  - node
 ---
 
 # 运行轻节点

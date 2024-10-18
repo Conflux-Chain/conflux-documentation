@@ -1,6 +1,23 @@
 ---
 title: Bad Randomness
 displayed_sidebar: generalSidebar
+keywords:
+  - smart contracts
+  - security
+  - vulnerabilities
+  - randomness
+  - nft
+  - gamefi
+  - ethereum
+  - solidity
+  - pseudo-random
+  - blockhash
+  - keccak256
+  - chainlink-vrf
+tags:
+  - Bad Randomness
+  - Security
+  - Smart Contracts
 ---
 
 # Bad Randomness

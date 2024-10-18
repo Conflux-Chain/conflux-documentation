@@ -2,6 +2,8 @@
 sidebar_position: 6
 title: Node Configuration
 displayed_sidebar: generalSidebar
+tags:
+  - node
 ---
 
 Conflux nodes offer a rich set of configuration options, allowing the adjustment of node behavior by modifying these settings. This document provides an overview of the node configuration options and their meanings.

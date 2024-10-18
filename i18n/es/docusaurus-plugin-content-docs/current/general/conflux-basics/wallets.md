@@ -2,6 +2,26 @@
 sidebar_position: 8
 title: Wallets (billeteras)
 displayed_sidebar: generalSidebar
+keywords:
+  - Conflux Network
+  - wallets
+  - digital assets
+  - private keys
+  - public keys
+  - addresses
+  - Fluent
+  - Ledger
+  - MetaMask
+  - hardware wallets
+  - software wallets
+  - Core Space
+  - eSpace
+  - DApps
+  - CFX
+  - security
+  - key management
+tags:
+  - Wallets (billeteras)
 ---
 
 Esta guía le ayudará a entender los fundamentos de las billeteras, su propósito y su papel en la red de Conflux.

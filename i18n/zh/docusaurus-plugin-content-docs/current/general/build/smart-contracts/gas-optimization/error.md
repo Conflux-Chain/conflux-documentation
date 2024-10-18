@@ -1,5 +1,20 @@
 ---
 displayed_sidebar: generalSidebar
+keywords:
+  - smart-contracts
+  - Solidity
+  - gas-optimization
+  - error-handling
+  - 回滚
+  - require
+  - assert
+  - custom-errors
+  - gas-consumption
+  - EVM
+tags:
+  - 错误
+  - GAS 优化
+  - 智能合约
 ---
 
 # 错误

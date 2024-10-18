@@ -6,10 +6,6 @@ displayed_sidebar: coreSidebar
 keywords:
   - cfx_estimateGasAndCollateral
   - errors
-toc_max_heading_level: 4
-tags:
-  - cfx_estimateGasAndCollateral
-  - errors
   - json-rpc
   - gas-estimation
   - transaction-execution
@@ -22,6 +18,10 @@ tags:
   - nonce-handling
   - contract-deployment
   - error-handling
+toc_max_heading_level: 4
+tags:
+  - gas estimation
+  - transaction execution
 ---
 
 `cfx_estimateGasAndCollateral` 接口是 Conflux 区块链中的一个关键组成部分，该接口允许用户可在发起交易前，估算交互所需交易费用和存储抵押费用 本文档旨在清晰地概述 `cfx_estimateGasAndCollateral` 接口的功能，特别强调其对各种参数配置的响应。

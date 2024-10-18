@@ -3,7 +3,7 @@ sidebar_position: 3
 title: thirdweb
 description: 使用 thirdweb 部署合约
 displayed_sidebar: eSpaceSidebar
-tags:
+keywords:
   - Conflux eSpace
   - thirdweb
   - 智能合约
@@ -28,6 +28,8 @@ tags:
   - Prebuilt Contracts
   - Contract Extensions
   - Royalties
+tags:
+  - thirdwebm Tutorial
 ---
 
 ## Create Contract

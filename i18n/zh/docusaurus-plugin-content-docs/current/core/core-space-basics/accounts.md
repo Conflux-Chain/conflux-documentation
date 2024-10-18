@@ -2,7 +2,7 @@
 sidebar_position: 2
 title: 账户
 displayed_sidebar: coreSidebar
-tags:
+keywords:
   - 账户
   - Core Space
   - 账户地址
@@ -21,6 +21,8 @@ tags:
   - SponsorInfo
   - StorageCollateral
   - AccumulatedInterestReturn
+tags:
+  - 账户
 ---
 
 :::note

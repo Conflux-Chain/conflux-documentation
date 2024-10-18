@@ -2,6 +2,25 @@
 sidebar_position: 4
 title: 运行 PoS 质押池
 displayed_sidebar: generalSidebar
+keywords:
+  - Conflux Network
+  - PoS 共识机制
+  - staking pool
+  - node setup
+  - 全节点
+  - 归档节点
+  - conflux-fans/pos-pool
+  - PoS Pool contract
+  - PoS Pool interface
+  - web server
+  - infrastructure
+  - dApp
+  - community-driven
+  - open source
+  - CFX holders
+  - technical configuration
+tags:
+  - Staking
 ---
 
 在本节中，我们提供了一个指南，介绍了如何部署、配置和管理一个**PoS池**，允许 CFX 持有者通过与PoS池前端应用程序进行交互而无需处理技术复杂性就加入PoS协议。

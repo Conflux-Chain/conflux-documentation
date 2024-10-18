@@ -2,6 +2,23 @@
 sidebar_position: 10
 title: Gas and Fees
 displayed_sidebar: generalSidebar
+keywords:
+  - Conflux Network
+  - gas
+  - transaction fees
+  - computational effort
+  - gas limit
+  - 燃气用量
+  - 燃气计费
+  - base fee
+  - priority fee
+  - EVM opcodes
+  - 存储抵押
+  - fixed fee
+  - dynamic fee
+  - fee optimization
+tags:
+  - 燃气
 ---
 
 ## What is Gas?

@@ -1,11 +1,25 @@
 ---
 id: pos_overview
 title: PoS 概览
-keywords:
-  - pos
-  - overview
 sidebar_position: 2
 displayed_sidebar: generalSidebar
+keywords:
+  - Conflux-Network
+  - Proof-of-Stake
+  - PoS 共识机制
+  - consensus-mechanism
+  - 51-attack
+  - PoW-chain
+  - pivot-block
+  - voting-committee
+  - BLS
+  - VRF
+  - staking
+  - CFX
+  - incentive-plan
+  - security
+tags:
+  - Proof-of-Stake
 ---
 
 本文是介绍 Conflux PoS 最终性的概念，而不涉及具体的细节。 它是帮助读者一般地理解 PoS 的，也是阅读其他技术文档的基础。

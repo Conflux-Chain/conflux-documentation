@@ -3,10 +3,17 @@ sidebar_position: 1
 title: Deploying Upgradeable Contracts using Hardhat
 description: Learn how to deploy upgradeable contracts on Conflux eSpace using Hardhat
 keywords:
-  - Upgrade
+  - tutorial
+  - smart contracts
+  - upgradeable contracts
   - Hardhat
-  - 智能合约
+  - eSpace
+  - proxy pattern
 displayed_sidebar: eSpaceSidebar
+tags:
+  - 教程
+  - Upgradeable Contracts
+  - Hardhat
 ---
 
 # Deploying Upgradeable Contracts on Conflux eSpace using Hardhat

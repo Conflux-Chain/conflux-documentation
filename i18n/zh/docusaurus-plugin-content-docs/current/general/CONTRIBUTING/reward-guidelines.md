@@ -3,6 +3,24 @@ displayed_sidebar: generalSidebar
 title: 奖励准则
 description: 贡献奖励准则
 sidebar_position: 2
+keywords:
+  - Conflux Network
+  - documentation
+  - contributing
+  - reward guidelines
+  - FansCoin
+  - FC rewards
+  - issue rewards
+  - pull request rewards
+  - formatting
+  - error identification
+  - improvements
+  - website code issues
+  - reward evaluation
+  - reward distribution
+  - community involvement
+tags:
+  - Community Contribution
 ---
 
 ## 简介

@@ -3,6 +3,19 @@ sidebar_position: 15
 title: FAQs
 description: Frequently asked questions about Conflux eSpace
 displayed_sidebar: eSpaceSidebar
+keywords:
+  - Conflux eSpace
+  - FAQs
+  - Node Operation
+  - Development Tools
+  - Cross-Space Bridge
+  - Performance
+  - Ethereum Compatibility
+  - Blockchain Basics
+  - Contratos Inteligentes
+  - DApp Development
+tags:
+  - Node Operation
 ---
 
 ## How to run eSpace node?

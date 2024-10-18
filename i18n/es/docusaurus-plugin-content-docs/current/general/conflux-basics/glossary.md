@@ -2,6 +2,24 @@
 sidebar_position: 5
 title: Glosario
 displayed_sidebar: generalSidebar
+keywords:
+  - Conflux Network
+  - blockchain terminology
+  - consensus mechanisms
+  - cryptography
+  - smart contracts
+  - tokens
+  - wallets
+  - mining
+  - staking
+  - governance
+  - network architecture
+  - transaction processing
+  - security
+  - decentralized finance
+  - NFTs
+tags:
+  - Glosario
 ---
 
 ## Introducción

@@ -12,10 +12,9 @@ keywords:
   - confluxscan
 tags:
   - Gas Sponsorship
-  - Foundation
+  - Foundation Support
   - Developer Support
   - Contract Deployment
-  - ConfluxScan
 displayed_sidebar: coreSidebar
 ---
 

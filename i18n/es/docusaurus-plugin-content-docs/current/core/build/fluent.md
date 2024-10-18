@@ -13,19 +13,7 @@ keywords:
   - use-wallet
 tags:
   - Wallet (billetera)
-  - Integration
-  - Fluent
-  - dApp
-  - Core Space
-  - eSpace
-  - Browser Extension
-  - EVM-Compatible
-  - Wallet Connection
-  - RPC API
-  - Web3 Provider
-  - Blockchain Interaction
-  - User Authentication
-  - Account Management
+  - fluent wallet
 displayed_sidebar: coreSidebar
 ---
 

@@ -2,6 +2,21 @@
 sidebar_position: 3
 title: Token 标准
 displayed_sidebar: generalSidebar
+keywords:
+  - smart-contracts
+  - token-standards
+  - ERC-20
+  - ERC-721
+  - ERC-1155
+  - CIP-1820
+  - fungible-tokens
+  - non-fungible-tokens
+  - 非同质化代币（NFTs）
+  - ICOs
+  - interface-detection
+  - Conflux
+tags:
+  - Token 标准
 ---
 
 区块链生态系统中的代币（Token）标准是至关重要的，它们为代币的实施提供了一套标准和指导原则。 这些标准确保了不同应用和平台间的互操作性和一致性。 主要标准包括：

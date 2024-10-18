@@ -2,6 +2,20 @@
 sidebar_position: 10
 title: 账户和地址
 displayed_sidebar: generalSidebar
+keyworks:
+  - Conflux-Network
+  - accounts
+  - addresses
+  - blockchain
+  - distributed-ledger
+  - Proof-of-Work
+  - Proof-of-Stake
+  - hybrid-consensus
+  - 树图
+  - GHAST
+  - transaction-validation
+tags:
+  - 账户
 ---
 
 ## 概览

@@ -18,29 +18,8 @@ keywords:
   - testing framework
   - deployment automation
 tags:
-  - Development Tools
-  - Hardhat
-  - ChainIDE
-  - Address Converter
-  - Dapp
-  - Contratos Inteligentes
-  - Multi-Chain
-  - Blockchain Development
-  - Solidity
-  - Contract Compilation
-  - Testing Framework
-  - Deployment Automation
-  - Cloud-Based IDE
-  - js-conflux-sdk
-  - Plugin
-  - Address Format
-  - Development Environment
-  - Contract Interaction
-  - Debugging
-  - Gas Optimization
-  - Security Analysis
-  - Contract Verification
-  - Network Management
+  - development tools
+  - blockchain utilities
 displayed_sidebar: coreSidebar
 ---
 

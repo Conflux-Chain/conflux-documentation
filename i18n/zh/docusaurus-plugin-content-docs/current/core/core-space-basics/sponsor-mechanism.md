@@ -2,22 +2,24 @@
 sidebar_position: 5
 title: 代付机制
 displayed_sidebar: coreSidebar
-tags:
+keywords:
   - 赞助机制
   - 智能合约
   - Gas Fees
   - 存储抵押
   - SponsorWhitelistControl
   - Sponsor Balance
-  - 白名单
-  - 燃气费赞助
-  - 关于存储的赞助
+  - Whitelist
+  - Gas Sponsorship
+  - Storage Sponsorship
   - 交易费用
   - User Adoption
   - Contract Deployment
   - Sponsor Replacement
   - 存储点
   - CIP-107
+tags:
+  - 赞助机制
 ---
 
 Conflux Core 空间实现了代付机制，来补贴智能合约的使用。 这允许余额为零的新账户调用智能合约，前提是执行操作得到代付（通常由Dapp运营者提供）。 这个机制旨在降低新用户的入门门槛。
@@ -37,7 +39,7 @@ Conflux Core 空间实现了代付机制，来补贴智能合约的使用。 这
 
 要赞助合约，赞助方需要调用 [SponsorWhitelistControll](./internal-contracts/sponsor-whitelist-control) 内置合约。 它还会记录智能合约的赞助信息。
 
-### 燃气费赞助
+### Gas Sponsorship
 
 要赞助合约的燃气费用，您可以调用 `SponsorWhitelistControl` 的 `setSponsorForGas` 方法。 此方法有两个参数：
 
@@ -58,7 +60,7 @@ Conflux Core 空间实现了代付机制，来补贴智能合约的使用。 这
 
 如果在调用 `setSponsorForGas` 时合约已经有了赞助者，并且新的赞助者与当前赞助者相同，合约的赞助余额将会增加。 如果新的赞助者发生变动，合约的赞助余额将被被替换。 在这种情况下，赞助金额需要大于 ` currentSponsorBalance + 1000 * upperBound`。 前一个赞助者的赞助余额将被退还，剩余金额将更换为赞助者后的赞助余额。
 
-### 关于存储的赞助
+### Storage Sponsorship
 
 要赞助合约的存储抵押，可以调用 `SponsorWhitelistControl` 里面的 `setSponsorForCollateral` 方法。 这个方法只需要一个参数：
 
@@ -74,7 +76,7 @@ Conflux Core 空间实现了代付机制，来补贴智能合约的使用。 这
 
 类似的，如果在调用 `setSponsorForCollateral` 时合约已经有了赞助者，且新赞助者与当前赞助者相同，则合约的赞助余额将增加。 如果新的赞助者发生变动，合约的赞助余额将被被替换。 在这种情况下，新的代付金额需要大于 `currentSponsorBalance + currentCollateral`。 前一个赞助者的余额和抵押物将被退还，剩余金额将会作为更换代付方后的代付余额(其中一部分将转换为存储点)。
 
-### 白名单
+### Whitelist
 
 `SponsorWhitelistControl`还会维护每个赞助合约的白名单。 只有在这个白名单上的地址才能在与合约交互时享受赞助的好处；否则，交易费用必须由交易的发送者支付。 这个白名单可以通过 `SponsorWhitelistControl` 中的 `addPrivilegeByAdmin` 和`removePrivilegeByAdmin` 方法来修改。
 

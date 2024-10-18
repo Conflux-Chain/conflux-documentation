@@ -1,6 +1,21 @@
 ---
 title: 智能合约安全
 displayed_sidebar: generalSidebar
+keywords:
+  - smart-contracts
+  - security
+  - best-practices
+  - testing
+  - auditing
+  - vulnerabilities
+  - reentrancy
+  - input-validation
+  - upgradability
+  - incident-response
+  - solidity
+tags:
+  - Security
+  - 智能合约
 ---
 
 确保智能合约的安全至关重要，因为它们涉及财产的直接处理与存储，并且一旦合约被部署在区块链上，就很难修改。 为了保护你的智能合约，遵循以下关键步骤和最优的实践方法：

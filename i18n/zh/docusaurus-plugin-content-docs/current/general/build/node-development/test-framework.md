@@ -1,5 +1,16 @@
 ---
 displayed_sidebar: generalSidebar
+keywords:
+  - Conflux Network
+  - test framework
+  - node testing
+  - Python tests
+  - P2P messages
+  - blockchain testing
+  - RPC testing
+  - network simulation
+tags:
+  - Testing
 ---
 
 # 测试框架

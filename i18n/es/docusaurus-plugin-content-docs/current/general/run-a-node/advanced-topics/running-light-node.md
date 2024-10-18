@@ -2,6 +2,8 @@
 sidebar_position: 10
 title: Running a Light Node
 displayed_sidebar: generalSidebar
+tags:
+  - node
 ---
 
 # Running a Light Node

@@ -2,6 +2,24 @@
 sidebar_position: 5
 title: 术语表
 displayed_sidebar: generalSidebar
+keywords:
+  - Conflux Network
+  - blockchain terminology
+  - consensus mechanisms
+  - cryptography
+  - smart contracts
+  - tokens
+  - wallets
+  - mining
+  - staking
+  - governance
+  - network architecture
+  - transaction processing
+  - security
+  - decentralized finance
+  - 非同质化代币（NFTs）
+tags:
+  - 术语表
 ---
 
 ## 简介
@@ -83,10 +101,10 @@ ConfluxScan is the official blockchain explorer for the Conflux network. 它为�
 
 Links:
 
-- 主网
+- Mainnet
   - Core Space: https://confluxscan.io or https://confluxscan.net
   - eSpace: https://evm.confluxscan.io or https://evm.confluxscan.net
-- 测试网
+- Testnet
   - Core Space: https://testnet.confluxscan.io or https://testnet.confluxscan.net
   - eSpace: https://evmtestnet.confluxscan.io or https://evmtestnet.confluxscan.net
 

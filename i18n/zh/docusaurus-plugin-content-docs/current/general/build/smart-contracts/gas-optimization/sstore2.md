@@ -1,5 +1,21 @@
 ---
 displayed_sidebar: generalSidebar
+keywords:
+  - smart-contracts
+  - gas-optimization
+  - Solidity
+  - SSTORE2
+  - storage-optimization
+  - bytecode-storage
+  - CREATE-opcode
+  - EXTCODECOPY
+  - 以太坊
+  - Conflux
+  - Core-Space
+tags:
+  - SSTORE2
+  - GAS 优化
+  - 智能合约
 ---
 
 # SSTORE2

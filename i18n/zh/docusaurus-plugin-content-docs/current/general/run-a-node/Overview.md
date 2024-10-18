@@ -2,6 +2,25 @@
 title: 概览
 sidebar_position: 0
 displayed_sidebar: generalSidebar
+keywords:
+  - Conflux Network
+  - node operation
+  - decentralization
+  - PoW mining
+  - PoS staking
+  - RPC node
+  - Conflux-rust
+  - client software
+  - network security
+  - transaction validation
+  - block verification
+  - node types
+  - node setup
+  - node configuration
+  - snapshot tool
+  - troubleshooting
+tags:
+  - node
 ---
 
 Conflux是一组运行着特定软件的计算机（即节点）组成的分布式网络，该软件用于验证区块和交易数据。 该软件必须在你的计算机或服务器上运行，以将其转变为Conflux节点。

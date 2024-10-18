@@ -2,8 +2,25 @@
 title: Transacciones
 sidebar_position: 9
 keywords:
-  - transaction
+  - Conflux Network
+  - transactions
+  - CFX transfer
+  - token transfer
+  - smart contracts
+  - EVM
+  - gas fees
+  - nonce
+  - transaction lifecycle
+  - transaction status
+  - Core Space
+  - eSpace
+  - storageLimit
+  - epochHeight
+  - transaction receipt
+  - base fee
 displayed_sidebar: generalSidebar
+tags:
+  - Transacciones
 ---
 
 Una transacción es una única instrucción compuesta por un actor externo con una cuenta de Conflux, y esta instrucción está firmada criptográficamente usando la clave privada de la cuenta del remitente. Una transacción puede implicar una **transferencia simple de CFX** (la moneda nativa de Conflux), una **transferencia de tokens** (como ERC20 o ERC721), un **despliegue de un nuevo contrato inteligente**, o una **ejecución de una función en un contrato inteligente existente**. Las transacciones son la única forma de almacenar o actualizar datos en la cadena de bloques.

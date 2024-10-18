@@ -6,12 +6,6 @@ displayed_sidebar: coreSidebar
 keywords:
   - cfx_sendRawTransaction
   - errors
-label:
-  - cfx_sendRawTransaction
-  - errors
-tags:
-  - cfx_sendRawTransaction
-  - errors
   - json-rpc
   - transaction-execution
   - troubleshooting
@@ -35,6 +29,12 @@ tags:
   - transaction-size
   - rlp-encoding
   - transaction-pool-management
+label:
+  - cfx_sendRawTransaction
+  - errors
+tags:
+  - transaction errors
+  - troubleshooting
 ---
 
 这些错误是由 Conflux 协议的官方实现 [conflux-rust](https://github.com/Conflux-Chain/conflux-rust)定义的。

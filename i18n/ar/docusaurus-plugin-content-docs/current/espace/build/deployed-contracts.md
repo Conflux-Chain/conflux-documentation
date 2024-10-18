@@ -3,7 +3,7 @@ sidebar_position: 10
 title: Deployed Contracts
 description: Useful utilities contract addresses for Conflux eSpace
 displayed_sidebar: eSpaceSidebar
-tags:
+keywords:
   - Conflux eSpace
   - Deployed Contracts
   - Contract Addresses
@@ -22,6 +22,8 @@ tags:
   - Cross-chain Compatibility
   - EVM Compatibility
   - Developer Resources
+tags:
+  - Contract Addresses
 ---
 
 In this article you’ll find useful contract addresses for Conflux eSpace and commonly used protocols

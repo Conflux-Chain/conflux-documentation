@@ -2,10 +2,18 @@
 sidebar_position: 5
 title: Ethereum 开发者的快速入门
 displayed_sidebar: coreSidebar
-tags:
-  - ethereum
-  - quickstart
+keywords:
+  - 以太坊
   - migration
+  - compatibility
+  - EVM
+  - smart contracts
+  - Conflux Core Space
+  - development
+  - quickstart
+tags:
+  - Ethereum compatibility
+  - Core Space development
 ---
 
 Conflux Core Space 是一个基于创新树图账本结构的区块链协议。 它与虚拟机和以太坊虚拟机兼容，而它的其核心概念（账户，交易，智能合约等） 与以太坊相似。 如果你是一个以太坊的开发者，你可以很快上手Conflux Core Space开发。 这篇文章将指导以太坊开发者们如何迅速上手Conflux Core Space的开发。

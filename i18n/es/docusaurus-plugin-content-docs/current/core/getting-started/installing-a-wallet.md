@@ -3,9 +3,6 @@ sidebar_position: 1
 title: Installing a Wallet
 description: Install and setup Fluent wallet
 keywords:
-  - wallet
-displayed_sidebar: coreSidebar
-tags:
   - Fluent Wallet
   - Wallet Installation
   - Browser Extension
@@ -20,6 +17,10 @@ tags:
   - Wallet Setup
   - Account Management
   - Cryptocurrency Wallet
+displayed_sidebar: coreSidebar
+tags:
+  - Fluent Wallet
+  - Wallet (billetera)
 ---
 
 To interact with Conflux Core Space, you'll first need to create an account. Usually accounts in Conflux Core Space are created and managed through the Fluent wallet.

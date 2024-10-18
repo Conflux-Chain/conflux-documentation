@@ -2,6 +2,19 @@
 title: 常见问题
 sidebar_position: 5
 displayed_sidebar: generalSidebar
+keywords:
+  - Conflux Network
+  - 常见问题解答
+  - community questions
+  - RPC errors
+  - Core Space
+  - eSpace
+  - sponsorship mechanism
+  - storage
+  - gas
+  - conflux-hardhat
+  - 网络端点
+  - oracles
 ---
 
 欢迎来到我们的常见问题解答（FAQ）部分，在这里，我们为您整理了一系列常见问题及其相应的答案，以方便您快速有效地找到所需信息。 我们的FAQ部分分为几个小节，使您能够轻松找到所需的信息。

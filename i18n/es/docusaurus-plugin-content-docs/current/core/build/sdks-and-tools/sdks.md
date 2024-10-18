@@ -21,35 +21,9 @@ kkeywords:
   - cross-platform
   - client libraries
 tags:
-  - SDK
-  - Development
-  - API
-  - Programming
-  - Contratos Inteligentes
-  - JavaScript
-  - Golang
-  - Java
-  - Python
-  - CPP
-  - .NET
-  - Swift
-  - Solidity
-  - ThirdWeb
-  - Cive
-  - Web3
-  - Blockchain-Integration
-  - Cross-Platform
-  - Client-Libraries
-  - RPC-Interaction
-  - Account-Management
-  - Transaction-Signing
-  - Contract-Deployment
-  - Contract-Interaction
-  - Wallet-Integration
-  - Gas-Estimation
-  - Event-Listening
-  - Node-Communication
-  - Conflux-Network
+  - development tools
+  - client libraries
+  - conflux sdk
 displayed_sidebar: coreSidebar
 ---
 

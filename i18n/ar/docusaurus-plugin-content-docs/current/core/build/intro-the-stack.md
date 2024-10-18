@@ -12,11 +12,8 @@ keywords:
   - web3
   - development
 tags:
-  - Architecture
-  - Blockchain Stack
-  - Smart Contracts
-  - Nodes
-  - dApp Development
+  - architecture overview
+  - blockchain stack
 displayed_sidebar: coreSidebar
 ---
 

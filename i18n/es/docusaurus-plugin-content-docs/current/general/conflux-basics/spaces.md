@@ -2,6 +2,20 @@
 sidebar_position: 7
 title: Espacios
 displayed_sidebar: generalSidebar
+keywords:
+  - Conflux Network
+  - Espacios
+  - Core Space
+  - eSpace
+  - CIP-90
+  - Hydra upgrade
+  - Ethereum compatibility
+  - virtual chain
+  - transaction encoding
+  - cross-space calls
+  - CFX transfer
+tags:
+  - Espacios
 ---
 
 ## **Introducción a los Espacios**

@@ -2,6 +2,23 @@
 sidebar_position: 1
 title: 何为 Conflux？
 displayed_sidebar: generalSidebar
+keywords:
+  - Conflux Network
+  - blockchain
+  - consensus mechanism
+  - 树图
+  - GHAST
+  - 工作量证明（PoW）
+  - Proof of Stake
+  - hybrid consensus
+  - high throughput
+  - low latency
+  - decentralization
+  - Core Space
+  - eSpace
+  - cross-space communication
+tags:
+  - What is Conflux
 ---
 
 Conflux是一条具有卓越性能、独特共识机制和创新双空间设计的公链。 这些特点使得 Conflux 能够提供一个快速、安全、去中心化的平台，非常适合于各种应用，包括去中心化金融和游戏。

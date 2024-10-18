@@ -3,6 +3,24 @@ sidebar_position: 2
 title: Node Types
 description: Learn about the different types of nodes in the Conflux Network.
 displayed_sidebar: generalSidebar
+keywords:
+  - Conflux Network
+  - node types
+  - full node
+  - archive node
+  - light node
+  - storage requirements
+  - hardware requirements
+  - RPC service
+  - mining
+  - staking
+  - transaction index
+  - persist_tx_index
+  - Exchange requirements
+  - node configuration
+  - hydra.toml
+tags:
+  - node
 ---
 
 In the Conflux Network, there are different types of nodes that you can run, each serving different purposes and having different requirements. There are 3 types of nodes: **Archive Node, Full Node and Light Node**.

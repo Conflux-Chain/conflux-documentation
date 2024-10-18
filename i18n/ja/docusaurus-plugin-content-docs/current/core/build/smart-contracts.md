@@ -12,11 +12,7 @@ keywords:
   - contract address
   - 1820 contract
 tags:
-  - Smart Contracts
-  - Solidity
-  - Core
-  - Development
-  - EVM
+  - Core Space development
 displayed_sidebar: coreSidebar
 ---
 

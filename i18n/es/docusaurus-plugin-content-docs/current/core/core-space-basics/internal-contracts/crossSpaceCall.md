@@ -12,18 +12,6 @@ keywords:
 tags:
   - CrossSpaceCall
   - Internal Contracts
-  - Core Space
-  - eSpace
-  - Cross-Space Transfer
-  - CFX Transfer
-  - Smart Contract Interaction
-  - Contract Deployment
-  - Mapped Balance
-  - Withdrawal
-  - Space Bridge
-  - CIP-90
-  - EVM Compatibility
-  - RPC Methods
 displayed_sidebar: coreSidebar
 ---
 

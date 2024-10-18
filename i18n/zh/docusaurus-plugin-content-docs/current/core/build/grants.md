@@ -12,10 +12,7 @@ keywords:
   - community contribution
 tags:
   - 基金会补助
-  - Funding
   - Developer Support
-  - Ecosystem
-  - Open Source
 displayed_sidebar: coreSidebar
 ---
 

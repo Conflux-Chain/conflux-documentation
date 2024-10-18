@@ -3,6 +3,26 @@ sidebar_position: 3
 title: 节点快照工具
 description: 学习如何使用Conflux快照工具从快照中快速建立一个Conflux节点。
 displayed_sidebar: generalSidebar
+keywords:
+  - Conflux Network
+  - snapshot tool
+  - archive tool
+  - node setup
+  - blockchain data
+  - download links
+  - resuming downloads
+  - curl
+  - mainnet
+  - testnet
+  - 归档节点
+  - 全节点
+  - data unzip
+  - pos_config
+  - 'Linux:'
+  - Mac
+  - Windows
+tags:
+  - node
 ---
 
 ## 简介

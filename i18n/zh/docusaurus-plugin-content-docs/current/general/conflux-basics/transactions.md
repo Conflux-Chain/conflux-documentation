@@ -2,8 +2,25 @@
 title: 交易
 sidebar_position: 9
 keywords:
-  - 交易
+  - Conflux Network
+  - transactions
+  - CFX transfer
+  - token transfer
+  - smart contracts
+  - EVM
+  - gas fees
+  - nonce
+  - transaction lifecycle
+  - transaction status
+  - Core Space
+  - eSpace
+  - storageLimit
+  - epochHeight
+  - transaction receipt
+  - base fee
 displayed_sidebar: generalSidebar
+tags:
+  - 交易
 ---
 
 一笔交易是由具有Conflux账户的外部参与者创建的单一指令，该指令使用发送者账户的私钥进行了数字签名。 A transaction can involve a **simple transfer of CFX** (the native currency of Conflux), a **transfer of tokens** (such as ERC20 or ERC721), a **deployment of a new smart contract**, or an **execution of a function on an existing smart contract**. 交易是在区块链上存储或更新数据的唯一方式。

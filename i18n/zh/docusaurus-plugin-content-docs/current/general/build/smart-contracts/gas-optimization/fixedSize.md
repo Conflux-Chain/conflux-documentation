@@ -1,5 +1,20 @@
 ---
 displayed_sidebar: generalSidebar
+keywords:
+  - smart-contracts
+  - Solidity
+  - gas-optimization
+  - arrays
+  - fixed-size-arrays
+  - dynamic-arrays
+  - memory-allocation
+  - ArrayGasOpt
+  - push-operation
+  - storage-efficiency
+tags:
+  - Fixed-Size/Dynamic Arrays
+  - GAS 优化
+  - 智能合约
 ---
 
 # Fixed-Size/Dynamic Arrays

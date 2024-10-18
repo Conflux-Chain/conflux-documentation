@@ -2,6 +2,33 @@
 title: 社区常见问题
 sidebar_position: 2
 displayed_sidebar: generalSidebar
+keywords:
+  - Conflux Network
+  - 常见问题解答
+  - community questions
+  - storageLimit
+  - epochHeight
+  - transaction nonce
+  - ExceedStorageLimit error
+  - keystore format
+  - node synchronization
+  - sponsor payment
+  - CFX token
+  - OpenZeppelin
+  - testnet faucet
+  - 枢轴链
+  - base fee
+  - 全节点
+  - 归档节点
+  - transaction failure
+  - tx revert
+  - websocket service
+  - docker
+  - block height
+  - transaction signing
+  - gas units
+  - EVM opcodes
+  - transaction lifecycle
 ---
 
 # 社区常见问题

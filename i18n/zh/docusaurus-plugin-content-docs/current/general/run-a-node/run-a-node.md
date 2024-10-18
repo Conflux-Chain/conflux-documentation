@@ -4,6 +4,25 @@ title: 运行节点
 description: 运行 Conflux 节点的快速指南
 toc_max_heading_level: 4
 displayed_sidebar: generalSidebar
+keywords:
+  - Conflux Network
+  - node setup
+  - 全节点
+  - hardware requirements
+  - Conflux client
+  - compilation
+  - snapshot tool
+  - node configuration
+  - hydra.toml
+  - RPC interaction
+  - node update
+  - troubleshooting
+  - 'Linux:'
+  - macOS
+  - Windows
+  - 容器(Docker)
+tags:
+  - node
 ---
 
 Conflux Network是一个具有可扩展性的区块链平台，旨在实现高吞吐量和安全性。 运行Conflux节点可以让你参与到网络中，验证交易，并与Conflux区块链进行交互。

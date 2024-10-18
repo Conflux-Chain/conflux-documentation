@@ -3,39 +3,12 @@ sidebar_position: 1
 title: Retrieve Price
 description: Learn how to Use Pyth Oracle on Conflux eSpace to Retrieve CFX Price
 keywords:
-  - Hardhat
-  - 智能合约
-  - Oracle
-  - Pyth
-  - CFX Price
+  - Conflux eSpace - Pyth Network - Oracle - Price Feed - Smart Contracts - Hardhat - JavaScript - Solidity - CFX Price - Testnet - EVM - Web3 Development - Blockchain - Tutorial - Deployment - Contract Interaction - Gas Estimation - Transaction Confirmation - Environment Variables - NPM - Node.js - Ethereum Compatibility - Pyth SDK - IPyth Interface - Price Update - Hermes Price Service
 displayed_sidebar: eSpaceSidebar
 tags:
-  - Conflux eSpace
-  - Pyth Network
-  - Oracle
-  - Price Feed
-  - 智能合约
-  - Hardhat
-  - JavaScript
-  - Solidity
-  - CFX Price
-  - 测试网
-  - EVM
-  - Web3 Development
-  - 区块链
+  - Pyth
+  - 预言机
   - 教程
-  - 部署
-  - Contract Interaction
-  - Gas Estimation
-  - Transaction Confirmation
-  - Environment Variables
-  - NPM
-  - Node.js
-  - Ethereum Compatibility
-  - Pyth SDK
-  - IPyth Interface
-  - Price Update
-  - Hermes Price Service
 ---
 
 # Retrieve Price

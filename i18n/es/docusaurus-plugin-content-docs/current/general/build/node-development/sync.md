@@ -1,5 +1,16 @@
 ---
 displayed_sidebar: generalSidebar
+keywords:
+  - Conflux Network
+  - block synchronization
+  - synchronization graph
+  - blockchain
+  - node development
+  - validity checks
+  - garbage collection
+  - peer-to-peer
+tags:
+  - Synchronization
 ---
 
 # Block Synchronization Process

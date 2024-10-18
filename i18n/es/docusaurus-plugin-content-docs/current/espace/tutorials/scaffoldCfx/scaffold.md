@@ -3,11 +3,6 @@ sidebar_position: 4
 title: Scaffold Conflux General
 description: Learn how to leverage Scaffold-Eth 2 components to make your Conflux App
 keywords:
-  - Hardhat
-  - Contratos Inteligentes
-  - Scaffold
-displayed_sidebar: eSpaceSidebar
-tags:
   - Conflux eSpace
   - Scaffold-ETH-2
   - Contratos Inteligentes
@@ -36,6 +31,10 @@ tags:
   - Component Library
   - Hooks
   - Network Configuration
+displayed_sidebar: eSpaceSidebar
+tags:
+  - Scaffold
+  - Tutorial
 ---
 
 [Scaffold Conflux](https://github.com/conflux-fans/conflux-scaffold) is an adaptation of Scaffold-ETH-2 (https://scaffoldeth.io/) whereby we have adjusted the template to allow you to deploy the contract on Conflux eSpace and leverage the components, integration of hardhat, and the quick deployment of Scaffold-ETH-2. In this tutorial, we will show you how to set-up Scaffold Conflux to better understand your smart contract and to leverage some of the beautiful react components available to quickly make your app on Conflux eSpace.

@@ -2,6 +2,19 @@
 sidebar_position: 9
 title: 智能合约
 displayed_sidebar: generalSidebar
+keywords:
+  - smart contracts
+  - Conflux Network
+  - Solidity
+  - EVM
+  - decentralized applications
+  - dApps
+  - 非同质化代币（NFTs）
+  - DeFi
+  - ICOs
+  - user accounts
+tags:
+  - 智能合约
 ---
 
 # 智能合约简介

@@ -3,14 +3,14 @@ sidebar_position: 1
 title: Hardhat 和 Foundry
 description: 使用 Hardhat 和 Foundry 部署智能合约
 displayed_sidebar: eSpaceSidebar
-tags:
+keywords:
   - Conflux eSpace
   - 智能合约
   - 部署
   - Hardhat
   - Foundry
   - 教程
-  - 测试网
+  - Testnet
   - NodeJS
   - Yarn
   - Environment Variables
@@ -21,7 +21,7 @@ tags:
   - RPC URL
   - Unix Timestamp
   - 故障排除
-  - 视频教程
+  - Video Guides
   - GitHub Repository
   - Ethereum Compatibility
   - JavaScript
@@ -30,6 +30,10 @@ tags:
   - Gas Fees
   - Contract Compilation
   - Testing
+tags:
+  - Hardhat
+  - Foundry
+  - 教程
 ---
 
 import { DiscordLink } from "../../../templates/links.tsx"
@@ -58,7 +62,7 @@ eSpace 测试网允许任何人在 eSpace 上部署智能合约。 在本教程�
 
 6. 运行 `yarn test` 进行 hardhat 测试。
 
-### 视频教程
+### Video Guides
 
 以下视频展示了如何使用 Hardhat 部署智能合约：
 

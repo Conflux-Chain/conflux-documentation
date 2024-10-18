@@ -2,20 +2,14 @@
 sidebar_position: 0
 title: Intro
 displayed_sidebar: coreSidebar
+keywords:
+  - Core Space - Base32 Address - CFX - Gas - Storage - Sponsorship - CVM - Internal Contracts - Smart Contract Platform - Ethereum Compatibility - Fluent Wallet - Drip - GDrip
 tags:
+  - Base32 Addresses
+  - Addresses
+  - Conflux Addresses
+  - Accounts
   - Core Space
-  - Base32 Address
-  - CFX
-  - Gas
-  - Storage
-  - Sponsorship
-  - CVM
-  - Internal Contracts
-  - Smart Contract Platform
-  - Ethereum Compatibility
-  - Fluent Wallet
-  - Drip
-  - GDrip
 ---
 
 We will give you a quick introduction to Core Space. It is a smart contract platform kind of like Ethereum. If you are familiar with Ethereum, this guide will help you understand Core Space quickly.

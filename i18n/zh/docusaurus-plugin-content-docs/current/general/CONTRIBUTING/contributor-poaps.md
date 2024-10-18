@@ -3,6 +3,20 @@ displayed_sidebar: generalSidebar
 title: 贡献者 POAP
 sidebar_position: 3
 description: 贡献者POAP是发放给贡献者以表彰其持续参与的证明。
+keywords:
+  - Conflux Network
+  - 贡献者 POAP
+  - community recognition
+  - 非同质化代币（NFTs）
+  - Core Space
+  - eSpace
+  - FansCoin
+  - FC rewards
+  - issue creation
+  - pull requests
+  - translations
+  - special POAPs
+  - reward pool
 ---
 
 :::note

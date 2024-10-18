@@ -2,19 +2,19 @@
 sidebar_position: 7
 title: 运行 eSpace 节点
 displayed_sidebar: eSpaceSidebar
-tags:
+keywords:
   - Conflux eSpace
   - Node Operation
   - RPC Configuration
-  - 全状态
-  - 链 ID
+  - Full State
+  - Chain ID
   - JSON-RPC
   - WebSocket
   - EVM
   - 归档节点
   - State Query
-  - 主网
-  - 测试网
+  - Mainnet
+  - Testnet
   - Configuration
   - TOML
   - Blockchain Data
@@ -24,6 +24,8 @@ tags:
   - Port Configuration
   - eth_getTransactionCount
   - 故障排除
+tags:
+  - 节点
 ---
 
 eSpace 和 Core Space 共用一个节点程序，请参考 [Core Space 节点操作指南](/docs/category/run-a-node) 来运行节点。 以下是一些特定于 eSpace 的配置。
@@ -40,7 +42,7 @@ public_evm_rpc_apis = "evm"
 
 eSpace 的 RPC 端点端口与 Core Space 不同，您**不能**在 **Core Space 的 RPC 端口**访问 eth RPC 接口。
 
-## 全状态
+## Full State
 
 为了启用完整的 eSpace，您需要将 `single_mpt_space` 参数设置为 `evm` 并运行一个归档节点。
 

@@ -5,24 +5,25 @@ sidebar_position: 4
 keywords:
   - 网络端点
   - Conflux core space
-tags:
   - RPC Endpoints
   - Conflux Core Space
-  - 主网
-  - 测试网
+  - Mainnet
+  - Testnet
   - Confura
   - Unifra
-  - 链 ID
+  - Chain ID
   - HTTP Endpoints
   - WebSocket Endpoints
-  - 速率限制
-  - API 密钥
+  - Rate Limits
+  - API Key
   - Fee Tiers
   - Error Handling
   - Public RPC Services
   - Blockchain Explorer
   - Web3 Development
   - JSON-RPC
+tags:
+  - 网络端点
 displayed_sidebar: coreSidebar
 ---
 
@@ -55,7 +56,7 @@ Conflux Core space 主网的链 ID 是 `1029(0x405)`。 相应的区块链浏览
 | wss://main.confluxrpc.com/ws          | Websocket |                |
 | wss://main.confluxrpc.org/ws          | Websocket | 备用 RPC 服务      |
 
-#### 测试网
+#### Testnet
 
 Conflux Core Space 测试网的链 ID 是 `1(0x1)`。 相应的区块链浏览器 URL 是 https://testnet.confluxscan.io。
 
@@ -67,13 +68,13 @@ Conflux Core Space 测试网的链 ID 是 `1(0x1)`。 相应的区块链浏览�
 | wss://test.confluxrpc.com/ws   | Websocket |           |
 | wss://test.confluxrpc.org/ws   | Websocket |           |
 
-### 速率限制
+### Rate Limits
 
 为了保持服务的可用性，免费版本设有访问频率限制。 如果你需要更高级别的 RPC 服务，你可以通过 [Web3 Paywall](../general/build/tools/web3paywall.md) 进行购买，或者可以直接发送邮件到 [bd@confluxnetwork.org](mailto:bd@confluxnetwork.org) 向 Conflux 基金会申请。
 
 这里提供了各种费用等级及其访问速率限制的参考信息。
 
-| 付费级别 | 价格                          | 速率限制                          | 购买链接                                                                                                                                                                                                                                         |
+| 付费级别 | 价格                          | Rate Limits                   | 购买链接                                                                                                                                                                                                                                         |
 | ---- | --------------------------- | ----------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | 免费   | $0                          | 每秒 50 次调用，每天最多100,000次 调用     | -                                                                                                                                                                                                                                            |
 | 标准   | 150 美元/月                    | 每秒 100 次调用，每天最多 1,000,000 次调用 | [mainnet](https://confluxhub.io/payment/consumer/app/subscription/0x33A9451ee070d750a077C93f71D2cFcD0180Fa7D) <br/> [testnet](https://test.confluxhub.io/payment/consumer/app/subscription/0x4805C5B2741088B8458ed781083eA8940186E477) |
@@ -123,6 +124,6 @@ Unifra提供：
 
 ### 公共端点
 
-| 网络名称 | 链 ID | 浏览器网址                   | 端点                                    |
-| ---- | ---- | ----------------------- | ------------------------------------- |
-| 主网   | 1029 | https://confluxscan.net | https://conflux-core-public.unifra.io |
+| 网络名称    | Chain ID | 浏览器网址                   | 端点                                    |
+| ------- | -------- | ----------------------- | ------------------------------------- |
+| Mainnet | 1029     | https://confluxscan.net | https://conflux-core-public.unifra.io |

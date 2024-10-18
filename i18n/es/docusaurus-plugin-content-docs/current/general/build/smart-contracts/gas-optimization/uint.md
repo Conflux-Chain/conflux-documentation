@@ -1,5 +1,23 @@
 ---
 displayed_sidebar: generalSidebar
+keywords:
+  - smart-contracts
+  - gas-optimization
+  - Solidity
+  - uint-types
+  - EVM
+  - storage-slots
+  - uint8
+  - uint32
+  - uint256
+  - arithmetic-operations
+  - Uint8Example
+  - Uint32Example
+  - Uint256Example
+tags:
+  - Uint Types
+  - Gas Comparison
+  - Contratos Inteligentes
 ---
 
 # Uint Types Gas Comparison

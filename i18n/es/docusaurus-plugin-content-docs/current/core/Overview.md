@@ -2,7 +2,7 @@
 sidebar_position: 1
 title: Overview
 displayed_sidebar: coreSidebar
-tags:
+keywords:
   - Core Space
   - Tree Graph
   - Contratos Inteligentes

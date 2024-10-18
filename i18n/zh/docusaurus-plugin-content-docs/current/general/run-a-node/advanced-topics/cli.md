@@ -7,6 +7,8 @@ keywords:
   - cli
   - sdk
 displayed_sidebar: generalSidebar
+tags:
+  - node
 ---
 
 Conflux CLI子命令是一个命令行接口集，允许你与本地或远程Conflux节点进行交互

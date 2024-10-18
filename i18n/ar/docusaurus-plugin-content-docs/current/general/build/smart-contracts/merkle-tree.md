@@ -2,6 +2,20 @@
 sidebar_position: 2
 title: Merkle Tree
 displayed_sidebar: generalSidebar
+keywords:
+  - smart-contracts
+  - Merkle-Tree
+  - cryptography
+  - blockchain
+  - data-verification
+  - Ethereum
+  - Bitcoin
+  - NFT
+  - whitelist
+  - Solidity
+  - MerkleVerification
+tags:
+  - Merkle Tree
 ---
 
 ## Basic Concept

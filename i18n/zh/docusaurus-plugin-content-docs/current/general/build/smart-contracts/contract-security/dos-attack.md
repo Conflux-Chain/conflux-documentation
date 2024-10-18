@@ -1,5 +1,21 @@
 ---
 displayed_sidebar: generalSidebar
+keywords:
+  - smart-contracts
+  - security
+  - vulnerabilities
+  - dos
+  - denial-of-service
+  - ethereum
+  - solidity
+  - refunds
+  - fallback-function
+  - prevention
+  - gameoffunds
+tags:
+  - Denial of Service
+  - Security
+  - 智能合约
 ---
 
 # 拒绝服务攻击

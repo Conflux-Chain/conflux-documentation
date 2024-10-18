@@ -3,6 +3,20 @@ sidebar_position: 10
 title: 合约验证
 description: 如何在 ConfluxScan 上验证您的智能合约
 displayed_sidebar: eSpaceSidebar
+keywords:
+  - Conflux eSpace
+  - 合约验证
+  - Developer Tools
+  - Block Explorer
+  - 智能合约
+  - Hardhat
+  - Foundry
+  - Web UI
+  - API Integration
+  - Blockchain Development
+tags:
+  - 教程
+  - 合约验证
 ---
 
 部署智能合约之后，在区块链浏览器上验证代码是非常重要的。 这可以通过使用开发者工具或 Web UI 以自动化的方式完成。
@@ -11,10 +25,10 @@ displayed_sidebar: eSpaceSidebar
 
 大多数智能合约工具都有插件，可以轻松地在 ConfluxScan 上验证合约。
 
-| 网络名称 | 区块链浏览器 API                                                                                 |
-| ---- | ------------------------------------------------------------------------------------------ |
-| 主网   | https://evmapi.confluxscan.io/api/         |
-| 测试网  | https://evmapi-testnet.confluxscan.io/api/ |
+| 网络名称    | 区块链浏览器 API                                                                                 |
+| ------- | ------------------------------------------------------------------------------------------ |
+| 主网      | https://evmapi.confluxscan.io/api/         |
+| Testnet | https://evmapi-testnet.confluxscan.io/api/ |
 
 ### Hardhat
 

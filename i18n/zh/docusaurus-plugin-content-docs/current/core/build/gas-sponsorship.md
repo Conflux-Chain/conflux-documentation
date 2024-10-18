@@ -11,11 +11,10 @@ keywords:
   - application process
   - confluxscan
 tags:
-  - 燃气费赞助
-  - Foundation
+  - Gas Sponsorship
+  - Foundation Support
   - Developer Support
   - Contract Deployment
-  - ConfluxScan
 displayed_sidebar: coreSidebar
 ---
 

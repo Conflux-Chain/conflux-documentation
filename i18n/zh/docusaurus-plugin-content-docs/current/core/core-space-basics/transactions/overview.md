@@ -3,8 +3,6 @@ sidebar_position: 0
 title: 概览
 keywords:
   - 交易
-tags:
-  - 交易
   - Core Space
   - 交易字段
   - 交易随机序号(Nonce)
@@ -20,6 +18,10 @@ tags:
   - cfx_sendRawTransaction
   - 钱包
   - SDKs
+tags:
+  - 交易
+  - 交易字段
+  - 交易生命周期
 displayed_sidebar: coreSidebar
 ---
 

@@ -2,6 +2,8 @@
 sidebar_position: 11
 title: 运行全节点
 displayed_sidebar: generalSidebar
+tags:
+  - node
 ---
 
 ### 硬件要求

@@ -2,7 +2,7 @@
 sidebar_position: 1
 title: Node Setup
 displayed_sidebar: eSpaceSidebar
-tags:
+keywords:
   - The Graph
   - Graph Node
   - Indexing
@@ -22,6 +22,9 @@ tags:
   - JSON-RPC API
   - EVM Compatibility
   - Subgraph Deployment
+tags:
+  - The Graph
+  - Indexing
 ---
 
 Graph Node is the component which indexes subgraphs, and makes the resulting data available to query via a GraphQL API. As such it is central to the indexer stack, and correct operation of Graph Node is crucial to running a successful indexer.
@@ -70,10 +73,7 @@ createdb graph-node`
 1. Clone [Graph Node](https://github.com/graphprotocol/graph-node) repo and build the source by running `cargo build`
 2. Now that all the dependencies are setup, start the Graph Node:
 
-`cargo run -p graph-node --release -- \
-  --postgres-url postgresql://[USERNAME]:[PASSWORD]@localhost:5432/graph-node \
-  --ethereum-rpc [NETWORK_NAME]:[URL] \
-  --ipfs https://ipfs.network.thegraph.com`
+`cargo run -p graph-node --release -- \   --postgres-url postgresql://[USERNAME]:[PASSWORD]@localhost:5432/graph-node \   --ethereum-rpc [NETWORK_NAME]:[URL] \   --ipfs https://ipfs.network.thegraph.com`
 
 ### Getting started using Docker
 
@@ -96,7 +96,7 @@ cd graph-node/docker`
 
 `docker-compose up`
 
-***References***
+_**References**_
 
 [https://thegraph.com/docs/en/operating-graph-node/](https://thegraph.com/docs/en/operating-graph-node/)
 

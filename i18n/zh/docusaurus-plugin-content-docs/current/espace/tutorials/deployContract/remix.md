@@ -3,7 +3,7 @@ sidebar_position: 2
 title: Remix IDE
 description: 使用 Remix 部署 ERC-20 代币
 displayed_sidebar: eSpaceSidebar
-tags:
+keywords:
   - Conflux eSpace
   - Remix IDE
   - 智能合约
@@ -26,6 +26,8 @@ tags:
   - Cookbook
   - EVM
   - 区块链
+tags:
+  - Remix, Tutorial
 ---
 
 ## 简介

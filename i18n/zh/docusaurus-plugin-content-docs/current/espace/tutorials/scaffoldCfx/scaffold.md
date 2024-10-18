@@ -3,11 +3,6 @@ sidebar_position: 4
 title: Scaffold Conflux General
 description: 了解如何利用 Scaffold-Eth 2 组件为您的 Conflux 应用提供支持
 keywords:
-  - Hardhat
-  - 智能合约
-  - Scaffold
-displayed_sidebar: eSpaceSidebar
-tags:
   - Conflux eSpace
   - Scaffold-ETH-2
   - 智能合约
@@ -36,6 +31,10 @@ tags:
   - Component Library
   - Hooks
   - 网络配置
+displayed_sidebar: eSpaceSidebar
+tags:
+  - Scaffold
+  - 教程
 ---
 
 [Scaffold Conflux](https://github.com/conflux-fans/conflux-scaffold) 是 Scaffold-ETH-2 (https://scaffoldeth.io/) 的一个修改版本，我们调整了模板，允许您在 Conflux eSpace 上部署合约，并利用组件、集成 hardhat 和 Scaffold-ETH-2 的快速部署。 在本教程中，我们将向您展示如何设置 Scaffold Conflux，以更好地读取您的智能合约，并利用一些现成的 react 组件快速制作您的 Conflux eSpace 应用。

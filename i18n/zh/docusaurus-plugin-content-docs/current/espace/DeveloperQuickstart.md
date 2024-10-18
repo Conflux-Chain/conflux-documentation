@@ -3,8 +3,21 @@ sidebar_position: 3
 title: 开发者快速入门
 description: 针对以太坊开发者的 eSpace 快速入门指南
 keywords:
-  - 快速入门
+  - Conflux eSpace
+  - Developer Tools
+  - 智能合约
+  - EVM兼容性
+  - Blockchain Development
+  - 网络配置
+  - Web3 Development
+  - DApp Development
+  - Contract Deployment
+  - Frontend Integration
+  - Cross-Space Bridge
 displayed_sidebar: eSpaceSidebar
+tags:
+  - 快速入门
+  - Developer Tools
 ---
 
 Conflux eSpace 现在已经支持以太坊的智能合约编写和测试工具。
@@ -30,7 +43,7 @@ eSpace 也使用 CFX 作为其原生货币，用于支付部署合约和与网�
 | 网络名称      | Conflux eSpace                                                                                           |
 | --------- | -------------------------------------------------------------------------------------------------------- |
 | RPC URL   | [https://evm.confluxrpc.com](https://evm.confluxrpc.com) |
-| 链 ID      | 1030                                                                                                     |
+| Chain ID  | 1030                                                                                                     |
 | 货币符号      | CFX                                                                                                      |
 | 区块浏览器 URL | [https://evm.confluxscan.io](https://evm.confluxscan.io) |
 
@@ -41,7 +54,7 @@ eSpace 也使用 CFX 作为其原生货币，用于支付部署合约和与网�
 | 网络名称      | Conflux eSpace 测试网                                                                                                     |
 | --------- | ---------------------------------------------------------------------------------------------------------------------- |
 | RPC URL   | [https://evmtestnet.confluxrpc.com](https://evmtestnet.confluxrpc.com) |
-| 链 ID      | 71                                                                                                                     |
+| Chain ID  | 71                                                                                                                     |
 | 货币符号      | CFX                                                                                                                    |
 | 区块浏览器 URL | [https://evmtestnet.confluxrpc.com](https://evmtestnet.confluxrpc.com) |
 

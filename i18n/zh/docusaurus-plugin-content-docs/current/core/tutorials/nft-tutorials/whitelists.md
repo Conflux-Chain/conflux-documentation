@@ -1,9 +1,9 @@
 ---
 title: 默克尔树白名单
 displayed_sidebar: coreSidebar
-tags:
+keywords:
   - NFT
-  - 白名单
+  - Whitelist
   - 默克尔树
   - 智能合约
   - Hardhat
@@ -20,6 +20,10 @@ tags:
   - js-conflux-sdk
   - Proof Generation
   - Whitelist Management
+tags:
+  - NFT
+  - Whitelist
+  - 教程
 ---
 
 # 在CoreSpace使用Hardhat的默克尔树NFT白名单

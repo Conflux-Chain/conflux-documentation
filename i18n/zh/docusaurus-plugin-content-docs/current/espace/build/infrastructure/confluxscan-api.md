@@ -3,7 +3,7 @@ sidebar_position: 3
 title: ConfluxScan API
 displayed_sidebar: eSpaceSidebar
 description: Conflux 网络的区块浏览器提供了一个 RESTful API，用于访问**聚合的**区块链数据。
-tags:
+keywords:
   - ConfluxScan
   - API
   - Block Explorer
@@ -17,11 +17,13 @@ tags:
   - ABI
   - Block Query
   - eSpace
-  - 主网
-  - 测试网
-  - 速率限制
-  - API 密钥
+  - Mainnet
+  - Testnet
+  - Rate Limits
+  - API Key
   - Web3 Paywall
+tags:
+  - ConfluxScan
 ---
 
 [ConfluxScan](https://evm.confluxscan.io/) 是 Conflux 网络的区块链浏览器，就像 Etherscan 对于以太坊一样。 它提供了 [**RESTful API**](https://evmapi.confluxscan.io/doc) ，供开发者查询**聚合的区块链数据**。 该 API 可以免费使用，并且与 [Etherscan API](https://etherscan.io/apis) 兼容。
@@ -48,6 +50,6 @@ API 端点如下所示：
 
 请在 [swagger 文档](https://evmapi.confluxscan.io/doc) 中查看 API 的速率限制。
 
-## API 密钥
+## API Key
 
 如果免费配额不足以满足您的使用需求，您可以通过向 [bd@confluxnetwork.org](mailto:bd@confluxnetwork.org) 发送电子邮件申请或通过 [Web3 Paywall](../../../general/build/tools/web3paywall) 购买 API 密钥。

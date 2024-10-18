@@ -2,6 +2,16 @@
 sidebar_position: 4
 title: Transfer Funds Across Chains Using Multichain
 displayed_sidebar: generalSidebar
+keywords:
+  - OKX
+  - Conflux Network
+  - CFX
+  - Transfer
+  - Core Space
+  - eSpace
+  - Fluent
+  - MetaMask
+  - Cryptocurrency exchange
 ---
 
 :::note 提醒币安用户和 bCFX 持有者：在币安上，Conflux 被列为封装的 ERC-20 代币(bCFX)，而不是原生的 CFX。 Conflux eSpace和BNB Chain使用兼容EVM的地址，但这些地址位于不同的区块链上。

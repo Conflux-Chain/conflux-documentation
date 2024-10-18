@@ -1,5 +1,23 @@
 ---
 displayed_sidebar: generalSidebar
+keywords:
+  - smart-contracts
+  - gas-optimization
+  - Solidity
+  - UUPS
+  - Transparent-Proxy
+  - upgradeable-contracts
+  - EVM
+  - proxy-patterns
+  - admin-checks
+  - TransparentProxy
+  - UUPSProxy
+  - TransparentLogic
+  - UUPSLogic
+tags:
+  - UUPS vs Transparent Proxy
+  - Gas Optimization
+  - Contratos Inteligentes
 ---
 
 # UUPS vs Transparent Proxy

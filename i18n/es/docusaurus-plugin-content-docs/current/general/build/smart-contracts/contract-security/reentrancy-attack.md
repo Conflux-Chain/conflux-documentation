@@ -1,5 +1,20 @@
 ---
 displayed_sidebar: generalSidebar
+keywords:
+  - smart-contracts
+  - security
+  - vulnerabilities
+  - reentrancy-attack
+  - solidity
+  - dao-hack
+  - fei-protocol
+  - prevention
+  - checks-effects-interactions
+  - reentrancy-guard
+tags:
+  - Reentrancy Attacks
+  - Security
+  - Contratos Inteligentes
 ---
 
 # Re-entrancy Attacks

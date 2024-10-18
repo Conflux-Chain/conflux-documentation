@@ -1,6 +1,22 @@
 ---
 title: 绕过智能合约检测
 displayed_sidebar: generalSidebar
+keywords:
+  - smart-contracts
+  - security
+  - vulnerabilities
+  - contract-check
+  - extcodesize
+  - bytecode
+  - eoa
+  - free-mint
+  - solidity
+  - constructor-exploit
+  - prevention
+tags:
+  - Constructor
+  - Security
+  - 智能合约
 ---
 
 许多免费铸造的项目使用 `isContract()` 方法限制对外部账户（EOAs）的访问以及限制智能合约的交互。 此方法使用 `extcodesize` 来决定地址运行时 `bytecode` 长度。 如果大于零，则被视为智能合约；否则，它被视为EOA。

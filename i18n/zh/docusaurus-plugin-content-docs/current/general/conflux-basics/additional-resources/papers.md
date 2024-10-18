@@ -2,10 +2,21 @@
 sidebar_position: 1
 id: conflux_papers
 title: 论文
-keywords:
-  - conflux
-  - papers
 displayed_sidebar: generalSidebar
+keywords:
+  - Conflux-Protocol
+  - research-papers
+  - yellow-paper
+  - consensus-mechanism
+  - 树图
+  - GHAST
+  - high-throughput
+  - fast-confirmation
+  - decentralized-blockchain
+  - adaptive-weighted-blocks
+  - technical-presentation
+tags:
+  - Conflux Papers
 ---
 
 The Conflux Protocol is defined and analyzed in a number of research papers.

@@ -10,16 +10,8 @@ eywords:
   - finalized epoch
   - network info
 tags:
-  - ConfluxContext
   - 内置合约
-  - Epoch Number
-  - PoS Height
-  - Finalized Epoch
-  - Network Info
-  - Blockchain State
-  - Query Functions
-  - PoW-PoS Hybrid
-  - Chain Finality
+  - ConfluxContext
 displayed_sidebar: coreSidebar
 ---
 

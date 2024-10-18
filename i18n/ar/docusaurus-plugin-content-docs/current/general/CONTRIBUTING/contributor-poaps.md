@@ -3,6 +3,20 @@ displayed_sidebar: generalSidebar
 title: Contributor POAPs
 sidebar_position: 3
 description: Contributor POAPs are issued to contributors for their continuous participation.
+keywords:
+  - Conflux Network
+  - Contributor POAPs
+  - community recognition
+  - NFTs
+  - Core Space
+  - eSpace
+  - FansCoin
+  - FC rewards
+  - issue creation
+  - pull requests
+  - translations
+  - special POAPs
+  - reward pool
 ---
 
 :::note

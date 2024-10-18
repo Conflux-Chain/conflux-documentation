@@ -3,9 +3,6 @@ sidebar_position: 1
 title: 安装钱包
 description: 安装并设置 Fluent 钱包
 keywords:
-  - 钱包
-displayed_sidebar: coreSidebar
-tags:
   - Fluent Wallet
   - Wallet Installation
   - Browser Extension
@@ -20,6 +17,10 @@ tags:
   - Wallet Setup
   - Account Management
   - Cryptocurrency Wallet
+displayed_sidebar: coreSidebar
+tags:
+  - Fluent Wallet
+  - 钱包
 ---
 
 与 Conflux Core Space 互动之前，您首先需要创建一个账户。 通常情况下，在Conflux Core Space中创建和管理账户需要使用Fluent钱包。

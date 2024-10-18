@@ -3,6 +3,25 @@ title: Nodes FAQs
 sidebar_position: 13
 description: Frequently asked questions about running a node.
 displayed_sidebar: generalSidebar
+keywords:
+  - Conflux Network
+  - node operation
+  - FAQs
+  - data synchronization
+  - archive node
+  - snapshot tool
+  - node data size
+  - mining
+  - GPU mining
+  - PoS node
+  - public IP
+  - mainnet
+  - testnet
+  - RPC methods
+  - node configuration
+  - client software
+tags:
+  - node
 ---
 
 ## Common
