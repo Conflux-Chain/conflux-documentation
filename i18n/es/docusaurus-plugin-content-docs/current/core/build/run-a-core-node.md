@@ -10,9 +10,7 @@ keywords:
   - decentralization
   - full node
 tags:
-  - Core
   - Node
-  - Infrastructure
 displayed_sidebar: coreSidebar
 ---
 
