@@ -1,5 +1,17 @@
 ---
 displayed_sidebar: generalSidebar
+keywords:
+  - Conflux Network
+  - consensus layer
+  - GHAST algorithm
+  - TreeGraph
+  - blockchain
+  - consensus protocol
+  - cadena pivote
+  - timer chain
+  - adaptive weight
+tags:
+  - Consensus Layer
 ---
 
 # The Conflux Consensus Layer Design and Implementation
