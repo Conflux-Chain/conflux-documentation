@@ -2,7 +2,7 @@
 sidebar_position: 1
 title: 概览
 displayed_sidebar: coreSidebar
-tags:
+keywords:
   - Core Space
   - 树图
   - 智能合约
@@ -16,9 +16,9 @@ tags:
   - Fluent Wallet
   - js-conflux-sdk
   - Developer Resources
-  - 教程
-  - 技术细节
-  - 测试网
+  - Tutorials
+  - Technical Details
+  - Testnet
   - Node Operation
   - SDKs
   - 常见问题解答
@@ -36,7 +36,7 @@ Core Space 中的账户地址使用 **base32编码**，与以太坊不同。 它
 - [开发者快速入门](./core-developer-quickstart)
 - [以太坊开发者快速入门](./build/quickstart-for-eth-devs)
 
-## 教程
+## Tutorials
 
 - [JS SDK 完整指南](./tutorials/js-conflux-sdk)
 - [hardhat-conflux 教程](./tutorials/hardhat-conflux-plugin)
@@ -44,7 +44,7 @@ Core Space 中的账户地址使用 **base32编码**，与以太坊不同。 它
 - [合约代付教程](./tutorials/how-to-sponsor-contract)
 - [NFT 教程](./tutorials/nft-tutorial)
 
-## 技术细节
+## Technical Details
 
 1. [Base32 地址](./core-space-basics/addresses)
 2. [账户状态](./core-space-basics/accounts)
