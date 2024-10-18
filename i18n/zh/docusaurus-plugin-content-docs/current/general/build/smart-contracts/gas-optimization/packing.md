@@ -1,5 +1,21 @@
 ---
 displayed_sidebar: generalSidebar
+keywords:
+  - smart-contracts
+  - gas-optimization
+  - Solidity
+  - variable-packing
+  - struct-packing
+  - storage-slots
+  - EVM
+  - uint64
+  - uint256
+  - 地址
+  - gas-efficiency
+tags:
+  - Packing
+  - GAS 优化
+  - 智能合约
 ---
 
 # Packing
