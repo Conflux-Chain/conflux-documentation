@@ -3,11 +3,6 @@ sidebar_position: 4
 title: Brownie
 description: Learn how to deploy an ERC-20 Token using Brownie.
 keywords:
-  - Brownie
-  - Smart Contracts
-  - Python
-displayed_sidebar: eSpaceSidebar
-tags:
   - Conflux eSpace
   - Brownie
   - Python
@@ -29,6 +24,9 @@ tags:
   - Customization
   - Front-End Development
   - Scripting
+displayed_sidebar: eSpaceSidebar
+tags: [Brownie, Tutorial]
+ 
 ---
 
 [Brownie](https://eth-brownie.readthedocs.io/en/stable/) is a Python-based development and testing framework for smart contracts targeting the Ethereum Virtual Machine. In this tutorial, we will guide you through configuring Brownie (or eth-brownie) for Conflux eSpace and demonstrate how to use Brownie scripts to deploy contracts on Conflux eSpace.

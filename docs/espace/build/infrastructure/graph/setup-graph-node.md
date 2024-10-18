@@ -22,8 +22,9 @@ keywords:
   - JSON-RPC API
   - EVM Compatibility
   - Subgraph Deployment
-tags: [The Graph, Tutorial]
-
+tags:
+  - The Graph
+  - Indexing
 ---
 
 Graph Node is the component which indexes subgraphs, and makes the resulting data available to query via a GraphQL API. As such it is central to the indexer stack, and correct operation of Graph Node is crucial to running a successful indexer.

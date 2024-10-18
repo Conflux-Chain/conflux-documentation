@@ -3,32 +3,11 @@ sidebar_position: 4
 title: JSON-RPC Compatibility
 description: JSON-RPC compatibility with Ethereum
 displayed_sidebar: eSpaceSidebar
-tags:
+keywords:
   - Conflux eSpace
   - JSON-RPC
-  - Ethereum Compatibility
-  - Web3
-  - RPC Methods
-  - API
-  - EVM
-  - Transaction Types
-  - Block Data
-  - Transaction Receipts
-  - Gas Price
-  - Filters
-  - Tracing
-  - Parity RPC
-  - Debug Methods
-  - Pub/Sub
-  - Data Verifiability
-  - EIP-155
-  - EIP-2930
-  - EIP-1559
-  - EIP-4844
-  - Burnt Gas Fee
-  - Pending Transactions
-  - Uncle Blocks
-  - CIP-137
+tags: [JSON-RPC, EVM Methods]
+ 
 ---
 
 Conflux eSpace implements the Web3 JSON-RPC protocol.

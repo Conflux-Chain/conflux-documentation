@@ -1,7 +1,7 @@
 ---
 sidebar_position: 2
 title: SponsorWhitelistControl
-tags:
+keywords:
     - Transaction Encoding
     - RLP Serialization
     - Transaction Fields
@@ -10,6 +10,9 @@ tags:
     - Raw Transaction
     - Transaction Signature
     - Hex Encoding
+tags:
+    - SponsorWhitelistControl
+    - Internal Contracts
 displayed_sidebar: coreSidebar
 ---
 

@@ -3,44 +3,10 @@ id: common_rpc_error
 sidebar_position: 7
 title: Common RPC errors
 keywords:
-  - rpc
-  - error
-  - json-rpc
-  - troubleshooting
-  - method not found
-  - invalid parameters
-  - invalid address
-  - invalid hash
-  - estimate error
-  - debugging
-  - error codes
-  - error messages
-  - parameter validation
-  - gas estimation
-tags:
   - RPC
   - JSON-RPC
-  - Errors
-  - Troubleshooting
-  - API
-  - Method-Not-Found
-  - Invalid-Parameters
-  - Invalid-Address
-  - Invalid-Hash
-  - Estimate-Error
-  - Error-Codes
-  - Error-Messages
-  - Parameter-Validation
-  - Gas-Estimation
-  - Debugging
-  - Base32-Address
-  - Block-Hash
-  - Transaction-Hash
-  - Out-Of-Gas
-  - Error-Handling
-  - API-Errors
-  - RPC-Responses
-  - JSON-Parsing
+  - Error Messages
+tags: [error handling, RPC troubleshooting]
 displayed_sidebar: coreSidebar
 ---
 

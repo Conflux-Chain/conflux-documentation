@@ -1,5 +1,17 @@
 ---
 displayed_sidebar: generalSidebar
+keywords:
+  - smart-contracts
+  - gas-optimization
+  - Solidity
+  - storage-pointers
+  - memory-operations
+  - structs
+  - mappings
+  - UserActivityUnoptimized
+  - UserActivityOptimized
+  - EVM
+tags: [Storage Pointers, Gas Optimization, Smart Contracts]
 ---
 
 # Efficient Use of Storage Pointers

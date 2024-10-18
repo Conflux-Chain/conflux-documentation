@@ -5,7 +5,11 @@ keywords:
   - WalletConnect
   - Web3Modal
   - Dapp
+  - Vue.js
+  - Conflux eSpace
+  - DApp Development
 displayed_sidebar: eSpaceSidebar
+tags: [Tutorial, WalletConnect]
 ---
 
 # Integrating WalletConnect with Vue.js Project on Conflux eSpace

@@ -3,8 +3,8 @@ sidebar_position: 2
 title: JS SDK Complete Guide
 description: A comprehensive guide to using the js-conflux-sdk.
 displayed_sidebar: coreSidebar
-tags:
-  - js-conflux-sdk
+keywords:
+ - js-conflux-sdk
   - JavaScript
   - SDK
   - Account Generation
@@ -23,6 +23,8 @@ tags:
   - CFX
   - Transaction Execution
   - Cryptography
+tags: [js-conflux-sdk]
+ 
 ---
 
 The [Developer Quickstart](../core-developer-quickstart.md) demonstrates how to install and use the js-conflux-sdk for sending transactions. This guide delves into the details of the js-conflux-sdk.

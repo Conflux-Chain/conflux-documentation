@@ -5,6 +5,12 @@ sidebar_position: 1
 keywords:
   - conflux
   - ipfs
+  - nft storage
+  - decentralized storage
+  - content addressing
+  - distributed file system
+  - blockchain
+tags: [IPFS, NFT]
 displayed_sidebar: generalSidebar
 ---
 

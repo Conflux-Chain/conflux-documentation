@@ -3,6 +3,18 @@ title: How to Contribute
 sidebar_position: 1
 description: How to contribute to our documentation site
 displayed_sidebar: generalSidebar
+keywords: 
+- Conflux Network
+- documentation
+- contributing
+- community involvement
+- issue reporting
+- pull requests
+- translations
+- Crowdin
+- GitHub
+- content creation
+- visual aids
 ---
 
 :::info

@@ -2,6 +2,18 @@
 sidebar_position: 1
 title: use-wallet
 displayed_sidebar: generalSidebar
+keywords:
+  - use-wallet
+  - DApp-development
+  - wallet-integration
+  - React
+  - Vue3
+  - Conflux
+  - Ethereum
+  - Portal
+  - Fluent
+tags: [use-wallet]
+
 ---
 
 # use-wallet Library

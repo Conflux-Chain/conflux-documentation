@@ -1,6 +1,20 @@
 ---
 displayed_sidebar: generalSidebar
+keywords: 
+  - smart-contracts
+  - security
+  - price-manipulation
+  - dex
+  - uniswap
+  - oracle
+  - mango-markets
+  - vulnerabilities
+  - erc20
+  - twap
+  - prevention
+tags: [Price Manipulation, Security, Smart Contracts]
 ---
+
 
 # Price Manipulation
 

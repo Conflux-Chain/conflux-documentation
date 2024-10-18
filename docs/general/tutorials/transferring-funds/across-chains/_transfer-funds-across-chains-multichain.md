@@ -2,6 +2,16 @@
 sidebar_position: 4
 title: Transfer Funds Across Chains Using Multichain
 displayed_sidebar: generalSidebar
+keywords:
+  - OKX
+  - Conflux Network
+  - CFX
+  - Transfer
+  - Core Space
+  - eSpace
+  - Fluent
+  - MetaMask
+  - Cryptocurrency exchange
 ---
 
 :::note Note to Binance users and bCFX holders: Conflux on Binance is listed as wrapped ERC-20 token (bCFX), it is not native CFX. Conflux eSpace and BNB Chain use EVM-compatible addresses, but those addresses live in different chains.
