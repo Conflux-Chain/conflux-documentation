@@ -3,16 +3,16 @@ sidebar_position: 5
 title: 如何赞助智能合约
 description: 使用 ConfluxScan的读取/写入工具赞助合约。
 displayed_sidebar: coreSidebar
-tags:
+keywords:
   - 代付
   - ConfluxScan
   - Read&Write Tool
   - 智能合约
   - Fluent Wallet
-  - 测试网
-  - 燃气费赞助
-  - 关于存储的赞助
-  - 白名单
+  - Testnet
+  - Gas Sponsorship
+  - Storage Sponsorship
+  - Whitelist
   - SponsorWhitelistControl
   - Contract Interaction
   - CFX
@@ -22,6 +22,9 @@ tags:
   - Zero Address
   - 合约验证
   - Sponsored Transactions
+tags:
+  - Contract Sponsorship
+  - Gas Sponsorship
 ---
 
 Conflux Core [Sponsorship](../core-space-basics/sponsor-mechanism.md) offers a user-friendly feature for new blockchain users. This tutorial will guide you on how to use the [ConfluxScan Read&Write Tool](https://www.confluxscan.io/address/cfx:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaaegg2r16ar?tab=contract-viewer) to sponsor a contract.
@@ -81,7 +84,7 @@ After the transaction execution, you can query the contract's sponsor info again
 
 ![](./imgs/sponsor/query-sponsor-gas-balance.png)
 
-## 白名单
+## Whitelist
 
 Finally, add the zero address to the whitelist to use the contract without paying a gas fee.
 
