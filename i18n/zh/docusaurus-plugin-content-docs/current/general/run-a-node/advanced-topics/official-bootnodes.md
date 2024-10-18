@@ -2,6 +2,8 @@
 sidebar_position: 9
 title: 官方启动节点列表
 displayed_sidebar: generalSidebar
+tags:
+  - node
 ---
 
 Bootnodes是一组Conflux节点的列表，这些节点是可信的，当节点启动时会用于同步区块链。 The value is a string divided by comma without space, and every entry is a node A node is identified by `cfxnode://NODEID@PUBLICIP:PORT`. 这里提供的是 Conflux 团队在世界范围内维护的节点列表。
