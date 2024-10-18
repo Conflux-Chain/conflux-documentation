@@ -2,6 +2,8 @@
 sidebar_position: 9
 title: Official Bootnodes
 displayed_sidebar: generalSidebar
+tags:
+  - node
 ---
 
 Bootnodes is a list of nodes that a conflux node trusts, and will be used to sync the blockchain when a node starts. The value is a string divided by comma without space, and every entry is a node A node is identified by `cfxnode://NODEID@PUBLICIP:PORT`. What's provided here is a list of nodes that Conflux Team maintains across the world.
