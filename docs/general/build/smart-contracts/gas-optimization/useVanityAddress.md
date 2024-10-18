@@ -89,7 +89,7 @@ import { ethers } from "ethers";
 async function findVanityAddress(prefix, bytecode, factoryAddress) {
   let salt = 0n;
   while (true) {
-    const saltHex = ethers.zeroPadValue(ethers.hexlify(salt), 32);
+    const saltHex = ethers.zeroPadValue(ethers.toBeHex(salt), 32);
     const address = ethers.getCreate2Address(
       factoryAddress,
       saltHex,
