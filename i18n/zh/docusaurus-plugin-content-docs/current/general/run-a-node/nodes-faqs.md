@@ -3,6 +3,25 @@ title: 节点常见问题解答
 sidebar_position: 13
 description: 运行节点的常见问题。
 displayed_sidebar: generalSidebar
+keywords:
+  - Conflux Network
+  - node operation
+  - 常见问题解答
+  - data synchronization
+  - 归档节点
+  - snapshot tool
+  - node data size
+  - mining
+  - GPU mining
+  - PoS node
+  - public IP
+  - mainnet
+  - testnet
+  - RPC methods
+  - node configuration
+  - client software
+tags:
+  - node
 ---
 
 ## Common
