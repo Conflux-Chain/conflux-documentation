@@ -2,7 +2,7 @@
 sidebar_position: 7
 title: Run an eSpace Node
 displayed_sidebar: eSpaceSidebar
-tags:
+keywords:
   - Conflux eSpace
   - Node Operation
   - RPC Configuration
@@ -24,6 +24,8 @@ tags:
   - Port Configuration
   - eth_getTransactionCount
   - Troubleshooting
+tags:
+  - Node
 ---
 
 eSpace and Core Space share a common node program, so please refer to the [Core Space Node Operation Guide](/docs/category/run-a-node) for running a node. Below are some eSpace specific configurations.
