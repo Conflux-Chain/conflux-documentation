@@ -2,6 +2,24 @@
 sidebar_position: 1
 title: 运行矿工节点
 displayed_sidebar: generalSidebar
+keywords:
+  - Conflux Network
+  - mining
+  - PoW
+  - GPU mining
+  - NVIDIA GPU
+  - mining node
+  - fullnode
+  - cfxmine
+  - Hydra network
+  - Windows mining
+  - Linux mining
+  - mining configuration
+  - mining wallet
+  - remote mining
+  - stratum protocol
+tags:
+  - 挖矿
 ---
 
 ## Conflux网络PoW（工作量证明）- GPU挖矿指南
