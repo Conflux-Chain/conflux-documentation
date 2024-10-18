@@ -29,59 +29,57 @@ tags:
   - ParamsControl
 ---
 
----
+Conflux introduces several built-in internal contracts for better system maintenance and on-chain governance. Now Conflux has seven internal contracts. These contracts provide [`solidity interfaces defined here`](https://github.com/Conflux-Chain/conflux-rust/tree/master/internal_contract/contracts). These function can only be called via `CALL` or `STATICCALL` operation. Using operation `CALLCODE` or `DELEGATECALL` to interact with internal contracts will trigger an error.
 
-Conflux引入了几个内嵌的内置合约，以便更好地进行系统维护和链上治理。 现在Conflux有七份内部合同。 这些合约提供了[`Solidity接口`](https://github.com/Conflux-Chain/conflux-rust/tree/master/internal_contract/contracts)。 这些函数只能通过CALL或STATICCALL操作来调用。 使用操作CALLCODE或DELEGATECALL与内部合约交互将触发错误。
-
-`AdminControl`合约、`SpongsorWhitelistControl`合约和`Staking`合约从一开始就被引入。
+`AdminControl` contract, `SponsorWhitelistControl` contract and `Staking` contract are introduced from the beginning.
 
 `ConfluxContext`, `PoSRegister`, `CrossSpaceCall` are introduced at v2 hard-fork, 
 
-`ParamsControl` 是在 v2.1 硬分叉中引入的。 
+`ParamsControl` is introduced at v2.1 hard-fork. 
 
-这7个内置合约的地址如下所示：
+The addresses of these 7 internal contracts are list as follows:
 
 ## AdminControl:
 
-- hex40：`0x0888000000000000000000000000000000000000000000`
-- 测试网 base32: `cfxtest:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaaawby2s44d`
-- 主网 base32: `cfx:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaaa2mhjju8k`
+- hex40: `0x0888000000000000000000000000000000000000`
+- Testnet base32: `cfxtest:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaaawby2s44d`
+- Mainnet base32: `cfx:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaaa2mhjju8k`
 
 ## SponsorWhitelistControl:
 
 - hex40: `0x0888000000000000000000000000000000000001`
-- 测试网 base32: `cfxtest:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaaeprn7v0eh`
-- 主网 base32: `cfx:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaaegg2r16ar`
+- Testnet base32: `cfxtest:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaaeprn7v0eh`
+- Mainnet base32: `cfx:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaaegg2r16ar`
 
 ## Staking
 
 - hex40: `0x0888000000000000000000000000000000000002`
-- 测试网 base32: `cfxtest:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaajh3dw3ctn`
-- 主网 base32: `cfx:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaajrwuc9jnb`
+- Testnet base32: `cfxtest:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaajh3dw3ctn`
+- Mainnet base32: `cfx:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaajrwuc9jnb`
 
 ## ConfluxContext:
 
 - hex40: `0x0888000000000000000000000000000000000004`
-- 测试网 base32: `cfxtest:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaauv2xpkd3x`
-- 主网 base32: `cfx:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaau5xa6tk73`
+- Testnet base32: `cfxtest:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaauv2xpkd3x`
+- Mainnet base32: `cfx:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaau5xa6tk73`
 
 ## PoSRegister:
 
 - hex40: `0x0888000000000000000000000000000000000005`
-- 测试网 base32: `cfxtest:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaaytypk0th1`
-- 主网 base32: `cfx:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaayf993ufd7`
+- Testnet base32: `cfxtest:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaaytypk0th1`
+- Mainnet base32: `cfx:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaayf993ufd7`
 
 ## CrossSpaceCall
 
 - hex40: `0x0888000000000000000000000000000000000006`
-- 测试网 base32: `cfxtest:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaa2eaeg85p5`
-- 主网 base32: `cfx:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaa2sn102vjv`
+- Testnet base32: `cfxtest:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaa2eaeg85p5`
+- Mainnet base32: `cfx:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaa2sn102vjv`
 
 ## ParamsControl
 
 - hex40: `0x0888000000000000000000000000000000000007`
-- 测试网 base32: `cfxtest:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaa64p5db1w9`
-- 主网 base32: `cfx:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaa6uhjxh70z`
+- Testnet base32: `cfxtest:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaa64p5db1w9`
+- Mainnet base32: `cfx:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaa6uhjxh70z`
 
 ```mdx-code-block
 import DocCardList from '@theme/DocCardList';
