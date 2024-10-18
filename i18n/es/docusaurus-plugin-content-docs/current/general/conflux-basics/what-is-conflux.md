@@ -2,6 +2,23 @@
 sidebar_position: 1
 title: '¿Qué es Conflux?'
 displayed_sidebar: generalSidebar
+keywords:
+  - Conflux Network
+  - blockchain
+  - consensus mechanism
+  - Tree Graph
+  - GHAST
+  - Prueba de trabajo (Proof of Work)
+  - Proof de Stake (Prueba de participación)
+  - hybrid consensus
+  - high throughput
+  - low latency
+  - decentralization
+  - Core Space
+  - eSpace
+  - cross-space communication
+tags:
+  - What is Conflux
 ---
 
 Conflux se destaca como una blockchain pública con un rendimiento superior, un mecanismo de consenso único y un innovador diseño dual-space. Estas características permiten que Conflux ofrezca una plataforma rápida, segura y descentralizada que es adecuada para diversas aplicaciones, incluidas las finanzas descentralizadas y los juegos.
