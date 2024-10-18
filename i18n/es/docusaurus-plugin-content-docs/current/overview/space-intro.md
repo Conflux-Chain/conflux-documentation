@@ -2,6 +2,13 @@
 sidebar_position: 2
 title: Espacios de Conflux
 displayed_sidebar: overviewSidebar
+keywords:
+  - Conflux
+  - Espacios
+  - eSpace
+  - Core Space
+  - blockchain
+  - Ethereum compatibility
 ---
 
 La Red de Conflux presenta un diseño único conocido como [Espacios de Conflux](/docs/general/conflux-basics/spaces). Un espacio en la red de Conflux puede ser entendido como un área específica o similar a una cadena de bloques individual. Actualmente hay dos espacios en la Red Conflux: **eSpace** y **Core Space**.
