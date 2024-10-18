@@ -1,6 +1,19 @@
 ---
 displayed_sidebar: generalSidebar
 sidebar_position: 1
+keywords:
+  - blockchain wallet
+  - wallet security
+  - mnemonic phrase
+  - private key
+  - public key
+  - hardware wallet
+  - software wallet
+  - multi-wallet strategy
+  - keyless wallet
+  - cold storage
+tags:
+  - 钱包
 ---
 
 # Security Advice for Creating a Wallet
