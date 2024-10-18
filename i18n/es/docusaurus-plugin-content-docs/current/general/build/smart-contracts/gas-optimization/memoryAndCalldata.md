@@ -1,6 +1,20 @@
 ---
 displayed_sidebar: generalSidebar
 sidebar_position: 2
+keywords:
+  - smart-contracts
+  - Solidity
+  - gas-optimization
+  - memory
+  - calldata
+  - data-location
+  - EVM
+  - function-parameters
+  - CalldataAndMemory
+tags:
+  - Memory vs Calldata
+  - Gas Optimization
+  - Contratos Inteligentes
 ---
 
 # Memory vs Calldata
