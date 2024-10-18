@@ -5,6 +5,8 @@ keywords:
   - config
   - node
 displayed_sidebar: generalSidebar
+tags:
+  - node
 ---
 
 Below is a mainnet node configuration file, it contains all the supported options along with some explanations in the comments. You can also find the latest version at [conflux-rust Github repository's run folder](https://github.com/Conflux-Chain/conflux-rust/tree/master/run). The file name is `hydra.toml` or `testnet.toml`. You can also find the log config file [`log.yaml`](https://github.com/Conflux-Chain/conflux-rust/blob/master/run/log.yaml) in the same folder.
