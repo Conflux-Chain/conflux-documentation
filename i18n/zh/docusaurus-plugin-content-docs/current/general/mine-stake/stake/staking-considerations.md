@@ -2,6 +2,23 @@
 sidebar_position: 3
 title: 质押注意事项
 displayed_sidebar: generalSidebar
+keywords:
+  - Conflux Network
+  - PoS 共识机制
+  - staking risks
+  - token locking
+  - private key security
+  - node operation
+  - network upgrades
+  - PoS node
+  - PoS network
+  - forceRetired
+  - unlock period
+  - reward distribution
+  - staking pool
+  - validator responsibilities
+tags:
+  - Staking
 ---
 
 在参与质押活动之前，了解潜在风险并采取适当措施来减轻这些风险是非常重要的。
