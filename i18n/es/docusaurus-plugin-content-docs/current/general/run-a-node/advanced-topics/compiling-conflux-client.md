@@ -2,6 +2,8 @@
 sidebar_position: 5
 title: Compiling the Conflux Client
 displayed_sidebar: generalSidebar
+tags:
+  - node
 ---
 
 import { confluxNodeVersion } from '../../../templates/parameters.ts'
