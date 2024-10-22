@@ -4,7 +4,7 @@ sidebar_position: 1
 title: cfx Namespace
 description: The core JSON-RPC API of Conflux.
 keywords:
- - cfx_sendRawTransaction
+  - cfx_sendRawTransaction
   - transaction
   - raw transaction
   - blockchain
