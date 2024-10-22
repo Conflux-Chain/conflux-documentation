@@ -4,37 +4,37 @@ sidebar_position: 1
 title: cfx Namespace
 description: The core JSON-RPC API of Conflux.
 keywords:
-  - 
-    - transacción
-    - raw transaction
-    - blockchain
-    - Conflux
-    - JSON-RPC
-    - API
-    - cfx_getBalance
-    - cfx_getCode
-    - cfx_getStorageAt
-    - cfx_call
-    - cfx_estimateGasAndCollateral
-    - cfx_getLogs
-    - cfx_getTransactionReceipt
-    - cfx_getAccount
-    - cfx_getInterestRate
-    - cfx_getAccumulateInterestRate
-    - cfx_getBlockByHash
-    - cfx_getBlockByEpochNumber
-    - cfx_getBestBlockHash
-    - cfx_epochNumber
-    - cfx_gasPrice
-    - cfx_getNextNonce
-    - state-query
-    - transaction-execution
-    - block-information
-    - account-information
-    - gas-estimation
-    - log-retrieval
-    - receipt-retrieval
-    - epoch-handling
+  - cfx_sendRawTransaction
+  - transacción
+  - raw transaction
+  - blockchain
+  - Conflux
+  - JSON-RPC
+  - API
+  - cfx_getBalance
+  - cfx_getCode
+  - cfx_getStorageAt
+  - cfx_call
+  - cfx_estimateGasAndCollateral
+  - cfx_getLogs
+  - cfx_getTransactionReceipt
+  - cfx_getAccount
+  - cfx_getInterestRate
+  - cfx_getAccumulateInterestRate
+  - cfx_getBlockByHash
+  - cfx_getBlockByEpochNumber
+  - cfx_getBestBlockHash
+  - cfx_epochNumber
+  - cfx_gasPrice
+  - cfx_getNextNonce
+  - state-query
+  - transaction-execution
+  - block-information
+  - account-information
+  - gas-estimation
+  - log-retrieval
+  - receipt-retrieval
+  - epoch-handling
 displayed_sidebar: coreSidebar
 tags:
   - JSON-RPC
