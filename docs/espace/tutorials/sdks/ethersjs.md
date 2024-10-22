@@ -1,8 +1,30 @@
 ---
-sidebar_position: 4
+sidebar_position: 3
 title: ethers.js
 displayed_sidebar: eSpaceSidebar
 description: This page is meant to guide you through the basics on how to use ethers.js when developing on Conflux eSpace.
+keywords:
+  - ethers.js
+  - JavaScript
+  - Conflux eSpace
+  - Smart Contracts
+  - Transactions
+  - Blockchain Interaction
+  - Solidity
+  - ABI
+  - Bytecode
+  - HTTP Connection
+  - Account Balance
+  - Contract Methods
+  - Call Methods
+  - Send Methods
+  - Gas Estimation
+  - Transaction Signing
+  - Node.js
+  - RPC Endpoint
+  - Private Key
+  - Web3 Provider
+tags: [ethers.js, Tutorial]
 ---
 
 
