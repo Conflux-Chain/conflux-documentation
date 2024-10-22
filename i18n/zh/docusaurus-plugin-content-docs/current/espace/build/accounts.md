@@ -3,7 +3,7 @@ sidebar_position: 5
 title: eSpace 映射地址（跨空间）
 description: 跨空间操作中的映射地址
 displayed_sidebar: eSpaceSidebar
-tags:
+keywords:
   - Conflux eSpace
   - Conflux Core
   - Mapped Addresses
@@ -27,6 +27,10 @@ tags:
   - transferEVM
   - mappedBalance
   - withdrawFromMapped
+tags:
+  - 账户
+  - eSpace Accounts
+  - eSpace Addresses
 ---
 
 ## 概览

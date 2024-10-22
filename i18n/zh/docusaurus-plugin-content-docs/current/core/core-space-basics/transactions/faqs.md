@@ -3,9 +3,6 @@ title: 常见问题解答
 sidebar_position: 15
 displayed_sidebar: coreSidebar
 keywords:
-  - 常见问题与解答
-  - 交易
-tags:
   - 交易
   - Sending Transactions
   - Transaction Cancellation
@@ -16,6 +13,10 @@ tags:
   - EIP-2718
   - Tree Graph
   - Concurrent Block Emission
+tags:
+  - 155 transaction
+  - Core Space transaction differences with Ethereum
+  - 交易
 ---
 
 ## 其他

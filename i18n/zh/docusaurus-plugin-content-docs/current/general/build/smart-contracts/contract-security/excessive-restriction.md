@@ -1,5 +1,20 @@
 ---
 displayed_sidebar: generalSidebar
+keywords:
+  - smart-contracts
+  - security
+  - excessive-restrictions
+  - fund-locking
+  - akutars-nft
+  - solidity
+  - prevention
+  - audits
+  - escape-hatches
+  - flexible-control
+tags:
+  - Excessive Restrictions
+  - Security
+  - 智能合约
 ---
 
 # Excessive Function Restrictions

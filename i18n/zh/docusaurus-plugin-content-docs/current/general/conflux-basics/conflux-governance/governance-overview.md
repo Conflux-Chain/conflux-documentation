@@ -2,6 +2,18 @@
 sidebar_position: 1
 title: 治理概览
 displayed_sidebar: generalSidebar
+keywords:
+  - Conflux-Network
+  - governance
+  - decentralization
+  - community-voting
+  - CIPs
+  - network-upgrades
+  - hard-forks
+  - PoS 共识机制
+  - staking
+tags:
+  - 治理概览
 ---
 
 ## **治理模式 — CFX 投票**

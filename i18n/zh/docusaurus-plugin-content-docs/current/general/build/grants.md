@@ -2,6 +2,21 @@
 sidebar_position: 5
 title: 基金会补助
 displayed_sidebar: generalSidebar
+keywords:
+  - Conflux-Network
+  - ecosystem-grants
+  - technical-grants
+  - growth-grants
+  - funding
+  - application-process
+  - grant-tiers
+  - grant-onboarding
+  - grant-delivery
+  - committee-responsibilities
+  - no-sale-rule
+  - public-reporting
+tags:
+  - 基金会补助
 ---
 
 # **Conflux Ecosystem Grants Overview**

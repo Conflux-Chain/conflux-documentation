@@ -5,7 +5,28 @@ description: Conflux eSpace RPC 端点
 keywords:
   - 网络端点
   - Conflux eSpace
+  - RPC
+  - JSON-RPC
+  - Mainnet
+  - Testnet
+  - Chain ID
+  - HTTP endpoints
+  - WebSocket endpoints
+  - Confura
+  - Rate limits
+  - API key
+  - Web3 Paywall
+  - Commercial RPC service
+  - Blockchain explorer
+  - EVM compatibility
+  - Web3 development
+  - dApp infrastructure
+  - Blockchain node
+  - Public RPC service
+  - Enterprise solutions
 displayed_sidebar: eSpaceSidebar
+tags:
+  - 网络端点
 ---
 
 :::tip
@@ -22,7 +43,7 @@ Confura 是由 Conflux 基金会提供的公共 RPC 服务，可以免费使用�
 
 Confura为主网和测试网提供了多个可用的RPC端点。 我们按照“优先选择前者”的原则对它们进行了排序，并提供了简要描述。 如果您不确定选择哪一个，请优先选择列表顶部的 RPC 端点。
 
-#### 主网
+#### Mainnet
 
 Chain ID for Conflux eSpace Mainnet is `1030(0x406)`. The corresponding blockchain explorer URL is https://evm.confluxscan.io.
 
@@ -35,7 +56,7 @@ Chain ID for Conflux eSpace Mainnet is `1030(0x406)`. The corresponding blockcha
 | wss://evm.confluxrpc.com/ws           | Websocket |                |
 | wss://evm.confluxrpc.org/ws           | Websocket | 备用 RPC 服务      |
 
-#### 测试网
+#### Testnet
 
 Chain ID for Conflux eSpace Mainnet is `71(0x47)`. The corresponding blockchain explorer URL is https://evmtestnet.confluxscan.io.
 
@@ -47,13 +68,13 @@ Chain ID for Conflux eSpace Mainnet is `71(0x47)`. The corresponding blockchain 
 | wss://evmtestnet.confluxrpc.com/ws | Websocket |           |
 | wss://evmtestnet.confluxrpc.org/ws | Websocket |           |
 
-### 速率限制
+### Rate Limits
 
 为了保持服务的可用性，免费版本设有访问频率限制。 如果你需要更高级别的 RPC 服务，你可以通过 [Web3 Paywall](../general/build/tools/web3paywall.md) 进行购买，或者可以直接发送邮件到 [bd@confluxnetwork.org](mailto:bd@confluxnetwork.org) 向 Conflux 基金会申请。
 
 这里提供了各种费用等级及其访问速率限制的参考信息。
 
-| 付费级别 | 价格                          | 速率限制                          | 购买链接                                                                                                                                                                                                                                         |
+| 付费级别 | 价格                          | Rate Limits                   | 购买链接                                                                                                                                                                                                                                         |
 | ---- | --------------------------- | ----------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | 免费   | $0                          | 每秒 50 次调用，每天最多100,000次 调用     | -                                                                                                                                                                                                                                            |
 | 标准   | 150 美元/月                    | 每秒 100 次调用，每天最多 1,000,000 次调用 | [mainnet](https://confluxhub.io/payment/consumer/app/subscription/0x33A9451ee070d750a077C93f71D2cFcD0180Fa7D) <br/> [testnet](https://test.confluxhub.io/payment/consumer/app/subscription/0x4805C5B2741088B8458ed781083eA8940186E477) |

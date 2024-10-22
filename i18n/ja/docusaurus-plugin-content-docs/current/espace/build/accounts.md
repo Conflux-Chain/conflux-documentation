@@ -3,7 +3,7 @@ sidebar_position: 5
 title: eSpace Mapped Addresses(Cross Space)
 description: Mapped addresses in cross-space operations
 displayed_sidebar: eSpaceSidebar
-tags:
+keywords:
   - Conflux eSpace
   - Conflux Core
   - Mapped Addresses
@@ -27,6 +27,10 @@ tags:
   - transferEVM
   - mappedBalance
   - withdrawFromMapped
+tags:
+  - Accounts
+  - eSpace Accounts
+  - eSpace Addresses
 ---
 
 ## Overview

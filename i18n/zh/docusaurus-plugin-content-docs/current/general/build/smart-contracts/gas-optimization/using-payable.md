@@ -1,5 +1,21 @@
 ---
 displayed_sidebar: generalSidebar
+keywords:
+  - smart-contracts
+  - gas-optimization
+  - Solidity
+  - payable
+  - constructors
+  - admin-functions
+  - EVM
+  - BasicConstructor
+  - AdvancedConstructor
+  - Admin
+  - AdminPayable
+tags:
+  - Using Payable
+  - GAS 优化
+  - 智能合约
 ---
 
 # Using Payable

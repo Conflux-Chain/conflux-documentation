@@ -3,10 +3,15 @@ sidebar_position: 2
 title: Next.js
 description: Learn how to use Web3Modal in a Next.js project
 keywords:
-  - WalletConnect
-  - Web3Modal
-  - Dapp
+  - tutorial
+  - web3
+  - frontend
+  - nextjs
+  - walletconnect
 displayed_sidebar: eSpaceSidebar
+tags:
+  - 教程
+  - WalletConnect
 ---
 
 # Integrating WalletConnect with Next.js Project on Conflux eSpace

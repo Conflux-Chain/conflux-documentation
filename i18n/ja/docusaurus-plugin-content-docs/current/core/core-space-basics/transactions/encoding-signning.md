@@ -3,10 +3,6 @@ sidebar_position: 2
 title: Encoding & Signing
 displayed_sidebar: coreSidebar
 keywords:
-  - transaction
-  - signing
-  - encoding
-tags:
   - Transaction Signing
   - Transaction Encoding
   - RLP Encoding
@@ -19,6 +15,10 @@ tags:
   - Cryptographic Process
   - Blockchain Security
   - Transaction Broadcast
+tags:
+  - Transaction Encoding
+  - Transaction Lifecycle
+  - Transactions
 ---
 
 After every field of a transaction is prepared, following steps are required before it can be sent to network (don't worry, these steps are already implemented by wallets or SDKs):

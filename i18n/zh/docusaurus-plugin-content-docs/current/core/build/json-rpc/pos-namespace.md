@@ -20,34 +20,7 @@ keywords:
   - committee election
 tags:
   - PoS 共识机制
-  - RPC
-  - API
-  - 共识
-  - 区块链
-  - Proof-of-Stake
-  - Committee
-  - 纪元（Epoch）
-  - Block
-  - 交易
-  - Rewards
-  - Voting-Power
-  - PoS-Chain
-  - Finality
-  - Pivot-Decision
-  - Account-Status
-  - Committee-Election
-  - Node-Status
-  - Block-Retrieval
-  - Transaction-Retrieval
-  - Reward-Distribution
-  - Staking
-  - Voting
-  - PoS-Address
-  - PoS-Transactions
-  - PoS-Blocks
-  - Consensus-Mechanism
-  - Chain-Finalization
-  - PoW-PoS-Interaction
+  - JSON-RPC
 displayed_sidebar: coreSidebar
 ---
 

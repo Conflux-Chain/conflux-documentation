@@ -3,6 +3,18 @@ title: 如何贡献
 sidebar_position: 1
 description: 如何为我们的文档网站做出贡献
 displayed_sidebar: generalSidebar
+keywords:
+  - Conflux Network
+  - documentation
+  - contributing
+  - community involvement
+  - issue reporting
+  - pull requests
+  - translations
+  - Crowdin
+  - GitHub
+  - content creation
+  - visual aids
 ---
 
 :::info

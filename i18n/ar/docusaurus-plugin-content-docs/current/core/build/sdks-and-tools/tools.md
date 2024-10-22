@@ -18,29 +18,8 @@ keywords:
   - testing framework
   - deployment automation
 tags:
-  - Development Tools
-  - Hardhat
-  - ChainIDE
-  - Address Converter
-  - Dapp
-  - Smart Contracts
-  - Multi-Chain
-  - Blockchain Development
-  - Solidity
-  - Contract Compilation
-  - Testing Framework
-  - Deployment Automation
-  - Cloud-Based IDE
-  - js-conflux-sdk
-  - Plugin
-  - Address Format
-  - Development Environment
-  - Contract Interaction
-  - Debugging
-  - Gas Optimization
-  - Security Analysis
-  - Contract Verification
-  - Network Management
+  - development tools
+  - blockchain utilities
 displayed_sidebar: coreSidebar
 ---
 
@@ -63,3 +42,15 @@ ChainIDE is a Cloud-Based Multi-Chain IDE. Developers don’t need to install ex
 ConfluxScan provides a [Online Address Converter](https://www.confluxscan.io/address-converter) which is very useful.
 
 ![](../../core-space-basics/img/scan-address-converter.png)
+
+## Deployed Contracts
+
+The following contract has been deployed and verified on the Conflux core space.
+
+Mainnet:
+
+- Multicall3: [cfx:acevn2d3dr6vh4jca28c6cmvkktsg7r8n25vp9hnmw](https://confluxscan.io/address/cfx:acevn2d3dr6vh4jca28c6cmvkktsg7r8n25vp9hnmw?tab=contract-viewer)
+
+Testnet:
+
+- Multicall3: [cfxtest:acay1u1fj9bz93334efs447tx1x6y5p61a944zyy47](https://testnet.confluxscan.io/address/cfxtest:acay1u1fj9bz93334efs447tx1x6y5p61a944zyy47?tab=contract-viewer)

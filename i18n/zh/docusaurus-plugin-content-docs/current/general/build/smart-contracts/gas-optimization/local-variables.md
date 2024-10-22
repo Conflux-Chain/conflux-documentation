@@ -1,5 +1,19 @@
 ---
 displayed_sidebar: generalSidebar
+keywords:
+  - smart contracts
+  - Solidity
+  - gas optimization
+  - local variables
+  - storage variables
+  - memory
+  - DeFi
+  - arithmetic operations
+  - LocalVariablesExample
+tags:
+  - 局部变量
+  - GAS 优化
+  - 智能合约
 ---
 
 # 局部变量

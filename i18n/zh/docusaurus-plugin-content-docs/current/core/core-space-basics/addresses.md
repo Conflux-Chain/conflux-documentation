@@ -2,7 +2,7 @@
 sidebar_position: 1
 title: Base32 地址
 displayed_sidebar: coreSidebar
-tags:
+keywords:
   - Base32 地址
   - Hex Address
   - Address Conversion
@@ -17,6 +17,10 @@ tags:
   - Create2
   - 地址转换器
   - BIP-44
+tags:
+  - Base32 地址
+  - Addresses
+  - Conflux Addresses
 ---
 
 import Tabs from "@theme/Tabs";

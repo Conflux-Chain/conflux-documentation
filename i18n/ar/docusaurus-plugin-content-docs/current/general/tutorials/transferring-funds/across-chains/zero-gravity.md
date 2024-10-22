@@ -2,6 +2,15 @@
 sidebar_position: 1
 title: Zero Gravity
 displayed_sidebar: generalSidebar
+keywords:
+  - Zero Gravity
+  - Cross-chain transfer
+  - Conflux Network
+  - Core Space
+  - BNB Smart Chain
+  - CFX
+  - Fluent Wallet
+  - MetaMask
 ---
 
 # Transfer Assets Across Chains Using Zero Gravity

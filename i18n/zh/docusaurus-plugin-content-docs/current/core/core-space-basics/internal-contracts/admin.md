@@ -10,24 +10,8 @@ keywords:
   - debug tool
   - contract destruction
 tags:
-  - AdminControl
   - 内置合约
-  - Core
-  - Contract Administration
-  - Debug Tool
-  - 智能合约
-  - Contract Destruction
-  - Admin Rights
-  - Contract Deployment
-  - Contract Lifecycle
-  - Sponsor Mechanism
-  - Contract Security
-  - Governance
-  - Contract Ownership
-  - Address Management
-  - Zero Address
-  - Contract Upgrades
-  - Development Mode
+  - AdminControl
 displayed_sidebar: coreSidebar
 ---
 

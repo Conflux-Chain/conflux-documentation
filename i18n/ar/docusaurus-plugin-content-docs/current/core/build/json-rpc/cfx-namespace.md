@@ -4,11 +4,6 @@ sidebar_position: 1
 title: cfx Namespace
 description: The core JSON-RPC API of Conflux.
 keywords:
-  - conflux
-  - json-rpc
-  - sdk
-displayed_sidebar: coreSidebar
-tags:
   - cfx_sendRawTransaction
   - transaction
   - raw transaction
@@ -40,6 +35,10 @@ tags:
   - log-retrieval
   - receipt-retrieval
   - epoch-handling
+displayed_sidebar: coreSidebar
+tags:
+  - JSON-RPC
+  - cfx namespace
 ---
 
 ## JSON-RPC Spec

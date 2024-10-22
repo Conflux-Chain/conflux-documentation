@@ -1,5 +1,17 @@
 ---
 displayed_sidebar: generalSidebar
+keywords:
+  - Conflux Network
+  - rigorous testing
+  - unit tests
+  - integration tests
+  - consensus fuzzing
+  - random tracing
+  - performance benchmarks
+  - blockchain testing
+  - node development
+tags:
+  - Testing
 ---
 
 # Rigorous Testing Tools for Conflux

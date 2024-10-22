@@ -2,6 +2,20 @@
 sidebar_position: 10
 title: Cuentas y Direcciones
 displayed_sidebar: generalSidebar
+keyworks:
+  - Conflux-Network
+  - accounts
+  - addresses
+  - blockchain
+  - distributed-ledger
+  - Proof-of-Work
+  - Proof-of-Stake
+  - hybrid-consensus
+  - Tree Graph
+  - GHAST
+  - transaction-validation
+tags:
+  - Accounts
 ---
 
 ## Información general

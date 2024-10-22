@@ -4,6 +4,9 @@ title: Fluent
 keywords:
   - Fluent
   - Wallet (billetera)
+tags:
+  - wallet
+  - fluent wallet
 displayed_sidebar: generalSidebar
 ---
 

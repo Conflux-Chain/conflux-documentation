@@ -1,6 +1,20 @@
 ---
 title: Safe Downcasting
 displayed_sidebar: generalSidebar
+keywords:
+  - smart-contracts
+  - solidity
+  - security
+  - downcasting
+  - integer-overflow
+  - safe-cast
+  - openzeppelin
+  - arithmetic-operations
+  - type-conversion
+tags:
+  - Downcasting
+  - Security
+  - Smart Contracts
 ---
 
 # Safe Downcasting

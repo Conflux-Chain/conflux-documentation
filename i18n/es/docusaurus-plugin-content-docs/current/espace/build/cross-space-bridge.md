@@ -3,34 +3,12 @@ sidebar_position: 5
 title: CrossSpaceCall Contract
 description: Detail explain of CrossSpaceCall contract
 displayed_sidebar: eSpaceSidebar
-tags:
-  - CIP-90
-  - Conflux eSpace
-  - Conflux Core
-  - EVM Compatibility
+keywords:
   - CrossSpaceCall
-  - Internal Contract
-  - Cross-Space Operations
-  - CFX Transfer
-  - Contratos Inteligentes
-  - Mapped Addresses
-  - Ethereum Compatibility
-  - Transaction Format
-  - Address Generation
-  - Base32 Addresses
-  - Hex Addresses
-  - EIP-155
-  - CIP-37
-  - EIP-55
-  - Atomic Operations
-  - Layer-1 Security
-  - js-conflux-sdk
-  - Solidity
-  - RPC Methods
-  - Blockchain Interoperability
-  - Cross-Chain Communication
-  - Contract Deployment
-  - Contract Interaction
+  - Internal Contracts
+tags:
+  - CrossSpaceCall
+  - Internal Contracts
 ---
 
 Conflux eSpace and Core space are two separate space, you can not send CFX from base32 address to hex address directly. You can only use [Confluxhub Space Bridge](https://confluxhub.io/espace-bridge/cross-space) to cross CFX between eSpace and Core Space.

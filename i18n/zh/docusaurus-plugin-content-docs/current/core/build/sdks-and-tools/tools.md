@@ -18,29 +18,8 @@ keywords:
   - testing framework
   - deployment automation
 tags:
-  - Development Tools
-  - Hardhat
-  - ChainIDE
-  - 地址转换器
-  - Dapp
-  - 智能合约
-  - Multi-Chain
-  - Blockchain Development
-  - Solidity
-  - Contract Compilation
-  - Testing Framework
-  - Deployment Automation
-  - Cloud-Based IDE
-  - js-conflux-sdk
-  - Plugin
-  - Address Format
-  - Development Environment
-  - Contract Interaction
-  - Debugging
-  - GAS 优化
-  - Security Analysis
-  - 合约验证
-  - Network Management
+  - development tools
+  - blockchain utilities
 displayed_sidebar: coreSidebar
 ---
 
@@ -63,3 +42,15 @@ ChainIDE 是基于云的多链 IDE。 在开发智能合约时，开发人员无
 ConfluxScan 提供了一个高效的 [在线地址转换器](https://www.confluxscan.io/address-converter) 。
 
 ![](../../core-space-basics/img/scan-address-converter.png)
+
+## 已部署合约
+
+The following contract has been deployed and verified on the Conflux core space.
+
+Mainnet:
+
+- Multicall3: [cfx:acevn2d3dr6vh4jca28c6cmvkktsg7r8n25vp9hnmw](https://confluxscan.io/address/cfx:acevn2d3dr6vh4jca28c6cmvkktsg7r8n25vp9hnmw?tab=contract-viewer)
+
+Testnet:
+
+- Multicall3: [cfxtest:acay1u1fj9bz93334efs447tx1x6y5p61a944zyy47](https://testnet.confluxscan.io/address/cfxtest:acay1u1fj9bz93334efs447tx1x6y5p61a944zyy47?tab=contract-viewer)

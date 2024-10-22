@@ -1,11 +1,25 @@
 ---
 id: pos_overview
 title: Introducción a PoS
-keywords:
-  - pos
-  - overview
 sidebar_position: 2
 displayed_sidebar: generalSidebar
+keywords:
+  - Conflux-Network
+  - Proof-of-Stake
+  - PoS
+  - consensus-mechanism
+  - 51-attack
+  - PoW-chain
+  - pivot-block
+  - voting-committee
+  - BLS
+  - VRF
+  - staking
+  - CFX
+  - incentive-plan
+  - security
+tags:
+  - Proof-of-Stake
 ---
 
 Este documento es una introducción a la finalidad de Conflux PoS sin detalles prácticos. Es para ayudar a los lectores a entender PoS en general, y es esencial para leer otros documentos técnicos.

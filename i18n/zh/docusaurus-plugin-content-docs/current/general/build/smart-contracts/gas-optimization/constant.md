@@ -1,5 +1,20 @@
 ---
 displayed_sidebar: generalSidebar
+keywords:
+  - smart-contracts
+  - gas-optimization
+  - Solidity
+  - constant
+  - immutable
+  - variable
+  - deployment
+  - initialization
+  - SLOAD
+  - gas-efficiency
+tags:
+  - 常量 vs 不可变量(Constant vs Immutable)
+  - GAS 优化
+  - 智能合约
 ---
 
 # 常量 vs 不可变量(Constant vs Immutable)

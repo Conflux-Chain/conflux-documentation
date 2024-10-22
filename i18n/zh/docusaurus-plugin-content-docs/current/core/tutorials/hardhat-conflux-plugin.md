@@ -3,7 +3,7 @@ sidebar_position: 3
 title: Hardhat Conflux 插件
 description: Hardhat Conflux 插件使用教程
 displayed_sidebar: coreSidebar
-tags:
+keywords:
   - Hardhat
   - Conflux Plugin
   - Development Environment
@@ -20,6 +20,9 @@ tags:
   - js-conflux-sdk
   - Ethereum Compatibility
   - Task Runner
+tags:
+  - Hardhat
+  - Conflux Plugin
 ---
 
 [Hardhat](https://hardhat.org/) is an exceptional tool for building smart contracts. It serves as a development environment, testing framework, and asset pipeline for Ethereum-like blockchains, such as Conflux. The [Hardhat Conflux Plugin](https://github.com/conflux-chain/hardhat-conflux) adds Conflux Core Space support to Hardhat.

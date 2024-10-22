@@ -1,5 +1,20 @@
 ---
 displayed_sidebar: generalSidebar
+keywords:
+  - smart-contracts
+  - gas-optimization
+  - bitmap
+  - bitwise-operations
+  - Solidity
+  - uint8
+  - boolean-array
+  - AND-operation
+  - bit-shift
+  - gas-efficiency
+tags:
+  - Bitmap Bitwise Operation
+  - Gas Optimization
+  - Contratos Inteligentes
 ---
 
 # Bitmap & Bitwise operation

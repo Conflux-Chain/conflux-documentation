@@ -3,14 +3,14 @@ sidebar_position: 3
 title: 开发者快速入门
 displayed_sidebar: coreSidebar
 description: 本教程将向您展示如何使用 js-conflux-sdk 发送交易。
-tags:
+keywords:
   - js-conflux-sdk
   - Core Space
   - 交易
   - JavaScript
   - SDK
   - 快速入门
-  - Conflux 地址
+  - Conflux Address
   - Account Balance
   - Private Key
   - RPC 端点
@@ -18,9 +18,11 @@ tags:
   - Drip
   - Transaction Sending
   - Error Handling
-  - 测试网
+  - Testnet
   - 水龙头
   - ConfluxScan
+tags:
+  - js-conflux-sdk
 ---
 
 为了在 Conflux Core Space 上发送交易，您需要使用其特有的 SDK。 本教程将向您展示如何使用 js-conflux-sdk 发送交易。
@@ -80,7 +82,7 @@ const account = cfxClient.wallet.addPrivateKey(PRIVATE_KEY); // 创建账户实�
 console.log("账户地址: ", account.address);
 ```
 
-### Conflux 地址
+### Conflux Address
 
 Conflux Core Space 的地址与以太坊不同。 它是由 [CIP-37](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-37.md) 引入的 base32 编码字符串。
 

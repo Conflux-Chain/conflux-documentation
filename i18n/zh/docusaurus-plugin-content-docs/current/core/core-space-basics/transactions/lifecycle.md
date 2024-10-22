@@ -3,12 +3,6 @@ sidebar_position: 5
 title: 交易生命周期
 displayed_sidebar: coreSidebar
 keywords:
-  - 交易
-  - 生命周期
-  - 阶段
-  - 确认
-  - 最终性
-tags:
   - 交易生命周期
   - 交易阶段
   - Transaction Construction
@@ -23,6 +17,8 @@ tags:
   - Nonce
   - Gas Price
   - Mempool
+tags:
+  - 交易生命周期
 ---
 
 交易从构建时到最终在链上确认之前会经历几个阶段。 对这些阶段的深刻理解将有助于用户和开发人员更好地识别发送交易过程中的问题，最终确保交易成功确认甚至最终化。

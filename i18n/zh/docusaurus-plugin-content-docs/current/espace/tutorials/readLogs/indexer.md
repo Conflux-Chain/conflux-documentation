@@ -3,12 +3,6 @@ sidebar_position: 4
 title: Create an indexer for Conflux
 description: Read logs and events emitted
 keywords:
-  - Events
-  - Ethers.js
-  - Logs
-  - Indexer
-displayed_sidebar: eSpaceSidebar
-tags:
   - Conflux eSpace
   - Indexer
   - 智能合约
@@ -34,6 +28,10 @@ tags:
   - Off-chain Storage
   - Liquidity Positions
   - Uniswap V3
+displayed_sidebar: eSpaceSidebar
+tags:
+  - Indexer
+  - 教程
 ---
 
 # Creating an Indexer for Conflux Contracts

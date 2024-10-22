@@ -12,10 +12,7 @@ keywords:
   - community contribution
 tags:
   - Grants
-  - Funding
   - Developer Support
-  - Ecosistema
-  - Open Source
 displayed_sidebar: coreSidebar
 ---
 

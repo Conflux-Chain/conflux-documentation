@@ -5,6 +5,8 @@ keywords:
   - config
   - node
 displayed_sidebar: generalSidebar
+tags:
+  - node
 ---
 
 以下是一个主网节点配置文件，其中包含所有支持的选项以及一些在注释中的说明。 您也可以在[conflux-rust Github存储库的run文件夹](https://github.com/Conflux-Chain/conflux-rust/tree/master/run)中找到最新版本的配置文件。 文件名为`hydra.toml`或`testnet.toml`。 您还可以在相同的文件夹中找到日志配置文件[`log.yaml`](https://github.com/Conflux-Chain/conflux-rust/blob/master/run/log.yaml)。

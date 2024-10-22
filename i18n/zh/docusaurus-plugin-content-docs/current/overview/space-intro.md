@@ -2,6 +2,13 @@
 sidebar_position: 2
 title: Conflux 多空间
 displayed_sidebar: overviewSidebar
+keywords:
+  - Conflux
+  - 空间（Spaces）
+  - eSpace
+  - Core Space
+  - blockchain
+  - Ethereum compatibility
 ---
 
 Conflux Network的特色之一是其独特的设计，被称为 [Conflux Spaces](/docs/general/conflux-basics/spaces)。 在Conflux Network中，一个Space可以被理解为一个特定区域或类似于一个独立的区块链。 目前，Conflux Network上有两个Space：**eSpace** 和 **Core Space** 。

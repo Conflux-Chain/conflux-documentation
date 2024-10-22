@@ -1,6 +1,22 @@
 ---
 title: Bypass Contract Check
 displayed_sidebar: generalSidebar
+keywords:
+  - smart-contracts
+  - security
+  - vulnerabilities
+  - contract-check
+  - extcodesize
+  - bytecode
+  - eoa
+  - free-mint
+  - solidity
+  - constructor-exploit
+  - prevention
+tags:
+  - Constructor
+  - Security
+  - Smart Contracts
 ---
 
 Many free-mint projects utilize the `isContract()` method to limit access to external accounts (EOAs) and restrict contract addresses. This method leverages `extcodesize` to determine the runtime `bytecode` length of an address. If it is greater than zero, the address is deemed a contract; otherwise, it is considered an EOA.

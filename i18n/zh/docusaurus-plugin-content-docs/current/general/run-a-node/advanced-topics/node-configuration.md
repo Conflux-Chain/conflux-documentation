@@ -2,6 +2,8 @@
 sidebar_position: 6
 title: 配置节点
 displayed_sidebar: generalSidebar
+tags:
+  - node
 ---
 
 Conflux节点提供了丰富的配置选项，允许通过修改这些设置来调整节点行为。 本文档提供了节点配置选项及其含义的概述。

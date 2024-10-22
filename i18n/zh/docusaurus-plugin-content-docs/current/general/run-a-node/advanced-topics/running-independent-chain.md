@@ -2,6 +2,8 @@
 sidebar_position: 13
 title: 运行私有链
 displayed_sidebar: generalSidebar
+tags:
+  - node
 ---
 
 # 运行私有链

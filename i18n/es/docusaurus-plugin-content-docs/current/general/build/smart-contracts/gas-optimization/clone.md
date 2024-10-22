@@ -1,5 +1,21 @@
 ---
 displayed_sidebar: generalSidebar
+keywords:
+  - smart-contracts
+  - gas-optimization
+  - clone
+  - new
+  - create2
+  - factory-contracts
+  - EIP1167
+  - minimal-proxies
+  - Solidity
+  - deployment-strategies
+  - gas-efficiency
+tags:
+  - Clone vs New/Create2
+  - Gas Optimization
+  - Contratos Inteligentes
 ---
 
 # Clone vs New/Create2

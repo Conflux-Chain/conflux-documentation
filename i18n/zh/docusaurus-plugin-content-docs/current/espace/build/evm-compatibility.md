@@ -2,11 +2,8 @@
 sidebar_position: 3
 title: EVM兼容性
 description: Conflux eSpace 的 EVM 兼容性
-keywords:
-  - EVM
-  - 兼容性
 displayed_sidebar: eSpaceSidebar
-tags:
+keywords:
   - Conflux eSpace
   - EVM兼容性
   - Transaction Types
@@ -34,6 +31,8 @@ tags:
   - Storage Costs
   - CrossSpaceCall
   - Virtual Transactions
+tags:
+  - eSpace
 ---
 
 eSpace 实现了一个以太坊虚拟机 (EVM)。 以下是 eSpace 和以太坊之间的一些区别：

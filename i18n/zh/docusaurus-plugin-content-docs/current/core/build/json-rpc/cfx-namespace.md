@@ -4,11 +4,6 @@ sidebar_position: 1
 title: cfx 命名空间
 description: Conflux的核心JSON-RPC API
 keywords:
-  - conflux
-  - json-rpc
-  - sdk
-displayed_sidebar: coreSidebar
-tags:
   - cfx_sendRawTransaction
   - 交易
   - raw transaction
@@ -40,6 +35,10 @@ tags:
   - log-retrieval
   - receipt-retrieval
   - epoch-handling
+displayed_sidebar: coreSidebar
+tags:
+  - JSON-RPC
+  - cfx namespace
 ---
 
 ## JSON-RPC规范说明

@@ -1,6 +1,21 @@
 ---
 title: GAS 优化
 displayed_sidebar: generalSidebar
+keywords:
+  - smart-contracts
+  - gas-optimization
+  - Solidity
+  - EVM
+  - storage
+  - data-types
+  - variable-packing
+  - loops
+  - functions
+  - libraries
+  - delegate-calls
+tags:
+  - GAS 优化
+  - 智能合约
 ---
 
 ## 降低 gas 费用的小窍门

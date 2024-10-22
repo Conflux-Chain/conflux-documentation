@@ -2,6 +2,25 @@
 sidebar_position: 5
 title: Run a PoS Node on AWS
 displayed_sidebar: generalSidebar
+keywords:
+  - Conflux Network
+  - PoS 共识机制
+  - AWS
+  - EC2 instance
+  - Ubuntu Server
+  - node setup
+  - SSH
+  - key pair
+  - server configuration
+  - Conflux client
+  - archive node snapshot
+  - node synchronization
+  - PoW block
+  - PoS block
+  - hydra.toml
+  - PoS encryption password
+tags:
+  - Staking
 ---
 
 以下是如何在AWS上搭建Conflux节点的教程。

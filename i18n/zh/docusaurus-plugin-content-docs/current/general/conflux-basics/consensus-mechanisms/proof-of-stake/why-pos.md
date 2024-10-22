@@ -3,9 +3,17 @@ sidebar_position: 2
 title: 为什么要引入 PoS ？
 id: why_pos
 keywords:
-  - pos
-  - why
+  - Conflux-Network
+  - Proof-of-Stake
+  - PoS 共识机制
+  - Proof-of-Work
+  - PoW
+  - 51-attack
+  - hybrid-consensus
+  - security
 displayed_sidebar: generalSidebar
+tags:
+  - Proof-of-Stake
 ---
 
 :::note

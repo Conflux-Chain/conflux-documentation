@@ -2,7 +2,7 @@
 sidebar_position: 2
 title: 创建子图
 displayed_sidebar: eSpaceSidebar
-tags:
+keywords:
   - The Graph
   - Subgraphs
   - GraphQL
@@ -20,6 +20,9 @@ tags:
   - Entity Creation
   - Data Sources
   - Subgraph Deployment
+tags:
+  - The Graph
+  - Subgraphs
 ---
 
 

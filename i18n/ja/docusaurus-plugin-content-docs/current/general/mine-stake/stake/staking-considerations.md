@@ -2,6 +2,23 @@
 sidebar_position: 3
 title: Staking Considerations
 displayed_sidebar: generalSidebar
+keywords:
+  - Conflux Network
+  - PoS
+  - staking risks
+  - token locking
+  - private key security
+  - node operation
+  - network upgrades
+  - PoS node
+  - PoS network
+  - forceRetired
+  - unlock period
+  - reward distribution
+  - staking pool
+  - validator responsibilities
+tags:
+  - Staking
 ---
 
 Before participating in staking activities, it's important to be aware of potential risks and take appropriate measures to mitigate them.

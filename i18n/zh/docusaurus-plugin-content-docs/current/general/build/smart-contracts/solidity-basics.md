@@ -2,6 +2,20 @@
 sidebar_position: 2
 title: Solidity 基础
 displayed_sidebar: generalSidebar
+keywords:
+  - smart-contracts
+  - Solidity
+  - programming-language
+  - 以太坊
+  - Conflux-Network
+  - variables
+  - functions
+  - inheritance
+  - libraries
+  - gas-optimization
+  - deployment
+tags:
+  - Solidity
 ---
 
 ## 介绍

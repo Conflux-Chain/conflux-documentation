@@ -1,10 +1,21 @@
 ---
 title: 常见问题解答
 keywords:
-  - pos
-  - faq
+  - Conflux-Network
+  - Proof-of-Stake
+  - PoS 共识机制
+  - PoW
+  - hybrid-consensus
+  - security
+  - transaction-finality
+  - CIP-43
+  - validators
+  - staking
+  - 51-attack
 sidebar_position: 3
 displayed_sidebar: generalSidebar
+tags:
+  - Proof-of-Stake
 ---
 
 ## 新的Conflux权益证明（Proof-of-Stake）链是什么？

@@ -2,6 +2,23 @@
 sidebar_position: 4
 title: 升级节点
 displayed_sidebar: generalSidebar
+keywords:
+  - Conflux Network
+  - node upgrade
+  - software update
+  - node operation
+  - Conflux-Rust
+  - release version
+  - PoS node
+  - forced retirement
+  - node restart
+  - version check
+  - Docker upgrade
+  - block synchronization
+  - node migration
+  - Linux commands
+tags:
+  - node
 ---
 
 当节点软件发布新版本时，节点运营者需要升级节点软件以确保其正常运行。

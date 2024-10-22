@@ -4,8 +4,6 @@ title: Send Transaction Errors
 displayed_sidebar: coreSidebar
 toc_max_heading_level: 4
 keywords:
-  - errors
-tags:
   - Transaction Errors
   - RPC Errors
   - estimateGas
@@ -20,6 +18,9 @@ tags:
   - Error Handling
   - Transaction Submission
   - Network Issues
+tags:
+  - Transacciones
+  - Transaction Errors
 ---
 
 When using SDK or the Fluent wallet to send transactions, you may encounter some errors. This document outlines some common errors and their solutions.

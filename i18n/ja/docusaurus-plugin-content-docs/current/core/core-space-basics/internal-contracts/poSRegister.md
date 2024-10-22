@@ -2,7 +2,7 @@
 sidebar_position: 5
 title: PoSRegister
 displayed_sidebar: coreSidebar
-tags:
+keywords:
   - PoSRegister
   - Internal Contracts
   - Proof of Stake
@@ -18,6 +18,9 @@ tags:
   - PoS Address
   - PoW Address
   - Identifier
+tags:
+  - PoSRegister
+  - Internal Contracts
 ---
 
 This contract is used let user participate in PoS chain. If anyone want to become a PoS node, he need to interact with this contract. This contract provide serveral methods to increase or decrease PoS votes:

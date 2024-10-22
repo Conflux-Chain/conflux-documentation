@@ -2,6 +2,8 @@
 sidebar_position: 5
 title: 编译 Conflux 节点
 displayed_sidebar: generalSidebar
+tags:
+  - node
 ---
 
 import { confluxNodeVersion } from '../../../templates/parameters.ts'
