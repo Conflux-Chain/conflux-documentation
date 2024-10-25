@@ -4,7 +4,7 @@ displayed_sidebar: generalSidebar
 
 # Avoiding Signed Integers in Calldata
 
-When optimizing gas usage in Ethereum smart contracts, it's crucial to consider every aspect of data representation. One often overlooked optimization technique involves avoiding signed integers in calldata when possible. This approach can lead to significant gas savings, especially when dealing with small negative numbers.
+When optimizing gas usage in smart contracts, it's crucial to consider every aspect of data representation. One often overlooked optimization technique involves avoiding signed integers in calldata when possible. This approach can lead to gas savings, especially when dealing with small negative numbers.
 
 Ethereum charges `4` gas for a zero byte of calldata and `16` gas for a non-zero byte. This pricing model applies during function calls. As a result, using unsigned integers instead of signed integers can lead to gas savings in certain scenarios.
 
@@ -61,39 +61,13 @@ contract OptimizedContract {
     // If negative values are necessary, consider offsetting
     function processOffsetInteger(uint256 value) external pure returns (int256) {
         // Assuming the range is -128 to 127
+        require(value <= 255, "Value out of range");
         return int256(value) - 128;
     }
 }
 ```
 
-### Testing Gas Usage
-
-Here's a script to demonstrate the gas savings:
-
-```javascript
-import { ethers } from "ethers";
-
-async function testGasUsage(contract) {
-  const tx1 = await contract.processSignedInteger(-1);
-  const receipt1 = await tx1.wait();
-  console.log("Gas used for signed integer (-1):", receipt1.gasUsed.toString());
-
-  const tx2 = await contract.processUnsignedInteger(1);
-  const receipt2 = await tx2.wait();
-  console.log("Gas used for unsigned integer (1):", receipt2.gasUsed.toString());
-
-  const tx3 = await contract.processOffsetInteger(127); // Equivalent to -1 in offset representation
-  const receipt3 = await tx3.wait();
-  console.log("Gas used for offset integer (127):", receipt3.gasUsed.toString());
-}
-
-// Usage example
-const contractAddress = "0x..."; // Your OptimizedContract address
-const contract = new ethers.Contract(contractAddress, ABI, signer);
-testGasUsage(contract);
-```
-
-### Recommendations for Gas Optimization:
+### Recommendations for Gas Optimization
 
 🌟 When designing functions that accept integer parameters:
 
