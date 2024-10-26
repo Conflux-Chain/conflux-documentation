@@ -2,7 +2,7 @@
 sidebar_position: 1
 title: 概览
 displayed_sidebar: eSpaceSidebar
-description: This page is meant to provide a quick overview of the different SDKs you can use when developing on Conflux eSpace.
+description: 此页面旨在为您提供使用Conflux eSpace开发时可以使用的不同SDK的快速概览。
 keywords:
   - SDKs
   - Conflux eSpace
@@ -33,55 +33,55 @@ tags:
 
 # 概览
 
-To interact with the Conflux blockchain through a web app, it is necessary to connect to a Conflux node. This can be done using the JSON-RPC specification, which is implemented by every Conflux client, providing a uniform set of methods for applications to rely on.
+要通过Web应用程序与Conflux区块链交互，需要连接到一个Conflux节点。 这可以通过JSON-RPC规范来实现，该规范由每个Conflux客户端实现，为应用程序提供了一组统一的方法。
 
-While it is possible to use vanilla JavaScript to connect with a Conflux node, there are convenient libraries within the Conflux ecosystem that simplify the process. These libraries allow developers to write intuitive, one-line methods to initialize JSON-RPC requests that interact with Conflux, abstracting away much of the complexity of directly interacting with a Conflux node and providing utility functions for easier development.
+虽然可以使用原生JavaScript连接到Conflux节点，但Conflux生态系统中有方便的库简化了这一过程。 这些库让开发者可以编写少量简单且直观的代码来初始化并与Conflux JSON-RPC进行请求，并且抽象了与Conflux交互的减少了复杂性，提供了许多使用功能以简化开发。
 
-Some of the features offered by these libraries include the ability to connect to Conflux nodes using providers, such as JSON-RPC, Unifra, ConfluxScan, or MetaMask, as well as wallet functionality for creating wallets, managing keys, and signing transactions. Additionally, these libraries enable interaction with smart contract functions by reading the Application Binary Interface (ABI) of a compiled contract. The ABI is a JSON format that explains the functions of the contract and allows developers to use it like a normal JavaScript object.
+这些库提供的一些功能包括使用提供者（如JSON-RPC、Unifra、ConfluxScan或MetaMask）连接到Conflux节点，以及钱包功能，用于创建钱包、管理密钥和签名交易。 此外，这些库通过读取编译合约的应用程序二进制接口（ABI）来启用与智能合约函数的交互。 ABI是一个JSON格式，解释了合约的函数，并允许开发者像使用普通JavaScript对象那样使用它。
 
-Utility functions offered by these libraries also provide handy shortcuts for building with Conflux, such as converting CFX values to DRIP, as 1 CFX is equal to 1,000,000,000,000,000,000 DRIP, and working with numbers in this format can be challenging. For example, the web3.utils.toWei function can be used to convert CFX to DRIP.
+这些库提供的实用函数还为在Conflux构建提供了便捷的快捷方式，例如将CFX值转换为DRIP，因为1 CFX等于1,000,000,000,000,000,000 DRIP，以这种格式处理数字可能会有挑战性。 例如，可以使用web3.utils.toWei函数将CFX转换为DRIP。
 
-Some of the most popular libraries for interacting with Conflux using JavaScript include Web3.js, which is the Ethereum JavaScript API, and Ethers.js, which is a complete Ethereum wallet implementation and utilities in JavaScript and TypeScript.
-Here are the links to the documentation and GitHub repositories of the most popular libraries:
+使用JavaScript与Conflux进行交互的一些最受欢迎的库包括Web3.js（它是以太坊的JavaScript API）和Ethers.js（它是JavaScript和TypeScript中完整的以太坊钱包实现和实用工具）。
+以下是最受欢迎的库的文档和GitHub仓库的链接：
 
 ## Web3.js
 
-Web3.js is a comprehensive set of libraries that provides seamless interactions with Ethereum nodes, whether local or remote, through various protocols such as HTTP, IPC, or WebSocket. It offers a wide range of functionalities for developers to interact with the Ethereum blockchain, making it a versatile tool for building decentralized applications (dApps) and working with Ethereum-based projects.
-Documentation: https://web3js.readthedocs.io/en/v1.8.2/
+Web3.js是一套全面的库，提供与以太坊节点的无缝交互，无论是本地还是远程，通过HTTP、IPC或WebSocket等各种协议。 它为开发者提供了与以太坊区块链交互的广泛功能，使其成为构建去中心化应用程序（dApps）和处理基于以太坊的项目的多功能工具。
+文档：https://web3js.readthedocs.io/en/v1.8.2/
 
 ## Web3.py
 
-Web3.py is a widely used Python library that facilitates interactions with the Ethereum blockchain, particularly in decentralized applications (dApps). It provides functionalities for sending transactions, interacting with smart contracts, reading block data, and more. While its initial API was inspired by Web3.js, it has evolved to cater to the preferences and requirements of Python developers, offering a Pythonic way of interacting with Ethereum.
-Documentation: https://web3py.readthedocs.io/
+Web3.py是一个广泛使用的Python库，便于与以太坊区块链交互，特别是在去中心化应用程序（dApps）中。 它提供发送交易、与智能合约交互、读取区块数据等功能。 虽然最初的API受到了Web3.js的启发，但它已经发展成满足Python开发人员的偏好和要求，提供了一种Python方式与以太坊交互的方式。
+文档：https://web3py.readthedocs.io/
 
 ## Ethers.js
 
-The ethers.js library is designed to be a comprehensive and concise solution for interacting with the Ethereum Blockchain and its ecosystem. It is widely utilized for building decentralized applications (dApps), creating wallets (e.g., MetaMask and Tally), and developing other tools and scripts that involve reading and writing to the blockchain. The documentation provides detailed information on how to effectively leverage the functionalities offered by ethers.js in a variety of use cases.
-Documentation: https://docs.ethers.org/v6/
+Ethers.js库旨在成为与以太坊区块链及其生态系统交互的全面且简洁的解决方案。 它广泛用于构建去中心化应用程序（dApps）、创建钱包（如MetaMask和Tally）以及开发涉及读写区块链的其他工具和脚本。 文档详细介绍了如何在各种用例中有效利用ethers.js提供的功能。
+文档：https://docs.ethers.org/v6/
 
-## Differences between Web3.js and Ethers.js
+## Web3.js和Ethers.js之间的区别
 
-As the world of blockchain and decentralized applications (dApps) continues to evolve, JavaScript libraries such as web3.js and ethers.js have emerged as powerful tools for web3 developers. These libraries provide developers with the necessary functions and interfaces to interact with blockchain networks, including Ethereum. However, it is important to understand the advantages and setbacks of these libraries in order to make an informed choice based on project requirements. In this article, we will compare web3.js and ethers.js, highlighting their respective advantages and setbacks.
+随着区块链和去中心化应用程序（dApps）世界的持续发展，如web3.js和ethers.js这样的JavaScript库已经成为web3开发者的强大工具。 这些库为开发人员提供了与包括以太坊在内的区块链网络进行交互的必要函数和接口。 然而，为了根据项目需求做出明智的选择，了解这些库的优势和缺点是非常重要的。 本文中，我们将比较web3.js和ethers.js，突出它们各自的优势和缺点。
 
-### Advantages of web3.js:
+### web3.js的优势：
 
-Web3.js, developed by the Ethereum Foundation, has the distinction of being one of the earliest JavaScript libraries for web3 development. This lends credibility to its effectiveness in design, as it benefits from a large base of contributors and regular updates. Additionally, web3.js has gained popularity due to its widespread adoption in the blockchain community and the availability of a large community of experienced developers.
+由以太坊基金会开发的Web3.js是web3开发的最早的JavaScript库之一。 这使得它在设计上具有可信度，因为它受益于庞大的贡献者群体和定期更新。 此外，由于web3.js因其在区块链社区中的广泛采用以及拥有大量经验丰富的开发人员社区而备受推崇。
 
-### Setbacks of web3.js:
+### web3.js的缺点：
 
-Despite its advantages, web3.js also has some setbacks. It may not be suitable for all new projects, as it may not be the best fit for different requirements or use cases. Additionally, web3.js relies on a license with restrictive limitations, such as the need to release modifications to the public, which may not be suitable for some projects. Another potential drawback is its larger size compared to other web3 libraries, which may impact the performance of a web3 site or app.
+尽管有其优点，web3.js也有一些缺点。 它可能不适合所有新项目，因为它可能不是不同需求或用例的最佳选择。 此外，web3.js依赖于具有限制性限制的许可证，例如需要向公众发布修改，这可能不适合某些项目。 另一个潜在的缺点是与其他web3库相比，其大小较大，可能会影响web3网站或应用程序的性能。
 
-### Advantages of ethers.js:
+### ethers.js的优势：
 
-Ethers.js, on the other hand, offers several advantages for web3 development. It has a broader license that allows for free usage and modifications, with the requirement to release source code with implemented modifications. Ethers.js is also a lightweight library (only 77kb vs 4.5MB) that supports ENS domain names and has proven support for a large number of test cases, providing developers with flexibility and reliability. Ethers.js separates the roles of a "wallet" for key management and a "provider" for connecting to the Ethereum network. This allows developers to have more flexibility in managing keys and transactions, such as using a hardware device for wallet functions and Unifra as the provider.
+另一方面，ethers.js为web3开发提供了几个优势。 它有一个更宽松的许可证，允许免费使用和修改，并要求发布实施修改的源代码。 Ethers.js还是一个轻量级库（仅77kb vs 4.5MB），支持ENS域名，并已经证实支持大量的测试用例，为开发者提供了灵活性和可靠性。 Ethers.js将用于密钥管理的"钱包"和用于连接到以太坊网络的"提供者"角色分离开。 这允许开发人员在管理密钥和交易方面有更多的灵活性，例如使用硬件设备进行钱包功能和使用Unifra作为提供者。
 
-### Setbacks of ethers.js:
+### ethers.js的缺点：
 
-While ethers.js presents noticeable improvements over the setbacks of web3.js, it also has some potential drawbacks. Being a comparatively new library, developers may encounter difficulties in using ethers.js for older companies or projects that may have been built using other libraries. However, no specific setbacks were mentioned in the provided text.
+虽然ethers.js相比web3.js有明显的改进，但它也有一些潜在的缺点。 作为一个相对新的库，开发人员可能会在使用ethers.js遇到困难，尤其是对于可能使用其他库构建的老公司或项目。 但是，提供的文本中没有提到具体的缺点。
 
-web3.js and ethers.js are two popular JavaScript libraries for web3 development, each with its own set of advantages and setbacks. Ultimately, the choice between web3.js and ethers.js would depend on the specific needs of the project and the preferences of the developers involved.
+web3.js和ethers.js是两个流行的web3开发JavaScript库，各自都具有一系列优势和不足。 最终，选择web3.js还是ethers.js将取决于项目的具体需求和涉及的开发人员的偏好。
 
-## Educational Videos:
+## 教育视频：
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
