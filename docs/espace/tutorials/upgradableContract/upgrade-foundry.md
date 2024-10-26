@@ -20,8 +20,8 @@ First, ensure you have Foundry installed. If not, follow the [official Foundry i
 Create a new Foundry project:
 
 ```bash
-forge init upgradeable-contract-demo
-cd upgradeable-contract-demo
+forge init upgradeable-contract-foundry-demo
+cd upgradeable-contract-foundry-demo
 ```
 
 ## 2. Configure Foundry
@@ -233,7 +233,13 @@ PROXY_ADDRESS=
 2. Deploy the initial contract:
 
 ```bash
-forge script script/Deploy.s.sol:DeployScript --rpc-url $espaceTestnet --broadcast
+forge script script/Deploy.s.sol:DeployScript --rpc-url espaceTestnet --broadcast
+```
+
+Expected output:
+```
+Logic1 deployed to: 0x...(Logic1's address)
+Proxy deployed to: 0x...(Proxy's address)
 ```
 
 3. Update the `PROXY_ADDRESS` in the `.env` file with the deployed proxy address.
@@ -241,7 +247,7 @@ forge script script/Deploy.s.sol:DeployScript --rpc-url $espaceTestnet --broadca
 4. Run the pre-upgrade test:
 
 ```bash
-forge script script/TestBeforeUpgrade.s.sol:TestBeforeUpgradeScript --rpc-url $espaceTestnet
+forge script script/TestBeforeUpgrade.s.sol:TestBeforeUpgradeScript --rpc-url espaceTestnet
 ```
 
 Expected output:
@@ -253,13 +259,13 @@ Current implementation address: 0x...(Logic1's address)
 5. Upgrade the contract:
 
 ```bash
-forge script script/Upgrade.s.sol:UpgradeScript --rpc-url $espaceTestnet --broadcast
+forge script script/Upgrade.s.sol:UpgradeScript --rpc-url espaceTestnet --broadcast
 ```
 
 6. Run the post-upgrade test:
 
 ```bash
-forge script script/TestAfterUpgrade.s.sol:TestAfterUpgradeScript --rpc-url $espaceTestnet
+forge script script/TestAfterUpgrade.s.sol:TestAfterUpgradeScript --rpc-url espaceTestnet
 ```
 
 Expected output:
