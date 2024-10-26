@@ -49,7 +49,8 @@ async function readPrivateData(contractAddress) {
     // Read storage slot 0 where 'secretNumber' is stored
     const data = await provider.getStorage(contractAddress, 0);
     
-    console.log("Secret number:", ethers.formatUnits(data, 0));
+    // In v6, formatUnits is a standalone function
+    console.log("Secret number:", ethers.formatUnits(BigInt(data), 0));
 }
 ```
 
@@ -110,11 +111,5 @@ contract EncryptedStorage {
     }
 }
 ```
-
-#### Alternative Approaches
-
-1. **Zero-Knowledge Proofs**: Use ZK proofs to verify information without revealing it.
-2. **Trusted Execution Environments (TEEs)**: Use secure enclaves for sensitive computations.
-3. **Layer 2 Solutions**: Some L2 solutions offer enhanced privacy features.
 
 Remember: The blockchain is fundamentally transparent. If your application requires true data privacy, carefully consider whether blockchain storage is appropriate for that particular data.
