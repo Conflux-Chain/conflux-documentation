@@ -3,7 +3,7 @@
   "position": 2,
   "link": {
     "type": "generated-index",
-    "description": "This section covers the different SDKs you can use when developing on Conflux eSpace."
+    "description": "这个部分介绍了在Conflux eSpace开发时可以使用的不同SDK。"
   },
   "collapsed": false
 }

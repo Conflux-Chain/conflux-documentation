@@ -2,36 +2,36 @@
 sidebar_position: 3
 title: ethers.js
 displayed_sidebar: eSpaceSidebar
-description: This page is meant to guide you through the basics on how to use ethers.js when developing on Conflux eSpace.
+description: 这个页面旨在指导您在Conflux eSpace开发时如何使用ethers.js的基础知识。
 keywords:
   - ethers.js
   - JavaScript
   - Conflux eSpace
   - 智能合约
   - 交易
-  - Blockchain Interaction
+  - 区块链交互
   - Solidity
-  - ABI
-  - Bytecode
-  - HTTP Connection
-  - Account Balance
-  - Contract Methods
-  - Call Methods
-  - Send Methods
-  - Gas Estimation
-  - Transaction Signing
+  - 应用程序二进制接口（ABI）
+  - 字节码（Bytecode）
+  - HTTP连接
+  - 账户余额
+  - 合约方法
+  - 调用方法
+  - 发送方法
+  - 燃气估算
+  - 交易签名
   - Node.js
   - RPC 端点
-  - Private Key
-  - Web3 Provider
+  - 私钥
+  - Web3提供者
 tags:
   - ethers.js
   - 教程
 ---
 
-ethers.js is a JavaScript library for building Ethereum applications. As Conflux eSpace is compatible with Ethereum, we can directly use this library within Conflux eSpace. Currently, ethers has two main versions: v6 and v5. This tutorial focuses on demonstrating how to utilize the v6 version within Conflux eSpace.
+ethers.js 是一个用于构建以太坊应用程序的 JavaScript 库。 由于 Conflux eSpace 兼容以太坊，我们可以直接在 Conflux eSpace 中使用这个库。 目前，ethers 有两个主要版本：v6 和 v5。 本教程重点展示如何在 Conflux eSpace 中使用 v6 版本。
 
-The tutorial covers sending transactions, interacting with contracts, and querying on-chain data using ethers within Conflux eSpace.
+本教程涵盖了如何在 Conflux eSpace 中使用 ethers发送交易、与合约交互以及查询链上数据。
 
 ## 安装
 
@@ -43,15 +43,15 @@ mkdir demo && cd demo && npm init -y && npm install ethers
 import { ethers } from "ethers";
 ```
 
-ethers provides several abstract functions and class for developers:
+ethers 提供了几个抽象函数和类供开发者使用：
 
-- `providers`: provides abstract functions for connecting to the Ethereum network. For example, [`JsonRpcProvider`](https://docs.ethers.org/v6/api/providers/jsonrpc/#JsonRpcProvider) for fetching data from the chain using HTTP, [`WebSocketProvider`](https://docs.ethers.org/v6/api/providers/#WebSocketProvider) for fetching data from the chain using WebSocket, and the more common browser plugin [`BrowserProvider`](https://docs.ethers.org/v6/api/providers/#BrowserProvider)
+- `providers`:提供用于连接以太坊网络的抽象函数。 例如， [`JsonRpcProvider`](https://docs.ethers.org/v6/api/providers/jsonrpc/#JsonRpcProvider)用于通过HTTP从链上获取数据，[`WebSocketProvider`](https://docs.ethers.org/v6/api/providers/#WebSocketProvider)用于通过 WebSocket从链上获取数据，以及更常见的浏览器插件[`BrowserProvider`](https://docs.ethers.org/v6/api/providers/#BrowserProvider)。
 
-- `signers`: provides abstract functions for managing accounts. For example, [`Wallet`](https://docs.ethers.org/v6/api/wallet/#Wallet) facilitates transactions and message signing by managing a single private key, while [`HdWallet`](https://docs.ethers.org/v6/api/wallet/#hd-wallets) generates multiple private keys from a mnemonic phrase for transaction and message signing
+- `signers`: 提供管理账户的抽象函数。 例如，[`Wallet`](https://docs.ethers.org/v6/api/wallet/#Wallet)通过管理单个私钥来方便交易和消息签名，而[`HdWallet`](https://docs.ethers.org/v6/api/wallet/#hd-wallets) 则通过助记词生成多个私钥，用于交易和消息签名。
 
-- `contracts`: provides abstract functions for interacting with contracts, such as [`Contract`](https://docs.ethers.org/v6/api/contract/#Contract)
+- `contracts`: 提供与合约交互的抽象函数，如[`Contract`](https://docs.ethers.org/v6/api/contract/#Contract)。
 
-## Using ethers
+## 使用ethers
 
 ### Provider
 
@@ -68,7 +68,7 @@ const provider = new WebSocketProvider("wss://evm.confluxrpc.com/ws");
 const blockNumber = await provider.getBlockNumber();
 ```
 
-After connecting to Conflux eSpace with JsonRpcProvider or WebSocketProvider, we can easily retrieve the desired data and status from the chain. Here you can find all the RPCs officially provided by Conflux eSpace, but developers often prefer to directly connect to the user's plugin wallet. The following example will demonstrate how to directly connect to the user's wallet.
+在通过 JsonRpcProvider 或 WebSocketProvider 连接到 Conflux eSpace 后，我们可以轻松地从链上获取所需的数据和状态。 在这里，您可以找到 Conflux eSpace 官方提供的所有 RPC，但开发者通常更喜欢直接连接到用户的插件钱包。 以下示例将演示如何直接连接到用户的钱包。
 
 ```js
 import { BrowserProvider } from "ethers";
@@ -86,9 +86,9 @@ if (window.ethereum) {
 }
 ```
 
-### Numerical Values
+### 数值
 
-In Ethereum, all units are represented as integers. However, long numbers can be difficult to read and write. Therefore, ethers provides a variety of utility functions for handling these numbers. As Conflux eSpace is compatible with Ethereum, it is also easy to use these utility functions.
+在以太坊中，所有单位都表示为整数。 然而，长数字可能难以阅读和书写。 因此，ethers提供了多种用于处理这些数字的实用功能。 由于Conflux eSpace与以太坊兼容，因此使用这些实用功能也很方便。
 
 ```js
 // Convert user-provided strings in cfx to wei for a value
@@ -108,7 +108,7 @@ const feePerGasDisplay = formatUnits(feePerGas, "gwei");
 
 ### 交易
 
-In general, we send transactions using a wallet. However, we can also sign and send transactions directly using a private key. Next, we will demonstrate examples of signing and sending transactions using a wallet and a private key, respectively.
+一般而言，我们使用钱包发送交易。 不过，我们也可以直接用私钥来签名和发送交易。 接下来，我们将分别演示如何使用钱包和私钥签名和发送交易的例子。
 
 ```js
 import { BrowserProvider } from "ethers";
@@ -135,7 +135,7 @@ if (window.ethereum) {
 }
 ```
 
-The following example demonstrates how to sign and send a transaction locally using a private key.
+下面的示例演示如何使用私钥在本地签名并发送交易。
 
 ```js
 import { Wallet } from "ethers";
@@ -165,13 +165,13 @@ const receipt = await wallet.provider.waitForTransaction(tx.hash);
 
 ### 智能合约
 
-In ethers, contracts are abstracted as class, determining the contract's properties and methods by parsing the provided ABI. Next, we will demonstrate an example of calling a contract function.
+在 ethers 中，合约被抽象为类，通过解析提供的 ABI 来确定合约的属性和方法。 接下来，我们将演示一个调用合约函数的示例。
 
 #### ABI
 
-In Ether.js, you can utilize the JSON format ABI generated by compiling contracts in Solidity, and it also supports human-readable ABI (Solidity signatures). In practice, there is no need to list out all ABIs; you only need to specify the methods you want.
+在 Ether.js 中，您可以使用通过编译 Solidity 合约生成的 JSON 格式 ABI，它还支持人类可读的 ABI（Solidity 签名）。 在实践中，不需要列出所有 ABI；只需指定你想要的方法就可以了。
 
-there are examples of two ABIs.
+以下是两个 ABI 的示例。
 
 ```js
 const ABI = [
@@ -207,9 +207,9 @@ const ABI = [
 ];
 ```
 
-#### Read-only functions (`view` and `pure`)
+#### 只读函数(`view` 与 `pure`)
 
-The properties of read-only functions (`view` and `pure`) are not modified and are typically used to retrieve relevant data from the contract.
+只读函数(`view` 与 `pure`)的特性不会被修改，通常用于从合约中检索相关数据。
 
 ```js
 import { JsonRpcProvider } from "ethers";
@@ -232,9 +232,9 @@ const symbol = await contract.symbol();
 const balance = await contract.balanceOf("0x...");
 ```
 
-#### Method for Changing Contract State
+#### 更改合同状态的方法
 
-Some methods result in changes to the contract's state. Typically, such methods require a transaction to be submitted to the chain, for example `transfer`, `approve`, `transferFrom` etc.
+有些方法会导致合同状态的改变。 通常，这些方法需要将交易提交给区块链，例如`transfer`, `approve`, `transferFrom`等。
 
 ```js
 import { Wallet, Contract, JsonRpcProvider, BrowserProvider } from "ethers";
@@ -265,9 +265,9 @@ const tx = await contract.transfer("0x...", parseUnits("1.0", 18));
 await tx.wait();
 ```
 
-#### Sign Messages
+#### 签名消息
 
-Many DAPPs require users to sign messages to verify their identity. Here is an example.
+许多去中心化应用（DAPP）要求用户签名消息以验证其身份。 参见下面的示例。
 
 ```js
 // you can use the private wallet
@@ -282,4 +282,4 @@ const signer = await provider.getSigner(address);
 const signedMessage = await signer.signMessage("Hello, World!");
 ```
 
-[ethers.js Documentation](https://docs.ethers.org/v6/)
+[ethers.js 文档](https://docs.ethers.org/v6/)

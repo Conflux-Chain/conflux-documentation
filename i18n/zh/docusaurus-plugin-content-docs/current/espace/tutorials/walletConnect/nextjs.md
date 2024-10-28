@@ -1,7 +1,7 @@
 ---
 sidebar_position: 2
 title: Next.js
-description: Learn how to use Web3Modal in a Next.js project
+description: 学习如何在Next.js项目中使用 Web3Modal
 keywords:
   - tutorial
   - web3
@@ -14,40 +14,40 @@ tags:
   - WalletConnect
 ---
 
-# Integrating WalletConnect with Next.js Project on Conflux eSpace
+# 在Conflux eSpace上集成WalletConnect 和Next.js 项目
 
-This tutorial provides a comprehensive guide on how to integrate WalletConnect with Web3Modal in a Next.js project, specifically targeting the Conflux eSpace network. For a hands-on example, check out the GitHub repository [web3modal-conflux-nextjs](https://github.com/ConfluxDAO/web3modal-conflux-nextjs).
+本教程全面介绍了专门针对Conflux eSpace 网络，如何在 Next.js 项目中集成WalletConnect 和 Web3Modal。 如需实际操作,可以查看GitHub仓库 [web3modal-conflux-nextjs](https://github.com/ConfluxDAO/web3modal-conflux-nextjs)。
 
 ## 前提条件
 
-- Node.js installed on your system
-- Basic knowledge of React and Next.js
-- An account on the Conflux eSpace network
+- 在您的系统上安装了Node.js
+- 拥有React and Next.js的基础知识
+- 在Conflux eSpace网络上有账户
 
-## Step 1: Set Up Your Next.js Project
+## 第1步: 设置你的Next.js项目
 
-First, create a new Next.js application if you haven't already:
+首先，如果还没有的话，请创建一个新的Next.js应用程序：
 
 ```bash
 npx create-next-app web3modal-conflux-nextjs
 cd web3modal-conflux-nextjs
 ```
 
-When setting up your Next.js project using `create-next-app`, you'll be prompted with a few configuration options. For the purposes of this tutorial, you can proceed with all the default settings provided by the setup. This will configure your project with optimal defaults for most applications, including a basic file structure and configuration settings.
+在使用`create-next-app`设置Next.js项目时,会提示您选择一些配置选项。 在本教程中，您可以继续使用设置中提供的所有默认设置。 这将为您的项目配置最佳默认设置，适用于大多数应用程序，包括基本的文件结构和配置设置。
 
-## Step 2: Install Necessary Packages
+## 第2步：安装必要的软件包
 
-Web3Modal SDK has support for Wagmi, which will help you interact with wallets and smart contracts.
+Web3Modal SDK支持Wagmi，这将帮助您与钱包和智能合约进行交互。
 
 ```bash
 npm install @web3modal/wagmi wagmi viem @tanstack/react-query
 ```
 
-## Step 3: Configure Wagmi
+## 第3步：配置Wagmi
 
-Let's set up a separate file for your Wagmi configuration. Because this function needs to run on both the client and the server, it shouldn't be placed in a file that contains the `'use client'` directive.
+让我们为您的Wagmi设置一个单独的文件。 因为这个函数需要同时在客户端和服务器上运行，所以它不应放置在包含`'use client'`指令的文件中。
 
-In this example, we'll create a file named `config/index.tsx` outside of our app directory and configure it as follows:
+在这个示例中, 我们将在我们的应用程序目录之外创建一个名为`config/index.tsx`的文件，并进行如下配置：
 
 ```typescript
 import { cookieStorage, createStorage } from "wagmi";
@@ -89,23 +89,23 @@ export const config = createConfig({
 });
 ```
 
-For the project to access environment variables such as `projectId`, you need to set them up in a `.env.local` file in the root of your project. Here's how you can do it:
+为了让项目访问环境变量，比如`projectId`, 你需要再项目根目录下设置一个`.env.local` 文件。 以下是如何操作：
 
-Create a file named `.env.local` and add the following line:
+创建一个名为`.env.local`的文件，并添加以下行 :
 
 ```typescript
 NEXT_PUBLIC_PROJECT_ID = your_project_id_here;
 ```
 
-Replace your_project_id_here with the actual project ID you get from https://cloud.walletconnect.com.
+将`your_project_id_here`替换为你从https://cloud.walletconnect.com获取的实际项目ID。
 
-For details on how to obtain `ProjectId`, please refer to this [article](/docs/espace/tutorials/walletConnect/project-creation).
+关于如何获取 `ProjectId` 的详细信息，请参考这篇[文章](/docs/espace/tutorials/walletConnect/project-creation)。
 
 ## Step 4: Context Provider
 
-We'll now set up a context provider to encapsulate our application and handle the initialization of Web3Modal. It’s important to remember that `createWeb3Modal` should be called from within a React Client Component file.
+我们现在将设置一个上下文提供者来封装我们的应用程序，并处理Web3Modal的初始化。 重要的是要记住， `createWeb3Modal`应该从 一个React 客户端组件文件中调用。
 
-For this tutorial, let's create a file named `context/index.tsx` outside our main app directory and implement the configuration as outlined.
+在本教程中，让我们在我们的主应用程序目录之外创建一个名为`context/index.tsx`的文件，并按照所述的配置实现。
 
 ```typescript
 "use client";
@@ -147,11 +147,11 @@ export default function Web3ModalProvider({
 }
 ```
 
-## Step 4: Use Web3ModalProvider
+## 第 4 步：使用 Web3ModalProvider
 
-In the `app/layout.tsx` file, we will incorporate the `Web3ModalProvider` component and invoke Wagmi's `cookieToInitialState` function.
+在`app/layout.tsx` 文件中, 我们会将`Web3ModalProvider` 组件集成，并调用Wagmi的 `cookieToInitialState`功能。
 
-The `initialState` obtained from `cookieToInitialState` provides the preliminary values that will populate Wagmi's store across both server and client environments.
+从`cookieToInitialState`获得的`initialState`提供了将填充Wagmi存储的初步值，适用于服务器和客户端环境。
 
 ```typescript
 import "./globals.css";
@@ -186,9 +186,9 @@ export default function RootLayout({
 }
 ```
 
-## Step 5: Connect Conflux eSpace Network
+## 第5步：连接Conflux eSpace 网络
 
-Create a new component, `ConnectButton.tsx`, in your project, to open ConnectWallet Modal
+在你的项目中创建一个新的组件 `ConnectButton.tsx`，用于打开 ConnectWallet 模态框。
 
 ```typescript
 "use client";
@@ -213,7 +213,7 @@ export default function ConnectButton() {
 }
 ```
 
-In `app/page.tsx` or any other component, use the `ConnectButton` component to connect to wallets on the Conflux eSpace
+在`app/page.tsx`或者其他组件中, 使用`ConnectButton` 组件来连接到Conflux eSpace上的钱包。
 
 ```typescript
 import Image from "next/image";
@@ -236,4 +236,4 @@ export default function Home() {
 }
 ```
 
-By following the steps above, you now have a Next.js application setup that can connect to the Conflux eSpace network using WalletConnect and Web3Modal. This setup allows users to securely interact with the blockchain directly from their web browsers.
+通过以上步骤，你现在已经建立了一个Next.js应用程序，可以通过WalletConnect和Web3Modal连接到Conflux eSpace网络上。 此设置允许用户直接从他们的网络浏览器安全地与区块链进行交互。
