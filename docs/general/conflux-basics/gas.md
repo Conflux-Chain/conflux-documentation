@@ -28,7 +28,7 @@ To elaborate, all transactions on Conflux are processed in its virtual machine, 
 
 :::note
 
-In Conflux's cSpace, [storage collateral](../../core/core-space-basics/storage) is used as another resource other than gas for storing data required during transaction execution.
+In Conflux's core space, [storage collateral](../../core/core-space-basics/storage) is used as another resource other than gas for storing data required during transaction execution.
 
 :::
 
