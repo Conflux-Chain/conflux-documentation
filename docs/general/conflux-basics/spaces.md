@@ -46,13 +46,13 @@ In Conflux, eSpace transactions are only included in blocks if the block height 
 
 ![spaces view from hardfork v2.4](./img/space.drawio.svg)
 
-The graph above illustrates the relationship between the actual blocks in the ledger and the views from cSpace and eSpace. The text `H=..` indicates the block height.
+The graph above illustrates the relationship between the actual blocks in the ledger and the views from Core Space and eSpace. The text `H=..` indicates the block height.
 
 #### Actual Blocks
 
 In the Conflux ledger, blocks are organized as a Directed Acyclic Graph (DAG) and divided into epochs. For blocks whose height is a multiple of 5, eSpace transactions can be included, utilizing the isolated block space.
 
-The parameter `block.gasLimit` represents the **expected** block size for overall Conflux blocks and is set to 60,000,000. This value can be retrieved using the [cfx_getBlockByHash](../../core/build/json-rpc/cfx-namespace.md) or similar RPC methods. The `cSpace.gasLimit` is set to 90% of `block.gasLimit` (54,000,000), while the `eSpace.gasLimit` is 50% of `block.gasLimit` (30,000,000).
+The parameter `block.gasLimit` represents the **expected** block size for overall Conflux blocks and is set to 60,000,000. This value can be retrieved using the [cfx_getBlockByHash](../../core/build/json-rpc/cfx-namespace.md) or similar RPC methods. The `coreSpace.gasLimit` is set to 90% of `block.gasLimit` (54,000,000), while the `eSpace.gasLimit` is 50% of `block.gasLimit` (30,000,000).
 
 Consequently, for blocks whose height is a multiple of 5, their size can reach up to `1.4 * block.gasLimit`, while for those that are not, their maximum size is `0.9 * block.gasLimit`.
 
@@ -62,7 +62,7 @@ Miners can adjust the block gas limit by 1% higher or lower for each block, but 
 
 :::
 
-#### cSpace View
+#### Core Space View
 
 From the Core perspective, the view is nearly the same as the actual block structure, except for the eSpace transactions. Blocks are organized as a DAG and divided into epochs, with each block having the same gas limit.
 
