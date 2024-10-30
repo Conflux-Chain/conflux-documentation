@@ -245,8 +245,9 @@ RPC_URL=https://evmtestnet.confluxrpc.com
 
 ```bash
 source .env
-forge script script/DeployBox.s.sol --rpc-url $RPC_URL --broadcast 
+forge script script/DeployBox.s.sol --rpc-url $RPC_URL --broadcast -g 200
 ```
+> **Note:** The `-g` flag sets the gas price multiplier (in percentage). Using `-g 200` means the gas price will be 200% of the estimated price, which helps prevent "insufficient gas fee" errors during deployment.
 
 Expected output:
 ```
@@ -266,8 +267,9 @@ ADMIN_ADDRESS=<ADMIN_ADDRESS>
 3. Upgrade to BoxV2:
 
 ```bash
-forge script script/UpgradeBox.s.sol --rpc-url $RPC_URL --broadcast 
+forge script script/UpgradeBox.s.sol --rpc-url $RPC_URL --broadcast -g 200
 ```
+
 
 Expected output:
 ```
