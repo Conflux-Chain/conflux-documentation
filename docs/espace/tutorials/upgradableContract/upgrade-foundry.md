@@ -233,8 +233,9 @@ PROXY_ADDRESS=
 2. Deploy the initial contract:
 
 ```bash
-forge script script/Deploy.s.sol:DeployScript --rpc-url espaceTestnet --broadcast
+forge script script/Deploy.s.sol:DeployScript --rpc-url espaceTestnet --broadcast -g 200
 ```
+> **Note:** The `-g` flag sets the gas price multiplier (in percentage). Using `-g 200` means the gas price will be 200% of the estimated price, which helps prevent "insufficient gas fee" errors during deployment. 
 
 Expected output:
 ```
@@ -247,7 +248,7 @@ Proxy deployed to: 0x...(Proxy's address)
 4. Run the pre-upgrade test:
 
 ```bash
-forge script script/TestBeforeUpgrade.s.sol:TestBeforeUpgradeScript --rpc-url espaceTestnet
+forge script script/TestBeforeUpgrade.s.sol:TestBeforeUpgradeScript --rpc-url espaceTestnet 
 ```
 
 Expected output:
@@ -259,7 +260,7 @@ Current implementation address: 0x...(Logic1's address)
 5. Upgrade the contract:
 
 ```bash
-forge script script/Upgrade.s.sol:UpgradeScript --rpc-url espaceTestnet --broadcast
+forge script script/Upgrade.s.sol:UpgradeScript --rpc-url espaceTestnet --broadcast -g 200
 ```
 
 6. Run the post-upgrade test:
