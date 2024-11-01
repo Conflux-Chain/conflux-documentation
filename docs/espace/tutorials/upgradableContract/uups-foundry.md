@@ -21,8 +21,8 @@ tags: [Tutorial, Upgradeable Contracts]
 1. Create a new Foundry project:
 
 ```bash
-forge init uups-proxy-demo
-cd uups-proxy-demo
+forge init uups-proxy-foundry-demo
+cd uups-proxy-foundry-demo
 ```
 
 2. Install OpenZeppelin contracts:
