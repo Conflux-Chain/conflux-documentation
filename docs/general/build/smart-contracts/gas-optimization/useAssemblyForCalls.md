@@ -4,16 +4,9 @@ displayed_sidebar: generalSidebar
 
 # Using Assembly for Function Calls
 
-When optimizing gas usage in Ethereum smart contracts, interface calls can be expensive due to memory expansion costs. Using inline assembly for function calls can lead to significant gas savings by reusing existing memory space instead of allocating new memory.
+When optimizing gas usage in Ethereum smart contracts, interface calls can be expensive due to memory expansion costs. Using inline assembly for function calls can lead to gas savings by reusing existing memory space instead of allocating new memory.
 
 Solidity's high-level interface calls automatically handle memory management but may create unnecessary memory allocations. By using assembly, we can optimize memory usage and reduce gas costs, especially for frequent function calls.
-
-**Key Points:**
-
-- Assembly allows reuse of existing memory space
-- Can save significant gas on frequent external calls
-- Requires careful handling of memory management
-- Important to include contract existence checks
 
 ### Interface Calls vs Assembly Calls
 
@@ -127,31 +120,9 @@ if iszero(success) {
 - When maintaining type safety is crucial
 - Inexperienced developers
 
-### Security Considerations
-
-1. Always include contract existence checks
-2. Verify call success and handle errors
-3. Be careful with memory management
-4. Test thoroughly before deployment
-5. Document assembly code clearly
 
 **Warning**: Inline assembly is a low-level feature that bypasses many of Solidity's safety features. Use with caution and ensure thorough testing of your implementation.
 
-### Example Gas Savings Calculation
+#### Gas Optimization Recommendations
 
-For a contract making 1000 external calls:
-
-- Interface calls: 30,570 \* 1000 = 30,570,000 gas
-- Assembly calls: 30,350 \* 1000 = 30,350,000 gas
-- Total savings: 220,000 gas
-
-At 100 gwei gas price: 220,000 \* 100 = 22,000,000 gwei = 0.022 ETH saved
-
-#### Recommendations for Gas Optimization:
-
-🌟 When optimizing function calls in your smart contracts:
-
-- Use assembly for frequently called functions where the gas savings will be significant
-- Carefully manage memory usage and reuse existing memory spaces when possible
-- Document your assembly code thoroughly for maintainability
-- Consider the trade-off between gas savings and code complexity
+🌟 For frequently called functions, consider implementing assembly calls to optimize gas usage by carefully managing and reusing memory spaces. Always document your assembly code thoroughly and weigh the trade-off between gas efficiency and code complexity before implementation.
