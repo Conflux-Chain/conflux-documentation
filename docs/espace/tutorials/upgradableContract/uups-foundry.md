@@ -63,13 +63,12 @@ RPC_URL=https://evmtestnet.confluxrpc.com
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.24;
 
-import "@openzeppelin/contracts-upgradeable/proxy/utils/UUPSUpgradeable.sol";
+import "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol";
 import "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol";
+import "@openzeppelin/contracts-upgradeable/proxy/utils/UUPSUpgradeable.sol";
 
-contract Counter is UUPSUpgradeable, OwnableUpgradeable {
-    uint256 private count;
-
-    event CountChanged(uint256 count);
+contract Counter is Initializable, OwnableUpgradeable, UUPSUpgradeable {
+    uint256 public number;
 
     /// @custom:oz-upgrades-unsafe-allow constructor
     constructor() {
@@ -79,19 +78,24 @@ contract Counter is UUPSUpgradeable, OwnableUpgradeable {
     function initialize() public initializer {
         __Ownable_init(msg.sender);
         __UUPSUpgradeable_init();
+        number = 0;
+    }
+
+    function setNumber(uint256 newNumber) public {
+        number = newNumber;
     }
 
     function increment() public {
-        count += 1;
-        emit CountChanged(count);
+        number++;
     }
 
     function getCount() public view returns (uint256) {
-        return count;
+        return number;
     }
 
     function _authorizeUpgrade(address newImplementation) internal override onlyOwner {}
 }
+
 ```
 
 2. Create CounterV2 in `src/CounterV2.sol`:
@@ -133,7 +137,7 @@ contract CounterV2 is UUPSUpgradeable, OwnableUpgradeable {
     }
 
     function _authorizeUpgrade(address newImplementation) internal override onlyOwner {}
-}
+} 
 ```
 
 ## Deployment Scripts
@@ -151,26 +155,30 @@ import "@openzeppelin/contracts/proxy/ERC1967/ERC1967Proxy.sol";
 contract DeployCounter is Script {
     function run() external {
         uint256 deployerPrivateKey = vm.envUint("PRIVATE_KEY");
+
         vm.startBroadcast(deployerPrivateKey);
 
         // Deploy implementation
         Counter counter = new Counter();
-        
+        console.log("Implementation deployed to:", address(counter));
+
         // Encode initialize function call
         bytes memory data = abi.encodeWithSelector(Counter.initialize.selector);
-        
+
         // Deploy proxy
         ERC1967Proxy proxy = new ERC1967Proxy(
             address(counter),
             data
         );
-
         console.log("Proxy deployed to:", address(proxy));
-        console.log("Implementation deployed to:", address(counter));
+
+        // Verify deployment
+        Counter proxiedCounter = Counter(address(proxy));
+        console.log("Initial count:", proxiedCounter.getCount());
 
         vm.stopBroadcast();
     }
-}
+} 
 ```
 
 2. Create an upgrade script in `script/UpgradeCounter.s.sol`:
@@ -180,25 +188,63 @@ contract DeployCounter is Script {
 pragma solidity ^0.8.24;
 
 import "forge-std/Script.sol";
+import "../src/Counter.sol";
 import "../src/CounterV2.sol";
-import "@openzeppelin/contracts/proxy/ERC1967/ERC1967Proxy.sol";
 
 contract UpgradeCounter is Script {
     function run() external {
         uint256 deployerPrivateKey = vm.envUint("PRIVATE_KEY");
         address proxyAddress = vm.envAddress("PROXY_ADDRESS");
-        
+
+        // Test before upgrade
+        console.log("============ Before Upgrade ============");
+        Counter counter = Counter(proxyAddress);
+        uint256 valueBefore = counter.getCount();
+        console.log("Current count:", valueBefore);
+
         vm.startBroadcast(deployerPrivateKey);
 
         // Deploy new implementation
         CounterV2 counterV2 = new CounterV2();
-        
-        // Upgrade proxy to new implementation
-        CounterV2(proxyAddress).upgradeTo(address(counterV2));
+        console.log("\n============ Deploying New Implementation ============");
+        console.log("New implementation:", address(counterV2));
 
-        console.log("Proxy upgraded to:", address(counterV2));
+        // Upgrade proxy to new implementation
+        Counter(proxyAddress).upgradeToAndCall(
+            address(counterV2),
+            "" // Empty bytes string since we don't need to call any initialization function
+        );
 
         vm.stopBroadcast();
+
+        // Test after upgrade
+        console.log("\n============ After Upgrade ============");
+        CounterV2 upgradedCounter = CounterV2(proxyAddress);
+        uint256 valueAfter = upgradedCounter.getCount();
+        console.log("Count after upgrade:", valueAfter);
+
+        vm.startBroadcast(deployerPrivateKey);
+        upgradedCounter.increment();
+        vm.stopBroadcast();
+
+        uint256 valueAfterIncrement = upgradedCounter.getCount();
+        console.log("Count after increment:", valueAfterIncrement);
+
+        vm.startBroadcast(deployerPrivateKey);
+        upgradedCounter.reset();
+        vm.stopBroadcast();
+
+        uint256 valueAfterReset = upgradedCounter.getCount();
+        console.log("Count after reset:", valueAfterReset);
+
+        // Verify upgrade results
+        require(valueAfter == valueBefore, "State verification failed: Value changed during upgrade");
+        require(valueAfterIncrement == valueAfter + 1, "Function verification failed: Increment not working");
+        require(valueAfterReset == 0, "Function verification failed: Reset not working");
+
+        console.log("\n============ Upgrade Successful ============");
+        console.log("1. State preserved: Initial count maintained after upgrade");
+        console.log("2. New functions working: Increment and Reset successfully added");
     }
 }
 ```
@@ -260,49 +306,53 @@ contract CounterTest is Test {
 
 ## Deployment and Upgrade Process
 
-1. Build the contracts:
+1. Deploy the initial implementation and proxy:
 
 ```bash
-forge build
+source .env
+forge script script/DeployCounter.s.sol --rpc-url $RPC_URL --broadcast -g 200
 ```
 
-2. Deploy the initial contract:
+> **Note:** The `-g` flag sets the gas price multiplier (in percentage). Using `-g 200` means the gas price will be 200% of the estimated price, which helps prevent "insufficient gas fee" errors during deployment.
+
+Expected output:
+```
+Deploying Counter...
+Implementation deployed to: <IMPLEMENTATION_ADDRESS>
+Proxy deployed to: <PROXY_ADDRESS>
+Initial count: 0
+```
+
+2. After deployment, save the proxy address in `.env`:
 
 ```bash
-forge script script/DeployCounter.s.sol:DeployCounter --rpc-url $RPC_URL --broadcast
+PROXY_ADDRESS=<PROXY_ADDRESS>
 ```
 
-3. Update your `.env` file with the proxy address:
-
-```
-PROXY_ADDRESS=<deployed_proxy_address>
-```
-
-4. Upgrade the contract:
+3. Upgrade to CounterV2:
 
 ```bash
-forge script script/UpgradeCounter.s.sol:UpgradeCounter --rpc-url $RPC_URL --broadcast
+forge script script/UpgradeCounter.s.sol --rpc-url $RPC_URL --broadcast -g 200
 ```
 
-5. Run the tests:
+Expected output:
+```
+============ Before Upgrade ============
+Current count: 0
 
-```bash
-forge test
+============ Deploying New Implementation ============
+New implementation: <IMPLEMENTATION_V2_ADDRESS>
+
+============ After Upgrade ============
+Count after upgrade: 0
+Count after increment: 1
+Count after reset: 0
+
+============ Upgrade Successful ============
+1. State preserved: Initial count maintained after upgrade
+2. New functions working: Increment and Reset successfully added
 ```
 
-## Interacting with the Contract
+By following these steps, you can deploy and upgrade smart contracts using UUPS proxy pattern on Conflux eSpace with Foundry. This pattern provides a more gas-efficient alternative to the transparent proxy pattern while maintaining upgradeability. The UUPS pattern moves the upgrade logic to the implementation contract, making it more lightweight and cost-effective for users.
 
-You can interact with your contract using the Foundry's `cast` command:
 
-```bash
-# Get the current count
-cast call $PROXY_ADDRESS "getCount()" --rpc-url $RPC_URL
-
-# Increment the counter
-cast send $PROXY_ADDRESS "increment()" --private-key $PRIVATE_KEY --rpc-url $RPC_URL
-
-# After upgrade, reset the counter
-cast send $PROXY_ADDRESS "reset()" --private-key $PRIVATE_KEY --rpc-url $RPC_URL
-```
-
-This tutorial demonstrates how to implement, deploy, and upgrade UUPS contracts using Foundry on Conflux eSpace. The approach maintains the same functionality as the Hardhat version but leverages Foundry's tools and testing framework.
