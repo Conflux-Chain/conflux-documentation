@@ -14,7 +14,30 @@ tags: [Tutorial, Upgradeable Contracts]
 
 ### UUPS (Universal Upgradeable Proxy Standard)
 
-[Keep the same UUPS explanation section as in the original tutorial...]
+UUPS is an upgradeable proxy pattern that addresses some limitations of the transparent proxy pattern. Key features include:
+
+- **Upgrade Logic in Implementation**: The upgrade functionality is placed in the implementation contract rather than the proxy.
+- **Gas Efficiency**: More gas-efficient for users as there's no need to check the caller's identity on every function call.
+- **Smaller Proxy Contract**: The proxy contract is simpler and smaller, potentially reducing deployment costs.
+
+### Comparison of Proxy Patterns
+
+1. **UUPS vs. Transparent Proxy**:
+
+   - UUPS places upgrade logic in the implementation, while transparent proxy keeps it in the proxy contract.
+   - UUPS is more gas-efficient for regular function calls.
+   - Transparent proxy has a larger proxy contract but simpler implementation contracts.
+
+2. **UUPS vs. Regular Upgradeable Proxy**:
+
+   - UUPS provides better security against accidental contract locking.
+   - Regular upgradeable proxies are simpler but may be more prone to errors during upgrades.
+
+3. **Common Features**:
+   - All patterns allow upgrading contract logic without changing the contract address.
+   - They all use delegate calls to forward function calls to the implementation contract.
+
+UUPS is often preferred for its balance of security, gas efficiency, and flexibility. In this tutorial, we'll implement and deploy upgradeable contracts using UUPS on Conflux eSpace.
 
 ## Project Setup
 
