@@ -78,7 +78,7 @@ The transactions that are included in a block will eventually be executed, gener
 
 For eSpace transactions, you can determine the execution status through the **status** field in the Receipt, where **1 represents success, and 0 represents failure**.
 
-For Core transactions, you can check the execution status through the **outcomeStatus** field in the Receipt, where **0 represents success, and 1 represents failure**.
+For Core transactions, you can check the execution status through the **outcomeStatus** field in the Receipt, where **0 represents success, 1 represents failure, and 2 represents skipping(due to Conflux's DAG structure)**.
 
 In addition to this, the Receipt also includes other information about the transaction execution, such as block information and event details.
 
