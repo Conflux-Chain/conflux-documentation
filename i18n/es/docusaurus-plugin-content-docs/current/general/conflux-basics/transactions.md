@@ -79,7 +79,7 @@ Las transacciones que se incluyan en un bloque se ejecutarán finalmente, genera
 
 Para las transacciones de eSpace, puede determinar el estado de ejecución a través del campo **status** del Recibo, donde **1 representa éxito, y 0 representa fracaso**.
 
-Para las transacciones de Core Space, puede determinar el estado de ejecución a través del campo **status** del Recibo, donde **1 representa éxito, y 0 representa fracaso**.
+For Core transactions, you can check the execution status through the **outcomeStatus** field in the Receipt, where **0 represents success, 1 represents failure, and 2 represents skipping(due to Conflux's DAG structure)**.
 
 Además, el recibo también incluye más información sobre la ejecución de la transacción, como información del bloque y los detalles de los eventos.
 
