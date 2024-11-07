@@ -32,7 +32,7 @@ forge install OpenZeppelin/openzeppelin-contracts
 forge install OpenZeppelin/openzeppelin-contracts-upgradeable
 ```
 
-3. Add the following to `remappings.txt`:
+1. Add the following to `remappings.txt`:
 
 ```
 @openzeppelin/=lib/openzeppelin-contracts/
@@ -160,6 +160,12 @@ contract DeployBox is Script {
         ))));
 
         vm.stopBroadcast();
+
+        console.log("Box implementation deployed to:", address(box));
+        console.log("Proxy deployed to:", address(proxy));
+        console.log("ProxyAdmin deployed to:", proxyAdminAddress);
+    }
+}
 ```
 
 
