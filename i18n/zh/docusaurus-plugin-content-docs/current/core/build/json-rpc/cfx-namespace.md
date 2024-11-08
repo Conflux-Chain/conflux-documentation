@@ -106,18 +106,42 @@ TODO: Add links to deferred execution documentation.
 
 #### 遵循 EIP-1898 的Conflux epochNumber 参数
 
-Conflux core space 支持纪元数参数在 [EIP-1898](https://eips.ethereum.org/EIPS/eip-1898) 样式中为某些RPC 服务。 [EIP-1898](https://eips.ethereum.org/EIPS/eip-1898) 样式的纪元参数是一个包含3个可选字段的对象：
+Conflux core space 支持纪元数参数在 [EIP-1898](https://eips.ethereum.org/EIPS/eip-1898) 样式中为某些RPC 服务。 Developers can query the state of the epoch by providing the epoch number or the block hash. Moreover, this parameter enables the developers to query the state of a specific epoch making sure who is the pivot block, which is useful when dealing with chain reorganizations.
 
-- `epochNumber`. 对应于EIP-1898定义的`blockNumber`。
-- `blockHash`. 与EIP-1898的`blockHash`相同。
-- `requirePivot`. 对应于EIP-1898的`requireCanonical`。 默认值为`true`
+[EIP-1898](https://eips.ethereum.org/EIPS/eip-1898) 样式的纪元参数是一个包含3个可选字段的对象：
+
+* `epochNumber`. 对应于EIP-1898定义的`blockNumber`。
+* `blockHash`. The hash of the block specified.
+* `requirePivot`. Corresponding to EIP-1898 `requireCanonical`, but has different usage.
+  * If true, if the block specified by `blockHash` is not the pivot block, the RPC will return an error with message "pivot chain assumption failed".
+  * If false, the RPC will return the result considering the epoch of the block specified by `blockHash`, regardless of whether it is the pivot block or not.
+  * **Defaults to `true`**.
+
+:::note
+
+If `blockHash` is provided with `requirePivot` set to `true`, the RPC will first check whether the block is the pivot block first regardless of the rpc behaviour, for example, whether the epoch is executed or not.
+
+:::
 
 例如：
 
 ```json
+
+{
+  "epochNumber": "0x3e8"
+}
+
+or
 {
   "blockHash": "0x692373025c7315fa18b2d02139d08e987cd7016025920f59ada4969c24e44e06",
   "requirePivot": false
+}
+
+or 
+
+{
+  "blockHash": "0x692373025c7315fa18b2d02139d08e987cd7016025920f59ada4969c24e44e06",
+  "requirePivot": true
 }
 ```
 
@@ -700,7 +724,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"cfx_getBlocksByEpoch","params":[
 #### 参数
 
 1. `BASE32` - 用于检查余额的地址，采用 base32 编码。
-2. `QUANTITY|TAG` - （可选，默认为`"latest_state"`）整数纪元号，或字符串 `"latest_state"`、`"latest_confirmed"`、`"latest_checkpoint"` 或 `"earliest"`，详见 [纪元号参数](#the-default-epochnumber-parameter)。
+2. `QUANTITY|TAG|BLOCKHASH_PARAMETER` - (optional, default: `"latest_state"`) integer epoch number, or the string `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-default-epochnumber-parameter), or the [EIP-1898 `blockHash` parameter](#eip-1898-style-conflux-epochnumber-parameter).
 
 ```json
 params: [
@@ -851,7 +875,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"cfx_getAdmin","params":["cfx:typ
 #### 参数
 
 1. `BASE32` - 合约地址
-2. `QUANTITY|TAG` - （可选，默认为`"latest_state"`）整数纪元号，或字符串 `"latest_state"`、`"latest_confirmed"`、`"latest_checkpoint"` 或 `"earliest"`，详见 [纪元号参数](#the-default-epochnumber-parameter)。
+2. `QUANTITY|TAG|BLOCKHASH_PARAMETER` - (optional, default: `"latest_state"`) integer epoch number, or the string `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-default-epochnumber-parameter), or the [EIP-1898 `blockHash` parameter](#eip-1898-style-conflux-epochnumber-parameter).
 
 ```json
 params: [
@@ -888,7 +912,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"cfx_getCode","params":["cfx:type
 
 1. `BASE32` - 合约地址
 2. `QUANTITY` - 存储位置 (查看 [这里](https://solidity.readthedocs.io/en/v0.7.1/internals/layout_in_storage.html) 获取更多信息)。
-3. `QUANTITY|TAG` - （可选，默认为`"latest_state"`）整数纪元号，或字符串 `"latest_state"`、`"latest_confirmed"`、`"latest_checkpoint"` 或 `"earliest"`，详见 [纪元号参数](#the-default-epochnumber-parameter)。
+3. `QUANTITY|TAG|BLOCKHASH_PARAMETER` - (optional, default: `"latest_state"`) integer epoch number, or the string `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-default-epochnumber-parameter), or the [EIP-1898 `blockHash` parameter](#eip-1898-style-conflux-epochnumber-parameter).
 
 ```json
 params: [
@@ -1027,7 +1051,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"cfx_getSponsorInfo","params":["c
 #### 参数
 
 1. `BASE32` - 账户地址。
-2. `QUANTITY|TAG` - (可选，默认为`"latest_state"`)整数纪元号，或字符串 `"latest_state"`、`"latest_confirmed"`、`"latest_checkpoint"` 或 `"earliest"`，详见 [纪元号参数](#the-default-epochnumber-parameter)。
+2. `QUANTITY|TAG|BLOCKHASH_PARAMETER` - (optional, default: `"latest_state"`) integer epoch number, or the string `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-default-epochnumber-parameter), or the [EIP-1898 `blockHash` parameter](#eip-1898-style-conflux-epochnumber-parameter).
 
 ```json
 params: [
@@ -1112,7 +1136,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"cfx_sendRawTransaction","params"
     * `maxFeePerGas`：`QUANTITY` -（可选，默认值：`0`)）每单位燃气的最大费用，以 Drip 为单位。 添加自 `Conflux-rust v2.4.0` 。
     * `maxPriorityFeePerGas`：`QUANTITY` -可选，默认值：`0`）每单位燃气的最大优先费用，以 Drip 为单位。 添加自 `Conflux-rust v2.4.0` 。
 
-2. `QUANTITY|TAG` - （可选，默认为`"latest_state"`）整数纪元号，或字符串 `"latest_state"`、`"latest_confirmed"`、`"latest_checkpoint"` 或 `"earliest"`，详见 [纪元号参数](#the-default-epochnumber-parameter)。
+2. `QUANTITY|TAG|BLOCKHASH_PARAMETER` - (optional, default: `"latest_state"`) integer epoch number, or the string `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-default-epochnumber-parameter), or the [EIP-1898 `blockHash` parameter](#eip-1898-style-conflux-epochnumber-parameter).
 
 ```json
 params: [
@@ -1767,7 +1791,7 @@ Returns the deposit list of the given account, identified by its address.
 #### 参数
 
 1. `BASE32` - 账户地址。
-2. `QUANTITY|TAG` - （可选，默认为`"latest_state"`）整数纪元号，或字符串 `"latest_state"`、`"latest_confirmed"`、`"latest_checkpoint"` 或 `"earliest"`，详见 [纪元号参数](#the-default-epochnumber-parameter)。
+2. `QUANTITY|TAG` - (可选，默认为`"latest_state"`)整数纪元号，或字符串 `"latest_state"`、`"latest_confirmed"`、`"latest_checkpoint"` 或 `"earliest"`，详见 [纪元号参数](#the-default-epochnumber-parameter)。
 
 ```json
 params: [
@@ -2459,13 +2483,13 @@ Returns all transaction receipts within the specific epoch.
 
 :::note
 
-This method is supported by [Confura](../../core-endpoints.md#1-confura) if api key is provided. For normal nodes, this method is also supported, but can only be accessed in local environment.
+Public RPC endpoints are run on top of [Confura](../../core-endpoints.md#1-confura), where this method is supported if api key is provided. For normal nodes, this method is also supported, but can only be accessed in local environment.
 
 :::
 
 #### 参数
 
-1. `QUANTITY|TAG` - the epoch number, or the string `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-default-epochnumber-parameter).
+1. `QUANTITY|TAG|BLOCKHASH_PARAMETER` - the epoch number, or the string `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-default-epochnumber-parameter), or the [EIP-1898 `blockHash` parameter](#eip-1898-style-conflux-epochnumber-parameter).
 2. `Boolean` - whether eSpace transaction receipts will be included in the return value, defaults to `false`.
 
 ```json
@@ -2477,7 +2501,7 @@ params: [
 
 #### 返回值
 
-`Array` -  This is a two-dimensional array of [transaction receipts](#cfx_gettransactionreceipt). Each sub-array represents transactions within a block. Noting an extra field of `space` will be added to each transaction receipt if the second parameter is set to `true`. The value of `space` will be either `native` meaning this is a core space transaction receipt or `evm` meaning the transaction is from eSpace.
+`null` if the epoch is not executed, otherwise `Array` - a two-dimensional array of [transaction receipts](#cfx_gettransactionreceipt). Each sub-array represents transactions within a block. Noting an extra field of `space` will be added to each transaction receipt if the second parameter is set to `true`. The value of `space` will be either `native` meaning this is a core space transaction receipt or `evm` meaning the transaction is from eSpace.
 
 ##### 示例
 
