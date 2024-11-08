@@ -103,18 +103,42 @@ Please note that due to performance optimization, the latest mined epochs are no
 
 #### EIP-1898 style Conflux epochNumber parameter
 
-Conflux core space supports epoch number parameter in [EIP-1898](https://eips.ethereum.org/EIPS/eip-1898) style for certain RPCs. The [EIP-1898](https://eips.ethereum.org/EIPS/eip-1898) style epoch number parameter is an object with 3 optional fields:
+Conflux core space supports epoch number parameter in [EIP-1898](https://eips.ethereum.org/EIPS/eip-1898) style for certain RPCs. Developers can query the state of the epoch by providing the epoch number or the block hash. Moreover, this parameter enables the developers to query the state of a specific epoch making sure who is the pivot block, which is useful when dealing with chain reorganizations.
 
-- `epochNumber`. Corresponding to EIP-1898 defined `blockNumber`
-- `blockHash`. Same as EIP-1898 `blockHash`
-- `requirePivot`. Corresponding to EIP-1898 `requireCanonical`. Defaults to `true`
+The [EIP-1898](https://eips.ethereum.org/EIPS/eip-1898) style epoch number parameter is an object with 3 optional fields:
+
+* `epochNumber`. Corresponding to EIP-1898 defined `blockNumber`
+* `blockHash`. The hash of the block specified.
+* `requirePivot`. Corresponding to EIP-1898 `requireCanonical`, but has different usage.
+  * If true, if the block specified by `blockHash` is not the pivot block, the RPC will return an error with message "pivot chain assumption failed".
+  * If false, the RPC will return the result considering the epoch of the block specified by `blockHash`, regardless of whether it is the pivot block or not.
+  * **Defaults to `true`**.
+
+:::note
+
+If `blockHash` is provided with `requirePivot` set to `true`, the RPC will first check whether the block is the pivot block first regardless of the rpc behaviour, for example, whether the epoch is executed or not.
+
+:::
 
 For example:
 
 ```json
+
+{
+  "epochNumber": "0x3e8"
+}
+
+or
 {
   "blockHash": "0x692373025c7315fa18b2d02139d08e987cd7016025920f59ada4969c24e44e06",
   "requirePivot": false
+}
+
+or 
+
+{
+  "blockHash": "0x692373025c7315fa18b2d02139d08e987cd7016025920f59ada4969c24e44e06",
+  "requirePivot": true
 }
 ```
 
@@ -697,7 +721,7 @@ Returns the balance of the given account, identified by its address.
 #### Parameters
 
 1. `BASE32` - address to check for balance.
-2. `QUANTITY|TAG` - (optional, default: `"latest_state"`) integer epoch number, or the string `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-default-epochnumber-parameter)
+2. `QUANTITY|TAG|BLOCKHASH_PARAMETER` - (optional, default: `"latest_state"`) integer epoch number, or the string `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-default-epochnumber-parameter), or the [EIP-1898 `blockHash` parameter](#eip-1898-style-conflux-epochnumber-parameter).
 
 ```json
 params: [
@@ -848,7 +872,7 @@ Returns the code of the specified contract. If contract not exist will return `0
 #### Parameters
 
 1. `BASE32` - address of the contract.
-2. `QUANTITY|TAG` - (optional, default: `"latest_state"`) integer epoch number, or the string `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-default-epochnumber-parameter)
+2. `QUANTITY|TAG|BLOCKHASH_PARAMETER` - (optional, default: `"latest_state"`) integer epoch number, or the string `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-default-epochnumber-parameter), or the [EIP-1898 `blockHash` parameter](#eip-1898-style-conflux-epochnumber-parameter).
 
 ```json
 params: [
@@ -885,7 +909,7 @@ Returns storage entries from a given contract.
 
 1. `BASE32` - address of the contract.
 2. `QUANTITY` - a storage position (see [here](https://solidity.readthedocs.io/en/v0.7.1/internals/layout_in_storage.html) for more info).
-3. `QUANTITY|TAG` - (optional, default: `"latest_state"`) integer epoch number, or the string `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-default-epochnumber-parameter)
+3. `QUANTITY|TAG|BLOCKHASH_PARAMETER` - (optional, default: `"latest_state"`) integer epoch number, or the string `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-default-epochnumber-parameter), or the [EIP-1898 `blockHash` parameter](#eip-1898-style-conflux-epochnumber-parameter).
 
 ```json
 params: [
@@ -1024,7 +1048,7 @@ Returns the next nonce that should be used by the given account when sending a t
 #### Parameters
 
 1. `BASE32` - address of the account.
-2. `QUANTITY|TAG` - (optional, default: `"latest_state"`) integer epoch number, or the string `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-default-epochnumber-parameter)
+2. `QUANTITY|TAG|BLOCKHASH_PARAMETER` - (optional, default: `"latest_state"`) integer epoch number, or the string `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-default-epochnumber-parameter), or the [EIP-1898 `blockHash` parameter](#eip-1898-style-conflux-epochnumber-parameter).
 
 ```json
 params: [
@@ -1109,7 +1133,7 @@ Virtually calls a contract, returns the output data. The transaction will not be
     * `maxFeePerGas`: `QUANTITY` - (optional, default: `0`) the max fee per gas in Drip. Added from `Conflux-rust v2.4.0`
     * `maxPriorityFeePerGas`: `QUANTITY` - (optional, default: `0`) the max priority fee per gas in Drip. Added from `Conflux-rust v2.4.0`
 
-2. `QUANTITY|TAG` - (optional, default: `"latest_state"`) integer epoch number, or the string `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-default-epochnumber-parameter)
+2. `QUANTITY|TAG|BLOCKHASH_PARAMETER` - (optional, default: `"latest_state"`) integer epoch number, or the string `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-default-epochnumber-parameter), or the [EIP-1898 `blockHash` parameter](#eip-1898-style-conflux-epochnumber-parameter).
 
 ```json
 params: [
@@ -2456,13 +2480,14 @@ Returns all transaction receipts within the specific epoch.
 
 :::note
 
-This method is supported by [Confura](../../core-endpoints.md#1-confura) if api key is provided. For normal nodes, this method is also supported, but can only be accessed in local environment.
+Public RPC endpoints are run on top of [Confura](../../core-endpoints.md#1-confura), where this method is supported if api key is provided. 
+For normal nodes, this method is also supported, but can only be accessed in local environment.
 
 :::
 
 #### Parameters
 
-1. `QUANTITY|TAG` - the epoch number, or the string `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-default-epochnumber-parameter).
+1. `QUANTITY|TAG|BLOCKHASH_PARAMETER` - the epoch number, or the string `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-default-epochnumber-parameter), or the [EIP-1898 `blockHash` parameter](#eip-1898-style-conflux-epochnumber-parameter).
 2. `Boolean` - whether eSpace transaction receipts will be included in the return value, defaults to `false`.
 
 ```json
@@ -2474,7 +2499,7 @@ params: [
 
 #### Returns
 
-`Array` -  This is a two-dimensional array of [transaction receipts](#cfx_gettransactionreceipt). Each sub-array represents transactions within a block. Noting an extra field of `space` will be added to each transaction receipt if the second parameter is set to `true`. The value of `space` will be either `native` meaning this is a core space transaction receipt or `evm` meaning the transaction is from eSpace.
+`null` if the epoch is not executed, otherwise `Array` - a two-dimensional array of [transaction receipts](#cfx_gettransactionreceipt). Each sub-array represents transactions within a block. Noting an extra field of `space` will be added to each transaction receipt if the second parameter is set to `true`. The value of `space` will be either `native` meaning this is a core space transaction receipt or `evm` meaning the transaction is from eSpace.
 
 ##### Example
 
