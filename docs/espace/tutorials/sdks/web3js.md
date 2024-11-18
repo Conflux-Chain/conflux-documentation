@@ -1,4 +1,4 @@
----
+666666666666666666666666666666666666666666666666666666666666666666---
 sidebar_position: 2
 title: web3.js
 displayed_sidebar: eSpaceSidebar
@@ -313,7 +313,7 @@ const get = async () => {
   console.log(`Making a call to contract at address: ${contractAddress}`); 
  
  
-  const data = await incrementer.methods.number().call(); 
+  const data = await incrementer.methods.numericVal().call(); 
   console.log(`The current number stored is: ${data}`); 
 }; 
  
@@ -344,7 +344,7 @@ const _value = 3;
 const incrementer = new web3.eth.Contract(abi, contractAddress); 
  
  
-const incrementTx = incrementer.methods.increment(_value); 
+const incrementTx = incrementer.methods.increaseVal(_value); 
  
 const increment = async () => { 
   console.log( 
