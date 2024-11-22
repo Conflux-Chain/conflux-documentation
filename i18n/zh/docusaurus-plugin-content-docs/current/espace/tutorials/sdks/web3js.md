@@ -332,7 +332,7 @@ const increment = async () => {
 increment(); 
 ```
 
-## Educational Videos:
+## 教育视频：
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
