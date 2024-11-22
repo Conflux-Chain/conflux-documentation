@@ -27,69 +27,69 @@ import TabItem from '@theme/TabItem';
 
 ## 方法
 
-| 方法                                     | 状态 | 备注                               |
-| -------------------------------------- | -- | -------------------------------- |
-| web3_clientVersion                     | ✅  |                                  |
-| net_version                            | ✅  |                                  |
-| eth_protocolVersion                    | ✅  |                                  |
-| eth_chainId                            | ✅  |                                  |
-| eth_gasPrice                           | ✅  |                                  |
-| eth_blocknumber                        | ✅  |                                  |
-| eth_getBalance                         | ✅  |                                  |
-| eth_getStorageAt                       | ✅  |                                  |
-| eth_getCode                            | ✅  |                                  |
-| eth_getTransactionCount                | ✅  |                                  |
-| eth_sendRawTransaction                 | ✅  |                                  |
-| eth_submitTransaction                  | ✅  |                                  |
-| eth_call                               | ✅  |                                  |
-| eth_estimateGas                        | ✅  |                                  |
-| eth_getTransactionByHash               | ✅  |                                  |
-| eth_getTransactionrecipt               | ✅  |                                  |
-| eth_getLogs                            | ✅  | fromBlock 与 toBlock 的差值最大限制为1000 |
-| eth_getBlockByHash                     | ✅  |                                  |
-| eth_getBlockBynumber                   | ✅  |                                  |
-| eth_getBlockTransactionCountByHash     | ✅  |                                  |
-| eth_getBlockTransactionCountBynumber   | ✅  |                                  |
-| eth_getTransactionBylockHashAndIndex   | ✅  |                                  |
-| eth_getTransactionBylockNumberAndIndex | ✅  |                                  |
-| eth_syncing                            | ✅  |                                  |
-| eth_hashrate                           | ✅  |                                  |
-| eth_coinbase                           | ✅  |                                  |
-| eth_mining                             | ✅  |                                  |
-| eth_maxPriorityFeePerGas               | ✅  |                                  |
-| eth_accounts                           | ✅  |                                  |
-| eth_submitHashrate                     | ✅  |                                  |
-| eth_getUncleByBlockHashAndIndex        | ✅  |                                  |
-| eth_getUncleByBlockNumberAndIndex      | ✅  |                                  |
-| eth_getUncleCountByBlockHash           | ✅  |                                  |
-| eth_getUncleCountByBlockNumber         | ✅  |                                  |
-| parity_getBlockReceipts                | ✅  |                                  |
-| eth_pendingTransactions                | 🚧  |                                  |
-| web3_sha3                              | 🚧  |                                  |
-| trace_block                            | ✅  | Parity RPC                       |
-| trace_filter                           | ✅  | Parity RPC                       |
-| trace_transaction                      | ✅  | Parity RPC                       |
-| eth_feeHistory                         | ✅  | Supported at v2.4.0              |
-| eth_getFilterChanges                   | ✅  | 在v2.1.1版本中支持                     |
-| eth_getFilterLogs                      | ✅  | 在v2.1.1版本中支持                     |
-| eth_newBlockFilter                     | ✅  | 在v2.1.1版本中支持                     |
-| eth_newFilter                          | ✅  | 在v2.1.1版本中支持                     |
-| eth_newPendingTransactionFilter        | ✅  | 在v2.1.1版本中支持                     |
-| eth_uninstallFilter                    | ✅  | 在v2.1.1版本中支持                     |
-| debug_traceTransaction                 | ✅  | Supported at v2.4.0              |
-| debug_traceBlockByHash                 | ✅  | Supported at v2.4.0              |
-| debug_traceBlockByNumber               | ✅  | Supported at v2.4.0              |
-| net_listening                          | ❌  |                                  |
-| net_peerCount                          | ❌  |                                  |
-| eth_compileLLL                         | ❌  |                                  |
-| eth_compileSerpent                     | ❌  |                                  |
-| eth_compileSolidity                    | ❌  |                                  |
-| eth_getCompilers                       | ❌  |                                  |
-| eth_getProof                           | ❌  | EIP-1186                         |
-| eth_getWork                            | ❌  |                                  |
-| db_*                                   | ❌  |                                  |
-| shh_*                                  | ❌  |                                  |
-|                                        |    |                                  |
+| 方法                                      | 状态 | 备注                               |
+| --------------------------------------- | -- | -------------------------------- |
+| web3_clientVersion                      | ✅  |                                  |
+| net_version                             | ✅  |                                  |
+| eth_protocolVersion                     | ✅  |                                  |
+| eth_chainId                             | ✅  |                                  |
+| eth_gasPrice                            | ✅  |                                  |
+| eth_blockNumber                         | ✅  |                                  |
+| eth_getBalance                          | ✅  |                                  |
+| eth_getStorageAt                        | ✅  |                                  |
+| eth_getCode                             | ✅  |                                  |
+| eth_getTransactionCount                 | ✅  |                                  |
+| eth_sendRawTransaction                  | ✅  |                                  |
+| eth_submitTransaction                   | ✅  |                                  |
+| eth_call                                | ✅  |                                  |
+| eth_estimateGas                         | ✅  |                                  |
+| eth_getTransactionByHash                | ✅  |                                  |
+| eth_getTransactionReceipt               | ✅  |                                  |
+| eth_getLogs                             | ✅  | fromBlock 与 toBlock 的差值最大限制为1000 |
+| eth_getBlockByHash                      | ✅  |                                  |
+| eth_getBlockByNumber                    | ✅  |                                  |
+| eth_getBlockTransactionCountByHash      | ✅  |                                  |
+| eth_getBlockTransactionCountByNumber    | ✅  |                                  |
+| eth_getTransactionByBlockHashAndIndex   | ✅  |                                  |
+| eth_getTransactionByBlockNumberAndIndex | ✅  |                                  |
+| eth_syncing                             | ✅  |                                  |
+| eth_hashrate                            | ✅  |                                  |
+| eth_coinbase                            | ✅  |                                  |
+| eth_mining                              | ✅  |                                  |
+| eth_maxPriorityFeePerGas                | ✅  |                                  |
+| eth_accounts                            | ✅  |                                  |
+| eth_submitHashrate                      | ✅  |                                  |
+| eth_getUncleByBlockHashAndIndex         | ✅  |                                  |
+| eth_getUncleByBlockNumberAndIndex       | ✅  |                                  |
+| eth_getUncleCountByBlockHash            | ✅  |                                  |
+| eth_getUncleCountByBlockNumber          | ✅  |                                  |
+| parity_getBlockReceipts                 | ✅  |                                  |
+| eth_pendingTransactions                 | 🚧  |                                  |
+| web3_sha3                               | 🚧  |                                  |
+| trace_block                             | ✅  | Parity RPC                       |
+| trace_filter                            | ✅  | Parity RPC                       |
+| trace_transaction                       | ✅  | Parity RPC                       |
+| eth_feeHistory                          | ✅  | Supported at v2.4.0              |
+| eth_getFilterChanges                    | ✅  | 在v2.1.1版本中支持                     |
+| eth_getFilterLogs                       | ✅  | 在v2.1.1版本中支持                     |
+| eth_newBlockFilter                      | ✅  | 在v2.1.1版本中支持                     |
+| eth_newFilter                           | ✅  | 在v2.1.1版本中支持                     |
+| eth_newPendingTransactionFilter         | ✅  | 在v2.1.1版本中支持                     |
+| eth_uninstallFilter                     | ✅  | 在v2.1.1版本中支持                     |
+| debug_traceTransaction                  | ✅  | Supported at v2.4.0              |
+| debug_traceBlockByHash                  | ✅  | Supported at v2.4.0              |
+| debug_traceBlockByNumber                | ✅  | Supported at v2.4.0              |
+| net_listening                           | ❌  |                                  |
+| net_peerCount                           | ❌  |                                  |
+| eth_compileLLL                          | ❌  |                                  |
+| eth_compileSerpent                      | ❌  |                                  |
+| eth_compileSolidity                     | ❌  |                                  |
+| eth_getCompilers                        | ❌  |                                  |
+| eth_getProof                            | ❌  | EIP-1186                         |
+| eth_getWork                             | ❌  |                                  |
+| db_*                                    | ❌  |                                  |
+| shh_*                                   | ❌  |                                  |
+|                                         |    |                                  |
 
 图例解释：❌ = 不支持。 🚧 = 开发中。 ✅ = 已支持。
 
