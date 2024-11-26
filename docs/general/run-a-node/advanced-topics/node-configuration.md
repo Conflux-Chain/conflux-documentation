@@ -100,6 +100,19 @@ Enabling the fullstate mode for dual spaces.
 enable_single_mpt_storage=true
 ```
 
+> The Conflux Foundation currently does not provide snapshot data containing the full historical state; users need to synchronize the data themselves.
+
+### PivotHint
+
+If you want to `fully synchronize the data`, you need to enable the pivot_hint related configuration option.
+
+* `pivot_hint_path`: Path to the pivot hint file
+* `pivot_hint_checksum`: Expected checksum of Page Digests section (hex string without "0x" prefix)
+
+Note: These two configurations must either both be specified or both be omitted. Specifying only one will result in an error.
+
+PivotHint file can be downloaded [here](https://github.com/Conflux-Chain/conflux-rust/pull/2935)
+
 ### cfx_getLogs/eth_getLogs related options
 
 The `getLogs` RPC method imposes a significant performance overhead on the node. Excessive querying of data with this method can lead to high node loads. To mitigate this, adjust the following configuration option to limit the amount of data requested per `getLogs` request.
@@ -206,6 +219,7 @@ jsonrpc_ws_port=12535
 public_rpc_apis='safe'
 persist_block_number_index=true
 persist_tx_index=true
+max_estimation_gas_limit=30000000
 ```
 
 ### I want to run an eSpace RPC node, what parameters do I need to configure?
@@ -217,6 +231,7 @@ jsonrpc_ws_eth_port=8546
 public_evm_rpc_apis = "evm"
 persist_block_number_index=true
 persist_tx_index=true
+max_estimation_gas_limit=30000000
 ```
 
 ### After my node has been running for a while, I want to enable the `executive_trace` configuration. Do I need to resynchronize the data?
