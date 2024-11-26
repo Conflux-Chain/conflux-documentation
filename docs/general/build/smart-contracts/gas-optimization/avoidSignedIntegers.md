@@ -2,7 +2,7 @@
 displayed_sidebar: generalSidebar
 ---
 
-# Avoiding Signed Integers in Calldata
+# Reducing Gas Costs through Reduction of Non-Zero Bytes
 
 When optimizing gas usage in smart contracts, it's crucial to consider every aspect of data representation. One often overlooked optimization technique involves avoiding signed integers in calldata when possible. This approach can lead to gas savings, especially when dealing with small negative numbers.
 
@@ -34,10 +34,10 @@ Two's complement is a mathematical operation used to represent signed integers i
 
 Let's compare the gas costs for using signed vs. unsigned integers in calldata:
 
-| Scenario                    | Gas Consumption                            |
-|-----------------------------|-------------------------------------------|
-| Using signed integer (-1)   | Higher (256 non-zero bytes in calldata)   |
-| Using unsigned integer (1)  | Lower (1 non-zero byte in calldata)       |
+| Scenario                    | Gas Consumption                            | Total Gas |
+|-----------------------------|-------------------------------------------|-----------|
+| Using signed integer (-1)   | 32 non-zero bytes (32 × 16 gas)          | 512 gas   |
+| Using unsigned integer (1)  | 31 zero bytes (31 × 4 gas) + 1 non-zero byte (1 × 16 gas) | 140 gas   |
 
 ### Implementing the Optimization
 
