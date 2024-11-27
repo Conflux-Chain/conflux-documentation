@@ -101,6 +101,19 @@ single_mpt_space = "evm" # 核心空间使用"native"
 enable_single_mpt_storage=true
 ```
 
+> The Conflux Foundation currently does not provide snapshot data containing the full historical state; users need to synchronize the data themselves.
+
+### PivotHint
+
+If you want to `fully synchronize the data`, you need to enable the pivot_hint related configuration option.
+
+* `pivot_hint_path`: Path to the pivot hint file
+* `pivot_hint_checksum`: Expected checksum of Page Digests section (hex string without "0x" prefix)
+
+Note: These two configurations must either both be specified or both be omitted. Specifying only one will result in an error.
+
+PivotHint file can be downloaded [here](https://github.com/Conflux-Chain/conflux-rust/pull/2935)
+
 ### cfx_getLogs/eth_getLogs相关选项
 
 `getLogs` RPC方法对节点造成了显著的性能负担。 过度查询此方法的数据可能导致节点负载高。 为了缓解这一点，调整以下配置选项以限制每个`getLogs`请求请求的数据量。
@@ -207,6 +220,7 @@ jsonrpc_ws_port=12535
 public_rpc_apis='safe'
 persist_block_number_index=true
 persist_tx_index=true
+max_estimation_gas_limit=30000000
 ```
 
 ### 我想运行一个eSpace RPC节点，我需要配置哪些参数？
@@ -218,6 +232,7 @@ jsonrpc_ws_eth_port=8546
 public_evm_rpc_apis = "evm"
 persist_block_number_index=true
 persist_tx_index=true
+max_estimation_gas_limit=30000000
 ```
 
 ### 我的节点运行了一段时间后，我想启用`executive_trace`配置。 我需要重新同步数据吗？
