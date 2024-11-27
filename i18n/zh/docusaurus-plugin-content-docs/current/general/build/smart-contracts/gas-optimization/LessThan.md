@@ -25,8 +25,6 @@ Given that iszero consumes 3 units of gas, utilizing `≤` and `≥` in contract
 
 **代码演示**
 
-Below are examples of code achieving the same result using `<` and `<=`, respectively.
-
 ```solidity
 contract CompareLessThan {
     // gas: 247
