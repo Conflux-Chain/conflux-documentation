@@ -9,43 +9,84 @@ sidebar_position: 3
 
 Uniswap V3, launched in May 2021, represents a significant evolution in automated market maker (AMM) technology. This version introduces groundbreaking features that dramatically improve capital efficiency and provide liquidity providers with more control over their positions. It maintains the core principles of permissionless trading while offering enhanced functionality compared to its predecessors.
 
-## Key Features and Improvements
+## Key Features and Improvements of Uniswap V3
 
 ### 1. Concentrated Liquidity
 
-The most significant innovation in V3 is concentrated liquidity, allowing liquidity providers (LPs) to specify custom price ranges for their positions. This feature enables:
-- Up to 4000x capital efficiency compared to V2
-- Better execution prices for traders
+**Comparison with V2**:
+- **V2**: Liquidity providers (LPs) funds are distributed across the entire price range (0 to ∞)
+- **V3**: LPs can select specific price ranges for their liquidity, which is only active within that range
+- **Impact**: Same capital amount achieves greater trading depth and lower slippage, up to 4000x capital efficiency
+
+**Key Features**:
+- Custom price range specification
 - More granular control over LP positions
+- Better execution prices for traders
+- Significantly improved capital efficiency
 
-### 2. Multiple Fee Tiers
+### 2. Fee Structure
 
-Uniswap V3 introduces multiple fee tiers per pair:
+**Comparison with V2**:
+- **V2**: Fixed trading fee of 0.3%
+- **V3**: Multiple fee tiers for different pair types
+- **Impact**: LPs can choose appropriate fee tiers based on asset volatility and risk profile
+
+**Fee Tiers**:
 - 0.01% for stable pairs
 - 0.05% for stable-like pairs
 - 0.30% for standard pairs
 - 1.00% for exotic pairs
 
-### 3. Non-Fungible Liquidity
+### 3. Liquidity Position Management
 
-Unlike V2's fungible LP tokens, V3 positions are represented as NFTs (ERC-721 tokens) because:
+**Comparison with V2**:
+- **V2**: ERC-20 tokens for LP positions, passive positions with no price range control
+- **V3**: NFT-based position management (ERC-721)
+- **Impact**: More efficient position tracking and flexible management strategies
+
+**Non-Fungible Liquidity Features**:
 - Each position can have unique parameters
 - Positions are non-fungible due to custom price ranges
 - Enhanced position management capabilities
+- Dynamic position management with adjustable price ranges
 
-### 4. Advanced Oracle System
+### 4. Oracle System
 
-V3 features an improved oracle system that:
-- Provides higher precision price data
-- Offers better manipulation resistance
-- Allows access to recent price observations
+**Comparison with V2**:
+- **V2**: Basic TWAP oracle functionality
+- **V3**: Enhanced price oracle system
+- **Impact**: More accurate price feeds and better manipulation resistance
 
-### 5. Range Orders
+**Advanced Features**:
+- Higher precision price data
+- Better manipulation resistance
+- Access to recent price observations
+- Smaller time window support
 
-Introduces the concept of range orders, allowing users to:
+### 5. Trading Depth and Range Orders
+
+**Comparison with V2**:
+- **V2**: Uniform liquidity distribution leads to shallow depth
+- **V3**: Concentrated liquidity enables deeper markets
+- **Impact**: Better price execution and reduced slippage for most trades
+
+**Range Orders Capabilities**:
 - Create limit order-like positions
 - Automatically execute trades at specific price points
 - Implement more sophisticated trading strategies
+
+### Key Considerations
+
+These improvements make Uniswap V3 particularly suitable for professional traders and liquidity providers, offering:
+- Superior capital efficiency
+- More flexible trading strategies
+- Better price execution
+- Enhanced position management
+
+However, users should be aware of:
+- Increased complexity in position management
+- Need for more active monitoring
+- Potentially higher gas costs for complex operations
 
 ## How Uniswap V3 Works
 
@@ -113,14 +154,6 @@ Introduces the concept of range orders, allowing users to:
 - **Higher Gas Costs**: Complex operations can lead to higher transaction fees
 - **Active Management**: Requires more attention to position management
 - **Impermanent Loss Risk**: Can be more severe in concentrated positions
-
-## Development and Future
-
-Uniswap V3 continues to evolve with:
-- Integration with Layer 2 solutions
-- Development of new tools and interfaces
-- Community-driven improvements
-- Ecosystem expansion
 
 ## Developer Resources and Related Links
 
