@@ -28,7 +28,7 @@ tags:
 
 ### 从零开始同步数据需要多长时间？
 
-It takes about 3 weeks to synchronize the data from beginning. As blockchain data grows, the time required for syncing from scratch will increase.
+It takes about two month to synchronize the data from beginning. As blockchain data grows, the time required for syncing from scratch will increase.
 
 ### 运行一个归档节点时如何快速同步数据？
 
