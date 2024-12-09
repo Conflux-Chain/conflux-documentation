@@ -12,7 +12,7 @@ Here's a comparison showing different approaches:
 
 ```solidity
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.0;
+pragma solidity ^0.8.24;
 
 contract ComparisonExample {
     address public owner;
