@@ -12,7 +12,7 @@ Here's a comparison showing both approaches:
 
 ```solidity
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.0;
+pragma solidity ^0.8.24;
 
 contract MathOperations {
     // Standard implementation
@@ -103,21 +103,6 @@ function average(uint256 x, uint256 y) public pure returns (uint256 z) {
 - When maintaining type safety is important
 - Inexperienced developers
 
-### Best Practices
-
-1. **Documentation**
-   - Always comment assembly code thoroughly
-   - Explain the mathematical logic behind optimizations
-
-2. **Testing**
-   - Extensive testing across edge cases
-   - Comparison with standard implementations
-   - Gas measurement verification
-
-3. **Safety**
-   - Use `memory-safe-assembly` tag
-   - Verify overflow protection
-   - Consider using established libraries like Solady
 
 ### Additional Resources
 
@@ -127,6 +112,6 @@ For more optimized math operations, consider exploring:
 
 **Warning**: Assembly code bypasses Solidity's safety features. Ensure thorough testing and auditing before deployment.
 
-#### Gas Optimization Tips
+#### Recommendations for gas optimization:
 
-🌟 Consider using these assembly implementations for frequently called math operations in your smart contracts. Always benchmark your specific use case, as the effectiveness of optimizations can vary based on context and the Solidity compiler version.
+🌟 Consider using these assembly implementations for frequently called math operations in your smart contracts. 
