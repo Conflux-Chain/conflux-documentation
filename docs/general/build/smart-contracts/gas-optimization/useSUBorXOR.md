@@ -61,10 +61,16 @@ contract ComparisonExample {
 
 ### When to Use Each Approach
 
+#### ISZERO(EQ)
+- Standard approach for equality checks
+- Clear and straightforward
+- Slightly higher gas cost compared to SUB and XOR
+
 #### SUB (Subtraction)
 - Best for comparing numerical values or addresses
 - Clearer intention in code
 - No risk of bit-flip issues
+- Slightly more gas efficient than ISZERO(EQ)
 
 ```solidity
 assembly {
@@ -79,41 +85,15 @@ assembly {
 - Slightly more efficient for bitwise operations
 - Must be used carefully due to bit-flip vulnerability
 - Not recommended for security-critical comparisons
+- Slightly more gas efficient than ISZERO(EQ)
 
 ```solidity
 assembly {
-    // Warning: XOR considers a value with all bits flipped as equal
     if xor(caller(), sload(owner.slot)) {
         revert(0, 0)
     }
 }
 ```
-
-### Security Considerations
-
-⚠️ **XOR Vulnerability**
-When using XOR for comparisons, be aware that it will consider a value with all bits flipped to be equal:
-```solidity
-A ⊕ B = 0           // Equal values
-A ⊕ (NOT A) = 0     // Also considered equal!
-```
-
-### Best Practices
-
-1. **Choose the Right Operation**
-   - Use SUB for general equality checks
-   - Use XOR only when bit manipulation is specifically needed
-   - Consider readability vs gas savings
-
-2. **Security First**
-   - Avoid XOR for security-critical comparisons
-   - Document the reason for using SUB/XOR over ISZERO(EQ)
-   - Always test thoroughly with different inputs
-
-3. **Context Matters**
-   - Consider compiler optimizations
-   - Test gas costs in your specific context
-   - Balance minimal gas savings against code clarity
 
 ### When to Use This Optimization
 
@@ -127,12 +107,6 @@ A ⊕ (NOT A) = 0     // Also considered equal!
 - Complex comparison logic
 - When code clarity is paramount
 
-**Warning**: Always verify that gas savings are meaningful in your specific context, as compiler optimizations might affect the actual benefits.
-
 #### Gas Optimization Tips
 
-🌟 For optimal results:
-- Use SUB for most equality checks
-- Avoid XOR unless specifically needed for bitwise operations
-- Test gas costs with different compiler versions
-- Document your optimization choices clearly
+🌟 Use SUB for equality checks to save gas, avoid XOR unless necessary for bitwise operations, and ensure to document your optimization decisions clearly.
