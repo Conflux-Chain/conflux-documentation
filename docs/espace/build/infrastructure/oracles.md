@@ -51,7 +51,7 @@ The most versatile, seamless and trustworthy oracle solution for your smart cont
     - Build your own custom and parameterized data feeds.
     - Rely on any combination of public sources and APIs on the Internet.
     - Fetch fully unpredictable and unbiased randomness.
-    - Link contracts across multiple chains via **CCDR**s (*i.e. Cross Chain Data Requests*).  
+    - Link contracts across multiple chains via CCDRs (*i.e. Cross Chain Data Requests*).  
 - **Seamless**
     - Pull data updates straight from your smart contracts. 
     - Pay queries to the Wit/Oracle in plain *$CFX* currency.
