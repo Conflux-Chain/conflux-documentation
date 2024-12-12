@@ -42,7 +42,7 @@ Pyth is already integrated in Conflux eSpace, you can use it directly. Check it'
 
 The **[Wit/Oracle](https://witnet.io)** is a public, permissionless, and fully decentralized *Proof-of-Stake* blockchain that is powered by its own cryptocurrency, the *$WIT* coin. 
 
-By means of the ***Wit/Oracle Bridging Framework*** (a set of verified and counter-factual smart contracts deployed by the [*Witnet Foundation*](https://witnet.foundation)), all data that is publicly accessible on the Internet using HTTP/GET, HTTP/POST or even HTTP/HEAD requests, can be attested, aggregated and brought right into your smart contracts, 100% truthful to the data sources being referred.
+By means of the ***Wit/Oracle Bridging Framework*** (a set of verified and counter-factual smart contracts deployed by the [*Witnet Foundation*](https://witnet.foundation)), all data that is publicly accessible on the Internet using HTTP/GET, HTTP/POST or even HTTP/HEAD requests, can be attested, aggregated and brought right into your smart contracts, truthful to the data sources being referred.
 
 The most versatile, seamless and trustworthy oracle solution for your smart contracts:
 
