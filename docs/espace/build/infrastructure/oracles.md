@@ -39,7 +39,6 @@ Pyth is already integrated in Conflux eSpace, you can use it directly. Check it'
 
 ## [Wit/Oracle](https://witnet.io/)
 
-**Start building a truly Decentralized and Censorship-Resistant Future**.
 
 The **[Wit/Oracle](https://witnet.io)** is a public, permissionless, and fully decentralized *Proof-of-Stake* blockchain that is powered by its own cryptocurrency, the *$WIT* coin. 
 
