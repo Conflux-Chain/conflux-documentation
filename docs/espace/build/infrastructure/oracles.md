@@ -64,7 +64,7 @@ The most versatile, seamless and trustworthy oracle solution for your smart cont
     - Witnessing committee members get randomnly selected upon every data update.
     - Formally verify data sources, off-chain computations and sampling timestamps.
 
-Harness the real power of the **Wit/Oracle** and [start building now](https://medium.com/witnet/solidity-and-the-wit-oracle-852bc4b338c1).
+You can check [start building now](https://medium.com/witnet/solidity-and-the-wit-oracle-852bc4b338c1) for the introduction of the Witnet solidity package and contracts framework as well as the tutorial of how to build and pull your own custom data feeds. .
 
 ## FAQs
 
