@@ -65,5 +65,13 @@ The rest of this guide will assume your MetaMask is connected to _Conflux {props
 
 ## 水龙头
 
+### Mainnet Faucet
+
+To interact with our mainnet, you first need to receive mainnet CFX on {props.space} Mainnet. You can get mainnet CFX from [Conflux Faucets](https://conflux-faucets.com/).
+
+These faucets will currently send you 0.02 CFX for Core Space or ESpace. This amount will be enough for 3-10 transactions on {props.space}.
+
+### Testnet Faucet
+
 To interact with our testnet, you first need to receive testnet CFX on {props.space} Testnet. 您可以从我们的 <Faucet /> 获取测试网CFX。
 粘贴您的钱包地址到输入框中，输入验证码并点击 `Claim` （认领）按钮以接收测试网CFX。
