@@ -20,7 +20,7 @@ displayed_sidebar: coreSidebar
 - `epochNumber` - 当前纪元号
 - `posHeight` - PoS链的当前区块高度
 - `finalizedEpochNumber` - （由PoS链）最新确定的PoW纪元号
-
+- `epochHash` - Get epoch hash by epoch number
 ## 接口
 
 `ConfluxContext`的hex40合约地址是`0x0888000000000000000000000000000000000004`
@@ -45,6 +45,8 @@ interface ConfluxContext {
      * @dev get the epoch number of the finalized pivot block.
      * @return the finalized epoch number
      */
-    function finalizedEpochNumber() external view returns (uint256);
+    function finalizedEpochNumber() public view returns (uint256);
+
+    function epochHash(uint256) external view returns (bytes32);
 }
 ```
