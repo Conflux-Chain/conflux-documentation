@@ -36,7 +36,7 @@ import TabItem from '@theme/TabItem';
   </TabItem>
 </Tabs>
 
-## Mainnet Faucet dApp
+## Mainnet Faucet
 
 You can use the [Conflux Faucets](https://conflux-faucets.com/) to get `0.02 CFX` on the mainnet. This amount will be enough for 3-10 transactions on Conflux Core Space.
 
