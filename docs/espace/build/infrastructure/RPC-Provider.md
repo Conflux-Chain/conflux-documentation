@@ -32,7 +32,7 @@ tags: [RPC Providers]
  
 ---
 
-Conflux eSpace has partnered with select RPC Providers and also offers its own, similar to those like Infura, Alchemy, and QuickNode. These can be utilized to connect to the Conflux eSpace network.
+Conflux has partnered with select RPC Providers and also offers its own, similar to those like Infura, Alchemy, and QuickNode. These can be utilized to connect to the Conflux eSpace network.
 
 ## [Validation Cloud](https://www.validationcloud.io/)
 
