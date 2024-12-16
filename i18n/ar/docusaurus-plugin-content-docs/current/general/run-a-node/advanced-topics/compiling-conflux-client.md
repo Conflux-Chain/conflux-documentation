@@ -67,7 +67,7 @@ curl https://sh.rustup.rs -sSf | sh
 # you might need to run 
 # source "$HOME/.cargo/env"
 # to configure your shell
-rustup install 1.62.0
+rustup install 1.77.2
 ```
 
 You might need to install `brew` if you need to use it to install `clang`:
@@ -85,7 +85,7 @@ brew install llvm
 You also need to install other dependencies with homebrew and set up the environment variables as described after the installation:
 
 ```shell
-brew install openssl pkg-config cmake
+brew install openssl pkg-config cmake bzip2 
 ```
 
 ### Windows
@@ -117,6 +117,13 @@ cd conflux-rust
 # build in release mode
 cargo build --release
 ```
+
+If you are building on MacOS and get the error: `could not find native static library bz2` you can try the following command:
+
+```bash
+RUSTFLAGS="-L $(brew --prefix bzip2)/lib -l bz2" cargo build
+```
+
 
 This produces an executable called **conflux** in the **./target/release** subdirectory. The **conflux** binary it a client software that we can use to run a node.
 
