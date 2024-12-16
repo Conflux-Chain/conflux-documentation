@@ -1,9 +1,10 @@
 ---
 sidebar_position: 2
-title: Funding Your Account on Testnet
-description: How to get testnet CFX
+title: Funding Your Account
+description: How to get CFX
 displayed_sidebar: coreSidebar
 keywords:
+  - Mainnet
   - Testnet
   - CFX
   - Faucet
@@ -35,8 +36,11 @@ import TabItem from '@theme/TabItem';
   </TabItem>
 </Tabs>
 
+## Mainnet Faucet
 
-## Faucet dApp
+You can use the [Conflux Faucets](https://conflux-faucets.com/) to get `0.02 CFX` on the mainnet. This amount will be enough for 3-10 transactions on Conflux Core Space.
+
+## Testnet Faucet dApp
 
 We have developed a [Faucet Dapp](https://faucet.confluxnetwork.org/), which not only can be used to claim `CFX` but also tokens, currently includes `FC`, `cUSDT`.
 
