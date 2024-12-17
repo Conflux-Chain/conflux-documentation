@@ -32,7 +32,20 @@ tags:
   - RPC Providers
 ---
 
-Conflux eSpace also offers its own RPC Providers, similar to those like Infura, Alchemy, and QuickNode. These can be utilized to connect to the Conflux eSpace network.
+Conflux has partnered with select RPC Providers and also offers its own, similar to those like Infura, Alchemy, and QuickNode. These can be utilized to connect to the Conflux eSpace network.
+
+## [Validation Cloud](https://www.validationcloud.io/)
+
+Validation Cloud offers an enterprise-grade web3 infrastructure platform covering RPC, Staking, and Data for 50+ leading Web3 blockchains and networks. We are committed to delivering the best performance, reliability and compliance to our users and partners. Validation Cloud is SOC2 Type II certified.
+
+Validation Cloud’s RPC is ranked the fastest RPC globally by CompareNodes and our staking infrastructure handles over $1 Billion of staked assets under management (AUM).
+
+For Conflux, Validation Cloud provides:
+
+- RPC access to both **eSpace Mainnet** and **eSpace Testnet**. See our [documentation](https://docs.validationcloud.io/v1/conflux/overview) for the list of supported methods
+- Self staking CFX via our Conflux validator and earn yield
+
+You can sign up on a free tier, without a credit card, and start making RPC requests to Conflux today at [app.validationcloud.io/node](https://app.validationcloud.io/node).
 
 ## [NOWNodes](https://nownodes.io/conflux)
 
