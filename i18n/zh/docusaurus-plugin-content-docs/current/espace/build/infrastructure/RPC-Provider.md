@@ -32,7 +32,20 @@ tags:
   - RPC 提供商
 ---
 
-Conflux eSpace 也有类似于 Infura、Alchemy 和 QuickNode的 RPC 提供商。 用户可以利用这些提供商连接到 Conflux eSpace 网络。
+Conflux has partnered with select RPC Providers and also offers its own, similar to those like Infura, Alchemy, and QuickNode. 用户可以利用这些提供商连接到 Conflux eSpace 网络。
+
+## [Validation Cloud](https://www.validationcloud.io/)
+
+Validation Cloud offers an enterprise-grade web3 infrastructure platform covering RPC, Staking, and Data for 50+ leading Web3 blockchains and networks. We are committed to delivering the best performance, reliability and compliance to our users and partners. Validation Cloud is SOC2 Type II certified.
+
+Validation Cloud’s RPC is ranked the fastest RPC globally by CompareNodes and our staking infrastructure handles over $1 Billion of staked assets under management (AUM).
+
+For Conflux, Validation Cloud provides:
+
+- RPC access to both **eSpace Mainnet** and **eSpace Testnet**. See our [documentation](https://docs.validationcloud.io/v1/conflux/overview) for the list of supported methods
+- Self staking CFX via our Conflux validator and earn yield
+
+You can sign up on a free tier, without a credit card, and start making RPC requests to Conflux today at [app.validationcloud.io/node](https://app.validationcloud.io/node).
 
 ## [NOWNodes](https://nownodes.io/conflux)
 
