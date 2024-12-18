@@ -40,9 +40,33 @@ Pyth is a renowned oracle service in the industry, offering **Smarter Data for S
 
 Pyth is already integrated in Conflux eSpace, you can use it directly. Check it's [documentation](https://docs.pyth.network/documentation/pythnet-price-feeds/evm#mainnets) for how to use it in your smart contracts.
 
-## [Witnet](https://witnet.io/)
+## [Wit/Oracle](https://witnet.io/)
 
-Witnet is a permissionless, decentralized, and censorship-resistant oracle helping smart contracts to react to real world events with strong crypto-economic guarantees.
+The **[Wit/Oracle](https://witnet.io)** is a public, permissionless, and fully decentralized _Proof-of-Stake_ blockchain that is powered by its own cryptocurrency, the _$WIT_ coin.
+
+By means of the _**Wit/Oracle Bridging Framework**_ (a set of verified and counter-factual smart contracts deployed by the [_Witnet Foundation_](https://witnet.foundation)), all data that is publicly accessible on the Internet using HTTP/GET, HTTP/POST or even HTTP/HEAD requests, can be attested, aggregated and brought right into your smart contracts, truthful to the data sources being referred.
+
+The most versatile, seamless and trustworthy oracle solution for your smart contracts:
+
+- **Versatile**
+  - Access to data of any type, not just price feeds.
+  - Build your own custom and parameterized data feeds.
+  - Rely on any combination of public sources and APIs on the Internet.
+  - Fetch fully unpredictable and unbiased randomness.
+  - Link contracts across multiple chains via CCDRs (_i.e. Cross Chain Data Requests_).
+- **Seamless**
+  - Pull data updates straight from your smart contracts.
+  - Pay queries to the Wit/Oracle in plain _$CFX_ currency.
+  - No need to pre-fund your contracts with third-party ERC-20 tokens.
+  - No need to undergo off-chain subscriptions, nor KYC workflows.
+  - No need to run your own nodes, nor any other sort of infrastructure.
+- **Trustworthy**
+  - Improve data reliability by relying on multiple data sources.
+  - Settle the size of witnessing committees depending on your security concerns.
+  - Witnessing committee members get randomnly selected upon every data update.
+  - Formally verify data sources, off-chain computations and sampling timestamps.
+
+You can check [start building now](https://medium.com/witnet/solidity-and-the-wit-oracle-852bc4b338c1) for the introduction of the Witnet solidity package and contracts framework as well as the tutorial of how to build and pull your own custom data feeds. .
 
 ## FAQs
 

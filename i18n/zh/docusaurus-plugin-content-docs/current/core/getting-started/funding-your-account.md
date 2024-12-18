@@ -1,9 +1,10 @@
 ---
 sidebar_position: 2
-title: 领取测试网代币
-description: 如何获取测试网上的 CFX
+title: Funding Your Account
+description: How to get CFX
 displayed_sidebar: coreSidebar
 keywords:
+  - Mainnet
   - Testnet
   - CFX
   - 水龙头
@@ -35,7 +36,11 @@ import TabItem from '@theme/TabItem';
   </TabItem>
 </Tabs>
 
-## 水龙头 dApp
+## Mainnet Faucet
+
+You can use the [Conflux Faucets](https://conflux-faucets.com/) to get `0.02 CFX` on the mainnet. This amount will be enough for 3-10 transactions on Conflux Core Space.
+
+## Testnet Faucet dApp
 
 我们开发了一个[Faucet Dapp](https://faucet.confluxnetwork.org/)，不仅可以用于领取` CFX`，还可以领取代币，目前包括 `FC` 和 `cUSDT`。
 
