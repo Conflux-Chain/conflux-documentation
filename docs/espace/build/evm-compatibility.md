@@ -69,7 +69,7 @@ Contract max code size is `49152` double as Ethereum
 
 ## Transaction Gas limit
 
-Only the block whose block height is a multiple of `5` can pack Ethereum type transaction. The total gas limit of these transaction cannot exceed half of the block gas limit (15,000,000).
+Only blocks whose height is a multiple of `5` can include Ethereum-type transactions. The total gas limit of these transactions cannot exceed half of the block gas limit, which is 15 million gas before v2.4.0 and 30 million gas after v2.4.0.
 
 ## EVM Precompiles
 
@@ -79,15 +79,15 @@ All standard precompiles are supported.
 
 Address | ID          | Name                                 | Spec           | Status | Version
 ------- | ----------- | ------------------------------------ | -------------- | ------ |------
-0x01    | `ECRecover` | ECDSA public key recovery            | [Yellow Paper] | ✅ | 
-0x02    | `SHA256`    | SHA-2 256-bit hash function          | [Yellow Paper] | ✅ | 
-0x03    | `RIPEMD160` | RIPEMD 160-bit hash function         | [Yellow Paper] | ✅ | 
-0x04    | `Identity`  | Identity function                    | [Yellow Paper] | ✅ | 
-0x05    | `ModExp`    | Big integer modular exponentiation   | [EIP-198]      | ✅ | 
-0x06    | `BN128Add`  | Elliptic curve addition              | [EIP-196]      | ✅ | 
-0x07    | `BN128Mul`  | Elliptic curve scalar multiplication | [EIP-196]      | ✅ | 
-0x08    | `BN128Pair` | Elliptic curve pairing check         | [EIP-197]      | ✅ | 
-0x09    | `Blake2F`   | BLAKE2b `F` compression function     | [EIP-152]      | ✅ | 
+0x01    | `ECRecover` | ECDSA public key recovery            | [Yellow Paper] | ✅  |  
+0x02    | `SHA256`    | SHA-2 256-bit hash function          | [Yellow Paper] | ✅  |  
+0x03    | `RIPEMD160` | RIPEMD 160-bit hash function         | [Yellow Paper] | ✅  |  
+0x04    | `Identity`  | Identity function                    | [Yellow Paper] | ✅  |  
+0x05    | `ModExp`    | Big integer modular exponentiation   | [EIP-198]      | ✅  |  
+0x06    | `BN128Add`  | Elliptic curve addition              | [EIP-196]      | ✅  |  
+0x07    | `BN128Mul`  | Elliptic curve scalar multiplication | [EIP-196]      | ✅  |  
+0x08    | `BN128Pair` | Elliptic curve pairing check         | [EIP-197]      | ✅  |  
+0x09    | `Blake2F`   | BLAKE2b `F` compression function     | [EIP-152]      | ✅  |  
 0x0a    | `PointEvaluation`| Verify p(z) = y given commitment that corresponds to the polynomial p(x) and a KZG proof| [EIP-4844]      | ✅ | V2.4.0
 
 [Yellow Paper]: https://ethereum.github.io/yellowpaper/paper.pdf
