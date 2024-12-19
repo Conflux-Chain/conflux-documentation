@@ -101,6 +101,10 @@ enable_single_mpt_storage=true
 ```
 
 > The Conflux Foundation currently does not provide snapshot data containing the full historical state; users need to synchronize the data themselves.
+> To run a fullstate node, you need to use a specially compiled Conflux client program. Currently, the official release does not provide it, so you need to compile it yourself. The compilation command is:
+```bash
+cargo build --release --features u64-mpt-db-key
+```
 
 ### PivotHint
 
