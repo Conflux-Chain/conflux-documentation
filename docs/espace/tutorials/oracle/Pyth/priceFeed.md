@@ -110,7 +110,7 @@ contract CFXPrice {
         uint fee = pyth.getUpdateFee(priceUpdateData);
         pyth.updatePriceFeeds{value: fee}(priceUpdateData);
 
-        PythStructs.Price memory price = pyth.getPrice(CFX_USD_PRICE_ID);
+        PythStructs.Price memory price = pyth.getPriceNoOlderThan(CFX_USD_PRICE_ID,60);
         return (price.price, price.conf);
     }
 }
