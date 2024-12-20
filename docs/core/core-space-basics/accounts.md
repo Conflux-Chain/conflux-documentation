@@ -64,13 +64,14 @@ curl --data '{"jsonrpc":"2.0","method":"cfx_getAccount","params":["cfx:type.cont
 
 The global state of Conflux is composed of individual account states, each of which is an address-state pair (key pair).
 
-A Conflux account state includes five parts:
+A Conflux account state includes four parts:
 
 - ```Basic state``` is the basic state of the account.
 - ```Storage state``` is a key/value database or storage space that can be used to store custom states or data of smart contracts.
 - ```Code information``` is the code information of the smart contract account. It includes the contract codes and the ```address``` of the account that paid the fee for the storage space occupied by the codes.
-- ```Staking deposit list``` is the list of Staking operations of the accounts (it will be removed in the next Hardfork).
 - ```Staking vote lock list``` is the list of lock operations performed by the account to participate in DAO voting.
+
+> ```Staking deposit list``` is already **removed** in the v2.4.0 Hardfork, which is the list of Staking operations of the account.
 
 The basic status of the account consists of eight fields as follows:
 
