@@ -65,13 +65,13 @@ curl --data '{"jsonrpc":"2.0","method":"cfx_getAccount","params":["cfx:type.cont
 
 Conflux 的全局状态由各个账户状态组成，每个账户状态是一个地址-状态对（键值对）。
 
-Conflux 账户状态包括五个部分：
+A Conflux account state includes four parts:
 
 - `Basic state`是账户的基本状态。
 - `Storage state` 是一个键/值数据库或存储空间，可以用于存储智能合约的自定义状态或数据。
 - `Code information` 是智能合约账户的代码信息。 它包括合约代码和支付代码占用存储空间费用的账户`address`。
-- `Staking deposit list` 是账户的质押操作列表（它将在下一次硬分叉中被移除）。
 - `Staking vote lock list` 是账户为了参与 DAO 投票而执行的锁定操作列表。
+> `Staking deposit list` is already **removed** in the v2.4.0 Hardfork, which is the list of Staking operations of the account.
 
 账户的基本状态由以下八个字段组成：
 

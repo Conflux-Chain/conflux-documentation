@@ -79,6 +79,7 @@ import TabItem from '@theme/TabItem';
 | debug_traceTransaction                  | ✅  | Supported at v2.4.0              |
 | debug_traceBlockByHash                  | ✅  | Supported at v2.4.0              |
 | debug_traceBlockByNumber                | ✅  | Supported at v2.4.0              |
+| debug_traceCall                         | ✅  | Supported at v2.4.1              |
 | net_listening                           | ❌  |                                  |
 | net_peerCount                           | ❌  |                                  |
 | eth_compileLLL                          | ❌  |                                  |

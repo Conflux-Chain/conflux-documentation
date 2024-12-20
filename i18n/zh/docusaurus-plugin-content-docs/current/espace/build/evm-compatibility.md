@@ -69,7 +69,7 @@ eSpace 实现了一个以太坊虚拟机 (EVM)。 以下是 eSpace 和以太坊�
 
 ## 交易的 Gas 上限
 
-只有区块高度是 `5` 的倍数的区块才能打包以太坊类型交易。 这些交易的总 gas 上限不能超过区块 gas 上限的一半（1500w）。
+Only blocks whose height is a multiple of `5` can include Ethereum-type transactions. The total gas limit of these transactions cannot exceed half of the block gas limit, which is 15 million gas before v2.4.0 and 30 million gas after v2.4.0.
 
 ## EVM 预编译合约
 
