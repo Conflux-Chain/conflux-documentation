@@ -83,21 +83,25 @@ function getConfig() {
         },
       ],
       [
-        "./plugins/openrpc/index.ts",
+        "./plugins/docusaurus-openrpc/src/index.ts",
         {
-          id: "cspace",
-          path: "/docs/core/rpc",
-          openrpcDocument: "./plugins/openrpc/src/rpc/cfx.json", // path or url to openrpc document.
-          defaultEndpoint: "https://test.confluxrpc.com",
+          id: "coreSpace",
+          openRPCPath: "./plugins/docusaurus-openrpc/src/rpcs/cfx.json",
+          outputPath: "./docs/core/rpcs",
+          category: {
+            label: "Core Space JSON RPC(Interactive)",
+          },
         },
       ],
       [
-        "./plugins/openrpc/index.ts",
+        "./plugins/docusaurus-openrpc/src/index.ts",
         {
-          id: "espace",
-          path: "/docs/espace/rpc",
-          openrpcDocument: "./plugins/openrpc/src/rpc/Eth.json", // path or url to openrpc document.
-          defaultEndpoint: "https://evmtestnet.confluxrpc.com",
+          id: "eSpace",
+          openRPCPath: "./plugins/docusaurus-openrpc/src/rpcs/Eth.json",
+          outputPath: "./docs/espace/rpcs",
+          category: {
+            label: "eSpace JSON RPC(Interactive)",
+          },
         },
       ],
     ],

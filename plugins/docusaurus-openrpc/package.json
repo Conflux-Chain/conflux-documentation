@@ -1,0 +1,37 @@
+{
+  "name": "docusaurus-openrpc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./lib/index.js",
+  "scripts": {
+    "build": "tsc && node copyUntypedFiles.mjs",
+    "build:watch": "tsc --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@docusaurus/module-type-aliases": "3.6.1",
+    "@docusaurus/types": "3.6.1",
+    "@types/mustache": "^4.2.5",
+    "@types/node": "^22.9.0",
+    "@types/react": "^18.3.12",
+    "fs-extra": "^11.2.0",
+    "typescript": "~5.6.2"
+  },
+  "dependencies": {
+    "@docusaurus/utils-validation": "^3.6.1",
+    "@open-rpc/meta-schema": "^1.14.9",
+    "@open-rpc/schema-utils-js": "^2.0.5",
+    "@rjsf/bootstrap-4": "^5.23.2",
+    "@rjsf/core": "^5.23.2",
+    "@rjsf/utils": "^5.23.2",
+    "@rjsf/validator-ajv8": "^5.23.2",
+    "bootstrap": "4.6.2",
+    "framer-motion": "^5",
+    "json-schema-typed": "^8.0.1",
+    "mustache": "^4.2.0",
+    "react": "^18.0.0",
+    "react-bootstrap": "^1.6.5"
+  }
+}
