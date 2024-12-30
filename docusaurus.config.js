@@ -87,9 +87,10 @@ function getConfig() {
         {
           id: "coreSpace",
           openRPCPath: "./plugins/docusaurus-openrpc/src/rpcs/cfx.json",
-          outputPath: "./docs/core/rpcs",
+          outputPath: "./docs/core/build/json-rpc/rpcs",
           category: {
             label: "Core Space JSON RPC(Interactive)",
+            position: 7
           },
         },
       ],
@@ -98,9 +99,10 @@ function getConfig() {
         {
           id: "eSpace",
           openRPCPath: "./plugins/docusaurus-openrpc/src/rpcs/Eth.json",
-          outputPath: "./docs/espace/rpcs",
+          outputPath: "./docs/espace/build/rpcs",
           category: {
             label: "eSpace JSON RPC(Interactive)",
+            position: 5
           },
         },
       ],
