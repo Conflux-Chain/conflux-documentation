@@ -31,14 +31,7 @@ async function pluginOpenRPCDocs(
 
     async loadContent() {
       const rpcDocument = await parseOpenRPCDocument(options.openRPCPath);
-
-      return {
-        openrpc: rpcDocument,
-      };
-    },
-
-    async contentLoaded({ content, actions }) {
-      const { openrpc } = content;
+      const  openrpc  = rpcDocument;
 
       const outputPath = `${options.outputPath}`;
       // check the outputPath dir exists
@@ -81,7 +74,12 @@ async function pluginOpenRPCDocs(
       } catch (err) {
         throw new Error(`Failed to write ${outputPath}/sidebar.js`);
       }
+      return {
+        openrpc: rpcDocument,
+      };
     },
+
+    async contentLoaded({ content, actions }) {},
 
     async postBuild(props) {
       // After docusaurus <build> finish.
