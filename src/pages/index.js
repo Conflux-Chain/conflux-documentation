@@ -7,7 +7,7 @@ import FeatureCards from "@site/src/modules/featureCards";
 import conflux from "@site/static/img/conflux.png";
 import styles from "./index.module.css";
 import Translate, { translate } from "@docusaurus/Translate";
-console.log(conflux);
+
 const Home = () => {
   const { siteConfig } = useDocusaurusContext();
 

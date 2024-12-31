@@ -21,3 +21,5 @@ yarn-error.log*
 
 .vscode/
 .idea
+/docs/core/build/json-rpc/rpcs
+/docs/espace/build/rpcs
