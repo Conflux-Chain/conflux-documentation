@@ -27,7 +27,7 @@
     "@rjsf/core": "^5.23.2",
     "@rjsf/utils": "^5.23.2",
     "@rjsf/validator-ajv8": "^5.23.2",
-    "bootstrap": "4.6.2",
+    "bootstrap": "5.0.1",
     "framer-motion": "^5",
     "json-schema-typed": "^8.0.1",
     "mustache": "^4.2.0",
