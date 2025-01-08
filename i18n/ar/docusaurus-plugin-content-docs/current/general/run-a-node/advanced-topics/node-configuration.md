@@ -101,7 +101,10 @@ Enabling the fullstate mode for dual spaces.
 enable_single_mpt_storage=true
 ```
 
-> The Conflux Foundation currently does not provide snapshot data containing the full historical state; users need to synchronize the data themselves.
+> The Conflux Foundation currently does not provide snapshot data containing the full historical state; users need to synchronize the data themselves. To run a **fullstate node**, which enables querying blockchain state on any block height, you need to use a specially compiled Conflux client program. Currently, the official binary release does not enable this feature, and you need to compile it yourself. The compilation command is:
+```bash
+cargo build --release --features u64-mpt-db-key
+```
 
 ### PivotHint
 
