@@ -24,4 +24,4 @@ displayed_sidebar: coreSidebar
 
 ### cfx_getEpochReceipts
 
-Get one epoch's all receipts in one RPC call. Document moved to [cfx_getEpochReceipts](./cfx-namespace.md#cfx_getepochreceipts).
+一次RPC调用即可获取一个epoch的所有回执。 文档已转移至[cfx_getEpochReceipts](./cfx-namespace.md#cfx_getepochreceipts)。
