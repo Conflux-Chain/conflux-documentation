@@ -77,7 +77,7 @@ persist_tx_index=true
 
 ### 交易跟踪
 
-Parity style transaction trace related options.
+Parity 风格的交易跟踪相关选项
 
 ```toml
 executive_trace=true
@@ -101,7 +101,7 @@ single_mpt_space = "evm" # 核心空间使用"native"
 enable_single_mpt_storage=true
 ```
 
-> The Conflux Foundation currently does not provide snapshot data containing the full historical state; users need to synchronize the data themselves. To run a **fullstate node**, which enables querying blockchain state on any block height, you need to use a specially compiled Conflux client program. Currently, the official binary release does not enable this feature, and you need to compile it yourself. The compilation command is:
+> 目前，Conflux 基金会不提供包含完整历史状态的快照数据，用户需要自行同步数据。 要运行一个支持在任意区块高度查询区块链状态的 **fullstate node** 节点，您需要使用一个特殊编译的 Conflux 客户端程序。 目前，官方的二进制发布版本未启用此功能，您需要自行编译。 The compilation command is:
 ```bash
 cargo build --release --features u64-mpt-db-key
 ```
