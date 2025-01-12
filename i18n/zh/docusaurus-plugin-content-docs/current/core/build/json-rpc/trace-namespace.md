@@ -61,7 +61,7 @@ Get block traces by block hash
 
 #### 参数
 
-1. DATA, 32 Bytes - hash of a block
+1. DATA，32 字节 - 区块的哈希。
 
 #### 返回值
 
@@ -220,7 +220,7 @@ Get transaction's trace by it's hash
 * `epochNumber`: `QUANTITY` - Number of epoch
 * `epochHash`: `HASH` - Hash of epoch
 * `blockHash`: `HASH` - Hash of block
-* `action`: `OBJECT` - Trace info
+* `action`: `OBJECT` - 追踪信息
 
 ```json
 // Request
@@ -417,7 +417,7 @@ Returns all traces matching the provided filter.
 
 #### 返回值
 
-Same as `trace_transaction`
+与 `trace_transaction` 相同
 
 ## Note
 
@@ -431,7 +431,7 @@ From Conflux-rust v2.0 the trace RPC have imported some breaking change, below i
 
 **Note: To use the new trace data, the fullnode data should be cleaned and resynchronization.**
 
-### New added field `valid`
+### 新增 `valid` 字段
 
 A new field `valid` is added to trace to indicate whether the corresponding trace is reverted.
 
@@ -493,9 +493,9 @@ After execution, if this transaction costs 25000 gas, up to 1/4 of gas limit, i.
 
 ### Trace for storage collateral.
 
-Consider a transaction collateralize 10 Drip (it can not happen in a real Conflux system, just for example).
+考虑一个交易抵押了 10 Drip（在真实的 Conflux 系统中不会发生，仅作为示例）。
 
-If the transaction is sponsored,
+如果交易被赞助，
 
 ```js
 {
@@ -548,7 +548,7 @@ Each time a contract is killed, it will produce such a trace,
 }
 ```
 
-### New added `space` field
+### 新增加的 `space` 字段
 
 The `call` and `create` type action will add a new field `space` indicate wich space the trace is occured, the possible value are:
 
@@ -575,7 +575,7 @@ In Conflux, each account could have several pockets to store CFX.
 
 The fromPocket field and toPocket field could be one of them.
 
-Besides these five values, the "pocket" could be two special values `mint_burn` and `gas_payment`.
+除了这五个值之外，"pocket" 还可以是两个特殊值 `mint_burn`和 `gas_payment`。
 
 * fromPocket = `mint_burn`: mint CFX, e.g., generate staking interest
 * toPocket = `mint_burn`: burn CFX, e.g., when a contract is killed, its staking balance will be burnt.
@@ -590,11 +590,11 @@ Besides these five values, the "pocket" could be two special values `mint_burn` 
 
 ### Changes in integrity constraints
 
-#### Before change
+#### 变更前
 
 * The balance increasing (or decreasing) of an address (except the internal contract) during transaction execution corresponds to a trace whose "to" (or "from") is this address.
 
-#### After change
+#### 变更后
 
 * The balance increasing (or decreasing) of an address (all the address) during transaction execution corresponds to a trace whose "to" (or "from") is this address and "toPocket" (or "fromPocket") is "balance". (Note: for trace type except "interal_transfer_action", the "fromPocket" and "toPocket" equal to "balance" implicitly.)
 * The staking balance/collateral balance/sponsor balance for gas/sponsor balance for collateral increasing (or decreasing) of an address during transaction execution corresponds to an internal_transfer type trace whose "to" (or "from") is this address and "toPocket" (or "fromPocket") is "sponsor_balance"/"storage_collateral"/"sponsor_balance_for_gas"/"sponsor_balance_for_collateral".
