@@ -45,7 +45,7 @@ tags:
 
 ## 克隆 Scaffold Conflux
 
-在您的 visual studio 终端中，运行以下命令克隆仓库并安装依赖。
+In your visual studio terminal, run the following to clone the repository and install the dependencies.
 
 ```bash
 git clone https://github.com/conflux-fans/conflux-scaffold
@@ -60,7 +60,7 @@ yarn install
 
 - 您可以在 /conflux-scaffold/packages/hardhat/contracts 中调整您的智能合约Solidity文件
 - 例如，当前的 Solidity 样本文件是 "YourContract.sol"
-- 启动您的区块链以进行测试。 我们这样做是为了轻松创建账户并与智能合约进行交互，而不需要在测试网（即  RPC 限制）和 Conflux eSpace（即 Gas 费用）上部署
+- Start up your local blockchain for testing purposes. This allows you to easily create accounts and interact with the smart contract without deploying it on testnet (i.e.  RPC 限制）和 Conflux eSpace（即 Gas 费用）上部署
 
 ```bash
 yarn chain
