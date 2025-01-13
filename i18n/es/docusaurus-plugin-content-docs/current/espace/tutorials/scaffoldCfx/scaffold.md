@@ -45,7 +45,7 @@ Watch this [video](https://youtu.be/33S0IjGGsQg) for full tutorial on how to cre
 
 ## Clone Scaffold Conflux
 
-In your visual studio terminal, run the following to clone the repo and install the dependencies.
+In your visual studio terminal, run the following to clone the repository and install the dependencies.
 
 ```bash
 git clone https://github.com/conflux-fans/conflux-scaffold
@@ -60,7 +60,7 @@ The repository contains two main sections. The first section is for hardhat.
 
 - You can adjust your smart contract solidity files in /conflux-scaffold/packages/hardhat/contracts
 - For example, the current sample solidity file is "YourContract.sol"
-- Start up your blockchain for testing purposes. We do this to easily create accounts and interact with the smart contract without deploying it on testnet (i.e. RPC limits) and Conflux eSpace (i.e. gas fees)
+- Start up your local blockchain for testing purposes. This allows you to easily create accounts and interact with the smart contract without deploying it on testnet (i.e. RPC limits) and Conflux eSpace (i.e. gas fees)
 
 ```bash
 yarn chain
