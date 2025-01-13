@@ -15,7 +15,7 @@ keywords:
   - State Query
   - Mainnet
   - Testnet
-  - Configuration
+  - 配置
   - TOML
   - Blockchain Data
   - Snapshot
