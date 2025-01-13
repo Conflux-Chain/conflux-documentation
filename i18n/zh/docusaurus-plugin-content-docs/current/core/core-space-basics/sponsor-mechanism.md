@@ -9,7 +9,7 @@ keywords:
   - 存储抵押
   - SponsorWhitelistControl
   - Sponsor Balance
-  - Whitelist
+  - 白名单
   - Gas Sponsorship
   - Storage Sponsorship
   - 交易费用
@@ -76,7 +76,7 @@ Conflux Core 空间实现了代付机制，来补贴智能合约的使用。 这
 
 类似的，如果在调用 `setSponsorForCollateral` 时合约已经有了赞助者，且新赞助者与当前赞助者相同，则合约的赞助余额将增加。 如果新的赞助者发生变动，合约的赞助余额将被被替换。 在这种情况下，新的代付金额需要大于 `currentSponsorBalance + currentCollateral`。 前一个赞助者的余额和抵押物将被退还，剩余金额将会作为更换代付方后的代付余额(其中一部分将转换为存储点)。
 
-### Whitelist
+### 白名单
 
 `SponsorWhitelistControl`还会维护每个赞助合约的白名单。 只有在这个白名单上的地址才能在与合约交互时享受赞助的好处；否则，交易费用必须由交易的发送者支付。 这个白名单可以通过 `SponsorWhitelistControl` 中的 `addPrivilegeByAdmin` 和`removePrivilegeByAdmin` 方法来修改。
 
