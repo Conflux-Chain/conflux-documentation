@@ -25,7 +25,7 @@ tags:
   - Conflux Plugin
 ---
 
-[Hardhat](https://hardhat.org/) is an exceptional tool for building smart contracts. It serves as a development environment, testing framework, and asset pipeline for Ethereum-like blockchains, such as Conflux. The [Hardhat Conflux Plugin](https://github.com/conflux-chain/hardhat-conflux) adds Conflux Core Space support to Hardhat.
+[Hardhat](https://hardhat.org/) 是构建智能合约的卓越工具。 它为像以太坊这样的区块链（比如 Conflux）提供了开发环境、测试框架和资产管理流程。 The [Hardhat Conflux Plugin](https://github.com/conflux-chain/hardhat-conflux) adds Conflux Core Space support to Hardhat.
 
 Developers can use Hardhat to compile Solidity code and the Hardhat-Conflux plugin to deploy, interact with, and test contracts on Core Space.
 
@@ -35,27 +35,27 @@ The Hardhat-Conflux plugin is built on top of `js-conflux-sdk`, making its usage
 
 ## 安装
 
-After installing Hardhat, you can install the plugin with:
+安装完 Hardhat 后，您可以使用以下命令安装插件：
 
 ```bash
 npm install hardhat-conflux js-conflux-sdk
 ```
 
-## Configuration
+## 配置
 
-First, import the plugin in your `hardhat.config.js`:
+首先，在您的 `hardhat.config.js` 中导入插件：
 
 ```js
 require("hardhat-conflux");
 ```
 
-Or in `hardhat.config.ts`:
+或者在 `hardhat.config.ts` 中:
 
 ```ts
 import "hardhat-conflux";
 ```
 
-Then, add the Conflux network to your `hardhat.config.js`:
+然后，在您的 `hardhat.config.js` 中添加 Conflux 网络：
 
 ```js
 const PRIVATE_KEY = "0x0123456789012345678901234567890123456789012345678901234567890123"; // replace with your private key
@@ -76,31 +76,31 @@ module.exports = {
 }
 ```
 
-If your configuration file is `hardhat.config.ts`, the settings are similar.
+如果您的配置文件是 `hardhat.config.ts`，设置是类似的。
 
-Ensure that the private key's account you use has enough balance to interact with Core Space. If not, you can use the [faucet](https://faucet.confluxnetwork.org/) to obtain some test tokens.
+确保您使用的私钥账户有足够的余额与 Core Space 互动。 如果没有的话，您可以使用[水龙头](https://faucet.confluxnetwork.org/)获取一些测试代币。
 
-## What the Hardhat-Conflux Plugin Provides
+## Hardhat-Conflux 插件提供的功能
 
-### Tasks
+### 任务
 
-This plugin provides the `verifyCfxContract` task, which allows you to verify contracts through ConfluxScan's service.
+此插件提供了 `verifyCfxContract` 任务，允许您通过 ConfluxScan 的服务验证合约。
 
 ```shell
 npx hardhat verifyCfxContract Greeter cfxtest:acba7cvb1k6bhctzsfshybg5zgch39gnpuc8teem53
 ```
 
-### Environment Extensions
+### 环境扩展
 
-This plugin extends the Hardhat Runtime Environment by adding the following members:
+此插件通过添加以下内容来扩展 Hardhat 运行时环境：
 
 #### ConfluxSDK
 
-This is the `js-conflux-sdk` object, which is the same as the one obtained by `require('js-conflux-sdk')`.
+这是 `js-conflux-sdk` 对象，与通过 `require('js-conflux-sdk')` 获取的对象相同。
 
-#### conflux object
+#### conflux 对象
 
-A Conflux field is added to the Hardhat Runtime Environment, which is a Conflux instance automatically connected to the selected network, with extra Hardhat-specific functionality.
+Hardhat 运行时环境中添加了 Conflux 字段，这是一个自动连接到所选网络的 Conflux 实例，具有额外的 Hardhat 特定功能。
 
 ```js
 // Get a signer array
@@ -115,13 +115,13 @@ function getContractAt(name: string, address: string): Promise<ConfluxSDK.Contra
 function getContractAt(abi: any[], address: string): Promise<ConfluxSDK.Contract>;
 ```
 
-## 用法
+## 使用方法
 
-Developers can write Hardhat scripts to deploy, interact with, and test contracts on Core Space.
+开发者可以通过编写 Hardhat 脚本在 Core Space 上部署、交互和测试合约。
 
 ### 部署合约
 
-Here is a simple example of deploying a contract:
+以下是部署合约的简单示例：
 
 ```js
 
@@ -153,17 +153,17 @@ main().catch(err => {
 });
 ```
 
-Then, you can run this script with:
+然后，您可以使用以下命令运行此脚本：
 
 ```shell
 npx hardhat run scripts/deploy.js --network cfxTestnet
 ```
 
-After executing the script, you can view the contract address in the console.
+执行脚本后，您可以在控制台中查看合约地址。
 
-### Interact with Contract
+### 与合约交互
 
-Here is a simple example of interacting with a contract:
+以下是与合约交互的简单示例：
 
 ```js
 async function main() {
@@ -190,34 +190,34 @@ main().catch(err => {
 });
 ```
 
-Then, you can run this script with:
+然后，您可以使用以下命令运行此脚本：
 
 ```shell
 npx hardhat run scripts/interact.js --network cfxTestnet
 ```
 
-### Verify Contract
+### 验证合约
 
-Use the **verifyCfxContract** task to verify contracts through ConfluxScan's service.
+使用 **verifyCfxContract** 任务来通过 ConfluxScan 的服务验证合约。
 
 ```shell
 npx hardhat verifyCfxContract Greeter cfxtest:acba7cvb1k6bhctzsfshybg5zgch39gnpuc8teem53
 ```
 
-## Complete Example
+## 完整示例
 
-A complete example is available at [hardhat-conflux-example](https://github.com/Conflux-Chain/hardhat-conflux-example).
+完整示例您可在 [hardhat-conflux-example](https://github.com/Conflux-Chain/hardhat-conflux-example) 中找到。
 
 ## 常见问题解答
 
-### Can I use the Hardhat network to test contracts for Conflux Core?
+### 我可以在 Conflux Core 上使用 Hardhat 网络测试合约吗？
 
-If your contracts do not use any Conflux-specific features (like Internal Contracts, 1820, create2), you can use the Hardhat network to test your contracts. For the VM differences between the Hardhat network and Conflux Core, please refer to [VM differences](../core-space-basics/vm-difference.md).
+如果您的合约不使用任何 Conflux 特定功能（如内部合约、1820、create2），您可以使用 Hardhat 网络测试您的合约。 有关 Hardhat 网络和 Conflux Core 之间的 VM 差异，请参阅 [VM 差异](../core-space-basics/vm-difference.md)。
 
-### Can I use the Hardhat fork feature on Conflux Core?
+### 我可以在 Conflux Core 上使用 Hardhat 的分叉功能吗？
 
-没有。 The Hardhat fork feature is not supported on Conflux Core.
+不可以 Conflux Core 不支持 Hardhat 的分叉功能。
 
-### When I use helper methods in TypeScript, it shows an error like `Property 'getContractFactory' does not exist on 'hre.conflux'`
+### 当我在 TypeScript 中使用助手方法时，出现类似 `Property 'getContractFactory' does not exist on 'hre.conflux'` 的错误
 
-Currently, this plugin does not provide TypeScript type definitions. You can use `// @ts-ignore` to suppress the error message; it will not affect the code's execution. We plan to provide TypeScript type definitions in the future.
+目前，此插件没有提供 TypeScript 的类型定义。 您可以使用 `// @ts-ignore ` 来避免错误信息的提示；这并不会对代码执行产生影响。 我们计划未来提供 TypeScript 类型定义。
