@@ -51,4 +51,4 @@ tags:
 
 ### Core Space支持EIP-1559交易或EIP-2718吗？
 
-Core space supports typed transaction as well as `maxFeePerGas`, `maxPriorityFeePerGas` transaction fields as described in EIP-1559. But it should be noticed Conflux Core Space adopts a different RLP structure to implement typed transaction, just similar to the difference between Ethereum 155 transaction and Core Space legacy transaction.
+Core space支持类型化交易以及EIP-1559中描述的`maxFeePerGas`和`maxPriorityFeePerGas`交易字段。 需要注意的是，Conflux Core Space采用了不同的RLP结构来实现类型化交易，这与以太坊 155 交易和 Core Space 传统交易之间的差异类似。
