@@ -47,10 +47,10 @@ ConfluxScan 提供了一个高效的 [在线地址转换器](https://www.conflux
 
 The following contract has been deployed and verified on the Conflux core space.
 
-Mainnet:
+主网：
 
 - Multicall3: [cfx:acevn2d3dr6vh4jca28c6cmvkktsg7r8n25vp9hnmw](https://confluxscan.io/address/cfx:acevn2d3dr6vh4jca28c6cmvkktsg7r8n25vp9hnmw?tab=contract-viewer)
 
-Testnet:
+测试网：
 
 - Multicall3: [cfxtest:acay1u1fj9bz93334efs447tx1x6y5p61a944zyy47](https://testnet.confluxscan.io/address/cfxtest:acay1u1fj9bz93334efs447tx1x6y5p61a944zyy47?tab=contract-viewer)
