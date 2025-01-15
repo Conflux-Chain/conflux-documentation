@@ -41,7 +41,7 @@ UUPS is an upgradeable proxy pattern that addresses some limitations of the tran
 
 UUPS is often preferred for its balance of security, gas efficiency, and flexibility. In this tutorial, we'll implement and deploy upgradeable contracts using UUPS on Conflux eSpace.
 
-## Project Setup
+## 项目设置
 
 1. Create a new directory and initialize the project:
 
@@ -66,7 +66,7 @@ npx hardhat
 
 Choose "Create a JavaScript project".
 
-4. Configure Hardhat
+4. 配置Hardhat
 
 Edit the `hardhat.config.js` file:
 
