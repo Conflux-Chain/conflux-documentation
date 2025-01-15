@@ -12,7 +12,7 @@ displayed_sidebar: eSpaceSidebar
 
 This tutorial will guide you through the process of deploying and upgrading smart contracts on Conflux eSpace using Foundry.
 
-## 1. Project Setup
+## 1. 项目设置
 
 First, ensure you have Foundry installed. If not, follow the [official Foundry installation guide](https://book.getfoundry.sh/getting-started/installation).
 
