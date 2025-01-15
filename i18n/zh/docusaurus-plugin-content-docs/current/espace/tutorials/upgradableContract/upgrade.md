@@ -47,9 +47,9 @@ This pattern allows for upgrading contract logic while preserving the contract's
 
 Next, we'll proceed with the tutorial on how to implement this pattern on Conflux eSpace using Hardhat.
 
-## 1. Project Setup
+## 1. 项目设置
 
-First, ensure you have Node.js and npm installed. Then, create a new directory and initialize the project:
+首先，确保你已经安装了 Node.js 和 npm。 Then, create a new directory and initialize the project:
 
 ```
 mkdir upgradeable-contract-demo
@@ -68,7 +68,7 @@ When prompted, choose "Create a JavaScript project". This will create a basic Ha
 
 After completing these steps, you'll have a basic Hardhat project structure using JavaScript, ready for writing and deploying upgradeable contracts.
 
-## 2. Configure Hardhat
+## 2. 配置Hardhat
 
 Create a Hardhat configuration file:
 
