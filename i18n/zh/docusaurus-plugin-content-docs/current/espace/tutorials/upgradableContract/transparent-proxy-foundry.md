@@ -20,7 +20,7 @@ tags:
 
 This tutorial demonstrates how to deploy and upgrade smart contracts using the transparent proxy pattern with Foundry. The transparent proxy pattern allows you to upgrade your smart contracts while maintaining the same address and state.
 
-## Project Setup
+## 项目设置
 
 1. Create a new Foundry project:
 
