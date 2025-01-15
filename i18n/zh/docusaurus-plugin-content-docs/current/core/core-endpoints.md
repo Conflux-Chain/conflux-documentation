@@ -11,7 +11,7 @@ keywords:
   - Testnet
   - Confura
   - Unifra
-  - Chain ID
+  - 链 ID
   - HTTP Endpoints
   - WebSocket Endpoints
   - Rate Limits
@@ -124,6 +124,6 @@ Unifra提供：
 
 ### 公共端点
 
-| 网络名称    | Chain ID | 浏览器网址                   | 端点                                    |
-| ------- | -------- | ----------------------- | ------------------------------------- |
-| Mainnet | 1029     | https://confluxscan.net | https://conflux-core-public.unifra.io |
+| 网络名称    | 链 ID | 浏览器网址                   | 端点                                    |
+| ------- | ---- | ----------------------- | ------------------------------------- |
+| Mainnet | 1029 | https://confluxscan.net | https://conflux-core-public.unifra.io |
