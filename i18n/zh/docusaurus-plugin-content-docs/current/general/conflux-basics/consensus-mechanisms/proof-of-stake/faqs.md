@@ -12,7 +12,7 @@ keywords:
   - validators
   - staking
   - 51-attack
-sidebar_position: 3
+sidebar_position: 4
 displayed_sidebar: generalSidebar
 tags:
   - Proof-of-Stake
