@@ -69,17 +69,17 @@ import TabItem from '@theme/TabItem';
 | trace_block                             | ✅  | Parity RPC                       |
 | trace_filter                            | ✅  | Parity RPC                       |
 | trace_transaction                       | ✅  | Parity RPC                       |
-| eth_feeHistory                          | ✅  | Supported at v2.4.0              |
+| eth_feeHistory                          | ✅  | 在v2.4.0版本中支持。                    |
 | eth_getFilterChanges                    | ✅  | 在v2.1.1版本中支持                     |
 | eth_getFilterLogs                       | ✅  | 在v2.1.1版本中支持                     |
-| eth_newBlockFilter                      | ✅  | 在v2.1.1版本中支持                     |
-| eth_newFilter                           | ✅  | 在v2.1.1版本中支持                     |
-| eth_newPendingTransactionFilter         | ✅  | 在v2.1.1版本中支持                     |
-| eth_uninstallFilter                     | ✅  | 在v2.1.1版本中支持                     |
-| debug_traceTransaction                  | ✅  | Supported at v2.4.0              |
-| debug_traceBlockByHash                  | ✅  | Supported at v2.4.0              |
-| debug_traceBlockByNumber                | ✅  | Supported at v2.4.0              |
-| debug_traceCall                         | ✅  | Supported at v2.4.1              |
+| eth_newBlockFilter                      | ✅  | 在v2.1.1版本中支持。                    |
+| eth_newFilter                           | ✅  | 在v2.1.1版本中支持。                    |
+| eth_newPendingTransactionFilter         | ✅  | 在v2.1.1版本中支持。                    |
+| eth_uninstallFilter                     | ✅  | 在v2.1.1版本中支持。                    |
+| debug_traceTransaction                  | ✅  | 在v2.4.0版本中支持。                    |
+| debug_traceBlockByHash                  | ✅  | 在v2.4.0版本中支持。                    |
+| debug_traceBlockByNumber                | ✅  | 在v2.4.0版本中支持。                    |
+| debug_traceCall                         | ✅  | 在v2.4.1版本中支持。                    |
 | net_listening                           | ❌  |                                  |
 | net_peerCount                           | ❌  |                                  |
 | eth_compileLLL                          | ❌  |                                  |
@@ -96,17 +96,17 @@ import TabItem from '@theme/TabItem';
 
 ## 备注
 
-* `eth_sendRawTransaction` supports legacy(EIP-155), type-1(EIP-2930) and type-2(EIP-1559) transactions. Type-3 transactions (EIP-4844) transactions are not supported yet.
+* `eth_sendRawTransaction`支持传统交易（EIP-155）、类型1交易（EIP-2930）和类型2交易（EIP-1559）。 目前尚不支持类型-3的交易（EIP-4844）。
 * 此处未列出的方法也不支持。
 * 没有所谓的 uncle（又称 ommer）区块。 `eth_getUncleByBlockHashAndIndex` 和 `eth_getUncleByBlockNumberAndIndex` 方法总是返回 `null`。 `eth_getUncleCountByBlockHash` 和 `eth_getUncleCountByBlockNumber` 方法对有效的区块 ID 返回零，对无效的区块 ID 返回 `null`。 此外，与 uncle 相关的区块元数据如 `sha3Uncles` 是空的哈希数组 sha3。
 * 目前不支持非标准的 Geth 跟踪 API
 * 非标准 Parity 跟踪 API 正在开发中
 
-### extra `burntGasFee` field of transaction receipts
+### 交易收据中额外的`burntGasFee`字段
 
-The implementation of 1559 in Conflux eSpace differs slightly from Ethereum. The base fee of the transaction is not entirely burned; instead, it is partially burned according to a certain ratio, with the remaining part still serving as the miner's revenue. An additional field `burntGasFee` is added to the transaction receipt (e.g. got from `eth_getTransactionReceipt` RPC) to record the amount of fees that is burned.
+Conflux eSpace中的1559实现与Ethereum略有不同。 交易的基本费用并未完全销毁，而是按照一定比例部分销毁，其余部分仍作为矿工收入。 交易收据（例如通过`eth_getTransactionReceipt` RPC获得）中增加了一个额外的字段`burntGasFee`，用于记录被销毁的费用金额。
 
-For more information, please refer to [CIP-137](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-137.md).
+更多信息，请参考[CIP-137](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-137.md)。
 
 ### `pending` 标签
 
