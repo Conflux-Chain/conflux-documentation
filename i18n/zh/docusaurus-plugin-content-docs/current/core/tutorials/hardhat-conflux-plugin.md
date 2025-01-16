@@ -25,11 +25,11 @@ tags:
   - Conflux Plugin
 ---
 
-[Hardhat](https://hardhat.org/) 是构建智能合约的卓越工具。 它为像以太坊这样的区块链（比如 Conflux）提供了开发环境、测试框架和资产管理流程。 The [Hardhat Conflux Plugin](https://github.com/conflux-chain/hardhat-conflux) adds Conflux Core Space support to Hardhat.
+[Hardhat](https://hardhat.org/) 是构建智能合约的卓越工具。 它为像以太坊这样的区块链（比如 Conflux）提供了开发环境、测试框架和资产管理流程。 [Hardhat Conflux 插件](https://github.com/conflux-chain/hardhat-conflux) 为 Hardhat 添加了对 Conflux Core Space 的支持。
 
-Developers can use Hardhat to compile Solidity code and the Hardhat-Conflux plugin to deploy, interact with, and test contracts on Core Space.
+开发者可以使用 Hardhat 编译 Solidity 代码，并使用 Hardhat-Conflux 插件在 Core Space 上部署、交互和测试合约。
 
-The Hardhat-Conflux plugin is built on top of `js-conflux-sdk`, making its usage for deployment and interaction very similar to that of `js-conflux-sdk`.
+Hardhat-Conflux 插件基于 `js-conflux-sdk` 构建，使其用于部署和交互的方式与 `js-conflux-sdk` 非常相似。
 
 如果您不熟悉 Hardhat，请参考 [Hardhat 文档](https://hardhat.org/getting-started/)。
 
