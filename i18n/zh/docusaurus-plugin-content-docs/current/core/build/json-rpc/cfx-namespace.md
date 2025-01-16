@@ -1716,11 +1716,11 @@ params: [
 ]
 ```
 
-请注意，奖励计算可能会有延迟，因此最近几个纪元（包括`最新状态 <0>）的奖励信息可能不可用。</p>
+请注意，奖励计算可能会有延迟，因此最近几个纪元（包括`"latest_state"`）的奖励信息可能不可用。
 
-<h4 spaces-before="0">返回值</h4>
+#### 返回值
 
-<p spaces-before="0"><code>Array` - 奖励信息对象的数组
+`Array` - 奖励信息对象的数组
 
 * `blockHash`: `DATA` - 区块哈希
 * `author`: `BASE32` - 挖得区块的矿工地址
@@ -2560,13 +2560,13 @@ curl --location --request POST 'http://localhost:12537' \
 
 #### 参数
 
-1. `QUANTITY|TAG` - (可选，默认为`"latest_state"`)纪元号，或字符串 `"latest_state"`、`"latest_confirmed"`、`"latest_checkpoint"` 或 `"earliest"</0>，详见 <a href="#the-default-epochnumber-parameter">纪元号参数</a>。</li>
-</ol>
+1. `QUANTITY|TAG` - (可选，默认为`"latest_state"`)纪元号，或字符串 `"latest_state"`、`"latest_confirmed"`、`"latest_checkpoint"` 或 <0>"earliest"</0>，详见 [纪元号参数](#the-default-epochnumber-parameter)。
 
-<pre><code class="json">params: [
+```json
+params: [
     "latest_state",
 ]
-`</pre>
+```
 
 #### 返回值
 
