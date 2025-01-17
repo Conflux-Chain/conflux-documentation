@@ -2560,7 +2560,7 @@ curl --location --request POST 'http://localhost:12537' \
 
 #### 参数
 
-1. `QUANTITY|TAG` - (可选，默认为`"latest_state"`)纪元号，或字符串 `"latest_state"`、`"latest_confirmed"`、`"latest_checkpoint"` 或 <0>"earliest"</0>，详见 [纪元号参数](#the-default-epochnumber-parameter)。
+1. `QUANTITY|TAG` - (可选, 默认值为: `"latest_state"`) 为整数纪元号, 或字符串如 ``"latest_state"`,`"latest_confirmed"`,`"latest_checkpoint"`or`"earliest"`, 详见 [纪元号参数](#the-default-epochnumber-parameter)。
 
 ```json
 params: [
