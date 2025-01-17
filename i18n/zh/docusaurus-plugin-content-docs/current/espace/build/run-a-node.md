@@ -7,7 +7,7 @@ keywords:
   - Node Operation
   - RPC Configuration
   - Full State
-  - Chain ID
+  - 链 ID
   - JSON-RPC
   - WebSocket
   - EVM
