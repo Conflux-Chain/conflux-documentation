@@ -46,35 +46,23 @@ Conflux 的共识层处理从同步层接收到的所有区块，根据 Conflux 
 
 `ConsensusGraphInner` 的内部结构相当复杂。
 一般来说，它维护两种类型的信息。 第一种信息是整个TreeGraph的状态，即当前的_pivot chain_、_timer chain_、_difficulty_等等。 第二种信息是每个区块的状态(即每个区块的`ConsensusGraphNode`结构)。
-Each block corresponds to a `ConsensusGraphNode` struct for its information.
-When it first enters `ConsensusGraphInner`, it will be inserted into
-`ConsensusGraphInner::arena : Slab<ConsensusGraphNode>`. The index in the
-slab will become the arena index of the block in `ConsensusGraphInner`. We use
-the arena index to represent a block internally instead of `H256` because it is
-much cheaper. We will refer back to the fields in `ConsensusGraphInner` and
-`ConsensusGraphNode` when we talk about algorithm mechanism and their
-implementations.
+每个区块对应一个 `ConsensusGraphNode` 结构，用于存储其信息。
+当第一次进入 `ConsensusGraphInner` 时，它将被插入到 `ConsensusGraphInner::arena : Slab<ConsensusGraphNode>` 中。 在Slab中的索引将成为 `ConsensusGraphInner` 中区块的arena索引。 我们在内部使用arena索引来表示一个区块，而不是使用`H256`，因为它更加经济高效。 在讨论算法机制和实现时，我们将回顾 `ConsensusGraphInner` 和 `ConsensusGraphNode` 中的字段。
 
 ### ConsensusNewBlockHandler
 
 `ConsensusNewBlockHandler`
 (core/src/consensus/consensus_inner/consensus_new_block_handler.rs) contains a
-set of routines for processing a new block. In theory, this code could be part
-of `ConsensusGraphInner` because it mostly manipulates the inner struct.
-However, these routines are all subroutine of the `on_new_block()` and the
-consensus_inner/mod.rs is already very complicated. We therefore decided to put
-them into a separate file.
+set of routines for processing a new block. 从理论上讲，这段代码可以成为 `ConsensusGraphInner` 的一部分，因为它主要操作内部结构。
+然而，这些程序都是 `on_new_block()` 的子程序，而且consensus_inner/mod.rs已经非常复杂了。 因此，我们决定将它们放入一个单独的文件中。
 
 ### ConsensusExecutor
 
-`ConsensusExecutor` (core/src/consensus/consensus_inner/consensus_executor.rs)
-is the interface struct for the standalone transaction execution thread.
-`ConsensusExecutor::enqueue_epoch()` allows other threads to send an execution
-task to execute the epoch of a given pivot chain block asynchronously. Once the
+`ConsensusExecutor`（core/src/consensus/consensus_inner/consensus_executor.rs）是独立交易执行线程的接口结构体。
+ConsensusExecutor::enqueue_epoch() 允许其他线程异步地向执行线程发送一个执行任务，以执行给定 pivot chain 区块的纪元。 Once the
 computation finishes, the resulting state root will be stored into
-`BlockDataManager`. Other threads can call
-`ConsensusExecutor::wait_for_result()` to wait for the execution of an epoch if
-desired. In the current implementation, `ConsensusExecutor` also contains the
+`BlockDataManager`. 如有需要，其它线程可以调用
+`ConsensusExecutor::wait_for_result()` 以等待执行一个纪元. In the current implementation, `ConsensusExecutor` also contains the
 routines for the calculation for block rewards, including
 `get_reward_execution_info()` and its subroutines.
 
@@ -83,8 +71,7 @@ routines for the calculation for block rewards, including
 `ConfirmationMeter` (core/src/consensus/consensus_inner/confirmation_meter.rs)
 conservatively calculates the confirmation risk of each pivot chain block. Its
 result will be useful for the storage layer to determine when it is _safe_ to
-discard old snapshots. It can also be used to serve RPC queries about block
-confirmation if we decide to provide such RPC.
+discard old snapshots. 如果我们决定提供关于区块确认的RPC查询，它还可以用于提供这样的RPC服务。
 
 ### AnticoneCache and PastsetCache
 
