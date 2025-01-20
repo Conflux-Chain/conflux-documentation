@@ -162,13 +162,9 @@ Conflux 共识算法定义那些选择了错误父区块或填写了不正确的
 
 ### 强制确认
 
-如果 1）一个区块的子树下有连续的 `timer_chain_beta` 个计时链区块，以及 2）之后至少有 `timer_chain_beta` 个计时链区块跟随（尽管不要求在子树中），那么Conflux共识算法将 _强制确认_ 一个区块。 Force confirmation means that
-new blocks should follow this block as their ancestor no matter what, ignoring
-subtree weights. Though extremely unlikely a force confirmed block will have
-lesser weights than its siblings.
+如果 1）一个区块的子树下有连续的 `timer_chain_beta` 个计时链区块，以及 2）之后至少有 `timer_chain_beta` 个计时链区块跟随（尽管不要求在子树中），那么Conflux共识算法将 _强制确认_ 一个区块。 强制确认意味着新区块应该将这个区块作为它们的祖先遵循，忽略子树权重。 虽然可能性极小，但一个被强制确认的区块会比其兄弟区块的权重小。
 
-The force confirmation mechanism is to enable checkpoint, which we will
-describe later. It is based on the rationale that:
+强制确认机制是为了启用检查点，我们稍后会描述。 它基于以下理由：
 
 1. Reverting a `timer_chain_beta` length timer chain is impossible.
 
