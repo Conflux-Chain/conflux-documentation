@@ -15,7 +15,7 @@ keywords:
   - 以太坊
   - Ubuntu
   - 安装
-  - Configuration
+  - 配置
   - Database Setup
   - Source Build
   - Docker Compose

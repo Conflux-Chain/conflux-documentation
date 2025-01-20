@@ -77,7 +77,7 @@ persist_tx_index=true
 
 ### 交易跟踪
 
-Parity style transaction trace related options.
+Parity 风格的交易跟踪相关选项
 
 ```toml
 executive_trace=true
@@ -101,21 +101,21 @@ single_mpt_space = "evm" # 核心空间使用"native"
 enable_single_mpt_storage=true
 ```
 
-> The Conflux Foundation currently does not provide snapshot data containing the full historical state; users need to synchronize the data themselves. To run a **fullstate node**, which enables querying blockchain state on any block height, you need to use a specially compiled Conflux client program. Currently, the official binary release does not enable this feature, and you need to compile it yourself. The compilation command is:
+> 目前，Conflux 基金会不提供包含完整历史状态的快照数据，用户需要自行同步数据。 要运行一个支持在任意区块高度查询区块链状态的 **fullstate node** 节点，您需要使用一个特殊编译的 Conflux 客户端程序。 目前，官方的二进制发布版本未启用此功能，您需要自行编译。 The compilation command is:
 ```bash
 cargo build --release --features u64-mpt-db-key
 ```
 
 ### PivotHint
 
-If you want to `fully synchronize the data`, you need to enable the pivot_hint related configuration option.
+如果您想要`完全同步数据`，您需要启用与 pivot_hint 相关的配置选项。
 
-* `pivot_hint_path`: Path to the pivot hint file
-* `pivot_hint_checksum`: Expected checksum of Page Digests section (hex string without "0x" prefix)
+* `pivot_hint_path`: pivot hint文件的路径
+* `pivot_hint_checksum`:Page Digests 部分的预期校验和（十六进制字符串，不带“0x”前缀）
 
-Note: These two configurations must either both be specified or both be omitted. Specifying only one will result in an error.
+注意：这两个配置项必须同时指定或同时省略。 如果只指定其中一个，将会导致错误。
 
-PivotHint file can be downloaded [here](https://github.com/Conflux-Chain/conflux-rust/pull/2935)
+PivotHint文件可以在[这里](https://github.com/Conflux-Chain/conflux-rust/pull/2935)下载。
 
 ### cfx_getLogs/eth_getLogs相关选项
 
@@ -180,7 +180,7 @@ netconf_dir="./blockchain_data/net_config"
 dev_pos_private_key_encryption_password="aaaa"
 ```
 
-Or you can pass it through environment variable: `CFX_POS_KEY_ENCRYPTION_PASSWORD`.
+或者您可以通过环境变量传递它: `CFX_POS_KEY_ENCRYPTION_PASSWORD`。
 
 #### pos 配置文件
 
@@ -256,7 +256,7 @@ max_estimation_gas_limit=30000000
 
 其他一般不需要重启。
 
-### I want to access Core Space debug/test RPC methods, what parameters do I need to configure?
+### 我要访问 Core Space 的调试/测试 RPC 方法，需要配置哪些参数？
 
 ```toml
 jsonrpc_local_http_port=12539 # this is the port for debug/test RPC methods

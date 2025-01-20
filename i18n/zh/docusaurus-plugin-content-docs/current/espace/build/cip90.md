@@ -40,6 +40,6 @@ Conflux Core 和 Conflux eSpace 中的账户是**独立的**。 这意味着 Con
 
 :::tip
 
-Refer to [Transferring Funds](../../general/tutorials/transferring-funds/transferring-funds.mdx) and [Wallets](../../general/tutorials/wallets/wallets.mdx) for cross chain and wallet usage tutorials.
+关于跨链和钱包使用教程,请参阅[转移资金](../../general/tutorials/transferring-funds/transferring-funds.mdx)和[钱包](../../general/tutorials/wallets/wallets.mdx)。
 
 :::

@@ -31,7 +31,7 @@ These RPC methods require node's `public_rpc_apis` config set to `safe` or `all`
 
 #### 参数
 
-1. `ADDRESS`: CIP-37 address
+1. `ADDRESS`: CIP-37地址
 
 ```json
 params: [

@@ -42,7 +42,7 @@ This approach ensures the security of management functions while providing a sea
 
 Next, we will learn how to implement and deploy upgradeable contracts using transparent proxy on Conflux eSpace.
 
-## Project Setup
+## 项目设置
 
 1. Create a new directory and initialize the project:
 
@@ -66,7 +66,7 @@ npx hardhat
 
 Choose "Create a JavaScript project".
 
-4. Configure Hardhat
+4. 配置Hardhat
 
 Edit the `hardhat.config.js` file:
 

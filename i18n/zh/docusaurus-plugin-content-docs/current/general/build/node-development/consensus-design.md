@@ -46,35 +46,23 @@ Conflux 的共识层处理从同步层接收到的所有区块，根据 Conflux 
 
 `ConsensusGraphInner` 的内部结构相当复杂。
 一般来说，它维护两种类型的信息。 第一种信息是整个TreeGraph的状态，即当前的_pivot chain_、_timer chain_、_difficulty_等等。 第二种信息是每个区块的状态(即每个区块的`ConsensusGraphNode`结构)。
-Each block corresponds to a `ConsensusGraphNode` struct for its information.
-When it first enters `ConsensusGraphInner`, it will be inserted into
-`ConsensusGraphInner::arena : Slab<ConsensusGraphNode>`. The index in the
-slab will become the arena index of the block in `ConsensusGraphInner`. We use
-the arena index to represent a block internally instead of `H256` because it is
-much cheaper. We will refer back to the fields in `ConsensusGraphInner` and
-`ConsensusGraphNode` when we talk about algorithm mechanism and their
-implementations.
+每个区块对应一个 `ConsensusGraphNode` 结构，用于存储其信息。
+当第一次进入 `ConsensusGraphInner` 时，它将被插入到 `ConsensusGraphInner::arena : Slab<ConsensusGraphNode>` 中。 在Slab中的索引将成为 `ConsensusGraphInner` 中区块的arena索引。 我们在内部使用arena索引来表示一个区块，而不是使用`H256`，因为它更加经济高效。 在讨论算法机制和实现时，我们将回顾 `ConsensusGraphInner` 和 `ConsensusGraphNode` 中的字段。
 
 ### ConsensusNewBlockHandler
 
 `ConsensusNewBlockHandler`
 (core/src/consensus/consensus_inner/consensus_new_block_handler.rs) contains a
-set of routines for processing a new block. In theory, this code could be part
-of `ConsensusGraphInner` because it mostly manipulates the inner struct.
-However, these routines are all subroutine of the `on_new_block()` and the
-consensus_inner/mod.rs is already very complicated. We therefore decided to put
-them into a separate file.
+set of routines for processing a new block. 从理论上讲，这段代码可以成为 `ConsensusGraphInner` 的一部分，因为它主要操作内部结构。
+然而，这些程序都是 `on_new_block()` 的子程序，而且consensus_inner/mod.rs已经非常复杂了。 因此，我们决定将它们放入一个单独的文件中。
 
 ### ConsensusExecutor
 
-`ConsensusExecutor` (core/src/consensus/consensus_inner/consensus_executor.rs)
-is the interface struct for the standalone transaction execution thread.
-`ConsensusExecutor::enqueue_epoch()` allows other threads to send an execution
-task to execute the epoch of a given pivot chain block asynchronously. Once the
+`ConsensusExecutor`（core/src/consensus/consensus_inner/consensus_executor.rs）是独立交易执行线程的接口结构体。
+ConsensusExecutor::enqueue_epoch() 允许其他线程异步地向执行线程发送一个执行任务，以执行给定 pivot chain 区块的纪元。 Once the
 computation finishes, the resulting state root will be stored into
-`BlockDataManager`. Other threads can call
-`ConsensusExecutor::wait_for_result()` to wait for the execution of an epoch if
-desired. In the current implementation, `ConsensusExecutor` also contains the
+`BlockDataManager`. 如有需要，其它线程可以调用
+`ConsensusExecutor::wait_for_result()` 以等待执行一个纪元. In the current implementation, `ConsensusExecutor` also contains the
 routines for the calculation for block rewards, including
 `get_reward_execution_info()` and its subroutines.
 
@@ -83,50 +71,33 @@ routines for the calculation for block rewards, including
 `ConfirmationMeter` (core/src/consensus/consensus_inner/confirmation_meter.rs)
 conservatively calculates the confirmation risk of each pivot chain block. Its
 result will be useful for the storage layer to determine when it is _safe_ to
-discard old snapshots. It can also be used to serve RPC queries about block
-confirmation if we decide to provide such RPC.
+discard old snapshots. 如果我们决定提供关于区块确认的RPC查询，它还可以用于提供这样的RPC服务。
 
 ### AnticoneCache and PastsetCache
 
-`AnticoneCache` (core/src/consensus/anticone_cache.rs) and `PastsetCache`
-(core/src/consensus/pastset_cache.rs) are two structs that implement customized
-caches for data structures in `ConsensusGraphInner`. In the implementation of
+`AnticoneCache` (core/src/consensus/anticone_cache.rs) 和 `PastsetCache` (core/src/consensus/pastset_cache.rs) 是两个结构体，它们为 `ConsensusGraphInner` 中的数据结构实现了定制化的缓存。 In the implementation of
 the inner struct, we need to calculate and store the anticone set and the past
 set of each block. However, it is not possible to store all of these sets in
-memory. We therefore implement cache style data structures to store sets for
-recently inserted/accessed blocks. If an anticone/past set is not found in the
+memory. 因此，我们实现了缓存样式的数据结构来存储最近插入/访问的区块集合。 If an anticone/past set is not found in the
 cache, we will recalculate the set in the current inner struct implementation.
 
-## Important Algorithmic Mechanisms
+## 重要算法机制
 
-There are several important algorithmic mechanisms in the Conflux Consensus
-Layer. Here we will talk about them from the implementation aspect. See XXX for
+Conflux 共识层中有几个重要的算法机制。 在这里，我们将从实现的角度来讨论它们。 See XXX for
 the algorithmic reasoning behind them.
 
-### Pivot Chain and Total Order
+### 主链和全序
 
-The basic idea of the Conflux consensus algorithm is to first make everyone
-agree on a pivot chain. It then expands the total order from the pivot chain to
-cover all blocks with a topological sort. As long as the pivot chain does not
-change/reorg, the total order of blocks will stay the same, so does the derived
-order of transactions.
+Conflux 共识算法的基本思想是首先让所有人都同意一个主链（pivot chain）。 然后，从主链开始，通过拓扑排序来扩展总排序，覆盖所有的区块。 只要主链不发生改变/重组，区块的总排序以及派生的交易顺序将保持不变。
 
-Comparing with Bitcoin/Ethereum, the consensus in Conflux has two key
-differences:
+与比特币/以太坊相比，Conflux的共识机制有两个关键的不同之处：
 
-1. _almost every block_ will go into the total order, not just the agreed pivot
-   chain.
+1. 与仅仅将枢轴链纳入总排序不同，Conflux中几乎每个区块都会进入总排序。
 
-2. The transaction validity and the block validity are _independent_. For example, a
-   transaction is invalid if it was included before or it cannot carry out due to
-   insufficient balance. Such invalid transactions will become noop during the
-   execution. However, _unlike Bitcoin and Ethereum blocks containing such
-   transactions will not become invalid_.
+2. The transaction validity and the block validity are _independent_. 例如，如果一个交易已经被包含在区块中或由于余额不足无法执行，那么该交易就是无效的。 这些无效的交易将在执行过程中成为空操作（noop）。 然而，与比特币和以太坊不同，包含这种无效交易的区块并不会变为无效。
 
 In `ConsensusGraphInner`, the arena index of the current pivot chain blocks are
-stored in order in the `pivot_chain[]` vector. To maintain it, we calculate the
-lowest common ancestor (LCA) between the newly inserted block and the current best
-block following the GHAST rule. If the fork corresponding to the newly inserted
+stored in order in the `pivot_chain[]` vector. 为了维护它，我们按照 GHAST 规则计算新插入区块与当前最佳区块之间的最近公共祖先 (LCA)。 If the fork corresponding to the newly inserted
 block for the LCA ended up to be heavier, we will update the `pivot_chain[]` from
 the forked point.
 
@@ -134,151 +105,64 @@ the forked point.
 
 Blocks whose PoW quality is `timer_chain_difficulty_ratio` times higher than the target
 difficulty are _timer blocks_. The `is_timer` field of the block will be set to
-True. The consensus algorithm then finds the longest timer block chain (more
-accurately, with greatest accumulated difficulty) similar to the Bitcoin
-consensus algorithm of finding the longest chain. The arena index of this
-longest timer chain will be stored into `timer_chain[]`.
+True. 然后共识算法找到最长的计时器块链（更准确地说，是累积难度最大的链），类似于比特币共识算法寻找最长链的方式。 最长计时器链的竞技场索引将存储到 `timer_chain[]`。
 
-The rationale of the timer chain is to provide a coarse-grained measurement of
-time that cannot be influenced by a malicious attacker. Because timer blocks
-are rare and generated slowly (if `timer_chain_difficulty_ratio` is properly
-high), a malicious attacker cannot prevent the growth of the timer chain unless
-it has the majority of the computation power. Therefore how many timer chain
-blocks appear in the past set of a block is a good indication about the latest
-possible generation time of the block. We compute this value for each block and
+计时器链的原理是提供一种粗粒度的时间测量，很难被恶意攻击者影响 因为计时器块
+罕见并缓慢生成(如果`timer_chain_difficulty_ratio` 是适当的
+高), 恶意攻击者不能阻止计时器链的增长，除非
+它拥有大多数计算能力。 因此，在一个块的先前设置中出现了多少计时器链块，是关于该块的最新可能生成时间的良好指示。 We compute this value for each block and
 store it in `timer_chain_height` field of the block.
 
-### Weight Maintenance with Link-Cut Tree
+### 使用Link-Cut Tree（链剖树）进行权重维护。
 
-To effectively maintain the pivot chain, we need to query the total weight of a
-subtree. Conflux uses a Link-Cut Tree data structure to maintain the subtree
-weights in O(log n). The Link-Cut Tree can also calculate the LCA of any two nodes
-in the TreeGraph in O(log n). The `weight_tree` field in `ConsensusGraphInner`
-is the link-cut tree that stores the subtree weight of every node. Note that
-the implementation of the Link-Cut Tree is in the utils/link-cut-tree
-directory.
+为了有效地维护主链，我们需要查询子树的总权重。 Conflux使用Link-Cut Tree（链剖树）数据结构来在O(log n)的时间复杂度下维护子树权重。 Link-Cut Tree（链剖树）还可以在O(log n)的时间复杂度下计算树图中任意两个节点的LCA（最近公共祖先） `ConsensusGraphInner`
+中的`weight_tree`字段是存储每个节点的子树重量的链剖树。 请注意，Link-Cut Tree（链剖树）的实现位于utils/link-cut-tree目录下。
 
 ### Adaptive Weight
 
-If the TreeGraph is under a liveness attack, it may fail to converge under one
-block for a while. To handle this situation, the GHAST algorithm idea is to
-start to generate adaptive blocks, i.e., blocks whose weights are redistributed
-significantly so that there will be many zero weight blocks with a rare set of
-very heavy blocks. Specifically, if the PoW quality of an adaptive block is
+如果TreeGraph处于活性攻击状态，它可能在一段时间内无法在一个块下收敛。 为了应对这种情况，GHAST算法的想法是开始生成适应性块，即块的权重被显著重新分配，以便会有许多零权重块和一组罕见的非常重的块。 Specifically, if the PoW quality of an adaptive block is
 `adaptive_heavy_block_ratio` times of the target difficulty, the block
 will have a weight of `adaptive_heavy_block_ratio`; otherwise, the block will
-have a weight of zero. This effectively slows down the confirmation
-temporarily but will ensure the consensus progress.
+have a weight of zero. 这将有效地暂时减慢确认的速度，但将确保共识的进展。
 
-Because adaptive weight is a mechanism to defend against rare liveness attacks,
-it should not be turned on during the normal scenario. A new block is adaptive
-only if: 1) one of its ancestor blocks is still not the dominant subtree
-comparing to its siblings, and 2) a significantly long period of time has passed
-between the generation of that ancestor block and the new block (i.e., the
-difference of `timer_chain_height` is sufficiently large). `ConsensusGraphInner::adaptive_weight()`
-and its subroutines implement the algorithm to determine whether a block is
-adaptive or not. Note that the implementation uses another link-cut-tree
-`adaptive_tree` as a helper. Please see the inlined comments for the
+因为适应性权重是一种防御罕见活性攻击的机制，所以在正常情况下不应该启用它。 一个新区块只有在以下情况下才是适应性的：1) 它的一个祖先区块相比其兄弟区块仍不是占主导地位的子树，以及2) 在那个祖先区块和新区块生成之间过去了相当长的时间（即，`timer_chain_height` 的差异足够大）。 `ConsensusGraphInner::adaptive_weight()` 及其子程序实现了确定一个区块是否是适应性的算法。 注意，该实现使用了另一个名为 `adaptive_tree` 的链剖树（link-cut-tree）作为辅助。 Please see the inlined comments for the
 implementation details.
 
-### Partial Invalid
+### 部分无效
 
-Note that the past set of a new block denotes all the blocks that the generator
-of the new block observes at the generation time. Therefore, from the past set
-of a new block, other full nodes could determine whether it chooses the correct
-parent block and whether it should be adaptive or not.
+需要注意的是，新区块的过去集表示生成新区块时其生成者观察到的所有区块。 因此，从新区块的过去集中，其他完整节点可以确定它是否选择了正确的父区块，以及它是否应该是适应性的。
 
-The Conflux consensus algorithm defines those blocks who choose incorrect
-parents or fill in incorrect adaptive status as _partial invalid blocks_. For a
-partial invalid block, the `partial_invalid` field will be set to True. The
-algorithm requires the partial invalid blocks being treated differently from
-the normal blocks in three ways:
+Conflux 共识算法定义那些选择了错误父区块或填写了不正确的适应状态的区块为_部分无效区块_。 对于部分无效的区块，`partial_invalid` 字段将被设置为 True。 该算法中部分无效区块与正常区块被要求以三种不同方式进行处理：
 
-1. All honest nodes will not reference directly or indirectly partial invalid
-   blocks until a significant period of time. This time period is measured with
-   the `timer_chain_height` and the difference has to be more than
-   `timer_chain_beta`. Yes, it means that if another otherwise perfectly fine
-   block referencing the partial invalid block, both of these two blocks will not
-   be referenced for a while.
+1. 所有诚实的节点在较长的一段时间内都不会直接或间接引用部分无效区块。 这个时间周期是使用 `timer_chain_height` 测量的，差异必须超过 `timer_chain_beta`。 因此这意味着如果另一个本来完全正常的区块引用了部分无效区块，这两个区块在一段时间内都不会被引用。
 
-2. Partial invalid blocks will have no block reward. They are extremely
-   unlikely to get any reward anyway because of their large anticone set due to
-   the first rule.
+2. 部分无效区块将没有区块奖励。 由于第一条规则导致的大量反锥区块集，它们大概率不会获得任何奖励。
 
-3. Partial invalid blocks are excluded from the timer chain consideration.
+3. 部分无效区块被排除在计时链考虑之外。
 
-To implement the first rule, the `on_new_block()` routine in
-`ConsensusNewBlockHandler` is separated into two subroutine
-`preactivate_block()` and `activate_block()`. `preactivate_block()` compute and
-determine whether a block is partial invalid or not, while `activate_block()`
-fully integrate a block into the consensus graph inner data structures. For
-every new block, the field `active_cnt` tracks how many inactive blocks it
-references. A block is inactive if it references directly or indirectly a
-partial invalid block. `activate_block()` will be called on a block only when
-`active_cnt` of the block becomes zero. The field `activated` denotes whether a
-block is active or not. For partially invalid blocks, their activation will be
-delayed till the current timer chain height of the ledger is `timer_chain_beta`
-higher than the invalid block. Newly generated blocks will not reference any
-inactive blocks, i.e., these inactive blocks are treated as if they were not in
-the TreeGraph.
+为了实现第一条规则， `ConsensusNewBlockHandler` 中的 `on_new_block()` 例程被分成了两个子程序 `preactivate_block()` 和 `activate_block()`。 `preactivate_block()` 计算并确定一个区块是否部分无效，而 `activate_block()` 将一个区块完整地整合到共识图内部数据结构中。 对于每个新区块，字段 `active_cnt` 跟踪它引用了多少个不活跃的区块。 如果一个区块直接或间接引用了一个部分无效区块，则该区块是不活跃的。 只有当一个区块的 `active_cnt` 变为零时，才会对该区块调用 `activate_block()`。 字段 `activated` 表示一个区块是否活跃。 对于部分无效的区块，它们的激活将被延迟，直到账本的当前计时链高度比无效区块高出 `timer_chain_beta`。 新生成的区块不会引用任何不活跃的区块，即这些不活跃的区块将会被当作排除在 TreeGraph 外的区块
 
-### Anticone, Past View, and Ledger View
+### 反锥体，过去视图，账本视图
 
-In order to check the partial invalid status of each block, we need to operate
-under the _past view_ of the block to determine its correct parent and its
-adaptivity. This is different from the current state of the TreeGraph or we
-call it the _ledger view_, i.e., all blocks in the anticone and the future set
-of the block are excluded. Because we process blocks in topological order, the
-future set of a new block is empty. We therefore need to eliminate all anticone
-blocks only.
+为了检查每个区块的部分无效状态，我们需要在该区块的_过去视图_下操作，以确定其正确的父区块及其适应性。 这与 TreeGraph 的当前状态不同，或者我们称之为_账本视图_，即排除了区块的反锥体和该区块的未来集合中的所有区块。 因为我们按照拓扑顺序处理区块，新区块的未来集合是空的。 因此，我们只需要排除所有反锥体区块。
 
-`compute_and_update_anticone()` in `ConsensusNewBlockHandler` computes the
-anticone set of a new block. Note that because the anticone set may be very
-large, we have two implementation level optimizations. First, we represent the
-anticone set as a set of barrier nodes in the TreeGraph, i.e., a set of
-subtrees where each block in the subtrees is in the anticone set. Second, we
-will maintain the anticone set of the recently accessed/inserted blocks
-only. When checking whether a block is valid in its past view or not (e.g., in
-`adaptive_weight()` and in `check_correct_parent()`), we first cut all barrier
-subtrees from the link-cut weight trees accordingly to get the state of the
-past view. After the computation, we restore these anticone subtrees.
+`compute_and_update_anticone()` 在 `ConsensusNewBlockHandler` 中计算新区块的反锥体集合。 注意，由于反锥集合可能非常大，我们有两个在执行层面上的优化。 首先，我们将反锥集合表示为 TreeGraph 中的一组屏障节点，即每个子树中的每个区块都在反锥集合中。 其次，我们只维护最近访问/插入区块的反锥集合。 在检查区块在其过去视图中是否有效时（例如，`在 adaptive_weight()` 和 `check_correct_parent()` 中），我们首先相应地从Link-Cut Tree (链剖树) 中切除所有屏障子树，以获得过去视图的状态。 在计算之后，我们将会还原这些反锥子树。
 
-### Check Correct Parent
+### 检查正确的父区块
 
-To check whether a new block chooses a correct parent block or not, we first
-compute the set of blocks inside the epoch of the new block assuming that
-the new block is on the pivot chain. We store this set to the field
-`blockset_in_own_view_of_epoch`. We then iterate over every candidate block in
-this set to make sure that the chosen parent block is better than it.
-Specifically, we find out the two fork blocks of the candidate block and the
-parent block from their LCA and make sure that the fork of the parent is
-heavier. This logic is implemented in `check_correct_parent()` in
-`ConsensusNewBlockHandler`.
+为了检查一个新区块是否选择了正确的父区块，我们首先计算假设新区块在主链上时，该新区块纪元内的区块集合。 我们将这个集合存储到字段 `blockset_in_own_view_of_epoch` 中。 然后我们遍历这个集合中的每一个候选区块，确保所选的父区块比它更好。
+具体来说，我们找出候选区块和父区块从它们的最近公共祖先(LCA)出发的两个分叉区块，并确保父区块的分叉更重。 这个逻辑在 `ConsensusNewBlockHandler` 中的 `check_correct_parent()` 中实现。
 
-Note that `blockset_in_own_view_of_epoch` may become too large to hold
-consistently in memory as well. Especially if a malicious attacker tries to
-generate invalid blocks to blow up this set. The current implementation will
-only periodically clear the set and only keep the sets for pivot chain blocks.
-Note that for pivot chain blocks, this set will also be used during the
-transaction execution.
+值得注意的是，`blockset_in_own_view_of_epoch` 也可能因为过大而无法一直在内存中保持。 特别是如果恶意攻击者试图生成无效区块来扩大这个集合。 目前的实现将会定期清理这个集合，只保留主链区块的集合。
+请注意，对于主链区块，这个集合在交易执行期间也会被使用。
 
-### Fallback Brute Force Methods
+### 备用暴力方法
 
-There are situations where the anticone barrier set is too large if a malicious
-attacker tries to launch a performance attack on Conflux. This will make the
-default strategy worse than O(n) because there is a factor of O(log n) for each
-block in the barrier set when we do the link-cut tree chopping. To this end, we
-implemented a brute force routine `compute_subtree_weights()` to compute the
-subtree weights of each block in a past view for O(n). We also implement
-`check_correct_parent_brutal()` and `adaptive_weight_impl_brutal()` to use the
-brute-force computed subtree weight to do the checking instead.
+在Conflux中，如果恶意攻击者试图针对系统发起性能攻击，反锥屏障子树集合可能会过大。 这会使得默认策略变得比O(n)更糟，因为当我们进行LCT（链剖树）剖分时，每个屏障集合中的区块都会带来一个O(log n)的因子。 为此，我们实现了一个蛮力例程 `compute_subtree_weights()` ，以O(n)计算过去视图中每个区块的子树权重。 我们还实现了 `check_correct_parent_brutal()` 和 `adaptive_weight_impl_brutal()` ，使用蛮力计算的子树权重进行检查。
 
-### Force Confirmation
+### 强制确认
 
-The Conflux consensus algorithm will _force confirm_ a block if 1) there are
-`timer_chain_beta` consecutive timer chain blocks under the subtree of the
-block and 2) afterward there are at least `timer_chain_beta` timer chain blocks
-following (not required in the subtree though). Force confirmation means that
+如果 1）一个区块的子树下有连续的 `timer_chain_beta` 个计时链区块，以及 2）之后至少有 `timer_chain_beta` 个计时链区块跟随（尽管不要求在子树中），那么Conflux共识算法将 _强制确认_ 一个区块。 Force confirmation means that
 new blocks should follow this block as their ancestor no matter what, ignoring
 subtree weights. Though extremely unlikely a force confirmed block will have
 lesser weights than its siblings.

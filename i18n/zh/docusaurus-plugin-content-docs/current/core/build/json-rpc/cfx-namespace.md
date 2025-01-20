@@ -106,20 +106,20 @@ TODO: Add links to deferred execution documentation.
 
 #### 遵循 EIP-1898 的Conflux epochNumber 参数
 
-Conflux core space 支持纪元数参数在 [EIP-1898](https://eips.ethereum.org/EIPS/eip-1898) 样式中为某些RPC 服务。 Developers can query the state of the epoch by providing the epoch number or the block hash. Moreover, this parameter enables the developers to query the state of a specific epoch making sure who is the pivot block, which is useful when dealing with chain reorganizations.
+Conflux core space 支持纪元数参数在 [EIP-1898](https://eips.ethereum.org/EIPS/eip-1898) 样式中为某些RPC 服务。 开发者可以通过提供纪元编号或区块哈希来查询纪元的状态。 此外，该参数使开发者能够查询特定纪元的状态，从而确定哪个区块是枢纽区块，这在处理链重组时非常有用。
 
 [EIP-1898](https://eips.ethereum.org/EIPS/eip-1898) 样式的纪元参数是一个包含3个可选字段的对象：
 
 * `epochNumber`. 对应于EIP-1898定义的`blockNumber`。
-* `blockHash`. The hash of the block specified.
-* `requirePivot`. Corresponding to EIP-1898 `requireCanonical`, but has different usage.
-  * If true, if the block specified by `blockHash` is not the pivot block, the RPC will return an error with message "pivot chain assumption failed".
-  * If false, the RPC will return the result considering the epoch of the block specified by `blockHash`, regardless of whether it is the pivot block or not.
-  * **Defaults to `true`**.
+* `blockHash`. 指定区块的哈希
+* `requirePivot`. 对应于EIP-1898中的 `requireCanonical`, 但用法不同。
+  * 如果为true，当由`blockHash`指定的区块不是枢纽块时，RPC将返回错误消息"pivot chain assumption failed"（枢纽块假设失败）。
+  * 如果为 false，无论该区块是否为枢纽区块，RPC 都将 根据 `blockHash`指定的区块的纪元返回结果。
+  * **默认值为`true`**.
 
 :::note
 
-If `blockHash` is provided with `requirePivot` set to `true`, the RPC will first check whether the block is the pivot block first regardless of the rpc behaviour, for example, whether the epoch is executed or not.
+如果提供了`blockHash`且`requirePivot`设置为`真`，无论RPC的行为如何（例如epoch是否已执行），RPC 会首先检查该区块是否为枢纽区块。
 
 :::
 
@@ -846,7 +846,7 @@ params: [
 
 `BASE32` - 管理员地址，合约不存在时为 `null`。
 
-:::note
+:::注意
 
 虽然没有意义，但也可以使用用户地址作为 `cfx_getAdmin` 方法的输入参数。 在这种情况下，如果输入用户地址存在于世界状态，返回值将为零地址。 否则将返回 `null`。
 
@@ -1643,7 +1643,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"cfx_getConfirmationRiskByHash","
 * `epochNumber`: `QUANTITY` - 最新纪元编号
 * `latestCheckpoint`: `QUANTITY` - 最新检查点纪元编号
 * `latestConfirmed`: `QUANTITY` - 最新确认纪元编号
-* `latestFinalized`: `QUANTITY` - latest finallized epoch number (Added from v2.0)
+* `latestFinalized`: `QUANTITY` - 最新终结纪元编号（从v2.0添加）
 * `latestState`: `QUANTITY` - 最新状态纪元编号
 * `pendingTxNumber`: `QUANTITY` - 当前待处理纪元数
 
@@ -1716,7 +1716,7 @@ params: [
 ]
 ```
 
-Please note that reward calculation is delayed so it might not be available for the latest few epochs (including `"latest_state"`).
+请注意，奖励计算可能会有延迟，因此最近几个纪元（包括`"latest_state"`）的奖励信息可能不可用。
 
 #### 返回值
 
@@ -1786,7 +1786,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"cfx_getBlockByHashWithPivotAssum
 
 ### cfx_getDepositList
 
-Returns the deposit list of the given account, identified by its address.
+返回通过地址识别的指定账户的质押列表。
 
 #### 参数
 
@@ -1802,11 +1802,11 @@ params: [
 
 #### 返回值
 
-`Array` - array of deposit info objects:
+`Array` - 存款信息对象的数组：
 
-* `accumulatedInterestRate`: `QUANTITY` - the accumulated interest rate at the time of the deposit.
-* `amount`: `QUANTITY` - the number of tokens deposited.
-* `depositTime`: `QUANTITY` - the time of the deposit.
+* `accumulatedInterestRate`: `QUANTITY` - 存款时的累积利率。
+* `amount`: `QUANTITY` - 质押的代币数量
+* `depositTime`: `QUANTITY` - 质押时间
 
 ##### 示例
 
@@ -1834,7 +1834,7 @@ curl --data '{"jsonrpc":"2.0","method":"cfx_getDepositList","params":["cfx:aan02
 
 ### cfx_getVoteList
 
-Returns the vote list of the given account, identified by its address.
+返回给定地址账户的投票列表。
 
 #### 参数
 
@@ -1850,12 +1850,12 @@ params: [
 
 #### 返回值
 
-`Array` - array of vote info objects:
+`Array` - 投票信息对象的数组：
 
-* `amount`: `QUANTITY` - the number of tokens locked.
-* `unlockBlockNumber`: `QUANTITY` - the block number at which the locked tokens are released.
+* `amount`: `QUANTITY` - 锁定的代币数量。
+* `unlockBlockNumber`: `QUANTITY` - 锁定的代币释放的区块编号。
 
-For getting the current block number, please refer to [conflux-rust#1973](https://github.com/Conflux-Chain/conflux-rust/issues/1973).
+要获取当前区块编号，请参考[conflux-rust#1973](https://github.com/Conflux-Chain/conflux-rust/issues/1973)。
 
 ##### 示例
 
@@ -1876,7 +1876,7 @@ curl --data '{"jsonrpc":"2.0","method":"cfx_getVoteList","params":["cfx:aan02vpw
 
 ### cfx_getSupplyInfo
 
-Returns summary supply info of the entire chain.
+返回整个链的供应总览信息。
 
 #### 参数
 
@@ -1884,13 +1884,13 @@ Returns summary supply info of the entire chain.
 
 #### 返回值
 
-`Object` - Object include the supply summary info.
+`Object` - 包含供应总览信息的对象。
 
-* `totalIssued`: `QUANTITY` - Amount of total issued CFX in Drip
-* `totalCollateral`: `QUANTITY` - Amount of total storage collateraled CFX in Drip
-* `totalStaking`: `QUANTITY` - Amount of total staking CFX in Drip
-* `totalCirculating`: `QUANTITY` - Amount: `TotalIssued` - `FourYearUnlock` - `TwoYearUnlock`
-* `totalEspaceTokens`: `QUANTITY` - Amount of total eSpace CFX in Drip (Added in Conflux-Rust v2.0.1)
+* `totalIssued`: `QUANTITY` - Drip单位下发行的总CFX数量。
+* `totalCollateral`: `QUANTITY` - Drip单位下存储抵押的总CFX数量。
+* `totalStaking`: `QUANTITY` - Drip单位下的总抵押CFX数量。
+* `totalCirculating`: `QUANTITY` - 总流通量： `TotalIssued` - `FourYearUnlock` - `TwoYearUnlock`
+* `totalEspaceTokens`: `QUANTITY` - Drip单位下的eSpace CFX总量（添加于Conflux-Rust v2.0.1版本）。
 
 #### 示例
 
@@ -1913,7 +1913,7 @@ curl --data '{"jsonrpc":"2.0","method":"cfx_getSupplyInfo","params":[],"id":1}' 
 
 ### cfx_getAccountPendingInfo
 
-Returns transaction pool pending info of one account
+返回一个账户的交易池中待处理信息。
 
 #### 参数
 
@@ -1927,12 +1927,12 @@ params: [
 
 #### 返回值
 
-`Object` - Object include account's pending info.
+`Object` - 包含账户的待处理信息的对象。
 
-* `localNonce`: `QUANTITY` - User's transaction pool nonce that can be used for next transaction.
-* `pendingNonce`: `QUANTITY` - User's current pending nonce
-* `pendingCount`: `QUANTITY` - Count of pending transaction
-* `nextPendingTx`: `DATA` - Hash of next pending transaction
+* `localNonce`: `QUANTITY` - 用户的交易池nonce，可用于下一笔交易。
+* `pendingNonce`: `QUANTITY` - 用户当前的待处理交易nonce。
+* `pendingCount`: `QUANTITY` - 待处理交易的数量。
+* `nextPendingTx`: `DATA` - 下一个待处理交易的哈希值。
 
 #### 示例
 
@@ -1955,13 +1955,13 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"cfx_getAccountPendingInfo","para
 
 ### cfx_getAccountPendingTransactions
 
-Returns pending transactions in pool of one account
+返回一个账户在交易池中的待处理交易。
 
 #### 参数
 
 1. `BASE32` - 账户地址。
-2. [`QUANTITY`] - Optional start nonce to return
-3. [`QUANTITY`] - Optional `limit` of pending transactions to return
+2. [`QUANTITY`] - 可选参数，起始nonce，用于返回相应的交易。
+3. [`QUANTITY`] - 可选参数，待处理交易的返回限制数量（`limit`）。
 
 ```json
 params: [
@@ -1971,11 +1971,11 @@ params: [
 
 #### 返回值
 
-`Object` - Object include account's pending transaction info.
+`Object` - 包含账户的待处理交易信息的对象。
 
-* `firstTxStatus`: `OBJECT` - An object with only one field `pending`, it's value is the first pending transaction's status. Only have three case `futureNonce`, `notEnoughCash`. Or just a string `ready`
-* `pendingCount`: `QUANTITY` - Count of pending transactions
-* `pendingTransactions`: `ARRAY` - Array of pending [transaction](#cfx_gettransactionbyhash)
+* `firstTxStatus`: `OBJECT` - 一个只有一个字段`pending`的对象，它的值是第一个挂起交易的状态。 只有三种情况：`futureNonce`、`notEnoughCash`。 或者只是一个字符串 `ready`。
+* `pendingCount`: `QUANTITY` - 挂起交易的数量
+* `pendingTransactions`: `ARRAY` - 挂起交易的[交易](#cfx_gettransactionbyhash)数组
 
 #### 示例
 
@@ -2004,15 +2004,15 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"cfx_getAccountPendingTransaction
 
 ### cfx_getBlockByBlockNumber
 
-Returns information about a block, identified by its block number (block's tree-graph order number).
+返回由其块编号（块的树图顺序号）标识的区块的信息。
 
-#### Added at
+#### 添加于
 
 `Conflux-rust v1.1.5`
 
 #### 参数
 
-1. `QUANTITY` - the block number.
+1. `QUANTITY` - 区块编号。
 2. `Boolean` - 如果 `true`，返回完整的交易对象。 如果为 `false`，只会返回交易的哈希值。
 
 ```json
@@ -2039,21 +2039,21 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"cfx_getBlockByBlockNumber","para
 
 ### cfx_getPoSEconomics
 
-Returns PoS economics summary info.
+返回 PoS 经济总结信息。
 
-#### Added at
+#### 添加于
 
 `Conflux-rust v2.0.0`
 
 #### 参数
 
-1. [`QUANTITY`] - (optional, default: `"latest_state"`) integer epoch number, or the string `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-default-epochnumber-parameter)
+1. [`QUANTITY`] - (可选的，默认值：`"latest_state"`) 整数纪元编号，或字符串`"latest_state"`、`"latest_confirmed"`、`"latest_checkpoint"`或`"earliest"`，请参见[epoch number parameter](#the-default-epochnumber-parameter)。
 
 #### 返回值
 
-* `distributablePosInterest`: `QUANTITY` Total distributable PoS interest (Unit is Drip)
-* `lastDistributeBlock`: `QUANTITY` Last block that distributable PoS interest
-* `totalPosStakingTokens`: `QUANTITY` Total tokens staked in PoS (Unit is Drip)
+* `distributablePosInterest`: `QUANTITY` 可分配的 PoS 利息总额（单位为 Drip）
+* `lastDistributeBlock`: `QUANTITY` 可分配的 PoS 利息的最后一个块
+* `totalPosStakingTokens`: `QUANTITY` 在 PoS 中质押的总代币数（单位为 Drip）
 
 #### 示例
 
@@ -2082,15 +2082,15 @@ curl --location --request POST 'http://localhost:12537' \
 
 ### cfx_getPoSRewardByEpoch
 
-Get rewards information of a PoS epoch by it's correspond PoW epoch number. Only PoW epoch happen's at PoS epoch end will have rewards information. Others will return null.
+通过对应的 PoW epoch编号，获取 PoS epoch的奖励信息。 只有在 PoS epoch结束时发生的 PoW epoch才会有奖励信息。 其他将返回空值（null）。
 
-#### Added at
+#### 添加于
 
 `Conflux-rust v2.0.0`
 
 #### 参数
 
-1. `QUANTITY`: PoW epoch number
+1. `QUANTITY`: PoW epoch编号
 
 ```json
 params: [
@@ -2100,18 +2100,18 @@ params: [
 
 #### 返回值
 
-* `accountRewards`: `Array` of [AccountReward](#accountreward)
-* `powEpochHash`: `HASH` - the hash value of the PoW block when the rewards are made
+* `accountRewards`: `Array`，其中包含 [AccountReward](#accountreward) 的信息
+* `powEpochHash`: `HASH` - 在奖励产生时的 PoW 区块的哈希值
 
-##### AccountReward
+##### 账户奖励
 
-* `posAddress`: `ADDRESS` - PoS account address
-* `powAddress`: `BASE32` - PoW account address
-* `reward`: `QUANTITY` - the number of rewards, in the unit of Drip
+* `posAddress`: `ADDRESS` - PoS 账户地址
+* `powAddress`: `BASE32` - PoW 账户地址
+* `reward`: `QUANTITY` - 奖励数量，以 Drip 为单位
 
 ##### 示例
 
-Request
+请求
 
 ```sh
 curl --location --request POST 'http://localhost:12537' \
@@ -2124,7 +2124,7 @@ curl --location --request POST 'http://localhost:12537' \
 }'
 ```
 
-Response
+响应
 
 ```json
 {
@@ -2150,15 +2150,15 @@ Response
 
 ### cfx_getParamsFromVote
 
-Returns DAO vote params info
+返回DAO投票参数信息。
 
-#### Added at
+#### 添加于
 
 `Conflux-rust v2.1.0`
 
 #### 参数
 
-1. `QUANTITY`: (optional, default: `"latest_state"`) integer epoch number, or the string `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-default-epochnumber-parameter)
+1. `QUANTITY`: (可选的，默认值：`"latest_state"`) 整数纪元编号，或字符串`"latest_state"`、`"latest_confirmed"`、`"latest_checkpoint"`或`"earliest"`，请参见[epoch number parameter](#the-default-epochnumber-parameter)。
 
 ```json
 params: [
@@ -2168,14 +2168,14 @@ params: [
 
 #### 返回值
 
-* `powBaseReward`: `QUANTITY` - The PoW base reward amount
-* `interestRate`: `QUANTITY` - The PoS interest rate
-* `storagePointProp`: `QUANTITY` - The integer parameter determining the proportion of sponsored storage which will transfer to storage point. The proportion is calculated as `storagePointProp / (storagePointProp + 10**18)`.
-* `baseFeeShareProp`: `QUANTITY` - The integer parameter determining the proportion of transaction base fee which will reward to miner. Added in Conflux-Rust v2.4.0. The proportion is calculated as `baseFeeShareProp / (baseFeeShareProp + 10**18)`.
+* `powBaseReward`: `QUANTITY` - PoW 基本奖励金额
+* `interestRate`: `QUANTITY` - PoS 利率
+* `storagePointProp`: `QUANTITY` - 整数参数，确定将转换为存储点的赞助存储的比例。 该比例的计算公式为： `storagePointProp / (storagePointProp + 10**18)`.
+* `baseFeeShareProp`: `QUANTITY` - 整数参数，确定将奖励给矿工的交易基础费用的比例。 从 Conflux-rust v2.4.0 开始添加。 该比例的计算公式为： `baseFeeShareProp / (baseFeeShareProp + 10**18)`.
 
 ##### 示例
 
-Request
+请求
 
 ```sh
 curl --location --request POST 'http://localhost:12537' \
@@ -2188,7 +2188,7 @@ curl --location --request POST 'http://localhost:12537' \
 }'
 ```
 
-Response
+响应
 
 ```json
 {
@@ -2205,16 +2205,16 @@ Response
 
 ### cfx_newFilter
 
-This function creates a log filter for tracking usage. It returns a log filter ID, which can be employed through the [cfx_getFilterChanges](#cfx_getfilterchanges) command to retrieve logs newly generated from recently executed transactions. The `from*` field in this context will be disregarded by this RPC (Remote Procedure Call). This function can also be used via [cfx_getFilterLogs](#cfx_getfilterlogs) to retrieve all logs that match the filter criteria. In this instance, the `from*` fields are considered.
+该函数创建一个用于跟踪使用情况的日志过滤器。 它返回一个日志过滤器ID，可以通过[cfx_getFilterChanges](#cfx_getfilterchanges) 命令使用，以检索从最近执行的交易中新生成的日志。 在这种情况下，该 RPC（远程过程调用）将忽略上下文中的 `from` 字段。 此函数还可以通过[cfx_getFilterLogs](#cfx_getfilterlogs) 使用，以检索与过滤器条件匹配的所有日志。 在这种情况下， `from*` 字段会被考虑。
 
-It is important to note that the filter object will expire after a certain period of inactivity from the last request, typically 60 seconds. This expiration duration is configured by the node. To avoid losing log tracking, it is recommended to refresh or recreate the filter as necessary.
+需要注意的是，该过滤器对象将在最后一次请求后的一段时间内处于不活动状态后过期，通常为60秒。 这个过期持续时间由节点配置。 为了避免丢失日志跟踪，建议根据需要刷新或重新创建过滤器。
 
 #### 参数
 
 1. `object` - 日志过滤对象：
-    * `fromEpoch`: `QUANTITY|TAG` - (可选，默认为: `"latest_checkpoint"`) 纪元号，或字符串 `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, 详见 [纪元号参数](#the-default-epochnumber-parameter)。 The start epoch to search. Noting that [cfx_getFilterChanges] will ignore this parameter.
+    * `fromEpoch`: `QUANTITY|TAG` - (可选，默认为`"latest_checkpoint"`)整数纪元号，或字符串 `"latest_state"`、`"latest_confirmed"`、`"latest_checkpoint"` 或 `"earliest"`，详见 [纪元号参数](#the-default-epochnumber-parameter)。 需要搜索的起始纪元 需要注意的是，[cfx_getFilterChanges] 将忽略此参数。
     * `toEpoch`: `QUANTITY|TAG` - (可选，默认为: `"latest_state"`) 纪元号，或字符串 `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, 详见 [纪元号参数](#the-default-epochnumber-parameter)。 搜索将持续到(包括)这个纪元数。
-    * `fromBlock`: `QUANTITY` - (可选，默认为: `null`)。 The start block to search. Noting that [cfx_getFilterChanges] will ignore this parameter.
+    * `fromBlock`: `QUANTITY` - (可选，默认为: `null`)。 The start block to search. 需要注意的是，[cfx_getFilterChanges] 将忽略此参数。
     * `toBlock`: `QUANTITY` - (可选， 默认为: `null`)。 搜索将被应用持续到(包括) 此指定区块。
     * `blockHashes`: `Array` `DATA` - (可选，默认为: `null`)搜索会被应用到最多128个区块哈希的数组。 如果不是`null`，则会覆盖 from/to 纪元 字段。
     * `address`: `Array` of `BASE32` - (可选, 默认为: `null`) 搜索合约地址。 如果为 `null`, 匹配所有。 如果指定了，日志必须由这些合约中的一个生成。
@@ -2233,11 +2233,11 @@ params: [
 
 #### 返回值
 
-`QUANTITY` - the id of the log filter object.
+`QUANTITY` - 日志过滤器对象的 id。
 
 ##### 示例
 
-Request
+请求
 
 ```sh
 curl --location --request POST 'http://localhost:12537' \
@@ -2250,7 +2250,7 @@ curl --location --request POST 'http://localhost:12537' \
 }'
 ```
 
-Response
+响应
 
 ```json
 {
@@ -2262,9 +2262,9 @@ Response
 
 ### cfx_newBlockFilter
 
-Create a block filter for following up usage. Returns the block filter id which can be used via [cfx_getFilterChanges](#cfx_getfilterchanges) to retrieve latest executed blocks.
+Create a block filter for following up usage. 返回区块过滤器ID，可通过 [cfx_getFilterChanges](#cfx_getfilterchanges) 使用以检索最近执行的区块。
 
-It is important to note that the filter object will expire after a certain period of inactivity from the last request, typically 60 seconds. This expiration duration is configured by the node. To avoid losing log tracking, it is recommended to refresh or recreate the filter as necessary.
+需要注意的是，该过滤器对象将在最后一次请求后的一段时间内处于不活动状态后过期，通常为60秒。 这个过期持续时间由节点配置。 为了避免丢失日志跟踪，建议根据需要刷新或重新创建过滤器。
 
 #### 参数
 
@@ -2272,11 +2272,11 @@ It is important to note that the filter object will expire after a certain perio
 
 #### 返回值
 
-`QUANTITY` - the id of the block filter object.
+`QUANTITY` - 区块过滤器对象的ID。
 
 ##### 示例
 
-Request
+请求
 
 ```sh
 curl --location --request POST 'http://localhost:12537' \
@@ -2289,7 +2289,7 @@ curl --location --request POST 'http://localhost:12537' \
 }'
 ```
 
-Response
+响应
 
 ```json
 {
@@ -2301,15 +2301,15 @@ Response
 
 ### cfx_newPendingTransactionFilter
 
-Create a pending transaction filter for following up usage. Returns the transaction filter id which can be used via [cfx_getFilterChanges](#cfx_getfilterchanges) to retrieve **ready but not executed** transactions.
+创建一个用于跟踪待处理交易的过滤器。 返回交易过滤器ID，可以通过 [cfx_getFilterChanges](#cfx_getfilterchanges) 使用以检索 **准备好但尚未执行** 的交易。
 
-:::note
+:::注意
 
-The created filter will only filter out ready transactions, which means a pending transaction with a future nonce will never be listed via corresponding [cfx_getFilterChanges](#cfx_getfilterchanges).
+所创建的过滤器仅会过滤出准备好的交易，这意味着具有未来随机数的待处理交易将永远不会通过相应的 [cfx_getFilterChanges](#cfx_getfilterchanges) 列出。
 
 :::
 
-Besides, it is important to note that the filter object will expire after a certain period of inactivity from the last request, typically 60 seconds. This expiration duration is configured by the node. To avoid losing log tracking, it is recommended to refresh or recreate the filter as necessary.
+此外，需要注意的是，该过滤器对象将在最后一次请求后的一段时间内处于不活动状态后过期，通常为60秒。 这个过期持续时间由节点配置。 为了避免丢失日志跟踪，建议根据需要刷新或重新创建过滤器。
 
 #### 参数
 
@@ -2317,11 +2317,11 @@ Besides, it is important to note that the filter object will expire after a cert
 
 #### 返回值
 
-`QUANTITY` - the id of the pending transaction filter object.
+`QUANTITY` - 待处理交易过滤器对象的ID。
 
 ##### 示例
 
-Request
+请求
 
 ```sh
 curl --location --request POST 'http://localhost:12537' \
@@ -2334,7 +2334,7 @@ curl --location --request POST 'http://localhost:12537' \
 }'
 ```
 
-Response
+响应
 
 ```json
 {
@@ -2346,21 +2346,21 @@ Response
 
 ### cfx_getFilterChanges
 
-Get filter changes since last retrieve. Return value depends on which type of filter id is provided. Filter id can be returned from current RPCs:
+获取自上次检索以来的过滤器变化。 返回值取决于提供的过滤器ID的类型。 过滤器ID可以从当前RPC中返回：
 
-* [cfx_newFilter](#cfx_newfilter): new logs generated from newly executed transactions matching the filter. Noting that `from*` fields will be ignored by this RPC.
-* [cfx_newBlockFilter](#cfx_newblockfilter): new executed blocks.
+* [cfx_newFilter](#cfx_newfilter): new logs generated from newly executed transactions matching the filter. 需要注意的是，此RPC将忽略 `from*` 字段。
+* [cfx_newBlockFilter](#cfx_newblockfilter)：新执行的区块。
 * [cfx_newPendingTransactionFilter](#cfx_newpendingtransactionfilter): new pending transactions which are **ready to execute**.
 
-:::note
+:::注意
 
-The created filter will only filter out ready transactions, which means a pending transaction with a future nonce will never be listed via corresponding [cfx_getFilterChanges](#cfx_getfilterchanges).
+所创建的过滤器仅会过滤出准备好的交易，这意味着具有未来随机数的待处理交易将永远不会通过相应的 [cfx_getFilterChanges](#cfx_getfilterchanges) 列出。
 
 :::
 
 #### 参数
 
-1. `QUANTITY` - the filter id.
+1. `QUANTITY` - 过滤器ID。
 
 ```json
 params: [
@@ -2374,7 +2374,7 @@ params: [
 
 ##### 示例
 
-Request
+请求
 
 ```sh
 curl --location --request POST 'http://localhost:12537' \
@@ -2387,7 +2387,7 @@ curl --location --request POST 'http://localhost:12537' \
 }'
 ```
 
-Response
+响应
 
 ```json
 {
@@ -2399,11 +2399,11 @@ Response
 
 ### cfx_getFilterLogs
 
-Returns **all** logs matching the log filter (Unlike `cfx_getFilterChanges`, `from*` fields still work).
+返回匹配日志过滤器的 **所有** 日志（与 `cfx_getFilterChanges` 不同，`from*` 字段仍然有效）。
 
 #### 参数
 
-1. `QUANTITY` - the filter id.
+1. `QUANTITY` - 过滤器ID。
 
 ```json
 params: [
@@ -2417,7 +2417,7 @@ params: [
 
 ##### 示例
 
-Request
+请求
 
 ```sh
 curl --location --request POST 'http://localhost:12537' \
@@ -2430,17 +2430,17 @@ curl --location --request POST 'http://localhost:12537' \
 }'
 ```
 
-Response
+响应
 
-Refer to [cfx_getLogs](#cfx_getlogs).
+请参阅 [cfx_getLogs](#cfx_getlogs)
 
 ### cfx_uninstallFilter
 
-Uninstall the specified filter. Returns a bool whether the uninstallation succeeds.
+卸载指定的过滤器。 返回一个布尔值，指示卸载是否成功。
 
 #### 参数
 
-1. `QUANTITY` - the filter id.
+1. `QUANTITY` - 过滤器ID。
 
 ```json
 params: [
@@ -2450,11 +2450,11 @@ params: [
 
 #### 返回值
 
-`Boolean` - whether the uninstallation succeeds.
+`Boolean` - 卸载是否成功。
 
 ##### 示例
 
-Request
+请求
 
 ```sh
 curl --location --request POST 'http://localhost:12537' \
@@ -2467,7 +2467,7 @@ curl --location --request POST 'http://localhost:12537' \
 }'
 ```
 
-Response
+响应
 
 ```json
 {
@@ -2479,11 +2479,11 @@ Response
 
 ### cfx_getEpochReceipts
 
-Returns all transaction receipts within the specific epoch.
+返回特定纪元内的所有交易收据。
 
 :::note
 
-Public RPC endpoints are run on top of [Confura](../../core-endpoints.md#1-confura), where this method is supported if api key is provided. For normal nodes, this method is also supported, but can only be accessed in local environment.
+公共RPC端点运行在[Confura](../../core-endpoints.md#1-confura)之上，如果提供了api密钥，则支持此方法。 对于普通节点，此方法也受支持，但只能在本地环境中访问。
 
 :::
 
@@ -2505,7 +2505,7 @@ params: [
 
 ##### 示例
 
-Request
+请求
 
 ```sh
 curl --location --request POST 'http://localhost:12537' \
@@ -2518,7 +2518,7 @@ curl --location --request POST 'http://localhost:12537' \
 }'
 ```
 
-Response
+响应
 
 ```json
 {
@@ -2556,11 +2556,11 @@ Response
 
 ### cfx_getCollateralInfo
 
-Returns current chain collateral status info.
+返回当前链的质押物状态信息。
 
 #### 参数
 
-1. `QUANTITY|TAG` - (optional, default: `"latest_state"`) the epoch number, or the string ``"latest_state"`,`"latest_confirmed"`,`"latest_checkpoint"`or`"earliest"`, see the [epoch number parameter](#the-default-epochnumber-parameter).
+1. `QUANTITY|TAG` - (可选, 默认值为: `"latest_state"`) 为整数纪元号, 或字符串如 ``"latest_state"`,`"latest_confirmed"`,`"latest_checkpoint"`or`"earliest"`, 详见 [纪元号参数](#the-default-epochnumber-parameter)。
 
 ```json
 params: [
@@ -2570,15 +2570,15 @@ params: [
 
 #### 返回值
 
-`Object` - The storage collateral info object of the chain.
+`Object` - 链的存储抵押信息对象。
 
 * `totalStorageTokens`
-* `convertedStoragePoints` - converted storage points of the total chain
-* `usedStoragePoints` - storage points already used for sponsorship
+* `convertedStoragePoints` - 全链的转换存储节点数
+* `usedStoragePoints` - 已用于代付的存储节点数
 
 ##### 示例
 
-Request
+请求
 
 ```sh
 curl --location --request POST 'http://localhost:12537' \
@@ -2591,7 +2591,7 @@ curl --location --request POST 'http://localhost:12537' \
 }'
 ```
 
-Response
+响应
 
 ```json
 {
@@ -2607,7 +2607,7 @@ Response
 
 ### cfx_getFeeBurnt
 
-Returns the total burnt tx gas fee by 1559. Added in Conflux-Rust v2.4.0.
+返回1559交易机制下烧毁的总交易燃气费用。 从 Conflux-rust v2.4.0 开始添加。
 
 #### 参数
 
@@ -2615,7 +2615,7 @@ Returns the total burnt tx gas fee by 1559. Added in Conflux-Rust v2.4.0.
 
 #### 返回值
 
-`QUANTITY` - the total burnt tx gas fee by 1559 in Drip.
+`QUANTITY`：1559机制下烧毁的总交易燃气费用，以Drip为单位。
 
 ##### 示例
 
@@ -2631,9 +2631,9 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"cfx_getFeeBurnt","id":1}' -H "Co
 }
 ```
 
-## Related Topics
+## 相关主题
 
-* [JSON-RPC specification](https://github.com/conflux-chain/jsonrpc-spec)
+* [JSON-RPC 规范](https://github.com/conflux-chain/jsonrpc-spec)
 * [Nodes and clients](https://github.com/conflux-chain/conflux-rust)
 * [JavaScript APIs](https://github.com/conflux-chain/js-conflux-sdk)
 * [Backend APIs](https://github.com/conflux-chain/go-conflux-sdk)

@@ -21,7 +21,7 @@ tags:
   - 内置合约
 ---
 
-`ParamsControl` is a smart contract at address `0x0888000000000000000000000000000000000007` that allows participation in the chain parameter DAO vote on the Conflux network. 以下是该合约在测试网和主网环境中的地址，您可以在这些环境中与该合约进行交互：
+`ParamsControl` 是一个地址为 `0x0888000000000000000000000000000000000007` 的智能合约，允许参与 Conflux 网络上的链参数 DAO 投票。 以下是该合约在测试网和主网环境中的地址，您可以在这些环境中与该合约进行交互：
 
 - **测试网地址**: [`cfxtest:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaa64p5db1w9`](https://testnet.confluxscan.io/address/cfxtest:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaa64p5db1w9)
 - **主网地址**: [`cfx:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaa6uhjxh70z`](https://confluxscan.io/address/cfx:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaa6uhjxh70z)

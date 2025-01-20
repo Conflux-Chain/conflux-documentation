@@ -9,7 +9,7 @@ keywords:
   - JSON-RPC
   - Mainnet
   - Testnet
-  - Chain ID
+  - 链 ID
   - HTTP endpoints
   - WebSocket endpoints
   - Confura

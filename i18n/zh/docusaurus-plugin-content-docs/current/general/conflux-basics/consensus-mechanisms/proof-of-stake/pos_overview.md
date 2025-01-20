@@ -1,7 +1,7 @@
 ---
 id: pos_overview
 title: PoS 概览
-sidebar_position: 2
+sidebar_position: 1
 displayed_sidebar: generalSidebar
 keywords:
   - Conflux-Network

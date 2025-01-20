@@ -12,7 +12,7 @@ keywords:
   - Testnet
   - Gas Sponsorship
   - Storage Sponsorship
-  - Whitelist
+  - 白名单
   - SponsorWhitelistControl
   - Contract Interaction
   - CFX
@@ -27,93 +27,93 @@ tags:
   - Gas Sponsorship
 ---
 
-Conflux Core [Sponsorship](../core-space-basics/sponsor-mechanism.md) offers a user-friendly feature for new blockchain users. This tutorial will guide you on how to use the [ConfluxScan Read&Write Tool](https://www.confluxscan.io/address/cfx:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaaegg2r16ar?tab=contract-viewer) to sponsor a contract.
+Conflux Core [赞助](../core-space-basics/sponsor-mechanism.md)提供了一个方便的功能给刚接触区块链的用户。 本教程将指导您如何使用 [ConfluxScan 读写工具](https://www.confluxscan.io/address/cfx:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaaegg2r16ar?tab=contract-viewer)来赞助一个合约。
 
-The Contract Read&Write Tool allows users to interact with smart contracts. Any verified contract on ConfluxScan can utilize this tool to read or write data.
+合约读写工具允许用户与智能合约进行交互。 任何在 ConfluxScan 上验证过的合约都可以使用这个工具来读取或写入数据。
 
-- [Mainnet SponsorWhitelistControl Read&Write Tool](https://www.confluxscan.io/address/cfx:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaaegg2r16ar?tab=contract-viewer)
-- [Testnet SponsorWhitelistControl Read&Write Tool](https://testnet.confluxscan.io/address/cfxtest:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaaeprn7v0eh?tab=contract-viewer)
+- [主网上控制赞助白名单的读写工具](https://www.confluxscan.io/address/cfx:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaaegg2r16ar?tab=contract-viewer)
+- [控制测试网上赞助白名单的读写工具](https://testnet.confluxscan.io/address/cfxtest:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaaeprn7v0eh?tab=contract-viewer)
 
 ![](./imgs/sponsor/sponsor-read-methods.png)
 
-## Preparation
+## 准备工作
 
-1. Install the [Fluent](https://fluentwallet.com/) wallet and switch to the Conflux Testnet network.
-2. Acquire some test tokens from the [Conflux Testnet Faucet](https://faucet.confluxnetwork.org/).
-3. Have a contract address ready, for example: `cfxtest:acgwyxdwpc8475n2na9uk9rfbghstg1xtumht10mue`.
+1. 安装 [Fluent](https://fluentwallet.com/) 钱包并切换到 Conflux 测试网络。
+2. 从 [Conflux 测试网水龙头](https://faucet.confluxnetwork.org/) 获取一些测试代币。
+3. 准备一个合约地址，例如：`cfxtest:acgwyxdwpc8475n2na9uk9rfbghstg1xtumht10mue`。
 
-## Query Sponsor Info
+## 查询赞助信息
 
-In the **Read Contract** tab, all the contract's view methods are listed. Open any of them, input the parameter (if any), and click the **Query** button to obtain the result.
+在**读取合约**标签页中列出了所有的合约查看方法 打开其中任意一个合约，输入参数（如果有的话），然后点击**查询**按钮以获取结果。
 
-For instance, using `getSponsorForGas`:
+例如，使用 `getSponsorForGas`：
 
 ![](./imgs/sponsor/query-gas-sponsor.png)
 
-If a **Zero Address** is returned, it signifies that the contract is not sponsored.
+如果返回**零地址**，这意味着合约未被赞助。
 
-## Sponsor Storage
+## 赞助存储
 
-In the **Write Contract** tab, all the contract's write methods are listed. Before using it, connect your wallet.
+在**写入合约**标签页中列出了所有的合约写入方法。 在使用之前需要先连接您的钱包。
 
 ![](./imgs/sponsor/set-collateral-sponsor.png)
 
-If a write method includes a **payable modifier**, the first input box can be used to set the amount of CFX to be transferred to the contract when calling the method.
+如果写入方法包含 **payable 修饰符**，第一个输入框可用于在调用方法时，设置要转移到合约的 CFX 数量。
 
-For example, inputting 50 means transferring 50 CFX to the contract.
+例如，输入 50 意味着向合约转移 50 CFX。
 
-Then click the **Write** button. A popup will appear; click **Confirm** to approve the transaction.
+然后点击**写入**按钮 随后将出现一个弹窗；点击**确认**以批准交易。
 
 ![](./imgs/sponsor/set-collateral-sponsor-popup.png)
 
-After transaction execution, you can query the contract's sponsor info again.
+交易执行后，您可以再次查询合约的赞助信息。
 
 ![](./imgs/sponsor/query-sponsor-storage-balance.png)
 
-Half of the CFX will be converted into storage points.
+一半的 CFX 将转换为存储点。
 
 ![](./imgs/sponsor/query-storage-points.png)
 
-## Sponsor Gas
+## 赞助 Gas
 
-We will set 10 CFX for the gas sponsor balance, with an upper bound of **1000000000000000** Drip (`10**15` Drip).
+我们将 gas 的赞助余额设置为 10 CFX，上限为 **1000000000000000** Drip（`**1000000000000000** ` Drip）。
 
 ![](./imgs/sponsor/set-gas-sponsor.png)
 
-After the transaction execution, you can query the contract's sponsor info again.
+交易执行后，您可以再次查询合约的赞助信息。
 
 ![](./imgs/sponsor/query-sponsor-gas-balance.png)
 
-## Whitelist
+## 白名单
 
-Finally, add the zero address to the whitelist to use the contract without paying a gas fee.
+最后，将零地址添加到白名单中，以便在不支付 gas 费的情况下使用合约。
 
-For the second parameter, which is an array, pass ["0x0000000000000000000000000000000000000000"].
+对于第二个参数（即数组），传递 ["0x0000000000000000000000000000000000000000"]。
 
 ![](./imgs/sponsor/add-zero-address-whitelist.png)
 
-## Check Contract Storage Usage Info on ConfluxScan
+## 在 ConfluxScan 上检查合约存储的使用信息
 
-You can check the contract's storage usage and sponsor balance info on the ConfluxScan contract detail page.
+您可以在 ConfluxScan 的合约详情页面上，检查合约的存储使用以及赞助余额信息。
 
 ![](./imgs/sponsor/contract-detail-page.jpg)
 
-## Check Transactions Sponsored on ConfluxScan
+## 在 ConfluxScan 上检查有关赞助的交易
 
-After setting up the sponsor, you can interact with the contract without paying gas fee. The transaction will be marked as **Sponsored** on ConfluxScan in the detail page.
+设置了赞助后，您可以在不支付 gas 费的情况下与合约互交互 交易将在 ConfluxScan 的详情页面上被标记为赞助。
 
 ![](./imgs/sponsor/tx-is-sponsored.jpg)
 
-## Other Sponsor Methods
+## 其他的赞助方法
 
-Developers can use SDKs to call the `SponsorWhitelistControl` methods to sponsor a contract. For an example, see [here](../core-space-basics/internal-contracts/sponsor-whitelist-control.md#how-to-sponsor-a-contract).
+开发者可以使用 SDK 来调用 `SponsorWhitelistControl` 方法来赞助合约。 相关示例请点击[此处](../core-space-basics/internal-contracts/sponsor-whitelist-control.md#how-to-sponsor-a-contract)进行查看。
 
 ## 常见问题解答
 
-### I sponsored a contract, but the transaction still failed. Why?
+### 我赞助了一个合约，为什么交易仍然失败了？ 我赞助了一个合约，为什么交易仍然失败了？
 
-Several reasons might cause the transaction to fail:
+可能导致交易失败的几个原因：
 
-1. The upper bound is too small.
-2. The sponsor balance is insufficient.
-3. 白名单设置不正确。
+1. gas 上限设置得太低。
+2. 赞助余额不足。
+3. 白名单设置得不正确。

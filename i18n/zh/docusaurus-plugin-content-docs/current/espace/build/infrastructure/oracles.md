@@ -42,7 +42,7 @@ Pyth 已经集成在 Conflux eSpace 中，您可以直接使用。 请查看其[
 
 ## [Wit/Oracle](https://witnet.io/)
 
-The **[Wit/Oracle](https://witnet.io)** is a public, permissionless, and fully decentralized _Proof-of-Stake_ blockchain that is powered by its own cryptocurrency, the _$WIT_ coin.
+**[Wit/Oracle](https://witnet.io)** 是一个公开的、无需许可的、完全去中心化的 _权益证明（Proof-of-Stake）_ 区块链，由其原生加密货币 _$WIT_ 代币驱动。
 
 By means of the _**Wit/Oracle Bridging Framework**_ (a set of verified and counter-factual smart contracts deployed by the [_Witnet Foundation_](https://witnet.foundation)), all data that is publicly accessible on the Internet using HTTP/GET, HTTP/POST or even HTTP/HEAD requests, can be attested, aggregated and brought right into your smart contracts, truthful to the data sources being referred.
 

@@ -24,23 +24,23 @@ tags:
   - API
 ---
 
-In order for a software application to interact with the Conflux blockchain - either by reading blockchain data or sending transactions to the network - it must connect to an Conflux node.
+为了使一个软件应用程序与 Conflux 区块链交互——无论是读取区块链数据还是向网络发送交易——它必须连接到一个 Conflux 节点。
 
-For this purpose, every [Conflux client](https://github.com/conflux-chain/conflux-rust) implements a [JSON-RPC specification](https://github.com/Conflux-Chain/jsonrpc-spec), so there are a uniform set of methods that applications can rely on regardless of the specific node or client implementation.
+为此，每个[Conflux客户端](https://github.com/conflux-chain/conflux-rust)都执行了一个[JSON-RPC 规范](https://github.com/Conflux-Chain/jsonrpc-spec)，因此无论特定节点和客户端执行，应用程序都可以依赖一组统一的方法。
 
-[JSON-RPC](https://www.jsonrpc.org/specification) is a stateless, light-weight remote procedure call (RPC) protocol. It defines several data structures and the rules around their processing. It is transport agnostic in that the concepts can be used within the same process, over sockets, over HTTP, or in many various message passing environments. It uses JSON (RFC 4627) as data format.
+[JSON-RPC](https://www.jsonrpc.org/specification) 是一个无状态、轻量级的远程程序调用(RPC)协议。 它定义了几个数据结构以及它们处理的规则。 It is transport agnostic in that the concepts can be used within the same process, over sockets, over HTTP, or in many various message passing environments. 它使用 JSON (RFC 4627) 作为数据格式。
 
 ## CONVENIENCE LIBRARIES
 
-While you may choose to interact directly with Conflux clients via the JSON-RPC API, there are often easier options for dapp developers. Many [JavaScript](https://github.com/conflux-chain/js-conflux-sdk) and [backend API](https://github.com/conflux-chain/go-conflux-sdk) libraries exist to provide wrappers on top of the JSON-RPC API. With these libraries, developers can write intuitive, one-line methods in the programming language of their choice to initialize JSON-RPC requests (under the hood) that interact with Conflux.
+虽然你可以选择通过JSON-RPC API直接与Conflux客户端交互，但对于dapp开发者来说，通常有更方便的选择。 Many [JavaScript](https://github.com/conflux-chain/js-conflux-sdk) and [backend API](https://github.com/conflux-chain/go-conflux-sdk) libraries exist to provide wrappers on top of the JSON-RPC API. With these libraries, developers can write intuitive, one-line methods in the programming language of their choice to initialize JSON-RPC requests (under the hood) that interact with Conflux.
 
-## JSON-RPC endpoints
+## JSON-RPC 端点
 
 Currently, Conflux has a [Rust implementation](https://github.com/Conflux-Chain/conflux-rust) that supports JSON-RPC 2.0 over an HTTP, TPC, or WebSocket connection.
 
-If you are a node operator, you can enable and configure various RPC interfaces through the TOML config file, or directly by passing command line arguments. The main configuration items are listed in the table below. Note that if you want to enable HTTPS or access control, you will need to set up a proxy for your node.
+如果你是一个节点搭设者，你可以通过 TOML 配置文件，或者直接传递命令行参数，来启用和配置各种 RPC 接口。 主要的配置项如下表所示。 Note that if you want to enable HTTPS or access control, you will need to set up a proxy for your node.
 
-| config parameter          | cli parameter         | default port   | enabled by default   |
+| 配置参数                      | 命令行参数                 |     默认端口：      |        默认启用          |
 | ------------------------- | --------------------- | :------------: | :------------------: |
 | `jsonrpc_ws_port`         | `--jsonrpc-ws-port`   | 12535          | no                   |
 | `jsonrpc_tcp_port`        | `--jsonrpc-tcp-port`  | 12536          | no                   |
@@ -48,9 +48,9 @@ If you are a node operator, you can enable and configure various RPC interfaces 
 | `jsonrpc_local_tcp_port`  | -                     | 12538          | no                   |
 | `jsonrpc_local_http_port` | -                     | 12539          | yes                  |
 
-## Method Namespace
+## 方法命名空间
 
-The JSON-RPC API is organized into namespaces, with each namespace containing a set of methods. All methods name in one namespace have a same prefix, for example all methods in `cfx namespace` have a same prefix `cfx_` eg `cfx_getBalance`, `cfx_getTransactionByHash`. The following namespaces are currently supported:
+The JSON-RPC API is organized into namespaces, with each namespace containing a set of methods. All methods name in one namespace have a same prefix, for example all methods in `cfx namespace` have a same prefix `cfx_` eg `cfx_getBalance`, `cfx_getTransactionByHash`. 当前支持下列命名空间：
 
 ```mdx-code-block
 import DocCardList from '@theme/DocCardList';

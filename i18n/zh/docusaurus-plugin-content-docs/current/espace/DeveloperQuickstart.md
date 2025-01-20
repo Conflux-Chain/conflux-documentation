@@ -43,7 +43,7 @@ eSpace 也使用 CFX 作为其原生货币，用于支付部署合约和与网�
 | 网络名称      | Conflux eSpace                                                                                           |
 | --------- | -------------------------------------------------------------------------------------------------------- |
 | RPC URL   | [https://evm.confluxrpc.com](https://evm.confluxrpc.com) |
-| Chain ID  | 1030                                                                                                     |
+| 链 ID      | 1030                                                                                                     |
 | 货币符号      | CFX                                                                                                      |
 | 区块浏览器 URL | [https://evm.confluxscan.io](https://evm.confluxscan.io) |
 
@@ -54,7 +54,7 @@ eSpace 也使用 CFX 作为其原生货币，用于支付部署合约和与网�
 | 网络名称      | Conflux eSpace 测试网                                                                                                     |
 | --------- | ---------------------------------------------------------------------------------------------------------------------- |
 | RPC URL   | [https://evmtestnet.confluxrpc.com](https://evmtestnet.confluxrpc.com) |
-| Chain ID  | 71                                                                                                                     |
+| 链 ID      | 71                                                                                                                     |
 | 货币符号      | CFX                                                                                                                    |
 | 区块浏览器 URL | [https://evmtestnet.confluxrpc.com](https://evmtestnet.confluxrpc.com) |
 

@@ -39,14 +39,14 @@ eSpace 实现了一个以太坊虚拟机 (EVM)。 以下是 eSpace 和以太坊�
 
 ## 交易类型
 
-- eSpace initially only supports **155 type** transaction (legacy transactions)
+- eSpace最初只支持**155类型**交易(传统交易)。
 - [EIP-2930](https://eips.ethereum.org/EIPS/eip-2930) (type 1) & [EIP-1559](https://eips.ethereum.org/EIPS/eip-1559) (type 2) transactions are supported after hardfork v2.4.0.
 - [EIP-4844](https://eips.ethereum.org/EIPS/eip-4844) (type 3) transactions are not supported.
 
 ## EVM 操作码
 
-* **Before v2.4.0** the `BLOCKHASH` opcode can only take `NUMBER-1` as input. （与以太坊不同的是，以太坊可以接受 `NUMBER-256` 到 `NUMBER-1` 之间的任何整数作为输入）。 After v2.4.0 it is fully compatible with Ethereum with an advanced input range up to 65536 blocks (implemented by [CIP-133](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-133.md)).
-* The 4844 opcode `BLOBHASH` `BLOBBASEFEE` is not supprted.
+* **在v2.4.0之前**，`BLOCKHASH`操作码只能接受`NUMBER-1`作为输入。 （与以太坊不同的是，以太坊可以接受 `NUMBER-256` 到 `NUMBER-1` 之间的任何整数作为输入）。 在v2.4.0之后，通过[CIP-133](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-133.md)的实现，其输入范围扩展到65536个区块，完全兼容以太坊。
+* 不支持操作码`BLOBHASH`和`BLOBBASEFEE`。
 
 ## 区块时间
 
@@ -77,18 +77,18 @@ Only blocks whose height is a multiple of `5` can include Ethereum-type transact
 
 <div class="compat-evm-precompiles-table"></div>
 
-| 地址   | ID                | 名称                                                                                       | 规范               | 状态 | 版本     |
-| ---- | ----------------- | ---------------------------------------------------------------------------------------- | ---------------- | -- | ------ |
-| 0x01 | `ECRecover`       | ECDSA 公钥恢复                                                                               | [Yellow Paper][] | ✅  |        |
-| 0x02 | `SHA256`          | SHA-2 256 哈希函数                                                                           | [Yellow Paper][] | ✅  |        |
-| 0x03 | `RIPEMD160`       | RIPEMD 160 哈希函数                                                                          | [Yellow Paper][] | ✅  |        |
-| 0x04 | `Identity`        | 身份函数                                                                                     | [Yellow Paper][] | ✅  |        |
-| 0x05 | `ModExp`          | 大整数模幂运算                                                                                  | [EIP-198][]      | ✅  |        |
-| 0x06 | `BN128Add`        | 椭圆曲线加法                                                                                   | [EIP-196][]      | ✅  |        |
-| 0x07 | `BN128Mul`        | 椭圆曲线标量乘法                                                                                 | [EIP-196][]      | ✅  |        |
-| 0x08 | `BN128Pair`       | 椭圆曲线配对检查                                                                                 | [EIP-197][]      | ✅  |        |
-| 0x09 | `Blake2F`         | BLAKE2b `F` 压缩函数                                                                         | [EIP-152][]      | ✅  |        |
-| 0x0a | `PointEvaluation` | Verify p(z) = y given commitment that corresponds to the polynomial p(x) and a KZG proof | [EIP-4844][]     | ✅  | V2.4.0 |
+| 地址   | ID                | 名称                                           | 规范               | 状态 | 版本     |
+| ---- | ----------------- | -------------------------------------------- | ---------------- | -- | ------ |
+| 0x01 | `ECRecover`       | ECDSA 公钥恢复                                   | [Yellow Paper][] | ✅  |        |
+| 0x02 | `SHA256`          | SHA-2 256 哈希函数                               | [Yellow Paper][] | ✅  |        |
+| 0x03 | `RIPEMD160`       | RIPEMD 160 哈希函数                              | [Yellow Paper][] | ✅  |        |
+| 0x04 | `Identity`        | 身份函数                                         | [Yellow Paper][] | ✅  |        |
+| 0x05 | `ModExp`          | 大整数模幂运算                                      | [EIP-198][]      | ✅  |        |
+| 0x06 | `BN128Add`        | 椭圆曲线加法                                       | [EIP-196][]      | ✅  |        |
+| 0x07 | `BN128Mul`        | 椭圆曲线标量乘法                                     | [EIP-196][]      | ✅  |        |
+| 0x08 | `BN128Pair`       | 椭圆曲线配对检查                                     | [EIP-197][]      | ✅  |        |
+| 0x09 | `Blake2F`         | BLAKE2b `F` 压缩函数                             | [EIP-152][]      | ✅  |        |
+| 0x0a | `PointEvaluation` | 将多项式 p(x) 对应的承诺和一个 KZG 证明给定的情况下，验证 p(z) = y。 | [EIP-4844][]     | ✅  | V2.4.0 |
 
 ## 幽灵交易
 

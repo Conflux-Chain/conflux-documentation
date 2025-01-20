@@ -3,7 +3,7 @@ title: 默克尔树白名单
 displayed_sidebar: coreSidebar
 keywords:
   - NFT
-  - Whitelist
+  - 白名单
   - 默克尔树
   - 智能合约
   - Hardhat
@@ -22,15 +22,15 @@ keywords:
   - Whitelist Management
 tags:
   - NFT
-  - Whitelist
+  - 白名单
   - 教程
 ---
 
 # 在CoreSpace使用Hardhat的默克尔树NFT白名单
 
-Using a Merkle Tree whitelist provides a cost-efficient way to distribute NFTs to a predefined list of addresses. It ensures that only whitelisted addresses can mint the NFTs, enhancing security and efficiency. Writing a whitelist of thousands of addresses directly within a smart contract would result in significant gas costs, and additionally, due to the maximum transaction gas limit restriction, it might be impractical to update such a large whitelist in a single transaction. However, since in the Merkle Tree verification process, leaf nodes and proofs can be stored off-chain while only the root value needs to be stored on-chain, this method significantly saves on gas costs and enables whitelist setup with only one transaction.
+使用默克尔树白名单提供了一种经济高效的方法，将 NFT分发给预定义的地址列表。 它确保只有白名单上的地址才能铸造 NFT，从而增强了安全性和效率。 直接在智能合约中写入数千个地址的白名单将导致大量的燃气费用，此外由于最大交易燃气限制，可能无法在单个交易中更新如此庞大的白名单。 However, since in the Merkle Tree verification process, leaf nodes and proofs can be stored off-chain while only the root value needs to be stored on-chain, this method significantly saves on gas costs and enables whitelist setup with only one transaction.
 
-This tutorial will guide you through the steps to create, write, and deploy an ERC721 NFT smart contract with a Merkle Tree whitelist on Conflux CoreSpace using Hardhat. It will also show you how to use merkletreejs to create the Merkle Tree whitelist. For a practical example, please refer to the [Conflux-NFT-MerkleTree-Whitelist](https://github.com/ConfluxDAO/Conflux-NFT-MerkleTree-Whitelist) repository.
+本教程将指导您如何使用 Hardhat 在Conflux CoreSpace 上创建、编写和部署带有默克尔树白名单的ERC721 NFT智能合约。 同时，还将向您展示如何使用 merkletreejs 创建默克尔树白名单。 For a practical example, please refer to the [Conflux-NFT-MerkleTree-Whitelist](https://github.com/ConfluxDAO/Conflux-NFT-MerkleTree-Whitelist) repository.
 
 如果您不熟悉 Hardhat，请参考 [Hardhat 文档](https://hardhat.org/getting-started/)。
 
@@ -38,13 +38,13 @@ This tutorial will guide you through the steps to create, write, and deploy an E
 
 在开始之前，请确保您已经具备以下条件：
 
-- Node.js installed on your system & Hardhat setup on your machine.
-- A Conflux CoreSpace wallet
+- 在您的系统上安装了Node.js，并在您的计算机上设置了Hardhat。
+- 拥有一个Conflux CoreSpace钱包。
 - 对智能合约开发和Solidity编程语言有基本的了解。
 
 ## 第1步：设置您的环境
 
-Open your terminal and run:
+打开终端并运行以下命令：
 
 ```bash
 mkdir conflux-nft-merkletree-whitelist
@@ -58,17 +58,17 @@ npx hardhat
 
 [![Create Project](../imgs/nft-tutorials/whitelist-hardhat-create-project.png)](../imgs/nft-tutorials/whitelist-hardhat-create-project.png)
 
-## 步骤2: 安装相关程序
+## 第2步: 安装相关程序
 
-Install OpenZeppelin contracts for a secure, audited implementation of ERC721 tokens. Next, install the Hardhat-Conflux-Plugin, which is built on top of js-conflux-sdk, providing a similar interface for deployment and interaction. Finally, install merkletreejs and keccak256 to create a Merkle Tree from your whitelist addresses.
+安装 OpenZeppelin 合约，以安全、经过审计地实施的 ERC721 代币。 接着，安装 Hardhat-Conflux-Plugin，它基于 js-conflux-sdk 构建，为部署和交互提供类似的接口。 最后，安装merkletreejs 和 keccak256 以从您的白名单地址创建一个默克尔树。
 
 ```bash
 npm install @openzeppelin/contracts hardhat-conflux js-conflux-sdk keccak256 merkletreejs
 ```
 
-## Step 3: Configuring Hardhat
+## 第3步：配置Hardhat
 
-Update `hardhat.config.js` to include the Conflux network configuration:
+更新`hardhat.config.js`以包括Conflux网络配置：
 
 ```javascript
 require("@nomicfoundation/hardhat-toolbox");
@@ -95,9 +95,9 @@ module.exports = {
 };
 ```
 
-## Step 4: Writing the Smart Contract
+## 第4步：编写智能合约
 
-Create a new file `MerkleTreeNFT.sol` in the `contracts` directory:
+在`contracts`目录中创建一个新文件`MerkleTreeNFT.sol`：
 
 ```solidity
 // SPDX-License-Identifier: MIT
@@ -132,7 +132,7 @@ contract MerkleTreeNFT is ERC721 {
 }
 ```
 
-Create a new file `MerkleProof` library in the `contracts` directory:
+在`contracts`目录中创建一个新文件`MerkleTreeNFT.sol`：
 
 ```solidity
 // SPDX-License-Identifier: MIT
@@ -171,15 +171,15 @@ library MerkleProof {
 
 ```
 
-You will need to create or find an implementation for `MerkleProof` that suits your needs.
+您需要创建或找到适合您需要的`MerkleProof`的实现。
 
-Run `npx hardhat compile` in your terminal.
+在您的终端中运行 `npx hardhat compile` 。
 
-## Step 5: Generating a Merkle Tree
+## 第5步：生成一个默克尔树
 
-Create a new script `generateTree.js` in the `scripts` directory to deploy your contract.
+在 `scripts` 目录中创建一个新脚本`generateTree.js`来部署您的合约。
 
-Use a JavaScript script to create a Merkle Tree from your whitelist addresses. You can use libraries like `merkletreejs` and `keccak256`.
+使用 JavaScript 脚本从您的白名单地址创建一个默克尔树。 您可以使用像`merkletreejs`和`keccak256`这样的库。
 
 ```javascript
 const { MerkleTree } = require("merkletreejs");
@@ -227,13 +227,12 @@ console.log("merkle tree root:", root);
 console.log("merkle tree proof for address", addressToProof, ":", proof);
 ```
 
-You will see the following message after successful deployment
-[![Generate Success](../imgs/nft-tutorials/generate-merkletree.png)](../imgs/nft-tutorials/generate-merkletree.png)
-Save this root in your smart contract deployment script.
+您将会在成功部署后看到以下消息：
+[![Generate Success](../imgs/nft-tutorials/generate-merkletree.png)](../imgs/nft-tutorials/generate-merkletree.png)请将这个根节点保存到你的智能合约部署脚本中。
 
-## Step 6: Deploying the Contract
+## 第6步：部署合约
 
-Create a new script in the `scripts` directory to deploy your contract.
+在`scripts`目录中创建一个新的脚本来部署您的合约。
 
 ```javascript
 const hre = require("hardhat");
@@ -273,22 +272,22 @@ main()
   });
 ```
 
-Run your script with Hardhat to Deploy to Conflux CoreSpace Testnet
+使用Hardhat 在 Conflux CoreSpace 测试网部署您的脚本：
 
 ```bash
 npx hardhat run scripts/deploy.js --network cfxTestnet
 ```
 
-You will see the following message after successful deployment
+您将会在成功部署后看到以下消息：
 [![Deploy Success](../imgs/nft-tutorials/whitelist-deploy-success.png)](../imgs/nft-tutorials/whitelist-deploy-success.png)
 
-## Step 6: Minting an NFT with a Whitelist
+## 第7步：使用白名单铸造 NFT
 
-To mint an NFT, you can use a script that interacts directly with the `mint` function in your smart contract. This script will mint an NFT to a specified address with proof.
+要铸造一个NFT，您可以使用一个直接与您的智能合约中的 `mint`函数交互的脚本。 此脚本将会向指定地址铸造一个NFT并附带证明。
 
-Create another script in the `scripts` folder and name it `mintNFT.js`:
+在`scripts`文件夹中创建另一个脚本，命名为`mintNFT.js`：
 
-This script mints an NFT with the tokenId and a specific proof, where `YOUR_CONTRACT_ADDRESS` is the address of your deployed NFT contract, `NFT_RECEIVER_ADDRESS` is the address of the NFT you want mint to, and `YOUR_PROOF` is the merkle tree proof for your `NFT_RECEIVER_ADDRESS` address
+此脚本将使用 tokenId 和特定的证明铸造 NFT，其中`YOUR_CONTRACT_ADDRESS`是您已部署的 NFT 合约地址，`NFT_RECEIVER_ADDRESS`是您想要铸造到的地址，`YOUR_PROOF`是针对您的`NFT_RECEIVER_ADDRESS`的默克尔树证明。
 
 ```javascript
 const hre = require("hardhat");
@@ -325,15 +324,15 @@ main().catch((error) => {
 });
 ```
 
-Replace `YOUR_CONTRACT_ADDRESS` with your contract's address, `RECIPIENT_WALLET_ADDRESS` with the address of the wallet that should receive the NFT, and `YOUR_PROOF` is the merkle tree proof for your `NFT_RECEIVER_ADDRESS` address
+将`YOUR_CONTRACT_ADDRESS`替换为您的合约地址，`RECIPIENT_WALLET_ADDRESS`替换为应该接受NFT的钱包地址，`YOUR_PROOF`替换为`NFT_RECEIVER_ADDRESS` 地址的默克尔树证明。
 
 ```bash
 npx hardhat run scripts/mintNFT.js --network cfxTestnet
 ```
 
-You will see the following message after successful mint
+您将会在部署成功后看到以下信息：
 [![Deploy Success](../imgs/nft-tutorials/whitelist-mint-success.png)](../imgs/nft-tutorials/whitelist-mint-success.png)
 
 ## 结论
 
-This setup provides a cost-efficient way to distribute NFTs to a whitelist of addresses using a Merkle Tree. Each step is essential for ensuring the security and efficiency of your NFT distribution. Be sure to test thoroughly in a test environment before deploying to the main network.
+此设置提供了一种经济高效的方式，使用默克尔树将 NFT分发到白名单地址。 每个步对于确保您的 NFT 分发的安全性和效率都是必不可少的。 请务必在测试环境中彻底测试，然后再部署到主网。
