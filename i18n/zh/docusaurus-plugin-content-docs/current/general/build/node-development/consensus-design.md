@@ -168,24 +168,12 @@ Conflux 共识算法定义那些选择了错误父区块或填写了不正确的
 
 1. Reverting a `timer_chain_beta` length timer chain is impossible.
 
-2. Therefore force confirmed block will always move along the pivot chain, not
-   drifting between its siblings.
+2. 因此，强制确认的区块将始终沿着主链移动，而不会在其兄弟之间移动。
 
-We compute the accumulative LCA of the last `timer_chain_beta` timer chain
-blocks and store it at the `timer_chain_accumulative_lca[]` field. This vector
-is `timer_chain_beta` shorter than `timer_chain[]` because the force confirm
-needs at least `timer_chain_beta` timer chain block trailing, so their LCAs do
-not matter. `check_correct_parent()` and `adaptive_weight()` and their
-subroutines also respect this force confirm point during their checking.
-Specifically, any fork before the force confirm height is ignored.
+我们计算最后一个 `timer_chain_beta` 计时链区块的累积最近公共祖先，并将其存储在 `timer_chain_accumulative_lca[]` 字段中。 这个向量比 `timer_chain[]` 短 `timer_chain_beta` ，因为强制确认需要至少 `timer_chain_beta` 个计时链区块跟随，所以它们的累积最近公共祖先不重要。 `check_correct_parent()` 、 `adaptive_weight()` 及其子程序也在检查时遵循这个强制确认点。
+具体而言，在强制确认高度之前的任何分叉都被忽略。
 
-Note that this force confirm rule is also defined based on _past view_ of each
-block. With the computed anticone information, `compute_timer_chain_tuple()` in
-`ConsensusGraphInner` computes the timer chain related information of each
-block under its past view. The results of this function include the difference of
-the `timer_chain[]`, `timer_chain_accumulative_lca[]`, and `timer_chain_height`
-between the ledger view and the past view. We can use the diff and the current
-ledger view values to get the past view values.
+请注意，这个强制确认规则也是基于每个区块的 _过去视图_ 定义的。 利用计算出的反锥信息，`ConsensusGraphInner` 中的 `compute_timer_chain_tuple()` 计算了其过去视图下每个区块的计时链相关信息。 这个函数的结果包括 `timer_chain[]` 、`timer_chain_accumulative_lca[]` 和 `timer_chain_height` 在账本视图和过去视图之间的差异。 我们可以使用差异和当前账本视图的值来获取过去视图的值。
 
 ### Era
 
