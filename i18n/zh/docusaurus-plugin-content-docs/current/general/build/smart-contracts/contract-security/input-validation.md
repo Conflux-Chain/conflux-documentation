@@ -51,6 +51,6 @@ contract UnsafeBank {
 
 The contract ensures that the withdrawal amount doesn't exceed the account balance, but it doesn't prevent withdrawals from an arbitrary account.
 
-## Prevention Strategy
+## 预防策略
 
 External inputs to smart contracts that specifically affect certain financial transactions should be rigorously validated to prevent unauthorized actions.
