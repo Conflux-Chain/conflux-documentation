@@ -69,7 +69,7 @@ contract Hacker {
 }
 ```
 
-#### Prevention Strategy
+#### 预防策略
 
 **Always use `msg.sender` if you are hesitating between `msg.sender` and `tx.origin`**, `msg.sender` accurately identifies the direct caller of the contract, thereby preventing any interference by external malicious contracts.
 
