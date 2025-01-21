@@ -18,7 +18,7 @@ tags:
 
 Traces are used to record the transaction execution details. It can be used to debug or retrieve more information (like getting contract addresses created within transaction execution).
 
-## Trace Types
+## 追踪类型
 
 ### Call
 
@@ -56,9 +56,9 @@ pub enum CallType {
 
 If a transaction itself is calling a contract (`to` is a contract address), this trace will always be the first one in the trace list of this transaction.
 
-`call_type` can never be `None` for `Call` traces.
+对于 `Call` 追踪，`call_type` 永远不会是 `None` 。
 
-Note that `gas` is the "provided" gas for the execution of the callee, so the gas overhead has been deducted. For example, it is `0` for a simple balance transferring transaction of `21000` gas, because the base gas cost (`21000`) has been deducted in advance. The gas cost for call-related opcodes (`CALL`, `DELEGATECALL`, e.t.c.) or the 1/64 gas reserve for calling are also deducted in advance during contract execution.
+请注意，`gas` 是为被调用者执行提供的“提供”的燃气，因此已扣除了燃气开销。 For example, it is `0` for a simple balance transferring transaction of `21000` gas, because the base gas cost (`21000`) has been deducted in advance. The gas cost for call-related opcodes (`CALL`, `DELEGATECALL`, e.t.c.) or the 1/64 gas reserve for calling are also deducted in advance during contract execution.
 
 ### CallResult
 
@@ -118,11 +118,11 @@ pub struct CreateResult {
     pub return_data: Bytes,
 ```
 
-`addr` can only be used if `outcome` is `Success`.
+只有当 `outcome` 为 `Success` 时，`addr` 才可使用。
 
 ### InternalTransferAction
 
-The trace is recorded for the balance transfer triggered by internal contracts. It includes contract suicide, sponsor replacement (including storage collateral sponsor and gas sponsor) , and staking.
+对于由内部合约触发的余额转移的追踪将会被记录。 它包括合约自动销毁、代付方更换（包括存储抵押代付方和燃气代付方），以及质押。
 
 ```rust
 pub struct InternalTransferAction {
@@ -135,16 +135,16 @@ pub struct InternalTransferAction {
 }
 ```
 
-For contract suicide, if the refund address is the to-be-destroyed contract , the refund balance will be burnt, so `to` will be the null address instead of the refund address.
+对于合约自毁，如果退款地址是将被销毁的合约，退款余额将被销毁，所以 `to` 将是空地址而不是退款地址。
 
-For sponsor replacement, `from` is set to the sponsor whitelist contract address (`0x0888000000000000000000000000000000000001`, i.e., `cfx:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaaegg2r16ar`).
+对于代付方更换，`from` 将设置为赞助商白名单合约地址 (`0x0888000000000000000000000000000000000001`,即 `cfx:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaaegg2r16ar`)。
 
-For staking deposit, `to` is set to the staking interest contract address (`0x0888000000000000000000000000000000000002`, i.e., `cfx:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaajrwuc9jnb`).
+对于质押存款，`to` 设置为质押利息合约地址 (`0x0888000000000000000000000000000000000002`,即 `cfx:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaajrwuc9jnb`)。
 
-For staking withdraw, two `InternalTransferAction` traces will be recorded. The first is for withdrawing the original staked balance (`from` is set to the staking interest contract address), and the second is for withdrawing the staking interest (`from` is set to the null address).
+对于质押提现，将记录两个 `InternalTransferAction` 追踪。 第一个是为了提现原始的质押余额（`from` 设置为质押利息合约地址），第二个是为了提现质押利息（`from` 设置为空地址）。
 
-## Discussion of Failure
+## 对失败的讨论
 
-For `Call` or `Create` executed within contract execution, it is only recorded after the actual trap is triggered during execution, and the result is recorded after the trap is processed. If the transaction/instruction fails without triggering the trap (for example, the sender does not have enough balance, reentrancy is detected, or the stack has reached the max depth), no trace will be recorded.
+对于在合约执行内部执行的`Call` 或 `Create`，只有在执行期间实际触发陷阱后才会记录，结果在处理陷阱后记录。 如果交易/指令失败而没有触发陷阱（例如，发送者余额不足、检测到重入或栈达到最大深度），则不会记录追踪。
 
-For `Call` or `Create` triggered by the original transaction, the trace is only recorded after passing the preliminary checks. First, traces will only be recorded for "executed" transactions, so if the nonce does not match, this transaction will not be executed and there will be no trace. If the transaction is executed (the nonce of the sender increases), but the sender does not have enough balance to execute the transactions, there are also no traces. For `Create`, if the to-be-created contract address was created before and has code, we will also return directly without recording traces.
+对于由原始交易触发的 `Call` 或 `Create`，只有通过初步检查后才会记录追踪。 首先，追踪只会记录“执行”了的交易，所以如果 nonce 不匹配，这个交易将不会执行，也就没有追踪。 如果交易被执行（发送者的 nonce 增加），但发送者没有足够的余额执行交易，也不会有追踪。 对于 `Create`，如果待创建的合约地址之前已被创建并有代码，我们也会直接返回，不记录追踪。
