@@ -84,14 +84,14 @@ This example tries to get the genesis block header from node 0 with P2P requests
 
 ## 配置
 
-默认情况下，测试将使用 `cargo` 构建的发布版本可执行二进制文件。 If you want to use a file at another path (e.g., a debug version binary), you can set the environment variable `CONFLUX` to the full path of the used binary file before running the tests.
+默认情况下，测试将使用 `cargo` 构建的发布版本可执行二进制文件。 如果你想使用另一个路径的文件（例如，一个调试版本的二进制文件），你可以在运行测试之前，将环境变量 `CONFLUX` 设置为所使用的二进制文件的完整路径。
 
 待实现
 
-## Utility Function List
+## 实用函数列表
 
 待实现
 
-## Introduction to Existing Python Tests
+## 现有 Python测试介绍
 
 待实现
