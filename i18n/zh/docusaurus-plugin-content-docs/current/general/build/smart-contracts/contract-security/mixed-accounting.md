@@ -82,6 +82,6 @@ contract MixedAccountingERC20 {
 
 When using `balanceOf(address(this))`, you must account for the possibility of "donations" that bypass the deposit and withdraw functions. State variables that only depend on deposit or withdraw functions cannot account for this. It has to be extremely careful if you use both Both accounting methods.
 
-## Prevention Strategy
+## 预防策略
 
 - **Avoid Strict Equality Checks**: When checking the balances with introspection, strict using equality checks should be avoided as the balance can be changed by an outsider at will.
