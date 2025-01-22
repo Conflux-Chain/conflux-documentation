@@ -160,7 +160,7 @@ contract SecureCaller {
 
 By checking the return value of the `call()` method and reverting the transaction if the call fails, you can ensure that the contract behaves correctly and securely.
 
-## Prevention Measures
+## 预防措施
 
 To avoid such vulnerabilities, consider the following measures:
 
