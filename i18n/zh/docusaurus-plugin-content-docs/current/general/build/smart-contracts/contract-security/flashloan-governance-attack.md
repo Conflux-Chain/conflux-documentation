@@ -19,15 +19,15 @@ tags:
   - 智能合约
 ---
 
-# Flashloan Governance Attacks
+# 闪电贷治理攻击
 
-Flashloans are a powerful feature in decentralized finance (DeFi) that allows users to borrow assets without collateral, under the condition that they return the borrowed amount within the same transaction. This feature has enabled unique financial strategies, but it also poses significant risks for governance systems.
+闪电贷是一种强大的去中心化金融（DeFi）功能，允许用户在无需抵押的情况下借入资产，前提是他们在同一交易中归还借入的金额。 This feature has enabled unique financial strategies, but it also poses significant risks for governance systems.
 
-Consider a DeFi protocol that uses an ERC20 token with voting capabilities. Normally, the voting power is proportional to the token balance. However, flashloans can be exploited to manipulate votes. An attacker can borrow a large number of tokens, use them to influence a vote, and return them all within a single transaction. This can be particularly damaging if the protocol takes a snapshot of balances during the transaction to determine voting rights.
+考虑一个使用具有投票功能的 ERC20 代币的DeFi协议。 通常情况下，投票权与代币余额成正比。 However, flashloans can be exploited to manipulate votes. An attacker can borrow a large number of tokens, use them to influence a vote, and return them all within a single transaction. 如果协议在交易过程中对余额进行快照，以确定投票权，这可能会造成特别严重的破坏。
 
-## Example of a Flashloan Attack
+## 闪电贷攻击示例
 
-Here’s a look at a simple smart contract that could be vulnerable to such an attack
+下面我们来看一个容易受到这种攻击的简单智能合约
 
 ```solidity
 pragma solidity ^0.8.0;
@@ -66,18 +66,18 @@ contract GovernanceExploit {
 
 ```
 
-In this contract, `exploitFlashLoan()` allows the borrower to use the tokens as they wish, including participating in a vote, before they are returned. This vulnerability can be exploited to swing governance decisions.
+在这个合约中，`exploitFlashLoan()` 允许借款人在代币归还前随意使用代币，包括参与投票。 这一漏洞可以被用来左右治理决策。
 
-#### Real-World Examples
+#### 真实案例
 
-**MakerDAO Governance Attack Attempt**
+**MakerDAO治理攻击尝试**
 
-In 2020, there was an attempted governance attack on MakerDAO using a flashloan. The attacker tried to borrow a significant number of MKR tokens to influence a governance vote. Although this attempt was unsuccessful, it highlighted the potential risks and vulnerabilities in DeFi governance systems. [Learn more](https://www.theblock.co/post/82721/makerdao-issues-warning-after-a-flash-loan-is-used-to-pass-a-governance-vote).
+2020年，有人尝试利用闪电贷对MakerDAO进行治理攻击。 攻击者试图借入大量MKR代币以影响治理投票。 尽管这次尝试没有成功，但它凸显了DeFi治理系统中的潜在风险和漏洞。 [Learn more](https://www.theblock.co/post/82721/makerdao-issues-warning-after-a-flash-loan-is-used-to-pass-a-governance-vote).
 
 ## 预防策略
 
-To prevent such attacks, it's crucial to design governance mechanisms that are resistant to large, sudden changes in token balances. Some potential strategies include:
+为了防止此类攻击，设计针对大额、突然代币余额变化有抵抗力的治理机制至关重要。 一些潜在的策略包括：
 
-- **Using a longer snapshot history**: Instead of taking snapshots close to voting events, use historical balances to determine voting power.
-- **Locking periods**: Require that tokens be held for a certain period before they can be used to vote.
-- **Disabling flashloan transactions**: Identify and block transactions that involve flashloans during critical governance events.
+- **使用更长的快照历史**：使用历史余额来确定投票权，而不是在投票活动临近时进行快照。
+- **锁定周期**：要求代币在使用投票前必须持有一定时间。
+- **禁用闪电贷交易**：在关键的治理事件期间，识别并阻止涉及闪电贷的交易。
