@@ -30,7 +30,7 @@ Attackers were able to manipulate the parameters related to the paths for token 
 
 For further reading on the details of the Sushiswap exploit, you can refer to the detailed analysis: [Sushiswap Exploit Input Validation Failure](https://cointelegraph.com/news/sushiswap-approval-bug-leads-to-3-3-million-exploit).
 
-#### Vulnerability Example
+#### 漏洞示例
 
 ```solidity
 contract UnsafeBank {
