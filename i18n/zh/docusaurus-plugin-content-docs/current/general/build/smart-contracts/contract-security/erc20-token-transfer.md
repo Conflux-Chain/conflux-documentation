@@ -25,7 +25,7 @@ ERC20 规范规定，当转换成功时，ERC20 代币必须返回 true。 然�
 
 ERC20 transfer issues can occur when a contract assumes all ERC20 tokens behave identically. 一些代币在转账时不返回数值，一些总是返回 true，而另一些在失败时会回滚（revert），而不是返回 false。 如果不适当处理，这种行为上的差异可能会导致意外的结果。
 
-更复杂的是，一些 ERC20 代币并不遵循返回 true 的协议。 值得注意的是，Tether (USDT)和其他一些代币在转换失败时会回滚，导致回滚传递到调用者。 为了解决这个问题，一些库封装了 ERC20 代币的转账调用，以拦截回滚并返回一个布尔值。 Below are implementations from [Openzeppelin SafeTransfer](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC20/utils/SafeERC20.sol) and [Solady SafeTransfer](https://github.com/Vectorized/solady/blob/main/src/utils/SafeTransferLib.sol).
+更复杂的是，一些 ERC20 代币并不遵循返回 true 的协议。 值得注意的是，Tether (USDT)和其他一些代币在转换失败时会回滚，导致回滚传递到调用者。 为了解决这个问题，一些库封装了 ERC20 代币的转账调用，以拦截回滚并返回一个布尔值。 以下是[Openzeppelin SafeTransfer](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC20/utils/SafeERC20.sol) 和[Solady SafeTransfer](https://github.com/Vectorized/solady/blob/main/src/utils/SafeTransferLib.sol)的实现方式。
 
 Consider a simplified `TokenExchange` contract that swaps one ERC20 token for another:
 
@@ -38,13 +38,13 @@ contract TokenExchange {
 }
 ```
 
-In this contract, the `swapTokens` method is vulnerable to ERC20 transfer issues. It assumes that both `transferFrom` and `transfer` will return a boolean value, which isn't always the case.
+在这个合约中，`swapTokens`方法存在ERC20转账问题漏洞。 It assumes that both `transferFrom` and `transfer` will return a boolean value, which isn't always the case.
 
 ## 防御机制
 
-### Safe Transfer Libraries
+### 安全转账库
 
-Using safe transfer libraries is an effective way to handle ERC20 transfer inconsistencies. These libraries wrap the transfer calls and handle different token behaviors. Here's an example using OpenZeppelin's `SafeERC20`:
+Using safe transfer libraries is an effective way to handle ERC20 transfer inconsistencies. These libraries wrap the transfer calls and handle different token behaviors. 以下是使用OpenZeppelin's的`SafeERC20`示例:
 
 ```solidity
 import "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol";
@@ -59,7 +59,7 @@ contract SafeTokenExchange {
 }
 ```
 
-Solady also provides a more gas-efficient implementation of safe transfers:
+Solady 还提供了一种更节省 gas 的安全转账实现方式：
 
 ```solidity
 import "solady/src/utils/SafeTransferLib.sol";
@@ -72,9 +72,9 @@ contract GasEfficientTokenExchange {
 }
 ```
 
-### Low-level Call with Return Value Check
+### 低级调用与返回值检查
 
-For contracts that can't use external libraries, a low-level call with a return value check can be implemented:
+对于无法使用外部库的合约，可以实现低级调用与返回值检查：
 
 ```solidity
 function saferTransfer(IERC20 token, address to, uint256 value) internal returns (bool) {
@@ -85,4 +85,4 @@ function saferTransfer(IERC20 token, address to, uint256 value) internal returns
 }
 ```
 
-By following these practices, smart contract developers can significantly reduce the risk of ERC20 transfer issues and ensure the security of their contracts when interacting with various ERC20 tokens.
+通过遵循这些实践，智能合约开发者可以显著降低 ERC20 转账问题的风险，并确保在与各种 ERC20 代币交互时合约的安全性。
