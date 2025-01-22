@@ -72,7 +72,7 @@ contract SigAuth is ERC20, Ownable {
 
 **Note**: The `vulnerableMint()` function does not check if the `signature` has been used before, allowing the same signature to be reused for unlimited token minting.
 
-## Prevention Measures
+## 预防措施
 
 To prevent signature replay attacks, you can use the following methods:
 
