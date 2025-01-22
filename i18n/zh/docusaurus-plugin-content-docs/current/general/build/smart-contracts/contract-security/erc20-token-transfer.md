@@ -17,15 +17,15 @@ tags:
   - 智能合约
 ---
 
-# ERC20 Transfer Issues
+# ERC20 转账问题
 
-ERC20 transfer issues are a common source of vulnerabilities in smart contracts. These issues arise from inconsistent implementations of the ERC20 standard, particularly in how different tokens handle the return value of transfer functions.
+ERC20 转账问题是智能合约中常见的漏洞来源。 这些问题源于 ERC20 标准实现的不一致性，特别是不同代币如何处理转账函数的返回值。
 
-The ERC20 specification dictates that an ERC20 token must return true when a transfer succeeds. However, not all ERC20 tokens follow this rule consistently, leading to potential security risks.
+ERC20 规范规定，当转换成功时，ERC20 代币必须返回 true。 然而，并非所有 ERC20 代币都始终遵循这个规则，从而导致潜在的安全风险。
 
-ERC20 transfer issues can occur when a contract assumes all ERC20 tokens behave identically. Some tokens don't return a value, some always return true, and others revert on failure instead of returning false. This variance in behavior can lead to unexpected results if not properly handled.
+ERC20 transfer issues can occur when a contract assumes all ERC20 tokens behave identically. 一些代币在转账时不返回数值，一些总是返回 true，而另一些在失败时会回滚（revert），而不是返回 false。 如果不适当处理，这种行为上的差异可能会导致意外的结果。
 
-Further complicating this matter, some ERC20 tokens do not follow the protocol of returning true. Notably, Tether (USDT) and some other tokens revert on a failure to transfer, causing the revert to bubble up to the caller. To address this, some libraries wrap ERC20 token transfer calls to intercept the revert and return a boolean instead. Below are implementations from [Openzeppelin SafeTransfer](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC20/utils/SafeERC20.sol) and [Solady SafeTransfer](https://github.com/Vectorized/solady/blob/main/src/utils/SafeTransferLib.sol).
+更复杂的是，一些 ERC20 代币并不遵循返回 true 的协议。 值得注意的是，Tether (USDT)和其他一些代币在转换失败时会回滚，导致回滚传递到调用者。 为了解决这个问题，一些库封装了 ERC20 代币的转账调用，以拦截回滚并返回一个布尔值。 Below are implementations from [Openzeppelin SafeTransfer](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC20/utils/SafeERC20.sol) and [Solady SafeTransfer](https://github.com/Vectorized/solady/blob/main/src/utils/SafeTransferLib.sol).
 
 Consider a simplified `TokenExchange` contract that swaps one ERC20 token for another:
 
