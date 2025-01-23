@@ -26,7 +26,7 @@ Price manipulation poses a significant risk to smart contracts that utilize dece
 
 This incident highlights the urgent need for robust safeguards to prevent the manipulation of on-chain price data. Ensuring the accuracy and reliability of such data is crucial to maintaining the security and functionality of smart contracts that depend on it.
 
-#### Vulnerable Contract Example
+#### 易受攻击的合约示例
 
 This example is a stablecoin contract following the ERC20 standard. It allows users to swap `ETH` for `OracleUSD`. The swap price is determined by a custom oracle (`fetchPrice()` function) using the instant price from the Uniswap V2 `WETH-BUSD` pool, which is susceptible to manipulation.
 
