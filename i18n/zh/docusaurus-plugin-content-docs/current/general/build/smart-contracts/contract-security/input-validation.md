@@ -1,5 +1,5 @@
 ---
-title: Improper Input Validation
+title: 不当的输入验证
 displayed_sidebar: generalSidebar
 keywords:
   - smart-contracts
@@ -18,17 +18,17 @@ tags:
   - 智能合约
 ---
 
-# Improper Input Validation
+# 不当的输入验证
 
-If access control is about controlling who calls a function, input validation is about controlling what they call the contract with. This usually comes down to forgetting to put the proper require statements in place.
+如果访问控制是关于控制谁调用函数，那么输入验证就是要控制他们用什么参数来调用合约。 这一般归结为忘记放置恰当的require语句。
 
-(Improper access control occurs when `msg.sender` lacks sufficient limitations. Improper input validation happens when function arguments are not adequately checked.)
+(当`msg.sender`缺乏足够的限制时，就会出现不恰当的访问控制。 如果没有对函数参数进行充分检查，就会出现不恰当的输入验证)。
 
-Sushiswap was compromised due to improper input validation which leads to the loss of >$3.3M loss. The exploit specifically targeted a function responsible for updating swap pair routes, which did not rigorously validate its input parameters.
+Sushiswap由于输入验证不恰当导致发生超过 330 万美元的损失。 该漏洞专门针对一个负责更新交换对路由的函数，该函数没有严格验证其输入参数。
 
-Attackers were able to manipulate the parameters related to the paths for token swaps. These parameters, crucial for determining the routing of transactions, were not adequately checked for authenticity or logical integrity. By injecting malformed or deceptive input data, the attackers redirected funds to addresses under their control, effectively draining resources from legitimate liquidity pools.
+攻击者能够操纵与代币交换路径相关的参数。 这些参数对确定交易路由至关重要，但却没有充分检查其真实性或逻辑完整性。 通过注入格式错误或欺骗性的输入数据，攻击者可以将资金重定向到他们控制的地址，从而有效地从合法流动性池中耗尽资源。
 
-For further reading on the details of the Sushiswap exploit, you can refer to the detailed analysis: [Sushiswap Exploit Input Validation Failure](https://cointelegraph.com/news/sushiswap-approval-bug-leads-to-3-3-million-exploit).
+有关Sushiswap漏洞的详细信息，请参阅详细分析：[Sushiswap Exploit Input Validation Failure](https://cointelegraph.com/news/sushiswap-approval-bug-leads-to-3-3-million-exploit)。
 
 #### 漏洞示例
 
@@ -49,8 +49,8 @@ contract UnsafeBank {
 }
 ```
 
-The contract ensures that the withdrawal amount doesn't exceed the account balance, but it doesn't prevent withdrawals from an arbitrary account.
+该合约可以确保取款金额不超过账户余额，但并不阻止从任意账户提款。
 
 ## 预防策略
 
-External inputs to smart contracts that specifically affect certain financial transactions should be rigorously validated to prevent unauthorized actions.
+智能合约的外部输入，特别是影响某些财务交易的输入，应该严格验证，以防止未经授权的操作。
