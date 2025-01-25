@@ -24,7 +24,7 @@ Let's use an example to understand their differences. Imagine that User A calls 
 
 But use `tx.origin` for authentication in a smart contract can lead to vulnerabilities. Here's a more detailed explanation of the risk: If an attacker convinces the owner of a contract to interact with a malicious contract, the `msg.sender` will correctly show the address of the attacker's contract as the caller. However, `tx.origin` will still reflect the address of the original transaction initiator—i.e., the contract owner. Consequently, if the contract's security relies on `tx.origin` to validate permissions, this misalignment could mistakenly grant the attacker unauthorized access to perform transactions as if they were the owner.
 
-## Example of a Vulnerable Contract
+## 易受签名重放攻击的合约示例
 
 The `SimpleBank` contract below is a simple bank contract that includes a `sendFunds` function vulnerable to `tx.origin` attacks, it tracks the owner and includes a constructor and a public method:
 
