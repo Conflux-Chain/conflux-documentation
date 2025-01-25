@@ -4,13 +4,13 @@ displayed_sidebar: generalSidebar
 
 # Using assembly to revert with an error message
 
-When optimizing gas usage in smart contracts, using assembly for revert statements can lead to gas savings. While Solidity's `require` and `revert` statements are convenient, implementing the same functionality with assembly can be more gas-efficient.
+在智能合约中优化 Gas 使用时，使用汇编语言来实现 revert 语句可以节省 Gas。 While Solidity's `require` and `revert` statements are convenient, implementing the same functionality with assembly can be more gas-efficient.
 
-Solidity charges additional gas for memory expansion and type checking when using standard revert statements. By using assembly, we can bypass these overhead costs while maintaining the same functionality.
+Solidity 在使用标准 revert 语句时，会因内存扩展和类型检查而产生额外的 Gas 消耗。 而通过使用汇编语言，我们可以绕过这些额外的开销，同时保持相同的功能。
 
-### Gas Comparison Example
+### Gas比较示例
 
-Here's a comparative example showing both approaches:
+下面是两种方法的比较示例：
 
 ```solidity
 // SPDX-License-Identifier: MIT
@@ -57,30 +57,30 @@ contract AssemblyRevert {
 }
 ```
 
-### Gas Analysis
+### Gas分析
 
-| Implementation  | Gas Cost | Gas Saved |
-| --------------- | -------- | --------- |
-| Solidity Revert | 24,042   | -         |
-| Assembly Revert | 23,734   | 308       |
+| 实现方式            | Gas消耗  | 节省的Gas |
+| --------------- | ------ | ------ |
+| Solidity Revert | 24,042 | -      |
+| Assembly Revert | 23,734 | 308    |
 
-### Understanding the Assembly Implementation
+### 理解汇编实现
 
-The assembly revert implementation consists of several key components:
+汇编中的 revert 实现由几个关键部分组成：
 
-1. **Condition Check**:
+1. **条件检查**：
 
 ```solidity
 if sub(caller(), sload(owner.slot))
 ```
 
-2. **Memory Layout**:
+2. **内存布局**：
 
-- `0x00`: Stores the offset (0x20)
-- `0x20`: Stores the error message length (0x13 = 19 bytes)
-- `0x40`: Stores the actual error message in hex
+- `0x00`: 存储偏移量(0x20)
+- `0x20`: 存储错误消息的长度（0x13 = 19 字节）
+- `0x40`: 存储实际的错误消息（十六进制表示）
 
-3. **Revert Operation**:
+3. **Revert操作**:
 
 ```solidity
 revert(0x00, 0x60)
@@ -88,25 +88,25 @@ revert(0x00, 0x60)
 
 The first parameter (0x00) is the memory offset, and the second (0x60) is the size of the data to revert with.
 
-**Key Points:**
+**要点:**
 
-- Assembly revert statements are more gas-efficient than Solidity's `require` and `revert`
-- Gas savings come from avoiding memory expansion costs and compiler type checks
+- 汇编中的 revert 语句比 Solidity 的`require`和`revert`更节省 Gas。
+- Gas 节省来自于避免了内存扩展和编译器类型检查的开销。
 - The same error messages can be preserved while reducing gas costs
 
 ### Best Practices for Implementation
 
-1. Use assembly revert in frequently called functions where gas optimization is crucial
-2. Maintain clear documentation when using assembly code
+1. 在频繁调用的函数中使用汇编 revert，特别是在 Gas 优化至关重要的情况下。
+2. 使用汇编代码时，保持清晰的文档说明。
 3. Consider the trade-off between code readability and gas optimization
-4. Test thoroughly to ensure error messages are correctly encoded
+4. 充分测试，确保错误信息编码正确。
 
-### Security Considerations
+### 安全事项
 
-While using assembly for revert statements is safe when implemented correctly, keep in mind:
+虽然在正确实现时，使用汇编的 revert 语句是安全的，但需要注意：
 
-- Assembly code bypasses Solidity's safety checks
-- Careful testing is required to ensure error messages are properly encoded
-- Documentation is crucial for maintainability
+- 汇编代码绕过了 Solidity 的安全检查。
+- 需要仔细测试，确保错误消息正确编码。
+- 文档化对可维护性至关重要。
 
-**Note**: The gas savings shown are approximate and may vary depending on the Solidity version and optimization settings used.
+**注意**:显示的 Gas 节省是近似值，可能会根据 Solidity 版本和优化设置的不同而有所变化。
