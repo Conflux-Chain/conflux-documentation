@@ -111,6 +111,6 @@ Solady consistently uses the least gas across all operations, Solmate offers sig
 
 Note: These gas estimates are approximate and may vary based on the specific Solidity compiler version, optimization settings, and the exact implementation details.
 
-**Recommendations for Gas Optimization:**
+**燃气优化建议:**
 
 🌟 For high-volume or gas-sensitive applications, consider using Solmate or Solady instead of OpenZeppelin. While these alternatives offer gas savings, ensure you understand and account for any safety checks they might omit.
