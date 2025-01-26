@@ -98,7 +98,7 @@ From the above example, we can see that:
 - The contract using modifiers incurs higher deployment gas costs (195,435) compared to the contract using internal functions (159,309) due to repetition of the `onlyOwner` functionality in three functions.
 - During runtime, each function using modifiers costs a fixed 24 gas units less than the functions using internal functions.
 
-**Recommendations for Gas Optimization:**
+**燃气优化建议:**
 
 🌟 If runtime gas cost is your primary concern, and you are okay with the increase in deployment size, modifiers are a good choice. They reduce the gas cost during function calls by avoiding the jump to internal functions.
 
