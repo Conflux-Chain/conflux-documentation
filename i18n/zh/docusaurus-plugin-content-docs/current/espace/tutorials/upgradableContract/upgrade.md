@@ -12,7 +12,7 @@ keywords:
 displayed_sidebar: eSpaceSidebar
 tags:
   - 教程
-  - Upgradeable Contracts
+  - 可升级的合约
   - Hardhat
 ---
 
