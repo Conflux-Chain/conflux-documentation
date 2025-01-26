@@ -13,18 +13,18 @@ keywords:
   - deployment-strategies
   - gas-efficiency
 tags:
-  - Clone vs New/Create2
+  - Clone 和 New/Create2 关键字
   - GAS 优化
   - 智能合约
 ---
 
-# Clone vs New/Create2
+# Clone 和 New/Create2 关键字
 
 In factory contracts, we often need to create several child contracts, and there are three common ways to do this:
 
-- Using `new` to create through an existing contract, the new keyword allows for the instantiation of child contracts directly through an existing contract's codebase. This approach involves incorporating the child contract's bytecode within the factory contract itself, necessitating its deployment simultaneously. This method is straightforward and intuitive but requires careful management to avoid bloating the factory contract, especially given the Ethereum network's contract size limitations.
+- 使用 `new` 通过现有合约创建：new 关键字允许通过现有合约的代码库直接实例化子合约。 这种方法涉及到将子合约的字节码纳入工厂合约本身，需要同时部署。 This method is straightforward and intuitive but requires careful management to avoid bloating the factory contract, especially given the Ethereum network's contract size limitations.
 
-- Using `create2` to create through creation code, this method requires loading the creation code into the factory contract before any child. A significant advantage of create2 is its predictability in generating contract addresses, which can be predetermined before the actual contract deployment, facilitating more complex deployment schemes and interactions.
+- 使用 `create2` 通过创建代码创建：这种方法在创建任何子合约之前，需要将创建代码加载到工厂合约中。 create2 的一个重要优点是其在生成合约地址时的可预测性，这可以在实际合约部署之前预先确定，促进更复杂的部署方案和交互。
 
 - Using `clone` to clone an existing contract, the clone technique leverages the concept of minimal proxies as specified in EIP1167 to duplicate an already deployed contract. By cloning an existing contract, developers can significantly reduce the gas costs associated with deploying numerous contract instances. This method requires a pre-deployed copy of the child contract, from which clones are created with their own state but sharing the same codebase.
 
@@ -75,4 +75,4 @@ function deployClone(address prototype) internal returns (address deployedClone)
 
 🌟 When using the `new` operator, while convenient, it can easily lead to a situation where the size of the child contract causes the factory contract to exceed the 24kB limit.
 
-🌟 Compared to `create2` and `clone`, cloning is more recommended for gas optimization.
+🌟 与 `create2` 和 `clone` 相比，为了 gas 优化，更推荐使用克隆。
