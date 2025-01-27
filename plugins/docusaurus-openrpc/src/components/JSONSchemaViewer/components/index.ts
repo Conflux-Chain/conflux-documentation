@@ -1,4 +1,4 @@
-// To avoid circular dependancies issue, let's have a single place for exports and imports
+// To avoid circular dependencies issue, let's have a single place for exports and imports
 
 export { default as Collapsible } from "./Collapsible"
 
