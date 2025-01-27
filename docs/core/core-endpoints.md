@@ -120,7 +120,7 @@ Unifra provides:
 - Unifra's NFT API
 - Dashboard with Request Explorer
 
-To use Unifra's service, developer need to register an account first and find the RPC endpoint in [Unifra console](https://console.unifra.io/). For detail infomation check [Unifra's documentation](https://docs.unifra.io/)
+To use Unifra's service, developer need to register an account first and find the RPC endpoint in [Unifra console](https://console.unifra.io/). For detail information check [Unifra's documentation](https://docs.unifra.io/)
 
 ### Public Endpoint
 
