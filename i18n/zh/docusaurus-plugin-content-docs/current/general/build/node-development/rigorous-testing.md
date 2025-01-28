@@ -109,30 +109,14 @@ $ RUST_BACKTRACE=full target/release/storage_bench run -g /path/to/foundation.js
 共识实现通常很快，能在正常情况下每秒处理近千个区块。 然而，如果TreeGraph不稳定且包含很多分支，共识组件可能会退回到慢速程序。 其在这种不稳定情景下的性能至关重要，因为它对应于DoS攻击期间的追赶速度。
 `tests/attack_bench` 包含一系列 python 脚本，用于在攻击情景下对共识性能进行基准测试：
 
-1. `fork_same_height_merge.py` 会创建一个不稳定的 TreeGraph，大约有 95000 个区块。 In the TreeGraph, it has three branches and in each branch there are
-   star shape forks attached at a fixed height. It corresponds to one worst case
-   scenario for the consensus procesing engine. The expected speed is ~70 blocks/s
-   on MacBook Pro 2019 and ~45 blocks/s on m5a.xlarge.
+1. `fork_same_height_merge.py` 会创建一个不稳定的 TreeGraph，大约有 95000 个区块。 在TreeGraph中，它有三个分支，并且在每个分支的固定高度都有星形分叉。 这对共识处理引擎来说是一种最坏情况。 预期的速度是在2019年的MacBook Pro上大约70区块/秒，在m5a.xlarge上大约45区块/秒。
 
-2. `fork_same_height_hiding.py` tests the scenario where an attacker tries to
-   actively mine at a fixed height, hides the mined blocks, and release them
-   together. It measures the block generation capaiblity of the victim at this
-   scenario. The expected generation speed is always faster than 1000 blocks in
-   less than 1 minutes.
+2. `fork_same_height_hiding.py` 测试了一种攻击者在固定高度积极挖矿并且隐藏挖出的区块，然后一起发布它们的情景。 它衡量了受害者在此场景下的区块生成能力。 预期的生成速度总是在1分钟内超过1000个区块。
 
-3. `fork_same_height_attack.py` tests a similar attack as 2 but the attacker
-   does not hide the blocks. The expected generation speed is always faster than
-   100 blocks in less than 10 seconds.
+3. `fork_same_height_attack.py` 测试了与 2 相似的攻击，但攻击者不隐藏区块。 预期的生成速度总是在10秒内超过100个区块。
 
-4. `fork_chain_hiding.py` tests the scenario where an attacker tries to
-   actively mine a separate chain, hides the mined blocks, and release them
-   together. The expected generation speed of the victim is always faster than 100
-   blocks in less than 10 seconds.
+4. `fork_chain_hiding.py` 测试了一种攻击者积极挖掘一条独立的链，并且隐藏挖出的区块，然后一起发布它们的情景。 受害者的预期生成速度总是在10秒内超过100个区块。
 
-5. `fork_chain_attack.py` tests a similar attack as 4 but the attacker does not
-   hide the blocks. The expected generation speed of the victim is always faster
-   than 100 blocks in less than 10 seconds.
+5. `fork_chain_attack.py` 测试了与 4 相似的攻击，但攻击者不隐藏区块。 受害者的预期生成速度总是在10秒内超过100个区块。
 
-Note that 2, 3, and 5 are long running test scripts and you can terminate the
-execution after the speed stablizes. For every release, we run these scripts to
-make sure that there is no performance regression.
+请注意，2、3和5是长时间运行的测试脚本，在速度稳定后您可以终止执行。 对于每个版本，我们都会运行这些脚本以确保没有性能回退。

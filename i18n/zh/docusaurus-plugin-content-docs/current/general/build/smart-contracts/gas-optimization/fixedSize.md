@@ -12,18 +12,19 @@ keywords:
   - push-operation
   - storage-efficiency
 tags:
-  - Fixed-Size/Dynamic Arrays
+  - 固定大小/动态数组
   - GAS 优化
   - 智能合约
 ---
 
-# Fixed-Size/Dynamic Arrays
+# 固定大小/动态数组
 
 In Solidity, the way you manage and interact with arrays can impact the gas cost of your smart contract operations. This tutorial demonstrates the difference in gas usage between **fixed-size arrays** and **dynamic arrays** when they are filled with values. This understanding can help developers make more cost-effective decisions when designing smart contracts.
 
-Solidity supports two types of arrays: fixed-size arrays and dynamic arrays. Fixed-size arrays have a predefined length and occupy a continuous block of storage, while dynamic arrays can change in size and potentially consume more gas due to the need for resizing and memory allocation.
+Solidity支持两种数组类型：固定大小数组和动态数组。
+Fixed-size arrays have a predefined length and occupy a continuous block of storage, while dynamic arrays can change in size and potentially consume more gas due to the need for resizing and memory allocation.
 
-**代码演示**
+**演示代码**
 
 To illustrate the differences in gas consumption between these two types of arrays, the contract `ArrayGasOpt` includes two functions: one for filling a dynamic array and another for a fixed-size array.
 
@@ -51,7 +52,7 @@ contract ArrayGasOpt {
 }
 ```
 
-**Fixed-size Arrays**: These are generally more gas-efficient for storing a large number of elements known at compile time. This is due to the array using a continuous block of storage, which reduces the need for additional memory allocation or resizing.
+**Fixed-size Arrays**: These are generally more gas-efficient for storing a large number of elements known at compile time. 这是因为数组使用连续的存储块，从而减少了额外的内存分配或调整大小的需求。
 
 **Dynamic Arrays**: While flexible, they can be more costly in terms of gas, especially when frequently resized or when elements are added in a loop. Each `push` operation might require additional gas to handle memory resizing, depending on the state of the array.
 

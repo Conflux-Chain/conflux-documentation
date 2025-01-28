@@ -80,7 +80,7 @@ Memory Layout:
 ...
 ```
 
-### Best Practices
+### 最佳实践
 
 1. **Contract Existence Check**
 

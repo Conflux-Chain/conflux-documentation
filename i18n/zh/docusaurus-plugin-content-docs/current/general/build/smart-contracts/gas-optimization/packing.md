@@ -104,7 +104,7 @@ When deployed and executed, the `ContractWithPackedStruct` will generally use le
 - **ContractWithUnpackedStruct**: Each member of the struct is placed in a separate storage slot due to its data type and size, leading to three slots being used in total.
 - **ContractWithPackedStruct**: The `creationTime` and `owner` are combined into a single slot, reducing the total slot usage for the struct members. Only two slots are used, which makes operations like reading and writing to these members cheaper in terms of gas.
 
-**Recommendations for Gas Optimization:**
+**燃气优化建议:**
 
 🌟 Carefully consider the order and types of your struct members. Packing smaller-sized types and logically grouping them can save storage slots.
 

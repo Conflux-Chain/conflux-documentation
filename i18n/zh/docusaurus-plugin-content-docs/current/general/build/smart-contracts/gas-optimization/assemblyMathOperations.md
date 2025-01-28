@@ -2,13 +2,13 @@
 displayed_sidebar: generalSidebar
 ---
 
-# Using Assembly for Math Operations
+# 使用汇编语言进行数学运算
 
-When optimizing gas usage in Ethereum smart contracts, common mathematical operations can be made more efficient using assembly. While Solidity provides high-level math operations, using assembly implementations can lead to significant gas savings.
+在以太坊智能合约中优化 gas 使用时，常见的数学操作可以通过使用汇编语言变得更加高效。 尽管 Solidity 提供了高级数学运算，但使用汇编语言实现可以显著节省 gas。
 
-### Standard vs Assembly Math Operations
+### 标准与汇编语言数学运算对比
 
-Here's a comparison showing both approaches:
+以下是两种方法的对比：
 
 ```solidity
 // SPDX-License-Identifier: MIT
@@ -43,16 +43,16 @@ contract MathOperations {
 }
 ```
 
-### Gas Comparison
+### Gas 消耗比较
 
-| Operation | Standard Implementation  | Assembly Implementation  | Potential Savings        |
-| --------- | ------------------------ | ------------------------ | ------------------------ |
-| Max       | ~300 gas | ~200 gas | ~100 gas |
-| Min       | ~300 gas | ~200 gas | ~100 gas |
+| 操作  | 标准实现                     | 汇编实现                     | 潜在节省                     |
+| --- | ------------------------ | ------------------------ | ------------------------ |
+| 最大值 | ~300 gas | ~200 gas | ~100 gas |
+| 最小值 | ~300 gas | ~200 gas | ~100 gas |
 
-### Common Assembly Math Operations
+### 常见的汇编语言数学运算
 
-1. **Maximum Value**
+1. **最大值**
 
 ```solidity
 function max(uint256 x, uint256 y) public pure returns (uint256 z) {
@@ -62,7 +62,7 @@ function max(uint256 x, uint256 y) public pure returns (uint256 z) {
 }
 ```
 
-2. **Minimum Value**
+2. **最小值**
 
 ```solidity
 function min(uint256 x, uint256 y) public pure returns (uint256 z) {
@@ -72,7 +72,7 @@ function min(uint256 x, uint256 y) public pure returns (uint256 z) {
 }
 ```
 
-3. **Average (with rounding up)**
+3. **均值 (向上取整)**
 
 ```solidity
 function average(uint256 x, uint256 y) public pure returns (uint256 z) {
@@ -82,38 +82,38 @@ function average(uint256 x, uint256 y) public pure returns (uint256 z) {
 }
 ```
 
-### Why Assembly is More Efficient
+### 为什么使用汇编语言更高效
 
-1. **Fewer Operations**: Assembly implementations often use fewer EVM operations than their high-level counterparts.
+1. **较少的操作**: 汇编实现通常比高层次实现使用更少的 EVM 操作。
 
-2. **No Conditional Jumps**: Assembly implementations can avoid conditional jumps (JUMPI operations) which are gas-intensive.
+2. **无条件跳转**: 汇编实现可以避免条件跳转（JUMPI 操作），从而减少 gas 消耗。
 
-3. **Direct Memory Access**: Assembly allows direct manipulation of values without additional overhead.
+3. **直接内存访问**: 汇编允许直接操作数值，无需额外的开销。
 
-### When to Use Assembly Math
+### 何时使用汇编数学运算
 
-✅ **Recommended for:**
+✅ **推荐用于:**
 
-- High-frequency mathematical operations
+- 高频次数学运算
 - Gas-critical contracts
-- Simple mathematical functions
-- When maximum efficiency is required
+- 简单的数学函数
+- 需要最大效率的场景
 
-❌ **Not recommended for:**
+❌ **不推荐用于:**
 
-- Complex mathematical operations
-- When code readability is crucial
-- When maintaining type safety is important
-- Inexperienced developers
+- 复杂的数学运算
+- 对代码可读性至关重要的场景
+- 需要维护类型安全的场景
+- 缺乏经验的开发者
 
 ### 其他资源
 
-For more optimized math operations, consider exploring:
+为了进一步优化数学运算，可以考虑使用以下库：
 
-- [Solady Library](https://github.com/Vectorized/solady)
-- [PRBMath Library](https://github.com/PaulRBerg/prb-math)
+- [Solady 库](https://github.com/Vectorized/solady)
+- [PRBMath 库](https://github.com/PaulRBerg/prb-math)
 
-**Warning**: Assembly code bypasses Solidity's safety features. Ensure thorough testing and auditing before deployment.
+**警告**: 汇编代码绕过了 Solidity 的安全特性。 在部署前，务必进行彻底的测试和审计。
 
 #### 关于 gas 优化的建议：
 

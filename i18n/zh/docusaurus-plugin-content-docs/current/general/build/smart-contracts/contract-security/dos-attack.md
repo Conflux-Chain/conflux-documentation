@@ -20,15 +20,15 @@ tags:
 
 # 拒绝服务攻击
 
-In April 2022, a popular NFT project called Akutar conducted a successful [Dutch auction](https://en.wikipedia.org/wiki/Dutch_auction) to raise funds, amassing 11,539.5 ETH. However, when processing refunds for previous community pass holders, a flaw in their smart contract prevented operations, locking all funds within the contract due to a DoS vulnerability.
+2022年4月，一家名为Akutar的热门NFT项目成功地进行了一次 [荷兰式拍卖](https://en.wikipedia.org/wiki/Dutch_auction)筹集了11,539.5个ETH。 However, when processing refunds for previous community pass holders, a flaw in their smart contract prevented operations, locking all funds within the contract due to a DoS vulnerability.
 
-You can find more detailed information in [EXPLAINED: THE AKUTARS NFT INCIDENT (APRIL 2022)](https://www.halborn.com/blog/post/explained-the-akutars-nft-incident-april-2022)
+你可以在[解析：AKUTARS NFT事件(2022年4月)](https://www.halborn.com/blog/post/explained-the-akutars-nft-incident-april-2022)中找到更多详细信息。
 
-Denial of Service (DoS) attacks in the Web2 context typically involve overwhelming a server with excessive traffic, rendering it unable to serve legitimate requests. In the Web3 realm, such attacks exploit vulnerabilities to disrupt smart contract operations.
+在Web2环境中，拒绝服务(DoS)攻击通常涉及使用过多的流量淹没服务器，使其无法处理合法请求。 在Web3领域，这类攻击利用漏洞来破坏智能合约操作。
 
-#### Vulnerability Example
+#### 漏洞示例
 
-Let’s explore a simplified contract, `GameOfFunds`, that demonstrates this type of vulnerability. The contract allows players to deposit ETH at the beginning and intends to refund these deposits once the game concludes.
+Let’s explore a simplified contract, `GameOfFunds`, that demonstrates this type of vulnerability. 该合约允许玩家在开始时存入ETH，并打算在游戏结束时退还这些存款。
 
 ```solidity
 // SPDX-License-Identifier: MIT
@@ -66,7 +66,7 @@ contract GameOfFunds {
 }
 ```
 
-This contract is vulnerable because the `processRefunds()` function uses the `call` method, which activates the fallback function of recipient addresses. A malicious contract can disrupt this process.
+这个合约存在漏洞，因为`processRefunds()`函数使用了`call` 方法，它会激活收件人地址的回退函数。 A malicious contract can disrupt this process.
 
 ```solidity
 contract Malicious {
@@ -83,6 +83,6 @@ contract Malicious {
 
 ## 预防策略
 
-1. Ensure external contract calls, including fallback functions, do not interfere with or halt critical operations, allowing processes like refunds to continue even if individual transactions fail.
-2. Maintain contract functionality even if key participants are permanently absent, and allow users to withdraw refunds themselves rather than distributing them in batches.
-3. Prevent contracts from unintentionally self-destructing and avoid infinite loops to ensure stable and secure contract operations.
+1. 确保外部合同调用（包括回退函数）不会干扰或停止关键操作，即使个别交易失败，退款等流程也能继续进行。
+2. 即使关键参与者永久缺席，也要保持合约功能，并允许用户自行提取退款，而不是分批发放。
+3. 防止合约意外自毁并避免无限循环，以确保合约运行稳定和安全。

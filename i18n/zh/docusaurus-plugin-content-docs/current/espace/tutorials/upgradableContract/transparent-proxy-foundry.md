@@ -9,7 +9,7 @@ keywords:
   - eSpace
 tags:
   - 教程
-  - Upgradeable Contracts
+  - 可升级的合约
   - Transparent Proxy
   - Foundry
 ---

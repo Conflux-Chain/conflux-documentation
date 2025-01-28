@@ -17,15 +17,15 @@ tags:
   - 智能合约
 ---
 
-# Use Monolithic Contract Architecture
+# 使用单体合约架构
 
-This tutorial explores how making the architecture of your smart contracts monolithic, rather than having several contracts that communicate with each other, can result in gas savings. Inter-contract calls can be expensive, and by consolidating logic into a single contract, you can avoid these costs, albeit with some trade-offs in terms of complexity and modularity.
+This tutorial explores how making the architecture of your smart contracts monolithic, rather than having several contracts that communicate with each other, can result in gas savings. 合约间的调用可能会非常昂贵，通过将逻辑整合到单个合约中，可以避免这些成本，尽管在复杂性和模块化方面会有一些权衡。
 
-In Solidity, the default approach might be to modularize your code into multiple contracts that interact with each other. While this is great for maintainability and separation of concerns, it can lead to increased gas costs due to the overhead of contract calls. By designing a monolithic architecture, where most of the logic resides within a single contract, you can reduce these gas costs.
+在 Solidity 中，默认的方法可能是将代码模块化为多个相互交互的合约。 虽然这对于可维护性和关注点分离非常有利，但由于合约调用的开销，可能会导致 gas 成本增加。 通过设计单体架构，大多数逻辑都在单个合约中，可以降低这些 gas 成本。
 
 **代码演示**
 
-Below are two versions of a contract system. The first one uses multiple contracts that call each other, while the optimized version consolidates the logic into a single contract to minimize contract calls.
+以下是一个合约的两个版本。 第一版本使用多个相互调用的合约，而优化版则将逻辑整合到一个单一的合约中，以最小化合约调用。
 
 ```solidity
 // SPDX-License-Identifier: MIT
@@ -72,18 +72,18 @@ contract MonolithicContract {
 }
 ```
 
-In the optimized monolithic version, the `MonolithicContract` handles both setting and getting data within the same contract, eliminating the need for inter-contract calls. This approach can save approximately 20,000 gas units per call compared to the multiple contracts approach.
+在优化的单体版本中，`MonolithicContract`在同一个合约中设置和获取数据，消除了合约间调用的需求。 与多合约方法相比，这种方法每次调用大约可以节省 20,000 个 gas 单位。
 
-**Benefits of Monolithic Architecture**
+**单体构架的好处**
 
-- **Reduced Gas Costs**: Eliminates the overhead of contract calls, leading to significant gas savings.
-- **Simplified Gas Management**: Easier to estimate and manage gas consumption when all logic resides in a single contract.
+- **降低 gas 成本**: 消除了合约调用的开销，显著节省 gas。
+- **简化Gas管理**:：当所有逻辑在单个合约中时，更容易估算和管理 gas 消耗。
 
-**Trade-offs**
+**权衡**
 
-- **Increased Complexity**: The contract might become more complex and harder to maintain.
-- **Reduced Modularity**: Harder to reuse components in other contracts or projects.
+- **增加复杂性**：合约可能变得更加复杂且难以维护。
+- **降低模块化程度**:更难在其他合约或项目中重复使用组件。
 
-**Recommendations for Gas Optimization**
+**燃气优化建议**
 
-🌟 Consolidate logic into fewer contracts to reduce inter-contract call overhead. Aim to implement most of your functionalities within a single contract where feasible. But you need to carefully evaluate the trade-offs between maintainability and gas costs.
+🌟 将逻辑整合到较少的合约中，以减少合约间调用的开销。 在可行的情况下，尽量在单个合约中实现大部分功能。 但您需要仔细评估可维护性和 gas 成本之间的权衡。

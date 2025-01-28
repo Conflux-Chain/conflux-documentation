@@ -20,30 +20,30 @@ tags:
 
 # ERC20Permit
 
-In standard ERC20, users typically need to execute two separate transactions:
+在标准的 ERC20 中，用户通常需要执行两个单独的交易：
 
 1. **Approval (approve)**: The user authorizes a certain amount of tokens to a recipient.
-2. **Transfer (transferFrom)**: The recipient transfers tokens from the user's account.
+2. **转账(transferFrom)**:接收者从用户账户中转移代币。
 
 This approach not only increases gas costs but also diminishes user experience. By using ERC20Permit, we can merge these two steps into a single transaction, thereby saving gas and simplifying the process.
 
 ### Gas Optimization Comparison
 
-**Standard ERC20 Process**
+**标准ERC20流程**
 
 1. User calls `approve(spender, amount)`: approximately 50,000 gas
 2. Recipient calls `transferFrom(owner, recipient, amount)`: approximately 65,000 gas
 
-**Optimized Process Using ERC20Permit**
+**使用ERC20Permit的优化流程**
 
 1. User generates a signature (off-chain operation, no gas cost)
 2. Recipient calls `transferWithPermit` (including permit and transferFrom): approximately 80,000 gas
 
 **Savings**: approximately 35,000 gas, equivalent to a 30% gas reduction.
 
-### Example Code
+### 示例代码
 
-#### Standard ERC20 Implementation
+#### 标准ERC20实现
 
 ```solidity
 // SPDX-License-Identifier: MIT
@@ -59,7 +59,7 @@ contract StandardToken is ERC20 {
 }
 ```
 
-#### Optimized Implementation Using ERC20Permit
+#### 使用 ERC20Permit 的优化实现
 
 ```solidity
 // SPDX-License-Identifier: MIT
@@ -91,9 +91,9 @@ contract OptimizedToken is ERC20Permit {
 }
 ```
 
-#### Frontend Implementation
+#### 前端实现
 
-Example of implementing ERC20 Permit signature using Ethers.js v6:
+使用Ethers.js v6实现ERC20 Permit签名的示例:
 
 ```javascript
 import { ethers } from "ethers";
@@ -154,7 +154,7 @@ const { v, r, s } = await signERC20Permit(contract, owner, spender, value, deadl
 await contract.transferWithPermit(owner, spender, value, deadline, v, r, s);
 ```
 
-### Advantages of ERC20Permit
+### ERC20Permit的优势
 
 - **Reduced Transaction Count**: Merges approval and transfer into a single transaction, saving gas.
 - **Improved User Experience**: Token holders do not need to pay gas fees for approvals.
@@ -162,6 +162,6 @@ await contract.transferWithPermit(owner, spender, value, deadline, v, r, s);
 
 By adopting ERC20Permit, you can create a smoother and more cost-effective token interaction experience for users while reducing the overall load on the blockchain network.
 
-**Gas Optimization Recommendations**
+**燃气优化建议**
 
-🌟 In scenarios where frequent approvals and transfers are needed, consider using ERC20Permit. This can significantly reduce the number of transactions and overall gas consumption for users.
+🌟 在需要频繁进行授权和转账的场景中，建议使用 ERC20Permit。 这将显著减少交易数量和用户的总体燃气消耗。

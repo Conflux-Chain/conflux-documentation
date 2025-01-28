@@ -1,5 +1,5 @@
 ---
-title: Balance Accounting
+title: 余额核算
 displayed_sidebar: generalSidebar
 keywords:
   - smart-contracts
@@ -13,7 +13,7 @@ keywords:
   - prevention
   - introspection
 tags:
-  - Balance Accounting
+  - 余额核算
   - Security
   - 智能合约
 ---
@@ -22,11 +22,11 @@ Smart contracts often maintain state variables that track balances. However, dir
 
 Issues can arise if it simultaneously updates a state variable to monitor its balances and also relies on APIs such as `address(this).balance` or `balanceOf(address(this))` for balance information. This can lead to incorrect assumptions about the state of a contract, particularly when balances can be altered externally without corresponding state changes within the contract.
 
-Here are two examples:
+以下是两个示例：
 
-**Mixed Ether Accounting**
+**混合以太币核算**
 
-Contracts that do not implement a `receive` or `fallback` function cannot receive Ether through regular transfers (using `send` or `transfer`). However, Ether can still be forcibly sent to such contracts using the `selfdestruct` function from another contract. This scenario leads to situations where `address(this).balance` (actual balance) is greater than the recorded state variable `myBalance`.
+未实现 `receive` 或 `fallback` 函数的合约无法通过常规转账 (使用`send`或者`transfer`)接收以太币。 但是，可以通过另一个合约的 `selfdestruct` 函数强制向这些合约发送以太币。 这种情况导致 `address(this).balance` (实际余额)大于记录的状态变量 `myBalance`。
 
 ```solidity
  contract MixedAccounting {
@@ -52,9 +52,9 @@ Contracts that do not implement a `receive` or `fallback` function cannot receiv
 
 In this example, `myBalanceIntrospect()` queries the contract’s actual Ether balance using `address(this).balance`, which can differ from `myBalance` if Ether is sent to the contract outside of the `deposit()` function. Ether accounting method is fine, but if you use both, then the contract may have inconsistent behavior.
 
-**Mixed ERC20 Token Accounting**
+**混合 ERC20 代币核算**
 
-It is possible for ERC20 tokens to be sent directly to a contract's address, bypassing any `deposit` function designed to update an tracking variable (`myTokenBalance`). This results in discrepancies between `token.balanceOf(address(this))` (introspected balance) and the state variable (`myTokenBalance`).
+ERC20 代币可以直接发送到合约地址，绕过任何用于更新跟踪变量 (`myTokenBalance`)的`deposit` 函数。 This results in discrepancies between `token.balanceOf(address(this))` (introspected balance) and the state variable (`myTokenBalance`).
 
 ```solidity
 contract MixedAccountingERC20 {
@@ -82,6 +82,6 @@ contract MixedAccountingERC20 {
 
 When using `balanceOf(address(this))`, you must account for the possibility of "donations" that bypass the deposit and withdraw functions. State variables that only depend on deposit or withdraw functions cannot account for this. It has to be extremely careful if you use both Both accounting methods.
 
-## Prevention Strategy
+## 预防策略
 
-- **Avoid Strict Equality Checks**: When checking the balances with introspection, strict using equality checks should be avoided as the balance can be changed by an outsider at will.
+- **避免严格的相等性检查**：在使用内省检查余额时，应避免严格使用相等性检查，因为余额可以被外部人员随意更改。

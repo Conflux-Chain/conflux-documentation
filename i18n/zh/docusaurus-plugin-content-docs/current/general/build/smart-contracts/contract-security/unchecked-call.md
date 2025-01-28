@@ -15,32 +15,32 @@ keywords:
   - gas-limit
   - prevention
 tags:
-  - Unchecked Low-Level Calls
+  - 未经检查的低级调用
   - Security
   - 智能合约
 ---
 
-# Unchecked Low-Level Calls
+# 未经检查的低级调用
 
-Unchecked low-level calls are a common source of vulnerabilities in smart contract development. These calls include `call()`, `delegatecall()`, `staticcall()`, and `send()`, which do not revert the transaction when they fail but instead return a boolean `false`. Failing to check these return values can lead to critical security issues.
+未经检查的低级调用在智能合约开发中是常见的漏洞来源。 这些调用包括`call()`，`delegatecall()`，`staticcall()`和 `send()`，当它们失败时不会回滚交易，而是返回布尔值`false`。 未检查这些返回值可能导致严重的安全问题。
 
-The `send()` function in Ethereum is notoriously unreliable for transferring ether due to its strict gas limit of 2300. This limitation means that if the fallback function of the receiving address requires more gas than this allowance, the `send()` operation will not succeed. This limitation can lead to dangerous vulnerabilities if not properly managed.
+The `send()` function in Ethereum is notoriously unreliable for transferring ether due to its strict gas limit of 2300. 这意味着如果接收地址的回退函数需要的气体超过此限额，`send()` 操作将不会成功。 如果不正确地管理这个限制，可能会导致严重的漏洞。
 
-A notable example of this was the "King of Ether" game, which became infamous in 2016. The game was designed to crown the player who paid the most as the "King," transferring the title and associated ether to each new top payer. However, due to the restrictive gas limit of the `send()` function, the contract failed to transfer ether correctly when the recipients had complex fallback functions requiring more than 2300 gas. As a result, some participants did not receive their due payments, leading to significant financial losses. The incident highlights the critical importance of handling ether transactions with care in smart contracts.
+一个著名的例子是2016年臭名昭著的"King of Ether" 游戏。 该游戏的设计是将支付最多的玩家加冕为“国王”，并将头衔和相关的以太币转移到每个新的最高支付者。 然而，由于`send()` 函数的限制，当接收者的回退函数需要超过2300燃气时，合约未能正确地转移以太币。 As a result, some participants did not receive their due payments, leading to significant financial losses. 这一事件凸显了在智能合约中谨慎处理以太币交易的重要性。
 
 For an in-depth analysis of what went wrong and the lessons learned, you can review the detailed [King of Ether postmortem](https://www.kingoftheether.com/postmortem.html).
 
-### Unchecked `send()` Vulnerabilities
+### 未经检查的 `send()` 漏洞
 
 Here is a simple bank contract that includes functions to deposit and withdraw Ethereum, it involves operations that are vulnerable to attacks due to unchecked low-level call:
 
-- **`accountBalances`**: Records the Ethereum balances of all users.
+- **`accountBalances`**：记录所有用户的以太币余额。
 
-- **`depositFunds()`**: Users can deposit ETH into the contract through this function.
+- **`depositFunds()`**：用户可以通过此函数向合约存入以太币。
 
-- **`withdrawFunds()`**: This function allows users to withdraw their entire balance from the contract. It first checks if the user's balance is greater than zero, then attempts to send the corresponding amount of ETH to the user's address. **If the `send()` call fails, the user's balance will become zero.**
+- **`withdrawFunds()`**：此函数允许用户从合约中提取他们的全部余额。 首先检查用户的余额是否大于零，然后尝试将相应数量的以太币发送到用户的地址。 **如果 `send()` 调用失败，用户的余额将变为零。**
 
-- **`checkContractBalance()`**: It simply returns the balance of the contract address.
+- **`checkContractBalance()`**：它只是返回合约地址的余额。
 
 ```solidity
 contract SimpleBank {
@@ -100,13 +100,13 @@ contract Exploit {
 }
 ```
 
-Unchecked low-level calls can lead to unstable and insecure contract behavior. By implementing strict checks and using verified libraries for handling funds, developers can significantly reduce risks.
+未经检查的低级调用可能导致合约行为不稳定和不安全。 By implementing strict checks and using verified libraries for handling funds, developers can significantly reduce risks.
 
-### Unchecked `call()` Vulnerabilities
+### 未经检查的`call()`漏洞
 
-The `call()` method is often used for making external calls to other contracts. Similar to `send()`, the `call()` method returns a boolean value indicating the success or failure of the call. If this return value is not checked, it can lead to serious security issues where failures are silently ignored.
+The `call()` method is often used for making external calls to other contracts. 和`send()`类似，`call()`方法返回一个布尔值，表示调用的成功或失败。 If this return value is not checked, it can lead to serious security issues where failures are silently ignored.
 
-Here's an example to illustrate the potential problem:
+以下是一个说明潜在问题的示例：
 
 ```solidity
 contract ExampleContract {
@@ -133,17 +133,17 @@ contract VulnerableCaller {
 }
 ```
 
-In this example:
+在这个例子中：
 
 - `ExampleContract`: Contains a simple function `setY()` that updates a state variable `y`. The function includes a requirement that `_y` must be greater than 10.
 
-- `VulnerableCaller`: Has two functions to call `setY()` on `ExampleContract`.
+- `VulnerableCaller`:有两个函数来调用 ExampleContract 的`setY()`。
 
-- `setYUsingInterface()` uses an interface to call the function, which will revert if the requirement is not met.
+- `setYUsingInterface()`使用接口来调用函数，如果不满足要求，将回退。
 
-- `setYUsingCall()` uses a low-level call to invoke `setY()`. If the requirement is not met, the call will fail, but the transaction will not revert because the return value is not checked.
+- `setYUsingCall()` uses a low-level call to invoke `setY()`. 如果不满足要求，调用将失败，但由于没有检查返回值，交易不会回退。
 
-Here’s a revised version of `VulnerableCaller` with proper handling of the return value:
+以下是修改后的`VulnerableCaller`，正确处理返回值：
 
 ```solidity
 contract SecureCaller {
@@ -158,14 +158,14 @@ contract SecureCaller {
 }
 ```
 
-By checking the return value of the `call()` method and reverting the transaction if the call fails, you can ensure that the contract behaves correctly and securely.
+通过检查 `call()`方法的返回值，并在调用失败时回退交易，您可以确保合约正确且安全地运行。
 
-## Prevention Measures
+## 预防措施
 
-To avoid such vulnerabilities, consider the following measures:
+为了避免这类漏洞，考虑以下措施：
 
-1. **Mandate Return Value Checks**: It is imperative to consistently verify the return values of `send()` and `call()`. Ignoring these can lead to undetected failures that jeopardize contract integrity and user funds.
+1. **强制返回值检查**：必须始终验证`send()` 和`call()`的返回值。 忽略这些可能导致未发现的失误，从而危害合约的完整性和用户资金。
 
-2. **Prioritize Safer Transaction Methods**: Always prefer the `call()` method over `send()` for ether transactions. `call()` allows for greater gas flexibility and should be used with robust safeguards such as reentrancy guards to prevent common attack vectors like reentry attacks.
+2. **优先考虑更安全的交易方法**：在以太币交易中，始终优先使用`call()` 方法而不是`send()`方法 。 `call()`允许更大的燃气灵活性，并应与稳健的安全防护措施一起使用，如重入防护，以防止常见的攻击向量，比如重入攻击。
 
-3. **Implement Reputable Utility Libraries**: Use well-tested libraries such as OpenZeppelin’s [Address library](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/utils/Address.sol) (It wraps a low-level call to check the return value.) to manage low-level calls safely. These libraries provide enhanced security features that handle edge cases and exceptions, ensuring that even if errors occur, they are managed securely and predictably.
+3. **Implement Reputable Utility Libraries**: Use well-tested libraries such as OpenZeppelin’s [Address library](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/utils/Address.sol) (It wraps a low-level call to check the return value.) 安全地管理低级调用。 这些库提供了增强的安全功能，处理边缘情况和异常，确保即使发生错误，也能安全、可预测地进行管理。

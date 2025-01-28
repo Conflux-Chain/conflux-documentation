@@ -24,7 +24,7 @@ In August 2021, the cross-chain bridge contracts of Poly Network on ETH, BSC, an
 
 In Ethereum smart contracts, a function selector is the first `4` bytes (`8` hexadecimal digits) of the hash of the function signature `"<function name>(<function inputTypes>)"`. When a user calls a contract's function, the first `4` bytes of the `calldata` are the target function's selector, which determines which function to call.
 
-Due to the function selector being only `4` bytes long, it's quite short and prone to collisions: it's relatively easy to find two different functions that share the same function selector. For example, `mint(address,uint256)` and `cat642998653(address,uint256)` have the same selector: `0x23b872dd`.
+Due to the function selector being only `4` bytes long, it's quite short and prone to collisions: it's relatively easy to find two different functions that share the same function selector. 例如，`mint(address,uint256)` 和 `cat642998653(address,uint256)` 有相同的选择器：`0x23b872dd`。
 
 **Vulnerable Contract Example**
 

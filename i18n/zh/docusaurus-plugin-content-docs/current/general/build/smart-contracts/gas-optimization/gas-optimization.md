@@ -40,26 +40,27 @@ Reuse Computed Values: Store computed values in local variables if they are used
 
 Avoid Loops When Possible: Loops can significantly increase gas costs, especially if their iteration count can grow. Consider alternatives like mapping for direct access.
 
-Short-Circuit Evaluation: In if statements and logical expressions, order conditions by likelihood or cost. Solidity evaluates conditions from left to right and stops as soon as the result is determined.
+Short-Circuit Evaluation: In if statements and logical expressions, order conditions by likelihood or cost. Solidity 从左到右计算条件，一旦结果确定就会停止计算。
 
 ### Use Libraries and Delegate Calls
 
 Libraries for Reusable Code: Deploy reusable code as libraries. Libraries can be deployed once and then used by many contracts, reducing the deployment and execution gas costs.
-Delegate Calls: Use delegate calls for modular architecture. This can reduce the amount of bytecode in a contract, lowering deployment and execution costs.
+委托调用：使用委托调用实现模块化架构。 这样可以减少合约中的字节码数量，从而降低部署和执行成本。
 
 ### Efficient Event Logging
 
 Use Events for Data Not Requiring Immediate Retrieval: Instead of storing information that doesn't need to be immediately retrieved in storage variables, emit events. Logs cost significantly less gas than storage.
 
-### Testing and Optimization Tools
+### 测试和优化工具
 
-Use Gas Reporting Tools: Tools like Hardhat and Truffle can report gas usage for contract functions. Identify high-gas functions for optimization.
+Use Gas Reporting Tools: Tools like Hardhat and Truffle can report gas usage for contract functions. 识别高 gas 函数以进行优化。
 Use Remix IDE: It provides detailed gas consumption for transactions and can help identify expensive operations.
 
-### Upgradeable Contracts
+### 可升级的合约
 
-Consider Proxy Patterns: Using proxies allows for the logic contract to be upgraded without redeploying the entire contract, saving gas on deploying large contracts.
+考虑使用代理模式：使用代理可以在不重新部署整个合约的情况下升级逻辑合约，从而节省部署大型合约的
+gas。
 
 ### More Detailed Tutorial of Gas Optimization
 
-- [Constant VS Immutable](/docs/general/build/smart-contracts/gas-optimization/constant)
+- [常量 VS 不可变量](/docs/general/build/smart-contracts/gas-optimization/constant)

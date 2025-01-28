@@ -22,17 +22,17 @@ tags:
 
 # Bad Randomness
 
-## Pseudo-Random Numbers
+## 伪随机数
 
-Many applications on Ethereum, such as NFT random tokenId draws, blind box openings, and GameFi combat outcomes, rely on random numbers. However, since all data on Ethereum is public and deterministic, traditional random generation methods like `random()` are not available.
+以太坊上的许多应用程序，比如 NFT 随机 tokenId 抽奖、盲盒开启和 GameFi 战斗结果，都依赖于随机数。 然而，由于以太坊上的所有数据都是公开和确定性的，传统的随机生成方法如 `random()` 并不可用。
 
-Instead, projects often use pseudo-random number generators such as `blockhash()` and `keccak256()`. This approach, known as the Bad Randomness Vulnerability, allows attackers to predict outcomes, enabling them to manipulate results like minting specific rare NFTs.
+相反，项目通常使用伪随机数生成器，`blockhash()`和`keccak256()`。 This approach, known as the Bad Randomness Vulnerability, allows attackers to predict outcomes, enabling them to manipulate results like minting specific rare NFTs.
 
-This vulnerability is common in NFT and GameFi projects, including Meebits, Loots, and Wolf Game. It has led to significant financial losses, such as the SmartBillions Lottery exploit where attackers used predictable outcomes to win over 400 ETH. More information is available in the article, [The Blockchain Lottery SmartBillions Was Hacked for $120,000](https://crypto.news/blockchain-lottery-smartbillions-hacked-for-120000/).
+这种漏洞在NFT和GameFi项目中很常见，包括Meebits, Loots, and Wolf Game。 它已经造成了重大的财务损失，比如 SmartBillions 彩票漏洞，攻击者利用可预测的结果赢得了超过 400 ETH。 更多信息请参阅文章, [区块链彩票被黑客攻击，损失12万美元](https://crypto.news/blockchain-lottery-smartbillions-hacked-for-120000/)。
 
 ## Example of a Bad Randomness Vulnerability
 
-Let's explore a vulnerable NFT contract, `FlawedRandomizer.sol`.
+我们来探讨一个存在漏洞的NFT合约，`FlawedRandomizer.sol`。
 
 ```solidity
 contract FlawedRandomizer is ERC721 {
@@ -52,9 +52,9 @@ contract FlawedRandomizer is ERC721 {
 }
 ```
 
-The main function `mintIfLucky()` requires users to enter a number between `0-99`. If it matches the chain-generated pseudo-random number `pseudoRandomNumber`, they can mint a lucky NFT. The vulnerability lies in the ability of users to perfectly predict the generated random number and mint the NFT.
+主函数`mintIfLucky()`要求用户输入一个`0-99`之间的数字。 如果与链生成的伪随机数 `pseudoRandomNumber`匹配，则可以铸造一枚幸运的NFT。 漏洞在于用户能够完全预测生成的随机数并铸造NFT。
 
-Let's write an attack contract `Exploit.sol`.
+我们编写一个攻击合约`Exploit.sol`。
 
 ```solidity
 contract Exploit {
@@ -69,8 +69,8 @@ contract Exploit {
 }
 ```
 
-The function `executeMint()` takes a `FlawedRandomizer` contract address as a parameter. Here, we calculate the `predictedNumber` and then pass it to the `mintIfLucky()` function to execute the attack. Since both `executeMint()` and `mintIfLucky()` are called in the same block, the `blockhash` and `block.timestamp` are the same, making the generated random number predictable.
+函数`executeMint()` 以`FlawedRandomizer`合约地址为参数。 在这里，我们计算`predictedNumber`，然后将其传递到`mintIfLucky()` 函数来执行攻击。 由于在同一个区块中调用`executeMint()` 和 `mintIfLucky()`，`blockhash`和`block.timestamp`是相同的，因此可以预测生成的随机数字。
 
-## Prevention Strategy
+## 预防策略
 
-Use off-chain random numbers provided by oracle projects to prevent this type of vulnerability, such as Chainlink VRF. These random numbers are generated off-chain and uploaded to the blockchain, ensuring they are unpredictable.
+使用Oracle项目提供的链下随机数来防止这种类型的漏洞，例如Chainlink VRF。 这些随机数是在链下生成的，并上传到区块链，确保它们是不可预测的。

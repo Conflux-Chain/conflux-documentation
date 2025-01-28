@@ -1,5 +1,5 @@
 ---
-title: Private Variables Security
+title: 私有变量安全性
 displayed_sidebar: generalSidebar
 keywords:
   - smart-contracts
@@ -18,9 +18,9 @@ tags:
 
 When developing smart contracts, it's crucial to understand that marking variables as `private` does not make them confidential. This tutorial explains why private variables are still accessible and provides best practices for handling sensitive information in smart contracts.
 
-In Solidity, the `private` keyword only prevents other contracts from accessing the variable directly through code. However, all data stored on the blockchain is publicly visible, including private variables.
+In Solidity, the `private` keyword only prevents other contracts from accessing the variable directly through code. 然而，所有存储在区块链上的数据都是公开可见的，包括私有变量。
 
-Consider this simple smart contract with a private variable:
+考虑这个具有私有变量的简单智能合约：
 
 ```solidity
 // SPDX-License-Identifier: MIT
@@ -37,11 +37,11 @@ contract PrivateDataExample {
 
 While this variable cannot be accessed by other smart contracts, anyone can read its value by directly querying the blockchain storage.
 
-#### Vulnerability Explanation
+#### 漏洞解释
 
 The blockchain is a transparent, distributed ledger where all data must be accessible to validators to verify transactions. Private variables are stored in specific storage slots that can be read using web3 libraries or blockchain explorers.
 
-Here's how someone could read the private variable:
+以下是读取私有变量的方法：
 
 ```javascript
 import { ethers } from "ethers";
@@ -59,17 +59,17 @@ async function readPrivateData(contractAddress) {
 
 #### Real-World Implications
 
-This transparency has led to several security incidents where developers mistakenly stored sensitive information in private variables, thinking they were secure. Common examples include:
+This transparency has led to several security incidents where developers mistakenly stored sensitive information in private variables, thinking they were secure. 常见示例包括：
 
-- Private keys or seeds
-- Authentication credentials
-- Confidential business logic parameters
+- 私钥或种子
+- 身份验证凭证
+- 机密业务逻辑参数
 
-#### Best Practices
+#### 最佳实践
 
-1. **Never store sensitive data on-chain**: Any data that needs to remain confidential should not be stored on the blockchain, even in private variables.
+1. **切勿将敏感数据存储在链上**: 任何需要保密的数据都不应存储在区块链上，即使是私有变量也是如此。
 
-2. **Use commit-reveal patterns**: For data that needs temporary privacy:
+2. **使用提交-透露模式**：对于需要临时隐私的数据：
 
 ```solidity
 contract CommitReveal {
@@ -87,7 +87,7 @@ contract CommitReveal {
 }
 ```
 
-3. **Use off-chain storage**: Store sensitive data off-chain and only put hashes on-chain:
+3. **使用链下存储**: 将敏感数据存储在链下，仅在链上放置哈希值：
 
 ```solidity
 contract SecureStorage {
@@ -103,7 +103,7 @@ contract SecureStorage {
 }
 ```
 
-4. **Use encryption**: If you must store sensitive data on-chain, encrypt it first:
+4. **使用加密**: 如果必须在链上存储敏感数据，请先对其进行加密：
 
 ```solidity
 contract EncryptedStorage {
@@ -116,4 +116,4 @@ contract EncryptedStorage {
 }
 ```
 
-Remember: The blockchain is fundamentally transparent. If your application requires true data privacy, carefully consider whether blockchain storage is appropriate for that particular data.
+记住：区块链本质上是透明的。 如果您的应用程序需要真正的数据隐私，请仔细考虑区块链存储是否适合该特定数据。

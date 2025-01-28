@@ -21,7 +21,7 @@ tags:
 
 In the contract, all functions are organized into an array and systematically sorted by their MethodID, a unique identifier for each function. This organization not only streamlines the management of function calls but also facilitates quick access by imposing a structured order that can be efficiently searched during function executions.
 
-When a function is called, the system does not immediately execute the function but begins a sequential search through the function array. It uses the MethodID to accurately locate and execute the intended function.
+当调用一个函数时，系统不会立即执行该函数，而是开始对函数数组进行顺序搜索。 It uses the MethodID to accurately locate and execute the intended function.
 
 During this search process, each iteration of comparing MethodIDs incurs a gas cost of 22 units. This cost is associated with the computational effort required by the Ethereum Virtual Machine (EVM) to read and compare MethodIDs.
 
