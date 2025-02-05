@@ -120,7 +120,7 @@ Unifra提供：
 - Unifra的NFT API
 - 带有请求浏览器的仪表板
 
-要使用Unifra的服务，开发者需要先注册一个账户，并在[Unifra 控制台](https://console.unifra.io/)中找到RPC端点。 详细信息请查看[Unifra的文档](https://docs.unifra.io/)
+要使用Unifra的服务，开发者需要先注册一个账户，并在[Unifra 控制台](https://console.unifra.io/)中找到RPC端点。 For detail information check [Unifra's documentation](https://docs.unifra.io/)
 
 ### 公共端点
 
