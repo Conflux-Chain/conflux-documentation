@@ -77,7 +77,7 @@ The optimized contract demonstrates an approximate gas saving of 5,000 units com
 - Unoptimized Version: Copies entire struct from storage to memory, involving multiple storage reads.
 - Optimized Version: Directly references the struct in storage using a storage pointer, minimizing the storage access to only what is necessary.
 
-**Recommendations for Gas Optimization**
+**燃气优化建议**
 
 🌟 Use storage pointers to manipulate or read data directly in storage when only a specific part of the data structure is needed, avoiding unnecessary copying to memory.
 

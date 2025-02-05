@@ -101,7 +101,7 @@ contract AdminPayable {
 
 In this example, the `adminFunction` is payable, which can help save gas costs.
 
-**Recommendations for Gas Optimization**
+**燃气优化建议**
 
 🌟 在构造函数中使用 `payable` 修饰符会略微减少部署合约时的 gas 成本。
 

@@ -24,7 +24,7 @@ In Solidity, how you initialize state variables can have a impact on the deploym
 
 In the example below, we have two contracts, `Default` and `InitDefault`. Both contracts declare a state variable `foo` of type `uint256`. However, they differ in how `foo` is initialized:
 
-- `Default` leaves `foo` uninitialized, thereby relying on Solidity to set it to the default value of `uint256`, which is `0`.
+- `Default` 不初始化`foo` ，因此依赖Solidity将其设置为`uint256`的默认值，即 `0`。
 - `InitDefault` explicitly initializes `foo` to `0` during declaration.
 
 ```solidity

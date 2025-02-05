@@ -43,7 +43,7 @@ Smart contracts in Conflux offer benefits like enhanced security, reduced transa
 ### Use Cases
 The applications are diverse, ranging from decentralized finance (DeFi) and token creation to supply chain management and gaming. Smart contracts serve as the backbone for DApps (Decentralized Applications) on Conflux, enabling innovative business models and services.
 
-### Security Considerations
+### 安全事项
 Security in smart contracts is paramount. Despite their immutability, vulnerabilities in code can be exploited. Conflux Network emphasizes best practices in smart contract development, including thorough testing and audits.
 
 :::tip

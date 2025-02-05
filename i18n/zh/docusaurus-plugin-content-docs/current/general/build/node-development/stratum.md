@@ -13,63 +13,44 @@ tags:
   - Stratum Protocol
 ---
 
-# Stratum Protocol in Conflux-Rust
+# Conflux-Rust中的Stratum协议
 
-## Design Goal
+## 设计目标
 
-Rust is an excellent language to develop distributed systems like Conflux, but
-it is not very so good for developing miners. Miners are typically developed
-via languages like C/C++ that can operate with high performance and GPUs. We
-therefore design a stratum-like protocol in Conflux-Rust to enable external
-miners to connect to Conflux.
+Rust是开发像Conflux这样的分布式系统的优秀语言，但对于开发矿工程序来说并不是非常理想。 矿工程序通常通过像C/C++这样的语言开发，这些语言可以实现高性能和GPU操作。 因此，我们在Conflux-Rust中设计了一个类Stratum协议，以便外部矿工能够连接到Conflux。
 
-Note that to keep the protocol simple, the design goal of the stratum-like
-protocol is for solo-mining only, i.e., Conflux-Rust are connected with miner
-processes in local or remote machines that belong to the same entity. It is not
-designed to run as a mining pool server. For those who wish to run a mining
-pool, it is recommended to build their own customized proxy server that
-connects to Conflux-Rust.
+注意，为了保持协议的简单性，这种类Stratum协议的设计目标仅限于单独挖矿，也就是说，Conflux-Rust连接的是本地或远程机器上属于同一实体的矿工进程。 它不是设计来作为矿池服务器运行的。 对于那些希望运行矿池的人来说，建议构建自己的定制代理服务器来连接Conflux-Rust。
 
-## General Workflow
+## 一般工作流程
 
-In the scenario where an external miner connecting to Conflux-Rust via its
-stratum port (default 32525), here is the typical workflow.
+在一个外部矿工通过其Stratum端口（默认32525）连接到Conflux-Rust的场景中，以下是典型的工作流程。
 
-1. The miner connects via TCP to the stratum port. Conflux-Rust must run with
-   the configuration that enables stratum.
+1. 矿工通过TCP连接到Stratum端口。 Conflux-Rust必须以启用Stratum的配置运行。
 
-2. The miner sends a `mining.subscribe` RPC call via the TCP stream. It informs
-   Conflux-Rust the miner name. `mining.subscribe` also performs a basic password
-   based authentication, where the password can be set at the configuration file
-   of Conflux-Rust.
+2. 矿工通过 TCP 流发送 `mining.subscribe` RPC 调用。 它向Conflux-Rust通报矿工名称。 `mining.subscribe` 还执行基于密码的基本认证，其中密码可以在 Conflux-Rust 的配置文件中设置。
 
-3. After successful subscription, Conflux-Rust will continue to send
-   `mining.notify` RPC calls to the miner via the TCP stream. Each `mining.notify`
-   corresponds to a new proof-of-work (PoW) problem for the miner to solve. Miners
-   are expected to work on the last received job.
+3. 成功订阅后，Conflux-Rust 将继续通过 TCP 流向矿工发送 `mining.notify` RPC 调用。 每个 `mining.notify` 对应于一个新的工作量证明（PoW）问题，供矿工解决。 矿工预期将处理最后接收到的工作。
 
-4. Whenever miner solves a PoW problem, it returns the solution (i.e., the
-   nonce) to Conflux-Rust via calling `mining.submit` RPC calls.
+4. 每当矿工解决了一个 PoW 问题，它就通过调用 `mining.submit` RPC 调用将解决方案（即 nonce）返回给 Conflux-Rust。
 
-5. Miner can simply disconnect any time in this process to quit.
+5. 矿工可以在此过程中随时断开连接以退出。
 
-## RPC Interface
+## RPC接口
 
-### Server-side RPCs
+### 服务器端RPC
 
 #### mining.subscribe
 
-Start to subscribe the proof-of-work notification from the stratum server
+开始订阅来自stratum服务器的工作量证明通知
 
 ##### 参数
 
-1. WORKER_ID, string - the name of the miner
-2. Secret, empty or 32-bytes, the secret that corresponds to the keccak result
-   of the password in the configuration. Empty if password is not enabled.
+1. WORKER_ID，字符串 - 矿工的名称
+2. Secret, 空或 32 字节，对应于配置中密码的 keccak 结果的密码。 如果未启用密码，则为空。
 
 ##### 返回值
 
-`Bool` - `true` if successful, `false` if not.
+`Bool` - 如果成功，则为`true`；如果不成功，则为 `false`。
 
 ##### 示例
 
@@ -89,20 +70,18 @@ Start to subscribe the proof-of-work notification from the stratum server
 
 #### mining.submit
 
-Submit a PoW solution to the stratum server
+向stratum服务器提交一个PoW答案
 
 ##### 参数
 
-1. WORKER_ID, string - the name of the miner
-2. JOB_ID, hex-string - the identifier of the job, which is typically same as
-   the hash of the PoW problem.
-3. NONCE, hex-string of 32-bytes - the nonce solution of the PoW problem
-4. HASH, hex-string of 32-bytes - the hash of the solved PoW problem.
+1. WORKER_ID，字符串 - 矿工的名称
+2. JOB_ID, hex-string - 工作的标识符，通常与 PoW 问题的哈希相同。
+3. NONCE，32字节的十六进制字符串 - PoW问题的nonce答案
+4. HASH，32字节的十六进制字符串 - 解决的PoW问题的哈希值。
 
 ##### 返回值
 
-`Array` - A single element of `true` if successful, the first element will be
-`false` if not and the second element will explain reasons in string.
+`Array` - 如果成功，则为包含 `true` 的单个元素；如果不成功，第一个元素将是 `false`，第二个元素将以字符串形式解释原因。
 
 ##### 示例
 
@@ -126,12 +105,9 @@ Submit a PoW solution to the stratum server
 
 ---
 
-### Client-side Notification
+### 客户端通知
 
-Note that although the server notifies the mining client via a RPC like
-request, it is not a true RPC -- it does not expect the client to return any
-response. Instead, the client will just update the PoW problem it works on and
-submits whenever it finds solution.
+注意，尽管服务器通过类似 RPC 的请求通知挖矿客户端，它并不是一个真正的 RPC——它不期望客户端返回任何响应。 相反，客户端将只更新它工作的 PoW 问题，并在找到解决方案时提交。
 
 #### mining.notify
 
@@ -139,10 +115,9 @@ Notify the client about a new PoW problem.
 
 ##### 参数
 
-1. JOB_ID, hex-string - the identifier of the job.
-2. HASH, 32-bytes - the hash of the PoW problem.
-3. BOUNDARY, U256 - the difficulty boundary of the problem. For a nonce to be valid, the resulting
-   hash must be smaller than the BOUNDARY.
+1. JOB_ID, hex-string - 工作的标识符。
+2. HASH, 32 字节 - PoW 问题的哈希。
+3. BOUNDARY, U256 - 问题的难度边界。 对于 nonce 来说，结果哈希必须小于 BOUNDARY。
 
 ##### 示例
 

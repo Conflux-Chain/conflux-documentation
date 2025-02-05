@@ -1,5 +1,5 @@
 ---
-title: Safe Downcasting
+title: 安全的向下转换
 displayed_sidebar: generalSidebar
 keywords:
   - smart-contracts
@@ -17,13 +17,13 @@ tags:
   - 智能合约
 ---
 
-# Safe Downcasting
+# 安全的向下转换
 
-In Solidity, downcasting from a larger integer type to a smaller one can be hazardous due to the lack of automatic overflow checks in versions before 0.8.0. This tutorial explains the risks of downcasting, provides an example of a problematic function in older Solidity versions, and offers a solution using a library like SafeCast to ensure safe operations. Even though Solidity 0.8.0 and later versions include built-in overflow checks, using SafeCast can enhance code clarity and safety.
+在 Solidity 中，安全地将较大的整数类型向下转换为较小的类型可能会带来风险，尤其是在 0.8.0 之前的版本中，因为这些版本缺乏自动溢出检查。 本文将解释向下转换的风险，提供一个在旧版本 Solidity 中有问题的函数示例，并介绍如何使用诸如 SafeCast 之类的库来确保操作安全。 尽管 Solidity 0.8.0 及以后的版本已经内置了溢出检查，但使用 SafeCast 仍然可以提高代码的清晰度和安全性。
 
-## The Problem with Downcasting
+## 向下转换的问题
 
-Downcasting an integer in Solidity versions before 0.8.0 does not automatically check for overflow. This can lead to unexpected behavior and vulnerabilities if not handled properly. Here’s an example of a function that demonstrates this issue:
+在 0.8.0 之前的 Solidity 版本中，将整数向下转换不会自动检查溢出。 如果处理不当，这可能导致意外行为和漏洞。 以下是一个演示此问题的函数示例：
 
 ```solidity
 function test(int256 value) public pure returns (int8) {
@@ -31,11 +31,11 @@ function test(int256 value) public pure returns (int8) {
 }
 ```
 
-In Solidity versions prior to 0.8.0, adding 1 to a large `int256` value and casting it to `int8` can cause an overflow. Because Solidity does not revert on such overflows in these versions, the result can be incorrect, leading to potential vulnerabilities in your contract logic.
+在 0.8.0 之前的 Solidity 版本中，向一个大的 `int256` 值加 1 并将其转换为 `int8`  可能会导致溢出。 由于 Solidity 在这些版本中不会在溢出时回退，结果可能会不正确，从而导致合约逻辑中的潜在漏洞。
 
-## Solidity 0.8.0 and Later
+## Solidity 0.8.0 及以后版本
 
-Starting from Solidity 0.8.0, arithmetic operations automatically revert on overflow. Thus, the following function will revert on overflow:
+从 Solidity 0.8.0 开始，算术操作在溢出时会自动回退。 因此，以下函数在溢出时会回退：
 
 ```solidity
 function test(int256 value) public pure returns (int8) {
@@ -43,34 +43,34 @@ function test(int256 value) public pure returns (int8) {
 }
 ```
 
-Although the built-in checks help prevent overflow vulnerabilities, using the `SafeCast` library can still be beneficial for explicitness and additional safety.
+尽管内置检查有助于防止溢出漏洞，但使用 `SafeCast` 库仍然有助于提高代码的明确性和额外的安全性。
 
-## Safe Downcasting with SafeCast
+## 使用 SafeCast 进行安全的向下转换
 
-To explicitly handle overflow issues during downcasting and to make your intent clear, you can use the `SafeCast` library provided by OpenZeppelin. This library provides functions that revert the transaction if an overflow occurs, ensuring safe operations.
+为了在向下转换期间显式处理溢出问题并使意图明确，可以使用 OpenZeppelin 提供的 `SafeCast` 库。 该库提供了在溢出时回退交易的函数，确保操作安全。
 
-### Example: Safe Downcasting
+### 示例：安全的向下转换
 
-Here’s how you can modify the function to safely downcast using the `SafeCast` library:
+以下是如何使用 `SafeCast`库修改函数以安全地进行向下转换：
 
-1. **Import SafeCast Library**:
+1. **导入 SafeCast 库**：
 
    ```solidity
    import "@openzeppelin/contracts/utils/math/SafeCast.sol";
    ```
 
-2. **Use SafeCast for Downcasting**:
+2. **使用 SafeCast 进行向下转换**：
    ```solidity
    function test(int256 value) public pure returns (int8) {
        return SafeCast.toInt8(value + 1); // Reverts on overflow
    }
    ```
 
-In this updated function, `SafeCast.toInt8(value + 1)` ensures that if the value cannot be safely cast to `int8`, the transaction will revert, thus preventing overflow-related issues.
+在这个更新的函数中，`SafeCast.toInt8(value + 1)` 确保如果值不能安全地转换为 `int8`, 交易将会回退，从而防止与溢出相关的问题。
 
-### Full Contract Example
+### 完整的合约示例
 
-Here’s a complete example demonstrating safe downcasting using the `SafeCast` library:
+以下是一个使用 `SafeCast` 库进行安全向下转换的完整示例：
 
 ```solidity
 // SPDX-License-Identifier: MIT
@@ -89,4 +89,4 @@ contract SafeDowncasting {
 
 ## 结论
 
-Even though Solidity 0.8.0 and later versions include built-in overflow checks, downcasting still requires careful handling to ensure explicitness and prevent potential vulnerabilities. By leveraging the `SafeCast` library, you can enhance the readability and safety of your downcasting operations, protecting your smart contracts from potential risks. Always prioritize security and adopt safe coding practices in your Solidity development.
+尽管 Solidity 0.8.0 及以后的版本已经内置了溢出检查，向下转换仍然需要谨慎处理以确保明确性并防止潜在漏洞。 通过利用 `SafeCast` 库，可以提高向下转换操作的可读性和安全性，从而保护智能合约免受潜在风险。 始终优先考虑安全性，并在 Solidity 开发中采用安全的编码实践。

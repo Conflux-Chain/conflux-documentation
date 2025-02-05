@@ -13,35 +13,35 @@ tags:
   - Synchronization
 ---
 
-# Block Synchronization Process
+# 区块同步过程
 
-## Synchronization Graph
+## 同步图
 
-Synchronization graph is designed to organize newly arrived blocks (received from the peers, loaded from local storage, or self-mined) even when their past blocks haven’t been completely collected. Once all the past blocks of a block have been collected in synchronization graph, it will be dispatched to consensus graph for further processing.
+同步图旨在组织新到达的区块（来自对等节点接收、从本地存储加载或自行挖掘的），即使它们的过去区块尚未完全收集。 一旦某个区块的所有过去区块都在同步图中被收集完毕，它将被分派到共识图进行进一步处理。
 
-The block header and block body enter the synchronization graph in separate processes, because, typically, the block header and body are transferred separately in peer-to-peer layer. The graph structure in the synchronization graph is constructed by block header arrival. Each block is represented as a node in the graph structure, and the nodes are linked through the parent/child and referrer/referee relations between blocks.
+区块头和区块体在同步图中通过不同的流程进入，因为通常区块头和体在对等网络层中是分开传输的。 同步图中的图结构是通过区块头到达来构建的。 每个区块在图结构中表示为一个节点，节点通过区块间的父/子和引用块/被引用块关系连接。
 
-Synchronization graph checks the validity of arriving blocks. The blocks that do not pass the validity checks are invalid and will not be dispatched to consensus graph further. The following validity checks are conducted:
+同步图检查到达区块的有效性。 未通过有效性检查的区块是无效的，将不会进一步分派到共识图。 进行以下有效性检查：
 
-1. Check whether the parent or referees of a block are invalid. If one of them is invalid, the block is invalid too.
-2. Check whether the nonce in the block header is correctly set based on the difficulty in the block header, i.e., the miner of the block correctly solved the POW puzzle.
-3. Check whether the number of referees in the block header is larger than a threshold (200). If so, the block is invalid.
-4. Check whether there are duplicated hashes in the parent and referees of a block. If so, the block is invalid.
-5. Check whether the length (in byte) of the custom field in the block header is beyond a threshold (64). If so, the block is invalid.
-6. Check whether the height of a block is larger than the height of its parent block by 1. If NOT, the block is invalid.
-7. Check whether the timestamp of a block is larger than or equal to the timestamp of its parent block. If NOT, the block is invalid.
+1. 检查区块的父区块或被引用块是否无效。 若其中之一无效，则该区块亦无效。
+2. 检查区块头中的随机数是否根据区块头中的难度正确设置，即矿工是否正确解决了POW难题。
+3. 检查区块头中的被引用块数量是否超过阈值（200）。 如果是，则该区块无效。
+4. 检查区块的父区块和被引用块中是否有重复的哈希值。 如果是，则该区块无效。
+5. 检查区块头中自定义字段的长度（以字节计）是否超过阈值（64）。 如果是，则该区块无效。
+6. Check whether the height of a block is larger than the height of its parent block by 1. 如果不是，则该区块无效。
+7. 检查区块的时间戳是否大于或等于其父区块的时间戳。 如果不是，则该区块无效。
 8. Check the block gas limit is correctly set.
-9. Check the block difficulty is correctly set.
-10. Check whether the block header contains the correct transaction root according to the transactions in the block body.
-11. Check whether every transaction in the block body has valid signature structure.
-12. Check whether the total size of the transactions in the block body is larger than the block size limit (800KB). If so, the block is invalid.
-13. Check whether the total gas limit of transactions in the block body is larger than the block gas limit. If so, the block is invalid.
+9. 检查区块难度是否正确设置。
+10. 检查区块头是否包含根据区块体中的交易正确设置的交易根。
+11. 检查区块体中的每笔交易是否具有有效的签名结构。
+12. 检查区块体中的交易总大小是否超过区块大小限制（800KB）。 如果是，则该区块无效。
+13. Check whether the total gas limit of transactions in the block body is larger than the block gas limit. 如果是，则该区块无效。
 
-The validity checks 1~9 only use information in block header. The validity checks 10~13 use the information in block body. The checks 6~9 require graph structure information like parent information and are conducted on a block when the headers of all its past blocks have entered the synchronization graph. To speed up the block relay process, when both the header and body of a block have entered the synchronization graph and the headers of all its past blocks have also entered, the block can be relayed to the peers. It is not needed to wait for the bodies of all the past blocks of a block to be received in order to relay the block. This may lead to relaying invalid blocks, but since all the relayed blocks already have valid difficulty and POW settings, the attackers who make this case also pay the corresponding cost of computation power.
+The validity checks 1~9 only use information in block header. The validity checks 10~13 use the information in block body. The checks 6~9 require graph structure information like parent information and are conducted on a block when the headers of all its past blocks have entered the synchronization graph. To speed up the block relay process, when both the header and body of a block have entered the synchronization graph and the headers of all its past blocks have also entered, the block can be relayed to the peers. 无需等待该区块的所有过去区块的体被接收即可中继该区块。 这可能导致中继无效区块，但由于所有被中继的区块已具有有效的难度和POW设置，制造这种情况的攻击者也支付了相应的计算能力成本。
 
-### Graph Structure Maintenance
+### 图形结构维护
 
-The node structure of synchronization graph is defined as follows:
+同步图的节点结构定义如下：
 
 ```c
 pub struct SynchronizationGraphNode {
@@ -69,21 +69,21 @@ pub struct SynchronizationGraphNode {
 
 ```
 
-The graph structure is maintained by the fields `parent`, `children`, `referees`, and `referrers`. Each node has a `graph_status` field representing its status changing during the period from the time when the header arrives to the time when the block is ready to be dispatched to consensus graph.
+图结构由 `parent`, `children`, `referees`, 和 `referrers` 字段维护。 每个节点有一个 `graph_status` 字段，表示从头到达到区块准备好被派发到共识图的时间段内其状态的变化。
 
-When a block header enters synchronization graph, it is first checked whether this block is already processed by synchronization graph.
-If not, it will be added into the graph and the graph structure will be updated accordingly.
-First, the _parent/children_ edge will be established.
-If the parent of this newly arrived block hasn’t come into synchronization graph, the graph uses a collection `children_by_hash` to handle this.
-This is a map from block hash to a set of graph nodes.
-In this case, the graph node representing this newly arrived block header will be added into the graph node set mapped from the parent block hash of this block.
-This functions as a bookkeeping to remember the relation between the parent block hash and this newly arrived block.
-Once this parent block comes into the synchronization graph in the future, the corresponding edge between the parent and child nodes can be established and the hash of the parent block will be removed from the `children_by_hash` map.
-Secondly, the _referees/referrers_ edges will also be established.
-Similarly, the synchronization graph uses a map `referrers_by_hash` to remember the relation between the unarrived referee block and the newly arrived referrer block.
-The graph node also maintains a `pending_referee_count` field to remember how many referees of the block haven’t come into the synchronization graph.
+当一个区块头进入同步图时，首先检查该区块是否已经被同步图处理。
+如果没有，它将被添加到图中，并相应地更新图结构。
+首先，建立 _父/子_ 边。
+如果这个新到达的区块的父区块尚未进入同步图，图使用一个集合 `children_by_hash` 来处理这种情况。
+这是一个从区块哈希到图节点集的映射。
+在这种情况下，代表这个新到达的区块头的图节点将被添加到从这个区块的父区块哈希映射的图节点集中。
+这作为一种记账方式，用来记住父区块哈希与这个新到达区块之间的关系。
+一旦这个父区块将来进入同步图，父子节点之间的相应边可以建立，并且父区块的哈希将从 `children_by_hash` 映射中删除。
+其次，也将建立 _引用者/被引用者_ 边。
+同步图使用一个映射 `referrers_by_hash` 来记住未到达的被引用区块和新到达的引用者区块之间的关系。
+图节点还维护一个 `pending_referee_count` 字段，以记住区块的多少引用者尚未进入同步图。
 
-A graph node may be in the following 5 status:
+图节点可能处于以下 5 种状态之一：
 
 ```c
 // This block is an invalid block.
@@ -98,50 +98,50 @@ const BLOCK_HEADER_GRAPH_READY: u8 = 2;
 const BLOCK_GRAPH_READY: u8 = 3;
 ```
 
-When a block header just enters the synchronization graph and triggers a new graph node being created and added in the graph, the initial status of the node is `BLOCK_HEADER_ONLY`.
-And according to this graph structure update, the status of other nodes in the graph may also change.
-The effects of these changes are fulfilled by conducting a BFS traversal from the node to all its descendants.
-During this traversal process, for each node,
+当一个区块头刚进入同步图并触发一个新的图节点被创建并添加到图中时，节点的初始状态是 `BLOCK_HEADER_ONLY`。
+根据这个图结构的更新，图中其他节点的状态也可能改变。
+这些变化的影响是通过从该节点到其所有后代的 BFS 遍历来实现的。
+在这个遍历过程中，对于每个节点，
 
-1. if it is invalid, all its descendants are invalid;
-2. if it is new to be `BLOCK_HEADER_GRAPH_READY`, some graph-related validity checks (6~9) are applied on it.
-   If it passes these checks, it is then checked whether its block body has already entered synchronization graph (by checking the `block_ready` field of the graph node).
-   If so, this block is ready to be relayed. And this block may make some of its descendants become `BLOCK_HEADER_GRAPH_READY`.
-   Note that this cannot make its descendants become `BLOCK_GRAPH_READY` since the original node (at the starting point of the BFS process) for the newly arrived block header can only be `BLOCK_HEADER_GRAPH_READY`;
+1. 如果该节点无效，则其所有后代节点都无效；
+2. 如果它是新的 `BLOCK_HEADER_GRAPH_READY`，则对其应用一些图相关的有效性检查（6~9）。
+   如果它通过了这些检查，然后检查它的区块体是否已经进入同步图（通过检查图节点的 `block_ready` 字段）。
+   如果是，那么这个块已准备好被发布。 并且这个区块可能使它的一些后代变成 `BLOCK_HEADER_GRAPH_READY`。
+   请注意，这不能使它的后代变成 `BLOCK_GRAPH_READY` ，因为新到达区块头的原始节点（BFS 过程的起点）只能是 `BLOCK_HEADER_GRAPH_READY`；
 
-When a block body just enters the synchronization graph, the corresponding graph node should already exist in synchronization graph, otherwise, the block will be ignored (this may happen if it is garbage collected).
-The `block_ready` field of this node will be set as true now.
-The block then goes through the corresponding validity checks (10~13).
+当一个区块体刚进入同步图时，相应的图节点应该已经存在于同步图中，否则该区块将被忽略（这种情况可能发生在垃圾回收时）。
+这个节点的 `block_ready` 字段现在将被设置为 true。
+然后，区块将通过相应的有效性检查（10～13）。
 And similarly, this newly arrived block body will change the status of some of its descendants.
-This is also done by conducting a BFS traversal from this node.
-During this traversal process, for each node,
+这也是通过从这个节点进行广度优先搜索（BFS）遍历来完成的。
+在这个遍历过程中，对于每个节点，
 
-1. if it is invalid, all its descendants are invalid;
-2. if it is new to be `BLOCK_GRAPH_READY`, it is dispatched to consensus graph.
-   It may make some of its descendants become `BLOCK_GRAPH_READY`.
-   If the block with the newly arrived body is at least `BLOCK_HEADER_GRAPH_READY`, it becomes ready to be relayed.
+1. 如果它无效，则其所有后代都无效；
+2. 如果它是新的 `BLOCK_GRAPH_READY`，则它会被派发到共识图。
+   它可能使它的一些后代变成 `BLOCK_GRAPH_READY`。
+   如果新到达体的区块至少是 `BLOCK_HEADER_GRAPH_READY`，则表示它已经准备好被传播。
 
-### Garbage Collect Dangling Blocks
+### 回收悬挂区块
 
 Some (adversarial) nodes may send to a full node some blocks that cannot be in status of `BLOCK_GRAPH_READY` forever, e.g., to conduct DDOS attack or to be in the case of serious message delay so that the block does not belong to the current checkpoint era anymore.
-These blocks will be held in synchronization graph but should be garbage-collected eventually to avoid wasting memory resources.
-In order to do this, the synchronization graph maintains a set of blocks representing the frontier of these graph-unready blocks.
+这些区块将被保留在同步图中，但最终应该被垃圾回收，以避免浪费内存资源。
+为了做到这一点，同步图维护了一组代表这些图未准备好区块的边界区块。
 A block should be a frontier block if
 
-1. the block is not in status of `BLOCK_GRAPH_READY` but its parent block is; or
-2. its parent block has not come into the synchronization graph.
+1. 该区块的状态不是 `BLOCK_GRAPH_READY` ，但其父区块是；
+2. 其父区块尚未进入同步图。
 
-To garbage collect these graph-unready blocks, it starts from the frontier of these blocks, and removes them and all their descendants that can be reached through BFS traversal by following children and referrers edges.
-The reason that we must remove all the descendants of the frontier blocks from the synchronization graph is related to the design of block synchronization process.
-During the block synchronization, it follows the parent and referees edges of a newly arrived block and tries to fetch the missing ancestors.
-When it encounters such an ancestor block that already exists in synchronization graph, the process stops following its parent and referees edges further.
-Therefore, if the ancestor block is the descendant block of some frontier graph-unready block that has already been garbage collected, this removed unready block will never get chance to be fetched from peer again.
+为了回收这些图未准备好的区块，它从这些区块的边界开始，通过遵循子节点和引用者边缘的广度优先搜索遍历，移除它们以及所有可以到达的子代。
+将边界区块的所有子代从同步图中移除的原因，与区块同步过程的设计有关。
+在区块同步过程中，它会遵循新到达区块的父节点和被引用边缘，并尝试获取丢失的先前区块。
+当它遇到已经存在于同步图中的这样一个先前区块时，该过程将停止进一步遵循其父节点和被引用边缘。
+因此，如果某个先前的区块是一些已经被垃圾回收的边界图未准备好区块的后代区块，这个被移除的未准备好的区块将永远没有机会再次从同伴那里获取。
 However, this removed frontier block may be graph-unready merely because a temporary bad network situation which may recover later.
 
-This garbage collection process is triggered periodically, and in each of this process, it only tries to remove frontier blocks and their descendants which have already been in unready status for a long time.
-In order to get the timing information, each graph node has a field `last_update_timestamp` to remember the timestamp of the last update of the node status.
+这个垃圾回收过程会被定期触发，在每个过程中，它只尝试移除那些已经长时间处于未准备好状态的边界区块及其子代。
+为了获取时间信息，每个图节点有一个 `last_update_timestamp` 字段来记住节点状态最后更新的时间戳。
 
-One optimization in the synchronization process is that it does not always fetch from peers the parent and referees of newly arrived block that are missing in memory.
-It checks whether the height of the block is far less than the height of the local best epoch block.
-If so, it is highly probable that the ancestors of this block exist in local database, so it deserves the effort of trying to get these blocks from local database first.
-It is also an effective way to avoid unnecessary backward tree-graph traversing merely according to the peer information, which we also cover a bit more detail in Recovery Process section.
+同步过程中的一个优化是，它不总是从其他节点那里获取新到达的区块的父节点和引用信息。
+它检查区块的高度，是否远低于处于本地最佳纪元区块的高度。
+如果是这样，这个区块的先前区块很可能存在于本地数据库中，因此应首先尝试从本地数据库获取这些区块。
+这同样也是一种有效的方法，以避免仅根据其他节点信息而进行不必要的向后树图遍历，我们在恢复过程部分也会更详细地介绍这一点。

@@ -25,7 +25,7 @@ tags:
 
 2022 年，算法稳定币项目 Fei 遭到重入攻击，导致损失 8000 万美元。 更多信息可以在 [此处](https://rekt.news/fei-rari-rekt/) 找到。
 
-当合约在确保其状态正确更新之前进行外部调用时，可能会发生重入攻击。 Attackers can exploit this by making the vulnerable contract invoke an attacker-controlled contract, which then re-invokes the original contract repeatedly. 这种重复调用可以在正确更新前操纵合约的状态，导致可能的资金损失。
+当合约在确保其状态正确更新之前进行外部调用时，可能会发生重入攻击。 攻击者可以利用这一点，使得易受攻击的合约调用一个受攻击者控制的合约，然后再次重复调用原始合约。 这种重复调用可以在正确更新前操纵合约的状态，导致可能的资金损失。
 
 考虑一个简化的 `FinancialVault` 合约，它允许存入和取出 ETH，类似于银行账户：
 
