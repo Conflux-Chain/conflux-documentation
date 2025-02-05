@@ -50,7 +50,7 @@ tags:
 Conflux网络支持多种钱包，包括但不限于：
 
 - [Fluent](../tutorials/wallets/fluent.md): A browser extension wallet for Chrome (most Chromium-based browsers) and Firefox, similar to MetaMask but for the Conflux Network. Supports both Core and eSpace.
-- [Ledger](../tutorials/wallets/ledger.md): A hardware wallet known for its security features. Supports both Core a eSpace.
+- [Ledger](../tutorials/wallets/ledger.md): A hardware wallet known for its security features. Supports both Core and eSpace.
 - [MetaMask](../../espace/UserGuide.md): A popular wallet that can also be configured to work with the Conflux Network eSpace.
 
 You can find more information on supported wallets [here](../tutorials/wallets/wallets.mdx).
