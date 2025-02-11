@@ -29,8 +29,11 @@ This wallet supports both Core and eSpace
 
 ## Introduction
 
-You can now use your **Ledger Nano S** or **Ledger Nano X** hardware wallet to securely store your assets on both Core and eSpace. In this guide, we will show you how to interact with Conflux using your Ledger device and how to transfer assets.
+You can now use your **Ledger Nano S+**, **Nano X**, **Stax**, or **Flex** hardware wallet to securely store your assets on both Core and eSpace. In this guide, we will show you how to interact with Conflux using your Ledger device and how to transfer assets.
 
+:::note
+For Ledger Nano S users: You'll need to manually set up the development environment and load the app. Please refer to the [detailed instructions](https://github.com/conflux-chain/app-conflux?tab=readme-ov-file#2-if-my-device-is-a-nano-s-what-should-i-do).
+:::
 
 ## Using Ledger on Core Space
 
@@ -38,43 +41,33 @@ You can now use your **Ledger Nano S** or **Ledger Nano X** hardware wallet to s
 
 Before you start, make sure that you have done the following:
 
-**-**  Initialized your [Nano S](https://support.ledger.com/hc/en-us/articles/360000613793-Set-up-your-Ledger-Nano-S?docs=true) or [Nano X](https://support.ledger.com/hc/en-us/articles/360018784134-Set-up-your-Ledger-Nano-X?docs=true) device.
+- Updated your Ledger device to the latest firmware version
 
-**-**  Updated your [Nano S](https://support.ledger.com/hc/en-us/articles/360002731113-Update-Ledger-Nano-S-firmware?docs=true) or [Nano X](https://support.ledger.com/hc/en-us/articles/360013349800-Update-Ledger-Nano-X-firmware?docs=true) device to the latest firmware version.
+- Installed [Ledger Live](https://www.ledger.com/ledger-live) and updated it to the latest version
 
-**-**  Installed [Ledger Live](https://www.ledger.com/ledger-live) and updated it to the latest version.
-
-**-**  Installed [Fluent Wallet](https://fluentwallet.com/) on a compatible desktop browser.
-
+- Installed [Fluent Wallet](https://fluentwallet.com/) version 2.8.0 or later on Chrome or Edge browser (Firefox is not supported)
 
 If you encounter any issues, find us on <DiscordLink>Discord</DiscordLink> or [Telegram](https://t.me/Conflux_English), we are happy to help.
 
-### Installation
+For detailed usage instructions, you can refer to the [official documentation](https://github.com/Conflux-Chain/app-conflux/tree/develop/docs/how-to-use).
 
-:::note
-The Conflux Ledger app is currently available as an **unaudited developer release**. Please use it at your own risk.
-:::
+### Installation
 
 You can install the **Conflux app** on your Ledger device by following these steps:
 
-**1.** Connect your Ledger Nano S or Ledger Nano X device to your computer through USB.
+**1.** Connect your Ledger device to your computer through USB.
 
-**2.**  Unlock your device by entering your PIN.
+**2.** Unlock your device by entering your PIN.
 
-**3.**  Open Ledger Live.
+**3.** Open Ledger Live.
 
-**4.**  Click on the gear icon in the top right corner to open Settings.
+**4.** In the menu on the left, click "Manager" to open the Ledger Live app manager.
 
-**5.**  Go to "Experimental features" and enable "Developer mode".
+**5.** When your Ledger device displays "Allow Ledger manager", press both buttons to continue.
 
-**6.**  In the menu on the left, click "Manager" to open the Ledger Live app manager.
+**6.** Back in Ledger Live, under the "App catalog" tab, enter "Conflux" in the search field.
 
-**7.**  When your Ledger device displays "Allow Ledger manager", press both buttons to continue.
-
-**8.**  Back in Ledger Live, under the "App catalog" tab, enter "Conflux" in the search field.
-
-**9.**  Once Ledger Live shows the Conflux app, press "Install".
-
+**7.** Once Ledger Live shows the Conflux app, press "Install".
 
 The Conflux app is now installed successfully.
 
@@ -86,7 +79,7 @@ You can import accounts from your Ledger device into your Fluent wallet by follo
 
 **1.** Quit Ledger Live if it is currently opened.
 
-**2.** Connect your Ledger Nano S or Ledger Nano X device to your computer through USB.
+**2.** Connect your Ledger device to your computer through USB.
 
 **3.** Unlock your device by entering your PIN.
 
@@ -116,7 +109,7 @@ If you do not have CFX, you can purchase at one of the exchanges listed [here](h
 
 Make sure you have already imported your Ledger account into your Fluent wallet by following the steps in the previous section. Quit Ledger Live if it is currently opened.
 
-**1.** Connect your Ledger Nano S or Ledger Nano X device to your computer through USB.
+**1.** Connect your Ledger device to your computer through USB.
 
 **2.** Unlock your device by entering your PIN.
 
@@ -157,10 +150,13 @@ If you encounter any issues, find us on <DiscordLink>Discord</DiscordLink> or [T
 
 Before you start, make sure that you have done the following:
 
-- Initialized your [Nano S](https://support.ledger.com/hc/en-us/articles/360000613793-Set-up-your-Ledger-Nano-S?docs=true) or [Nano X](https://support.ledger.com/hc/en-us/articles/360018784134-Set-up-your-Ledger-Nano-X?docs=true) device.
-- Updated your [Nano S](https://support.ledger.com/hc/en-us/articles/360002731113-Update-Ledger-Nano-S-firmware?docs=true) or [Nano X](https://support.ledger.com/hc/en-us/articles/360013349800-Update-Ledger-Nano-X-firmware?docs=true) device to the latest firmware version.
-- Installed [Ledger Live](https://www.ledger.com/ledger-live) and updated it to the latest version.
-- Installed [MetaMask](https://MetaMask.io) on a compatible desktop browser.
+- Updated your Ledger device (Nano S+, Nano X, Stax, or Flex) to the latest firmware version
+- Installed [Ledger Live](https://www.ledger.com/ledger-live) and updated it to the latest version
+- Installed [MetaMask](https://MetaMask.io) on Chrome or Edge browser (Firefox is not supported)
+
+:::note
+For Ledger Nano S users: You'll need to manually set up the development environment and load the app. Please refer to the [detailed instructions](https://github.com/conflux-chain/app-conflux?tab=readme-ov-file#2-if-my-device-is-a-nano-s-what-should-i-do).
+:::
 
 If you encounter any issues, find us on <DiscordLink>Discord</DiscordLink> or [Telegram](https://t.me/Conflux_English), we are happy to help.
 
@@ -168,7 +164,7 @@ If you encounter any issues, find us on <DiscordLink>Discord</DiscordLink> or [T
 
 You can install the **Ethereum app** on your Ledger device by following these steps:
 
-1. Connect your Ledger Nano S or Ledger Nano X device to your computer through USB.
+1. Connect your Ledger device to your computer through USB.
 1. Unlock your device by entering your PIN.
 1. Open Ledger Live.
 1. In the menu on the left, click "Manager" to open the Ledger Live app manager.
@@ -207,7 +203,7 @@ Alternatively, you can add Conflux eSpace to MetaMask manually under "Settings",
 You can import accounts from your Ledger device into your MetaMask wallet by following these steps:
 
 1. Quit Ledger Live if it is currently opened.
-2. Connect your Ledger Nano S or Ledger Nano X device to your computer through USB.
+2. Connect your Ledger device to your computer through USB.
 3. Unlock your device by entering your PIN.
 4. Navigate to the Ethereum app on your device and press both buttons to open it.
 5. In MetaMask, navigate to "Settings", "Advanced", "Preferred Ledger Connection Type" and choose "WebHID".
@@ -227,7 +223,7 @@ Assuming your account on the Ledger device has some CFX tokens, the steps below 
 *Note: If you do not have CFX, you can purchase at one of the exchanges listed [here](/docs/category/from-exchanges).*
 
 1. Make sure you have already imported your Ledger account into your MetaMask wallet by following the steps in the previous section. Quit Ledger Live if it is currently opened.
-2. Connect your Ledger Nano S or Ledger Nano X device to your computer through USB.
+2. Connect your Ledger device to your computer through USB.
 3. Unlock your device by entering your PIN.
 4. Navigate to the Ethereum app on your device and press both buttons to open it.
 5. In MetaMask, select your Ledger account (e.g., "Ledger 1").
