@@ -29,7 +29,7 @@ You can add the Conflux {props.space} network to your MetaMask wallet by followi
 5. 当 MetaMask 提示“允许此站点添加网络？”时，点击“批准”。
 6. 当 MetaMask 提示“允许此站点切换网络？”时，点击“批准”。
 
-Your MetaMask wallet is now connected to Conflux {props.space}. 您可以随时通过Metamask中的网络选择菜单切换到其他网络。
+Your MetaMask wallet is now connected to Conflux {props.space}. You can switch to other networks anytime through the network selection dropdown menu in MetaMask.
 
 ### Add {props.space} manually
 
