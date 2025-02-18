@@ -1,0 +1,85 @@
+---
+sidebar_position: 0.5
+title: PoS Staking Overview
+displayed_sidebar: generalSidebar
+keywords: [Conflux Network, PoS, Proof of Stake, staking, validators, 51% attack, finality, Tree-Graph, pivot blocks, voting, CFX token, annual reward rate, solo validator, PoS pools, staking pool, staking risks, consensus mechanism]
+tags: [Staking]
+---
+
+# PoS Staking Overview
+
+This guide focuses on the practical aspects of staking CFX in Conflux's PoS mechanism. For technical details about how PoS works in Conflux, please refer to our [PoS Technical Overview](/docs/general/conflux-basics/consensus-mechanisms/proof-of-stake/pos_overview).
+
+## Benefits of Staking
+
+By participating in PoS staking, you can:
+- Earn rewards (current annual rate: **10%-14%**)
+- Help secure the Conflux network
+- Participate in network consensus
+
+For detailed information about reward calculations, see the [Annual Return Rate Calculation Method](/docs/general/conflux-basics/consensus-mechanisms/proof-of-stake/pos_overview#accrued-interest).
+
+To understand why Conflux implements PoS alongside PoW, check [Why PoS](/docs/general/conflux-basics/consensus-mechanisms/proof-of-stake/why-pos).
+
+## Staking Lock-up Period  
+
+CFX staked into PoS has a lock-up period with the following specific rules:  
+
+1. After staking CFX, there is a 13-day lock-up period during which the CFX status is **staking**.  
+2. After 13 days, the CFX status changes to **staked**.  
+3. If a user wants to retrieve their CFX, they must first perform an **unstake** operation, at which point the CFX status changes to **unstaking**, lasting for 1 day.  
+4. After 1 day of the **unstaking** period, the CFX status changes to **unstaked**.  
+5. At this point, the user can perform a **withdraw** operation, and the CFX will be returned to their Conflux account.  
+
+For CFX that has not yet completed the lock-up period, an unstake operation can still be performed. However, in this case, the **unstaking** period will be extended to **14 days minus the number of days already staked**. 
+
+For detailed examples and edge cases, see our [Staking Lock-up Examples](/docs/general/conflux-basics/consensus-mechanisms/proof-of-stake/pos_overview#example).
+
+## How to Participate in PoS
+
+There are two main ways to participate in PoS staking:
+
+### 1. Solo Staking
+
+Run your own validator node with complete control over your staking operations. Best for technically proficient users with significant CFX holdings.
+
+**Requirements:**
+- Technical knowledge to run a node
+- Minimum 1,000 CFX per vote
+- Ability to maintain 24/7 node operation
+
+👉 [Detailed Solo Validator Guide](./become-a-solo-validator)
+
+### 2. Stake Through a PoS Pool
+
+Join a staking pool to participate without running your own node. Ideal for most users who want to stake without technical overhead.
+
+**Benefits:**
+- No technical knowledge required
+- Lower minimum stake amount
+- Professional node operation
+
+👉 [Available PoS Pools List](./pos-pools-list)
+
+For those interested in running a PoS Pool, see our [Pool Operator Guide](./running-staking-pool).
+
+## Understanding Staking Risks
+
+Before staking, it's important to understand the potential risks:
+
+### 1. Force Retire
+Occurs when a validator node is offline for extended periods. Results in:
+- Automatic unstaking
+- 24-hour penalty period
+- No loss of principal
+
+For detailed information about force retire causes and recovery, see [Penalties and Slashing](/docs/general/conflux-basics/consensus-mechanisms/proof-of-stake/penalties_and_slash#force-retire).
+
+### 2. Slashing
+Severe penalty for malicious behavior, resulting in permanent loss of staked CFX. Learn more in our [Slashing Documentation](/docs/general/conflux-basics/consensus-mechanisms/proof-of-stake/penalties_and_slash#slashing).
+
+## Additional Resources
+
+- [PoS Technical Overview](/docs/general/conflux-basics/consensus-mechanisms/proof-of-stake/pos_overview)
+- [Why Conflux Uses PoS](/docs/general/conflux-basics/consensus-mechanisms/proof-of-stake/why-pos)
+- [Staking FAQs](./faqs)
