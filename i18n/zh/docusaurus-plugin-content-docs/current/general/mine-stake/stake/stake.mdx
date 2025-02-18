@@ -25,21 +25,148 @@ tags:
 ---
 
 Conflux utilizes PoS mechanism to counter 51% attacks and thereby introduces finality for its PoW chain. In PoS, validators stake their tokens to participate in the consensus process, also **are rewarded** for their participation in the consensus process.
+To learn more knowledge about PoS check the PoS [basic docs](/docs/general/conflux-basics/consensus-mechanisms/proof-of-stake/pos_overview)
 
-Validators are selected to vote on **Tree-Graph** pivot blocks. The more tokens a validator stakes, the higher the chance they will be selected to vote on pivot blocks, and the more rewards they will receive.
+## Why participating PoS
+
+Validators are selected to vote on **Tree-Graph** pivot blocks to protect the network. The more tokens a validator stakes, the higher the chance they will be selected to vote on pivot blocks, and the more rewards they will receive.
 
 The current annual reward rate of the Proof of Stake (PoS) is **10%-14%**, and it is influenced by the total staking amount. The lower the staking amount, the higher the yield. The annual return rate calculation method is in here: [Annual Return Rate Calculation Method](/docs/general/conflux-basics/consensus-mechanisms/proof-of-stake/pos_overview#accrued-interest).
 
-To participate in the PoS consensus process, there are two ways:
+## Staking Lock-up Period
 
-- [Become a Solo Validator](./become-a-solo-validator)
-- [Stake Through a PoS Pool](./pos-pools-list)
+CFX staked into PoS has a lock-up period with the following specific rules:  
+
+1. After staking CFX, there is a 13-day lock-up period during which the CFX status is **staking**.  
+2. After 13 days, the CFX status changes to **staked**.  
+3. If a user wants to retrieve their CFX, they must first perform an **unstake** operation, at which point the CFX status changes to **unstaking**, lasting for 1 day.  
+4. After 1 day of the **unstaking** period, the CFX status changes to **unstaked**.  
+5. At this point, the user can perform a **withdraw** operation, and the CFX will be returned to their Conflux account.  
+
+For CFX that has not yet completed the lock-up period, an unstake operation can still be performed. However, in this case, the **unstaking** period will be extended to **14 days minus the number of days already staked**. 
+
+Which is because that the minimum total lock-up period(staking + unstaking) for CFX in PoS is **14 days**.
+
+### 示例
+
+#### Case 1
+
+1. User stake in day 1
+2. Unstake in day 13
+3. He can withdaw in the end of day 14.
+
+### Case 2
+
+1. User stake in day 1
+2. Unstake in day 2
+3. He can withdaw in the end of day 14.
+
+### Case 3
+
+1. User stake in day 1
+2. Unstake in day 20
+3. He can withdraw after one day of the unstake operation, which is 21.
+
+Note: CFX staked in different batches has its own lock-up period, and they do not affect each other.
+
+## How to participate PoS
+
+There are usually two ways to participate in PoS staking:  
+
+1. **Solo Staking** – Users stake CFX independently.  
+2. **Staking via a PoS Pool Service** – Users stake CFX through a PoS pool service.
+
+### Solo Mode
+
+Solo mode refers to a user running their own **Validator node**, staking CFX independently, and participating in PoS. In this mode, the Validator only allows the creator to stake, which is why it is called **Solo Mode**.  
+
+Steps to set up Solo Mode:  
+
+1. Run a **Conflux full node** and create a **PoS Validator account**.  
+2. Bind your **Conflux account** to the **Validator address**.  
+3. Delegate **CFX tokens** to the Validator node for PoS participation—**1,000 CFX equals one vote**.  
+4. Once the Validator node receives votes, it will automatically participate in PoS by casting network votes and contributing to block production.  
+5. The PoS network **rewards Validators every hour**, with rewards sent directly to the Validator’s linked Conflux account.  
+
+During operation, users can **increase or decrease** their staked CFX as needed.  
+
+Since **running a Conflux full node** and **staking a large amount of CFX** is required (small stakes yield low returns, making it hard to break even), **Solo Mode has a high cost and entry barrier**. However, it offers greater control and is best suited for **technically proficient large-scale holders ("whales")**.  
+
+For detailed setup instructions, refer to [Become a Solo Validator](./become-a-solo-validator).
+
+### Stake Through a PoS Pool
+
+Solo mode requires participants to run a **Conflux full node** themselves, which comes with **high technical and financial barriers** for most users.  
+
+To lower these barriers, many **PoS Pool services** have emerged within the ecosystem. These pools allow users to **stake their CFX into a staking pool contract**, while the **pool operators** handle running the **Conflux full node** and participating in the **PoS mechanism** on behalf of users.  
+
+The **PoS Pool** distributes the **PoS rewards** proportionally among users while deducting a **small fee** to cover operational costs.  
+
+For a detailed introduction to this method, refer to [Stake Through a PoS Pool](./pos-pools-list).
+
+## How to run PoS Pool
 
 If you also want to run a PoS Pool, you can refer this doc:
 
 - [Running a PoS Staking Pool](./running-staking-pool)
 
+## Risks of Participating in PoS
+
 No matter which way you choose, it's better to understand the staking risks:
+
+1. Force Retire
+2. Slash
+
+### Force Retire
+
+If a **Validator node** experiences **downtime or network issues for more than 3 hours** while serving on the PoS committee, it will be **removed from the committee** and enter the **force retire** state.  
+
+#### Consequences of Force Retire:
+
+1. **Automatic Unstaking** – All CFX staked by the node will be **automatically unstaked** and enter the **unstaking lock-up period**. These CFX can only be withdrawn or restaked after the lock-up ends.  
+2. **24-Hour Force Retire State** – During this period:  
+   - The node cannot participate in PoS.  
+   - Any newly staked CFX will also be **automatically unstaked** and subjected to a **14-day unstaking period**.  
+   - The node will **not receive any PoS rewards**.  
+   - However, **the staked CFX principal is not lost**.  
+
+#### Causes of Force Retire:
+
+1. **Extended server downtime or network failures** affecting the Validator node.  
+2. **Incorrect upgrade operations**, such as shutting down the node improperly during an update.  
+3. **Configuration errors**, including mismatches between essential files like:  
+   - `pos_config/pos_key`  
+   - `pos_db/secure_storage.json`  
+
+#### Recovery Steps:
+
+To resume PoS participation, the **Validator operator must**:  
+
+1. **Fix the underlying issue** (server, network, or configuration).  
+2. **Wait for the 24-hour force retire period to end**.  
+3. **Restake the CFX** to rejoin PoS.  
+
+For detailed troubleshooting and prevention methods, refer to other sections of this documentation.
+
+### Slash
+
+The only **punishment rule** in Conflux PoS applies to **malicious behaviors** such as **double signing**, which will result in the **permanent locking of the staked CFX principal**, making it **irretrievable forever**. This is an extremely severe penalty.  
+
+#### Causes of of Slash:
+
+1. **Two Validator nodes using the same `pos_key`** to participate in PoS consensus.  
+2. **Maliciously modifying node code** to attack network consensus.  
+
+The first scenario requires **special attention** from node operators to avoid accidental misconfigurations, such as **operational mistakes** or **failures in primary-backup switching**.  
+
+### Additional doc
+
+For a detailed introduction to **PoS penalties and risks**, refer to:
 
 - [Penalties and Slashing](/docs/general/conflux-basics/consensus-mechanisms/proof-of-stake/penalties_and_slash)
 - [Staking Considerations](./staking-considerations)
+
+## 常见问题解答
+
+1. After a node is forcibly retired, how long does it usually take to resume participating in PoS and continue earning PoS rewards?\
+   The "force retire" status of a node lasts for one day. After the node is restored, it must wait for all unstaked CFX to complete unlocking before re-staking to resume PoS rewards. Therefore, the time required mainly depends on the unstaking duration of CFX, which ranges from 1 to 14 days.
