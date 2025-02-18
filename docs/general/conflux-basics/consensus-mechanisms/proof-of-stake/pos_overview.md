@@ -58,6 +58,8 @@ These keys combine to generate a unique 256-bit address:
 0xd731d7633dd38c47769c2a62926b9a54d288a5e664f4d2108ac5bb6601bb30f5
 ```
 
+The PoS account can be bound to a PoW account. The bound PoW account will receive the interest from the PoS chain.
+
 #### Node Wallet Implementation
 The wallet functionality is built directly into Conflux nodes for secure and automated operation:
 - **Automated Setup**: First-time node launch generates keys and prompts for encryption password
@@ -109,7 +111,7 @@ A total of 6,000,000 points are allocated per committee cycle across four key ac
 The point system directly ties to financial incentives:
 
 - Points are calculated and settled every 60 blocks (one committee cycle)
-- Network interest is divided proportionally based on accumulated points
+- Network interest is divided proportionally based on accumulated points, and the binded PoW account will receive the interest
 - Any undistributed interest (from unfilled point allocations) is burned
 - Current reward rates can be found in the [Staking Guide](/docs/general/mine-stake/stake/staking-overview.mdx#benefits-of-staking)
 
