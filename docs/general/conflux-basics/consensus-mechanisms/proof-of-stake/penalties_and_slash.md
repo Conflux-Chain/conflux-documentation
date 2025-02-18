@@ -15,7 +15,9 @@ A PoS node will be force retired if it is selected into the PoS committee and fa
 
 ### Penalty Details
 
-Force retiring a node is equivalent to automatically triggering the unstaking mechanism. This process is identical to voluntary unstaking, except it is not initiated by the node operator. After the PoS unlocking waiting period (which requires the token to be staked for at least 14 days and the unstaking process to be triggered for at least 1 day), the staker can choose to withdraw their CFX tokens or restake them.
+Force retiring a node is equivalent to automatically triggering the unstaking mechanism. This process is identical to voluntary unstaking, except it is not initiated by the node operator. Any new staked token during force retire period will also automatically triggering the unstake mechanism. Force retire period will last for **one day**.
+
+After the PoS unlocking waiting period (which requires the token to be staked for at least 14 days and the unstaking process to be triggered for at least 1 day), the staker can choose to withdraw their CFX tokens or restake them.
 
 ### Possible Causes
 
