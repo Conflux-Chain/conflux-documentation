@@ -28,7 +28,7 @@ This guide will walk you through the process of setting up a solo validator.
 
 ## 1. Run a Conflux node
 
-A PoS node is also a Conflux node. So you can run a PoS node following the [run a node](/docs/general/run-a-node/Overview) guide. Either a full node or a archive node is fine.
+For the official Conflux implementation(conflux-rust), the PoS node and PoW node use the same client. A conflux node works as a PoS node and a PoW node at the same time. And the snapshot data of the PoS and PoW also share the same data. So you can run a PoS node following the [run a node](/docs/general/run-a-node/Overview) guide. Either a full node or a archive node is fine.
 
 The PoS configuration file for the node is located in the `pos_config` directory within the downloaded node package. The `pos_config.yaml` file in this directory is the PoS configuration file, and typically, the settings in this file do not need to be modified.
 
@@ -138,9 +138,7 @@ The expected reward rate is 10-14% per year.
 
 ### Why my node is not elected?
 
-The more votes you have, the more likely you will be elected. There are total **300** votes in the network, you can calculate the required votes to be elected by this formula:
-
-Total CFX staked in the network / 300 = Required votes to be elected
+The more votes you have, the more likely you will be elected. Please check [Incentive Mechanism](/docs/general/conflux-basics/consensus-mechanisms/proof-of-stake/pos_overview.md#incentive-mechanism) for more details.
 
 The other reason is that your node is not running correctly, you can check your node's status:
 
@@ -149,11 +147,7 @@ The other reason is that your node is not running correctly, you can check your 
 
 ### The risks to be aware of when running a node?
 
-The risks to be aware of when running a node include:
-
-1. Risk of PoS private key leakage or loss. Please securely store the PoS private key and avoid uploading it to any public servers.
-2. Stability of PoS node operation. If the node is elected to the committee and does not participate in PoS voting for more than 1.5 hours, all PoS votes will be forcibly retired. There will be no rewards after retirement, but there won't be any penalties either.
-3. Sharing a pos_key file between two PoS nodes may result in the permanent lockup of all PoS votes for that node. This is **the most severe risk and should be treated with utmost caution**.
+Please check [Penalties and Slash](/docs/general/conflux-basics/consensus-mechanisms/proof-of-stake/penalties_and_slash.md) for more details.
 
 ### How to regenerate the PoS private key?
 
@@ -161,11 +155,7 @@ Deleting `pos_config/pos_key` and `pos_db/secure_storage.json`, and restarting t
 
 ### How long does it take for CFX to go from staking to withdrawal in PoS?
 
-14 days
-
-### How long does it take for unstaked PoS votes to be credited?
-
-Typically, it takes 1-14 days, depending on the staking duration. If your PoS votes have been staked for over 13 days, unstaking will only take one day. If recently staked, it will require the full 14 days.
+Please check [Staking Lock-up Examples](/docs/general/conflux-basics/consensus-mechanisms/proof-of-stake/pos_overview#example) for more details.
 
 ### Can the PoS node bound to a PoW account be modified?
 
