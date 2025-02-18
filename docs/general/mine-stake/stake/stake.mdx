@@ -128,6 +128,57 @@ To resume PoS participation, the **Validator operator must**:
 
 For detailed troubleshooting and prevention methods, refer to other sections of this documentation.
 
+#### How long does it take to recover from Force Retire?
+
+The node's force retire status will last for 24 hours. If the node's status is normal after 24 hours, it can be re-used for staking and participate in PoS.
+
+However, the CFX that is automatically unstaked due to the node’s force retire needs to wait for the unstaking process to complete before it can be re-staked. The unstaking time depends on the duration the CFX was previously staked, with a minimum of 1 day and a maximum of 14 days. The exact unstaking time is calculated as 14 days minus the staking duration.
+
+For example:
+
+Case 1 - 1st day FR: 
+
+1) x amount delegated on day 1, 
+2) FR on day 1  -> Days staked = 0
+
+it will take 14 days until the x amount delegated is fully unstaked, and can be staked to generate interest again
+
+14 - 0 (days the x amount was staked) = 14
+
+Case 2 - 7th day FR:
+
+1) x amount delegated on day 1, 
+2) FR on day 7  -> Days staked = 7
+
+it will take 7 days until the x amount delegated is fully unstaked, and can be staked to generate interest again
+
+14 - 7 (days the x amount was staked) = 7
+
+Case 3 - 12th day FR:
+
+1) x amount delegated on day 1, 
+2) FR on day 12 -> Days staked = 12
+
+it will take 2 days until the x amount delegated is fully unstaked, and can be staked to generate interest again
+
+14 - 12 (days the x amount was staked) = 2
+
+Case 4 - 20th day FR:
+
+1) x amount delegated on day 1, 
+2) FR on day 20,  -> Days staked > 12
+
+it will take 1 day until x amount delegated is fully unstaked, and can be staked to generate interest again
+
+Case 5 - Node is running fo 50 days and then get FR
+
+1) Day 1 - 2,000,000 CFX staked
+2) Day 40 - 1,000,000 CFX staked
+3) The 2,000,000 CFX will be fully unstaked after 1 day, since they have been staked for 13+ days, and falls within Case 4. The 2,000,000 CFX can be restaked after 1 day.
+4) The 1,000,000 CFX will be fully unstaked after 4 day, since they have been staked for less than 13 days. The 1,000,000 needs 4 days until they are fully unstaked to be restaked. 
+
+14 days  - (50 days - 40 days) = 4 days until fully unstaked
+
 ### Slash
 
 The only **punishment rule** in Conflux PoS applies to **malicious behaviors** such as **double signing**, which will result in the **permanent locking of the staked CFX principal**, making it **irretrievable forever**. This is an extremely severe penalty.  
