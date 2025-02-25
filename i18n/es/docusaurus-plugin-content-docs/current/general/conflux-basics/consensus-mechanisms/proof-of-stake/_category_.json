@@ -1,5 +1,8 @@
 {
   "label": "Proof de Stake (Prueba de participación)",
   "position": 2,
-  "link": null
+  "link": {
+    "type": "generated-index",
+    "description": "Learn about Conflux's Proof of Stake (PoS) mechanism, from basic concepts to technical implementation details."
+  }
 }
