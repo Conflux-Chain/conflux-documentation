@@ -29,7 +29,7 @@ This guide will walk you through the process of setting up a solo validator.
 
 ## 1. 运行Conflux节点
 
-运行PoS节点同样是运行Conflux节点。 你可以按照[运行节点指南](/docs/general/run-a-node/Overview)来操作。 运行全节点或归档节点都可以。
+For the official Conflux implementation(conflux-rust), the PoS node and PoW node use the same client. A conflux node works as a PoS node and a PoW node at the same time. And the snapshot data of the PoS and PoW also share the same data. 你可以按照[运行节点指南](/docs/general/run-a-node/Overview)来操作。 运行全节点或归档节点都可以。
 
 节点的PoS配置文件位于下载的节点包中的 `pos_config` 目录。 此目录中的 `pos_config.yaml` 文件是PoS配置文件，通常不需要修改此文件中的设置。
 
@@ -139,9 +139,7 @@ Once the node data is synchronized to the latest block (and the "Catch-up mode" 
 
 ### 为什么我的节点没有被选中？
 
-拥有的票数越多，被选中的可能性越高。 网络中总共有 **300** 个席位，您可以通过以下公式计算被选为验证者所需的票数：
-
-网络中总质押CFX总量 / 300 = 被选为验证者所需的票数
+拥有的票数越多，被选中的可能性越高。 Please check [Incentive Mechanism](/docs/general/conflux-basics/consensus-mechanisms/proof-of-stake/pos_overview.md#incentive-mechanism) for more details.
 
 另一个原因可能是您的节点未正确运行。您可以检查节点状态：
 
@@ -150,11 +148,7 @@ Once the node data is synchronized to the latest block (and the "Catch-up mode" 
 
 ### 运行节点时需注意哪些风险？
 
-需要注意的风险包括：
-
-1. PoS私钥的泄露或丢失风险。 请安全存储PoS私钥，避免将其上传至任何公共服务器。
-2. PoS节点运行的稳定性。 如果节点被选为PoS委员会成员并且超过1.5小时未参与PoS投票，将被强制退休。 退休后将不再有奖励，但也不会有任何处罚。
-3. 在两个PoS节点之间共享pos_key文件可能导致该节点的所有PoS票权永久锁定。 这是 **最严重的风险，应极为谨慎对待** 。
+Please check [Penalties and Slash](/docs/general/conflux-basics/consensus-mechanisms/proof-of-stake/penalties_and_slash.md) for more details.
 
 ### 如何重新生成PoS私钥？
 
@@ -162,11 +156,7 @@ Once the node data is synchronized to the latest block (and the "Catch-up mode" 
 
 ### 在PoS中，从CFX质押到提现需要多长时间？
 
-答：14天。
-
-### How long does it take for unstaked PoS votes to be credited?
-
-答：通常需要1-14天，这取决于质押的持续时间。 如果您的PoS投票已经质押超过13天，则撤销只需要一天。 如果是最近质押的，则需要满14天。
+Please check [Staking Lock-up Examples](/docs/general/conflux-basics/consensus-mechanisms/proof-of-stake/pos_overview#example) for more details.
 
 ### 是否可以修改绑定到PoW账户的PoS节点？
 
