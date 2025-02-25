@@ -106,7 +106,6 @@ import TabItem from '@theme/TabItem';
      --value <lock_amount> \
      --constructor-args <unlock_time> \
      --private-key <your_private_key> \
-     --legacy \
      contracts/Lock.sol:Lock
    ```
 
@@ -120,8 +119,16 @@ import TabItem from '@theme/TabItem';
      --value 0.00000000002ether \
      --constructor-args 1696118400 \
      --private-key 0xabc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc1 \
-     --legacy contracts/Lock.sol:Lock
+     contracts/Lock.sol:Lock
    ```
+
+### forge script
+
+Because some opcodes in Conflux eSpace consume twice the amount of gas compared to Ethereum, when using the `forge script` command to execute a script, you need to pass an additional parameter (-g 200) to increase the gas limit. Otherwise, the transaction will fail after being sent to the chain due to Insufficient gas fee.
+
+```shell
+forge script script/Counter.s.sol --rpc-url https://evmtestnet.confluxrpc.com --private-key 0xabc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc1 --broadcast -g 200
+```
 
 ## FAQs
 
