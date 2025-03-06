@@ -55,16 +55,16 @@ Here’s how you can modify the function to safely downcast using the `SafeCast`
 
 1. **Import SafeCast Library**:
 
-   ```solidity
-   import "@openzeppelin/contracts/utils/math/SafeCast.sol";
-   ```
+  ```solidity
+  import "@openzeppelin/contracts/utils/math/SafeCast.sol";
+  ```
 
 2. **Use SafeCast for Downcasting**:
-   ```solidity
-   function test(int256 value) public pure returns (int8) {
-       return SafeCast.toInt8(value + 1); // Reverts on overflow
-   }
-   ```
+  ```solidity
+  function test(int256 value) public pure returns (int8) {
+      return SafeCast.toInt8(value + 1); // Reverts on overflow
+  }
+  ```
 
 In this updated function, `SafeCast.toInt8(value + 1)` ensures that if the value cannot be safely cast to `int8`, the transaction will revert, thus preventing overflow-related issues.
 
