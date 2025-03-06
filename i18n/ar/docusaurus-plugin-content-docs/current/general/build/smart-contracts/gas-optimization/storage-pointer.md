@@ -82,3 +82,4 @@ The optimized contract demonstrates an approximate gas saving of 5,000 units com
 🌟 Use storage pointers to manipulate or read data directly in storage when only a specific part of the data structure is needed, avoiding unnecessary copying to memory.
 
 🌟 Understand the context and access patterns of your data to determine when storage pointers are more beneficial than memory copies.
+
