@@ -257,46 +257,46 @@ main()
 ## Deployment and Upgrade Process
 
 1. Compile the contracts:
-   ```
-   npx hardhat compile
-   ```
+  ```
+  npx hardhat compile
+  ```
 
 2. Deploy the initial contract:
 
-   ```
-   npx hardhat run scripts/deploy.js --network eSpaceTestnet
-   ```
+  ```
+  npx hardhat run scripts/deploy.js --network eSpaceTestnet
+  ```
 
 3. Test the initial version:
 
-   ```
-   npx hardhat run scripts/testBox.js --network eSpaceTestnet
-   ```
+  ```
+  npx hardhat run scripts/testBox.js --network eSpaceTestnet
+  ```
 
-   Expected output:
+  Expected output:
 
-   ```
-   Box value: 23
-   ```
+  ```
+  Box value: 23
+  ```
 
 4. Upgrade the contract:
 
-   ```
-   npx hardhat run scripts/upgrade.js --network eSpaceTestnet
-   ```
+  ```
+  npx hardhat run scripts/upgrade.js --network eSpaceTestnet
+  ```
 
 5. Test the upgraded version:
 
-   ```
-   npx hardhat run scripts/testBoxV2.js --network eSpaceTestnet
-   ```
+  ```
+  npx hardhat run scripts/testBoxV2.js --network eSpaceTestnet
+  ```
 
-   Expected Output:
+  Expected Output:
 
-   ```
-   BoxV2 current value: 23
-   Value after increment: 24
-   Final value: 25
-   ```
+  ```
+  BoxV2 current value: 23
+  Value after increment: 24
+  Final value: 25
+  ```
 
 By following these steps, you can deploy and upgrade upgradeable contracts using transparent proxy on Conflux eSpace, which not only allows you to update contract logic without changing the contract address but also effectively addresses selector conflicts by separating management functions from user functions.
