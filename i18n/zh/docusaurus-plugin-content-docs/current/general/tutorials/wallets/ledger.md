@@ -31,11 +31,11 @@ import { DiscordLink } from "../../../templates/links.tsx"
 
 You can now use your **Ledger Nano S+**, **Nano X**, **Stax**, or **Flex** hardware wallet to securely store your assets on both Core and eSpace. 在这个指南中，我们将向您展示如何使用 Ledger 设备与 Conflux 互动以及如何转移资产。
 
+## 在 Conflux eSpace 上使用 Ledger
+
 :::note
 For Ledger Nano S users: You'll need to manually set up the development environment and load the app. Please refer to the [detailed instructions](https://github.com/conflux-chain/app-conflux?tab=readme-ov-file#2-if-my-device-is-a-nano-s-what-should-i-do).
 :::
-
-## 在 Conflux eSpace 上使用 Ledger
 
 ### 开始前的准备工作：
 
@@ -138,12 +138,10 @@ Conflux 应用就安装成功了。
 如果您遇到任何问题，请在 <DiscordLink>Discord</DiscordLink> 或者 [Telegram](https://t.me/Conflux_English) 上联系我们，我们很乐意提供帮助。
 
 
-
-
 ## 在 Conflux eSpace 上使用 Ledger
 
 :::note
-**Conflux eSpace 的 Ledger 应用程序目前尚未在 Ledger Live 中提供。**
+**For Conflux eSpace, you should use The Ledger Ethereum app.**
 :::
 
 ### 开始前的准备工作：
@@ -153,10 +151,6 @@ Conflux 应用就安装成功了。
 - Updated your Ledger device (Nano S+, Nano X, Stax, or Flex) to the latest firmware version
 - Installed [Ledger Live](https://www.ledger.com/ledger-live) and updated it to the latest version
 - Installed [MetaMask](https://MetaMask.io) on Chrome or Edge browser (Firefox is not supported)
-
-:::note
-For Ledger Nano S users: You'll need to manually set up the development environment and load the app. Please refer to the [detailed instructions](https://github.com/conflux-chain/app-conflux?tab=readme-ov-file#2-if-my-device-is-a-nano-s-what-should-i-do).
-:::
 
 如果您遇到任何问题，请在 <DiscordLink>Discord</DiscordLink> 或者 [Telegram](https://t.me/Conflux_English) 上联系我们，我们很乐意提供帮助。
 

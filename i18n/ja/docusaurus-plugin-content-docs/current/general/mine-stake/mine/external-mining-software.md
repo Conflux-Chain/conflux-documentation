@@ -43,8 +43,8 @@ HiveOS is a popular mining operating system that supports Conflux mining. Here's
 
 3. **Configure Mining Settings**
    - **Pool URL**: Choose a mining pool:
-     - If not setting up your own node, Woolypooly, Herominers, etc. all support Conflux mining
-     - The pool of choice should have low fees, and support the distribution of mining rewards desired (i.e. solo mining, PPLNS, etc.). Some pools require login and have different minimum payout thresholds. Other pools/nodes may have result in lower accepted/stale shares and thereby result in lower payouts over time
+      - If not setting up your own node, Woolypooly, Herominers, etc. all support Conflux mining
+      - The pool of choice should have low fees, and support the distribution of mining rewards desired (i.e. solo mining, PPLNS, etc.). Some pools require login and have different minimum payout thresholds. Other pools/nodes may have result in lower accepted/stale shares and thereby result in lower payouts over time
    - **Wallet Address**: Enter your Conflux wallet address (in core CFX side with Fluent) whereby the mining rewards are distributed to
    - **Worker Name**: Create a unique name for your rig
 
@@ -65,3 +65,5 @@ Make sure to use a Base32 wallet address starting with 'cfx:' for mining.
 :::note
 Mining profitability depends on various factors including electricity costs, hardware efficiency, and current network difficulty. Use mining calculators to estimate potential returns.
 :::
+
+

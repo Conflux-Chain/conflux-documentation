@@ -38,9 +38,9 @@ tags:
 1. Once logged in, navigate to the dashboard or the area where you can manage projects.
 2. Look for a button or link labeled **"Create Project"** and click on it.
 3. Enter the required details about your project:
-   - **Project Name:** Assign a name to your project.
-   - **Type:** Choose a type of your project.
-   - **Website URL:** Enter the URL of your project's website if available.
+  - **Project Name:** Assign a name to your project.
+  - **Type:** Choose a type of your project.
+  - **Website URL:** Enter the URL of your project's website if available.
 
 [![Create Project Detail](../img/walletconnect-create-detail.png)](../img/walletconnect-create-detail.png)
 

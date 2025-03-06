@@ -36,20 +36,20 @@ In the scenario where an external miner connecting to Conflux-Rust via its
 stratum port (default 32525), here is the typical workflow.
 
 1. The miner connects via TCP to the stratum port. Conflux-Rust must run with
-   the configuration that enables stratum.
+ the configuration that enables stratum.
 
 2. The miner sends a `mining.subscribe` RPC call via the TCP stream. It informs
-   Conflux-Rust the miner name. `mining.subscribe` also performs a basic password
-   based authentication, where the password can be set at the configuration file
-   of Conflux-Rust.
+ Conflux-Rust the miner name. `mining.subscribe` also performs a basic password
+ based authentication, where the password can be set at the configuration file
+ of Conflux-Rust.
 
 3. After successful subscription, Conflux-Rust will continue to send
-   `mining.notify` RPC calls to the miner via the TCP stream. Each `mining.notify`
-   corresponds to a new proof-of-work (PoW) problem for the miner to solve. Miners
-   are expected to work on the last received job.
+ `mining.notify` RPC calls to the miner via the TCP stream. Each `mining.notify`
+ corresponds to a new proof-of-work (PoW) problem for the miner to solve. Miners
+ are expected to work on the last received job.
 
 4. Whenever miner solves a PoW problem, it returns the solution (i.e., the
-   nonce) to Conflux-Rust via calling `mining.submit` RPC calls.
+ nonce) to Conflux-Rust via calling `mining.submit` RPC calls.
 
 5. Miner can simply disconnect any time in this process to quit.
 
@@ -65,7 +65,7 @@ Start to subscribe the proof-of-work notification from the stratum server
 
 1. WORKER_ID, string - the name of the miner
 2. Secret, empty or 32-bytes, the secret that corresponds to the keccak result
-   of the password in the configuration. Empty if password is not enabled.
+ of the password in the configuration. Empty if password is not enabled.
 
 ##### Returns
 
@@ -95,7 +95,7 @@ Submit a PoW solution to the stratum server
 
 1. WORKER_ID, string - the name of the miner
 2. JOB_ID, hex-string - the identifier of the job, which is typically same as
-   the hash of the PoW problem.
+ the hash of the PoW problem.
 3. NONCE, hex-string of 32-bytes - the nonce solution of the PoW problem
 4. HASH, hex-string of 32-bytes - the hash of the solved PoW problem.
 
@@ -142,7 +142,7 @@ Notify the client about a new PoW problem.
 1. JOB_ID, hex-string - the identifier of the job.
 2. HASH, 32-bytes - the hash of the PoW problem.
 3. BOUNDARY, U256 - the difficulty boundary of the problem. For a nonce to be valid, the resulting
-   hash must be smaller than the BOUNDARY.
+ hash must be smaller than the BOUNDARY.
 
 ##### Example
 

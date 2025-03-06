@@ -39,3 +39,7 @@ All staked tokens of the validator will be permanently locked and cannot be unst
 1. Running multiple PoS nodes but sharing the same PoS Key, leading to inconsistent behaviors from the same key.
 2. Tampering with or loss of the `pos_db/secure_storage.json` file. (If the file is lost, it is recommended to unstake, wait for the unlocking period, and then bind a new PoS key.)
 3. Anomalies caused by unauthorized modifications to the official conflux-rust code.
+
+### Safe Node Restart Procedure to Prevent Slash
+
+To safely restart your PoS node while avoiding penalties, please follow the detailed procedure in [Safe Node Restart Procedure](/docs/general/mine-stake/stake/safe-node-restart).

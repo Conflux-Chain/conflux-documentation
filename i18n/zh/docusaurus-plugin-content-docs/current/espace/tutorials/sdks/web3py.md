@@ -261,3 +261,4 @@ print(f'Tx successful with hash: { tx_receipt.transactionHash.hex() }')
 ## 其他资源:
 
 - [**Web3.py Documentation**](https://web3py.readthedocs.io/)
+

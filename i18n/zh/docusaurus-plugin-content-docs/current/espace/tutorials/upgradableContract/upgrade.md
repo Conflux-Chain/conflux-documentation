@@ -24,8 +24,8 @@ Before diving into the tutorial, let's briefly explain the basic principles of i
 
 1. **Separation of Concerns**: Contract logic is separated from storage using two contracts:
 
-   - A Proxy contract that holds the state and receives user interactions.
-   - A Logic contract (Implementation contract) that contains the actual code logic.
+  - A Proxy contract that holds the state and receives user interactions.
+  - A Logic contract (Implementation contract) that contains the actual code logic.
 
 2. **Delegated Calls**: The Proxy contract uses `delegatecall` to forward function calls to the Logic contract.
 

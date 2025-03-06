@@ -105,9 +105,9 @@ const BLOCK_GRAPH_READY: u8 = 3;
 
 1. 如果该节点无效，则其所有后代节点都无效；
 2. 如果它是新的 `BLOCK_HEADER_GRAPH_READY`，则对其应用一些图相关的有效性检查（6~9）。
-   如果它通过了这些检查，然后检查它的区块体是否已经进入同步图（通过检查图节点的 `block_ready` 字段）。
-   如果是，那么这个块已准备好被发布。 并且这个区块可能使它的一些后代变成 `BLOCK_HEADER_GRAPH_READY`。
-   请注意，这不能使它的后代变成 `BLOCK_GRAPH_READY` ，因为新到达区块头的原始节点（BFS 过程的起点）只能是 `BLOCK_HEADER_GRAPH_READY`；
+  如果它通过了这些检查，然后检查它的区块体是否已经进入同步图（通过检查图节点的 `block_ready` 字段）。
+  如果是，那么这个块已准备好被发布。 并且这个区块可能使它的一些后代变成 `BLOCK_HEADER_GRAPH_READY`。
+  请注意，这不能使它的后代变成 `BLOCK_GRAPH_READY` ，因为新到达区块头的原始节点（BFS 过程的起点）只能是 `BLOCK_HEADER_GRAPH_READY`；
 
 当一个区块体刚进入同步图时，相应的图节点应该已经存在于同步图中，否则该区块将被忽略（这种情况可能发生在垃圾回收时）。
 这个节点的 `block_ready` 字段现在将被设置为 true。
@@ -118,8 +118,8 @@ And similarly, this newly arrived block body will change the status of some of i
 
 1. 如果它无效，则其所有后代都无效；
 2. 如果它是新的 `BLOCK_GRAPH_READY`，则它会被派发到共识图。
-   它可能使它的一些后代变成 `BLOCK_GRAPH_READY`。
-   如果新到达体的区块至少是 `BLOCK_HEADER_GRAPH_READY`，则表示它已经准备好被传播。
+  它可能使它的一些后代变成 `BLOCK_GRAPH_READY`。
+  如果新到达体的区块至少是 `BLOCK_HEADER_GRAPH_READY`，则表示它已经准备好被传播。
 
 ### 回收悬挂区块
 

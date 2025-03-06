@@ -37,7 +37,7 @@ A blockchain wallet is a digital tool that allows you to interact with blockchai
 A wallet doesn't actually store your cryptocurrencies. Instead, it manages the keys that prove your ownership of these assets on the blockchain. Here are the key components:
 
 1. **Mnemonic Phrase**: Also known as a seed phrase or recovery phrase, this is a sequence of 12-24 common words that serves as the foundation of your wallet. For example:
-   "apple banana cherry dog elephant frog golf hotel igloo jelly kite lemon"
+  "apple banana cherry dog elephant frog golf hotel igloo jelly kite lemon"
 
 2. **Private Key**: This is a long string of numbers and letters derived from your mnemonic phrase. It's used to sign transactions and prove ownership of your assets.
 
@@ -121,14 +121,14 @@ Implementing a multi-wallet strategy is crucial for enhancing security and manag
 ### Risk Mitigation Strategies
 
 1. **Asset Distribution**: Don't keep all your assets in one wallet. Distribute them across multiple wallets to reduce the impact of a potential security breach.
-   - Guideline: Consider keeping no more than 5-10% of your total assets in any single hot wallet.
+  - Guideline: Consider keeping no more than 5-10% of your total assets in any single hot wallet.
 
 2. **Regular Rebalancing**: Periodically review and adjust the balance across your wallets based on your current needs and risk assessment.
 
 3. **Security Tiering**: Implement different levels of security for different wallets.
-   - Highest security (e.g., hardware wallet) for long-term storage
-   - Medium security for trading wallets
-   - Lower security but high convenience for small, everyday transactions
+  - Highest security (e.g., hardware wallet) for long-term storage
+  - Medium security for trading wallets
+  - Lower security but high convenience for small, everyday transactions
 
 ### Testing New Projects Safely
 

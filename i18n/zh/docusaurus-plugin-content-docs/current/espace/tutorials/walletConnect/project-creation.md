@@ -38,9 +38,9 @@ tags:
 1. 登录后，导航到仪表板或您可以管理项目的区域。
 2. 查找标有“创建项目（Create Project）”的按钮或链接，并点击它。
 3. 输入关于您项目所需的细节：
-   - **项目名称（Project Name）**：为您的项目分配一个名称。
-   - \*\*类型（Type）：\*\*选择您的项目类型。
-   - \*\*网站URL：\*\*如果有，请输入您项目网站的URL。
+  - **项目名称（Project Name）**：为您的项目分配一个名称。
+  - \*\*类型（Type）：\*\*选择您的项目类型。
+  - \*\*网站URL：\*\*如果有，请输入您项目网站的URL。
 
 [![Create Project Detail](../img/walletconnect-create-detail.png)](../img/walletconnect-create-detail.png)
 

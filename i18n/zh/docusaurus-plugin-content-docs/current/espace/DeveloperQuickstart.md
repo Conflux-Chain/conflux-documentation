@@ -90,7 +90,7 @@ const config: HardhatUserConfig = {
 想要使用 eSpace 测试网的公共 RPC 进行部署，请运行：
 
 ```bash
-forge create ... --rpc-url=https://evmtestnet.confluxrpc.com --legacy
+forge create ... --rpc-url=https://evmtestnet.confluxrpc.com
 ```
 
 使用 Foundry 部署合约的完整工作流程在[这里](./tutorials/deployContract/hardhatAndFoundry.md)展示

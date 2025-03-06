@@ -57,3 +57,4 @@ contract Optimizer {
 Recommendations for gas optimization:
 
 🌟 By sorting functions based on the frequency of calls, and placing the most called function at the top of the array, we can reduce the gas cost, especially for high-frequency operations.
+

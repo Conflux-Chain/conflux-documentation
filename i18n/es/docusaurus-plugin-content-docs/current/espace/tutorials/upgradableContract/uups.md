@@ -26,18 +26,18 @@ UUPS is an upgradeable proxy pattern that addresses some limitations of the tran
 
 1. **UUPS vs. Transparent Proxy**:
 
-   - UUPS places upgrade logic in the implementation, while transparent proxy keeps it in the proxy contract.
-   - UUPS is more gas-efficient for regular function calls.
-   - Transparent proxy has a larger proxy contract but simpler implementation contracts.
+  - UUPS places upgrade logic in the implementation, while transparent proxy keeps it in the proxy contract.
+  - UUPS is more gas-efficient for regular function calls.
+  - Transparent proxy has a larger proxy contract but simpler implementation contracts.
 
 2. **UUPS vs. Regular Upgradeable Proxy**:
 
-   - UUPS provides better security against accidental contract locking.
-   - Regular upgradeable proxies are simpler but may be more prone to errors during upgrades.
+  - UUPS provides better security against accidental contract locking.
+  - Regular upgradeable proxies are simpler but may be more prone to errors during upgrades.
 
 3. **Common Features**:
-   - All patterns allow upgrading contract logic without changing the contract address.
-   - They all use delegate calls to forward function calls to the implementation contract.
+  - All patterns allow upgrading contract logic without changing the contract address.
+  - They all use delegate calls to forward function calls to the implementation contract.
 
 UUPS is often preferred for its balance of security, gas efficiency, and flexibility. In this tutorial, we'll implement and deploy upgradeable contracts using UUPS on Conflux eSpace.
 
@@ -298,52 +298,52 @@ main()
 
 1. Compile the contracts:
 
-   ```bash
-   npx hardhat compile
-   ```
+  ```bash
+  npx hardhat compile
+  ```
 
 2. Deploy the initial contract:
 
-   ```bash
-   npx hardhat run scripts/deploy.js --network eSpaceTestnet
-   ```
+  ```bash
+  npx hardhat run scripts/deploy.js --network eSpaceTestnet
+  ```
 
-   Make sure to note the deployed proxy address.
+  Make sure to note the deployed proxy address.
 
 3. Update the proxy address in `testCounter.js`, `upgrade.js`, and `testCounterV2.js`.
 
 4. Test the initial version:
 
-   ```bash
-   npx hardhat run scripts/testCounter.js --network eSpaceTestnet
-   ```
+  ```bash
+  npx hardhat run scripts/testCounter.js --network eSpaceTestnet
+  ```
 
-   Expected output:
+  Expected output:
 
-   ```
-   Counter value: 1
-   ```
+  ```
+  Counter value: 1
+  ```
 
 5. Upgrade the contract:
 
-   ```bash
-   npx hardhat run scripts/upgrade.js --network eSpaceTestnet
-   ```
+  ```bash
+  npx hardhat run scripts/upgrade.js --network eSpaceTestnet
+  ```
 
 6. Test the upgraded version:
 
-   ```bash
-   npx hardhat run scripts/testCounterV2.js --network eSpaceTestnet
-   ```
+  ```bash
+  npx hardhat run scripts/testCounterV2.js --network eSpaceTestnet
+  ```
 
-   Expected Output:
+  Expected Output:
 
-   ```
-   Testing CounterV2 contract...
-   Incrementing counter...
-   CounterV2 current value: 2
-   Resetting counter...
-   CounterV2 value after reset: 0
-   ```
+  ```
+  Testing CounterV2 contract...
+  Incrementing counter...
+  CounterV2 current value: 2
+  Resetting counter...
+  CounterV2 value after reset: 0
+  ```
 
 By following these steps, you can deploy and upgrade contracts using the UUPS pattern on Conflux eSpace. This approach allows you to update contract logic without changing the contract address, while providing better gas efficiency and security compared to other proxy patterns.

@@ -48,11 +48,11 @@ Before you start deploying the contract, **you need to request test tokens** fro
 
 2. Clone the repo and install dependencies:
 
-   ```shell
-   git clone https://github.com/conflux-fans/espace-contract-guide
-   cd espace-contract-guide
-   yarn install
-   ```
+  ```shell
+  git clone https://github.com/conflux-fans/espace-contract-guide
+  cd espace-contract-guide
+  yarn install
+  ```
 
 3. Create a `.env` file following the example `.env.example` in the root directory. Change `PRIVATE_KEY` to your own account private key in the `.env`.
 
@@ -84,43 +84,50 @@ import TabItem from '@theme/TabItem';
 
 1. Clone the repo:
 
-   ```shell
-   git clone https://github.com/conflux-fans/espace-contract-guide
-   cd espace-contract-guide
-   ```
+  ```shell
+  git clone https://github.com/conflux-fans/espace-contract-guide
+  cd espace-contract-guide
+  ```
 
 2. Install Foundry:
 
-   ```shell
-   curl -L https://foundry.paradigm.xyz | bash
-   foundryup
-   ```
+  ```shell
+  curl -L https://foundry.paradigm.xyz | bash
+  foundryup
+  ```
 
 3. Run `forge build` to build the project.
 
 4. Deploy your contract with Foundry:
 
-   ```bash
-   forge create --rpc-url https://evmtestnet.confluxrpc.com \
-     --value <lock_amount> \
-     --constructor-args <unlock_time> \
-     --private-key <your_private_key> \
-     --legacy \
-     contracts/Lock.sol:Lock
-   ```
+  ```bash
+  forge create --rpc-url https://evmtestnet.confluxrpc.com \
+    --value <lock_amount> \
+    --constructor-args <unlock_time> \
+    --private-key <your_private_key> \
+    contracts/Lock.sol:Lock
+  ```
 
-   - `<lock_amount>` is the amount of test `CFX` to be locked in the contract. Try setting this to some small amount, like `0.0000001ether`.&#x20
-   - `<unlock_time>` is the Unix timestamp after which the funds locked in the contract will become available for withdrawal. Try setting this to some Unix timestamp in the future, like `1730390400` (this Unix timestamp corresponds to October 1, 2024).
+  - `<lock_amount>` is the amount of test `CFX` to be locked in the contract. Try setting this to some small amount, like `0.0000001ether`.&#x20;
+  - `<unlock_time>` is the Unix timestamp after which the funds locked in the contract will become available for withdrawal. Try setting this to some Unix timestamp in the future, like `1730390400` (this Unix timestamp corresponds to October 1, 2024).
 
-   For example:
+  For example:
 
-   ```bash
-   forge create --rpc-url https://evmtestnet.confluxrpc.com \
-     --value 0.00000000002ether \
-     --constructor-args 1696118400 \
-     --private-key 0xabc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc1 \
-     --legacy contracts/Lock.sol:Lock
-   ```
+  ```bash
+  forge create --rpc-url https://evmtestnet.confluxrpc.com \
+    --value 0.00000000002ether \
+    --constructor-args 1696118400 \
+    --private-key 0xabc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc1 \
+    contracts/Lock.sol:Lock
+  ```
+
+### forge script
+
+Because some opcodes in Conflux eSpace consume twice the amount of gas compared to Ethereum, when using the `forge script` command to execute a script, you need to pass an additional parameter (-g 200) to increase the gas limit. Otherwise, the transaction will fail after being sent to the chain due to Insufficient gas fee.
+
+```shell
+forge script script/Counter.s.sol --rpc-url https://evmtestnet.confluxrpc.com --private-key 0xabc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc1 --broadcast -g 200
+```
 
 ## FAQs
 
