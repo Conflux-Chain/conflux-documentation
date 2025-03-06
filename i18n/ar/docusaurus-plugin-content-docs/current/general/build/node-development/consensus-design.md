@@ -35,20 +35,20 @@ Conflux Protocol Specification and Conflux paper (https://arxiv.org/abs/1805.038
 The consensus layer has the following design goals.
 
 1. Process new blocks in the background following the consensus algorithm
-   consistently.
+  consistently.
 
 2. We want to minimize the memory usage of each block in the consensus graph.
-   Even with the checkpoint mechanism, the graph will contain 300K-500K blocks in
-   the normal case and more than 1M blocks when facing liveness attacks. This may
-   stress the memory.
+  Even with the checkpoint mechanism, the graph will contain 300K-500K blocks in
+  the normal case and more than 1M blocks when facing liveness attacks. This may
+  stress the memory.
 
 3. We want to process each block fast. Because full/archive nodes have to
-   process every block from the _original genesis_ when they catch up with the
-   network from scratch, fast block process is important to keep the catch up
-   period short.
+  process every block from the _original genesis_ when they catch up with the
+  network from scratch, fast block process is important to keep the catch up
+  period short.
 
 4. Robust against potential attacks. Malicious attackers may generate bad
-   blocks at arbitrary positions in the TreeGraph.
+  blocks at arbitrary positions in the TreeGraph.
 
 ## Structures and Components
 
@@ -143,13 +143,13 @@ Comparing with Bitcoin/Ethereum, the consensus in Conflux has two key
 differences:
 
 1. _almost every block_ will go into the total order, not just the agreed pivot
-   chain.
+  chain.
 
 2. The transaction validity and the block validity are _independent_. For example, a
-   transaction is invalid if it was included before or it cannot carry out due to
-   insufficient balance. Such invalid transactions will become noop during the
-   execution. However, _unlike Bitcoin and Ethereum blocks containing such
-   transactions will not become invalid_.
+  transaction is invalid if it was included before or it cannot carry out due to
+  insufficient balance. Such invalid transactions will become noop during the
+  execution. However, _unlike Bitcoin and Ethereum blocks containing such
+  transactions will not become invalid_.
 
 In `ConsensusGraphInner`, the arena index of the current pivot chain blocks are
 stored in order in the `pivot_chain[]` vector. To maintain it, we calculate the
@@ -223,15 +223,15 @@ algorithm requires the partial invalid blocks being treated differently from
 the normal blocks in three ways:
 
 1. All honest nodes will not reference directly or indirectly partial invalid
-   blocks until a significant period of time. This time period is measured with
-   the `timer_chain_height` and the difference has to be more than
-   `timer_chain_beta`. Yes, it means that if another otherwise perfectly fine
-   block referencing the partial invalid block, both of these two blocks will not
-   be referenced for a while.
+  blocks until a significant period of time. This time period is measured with
+  the `timer_chain_height` and the difference has to be more than
+  `timer_chain_beta`. Yes, it means that if another otherwise perfectly fine
+  block referencing the partial invalid block, both of these two blocks will not
+  be referenced for a while.
 
 2. Partial invalid blocks will have no block reward. They are extremely
-   unlikely to get any reward anyway because of their large anticone set due to
-   the first rule.
+  unlikely to get any reward anyway because of their large anticone set due to
+  the first rule.
 
 3. Partial invalid blocks are excluded from the timer chain consideration.
 
@@ -317,7 +317,7 @@ describe later. It is based on the rationale that:
 1. Reverting a `timer_chain_beta` length timer chain is impossible.
 
 2. Therefore force confirmed block will always move along the pivot chain, not
-   drifting between its siblings.
+  drifting between its siblings.
 
 We compute the accumulative LCA of the last `timer_chain_beta` timer chain
 blocks and store it at the `timer_chain_accumulative_lca[]` field. This vector
@@ -344,11 +344,11 @@ pivot chain block at the height 50000 will be the genesis of a new era.
 At the era boundary, there are several differences from the normal case.
 
 1. A block will enter the total order for execution only if 1) it is under the
-   subtree of the previous era genesis and 2) it is inside the past set of the next era genesis in
-   the pivot chain.
+  subtree of the previous era genesis and 2) it is inside the past set of the next era genesis in
+  the pivot chain.
 
 2. Anticone penalty calculation for the block reward does not go across the era
-   boundary.
+  boundary.
 
 ### Checkpoint
 
@@ -380,16 +380,16 @@ Note that the checkpoint mechanism also changes how we handle a new block. For
 a new block:
 
 1. If the new block is outside the subtree of the current checkpoint, we only
-   need to insert a stub into our data structure (because a block under the
-   subtree may be indirectly referenced via this stub block). We do not need to
-   care about such a block because it is not going to change the timer chain and it
-   is not going to be executed.
+  need to insert a stub into our data structure (because a block under the
+  subtree may be indirectly referenced via this stub block). We do not need to
+  care about such a block because it is not going to change the timer chain and it
+  is not going to be executed.
 
 2. If the past set of the new block does not contain the stable era genesis block, we
-   do not need to check the partial invalid status of this block. This is because
-   this block will not change the timer chain (recall our assumption that the timer
-   chain will not reorg for more than `timer_chain_beta` blocks) and future blocks can reference
-   this block directly (since the timer chain difference is already more than `timer_chain_beta`).
+  do not need to check the partial invalid status of this block. This is because
+  this block will not change the timer chain (recall our assumption that the timer
+  chain will not reorg for more than `timer_chain_beta` blocks) and future blocks can reference
+  this block directly (since the timer chain difference is already more than `timer_chain_beta`).
 
 ### Deferred Execution
 
@@ -484,16 +484,16 @@ If you want to write code to interact with the Conflux consensus layer, it is
 very important to understand the following assumptions and rules.
 
 1. The consensus layer assumes that the passed `BlockDataManager` is in a
-   consistent state. It means that the `BlockDataManager` contains the correct current
-   checkpoint/stable height. Blocks before the checkpoint and the stable height
-   are properly checked during previous execution and they are persisted into the
-   `BlockDataManager` properly. The consensus layer **does not check** the results
-   it fetches from the block data manager. If it is inconsistent, the consensus
-   layer will execute incorrectly or crash!
+  consistent state. It means that the `BlockDataManager` contains the correct current
+  checkpoint/stable height. Blocks before the checkpoint and the stable height
+  are properly checked during previous execution and they are persisted into the
+  `BlockDataManager` properly. The consensus layer **does not check** the results
+  it fetches from the block data manager. If it is inconsistent, the consensus
+  layer will execute incorrectly or crash!
 
 2. Besides the subroutines of `on_new_block()`, **no one should hold the write
-   lock of the inner struct**! Right now the only exception for this rule is
-   `assemble_new_block_impl()` because of computing the adaptive field and this is
-   not good we plan to change it. Acquiring the write lock of the inner struct
-   is very likely to cause deadlock given the complexity of the Consensus layer
-   and its dependency with many other components. Always try to avoid this!
+  lock of the inner struct**! Right now the only exception for this rule is
+  `assemble_new_block_impl()` because of computing the adaptive field and this is
+  not good we plan to change it. Acquiring the write lock of the inner struct
+  is very likely to cause deadlock given the complexity of the Consensus layer
+  and its dependency with many other components. Always try to avoid this!
