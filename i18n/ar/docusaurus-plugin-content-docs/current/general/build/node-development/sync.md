@@ -105,9 +105,9 @@ During this traversal process, for each node,
 
 1. if it is invalid, all its descendants are invalid;
 2. if it is new to be `BLOCK_HEADER_GRAPH_READY`, some graph-related validity checks (6~9) are applied on it.
-   If it passes these checks, it is then checked whether its block body has already entered synchronization graph (by checking the `block_ready` field of the graph node).
-   If so, this block is ready to be relayed. And this block may make some of its descendants become `BLOCK_HEADER_GRAPH_READY`.
-   Note that this cannot make its descendants become `BLOCK_GRAPH_READY` since the original node (at the starting point of the BFS process) for the newly arrived block header can only be `BLOCK_HEADER_GRAPH_READY`;
+  If it passes these checks, it is then checked whether its block body has already entered synchronization graph (by checking the `block_ready` field of the graph node).
+  If so, this block is ready to be relayed. And this block may make some of its descendants become `BLOCK_HEADER_GRAPH_READY`.
+  Note that this cannot make its descendants become `BLOCK_GRAPH_READY` since the original node (at the starting point of the BFS process) for the newly arrived block header can only be `BLOCK_HEADER_GRAPH_READY`;
 
 When a block body just enters the synchronization graph, the corresponding graph node should already exist in synchronization graph, otherwise, the block will be ignored (this may happen if it is garbage collected).
 The `block_ready` field of this node will be set as true now.
@@ -118,8 +118,8 @@ During this traversal process, for each node,
 
 1. if it is invalid, all its descendants are invalid;
 2. if it is new to be `BLOCK_GRAPH_READY`, it is dispatched to consensus graph.
-   It may make some of its descendants become `BLOCK_GRAPH_READY`.
-   If the block with the newly arrived body is at least `BLOCK_HEADER_GRAPH_READY`, it becomes ready to be relayed.
+  It may make some of its descendants become `BLOCK_GRAPH_READY`.
+  If the block with the newly arrived body is at least `BLOCK_HEADER_GRAPH_READY`, it becomes ready to be relayed.
 
 ### Garbage Collect Dangling Blocks
 
