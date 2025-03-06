@@ -78,54 +78,54 @@ To prevent signature replay attacks, you can use the following methods:
 
 1. **Tracking Used Signatures**: Record signatures that have been used for operations like token minting to prevent their reuse.
 
-   ```solidity
-   // Record the minted addresses
-   mapping(address => bool) public alreadyMinted;
+  ```solidity
+  // Record the minted addresses
+  mapping(address => bool) public alreadyMinted;
 
-   function secureMint(address recipient, uint amount, bytes memory signature) public {
-       require(!alreadyMinted[recipient], "Tokens already minted for this address");
-       bytes32 messageHash = keccak256(abi.encodePacked(recipient, amount));
-       bytes32 ethSignedMessageHash = ECDSA.toEthSignedMessageHash(messageHash);
-       require(ECDSA.recover(ethSignedMessageHash, signature) == authorizedSigner, "Invalid signature!");
-       alreadyMinted[recipient] = true;
-       _mint(recipient, amount);
-   }
-   ```
+  function secureMint(address recipient, uint amount, bytes memory signature) public {
+      require(!alreadyMinted[recipient], "Tokens already minted for this address");
+      bytes32 messageHash = keccak256(abi.encodePacked(recipient, amount));
+      bytes32 ethSignedMessageHash = ECDSA.toEthSignedMessageHash(messageHash);
+      require(ECDSA.recover(ethSignedMessageHash, signature) == authorizedSigner, "Invalid signature!");
+      alreadyMinted[recipient] = true;
+      _mint(recipient, amount);
+  }
+  ```
 
 2. **Including Nonce and ChainID**: Incorporate a `nonce` (which increments with each transaction) and the `chainID` in the signature message to prevent both standard and cross-chain replays.
 
-   ```solidity
-   uint public nonce = 0;
+  ```solidity
+  uint public nonce = 0;
 
-   function nonceMint(address recipient, uint amount, bytes memory signature) public {
-       bytes32 messageHash = keccak256(abi.encodePacked(recipient, amount, nonce, block.chainid));
-       bytes32 ethSignedMessageHash = ECDSA.toEthSignedMessageHash(messageHash);
-       require(ECDSA.recover(ethSignedMessageHash, signature) == authorizedSigner, "Invalid signature!");
-       _mint(recipient, amount);
-       nonce++;
-   }
-   ```
+  function nonceMint(address recipient, uint amount, bytes memory signature) public {
+      bytes32 messageHash = keccak256(abi.encodePacked(recipient, amount, nonce, block.chainid));
+      bytes32 ethSignedMessageHash = ECDSA.toEthSignedMessageHash(messageHash);
+      require(ECDSA.recover(ethSignedMessageHash, signature) == authorizedSigner, "Invalid signature!");
+      _mint(recipient, amount);
+      nonce++;
+  }
+  ```
 
 3. **Using EIP-712 for Structured Data**:
-   Implement EIP-712 to create a more secure and structured data signing experience, which helps prevent signature replays across different contexts and contracts.
+  Implement EIP-712 to create a more secure and structured data signing experience, which helps prevent signature replays across different contexts and contracts.
 
-   ```solidity
-   // Utilizing EIP-712 to create a typed structured data signature
-   using EIP712 for bytes32;
+  ```solidity
+  // Utilizing EIP-712 to create a typed structured data signature
+  using EIP712 for bytes32;
 
-   function eip712Mint(address recipient, uint amount, bytes memory signature) public {
-       bytes32 structHash = keccak256(abi.encode(
-           keccak256("Mint(address recipient,uint256 amount,uint256 nonce)"),
-           recipient,
-           amount,
-           nonce
-       ));
-       bytes32 digest = _hashTypedDataV4(structHash);
-       require(ECDSA.recover(digest, signature) == authorizedSigner, "Invalid EIP-712 signature!");
-       _mint(recipient, amount);
-       nonce++;
-   }
-   ```
+  function eip712Mint(address recipient, uint amount, bytes memory signature) public {
+      bytes32 structHash = keccak256(abi.encode(
+          keccak256("Mint(address recipient,uint256 amount,uint256 nonce)"),
+          recipient,
+          amount,
+          nonce
+      ));
+      bytes32 digest = _hashTypedDataV4(structHash);
+      require(ECDSA.recover(digest, signature) == authorizedSigner, "Invalid EIP-712 signature!");
+      _mint(recipient, amount);
+      nonce++;
+  }
+  ```
 
 You can find more detailed implementation guidelines and tools in [OpenZeppelin's EIP-712 documentation](https://docs.openzeppelin.com/contracts/5.x/api/utils#EIP712).
 
