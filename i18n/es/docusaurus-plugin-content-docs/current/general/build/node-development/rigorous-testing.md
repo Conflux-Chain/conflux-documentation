@@ -112,15 +112,15 @@ testing the simple payment TPS and transaction pool performance. You can run
 this test as follows:
 
 1. First you need to download and install AWS CLI tools. Properly configure the
-   AWS credential for the CLI tool.
+  AWS credential for the CLI tool.
 
 2. Make your default public key registered as a named key pair in _the us-west-2 region_.
 
 3. Decide the branch of the Conflux repo you want to test. Note that this
-   script pulls the source code from a GitHub repo that contains the Conflux rust
-   implementation and compile them on the fly. You cannot run your local Conflux
-   copy with this script. If you do not specify the repo/branch name, it will pull
-   from the official Conflux-rust repo from the GitHub.
+  script pulls the source code from a GitHub repo that contains the Conflux rust
+  implementation and compile them on the fly. You cannot run your local Conflux
+  copy with this script. If you do not specify the repo/branch name, it will pull
+  from the official Conflux-rust repo from the GitHub.
 
 4. Run the following command:
 
@@ -147,15 +147,15 @@ blocks) as the benchmark traces. Here are steps to run the storage benchmark
 test:
 
 1. From the AWS S3 `conflux-storage-bench` bucket, download `foundation.json`
-   and `eth_from_0_to_4141811_txs.rlp.tar.gz`.
+  and `eth_from_0_to_4141811_txs.rlp.tar.gz`.
 
 2. Untar the rlp history file to obtain `eth_from_0_to_4141811_txs.rlp`.
 
 3. Go to `core/benchmark/storage` and run `cargo build --release` to compile
-   the binary `storage_bench`.
+  the binary `storage_bench`.
 
 4. Create a temporary directory `tmp_storage_db` for holding the blockchain
-   database generated in the experiment.
+  database generated in the experiment.
 
 5. Invoke the following command:
 
@@ -184,29 +184,29 @@ critical because it corresponds to the catch-up speed during DoS attacks.
 consensus performance under attack scenarios:
 
 1. `fork_same_height_merge.py` creates a unstable TreeGraph with roughly 95000
-   blocks. In the TreeGraph, it has three branches and in each branch there are
-   star shape forks attached at a fixed height. It corresponds to one worst case
-   scenario for the consensus procesing engine. The expected speed is ~70 blocks/s
-   on MacBook Pro 2019 and ~45 blocks/s on m5a.xlarge.
+  blocks. In the TreeGraph, it has three branches and in each branch there are
+  star shape forks attached at a fixed height. It corresponds to one worst case
+  scenario for the consensus procesing engine. The expected speed is ~70 blocks/s
+  on MacBook Pro 2019 and ~45 blocks/s on m5a.xlarge.
 
 2. `fork_same_height_hiding.py` tests the scenario where an attacker tries to
-   actively mine at a fixed height, hides the mined blocks, and release them
-   together. It measures the block generation capaiblity of the victim at this
-   scenario. The expected generation speed is always faster than 1000 blocks in
-   less than 1 minutes.
+  actively mine at a fixed height, hides the mined blocks, and release them
+  together. It measures the block generation capaiblity of the victim at this
+  scenario. The expected generation speed is always faster than 1000 blocks in
+  less than 1 minutes.
 
 3. `fork_same_height_attack.py` tests a similar attack as 2 but the attacker
-   does not hide the blocks. The expected generation speed is always faster than
-   100 blocks in less than 10 seconds.
+  does not hide the blocks. The expected generation speed is always faster than
+  100 blocks in less than 10 seconds.
 
 4. `fork_chain_hiding.py` tests the scenario where an attacker tries to
-   actively mine a separate chain, hides the mined blocks, and release them
-   together. The expected generation speed of the victim is always faster than 100
-   blocks in less than 10 seconds.
+  actively mine a separate chain, hides the mined blocks, and release them
+  together. The expected generation speed of the victim is always faster than 100
+  blocks in less than 10 seconds.
 
 5. `fork_chain_attack.py` tests a similar attack as 4 but the attacker does not
-   hide the blocks. The expected generation speed of the victim is always faster
-   than 100 blocks in less than 10 seconds.
+  hide the blocks. The expected generation speed of the victim is always faster
+  than 100 blocks in less than 10 seconds.
 
 Note that 2, 3, and 5 are long running test scripts and you can terminate the
 execution after the speed stablizes. For every release, we run these scripts to
