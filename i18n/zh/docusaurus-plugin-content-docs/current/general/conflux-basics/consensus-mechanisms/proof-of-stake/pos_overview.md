@@ -26,9 +26,9 @@ tags:
 
 This document provides a technical overview of Conflux's Proof of Stake (PoS) mechanism. For practical staking guides, see our [Staking Guide](/docs/general/mine-stake/stake/staking-overview.mdx).
 
-## Purpose and Design
+## 目的与设计
 
-Conflux implements a hybrid consensus mechanism that combines Proof of Work (PoW) with Proof of Stake (PoS). This unique approach serves three critical purposes:
+Conflux 采用了一种混合共识机制，结合了工作量证明（PoW）和权益证明（PoS）。 This unique approach serves three critical purposes:
 
 1. **Protection Against 51% Attacks**: In early network stages when hash power is limited, PoS provides an additional security layer against potential attacks.
 2. **Chain Finality**: The PoS mechanism ensures definitive finality for the PoW chain through committee voting.
