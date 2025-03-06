@@ -31,11 +31,11 @@ This wallet supports both Core and eSpace
 
 You can now use your **Ledger Nano S+**, **Nano X**, **Stax**, or **Flex** hardware wallet to securely store your assets on both Core and eSpace. In this guide, we will show you how to interact with Conflux using your Ledger device and how to transfer assets.
 
+## Using Ledger on Core Space
+
 :::note
 For Ledger Nano S users: You'll need to manually set up the development environment and load the app. Please refer to the [detailed instructions](https://github.com/conflux-chain/app-conflux?tab=readme-ov-file#2-if-my-device-is-a-nano-s-what-should-i-do).
 :::
-
-## Using Ledger on Core Space
 
 ### Before You Start
 
@@ -138,12 +138,10 @@ You can learn more about Conflux at [confluxnetwork.org](https://confluxnetwork.
 If you encounter any issues, find us on <DiscordLink>Discord</DiscordLink> or [Telegram](https://t.me/Conflux_English), we are happy to help.
 
 
-
-
 ## Using Ledger on eSpace
 
 :::note
-**The Conflux eSpace Ledger app is not yet available in Ledger Live.**
+**For Conflux eSpace, you should use The Ledger Ethereum app.**
 :::
 
 ### Before You Start
@@ -153,10 +151,6 @@ Before you start, make sure that you have done the following:
 - Updated your Ledger device (Nano S+, Nano X, Stax, or Flex) to the latest firmware version
 - Installed [Ledger Live](https://www.ledger.com/ledger-live) and updated it to the latest version
 - Installed [MetaMask](https://MetaMask.io) on Chrome or Edge browser (Firefox is not supported)
-
-:::note
-For Ledger Nano S users: You'll need to manually set up the development environment and load the app. Please refer to the [detailed instructions](https://github.com/conflux-chain/app-conflux?tab=readme-ov-file#2-if-my-device-is-a-nano-s-what-should-i-do).
-:::
 
 If you encounter any issues, find us on <DiscordLink>Discord</DiscordLink> or [Telegram](https://t.me/Conflux_English), we are happy to help.
 
