@@ -42,4 +42,4 @@ All staked tokens of the validator will be permanently locked and cannot be unst
 
 ### Safe Node Restart Procedure to Prevent Slash
 
-To safely restart your PoS node while avoiding penalties, please follow the detailed procedure in [Safe Node Restart Procedure](/docs/general/mine-stake/stake/safe-node-restart).
+To safely restart your PoS node while avoiding penalties, please follow the detailed procedure in [Safe Node Restart Procedure](/docs/general/mine-stake/stake/safe_node_restart).
