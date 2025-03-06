@@ -27,7 +27,7 @@ Conflux 的共识层处理从同步层接收到的所有区块，根据 Conflux 
 1. 在后台按照一致的共识算法处理新的区块
 
 2. 我们希望最小化共识图中每个块的内存使用。
-   即使有检查点机制，在正常情况下图中会包含 300K-500K 个块，在面对存活性攻击时可能会超过 1M 个块。 这可能会给内存带来压力。
+  即使有检查点机制，在正常情况下图中会包含 300K-500K 个块，在面对存活性攻击时可能会超过 1M 个块。 这可能会给内存带来压力。
 
 3. 我们想要快速处理每个区块。 因为全节点/归档节点在从零开始同步网络时必须处理从_初始创世区块_开始的之后每一个区块，因此快速处理区块对于缩短所需时间是非常重要的。
 
@@ -184,11 +184,11 @@ pivot chain block at the height 50000 will be the genesis of a new era.
 At the era boundary, there are several differences from the normal case.
 
 1. A block will enter the total order for execution only if 1) it is under the
-   subtree of the previous era genesis and 2) it is inside the past set of the next era genesis in
-   the pivot chain.
+  subtree of the previous era genesis and 2) it is inside the past set of the next era genesis in
+  the pivot chain.
 
 2. Anticone penalty calculation for the block reward does not go across the era
-   boundary.
+  boundary.
 
 ### Checkpoint
 
@@ -220,16 +220,16 @@ Note that the checkpoint mechanism also changes how we handle a new block. For
 a new block:
 
 1. If the new block is outside the subtree of the current checkpoint, we only
-   need to insert a stub into our data structure (because a block under the
-   subtree may be indirectly referenced via this stub block). We do not need to
-   care about such a block because it is not going to change the timer chain and it
-   is not going to be executed.
+  need to insert a stub into our data structure (because a block under the
+  subtree may be indirectly referenced via this stub block). We do not need to
+  care about such a block because it is not going to change the timer chain and it
+  is not going to be executed.
 
 2. If the past set of the new block does not contain the stable era genesis block, we
-   do not need to check the partial invalid status of this block. This is because
-   this block will not change the timer chain (recall our assumption that the timer
-   chain will not reorg for more than `timer_chain_beta` blocks) and future blocks can reference
-   this block directly (since the timer chain difference is already more than `timer_chain_beta`).
+  do not need to check the partial invalid status of this block. This is because
+  this block will not change the timer chain (recall our assumption that the timer
+  chain will not reorg for more than `timer_chain_beta` blocks) and future blocks can reference
+  this block directly (since the timer chain difference is already more than `timer_chain_beta`).
 
 ### Deferred Execution
 
@@ -324,16 +324,16 @@ If you want to write code to interact with the Conflux consensus layer, it is
 very important to understand the following assumptions and rules.
 
 1. The consensus layer assumes that the passed `BlockDataManager` is in a
-   consistent state. It means that the `BlockDataManager` contains the correct current
-   checkpoint/stable height. Blocks before the checkpoint and the stable height
-   are properly checked during previous execution and they are persisted into the
-   `BlockDataManager` properly. The consensus layer **does not check** the results
-   it fetches from the block data manager. If it is inconsistent, the consensus
-   layer will execute incorrectly or crash!
+  consistent state. It means that the `BlockDataManager` contains the correct current
+  checkpoint/stable height. Blocks before the checkpoint and the stable height
+  are properly checked during previous execution and they are persisted into the
+  `BlockDataManager` properly. The consensus layer **does not check** the results
+  it fetches from the block data manager. If it is inconsistent, the consensus
+  layer will execute incorrectly or crash!
 
 2. Besides the subroutines of `on_new_block()`, **no one should hold the write
-   lock of the inner struct**! Right now the only exception for this rule is
-   `assemble_new_block_impl()` because of computing the adaptive field and this is
-   not good we plan to change it. Acquiring the write lock of the inner struct
-   is very likely to cause deadlock given the complexity of the Consensus layer
-   and its dependency with many other components. Always try to avoid this!
+  lock of the inner struct**! Right now the only exception for this rule is
+  `assemble_new_block_impl()` because of computing the adaptive field and this is
+  not good we plan to change it. Acquiring the write lock of the inner struct
+  is very likely to cause deadlock given the complexity of the Consensus layer
+  and its dependency with many other components. Always try to avoid this!
