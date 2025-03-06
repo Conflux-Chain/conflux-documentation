@@ -35,7 +35,7 @@ tags:
 
 通常，在Linux上，您可以通过按Ctrl + C来停止节点软件。 如果无法停止，您可以使用kill命令强制停止。
 
-如果你正在运行一个PoS节点，则需要采取额外的步骤来防止强制退休。 请参阅[如何安全重启一个PoS节点](/docs/general/mine-stake/stake/faqs#how-can-i-safely-restart-my-pos-node).
+如果你正在运行一个PoS节点，则需要采取额外的步骤来防止强制退休。 See [How to Safely Restart a PoS Node](/docs/general/mine-stake/stake/safe-node-restart.md).
 
 ### 3. 替换旧节点软件并启动
 
