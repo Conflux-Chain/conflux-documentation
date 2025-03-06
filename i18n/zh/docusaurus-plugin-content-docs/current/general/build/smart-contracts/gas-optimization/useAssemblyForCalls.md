@@ -62,7 +62,7 @@ interface ITarget {
 
 ### Gas Comparison
 
-| Implementation          | Gas Cost (Approximate) |
+| 实现方式                    | Gas Cost (Approximate) |
 | ----------------------- | ----------------------------------------- |
 | Standard Interface Call | ~30,570 gas               |
 | Assembly Call           | ~30,350 gas               |
