@@ -54,37 +54,38 @@ This means an attacker could send a small amount of Ether and then specify multi
 
 2. **使用累加器**：如果必须在循环中处理付款，使用累加器来跟踪已处理的金额。
 
-   ```solidity
-    function processBatch(address[] memory recipients, uint256[] memory amounts) public payable {
-        require(recipients.length == amounts.length, "Arrays must have the same length");
-        
-        uint256 totalProcessed = 0;
-        for (uint i = 0; i < recipients.length; i++) {
-            totalProcessed += amounts[i];
-            require(totalProcessed <= msg.value, "Insufficient funds");
-            (bool success, ) = recipients[i].call{value: amounts[i]}("");
-            require(success, "Transfer failed");
-        }
-    }
-   ```
+  ```solidity
+   function processBatch(address[] memory recipients, uint256[] memory amounts) public payable {
+       require(recipients.length == amounts.length, "Arrays must have the same length");
+       
+       uint256 totalProcessed = 0;
+       for (uint i = 0; i < recipients.length; i++) {
+           totalProcessed += amounts[i];
+           require(totalProcessed <= msg.value, "Insufficient funds");
+           (bool success, ) = recipients[i].call{value: amounts[i]}("");
+           require(success, "Transfer failed");
+       }
+   }
+  ```
 
 3. **Check total amount upfront**: Verify that the total amount equals `msg.value` before starting any transfers.
 
-   ```solidity
-   function processBatch(address[] memory recipients, uint256[] memory amounts) public payable {
-        require(recipients.length == amounts.length, "Arrays must have the same length");
-        
-        uint256 totalAmount = 0;
-        for (uint i = 0; i < amounts.length; i++) {
-            totalAmount += amounts[i];
-        }
-        require(totalAmount == msg.value, "Incorrect total amount");
-        
-        for (uint i = 0; i < recipients.length; i++) {
-            (bool success, ) = recipients[i].call{value: amounts[i]}("");
-            require(success, "Transfer failed");
-        }
-    }
-   ```
+  ```solidity
+  function processBatch(address[] memory recipients, uint256[] memory amounts) public payable {
+       require(recipients.length == amounts.length, "Arrays must have the same length");
+       
+       uint256 totalAmount = 0;
+       for (uint i = 0; i < amounts.length; i++) {
+           totalAmount += amounts[i];
+       }
+       require(totalAmount == msg.value, "Incorrect total amount");
+       
+       for (uint i = 0; i < recipients.length; i++) {
+           (bool success, ) = recipients[i].call{value: amounts[i]}("");
+           require(success, "Transfer failed");
+       }
+   }
+  ```
 
 4. **Use the Pull Payments pattern**: Let users withdraw funds themselves instead of sending directly. This can avoid many problems associated with direct transfers.
+
