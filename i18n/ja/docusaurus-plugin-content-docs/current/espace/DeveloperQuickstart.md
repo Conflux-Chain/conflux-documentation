@@ -90,7 +90,7 @@ A complete workflow for using Hardhat deploy contract is shown [here](./tutorial
 To deploy using the eSpace Testnet Public RPC, run:
 
 ```bash
-forge create ... --rpc-url=https://evmtestnet.confluxrpc.com --legacy
+forge create ... --rpc-url=https://evmtestnet.confluxrpc.com
 ```
 
 A complete workflow for using foundry deploy contract is shown [here](./tutorials/deployContract/hardhatAndFoundry.md)
