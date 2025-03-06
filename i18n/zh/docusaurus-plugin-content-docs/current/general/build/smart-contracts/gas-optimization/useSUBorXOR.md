@@ -52,7 +52,7 @@ contract ComparisonExample {
 
 ### Gas Comparison
 
-| Implementation                | Gas Cost (Approximate) |
+| 实现方式                          | Gas Cost (Approximate) |
 | ----------------------------- | ----------------------------------------- |
 | ISZERO(EQ) | ~22 gas                   |
 | SUB                           | ~20 gas                   |
