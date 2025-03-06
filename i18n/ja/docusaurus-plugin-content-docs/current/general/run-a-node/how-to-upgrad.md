@@ -35,7 +35,7 @@ Visit the [Release page](https://github.com/Conflux-Chain/conflux-rust/releases)
 
 Typically, on Linux, you can stop the node software by pressing `Ctrl + C`. If it cannot be stopped, you can use the `kill` command to force stop.
 
-If you are running a PoS node, additional steps are required to prevent forced retirement. See [How to Safely Restart a PoS Node](/docs/general/mine-stake/stake/safe-node-restart.md).
+If you are running a PoS node, additional steps are required to prevent forced retirement. See [How to Safely Restart a PoS Node](/docs/general/mine-stake/stake/safe_node_restart).
 
 ### 3. Replace the Old Node Software and Start
 
