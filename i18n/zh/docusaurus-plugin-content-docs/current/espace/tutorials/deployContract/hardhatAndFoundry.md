@@ -48,11 +48,11 @@ eSpace 测试网允许任何人在 eSpace 上部署智能合约。 在本教程�
 
 2. 克隆仓库并安装依赖项：
 
-   ```shell
-   git clone https://github.com/conflux-fans/espace-contract-guide
-   cd espace-contract-guide
-   yarn install
-   ```
+  ```shell
+  git clone https://github.com/conflux-fans/espace-contract-guide
+  cd espace-contract-guide
+  yarn install
+  ```
 
 3. 按照根目录中的 `.env.example` 示例创建一个 `.env` 文件。 将 `.env` 中的 `PRIVATE_KEY` 更改为您自己账户的私钥。
 
@@ -84,43 +84,50 @@ import TabItem from '@theme/TabItem';
 
 1. 克隆仓库：
 
-   ```shell
-   git clone https://github.com/conflux-fans/espace-contract-guide
-   cd espace-contract-guide
-   ```
+  ```shell
+  git clone https://github.com/conflux-fans/espace-contract-guide
+  cd espace-contract-guide
+  ```
 
 2. 安装 Foundry：
 
-   ```shell
-   curl -L https://foundry.paradigm.xyz | bash
-   foundryup
-   ```
+  ```shell
+  curl -L https://foundry.paradigm.xyz | bash
+  foundryup
+  ```
 
 3. 运行 `forge build` 来构建项目。
 
 4. 使用 Foundry 部署您的合约：
 
-   ```bash
-   forge create --rpc-url https://evmtestnet.confluxrpc.com \
-     --value <lock_amount> \
-     --constructor-args <unlock_time> \
-     --private-key <your_private_key> \
-     --legacy \
-     contracts/Lock.sol:Lock
-   ```
+  ```bash
+  forge create --rpc-url https://evmtestnet.confluxrpc.com \
+    --value <lock_amount> \
+    --constructor-args <unlock_time> \
+    --private-key <your_private_key> \
+    contracts/Lock.sol:Lock
+  ```
 
-   - `<lock_amount> ` 是需要锁定在合约中的测试 CFX 数量。 尝试将其设置为一些小数额，比如 `0.0000001ether`。&#x20
-   - `<unlock_time>` 是锁定在合约中的资金可供提取的 Unix 时间戳。 尝试将其设置为未来的某个 Unix 时间戳，比如 `1730390400`（这个 Unix 时间戳对应于 2024 年 10 月 1 日）。
+  - `<lock_amount> ` 是需要锁定在合约中的测试 CFX 数量。 Try setting this to some small amount, like `0.0000001ether`.&#x20;
+  - `<unlock_time>` 是锁定在合约中的资金可供提取的 Unix 时间戳。 尝试将其设置为未来的某个 Unix 时间戳，比如 `1730390400`（这个 Unix 时间戳对应于 2024 年 10 月 1 日）。
 
-   例如：
+  例如：
 
-   ```bash
-   forge create --rpc-url https://evmtestnet.confluxrpc.com \
-     --value 0.00000000002ether \
-     --constructor-args 1696118400 \
-     --private-key 0xabc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc1 \
-     --legacy contracts/Lock.sol:Lock
-   ```
+  ```bash
+  forge create --rpc-url https://evmtestnet.confluxrpc.com \
+    --value 0.00000000002ether \
+    --constructor-args 1696118400 \
+    --private-key 0xabc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc1 \
+    contracts/Lock.sol:Lock
+  ```
+
+### forge script
+
+Because some opcodes in Conflux eSpace consume twice the amount of gas compared to Ethereum, when using the `forge script` command to execute a script, you need to pass an additional parameter (-g 200) to increase the gas limit. Otherwise, the transaction will fail after being sent to the chain due to Insufficient gas fee.
+
+```shell
+forge script script/Counter.s.sol --rpc-url https://evmtestnet.confluxrpc.com --private-key 0xabc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc1 --broadcast -g 200
+```
 
 ## 常见问题解答
 
