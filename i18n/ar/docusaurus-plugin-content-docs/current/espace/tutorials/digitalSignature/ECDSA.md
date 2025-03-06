@@ -100,9 +100,9 @@ Both ECDSA signatures and Merkle trees are useful techniques in blockchain appli
 
 1. **Efficiency for Large Datasets**: Excellent for verifying membership in large datasets.
 2. **Gas Costs**: Can lead to higher gas costs in certain situations:
-   - Use considerable amount of calldata
-   - Size of Merkle proofs increases with the size of the tree
-   - Verifying Merkle proofs requires multiple hash operations
+  - Use considerable amount of calldata
+  - Size of Merkle proofs increases with the size of the tree
+  - Verifying Merkle proofs requires multiple hash operations
 3. **On-chain Storage**: Requires storing the Merkle root on-chain
 4. **Flexibility**: Allows efficient updates to large datasets by only changing the affected branches
 
