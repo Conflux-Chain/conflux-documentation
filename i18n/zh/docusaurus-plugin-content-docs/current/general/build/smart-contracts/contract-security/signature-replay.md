@@ -78,53 +78,53 @@ To prevent signature replay attacks, you can use the following methods:
 
 1. **Tracking Used Signatures**: Record signatures that have been used for operations like token minting to prevent their reuse.
 
-   ```solidity
-   // Record the minted addresses
-   mapping(address => bool) public alreadyMinted;
+  ```solidity
+  // Record the minted addresses
+  mapping(address => bool) public alreadyMinted;
 
-   function secureMint(address recipient, uint amount, bytes memory signature) public {
-       require(!alreadyMinted[recipient], "Tokens already minted for this address");
-       bytes32 messageHash = keccak256(abi.encodePacked(recipient, amount));
-       bytes32 ethSignedMessageHash = ECDSA.toEthSignedMessageHash(messageHash);
-       require(ECDSA.recover(ethSignedMessageHash, signature) == authorizedSigner, "Invalid signature!");
-       alreadyMinted[recipient] = true;
-       _mint(recipient, amount);
-   }
-   ```
+  function secureMint(address recipient, uint amount, bytes memory signature) public {
+      require(!alreadyMinted[recipient], "Tokens already minted for this address");
+      bytes32 messageHash = keccak256(abi.encodePacked(recipient, amount));
+      bytes32 ethSignedMessageHash = ECDSA.toEthSignedMessageHash(messageHash);
+      require(ECDSA.recover(ethSignedMessageHash, signature) == authorizedSigner, "Invalid signature!");
+      alreadyMinted[recipient] = true;
+      _mint(recipient, amount);
+  }
+  ```
 
 2. **包含Nonce和ChainID**: 在签名消息中加入一个`nonce` ( 随每笔交易递增) 和`chainID`以防止标准重放攻击和跨链重放攻击。
 
-   ```solidity
-   uint public nonce = 0;
+  ```solidity
+  uint public nonce = 0;
 
-   function nonceMint(address recipient, uint amount, bytes memory signature) public {
-       bytes32 messageHash = keccak256(abi.encodePacked(recipient, amount, nonce, block.chainid));
-       bytes32 ethSignedMessageHash = ECDSA.toEthSignedMessageHash(messageHash);
-       require(ECDSA.recover(ethSignedMessageHash, signature) == authorizedSigner, "Invalid signature!");
-       _mint(recipient, amount);
-       nonce++;
-   }
-   ```
+  function nonceMint(address recipient, uint amount, bytes memory signature) public {
+      bytes32 messageHash = keccak256(abi.encodePacked(recipient, amount, nonce, block.chainid));
+      bytes32 ethSignedMessageHash = ECDSA.toEthSignedMessageHash(messageHash);
+      require(ECDSA.recover(ethSignedMessageHash, signature) == authorizedSigner, "Invalid signature!");
+      _mint(recipient, amount);
+      nonce++;
+  }
+  ```
 
 3. **使用EIP-712处理结构化数据**：实施EIP-712，以创建更安全和结构化的数据签名体验，有助于防止在不同上下文和合约中的签名重放攻击。
 
-   ```solidity
-   // Utilizing EIP-712 to create a typed structured data signature
-   using EIP712 for bytes32;
+  ```solidity
+  // Utilizing EIP-712 to create a typed structured data signature
+  using EIP712 for bytes32;
 
-   function eip712Mint(address recipient, uint amount, bytes memory signature) public {
-       bytes32 structHash = keccak256(abi.encode(
-           keccak256("Mint(address recipient,uint256 amount,uint256 nonce)"),
-           recipient,
-           amount,
-           nonce
-       ));
-       bytes32 digest = _hashTypedDataV4(structHash);
-       require(ECDSA.recover(digest, signature) == authorizedSigner, "Invalid EIP-712 signature!");
-       _mint(recipient, amount);
-       nonce++;
-   }
-   ```
+  function eip712Mint(address recipient, uint amount, bytes memory signature) public {
+      bytes32 structHash = keccak256(abi.encode(
+          keccak256("Mint(address recipient,uint256 amount,uint256 nonce)"),
+          recipient,
+          amount,
+          nonce
+      ));
+      bytes32 digest = _hashTypedDataV4(structHash);
+      require(ECDSA.recover(digest, signature) == authorizedSigner, "Invalid EIP-712 signature!");
+      _mint(recipient, amount);
+      nonce++;
+  }
+  ```
 
 您可以在 [OpenZeppelin的EIP-712 文档](https://docs.openzeppelin.com/contracts/5.x/api/utils#EIP712)中找到更详细的执行指南和工具。
 
