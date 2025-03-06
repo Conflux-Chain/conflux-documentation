@@ -55,16 +55,16 @@ function test(int256 value) public pure returns (int8) {
 
 1. **导入 SafeCast 库**：
 
-   ```solidity
-   import "@openzeppelin/contracts/utils/math/SafeCast.sol";
-   ```
+  ```solidity
+  import "@openzeppelin/contracts/utils/math/SafeCast.sol";
+  ```
 
 2. **使用 SafeCast 进行向下转换**：
-   ```solidity
-   function test(int256 value) public pure returns (int8) {
-       return SafeCast.toInt8(value + 1); // Reverts on overflow
-   }
-   ```
+  ```solidity
+  function test(int256 value) public pure returns (int8) {
+      return SafeCast.toInt8(value + 1); // Reverts on overflow
+  }
+  ```
 
 在这个更新的函数中，`SafeCast.toInt8(value + 1)` 确保如果值不能安全地转换为 `int8`, 交易将会回退，从而防止与溢出相关的问题。
 
