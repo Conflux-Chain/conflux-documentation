@@ -9,7 +9,7 @@ keywords:
   - eSpace
 tags:
   - 教程
-  - Upgradeable Contracts
+  - 可升级的合约
 ---
 
 # Deploying Upgradeable Contracts using UUPS with Foundry
@@ -26,18 +26,18 @@ UUPS is an upgradeable proxy pattern that addresses some limitations of the tran
 
 1. **UUPS vs. Transparent Proxy**:
 
-   - UUPS places upgrade logic in the implementation, while transparent proxy keeps it in the proxy contract.
-   - UUPS is more gas-efficient for regular function calls.
-   - Transparent proxy has a larger proxy contract but simpler implementation contracts.
+  - UUPS places upgrade logic in the implementation, while transparent proxy keeps it in the proxy contract.
+  - UUPS is more gas-efficient for regular function calls.
+  - Transparent proxy has a larger proxy contract but simpler implementation contracts.
 
 2. **UUPS vs. Regular Upgradeable Proxy**:
 
-   - UUPS provides better security against accidental contract locking.
-   - Regular upgradeable proxies are simpler but may be more prone to errors during upgrades.
+  - UUPS provides better security against accidental contract locking.
+  - Regular upgradeable proxies are simpler but may be more prone to errors during upgrades.
 
 3. **Common Features**:
-   - All patterns allow upgrading contract logic without changing the contract address.
-   - They all use delegate calls to forward function calls to the implementation contract.
+  - All patterns allow upgrading contract logic without changing the contract address.
+  - They all use delegate calls to forward function calls to the implementation contract.
 
 UUPS is often preferred for its balance of security, gas efficiency, and flexibility. In this tutorial, we'll implement and deploy upgradeable contracts using UUPS on Conflux eSpace.
 
@@ -381,3 +381,5 @@ Count after reset: 0
 ```
 
 By following these steps, you can deploy and upgrade smart contracts using UUPS proxy pattern on Conflux eSpace with Foundry. This pattern provides a more gas-efficient alternative to the transparent proxy pattern while maintaining upgradeability. The UUPS pattern moves the upgrade logic to the implementation contract, making it more lightweight and cost-effective for users.
+
+
