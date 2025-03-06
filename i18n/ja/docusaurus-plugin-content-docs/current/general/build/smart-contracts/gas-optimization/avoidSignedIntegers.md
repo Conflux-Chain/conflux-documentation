@@ -76,3 +76,4 @@ contract OptimizedContract {
 3. Be aware of the trade-offs: while this optimization can save gas, it may make your contract less intuitive to use and require additional documentation.
 
 **Security Note**: When implementing this optimization, ensure that your contract logic correctly handles the full range of expected values. Improper use of unsigned integers or offset representations can lead to underflow or overflow issues if not carefully managed.
+
