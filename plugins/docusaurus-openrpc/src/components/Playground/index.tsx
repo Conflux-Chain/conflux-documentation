@@ -9,9 +9,10 @@ import {
   MethodObject,
   MethodObjectParams,
 } from "@open-rpc/meta-schema";
-import Form from "@rjsf/bootstrap-4";
+import Form from "../Theme";
 import validator from "@rjsf/validator-ajv8";
 import { RJSFSchema, UiSchema } from "@rjsf/utils";
+import { Button, Card, Input } from "antd";
 interface Props {
   servers: { name: string; url: string }[];
   method: MethodObject;
@@ -126,31 +127,29 @@ const Playground = ({ servers, method }: Props) => {
       <div style={{ display: "flex", gap: "10px", marginBottom: "10px" }}>
         {servers.map((server, index) => {
           return (
-            <button
-              onClick={() => setUrl(server.url)}
-              key={index}
-              className="button button--sm button--secondary"
-            >
+            <Button onClick={() => setUrl(server.url)} key={index}>
               {server.name}
-            </button>
+            </Button>
           );
         })}
       </div>
-      <input
-        className="form-control"
+      <Input
+        style={{ marginBottom: 10 }}
         value={url}
         onChange={(v) => setUrl(v.target.value)}
       />
       {method.params && (
-        <Form
-          liveValidate
-          uiSchema={uiSchema}
-          schema={createJsonSchema(method.params)}
-          validator={validator}
-          formData={formData}
-          onChange={(v) => setFormData(v.formData)}
-          showErrorList={false}
-        />
+        <Card>
+          <Form
+            liveValidate
+            uiSchema={uiSchema}
+            schema={createJsonSchema(method.params)}
+            validator={validator}
+            formData={formData}
+            onChange={(v) => setFormData(v.formData)}
+            showErrorList={false}
+          />
+        </Card>
       )}
 
       <Tabs>
