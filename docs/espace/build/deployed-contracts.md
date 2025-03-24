@@ -35,6 +35,7 @@ In this article you’ll find useful contract addresses for Conflux eSpace and c
 * Multicall3: 0xEFf0078910f638cd81996cc117bccD3eDf2B072F or 0xcA11bde05977b3631167028862bE2a173976CA11 (Two address contracts are the same, and the latter is the same as the address on other EVM chains.)
 * Gnosis Safe v1.3.0 (Deterministic Deployment Proxy): Check address at [Gnosis Safe](https://github.com/safe-global/safe-contracts/blob/main/CHANGELOG.md#version-130-libs0)
 * Gnosis Safe v1.4.1: Check address at [Gnosis Safe](https://github.com/safe-global/safe-contracts/blob/main/CHANGELOG.md#version-141)
+* [Deterministic deployment proxy](https://github.com/Arachnid/deterministic-deployment-proxy): 0x4e59b44847b379578588920ca78fbf26c0b4956c
 
 ## eSpace testnet
 
@@ -42,3 +43,4 @@ In this article you’ll find useful contract addresses for Conflux eSpace and c
 * Multicall3: 0xeff0078910f638cd81996cc117bccd3edf2b072f
 * Gnosis Safe v1.3.0 (Deterministic Deployment Proxy): Check address at [Gnosis Safe](https://github.com/safe-global/safe-contracts/blob/main/CHANGELOG.md#version-130-libs0)
 * Gnosis Safe v1.4.1: Check address at [Gnosis Safe](https://github.com/safe-global/safe-contracts/blob/main/CHANGELOG.md#version-141)
+* [Deterministic deployment proxy](https://github.com/Arachnid/deterministic-deployment-proxy): 0x4e59b44847b379578588920ca78fbf26c0b4956c
