@@ -30,3 +30,7 @@ import DocCardList from '@theme/DocCardList';
 
 <DocCardList />
 ```
+
+## Links
+
+1. [The complete hardforks list](https://github.com/conflux-chain/cips?tab=readme-ov-file#list-of-hardforks)
