@@ -102,11 +102,11 @@ ConfluxScan is the official blockchain explorer for the Conflux network. 它为�
 Links:
 
 - Mainnet
-  - Core Space: https://confluxscan.io or https://confluxscan.net
-  - eSpace: https://evm.confluxscan.io or https://evm.confluxscan.net
+  - Core Space: https://confluxscan.org or https://confluxscan.net
+  - eSpace: https://evm.confluxscan.org or https://evm.confluxscan.net
 - Testnet
-  - Core Space: https://testnet.confluxscan.io or https://testnet.confluxscan.net
-  - eSpace: https://evmtestnet.confluxscan.io or https://evmtestnet.confluxscan.net
+  - Core Space: https://testnet.confluxscan.org or https://testnet.confluxscan.net
+  - eSpace: https://evmtestnet.confluxscan.org or https://evmtestnet.confluxscan.net
 
 ### **共识算法**
 共识算法是计算机科学中用于在分布式进程或系统中就单个数据值达成一致的过程。 在区块链中，它用于就交易的（总体）顺序达成一致。 Conflux使用基于树图（Tree-Graph）结构的独特共识算法，该算法允许在大规模去中心化网络中实现高吞吐量和低延迟。
@@ -192,7 +192,7 @@ Significant to note is the principle of hash invertibility. A hash function is c
 ### **内部交易**
 区块链中的内部交易指的是智能合约内部的价值转移或操作。 These transactions are triggered by external transactions and can involve actions such as transferring tokens, creating new tokens, executing function calls, or interacting with other smart contracts. These transactions are not recorded individually on the blockchain, but they can be tracked and displayed for analysis and visibility.
 
-[ConfluxScan](https://confluxscan.io)和[trace JSON-RPC API](../../core/build/json-rpc/trace-namespace.md)可以跟踪和显示内部交易，以便进行分析和可视化。
+[ConfluxScan](https://confluxscan.org) and [trace JSON-RPC API](../../core/build/json-rpc/trace-namespace.md) can track and display internal transactions for analysis and visibility.
 
 相关链接:
 
