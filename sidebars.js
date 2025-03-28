@@ -237,7 +237,7 @@ const sidebars = {
     },
     {
       type: "link",
-      href: "https://api.confluxscan.io/doc",
+      href: "https://api.confluxscan.org/doc",
       label: "ConfluxScan APIs"
     },
     {

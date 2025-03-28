@@ -33,8 +33,8 @@ After the end of each quarter, we issue a batch of Contributor POAPs (Proof of A
 
 **POAP Contract Addresses:**
 
-- **Core Space:** [cfx:acd97pbhxm11cegrz3anuuvcuj9j0nh956a108f5cc](https://www.confluxscan.io/address/cfx:acd97pbhxm11cegrz3anuuvcuj9j0nh956a108f5cc)
-- **eSpace:** [0x500371e7ec0b5bca911a11964300e694bb0fec9d](https://evm.confluxscan.io/address/0x500371e7ec0b5bca911a11964300e694bb0fec9d)
+- **Core Space:** [cfx:acd97pbhxm11cegrz3anuuvcuj9j0nh956a108f5cc](https://www.confluxscan.org/address/cfx:acd97pbhxm11cegrz3anuuvcuj9j0nh956a108f5cc)
+- **eSpace:** [0x500371e7ec0b5bca911a11964300e694bb0fec9d](https://evm.confluxscan.org/address/0x500371e7ec0b5bca911a11964300e694bb0fec9d)
 
 These POAPs, deployable in both Core Space and eSpace, function as a unified NFT, symbolizing your valuable contribution across the Conflux network.
 
@@ -44,11 +44,11 @@ In addition to the regular contributor POAPs, we recognize and reward significan
 
 ## FC (FansCoin) Rewards for POAP Holders
 
-As a token of appreciation, contributors can claim [FansCoin (FC)](https://confluxscan.io/token/cfx:achc8nxj7r451c223m18w2dwjnmhkd6rxawrvkvsy2) rewards for each POAP they own. The amount of FC awarded varies depending on the specific POAP.
+As a token of appreciation, contributors can claim [FansCoin (FC)](https://confluxscan.org/token/cfx:achc8nxj7r451c223m18w2dwjnmhkd6rxawrvkvsy2) rewards for each POAP they own. The amount of FC awarded varies depending on the specific POAP.
 
 This is the attached reward with POAP, and do not make impact on rewards relating to [reward guidelines](./reward-guidelines.md).
 
-> Please note that the FC reward pool is located exclusively in Core Space at [cfx:achm6kb92by13rpvwd04zscn1127zuaseu25usm7sc](https://confluxscan.io/address/cfx:achm6kb92by13rpvwd04zscn1127zuaseu25usm7sc).
+> Please note that the FC reward pool is located exclusively in Core Space at [cfx:achm6kb92by13rpvwd04zscn1127zuaseu25usm7sc](https://confluxscan.org/address/cfx:achm6kb92by13rpvwd04zscn1127zuaseu25usm7sc).
 
 ## Regular Review of POAP Issuing Rules
 

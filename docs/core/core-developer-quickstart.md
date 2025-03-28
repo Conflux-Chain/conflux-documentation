@@ -130,7 +130,7 @@ let txParams = {
 
 > The detailed explanation of each field can be found [here](./core-space-basics/transactions/overview.md)
 
-1. Send the composed transaction via ```cfxClient.cfx.sendTransaction``` and get the returned transaction hash. Then you can view the transaction details by using `tx.mined()` or `tx.executed()`, which APIs will return the transaction data or transaction receipt when transaction is mined or executed. Noting these 2 APIs are a simple wrapping layer for `cfxClient.cfx.getTransactionByHash` and `cfxClient.cfx.getTransactionReceipt`. You can also search the sent transaction at [Conflux Scan](https://confluxscan.io/) using transaction hash.
+1. Send the composed transaction via ```cfxClient.cfx.sendTransaction``` and get the returned transaction hash. Then you can view the transaction details by using `tx.mined()` or `tx.executed()`, which APIs will return the transaction data or transaction receipt when transaction is mined or executed. Noting these 2 APIs are a simple wrapping layer for `cfxClient.cfx.getTransactionByHash` and `cfxClient.cfx.getTransactionReceipt`. You can also search the sent transaction at [Conflux Scan](https://confluxscan.org/) using transaction hash.
 
 ```javascript
 async function main() {
@@ -166,5 +166,5 @@ If your account does not have enough balance, you will encounter the following e
 1. Check [js-conflux-sdk's documentation](https://confluxnetwork.gitbook.io/js-conflux-sdk) for more details
 2. Refer to [SDKs](./build/sdks-and-tools/sdks.md) for examples of other SDKs.
 3. [Core Space Faucet](https://faucet.confluxnetwork.org/)
-4. [Conflux Core Scan](https://confluxscan.io/)
+4. [Conflux Core Scan](https://confluxscan.org/)
 5. [use-wallet](../general/build/tools/use-wallet.md): a front-end perspective wallet hooks library providing rapid development support for lightweight dapps, with React and Vue3 support.

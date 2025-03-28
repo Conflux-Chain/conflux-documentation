@@ -38,4 +38,4 @@ To make a contribution, please take one of the following actions:
 
 ### Contributor Rewards and POAPs
 
-We distribute [FansCoin (FC)](https://confluxscan.io/token/cfx:achc8nxj7r451c223m18w2dwjnmhkd6rxawrvkvsy2) rewards and issue POAPs for our contributor as appreciation. For the [reward guidelines](./docs/general/CONTRIBUTING/reward-guidelines.md) and [contributors POAPs](./docs/general/CONTRIBUTING/contributor-poaps.md) to learn how the tokens are distributed.
+We distribute [FansCoin (FC)](https://confluxscan.org/token/cfx:achc8nxj7r451c223m18w2dwjnmhkd6rxawrvkvsy2) rewards and issue POAPs for our contributor as appreciation. For the [reward guidelines](./docs/general/CONTRIBUTING/reward-guidelines.md) and [contributors POAPs](./docs/general/CONTRIBUTING/contributor-poaps.md) to learn how the tokens are distributed.
