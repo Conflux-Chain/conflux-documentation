@@ -305,7 +305,7 @@ Conflux Core RPC 方法仅接受 base32 地址，因此 Conflux Core SDK 和钱�
 
 ## 地址格式转换工具
 
-ConfluxScan 提供了一个[在线地址转换器](https://www.confluxscan.io/address-converter)，非常实用。
+ConfluxScan provide a [Online Address Converter](https://www.confluxscan.org/address-converter) which is very useful.
 
 ![](./img/scan-address-converter.png)
 
@@ -313,7 +313,7 @@ ConfluxScan 提供了一个[在线地址转换器](https://www.confluxscan.io/ad
 
 ### 如何在 base32 和十六进制地址之间转换？
 
-使用[在线地址转换器](https://www.confluxscan.io/address-converter)或 SDK 可以实现 base32 和十六进制地址之间的转换。
+Use the [Online Address Converter](https://www.confluxscan.org/address-converter) or the SDKs to convert between base32 and hex addresses.
 
 ### 我什么时候应该使用十六进制地址？
 
