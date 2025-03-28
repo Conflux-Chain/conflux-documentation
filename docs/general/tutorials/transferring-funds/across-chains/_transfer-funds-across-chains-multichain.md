@@ -91,7 +91,7 @@ In this guide, we'll bridge bCFX from BNB Chain to Conflux eSpace through Multic
 
 ![Locale Dropdown](./img/connectWallet-16.png)
 
-18. Once the transaction is completed, click the Tx hash to view the transaction details in [Confluxscan](https://confluxscan.io/).
+18. Once the transaction is completed, click the Tx hash to view the transaction details in [Confluxscan](https://confluxscan.org/).
 
 ![Locale Dropdown](./img/connectWallet-17.png)
 

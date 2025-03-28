@@ -106,7 +106,7 @@ Normally the unstaked votes will be in **unlocking** status for 1-14 days. After
 
 ## View validator's status in ConfluxScan
 
-You can also view validator's status in [ConfluxScan](https://confluxscan.io/). By visiting this url **`https://confluxscan.io/pos/accounts/0x<your-pos-node-address>?tab=overview`**
+You can also view validator's status in [ConfluxScan](https://confluxscan.org/). By visiting this url **`https://confluxscan.org/pos/accounts/0x<your-pos-node-address>?tab=overview`**
 
 In this page you can view:
 

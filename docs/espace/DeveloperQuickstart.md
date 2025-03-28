@@ -44,7 +44,7 @@ Use the table below to configure your Ethereum tools to the eSpace mainnet.
 | RPC URL            | [https://evm.confluxrpc.com](https://evm.confluxrpc.com)   |
 | Chain ID           | 1030                                               |
 | Currency Symbol    | CFX                                                |
-| Block Explorer URL | [https://evm.confluxscan.io](https://evm.confluxscan.io) |
+| Block Explorer URL | [https://evm.confluxscan.org](https://evm.confluxscan.org) |
 
 ### eSpace Testnet
 
@@ -55,7 +55,7 @@ Use the table below to configure your Ethereum tools to the eSpace Testnet.
 | RPC URL            | [https://evmtestnet.confluxrpc.com](https://evmtestnet.confluxrpc.com)  |
 | Chain ID           | 71                                                                |
 | Currency Symbol    | CFX                                                               |
-| Block Explorer URL | [https://evmtestnet.confluxscan.io](https://evmtestnet.confluxscan.io) |
+| Block Explorer URL | [https://evmtestnet.confluxscan.org](https://evmtestnet.confluxscan.org) |
 
 ## Configure your tooling
 
@@ -132,8 +132,8 @@ True # should return True
 [Brownie](https://eth-brownie.readthedocs.io/en/stable/) is a Python-based development and testing framework for smart contracts targeting the Ethereum Virtual Machine. To add the Conflux eSpace networks to Brownie, run the following command:
 
 ```bash
-brownie networks add "Conflux eSpace" conflux-espace-main name=Mainnet host=https://evm.confluxrpc.com explorer=https://evm.confluxscan.io chainid=1030
-brownie networks add "Conflux eSpace" conflux-espace-test name=Testnet host=https://evmtestnet.confluxrpc.com explorer=https://evmtestnet.confluxscan.io chainid=71
+brownie networks add "Conflux eSpace" conflux-espace-main name=Mainnet host=https://evm.confluxrpc.com explorer=https://evm.confluxscan.org chainid=1030
+brownie networks add "Conflux eSpace" conflux-espace-test name=Testnet host=https://evmtestnet.confluxrpc.com explorer=https://evmtestnet.confluxscan.org chainid=71
 ```
 
 To deploy on eSpace, specify the Conflux network by using the `--network` option.

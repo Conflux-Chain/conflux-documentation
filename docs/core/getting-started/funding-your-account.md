@@ -65,7 +65,7 @@ You can select `CFX` in the tokens list and clic on the `CLAIM` button, a sign t
 
 ![SignTransaction](./img/SignTransaction)
 
-If successful, the interface will return the hash of the CFX transaction. Switch back to Fluent and you can see that the balance will increase by 1,000 CFX. You can use the hash to view the details of the transaction on [ConfluxScan](https://testnet.confluxscan.io/).
+If successful, the interface will return the hash of the CFX transaction. Switch back to Fluent and you can see that the balance will increase by 1,000 CFX. You can use the hash to view the details of the transaction on [ConfluxScan](https://testnet.confluxscan.org/).
  
 ![AddressWithTestCFX](./img/AddressWithTestCFX)
 

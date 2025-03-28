@@ -26,8 +26,8 @@ Most smart contract tooling has plugins for verifying your contracts easily on C
 
 | Network    | Scan API |
 | ---------- | ----------------------------- |
-| Mainnet | https://evmapi.confluxscan.io/api/   |
-| Testnet | https://evmapi-testnet.confluxscan.io/api/   |
+| Mainnet | https://evmapi.confluxscan.org/api/   |
+| Testnet | https://evmapi-testnet.confluxscan.org/api/   |
 
 ### Hardhat
 
@@ -59,8 +59,8 @@ const config: HardhatUserConfig = {
         network: 'espaceTestnet',
         chainId: 71,
         urls: {
-          apiURL: 'https://evmapi-testnet.confluxscan.io/api/',
-          browserURL: 'https://evmtestnet.confluxscan.io/',
+          apiURL: 'https://evmapi-testnet.confluxscan.org/api/',
+          browserURL: 'https://evmtestnet.confluxscan.org/',
         },
       },
     ],
@@ -96,7 +96,7 @@ Refer to the [Foundry documentation](https://book.getfoundry.sh/reference/forge/
 
 ```bash
 forge verify-contract <contract address> <contract name> \
-  --verifier-url https://evmapi-testnet.confluxscan.io/api/ \
+  --verifier-url https://evmapi-testnet.confluxscan.org/api/ \
   --etherscan-api-key <anything is ok> \
   --constructor-args <your constructor arguments>
 ```

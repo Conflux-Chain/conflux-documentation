@@ -303,7 +303,7 @@ For Conflux Core Space contract development, Ethereum toolchains are used to com
 
 ## Address Format Convert Tool
 
-ConfluxScan provide a [Online Address Converter](https://www.confluxscan.io/address-converter) which is very useful.
+ConfluxScan provide a [Online Address Converter](https://www.confluxscan.org/address-converter) which is very useful.
 
 ![](./img/scan-address-converter.png)
 
@@ -311,7 +311,7 @@ ConfluxScan provide a [Online Address Converter](https://www.confluxscan.io/addr
 
 ### How to convert between base32 and hex addresses?
 
-Use the [Online Address Converter](https://www.confluxscan.io/address-converter) or the SDKs to convert between base32 and hex addresses.
+Use the [Online Address Converter](https://www.confluxscan.org/address-converter) or the SDKs to convert between base32 and hex addresses.
 
 ### When should I use hex addresses?
 
