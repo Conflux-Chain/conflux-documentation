@@ -104,7 +104,7 @@ function isAllWhitelisted(address contractAddr) public view returns (bool)
 
 您可以调用 `SponsorWhitelistControl` 的查询方法来检查合约的代付信息。 例如，使用 `getSponsorForGas` 来检查 gas 费的代付方。
 
-您可以使用 ConfluxScan 里面的的 [Read and Write Contract 页面](https://confluxscan.io/address/cfx:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaaegg2r16ar?tab=contract-viewer) 来调用这些查询方法。
+You can use ConfluxScan's [Read and Write Contract page](https://confluxscan.org/address/cfx:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaaegg2r16ar?tab=contract-viewer) to call the query methods.
 
 ### 为什么在我已经赞助了一个合约后我的交易仍然会失败？
 
