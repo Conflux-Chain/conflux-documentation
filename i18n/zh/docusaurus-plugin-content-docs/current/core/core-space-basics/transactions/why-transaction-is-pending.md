@@ -30,7 +30,7 @@ tags:
 
 ## 如何查找待处理交易的原因？
 
-如果待处理交易已成功插入 [ConfluxScan](https://www.confluxscan.io/) 使用的节点的交易池中，则可以在 Scan 上通过哈希搜索该交易，并在交易详细信息页面上查看交易状态为` Pending `。
+If the pending transaction is successfully inserted into the transaction pool of the node used by [Scan](https://www.confluxscan.org/), the transaction can be searched by hash on Scan, and the status of the transaction can be seen as `Pending` on the transaction details page.
 
 ![Tx Pending](./img/scan-pending-detail-02.png)
 
