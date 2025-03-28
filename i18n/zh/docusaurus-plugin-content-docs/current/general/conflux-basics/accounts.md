@@ -30,7 +30,7 @@ The account implementation, including the account content and address computing 
 
 ## 地址
 
-Account addresses, like bank account numbers, identify accounts and can be examined on [ConfluxScan](https://confluxscan.io). However, the address format differs between [core space](../../core/core-space-basics/addresses.md) and espace. Core space使用CIP-37编码方案，而espace使用与以太坊相同的格式。
+Account addresses, like bank account numbers, identify accounts and can be examined on [ConfluxScan](https://confluxscan.org). However, the address format differs between [core space](../../core/core-space-basics/addresses.md) and espace. Core space使用CIP-37编码方案，而espace使用与以太坊相同的格式。
 
 下面是一些示例，显示了两个空间中的地址格式：
 
