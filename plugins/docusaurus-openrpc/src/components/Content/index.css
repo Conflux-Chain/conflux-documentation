@@ -1,3 +1,9 @@
 .json-schema-viewer {
     background-color: inherit;
 }
+.ant-form-item-required {
+    height: auto !important;
+}
+#root {
+    border: 0;
+}
