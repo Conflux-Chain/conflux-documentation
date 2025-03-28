@@ -127,13 +127,13 @@ Conflux 应用就安装成功了。
 
 **9.** 如果一切看起来正确，请在"接受并发送"界面上同时按下两个按钮以批准交易。 否则，按“拒绝”界面上的两个按钮来拒绝交易。
 
-交易被批准后，它现在已被签名并发送到Conflux网络。 您可以在 Fluent 中看到交易状态。 如果您在“历史记录”中点击交易右上角的箭头图标， 您可以在 [Conflux Scan](https://confluxscan.io) 上看到更多交易细节。
+交易被批准后，它现在已被签名并发送到Conflux网络。 您可以在 Fluent 中看到交易状态。 If you click on "History", then click on the arrow icon at the top right corner of your transaction, you can see more details on [Conflux Scan](https://confluxscan.org).
 
 ![Ledger](./img/send-tx-using-ledger.jpg)
 
 ### 后续步骤
 
-你可以在 [confluxnetwork.org](https://confluxnetwork.org) 了解更多关于Conflux的信息。 您可以在 [Conflux Scan](https://confluxscan.io) 上检查交易和帐户细节。
+你可以在 [confluxnetwork.org](https://confluxnetwork.org) 了解更多关于Conflux的信息。 You can check transaction and account details on [Conflux Scan](https://confluxscan.org).
 
 如果您遇到任何问题，请在 <DiscordLink>Discord</DiscordLink> 或者 [Telegram](https://t.me/Conflux_English) 上联系我们，我们很乐意提供帮助。
 
@@ -226,7 +226,7 @@ Assuming your account on the Ledger device has some CFX tokens, the steps below 
 8. 仔细检查交易详情，然后点击“确认”。
 9. 您的Ledger设备现在将显示“审核交易”。 **仔细检查交易金额和收款地址**，可以通过多次按下设备上的右按钮来完成。
 10. 如果所有信息都正确，请按下“接受并发送”屏幕上的两个按钮以批准交易。 否则，按“拒绝”界面上的两个按钮来拒绝交易。
-11. 交易被批准后，它现在已被签名并发送到Conflux网络。 你可以在 MetaMask 中查看交易状态。 如果你点击该交易并点击“在区块浏览器中查看”，你可以在[Conflux Scan](https://evm.confluxscan.io)上查看更多细节。
+11. 交易被批准后，它现在已被签名并发送到Conflux网络。 你可以在 MetaMask 中查看交易状态。 If you click on the transaction and click "View on block explorer", you can see more details on [Conflux Scan](https://evm.confluxscan.org).
 
 #### 接收加密资产
 
