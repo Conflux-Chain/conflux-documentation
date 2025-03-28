@@ -20,7 +20,7 @@ displayed_sidebar: references
 - [Core Space SDK](../../core/build/sdks-and-tools/sdks)
 - [Core Space 工具](../../core/build/sdks-and-tools/tools)
 - [eSpace（以太坊）工具教程](../../espace/DeveloperQuickstart)
-- [ConfluxScan API](https://api.confluxscan.io/doc)
+- [ConfluxScan APIs](https://api.confluxscan.org/doc)
 
 ## 智能合约
 
