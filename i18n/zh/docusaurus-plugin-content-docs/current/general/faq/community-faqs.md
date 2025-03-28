@@ -84,7 +84,7 @@ CFX不是合约代币。 CFX相当于以太坊的ETH。
 
 ### **CFX有查询计算能力的API吗？**
 
-https://www.confluxscan.io/v1/plot?interval=514&limit=10
+https://www.confluxscan.org/v1/plot?interval=514&limit=10
 
 ### **什么是枢轴链切换？**
 

@@ -130,7 +130,7 @@ let txParams = {
 
 > 每个字段的详细说明可以在[这里](./core-space-basics/transactions/overview.md)找到。
 
-1. 通过 `cfxClient.cfx.sendTransaction ` 发送组成的交易，并获取返回的交易哈希。 随后您可以使用 `tx.mined()` 或 `tx.executed()` 查看交易详情，这些 API 将在交易被挖掘或执行时返回交易数据或交易收据。 注意，这两个 API 是对 `cfxClient.cfx.getTransactionByHash` 和 `cfxClient.cfx.getTransactionReceipt` 的简单封装。 您也可以使用交易哈希在 [Conflux Scan](https://confluxscan.io/) 中搜索已发送的交易。
+1. 通过 `cfxClient.cfx.sendTransaction ` 发送组成的交易，并获取返回的交易哈希。 随后您可以使用 `tx.mined()` 或 `tx.executed()` 查看交易详情，这些 API 将在交易被挖掘或执行时返回交易数据或交易收据。 注意，这两个 API 是对 `cfxClient.cfx.getTransactionByHash` 和 `cfxClient.cfx.getTransactionReceipt` 的简单封装。 You can also search the sent transaction at [Conflux Scan](https://confluxscan.org/) using transaction hash.
 
 ```javascript
 async function main() {
@@ -166,5 +166,5 @@ main().catch(e => console.error(e));
 1. Check [js-conflux-sdk's documentation](https://confluxnetwork.gitbook.io/js-conflux-sdk) for more details
 2. 参考 [SDKs](./build/sdks-and-tools/sdks.md) 了解其他 SDK 的示例。
 3. [Core Space 水龙头](https://faucet.confluxnetwork.org/)
-4. [Conflux Core 区块链浏览器](https://confluxscan.io/)
+4. [Conflux Core Scan](https://confluxscan.org/)
 5. [use-wallet](../general/build/tools/use-wallet.md)：一个面向前端的钱包钩子库，为轻量级 dApp 提供快速开发支持，支持 React 和 Vue3。

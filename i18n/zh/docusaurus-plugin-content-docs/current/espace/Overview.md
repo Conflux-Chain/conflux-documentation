@@ -58,7 +58,7 @@ eSpace 为**开发者**和**普通用户**提供的体验与以太坊相同。 �
 
 ## 其他资源
 
-- [eSpace 区块链浏览器](https://evm.confluxscan.io/)
+- [eSpace Blockchain Explorer](https://evm.confluxscan.org/)
 - [网络 RPC 端点](./network-endpoints.md)
 - [ConfluxHub 跨Space桥 Dapp](https://confluxhub.io/espace-bridge/cross-space)
 - [eSpace 测试网水龙头](https://efaucet.confluxnetwork.org/)

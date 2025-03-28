@@ -33,8 +33,8 @@ Contributor POAPs operate distinctly from [FC reward guidelines](./reward-guidel
 
 **POAP 合约地址:**
 
-- **Core Space:** [cfx:acd97pbhxm11cegrz3anuuvcuj9j0nh956a108f5cc](https://www.confluxscan.io/address/cfx:acd97pbhxm11cegrz3anuuvcuj9j0nh956a108f5cc)
-- **eSpace:** [0x500371e7ec0b5bca911a11964300e694bb0fec9d](https://evm.confluxscan.io/address/0x500371e7ec0b5bca911a11964300e694bb0fec9d)
+- **Core Space:** [cfx:acd97pbhxm11cegrz3anuuvcuj9j0nh956a108f5cc](https://www.confluxscan.org/address/cfx:acd97pbhxm11cegrz3anuuvcuj9j0nh956a108f5cc)
+- **eSpace:** [0x500371e7ec0b5bca911a11964300e694bb0fec9d](https://evm.confluxscan.org/address/0x500371e7ec0b5bca911a11964300e694bb0fec9d)
 
 这些POAP，在 Core Space 和 eSpace 中都可以部署，并作为一个统一的 NFT，象征着您在 Conflux 网络中做出的宝贵贡献的凭证。
 
@@ -44,11 +44,11 @@ Contributor POAPs operate distinctly from [FC reward guidelines](./reward-guidel
 
 ## POAP 持有者的 FC（FansCoin）奖励
 
-为了表达我们的感谢，贡献者可以凭借他们拥有的每个 POAP 领取 FansCoin（FC）奖励。 不同的 POAP 获得的 FC 奖励数量也各不相同。
+As a token of appreciation, contributors can claim [FansCoin (FC)](https://confluxscan.org/token/cfx:achc8nxj7r451c223m18w2dwjnmhkd6rxawrvkvsy2) rewards for each POAP they own. 不同的 POAP 获得的 FC 奖励数量也各不相同。
 
 这是与POAP相关联的附加奖励，并不影响与 [奖励指南](./reward-guidelines.md)相关的奖励。
 
-> 请注意，FC 奖池位于 Core Space [cfx:achm6kb92by13rpvwd04zscn1127zuaseu25usm7sc](https://confluxscan.io/address/cfx:achm6kb92by13rpvwd04zscn1127zuaseu25usm7sc)。
+> Please note that the FC reward pool is located exclusively in Core Space at [cfx:achm6kb92by13rpvwd04zscn1127zuaseu25usm7sc](https://confluxscan.org/address/cfx:achm6kb92by13rpvwd04zscn1127zuaseu25usm7sc).
 
 ## 对于 POAP 发放规则的定期审查
 

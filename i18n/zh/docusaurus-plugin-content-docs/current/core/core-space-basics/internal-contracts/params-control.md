@@ -23,8 +23,8 @@ tags:
 
 `ParamsControl` 是一个地址为 `0x0888000000000000000000000000000000000007` 的智能合约，允许参与 Conflux 网络上的链参数 DAO 投票。 以下是该合约在测试网和主网环境中的地址，您可以在这些环境中与该合约进行交互：
 
-- **测试网地址**: [`cfxtest:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaa64p5db1w9`](https://testnet.confluxscan.io/address/cfxtest:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaa64p5db1w9)
-- **主网地址**: [`cfx:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaa6uhjxh70z`](https://confluxscan.io/address/cfx:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaa6uhjxh70z)
+- **Testnet Address**: [`cfxtest:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaa64p5db1w9`](https://testnet.confluxscan.org/address/cfxtest:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaa64p5db1w9)
+- **Mainnet Address**: [`cfx:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaa6uhjxh70z`](https://confluxscan.org/address/cfx:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaa6uhjxh70z)
 
 要检查当前的链参数，您可以使用`cfx_getParamsFromVote` JSON-RPC方法。 有关此方法的详细信息，参见 [cfx_getParamsFromVote文档](../../build/json-rpc/cfx-namespace.md#cfx_getparamsfromvote)。
 

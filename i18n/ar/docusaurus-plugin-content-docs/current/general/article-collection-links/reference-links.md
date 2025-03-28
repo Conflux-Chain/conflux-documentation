@@ -20,7 +20,7 @@ This page provides quick entries for Conflux reference documentation.
 - [Core Space SDKs](../../core/build/sdks-and-tools/sdks)
 - [Core Space Tools](../../core/build/sdks-and-tools/tools)
 - [eSpace(Ethereum) Tools Tutorial](../../espace/DeveloperQuickstart)
-- [ConfluxScan APIs](https://api.confluxscan.io/doc)
+- [ConfluxScan APIs](https://api.confluxscan.org/doc)
 
 ## Contracts
 

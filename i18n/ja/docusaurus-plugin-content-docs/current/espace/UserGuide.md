@@ -20,8 +20,8 @@ import img2 from "./img/metamask_add_network-ce.png"
   testnetChainId="71"
   mainnetRpcUrl="https://evm.confluxrpc.com"
   testnetRpcUrl="https://evmtestnet.confluxrpc.com"
-  mainnetScanUrl="https://evm.confluxscan.io"
-  testnetScanUrl="https://evmtestnet.confluxscan.io"
+  mainnetScanUrl="https://evm.confluxscan.org"
+  testnetScanUrl="https://evmtestnet.confluxscan.org"
   components={{
     Faucet() {
  return <a href="https://efaucet.confluxnetwork.org">espace faucet</a> }, Img1() { return <Image img={img1} /> }, Img2() { return <Image img={img2} /> }, }} />

@@ -45,7 +45,7 @@ Confura provides several available RPC endpoints for the mainnet and testnet. We
 
 #### Mainnet
 
-Chain ID for Conflux Core Space Mainnet is `1029(0x405)`. The corresponding blockchain explorer URL is https://confluxscan.io.
+Chain ID for Conflux Core Space Mainnet is `1029(0x405)`. The corresponding blockchain explorer URL is https://confluxscan.org.
 
 | RPC Endpoint                          | Type      | Notes                        |
 | ------------------------------------- | --------- | ---------------------------- |
@@ -58,7 +58,7 @@ Chain ID for Conflux Core Space Mainnet is `1029(0x405)`. The corresponding bloc
 
 #### Testnet
 
-Chain ID for Conflux Core Space Testnet is `1(0x1)`. The corresponding blockchain explorer URL is https://testnet.confluxscan.io.
+Chain ID for Conflux Core Space Testnet is `1(0x1)`. The corresponding blockchain explorer URL is https://testnet.confluxscan.org.
 
 | RPC Endpoint                   | Type      | Notes              |
 | ------------------------------ | --------- | ------------------ |

@@ -8,11 +8,11 @@ tags:
 
 Conflux nodes offer a rich set of configuration options, allowing the adjustment of node behavior by modifying these settings. This document provides an overview of the node configuration options and their meanings.
 
-## How to configure nodes.
+## How to configure nodes
 
 ### Configuration File
 
-The configuration file for Conflux nodes is `hydra.toml`, and by default, it is located in the `run` directory where the node program is downloaded. By modifying the configuration options in this file, you can adjust the behavior of the node.
+The configuration file for Conflux nodes is `hydra.toml`(`testnet.toml` for testnet), and by default, it is located in the `run` directory where the node program is downloaded. By modifying the configuration options in this file, you can adjust the behavior of the node.
 
 ### Command Line Parameters
 
@@ -45,6 +45,16 @@ evm_chain_id=1030
 
 Usually, this configuration option does not need to be modified unless you want to set up a local test network.
 
+### bootnodes
+
+Bootnodes are the initial nodes that the node connects to when it starts. The node will discover other nodes in the network through these bootnodes.
+
+```toml
+bootnodes="cfxnode://25265e1aa470d9d8667947820c4830a64e9f9678d6cb23ecde91e0447527f4926257b9637923a305ce91e15c929ed28164e6c32b76213764eb4a9624120ae1d7@39.97.180.246:32323,cfxnode://2b72adc3f52a80945db10fa35c3f6d02c73f65ff98b4a9eae4f7b244e8a51f01690e7dcef7a30bfb67fb07fcb2949e67c27487169623d40f6a9e55a8d04ca34f@39.107.143.220:32323"
+```
+
+Note: The mainnet and testnet bootnodes are different, you can get mainnet bootnodes from the [official-bootnodes](./official-bootnodes.md) page.
+
 ### Core Space RPC
 
 Core Space RPC related options.
@@ -52,9 +62,15 @@ Core Space RPC related options.
 ```toml
 jsonrpc_http_port=12537 # JSON-RPC HTTP port
 jsonrpc_ws_port=12535 # JSON-RPC WebSocket port
-public_rpc_apis='safe' # JSON-RPC API namespace list，Multiple namespaces are separated by commas, and using "all" represents enabling all APIs.
+# Specify the APIs available through the public JSON-RPC interfaces (HTTP, TCP, WebSocket)
+# using a comma-delimited list of API names.
+# Possible Core space names are: all, safe, cfx, pos, debug, pubsub, test, trace, txpool.
+# `safe` only includes `cfx` and `pubsub`, `txpool`.
+public_rpc_apis='safe' 
 poll_lifetime_in_seconds=60 # To open filter related methods
 ```
+
+Note: if some method is not available(eg. `method not found`), you can check the `public_rpc_apis` and `poll_lifetime_in_seconds` configuration.
 
 ### eSpace RPC
 
@@ -63,7 +79,21 @@ eSpace RPC related options.
 ```toml
 jsonrpc_http_eth_port=8545
 jsonrpc_ws_eth_port=8546
+# Possible eSpace names are: eth, ethpubsub, ethdebug.
+# `evm` only includes `eth` and `ethpubsub`
+# to use eth_debugTraceTransaction and other trace methods, you need to enable `ethdebug`
 public_evm_rpc_apis = "evm"
+```
+
+### eth_call/cfx_call max gas limit
+
+```toml
+# By default, the maximum gas limit supported by gas estimation is 27 million for 
+# core space and 15 million for espace. These limits are also supported by the majority 
+# of transaction pools. You can override this parameter, but be aware that the estimated 
+# gas may be rejected by transaction pools, including the transaction pool on yourself,
+#
+max_estimation_gas_limit = 30_000_000
 ```
 
 ### Data indexing
@@ -158,6 +188,10 @@ Transaction pool-related configuration options.
 tx_pool_size=50000 # tx pool size
 tx_pool_min_native_tx_gas_price=1_000_000_000 # core space tx minimum gas price
 tx_pool_min_eth_tx_gas_price=20_000_000_000 # eSpace tx minimum gas price
+# Controls whether transactions exceeding half of the gas limit are allowed to be packed.
+# If set to false, transactions exceeding half of the gas limit will not be packed.
+# For eSpace the block gas limit is 30 million, so the threshold is 15 million.
+tx_pool_allow_gas_over_half_block = false
 ```
 
 ### storage directory
@@ -210,7 +244,7 @@ use_isolated_db_for_mpt_table=true
 
 ## Configuration File Example
 
-For a more comprehensive configuration file example, you can refer to [hydra.toml](./configuration-files.md).
+For a more comprehensive configuration file example, you can refer to [hydra.toml](./configuration-files.md). There are more configuration options (with annotated explanations) available in the configuration file, and you can adjust them according to your needs.
 
 ## FAQs
 

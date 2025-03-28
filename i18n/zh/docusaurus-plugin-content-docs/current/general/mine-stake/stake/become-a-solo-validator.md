@@ -107,7 +107,7 @@ Once the node data is synchronized to the latest block (and the "Catch-up mode" 
 
 ## 在ConfluxScan中查看验证者的状态
 
-您还可以在[ConfluxScan](https://confluxscan.io/)中查看验证者的状态。 通过访问此链接 **`https://confluxscan.io/pos/accounts/0x<your-pos-node-address>?tab=overview`**
+You can also view validator's status in [ConfluxScan](https://confluxscan.org/). By visiting this url **`https://confluxscan.org/pos/accounts/0x<your-pos-node-address>?tab=overview`**
 
 在这个页面上，您可以查看：
 

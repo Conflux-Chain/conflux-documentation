@@ -102,11 +102,11 @@ ConfluxScan is the official blockchain explorer for the Conflux network. Proporc
 Links:
 
 - Mainnet
-  - Core Space: https://confluxscan.io or https://confluxscan.net
-  - eSpace: https://evm.confluxscan.io or https://evm.confluxscan.net
+  - Core Space: https://confluxscan.org or https://confluxscan.net
+  - eSpace: https://evm.confluxscan.org or https://evm.confluxscan.net
 - Testnet
-  - Core Space: https://testnet.confluxscan.io or https://testnet.confluxscan.net
-  - eSpace: https://evmtestnet.confluxscan.io or https://evmtestnet.confluxscan.net
+  - Core Space: https://testnet.confluxscan.org or https://testnet.confluxscan.net
+  - eSpace: https://evmtestnet.confluxscan.org or https://evmtestnet.confluxscan.net
 
 ### **Algoritmo de consenso**
 Un algoritmo de consenso es un proceso en ciencias de la computación usado para alcanzar un acuerdo sobre un único valor de datos entre los procesos o sistemas distribuidos. En el contexto de blockchain, se utiliza para acordar el (total) orden de las transacciones. Conflux utiliza un algoritmo de consenso único basado en la estructura Tree-Graph, que permite un alto rendimiento y baja latencia en redes descentralizadas a gran escala.
@@ -192,7 +192,7 @@ Significant to note is the principle of hash invertibility. A hash function is c
 ### **Internal Transactions**
 Internal transactions in blockchain refer to value transfers or operations within a smart contract. These transactions are triggered by external transactions and can involve actions such as transferring tokens, creating new tokens, executing function calls, or interacting with other smart contracts. These transactions are not recorded individually on the blockchain, but they can be tracked and displayed for analysis and visibility.
 
-[ConfluxScan](https://confluxscan.io) and [trace JSON-RPC API](../../core/build/json-rpc/trace-namespace.md) can track and display internal transactions for analysis and visibility.
+[ConfluxScan](https://confluxscan.org) and [trace JSON-RPC API](../../core/build/json-rpc/trace-namespace.md) can track and display internal transactions for analysis and visibility.
 
 Related links:
 
