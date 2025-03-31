@@ -21,6 +21,10 @@ tags:
   - 内置合约
 ---
 
+:::note
+Check [CIP-94](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-94.md) for more details.
+:::
+
 `ParamsControl` 是一个地址为 `0x0888000000000000000000000000000000000007` 的智能合约，允许参与 Conflux 网络上的链参数 DAO 投票。 以下是该合约在测试网和主网环境中的地址，您可以在这些环境中与该合约进行交互：
 
 - **Testnet Address**: [`cfxtest:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaa64p5db1w9`](https://testnet.confluxscan.org/address/cfxtest:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaa64p5db1w9)
@@ -39,38 +43,39 @@ pragma solidity >=0.8.0;
 
 interface ParamsControl {
     struct Vote {
+        // 0: powBaseReward, 1: interestRate, 2: storagePointProp, 3: baseFeeShareProp
         uint16 topic_index;
-        uint256[3] votes;
+        // [n_unchange, n_increase, n_decrease]
+        uint256[3] votes; 
     }
 
-/*** 查询函数 ***/
-/**
- * @dev 为参数投票
- * @param vote_round 投票轮次
- * @param vote_data 投票列表
- */
-function castVote(uint64 vote_round, Vote[] calldata vote_data) external;
+    /*** Query Functions ***/
+    /**
+     * @dev cast vote for parameters
+     * @param vote_round The round to vote for
+     * @param vote_data The list of votes to cast
+     */
+    function castVote(uint64 vote_round, Vote[] calldata vote_data) external;
 
-/**
- * @dev 读取账户的投票数据
- * @param addr 要读取的账户地址
- */
-function readVote(address addr) external view returns (Vote[] memory);
+    /**
+     * @dev read the vote data of an account
+     * @param addr The address of the account to read
+     */
+    function readVote(address addr) external view returns (Vote[] memory);
 
-/**
- * @dev 当前投票轮次
- */
-function currentRound() external view returns (uint64);
+    /**
+     * @dev Current vote round
+     */
+    function currentRound() external view returns (uint64);
 
-/**
- * @dev 读取指定轮次的总投票数
- * @param vote_round 投票轮次
- */
-function totalVotes(uint64 vote_round) external view returns (Vote[] memory);
+    /**
+     * @dev read the total votes of given round
+     * @param vote_round The vote number
+     */
+    function totalVotes(uint64 vote_round) external view returns (Vote[] memory);
 
-/**
- * @dev 读取该轮次的 PoS 质押额。
- */
+    /**
+     * @dev read the PoS stake for the round.
      function posStakeForVotes(uint64) external view returns (uint256);
 
 event CastVote(uint64 indexed vote_round, address indexed addr, uint16 indexed topic_index, uint256[3] votes);
