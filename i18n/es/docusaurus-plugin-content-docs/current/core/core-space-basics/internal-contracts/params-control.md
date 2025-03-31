@@ -21,6 +21,10 @@ tags:
   - Internal Contracts
 ---
 
+:::note
+Check [CIP-94](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-94.md) for more details.
+:::
+
 `ParamsControl` is a smart contract at address `0x0888000000000000000000000000000000000007` that allows participation in the chain parameter DAO vote on the Conflux network. Below are the addresses for both the Testnet and Mainnet environments, where you can interact with this contract:
 
 - **Testnet Address**: [`cfxtest:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaa64p5db1w9`](https://testnet.confluxscan.org/address/cfxtest:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaa64p5db1w9)
@@ -39,8 +43,10 @@ pragma solidity >=0.8.0;
 
 interface ParamsControl {
     struct Vote {
+        // 0: powBaseReward, 1: interestRate, 2: storagePointProp, 3: baseFeeShareProp
         uint16 topic_index;
-        uint256[3] votes;
+        // [n_unchange, n_increase, n_decrease]
+        uint256[3] votes; 
     }
 
     /*** Query Functions ***/
