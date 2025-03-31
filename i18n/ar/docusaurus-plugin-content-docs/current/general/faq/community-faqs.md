@@ -84,7 +84,7 @@ You can find all node related documentation on [THIS](../run-a-node/) section.
 
 ### **Does CFX have an API to query computing power?**
 
-https://www.confluxscan.io/v1/plot?interval=514&limit=10
+https://www.confluxscan.org/v1/plot?interval=514&limit=10
 
 ### **What is a pivot chain switch?**
 

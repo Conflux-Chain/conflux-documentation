@@ -27,12 +27,12 @@ tags:
   - Gas Sponsorship
 ---
 
-Conflux Core [赞助](../core-space-basics/sponsor-mechanism.md)提供了一个方便的功能给刚接触区块链的用户。 本教程将指导您如何使用 [ConfluxScan 读写工具](https://www.confluxscan.io/address/cfx:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaaegg2r16ar?tab=contract-viewer)来赞助一个合约。
+Conflux Core [赞助](../core-space-basics/sponsor-mechanism.md)提供了一个方便的功能给刚接触区块链的用户。 This tutorial will guide you on how to use the [ConfluxScan Read&Write Tool](https://www.confluxscan.org/address/cfx:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaaegg2r16ar?tab=contract-viewer) to sponsor a contract.
 
 合约读写工具允许用户与智能合约进行交互。 任何在 ConfluxScan 上验证过的合约都可以使用这个工具来读取或写入数据。
 
-- [主网上控制赞助白名单的读写工具](https://www.confluxscan.io/address/cfx:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaaegg2r16ar?tab=contract-viewer)
-- [控制测试网上赞助白名单的读写工具](https://testnet.confluxscan.io/address/cfxtest:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaaeprn7v0eh?tab=contract-viewer)
+- [Mainnet SponsorWhitelistControl Read&Write Tool](https://www.confluxscan.org/address/cfx:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaaegg2r16ar?tab=contract-viewer)
+- [Testnet SponsorWhitelistControl Read&Write Tool](https://testnet.confluxscan.org/address/cfxtest:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaaeprn7v0eh?tab=contract-viewer)
 
 ![](./imgs/sponsor/sponsor-read-methods.png)
 

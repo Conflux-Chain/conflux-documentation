@@ -51,8 +51,8 @@ pip install eth-brownie # 或者 pip3 install eth-brownie
 要将 Conflux eSpace 网络添加到 Brownie 中，请执行以下命令：
 
 ```bash
-brownie networks add "Conflux eSpace" conflux-espace-main name=Mainnet host=https://evm.confluxrpc.com explorer=https://evm.confluxscan.io chainid=1030
-brownie networks add "Conflux eSpace" conflux-espace-test name=Testnet host=https://evmtestnet.confluxrpc.com explorer=https://evmtestnet.confluxscan.io chainid=71
+brownie networks add "Conflux eSpace" conflux-espace-main name=Mainnet host=https://evm.confluxrpc.com explorer=https://evm.confluxscan.org chainid=1030
+brownie networks add "Conflux eSpace" conflux-espace-test name=Testnet host=https://evmtestnet.confluxrpc.com explorer=https://evmtestnet.confluxscan.org chainid=71
 ```
 
 或者使用 yaml 文件将导入 Conflux eSpace 网络到 Brownie 中：
@@ -62,12 +62,12 @@ live:
 - name: Conflux eSpace
   networks:
   - chainid: 1030
-    explorer: https://evm.confluxscan.io
+    explorer: https://evm.confluxscan.org
     host: https://evm.confluxrpc.com
     id: conflux-espace-main
     name: Mainnet
   - chainid: 71
-    explorer: https://evmtestnet.confluxscan.io
+    explorer: https://evmtestnet.confluxscan.org
     host: https://evmtestnet.confluxrpc.com
     id: conflux-espace-test
     name: Testnet

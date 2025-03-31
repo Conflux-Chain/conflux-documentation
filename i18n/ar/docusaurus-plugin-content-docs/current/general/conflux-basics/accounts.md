@@ -30,7 +30,7 @@ The account implementation, including the account content and address computing 
 
 ## Address
 
-Account addresses, like bank account numbers, identify accounts and can be examined on [ConfluxScan](https://confluxscan.io). However, the address format differs between [core space](../../core/core-space-basics/addresses.md) and espace. Core space uses the CIP-37 encoding scheme, while espace uses the same format as Ethereum.
+Account addresses, like bank account numbers, identify accounts and can be examined on [ConfluxScan](https://confluxscan.org). However, the address format differs between [core space](../../core/core-space-basics/addresses.md) and espace. Core space uses the CIP-37 encoding scheme, while espace uses the same format as Ethereum.
 
 Here are examples showing the address format in the 2 spaces:
 

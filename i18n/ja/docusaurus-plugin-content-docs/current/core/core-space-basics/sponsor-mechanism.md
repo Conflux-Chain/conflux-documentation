@@ -104,7 +104,7 @@ function isAllWhitelisted(address contractAddr) public view returns (bool)
 
 You can call `SponsorWhitelistControl`'s query methods to check the sponsorship information of a contract. For example, `getSponsorForGas` to check the gas sponsor.
 
-You can use ConfluxScan's [Read and Write Contract page](https://confluxscan.io/address/cfx:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaaegg2r16ar?tab=contract-viewer) to call the query methods.
+You can use ConfluxScan's [Read and Write Contract page](https://confluxscan.org/address/cfx:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaaegg2r16ar?tab=contract-viewer) to call the query methods.
 
 ### Why Did My Transaction Fail Even After I Sponsored a Contract?
 

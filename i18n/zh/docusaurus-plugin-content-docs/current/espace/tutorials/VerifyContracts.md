@@ -25,10 +25,10 @@ tags:
 
 大多数智能合约工具都有插件，可以轻松地在 ConfluxScan 上验证合约。
 
-| 网络名称    | 区块链浏览器 API                                                                                 |
-| ------- | ------------------------------------------------------------------------------------------ |
-| 主网      | https://evmapi.confluxscan.io/api/         |
-| Testnet | https://evmapi-testnet.confluxscan.io/api/ |
+| 网络名称    | 区块链浏览器 API                                                                                  |
+| ------- | ------------------------------------------------------------------------------------------- |
+| 主网      | https://evmapi.confluxscan.org/api/         |
+| Testnet | https://evmapi-testnet.confluxscan.org/api/ |
 
 ### Hardhat
 
@@ -61,8 +61,8 @@ const config: HardhatUserConfig = {
         network: 'espaceTestnet',
         chainId: 71,
         urls: {
-          apiURL: 'https://evmapi-testnet.confluxscan.io/api/',
-          browserURL: 'https://evmtestnet.confluxscan.io/',
+          apiURL: 'https://evmapi-testnet.confluxscan.org/api/',
+          browserURL: 'https://evmtestnet.confluxscan.org/',
         },
       },
     ],
@@ -98,7 +98,7 @@ Note: If the above does not work, try verifying with the following instead: apiU
 
 ```bash
 forge verify-contract <contract address> <contract name> \
-  --verifier-url https://evmapi-testnet.confluxscan.io/api/ \
+  --verifier-url https://evmapi-testnet.confluxscan.org/api/ \
   --etherscan-api-key <anything is ok> \
   --constructor-args <your constructor arguments>
 ```
