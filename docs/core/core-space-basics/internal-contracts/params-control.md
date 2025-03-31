@@ -40,7 +40,7 @@ pragma solidity >=0.8.0;
 interface ParamsControl {
     struct Vote {
         uint16 topic_index;
-        uint256[3] votes;
+        uint256[3] votes; // [n_unchange, n_increase, n_decrease]
     }
 
     /*** Query Functions ***/
