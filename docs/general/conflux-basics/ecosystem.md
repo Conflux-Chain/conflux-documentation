@@ -53,7 +53,7 @@ ConfluxHub is a vital component of the Conflux ecosystem, serving as a versatile
 
 If you want to learn how to use Confluxhub, you can follow [this](../tutorials/transferring-funds/transfer-funds-across-spaces.md) tutorial.
 
-## [PoS Validators](https://www.conflux-pos-validators.com/)
+## [PoS Validators](https://www.conflux-pos-validators.org)
 
 The Conflux Network employs a Proof of Stake (PoS) mechanism, and a comprehensive list of all Conflux PoS Validators can be found on this website. 
 
