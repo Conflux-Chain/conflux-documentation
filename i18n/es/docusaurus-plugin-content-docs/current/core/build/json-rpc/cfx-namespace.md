@@ -193,7 +193,6 @@ Below is a list of the Conflux RPC APIs and their availability on archive and fu
 | [`cfx_getCode`](#cfx_getcode)                                                     |    recent    |  recent   |
 | [`cfx_getCollateralForStorage`](#cfx_getcollateralforstorage)                     |    recent    |  recent   |
 | [`cfx_getConfirmationRiskByHash`](#cfx_getconfirmationriskbyhash)                 |      OK      |  recent   |
-| [`cfx_getDepositList`](#cfx_getdepositlist)                                       |    recent    |  recent   |
 | [`cfx_getInterestRate`](#cfx_getinterestrate)                                     |    recent    |  recent   |
 | [`cfx_getLogs`](#cfx_getlogs)                                                     |      OK      |  recent   |
 | [`cfx_getNextNonce`](#cfx_getnextnonce)                                           |    recent    |  recent   |
@@ -1784,7 +1783,7 @@ Result see [cfx_getBlockByHash](#cfx_getblockbyhash).
 
 ---
 
-### cfx_getDepositList
+### cfx_getDepositList(Deprecated)
 
 Returns the deposit list of the given account, identified by its address.
 
