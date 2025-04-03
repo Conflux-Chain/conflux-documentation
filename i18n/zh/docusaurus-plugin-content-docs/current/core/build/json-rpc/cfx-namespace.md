@@ -193,7 +193,6 @@ Conflux的归档节点和全节点会删除历史状态树，以减少存储空�
 | [`cfx_getCode`](#cfx_getcode)                                                     | recent | recent |
 | [`cfx_getCollateralForStorage`](#cfx_getcollateralforstorage)                     | recent | recent |
 | [`cfx_getConfirmationRiskByHash`](#cfx_getconfirmationriskbyhash)                 |   OK   | recent |
-| [`cfx_getDepositList`](#cfx_getdepositlist)                                       | recent | recent |
 | [`cfx_getInterestRate`](#cfx_getinterestrate)                                     | recent | recent |
 | [`cfx_getLogs`](#cfx_getlogs)                                                     |   OK   | recent |
 | [`cfx_getNextNonce`](#cfx_getnextnonce)                                           | recent | recent |
@@ -1784,7 +1783,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"cfx_getBlockByHashWithPivotAssum
 
 ---
 
-### cfx_getDepositList
+### cfx_getDepositList(Deprecated)
 
 返回通过地址识别的指定账户的质押列表。
 
