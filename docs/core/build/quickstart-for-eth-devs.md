@@ -57,6 +57,6 @@ If you already have an Ethereum Dapp and want to migrate it to Conflux Core Spac
 ## Other Resources
 
 - [Official Public RPC Endpoint](/docs/core/conflux_rpcs)
-- [Blockchain Explorer](https://confluxscan.io/)
+- [Blockchain Explorer](https://confluxscan.org/)
 - [How to Sponsor a Contract](/docs/core/tutorials/how-to-sponsor-contract)
 - [FAQs](/docs/core/FAQs)
