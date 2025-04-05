@@ -2584,7 +2584,7 @@ curl --location --request POST 'http://localhost:12537' \
     "id": 1,
     "jsonrpc": "2.0",
     "method": "cfx_getCollateralInfo",
-    "params": ["latest_executed"]
+    "params": ["latest_state"]
 }'
 ```
 
