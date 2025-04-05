@@ -2242,7 +2242,7 @@ curl --location --request POST 'http://localhost:12537' \
     "id": 1,
     "jsonrpc": "2.0",
     "method": "cfx_newFilter",
-    "params": ["fromEpoch": "0x873e12"]
+    "params": [{"fromEpoch": "0x873e12"}]
 }'
 ```
 
@@ -2379,7 +2379,7 @@ curl --location --request POST 'http://localhost:12537' \
     "id": 1,
     "jsonrpc": "2.0",
     "method": "cfx_getFilterChanges",
-    "params": [0x09294f7b3b63b52d3771fcafb7b7ed61]
+    "params": ["0x09294f7b3b63b52d3771fcafb7b7ed61"]
 }'
 ```
 
@@ -2422,7 +2422,7 @@ curl --location --request POST 'http://localhost:12537' \
     "id": 1,
     "jsonrpc": "2.0",
     "method": "cfx_getFilterLogs",
-    "params": [0x09294f7b3b63b52d3771fcafb7b7ed61]
+    "params": ["0x09294f7b3b63b52d3771fcafb7b7ed61"]
 }'
 ```
 
@@ -2459,7 +2459,7 @@ curl --location --request POST 'http://localhost:12537' \
     "id": 1,
     "jsonrpc": "2.0",
     "method": "cfx_uninstallFilter",
-    "params": [0x09294f7b3b63b52d3771fcafb7b7ed61]
+    "params": ["0x09294f7b3b63b52d3771fcafb7b7ed61"]
 }'
 ```
 
@@ -2584,7 +2584,7 @@ curl --location --request POST 'http://localhost:12537' \
     "id": 1,
     "jsonrpc": "2.0",
     "method": "cfx_getCollateralInfo",
-    "params": ["latest_executed"]
+    "params": ["latest_state"]
 }'
 ```
 
