@@ -133,7 +133,7 @@ function* foundUndeclaredTypes(
 export function detectedTypes(
   schema: Exclude<JSONSchema, true | false>,
 ): TypeValues[] {
-  // Find declarated type(s) provided by user
+  // Find declared type(s) provided by user
   const declaredTypes: TypeValues[] = Array.isArray(schema.type)
     ? schema.type
     : schema.type !== undefined
