@@ -67,6 +67,6 @@ Conflux Core Space的虚拟机基本可以完全兼容以太坊虚拟机，这�
 ## 其他资源
 
 - [官方的公开RPC 端点](/docs/core/conflux_rpcs)
-- [区块链浏览器](https://confluxscan.io/)
+- [Blockchain Explorer](https://confluxscan.org/)
 - [如何为合约提供代付](/docs/core/tutorials/how-to-sponsor-contract)
 - [常见问题](/docs/core/FAQs)
