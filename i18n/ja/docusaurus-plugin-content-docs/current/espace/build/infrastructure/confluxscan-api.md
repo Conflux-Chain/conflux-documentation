@@ -26,7 +26,7 @@ tags:
   - ConfluxScan
 ---
 
-[ConfluxScan](https://evm.confluxscan.io/) is a block explorer for the Conflux network, just like Etherscan for Ethereum. It provides a [**RESTful API**](https://evmapi.confluxscan.io/doc) for developers to query **aggregated blockchain data**. The API is free to use and compatible with the [Etherscan API](https://etherscan.io/apis).
+[ConfluxScan](https://evm.confluxscan.org/) is a block explorer for the Conflux network, just like Etherscan for Ethereum. It provides a [**RESTful API**](https://evmapi.confluxscan.org/doc) for developers to query **aggregated blockchain data**. The API is free to use and compatible with the [Etherscan API](https://etherscan.io/apis).
 
 ## Usage Scenarios
 
@@ -39,16 +39,16 @@ If you want get data like these:
 - Verify the source code of a contract, get the ABI of a contract
 - Query block number by timestamp
 
-Then you can use the ConfluxScan API to get the data you want. For a complete list of API endpoints, see [API swagger doc](https://evmapi.confluxscan.io/doc).
+Then you can use the ConfluxScan API to get the data you want. For a complete list of API endpoints, see [API swagger doc](https://evmapi.confluxscan.org/doc).
 
 ## API Endpoints
 
 The API endpoints are listed below:
 
-- Mainnet: `https://evmapi.confluxscan.io`
-- Testnet: `https://evmapi-testnet.confluxscan.io`
+- Mainnet: `https://evmapi.confluxscan.org`
+- Testnet: `https://evmapi-testnet.confluxscan.org`
 
-Check API's rate limit, notes in it's [swagger doc](https://evmapi.confluxscan.io/doc).
+Check API's rate limit, notes in it's [swagger doc](https://evmapi.confluxscan.org/doc).
 
 ## API Key
 
