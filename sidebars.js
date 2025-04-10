@@ -296,7 +296,15 @@ const sidebars = {
     // },
     {
       type: "doc",
-      id: "general/conflux-basics/additional-resources/conflux_papers",
+      id: "general/additional-resources/conflux_papers",
+    },
+    {
+      type: "doc",
+      id: "general/additional-resources/videos",
+    },
+    {
+      type: "doc",
+      id: "general/additional-resources/articles",
     },
     {
       type: "doc",
