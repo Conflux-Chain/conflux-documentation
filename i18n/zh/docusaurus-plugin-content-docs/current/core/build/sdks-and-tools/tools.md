@@ -39,7 +39,7 @@ ChainIDE 是基于云的多链 IDE。 在开发智能合约时，开发人员无
 
 ## 地址格式转换工具
 
-ConfluxScan 提供了一个高效的 [在线地址转换器](https://www.confluxscan.io/address-converter) 。
+ConfluxScan provides a [Online Address Converter](https://www.confluxscan.org/address-converter) which is very useful.
 
 ![](../../core-space-basics/img/scan-address-converter.png)
 
@@ -49,8 +49,8 @@ The following contract has been deployed and verified on the Conflux core space.
 
 主网：
 
-- Multicall3: [cfx:acevn2d3dr6vh4jca28c6cmvkktsg7r8n25vp9hnmw](https://confluxscan.io/address/cfx:acevn2d3dr6vh4jca28c6cmvkktsg7r8n25vp9hnmw?tab=contract-viewer)
+- Multicall3: [cfx:acevn2d3dr6vh4jca28c6cmvkktsg7r8n25vp9hnmw](https://confluxscan.org/address/cfx:acevn2d3dr6vh4jca28c6cmvkktsg7r8n25vp9hnmw?tab=contract-viewer)
 
 测试网：
 
-- Multicall3: [cfxtest:acay1u1fj9bz93334efs447tx1x6y5p61a944zyy47](https://testnet.confluxscan.io/address/cfxtest:acay1u1fj9bz93334efs447tx1x6y5p61a944zyy47?tab=contract-viewer)
+- Multicall3: [cfxtest:acay1u1fj9bz93334efs447tx1x6y5p61a944zyy47](https://testnet.confluxscan.org/address/cfxtest:acay1u1fj9bz93334efs447tx1x6y5p61a944zyy47?tab=contract-viewer)
