@@ -24,7 +24,7 @@ Developers can submit a request to the Foundation for sponsorship.
 
 ## Tutorial
 
-1. Go to the ConfluxScan official website (confluxscan.io)
+1. Go to the ConfluxScan official website (confluxscan.org)
 2. Click on "Blockchain", select "Sponsorship Contracts" under "Contracts" column and enter the sponsorship contract interface
 3. Fill in the search field with the address of the contract you want to apply for sponsorship, click "Search"
 4. Click on "Apply"

@@ -26,7 +26,7 @@ tags:
   - ConfluxScan
 ---
 
-[ConfluxScan](https://evm.confluxscan.io/) 是 Conflux 网络的区块链浏览器，就像 Etherscan 对于以太坊一样。 它提供了 [**RESTful API**](https://evmapi.confluxscan.io/doc) ，供开发者查询**聚合的区块链数据**。 该 API 可以免费使用，并且与 [Etherscan API](https://etherscan.io/apis) 兼容。
+[ConfluxScan](https://evm.confluxscan.org/) is a block explorer for the Conflux network, just like Etherscan for Ethereum. It provides a [**RESTful API**](https://evmapi.confluxscan.org/doc) for developers to query **aggregated blockchain data**. 该 API 可以免费使用，并且与 [Etherscan API](https://etherscan.io/apis) 兼容。
 
 ## 使用场景
 
@@ -39,16 +39,16 @@ tags:
 - 验证合约的源代码，获取合约的 ABI
 - 通过时间戳查询区块号
 
-您可以使用 ConfluxScan API 来获取您想要的数据。 要查看完整的 API 端点列表，请参阅 [API swagger 文档](https://evmapi.confluxscan.io/doc)。
+您可以使用 ConfluxScan API 来获取您想要的数据。 For a complete list of API endpoints, see [API swagger doc](https://evmapi.confluxscan.org/doc).
 
 ## API 端点
 
 API 端点如下所示：
 
-- 主网: `https://evmapi.confluxscan.io`
-- 测试网： `https://evmapi-testnet.confluxscan.io`
+- Mainnet: `https://evmapi.confluxscan.org`
+- Testnet: `https://evmapi-testnet.confluxscan.org`
 
-请在 [swagger 文档](https://evmapi.confluxscan.io/doc) 中查看 API 的速率限制。
+Check API's rate limit, notes in it's [swagger doc](https://evmapi.confluxscan.org/doc).
 
 ## API Key
 

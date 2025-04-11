@@ -19,7 +19,7 @@ Conflux eSpace 和 Core Space 是两个独立的 space，您不能直接将 CFX 
 
 这个合约在 Core Space 中可用，地址为：
 
-- base32 地址：['cfx:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaa2sn102vjv'](https://confluxscan.io/address/cfx:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaa2sn102vjv)
+- base32 address: [`cfx:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaa2sn102vjv`](https://confluxscan.org/address/cfx:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaa2sn102vjv)
 - 十六进制地址（在 solidity 中使用）：`0x0888000000000000000000000000000000000006`
 
 以下是这个合约的接口：

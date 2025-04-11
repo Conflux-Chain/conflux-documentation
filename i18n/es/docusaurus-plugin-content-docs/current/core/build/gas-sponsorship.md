@@ -24,7 +24,7 @@ Los desarrolladores pueden enviar una solicitud a la Fundación para el patrocin
 
 ## Tutorial
 
-1. Ir al sitio web oficial de ConfluxScan (confluxscan.io)
+1. Go to the ConfluxScan official website (confluxscan.org)
 2. Haga clic en "Blockchain", seleccione "Contract Sponsor" en la columna "Contracts" e ingrese la interfaz del contrato de patrocinio
 3. Rellene el campo de búsqueda con la dirección del contrato que desea solicitar patrocinio, haga clic en "Buscar"
 4. Haz clic en "Aplicar"
