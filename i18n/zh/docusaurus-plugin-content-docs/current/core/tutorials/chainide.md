@@ -5,7 +5,7 @@ description: 使用 ChainIDE 在 Core 空间部署智能合约
 displayed_sidebar: coreSidebar
 keywords:
   - ChainIDE
-  - Smart Contract Development
+  - 智能合约开发
   - Web-based IDE
   - Solidity
   - Contract Deployment
