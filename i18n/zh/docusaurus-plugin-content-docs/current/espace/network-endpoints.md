@@ -8,7 +8,7 @@ keywords:
   - RPC
   - JSON-RPC
   - Mainnet
-  - Testnet
+  - 测试网
   - 链 ID
   - HTTP endpoints
   - WebSocket endpoints
@@ -56,7 +56,7 @@ Chain ID for Conflux eSpace Mainnet is `1030(0x406)`. The corresponding blockcha
 | wss://evm.confluxrpc.com/ws           | Websocket |                |
 | wss://evm.confluxrpc.org/ws           | Websocket | 备用 RPC 服务      |
 
-#### Testnet
+#### 测试网
 
 Chain ID for Conflux eSpace Testnet is `71(0x47)`. The corresponding blockchain explorer URL is https://evmtestnet.confluxscan.org.
 
@@ -68,13 +68,13 @@ Chain ID for Conflux eSpace Testnet is `71(0x47)`. The corresponding blockchain 
 | wss://evmtestnet.confluxrpc.com/ws | Websocket |           |
 | wss://evmtestnet.confluxrpc.org/ws | Websocket |           |
 
-### Rate Limits
+### 速率限制
 
 为了保持服务的可用性，免费版本设有访问频率限制。 如果你需要更高级别的 RPC 服务，你可以通过 [Web3 Paywall](../general/build/tools/web3paywall.md) 进行购买，或者可以直接发送邮件到 [bd@confluxnetwork.org](mailto:bd@confluxnetwork.org) 向 Conflux 基金会申请。
 
 这里提供了各种费用等级及其访问速率限制的参考信息。
 
-| 付费级别 | 价格                          | Rate Limits                   | 购买链接                                                                                                                                                                                                                                         |
+| 付费级别 | 价格                          | 速率限制                          | 购买链接                                                                                                                                                                                                                                         |
 | ---- | --------------------------- | ----------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | 免费   | $0                          | 每秒 50 次调用，每天最多100,000次 调用     | -                                                                                                                                                                                                                                            |
 | 标准   | 150 美元/月                    | 每秒 100 次调用，每天最多 1,000,000 次调用 | [mainnet](https://confluxhub.io/payment/consumer/app/subscription/0x33A9451ee070d750a077C93f71D2cFcD0180Fa7D) <br/> [testnet](https://test.confluxhub.io/payment/consumer/app/subscription/0x4805C5B2741088B8458ed781083eA8940186E477) |
