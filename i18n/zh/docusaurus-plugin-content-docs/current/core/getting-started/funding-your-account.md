@@ -5,7 +5,7 @@ description: How to get CFX
 displayed_sidebar: coreSidebar
 keywords:
   - Mainnet
-  - Testnet
+  - 测试网
   - CFX
   - 水龙头
   - Fluent Wallet
@@ -36,11 +36,11 @@ import TabItem from '@theme/TabItem';
   </TabItem>
 </Tabs>
 
-## Mainnet Faucet
+## 主网水龙头
 
-You can use the [Conflux Faucets](https://conflux-faucets.com/) to get `0.02 CFX` on the mainnet. This amount will be enough for 3-10 transactions on Conflux Core Space.
+您可以使用 [Conflux 水龙头](https://conflux-faucets.com/) 在主网上获取 `0.02 CFX`。 这笔资金足够在 Conflux Core Space 上进行 3-10 笔交易。
 
-## Testnet Faucet dApp
+## 测试网水龙头 dApp
 
 我们开发了一个[Faucet Dapp](https://faucet.confluxnetwork.org/)，不仅可以用于领取` CFX`，还可以领取代币，目前包括 `FC` 和 `cUSDT`。
 
@@ -64,7 +64,7 @@ You can use the [Conflux Faucets](https://conflux-faucets.com/) to get `0.02 CFX
 
 ![签名交易](./img/SignTransaction)
 
-如果成功，界面将返回CFX交易的哈希。 切换回 Fluent，你可以看到余额将增加 1,000 CFX。 You can use the hash to view the details of the transaction on [ConfluxScan](https://testnet.confluxscan.org/).
+如果成功，界面将返回CFX交易的哈希。 切换回 Fluent，你可以看到余额将增加 1,000 CFX。 您可以使用交易哈希在[ConfluxScan](https://testnet.confluxscan.org/)上查看交易的详细信息。
 
 ![CFX 测试地址](./img/AddressWithTestCFX)
 
