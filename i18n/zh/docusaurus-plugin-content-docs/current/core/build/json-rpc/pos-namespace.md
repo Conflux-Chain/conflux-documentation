@@ -52,7 +52,7 @@ A PoS chain will on average perform one round of consensus `30 seconds` (i.e. tr
 
 注意：并不是每个回合都会生成一个块。 there may be network or consensus failures preventing a block from generating.
 
-### block.number
+### 区块编号（block.number）
 
 区块的block.number是指该区块的`高度`，每生成一个新的区块，该值就会加一。
 
