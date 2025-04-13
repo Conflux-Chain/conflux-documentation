@@ -65,7 +65,7 @@ The rest of this guide will assume your MetaMask is connected to _Conflux {props
 
 ## 水龙头
 
-### Mainnet Faucet
+### 主网水龙头
 
 To interact with our mainnet, you first need to receive mainnet CFX on {props.space} Mainnet. You can get mainnet CFX from [Conflux Faucets](https://conflux-faucets.com/).
 
