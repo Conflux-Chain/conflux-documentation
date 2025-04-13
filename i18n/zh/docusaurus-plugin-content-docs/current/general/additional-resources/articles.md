@@ -16,7 +16,7 @@ keywords:
   - Python-blockchain
   - Scaffold-ETH
 tags:
-  - Tutorials
+  - 教程
   - Articles
   - Learning Resources
 ---
@@ -36,13 +36,13 @@ tags:
 
 ## 开发教程
 
-- [Getting Started with Ethers: Sending Transactions and Deploying Smart Contracts](https://forum.conflux.fun/t/getting-started-with-ethers-sending-transactions-and-deploying-smart-contracts/21410)
-- [Deploy Smart Contracts and Fetch Real-Time CFX Prices with Pyth Oracle](https://forum.conflux.fun/t/deploy-smart-contracts-and-fetch-real-time-cfx-prices-with-pyth-oracle/21411)
-- [Python Scripts to Send Transactions on Conflux Core & eSpace](https://forum.conflux.fun/t/python-scripts-to-send-transactions-on-conflux-core-space-and-conflux-espace/21413)
-- [CFX Devkit Forum Post](https://forum.conflux.fun/t/cfx-devkit-development-tools-for-conflux/21439)
+- [开始使用Ethers：发送交易和部署智能合约](https://forum.conflux.fun/t/getting-started-with-ethers-sending-transactions-and-deploying-smart-contracts/21410)
+- [使用Pyth Oracle部署智能合约并获取实时CFX价格](https://forum.conflux.fun/t/deploy-smart-contracts-and-fetch-real-time-cfx-prices-with-pyth-oracle/21411)
+- [在Conflux Core和eSpace上发送交易的Python脚本](https://forum.conflux.fun/t/python-scripts-to-send-transactions-on-conflux-core-space-and-conflux-espace/21413)
+- [CFX开发工具包论坛帖子](https://forum.conflux.fun/t/cfx-devkit-development-tools-for-conflux/21439)
 
-## Project Walkthroughs & Case Studies
+## 项目演练与案例研究
 
-- [Learn how to build a complete NFT event ticketing platform using the Conflux blockchain!](https://forum.conflux.fun/t/learn-how-to-build-a-complete-nft-event-ticketing-platform-using-the-conflux-blockchain/21507)
-- [Integrating Conflux eSpace with Scaffold-ETH | Smart Contract Deployment & Debugging](https://forum.conflux.fun/t/integrating-conflux-espace-with-scaffold-eth-smart-contract-deployment-debugging/21714)
-- [How to Build a Staking dApp on Conflux | Step-by-Step Tutorial](https://forum.conflux.fun/t/how-to-build-a-staking-dapp-on-conflux-step-by-step-tutorial/21713)
+- [学习如何使用Conflux区块链构建一个完整的NFT活动票务平台！](https://forum.conflux.fun/t/learn-how-to-build-a-complete-nft-event-ticketing-platform-using-the-conflux-blockchain/21507)
+- [将Conflux eSpace与Scaffold-ETH集成 | 智能合约部署与调试](https://forum.conflux.fun/t/integrating-conflux-espace-with-scaffold-eth-smart-contract-deployment-debugging/21714)
+- [如何在Conflux上构建质押dApp | 逐步教程](https://forum.conflux.fun/t/how-to-build-a-staking-dapp-on-conflux-step-by-step-tutorial/21713)
