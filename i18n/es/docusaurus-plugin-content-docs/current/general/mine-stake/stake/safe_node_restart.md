@@ -36,9 +36,9 @@ For more details on penalties, see [Penalties and Slashing in PoS](/docs/general
 To safely restart your PoS node while avoiding penalties, follow this procedure:
 
 1. Exit the committee by running:
-
-     ./conflux rpc local pos stop_election
-
+   ```bash
+   ./conflux rpc local pos stop_election
+   ```
   This command returns either `NULL` or a future PoS block number. Once executed, your node will not participate in the next committee election.
 
 2. If you receive a block number response:
