@@ -18,7 +18,7 @@ keywords:
   - Drip
   - Transaction Sending
   - Error Handling
-  - Testnet
+  - 测试网
   - 水龙头
   - ConfluxScan
 tags:
