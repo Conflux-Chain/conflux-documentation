@@ -15,7 +15,7 @@ keywords:
   - 网络配置
   - Account Management
   - 水龙头
-  - Testnet
+  - 测试网
   - Mainnet
   - YAML
   - Private Key

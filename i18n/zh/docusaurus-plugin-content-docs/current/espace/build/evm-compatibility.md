@@ -40,8 +40,8 @@ eSpace 实现了一个以太坊虚拟机 (EVM)。 以下是 eSpace 和以太坊�
 ## 交易类型
 
 - eSpace最初只支持**155类型**交易(传统交易)。
-- [EIP-2930](https://eips.ethereum.org/EIPS/eip-2930) (type 1) & [EIP-1559](https://eips.ethereum.org/EIPS/eip-1559) (type 2) transactions are supported after hardfork v2.4.0.
-- [EIP-4844](https://eips.ethereum.org/EIPS/eip-4844) (type 3) transactions are not supported.
+- 在 v2.4.0 硬分叉后，开始支持 [EIP-2930](https://eips.ethereum.org/EIPS/eip-2930)（类型 1）和 [EIP-1559](https://eips.ethereum.org/EIPS/eip-1559)（类型 2）交易。
+- 不支持[EIP-4844](https://eips.ethereum.org/EIPS/eip-4844)（类型3）交易。
 
 ## EVM 操作码
 
@@ -69,7 +69,7 @@ eSpace 实现了一个以太坊虚拟机 (EVM)。 以下是 eSpace 和以太坊�
 
 ## 交易的 Gas 上限
 
-Only blocks whose height is a multiple of `5` can include Ethereum-type transactions. The total gas limit of these transactions cannot exceed half of the block gas limit, which is 15 million gas before v2.4.0 and 30 million gas after v2.4.0.
+只有区块高度为`5`的整数倍时，才能包含以太坊类型交易。 此类交易的总gas上限不得超过区块gas上限的50%，v2.4.0之前为1500万gas，之后为3000万gas。
 
 ## EVM 预编译合约
 

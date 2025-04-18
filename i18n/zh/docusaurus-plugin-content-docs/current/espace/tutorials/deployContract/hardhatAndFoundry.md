@@ -10,7 +10,7 @@ keywords:
   - Hardhat
   - Foundry
   - 教程
-  - Testnet
+  - 测试网
   - NodeJS
   - Yarn
   - Environment Variables
