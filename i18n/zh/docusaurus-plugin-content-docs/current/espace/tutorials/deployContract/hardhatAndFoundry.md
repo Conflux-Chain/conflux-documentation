@@ -62,7 +62,7 @@ eSpace 测试网允许任何人在 eSpace 上部署智能合约。 在本教程�
 
 6. 运行 `yarn test` 进行 hardhat 测试。
 
-### Video Guides
+### 视频指南
 
 以下视频展示了如何使用 Hardhat 部署智能合约：
 
@@ -123,7 +123,7 @@ import TabItem from '@theme/TabItem';
 
 ### forge script
 
-Because some opcodes in Conflux eSpace consume twice the amount of gas compared to Ethereum, when using the `forge script` command to execute a script, you need to pass an additional parameter (-g 200) to increase the gas limit. Otherwise, the transaction will fail after being sent to the chain due to Insufficient gas fee.
+在 Conflux eSpace 中，某些操作码的 Gas 消耗是以太坊的两倍。因此，在使用 `forge script`命令执行脚本时，需要额外传递参数 -g 200 来增加 Gas 限制。 否则，交易在发送到链上后可能会因为Gas 费用不足而失败。
 
 ```shell
 forge script script/Counter.s.sol --rpc-url https://evmtestnet.confluxrpc.com --private-key 0xabc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc1 --broadcast -g 200
