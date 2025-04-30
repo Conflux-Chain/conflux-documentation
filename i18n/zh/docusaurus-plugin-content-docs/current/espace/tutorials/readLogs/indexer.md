@@ -1,6 +1,6 @@
 ---
 sidebar_position: 4
-title: Create an indexer for Conflux
+title: 为Conflux创建一个索引器
 description: Read logs and events emitted
 keywords:
   - Conflux eSpace
@@ -36,7 +36,7 @@ tags:
 
 # Creating an Indexer for Conflux Contracts
 
-This tutorial will guide you through the process of creating an indexer for Conflux contracts. We'll use a sample project that demonstrates how to read logs and events emitted by the blockchain and store them in a database for quick retrieval.
+本教程将指导您创建一个Conflux合约的索引器。 我们将使用一个示例项目，演示如何读取区块链发出的日志和事件，并将其存储在数据库中以便快速检索。
 
 ## 概览
 
