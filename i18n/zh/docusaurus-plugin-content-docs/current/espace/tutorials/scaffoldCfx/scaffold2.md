@@ -11,13 +11,13 @@ tags:
   - NFT
 ---
 
-[Scaffold Conflux NFT Example](https://github.com/conflux-fans/conflux-scaffold-nft-example) is an adaptation of Scaffold-ETH-2 (https://scaffoldeth.io/) whereby we have adjusted the template to allow you to deploy a ERC721 contract on Conflux eSpace and leverage the components, integration of hardhat, and the quick deployment of Scaffold-ETH-2.
+[Scaffold Conflux NFT Example](https://github.com/conflux-fans/conflux-scaffold-nft-example) 是 Scaffold-ETH-2 (https://scaffoldeth.io/) 的一个改编版本，其模板已被调整，以便在 Conflux eSpace 上部署 ERC721 合约，并利用 Scaffold-ETH-2 的组件、`hardhat` 集成以及快速部署功能。
 
-In this tutorial, we go more in-depth of how the solidity contract is used and interact with the ERC721 contract to mint NFTs on Conflux eSpace that can be transfered to other wallets.
+在本教程中，我们将更深入地探讨 Solidity 合约的使用，以及如何与 ERC721 合约进行交互，以便在 Conflux eSpace 上铸造可以转移到其他钱包的 NFT。
 
-## Video Conflux
+## 视频Conflux
 
-Watch this [video](https://youtu.be/sj2ph_ctQUg) for full tutorial on how to create an app from scratch and deploy it live on Conflux eSpace.
+观看此[视频](https://youtu.be/sj2ph_ctQUg)，它完整地展示了如何从零开始创建一个应用并在Conflux eSpace 上实时部署。
 
 ## 克隆 Scaffold Conflux
 
@@ -28,7 +28,7 @@ git clone git@github.com:conflux-fans/conflux-scaffold-nft-example.git
 yarn install
 ```
 
-In the folder directory of `conflux-scaffold-nft-example` you will have a similar folder structure as the typical conflux scaffold repo. However, the hardhat folder includes a new contract called "ConfluxNFT.sol" which imports a bunch of openzepplin contracts.
+在`conflux-scaffold-nft-example`的文件夹目录中，您将看到一个类似于典型 Conflux Scaffold 仓库的文件夹结构。 However, the hardhat folder includes a new contract called "ConfluxNFT.sol" which imports a bunch of openzepplin contracts.
 
 The [openzepplin wizard](https://wizard.openzeppelin.com/#erc721) is a useful site to put together contract code for a NFT but it is best to review the libraries from node_modules within the hardhat folder and review the functions used in the solidity contract. Once you have have compiled and deployed the contract, review the debugger section in the frontend to see if the contract is constructed to your purposes.
 
