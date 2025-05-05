@@ -2,7 +2,7 @@
 sidebar_position: 2
 title: web3.py
 displayed_sidebar: eSpaceSidebar
-description: This page is meant to guide you through the basics on how to use web3.py when developing on Conflux eSpace.
+description: 本页面旨在指导您如何在Conflux eSpace上开发时使用web3.py的基础知识。
 keywords:
   - web3.py - Python - Conflux eSpace - Smart Contracts - Transactions - Blockchain Interaction - Solidity - ABI - Bytecode - HTTP Connection - Account Balance - Contract Deployment - Contract Methods - Call Methods - Send Methods - Gas Estimation - Transaction Signing - pip - RPC Endpoint - Private Key - Incrementer Contract - Compilation - Web3 Provider - Contract Instance - Transaction Receipt - solc-x - Gas Price Strategy
 tags:
@@ -10,26 +10,26 @@ tags:
   - 教程
 ---
 
-Web3.py and Web3.js are a set of libraries that facilitate the interaction of developers with Conflux nodes via the HTTP, IPC, or WebSocket communication protocols, using the Python and JavaScript programming languages respectively. This guide will provide you with the expertise to leverage the [**Web3.py**](https://web3py.readthedocs.io/) library for transmitting transactions and deploying smart contracts.
+Web3.py和Web3.js是一组库，通过HTTP、IPC或WebSocket通信协议，分别使用Python和JavaScript编程语言，为开发者与Conflux节点互动提供便利。 本指南将为您提供使用[**Web3.py**](https://web3py.readthedocs.io/)库进行交易传输和部署智能合约的专业知识。
 
-## Initiate a Project
+## 初始化项目
 
-To start, first create a directory where all the relevant files generated throughout this guide can be stored. Execute this task with the following command:
+首先，创建一个目录，用于存储本指南中生成的所有相关文件。 使用以下命令执行此任务：
 
 ```shell
 mkdir web3-examples && cd web3-examples 
 
 ```
 
-For the successful implementation of the upcoming sections, you'll need to install the Web3 library and the Solidity compiler. To obtain both packages, execute the following command:
+为了成功实现后续部分，您需要安装Web3库和Solidity编译器。 要获取两个包，请执行以下命令：
 
 ```shell
 pip3 install web3 py-solc-x 
 ```
 
-## Setup the HTTP connection
+## 设置HTTP连接
 
-Prepare your Web3 HTTP connection to align with any evm-powered network. To synchronize your project, you must secure an endpoint and API key of your own. Here's how you can get started with each network, step by step.
+Prepare your Web3 HTTP connection to align with any evm-powered network. 为了同步您的项目，您必须获得您自己的端点和API密钥。 以下是如何逐步开始使用每个网络的方法。
 
 ```python
 # Import Web3 library into your project: 
@@ -39,13 +39,13 @@ from web3 import Web3
 web3 = Web3(Web3.HTTPProvider('RPC-API-ENDPOINT-HERE')) 
 ```
 
-You can find Conflux eSpace Network Endpoints [**here**](../../network-endpoints.md).
+您可以在[**这里**](../../network-endpoints.md)找到Conflux eSpace网络端点。
 
-## Send a Transaction and check the balances
+## 发送交易并检查余额
 
-In this section, you will learn how to create two scripts in order to send a transaction between two accounts. The first script will be used to check the balances of the accounts before and after the transaction is sent. The second script will actually send the transaction.
+本节中，您将学习如何创建两个脚本，以便在两个账户之间发送交易。 第一个脚本将用于检查交易前后账户的余额。 第二个脚本将实际发送交易。
 
-### Check the balances
+### 检查余额
 
 To begin with the first script, you need to create a file called "balances.py" using the command "vim balances.py". In this file, you will set up the Web3 provider, define the variables "sender_address" and "recipient_address", and retrieve the balances of these accounts using the "web3.eth.get_balance" function. You will then format the results using the "web3.fromWei" function and print the balances in your terminal using the "print" function.
 To run the balances script, enter the command "python3 balances.py" in your terminal. The balances for the sender and recipient addresses will be displayed in your terminal in CFX.
@@ -69,7 +69,7 @@ print(f"The balance of { sender_address } is: { balance_sender } CFX")
 print(f"The balance of { recipient_address } is: { balance_recipient } CFX") 
 ```
 
-### Send a transaction
+### 发送交易
 
 To begin with the second script, you need to create a "transaction.py" file using the command "vim transaction.py". Within this file, you will import "rpc_gas_price_strategy" to obtain the gas price for the transaction. Then you will establish the Web3 provider, define the "sender" and "receiver" variables (including the private key for the "sender" account), establish the gas price strategy using the "web3.eth.set_gas_price_strategy" function, create and sign the transaction using the "web3.eth.account.sign_transaction" function, and send the transaction using the "web3.eth.send_raw_transaction" function. You will then wait for the transaction receipt using the "web3.eth.wait_for_transaction_receipt" function and print the transaction hash in your terminal.
 
@@ -113,17 +113,17 @@ tx_receipt = web3.eth.wait_for_transaction_receipt(tx_hash)
 print(f"Transaction successful with hash: { tx_receipt.transactionHash.hex() }") 
 ```
 
-## Deploy a Contract
+## 部署合约
 
-### Initialize a Smart Contract
+### 初始化智能合约
 
-Within the following sections, you will be initializing and executing a straightforward incremental contract named Incrementer.sol. You may commence the process by generating a file for the contract:
+在接下来的部分中，您将初始化和执行一个名为Incrementer.sol的简单的增量合约。 You may commence the process by generating a file for the contract:
 
 ```shell
 vim Incrementer.sol
 ```
 
-Once you have created the file, the subsequent step is to input the Solidity code into the file:
+一旦您创建了文件，接下来的步骤是将Solidity代码输入到文件中：
 
 ```solidity
 // SPDX-License-Identifier: MIT 
@@ -142,9 +142,9 @@ contract Incrementer {
 } 
 ```
 
-When the contract is deployed, the constructor function executes and assigns the starting value to the numericVal variable that is stored on the blockchain (the default is 0). By invoking the increaseVal function, the supplied _inputVal is added to the existing value. Note that executing this function requires sending a transaction, which alters the stored data. Lastly, the resetVal function reassigns the stored value to zero.
+当合约部署时，构造函数执行并将起始值赋给存储在区块链上的numericVal变量(默认值为0)。 通过调用increaseVal函数，会将提供的_inputVal添加到现有值上。 请注意，执行此函数需要发送交易，这会更改存储的数据。 最后，resetVal函数将存储的值重新赋为零。
 
-### Compile the Contract
+### 编译合约
 
 This section will guide you through the process of building a script that leverages the Solidity compiler to produce the ABI and bytecode for the Incrementer.sol contract. Start by generating a compile.py and fill it as bellow:
 
@@ -198,11 +198,11 @@ print(f'Contract deployed at address: { tx_receipt.contractAddress }')
 
 ```
 
-## Call methods
+## 调用方法
 
-When you interact with a contract through call methods, the contract's storage remains unchanged. This means that no transaction needs to be sent. Rather, call methods simply read various storage variables of the deployed contract. To create a script for this purpose, start by creating a file named get.py. Then, import the ABI, set up the Web3 provider, and define the account_from, including the private_key, which is required to sign the transaction.
+When you interact with a contract through call methods, the contract's storage remains unchanged. 这意味着不需要发送交易。 相反，调用方法只是简单地读取部署合约的各种存储变量。 To create a script for this purpose, start by creating a file named get.py. Then, import the ABI, set up the Web3 provider, and define the account_from, including the private_key, which is required to sign the transaction.
 
-Note that this is only for example purposes, and you should never store your private keys in a Python file. After that, create a contract instance using the web3.eth.contract function and passing in the ABI and address of the deployed contract. Finally, use the contract instance to call the number function.
+Note that this is only for example purposes, and you should never store your private keys in a Python file. 之后，使用web3.eth.contract函数创建一个合约实例，并传入已部署合约的ABI和地址。 最后，使用合约实例调用number函数。
 
 ```python
 from compile import abi 
