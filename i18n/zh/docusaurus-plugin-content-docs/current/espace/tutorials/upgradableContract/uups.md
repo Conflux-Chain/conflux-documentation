@@ -92,7 +92,7 @@ module.exports = {
 PRIVATE_KEY=your_private_key_here
 ```
 
-## Writing Smart Contracts
+## 编写智能合约
 
 1. Create the initial version of the Counter contract in `contracts/Counter.sol`:
 
@@ -318,7 +318,7 @@ main()
   npx hardhat run scripts/testCounter.js --network eSpaceTestnet
   ```
 
-  Expected output:
+  预期输出：
 
   ```
   Counter value: 1
