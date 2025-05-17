@@ -80,7 +80,7 @@ PRIVATE_KEY=your_private_key_here
 RPC_URL=https://evmtestnet.confluxrpc.com
 ```
 
-## Writing Smart Contracts
+## 编写智能合约
 
 1. Create the initial Counter contract in `src/Counter.sol`:
 
@@ -340,7 +340,7 @@ forge script script/DeployCounter.s.sol --rpc-url $RPC_URL --broadcast -g 200
 
 > **Note:** The `-g` flag sets the gas price multiplier (in percentage). Using `-g 200` means the gas price will be 200% of the estimated price, which helps prevent "insufficient gas fee" errors during deployment.
 
-Expected output:
+预期输出：
 
 ```
 Deploying Counter...
@@ -361,7 +361,7 @@ PROXY_ADDRESS=<PROXY_ADDRESS>
 forge script script/UpgradeCounter.s.sol --rpc-url $RPC_URL --broadcast -g 200
 ```
 
-Expected output:
+预期输出：
 
 ```
 ============ Before Upgrade ============
