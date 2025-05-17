@@ -307,7 +307,7 @@ npx hardhat run scripts/deploy.js --network eSpaceTestnet
 npx hardhat run scripts/testBeforeUpgrade.js --network eSpaceTestnet
 ```
 
-Expected output:
+预期输出：
 
 ```
 Words after calling Logic1's foo(): old
@@ -326,7 +326,7 @@ npx hardhat run scripts/upgrade.js --network eSpaceTestnet
 npx hardhat run scripts/testAfterUpgrade.js --network eSpaceTestnet
 ```
 
-Expected output:
+预期输出：
 
 ```
 Words after calling Logic2's foo(): new
