@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-title: Deploying Upgradeable Contracts using Hardhat
+title: 使用Hardhat部署可升级合约
 description: Learn how to deploy upgradeable contracts on Conflux eSpace using Hardhat
 keywords:
   - tutorial
@@ -16,28 +16,28 @@ tags:
   - Hardhat
 ---
 
-# Deploying Upgradeable Contracts on Conflux eSpace using Hardhat
+# 在Conflux eSpace上使用Hardhat部署可升级合约
 
 <!-- # Implementing Upgradeable Contracts: Basic Principles -->
 
-Before diving into the tutorial, let's briefly explain the basic principles of implementing upgradeable contracts:
+在深入学习教程之前，我们先简要解释一下实现可升级合约的基本原理：
 
-1. **Separation of Concerns**: Contract logic is separated from storage using two contracts:
+1. **关注点分离**: 合约逻辑与存储通过两个合约进行分离。
 
   - A Proxy contract that holds the state and receives user interactions.
   - A Logic contract (Implementation contract) that contains the actual code logic.
 
-2. **Delegated Calls**: The Proxy contract uses `delegatecall` to forward function calls to the Logic contract.
+2. **委托调用**:代理合约使用`delegatecall`将函数调用转发到逻辑合约。
 
-3. **Upgradability**: Upgrade by deploying a new Logic contract and updating the Proxy to point to it.
+3. **可升级性**: 通过部署一个新的逻辑合约并更新代理指向它来实现升级。
 
-4. **Fallback Function**: The Proxy contract uses a fallback function to catch and delegate all function calls.
+4. **回退函数**: 代理合约使用回退函数捕获并委托所有函数调用
 
 5. **Storage Layout**: Ensure new versions of the Logic contract maintain the same storage layout to prevent data corruption.
 
-The workflow of upgradeable contracts is as follows:
+可升级合约的工作流程如下：
 
-1. The Proxy contract stores the address of the current Logic contract.
+1. 代理合约存储当前逻辑合约的地址。
 2. When the Proxy is called, it triggers the fallback function.
 3. The fallback function uses `delegatecall` to forward the call to the Logic contract.
 4. The Logic contract executes the function in the context of the Proxy's storage.
@@ -49,7 +49,7 @@ Next, we'll proceed with the tutorial on how to implement this pattern on Conflu
 
 ## 1. 项目设置
 
-首先，确保你已经安装了 Node.js 和 npm。 Then, create a new directory and initialize the project:
+首先，确保你已经安装了 Node.js 和 npm。 然后，创建一个新目录并初始化项目：
 
 ```
 mkdir upgradeable-contract-demo
@@ -58,7 +58,7 @@ npm init -y
 npm install --save-dev hardhat @nomicfoundation/hardhat-toolbox dotenv
 ```
 
-Next, initialize the Hardhat project and select the JavaScript default template:
+接下来，初始化Hardhat项目并选择JavaScript默认模板：
 
 ```
 npx hardhat
@@ -70,7 +70,7 @@ After completing these steps, you'll have a basic Hardhat project structure usin
 
 ## 2. 配置Hardhat
 
-Create a Hardhat configuration file:
+创建Hardhat配置文件:
 
 ```javascript
 require("@nomicfoundation/hardhat-toolbox");
@@ -93,7 +93,7 @@ Create a .env file and add your private key:
 PRIVATE_KEY=your_private_key_here
 ```
 
-## 3. Write Smart Contracts
+## 3. 编写智能合约
 
 Create a contracts directory and add the following contracts:
 
@@ -174,7 +174,7 @@ contract Logic2 {
 }
 ```
 
-## 4. Deployment Script
+## 4. 部署脚本
 
 Create a scripts directory and add the following script:
 
@@ -203,7 +203,7 @@ main()
   });
 ```
 
-## 5. Upgrade Script
+## 5. 升级脚本
 
 ```javascript
 const hre = require("hardhat");
@@ -248,7 +248,7 @@ main()
   });
 ```
 
-## 6. Testing Before and After Upgrade
+## 6. 升级前后的测试
 
 Create testBeforeUpgrade.js and testAfterUpgrade.js:
 
