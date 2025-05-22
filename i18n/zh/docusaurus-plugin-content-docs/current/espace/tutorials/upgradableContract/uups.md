@@ -294,7 +294,7 @@ main()
   });
 ```
 
-## Deployment and Upgrade Process
+## 部署和升级过程
 
 1. Compile the contracts:
 
