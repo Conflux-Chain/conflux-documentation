@@ -329,7 +329,7 @@ contract CounterTest is Test {
 }
 ```
 
-## Deployment and Upgrade Process
+## 部署和升级过程
 
 1. Deploy the initial implementation and proxy:
 
