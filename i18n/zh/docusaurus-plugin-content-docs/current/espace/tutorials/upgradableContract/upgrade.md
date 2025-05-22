@@ -287,7 +287,7 @@ main()
 
 The content of testAfterUpgrade.js is similar to testBeforeUpgrade.js, but you need to change Logic1 to Logic2 and expect the value of the words variable to be "new".
 
-## 7. Deployment and Upgrade Process
+## 7. 部署和升级过程
 
 1. Compile the contracts:
 
@@ -333,4 +333,4 @@ Words after calling Logic2's foo(): new
 Current implementation address: 0x...(Logic2's address)
 ```
 
-By following this process, you can successfully deploy, test, and upgrade smart contracts on Conflux eSpace. This example demonstrates how to use a proxy contract to achieve upgradeability, allowing you to update contract logic without changing the contract address.
+通过这个过程，您可以成功地在 Conflux eSpace 上部署、测试和升级智能合约。 This example demonstrates how to use a proxy contract to achieve upgradeability, allowing you to update contract logic without changing the contract address.
