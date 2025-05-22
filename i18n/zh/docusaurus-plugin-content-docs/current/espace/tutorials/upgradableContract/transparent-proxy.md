@@ -143,7 +143,7 @@ contract BoxV2 {
 }
 ```
 
-## Deployment Script
+## 部署脚本
 
 Create a deployment script in `scripts/deploy.js`:
 
@@ -166,7 +166,7 @@ main()
   });
 ```
 
-## Upgrade Script
+## 升级脚本
 
 Create an upgrade script in `scripts/upgrade.js`:
 
