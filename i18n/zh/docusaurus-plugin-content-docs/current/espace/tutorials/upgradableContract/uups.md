@@ -12,11 +12,11 @@ tags:
   - 可升级的合约
 ---
 
-# Deploying Upgradeable Contracts using UUPS with Hardhat
+# 使用 Hardhat 部署可升级合约（UUPS 模式）
 
-### UUPS (Universal Upgradeable Proxy Standard)
+### UUPS（通用可升级代理标准）
 
-UUPS is an upgradeable proxy pattern that addresses some limitations of the transparent proxy pattern. Key features include:
+UUPS 是一种可升级的代理模式，解决了透明代理模式的某些局限性。 其主要特点包括：
 
 - **Upgrade Logic in Implementation**: The upgrade functionality is placed in the implementation contract rather than the proxy.
 - **Gas Efficiency**: More gas-efficient for users as there's no need to check the caller's identity on every function call.
