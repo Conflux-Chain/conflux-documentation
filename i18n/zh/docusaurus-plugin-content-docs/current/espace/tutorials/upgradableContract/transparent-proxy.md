@@ -21,7 +21,7 @@ Before diving into the tutorial, let's briefly introduce the concepts of transpa
 
 ### Transparent Proxy
 
-Transparent proxy is a special type of proxy contract that addresses selector conflict issues by separating management functions from user functions. Key features include:
+Transparent proxy is a special type of proxy contract that addresses selector conflict issues by separating management functions from user functions. 其主要特点包括：
 
 - **Separation of Management Functions**: The proxy contract contains specific management functions (such as upgrades) that can only be called by the administrator.
 - **Transparency**: For regular users, the existence of the proxy contract is "transparent," allowing them to interact with it as if they were directly interacting with the logic contract.
@@ -254,7 +254,7 @@ main()
   });
 ```
 
-## Deployment and Upgrade Process
+## 部署和升级过程
 
 1. Compile the contracts:
   ```
