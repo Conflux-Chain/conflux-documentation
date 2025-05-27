@@ -26,7 +26,7 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 rustup install 1.77.2
 ```
 
-Other dependencies including `clang`, `cmake (version >= 3.12)` and `sqlite (version >= 3.8.3)` can be installed with:
+Other dependencies including `clang`, `cmake (version >= 3.12)` and `sqlite (version >= 3.8.3 and < 4.0)` can be installed with:
 
 - Ubuntu 18.04-22.04:
 
