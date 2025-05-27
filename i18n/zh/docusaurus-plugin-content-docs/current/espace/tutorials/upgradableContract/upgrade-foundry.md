@@ -37,7 +37,7 @@ libs = ["lib"]
 espaceTestnet = "https://evmtestnet.confluxrpc.com"
 ```
 
-## 3. Write Smart Contracts
+## 3. 编写智能合约
 
 Create the following contracts in the `src` directory:
 
@@ -102,7 +102,7 @@ contract Logic2 {
 }
 ```
 
-## 4. Deployment Script
+## 4. 部署脚本
 
 Create a deployment script in the `script` directory:
 
@@ -131,7 +131,7 @@ contract DeployScript is Script {
 }
 ```
 
-## 5. Upgrade Script
+## 5. 升级脚本
 
 Create an upgrade script:
 
@@ -166,7 +166,7 @@ contract UpgradeScript is Script {
 }
 ```
 
-## 6. Testing Before and After Upgrade
+## 6. 升级前后的测试
 
 Create test scripts:
 
@@ -218,7 +218,7 @@ contract TestAfterUpgradeScript is Script {
 }
 ```
 
-## 7. Deployment and Upgrade Process
+## 7. 部署和升级过程
 
 1. Set up environment variables:
 
@@ -237,7 +237,7 @@ forge script script/Deploy.s.sol:DeployScript --rpc-url espaceTestnet --broadcas
 
 > **Note:** The `-g` flag sets the gas price multiplier (in percentage). Using `-g 200` means the gas price will be 200% of the estimated price, which helps prevent "insufficient gas fee" errors during deployment.
 
-Expected output:
+预期输出：
 
 ```
 Logic1 deployed to: 0x...(Logic1's address)
@@ -252,7 +252,7 @@ Proxy deployed to: 0x...(Proxy's address)
 forge script script/TestBeforeUpgrade.s.sol:TestBeforeUpgradeScript --rpc-url espaceTestnet 
 ```
 
-Expected output:
+预期输出：
 
 ```
 Words after calling Logic1's foo(): old
@@ -271,7 +271,7 @@ forge script script/Upgrade.s.sol:UpgradeScript --rpc-url espaceTestnet --broadc
 forge script script/TestAfterUpgrade.s.sol:TestAfterUpgradeScript --rpc-url espaceTestnet
 ```
 
-Expected output:
+预期输出：
 
 ```
 Words after calling Logic2's foo(): new
