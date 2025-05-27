@@ -86,7 +86,7 @@ module.exports = {
 };
 ```
 
-5. Create a `.env` file and add your private key:
+5. 创建一个`.env`文件并添加你的私钥：
 
 ```
 PRIVATE_KEY=your_private_key_here
@@ -145,7 +145,7 @@ contract BoxV2 {
 
 ## 部署脚本
 
-Create a deployment script in `scripts/deploy.js`:
+在`scripts/deploy.js`中创建部署脚本：
 
 ```javascript
 const { ethers, upgrades } = require("hardhat");
@@ -168,7 +168,7 @@ main()
 
 ## 升级脚本
 
-Create an upgrade script in `scripts/upgrade.js`:
+在`scripts/upgrade.js`中创建升级脚本：
 
 ```javascript
 const { ethers, upgrades } = require("hardhat");
@@ -188,7 +188,7 @@ main()
   });
 ```
 
-## Testing Scripts
+## 测试脚本
 
 Create a testing script in `scripts/testBox.js`:
 
@@ -267,7 +267,7 @@ main()
   npx hardhat run scripts/deploy.js --network eSpaceTestnet
   ```
 
-3. Test the initial version:
+3. 测试初始版本：
 
   ```
   npx hardhat run scripts/testBox.js --network eSpaceTestnet
