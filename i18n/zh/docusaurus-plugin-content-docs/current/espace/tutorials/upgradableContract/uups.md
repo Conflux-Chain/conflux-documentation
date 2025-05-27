@@ -18,32 +18,32 @@ tags:
 
 UUPS 是一种可升级的代理模式，解决了透明代理模式的某些局限性。 其主要特点包括：
 
-- **Upgrade Logic in Implementation**: The upgrade functionality is placed in the implementation contract rather than the proxy.
-- **Gas Efficiency**: More gas-efficient for users as there's no need to check the caller's identity on every function call.
-- **Smaller Proxy Contract**: The proxy contract is simpler and smaller, potentially reducing deployment costs.
+- **升级逻辑在实现中的应用**: 升级功能被放置在实现合约中，而不是代理合约中。
+- **燃气效率**: 由于无需在每个函数调用时检查调用者的身份，因此对用户来说更加节省燃气。
+- **更小的代理合约**: 代理合约更简单、更小，可能减少部署成本。
 
-### Comparison of Proxy Patterns
+### 代理模式比较
 
-1. **UUPS vs. Transparent Proxy**:
+1. **UUPS vs. 透明代理**:
 
-  - UUPS places upgrade logic in the implementation, while transparent proxy keeps it in the proxy contract.
-  - UUPS is more gas-efficient for regular function calls.
-  - Transparent proxy has a larger proxy contract but simpler implementation contracts.
+  - UUPS 将升级逻辑放在实现合约中，而透明代理将其放在代理合约中。
+  - UUPS 对于常规函数调用更节省燃气。
+  - 透明代理的代理合约较大，但实现合约更简单。
 
-2. **UUPS vs. Regular Upgradeable Proxy**:
+2. **UUPS vs. 传统可升级代理**:
 
   - UUPS provides better security against accidental contract locking.
-  - Regular upgradeable proxies are simpler but may be more prone to errors during upgrades.
+  - 传统可升级代理更简单，但在升级过程中更容易出错。
 
 3. **Common Features**:
-  - All patterns allow upgrading contract logic without changing the contract address.
-  - They all use delegate calls to forward function calls to the implementation contract.
+  - 所有模式都允许在不更改合约地址的情况下升级合约逻辑。
+  - 它们都使用委托调用（delegate calls）将函数调用转发到实现合约。
 
-UUPS is often preferred for its balance of security, gas efficiency, and flexibility. In this tutorial, we'll implement and deploy upgradeable contracts using UUPS on Conflux eSpace.
+由于其在安全性、燃气效率和灵活性方面的平衡，UUPS通常更受欢迎。 在本教程中，我们将在 Conflux eSpace 上使用 UUPS 实现和部署可升级合约。
 
 ## 项目设置
 
-1. Create a new directory and initialize the project:
+1. 创建一个新目录并初始化项目：
 
 ```bash
 mkdir uups-proxy-demo
@@ -58,17 +58,17 @@ npm install --save-dev hardhat @nomicfoundation/hardhat-toolbox @openzeppelin/ha
 npm install @openzeppelin/contracts-upgradeable
 ```
 
-3. Initialize the Hardhat project:
+3. 初始化 Hardhat 项目：
 
 ```bash
 npx hardhat
 ```
 
-Choose "Create a JavaScript project".
+选择"创建一个JavaScript项目".
 
 4. 配置Hardhat
 
-Edit the `hardhat.config.js` file:
+编辑`hardhat.config.js`文件:
 
 ```javascript
 require("@nomicfoundation/hardhat-toolbox");
@@ -86,7 +86,7 @@ module.exports = {
 };
 ```
 
-5. Create a `.env` file and add your private key:
+5. 创建一个`.env`文件并添加你的私钥：
 
 ```
 PRIVATE_KEY=your_private_key_here
@@ -94,7 +94,7 @@ PRIVATE_KEY=your_private_key_here
 
 ## 编写智能合约
 
-1. Create the initial version of the Counter contract in `contracts/Counter.sol`:
+1. 在 `contracts/Counter.sol`中创建Counter合约的初始版本:
 
 ```solidity
 // SPDX-License-Identifier: MIT
@@ -142,7 +142,7 @@ contract Counter is UUPSUpgradeable, OwnableUpgradeable {
 
 ```
 
-2. Create the upgraded CounterV2 contract in `contracts/CounterV2.sol`:
+2. 在`contracts/CounterV2.sol`中创建升级版的CounterV合约:
 
 ```solidity
 // SPDX-License-Identifier: MIT
@@ -190,7 +190,7 @@ contract CounterV2 is UUPSUpgradeable, OwnableUpgradeable {
 
 ## 部署脚本
 
-Create a deployment script in `scripts/deploy.js`:
+在`scripts/deploy.js`中创建部署脚本：
 
 ```javascript
 const { ethers, upgrades } = require("hardhat");
@@ -217,7 +217,7 @@ main()
 
 ## 升级脚本
 
-Create an upgrade script in `scripts/upgrade.js`:
+在`scripts/upgrade.js`中创建升级脚本：
 
 ```javascript
 const { ethers, upgrades } = require("hardhat");
@@ -238,9 +238,9 @@ main()
   });
 ```
 
-## Testing Scripts
+## 测试脚本
 
-Create a testing script in `scripts/testCounter.js`:
+在 `scripts/testCounter.js`中创建测试脚本：
 
 ```javascript
 const { ethers } = require("hardhat");
@@ -262,7 +262,7 @@ main()
   });
 ```
 
-Create another testing script in `scripts/testCounterV2.js`:
+在`scripts/testCounterV2.js`中创建另一个测试脚本：
 
 ```javascript
 const { ethers } = require("hardhat");
@@ -308,11 +308,11 @@ main()
   npx hardhat run scripts/deploy.js --network eSpaceTestnet
   ```
 
-  Make sure to note the deployed proxy address.
+  请确保记录下已部署的代理地址。
 
 3. Update the proxy address in `testCounter.js`, `upgrade.js`, and `testCounterV2.js`.
 
-4. Test the initial version:
+4. 测试初始版本：
 
   ```bash
   npx hardhat run scripts/testCounter.js --network eSpaceTestnet
