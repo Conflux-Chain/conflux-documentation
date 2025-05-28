@@ -18,7 +18,7 @@ tags:
 
 UUPS是一种可升级代理模式，解决了透明代理模式的一些局限性。 其主要特点包括：
 
-- **Upgrade Logic in Implementation**: The upgrade functionality is placed in the implementation contract rather than the proxy.
+- **升级逻辑在实现中的应用**: 升级功能被放置在实现合约中，而不是代理合约中。
 - **燃气效率**: 由于无需在每个函数调用时检查调用者的身份，因此对用户来说更加节省燃气。
 - **较小的代理合约**: 代理合约更简单且更小，可能减少部署成本。
 
