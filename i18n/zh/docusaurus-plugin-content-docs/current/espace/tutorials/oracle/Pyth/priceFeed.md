@@ -1,7 +1,7 @@
 ---
 sidebar_position: 1
-title: Retrieve Price
-description: Learn how to Use Pyth Oracle on Conflux eSpace to Retrieve CFX Price
+title: 获取价格
+description: 学习如何在 Conflux eSpace 上使用 Pyth Oracle 获取 CFX 价格
 keywords:
   - Conflux eSpace - Pyth Network - Oracle - Price Feed - Smart Contracts - Hardhat - JavaScript - Solidity - CFX Price - Testnet - EVM - Web3 Development - Blockchain - Tutorial - Deployment - Contract Interaction - Gas Estimation - Transaction Confirmation - Environment Variables - NPM - Node.js - Ethereum Compatibility - Pyth SDK - IPyth Interface - Price Update - Hermes Price Service
 displayed_sidebar: eSpaceSidebar
@@ -11,19 +11,19 @@ tags:
   - 教程
 ---
 
-# Retrieve Price
+# 获取价格
 
-This tutorial will guide you through building a project on Conflux eSpace using Hardhat and retrieving the CFX price through the Pyth oracle.
+本教程将引导您通过 Hardhat 在 Conflux eSpace 上构建项目，并通过 Pyth 预言机获取 CFX 价格。
 
 ## 前提条件
 
-Before starting, ensure you have the following software installed:
+在开始之前，请确保您已经安装了以下软件：
 
-1. Node.js and npm
+1. Node.js 和 npm
 2. Hardhat
-3. Conflux wallet extension
+3. Conflux 钱包扩展
 
-## Step 1: Create a Hardhat Project
+## 第1步：创建一个Hardhat项目
 
 First, create a new Hardhat project:
 
@@ -33,9 +33,9 @@ cd conflux-pyth-cfx-price
 npx hardhat
 ```
 
-Follow the prompts to create a basic JavaScript project.
+按照提示创建一个基础的JavaScript项目。
 
-## Step 2: Install Necessary Dependencies
+## 第2步：安装必要的依赖项
 
 Install the Pyth SDK and other required dependencies:
 
@@ -43,9 +43,9 @@ Install the Pyth SDK and other required dependencies:
 npm install @pythnetwork/pyth-sdk-solidity @pythnetwork/pyth-evm-js dotenv
 ```
 
-## Step 3: Configure Hardhat
+## 第3步：配置Hardhat
 
-Update `hardhat.config.js` to include the Conflux eSpace Testnet:
+更新`hardhat.config.js`文件，以包含Conflux eSpace测试网：
 
 ```javascript
 require("@nomicfoundation/hardhat-toolbox");
@@ -64,9 +64,9 @@ module.exports = {
 
 Make sure to set your private key as an environment variable for security.
 
-## Step 4: Write the Smart Contract
+## 第4步：编写智能合约
 
-Create `CFXPrice.sol` in the `contracts` directory:
+在`contracts`目录中创建`CFXPrice.sol`：
 
 ```solidity
 // SPDX-License-Identifier: MIT
@@ -93,9 +93,9 @@ contract CFXPrice {
 }
 ```
 
-## Step 5: Deploy the Smart Contract
+## 第5步：部署智能合约
 
-Create `deploy.js` in the `scripts` directory:
+在`scripts`目录中创建`deploy.js`：
 
 ```javascript
 const hre = require("hardhat");
@@ -117,9 +117,9 @@ main().catch((error) => {
 });
 ```
 
-## Step 6: Run the Deployment Script
+## 第6步：运行部署脚本
 
-Deploy the contract using:
+使用以下命令部署合约：
 
 ```bash
 npx hardhat run scripts/deploy.js --network confluxTestnet
@@ -127,7 +127,7 @@ npx hardhat run scripts/deploy.js --network confluxTestnet
 
 ## Step 7: Interact with the Contract
 
-Create `interact.js` in the `scripts` directory:
+在`scripts`目录中创建`interact.js`：
 
 ```javascript
 const hre = require("hardhat");
@@ -186,7 +186,7 @@ main().catch((error) => {
 });
 ```
 
-Run the interaction script:
+运行交互脚本：
 
 ```bash
 npx hardhat run scripts/interact.js --network confluxTestnet
@@ -196,7 +196,7 @@ npx hardhat run scripts/interact.js --network confluxTestnet
 
 ## 总结
 
-This tutorial demonstrates how to deploy a smart contract on Conflux eSpace Testnet that fetches the CFX/USD price using Pyth Network. Key points:
+This tutorial demonstrates how to deploy a smart contract on Conflux eSpace Testnet that fetches the CFX/USD price using Pyth Network. 关键要点：
 
 1. We use the correct CFX/USD price feed ID for Pyth.
 2. The contract is deployed on Conflux eSpace Testnet.

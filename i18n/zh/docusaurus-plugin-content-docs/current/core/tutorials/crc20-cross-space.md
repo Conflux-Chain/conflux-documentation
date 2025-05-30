@@ -24,10 +24,10 @@ tags:
   - Cross-Space
 ---
 
-This tutorial guides developers on transferring any CRC20 token from Core Space to eSpace, The goal is to transfer a CRC20 token (A) issued on coreSpace to become an ERC20 token (eA) in eSpace. Currently, if there is no corresponding token in eSpace, it's not possible to use the official [cross-space bridge](https://confluxhub.io/espace-bridge/cross-space) directly.
+本教程指导开发者将任意 CRC20 代币从 Core Space 转移到 eSpace，目标是将 Core Space 上发行的 CRC20 代币 (A) 转换为 eSpace 中的 ERC20 代币 (eA)。 目前，如果在 eSpace 中没有对应的代币，则无法直接使用官方的 [Cross Space 桥接功能](https://confluxhub.io/espace-bridge/cross-space) 。
 
 ![Can not cross space](./imgs/cross-space/cannot-cross-space.jpg)
-Before initiating cross-space operations, let's review several key contracts associated with the cross-space bridge:
+在开始 Space 之间的桥接操作前，让我们回顾几个与跨空间桥接相关的关键合约：
 
 **coreSpace 上的合约：**
 

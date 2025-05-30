@@ -8,13 +8,13 @@ keywords:
   - RPC Endpoints
   - Conflux Core Space
   - Mainnet
-  - Testnet
+  - 测试网
   - Confura
   - Unifra
   - 链 ID
   - HTTP Endpoints
   - WebSocket Endpoints
-  - Rate Limits
+  - 速率限制
   - API Key
   - Fee Tiers
   - Error Handling
@@ -45,7 +45,7 @@ Confura为主网和测试网提供了多个可用的RPC端点。 我们按照“
 
 #### 主网
 
-Conflux Core space 主网的链 ID 是 `1029(0x405)`。 The corresponding blockchain explorer URL is https://confluxscan.org.
+Conflux Core space 主网的链 ID 是 `1029(0x405)`。 相应的区块链浏览器 URL 是 https://confluxscan.org。
 
 | RPC 端点                                | 类型        | 说明             |
 | ------------------------------------- | --------- | -------------- |
@@ -56,9 +56,9 @@ Conflux Core space 主网的链 ID 是 `1029(0x405)`。 The corresponding blockc
 | wss://main.confluxrpc.com/ws          | Websocket |                |
 | wss://main.confluxrpc.org/ws          | Websocket | 备用 RPC 服务      |
 
-#### Testnet
+#### 测试网
 
-Conflux Core Space 测试网的链 ID 是 `1(0x1)`。 The corresponding blockchain explorer URL is https://testnet.confluxscan.org.
+Conflux Core Space 测试网的链 ID 是 `1(0x1)`。 相应的区块链浏览器 URL 是 https://testnet.confluxscan.org。
 
 | RPC 端点                         | 类型        | 备注        |
 | ------------------------------ | --------- | --------- |
@@ -68,13 +68,13 @@ Conflux Core Space 测试网的链 ID 是 `1(0x1)`。 The corresponding blockcha
 | wss://test.confluxrpc.com/ws   | Websocket |           |
 | wss://test.confluxrpc.org/ws   | Websocket |           |
 
-### Rate Limits
+### 速率限制
 
 为了保持服务的可用性，免费版本设有访问频率限制。 如果你需要更高级别的 RPC 服务，你可以通过 [Web3 Paywall](../general/build/tools/web3paywall.md) 进行购买，或者可以直接发送邮件到 [bd@confluxnetwork.org](mailto:bd@confluxnetwork.org) 向 Conflux 基金会申请。
 
 这里提供了各种费用等级及其访问速率限制的参考信息。
 
-| 付费级别 | 价格                          | Rate Limits                   | 购买链接                                                                                                                                                                                                                                         |
+| 付费级别 | 价格                          | 速率限制                          | 购买链接                                                                                                                                                                                                                                         |
 | ---- | --------------------------- | ----------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | 免费   | $0                          | 每秒 50 次调用，每天最多100,000次 调用     | -                                                                                                                                                                                                                                            |
 | 标准   | 150 美元/月                    | 每秒 100 次调用，每天最多 1,000,000 次调用 | [mainnet](https://confluxhub.io/payment/consumer/app/subscription/0x33A9451ee070d750a077C93f71D2cFcD0180Fa7D) <br/> [testnet](https://test.confluxhub.io/payment/consumer/app/subscription/0x4805C5B2741088B8458ed781083eA8940186E477) |
@@ -120,7 +120,7 @@ Unifra提供：
 - Unifra的NFT API
 - 带有请求浏览器的仪表板
 
-要使用Unifra的服务，开发者需要先注册一个账户，并在[Unifra 控制台](https://console.unifra.io/)中找到RPC端点。 For detail information check [Unifra's documentation](https://docs.unifra.io/)
+要使用Unifra的服务，开发者需要先注册一个账户，并在[Unifra 控制台](https://console.unifra.io/)中找到RPC端点。 详情请查看 [Unifra的文档](https://docs.unifra.io/)
 
 ### 公共端点
 

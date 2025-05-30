@@ -44,29 +44,29 @@ Pyth 已经集成在 Conflux eSpace 中，您可以直接使用。 请查看其[
 
 **[Wit/Oracle](https://witnet.io)** 是一个公开的、无需许可的、完全去中心化的 _权益证明（Proof-of-Stake）_ 区块链，由其原生加密货币 _$WIT_ 代币驱动。
 
-By means of the _**Wit/Oracle Bridging Framework**_ (a set of verified and counter-factual smart contracts deployed by the [_Witnet Foundation_](https://witnet.foundation)), all data that is publicly accessible on the Internet using HTTP/GET, HTTP/POST or even HTTP/HEAD requests, can be attested, aggregated and brought right into your smart contracts, truthful to the data sources being referred.
+通过_**Wit/Oracle桥接框架**_（由[_Witnet基金会_](https://witnet.foundation)部署的已验证且具备反事实特性的智能合约组），任何可通过HTTP/GET、HTTP/POST或HTTP/HEAD请求在互联网公开获取的数据，均可被验证和聚合后直接写入智能合约，确保与数据源完全一致。
 
-The most versatile, seamless and trustworthy oracle solution for your smart contracts:
+为您的智能合约提供最通用、无缝且值得信赖的预言机解决方案：
 
-- **Versatile**
-  - Access to data of any type, not just price feeds.
-  - Build your own custom and parameterized data feeds.
-  - Rely on any combination of public sources and APIs on the Internet.
-  - Fetch fully unpredictable and unbiased randomness.
-  - Link contracts across multiple chains via CCDRs (_i.e. Cross Chain Data Requests_).
-- **Seamless**
-  - Pull data updates straight from your smart contracts.
-  - Pay queries to the Wit/Oracle in plain _$CFX_ currency.
-  - No need to pre-fund your contracts with third-party ERC-20 tokens.
-  - No need to undergo off-chain subscriptions, nor KYC workflows.
-  - No need to run your own nodes, nor any other sort of infrastructure.
-- **Trustworthy**
-  - Improve data reliability by relying on multiple data sources.
-  - Settle the size of witnessing committees depending on your security concerns.
-  - Witnessing committee members get randomnly selected upon every data update.
-  - Formally verify data sources, off-chain computations and sampling timestamps.
+- **多功能性**
+  - 支持获取各类数据，不限于价格信息。
+  - 构建您自己的自定义和参数化数据源。
+  - 可依赖互联网上任意公共数据源与API的组合
+  - 获取完全不可预测且无偏的随机数
+  - 通过CCDR实现多链合约互连 (_跨链数据请求_)
+- **无缝衔接**
+  - 支持从智能合约直接获取数据更新
+  - 支持使用原生 _$CFX_ 代币向预言机支付查询费用
+  - 无需通过第三方ERC-20代币预存合约资金
+  - 无需进行链下订阅，也无需完成 KYC 流程。
+  - 无需自行维护节点或其他基础设施组件
+- **可信可靠**
+  - 通过依赖多个数据源来提高数据可靠性。
+  - 可根据安全需求配置见证委员会规模
+  - 每次数据更新时随机选取见证委员会成员
+  - 对数据源、链下计算与采样时间戳执行形式化验证
 
-You can check [start building now](https://medium.com/witnet/solidity-and-the-wit-oracle-852bc4b338c1) for the introduction of the Witnet solidity package and contracts framework as well as the tutorial of how to build and pull your own custom data feeds. .
+请参阅[立即开始构建](https://medium.com/witnet/solidity-and-the-wit-oracle-852bc4b338c1)，获取Witnet Solidity工具包与合约框架介绍，以及构建和获取自定义数据源的教程指南 .
 
 ## 常见问题解答
 

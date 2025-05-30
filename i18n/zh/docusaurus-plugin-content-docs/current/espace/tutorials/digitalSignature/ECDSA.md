@@ -57,7 +57,7 @@ contract SimpleECDSAExample {
 }
 ```
 
-This contract demonstrates the basic usage of ECDSA for signature verification. It uses OpenZeppelin's ECDSA library to:
+这个合约展示了 ECDSA 用于签名验证的基本用法。 它使用 OpenZeppelin 的 ECDSA 库来：
 
 1. 从签名中恢复签名者的地址
 2. 将恢复的地址与提供的签名者地址进行比较
@@ -94,7 +94,7 @@ console.log("Signature:", signature);
 
 ### 将ECDSA签名与Merkle树进行比较
 
-ECDSA 签名和 Merkle 树都是区块链应用中非常有用的技术，特别是在白名单和空投中。 Let's compare their characteristics:
+ECDSA 签名和 Merkle 树都是区块链应用中非常有用的技术，特别是在白名单和空投中。 让我们来比较一下它们的特点：
 
 #### Merkle树:
 

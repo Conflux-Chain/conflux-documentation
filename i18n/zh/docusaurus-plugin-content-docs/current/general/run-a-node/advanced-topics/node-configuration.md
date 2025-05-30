@@ -119,37 +119,40 @@ executive_trace=true
 
 全状态模式支持查询区块链的历史状态。
 
-要为单个空间启用全状态模式，可以使用`single_mpt_space`配置选项指定空间名称。
-
-```toml
-single_mpt_space = "evm" # 核心空间使用"native"
+To run a **fullstate node**, you need to use a specially compiled Conflux client program. 目前，官方的二进制发布版本未启用此功能，您需要自行编译。 The compilation command is:
+```bash
+cargo build --release --features u64-mpt-db-key
 ```
 
-启用双空间的全状态模式。
+To enabling the fullstate mode for dual spaces.
 
 ```toml
 enable_single_mpt_storage=true
 ```
 
-> 目前，Conflux 基金会不提供包含完整历史状态的快照数据，用户需要自行同步数据。 要运行一个支持在任意区块高度查询区块链状态的 **fullstate node** 节点，您需要使用一个特殊编译的 Conflux 客户端程序。 目前，官方的二进制发布版本未启用此功能，您需要自行编译。 The compilation command is:
-```bash
-cargo build --release --features u64-mpt-db-key
+To enable the fullstate mode for a single Space, an addition configuration can be used:
+
+```toml
+enable_single_mpt_storage=true
+single_mpt_space = "evm" # core-space use "native"
 ```
+
+> 目前，Conflux 基金会不提供包含完整历史状态的快照数据，用户需要自行同步数据。
 
 ### PivotHint
 
-如果您想要`完全同步数据`，您需要启用与 pivot_hint 相关的配置选项。
+If you want to `fully synchronize the data`, you need to enable the pivot_hint related configuration option.
 
 * `pivot_hint_path`: pivot hint文件的路径
 * `pivot_hint_checksum`:Page Digests 部分的预期校验和（十六进制字符串，不带“0x”前缀）
 
-注意：这两个配置项必须同时指定或同时省略。 如果只指定其中一个，将会导致错误。
+Note: These two configurations must either both be specified or both be omitted. Specifying only one will result in an error.
 
-PivotHint文件可以在[这里](https://github.com/Conflux-Chain/conflux-rust/pull/2935)下载。
+PivotHint file can be downloaded [here](https://github.com/Conflux-Chain/conflux-rust/pull/2935)
 
 ### cfx_getLogs/eth_getLogs相关选项
 
-`getLogs` RPC方法对节点造成了显著的性能负担。 过度查询此方法的数据可能导致节点负载高。 为了缓解这一点，调整以下配置选项以限制每个`getLogs`请求请求的数据量。
+The `getLogs` RPC method imposes a significant performance overhead on the node. Excessive querying of data with this method can lead to high node loads. To mitigate this, adjust the following configuration option to limit the amount of data requested per `getLogs` request.
 
 ```toml
 get_logs_filter_max_limit=1000
@@ -160,7 +163,7 @@ get_logs_filter_max_block_number_range=2000
 
 ### 日志
 
-与节点日志相关的配置选项。
+Configuration options related to node logs.
 
 ```toml
 log_conf="log.yaml" # 日志配置文件
@@ -170,7 +173,7 @@ log_level="info" # 值应为 "error"、"warn"、"info"、"debug"、"trace"、"of
 
 ### PoW挖矿
 
-与工作量证明（PoW）挖矿相关的配置选项。
+Configuration options related to Proof-of-Work (PoW) mining.
 
 ```toml
 mining_author="cfx:aarc9abycue0hhzgyrr53m6cxedgccrmmyybjgh4xg"
@@ -182,7 +185,7 @@ pow_problem_window_size=1
 
 ### 交易池
 
-与交易池相关的配置选项。
+Transaction pool-related configuration options.
 
 ```toml
 tx_pool_size=50000 # tx pool size
@@ -196,7 +199,7 @@ tx_pool_allow_gas_over_half_block = false
 
 ### 存储目录
 
-区块链数据存储目录配置：
+Blockchain data storage directory configuration:
 
 ```toml
 conflux_data_dir="./blockchain_data"
@@ -208,17 +211,17 @@ netconf_dir="./blockchain_data/net_config"
 
 #### pos_key 密码
 
-用于加密PoS私钥的密码，用来保护PoS私钥。 默认情况下，这个密码是在节点首次启动时通过命令行交互设置的。 您可以通过配置文件设置此密码以避免命令行交互。
+Password for encrypting the POS private key, used to secure the POS private key. By default, this password is set interactively through the command line during the first node startup. You can set this password through the configuration file to avoid command line interaction.
 
 ```toml
 dev_pos_private_key_encryption_password="aaaa"
 ```
 
-或者您可以通过环境变量传递它: `CFX_POS_KEY_ENCRYPTION_PASSWORD`。
+Or you can pass it through environment variable: `CFX_POS_KEY_ENCRYPTION_PASSWORD`.
 
 #### pos 配置文件
 
-以下是 PoS 配置文件、初始节点文件和私钥文件的默认路径。 您可以修改这些路径来自定义 PoS 配置。
+Below are the default paths for the POS configuration file, initial nodes file, and private key file. You can modify these paths to customize the POS configuration.
 
 ```toml
 # PoS 配置文件路径
@@ -229,11 +232,11 @@ pos_initial_nodes_path=./pos_config/initial_nodes.json
 pos_private_key_path=./pos_config/pos_key
 ```
 
-发布包含一个默认的 PoS 配置文件，可以在 `pos_config` 目录中找到。 `pos_key` 文件将在第一次节点启动后自动生成。
+The release package contains a default PoS configuration file, which can be found in the `pos_config` directory. The `pos_key` file will be generated automatically after the first node startup.
 
 ### 存储优化
 
-相关的存储优化选项。
+Storage optimization related options.
 
 ```toml
 # 为 MPT 表使用独立数据库
@@ -244,7 +247,7 @@ use_isolated_db_for_mpt_table=true
 
 ## 配置文件示例
 
-要获得更全面的配置文件示例，您可以参考[hydra.toml](./configuration-files.md)。 There are more configuration options (with annotated explanations) available in the configuration file, and you can adjust them according to your needs.
+For a more comprehensive configuration file example, you can refer to [hydra.toml](./configuration-files.md). There are more configuration options (with annotated explanations) available in the configuration file, and you can adjust them according to your needs.
 
 ## 常见问题解答
 
@@ -274,21 +277,21 @@ max_estimation_gas_limit=30000000
 
 ### 我的节点运行了一段时间后，我想启用`executive_trace`配置。 我需要重新同步数据吗？
 
-是的，您需要重新同步数据。
+Yes, you need to resynchronize the data.
 
 ### 官方提供的归档节点快照数据是否包含trace数据？
 
-是的，包含。
+Yes, it does.
 
 ### 修改配置后，我需要清除数据然后重启节点吗？
 
-根据情况而定，有时需要，有时不需要。 如果配置涉及数据存储或数据索引，配置更改时需要重启节点，例如：
+Depending on the situation, sometimes it does, sometimes it doesn’t. If the configuration involves data store or data index, you need to restart the node if the configuration changes, for example:
 
 - `persist_tx_index`
 - `executive_trace`
 - `persist_block_number_index`
 
-其他一般不需要重启。
+Other restart are generally not required.
 
 ### 我要访问 Core Space 的调试/测试 RPC 方法，需要配置哪些参数？
 

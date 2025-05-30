@@ -1,0 +1,6 @@
+position: 5
+link:
+  type: generated-index
+  description: The basic concepts and mechanisms for Conflux core space.
+label: Core Space Basics
+collapsed: false
