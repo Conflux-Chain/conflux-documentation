@@ -18,9 +18,9 @@
   },
   "dependencies": {
     "@cookbookdev/docsbot": "^4.5.2",
-    "@docusaurus/core": "^3.6.3",
-    "@docusaurus/plugin-ideal-image": "^3.6.3",
-    "@docusaurus/preset-classic": "^3.6.3",
+    "@docusaurus/core": "^3.8.1",
+    "@docusaurus/plugin-ideal-image": "^3.8.1",
+    "@docusaurus/preset-classic": "^3.8.1",
     "@mdx-js/react": "^3.0.0",
     "autoprefixer": "^10.4.13",
     "clsx": "^1.2.1",
@@ -32,8 +32,8 @@
     "tailwindcss": "^3.2.1"
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "^3.6.3",
-    "@docusaurus/types": "^3.6.3"
+    "@docusaurus/module-type-aliases": "^3.8.1",
+    "@docusaurus/types": "^3.8.1"
   },
   "browserslist": {
     "production": [
@@ -53,6 +53,6 @@
   "workspaces": [
     "./plugins/openrpc",
     "./plugins/docusaurus-openrpc"
-
-  ]
+  ],
+  "packageManager": "yarn@1.22.22+sha1.ac34549e6aa8e7ead463a7407e1c7390f61a6610"
 }
