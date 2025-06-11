@@ -14,36 +14,36 @@ tags:
   - Foundry
 ---
 
-# Deploying Upgradeable Contracts using Transparent Proxy with Foundry
+# 使用 Foundry 部署可升级合约（采用透明代理模式）
 
 ## 简介
 
-This tutorial demonstrates how to deploy and upgrade smart contracts using the transparent proxy pattern with Foundry. The transparent proxy pattern allows you to upgrade your smart contracts while maintaining the same address and state.
+This tutorial demonstrates how to deploy and upgrade smart contracts using the transparent proxy pattern with Foundry. 透明代理模式允许您在保持相同地址和状态的情况下升级智能合约。
 
 ## 项目设置
 
-1. Create a new Foundry project:
+1. 创建一个新的 Foundry 项目：
 
 ```bash
 forge init transparent-proxy-foundry-demo
 cd transparent-proxy-foundry-demo
 ```
 
-2. Install OpenZeppelin contracts:
+2. 安装 OpenZepelin 合约：
 
 ```bash
 forge install OpenZeppelin/openzeppelin-contracts
 forge install OpenZeppelin/openzeppelin-contracts-upgradeable
 ```
 
-1. Add the following to `remappings.txt`:
+1. 在`remappings.txt`中添加以下内容:
 
 ```
 @openzeppelin/=lib/openzeppelin-contracts/
 @openzeppelin-upgradeable/=lib/openzeppelin-contracts-upgradeable/
 ```
 
-4. Update `foundry.toml`:
+4. 更新`foundry.toml`:
 
 ```toml
 [profile.default]
@@ -58,9 +58,9 @@ remappings = [
 ]
 ```
 
-## Writing Smart Contracts
+## 编写智能合约
 
-1. Create the initial Box contract in `src/Box.sol`:
+1. 在`src/Box.sol`中创建初始的 Box 合约：
 
 ```solidity
 // SPDX-License-Identifier: MIT
@@ -89,7 +89,7 @@ contract Box is Initializable {
 }
 ```
 
-2. Create BoxV2 contract in `src/BoxV2.sol`:
+2. 在`src/BoxV2.sol`中创建BoxV2合约:
 
 ```solidity
 // SPDX-License-Identifier: MIT
@@ -123,9 +123,9 @@ contract BoxV2 is Initializable {
 }
 ```
 
-## Deployment Scripts
+## 部署脚本
 
-1. Create the deployment script in `script/DeployBox.s.sol`:
+1. 在`script/DeployBox.s.sol`中创建部署脚本:
 
 ```solidity
 // SPDX-License-Identifier: MIT
@@ -171,7 +171,7 @@ contract DeployBox is Script {
 }
 ```
 
-2. Create the upgrade script in `script/UpgradeBox.s.sol`:
+2. 在`script/UpgradeBox.s.sol`中创建升级脚本:
 
 ```solidity
 // SPDX-License-Identifier: MIT
@@ -236,27 +236,27 @@ contract UpgradeBox is Script {
 }
 ```
 
-## Environment Setup
+## 环境设置
 
-1. Create a `.env` file:
+1. 创建一个 `.env` 文件：
 
 ```bash
 PRIVATE_KEY=your_private_key_here
 RPC_URL=https://evmtestnet.confluxrpc.com
 ```
 
-## Deployment Process
+## 部署流程
 
-1. Deploy the initial implementation and proxy:
+1. 部署初始安装和代理：
 
 ```bash
 source .env
 forge script script/DeployBox.s.sol --rpc-url $RPC_URL --broadcast -g 200
 ```
 
-> **Note:** The `-g` flag sets the gas price multiplier (in percentage). Using `-g 200` means the gas price will be 200% of the estimated price, which helps prevent "insufficient gas fee" errors during deployment.
+> **注意:**`-g`标志设置燃气价格乘数(以百分比表示)。 使用`-g 200`意味着燃气价格将是估计价格的200%，这有助于阻止在部署过程中出现 "燃气费用不足"的错误。
 
-Expected output:
+预期输出：
 
 ```
 == Return ==
@@ -272,13 +272,13 @@ PROXY_ADDRESS=<PROXY_ADDRESS>
 ADMIN_ADDRESS=<ADMIN_ADDRESS>
 ```
 
-3. Upgrade to BoxV2:
+3. 升级到BoxV2：
 
 ```bash
 forge script script/UpgradeBox.s.sol --rpc-url $RPC_URL --broadcast -g 200
 ```
 
-Expected output:
+预期输出：
 
 ```
 
@@ -299,6 +299,6 @@ Value after increment: 43
 
 ```
 
-By following these steps, you can deploy and upgrade smart contracts using transparent proxy on Conflux eSpace with Foundry. This pattern not only allows you to update contract logic without changing the contract address but also effectively addresses selector conflicts by separating management functions from user functions.
+通过以下步骤，您可以在 Conflux eSpace 上使用 Foundry 部署和升级智能合约（采用透明代理模式）。 这种模式不仅允许您在不更改合约地址的情况下更新合约逻辑，还通过将管理功能与用户功能分离，有效地解决了选择器冲突的问题。
 
-The tutorial provides a complete workflow with all expected outputs at each step to help you successfully implement upgradeable contracts.
+本教程提供了一个完整的工作流程，涵盖每个步骤的预期输出，以帮助您成功实施可升级合约。

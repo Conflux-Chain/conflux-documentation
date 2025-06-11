@@ -20,7 +20,7 @@ keywords:
   - MetaMask
   - Blockchain Security
   - Mainnet
-  - Testnet
+  - 测试网
   - Wallet Integration
   - 故障排除
 tags:

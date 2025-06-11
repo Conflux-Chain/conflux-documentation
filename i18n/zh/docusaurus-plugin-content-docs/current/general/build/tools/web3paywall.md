@@ -56,4 +56,4 @@ Before you purchase the services of testnet, you can obtain some eSpace test tok
 
   > Making sure your api key works: visit the interfaces not supported by free tier, e.g. `cfx_newFilter` for core space and `eth_newFilter` for espace Making sure you are **NOT** connecting to https://*.confluxrpc.org endpoint. 这些是备用端点，API密钥将不会生效。
 
-- ConfluxScan API Pro-Service: use api key as query (e.g. `https://api.confluxscan.io/account/transactions?account=cfx%3Aaanjcf1esdz50j6zhkm0k60wc7669tfkw28mzudg24&apiKey=<api-key>`)
+- ConfluxScan API Pro-Service: use api key as query (e.g. `https://api.confluxscan.org/account/transactions?account=cfx%3Aaanjcf1esdz50j6zhkm0k60wc7669tfkw28mzudg24&apiKey=<api-key>`)

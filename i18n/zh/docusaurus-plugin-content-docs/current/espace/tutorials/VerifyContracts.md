@@ -25,10 +25,10 @@ tags:
 
 大多数智能合约工具都有插件，可以轻松地在 ConfluxScan 上验证合约。
 
-| 网络名称    | 区块链浏览器 API                                                                                  |
-| ------- | ------------------------------------------------------------------------------------------- |
-| 主网      | https://evmapi.confluxscan.org/api/         |
-| Testnet | https://evmapi-testnet.confluxscan.org/api/ |
+| 网络名称 | 区块链浏览器 API                                                                                  |
+| ---- | ------------------------------------------------------------------------------------------- |
+| 主网   | https://evmapi.confluxscan.org/api/         |
+| 测试网  | https://evmapi-testnet.confluxscan.org/api/ |
 
 ### Hardhat
 

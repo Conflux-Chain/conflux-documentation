@@ -14,7 +14,7 @@ keywords:
   - 归档节点
   - State Query
   - Mainnet
-  - Testnet
+  - 测试网
   - 配置
   - TOML
   - Blockchain Data

@@ -19,7 +19,7 @@ Under the hood there is a internal contract named `CrossSpaceCall` in Core Space
 
 This contract is available on Core Space under the address:
 
-- base32 address: [`cfx:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaa2sn102vjv`](https://confluxscan.io/address/cfx:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaa2sn102vjv)
+- base32 address: [`cfx:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaa2sn102vjv`](https://confluxscan.org/address/cfx:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaa2sn102vjv)
 - hex address(use in solidity): `0x0888000000000000000000000000000000000006`
 
 Below is the interface of this contract:

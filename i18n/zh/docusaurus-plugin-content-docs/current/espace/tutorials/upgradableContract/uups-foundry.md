@@ -12,54 +12,54 @@ tags:
   - 可升级的合约
 ---
 
-# Deploying Upgradeable Contracts using UUPS with Foundry
+# 使用 Foundry 部署可升级合约（UUPS）
 
-### UUPS (Universal Upgradeable Proxy Standard)
+### UUPS（Universal Upgradeable Proxy Standard，通用可升级代理标准）
 
-UUPS is an upgradeable proxy pattern that addresses some limitations of the transparent proxy pattern. Key features include:
+UUPS是一种可升级代理模式，解决了透明代理模式的一些局限性。 其主要特点包括：
 
-- **Upgrade Logic in Implementation**: The upgrade functionality is placed in the implementation contract rather than the proxy.
-- **Gas Efficiency**: More gas-efficient for users as there's no need to check the caller's identity on every function call.
-- **Smaller Proxy Contract**: The proxy contract is simpler and smaller, potentially reducing deployment costs.
+- **升级逻辑在实现中的应用**: 升级功能被放置在实现合约中，而不是代理合约中。
+- **燃气效率**: 由于无需在每个函数调用时检查调用者的身份，因此对用户来说更加节省燃气。
+- **较小的代理合约**: 代理合约更简单且更小，可能减少部署成本。
 
-### Comparison of Proxy Patterns
+### 代理模式比较
 
-1. **UUPS vs. Transparent Proxy**:
+1. **UUPS 与透明代理**:
 
-  - UUPS places upgrade logic in the implementation, while transparent proxy keeps it in the proxy contract.
-  - UUPS is more gas-efficient for regular function calls.
-  - Transparent proxy has a larger proxy contract but simpler implementation contracts.
+  - UUPS将升级逻辑放在实现合约中，而透明代理则将其保留在代理合约中。
+  - UUPS在正常函数调用时更节省燃气。
+  - 透明代理的代理合约较大，但实现合约更简单。
 
-2. **UUPS vs. Regular Upgradeable Proxy**:
+2. **UUPS 与常规可升级代理**:
 
-  - UUPS provides better security against accidental contract locking.
-  - Regular upgradeable proxies are simpler but may be more prone to errors during upgrades.
+  - UUPS 提供了更好的安全性，以防止合约被意外锁定。
+  - 常规可升级代理更简单，但在升级过程中可能更容易出现错误。
 
-3. **Common Features**:
-  - All patterns allow upgrading contract logic without changing the contract address.
-  - They all use delegate calls to forward function calls to the implementation contract.
+3. **共同特征**：
+  - 所有模式都允许在不更改合约地址的情况下升级合约逻辑。
+  - 它们都使用委托调用（delegate calls）将函数调用转发到实现合约。
 
-UUPS is often preferred for its balance of security, gas efficiency, and flexibility. In this tutorial, we'll implement and deploy upgradeable contracts using UUPS on Conflux eSpace.
+由于其在安全性、燃气效率和灵活性方面的平衡，UUPS通常更受欢迎。 在本教程中，我们将在 Conflux eSpace 上使用 UUPS 实现和部署可升级合约。
 
 ## 项目设置
 
-1. Create a new Foundry project:
+1. 创建一个新的 Foundry 项目：
 
 ```bash
 forge init uups-proxy-foundry-demo
 cd uups-proxy-foundry-demo
 ```
 
-2. Install OpenZeppelin contracts:
+2. 安装 OpenZepelin 合约：
 
 ```bash
 forge install OpenZeppelin/openzeppelin-contracts
 forge install OpenZeppelin/openzeppelin-contracts-upgradeable
 ```
 
-3. Configure Foundry
+3. 配置 Foundry
 
-Update your `foundry.toml`:
+更新您的`foundry.toml`文件:
 
 ```toml
 [profile.default]
@@ -73,14 +73,14 @@ remappings = [
 ]
 ```
 
-4. Create a `.env` file:
+4. 创建一个 `.env` 文件：
 
 ```
 PRIVATE_KEY=your_private_key_here
 RPC_URL=https://evmtestnet.confluxrpc.com
 ```
 
-## Writing Smart Contracts
+## 编写智能合约
 
 1. Create the initial Counter contract in `src/Counter.sol`:
 
@@ -165,9 +165,9 @@ contract CounterV2 is UUPSUpgradeable, OwnableUpgradeable {
 } 
 ```
 
-## Deployment Scripts
+## 部署脚本
 
-1. Create a deployment script in `script/DeployCounter.s.sol`:
+1. 在`script/DeployCounter.s.sol`中创建一个部署脚本：
 
 ```solidity
 // SPDX-License-Identifier: MIT
@@ -274,9 +274,9 @@ contract UpgradeCounter is Script {
 }
 ```
 
-## Testing
+## 测试
 
-Create a test file in `test/Counter.t.sol`:
+在`test/Counter.t.sol`中创建一个测试文件:
 
 ```solidity
 // SPDX-License-Identifier: MIT
@@ -329,18 +329,18 @@ contract CounterTest is Test {
 }
 ```
 
-## Deployment and Upgrade Process
+## 部署和升级过程
 
-1. Deploy the initial implementation and proxy:
+1. 部署初始实现和代理：
 
 ```bash
 source .env
 forge script script/DeployCounter.s.sol --rpc-url $RPC_URL --broadcast -g 200
 ```
 
-> **Note:** The `-g` flag sets the gas price multiplier (in percentage). Using `-g 200` means the gas price will be 200% of the estimated price, which helps prevent "insufficient gas fee" errors during deployment.
+> **注意:**`-g`标志设置燃气价格乘数(以百分比表示)。 使用`-g 200`意味着燃气价格将是估计价格的200%，这有助于阻止在部署过程中出现 "燃气费用不足"的错误。
 
-Expected output:
+预期输出：
 
 ```
 Deploying Counter...
@@ -349,19 +349,19 @@ Proxy deployed to: <PROXY_ADDRESS>
 Initial count: 0
 ```
 
-2. After deployment, save the proxy address in `.env`:
+2. 部署完毕后，请在 `.env` 中保存代理地址：
 
 ```bash
 PROXY_ADDRESS=<PROXY_ADDRESS>
 ```
 
-3. Upgrade to CounterV2:
+3. 升级到CounterV2：
 
 ```bash
 forge script script/UpgradeCounter.s.sol --rpc-url $RPC_URL --broadcast -g 200
 ```
 
-Expected output:
+预期输出：
 
 ```
 ============ Before Upgrade ============
@@ -380,6 +380,6 @@ Count after reset: 0
 2. New functions working: Increment and Reset successfully added
 ```
 
-By following these steps, you can deploy and upgrade smart contracts using UUPS proxy pattern on Conflux eSpace with Foundry. This pattern provides a more gas-efficient alternative to the transparent proxy pattern while maintaining upgradeability. The UUPS pattern moves the upgrade logic to the implementation contract, making it more lightweight and cost-effective for users.
+通过以下步骤，您可以在 Conflux eSpace 上使用 Foundry 部署和升级智能合约，采用 UUPS 代理模式。 与透明代理模式相比，该模式提供了更节省燃气的替代方案，同时保持合约的可升级性。 UUPS 模式将升级逻辑移到实现合约中，使其对用户来说更加轻量和具有成本效益。
 
 

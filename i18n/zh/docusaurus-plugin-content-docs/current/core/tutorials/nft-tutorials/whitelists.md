@@ -28,9 +28,9 @@ tags:
 
 # 在CoreSpace使用Hardhat的默克尔树NFT白名单
 
-使用默克尔树白名单提供了一种经济高效的方法，将 NFT分发给预定义的地址列表。 它确保只有白名单上的地址才能铸造 NFT，从而增强了安全性和效率。 直接在智能合约中写入数千个地址的白名单将导致大量的燃气费用，此外由于最大交易燃气限制，可能无法在单个交易中更新如此庞大的白名单。 However, since in the Merkle Tree verification process, leaf nodes and proofs can be stored off-chain while only the root value needs to be stored on-chain, this method significantly saves on gas costs and enables whitelist setup with only one transaction.
+使用默克尔树白名单提供了一种经济高效的方法，将 NFT分发给预定义的地址列表。 它确保只有白名单上的地址才能铸造 NFT，从而增强了安全性和效率。 直接在智能合约中写入数千个地址的白名单将导致大量的燃气费用，此外由于最大交易燃气限制，可能无法在单个交易中更新如此庞大的白名单。 然而，在默克尔树验证过程中，叶节点和证明可以存储在链下，而只需将根值存储在链上，这种方法显著节省了燃气费用，并使得只需一次交易即可设置白名单。
 
-本教程将指导您如何使用 Hardhat 在Conflux CoreSpace 上创建、编写和部署带有默克尔树白名单的ERC721 NFT智能合约。 同时，还将向您展示如何使用 merkletreejs 创建默克尔树白名单。 For a practical example, please refer to the [Conflux-NFT-MerkleTree-Whitelist](https://github.com/ConfluxDAO/Conflux-NFT-MerkleTree-Whitelist) repository.
+本教程将指导您如何使用 Hardhat 在Conflux CoreSpace 上创建、编写和部署带有默克尔树白名单的ERC721 NFT智能合约。 同时，还将向您展示如何使用 merkletreejs 创建默克尔树白名单。 有关实际示例，请参阅 [Conflux-NFT-MerkleTree-Whitelist](https://github.com/ConfluxDAO/Conflux-NFT-MerkleTree-Whitelist) 仓库。
 
 如果您不熟悉 Hardhat，请参考 [Hardhat 文档](https://hardhat.org/getting-started/)。
 

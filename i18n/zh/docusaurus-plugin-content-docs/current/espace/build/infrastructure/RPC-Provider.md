@@ -13,7 +13,7 @@ keywords:
   - API
   - Node Infrastructure
   - Mainnet
-  - Testnet
+  - 测试网
   - 链 ID
   - RPC 端点
   - 浏览器网址
@@ -32,20 +32,20 @@ tags:
   - RPC 提供商
 ---
 
-Conflux has partnered with select RPC Providers and also offers its own, similar to those like Infura, Alchemy, and QuickNode. 用户可以利用这些提供商连接到 Conflux eSpace 网络。
+Conflux已与多家精选RPC服务商达成合作，同时提供自建服务，功能类似Infura、Alchemy及QuickNode等平台。 用户可以利用这些提供商连接到 Conflux eSpace 网络。
 
 ## [Validation Cloud](https://www.validationcloud.io/)
 
-Validation Cloud offers an enterprise-grade web3 infrastructure platform covering RPC, Staking, and Data for 50+ leading Web3 blockchains and networks. We are committed to delivering the best performance, reliability and compliance to our users and partners. Validation Cloud is SOC2 Type II certified.
+Validation Cloud提供企业级Web3基础设施平台，涵盖RPC服务、质押管理及数据解决方案，支持50余个主流Web3区块链与网络。 我们致力于为用户和合作伙伴提供最佳的性能、可靠性和合规性。 Validation Cloud 已通过 SOC2 Type II 认证。
 
-Validation Cloud’s RPC is ranked the fastest RPC globally by CompareNodes and our staking infrastructure handles over $1 Billion of staked assets under management (AUM).
+Validation Cloud的RPC节点被CompareNodes评为全球最快，其质押基础设施管理的资产规模（AUM）已超过10亿美元。
 
-For Conflux, Validation Cloud provides:
+对于 Conflux，Validation Cloud 提供：
 
-- RPC access to both **eSpace Mainnet** and **eSpace Testnet**. See our [documentation](https://docs.validationcloud.io/v1/conflux/overview) for the list of supported methods
-- Self staking CFX via our Conflux validator and earn yield
+- RPC 访问 **eSpace 主网** 和 **eSpace 测试网**。 查看[文档](https://docs.validationcloud.io/v1/conflux/overview)获取支持的方法列表。
+- 通过Conflux验证节点自质押CFX获取收益
 
-You can sign up on a free tier, without a credit card, and start making RPC requests to Conflux today at [app.validationcloud.io/node](https://app.validationcloud.io/node).
+现可免信用卡注册免费版，立即通过[app.validationcloud.io/node](https://app.validationcloud.io/node)向Conflux发起RPC请求
 
 ## [NOWNodes](https://nownodes.io/conflux)
 
@@ -65,9 +65,9 @@ NOWNodes 提供共享节点和专用节点解决方案，以及免费的基础�
 
 Unifra 还提供了一个免费使用的 RPC 端点：
 
-| 网络名称           | 链 ID                            | RPC 端点 URL                                                                              | 浏览器网址                                                                      |
-| -------------- | ------------------------------- | --------------------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
-| [主网](#mainnet) | 1030 (0x406) | https://conflux-espace-public.unifra.io | https://evm.confluxscan.io |
+| 网络名称           | 链 ID                            | RPC 端点 URL                                                                              | 浏览器网址                                                                       |
+| -------------- | ------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| [主网](#mainnet) | 1030 (0x406) | https://conflux-espace-public.unifra.io | https://evm.confluxscan.org |
 
 您还可以从 Unifra 的[控制台面板](https://console.unifra.io/)中购买**更高级别的 RPC 服务**。
 
@@ -77,9 +77,9 @@ BlockPi 是一个分布式多链加速层， 通过无限扩展性解决 RPC 请
 
 目前，BlockPi支持超过 30 条链，包括 Conflux eSpace 网络。 他们提供了稳定且用户友好的 RPC 服务，可以用来连接到 Conflux eSpace 网络。
 
-| 网络名称           | 链 ID                            | RPC 端点 URL                                                                                           | 浏览器网址                                                                      |
-| -------------- | ------------------------------- | ---------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
-| [主网](#mainnet) | 1030 (0x406) | https://conflux-espace.blockpi.network/v1/rpc/public | https://evm.confluxscan.io |
+| 网络             | 链 ID                            | RPC 端点 URL                                                                                           | 浏览器网址                                                                       |
+| -------------- | ------------------------------- | ---------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| [主网](#mainnet) | 1030 (0x406) | https://conflux-espace.blockpi.network/v1/rpc/public | https://evm.confluxscan.org |
 
 有关如何使用他们服务的更多详情，请查看 BlockPi 的[文档](https://docs.blockpi.io/)。
 

@@ -65,9 +65,9 @@ They offer a stable and user-friendly RPC service, which can be utilized to conn
 
 Unifra also provides a free-to-use RPC endpoint:
 
-| Network             | Chain ID                        | RPC Endpoint URL                                                                        | Explorer                                                                   |
-| ------------------- | ------------------------------- | --------------------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
-| [Mainnet](#mainnet) | 1030 (0x406) | https://conflux-espace-public.unifra.io | https://evm.confluxscan.io |
+| Network             | Chain ID                        | RPC Endpoint URL                                                                        | Explorer                                                                    |
+| ------------------- | ------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| [Mainnet](#mainnet) | 1030 (0x406) | https://conflux-espace-public.unifra.io | https://evm.confluxscan.org |
 
 You can also buy **a higher tier RPC service** from Unifra at it [console dashboard](https://console.unifra.io/).
 
@@ -77,9 +77,9 @@ BlockPi is a distributed multi-chain acceleration layer. Solving the RPC request
 
 Currently BlockPi support more than 30 chains, including Conflux eSpace network. They offer a stable and user-friendly RPC service, which can be utilized to connect to the Conflux eSpace network.
 
-| Network             | Chain ID                        | RPC Endpoint URL                                                                                     | Explorer                                                                   |
-| ------------------- | ------------------------------- | ---------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
-| [Mainnet](#mainnet) | 1030 (0x406) | https://conflux-espace.blockpi.network/v1/rpc/public | https://evm.confluxscan.io |
+| Network             | Chain ID                        | RPC Endpoint URL                                                                                     | Explorer                                                                    |
+| ------------------- | ------------------------------- | ---------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| [Mainnet](#mainnet) | 1030 (0x406) | https://conflux-espace.blockpi.network/v1/rpc/public | https://evm.confluxscan.org |
 
 Check BlockPi's [documentation](https://docs.blockpi.io/) for more details on how to use their service.
 

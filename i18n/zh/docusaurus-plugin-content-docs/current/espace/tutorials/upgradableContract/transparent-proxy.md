@@ -21,7 +21,7 @@ Before diving into the tutorial, let's briefly introduce the concepts of transpa
 
 ### Transparent Proxy
 
-Transparent proxy is a special type of proxy contract that addresses selector conflict issues by separating management functions from user functions. Key features include:
+Transparent proxy is a special type of proxy contract that addresses selector conflict issues by separating management functions from user functions. 其主要特点包括：
 
 - **Separation of Management Functions**: The proxy contract contains specific management functions (such as upgrades) that can only be called by the administrator.
 - **Transparency**: For regular users, the existence of the proxy contract is "transparent," allowing them to interact with it as if they were directly interacting with the logic contract.
@@ -86,13 +86,13 @@ module.exports = {
 };
 ```
 
-5. Create a `.env` file and add your private key:
+5. 创建一个`.env`文件并添加你的私钥：
 
 ```
 PRIVATE_KEY=your_private_key_here
 ```
 
-## Writing Smart Contracts
+## 编写智能合约
 
 1. Create the initial version of the Box contract:
 
@@ -143,9 +143,9 @@ contract BoxV2 {
 }
 ```
 
-## Deployment Script
+## 部署脚本
 
-Create a deployment script in `scripts/deploy.js`:
+在`scripts/deploy.js`中创建部署脚本：
 
 ```javascript
 const { ethers, upgrades } = require("hardhat");
@@ -166,9 +166,9 @@ main()
   });
 ```
 
-## Upgrade Script
+## 升级脚本
 
-Create an upgrade script in `scripts/upgrade.js`:
+在`scripts/upgrade.js`中创建升级脚本：
 
 ```javascript
 const { ethers, upgrades } = require("hardhat");
@@ -188,7 +188,7 @@ main()
   });
 ```
 
-## Testing Scripts
+## 测试脚本
 
 Create a testing script in `scripts/testBox.js`:
 
@@ -254,7 +254,7 @@ main()
   });
 ```
 
-## Deployment and Upgrade Process
+## 部署和升级过程
 
 1. Compile the contracts:
   ```
@@ -267,13 +267,13 @@ main()
   npx hardhat run scripts/deploy.js --network eSpaceTestnet
   ```
 
-3. Test the initial version:
+3. 测试初始版本：
 
   ```
   npx hardhat run scripts/testBox.js --network eSpaceTestnet
   ```
 
-  Expected output:
+  预期输出：
 
   ```
   Box value: 23

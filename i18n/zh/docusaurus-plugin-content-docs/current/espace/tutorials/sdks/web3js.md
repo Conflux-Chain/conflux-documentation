@@ -10,28 +10,28 @@ tags:
   - 教程
 ---
 
-Web3.py and Web3.js are a set of libraries that facilitate the interaction of developers with Conflux nodes via the HTTP, IPC, or WebSocket communication protocols, using the Python and JavaScript programming languages respectively. This guide will provide you with the expertise to leverage the [**Web3.js**](https://web3js.readthedocs.io/en/v1.8.2/) library for transmitting transactions and deploying smart contracts.
+Web3.py 和 Web3.js 是一组库，通过 HTTP、IPC 或 WebSocket 通信协议，分别使用 Python 和 JavaScript 编程语言，帮助开发者与 Conflux 节点进行交互。 本指南将为您提供使用[**Web3.js**](https://web3js.readthedocs.io/en/v1.8.2/)库传输交易和部署智能合约的专业知识。
 
-## Initiate a Project
+## 初始化项目
 
-To start, first create a directory where all the relevant files generated throughout this guide can be stored. Execute this task with the following command:
+首先，创建一个目录，用于存储本指南中生成的所有相关文件。 使用以下命令执行此任务：
 
 ```shell
 mkdir web3-examples && cd web3-examples 
 
 ```
 
-For the successful implementation of the upcoming sections, you'll need to install the Web3 library and the Solidity compiler. To obtain both packages, execute the following command:
+为了成功实现接下来的部分，您需要安装Web3库和Solidity编译器。 执行以下命令来获取这两个包：
 
 ```shell
 npm install web3 solc@0.8.0 
 ```
 
-## Setup the HTTP connection
+## 设置HTTP连接
 
-Prepare your Web3 HTTP connection to align with any evm-powered network. To synchronize your project, you must secure an endpoint and API key of your own.
+Prepare your Web3 HTTP connection to align with any evm-powered network. 为了同步您的项目，您必须确保拥有自己的端点和API密钥。
 
-Here's how you can get started:
+以下是您可以开始的方式：
 
 ```javascript
 // Create a Web3 instance: 
@@ -44,25 +44,25 @@ const web3 = new Web3('RPC-API-ENDPOINT-HERE');
 
 ```
 
-You can find Conflux eSpace Network Endpoints [**here**](../../network-endpoints.md).
+您可以在这里找到Conflux eSpace网络端点 [**here**](../../network-endpoints.md)。
 
-## Send a Transaction and check the balances
+## 发送交易并检查余额
 
-In this section, you will learn how to create two scripts in order to send a transaction between two accounts. The first script will be used to check the balances of the accounts before and after the transaction is sent. The second script will actually send the transaction.
+本节中，您将学习如何创建两个脚本，以便在两个账户之间发送交易。 第一个脚本将用于检查交易前后账户的余额。 第二个脚本将实际发送交易。
 
-### Check the balances
+### 检查余额
 
-To check the account balances before and after the transaction, you just need to create a single file.
-You can start by creating a balances.js file by executing:
+要检查交易前后的账户余额，您只需要创建一个文件。
+您可以通过执行以下命令开始创建一个balances.js文件：
 
 ```shell
 
 vim balances.js 
 ```
 
-After that, you can create the script for the file.
+之后，您可以创建该文件的脚本。
 
-Here's the code for the script:
+以下是脚本的代码：
 
 ```javascript
 // Add the Web3 provider snippet 
@@ -92,7 +92,7 @@ const balances = async () => {
 balances(); 
 ```
 
-To fetch the account balances, simply run the following command:
+要获取账户余额，只需运行以下命令：
 
 ```shell
 node balances.js 
@@ -100,7 +100,7 @@ node balances.js
 
 If successful, the balances for the origin and receiving addresses will be displayed in your terminal in CFX.
 
-### Send a transaction
+### 发送交易
 
 Create a .js file by "vim transaction.js" and fill it with the code below. By "node transaction.js" you can execute it.
 
@@ -141,17 +141,17 @@ const send = async () => {
 send(); 
 ```
 
-## Deploy a Contract
+## 部署合约
 
-### Initialize a Smart Contract
+### 初始化智能合约
 
-Within the following sections, you will be initializing and executing a straightforward incremental contract named Incrementer.sol. You may commence the process by generating a file for the contract:
+在接下来的部分中，您将初始化和执行一个名为Incrementer.sol的简单的增量合约。 You may commence the process by generating a file for the contract:
 
 ```shell
 vim Incrementer.sol
 ```
 
-Once you have created the file, the subsequent step is to input the Solidity code into the file:
+一旦您创建了文件，接下来的步骤是将Solidity代码输入到文件中：
 
 ```solidity
 // SPDX-License-Identifier: MIT 
@@ -170,9 +170,9 @@ contract Incrementer {
 } 
 ```
 
-When the contract is deployed, the constructor function executes and assigns the starting value to the numericVal variable that is stored on the blockchain (the default is 0). By invoking the increaseVal function, the supplied _inputVal is added to the existing value. Note that executing this function requires sending a transaction, which alters the stored data. Lastly, the resetVal function reassigns the stored value to zero.
+当合约部署时，构造函数执行并将起始值赋给存储在区块链上的numericVal变量(默认值为0)。 通过调用increaseVal函数，会将提供的_inputVal添加到现有值上。 请注意，执行此函数需要发送交易，这会更改存储的数据。 最后，resetVal函数将存储的值重新赋为零。
 
-### Compile the Contract
+### 编译合约
 
 This section will guide you through the process of building a script that leverages the Solidity compiler to produce the ABI and bytecode for the Incrementer.sol contract. Start by generating a compile.js and fill it as bellow:
 
@@ -214,7 +214,7 @@ module.exports = contract;
 
 ### 部署
 
-To deploy the Incrementer.sol contract, you need to first compile the contract using a script and then create a deployment script file called deploy.js. The deployment script file must complete several steps, including importing the ABI and bytecode, setting up the Web3 provider, defining the account_from with the private_key, creating a contract instance, building a constructor transaction, signing the transaction, sending it using web3.eth.send_raw_transaction function, and waiting for the transaction receipt by using web3.eth.wait_for_transaction_receipt function.
+要部署Incrementer.sol合约，您需要首先使用脚本编译合约，然后创建一个名为deploy.js的部署脚本文件。 The deployment script file must complete several steps, including importing the ABI and bytecode, setting up the Web3 provider, defining the account_from with the private_key, creating a contract instance, building a constructor transaction, signing the transaction, sending it using web3.eth.send_raw_transaction function, and waiting for the transaction receipt by using web3.eth.wait_for_transaction_receipt function.
 
 ```javascript
 const contractFile = require('./compile'); 
@@ -259,11 +259,11 @@ const deploy = async () => {
 deploy(); 
 ```
 
-## Call methods
+## 调用方法
 
-When you interact with a contract through call methods, the contract's storage remains unchanged. This means that no transaction needs to be sent. Rather, call methods simply read various storage variables of the deployed contract. To create a script for this purpose, start by creating a file named get.js. Then, import the ABI, set up the Web3 provider, and define the account_from, including the private_key, which is required to sign the transaction.
+When you interact with a contract through call methods, the contract's storage remains unchanged. 这意味着不需要发送交易。 相反，调用方法只是简单地读取部署合约的各种存储变量。 To create a script for this purpose, start by creating a file named get.js. Then, import the ABI, set up the Web3 provider, and define the account_from, including the private_key, which is required to sign the transaction.
 
-Note that this is only for example purposes, and you should never store your private keys in a JS file. After that, create a contract instance using the web3.eth.contract function and passing in the ABI and address of the deployed contract. Finally, use the contract instance to call the number function.
+Note that this is only for example purposes, and you should never store your private keys in a JS file. 之后，使用web3.eth.contract函数创建一个合约实例，并传入已部署合约的ABI和地址。 最后，使用合约实例调用number函数。
 
 ```javascript
 const { abi } = require('./compile'); 

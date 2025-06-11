@@ -119,22 +119,25 @@ If you want to enable this configuration, you will need to resynchronize the dat
 
 Fullstate mode supports querying the historical state of the blockchain.
 
-To enable the fullstate mode for a single Space, you can specify the Space name using the `single_mpt_space` configuration option.
-
-```toml
-single_mpt_space = "evm" # core-space use "native"
+To run a **fullstate node**, you need to use a specially compiled Conflux client program. Currently, the official binary release does not enable this feature, and you need to compile it yourself. The compilation command is:
+```bash
+cargo build --release --features u64-mpt-db-key
 ```
 
-Enabling the fullstate mode for dual spaces.
+To enabling the fullstate mode for dual spaces.
 
 ```toml
 enable_single_mpt_storage=true
 ```
 
-> The Conflux Foundation currently does not provide snapshot data containing the full historical state; users need to synchronize the data themselves. To run a **fullstate node**, which enables querying blockchain state on any block height, you need to use a specially compiled Conflux client program. Currently, the official binary release does not enable this feature, and you need to compile it yourself. The compilation command is:
-```bash
-cargo build --release --features u64-mpt-db-key
+To enable the fullstate mode for a single Space, an addition configuration can be used:
+
+```toml
+enable_single_mpt_storage=true
+single_mpt_space = "evm" # core-space use "native"
 ```
+
+> The Conflux Foundation currently does not provide snapshot data containing the full historical state; users need to synchronize the data themselves.
 
 ### PivotHint
 

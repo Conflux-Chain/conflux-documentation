@@ -14,21 +14,21 @@ tags:
   - WalletConnect
 ---
 
-# Integrating WalletConnect with Vue.js Project on Conflux eSpace
+# 在Conflux eSpace的Vue.js项目中集成WalletConnect
 
-This tutorial guides you through the process of integrating WalletConnect with Web3Modal in a Vue.js project, specifically targeting the Conflux eSpace network.
-For a hands-on example, check out the GitHub repository [Web3modal-Conflux-Vue](https://github.com/ConfluxDAO/web3modal-conflux-vue).
+本教程指导您在Vue.js项目中，如何使用Web3Modal集成WalletConnect，特别是针对Conflux eSpace网络。
+如需实践，请查看 GitHub 仓库[Web3modal-Conflux-Vue](https://github.com/ConfluxDAO/web3modal-conflux-vue)。
 
 [![Vue Demo](../img/walletconnect-vue.png)](../img/walletconnect-vue.png)
 
 ## 前提条件
 
 - Node.js installed on your computer.
-- Basic knowledge of Vue.js and JavaScript.
+- 了解Vue.js和JavaScript的基础知识。
 
-## Step 1: Setting Up Your Vue.js Project
+## 第 1 步：设置您的 Vue.js 项目
 
-First, create a new Vue.js project using Vite, you can skip this step if you have an existing project. Open your terminal and run the following commands:
+首先，使用 Vite 创建一个新的 Vue.js 项目。如果您已经有现成的项目，可以跳过此步骤。 打开终端并运行以下命令：
 
 ```bash
 npm create vite@latest web3modal-conflux-vue -- --template vue
@@ -36,9 +36,9 @@ cd web3modal-conflux-vue
 npm install
 ```
 
-## Step 2: Install Web3Modal and WalletConnect
+## 步骤 2: 安装 Web3Modal 和 WalletConnect
 
-You need to install Web3Modal and the WalletConnect provider. Run:
+You need to install Web3Modal and the WalletConnect provider. 运行：
 
 ```bash
 npm install @web3modal/wagmi @wagmi/core @wagmi/connectors viem
@@ -89,7 +89,7 @@ Replace `"YOUR_PROJECT_ID"` with your actual project ID.
 
 关于如何获取 `ProjectId` 的详细信息，请参考这篇[文章](/docs/espace/tutorials/walletConnect/project-creation)。
 
-Make sure that the url from the metadata matches your domain and subdomain. This will later be used by the [Verify API](https://docs.walletconnect.com/cloud/verify) to tell wallets if your application has been verified or not.
+确保metadata中的url与您的域名和子域名匹配。 This will later be used by the [Verify API](https://docs.walletconnect.com/cloud/verify) to tell wallets if your application has been verified or not.
 
 ## Step 4: Using `Web3ModalSetup` in your Application
 
@@ -121,7 +121,7 @@ import "./web3ModalSetup";
 
 ```
 
-## Step 5: Connecting Conflux eSpace Network
+## 第5步：连接Conflux eSpace 网络
 
 Create a new component, `ConnectWallet.vue`, in your project, to open ConnectWallet Modal
 
@@ -177,4 +177,4 @@ const count = ref(0);
 
 ```
 
-You now have a basic setup for integrating Web3Modal with WalletConnect in your Vue.js project using Vite. This setup allows users to connect their wallets from a Vue.js application, enabling interactions with Conflux eSpace.
+现在，您已经在您的 Vue.js 项目中使用 Vite 基本设置了 Web3Modal 与 WalletConnect 的集成。 This setup allows users to connect their wallets from a Vue.js application, enabling interactions with Conflux eSpace.

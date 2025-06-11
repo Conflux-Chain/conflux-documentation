@@ -6,7 +6,7 @@ keywords:
   - Chain Parameters
   - DAO Voting
   - Governance
-  - Testnet
+  - 测试网
   - Mainnet
   - cfx_getParamsFromVote
   - Voting Interface
