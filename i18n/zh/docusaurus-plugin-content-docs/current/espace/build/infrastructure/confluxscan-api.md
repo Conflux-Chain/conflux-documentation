@@ -17,7 +17,7 @@ keywords:
   - ABI
   - Block Query
   - eSpace
-  - Mainnet
+  - 主网
   - 测试网
   - 速率限制
   - API Key
