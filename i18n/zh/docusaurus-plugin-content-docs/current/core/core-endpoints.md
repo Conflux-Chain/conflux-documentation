@@ -7,7 +7,7 @@ keywords:
   - Conflux core space
   - RPC Endpoints
   - Conflux Core Space
-  - Mainnet
+  - 主网
   - 测试网
   - Confura
   - Unifra
@@ -124,6 +124,6 @@ Unifra提供：
 
 ### 公共端点
 
-| 网络名称    | 链 ID | 浏览器网址                   | 端点                                    |
-| ------- | ---- | ----------------------- | ------------------------------------- |
-| Mainnet | 1029 | https://confluxscan.net | https://conflux-core-public.unifra.io |
+| 网络名称 | 链 ID | 浏览器网址                   | 端点                                    |
+| ---- | ---- | ----------------------- | ------------------------------------- |
+| 主网   | 1029 | https://confluxscan.net | https://conflux-core-public.unifra.io |
