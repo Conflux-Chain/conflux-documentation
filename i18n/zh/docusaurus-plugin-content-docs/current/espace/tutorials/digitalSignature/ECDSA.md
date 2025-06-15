@@ -9,7 +9,7 @@ keywords:
   - OpenZeppelin
   - 以太坊
   - Cryptography
-  - Blockchain Security
+  - 区块链安全
   - GAS 优化
   - Allowlists
   - Airdrops
