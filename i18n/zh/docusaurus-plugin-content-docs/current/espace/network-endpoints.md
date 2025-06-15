@@ -7,7 +7,7 @@ keywords:
   - Conflux eSpace
   - RPC
   - JSON-RPC
-  - Mainnet
+  - 主网
   - 测试网
   - 链 ID
   - HTTP endpoints
@@ -31,7 +31,7 @@ tags:
 
 :::tip
 
-This page lists the public RPC endpoints for Conflux eSpace. Public RPC endpoints for **Conflux Core Space** is provided [here](../core/core-endpoints.md).
+本页面列出了 Conflux eSpace 的公共 RPC 端点。 Public RPC endpoints for **Conflux Core Space** is provided [here](../core/core-endpoints.md).
 
 :::
 
@@ -39,26 +39,26 @@ This page lists the public RPC endpoints for Conflux eSpace. Public RPC endpoint
 
 Confura 是由 Conflux 基金会提供的公共 RPC 服务，可以免费使用。
 
-### Public Endpoints
+### 公共端点
 
-Confura为主网和测试网提供了多个可用的RPC端点。 我们按照“优先选择前者”的原则对它们进行了排序，并提供了简要描述。 如果您不确定选择哪一个，请优先选择列表顶部的 RPC 端点。
+Confura 为主网和测试网提供了多个可用的 RPC 端点。 我们已根据选定的优先级对它们进行排序，并提供了简要描述。 如果您不确定选择哪一个，请选择列表顶部附近的 RPC 端点。
 
-#### Mainnet
+#### 主网
 
-Chain ID for Conflux eSpace Mainnet is `1030(0x406)`. The corresponding blockchain explorer URL is https://evm.confluxscan.org.
+Conflux eSpace 主网的链 ID 为 `1030(0x406)`。 相应的区块链浏览器 URL 是 https://evm.confluxscan.org。
 
 | RPC 端点                                | 类型        | 备注             |
 | ------------------------------------- | --------- | -------------- |
 | https://evm.confluxrpc.com            | HTTP      |                |
-| https://evmmain-china.confluxrpc.com  | HTTP      | 面向中国用户的 RPC 服务 |
-| https://evmmain-global.confluxrpc.com | HTTP      | 面向全球用户的 RPC 服务 |
+| https://evmmain-china.confluxrpc.com  | HTTP      | 针对中国用户的 RPC 服务 |
+| https://evmmain-global.confluxrpc.com | HTTP      | 针对全球用户的 RPC 服务 |
 | https://evm.confluxrpc.org            | HTTP      | 备用 RPC 服务      |
 | wss://evm.confluxrpc.com/ws           | Websocket |                |
 | wss://evm.confluxrpc.org/ws           | Websocket | 备用 RPC 服务      |
 
 #### 测试网
 
-Chain ID for Conflux eSpace Testnet is `71(0x47)`. The corresponding blockchain explorer URL is https://evmtestnet.confluxscan.org.
+Conflux eSpace 测试网的链 ID 为 `71(0x47)`。 相应的区块链浏览器 URL 是 https://evmtestnet.confluxscan.org。
 
 | RPC 端点                             | 类型        | 备注        |
 | ---------------------------------- | --------- | --------- |
