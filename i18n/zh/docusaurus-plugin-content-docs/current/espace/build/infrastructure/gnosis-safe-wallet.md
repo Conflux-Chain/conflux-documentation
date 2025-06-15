@@ -18,8 +18,8 @@ keywords:
   - Safe-SDK
   - Safe CLI
   - MetaMask
-  - Blockchain Security
-  - Mainnet
+  - 区块链安全
+  - 主网
   - 测试网
   - Wallet Integration
   - 故障排除
