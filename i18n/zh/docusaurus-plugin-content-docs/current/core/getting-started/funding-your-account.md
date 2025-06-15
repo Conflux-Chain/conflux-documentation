@@ -4,7 +4,7 @@ title: Funding Your Account
 description: How to get CFX
 displayed_sidebar: coreSidebar
 keywords:
-  - Mainnet
+  - 主网
   - 测试网
   - CFX
   - 水龙头
