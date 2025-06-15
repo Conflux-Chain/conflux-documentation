@@ -25,7 +25,7 @@ tags:
 - **单元测试**：为合约中的每个函数编写测试，确保它们在各种条件下都能按照预期工作。
 - **集成测试**：测试合约间的交互。
 - **模糊测试**：使用随机生成的输入数据测试你的合约以寻找漏洞。
-- **Security Audits**: Conducted by professional third parties, these audits scrutinize your contract's code for security vulnerabilities and poor programming practices.
+- **安全审计**：由专业第三方进行，这些审计会审查你所写合约代码的安全漏洞和在编程过程中存在的疏漏。
 
 ### 遵循已知的最优实践方法
 
@@ -50,6 +50,6 @@ tags:
 - **可升级性**：虽然区块链上的合约是不可变的，但你可以通过代理模式等设计模式对合约进行升级。 查看 [使用升级](https://docs.openzeppelin.com/contracts/5.x/upgradeable) 以保障安全操作。
 - **事件响应计划**：为可能的安全事件制定计划，包括通知用户和冻结合约操作。
 
-Security is an ongoing process, not a one-time task. 随着区块链技术的发展和新的攻击方式的出现，不断更新和审查你的智能合约对于维护其安全至关重要。
+安全是一个持续的过程，而不是一次性的任务。 随着区块链技术的发展和新的攻击方式的出现，不断更新和审查你的智能合约对于维护其安全至关重要。
 
 ### 更详细的智能合约安全教程
