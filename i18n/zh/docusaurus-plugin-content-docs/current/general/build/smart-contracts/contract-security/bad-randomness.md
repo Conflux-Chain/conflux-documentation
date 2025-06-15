@@ -1,5 +1,5 @@
 ---
-title: Bad Randomness
+title: 随机性漏洞
 displayed_sidebar: generalSidebar
 keywords:
   - smart contracts
@@ -15,22 +15,22 @@ keywords:
   - keccak256
   - chainlink-vrf
 tags:
-  - Bad Randomness
+  - 随机性漏洞
   - Security
   - 智能合约
 ---
 
-# Bad Randomness
+# 随机性漏洞
 
 ## 伪随机数
 
 以太坊上的许多应用程序，比如 NFT 随机 tokenId 抽奖、盲盒开启和 GameFi 战斗结果，都依赖于随机数。 然而，由于以太坊上的所有数据都是公开和确定性的，传统的随机生成方法如 `random()` 并不可用。
 
-相反，项目通常使用伪随机数生成器，`blockhash()`和`keccak256()`。 This approach, known as the Bad Randomness Vulnerability, allows attackers to predict outcomes, enabling them to manipulate results like minting specific rare NFTs.
+相反，项目通常使用伪随机数生成器，`blockhash()`和`keccak256()`。 这种方法被称为随机性漏洞（Bad Randomness Vulnerability），使攻击者能够预测结果，从而操纵结果，例如铸造特定的稀有 NFT。
 
 这种漏洞在NFT和GameFi项目中很常见，包括Meebits, Loots, and Wolf Game。 它已经造成了重大的财务损失，比如 SmartBillions 彩票漏洞，攻击者利用可预测的结果赢得了超过 400 ETH。 更多信息请参阅文章, [区块链彩票被黑客攻击，损失12万美元](https://crypto.news/blockchain-lottery-smartbillions-hacked-for-120000/)。
 
-## Example of a Bad Randomness Vulnerability
+## 随机性漏洞示例
 
 我们来探讨一个存在漏洞的NFT合约，`FlawedRandomizer.sol`。
 
