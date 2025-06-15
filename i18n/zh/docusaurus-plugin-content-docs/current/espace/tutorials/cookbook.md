@@ -1,7 +1,7 @@
 ---
 sidebar_position: 11
 title: Cookbook
-description: Learn how to leverage Cookbook for smart contracts development.
+description: 学习如何利用Cookbook进行智能合约开发。
 keywords:
   - Cookbook
   - 智能合约
@@ -21,22 +21,22 @@ tags:
   - Contract Development
 ---
 
-[**Cookbook**](https://www.cookbook.dev/) is an essential resource for developers working with Solidity on EVM-compatible blockchains. This guide offers an overview of what Cookbook is, who it's for, and how it can facilitate the development of smart contracts.
+[**Cookbook**](https://www.cookbook.dev/) 是一个对在EVM兼容的区块链上使用Solidity的开发者来说至关重要的资源。 This guide offers an overview of what Cookbook is, who it's for, and how it can facilitate the development of smart contracts.
 
-### What is Cookbook?
+### Cookbook是什么？
 
 Cookbook is an open-source smart contract registry that provides developers access to Solidity primitives, libraries, and smart contracts for protocols across EVM-compatible blockchains. It integrates with a wide range of blockchain-native developer tooling, making it one of the quickest and easiest ways to start development work around smart contracts.
 
-### Key Features
+### 主要特点
 
-- **Search and Import:** Makes it easy to locate and open smart contracts in your preferred development environment, eliminating the need to sift through Github repositories.
-- **Integrated Development Tools:** Includes plugins for Remix and VSCode, and allows downloading with boilerplate code templates.
-- **ChefGPT:** An AI designed to assist in the development of smart contracts.
+- **搜索和导入：** 轻松定位和打开您所选的开发环境中的智能合约，无需查阅Github仓库。
+- \*\*集成开发工具：\*\*包括Remix和VSCode的插件，并允许下载带有样板代码模板。
+- \*\*ChefGPT：\*\*一个旨在辅助智能合约开发的AI。
 - **No-Code Deploy and Expanded View:** Offers options for deploying contracts without writing code and an expanded view for a better understanding of the code.
 
-### Getting Started with Cookbook
+### 开始使用Cookbook
 
-To begin working with Cookbook, make sure you have a development environment set up for Solidity projects. Cookbook will significantly ease the development process, from searching to deploying smart contracts.
+要开始使用Cookbook，请确保您已经为Solidity项目设置了开发环境。 Cookbook将大大简化从搜索到部署智能合约的开发过程。
 
 To start using Cookbook in your smart contract development projects, follow these preliminary steps:
 
@@ -44,15 +44,15 @@ To start using Cookbook in your smart contract development projects, follow thes
 - **Identify the Tools You Need:** Select the Solidity primitives, libraries, and smart contracts that are relevant to your project.
 - **Integration with Your Development Environment:** Leverage Cookbook plugins to integrate directly into your favorite IDE, such as Remix or Visual Studio Code.
 
-## Cookbook Tutorial
+## Cookbook教程
 
 This tutorial guides you through deploying a DeFi Token, based on [FEG](https://fegtoken.com/), with Token Reflection Mechanism and Deflationary Tokenomics, on the eSpace Testnet using [Remix IDE](./deployContract/remix.md). This comprehensive walkthrough covers the entire deployment process, ensuring you can deploy the contract efficiently from beginning to end.
 
 Before initiating the deployment, confirm you have test tokens from an eSpace faucet to cover any necessary deployment fees.
 
-### Deployment Process with Remix IDE
+### 使用Remix IDE的部署过程
 
-#### 1. Accessing the Deployment Interface
+#### 1. 访问部署界面
 
 - **Open Cookbook webpage**: Visit [cookbook.dev](https://www.cookbook.dev/) to explore various deployment options for your contract.
   ![cookbook1](./img/1cb.png)
