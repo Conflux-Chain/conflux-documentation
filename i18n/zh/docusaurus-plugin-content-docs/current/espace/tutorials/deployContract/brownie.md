@@ -16,7 +16,7 @@ keywords:
   - Account Management
   - 水龙头
   - 测试网
-  - Mainnet
+  - 主网
   - YAML
   - Private Key
   - Gas Price
