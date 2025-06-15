@@ -101,7 +101,7 @@ ConfluxScan is the official blockchain explorer for the Conflux network. 它为�
 
 Links:
 
-- Mainnet
+- 主网
   - Core Space: https://confluxscan.org or https://confluxscan.net
   - eSpace: https://evm.confluxscan.org or https://evm.confluxscan.net
 - 测试网
