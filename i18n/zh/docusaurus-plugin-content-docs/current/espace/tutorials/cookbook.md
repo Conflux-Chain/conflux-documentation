@@ -54,31 +54,31 @@ Before initiating the deployment, confirm you have test tokens from an eSpace fa
 
 #### 1. 访问部署界面
 
-- **Open Cookbook webpage**: Visit [cookbook.dev](https://www.cookbook.dev/) to explore various deployment options for your contract.
+- \*\*打开Cookbook网页：\*\*访问[cookbook.dev](https://www.cookbook.dev/) 以探索合约的各种部署选项。
   ![cookbook1](./img/1cb.png)
   ![cookbook2](./img/2cb.png)
-- **Navigate to Deployment section**: In the "Get Cookin'" section, sift through to find the deployment method using Remix IDE. Select this option to proceed.
+- \*\*导航到部署部分：\*\*在“Get Cookin'”部分，查找使用Remix IDE的部署方法。 选择此选项继续。
   ![cookbook3](./img/3cb.png)
 
-#### 2. Remix IDE Set Up
+#### 2. 设置Remix IDE
 
-- **Open Remix IDE:** After choosing the Remix option on Cookbook.dev, Remix Ethereum IDE will open in a new tab. Wait for the interface to load completely.
-- **Grant Permission:** Remix might request permission for proper operation. Click "Accept" to proceed.
+- \*\*打开Remix IDE：\*\*在Cookbook.dev上选择Remix选项后，Remix Ethereum IDE将在新标签页中打开。 等待界面完全加载。
+- \*\*授予权限：\*\*Remix可能请求权限以正常运行。 点击“接受”以继续。
   ![cookbook4](./img/4cb.png)
 - **Locate the Smart Contract File:** In Remix's "FILE EXPLORER" panel, find the FEG.sol file, typically located within a folder named FEG on the workspace's left side.
   ![cookbook6](./img/6cb.png)
 
-#### 3. Modifying the Contract
+#### 3. 修改合约
 
-- **Update Token Details:** Within the FEG/FEG.sol contract, locate the lines defining the token's name and symbol, initially set to 'FEGtoken' and 'FEG'. Update these to your chosen values, for example, 'MyDeFiToken' and 'MDT', and save the changes.
+- **Update Token Details:** Within the FEG/FEG.sol contract, locate the lines defining the token's name and symbol, initially set to 'FEGtoken' and 'FEG'. 将这些更新为您选择的值，例如'MyDeFiToken'和'MDT'，并保存更改。
   ![cookbook7](./img/7cb.png)
   ![cookbook8](./img/8cb.png)
 
-#### 4. Compiling and Deploying the Contract using Remix IDE
+#### 4. 使用Remix IDE编译和部署合约
 
-For this step, you can following the process already described in the [Remix IDE Tutorial](./deployContract/remix.md)
+对于这一步，您可以按照Remix IDE教程中已描述的过程操作。
 
-For an on-hands demonstration of how to deploy a smart contract using Remix IDE, you can also refer to the following video:
+如果你想要亲自实践如何使用Remix IDE部署智能合约，你也可以参考以下视频：
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -91,9 +91,9 @@ import TabItem from '@theme/TabItem';
 
 ### 其他资源
 
-- [Cookbook Website](https://www.cookbook.dev/)
-- [Cookbook Docs](https://docs.cookbook.dev/)
-- [Remix IDE Website](https://remix.ethereum.org/)
+- [Cookbook 网站](https://www.cookbook.dev/)
+- [Cookbook 文档](https://docs.cookbook.dev/)
+- [Remix IDE 网站](https://remix.ethereum.org/)
 
 
 
