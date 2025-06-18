@@ -62,7 +62,7 @@ Block generate rate is 1.25s per block (mainnet), is same as Core Space Epoch ti
 
 ## Contract Size
 
-Contract max code size is `49152` double as Ethereum
+Contract max code size is `49152` (double as Ethereum).
 
 ## Transaction Fees
 
@@ -88,7 +88,8 @@ Conflux supports querying a larger range of blocks `[n-65535, n]` compared to Et
 
 ## Transaction Gas limit
 
-Only blocks whose height is a multiple of `5` can include Ethereum-type transactions. The total gas limit of these transactions cannot exceed half of the block gas limit, which is 30 million gas.
+- Only blocks whose height is a multiple of `5` can include Ethereum-type transactions. The total gas limit of these transactions cannot exceed half of the block gas limit, which is 30 million gas.
+- A transaction's gas limit should be no less than 100 times the byte size of its call data. Check [CIP-130](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-130.md) for more details.
 
 ## COINBASE Address Handling
 

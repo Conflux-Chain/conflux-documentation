@@ -51,7 +51,7 @@ The `block.number` is the sequence number in whole tree-graph.
 
 Core Space has some [internal contracts](./internal-contracts/) that are not in Ethereum.
 
-## Gas
+## Gas Pricing
 
 ### Storage Collateral
 
@@ -70,7 +70,11 @@ While Ethereum allows querying blocks in the range `[n-256, n-1]` for block heig
 * **Gas refund cap**: In Ethereum, if a transaction's gas limit exceeds the actual gas cost, the remaining gas is fully refunded. In contrast, Conflux refunds a **maximum of 1/4** of the **gas limit**. Check [Gas Limit, Gas Used, and Gas Charged](../../general/conflux-basics/gas#gas-limit-gas-used-and-gas-charged) for more details.
 * **EIP-7702 refund difference**: When updating delegate addresses (rather than creating a new delegation), Conflux does not issue the 12500 gas refund that Ethereum provides.
 
-## Transaction Balance Handling
+### Transaction Gas limit
+
+- A transaction's gas limit should be no less than 100 times the byte size of its call data. Check [CIP-130](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-130.md) for more details.
+
+### Transaction Balance Handling
 
 When transaction balance cannot afford maximum cost (`max gas price × gas limit + tx value`):
 
