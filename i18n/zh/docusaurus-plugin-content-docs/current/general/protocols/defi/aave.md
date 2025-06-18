@@ -15,7 +15,7 @@ keywords:
 
 Aave v3, launched in March 2022, is a decentralized non-custodial liquidity protocol that introduces significant improvements in capital efficiency, risk management, and cross-chain functionality. Users can participate as depositors or borrowers, with enhanced features for both roles.
 
-## Key Features
+## 主要特点
 
 ### 1. Portal
 
