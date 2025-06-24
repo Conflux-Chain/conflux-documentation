@@ -20,8 +20,7 @@ keywords:
   - Remix
   - Development Environment
   - No-setup Development
-tags:
-  - ChainIDE
+tags: [ ChainIDE ]
 ---
 
 [ChainIDE]](https://chainide.com/) 是一个针对区块链智能合约开发定制的基于 Web 的集成开发环境（IDE）。 它为智能合约的开发、测试、调试和部署提供了全面的解决方案。 与以太坊的 Remix 相比，ChainIDE 功能更强大，支持包括 Conflux Core Space 在内的多个区块链。
