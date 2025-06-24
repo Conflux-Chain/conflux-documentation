@@ -12,9 +12,11 @@ keywords:
   - gas-efficiency
   - function-array
 tags:
-  - MethodId Sort Optimization
-  - Gas Optimization
-  - Contratos Inteligentes
+  [
+    MethodId Sort Optimization,
+    Gas Optimization,
+    Contratos Inteligentes
+  ]
 ---
 
 # MethodId Sort Optimization
