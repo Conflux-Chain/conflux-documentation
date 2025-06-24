@@ -26,8 +26,7 @@ keywords:
   - Type-1 Transactions
   - Type-2 Transactions
   - Type-3 Transactions
-tags:
-  - 交易生命周期
+tags: [ 交易生命周期 ]
 ---
 
 Conflux eSpace最初支持Ethereum 155格式的交易 (传统交易)。 在v2.4.0硬分叉之后，开始接受类型-1（EIP-2930）和类型-2（EIP-1559）格式的交易。 这种兼容性实现了主流Ethereum SDK和工具的无缝过渡。 目前不支持类型-3的交易（EIP-4844）。
