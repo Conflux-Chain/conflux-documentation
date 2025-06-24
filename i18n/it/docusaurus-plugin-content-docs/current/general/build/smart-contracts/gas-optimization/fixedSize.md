@@ -12,9 +12,11 @@ keywords:
   - push-operation
   - storage-efficiency
 tags:
-  - Fixed-Size/Dynamic Arrays
-  - Gas Optimization
-  - Smart Contracts
+  [
+    Fixed-Size/Dynamic Arrays,
+    Gas Optimization,
+    Smart Contracts
+  ]
 ---
 
 # Fixed-Size/Dynamic Arrays
