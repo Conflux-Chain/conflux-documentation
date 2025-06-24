@@ -12,10 +12,7 @@ keywords:
   - AdvancedConstructor
   - Admin
   - AdminPayable
-tags:
-  - Using Payable
-  - Gas Optimization
-  - Smart Contracts
+tags: [ Using Payable, Gas Optimization, Smart Contracts ]
 ---
 
 # Using Payable
