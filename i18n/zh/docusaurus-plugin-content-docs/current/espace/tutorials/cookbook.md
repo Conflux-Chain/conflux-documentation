@@ -15,10 +15,7 @@ keywords:
   - Blockchain Development
   - 教程
 displayed_sidebar: eSpaceSidebar
-tags:
-  - 教程
-  - Cookbook
-  - Contract Development
+tags: [ 教程, Cookbook, Contract Development ]
 ---
 
 [**Cookbook**](https://www.cookbook.dev/) 是一个对在EVM兼容的区块链上使用Solidity的开发者来说至关重要的资源。 This guide offers an overview of what Cookbook is, who it's for, and how it can facilitate the development of smart contracts.
