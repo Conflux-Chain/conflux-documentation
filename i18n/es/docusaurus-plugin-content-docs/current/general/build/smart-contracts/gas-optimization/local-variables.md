@@ -1,19 +1,23 @@
 ---
 displayed_sidebar: generalSidebar
 keywords:
-  - smart contracts
-  - Solidity
-  - gas optimization
-  - local variables
-  - storage variables
-  - memory
-  - DeFi
-  - arithmetic operations
-  - LocalVariablesExample
+  [
+    smart contracts,
+    Solidity,
+    gas optimization,
+    local variables,
+    storage variables,
+    memory,
+    DeFi,
+    arithmetic operations,
+    LocalVariablesExample
+  ]
 tags:
-  - Local Variables
-  - Gas Optimization
-  - Contratos Inteligentes
+  [
+    Local Variables,
+    Gas Optimization,
+    Contratos Inteligentes
+  ]
 ---
 
 # Local Variables
