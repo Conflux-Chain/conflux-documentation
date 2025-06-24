@@ -12,8 +12,7 @@ keywords:
   - paper backup
   - security audit
   - social engineering
-tags:
-  - 钱包
+tags: [ 钱包 ]
 ---
 
 # 钱包备份的安全建议
