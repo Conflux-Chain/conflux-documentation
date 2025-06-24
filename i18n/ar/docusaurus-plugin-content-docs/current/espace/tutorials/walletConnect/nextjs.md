@@ -9,9 +9,7 @@ keywords:
   - nextjs
   - walletconnect
 displayed_sidebar: eSpaceSidebar
-tags:
-  - Tutorial
-  - WalletConnect
+tags: [ Tutorial, WalletConnect ]
 ---
 
 # Integrating WalletConnect with Next.js Project on Conflux eSpace
