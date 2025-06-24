@@ -5,8 +5,7 @@ description: A comprehensive guide to using the js-conflux-sdk.
 displayed_sidebar: coreSidebar
 keywords:
   - js-conflux-sdk - JavaScript - SDK - Account Generation - Blockchain Queries - Smart Contract Deployment - Smart Contract Interaction - Utilities - Address Handling - Unit Conversion - Hashing - Signing - Conflux Network - Core Space - RPC Methods - Drip - CFX - Transaction Execution - Cryptography
-tags:
-  - js-conflux-sdk
+tags: [ js-conflux-sdk ]
 ---
 
 The [Developer Quickstart](../core-developer-quickstart.md) demonstrates how to install and use the js-conflux-sdk for sending transactions. This guide delves into the details of the js-conflux-sdk.
