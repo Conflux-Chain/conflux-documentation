@@ -13,9 +13,11 @@ keywords:
   - MulticallRouter
   - Foundry
 tags:
-  - Multicall in Router
-  - Gas Optimization
-  - Contratos Inteligentes
+  [
+    Multicall in Router,
+    Gas Optimization,
+    Contratos Inteligentes
+  ]
 ---
 
 # Implement multicall in router-like contracts
