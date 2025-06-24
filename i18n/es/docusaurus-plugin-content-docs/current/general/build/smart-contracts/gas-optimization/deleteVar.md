@@ -12,9 +12,11 @@ keywords:
   - gas-costs
   - comparison
 tags:
-  - ResetVariable
-  - Gas Optimization
-  - Contratos Inteligentes
+  [
+    ResetVariable,
+    Gas Optimization,
+    Contratos Inteligentes
+  ]
 ---
 
 # ResetVariable
