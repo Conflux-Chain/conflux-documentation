@@ -6,9 +6,7 @@ displayed_sidebar: eSpaceSidebar
 keywords:
   - CrossSpaceCall
   - Internal Contracts
-tags:
-  - CrossSpaceCall
-  - Internal Contracts
+tags: [ CrossSpaceCall, Internal Contracts ]
 ---
 
 Conflux eSpace and Core space are two separate space, you can not send CFX from base32 address to hex address directly. You can only use [Confluxhub Space Bridge](https://confluxhub.io/espace-bridge/cross-space) to cross CFX between eSpace and Core Space.
