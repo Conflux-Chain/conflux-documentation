@@ -12,8 +12,7 @@ keywords:
   - paper backup
   - security audit
   - social engineering
-tags:
-  - Wallet (billetera)
+tags: [ Wallet (billetera) ]
 ---
 
 # Security Advice for Wallet Backup
