@@ -14,9 +14,7 @@ keywords:
   - Web UI
   - API Integration
   - Blockchain Development
-tags:
-  - Tutorial
-  - Contract Verification
+tags: [ Tutorial, Contract Verification ]
 ---
 
 After deploying your smart contracts, it's important to verify your code on a block explorer. This can be done in an automated way using your developer tooling or the Web UI.
