@@ -19,9 +19,12 @@ keywords:
   - Wallets (billeteras)
   - SDKs
 tags:
-  - Transacciones
-  - Transaction Fields
-  - Ciclo de vida de la transacción
+  [
+    Transacciones,
+    Transaction Fields,
+    Ciclo de vida de la transacción
+  ]
+
 displayed_sidebar: coreSidebar
 ---
 
