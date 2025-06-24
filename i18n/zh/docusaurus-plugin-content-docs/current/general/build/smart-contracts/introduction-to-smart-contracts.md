@@ -14,9 +14,7 @@ keywords:
   - deployment
   - function-calls
   - gas-optimization
-tags:
-  - 智能合约
-  - 教程
+tags: [ 智能合约, 教程 ]
 ---
 
 ## Conflux 网络智能合约开发介绍
