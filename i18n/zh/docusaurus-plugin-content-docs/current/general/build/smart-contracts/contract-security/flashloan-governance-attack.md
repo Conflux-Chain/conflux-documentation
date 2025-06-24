@@ -12,11 +12,7 @@ keywords:
   - makerdao
   - solidity
   - prevention-strategies
-tags:
-  - Flashloan
-  - Governance Attacks
-  - Security
-  - 智能合约
+tags: [ Flashloan, Governance Attacks, Security, 智能合约 ]
 ---
 
 # 闪电贷治理攻击
