@@ -10,8 +10,7 @@ keywords:
   - Create traces
   - CreateResult
   - InternalTransferAction
-tags:
-  - Transaction Traces
+tags: [ Transaction Traces ]
 ---
 
 # Introduction to Transaction Traces
