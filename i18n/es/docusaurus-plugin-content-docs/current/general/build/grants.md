@@ -15,8 +15,7 @@ keywords:
   - committee-responsibilities
   - no-sale-rule
   - public-reporting
-tags:
-  - Grants
+tags: [ Grants ]
 ---
 
 # **Descripción general de las subvenciones del Ecosistema Conflux**
