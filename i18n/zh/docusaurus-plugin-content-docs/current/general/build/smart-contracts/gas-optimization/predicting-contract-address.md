@@ -12,10 +12,7 @@ keywords:
   - DataStorage
   - DataWriter
   - DeploymentManager
-tags:
-  - Predicting Contract Addresses
-  - GAS 优化
-  - 智能合约
+tags: [ Predicting Contract Addresses, GAS 优化, 智能合约 ]
 ---
 
 # Predicting Contract Addresses Using Account Nonce
