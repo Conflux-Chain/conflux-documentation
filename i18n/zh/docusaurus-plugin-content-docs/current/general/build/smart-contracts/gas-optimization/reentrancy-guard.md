@@ -13,10 +13,7 @@ keywords:
   - ReentrancyGuardBool
   - ReentrancyGuardUint01
   - ReentrancyGuardUint12
-tags:
-  - Reentrancy Guard
-  - GAS 优化
-  - 智能合约
+tags: [ Reentrancy Guard, GAS 优化, 智能合约 ]
 ---
 
 # 低成本重入保护
