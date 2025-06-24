@@ -12,7 +12,7 @@ keywords:
   - Blockchain-as-a-Service
   - API
   - Node Infrastructure
-  - Mainnet
+  - 主网
   - 测试网
   - 链 ID
   - RPC 端点
@@ -28,8 +28,7 @@ keywords:
   - Infura
   - Alchemy
   - QuickNode
-tags:
-  - RPC 提供商
+tags: [ RPC 提供商 ]
 ---
 
 Conflux已与多家精选RPC服务商达成合作，同时提供自建服务，功能类似Infura、Alchemy及QuickNode等平台。 用户可以利用这些提供商连接到 Conflux eSpace 网络。
