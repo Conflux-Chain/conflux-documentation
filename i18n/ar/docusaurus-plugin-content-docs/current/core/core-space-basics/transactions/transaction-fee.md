@@ -18,10 +18,7 @@ keywords:
   - Miner Incentives
   - Network Congestion
   - Transaction Prioritization
-tags:
-  - Transactions
-  - Transaction Fee
-  - Gas
+tags: [ Transactions, Transaction Fee, Gas ]
 ---
 
 In the Conflux Core Space, transactions are processed by miners who charge a fee for their service. This fee incentivises miners to participate in the network and keep it running smoothly. The fees are paid in CFX and are specified by the transaction initiator through the `gas`, `gasPrice` and `storageLimit` fields in the transaction.
