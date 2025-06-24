@@ -21,8 +21,7 @@ keywords:
   - 测试网
   - 水龙头
   - ConfluxScan
-tags:
-  - js-conflux-sdk
+tags: [ js-conflux-sdk ]
 ---
 
 为了在 Conflux Core Space 上发送交易，您需要使用其特有的 SDK。 本教程将向您展示如何使用 js-conflux-sdk 发送交易。
