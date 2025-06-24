@@ -13,10 +13,12 @@ keywords:
   - solidity
   - prevention-strategies
 tags:
-  - Flashloan
-  - Governance Attacks
-  - Security
-  - Smart Contracts
+  [
+    Flashloan,
+    Governance Attacks,
+    Security,
+    Smart Contracts
+  ]
 ---
 
 # Flashloan Governance Attacks
