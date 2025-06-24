@@ -14,10 +14,7 @@ keywords:
   - Uint8Example
   - Uint32Example
   - Uint256Example
-tags:
-  - Uint Types
-  - Gas Comparison
-  - 智能合约
+tags: [ Uint Types, Gas Comparison, 智能合约 ]
 ---
 
 # Uint 类型 Gas 比较
