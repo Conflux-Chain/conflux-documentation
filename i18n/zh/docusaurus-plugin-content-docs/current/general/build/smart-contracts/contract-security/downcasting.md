@@ -11,10 +11,7 @@ keywords:
   - openzeppelin
   - arithmetic-operations
   - type-conversion
-tags:
-  - Downcasting
-  - Security
-  - 智能合约
+tags: [ Downcasting, Security, 智能合约 ]
 ---
 
 # 安全的向下转换
