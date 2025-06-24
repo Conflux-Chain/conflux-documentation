@@ -11,10 +11,7 @@ keywords:
   - EVM
   - function-parameters
   - CalldataAndMemory
-tags:
-  - Memory vs Calldata
-  - Gas Optimization
-  - Smart Contracts
+tags: [ Memory vs Calldata, Gas Optimization, Smart Contracts ]
 ---
 
 # Memory vs Calldata
