@@ -15,8 +15,7 @@ keywords:
   - committee-responsibilities
   - no-sale-rule
   - public-reporting
-tags:
-  - Grants
+tags: [ Grants ]
 ---
 
 # **Conflux Ecosystem Grants Overview**
