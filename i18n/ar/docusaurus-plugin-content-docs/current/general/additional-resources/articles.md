@@ -15,10 +15,7 @@ keywords:
   - Conflux-eSpace
   - Python-blockchain
   - Scaffold-ETH
-tags:
-  - Tutorials
-  - Articles
-  - Learning Resources
+tags: [ Tutorials, Articles, Learning Resources ]
 ---
 
 # Articles
