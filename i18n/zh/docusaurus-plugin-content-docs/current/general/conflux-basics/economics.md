@@ -14,8 +14,7 @@ keywords:
   - token issuance
   - token burning
   - DAO governance
-tags:
-  - Tokenomics
+tags: [ Tokenomics ]
 ---
 
 Conflux 的经济模型旨在鼓励用户参与和网络发展，同时确保技术的稳定性。 一个精心设计的经济模型对于一个去中心化的系统有效运行是必不可少的。 Blockchain technology establishes trust and promotes efficient relationships among cooperators, accelerating the transfer of value.
