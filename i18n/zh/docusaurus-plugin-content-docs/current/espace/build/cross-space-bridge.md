@@ -6,9 +6,7 @@ displayed_sidebar: eSpaceSidebar
 keywords:
   - CrossSpaceCall
   - 内置合约
-tags:
-  - CrossSpaceCall
-  - 内置合约
+tags: [ CrossSpaceCall, 内置合约 ]
 ---
 
 Conflux eSpace 和 Core Space 是两个独立的 space，您不能直接将 CFX 从 base32 地址发送到十六进制地址。 您只能使用 [Confluxhub Space Bridge](https://confluxhub.io/espace-bridge/cross-space) 在 eSpace 和 Core Space 之间转移 CFX。
