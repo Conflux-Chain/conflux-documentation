@@ -21,8 +21,7 @@ keywords:
   - Testnet
   - Faucet
   - ConfluxScan
-tags:
-  - js-conflux-sdk
+tags: [ js-conflux-sdk ]
 ---
 
 To send a transaction on Conflux Core Space, you need to use it's own SDKs. This tutorial will show you how to send a transaction using the js-conflux-sdk.
