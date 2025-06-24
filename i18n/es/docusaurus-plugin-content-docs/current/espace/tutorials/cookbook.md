@@ -15,10 +15,7 @@ keywords:
   - Blockchain Development
   - Tutorial
 displayed_sidebar: eSpaceSidebar
-tags:
-  - Tutorial
-  - Cookbook
-  - Contract Development
+tags: [ Tutorial, Cookbook, Contract Development ]
 ---
 
 [**Cookbook**](https://www.cookbook.dev/) is an essential resource for developers working with Solidity on EVM-compatible blockchains. This guide offers an overview of what Cookbook is, who it's for, and how it can facilitate the development of smart contracts.
