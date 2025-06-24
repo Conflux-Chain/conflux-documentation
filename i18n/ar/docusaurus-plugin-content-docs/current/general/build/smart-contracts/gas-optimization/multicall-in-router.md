@@ -12,10 +12,7 @@ keywords:
   - delegatecall
   - MulticallRouter
   - Foundry
-tags:
-  - Multicall in Router
-  - Gas Optimization
-  - Smart Contracts
+tags: [ Multicall in Router, Gas Optimization, Smart Contracts ]
 ---
 
 # Implement multicall in router-like contracts
