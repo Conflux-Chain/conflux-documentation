@@ -24,9 +24,7 @@ keywords:
   - RPC 端点
   - 私钥
   - Web3提供者
-tags:
-  - ethers.js
-  - 教程
+tags: [ ethers.js, 教程 ]
 ---
 
 ethers.js 是一个用于构建以太坊应用程序的 JavaScript 库。 由于 Conflux eSpace 兼容以太坊，我们可以直接在 Conflux eSpace 中使用这个库。 目前，ethers 有两个主要版本：v6 和 v5。 本教程重点展示如何在 Conflux eSpace 中使用 v6 版本。
