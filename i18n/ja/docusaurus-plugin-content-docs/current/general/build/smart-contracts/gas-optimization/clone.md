@@ -13,9 +13,11 @@ keywords:
   - deployment-strategies
   - gas-efficiency
 tags:
-  - Clone vs New/Create2
-  - Gas Optimization
-  - Smart Contracts
+  [
+    Clone vs New/Create2,
+    Gas Optimization,
+    Smart Contracts
+  ]
 ---
 
 # Clone vs New/Create2
