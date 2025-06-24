@@ -14,9 +14,7 @@ keywords:
   - 教程
   - eSpace
 displayed_sidebar: eSpaceSidebar
-tags:
-  - 教程
-  - WalletConnect
+tags: [ 教程, WalletConnect ]
 ---
 
 # 在Conflux链上将WalletConnect与您的React应用集成
