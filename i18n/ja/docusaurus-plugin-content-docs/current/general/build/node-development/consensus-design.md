@@ -10,8 +10,7 @@ keywords:
   - pivot chain
   - timer chain
   - adaptive weight
-tags:
-  - Consensus Layer
+tags: [ Consensus Layer ]
 ---
 
 # The Conflux Consensus Layer Design and Implementation
