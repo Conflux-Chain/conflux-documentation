@@ -14,10 +14,7 @@ keywords:
   - blockhash
   - keccak256
   - chainlink-vrf
-tags:
-  - 随机性漏洞
-  - Security
-  - 智能合约
+tags: [ 随机性漏洞, Security, 智能合约 ]
 ---
 
 # 随机性漏洞
