@@ -1,12 +1,8 @@
 ---
 displayed_sidebar: generalSidebar
 sidebar_position: 3
-keywords:
-  - Uniswap V3
-  - DeFi
-  - decentralized trading protocol
-tags:
-  - Protocols
+keywords: [ Uniswap V3, DeFi, decentralized trading protocol ]
+tags: [ Protocols ]
 ---
 
 # Uniswap V3
