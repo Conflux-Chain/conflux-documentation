@@ -11,10 +11,7 @@ keywords:
   - UserActivityUnoptimized
   - UserActivityOptimized
   - EVM
-tags:
-  - Storage Pointers
-  - GAS 优化
-  - 智能合约
+tags: [ Storage Pointers, GAS 优化, 智能合约 ]
 ---
 
 # Efficient Use of Storage Pointers
