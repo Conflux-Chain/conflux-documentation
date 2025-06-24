@@ -9,9 +9,7 @@ keywords:
   - Conflux eSpace
   - DApp Development
 displayed_sidebar: eSpaceSidebar
-tags:
-  - Tutorial
-  - WalletConnect
+tags: [ Tutorial, WalletConnect ]
 ---
 
 # Integrating WalletConnect with Vue.js Project on Conflux eSpace
