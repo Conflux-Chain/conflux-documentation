@@ -66,9 +66,14 @@ import TabItem from '@theme/TabItem';
 | parity_getBlockReceipts                 | ✅      |                                                              |
 | eth_pendingTransactions                 | 🚧      |                                                              |
 | web3_sha3                               | 🚧      |                                                              |
-| trace_block                             | ✅      | Parity RPC                                                   |
-| trace_filter                            | ✅      | Parity RPC                                                   |
-| trace_transaction                       | ✅      | Parity RPC                                                   |
+| trace_block                             | ✅      | Compatible with parity and erigon since v3.0.0               |
+| trace_filter                            | ✅      | Compatible with parity and erigon since v3.0.0               |
+| trace_transaction                       | ✅      | Compatible with parity and erigon since v3.0.0               |
+| trace_get                               | ✅      | Supported at v3.0.0                                          |
+| trace_call                              | 🚧      |                                                              |
+| trace_rawTransaction                    | 🚧      |                                                              |
+| trace_replayTransaction                 | 🚧      |                                                              |
+| trace_replayBlockTransactions           | 🚧      |                                                              |
 | eth_feeHistory                          | ✅      | Supported at v2.4.0                                          |
 | eth_getFilterChanges                    | ✅      | Supported at v2.1.1                                          |
 | eth_getFilterLogs                       | ✅      | Supported at v2.1.1                                          |
@@ -80,6 +85,10 @@ import TabItem from '@theme/TabItem';
 | debug_traceBlockByHash                  | ✅      | Supported at v2.4.0                                          |
 | debug_traceBlockByNumber                | ✅      | Supported at v2.4.0                                          |
 | debug_traceCall                         | ✅      | Supported at v2.4.1                                          |
+| txpool_status                           | ✅      | Supported at v3.0.0                                          |
+| txpool_inspect                          | ✅      | Supported at v3.0.0                                          |
+| txpool_content                          | ✅      | Supported at v3.0.0                                          |
+| txpool_contentFrom                      | ✅      | Supported at v3.0.0                                          |
 | net_listening                           | ❌      |                                                              |
 | net_peerCount                           | ❌      |                                                              |
 | eth_compileLLL                          | ❌      |                                                              |
@@ -94,6 +103,36 @@ import TabItem from '@theme/TabItem';
 
 Legend: ❌ = not supported. 🚧 = work in progress. ✅ = supported.
 
+### Conflux Specific RPCs
+
+#### `trace_blockSetAuth`
+
+`trace_blockSetAuth` is a Conflux specific RPC used to retrieve the trace data for SetAuth operations in EIP-7702 transactions. The returned result is as follows:
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": [
+        {
+            "action": {
+                "address": "0xf0109fc8df283027b6285cc889f5aa624eac1f55",
+                "chainId": "0x401",
+                "nonce": "0x1",
+                "author": "0x3d69d968e3673e188b2d2d42b6a385686186258f"
+            },
+            "result": "invalid_nonce",
+            "transactionPosition": 0,
+            "transactionHash": "0x716f6f3294346099d98d5f9b0e12846647e1d17b9076d1a5ac0e42dac72f7229",
+            "blockNumber": 7800,
+            "blockHash": "0x015880a004ff96fed4161353994958d0f09eeae770f73ca888f105dc9f4ef1cc"
+        }
+    ]
+}
+```
+
+Check [trace_blockSetAuth](https://github.com/Conflux-Chain/conflux-rust/blob/master/docs/transaction-trace/parity-style-trace.md#trace-setauth7702) for more details.
+
 ## Notes
 
 * `eth_sendRawTransaction` supports legacy(EIP-155), type-1(EIP-2930) and type-2(EIP-1559) transactions. Type-3 transactions (EIP-4844) transactions are not supported yet.
@@ -101,12 +140,22 @@ Legend: ❌ = not supported. 🚧 = work in progress. ✅ = supported.
 * There is no concept of uncle (aka ommer) blocks. The `eth_getUncleByBlockHashAndIndex` and `eth_getUncleByBlockNumberAndIndex` methods always return `null`. The `eth_getUncleCountByBlockHash` and `eth_getUncleCountByBlockNumber` methods return zero for valid block IDs and `null` for invalid block IDs. Additionally, uncle-related block metadata such as `sha3Uncles` is sha3 of empty hash array.
 * The nonstandard Geth tracing APIs are not supported at present
 * The nonstandard Parity tracing APIs are in progress
+* A breaking change at v3.0.0: Trace RPC methods is compatible with parity and erigon, including `trace_block`, `trace_transaction`, `trace_filter`.
 
-### extra `burntGasFee` field of transaction receipts
+### Extra Fields RPC Response
 
-The implementation of 1559 in Conflux eSpace differs slightly from Ethereum. The base fee of the transaction is not entirely burned; instead, it is partially burned according to a certain ratio, with the remaining part still serving as the miner's revenue. An additional field `burntGasFee` is added to the transaction receipt (e.g. got from `eth_getTransactionReceipt` RPC) to record the amount of fees that is burned.
+#### Extra Fields of Transaction Receipts
 
-For more information, please refer to [CIP-137](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-137.md).
+Transaction receipts returned by the `eth_getTransactionReceipt` RPC have the following extra fields:
+
+- `burntGasFee`: The amount of fees that is burned. In Conflux, the base fee of the transaction is partially burned rather than entirely burned. Check [CIP-137](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-137.md) for more details.
+- `gasFee`: The amount of fees of a transaction. Added at v3.0.0.
+
+#### Extra Fields of Block
+
+Block object returned by the `eth_getBlockByNumber`, `eth_getBlockByHash` RPC has the following extra fields:
+
+- `espaceGasLimit`: The actual gas limit for eSpace transactions, which is different from `gasLimit` in the block object. Check [Spaces](../../general/conflux-basics/spaces.md#graph-illustration) for more details. Added at v3.0.0.
 
 ### `pending` tag
 
