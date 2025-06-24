@@ -11,10 +11,7 @@ keywords:
   - for-loop
   - UncheckedExample
   - gas-efficiency
-tags:
-  - Unchecked
-  - Gas Optimization
-  - Contratos Inteligentes
+tags: [ Unchecked, Gas Optimization, Contratos Inteligentes ]
 ---
 
 # Unchecked
