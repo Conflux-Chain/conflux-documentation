@@ -10,10 +10,7 @@ keywords:
   - LogicOptimization
   - function-ordering
   - gas-efficiency
-tags:
-  - 短路运算
-  - GAS 优化
-  - 智能合约
+tags: [ 短路运算, GAS 优化, 智能合约 ]
 ---
 
 # 短路运算
