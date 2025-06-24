@@ -14,10 +14,7 @@ keywords:
   - king-of-ether
   - gas-limit
   - prevention
-tags:
-  - Unchecked Low-Level Calls
-  - Security
-  - Smart Contracts
+tags: [ Unchecked Low-Level Calls, Security, Smart Contracts ]
 ---
 
 # Unchecked Low-Level Calls
