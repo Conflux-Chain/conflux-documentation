@@ -10,8 +10,7 @@ keywords:
   - 枢轴链
   - timer chain
   - adaptive weight
-tags:
-  - Consensus Layer
+tags: [ Consensus Layer ]
 ---
 
 # Conflux 共识层的设计与实现
