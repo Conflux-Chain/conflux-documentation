@@ -11,10 +11,7 @@ keywords:
   - for-loop
   - UncheckedExample
   - gas-efficiency
-tags:
-  - Unchecked
-  - GAS 优化
-  - 智能合约
+tags: [ Unchecked, GAS 优化, 智能合约 ]
 ---
 
 # Unchecked
