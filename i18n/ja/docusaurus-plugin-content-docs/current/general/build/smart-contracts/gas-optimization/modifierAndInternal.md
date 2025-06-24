@@ -12,9 +12,11 @@ keywords:
   - UsingModifiers
   - UsingInternalFunctions
 tags:
-  - Modifiers vs Internal Functions
-  - Gas Optimization
-  - Smart Contracts
+  [
+    Modifiers vs Internal Functions,
+    Gas Optimization,
+    Smart Contracts
+  ]
 ---
 
 # Modifiers vs Internal Functions
