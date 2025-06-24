@@ -12,10 +12,7 @@ keywords:
   - Solidity
   - deployment-strategies
   - gas-efficiency
-tags:
-  - Clone 和 New/Create2 关键字
-  - GAS 优化
-  - 智能合约
+tags: [ Clone 和 New/Create2 关键字, GAS 优化, 智能合约 ]
 ---
 
 # Clone 和 New/Create2 关键字
