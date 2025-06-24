@@ -20,8 +20,7 @@ keywords:
   - CFX staking
   - governance
   - PoS validators
-tags:
-  - Ecosystem
+tags: [ Ecosystem ]
 ---
 
 # Conflux Network Ecosystem
