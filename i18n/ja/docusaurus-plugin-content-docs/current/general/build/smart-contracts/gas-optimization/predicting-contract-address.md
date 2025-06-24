@@ -13,9 +13,11 @@ keywords:
   - DataWriter
   - DeploymentManager
 tags:
-  - Predicting Contract Addresses
-  - Gas Optimization
-  - Smart Contracts
+  [
+    Predicting Contract Addresses,
+    Gas Optimization,
+    Smart Contracts
+  ]
 ---
 
 # Predicting Contract Addresses Using Account Nonce
