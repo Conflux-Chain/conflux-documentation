@@ -20,10 +20,7 @@ keywords:
   - js-conflux-sdk
   - Proof Generation
   - Whitelist Management
-tags:
-  - NFT
-  - Whitelist
-  - Tutorial
+tags: [ NFT, Whitelist, Tutorial ]
 ---
 
 # Merkle Tree NFT Whitelist on CoreSpace using Hardhat
