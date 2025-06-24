@@ -10,9 +10,7 @@ keywords:
   - Project Creation
   - WalletConnect Cloud
 displayed_sidebar: eSpaceSidebar
-tags:
-  - Tutorial
-  - WalletConnect
+tags: [ Tutorial, WalletConnect ]
 ---
 
 # Creating a WalletConnect Project and Obtaining a `ProjectId`
