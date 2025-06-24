@@ -3,23 +3,24 @@ sidebar_position: 1
 title: Mining Using External Mining Software
 displayed_sidebar: generalSidebar
 keywords:
-  - Conflux Network
-  - mining
-  - PoW
-  - GPU mining
-  - NVIDIA GPU
-  - mining node
-  - fullnode
-  - cfxmine
-  - Hydra network
-  - Windows mining
-  - Linux mining
-  - mining configuration
-  - mining wallet
-  - remote mining
-  - stratum protocol
-tags:
-  - Mining
+  [
+    Conflux Network,
+    mining,
+    PoW,
+    GPU mining,
+    NVIDIA GPU,
+    mining node,
+    fullnode,
+    cfxmine,
+    Hydra network,
+    Windows mining,
+    Linux mining,
+    mining configuration,
+    mining wallet,
+    remote mining,
+    stratum protocol
+  ]
+tags: [ Mining ]
 ---
 
 ## Conflux Network PoW - GPU Mining Instruction
