@@ -4,24 +4,25 @@ sidebar_position: 14
 description: How to solve common problems
 displayed_sidebar: generalSidebar
 keywords:
-  - Conflux Network
-  - troubleshooting
-  - node operation
-  - illegal instruction
-  - GLIBC
-  - data corruption
-  - pos_key password
-  - Docker issues
-  - Mac compatibility
-  - Windows issues
-  - node crash
-  - peer connection
-  - node synchronization
-  - error logs
-  - testnet synchronization
-  - mempool broadcast
-tags:
-  - node
+  [
+    Conflux Network,
+    troubleshooting,
+    node operation,
+    illegal instruction,
+    GLIBC,
+    data corruption,
+    pos_key password,
+    Docker issues,
+    Mac compatibility,
+    Windows issues,
+    node crash,
+    peer connection,
+    node synchronization,
+    error logs,
+    testnet synchronization,
+    mempool broadcast
+  ]
+tags: [ node ]
 ---
 
 ## Node startup failure.
