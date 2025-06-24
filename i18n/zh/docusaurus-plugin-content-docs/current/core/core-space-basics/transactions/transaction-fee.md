@@ -18,10 +18,7 @@ keywords:
   - Miner Incentives
   - Network Congestion
   - Transaction Prioritization
-tags:
-  - 交易
-  - 交易费用
-  - 燃气
+tags: [ 交易, 交易费用, 燃气 ]
 ---
 
 在Conflux网络的核心空间中，交易由矿工处理，矿工为其服务收费。 这个费用激励矿工参与网络并保持其顺畅运行。 这些费用是用CFX支付的，并由交易发起者通过交易中的`gas`, `gasPrice` and `storageLimit` 字段指定。
