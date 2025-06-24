@@ -11,10 +11,7 @@ keywords:
   - audits
   - escape-hatches
   - flexible-control
-tags:
-  - Excessive Restrictions
-  - Security
-  - Smart Contracts
+tags: [ Excessive Restrictions, Security, Smart Contracts ]
 ---
 
 # Excessive Function Restrictions
