@@ -12,9 +12,11 @@ keywords:
   - function-selectors
   - ExampleContract
 tags:
-  - MethodId Optimization
-  - Gas Optimization
-  - Smart Contracts
+  [
+    MethodId Optimization,
+    Gas Optimization,
+    Smart Contracts
+  ]
 ---
 
 # MethodId Optimization
