@@ -13,9 +13,7 @@ keywords:
   - upgradability
   - incident-response
   - solidity
-tags:
-  - Security
-  - Contratos Inteligentes
+tags: [ Security, Contratos Inteligentes ]
 ---
 
 Ensuring the security of smart contracts is crucial as they directly handle and store value, and are difficult to modify once deployed on a blockchain. To secure your smart contracts, follow these key steps and best practices:
