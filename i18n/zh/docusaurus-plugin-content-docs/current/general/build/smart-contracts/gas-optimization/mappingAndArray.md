@@ -11,10 +11,7 @@ keywords:
   - storage-efficiency
   - UseMapping
   - UseArray
-tags:
-  - 映射 vs 动态数组
-  - GAS 优化
-  - 智能合约
+tags: [ 映射 vs 动态数组, GAS 优化, 智能合约 ]
 ---
 
 # 映射 vs 动态数组
