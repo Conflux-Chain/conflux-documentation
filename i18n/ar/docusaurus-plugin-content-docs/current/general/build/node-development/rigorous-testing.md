@@ -10,8 +10,7 @@ keywords:
   - performance benchmarks
   - blockchain testing
   - node development
-tags:
-  - Testing
+tags: [ Testing ]
 ---
 
 # Rigorous Testing Tools for Conflux
