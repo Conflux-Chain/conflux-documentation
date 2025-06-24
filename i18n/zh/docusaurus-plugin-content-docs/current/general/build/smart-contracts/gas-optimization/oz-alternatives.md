@@ -12,10 +12,7 @@ keywords:
   - assembly
   - DeFi
   - gas-efficiency
-tags:
-  - Alternatives to OpenZeppelin
-  - GAS 优化
-  - 智能合约
+tags: [ Alternatives to OpenZeppelin, GAS 优化, 智能合约 ]
 ---
 
 # Alternatives to OpenZeppelin
