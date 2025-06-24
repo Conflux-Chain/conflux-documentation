@@ -5,11 +5,13 @@ displayed_sidebar: coreSidebar
 keywords:
   - Core Space - Base32 Address - CFX - Gas - Storage - Sponsorship - CVM - Internal Contracts - Smart Contract Platform - Ethereum Compatibility - Fluent Wallet - Drip - GDrip
 tags:
-  - Base32 地址
-  - Addresses
-  - Conflux Addresses
-  - 账户
-  - Core Space
+  [
+    Base32 地址,
+    Addresses,
+    Conflux Addresses,
+    账户,
+    Core Space
+  ]
 ---
 
 我们将为您快速介绍 Core Space。 它是一个类似于以太坊的智能合约平台。 如果您熟悉以太坊，这个指南将帮助您快速理解 Core Space。
