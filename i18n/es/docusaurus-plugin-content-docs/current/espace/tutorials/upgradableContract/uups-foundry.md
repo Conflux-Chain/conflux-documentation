@@ -7,9 +7,7 @@ keywords:
   - UUPS
   - Foundry
   - eSpace
-tags:
-  - Tutorial
-  - Upgradeable Contracts
+tags: [ Tutorial, Upgradeable Contracts ]
 ---
 
 # Deploying Upgradeable Contracts using UUPS with Foundry
