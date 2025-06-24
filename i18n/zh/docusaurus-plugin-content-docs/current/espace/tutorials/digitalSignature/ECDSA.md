@@ -25,9 +25,7 @@ keywords:
   - Contract Efficiency
   - Decentralized Identity
   - Multi-sig Wallets
-tags:
-  - ECDSA
-  - 教程
+tags: [ ECDSA, 教程 ]
 ---
 
 # 如何使用 ECDSA 签名
