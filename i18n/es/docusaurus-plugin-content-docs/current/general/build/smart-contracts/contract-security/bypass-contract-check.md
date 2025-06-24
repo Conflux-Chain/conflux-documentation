@@ -13,10 +13,7 @@ keywords:
   - solidity
   - constructor-exploit
   - prevention
-tags:
-  - Constructor
-  - Security
-  - Contratos Inteligentes
+tags: [ Constructor, Security, Contratos Inteligentes ]
 ---
 
 Many free-mint projects utilize the `isContract()` method to limit access to external accounts (EOAs) and restrict contract addresses. This method leverages `extcodesize` to determine the runtime `bytecode` length of an address. If it is greater than zero, the address is deemed a contract; otherwise, it is considered an EOA.
