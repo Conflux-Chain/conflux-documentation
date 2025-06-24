@@ -1,22 +1,26 @@
 ---
 displayed_sidebar: generalSidebar
 keywords:
-  - smart contracts
-  - gas optimization
-  - Solidity
-  - ERC20
-  - non-zero balances
-  - storage variables
-  - Conflux
-  - Core Space
-  - eSpace
-  - SSTORE
-  - OpenZeppelin
-  - reentrancy guard
+  [
+    smart contracts,
+    gas optimization,
+    Solidity,
+    ERC20,
+    non-zero balances,
+    storage variables,
+    Conflux,
+    Core Space,
+    eSpace,
+    SSTORE,
+    OpenZeppelin,
+    reentrancy guard
+  ]
 tags:
-  - Non-Zero Balances
-  - Gas Optimization
-  - Contratos Inteligentes
+  [
+    Non-Zero Balances,
+    Gas Optimization,
+    Contratos Inteligentes
+  ]
 ---
 
 # Non-Zero Balances
