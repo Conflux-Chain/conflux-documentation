@@ -10,10 +10,7 @@ keywords:
   - EVM
   - state-variables
   - uint256
-tags:
-  - Initialization
-  - GAS 优化
-  - 智能合约
+tags: [ Initialization, GAS 优化, 智能合约 ]
 ---
 
 # Efficient Initialization
