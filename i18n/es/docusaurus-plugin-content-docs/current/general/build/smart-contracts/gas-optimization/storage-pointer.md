@@ -12,9 +12,11 @@ keywords:
   - UserActivityOptimized
   - EVM
 tags:
-  - Storage Pointers
-  - Gas Optimization
-  - Contratos Inteligentes
+  [
+    Storage Pointers,
+    Gas Optimization,
+    Contratos Inteligentes
+  ]
 ---
 
 # Efficient Use of Storage Pointers
