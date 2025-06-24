@@ -29,9 +29,7 @@ keywords:
   - Liquidity Positions
   - Uniswap V3
 displayed_sidebar: eSpaceSidebar
-tags:
-  - Indexer
-  - Tutorial
+tags: [ Indexer, Tutorial ]
 ---
 
 # Creating an Indexer for Conflux Contracts
