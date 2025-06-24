@@ -5,8 +5,7 @@ description: 使用 js-conflux-sdk 的全面指南。
 displayed_sidebar: coreSidebar
 keywords:
   - js-conflux-sdk - JavaScript - SDK - Account Generation - Blockchain Queries - Smart Contract Deployment - Smart Contract Interaction - Utilities - Address Handling - Unit Conversion - Hashing - Signing - Conflux Network - Core Space - RPC Methods - Drip - CFX - Transaction Execution - Cryptography
-tags:
-  - js-conflux-sdk
+tags: [ js-conflux-sdk ]
 ---
 
 [开发者快速入门](../core-developer-quickstart.md) 演示了如何安装和使用 js-conflux-sdk 来发送交易。 这份指南深入探讨了 js-conflux-sdk 的细节。
