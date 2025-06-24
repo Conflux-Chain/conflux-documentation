@@ -11,10 +11,7 @@ keywords:
   - ResetVariable
   - gas-costs
   - comparison
-tags:
-  - ResetVariable
-  - GAS 优化
-  - 智能合约
+tags: [ ResetVariable, GAS 优化, 智能合约 ]
 ---
 
 # ResetVariable
