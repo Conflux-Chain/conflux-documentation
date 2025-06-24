@@ -12,10 +12,7 @@ keywords:
   - 以太坊
   - OpenZeppelin
   - Ethers.js
-tags:
-  - ERC20Permit
-  - GAS 优化
-  - 智能合约
+tags: [ ERC20Permit, GAS 优化, 智能合约 ]
 ---
 
 # ERC20Permit
