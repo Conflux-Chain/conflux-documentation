@@ -11,10 +11,7 @@ keywords:
   - AND-operation
   - bit-shift
   - gas-efficiency
-tags:
-  - Bitmap Bitwise Operation
-  - GAS 优化
-  - 智能合约
+tags: [ Bitmap Bitwise Operation, GAS 优化, 智能合约 ]
 ---
 
 # 位图和位运算
