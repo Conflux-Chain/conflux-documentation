@@ -11,10 +11,7 @@ keywords:
   - ArrayGasOpt
   - push-operation
   - storage-efficiency
-tags:
-  - 固定大小/动态数组
-  - GAS 优化
-  - 智能合约
+tags: [ 固定大小/动态数组, GAS 优化, 智能合约 ]
 ---
 
 # 固定大小/动态数组
