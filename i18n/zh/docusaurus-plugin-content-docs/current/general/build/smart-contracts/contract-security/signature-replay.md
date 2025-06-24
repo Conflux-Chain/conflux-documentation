@@ -15,10 +15,7 @@ keywords:
   - prevention
   - nonce
   - chainid
-tags:
-  - Signature Replay
-  - Security
-  - 智能合约
+tags: [ Signature Replay, Security, 智能合约 ]
 ---
 
 ## 签名重放攻击
