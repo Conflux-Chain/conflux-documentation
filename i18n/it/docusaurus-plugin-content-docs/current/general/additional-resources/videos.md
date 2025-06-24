@@ -15,10 +15,7 @@ keywords:
   - Conflux-eSpace
   - Hardhat-tutorials
   - wallet-integration
-tags:
-  - Tutorials
-  - Videos
-  - Learning Resources
+tags: [ Tutorials, Videos, Learning Resources ]
 ---
 
 # Videos
