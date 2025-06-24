@@ -11,10 +11,7 @@ keywords:
   - iszero
   - opcode
   - DemoCode
-tags:
-  - LessThan
-  - Gas Optimization
-  - Smart Contracts
+tags: [ LessThan, Gas Optimization, Smart Contracts ]
 ---
 
 # Comparison Operators
