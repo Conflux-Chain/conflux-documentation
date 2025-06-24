@@ -7,10 +7,7 @@ keywords:
   - transparent proxy
   - Hardhat
   - eSpace
-tags:
-  - 教程
-  - 可升级的合约
-  - Transparent Proxy
+tags: [ 教程, 可升级的合约, Transparent Proxy ]
 ---
 
 # Deploying Upgradeable Contracts using Transparent Proxy with Hardhat
