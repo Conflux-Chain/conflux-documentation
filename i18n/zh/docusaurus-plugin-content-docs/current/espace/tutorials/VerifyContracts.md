@@ -14,9 +14,7 @@ keywords:
   - Web UI
   - API Integration
   - Blockchain Development
-tags:
-  - 教程
-  - 合约验证
+tags: [ 教程, 合约验证 ]
 ---
 
 部署智能合约之后，在区块链浏览器上验证代码是非常重要的。 这可以通过使用开发者工具或 Web UI 以自动化的方式完成。
