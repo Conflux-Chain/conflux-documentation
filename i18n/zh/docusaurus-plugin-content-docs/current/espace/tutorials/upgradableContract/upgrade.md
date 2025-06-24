@@ -10,10 +10,7 @@ keywords:
   - eSpace
   - proxy pattern
 displayed_sidebar: eSpaceSidebar
-tags:
-  - 教程
-  - 可升级的合约
-  - Hardhat
+tags: [ 教程, 可升级的合约, Hardhat ]
 ---
 
 # 在Conflux eSpace上使用Hardhat部署可升级合约
