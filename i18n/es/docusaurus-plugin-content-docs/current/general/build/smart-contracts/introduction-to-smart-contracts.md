@@ -14,9 +14,7 @@ keywords:
   - deployment
   - function-calls
   - gas-optimization
-tags:
-  - Contratos Inteligentes
-  - Tutorial
+tags: [ Contratos Inteligentes, Tutorial ]
 ---
 
 ## Introduction to Smart Contracts Development on Conflux Network
