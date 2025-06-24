@@ -12,10 +12,7 @@ keywords:
   - Ethereum
   - OpenZeppelin
   - Ethers.js
-tags:
-  - ERC20Permit
-  - Gas Optimization
-  - Smart Contracts
+tags: [ ERC20Permit, Gas Optimization, Smart Contracts ]
 ---
 
 # ERC20Permit
