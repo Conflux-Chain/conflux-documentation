@@ -15,8 +15,7 @@ keywords:
   - ICOs
   - interface-detection
   - Conflux
-tags:
-  - Token 标准
+tags: [ Token 标准 ]
 ---
 
 区块链生态系统中的代币（Token）标准是至关重要的，它们为代币的实施提供了一套标准和指导原则。 这些标准确保了不同应用和平台间的互操作性和一致性。 主要标准包括：
