@@ -19,8 +19,7 @@ keywords:
   - reward evaluation
   - reward distribution
   - community involvement
-tags:
-  - Community Contribution
+tags: [ Community Contribution ]
 ---
 
 ## Introduction
