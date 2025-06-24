@@ -13,10 +13,7 @@ keywords:
   - ReentrancyGuardBool
   - ReentrancyGuardUint01
   - ReentrancyGuardUint12
-tags:
-  - Reentrancy Guard
-  - Gas Optimization
-  - Smart Contracts
+tags: [ Reentrancy Guard, Gas Optimization, Smart Contracts ]
 ---
 
 # Low-Cost Reentrancy Guard
