@@ -15,9 +15,11 @@ keywords:
   - TransparentLogic
   - UUPSLogic
 tags:
-  - UUPS vs Transparent Proxy
-  - Gas Optimization
-  - Contratos Inteligentes
+  [
+    UUPS vs Transparent Proxy,
+    Gas Optimization,
+    Contratos Inteligentes
+  ]
 ---
 
 # UUPS vs Transparent Proxy
