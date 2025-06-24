@@ -14,9 +14,7 @@ keywords:
   - stop_election
   - committee
   - staking safety
-tags:
-  - Staking
-  - Node Operation
+tags: [ Staking, Node Operation ]
 ---
 
 # Safe Node Restart Procedure
