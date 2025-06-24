@@ -7,9 +7,7 @@ keywords:
   - UUPS
   - Hardhat
   - eSpace
-tags:
-  - 教程
-  - 可升级的合约
+tags: [ 教程, 可升级的合约 ]
 ---
 
 # 使用 Hardhat 部署可升级合约（UUPS 模式）
