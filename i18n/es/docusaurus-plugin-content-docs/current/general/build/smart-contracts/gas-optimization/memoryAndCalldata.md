@@ -12,9 +12,11 @@ keywords:
   - function-parameters
   - CalldataAndMemory
 tags:
-  - Memory vs Calldata
-  - Gas Optimization
-  - Contratos Inteligentes
+  [
+    Memory vs Calldata,
+    Gas Optimization,
+    Contratos Inteligentes
+  ]
 ---
 
 # Memory vs Calldata
