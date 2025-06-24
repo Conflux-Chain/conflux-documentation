@@ -12,10 +12,7 @@ keywords:
   - cross-chain-bridge
   - prevention
   - keccak256
-tags:
-  - Selector Collision
-  - Security
-  - 智能合约
+tags: [ Selector Collision, Security, 智能合约 ]
 ---
 
 The **selector collision attack** was one of the key reasons behind the hacking of the Poly Network cross-chain bridge.
