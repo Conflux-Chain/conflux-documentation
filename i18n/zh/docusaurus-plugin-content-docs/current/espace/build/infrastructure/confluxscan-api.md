@@ -22,8 +22,7 @@ keywords:
   - 速率限制
   - API Key
   - Web3 Paywall
-tags:
-  - ConfluxScan
+tags: [ ConfluxScan ]
 ---
 
 [ConfluxScan](https://evm.confluxscan.org/) 是 Conflux 网络的区块浏览器，就像以太坊的 Etherscan 一样。 它为开发者提供了一个 [**RESTful API**](https://evmapi.confluxscan.org/doc) 来查询 **聚合的区块链数据**。 该 API 可以免费使用，并且与 [Etherscan API](https://etherscan.io/apis) 兼容。
