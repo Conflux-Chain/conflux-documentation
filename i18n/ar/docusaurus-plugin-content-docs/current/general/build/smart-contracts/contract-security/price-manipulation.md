@@ -12,10 +12,7 @@ keywords:
   - erc20
   - twap
   - prevention
-tags:
-  - Price Manipulation
-  - Security
-  - Smart Contracts
+tags: [ Price Manipulation, Security, Smart Contracts ]
 ---
 
 # Price Manipulation
