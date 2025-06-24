@@ -11,10 +11,7 @@ keywords:
   - ResetVariable
   - gas-costs
   - comparison
-tags:
-  - ResetVariable
-  - Gas Optimization
-  - Smart Contracts
+tags: [ ResetVariable, Gas Optimization, Smart Contracts ]
 ---
 
 # ResetVariable
