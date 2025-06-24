@@ -5,9 +5,7 @@ displayed_sidebar: eSpaceSidebar
 description: This page is meant to guide you through the basics on how to use web3.js when developing on Conflux eSpace.
 keywords:
   - web3.js - JavaScript - Conflux eSpace - Smart Contracts - Transactions - Blockchain Interaction - Solidity - ABI - Bytecode - HTTP Connection - Account Balance - Contract Deployment - Contract Methods - Call Methods - Send Methods - Gas Estimation - Transaction Signing - npm - Node.js - RPC Endpoint - Private Key - Incrementer Contract - Compilation - Web3 Provider - Contract Instance - Transaction Receipt
-tags:
-  - Web3.js
-  - 教程
+tags: [ Web3.js, 教程 ]
 ---
 
 Web3.py 和 Web3.js 是一组库，通过 HTTP、IPC 或 WebSocket 通信协议，分别使用 Python 和 JavaScript 编程语言，帮助开发者与 Conflux 节点进行交互。 本指南将为您提供使用[**Web3.js**](https://web3js.readthedocs.io/en/v1.8.2/)库传输交易和部署智能合约的专业知识。
