@@ -10,10 +10,7 @@ keywords:
   - transparency
   - storage slots
   - best-practices
-tags:
-  - Private Variables
-  - Security
-  - Smart Contracts
+tags: [ Private Variables, Security, Smart Contracts ]
 ---
 
 When developing smart contracts, it's crucial to understand that marking variables as `private` does not make them confidential. This tutorial explains why private variables are still accessible and provides best practices for handling sensitive information in smart contracts.
