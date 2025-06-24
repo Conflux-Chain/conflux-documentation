@@ -15,8 +15,7 @@ keywords:
   - PoW stake
   - PoS votes
   - validator rewards
-tags:
-  - Staking
+tags: [ Staking ]
 ---
 
 To become a solo validator, you’ll need to:
