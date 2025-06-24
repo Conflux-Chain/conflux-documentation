@@ -11,9 +11,11 @@ keywords:
   - state-variables
   - uint256
 tags:
-  - Initialization
-  - Gas Optimization
-  - Contratos Inteligentes
+  [
+    Initialization,
+    Gas Optimization,
+    Contratos Inteligentes
+  ]
 ---
 
 # Efficient Initialization
