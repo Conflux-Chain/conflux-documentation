@@ -1,12 +1,8 @@
 ---
 displayed_sidebar: generalSidebar
 sidebar_position: 3
-tags:
-  - Protocols
-keywords:
-  - Aave
-  - DeFi
-  - decentralized lending protocol
+tags: [ Protocols ]
+keywords: [ Aave, DeFi, decentralized lending protocol ]
 ---
 
 # Aave Protocol
