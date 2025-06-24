@@ -12,10 +12,7 @@ keywords:
   - access-control
   - require-statements
   - prevention
-tags:
-  - Input Validation
-  - Security
-  - Contratos Inteligentes
+tags: [ Input Validation, Security, Contratos Inteligentes ]
 ---
 
 # Improper Input Validation
