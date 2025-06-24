@@ -9,8 +9,7 @@ keywords:
   - proof-of-work
   - RPC interface
   - blockchain mining
-tags:
-  - Stratum Protocol
+tags: [ Stratum Protocol ]
 ---
 
 # Conflux-Rust中的Stratum协议
