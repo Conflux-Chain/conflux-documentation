@@ -5,9 +5,7 @@ displayed_sidebar: eSpaceSidebar
 description: 本页面旨在指导您如何在Conflux eSpace上开发时使用web3.py的基础知识。
 keywords:
   - web3.py - Python - Conflux eSpace - Smart Contracts - Transactions - Blockchain Interaction - Solidity - ABI - Bytecode - HTTP Connection - Account Balance - Contract Deployment - Contract Methods - Call Methods - Send Methods - Gas Estimation - Transaction Signing - pip - RPC Endpoint - Private Key - Incrementer Contract - Compilation - Web3 Provider - Contract Instance - Transaction Receipt - solc-x - Gas Price Strategy
-tags:
-  - Web3.py
-  - 教程
+tags: [ Web3.py, 教程 ]
 ---
 
 Web3.py和Web3.js是一组库，通过HTTP、IPC或WebSocket通信协议，分别使用Python和JavaScript编程语言，为开发者与Conflux节点互动提供便利。 本指南将为您提供使用[**Web3.py**](https://web3py.readthedocs.io/)库进行交易传输和部署智能合约的专业知识。
