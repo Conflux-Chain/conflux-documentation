@@ -11,10 +11,7 @@ keywords:
   - Optimizer
   - gas-efficiency
   - function-array
-tags:
-  - MethodId Sort Optimization
-  - GAS 优化
-  - 智能合约
+tags: [ MethodId Sort Optimization, GAS 优化, 智能合约 ]
 ---
 
 # MethodId Sort Optimization
