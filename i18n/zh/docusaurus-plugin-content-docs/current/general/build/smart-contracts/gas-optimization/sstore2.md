@@ -12,10 +12,7 @@ keywords:
   - 以太坊
   - Conflux
   - Core-Space
-tags:
-  - SSTORE2
-  - GAS 优化
-  - 智能合约
+tags: [ SSTORE2, GAS 优化, 智能合约 ]
 ---
 
 # SSTORE2
