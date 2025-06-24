@@ -14,10 +14,7 @@ keywords:
   - UUPSProxy
   - TransparentLogic
   - UUPSLogic
-tags:
-  - UUPS vs Transparent Proxy
-  - GAS 优化
-  - 智能合约
+tags: [ UUPS vs Transparent Proxy, GAS 优化, 智能合约 ]
 ---
 
 # UUPS vs Transparent Proxy
