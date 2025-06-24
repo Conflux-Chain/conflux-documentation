@@ -17,8 +17,7 @@ keywords:
   - Transaction Monitoring
   - 待处理交易
   - Account Management
-tags:
-  - Nonce
+tags: [ Nonce ]
 ---
 
 在Conflux中，每个账户都有一个nonce值，表示该账户执行的交易序号。 可以使用RPC方法[`cfx_getNextNonce`](/docs/core/build/json-rpc/cfx-namespace/#cfx_getnextnonce)获取此值。 交易中的nonce字段用于指定执行顺序，较低的nonce值表示较早地执行。 通常情况下，可以直接将这个值作为下一次交易的nonce。
