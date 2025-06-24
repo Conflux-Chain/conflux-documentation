@@ -22,8 +22,7 @@ keywords:
   - Rate Limits
   - API Key
   - Web3 Paywall
-tags:
-  - ConfluxScan
+tags: [ ConfluxScan ]
 ---
 
 [ConfluxScan](https://evm.confluxscan.org/) is a block explorer for the Conflux network, just like Etherscan for Ethereum. It provides a [**RESTful API**](https://evmapi.confluxscan.org/doc) for developers to query **aggregated blockchain data**. The API is free to use and compatible with the [Etherscan API](https://etherscan.io/apis).
