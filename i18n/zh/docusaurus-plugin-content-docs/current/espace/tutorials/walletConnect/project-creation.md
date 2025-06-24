@@ -10,9 +10,7 @@ keywords:
   - Project Creation
   - WalletConnect Cloud
 displayed_sidebar: eSpaceSidebar
-tags:
-  - 教程
-  - WalletConnect
+tags: [ 教程, WalletConnect ]
 ---
 
 # 创建一个 WalletConnect 项目并获取`ProjectId`
