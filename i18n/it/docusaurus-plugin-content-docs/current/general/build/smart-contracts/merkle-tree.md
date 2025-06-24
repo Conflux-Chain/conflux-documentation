@@ -14,8 +14,7 @@ keywords:
   - whitelist
   - Solidity
   - MerkleVerification
-tags:
-  - Merkle Tree
+tags: [ Merkle Tree ]
 ---
 
 ## Basic Concept
