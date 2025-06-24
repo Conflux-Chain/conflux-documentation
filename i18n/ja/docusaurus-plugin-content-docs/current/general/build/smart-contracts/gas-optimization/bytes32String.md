@@ -11,10 +11,7 @@ keywords:
   - AND-operation
   - bit-shift
   - gas-efficiency
-tags:
-  - Bytes32 vs String
-  - Gas Optimization
-  - Smart Contracts
+tags: [ Bytes32 vs String, Gas Optimization, Smart Contracts ]
 ---
 
 # Bytes32 vs String
