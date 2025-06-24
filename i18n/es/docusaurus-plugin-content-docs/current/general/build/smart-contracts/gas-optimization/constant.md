@@ -12,9 +12,11 @@ keywords:
   - SLOAD
   - gas-efficiency
 tags:
-  - Constant vs Immutable
-  - Gas Optimization
-  - Contratos Inteligentes
+  [
+    Constant vs Immutable,
+    Gas Optimization,
+    Contratos Inteligentes
+  ]
 ---
 
 # Constant vs Immutable
