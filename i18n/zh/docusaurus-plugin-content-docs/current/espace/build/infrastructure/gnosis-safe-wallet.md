@@ -23,8 +23,7 @@ keywords:
   - 测试网
   - Wallet Integration
   - 故障排除
-tags:
-  - Gnosis Safe
+tags: [ Gnosis Safe ]
 ---
 
 [Gnosis Safe Wallet](https://safe.global/) 是区块链领域著名的多重签名钱包服务，提供安全的资金管理解决方案。 它在以太坊和 EVM（以太坊虚拟机）兼容的区块链生态系统中特别受欢迎。 Gnosis Safe 的全部源代码，包括其智能合约、前端和后端代码，都是开源的，确保了透明性与社区信任度。 Gnosis Safe 致力于创新，它引入了像账户抽象化这样的功能，进一步增强了用户体验并提高了安全性。
