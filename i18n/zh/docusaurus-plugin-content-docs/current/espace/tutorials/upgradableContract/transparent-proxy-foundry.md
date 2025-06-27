@@ -7,11 +7,7 @@ keywords:
   - transparent proxy
   - Foundry
   - eSpace
-tags:
-  - 教程
-  - 可升级的合约
-  - Transparent Proxy
-  - Foundry
+tags: [ 教程, 可升级的合约, Transparent Proxy, Foundry ]
 ---
 
 # 使用 Foundry 部署可升级合约（采用透明代理模式）

@@ -10,10 +10,7 @@ keywords:
   - arithmetic-operations
   - comparison
   - DemoCode
-tags:
-  - Increment
-  - GAS 优化
-  - 智能合约
+tags: [ Increment, GAS 优化, 智能合约 ]
 ---
 
 # 更好的增量

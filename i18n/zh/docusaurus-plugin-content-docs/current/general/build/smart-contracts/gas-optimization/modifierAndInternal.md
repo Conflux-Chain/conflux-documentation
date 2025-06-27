@@ -11,10 +11,7 @@ keywords:
   - runtime-gas-costs
   - UsingModifiers
   - UsingInternalFunctions
-tags:
-  - 修饰符 vs 内部函数
-  - GAS 优化
-  - 智能合约
+tags: [ 修饰符 vs 内部函数, GAS 优化, 智能合约 ]
 ---
 
 # 修饰符 vs 内部函数

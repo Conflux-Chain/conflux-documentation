@@ -12,9 +12,11 @@ keywords:
   - escape-hatches
   - flexible-control
 tags:
-  - Excessive Restrictions
-  - Security
-  - Contratos Inteligentes
+  [
+    Excessive Restrictions,
+    Security,
+    Contratos Inteligentes
+  ]
 ---
 
 # Excessive Function Restrictions

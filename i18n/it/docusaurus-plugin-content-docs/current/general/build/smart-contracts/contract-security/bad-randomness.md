@@ -14,10 +14,7 @@ keywords:
   - blockhash
   - keccak256
   - chainlink-vrf
-tags:
-  - Bad Randomness
-  - Security
-  - Smart Contracts
+tags: [ Bad Randomness, Security, Smart Contracts ]
 ---
 
 # Bad Randomness

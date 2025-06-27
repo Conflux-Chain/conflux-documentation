@@ -12,9 +12,11 @@ keywords:
   - bit-shift
   - gas-efficiency
 tags:
-  - Bytes32 vs String
-  - Gas Optimization
-  - Contratos Inteligentes
+  [
+    Bytes32 vs String,
+    Gas Optimization,
+    Contratos Inteligentes
+  ]
 ---
 
 # Bytes32 vs String

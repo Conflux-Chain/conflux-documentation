@@ -13,9 +13,11 @@ keywords:
   - DeFi
   - gas-efficiency
 tags:
-  - Alternatives to OpenZeppelin
-  - Gas Optimization
-  - Smart Contracts
+  [
+    Alternatives to OpenZeppelin,
+    Gas Optimization,
+    Smart Contracts
+  ]
 ---
 
 # Alternatives to OpenZeppelin

@@ -5,10 +5,7 @@ description: Make NFTS using Conflux Scaffold
 keywords:
   - Conflux eSpace - Scaffold-ETH-2 - NFT - ERC721 - Smart Contracts - Hardhat - React - Frontend Development - Solidity - JavaScript - TypeScript - Yarn - Git - Deployment - Vercel - Contract Interaction - Blockchain - Web3 Development - dApp - EVM Compatibility - NextJS - Environment Variables - Contract Verification - Wallet Integration - Video Tutorial - GitHub Repository - Component Library - Hooks - Network Configuration - IPFS - OpenZeppelin - Metadata - Token URI - Minting - Token Transfer - Event Logging
 displayed_sidebar: eSpaceSidebar
-tags:
-  - Scaffold
-  - 教程
-  - NFT
+tags: [ Scaffold, 教程, NFT ]
 ---
 
 [Scaffold Conflux NFT Example](https://github.com/conflux-fans/conflux-scaffold-nft-example) 是 Scaffold-ETH-2 (https://scaffoldeth.io/) 的一个改编版本，其模板已被调整，以便在 Conflux eSpace 上部署 ERC721 合约，并利用 Scaffold-ETH-2 的组件、`hardhat` 集成以及快速部署功能。

@@ -11,10 +11,7 @@ keywords:
   - zero-bytes
   - function-selectors
   - ExampleContract
-tags:
-  - 方法标识（MethodId）优化
-  - GAS 优化
-  - 智能合约
+tags: [ 方法标识（MethodId）优化, GAS 优化, 智能合约 ]
 ---
 
 # 方法标识（MethodId）优化

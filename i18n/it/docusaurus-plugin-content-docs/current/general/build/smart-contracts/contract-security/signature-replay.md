@@ -15,10 +15,7 @@ keywords:
   - prevention
   - nonce
   - chainid
-tags:
-  - Signature Replay
-  - Security
-  - Smart Contracts
+tags: [ Signature Replay, Security, Smart Contracts ]
 ---
 
 ## Signature Replay Attacks

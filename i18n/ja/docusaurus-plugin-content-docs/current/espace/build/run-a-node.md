@@ -24,8 +24,7 @@ keywords:
   - Port Configuration
   - eth_getTransactionCount
   - Troubleshooting
-tags:
-  - Node
+tags: [ Node ]
 ---
 
 eSpace and Core Space share a common node program, so please refer to the [Core Space Node Operation Guide](/docs/category/run-a-node) for running a node. Below are some eSpace specific configurations.

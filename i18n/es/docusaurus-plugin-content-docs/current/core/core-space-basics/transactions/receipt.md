@@ -19,9 +19,11 @@ keywords:
   - Event Logs
   - Estado de la Transacción
 tags:
-  - Transaction Receipt
-  - Transacciones
-  - Execution Failure Error Messages
+  [
+    Transaction Receipt,
+    Transacciones,
+    Execution Failure Error Messages
+  ]
 ---
 
 Transaction receipt is the data structure that contains information about the transaction execution result.

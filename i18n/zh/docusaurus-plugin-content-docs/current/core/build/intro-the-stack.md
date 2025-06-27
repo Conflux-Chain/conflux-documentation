@@ -11,9 +11,7 @@ keywords:
   - dapps
   - web3
   - development
-tags:
-  - architecture overview
-  - blockchain stack
+tags: [ architecture overview, blockchain stack ]
 displayed_sidebar: coreSidebar
 ---
 

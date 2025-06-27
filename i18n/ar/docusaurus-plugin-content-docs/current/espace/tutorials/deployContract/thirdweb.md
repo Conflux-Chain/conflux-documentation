@@ -28,8 +28,7 @@ keywords:
   - Prebuilt Contracts
   - Contract Extensions
   - Royalties
-tags:
-  - thirdwebm Tutorial
+tags: [ thirdwebm Tutorial ]
 ---
 
 ## Create Contract

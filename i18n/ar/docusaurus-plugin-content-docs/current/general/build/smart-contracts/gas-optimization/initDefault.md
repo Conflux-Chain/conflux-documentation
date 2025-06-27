@@ -10,10 +10,7 @@ keywords:
   - EVM
   - state-variables
   - uint256
-tags:
-  - Initialization
-  - Gas Optimization
-  - Smart Contracts
+tags: [ Initialization, Gas Optimization, Smart Contracts ]
 ---
 
 # Efficient Initialization

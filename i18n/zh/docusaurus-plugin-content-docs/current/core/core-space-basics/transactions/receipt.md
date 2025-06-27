@@ -18,10 +18,7 @@ keywords:
   - Transaction Confirmation
   - Event Logs
   - Transaction Status
-tags:
-  - 交易收据
-  - 交易
-  - Execution Failure Error Messages
+tags: [ 交易收据, 交易, Execution Failure Error Messages ]
 ---
 
 交易收据是一个包含有关交易执行结果信息的数据结构。

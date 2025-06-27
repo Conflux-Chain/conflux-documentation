@@ -18,8 +18,7 @@ keywords:
   - Core Space
   - cfx_getCollateralForStorage
   - cfx_estimateGasAndCollateral
-tags:
-  - 存储抵押
+tags: [ 存储抵押 ]
 ---
 
 Conflux Core 引入了存储抵押物(CFS)机制，作为**使用存储空间的定价方法**。 与以太坊的一次性存储费用相比，CFS 机制更加公平合理。 原则上，该机制需要锁定一定数量的资金作为抵押品，以占用存储空间。 这些抵押资金将保持锁定，直到相应的存储空间释放或被其他人接管。 锁定的抵押资金产生的利息将直接分配给矿工，以维护存储空间。 因此，Conflux 中的存储成本也取决于占用存储空间的持续时间。 Conflux 在其 [Conflux 协议规范](https://confluxnetwork.org/files/Conflux_Protocol_Specification.pdf)的第 7 章详细描述了这一机制。

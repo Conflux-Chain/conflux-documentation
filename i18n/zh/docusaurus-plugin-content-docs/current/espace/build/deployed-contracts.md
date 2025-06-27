@@ -10,7 +10,7 @@ keywords:
   - WCFX9
   - Multicall3
   - Gnosis Safe
-  - Mainnet
+  - 主网
   - 测试网
   - Utility Contracts
   - Wrapped CFX

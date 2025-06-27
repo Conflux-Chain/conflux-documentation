@@ -12,9 +12,11 @@ keywords:
   - UseMapping
   - UseArray
 tags:
-  - Mapping vs Dynamic Array
-  - Gas Optimization
-  - Contratos Inteligentes
+  [
+    Mapping vs Dynamic Array,
+    Gas Optimization,
+    Contratos Inteligentes
+  ]
 ---
 
 # Mapping vs Dynamic Array

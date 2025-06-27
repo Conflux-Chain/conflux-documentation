@@ -13,9 +13,11 @@ keywords:
   - deployment-strategies
   - gas-efficiency
 tags:
-  - Clone vs New/Create2
-  - Gas Optimization
-  - Contratos Inteligentes
+  [
+    Clone vs New/Create2,
+    Gas Optimization,
+    Contratos Inteligentes
+  ]
 ---
 
 # Clone vs New/Create2

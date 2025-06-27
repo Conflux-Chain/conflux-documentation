@@ -12,9 +12,11 @@ keywords:
   - bit-shift
   - gas-efficiency
 tags:
-  - Bitmap Bitwise Operation
-  - Gas Optimization
-  - Smart Contracts
+  [
+    Bitmap Bitwise Operation,
+    Gas Optimization,
+    Smart Contracts
+  ]
 ---
 
 # Bitmap & Bitwise operation

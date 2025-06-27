@@ -9,8 +9,7 @@ keywords:
   - validity checks
   - garbage collection
   - peer-to-peer
-tags:
-  - Synchronization
+tags: [ Synchronization ]
 ---
 
 # Block Synchronization Process

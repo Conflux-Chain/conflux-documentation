@@ -11,10 +11,7 @@ keywords:
   - UserActivityUnoptimized
   - UserActivityOptimized
   - EVM
-tags:
-  - Storage Pointers
-  - Gas Optimization
-  - Smart Contracts
+tags: [ Storage Pointers, Gas Optimization, Smart Contracts ]
 ---
 
 # Efficient Use of Storage Pointers

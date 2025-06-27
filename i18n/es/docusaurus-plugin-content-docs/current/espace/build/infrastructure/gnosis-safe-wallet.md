@@ -23,8 +23,7 @@ keywords:
   - Testnet
   - Wallet Integration
   - Troubleshooting
-tags:
-  - Gnosis Safe
+tags: [ Gnosis Safe ]
 ---
 
 [Gnosis Safe Wallet](https://safe.global/) is a renowned multisignature wallet service in the blockchain sector, offering secure fund management solutions. It is particularly popular among Ethereum and EVM (Ethereum Virtual Machine)-compatible blockchain ecosystems. The entire source code for Gnosis Safe, including its smart contracts and both the front-end and back-end code, is open source, ensuring transparency and community trust. In its commitment to innovation, Gnosis Safe has introduced features like account abstraction, further enhancing user experience and security.

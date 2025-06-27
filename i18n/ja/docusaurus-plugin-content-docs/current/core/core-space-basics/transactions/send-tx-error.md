@@ -18,9 +18,7 @@ keywords:
   - Error Handling
   - Transaction Submission
   - Network Issues
-tags:
-  - Transactions
-  - Transaction Errors
+tags: [ Transactions, Transaction Errors ]
 ---
 
 When using SDK or the Fluent wallet to send transactions, you may encounter some errors. This document outlines some common errors and their solutions.

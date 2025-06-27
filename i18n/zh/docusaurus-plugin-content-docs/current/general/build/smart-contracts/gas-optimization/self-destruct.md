@@ -9,10 +9,7 @@ keywords:
   - one-time-use-contracts
   - contract-deployment
   - storage-reclamation
-tags:
-  - Self-Destruct
-  - GAS 优化
-  - 智能合约
+tags: [ Self-Destruct, GAS 优化, 智能合约 ]
 ---
 
 # Using selfdestruct in Constructors

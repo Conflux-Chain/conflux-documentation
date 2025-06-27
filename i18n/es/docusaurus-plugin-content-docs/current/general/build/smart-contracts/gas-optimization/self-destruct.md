@@ -10,9 +10,11 @@ keywords:
   - contract-deployment
   - storage-reclamation
 tags:
-  - Self-Destruct
-  - Gas Optimization
-  - Contratos Inteligentes
+  [
+    Self-Destruct,
+    Gas Optimization,
+    Contratos Inteligentes
+  ]
 ---
 
 # Using selfdestruct in Constructors

@@ -8,10 +8,12 @@ keywords:
   - Foundry
   - eSpace
 tags:
-  - Tutorial
-  - Upgradeable Contracts
-  - Transparent Proxy
-  - Foundry
+  [
+    Tutorial,
+    Upgradeable Contracts,
+    Transparent Proxy,
+    Foundry
+  ]
 ---
 
 # Deploying Upgradeable Contracts using Transparent Proxy with Foundry

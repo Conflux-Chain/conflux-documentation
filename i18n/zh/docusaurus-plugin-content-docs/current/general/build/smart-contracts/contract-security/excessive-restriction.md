@@ -11,10 +11,7 @@ keywords:
   - audits
   - escape-hatches
   - flexible-control
-tags:
-  - Excessive Restrictions
-  - Security
-  - 智能合约
+tags: [ Excessive Restrictions, Security, 智能合约 ]
 ---
 
 # 过多的函数限制

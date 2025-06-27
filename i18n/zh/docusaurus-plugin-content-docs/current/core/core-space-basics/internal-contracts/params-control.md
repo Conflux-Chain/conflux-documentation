@@ -7,7 +7,7 @@ keywords:
   - DAO Voting
   - Governance
   - 测试网
-  - Mainnet
+  - 主网
   - cfx_getParamsFromVote
   - Voting Interface
   - powBaseReward

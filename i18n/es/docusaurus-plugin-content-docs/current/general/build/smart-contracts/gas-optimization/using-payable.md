@@ -13,9 +13,11 @@ keywords:
   - Admin
   - AdminPayable
 tags:
-  - Using Payable
-  - Gas Optimization
-  - Contratos Inteligentes
+  [
+    Using Payable,
+    Gas Optimization,
+    Contratos Inteligentes
+  ]
 ---
 
 # Using Payable

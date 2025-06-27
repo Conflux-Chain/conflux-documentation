@@ -16,7 +16,7 @@ keywords:
   - Account Management
   - 水龙头
   - 测试网
-  - Mainnet
+  - 主网
   - YAML
   - Private Key
   - Gas Price
@@ -25,9 +25,7 @@ keywords:
   - Front-End Development
   - Scripting
 displayed_sidebar: eSpaceSidebar
-tags:
-  - Brownie
-  - 教程
+tags: [ Brownie, 教程 ]
 ---
 
 [Brownie](https://eth-brownie.readthedocs.io/en/stable/) 是一个基于 Python 的开发和测试框架，用于针对以太坊虚拟机（EVM）的智能合约。 在本教程中，我们将指导您如何配置 Brownie（或 eth-brownie）以适应 Conflux eSpace，并将演示如何使用 Brownie 脚本在 Conflux eSpace 上部署合约。

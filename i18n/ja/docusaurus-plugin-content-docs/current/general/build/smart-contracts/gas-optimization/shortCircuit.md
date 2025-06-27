@@ -10,10 +10,7 @@ keywords:
   - LogicOptimization
   - function-ordering
   - gas-efficiency
-tags:
-  - Short-Circuiting
-  - Gas Optimization
-  - Smart Contracts
+tags: [ Short-Circuiting, Gas Optimization, Smart Contracts ]
 ---
 
 # Short-Circuiting

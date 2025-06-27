@@ -12,10 +12,7 @@ keywords:
   - access-control
   - require-statements
   - prevention
-tags:
-  - Input Validation
-  - Security
-  - 智能合约
+tags: [ Input Validation, Security, 智能合约 ]
 ---
 
 # 不当的输入验证

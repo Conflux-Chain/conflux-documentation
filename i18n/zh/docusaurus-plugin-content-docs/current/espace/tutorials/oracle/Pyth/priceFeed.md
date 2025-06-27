@@ -5,10 +5,7 @@ description: 学习如何在 Conflux eSpace 上使用 Pyth Oracle 获取 CFX 价
 keywords:
   - Conflux eSpace - Pyth Network - Oracle - Price Feed - Smart Contracts - Hardhat - JavaScript - Solidity - CFX Price - Testnet - EVM - Web3 Development - Blockchain - Tutorial - Deployment - Contract Interaction - Gas Estimation - Transaction Confirmation - Environment Variables - NPM - Node.js - Ethereum Compatibility - Pyth SDK - IPyth Interface - Price Update - Hermes Price Service
 displayed_sidebar: eSpaceSidebar
-tags:
-  - Pyth
-  - 预言机
-  - 教程
+tags: [ Pyth, 预言机, 教程 ]
 ---
 
 # 获取价格

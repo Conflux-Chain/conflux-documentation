@@ -1,22 +1,21 @@
 ---
 displayed_sidebar: generalSidebar
 keywords:
-  - smart contracts
-  - gas optimization
-  - Solidity
-  - ERC20
-  - non-zero balances
-  - storage variables
-  - Conflux
-  - Core Space
-  - eSpace
-  - SSTORE
-  - OpenZeppelin
-  - reentrancy guard
-tags:
-  - 非零余额
-  - GAS 优化
-  - 智能合约
+  [
+    smart contracts,
+    gas optimization,
+    Solidity,
+    ERC20,
+    non-zero balances,
+    storage variables,
+    Conflux,
+    Core Space,
+    eSpace,
+    SSTORE,
+    OpenZeppelin,
+    reentrancy guard
+  ]
+tags: [ 非零余额, GAS 优化, 智能合约 ]
 ---
 
 # 非零余额

@@ -14,8 +14,7 @@ keywords:
   - libraries
   - gas-optimization
   - deployment
-tags:
-  - Solidity
+tags: [ Solidity ]
 ---
 
 ## Intro

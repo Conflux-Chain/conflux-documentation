@@ -11,10 +11,7 @@ keywords:
   - prevention
   - checks-effects-interactions
   - reentrancy-guard
-tags:
-  - Reentrancy Attacks
-  - Security
-  - 智能合约
+tags: [ Reentrancy Attacks, Security, 智能合约 ]
 ---
 
 # 重入攻击

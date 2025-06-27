@@ -10,10 +10,7 @@ keywords:
   - arithmetic-operations
   - comparison
   - DemoCode
-tags:
-  - Increment
-  - Gas Optimization
-  - Contratos Inteligentes
+tags: [ Increment, Gas Optimization, Contratos Inteligentes ]
 ---
 
 # Better Increment

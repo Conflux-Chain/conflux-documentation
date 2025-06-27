@@ -14,9 +14,7 @@ keywords:
   - Tutorial
   - eSpace
 displayed_sidebar: eSpaceSidebar
-tags:
-  - Tutorial
-  - WalletConnect
+tags: [ Tutorial, WalletConnect ]
 ---
 
 # Integrating WalletConnect with Your React App on Conflux Chain

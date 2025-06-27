@@ -18,9 +18,7 @@ keywords:
   - Error Handling
   - Transaction Submission
   - Network Issues
-tags:
-  - 交易
-  - Transaction Errors
+tags: [ 交易, Transaction Errors ]
 ---
 
 当使用 SDK 或 Fluent 钱包发送交易时，可能会遇到一些错误。 本文概述了一些常见错误及其解决方案。

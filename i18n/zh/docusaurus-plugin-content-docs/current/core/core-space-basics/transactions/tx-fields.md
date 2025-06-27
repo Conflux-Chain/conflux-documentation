@@ -23,9 +23,7 @@ keywords:
   - Replay Protection
   - Transaction Expiration
   - RLP Encoding
-tags:
-  - 交易字段
-  - 交易
+tags: [ 交易字段, 交易 ]
 ---
 
 在编码 Conflux Core Space 交易时，以下字段是必需的：

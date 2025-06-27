@@ -19,9 +19,7 @@ keywords:
   - ERC-20
   - Contract Interaction
   - Blockchain Interoperability
-tags:
-  - CRC20
-  - Cross-Space
+tags: [ CRC20, Cross-Space ]
 ---
 
 本教程指导开发者将任意 CRC20 代币从 Core Space 转移到 eSpace，目标是将 Core Space 上发行的 CRC20 代币 (A) 转换为 eSpace 中的 ERC20 代币 (eA)。 目前，如果在 eSpace 中没有对应的代币，则无法直接使用官方的 [Cross Space 桥接功能](https://confluxhub.io/espace-bridge/cross-space) 。

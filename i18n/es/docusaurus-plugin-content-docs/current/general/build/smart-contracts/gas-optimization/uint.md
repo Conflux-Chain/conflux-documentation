@@ -14,10 +14,7 @@ keywords:
   - Uint8Example
   - Uint32Example
   - Uint256Example
-tags:
-  - Uint Types
-  - Gas Comparison
-  - Contratos Inteligentes
+tags: [ Uint Types, Gas Comparison, Contratos Inteligentes ]
 ---
 
 # Uint Types Gas Comparison

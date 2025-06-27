@@ -30,10 +30,7 @@ keywords:
   - Gas Fees
   - Contract Compilation
   - Testing
-tags:
-  - Hardhat
-  - Foundry
-  - Tutorial
+tags: [ Hardhat, Foundry, Tutorial ]
 ---
 
 import { DiscordLink } from "../../../templates/links.tsx"

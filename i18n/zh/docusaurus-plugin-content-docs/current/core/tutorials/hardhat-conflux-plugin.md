@@ -20,9 +20,7 @@ keywords:
   - js-conflux-sdk
   - Ethereum Compatibility
   - Task Runner
-tags:
-  - Hardhat
-  - Conflux Plugin
+tags: [ Hardhat, Conflux Plugin ]
 ---
 
 [Hardhat](https://hardhat.org/) 是构建智能合约的卓越工具。 它为像以太坊这样的区块链（比如 Conflux）提供了开发环境、测试框架和资产管理流程。 [Hardhat Conflux 插件](https://github.com/conflux-chain/hardhat-conflux) 为 Hardhat 添加了对 Conflux Core Space 的支持。

@@ -12,10 +12,7 @@ keywords:
   - fallback-function
   - prevention
   - gameoffunds
-tags:
-  - Denial of Service
-  - Security
-  - Contratos Inteligentes
+tags: [ Denial of Service, Security, Contratos Inteligentes ]
 ---
 
 # Denial of Service Attacks

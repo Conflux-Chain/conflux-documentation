@@ -20,10 +20,7 @@ keywords:
   - js-conflux-sdk
   - Proof Generation
   - Whitelist Management
-tags:
-  - NFT
-  - 白名单
-  - 教程
+tags: [ NFT, 白名单, 教程 ]
 ---
 
 # 在CoreSpace使用Hardhat的默克尔树NFT白名单

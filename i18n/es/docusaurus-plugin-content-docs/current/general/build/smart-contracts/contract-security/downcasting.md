@@ -11,10 +11,7 @@ keywords:
   - openzeppelin
   - arithmetic-operations
   - type-conversion
-tags:
-  - Downcasting
-  - Security
-  - Contratos Inteligentes
+tags: [ Downcasting, Security, Contratos Inteligentes ]
 ---
 
 # Safe Downcasting

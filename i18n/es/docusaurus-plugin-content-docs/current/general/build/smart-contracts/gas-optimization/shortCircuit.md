@@ -11,9 +11,11 @@ keywords:
   - function-ordering
   - gas-efficiency
 tags:
-  - Short-Circuiting
-  - Gas Optimization
-  - Contratos Inteligentes
+  [
+    Short-Circuiting,
+    Gas Optimization,
+    Contratos Inteligentes
+  ]
 ---
 
 # Short-Circuiting

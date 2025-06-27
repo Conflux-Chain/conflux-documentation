@@ -13,9 +13,7 @@ keywords:
   - functions
   - libraries
   - delegate-calls
-tags:
-  - GAS 优化
-  - 智能合约
+tags: [ GAS 优化, 智能合约 ]
 ---
 
 ## 降低 gas 费用的小窍门

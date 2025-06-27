@@ -15,9 +15,11 @@ keywords:
   - gas-limit
   - prevention
 tags:
-  - Unchecked Low-Level Calls
-  - Security
-  - Contratos Inteligentes
+  [
+    Unchecked Low-Level Calls,
+    Security,
+    Contratos Inteligentes
+  ]
 ---
 
 # Unchecked Low-Level Calls

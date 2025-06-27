@@ -11,10 +11,7 @@ keywords:
   - custom-errors
   - gas-consumption
   - EVM
-tags:
-  - Error
-  - Gas Optimization
-  - Smart Contracts
+tags: [ Error, Gas Optimization, Smart Contracts ]
 ---
 
 # Error

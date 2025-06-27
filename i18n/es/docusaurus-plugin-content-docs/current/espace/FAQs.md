@@ -14,8 +14,7 @@ keywords:
   - Blockchain Basics
   - Contratos Inteligentes
   - DApp Development
-tags:
-  - Node Operation
+tags: [ Node Operation ]
 ---
 
 ## How to run eSpace node?

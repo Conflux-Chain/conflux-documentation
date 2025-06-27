@@ -28,8 +28,7 @@ keywords:
   - Infura
   - Alchemy
   - QuickNode
-tags:
-  - RPC Providers
+tags: [ RPC Providers ]
 ---
 
 Conflux has partnered with select RPC Providers and also offers its own, similar to those like Infura, Alchemy, and QuickNode. These can be utilized to connect to the Conflux eSpace network.

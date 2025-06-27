@@ -12,9 +12,11 @@ keywords:
   - ContractB
   - MonolithicContract
 tags:
-  - Monolithic Architecture
-  - Gas Optimization
-  - Contratos Inteligentes
+  [
+    Monolithic Architecture,
+    Gas Optimization,
+    Contratos Inteligentes
+  ]
 ---
 
 # Use Monolithic Contract Architecture

@@ -12,10 +12,7 @@ keywords:
   - best-practices
   - pull-payments
   - accumulator-pattern
-tags:
-  - Msg.value in Loops
-  - Security
-  - 智能合约
+tags: [ Msg.value in Loops, Security, 智能合约 ]
 ---
 
 在开发智能合约时，安全性是最关键的考虑因素之一。 本教程将深入探讨一个常见但危险的模式：在循环中使用`msg.value`。 We'll explain why this is dangerous and provide some best practices to avoid related vulnerabilities.

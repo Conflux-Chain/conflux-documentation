@@ -12,10 +12,7 @@ keywords:
   - fallback-function
   - prevention
   - gameoffunds
-tags:
-  - Denial of Service
-  - Security
-  - 智能合约
+tags: [ Denial of Service, Security, 智能合约 ]
 ---
 
 # 拒绝服务攻击

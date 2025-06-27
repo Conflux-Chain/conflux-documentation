@@ -14,8 +14,7 @@ keywords:
   - Blockchain Basics
   - 智能合约
   - DApp Development
-tags:
-  - Node Operation
+tags: [ Node Operation ]
 ---
 
 ## 如何运行 eSpace 节点

@@ -12,10 +12,7 @@ keywords:
   - AdvancedConstructor
   - Admin
   - AdminPayable
-tags:
-  - Using Payable
-  - GAS 优化
-  - 智能合约
+tags: [ Using Payable, GAS 优化, 智能合约 ]
 ---
 
 # Using Payable

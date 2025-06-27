@@ -9,7 +9,7 @@ keywords:
   - OpenZeppelin
   - 以太坊
   - Cryptography
-  - Blockchain Security
+  - 区块链安全
   - GAS 优化
   - Allowlists
   - Airdrops
@@ -25,9 +25,7 @@ keywords:
   - Contract Efficiency
   - Decentralized Identity
   - Multi-sig Wallets
-tags:
-  - ECDSA
-  - 教程
+tags: [ ECDSA, 教程 ]
 ---
 
 # 如何使用 ECDSA 签名

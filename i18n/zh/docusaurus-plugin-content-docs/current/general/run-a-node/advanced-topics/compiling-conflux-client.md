@@ -12,7 +12,7 @@ import { confluxNodeVersion } from '../../../templates/parameters.ts'
 
 ## 安装构建依赖
 
-Conflux requires **Rust 1.77.2**, `clang`, and `sqlite` to build.
+Conflux requires **Rust 1.86**, `clang`, and `sqlite` to build.
 
 我们推荐通过[rustup](https://rustup.rs/)来安装Rust。 如果您还没有安装`rustup`或`clang`，可以这样安装它们：
 
@@ -23,7 +23,7 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 # you might need to run 
 # source "$HOME/.cargo/env"
 # to configure your shell
-rustup install 1.77.2
+rustup install 1.86
 ```
 
 Other dependencies including `clang`, `cmake (version >= 3.12)` and `sqlite (version >= 3.8.3 and < 4.0)` can be installed with:
@@ -67,7 +67,7 @@ curl https://sh.rustup.rs -sSf | sh
 # you might need to run 
 # source "$HOME/.cargo/env"
 # to configure your shell
-rustup install 1.77.2
+rustup install 1.86
 ```
 
 如果您需要使用`brew`来安装`clang`，可能需要安装`brew`：

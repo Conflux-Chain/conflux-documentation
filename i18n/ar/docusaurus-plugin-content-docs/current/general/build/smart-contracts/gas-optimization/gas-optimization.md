@@ -13,9 +13,7 @@ keywords:
   - functions
   - libraries
   - delegate-calls
-tags:
-  - Gas Optimization
-  - Smart Contracts
+tags: [ Gas Optimization, Smart Contracts ]
 ---
 
 ## Some Tips to Make Gas Fee Lower

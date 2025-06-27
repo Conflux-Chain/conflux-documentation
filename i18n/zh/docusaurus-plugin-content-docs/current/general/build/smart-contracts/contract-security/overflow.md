@@ -12,10 +12,7 @@ keywords:
   - arithmetic-operations
   - evm
   - prevention
-tags:
-  - 整数溢出
-  - Security
-  - 智能合约
+tags: [ 整数溢出, Security, 智能合约 ]
 ---
 
 # 整数溢出

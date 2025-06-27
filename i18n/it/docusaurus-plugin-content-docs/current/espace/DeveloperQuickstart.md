@@ -15,9 +15,7 @@ keywords:
   - Frontend Integration
   - Cross-Space Bridge
 displayed_sidebar: eSpaceSidebar
-tags:
-  - Quickstart
-  - Developer Tools
+tags: [ Quickstart, Developer Tools ]
 ---
 
 With Conflux eSpace, your favorite tools for building and testing smart contracts just work.

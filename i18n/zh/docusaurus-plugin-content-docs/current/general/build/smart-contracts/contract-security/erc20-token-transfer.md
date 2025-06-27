@@ -11,10 +11,7 @@ keywords:
   - solady
   - openzeppelin
   - safe-transfer-libraries
-tags:
-  - ERC20 Transfer
-  - Security
-  - 智能合约
+tags: [ ERC20 Transfer, Security, 智能合约 ]
 ---
 
 # ERC20 转账问题

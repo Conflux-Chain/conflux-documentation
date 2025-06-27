@@ -12,10 +12,7 @@ keywords:
   - arithmetic-operations
   - evm
   - prevention
-tags:
-  - Integer Overflow
-  - Security
-  - Smart Contracts
+tags: [ Integer Overflow, Security, Smart Contracts ]
 ---
 
 # Integer Overflow

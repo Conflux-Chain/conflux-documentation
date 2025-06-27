@@ -11,10 +11,7 @@ keywords:
   - iszero
   - opcode
   - DemoCode
-tags:
-  - LessThan
-  - GAS 优化
-  - 智能合约
+tags: [ LessThan, GAS 优化, 智能合约 ]
 ---
 
 # 比较运算符

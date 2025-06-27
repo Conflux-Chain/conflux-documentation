@@ -14,10 +14,7 @@ keywords:
   - king-of-ether
   - gas-limit
   - prevention
-tags:
-  - 未经检查的低级调用
-  - Security
-  - 智能合约
+tags: [ 未经检查的低级调用, Security, 智能合约 ]
 ---
 
 # 未经检查的低级调用

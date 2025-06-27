@@ -13,7 +13,7 @@ keywords:
   - EVM
   - 归档节点
   - State Query
-  - Mainnet
+  - 主网
   - 测试网
   - 配置
   - TOML
@@ -24,8 +24,7 @@ keywords:
   - Port Configuration
   - eth_getTransactionCount
   - 故障排除
-tags:
-  - 节点
+tags: [ 节点 ]
 ---
 
 eSpace 和 Core Space 共用一个节点程序，请参考 [Core Space 节点操作指南](/docs/category/run-a-node) 来运行节点。 以下是一些特定于 eSpace 的配置。

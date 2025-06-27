@@ -11,10 +11,7 @@ keywords:
   - prevention
   - checks-effects-interactions
   - reentrancy-guard
-tags:
-  - Reentrancy Attacks
-  - Security
-  - Contratos Inteligentes
+tags: [ Reentrancy Attacks, Security, Contratos Inteligentes ]
 ---
 
 # Re-entrancy Attacks

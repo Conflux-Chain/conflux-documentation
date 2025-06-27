@@ -9,9 +9,7 @@ keywords:
   - Conflux eSpace
   - DApp Development
 displayed_sidebar: eSpaceSidebar
-tags:
-  - 教程
-  - WalletConnect
+tags: [ 教程, WalletConnect ]
 ---
 
 # 在Conflux eSpace的Vue.js项目中集成WalletConnect

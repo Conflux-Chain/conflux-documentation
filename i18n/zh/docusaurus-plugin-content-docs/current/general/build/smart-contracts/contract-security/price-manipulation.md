@@ -12,10 +12,7 @@ keywords:
   - erc20
   - twap
   - prevention
-tags:
-  - 价格操纵
-  - Security
-  - 智能合约
+tags: [ 价格操纵, Security, 智能合约 ]
 ---
 
 # 价格操纵

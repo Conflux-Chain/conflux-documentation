@@ -11,10 +11,7 @@ keywords:
   - custom-errors
   - gas-consumption
   - EVM
-tags:
-  - 错误
-  - GAS 优化
-  - 智能合约
+tags: [ 错误, GAS 优化, 智能合约 ]
 ---
 
 # 错误

@@ -14,9 +14,11 @@ keywords:
   - ReentrancyGuardUint01
   - ReentrancyGuardUint12
 tags:
-  - Reentrancy Guard
-  - Gas Optimization
-  - Contratos Inteligentes
+  [
+    Reentrancy Guard,
+    Gas Optimization,
+    Contratos Inteligentes
+  ]
 ---
 
 # Low-Cost Reentrancy Guard

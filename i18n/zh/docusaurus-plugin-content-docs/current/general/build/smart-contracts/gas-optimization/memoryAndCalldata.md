@@ -11,10 +11,7 @@ keywords:
   - EVM
   - function-parameters
   - CalldataAndMemory
-tags:
-  - Memory 与 Calldata
-  - GAS 优化
-  - 智能合约
+tags: [ Memory 与 Calldata, GAS 优化, 智能合约 ]
 ---
 
 # Memory 与 Calldata

@@ -12,10 +12,7 @@ keywords:
   - uint256
   - address (dirección)
   - gas-efficiency
-tags:
-  - Packing
-  - Gas Optimization
-  - Contratos Inteligentes
+tags: [ Packing, Gas Optimization, Contratos Inteligentes ]
 ---
 
 # Packing

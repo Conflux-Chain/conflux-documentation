@@ -10,10 +10,7 @@ keywords:
   - eSpace
   - proxy pattern
 displayed_sidebar: eSpaceSidebar
-tags:
-  - Tutorial
-  - Upgradeable Contracts
-  - Hardhat
+tags: [ Tutorial, Upgradeable Contracts, Hardhat ]
 ---
 
 # Deploying Upgradeable Contracts on Conflux eSpace using Hardhat

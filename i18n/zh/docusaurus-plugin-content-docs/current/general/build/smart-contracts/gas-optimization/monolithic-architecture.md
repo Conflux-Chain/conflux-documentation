@@ -11,10 +11,7 @@ keywords:
   - ContractA
   - ContractB
   - MonolithicContract
-tags:
-  - Monolithic Architecture
-  - GAS 优化
-  - 智能合约
+tags: [ Monolithic Architecture, GAS 优化, 智能合约 ]
 ---
 
 # 使用单体合约架构

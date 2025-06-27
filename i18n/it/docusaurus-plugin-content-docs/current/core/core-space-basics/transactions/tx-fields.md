@@ -23,9 +23,7 @@ keywords:
   - Replay Protection
   - Transaction Expiration
   - RLP Encoding
-tags:
-  - Transaction Fields
-  - Transactions
+tags: [ Transaction Fields, Transactions ]
 ---
 
 In order to encode a Core Space transaction, the following fields are required:

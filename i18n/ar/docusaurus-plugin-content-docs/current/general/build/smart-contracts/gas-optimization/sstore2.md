@@ -12,10 +12,7 @@ keywords:
   - Ethereum
   - Conflux
   - Core-Space
-tags:
-  - SSTORE2
-  - Gas Optimization
-  - Smart Contracts
+tags: [ SSTORE2, Gas Optimization, Smart Contracts ]
 ---
 
 # SSTORE2

@@ -9,10 +9,7 @@ keywords:
   - one-time-use-contracts
   - contract-deployment
   - storage-reclamation
-tags:
-  - Self-Destruct
-  - Gas Optimization
-  - Smart Contracts
+tags: [ Self-Destruct, Gas Optimization, Smart Contracts ]
 ---
 
 # Using selfdestruct in Constructors

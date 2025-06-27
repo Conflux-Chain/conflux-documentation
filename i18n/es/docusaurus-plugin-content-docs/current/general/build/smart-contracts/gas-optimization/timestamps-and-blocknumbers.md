@@ -13,9 +13,11 @@ keywords:
   - storage-efficiency
   - EfficientStorage
 tags:
-  - Timestamps and Block Numbers
-  - Gas Optimization
-  - Contratos Inteligentes
+  [
+    Timestamps and Block Numbers,
+    Gas Optimization,
+    Contratos Inteligentes
+  ]
 ---
 
 In Solidity, the way data is stored can significantly impact the gas costs associated with deploying and interacting with smart contracts. Gas costs can quickly become a major concern, especially in applications that handle a large number of transactions.

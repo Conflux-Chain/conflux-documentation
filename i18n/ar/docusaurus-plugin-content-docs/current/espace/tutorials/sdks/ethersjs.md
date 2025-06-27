@@ -24,9 +24,7 @@ keywords:
   - RPC Endpoint
   - Private Key
   - Web3 Provider
-tags:
-  - ethers.js
-  - Tutorial
+tags: [ ethers.js, Tutorial ]
 ---
 
 ethers.js is a JavaScript library for building Ethereum applications. As Conflux eSpace is compatible with Ethereum, we can directly use this library within Conflux eSpace. Currently, ethers has two main versions: v6 and v5. This tutorial focuses on demonstrating how to utilize the v6 version within Conflux eSpace.

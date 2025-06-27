@@ -7,10 +7,7 @@ keywords:
   - transparent proxy
   - Hardhat
   - eSpace
-tags:
-  - Tutorial
-  - Upgradeable Contracts
-  - Transparent Proxy
+tags: [ Tutorial, Upgradeable Contracts, Transparent Proxy ]
 ---
 
 # Deploying Upgradeable Contracts using Transparent Proxy with Hardhat

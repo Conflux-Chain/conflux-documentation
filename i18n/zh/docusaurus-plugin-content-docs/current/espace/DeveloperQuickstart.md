@@ -15,9 +15,7 @@ keywords:
   - Frontend Integration
   - Cross-Space Bridge
 displayed_sidebar: eSpaceSidebar
-tags:
-  - 快速入门
-  - Developer Tools
+tags: [ 快速入门, Developer Tools ]
 ---
 
 Conflux eSpace 现在已经支持以太坊的智能合约编写和测试工具。
