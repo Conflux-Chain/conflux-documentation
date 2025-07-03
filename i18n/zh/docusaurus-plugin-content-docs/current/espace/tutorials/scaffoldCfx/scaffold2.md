@@ -59,7 +59,7 @@ yarn deploy --network confluxESpaceTestnet
 npx hardhat verify --network confluxESpaceTestnet [Contract Address] 
 ```
 
-添加到 hardhat 的指令在packages/hardhat/hardhat.config.ts文件中，etherscan被调整以包含区块浏览器的 URL。
+The added instructions onto hardhat are in the packages/hardhat/hardhat.config.ts file where etherscan is adjusted to include the block explorer url.
 
 :::note
 合约的部署者及所有者可以通过将 `./packages/hardhat/.env.example` 重命名为 `./packages/hardhat/.env` ，并在 DEPLOYER_PRIVATE_KEY= 中放入您的私钥来更改。 然而，默认使用一个默认的“公开”私钥用于 hardhat 测试目的。
