@@ -31,7 +31,7 @@ Conflux Network是一个具有可扩展性的区块链平台，旨在实现高�
 
 ## 硬件要求
 
-硬件要求取决于您想要运行的节点类型。 有关每种节点类型的具体要求，请访问 [节点类型](./node-types) 部分。
+硬件要求取决于您想要运行的节点类型。 For the specific requirements of each type of node, please visit the section [Node Types](/docs/general/run-a-node/node-types)
 
 对于一个全节点，其要求如下：
 

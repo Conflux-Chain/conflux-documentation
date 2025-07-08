@@ -31,7 +31,7 @@ Running a Conflux node is a valuable way to participate in the Conflux network a
 
 ## Requirements
 
-The hardware requirements depend on the type of node you want to run. For the specific requirements of each type of node, please visit the section [Node Types](./node-types)
+The hardware requirements depend on the type of node you want to run. For the specific requirements of each type of node, please visit the section [Node Types](/docs/general/run-a-node/node-types)
 
 For a Full Node, requirements are the following:
 
