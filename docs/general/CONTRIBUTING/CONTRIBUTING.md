@@ -32,8 +32,4 @@ This section outlines the various ways you can contribute to our documentation s
 
 ## Reward Guidelines
 
-Our Contribution Reward Guidelines are designed to acknowledge the efforts of our community members. By participating and contributing to our platform, you can earn FansCoin (FC) as a token of our appreciation. This document explains the reward system in detail, including the types of contributions that are eligible for rewards and the FC amounts associated with each category of contribution.
-
-## Contributor POAPs
-
-In addition to FC rewards, we also issue Contributor POAPs (Proof of Attendance Protocol) to recognize ongoing participation and significant contributions to our documentation site. POAPs are a way of showing gratitude for the time and effort put into the project and serve as a badge of honor within our community. This section explains the criteria for earning POAPs, the contract addresses for claiming them, and the special recognition given for exceptional contributions.
+Our Contribution Reward Guidelines are designed to acknowledge the efforts of our community members. As of now, only issues or pull requests that are explicitly listed as bounties in the documentation repository's issues are eligible for FansCoin (FC) rewards. Rewards are primarily focused on these designated bounties. Please refer to the reward guidelines for more details.
