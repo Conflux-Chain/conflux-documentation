@@ -36,6 +36,6 @@ To make a contribution, please take one of the following actions:
 - **Submit Changes**: For direct contributions to content, [create a pull request](./docs/general/CONTRIBUTING/how-to-contribute.md#create-a-pull-request).
 - **Help with Translation**: To contribute translations, please follow our [translation guidelines](./docs/general/CONTRIBUTING/how-to-contribute.md#provide-translation).
 
-### Contributor Rewards and POAPs
+### Contributor Rewards
 
-We distribute [FansCoin (FC)](https://confluxscan.org/token/cfx:achc8nxj7r451c223m18w2dwjnmhkd6rxawrvkvsy2) rewards and issue POAPs for our contributor as appreciation. For the [reward guidelines](./docs/general/CONTRIBUTING/reward-guidelines.md) and [contributors POAPs](./docs/general/CONTRIBUTING/contributor-poaps.md) to learn how the tokens are distributed.
+We distribute [FansCoin (FC)](https://confluxscan.org/token/cfx:achc8nxj7r451c223m18w2dwjnmhkd6rxawrvkvsy2) rewards for contributors as appreciation. Issues listed as bounties in the documentation repository's issues are eligible for FC rewards. For details, please refer the [reward guidelines](./docs/general/CONTRIBUTING/reward-guidelines.md).
