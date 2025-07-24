@@ -31,8 +31,4 @@ import DocCardList from '@theme/DocCardList';
 
 ## 奖励指南
 
-我们的贡献奖励指南旨在对社区成员的努力给予认可。 通过参与并对我们的平台做出贡献，您可以获得 FansCoin（FC）作为我们对您的感谢。 本文详细解释了奖励制度，包括符合奖励条件的贡献类型以及与各类贡献对应的 FC 数量。
-
-## 贡献者 POAP
-
-除了 FC 奖励外，我们还会发放贡献者 POAP（Proof of Attendance Protocol 活动参与证明）来认可您对我们文档网站的持续参与和重要贡献。 POAP 是我们对您为做出贡献投入的时间和精力表达感激的一种方式，同时，它也可以作为生态社区中的荣誉徽章。 本部分解释了 POAP 的颁发标准、领取 POAP 的合约地址以及对杰出贡献给予的特别认可。
+我们的贡献奖励指南旨在对社区成员的努力给予认可。 As of now, only issues or pull requests that are explicitly listed as bounties in the documentation repository's issues are eligible for FansCoin (FC) rewards. Rewards are primarily focused on these designated bounties. Please refer to the reward guidelines for more details.
