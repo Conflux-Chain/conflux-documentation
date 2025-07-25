@@ -44,7 +44,7 @@ It takes about two month to synchronize the data from beginning. As blockchain d
 
 ### 如何运行 PoS 节点？
 
-请参考[这部分](/docs/general/mine-stake/stake/) 。
+Refer to [THIS](/docs/general/mine-stake/stake/staking-overview) section.
 
 ### 运行 Conflux 节点是否需要公共IP地址？
 
