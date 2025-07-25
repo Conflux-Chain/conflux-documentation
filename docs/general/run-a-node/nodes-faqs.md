@@ -27,7 +27,7 @@ Mining requires GPU, you can see here for [details](https://forum.conflux.fun/t
 
 ### How to run a PoS node?
 
-Refer to [THIS](/docs/general/mine-stake/stake/) section.
+Refer to [THIS](/docs/general/mine-stake/stake/staking-overview) section.
 
 ### Does running a Conflux node requires a public IP address?
 
