@@ -30,7 +30,7 @@ function getConfig() {
       en: "Developer resources for building on Conflux. By developers, for developers.",
       "zh-CN": "在Conflux上构建的开发者资源。由开发者提供，面向开发者。",
     }),
-    url: "https://doc.confluxnetwork.org/",
+    url: process.env.DOCUSAURUS_URL || "https://doc.confluxnetwork.org/",
     baseUrl: "/",
     onBrokenLinks: "warn",
     onBrokenMarkdownLinks: "warn",
@@ -307,35 +307,28 @@ function getConfig() {
           darkTheme: darkCodeTheme,
           additionalLanguages: ["solidity"],
         },
-        // algolia: {
-        //   // The application ID provided by Algolia
-        //   appId: 'EA5TTCRZGT',
+        metadata: [
+          { name: 'algolia-site-verification', content: process.env.ALGOLIA_VERIFY || 'YOUR_ALGOLIA_VERIFY' },
+        ],
 
-        //   // Public API key: it is safe to commit it
-        //   apiKey: '459281c476ae57d1d2a275ea535cdf1c',
+        algolia: {
+          // The application ID provided by Algolia
+          appId: process.env.ALGOLIA_APP_ID || 'YOUR_ALGOLIA_APP_ID',
 
-        //   indexName: 'confluxnetwork',
-        //   /*
-        //   // Optional: see doc section below
-        //   contextualSearch: true,
+          // Public API key: it is safe to commit it
+          apiKey: process.env.ALGOLIA_API_KEY || 'YOUR_SEARCH_API_KEY',
 
-        //   // Optional: Specify domains where the navigation should occur through window.location instead on history.push. Useful when our Algolia config crawls multiple documentation sites and we want to navigate with window.location.href to them.
-        //   externalUrlRegex: 'external\\.com|domain\\.com',
+          indexName: process.env.ALGOLIA_INDEX_NAME || 'YOUR_INDEX_NAME',
 
-        //   // Optional: Replace parts of the item URLs from Algolia. Useful when using the same search index for multiple deployments using a different baseUrl. You can use regexp or string in the `from` param. For example: localhost:3000 vs myCompany.com/docs
-        //   replaceSearchResultPathname: {
-        //   from: '/docs/', // or as RegExp: /\/docs\//
-        //   to: '/docs/',
-        //   },
-        //   */
-        //   // Optional: Algolia search parameters
-        //   searchParameters: {},
+          // Optional: see doc section below
+          contextualSearch: true,
 
-        //   // Optional: path for search page that enabled by default (`false` to disable it)
-        //   searchPagePath: 'search',
+          // Optional: path for search page that enabled by default (`false` to disable it)
+          searchPagePath: 'search',
 
-        //   //... other Algolia params
-        //   },
+          // Optional: whether the insights feature is enabled or not on Docsearch (`false` by default)
+          insights: false,
+        },
       }),
   };
 }
