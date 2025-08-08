@@ -38,7 +38,7 @@ tags: [ ConfluxScan ]
 - 验证合约的源代码，获取合约的 ABI
 - 通过时间戳查询区块号
 
-您可以使用 ConfluxScan API 来获取您想要的数据。 完整的 API 端点列表，请参见 [API swagger 文档](https://evmapi.confluxscan.org/doc)。
+您可以使用 ConfluxScan API 来获取您想要的数据。 完整的 API 端点列表，请参见 [API swagger 文档](https://evmapi.confluxscan.org/doc)。 You can also visit [API swagger doc spec json](https://evmapi.confluxscan.org/spec) to obtain the raw file describing the API and provide it as LLM context.
 
 ## API 端点
 
