@@ -38,7 +38,7 @@ If you want get data like these:
 - Verify the source code of a contract, get the ABI of a contract
 - Query block number by timestamp
 
-Then you can use the ConfluxScan API to get the data you want. For a complete list of API endpoints, see [API swagger doc](https://evmapi.confluxscan.org/doc).
+Then you can use the ConfluxScan API to get the data you want. For a complete list of API endpoints, see [API swagger doc](https://evmapi.confluxscan.org/doc). You can also visit [API swagger doc spec json](https://evmapi.confluxscan.org/spec) to obtain the raw file describing the API and provide it as LLM context.
 
 ## API Endpoints
 
