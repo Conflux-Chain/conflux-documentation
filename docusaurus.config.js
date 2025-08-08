@@ -313,12 +313,12 @@ function getConfig() {
 
         algolia: {
           // The application ID provided by Algolia
-          appId: process.env.ALGOLIA_APP_ID || '6UZZOVC2KR',
+          appId: process.env.ALGOLIA_APP_ID || 'RZ5332ZSQO',
 
           // Public API key: it is safe to commit it
-          apiKey: process.env.ALGOLIA_API_KEY || 'a5f90a9e6494b49f4ed7b08e1aef2764',
+          apiKey: process.env.ALGOLIA_API_KEY || 'fdcf1238b42763c0e277a4d3eec74281',
 
-          indexName: process.env.ALGOLIA_INDEX_NAME || 'doc_confluxnetwork_org_6uzzovc2kr_pages',
+          indexName: process.env.ALGOLIA_INDEX_NAME || 'Documentation crawler',
 
           // Optional: see doc section below
           contextualSearch: true,
