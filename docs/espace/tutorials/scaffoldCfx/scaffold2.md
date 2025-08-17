@@ -63,7 +63,7 @@ yarn install
 
 In the folder directory of `conflux-scaffold-nft-example` you will have a similar folder structure as the typical conflux scaffold repo. However, the hardhat folder includes a new contract called "ConfluxNFT.sol" which imports a bunch of openzepplin contracts.
 
-The [openzepplin wizard](https://wizard.openzeppelin.com/#erc721) is a useful site to put together contract code for a NFT but it is best to review the libraries from node_modules within the hardhat folder and review the functions used in the solidity contract. Once you have have compiled and deployed the contract, review the debugger section in the frontend to see if the contract is constructed to your purposes.
+The [openzepplin wizard](https://wizard.openzeppelin.com/#erc721) is a useful site to put together contract code for a NFT but it is best to review the libraries from node_modules within the hardhat folder and review the functions used in the solidity contract. Once you have compiled and deployed the contract, review the debugger section in the frontend to see if the contract is constructed to your purposes.
 
 ```bash
 yarn chain
