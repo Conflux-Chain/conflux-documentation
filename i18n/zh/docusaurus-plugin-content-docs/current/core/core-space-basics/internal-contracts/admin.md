@@ -25,6 +25,8 @@ displayed_sidebar: coreSidebar
 
 **注意：所有需要管理员权限的接口，在内置合约执行期间，无论执行成功与否，都不会触发错误或异常。**例如，如果一个非管理员地址试图将管理员地址设置为自己的地址，该交易将成功，但不会发生任何变化。
 
+**Note: Conflux v3.0 introduced [CIP-151](/docs/general/hardforks/v3.0#cip-151), the contract destruction feature has been disabled, and the `destroy` method has also been deactivated. If the destroy method is called again, it will return the error `internal contract error`.
+
 ConfluxScan 可能会将具有非零管理员地址的合约标记为调试模式。 **所以请记住，如果您认为合约已经准备好进入生产环境，您应该将管理员地址设置为零。**
 
 
