@@ -27,7 +27,7 @@ yarn install
 
 在`conflux-scaffold-nft-example`的文件夹目录中，您将看到一个类似于典型 Conflux Scaffold 仓库的文件夹结构。 然而，hardhat文件夹中包含一个叫做"ConfluxNFT.sol"的新合约，它导入了很多openzepplin合约。
 
-The [openzepplin wizard](https://wizard.openzeppelin.com/#erc721)是一个很有用的网站，可以帮助你组合NFT 合约代码，但最好从 hardhat 文件夹中的 node_modules 库中查看这些库，并审查 Solidity 合约中使用的函数。 编译和部署合约后，请查看前端的调试器部分，查看合约是否按照您的需求构建。
+The [openzepplin wizard](https://wizard.openzeppelin.com/#erc721)是一个很有用的网站，可以帮助你组合NFT 合约代码，但最好从 hardhat 文件夹中的 node_modules 库中查看这些库，并审查 Solidity 合约中使用的函数。 Once you have compiled and deployed the contract, review the debugger section in the frontend to see if the contract is constructed to your purposes.
 
 ```bash
 yarn chain
