@@ -12,7 +12,7 @@ Staking through a PoS pool is a good option for users who do not have the techni
 
 ## Conflux PoS Pool Validators
 
-[Conflux PoS Validators](https://www.conflux-pos-validators.org) is a third-party application that compiles a list of PoS staking pools on the Conflux network. Its purpose is to centralize information on the different staking pools that secure the Conflux network, and anyone can add their pool to the list by following the instructions provided. 
+[Conflux PoS Validators](https://conflux-pos-validators.org) is a third-party application that compiles a list of PoS staking pools on the Conflux network. Its purpose is to centralize information on the different staking pools that secure the Conflux network, and anyone can add their pool to the list by following the instructions provided. 
 
 Although it has not been developed by the Conflux team, it has been awarded with a [Conflux Grant](https://forum.conflux.fun/t/conflux-pools-validators-list/14258) . The application is open-source, and anyone can contribute to its development.
 
