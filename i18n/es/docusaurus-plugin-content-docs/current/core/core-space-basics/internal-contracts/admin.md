@@ -25,6 +25,8 @@ The admin of a contract has several administrator rights. It can call interface 
 
 **Note: For all the interfaces requiring administrator rights, no matter the execution success or not, no error or exception will be triggered during internal contract execution.** For example, if a non-admin address tries to transfer the admin address to itself, this transaction will success but nothing will be changed.
 
+**Note: Conflux v3.0 introduced [CIP-151](/docs/general/hardforks/v3.0#cip-151), the contract destruction feature has been disabled, and the `destroy` method has also been deactivated. If the destroy method is called again, it will return the error `internal contract error`.
+
 ConfluxScan may mark a contract as debug mode if the contract has non-zero admin address. **So remember, if you think the contract is ready for production environment, you should set admin address to zero.**
 
 
