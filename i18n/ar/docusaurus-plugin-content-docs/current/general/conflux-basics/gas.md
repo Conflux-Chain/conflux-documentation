@@ -39,7 +39,7 @@ Just like a vehicle has a limited fuel tank size, blockchain transactions have a
 
 Typically, a transaction will use only part of its gas limit, referred to as `gas used`. In Conflux, if the `gas limit` is set **appropriately**, unused gas will be fully refunded to the user ensuring no extra cost. However, if the `gas limit` is set too high, the user may not receive a full refund for unused gas.
 
-The `gas charged` is the actual amount billed to the user, calculated using the formula: `gasCharged = max(gasUsed, 3/4*gasLimit)`. Therefore, it’s crucial to set this limit correctly to avoid unnecessary costs. If the limit is too low, the transaction will fail; if too high, you may overpay.
+The `gas charged` is the actual amount billed to the user, calculated using the formula: `gasCharged = max(gasUsed, RoundUp(3/4*gasLimit))`. Therefore, it’s crucial to set this limit correctly to avoid unnecessary costs. If the limit is too low, the transaction will fail; if too high, you may overpay.
 
 Here is an example illustrating the relationships among `gas limit`, `gas used`, and `gas charged`:
 
