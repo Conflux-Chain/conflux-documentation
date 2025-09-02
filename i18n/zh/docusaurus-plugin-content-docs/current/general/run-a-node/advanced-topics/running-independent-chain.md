@@ -71,7 +71,7 @@ grep "Self node id" log/conflux.log|awk '{print $9}'|sed -e "s/^0x//"
 
 一种实现方法是启动这些启动节点然后立即停止它们。 然后收集它们的节点ID，设置它们的配置，并重新启动所有节点。
 
-另一种更好的方法是分别生成它们的私钥，并手动设置它们的`net_key`以启动。 这可以通过我们的python测试框架中提供的函数来完成，在`test`目录下。
+Another better way is to generate their private keys separately, and manually set their `net_key` to start. 这可以通过我们的python测试框架中提供的函数来完成，在`test`目录下。
 
 ```js
 from conflux.utils import *
