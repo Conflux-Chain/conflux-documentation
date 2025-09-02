@@ -256,7 +256,7 @@ Yes.
 
 ### **Are ERC20/ERC777 still called this way in the Conflux network?**
 
-Both can be used. They are still referred to as ERC20/ERC777, but in some contexts you can find them reffered as CRC20/CRC777.
+Both can be used. They are still referred to as ERC20/ERC777, but in some contexts you can find them referred as CRC20/CRC777.
 
 ### **What are the websocket service ports of the official nodes of the mainnet and testnet?**
 
