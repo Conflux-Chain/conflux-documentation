@@ -74,7 +74,7 @@ You can also setup multiple bootnodes at the very beginning. However, this canno
 
 One way to achieve this is to start these bootnodes and stop them immediately. Then gather their node ids, set their configuration, and restart them all.
 
-Another better way is to generate their private keys seperately, and manually set their `net_key` to start. This can be done with the functions provided in our python test framework in the directory `test`.
+Another better way is to generate their private keys separately, and manually set their `net_key` to start. This can be done with the functions provided in our python test framework in the directory `test`.
 
 ```js
 from conflux.utils import *
