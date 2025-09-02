@@ -24,18 +24,18 @@ UUPS 是一种可升级的代理模式，解决了透明代理模式的某些局
 
 1. **UUPS vs. 透明代理**:
 
-  - UUPS 将升级逻辑放在实现合约中，而透明代理将其放在代理合约中。
-  - UUPS 对于常规函数调用更节省燃气。
-  - 透明代理的代理合约较大，但实现合约更简单。
+   - UUPS 将升级逻辑放在实现合约中，而透明代理将其放在代理合约中。
+   - UUPS 对于常规函数调用更节省燃气。
+   - 透明代理的代理合约较大，但实现合约更简单。
 
 2. **UUPS vs. 传统可升级代理**:
 
-  - UUPS provides better security against accidental contract locking.
-  - 传统可升级代理更简单，但在升级过程中更容易出错。
+   - UUPS provides better security against accidental contract locking.
+   - 传统可升级代理更简单，但在升级过程中更容易出错。
 
 3. **Common Features**:
-  - 所有模式都允许在不更改合约地址的情况下升级合约逻辑。
-  - 它们都使用委托调用（delegate calls）将函数调用转发到实现合约。
+   - 所有模式都允许在不更改合约地址的情况下升级合约逻辑。
+   - 它们都使用委托调用（delegate calls）将函数调用转发到实现合约。
 
 由于其在安全性、燃气效率和灵活性方面的平衡，UUPS通常更受欢迎。 在本教程中，我们将在 Conflux eSpace 上使用 UUPS 实现和部署可升级合约。
 
@@ -296,52 +296,52 @@ main()
 
 1. Compile the contracts:
 
-  ```bash
-  npx hardhat compile
-  ```
+   ```bash
+   npx hardhat compile
+   ```
 
 2. Deploy the initial contract:
 
-  ```bash
-  npx hardhat run scripts/deploy.js --network eSpaceTestnet
-  ```
+   ```bash
+   npx hardhat run scripts/deploy.js --network eSpaceTestnet
+   ```
 
-  请确保记录下已部署的代理地址。
+   请确保记录下已部署的代理地址。
 
 3. Update the proxy address in `testCounter.js`, `upgrade.js`, and `testCounterV2.js`.
 
 4. 测试初始版本：
 
-  ```bash
-  npx hardhat run scripts/testCounter.js --network eSpaceTestnet
-  ```
+   ```bash
+   npx hardhat run scripts/testCounter.js --network eSpaceTestnet
+   ```
 
-  预期输出：
+   预期输出：
 
-  ```
-  Counter value: 1
-  ```
+   ```
+   Counter value: 1
+   ```
 
 5. Upgrade the contract:
 
-  ```bash
-  npx hardhat run scripts/upgrade.js --network eSpaceTestnet
-  ```
+   ```bash
+   npx hardhat run scripts/upgrade.js --network eSpaceTestnet
+   ```
 
 6. Test the upgraded version:
 
-  ```bash
-  npx hardhat run scripts/testCounterV2.js --network eSpaceTestnet
-  ```
+   ```bash
+   npx hardhat run scripts/testCounterV2.js --network eSpaceTestnet
+   ```
 
-  Expected Output:
+   Expected Output:
 
-  ```
-  Testing CounterV2 contract...
-  Incrementing counter...
-  CounterV2 current value: 2
-  Resetting counter...
-  CounterV2 value after reset: 0
-  ```
+   ```
+   Testing CounterV2 contract...
+   Incrementing counter...
+   CounterV2 current value: 2
+   Resetting counter...
+   CounterV2 value after reset: 0
+   ```
 
 By following these steps, you can deploy and upgrade contracts using the UUPS pattern on Conflux eSpace. This approach allows you to update contract logic without changing the contract address, while providing better gas efficiency and security compared to other proxy patterns.

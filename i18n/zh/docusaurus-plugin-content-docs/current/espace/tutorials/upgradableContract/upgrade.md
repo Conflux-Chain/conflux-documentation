@@ -21,8 +21,8 @@ tags: [ 教程, 可升级的合约, Hardhat ]
 
 1. **关注点分离**: 合约逻辑与存储通过两个合约进行分离。
 
-  - A Proxy contract that holds the state and receives user interactions.
-  - A Logic contract (Implementation contract) that contains the actual code logic.
+   - A Proxy contract that holds the state and receives user interactions.
+   - A Logic contract (Implementation contract) that contains the actual code logic.
 
 2. **委托调用**:代理合约使用`delegatecall`将函数调用转发到逻辑合约。
 

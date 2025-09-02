@@ -71,9 +71,9 @@ So far, there are three tag lines in the officially released image:
 2. x.x.x-mainnet
 3. x.x.x-testnet
 
-The first type of image will run a **private chain node** in **dev mode** by default. The chainId and miner account will be randomly generated. At the same time, 10 genesis accounts will be created (the defult password is `123456`), and 1000 CFX will be distributed to each account for developing and testing.
+The first type of image will run a **private chain node** in **dev mode** by default. The chainId and miner account will be randomly generated. At the same time, 10 genesis accounts will be created (the default password is `123456`), and 1000 CFX will be distributed to each account for developing and testing.
 
-The image with mainnet/testnet suffix tag will activate the nodes of the main network/test network by default. The nodes will start to synchronize data from Epoch 0 through the network. (The process of sychronizing might take a long time, and the transaction sending request won't be processed.)
+The image with mainnet/testnet suffix tag will activate the nodes of the main network/test network by default. The nodes will start to synchronize data from Epoch 0 through the network. (The process of synchronizing might take a long time, and the transaction sending request won't be processed.)
 
 They all support the use of custom configuration files and data directories through mounting directories. You can check the tutorial at: [Conflux-rust docker file on Github](https://github.com/conflux-chain/conflux-docker)
 

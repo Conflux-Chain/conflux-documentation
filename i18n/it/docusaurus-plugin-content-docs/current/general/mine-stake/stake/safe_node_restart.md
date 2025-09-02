@@ -37,18 +37,18 @@ To safely restart your PoS node while avoiding penalties, follow this procedure:
    ```bash
    ./conflux rpc local pos stop_election
    ```
-  This command returns either `NULL` or a future PoS block number. Once executed, your node will not participate in the next committee election.
+   This command returns either `NULL` or a future PoS block number. Once executed, your node will not participate in the next committee election.
 
 2. If you receive a block number response:
-  - Maintain node operation
-  - Wait for the specified block to be generated (~2-4 hours)
-  - Re-run the command until it returns `NULL`
-  - Note that PoS rewards will cease after this block
+   - Maintain node operation
+   - Wait for the specified block to be generated (~2-4 hours)
+   - Re-run the command until it returns `NULL`
+   - Note that PoS rewards will cease after this block
 
 3. When the command returns `NULL`:
-  - The node can be safely stopped
-  - Upon restart, PoS voting will automatically resume
-  - New rewards will begin after ~2-3 hours
+   - The node can be safely stopped
+   - Upon restart, PoS voting will automatically resume
+   - New rewards will begin after ~2-3 hours
 
 This procedure ensures a clean shutdown and prevents accidental slashing that could occur from running duplicate instances. Always follow these steps when performing maintenance or updates on your PoS node.
 

@@ -254,7 +254,7 @@ Any object that has implemented the methods error, info, and log can be used.
 
 ### **在Conflux网络中，ERC20/ERC777是否仍以此方式命名？**
 
-两者都可以使用。 它们仍被称为ERC20/ERC777，但在某些情况下，你也可以看到它们被称为CRC20/CRC777。
+两者都可以使用。 They are still referred to as ERC20/ERC777, but in some contexts you can find them referred as CRC20/CRC777.
 
 ### **主网和测试网的官方节点的websocket服务端口是什么？**
 
