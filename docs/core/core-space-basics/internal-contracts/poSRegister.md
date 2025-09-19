@@ -23,7 +23,7 @@ tags:
   - Internal Contracts
 ---
 
-This contract is used let user participate in PoS chain. If anyone want to become a PoS node, he need to interact with this contract. This contract provide serveral methods to increase or decrease PoS votes:
+This contract is used let user participate in PoS chain. If anyone want to become a PoS node, he need to interact with this contract. This contract provide several methods to increase or decrease PoS votes:
 
 - ```register``` - Regist in PoS chain to become a PoS node
 - ```increaseStake``` - Increase PoS stake
