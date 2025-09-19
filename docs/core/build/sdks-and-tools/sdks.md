@@ -133,7 +133,7 @@ This SDK provides the tools needed to build custom smart contracts efficiently b
 
 ### [Conflux-contracts](https://github.com/conflux-fans/conflux-contracts)
 
-This is a Solidity package including common useful contracts in Conflux DAPP developments. Which is kindly like OpenZeppelin. Currenlty most used is `Conflux InternalContracts`.
+This is a Solidity package including common useful contracts in Conflux DAPP developments. Which is kindly like OpenZeppelin. Currently most used is `Conflux InternalContracts`.
 
 ### [OpenZeppelin](https://docs.openzeppelin.com/contracts/4.x/)
 
