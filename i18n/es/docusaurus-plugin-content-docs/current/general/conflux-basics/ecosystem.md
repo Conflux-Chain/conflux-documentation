@@ -53,7 +53,7 @@ ConfluxHub is a vital component of the Conflux ecosystem, serving as a versatile
 
 Si quieres aprender a usar ConfluxHub, puedes seguir [este](../tutorials/transferring-funds/transfer-funds-across-spaces.md) tutorial.
 
-## [PoS Validators](https://www.conflux-pos-validators.org)
+## [PoS Validators](https://conflux-pos-validators.org)
 
 La red de Conflux emplea un mecanismo de prueba de participación (PoS) y una lista completa de todos los Validadores PoS de Conflux se puede encontrar en este sitio web.
 

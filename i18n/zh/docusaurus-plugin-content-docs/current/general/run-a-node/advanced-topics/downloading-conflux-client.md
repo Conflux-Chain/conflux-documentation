@@ -71,9 +71,9 @@ $ docker run -p 12537:12537 --rm --name cfx-node confluxchain/conflux-rust
 2. x.x.x-mainnet
 3. x.x.x-testnet
 
-默认情况下，第一类镜像会在**开发模式**下运行一个**私有链节点** 。 将随机生成链的ID和矿工账户。 同时，将创建10个创世账户(口令是`123456`)，并向每个账户分发1000 CFX用于开发和测试。
+默认情况下，第一类镜像会在**开发模式**下运行一个**私有链节点** 。 将随机生成链的ID和矿工账户。 At the same time, 10 genesis accounts will be created (the default password is `123456`), and 1000 CFX will be distributed to each account for developing and testing.
 
-默认情况下，包含主网/测试网后缀标签的镜像将默认激活主网/测试网节点。 这些节点将通过网络开始从Epoch 0同步数据。 (同步过程可能需要很长时间，并且同步期间将不能处理任何交易请求)。
+默认情况下，包含主网/测试网后缀标签的镜像将默认激活主网/测试网节点。 这些节点将通过网络开始从Epoch 0同步数据。 (The process of synchronizing might take a long time, and the transaction sending request won't be processed.)
 
 上述三类镜像都支持通过挂载目录使用自定义配置文件和数据目录。 你可以在这里查看教程：[Conflux-rust docker file](https://github.com/conflux-chain/conflux-docker)。
 
