@@ -23,7 +23,7 @@ tags:
   - 内置合约
 ---
 
-这个合约用于让用户参与PoS链。 需要与这个合约交互才能成为PoS节点。 这个合约提供了几个方法来增加或减少PoS投票：
+这个合约用于让用户参与PoS链。 需要与这个合约交互才能成为PoS节点。 This contract provide several methods to increase or decrease PoS votes:
 
 - `register` - 注册到PoS链，成为一个PoS节点
 - `increaseStake` - 增加PoS权益

@@ -115,7 +115,7 @@ For rapid transaction processing, managing nonce values manually is essential. T
 
 - **Sufficient Funds**: Ensure the account has adequate CFX for both the transfer amount and transaction fees to prevent transaction processing delays.
 
-- **Multiple Accounts for Increased Speed (for certain situations)**: Using several accounts in parellel for transactions can further enhance processing speed.
+- **Multiple Accounts for Increased Speed (for certain situations)**: Using several accounts in parallel for transactions can further enhance processing speed.
 
 ## FAQs
 
