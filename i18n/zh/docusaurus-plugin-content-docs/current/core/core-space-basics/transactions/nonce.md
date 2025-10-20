@@ -115,7 +115,7 @@ tags: [ Nonce ]
 
 - **足够的资金**: 确保账户有足够的CFX，既能支付转账金额，又能支付交易费用，以防止交易处理的延迟。
 
-- **使用多账户以提高速度（在某些情况下）**: 可以并行使用多个账户进行交易，以进一步提高处理速度。
+- **Multiple Accounts for Increased Speed (for certain situations)**: Using several accounts in parallel for transactions can further enhance processing speed.
 
 ## 常见问题解答
 

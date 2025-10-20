@@ -100,6 +100,21 @@ Here are references for various fee tiers and their rate limits.
 | trace RPC           | not supported                            | QPS < 20                                      | includes: <br/> `trace_block`, `trace_filter`, `trace_transaction`                  |
 | filter API          | not supported                            | supported                                     | includes: <br/> `eth_newFilter`, `eth_getFilterChanges` etc.                        |
 
+A diagnostic method `diagnostic_getRateLimitStatus` has been provided for users to **check their current rate-limit status**.
+
+**Usage Example:**
+
+```bash
+curl --location 'https://evm.confluxrpc.com/<api-key>' \
+--header 'Content-Type: application/json' \
+--data '{
+  "jsonrpc":"2.0",
+  "method":"diagnostic_getRateLimitStatus",
+  "params":[],
+  "id":1
+}'
+```
+
 </details>
 
 import ConfuraError from '../templates/confura-error.md'

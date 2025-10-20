@@ -54,7 +54,7 @@ Consider a regular CFX transfer with a gas cost of 21,000:
 
 Most users need not worry about these details as wallets(Fluent Wallet, Metamask, etc) typically manage gas settings effectively to minimize costs.
 
-For developers, SDKs will also choose an appropriate gas limit if not sepcified. Developers can also use the [cfx_estimateGasAndCollateral](../../core/build/json-rpc/cfx-namespace.md#cfx_estimategasandcollateral) to find the proper gas limit for their transactions.
+For developers, SDKs will also choose an appropriate gas limit if not specified. Developers can also use the [cfx_estimateGasAndCollateral](../../core/build/json-rpc/cfx-namespace.md#cfx_estimategasandcollateral) to find the proper gas limit for their transactions.
 
 :::info
 

@@ -46,7 +46,7 @@ tags: [ 交易生命周期 ]
 
 :::note
 
-如果交易池已满并收到了具有较高gasPrice的其他交易，交易也可能会从交易池中被丢弃。
+A transaction may also be dropped from the transaction pool if the pool is full and other transactions with higher `gasPrice` are received.
 
 :::
 
