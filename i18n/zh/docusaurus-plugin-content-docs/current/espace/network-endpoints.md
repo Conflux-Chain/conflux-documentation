@@ -100,6 +100,21 @@ Conflux eSpace 测试网的链 ID 为 `71(0x47)`。 相应的区块链浏览器 
 | trace RPC           | 暂不支持                                | 每秒请求数< 20                             | 包括： <br/> `trace_block`, `trace_filter`, `trace_transaction`                        |
 | filter API          | 暂不支持                                | 支持                                    | includes: <br/> `eth_newFilter`, `eth_getFilterChanges` etc.                        |
 
+A diagnostic method `diagnostic_getRateLimitStatus` has been provided for users to **check their current rate-limit status**.
+
+**Usage Example:**
+
+```bash
+curl --location 'https://evm.confluxrpc.com/<api-key>' \
+--header 'Content-Type: application/json' \
+--data '{
+  "jsonrpc":"2.0",
+  "method":"diagnostic_getRateLimitStatus",
+  "params":[],
+  "id":1
+}'
+```
+
 </details>
 
 import ConfuraError from '../templates/confura-error.md'
