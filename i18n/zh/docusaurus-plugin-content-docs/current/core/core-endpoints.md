@@ -100,6 +100,21 @@ Conflux Core Space 测试网的链 ID 是 `1(0x1)`。 相应的区块链浏览�
 | trace RPC           | 暂不支持                                | 每秒请求数< 20                             | 包括： <br/> `trace_block`, `trace_filter`, `trace_transaction`                  |
 | filter API          | 暂不支持                                | 支持                                    | 包括： <br/> `cfx_newFilter`, `cfx_getFilterChanges` 等。                          |
 
+A diagnostic method `diagnostic_getRateLimitStatus` has been provided for users to **check their current rate-limit status**.
+
+**Usage Example:**
+
+```bash
+curl --location 'https://main.confluxrpc.com/<api-key>' \
+--header 'Content-Type: application/json' \
+--data '{
+  "jsonrpc":"2.0",
+  "method":"diagnostic_getRateLimitStatus",
+  "params":[],
+  "id":1
+}'
+```
+
 </details>
 
 import ConfuraError from '../templates/confura-error.md'
