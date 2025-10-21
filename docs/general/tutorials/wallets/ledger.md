@@ -123,7 +123,7 @@ Make sure you have already imported your Ledger account into your Fluent wallet 
 
 **7.** Double check the transaction details, and click "Confirm".
 
-**8.** Your Ledger device will now show "Review transaction". **Carefully review the transaction amount and receipient address** by repeatedly pressing the right button on your device.
+**8.** Your Ledger device will now show "Review transaction". **Carefully review the transaction amount and recipient address** by repeatedly pressing the right button on your device.
 
 **9.** If everything looks correct, press both buttons at the "Accept and send" screen to approve the transaction. Otherwise, press both buttons at the "Reject" screen to reject the transaction.
 
@@ -224,7 +224,7 @@ Assuming your account on the Ledger device has some CFX tokens, the steps below 
 6. Click "Send" and enter the recipient address (should start with `0x`).
 7. Under "Amount", enter the amount of CFX to transfer and click "Next".
 8. Double check the transaction details, and click "Confirm".
-9. Your Ledger device will now show "Review transaction". **Carefully review the transaction amount and receipient address** by repeatedly pressing the right button on your device.
+9. Your Ledger device will now show "Review transaction". **Carefully review the transaction amount and recipient address** by repeatedly pressing the right button on your device.
 10. If everything looks correct, press both buttons at the "Accept and send" screen to approve the transaction. Otherwise, press both buttons at the "Reject" screen to reject the transaction.
 11. After the transaction has been approved, it is now signed and sent to the Conflux Network. You can see the transaction status in MetaMask. If you click on the transaction and click "View on block explorer", you can see more details on [Conflux Scan](https://evm.confluxscan.org).
 
