@@ -46,7 +46,7 @@ After a transaction is included in a block, it will be assigned a block number a
 
 :::note
 
-A transaction may also be dropped from the transation pool if the pool is full and other transactions with higher `gasPrice` are received.
+A transaction may also be dropped from the transaction pool if the pool is full and other transactions with higher `gasPrice` are received.
 
 :::
 

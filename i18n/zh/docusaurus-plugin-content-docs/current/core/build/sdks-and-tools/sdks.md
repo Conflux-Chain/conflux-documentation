@@ -136,7 +136,7 @@ w3.cfx.send_transaction(transaction)
 
 ### [Conflux-contracts](https://github.com/conflux-fans/conflux-contracts)
 
-这是一个Solidity包，包含了 Conflux DAPP 开发中常用的有用合约。 这个包类似于 OpenZeppelin。 目前最常用的是 `Conflux InternalContracts`。
+这是一个Solidity包，包含了 Conflux DAPP 开发中常用的有用合约。 这个包类似于 OpenZeppelin。 Currently most used is `Conflux InternalContracts`.
 
 ### [OpenZeppelin](https://docs.openzeppelin.com/contracts/4.x/)
 
