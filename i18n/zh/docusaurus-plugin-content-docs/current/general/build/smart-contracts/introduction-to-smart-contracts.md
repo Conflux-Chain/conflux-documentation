@@ -284,7 +284,7 @@ const { Conflux } = require("js-conflux-sdk");
 }
 ```
 
-rpc 方法为 `cfx_call`，数据是 `函数选择器加上参数列表的 ABI 编码结果`。 前4个字节 `0xe18a7b92` 是函数 `balanceOf` 的函数选择器。 该计算对balanceOf的签名`balanceOf(address)`执行keccak操作`keccak256("balanceOf(address)")`，然后取其前4个字节。 `00000000000000000000000019f4bcf113e0b896d9b34294fd3da86b4adf0302`是参数 `0x19f4bcf113e0b896d9b34294fd3da86b4adf0302` 的 ABI 编码值。
+rpc 方法为 `cfx_call`，数据是 `函数选择器加上参数列表的 ABI 编码结果`。 前4个字节 `0xe18a7b92` 是函数 `balanceOf` 的函数选择器。 该计算对balanceOf的签名`balanceOf(address)`执行keccak操作`keccak256("balanceOf(address)")`，然后取其前4个字节。 `00000000000000000000000019f4bcf113e0b896d9b34294fd3da86b4adf0302` is the ABI-encoded value of parameter `0x19f4bcf113e0b896d9b34294fd3da86b4adf0302`.
 
 返回的值是 `0x0000000000000000000000000000000000000000000000000000000000000000`，这是类型为 uint256 的 ABI 编码值 0 的结果。
 
