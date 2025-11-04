@@ -186,7 +186,7 @@ This tutorial focuses on MetaMask, but you can use any other supported wallet su
 
 
 
-5.  Copy the Conflux eSpace acount address from your MetaMask wallet.
+5.  Copy the Conflux eSpace account address from your MetaMask wallet.
 
 
 
