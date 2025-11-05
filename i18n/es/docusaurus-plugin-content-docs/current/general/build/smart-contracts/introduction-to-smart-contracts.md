@@ -284,7 +284,7 @@ From the log, we can see that the corresponding RPC information of `contract.cup
 }
 ```
 
-rpc method is `cfx_call`, data is the result of `function selector + ABI-encoded result of parameter list`. The first 4 bytes `0xe18a7b92` is the function selector of function `balanceOf`. The calculation takes keccak operation `keccak256("balanceOf(address)")` on the signature `balanceOf(address)` of `balanceOf` and then takes the first 4 bytes. `00000000000000000000000019f4bcf113e0b896d9b34294fd3da86b4adf0302` is the ABI-encoded value of paramter `0x19f4bcf113e0b896d9b34294fd3da86b4adf0302`.
+rpc method is `cfx_call`, data is the result of `function selector + ABI-encoded result of parameter list`. The first 4 bytes `0xe18a7b92` is the function selector of function `balanceOf`. The calculation takes keccak operation `keccak256("balanceOf(address)")` on the signature `balanceOf(address)` of `balanceOf` and then takes the first 4 bytes. `00000000000000000000000019f4bcf113e0b896d9b34294fd3da86b4adf0302` is the ABI-encoded value of parameter `0x19f4bcf113e0b896d9b34294fd3da86b4adf0302`.
 
 The returned value is `0x0000000000000000000000000000000000000000000000000000000000000000` wich is the result of ABI-encoded value 0 with the `uint256` type.
 

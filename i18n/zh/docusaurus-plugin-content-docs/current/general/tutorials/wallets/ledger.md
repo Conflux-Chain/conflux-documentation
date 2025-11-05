@@ -123,7 +123,7 @@ Conflux 应用就安装成功了。
 
 **7.** 仔细检查交易细节，然后点击“确认”。
 
-**8.** 您的Ledger设备将显示“审核交易”。 **仔细检查交易金额和收款地址**，可以通过多次按下设备上的右按钮来完成。
+**8.** 您的Ledger设备将显示“审核交易”。 **Carefully review the transaction amount and recipient address** by repeatedly pressing the right button on your device.
 
 **9.** 如果一切看起来正确，请在"接受并发送"界面上同时按下两个按钮以批准交易。 否则，按“拒绝”界面上的两个按钮来拒绝交易。
 
@@ -224,7 +224,7 @@ Assuming your account on the Ledger device has some CFX tokens, the steps below 
 6. 点击“发送”并输入接收方地址(应以`0x`开头)。
 7. 在“金额”下，输入要转移的 CFX 数量，然后单击“下一步”。
 8. 仔细检查交易详情，然后点击“确认”。
-9. 您的Ledger设备现在将显示“审核交易”。 **仔细检查交易金额和收款地址**，可以通过多次按下设备上的右按钮来完成。
+9. 您的Ledger设备现在将显示“审核交易”。 **Carefully review the transaction amount and recipient address** by repeatedly pressing the right button on your device.
 10. 如果所有信息都正确，请按下“接受并发送”屏幕上的两个按钮以批准交易。 否则，按“拒绝”界面上的两个按钮来拒绝交易。
 11. 交易被批准后，它现在已被签名并发送到Conflux网络。 你可以在 MetaMask 中查看交易状态。 If you click on the transaction and click "View on block explorer", you can see more details on [Conflux Scan](https://evm.confluxscan.org).
 

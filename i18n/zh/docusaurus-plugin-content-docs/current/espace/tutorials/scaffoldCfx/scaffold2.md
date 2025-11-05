@@ -10,7 +10,7 @@ tags: [ Scaffold, 教程, NFT ]
 
 [Scaffold Conflux NFT Example](https://github.com/conflux-fans/conflux-scaffold-nft-example) 是 Scaffold-ETH-2 (https://scaffoldeth.io/) 的一个改编版本，其模板已被调整，以便在 Conflux eSpace 上部署 ERC721 合约，并利用 Scaffold-ETH-2 的组件、`hardhat` 集成以及快速部署功能。
 
-在本教程中，我们将更深入地探讨 Solidity 合约的使用，以及如何与 ERC721 合约进行交互，以便在 Conflux eSpace 上铸造可以转移到其他钱包的 NFT。
+In this tutorial, we go more in-depth of how the solidity contract is used and interact with the ERC721 contract to mint NFTs on Conflux eSpace that can be transferred to other wallets.
 
 ## 视频Conflux
 
