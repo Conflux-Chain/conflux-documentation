@@ -2,7 +2,7 @@
 sidebar_position: 10
 title: Accounts and Addresses
 displayed_sidebar: generalSidebar
-keyworks:
+keywords:
   - Conflux-Network
   - accounts
   - addresses
