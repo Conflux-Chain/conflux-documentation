@@ -176,7 +176,7 @@ import Image from '@theme/IdealImage';
 
 
 
-5.  从您的MetaMask钱包复制Conflux eSpace账户地址。
+5.  Copy the Conflux eSpace account address from your MetaMask wallet.
 
 ```mdx-code-block
 
