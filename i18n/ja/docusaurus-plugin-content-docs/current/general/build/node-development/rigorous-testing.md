@@ -185,7 +185,7 @@ consensus performance under attack scenarios:
 1. `fork_same_height_merge.py` creates a unstable TreeGraph with roughly 95000
    blocks. In the TreeGraph, it has three branches and in each branch there are
    star shape forks attached at a fixed height. It corresponds to one worst case
-   scenario for the consensus procesing engine. The expected speed is ~70 blocks/s
+   scenario for the consensus processing engine. The expected speed is ~70 blocks/s
    on MacBook Pro 2019 and ~45 blocks/s on m5a.xlarge.
 
 2. `fork_same_height_hiding.py` tests the scenario where an attacker tries to
@@ -208,5 +208,5 @@ consensus performance under attack scenarios:
    than 100 blocks in less than 10 seconds.
 
 Note that 2, 3, and 5 are long running test scripts and you can terminate the
-execution after the speed stablizes. For every release, we run these scripts to
+execution after the speed stabilizes. For every release, we run these scripts to
 make sure that there is no performance regression.
