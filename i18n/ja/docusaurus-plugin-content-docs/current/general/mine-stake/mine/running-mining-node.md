@@ -41,7 +41,7 @@ For downloading the latest version of the software, please refer to: https://git
 ## Windows Testing Instruction
 Notes:
 
-1. It is recommended to turn off antivirus softwares.
+1. It is recommended to turn off antivirus software.
 2. Win 10, version 1903 and above.
 
 ## Run Files
