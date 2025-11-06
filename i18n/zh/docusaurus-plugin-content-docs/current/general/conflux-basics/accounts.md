@@ -2,7 +2,7 @@
 sidebar_position: 10
 title: 账户和地址
 displayed_sidebar: generalSidebar
-keyworks:
+keywords:
   - Conflux-Network
   - accounts
   - addresses
