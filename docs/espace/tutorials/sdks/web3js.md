@@ -206,7 +206,7 @@ When the contract is deployed, the constructor function executes and assigns the
  
 ### Compile the Contract 
  
-This section will guide you through the process of building a script that leverages the Solidity compiler to produce the ABI and bytecode for the Incrementer.sol contract. Start by generating a compile.js and fill it as bellow: 
+This section will guide you through the process of building a script that leverages the Solidity compiler to produce the ABI and bytecode for the Incrementer.sol contract. Start by generating a compile.js and fill it as below: 
 
 ```javascript
 // Import packages 

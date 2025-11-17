@@ -88,9 +88,9 @@ This contract is written in `solidity`, whose syntax is similar to `javascript`.
 - The `constructor` function is executed exactly once the contract is deployed.
 - The `balanceOf` function marked with the `view` is a read-only function that can't be used to modify the contract state. All read-only functions must be declared as `view` or `pure` functions.
 - `refill` function is an ordinary function, can be called by sending a transaction. This function will change the contract state.
-- `require(msg.sender ==  owner, "Only the owner can refill");` indicates that only when the condition `msg.sender == owner` is fullfilled (that is, the caller is the contract admin), the state of contract variable `cupcakeBalances` can be modified to refill the products. If the condition is not fullfilled then a messaged will be returner (in this case `"Only the owner can refill"`) and the transaction will be reverted.
+- `require(msg.sender ==  owner, "Only the owner can refill");` indicates that only when the condition `msg.sender == owner` is fulfilled (that is, the caller is the contract admin), the state of contract variable `cupcakeBalances` can be modified to refill the products. If the condition is not fulfilled then a messaged will be returner (in this case `"Only the owner can refill"`) and the transaction will be reverted.
 - `purchase` function includes a `payable`, indicating you can send CFX at the same time the function is called. Since customers need to pay CFX to purchase it's marked as a `payable` function.
-- `require(msg.value >= amount 1 ether, "You must pay at least 1 CFX per cupcake")` indicates the full amount of CFX must be paid in order to complete the purchase. Otherwhise the function will be reverted and will return the `"You must pay at least 1 CFX per cupcake"` message.
+- `require(msg.value >= amount 1 ether, "You must pay at least 1 CFX per cupcake")` indicates the full amount of CFX must be paid in order to complete the purchase. Otherwise the function will be reverted and will return the `"You must pay at least 1 CFX per cupcake"` message.
 
 >
 > **Solidity has built-in literal Ether Units**
@@ -287,7 +287,7 @@ From the log, we can see that the corresponding RPC information of `contract.cup
 
 rpc method is `cfx_call`, data is the result of `function selector + ABI-encoded result of parameter list`. The first 4 bytes `0xe18a7b92` is the function selector of function `balanceOf`. The calculation takes keccak operation `keccak256("balanceOf(address)")` on the signature `balanceOf(address)` of `balanceOf` and then takes the first 4 bytes. `00000000000000000000000019f4bcf113e0b896d9b34294fd3da86b4adf0302` is the ABI-encoded value of parameter `0x19f4bcf113e0b896d9b34294fd3da86b4adf0302`.
 
-The returned value is `0x0000000000000000000000000000000000000000000000000000000000000000` wich is the result of ABI-encoded value 0 with the `uint256` type.
+The returned value is `0x0000000000000000000000000000000000000000000000000000000000000000` which is the result of ABI-encoded value 0 with the `uint256` type.
 
 The RPC method for purchase is `cfx_sendRawTransaction`, which is sending transaction. This will change the state of the contract. The encoding method for the transaction's data is also `function selector + ABI-encoded result of parameter list`. You can check this through `getTransactionByHash`.
 

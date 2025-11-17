@@ -56,7 +56,7 @@ The framework will
 
 1. Call `set_test_params` to set basic test initialization parameters.
 2. Setup the test directories and node configurations according to the parameters set in `set_test_params`. By default, a temp directory will be created and all files will be kept within it. For example, setting `self.num_nodes = 2` will initialize directories for two nodes.
-3. Call `setup_network` to add nodes and connect them. Here `self.setup_nodes()` will add 2 Conflux nodes by running pre-compiled Conflux executable binary within the directory setupped in step 2. We do not connect them here because we want nodes seperated at the beginning.
+3. Call `setup_network` to add nodes and connect them. Here `self.setup_nodes()` will add 2 Conflux nodes by running pre-compiled Conflux executable binary within the directory setupped in step 2. We do not connect them here because we want nodes separated at the beginning.
 4. Call `run_test` to run the actual test codes.
 
 After running `self.setup_nodes()`, `self.nodes` is a list of `TestNode`, and each can be used to interact with the corresponding Conflux node. For example, to get the number of blocks in node 0 by calling the RPC named `getblockcount`, you simply call `self.nodes[0].getblockcount` and an integer will be returned.
@@ -65,7 +65,7 @@ After running `self.setup_nodes()`, `self.nodes` is a list of `TestNode`, and ea
 
 ## Sending P2P Messages
 
-After calling `start_p2p_connection(self.nodes)`, the field `p2p` of each `TestNode` will be initialized with a simulated Conflux node written in Python, and this simulated node will be connected to the Conflux process controled by the corresponding `TestNode`. After that, you can send and receive P2P messages within python code. Here is an example about how to use `p2p` to interact with the Conflux node.
+After calling `start_p2p_connection(self.nodes)`, the field `p2p` of each `TestNode` will be initialized with a simulated Conflux node written in Python, and this simulated node will be connected to the Conflux process controlled by the corresponding `TestNode`. After that, you can send and receive P2P messages within python code. Here is an example about how to use `p2p` to interact with the Conflux node.
 
 ```python
     def run_test(self):
