@@ -41,7 +41,7 @@ tags:
 ## Windows 测试指南
 注意：
 
-1. 建议关闭防病毒软件。
+1. It is recommended to turn off antivirus software.
 2. 需要Win 10, version 1903 或者更高
 
 ## 运行文件
