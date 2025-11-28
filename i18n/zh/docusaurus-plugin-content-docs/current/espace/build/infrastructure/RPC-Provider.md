@@ -33,6 +33,10 @@ tags: [ RPC 提供商 ]
 
 Conflux已与多家精选RPC服务商达成合作，同时提供自建服务，功能类似Infura、Alchemy及QuickNode等平台。 用户可以利用这些提供商连接到 Conflux eSpace 网络。
 
+## [Tenderly](https://tenderly.co/)
+
+Tenderly is a leading full-stack infrastructure platform for web3 Pros, it providing robust Ethereum-compatible RPC services, enabling developers to interact with the blockchain efficiently and reliably. Beyond basic RPC endpoints, Tenderly offers advanced features like real-time transaction simulation, debugging, and analytics, allowing developers to test, monitor, and optimize smart contract interactions with confidence. Its infrastructure is designed to ensure high availability, scalability, and detailed observability for decentralized applications.
+
 ## [Validation Cloud](https://www.validationcloud.io/)
 
 Validation Cloud提供企业级Web3基础设施平台，涵盖RPC服务、质押管理及数据解决方案，支持50余个主流Web3区块链与网络。 我们致力于为用户和合作伙伴提供最佳的性能、可靠性和合规性。 Validation Cloud 已通过 SOC2 Type II 认证。
