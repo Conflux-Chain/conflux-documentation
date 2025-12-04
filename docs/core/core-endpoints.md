@@ -116,6 +116,10 @@ curl --location 'https://main.confluxrpc.com/<api-key>' \
 
 </details>
 
+### Common Errors
+
+If you encounter RPC-related issues that are not covered above, refer to the common error cases below.
+
 import ConfuraError from '../templates/confura-error.md'
 
 <details>
