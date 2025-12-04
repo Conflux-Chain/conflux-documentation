@@ -118,7 +118,7 @@ curl --location 'https://main.confluxrpc.com/<api-key>' \
 
 import ConfuraError from '../templates/confura-error.md'
 
-<details>
+<details id="confura-common-errors">
 <summary>Confura Common Errors</summary>
 <ConfuraError basicUnitName="epoch" />
 </details>
