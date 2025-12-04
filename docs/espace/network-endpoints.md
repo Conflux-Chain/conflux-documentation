@@ -118,6 +118,7 @@ curl --location 'https://evm.confluxrpc.com/<api-key>' \
 
 import ConfuraError from '../templates/confura-error.md'
 
+<a id="confura-common-errors"></a>
 <details>
 <summary>Confura Common Errors</summary>
 <ConfuraError basicUnitName="block" />
