@@ -13,6 +13,15 @@ Confura 服务存在一些特有错误，这些错误并不是因为 Conflux-rus
 }
 ```
 
+Authentication related errors:
+
+| Message                    | 备注                                                                          |
+| -------------------------- | --------------------------------------------------------------------------- |
+| invalid api key            | The provided key is malformed or unrecognized.              |
+| api key is already expired | The key is no longer valid and cannot be used for requests. |
+
+Encountering such errors, please either upgrade to a higher-tier plan via the Web3 paywall or proceed without using an API key.
+
 限流相关错误：
 
 | 消息                           | 注释                 |
