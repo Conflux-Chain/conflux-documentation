@@ -118,7 +118,7 @@ Submit a PoW solution to the stratum server
 
 {
   "jsonrpc": "2.0",
-  "result": ["false", "invlaid nonce"],
+  "result": ["false", "invalid nonce"],
   "id": 1
 }
 ```
