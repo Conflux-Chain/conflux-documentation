@@ -13,6 +13,15 @@ common error response format:
 }
 ```
 
+Authentication related errors:
+
+| Message                    | Notes                                                                       |
+| -------------------------- | --------------------------------------------------------------------------- |
+| invalid api key            | The provided key is malformed or unrecognized.              |
+| api key is already expired | The key is no longer valid and cannot be used for requests. |
+
+Encountering such errors, please either upgrade to a higher-tier plan via the Web3 paywall or proceed without using an API key.
+
 Rate Limit related errors:
 
 | message                                                                                             | note                                                                       |
