@@ -90,9 +90,9 @@ contract VendingMachine {
 - 一旦合约被部署， `constructor` 函数便会执行。
 - 以 `view` 修饰的 `balanceOf` 函数是一个只读函数，它不能用来修改合约状态。 所有只读函数必须声明为 `view` 或 `pure` 函数。
 - `refill` 函数是一个普通函数，可以通过发送交易调用。 此函数将更改合约状态。
-- `require(msg.sender ==  owner, "Only the owner can refill");`只有当条件 `msg.sender == owner` 满足时（即调用者是合约管理员）， 才能修改合约变量 `cupcakeBalances` 的状态来补充商品。 如果条件不满足，则会返回一条消息（在这个例子中是 `"Only the owner can refill"`），并且交易将被回滚。
+- `require(msg.sender ==  owner, "Only the owner can refill");` indicates that only when the condition `msg.sender == owner` is fulfilled (that is, the caller is the contract admin), the state of contract variable `cupcakeBalances` can be modified to refill the products. If the condition is not fulfilled then a messaged will be returner (in this case `"Only the owner can refill"`) and the transaction will be reverted.
 - `purchase` 函数包括一个 `payable` 修饰符，表明在调用该函数的同时，你可以发送 CFX。 由于顾客需要支付 CFX 来购买，因此它被标记为一个 `payable` 函数。
-- `require(msg.value >= amount 1 ether, "You must pay at least 1 CFX per cupcake")` 表明必须支付完整的 CFX 金额才能完成购买。 否则，函数将被回滚，并返回消息 `"You must pay at least 1 CFX per cupcake"` 。
+- `require(msg.value >= amount 1 ether, "You must pay at least 1 CFX per cupcake")` 表明必须支付完整的 CFX 金额才能完成购买。 Otherwise the function will be reverted and will return the `"You must pay at least 1 CFX per cupcake"` message.
 
 > **Solidity 内置了以太单位字面量**
 >
@@ -286,7 +286,7 @@ const { Conflux } = require("js-conflux-sdk");
 
 rpc 方法为 `cfx_call`，数据是 `函数选择器加上参数列表的 ABI 编码结果`。 前4个字节 `0xe18a7b92` 是函数 `balanceOf` 的函数选择器。 该计算对balanceOf的签名`balanceOf(address)`执行keccak操作`keccak256("balanceOf(address)")`，然后取其前4个字节。 `00000000000000000000000019f4bcf113e0b896d9b34294fd3da86b4adf0302` is the ABI-encoded value of parameter `0x19f4bcf113e0b896d9b34294fd3da86b4adf0302`.
 
-返回的值是 `0x0000000000000000000000000000000000000000000000000000000000000000`，这是类型为 uint256 的 ABI 编码值 0 的结果。
+The returned value is `0x0000000000000000000000000000000000000000000000000000000000000000` which is the result of ABI-encoded value 0 with the `uint256` type.
 
 购买的RPC方法是`cfx_sendRawTransaction`，即发送交易。 这将改变合约的状态。 交易数据的编码方法也是 `函数选择器加上参数列表的 ABI 编码结果`。 您可以通过 `getTransactionByHash` 检查这一点。
 
