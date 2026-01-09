@@ -123,7 +123,7 @@ A `Trace` trace object contain below field:
 | ---| --- | --- | --- |
 | type | [ActionType Enum](./enums.md)| | |
 | action | Action Object| | |
-| valid | boolean| | |
+| valid | Boolean| | |
 
 Example:
 
@@ -160,7 +160,7 @@ Get block traces by block hash
 
 | Field | Type | Optional | Description |
 | ---| --- | --- | --- |
-| transactionHash | HASH| | |
+| transactionHash | Hash| | |
 | transactionPosition| QUANTITY | | |
 | traces | Array of Trace | | |
 
@@ -168,8 +168,8 @@ Get block traces by block hash
 
 | Field | Type | Optional | Description |
 | ---| --- | --- | --- |
-| blockHash | HASH| | |
-| epochHash| HASH | | |
+| blockHash | Hash| | |
+| epochHash| Hash | | |
 | epochNumber | QUANTITY| | |
 | transactionTraces | Array of TransactionTrace | | |
 
@@ -331,12 +331,12 @@ Get transaction's trace by it's hash
 | Field | Type | Optional | Description |
 | ---| --- | --- | --- |
 | type | [ActionType Enum](./enums.md) | | |
-| blockHash | HASH| | |
-| epochHash| HASH | | |
+| blockHash | Hash| | |
+| epochHash| Hash | | |
 | epochNumber | QUANTITY| | |
-| transactionHash | HASH| | |
+| transactionHash | Hash| | |
 | transactionPosition| QUANTITY | | |
-| valid | boolean | | |
+| valid | Boolean | | |
 | action | Action Object| | |
 
 
@@ -652,7 +652,7 @@ Get whole epoch transaction's trace by it's number
 | ---| --- | --- | --- |
 | cfxTraces | Array of LocalizedTrace| | |
 | ethTraces | Array of eSpaceTraceObject| | |
-| mirrorAddressMap | hex address to base32 address map| | |
+| mirrorAddressMap | Map<Address, Base32>| | hex address to base32 address |
 
 eSpaceTraceObject
 
@@ -661,13 +661,13 @@ eSpaceTraceObject
 | action | Call or Create or SelfDestruct| | |
 | result | CallResult or CreateResult Or None | | |
 | error | String | ✅| |
-| traceAddress | Array of number | | [explanation](https://docs.erigon.tech/interacting-with-erigon/interacting-with-erigon/trace#traceaddress-field) |
-| subtraces | number | | Count of subtraces |
-| transactionPosition | number | | |
+| traceAddress | Array of Number | | [explanation](https://docs.erigon.tech/interacting-with-erigon/interacting-with-erigon/trace#traceaddress-field) |
+| subtraces | Number | | Count of subtraces |
+| transactionPosition | Number | | |
 | transactionHash | Hash | | |
-| blockNumber | number | | |
+| blockNumber | Number | | |
 | blockHash | Hash | | |
-| valid | boolean | | |
+| valid | Boolean | | |
 
 ### trace_filter
 
@@ -681,9 +681,9 @@ Returns all traces matching the provided filter.
 | ---| --- | --- | --- |
 | fromEpoch |QUANTITY or TAG | ✅| the epoch number, or the string `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-default-epochnumber-parameter) Search will be applied from this epoch number.|
 | toEpoch |QUANTITY or TAG | ✅| the epoch number, or the string `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-default-epochnumber-parameter). Search will be applied up until (and including) this epoch number.|
-| fromAddress |BASE32 |✅ | |
-| toAddress |BASE32 | ✅| |
-| blockHashes |Array of HASH | ✅| default: `null` Array of up to 128 block hashes that the search will be applied to. This will override from/to epoch fields if it's not `null`.|
+| fromAddress |Base32 |✅ | |
+| toAddress |Base32 | ✅| |
+| blockHashes |Array of Hash | ✅| default: `null` Array of up to 128 block hashes that the search will be applied to. This will override from/to epoch fields if it's not `null`.|
 | actionTypes |Array of [ActionType Enum](./enums.md) | ✅|If None, match all. If specified, trace must match one of these action types. |
 | after |QUANTITY | ✅|The offset trace number. |
 | count |QUANTITY | ✅|The number of traces to display in a batch. |
