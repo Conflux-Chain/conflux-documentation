@@ -43,7 +43,7 @@ Before you start, make sure that you have done the following:
 
 - Updated your Ledger device to the latest firmware version
 
-- Installed [Ledger Live](https://www.ledger.com/ledger-live) and updated it to the latest version
+- Installed [Ledger Wallet](https://shop.ledger.com/pages/ledger-wallet) and updated it to the latest version
 
 - Installed [Fluent Wallet](https://fluentwallet.com/) version 2.8.0 or later on Chrome or Edge browser (Firefox is not supported)
 
@@ -59,15 +59,15 @@ You can install the **Conflux app** on your Ledger device by following these ste
 
 **2.** Unlock your device by entering your PIN.
 
-**3.** Open Ledger Live.
+**3.** Open Ledger Wallet.
 
-**4.** In the menu on the left, click "Manager" to open the Ledger Live app manager.
+**4.** In the menu on the left, click "Manager" to open the Ledger Wallet app manager.
 
 **5.** When your Ledger device displays "Allow Ledger manager", press both buttons to continue.
 
-**6.** Back in Ledger Live, under the "App catalog" tab, enter "Conflux" in the search field.
+**6.** Back in Ledger Wallet, under the "App catalog" tab, enter "Conflux" in the search field.
 
-**7.** Once Ledger Live shows the Conflux app, press "Install".
+**7.** Once Ledger Wallet shows the Conflux app, press "Install".
 
 The Conflux app is now installed successfully.
 
@@ -77,7 +77,7 @@ The Conflux app is now installed successfully.
 
 You can import accounts from your Ledger device into your Fluent wallet by following these steps:
 
-**1.** Quit Ledger Live if it is currently opened.
+**1.** Quit Ledger Wallet if it is currently opened.
 
 **2.** Connect your Ledger device to your computer through USB.
 
@@ -107,7 +107,7 @@ Assuming your account on the Ledger device has some CFX tokens, the steps below 
 If you do not have CFX, you can purchase at one of the exchanges listed [here](https://123cfx.com/#Exchanges).
 :::
 
-Make sure you have already imported your Ledger account into your Fluent wallet by following the steps in the previous section. Quit Ledger Live if it is currently opened.
+Make sure you have already imported your Ledger account into your Fluent wallet by following the steps in the previous section. Quit Ledger Wallet if it is currently opened.
 
 **1.** Connect your Ledger device to your computer through USB.
 
@@ -149,7 +149,7 @@ If you encounter any issues, find us on <DiscordLink>Discord</DiscordLink> or [T
 Before you start, make sure that you have done the following:
 
 - Updated your Ledger device (Nano S+, Nano X, Stax, or Flex) to the latest firmware version
-- Installed [Ledger Live](https://www.ledger.com/ledger-live) and updated it to the latest version
+- Installed [Ledger Wallet](https://www.ledger.com/ledger-live) and updated it to the latest version
 - Installed [MetaMask](https://MetaMask.io) on Chrome or Edge browser (Firefox is not supported)
 
 If you encounter any issues, find us on <DiscordLink>Discord</DiscordLink> or [Telegram](https://t.me/Conflux_English), we are happy to help.
@@ -160,11 +160,11 @@ You can install the **Ethereum app** on your Ledger device by following these st
 
 1. Connect your Ledger device to your computer through USB.
 1. Unlock your device by entering your PIN.
-1. Open Ledger Live.
-1. In the menu on the left, click "Manager" to open the Ledger Live app manager.
+1. Open Ledger Wallet.
+1. In the menu on the left, click "Manager" to open the Ledger Wallet app manager.
 1. When your Ledger device displays "Allow Ledger manager", press both buttons to continue.
-1. Back in Ledger Live, under the "App catalog" tab, enter "Ethereum" in the search field.
-1. Once Ledger Live shows the Ethereum app, press "Install".
+1. Back in Ledger Wallet, under the "App catalog" tab, enter "Ethereum" in the search field.
+1. Once Ledger Wallet shows the Ethereum app, press "Install".
 1. The Ethereum app is now installed successfully.
 
 
@@ -196,16 +196,15 @@ Alternatively, you can add Conflux eSpace to MetaMask manually under "Settings",
 
 You can import accounts from your Ledger device into your MetaMask wallet by following these steps:
 
-1. Quit Ledger Live if it is currently opened.
+1. Quit Ledger Wallet if it is currently opened.
 2. Connect your Ledger device to your computer through USB.
 3. Unlock your device by entering your PIN.
 4. Navigate to the Ethereum app on your device and press both buttons to open it.
-5. In MetaMask, navigate to "Settings", "Advanced", "Preferred Ledger Connection Type" and choose "WebHID".
-6. Open the menu in the top right corner in MetaMask and click "Connect Hardware Wallet".
-7. Select "Ledger" and click "Continue".
-8. A browser popup will appear saying "MetaMask wants to connect to a HID device". Select your Ledger device from the list and click "Connect".
-9. After a few seconds, the "Select an Account" page shows up in MetaMask. Select one or more accounts that you would like to import to MetaMask and click "Unlock".
-10. Your account is now visible in MetaMask as "Ledger 1".
+5. In MetaMask, navigate to "Account", "Add Wallet" and "Add a hardware wallet".
+6. Select "Ledger" and click "Continue".
+7. A browser popup will appear saying "MetaMask wants to connect to a HID device". Select your Ledger device from the list and click "Connect".
+8. After a few seconds, the "Select an Account" page shows up in MetaMask. Select one or more accounts that you would like to import to MetaMask and click "Unlock".
+9. Your account is now visible in MetaMask as "Ledger 1".
 
 
 ### Using Ledger
@@ -216,7 +215,7 @@ Assuming your account on the Ledger device has some CFX tokens, the steps below 
 
 *Note: If you do not have CFX, you can purchase at one of the exchanges listed [here](/docs/category/from-exchanges).*
 
-1. Make sure you have already imported your Ledger account into your MetaMask wallet by following the steps in the previous section. Quit Ledger Live if it is currently opened.
+1. Make sure you have already imported your Ledger account into your MetaMask wallet by following the steps in the previous section. Quit Ledger Wallet if it is currently opened.
 2. Connect your Ledger device to your computer through USB.
 3. Unlock your device by entering your PIN.
 4. Navigate to the Ethereum app on your device and press both buttons to open it.
