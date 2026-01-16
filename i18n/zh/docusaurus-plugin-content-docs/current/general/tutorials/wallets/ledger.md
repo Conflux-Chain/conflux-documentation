@@ -43,7 +43,7 @@ For Ledger Nano S users: You'll need to manually set up the development environm
 
 - Updated your Ledger device to the latest firmware version
 
-- Installed [Ledger Live](https://www.ledger.com/ledger-live) and updated it to the latest version
+- Installed [Ledger Wallet](https://shop.ledger.com/pages/ledger-wallet) and updated it to the latest version
 
 - Installed [Fluent Wallet](https://fluentwallet.com/) version 2.8.0 or later on Chrome or Edge browser (Firefox is not supported)
 
@@ -59,15 +59,15 @@ You can install the **Conflux app** on your Ledger device by following these ste
 
 **2.** 输入您的 PIN 码解锁您的设备。
 
-**3.** Open Ledger Live.
+**3.** Open Ledger Wallet.
 
-**4.** In the menu on the left, click "Manager" to open the Ledger Live app manager.
+**4.** In the menu on the left, click "Manager" to open the Ledger Wallet app manager.
 
 **5.** When your Ledger device displays "Allow Ledger manager", press both buttons to continue.
 
-**6.** Back in Ledger Live, under the "App catalog" tab, enter "Conflux" in the search field.
+**6.** Back in Ledger Wallet, under the "App catalog" tab, enter "Conflux" in the search field.
 
-**7.** Once Ledger Live shows the Conflux app, press "Install".
+**7.** Once Ledger Wallet shows the Conflux app, press "Install".
 
 Conflux 应用就安装成功了。
 
@@ -77,7 +77,7 @@ Conflux 应用就安装成功了。
 
 您可以通过以下步骤从您的Ledger设备导入账户到您的Fluent wallet：
 
-**1.** 如果当前打开了Ledger Live，请退出。
+**1.** Quit Ledger Wallet if it is currently opened.
 
 **2.** Connect your Ledger device to your computer through USB.
 
@@ -107,7 +107,7 @@ Conflux 应用就安装成功了。
 如果您没有CFX，可以在列在[这里](https://123cfx.com/#Exchanges)的交易所之一购买。
 :::
 
-请确保您已经将您的Ledger账户已经导入到您的Fluent 钱包，方法和上一节的步骤相同。 如果当前打开了Ledger Live，请退出。
+请确保您已经将您的Ledger账户已经导入到您的Fluent 钱包，方法和上一节的步骤相同。 Quit Ledger Wallet if it is currently opened.
 
 **1.** Connect your Ledger device to your computer through USB.
 
@@ -149,7 +149,7 @@ Conflux 应用就安装成功了。
 在您开始之前，请确保您已经做了以下工作：
 
 - Updated your Ledger device (Nano S+, Nano X, Stax, or Flex) to the latest firmware version
-- Installed [Ledger Live](https://www.ledger.com/ledger-live) and updated it to the latest version
+- Installed [Ledger Wallet](https://www.ledger.com/ledger-live) and updated it to the latest version
 - Installed [MetaMask](https://MetaMask.io) on Chrome or Edge browser (Firefox is not supported)
 
 如果您遇到任何问题，请在 <DiscordLink>Discord</DiscordLink> 或者 [Telegram](https://t.me/Conflux_English) 上联系我们，我们很乐意提供帮助。
@@ -160,11 +160,11 @@ You can install the **Ethereum app** on your Ledger device by following these st
 
 1. Connect your Ledger device to your computer through USB.
 1. 输入您的 PIN 码解锁您的设备。
-1. 打开 Ledger Live。
-1. 在左边的菜单中，点击“管理”打开Ledger Live 应用程序管理器。
+1. Open Ledger Wallet.
+1. In the menu on the left, click "Manager" to open the Ledger Wallet app manager.
 1. 当您的Ledger设备显示“允许Ledger管理器”时，请按下两个按钮以继续。
-1. 回到 Ledger Live, 在 “App catalog” 选项卡下，在搜索字段中输入 “Conflux”。
-1. 当 Ledger Live 上显示 Conflux 应用程序时，请点击“安装”。
+1. Back in Ledger Wallet, under the "App catalog" tab, enter "Ethereum" in the search field.
+1. Once Ledger Wallet shows the Ethereum app, press "Install".
 1. 现在，以太坊应用程序就已经安装成功了。
 
 
@@ -196,16 +196,15 @@ Alternatively, you can add Conflux eSpace to MetaMask manually under "Settings",
 
 You can import accounts from your Ledger device into your MetaMask wallet by following these steps:
 
-1. 如果当前打开了Ledger Live，请退出。
+1. Quit Ledger Wallet if it is currently opened.
 2. Connect your Ledger device to your computer through USB.
 3. 输入您的 PIN 码解锁您的设备。
 4. Navigate to the Ethereum app on your device and press both buttons to open it.
-5. 在 MetaMask 中，找到 "Settings"、"Advanced"、"Preferred Ledger Connection Type"，并选择 "WebHID"。
-6. 在 MetaMask 中打开右上角菜单，然后点击“连接硬件钱包”。
-7. 选择"Ledger"并点击"继续"。
-8. 您将看到一个浏览器弹出窗口，上面显示着 "MetaMask 希望连接到 HID 设备"。 从列表中选择您的Ledger设备，然后点击“连接”。
-9. 几秒钟后，MetaMask会显示“选择账户”页面。 请选择您想要导入到 MetaMask 的一个或多个账户，然后点击“解锁”。
-10. 你的账户现在可以在 MetaMask 中看到，显示为 "Ledger 1"。
+5. In MetaMask, navigate to "Account", "Add Wallet" and "Add a hardware wallet".
+6. 选择"Ledger"并点击"继续"。
+7. 您将看到一个浏览器弹出窗口，上面显示着 "MetaMask 希望连接到 HID 设备"。 从列表中选择您的Ledger设备，然后点击“连接”。
+8. 几秒钟后，MetaMask会显示“选择账户”页面。 请选择您想要导入到 MetaMask 的一个或多个账户，然后点击“解锁”。
+9. 你的账户现在可以在 MetaMask 中看到，显示为 "Ledger 1"。
 
 
 ### 使用Ledger
@@ -216,7 +215,7 @@ Assuming your account on the Ledger device has some CFX tokens, the steps below 
 
 *Note: If you do not have CFX, you can purchase at one of the exchanges listed [here](/docs/category/from-exchanges).*
 
-1. 确认您已经通过上一节中的步骤将您的 Ledger 账户导入到 MetaMask 钱包中。 如果当前打开了Ledger Live，请退出。
+1. 确认您已经通过上一节中的步骤将您的 Ledger 账户导入到 MetaMask 钱包中。 Quit Ledger Wallet if it is currently opened.
 2. Connect your Ledger device to your computer through USB.
 3. 输入您的 PIN 码解锁您的设备。
 4. Navigate to the Ethereum app on your device and press both buttons to open it.
