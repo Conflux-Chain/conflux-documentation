@@ -26,12 +26,104 @@ Note: An existing archive node need clear all blockchain data to open `executive
 
 **Note**: From Conflux-rust v2.0 trace RPC have some breaking change, [Read below](#v20-trace-breaking-change) for details.
 
+## Action object
+
+An `action` object corresponds to an operation executed by the underlying EVM, which could be a call (`call`), contract creation (`create`), or an internal transfer (`internal transfer`).
+Currently, there are several types of actions:
+
+1. `call`: Represents a method call operation.
+2. `call_result`: Represents the result of a method call operation.
+3. `create`: Represents a contract creation operation.
+4. `create_result`: Represents the result of a contract creation operation.
+5. `internal_transfer_action`: Represents an internal transfer operation.
+6. `set_auth`: EIP-7702 setting authorization.
+7. `suicide`: Contract self-destruct.
+
+Among these, `call` and `call_result`, as well as `create` and `create_result`, always appear in pairs, while the other types appear individually.
+
+### call
+
+| Field | Type | Optional | Description |
+| ---| --- | --- | --- |
+| space | [Space Enum](./enums.md)| | |
+| from| Address | | |
+| to |Address | | |
+| value | U256 | | |
+| gas |U256 | | |
+| input | Bytes | | |
+| callType | [CallType Enum](./enums.md) | | |
+
+### call_result
+
+| Field | Type | Optional | Description |
+| ---| --- | --- | --- |
+| outcome | [ActionStatus Enum](./enums.md)| | |
+| gasLeft | U256| | |
+| returnData | Bytes | | |
+
+### create
+
+| Field | Type | Optional | Description |
+| ---| --- | --- | --- |
+| space | [Space Enum](./enums.md)| | |
+| from| Address | | |
+| value | U256 | | |
+| gas |U256 | | |
+| init | Bytes | | |
+| createType | [CreateType Enum](./enums.md) | | |
+
+### create_result
+
+| Field | Type | Optional | Description |
+| ---| --- | --- | --- |
+| outcome | [ActionStatus Enum](./enums.md)| | |
+| addr | Address | | 
+| gasLeft | U256| | |
+| returnData | Bytes | | |
+
+### internal_transfer_action
+
+| Field | Type | Optional | Description |
+| ---| --- | --- | --- |
+| fromSpace | [Space Enum](./enums.md)| | |
+| fromPocket| [Pocket Enum](./enums.md) | | |
+| from |Address | | |
+| toSpace | [Space Enum](./enums.md)| | |
+| toPocket| [Pocket Enum](./enums.md) | | |
+| to |Address | | |
+| value | U256 | | |
+
+### set_auth
+
+| Field | Type | Optional | Description |
+| ---| --- | --- | --- |
+| space | [Space Enum](./enums.md)| | |
+| address| Address | | Impl address |
+| chainId |Uint256 | | |
+| nonce | Uint256| | |
+| outcome| [SetAuthOutcome Enum](./enums.md) | | |
+| author |Address | ✅ | The authorizer address |
+
+Note: Core Space does not support this type of action, which means that traces from Core Space will not contain this action type.
+
+### suicide
+
+| Field | Type | Optional | Description |
+| ---| --- | --- | --- |
+| space | [Space Enum](./enums.md)| | |
+| address| Address | | Contract address |
+| balance |Uint256 | | |
+| refundAddress | Address|  | Refund address |
+
 ## Trace object
 
 A `Trace` trace object contain below field:
 
-* `type`: `STRING` - Type of trace. Avaliable value is `call`, `create`, `call_result`, `create_result`, `internal_transfer_action`
-* `action`: `OBJECT` - Trace's action info，different type trace's action have different fields.
+| Field | Type | Optional | Description |
+| ---| --- | --- | --- |
+| type | [ActionType Enum](./enums.md)| | |
+| action | Action Object| | |
+| valid | Boolean| | |
 
 Example:
 
@@ -45,13 +137,12 @@ Example:
     "to": "CFXTEST:TYPE.CONTRACT:ACE8BSDS7WN52KHYK29NEBZWFPVZ5RPPD28KCXETJ8",
     "value": "0x1d6e3"
   },
-  "type": "call"
+  "type": "call",
+  "valid": true
 }
 ```
 
-Check this [document](https://github.com/Conflux-Chain/conflux-doc/blob/master/docs/trace_introduction.md) to get detail explanation of Conflux trace
-
-## RPCs
+## trace RPCs
 
 ### trace_block
 
@@ -63,16 +154,24 @@ Get block traces by block hash
 
 #### Returns
 
-* `blockHash`: `HASH` - Hash of block
-* `epochHash`: `HASH` - Hash of epoch
-* `epochNumber`: `QUANTITY` - Number of epoch
-* `transactionTraces`: `Array` -  Array of `TransactionTrace` info
+* `BlockTrace` -  Block trace object
 
-##### TransactionTrace
+##### TransactionTrace object
 
-* `transactionHash`: `HASH` - Hash of transaction
-* `transactionPosition`: `QUANTITY` - Position of transaction in block
-* `traces`: `Array` - Array of `Trace`
+| Field | Type | Optional | Description |
+| ---| --- | --- | --- |
+| transactionHash | Hash| | |
+| transactionPosition| QUANTITY | | |
+| traces | Array of Trace | | |
+
+##### BlockTrace object
+
+| Field | Type | Optional | Description |
+| ---| --- | --- | --- |
+| blockHash | Hash| | |
+| epochHash| Hash | | |
+| epochNumber | QUANTITY| | |
+| transactionTraces | Array of TransactionTrace | | |
 
 ```json
 // Request
@@ -97,6 +196,7 @@ curl --location --request POST 'http://testnet-rpc:12537' \
                 "traces": [
                     {
                         "action": {
+                            "space": "native",
                             "callType": "call",
                             "from": "CFXTEST:TYPE.USER:AAJSUKECFVZF2MG8GZYR9GNAKZYSX9P6VU29DWZ6T2",
                             "gas": "0x171e2",
@@ -104,10 +204,12 @@ curl --location --request POST 'http://testnet-rpc:12537' \
                             "to": "CFXTEST:TYPE.CONTRACT:ACE8BSDS7WN52KHYK29NEBZWFPVZ5RPPD28KCXETJ8",
                             "value": "0x1d6e3"
                         },
+                        "valid": true,
                         "type": "call"
                     },
                     {
                         "action": {
+                            "space": "native",
                             "callType": "call",
                             "from": "CFXTEST:TYPE.CONTRACT:ACE8BSDS7WN52KHYK29NEBZWFPVZ5RPPD28KCXETJ8",
                             "gas": "0x14ac7",
@@ -115,10 +217,12 @@ curl --location --request POST 'http://testnet-rpc:12537' \
                             "to": "CFXTEST:TYPE.CONTRACT:ACFNPY71HJHAMY075XYPS56124ZJE5154UX9NTE7VT",
                             "value": "0x1d6e3"
                         },
+                        "valid": true,
                         "type": "call"
                     },
                     {
                         "action": {
+                            "space": "native",
                             "callType": "delegatecall",
                             "from": "CFXTEST:TYPE.CONTRACT:ACFNPY71HJHAMY075XYPS56124ZJE5154UX9NTE7VT",
                             "gas": "0x14157",
@@ -126,10 +230,12 @@ curl --location --request POST 'http://testnet-rpc:12537' \
                             "to": "CFXTEST:TYPE.CONTRACT:ACEMTZA4ZJN1FCUTZWN6P8EKDBF2X8DCZY4TEESNH8",
                             "value": "0x1d6e3"
                         },
+                        "valid": true,
                         "type": "call"
                     },
                     {
                         "action": {
+                            "space": "native",
                             "callType": "staticcall",
                             "from": "CFXTEST:TYPE.CONTRACT:ACFNPY71HJHAMY075XYPS56124ZJE5154UX9NTE7VT",
                             "gas": "0x13464",
@@ -137,6 +243,7 @@ curl --location --request POST 'http://testnet-rpc:12537' \
                             "to": "CFXTEST:TYPE.CONTRACT:ACE8BSDS7WN52KHYK29NEBZWFPVZ5RPPD28KCXETJ8",
                             "value": "0x0"
                         },
+                        "valid": true,
                         "type": "call"
                     },
                     {
@@ -145,10 +252,12 @@ curl --location --request POST 'http://testnet-rpc:12537' \
                             "outcome": "success",
                             "returnData": "0x000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000001f00adf0308dce89889061254123a68747470733a2f2f6170692e62696e616e63652e636f6d2f6170692f76332f7469636b65722f70726963653f73796d626f6c3d434658555344541a168418778218646570726963658218571a000f4240185b1257123668747470733a2f2f7777772e6f6b65782e636f6d2f6170692f696e6465782f76332f4346582d5553442f636f6e7374697475656e74731a1d8518778218666464617461821864646c6173748218571a000f4240185b1247122e68747470733a2f2f646174612e676174656170692e696f2f617069322f312f7469636b65722f6366785f757364741a15841877821864646c6173748218571a000f4240185b1264123d68747470733a2f2f7777772e6d78632e636f6d2f6f70656e2f6170692f76322f6d61726b65742f7469636b65723f73796d626f6c3d4346585f555344541a23871877821861646461746182181800821867646c61737418728218571a000f4240185b125b123568747470733a2f2f6170692e626b65782e63632f76322f712f7469636b65722f70726963653f73796d626f6c3d4346585f555344541a228618778218616464617461821818008218646570726963658218571a000f4240185b1a0d0a0908051205fa3fc000001003220d0a0908051205fa3fc000001003100a186420012846308094ebdc0300000000000000000000000000000000"
                         },
+                        "valid": true,
                         "type": "call_result"
                     },
                     {
                         "action": {
+                            "space": "native",
                             "callType": "staticcall",
                             "from": "CFXTEST:TYPE.CONTRACT:ACFNPY71HJHAMY075XYPS56124ZJE5154UX9NTE7VT",
                             "gas": "0xce86",
@@ -156,6 +265,7 @@ curl --location --request POST 'http://testnet-rpc:12537' \
                             "to": "CFXTEST:TYPE.BUILTIN:AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAJK7B54454",
                             "value": "0x0"
                         },
+                        "valid": true,
                         "type": "call"
                     },
                     {
@@ -164,6 +274,7 @@ curl --location --request POST 'http://testnet-rpc:12537' \
                             "outcome": "success",
                             "returnData": "0xdccb9be50637c331c1c66ef1b0c2779f0a1893661c017c530b641dcec02010dc"
                         },
+                        "valid": true,
                         "type": "call_result"
                     },
                     {
@@ -172,6 +283,7 @@ curl --location --request POST 'http://testnet-rpc:12537' \
                             "outcome": "success",
                             "returnData": "0x0000000000000000000000000000000000000000000000000000000000001662"
                         },
+                        "valid": true,
                         "type": "call_result"
                     },
                     {
@@ -180,6 +292,7 @@ curl --location --request POST 'http://testnet-rpc:12537' \
                             "outcome": "success",
                             "returnData": "0x0000000000000000000000000000000000000000000000000000000000001662"
                         },
+                        "valid": true,
                         "type": "call_result"
                     },
                     {
@@ -188,6 +301,7 @@ curl --location --request POST 'http://testnet-rpc:12537' \
                             "outcome": "success",
                             "returnData": "0x"
                         },
+                        "valid": true,
                         "type": "call_result"
                     }
                 ],
@@ -200,8 +314,6 @@ curl --location --request POST 'http://testnet-rpc:12537' \
 }
 ```
 
-#### Returns
-
 ### trace_transaction
 
 Get transaction's trace by it's hash
@@ -212,13 +324,21 @@ Get transaction's trace by it's hash
 
 #### Returns
 
-* `type`: `string` - Avaliable value is `call`, `create`, `call_result`, `create_result`, `internal_transfer_action`
-* `transactionPosition`: `QUANTITY` - Position of transaction in block
-* `transactionHash`: `HASH` - Hash of transaction
-* `epochNumber`: `QUANTITY` - Number of epoch
-* `epochHash`: `HASH` - Hash of epoch
-* `blockHash`: `HASH` - Hash of block
-* `action`: `OBJECT` - Trace info
+* `Array` -  Array of `LocalizedTrace` info
+
+##### LocalizedTrace Object
+
+| Field | Type | Optional | Description |
+| ---| --- | --- | --- |
+| type | [ActionType Enum](./enums.md) | | |
+| blockHash | Hash| | |
+| epochHash| Hash | | |
+| epochNumber | QUANTITY| | |
+| transactionHash | Hash| | |
+| transactionPosition| QUANTITY | | |
+| valid | Boolean | | |
+| action | Action Object| | |
+
 
 ```json
 // Request
@@ -236,149 +356,282 @@ curl --location --request POST 'http://testnet-rpc:12537' \
     "jsonrpc": "2.0",
     "result": [
         {
+            "type": "internal_transfer_action",
             "action": {
-                "callType": "call",
-                "from": "CFXTEST:TYPE.USER:AAJSUKECFVZF2MG8GZYR9GNAKZYSX9P6VU29DWZ6T2",
-                "gas": "0x171e2",
-                "input": "0x9c312cfd",
-                "to": "CFXTEST:TYPE.CONTRACT:ACE8BSDS7WN52KHYK29NEBZWFPVZ5RPPD28KCXETJ8",
-                "value": "0x1d6e3"
+                "from": "CFX:TYPE.USER:AAR5P39N0JGA6GN2JB4Z93E46SU6BG7ARP8152HUR2",
+                "fromPocket": "balance",
+                "fromSpace": "native",
+                "to": "CFX:TYPE.NULL:AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA0SFBNJM2",
+                "toPocket": "gas_payment",
+                "toSpace": "none",
+                "value": "0x1c13f6519ca00"
             },
-            "blockHash": "0x4c4db64db7ddaf4fd6c9d0eb5398d4c7838252ceaefdfb6b1be27aa301428369",
-            "epochHash": "0x4c4db64db7ddaf4fd6c9d0eb5398d4c7838252ceaefdfb6b1be27aa301428369",
-            "epochNumber": "0x28968d0",
-            "transactionHash": "0x8437fd07e33ffaff9dc1b360cb8b0450847b15a164059b50736c65762e6629ad",
-            "transactionPosition": "0x0",
-            "type": "call"
+            "valid": true,
+            "epochHash": "0x20b2241f1c4ad1f64a1fbb677ebbf5a4f1e334120a8ee5e7e1c1d5cf96e286a7",
+            "epochNumber": "0x83f0b14",
+            "blockHash": "0x20b2241f1c4ad1f64a1fbb677ebbf5a4f1e334120a8ee5e7e1c1d5cf96e286a7",
+            "transactionPosition": "0x1",
+            "transactionHash": "0xb817af2240cccc0311419651bd7b563775c6701842a0ea42043a20ad02a1128e"
         },
         {
+            "type": "call",
             "action": {
-                "callType": "call",
-                "from": "CFXTEST:TYPE.CONTRACT:ACE8BSDS7WN52KHYK29NEBZWFPVZ5RPPD28KCXETJ8",
-                "gas": "0x14ac7",
-                "input": "0xb281a7bd00000000000000000000000089e0b86eec97bc24f44e3eb206b22b235db58c1e",
-                "to": "CFXTEST:TYPE.CONTRACT:ACFNPY71HJHAMY075XYPS56124ZJE5154UX9NTE7VT",
-                "value": "0x1d6e3"
+                "space": "native",
+                "from": "CFX:TYPE.USER:AAR5P39N0JGA6GN2JB4Z93E46SU6BG7ARP8152HUR2",
+                "to": "CFX:TYPE.CONTRACT:ACAD67180SED348RWSFUR34DZ6VS8MMCAJ8TV9B69E",
+                "value": "0x0",
+                "gas": "0x73739",
+                "input": "0xddbbce3b",
+                "callType": "call"
             },
-            "blockHash": "0x4c4db64db7ddaf4fd6c9d0eb5398d4c7838252ceaefdfb6b1be27aa301428369",
-            "epochHash": "0x4c4db64db7ddaf4fd6c9d0eb5398d4c7838252ceaefdfb6b1be27aa301428369",
-            "epochNumber": "0x28968d0",
-            "transactionHash": "0x8437fd07e33ffaff9dc1b360cb8b0450847b15a164059b50736c65762e6629ad",
-            "transactionPosition": "0x0",
-            "type": "call"
+            "valid": true,
+            "epochHash": "0x20b2241f1c4ad1f64a1fbb677ebbf5a4f1e334120a8ee5e7e1c1d5cf96e286a7",
+            "epochNumber": "0x83f0b14",
+            "blockHash": "0x20b2241f1c4ad1f64a1fbb677ebbf5a4f1e334120a8ee5e7e1c1d5cf96e286a7",
+            "transactionPosition": "0x1",
+            "transactionHash": "0xb817af2240cccc0311419651bd7b563775c6701842a0ea42043a20ad02a1128e"
         },
         {
+            "type": "call",
             "action": {
-                "callType": "delegatecall",
-                "from": "CFXTEST:TYPE.CONTRACT:ACFNPY71HJHAMY075XYPS56124ZJE5154UX9NTE7VT",
-                "gas": "0x14157",
-                "input": "0xb281a7bd00000000000000000000000089e0b86eec97bc24f44e3eb206b22b235db58c1e",
-                "to": "CFXTEST:TYPE.CONTRACT:ACEMTZA4ZJN1FCUTZWN6P8EKDBF2X8DCZY4TEESNH8",
-                "value": "0x1d6e3"
+                "space": "native",
+                "from": "CFX:TYPE.CONTRACT:ACAD67180SED348RWSFUR34DZ6VS8MMCAJ8TV9B69E",
+                "to": "CFX:TYPE.CONTRACT:ACFVDMF5XK7R0FDH9FBGRX3D579D3M3EFJRH3BX1JJ",
+                "value": "0x0",
+                "gas": "0x706ac",
+                "input": "0xddbbce3b",
+                "callType": "delegatecall"
             },
-            "blockHash": "0x4c4db64db7ddaf4fd6c9d0eb5398d4c7838252ceaefdfb6b1be27aa301428369",
-            "epochHash": "0x4c4db64db7ddaf4fd6c9d0eb5398d4c7838252ceaefdfb6b1be27aa301428369",
-            "epochNumber": "0x28968d0",
-            "transactionHash": "0x8437fd07e33ffaff9dc1b360cb8b0450847b15a164059b50736c65762e6629ad",
-            "transactionPosition": "0x0",
-            "type": "call"
+            "valid": true,
+            "epochHash": "0x20b2241f1c4ad1f64a1fbb677ebbf5a4f1e334120a8ee5e7e1c1d5cf96e286a7",
+            "epochNumber": "0x83f0b14",
+            "blockHash": "0x20b2241f1c4ad1f64a1fbb677ebbf5a4f1e334120a8ee5e7e1c1d5cf96e286a7",
+            "transactionPosition": "0x1",
+            "transactionHash": "0xb817af2240cccc0311419651bd7b563775c6701842a0ea42043a20ad02a1128e"
         },
         {
+            "type": "call",
             "action": {
-                "callType": "staticcall",
-                "from": "CFXTEST:TYPE.CONTRACT:ACFNPY71HJHAMY075XYPS56124ZJE5154UX9NTE7VT",
-                "gas": "0x13464",
-                "input": "0xf0940002",
-                "to": "CFXTEST:TYPE.CONTRACT:ACE8BSDS7WN52KHYK29NEBZWFPVZ5RPPD28KCXETJ8",
+                "space": "native",
+                "from": "CFX:TYPE.CONTRACT:ACAD67180SED348RWSFUR34DZ6VS8MMCAJ8TV9B69E",
+                "to": "CFX:TYPE.CONTRACT:ACCRDADJNXBX75X5MX6523FAJWX3K81B12EUGEC37V",
+                "value": "0x0",
+                "gas": "0x6ce13",
+                "input": "0x82df7a3b",
+                "callType": "staticcall"
+            },
+            "valid": true,
+            "epochHash": "0x20b2241f1c4ad1f64a1fbb677ebbf5a4f1e334120a8ee5e7e1c1d5cf96e286a7",
+            "epochNumber": "0x83f0b14",
+            "blockHash": "0x20b2241f1c4ad1f64a1fbb677ebbf5a4f1e334120a8ee5e7e1c1d5cf96e286a7",
+            "transactionPosition": "0x1",
+            "transactionHash": "0xb817af2240cccc0311419651bd7b563775c6701842a0ea42043a20ad02a1128e"
+        },
+        {
+            "type": "call",
+            "action": {
+                "space": "native",
+                "from": "CFX:TYPE.CONTRACT:ACCRDADJNXBX75X5MX6523FAJWX3K81B12EUGEC37V",
+                "to": "CFX:TYPE.CONTRACT:ACF81PBPVSEP9HMCCWVHGP0SXX72EKTCNPZN8HBUE9",
+                "value": "0x0",
+                "gas": "0x69f2a",
+                "input": "0x82df7a3b",
+                "callType": "delegatecall"
+            },
+            "valid": true,
+            "epochHash": "0x20b2241f1c4ad1f64a1fbb677ebbf5a4f1e334120a8ee5e7e1c1d5cf96e286a7",
+            "epochNumber": "0x83f0b14",
+            "blockHash": "0x20b2241f1c4ad1f64a1fbb677ebbf5a4f1e334120a8ee5e7e1c1d5cf96e286a7",
+            "transactionPosition": "0x1",
+            "transactionHash": "0xb817af2240cccc0311419651bd7b563775c6701842a0ea42043a20ad02a1128e"
+        },
+        {
+            "type": "call_result",
+            "action": {
+                "outcome": "success",
+                "gasLeft": "0x418ce",
+                "returnData": "0x0000000000000000000000000000000000000000000000000000000000000285"
+            },
+            "valid": true,
+            "epochHash": "0x20b2241f1c4ad1f64a1fbb677ebbf5a4f1e334120a8ee5e7e1c1d5cf96e286a7",
+            "epochNumber": "0x83f0b14",
+            "blockHash": "0x20b2241f1c4ad1f64a1fbb677ebbf5a4f1e334120a8ee5e7e1c1d5cf96e286a7",
+            "transactionPosition": "0x1",
+            "transactionHash": "0xb817af2240cccc0311419651bd7b563775c6701842a0ea42043a20ad02a1128e"
+        },
+        {
+            "type": "call_result",
+            "action": {
+                "outcome": "success",
+                "gasLeft": "0x4338a",
+                "returnData": "0x0000000000000000000000000000000000000000000000000000000000000285"
+            },
+            "valid": true,
+            "epochHash": "0x20b2241f1c4ad1f64a1fbb677ebbf5a4f1e334120a8ee5e7e1c1d5cf96e286a7",
+            "epochNumber": "0x83f0b14",
+            "blockHash": "0x20b2241f1c4ad1f64a1fbb677ebbf5a4f1e334120a8ee5e7e1c1d5cf96e286a7",
+            "transactionPosition": "0x1",
+            "transactionHash": "0xb817af2240cccc0311419651bd7b563775c6701842a0ea42043a20ad02a1128e"
+        },
+        {
+            "type": "call",
+            "action": {
+                "space": "native",
+                "from": "CFX:TYPE.CONTRACT:ACAD67180SED348RWSFUR34DZ6VS8MMCAJ8TV9B69E",
+                "to": "CFX:TYPE.BUILTIN:AAEJUAAAAAAAAAAAAAAAAAAAAAAAAAAAA2SN102VJV",
+                "value": "0x0",
+                "gas": "0x42724",
+                "input": "0xbea05ee3e9af34e140ab2a30e1ec1f39917aa506504b8c320000000000000000000000000000000000000000000000000000000000000000000000000000000000000040000000000000000000000000000000000000000000000000000000000000002401cfc7f8000000000000000000000000000000000000000000000000000000000000028500000000000000000000000000000000000000000000000000000000",
+                "callType": "call"
+            },
+            "valid": true,
+            "epochHash": "0x20b2241f1c4ad1f64a1fbb677ebbf5a4f1e334120a8ee5e7e1c1d5cf96e286a7",
+            "epochNumber": "0x83f0b14",
+            "blockHash": "0x20b2241f1c4ad1f64a1fbb677ebbf5a4f1e334120a8ee5e7e1c1d5cf96e286a7",
+            "transactionPosition": "0x1",
+            "transactionHash": "0xb817af2240cccc0311419651bd7b563775c6701842a0ea42043a20ad02a1128e"
+        },
+        {
+            "type": "internal_transfer_action",
+            "action": {
+                "from": "CFX:TYPE.BUILTIN:AAEJUAAAAAAAAAAAAAAAAAAAAAAAAAAAA2SN102VJV",
+                "fromPocket": "balance",
+                "fromSpace": "native",
+                "to": "CFX:TYPE.UNKNOWN:AD9CWFZA79RKKB8FW3T6WJJNH6V4E99NVA4CJ5FFTP",
+                "toPocket": "balance",
+                "toSpace": "evm",
                 "value": "0x0"
             },
-            "blockHash": "0x4c4db64db7ddaf4fd6c9d0eb5398d4c7838252ceaefdfb6b1be27aa301428369",
-            "epochHash": "0x4c4db64db7ddaf4fd6c9d0eb5398d4c7838252ceaefdfb6b1be27aa301428369",
-            "epochNumber": "0x28968d0",
-            "transactionHash": "0x8437fd07e33ffaff9dc1b360cb8b0450847b15a164059b50736c65762e6629ad",
-            "transactionPosition": "0x0",
-            "type": "call"
+            "valid": true,
+            "epochHash": "0x20b2241f1c4ad1f64a1fbb677ebbf5a4f1e334120a8ee5e7e1c1d5cf96e286a7",
+            "epochNumber": "0x83f0b14",
+            "blockHash": "0x20b2241f1c4ad1f64a1fbb677ebbf5a4f1e334120a8ee5e7e1c1d5cf96e286a7",
+            "transactionPosition": "0x1",
+            "transactionHash": "0xb817af2240cccc0311419651bd7b563775c6701842a0ea42043a20ad02a1128e"
         },
         {
+            "type": "call_result",
             "action": {
-                "gasLeft": "0x11ae8",
                 "outcome": "success",
-                "returnData": "0x000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000001f00adf0308dce89889061254123a68747470733a2f2f6170692e62696e616e63652e636f6d2f6170692f76332f7469636b65722f70726963653f73796d626f6c3d434658555344541a168418778218646570726963658218571a000f4240185b1257123668747470733a2f2f7777772e6f6b65782e636f6d2f6170692f696e6465782f76332f4346582d5553442f636f6e7374697475656e74731a1d8518778218666464617461821864646c6173748218571a000f4240185b1247122e68747470733a2f2f646174612e676174656170692e696f2f617069322f312f7469636b65722f6366785f757364741a15841877821864646c6173748218571a000f4240185b1264123d68747470733a2f2f7777772e6d78632e636f6d2f6f70656e2f6170692f76322f6d61726b65742f7469636b65723f73796d626f6c3d4346585f555344541a23871877821861646461746182181800821867646c61737418728218571a000f4240185b125b123568747470733a2f2f6170692e626b65782e63632f76322f712f7469636b65722f70726963653f73796d626f6c3d4346585f555344541a228618778218616464617461821818008218646570726963658218571a000f4240185b1a0d0a0908051205fa3fc000001003220d0a0908051205fa3fc000001003100a186420012846308094ebdc0300000000000000000000000000000000"
+                "gasLeft": "0x33d45",
+                "returnData": "0x00000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000000"
             },
-            "blockHash": "0x4c4db64db7ddaf4fd6c9d0eb5398d4c7838252ceaefdfb6b1be27aa301428369",
-            "epochHash": "0x4c4db64db7ddaf4fd6c9d0eb5398d4c7838252ceaefdfb6b1be27aa301428369",
-            "epochNumber": "0x28968d0",
-            "transactionHash": "0x8437fd07e33ffaff9dc1b360cb8b0450847b15a164059b50736c65762e6629ad",
-            "transactionPosition": "0x0",
-            "type": "call_result"
+            "valid": true,
+            "epochHash": "0x20b2241f1c4ad1f64a1fbb677ebbf5a4f1e334120a8ee5e7e1c1d5cf96e286a7",
+            "epochNumber": "0x83f0b14",
+            "blockHash": "0x20b2241f1c4ad1f64a1fbb677ebbf5a4f1e334120a8ee5e7e1c1d5cf96e286a7",
+            "transactionPosition": "0x1",
+            "transactionHash": "0xb817af2240cccc0311419651bd7b563775c6701842a0ea42043a20ad02a1128e"
         },
         {
+            "type": "call",
             "action": {
-                "callType": "staticcall",
-                "from": "CFXTEST:TYPE.CONTRACT:ACFNPY71HJHAMY075XYPS56124ZJE5154UX9NTE7VT",
-                "gas": "0xce86",
-                "input": "0x0adf0308dce89889061254123a68747470733a2f2f6170692e62696e616e63652e636f6d2f6170692f76332f7469636b65722f70726963653f73796d626f6c3d434658555344541a168418778218646570726963658218571a000f4240185b1257123668747470733a2f2f7777772e6f6b65782e636f6d2f6170692f696e6465782f76332f4346582d5553442f636f6e7374697475656e74731a1d8518778218666464617461821864646c6173748218571a000f4240185b1247122e68747470733a2f2f646174612e676174656170692e696f2f617069322f312f7469636b65722f6366785f757364741a15841877821864646c6173748218571a000f4240185b1264123d68747470733a2f2f7777772e6d78632e636f6d2f6f70656e2f6170692f76322f6d61726b65742f7469636b65723f73796d626f6c3d4346585f555344541a23871877821861646461746182181800821867646c61737418728218571a000f4240185b125b123568747470733a2f2f6170692e626b65782e63632f76322f712f7469636b65722f70726963653f73796d626f6c3d4346585f555344541a228618778218616464617461821818008218646570726963658218571a000f4240185b1a0d0a0908051205fa3fc000001003220d0a0908051205fa3fc000001003100a186420012846308094ebdc03",
-                "to": "CFXTEST:TYPE.BUILTIN:AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAJK7B54454",
-                "value": "0x0"
+                "space": "native",
+                "from": "CFX:TYPE.CONTRACT:ACAD67180SED348RWSFUR34DZ6VS8MMCAJ8TV9B69E",
+                "to": "CFX:TYPE.CONTRACT:ACCRDADJNXBX75X5MX6523FAJWX3K81B12EUGEC37V",
+                "value": "0x0",
+                "gas": "0x339f4",
+                "input": "0xd68076c3000000000000000000000000803e76feb3883cebcd938b06e743af22ef294202",
+                "callType": "staticcall"
             },
-            "blockHash": "0x4c4db64db7ddaf4fd6c9d0eb5398d4c7838252ceaefdfb6b1be27aa301428369",
-            "epochHash": "0x4c4db64db7ddaf4fd6c9d0eb5398d4c7838252ceaefdfb6b1be27aa301428369",
-            "epochNumber": "0x28968d0",
-            "transactionHash": "0x8437fd07e33ffaff9dc1b360cb8b0450847b15a164059b50736c65762e6629ad",
-            "transactionPosition": "0x0",
-            "type": "call"
+            "valid": true,
+            "epochHash": "0x20b2241f1c4ad1f64a1fbb677ebbf5a4f1e334120a8ee5e7e1c1d5cf96e286a7",
+            "epochNumber": "0x83f0b14",
+            "blockHash": "0x20b2241f1c4ad1f64a1fbb677ebbf5a4f1e334120a8ee5e7e1c1d5cf96e286a7",
+            "transactionPosition": "0x1",
+            "transactionHash": "0xb817af2240cccc0311419651bd7b563775c6701842a0ea42043a20ad02a1128e"
         },
         {
+            "type": "call",
             "action": {
-                "gasLeft": "0xcd8a",
+                "space": "native",
+                "from": "CFX:TYPE.CONTRACT:ACCRDADJNXBX75X5MX6523FAJWX3K81B12EUGEC37V",
+                "to": "CFX:TYPE.CONTRACT:ACF81PBPVSEP9HMCCWVHGP0SXX72EKTCNPZN8HBUE9",
+                "value": "0x0",
+                "gas": "0x32aa6",
+                "input": "0xd68076c3000000000000000000000000803e76feb3883cebcd938b06e743af22ef294202",
+                "callType": "delegatecall"
+            },
+            "valid": true,
+            "epochHash": "0x20b2241f1c4ad1f64a1fbb677ebbf5a4f1e334120a8ee5e7e1c1d5cf96e286a7",
+            "epochNumber": "0x83f0b14",
+            "blockHash": "0x20b2241f1c4ad1f64a1fbb677ebbf5a4f1e334120a8ee5e7e1c1d5cf96e286a7",
+            "transactionPosition": "0x1",
+            "transactionHash": "0xb817af2240cccc0311419651bd7b563775c6701842a0ea42043a20ad02a1128e"
+        },
+        {
+            "type": "call_result",
+            "action": {
                 "outcome": "success",
-                "returnData": "0xdccb9be50637c331c1c66ef1b0c2779f0a1893661c017c530b641dcec02010dc"
+                "gasLeft": "0x2d6b4",
+                "returnData": "0x0000000000000000000000000000000000000000000000000000000000000000"
             },
-            "blockHash": "0x4c4db64db7ddaf4fd6c9d0eb5398d4c7838252ceaefdfb6b1be27aa301428369",
-            "epochHash": "0x4c4db64db7ddaf4fd6c9d0eb5398d4c7838252ceaefdfb6b1be27aa301428369",
-            "epochNumber": "0x28968d0",
-            "transactionHash": "0x8437fd07e33ffaff9dc1b360cb8b0450847b15a164059b50736c65762e6629ad",
-            "transactionPosition": "0x0",
-            "type": "call_result"
+            "valid": true,
+            "epochHash": "0x20b2241f1c4ad1f64a1fbb677ebbf5a4f1e334120a8ee5e7e1c1d5cf96e286a7",
+            "epochNumber": "0x83f0b14",
+            "blockHash": "0x20b2241f1c4ad1f64a1fbb677ebbf5a4f1e334120a8ee5e7e1c1d5cf96e286a7",
+            "transactionPosition": "0x1",
+            "transactionHash": "0xb817af2240cccc0311419651bd7b563775c6701842a0ea42043a20ad02a1128e"
         },
         {
+            "type": "call_result",
             "action": {
-                "gasLeft": "0x8fe9",
                 "outcome": "success",
-                "returnData": "0x0000000000000000000000000000000000000000000000000000000000001662"
+                "gasLeft": "0x2e366",
+                "returnData": "0x0000000000000000000000000000000000000000000000000000000000000000"
             },
-            "blockHash": "0x4c4db64db7ddaf4fd6c9d0eb5398d4c7838252ceaefdfb6b1be27aa301428369",
-            "epochHash": "0x4c4db64db7ddaf4fd6c9d0eb5398d4c7838252ceaefdfb6b1be27aa301428369",
-            "epochNumber": "0x28968d0",
-            "transactionHash": "0x8437fd07e33ffaff9dc1b360cb8b0450847b15a164059b50736c65762e6629ad",
-            "transactionPosition": "0x0",
-            "type": "call_result"
+            "valid": true,
+            "epochHash": "0x20b2241f1c4ad1f64a1fbb677ebbf5a4f1e334120a8ee5e7e1c1d5cf96e286a7",
+            "epochNumber": "0x83f0b14",
+            "blockHash": "0x20b2241f1c4ad1f64a1fbb677ebbf5a4f1e334120a8ee5e7e1c1d5cf96e286a7",
+            "transactionPosition": "0x1",
+            "transactionHash": "0xb817af2240cccc0311419651bd7b563775c6701842a0ea42043a20ad02a1128e"
         },
         {
+            "type": "call_result",
             "action": {
-                "gasLeft": "0x94d5",
                 "outcome": "success",
-                "returnData": "0x0000000000000000000000000000000000000000000000000000000000001662"
-            },
-            "blockHash": "0x4c4db64db7ddaf4fd6c9d0eb5398d4c7838252ceaefdfb6b1be27aa301428369",
-            "epochHash": "0x4c4db64db7ddaf4fd6c9d0eb5398d4c7838252ceaefdfb6b1be27aa301428369",
-            "epochNumber": "0x28968d0",
-            "transactionHash": "0x8437fd07e33ffaff9dc1b360cb8b0450847b15a164059b50736c65762e6629ad",
-            "transactionPosition": "0x0",
-            "type": "call_result"
-        },
-        {
-            "action": {
-                "gasLeft": "0x713e",
-                "outcome": "success",
+                "gasLeft": "0x2ef0a",
                 "returnData": "0x"
             },
-            "blockHash": "0x4c4db64db7ddaf4fd6c9d0eb5398d4c7838252ceaefdfb6b1be27aa301428369",
-            "epochHash": "0x4c4db64db7ddaf4fd6c9d0eb5398d4c7838252ceaefdfb6b1be27aa301428369",
-            "epochNumber": "0x28968d0",
-            "transactionHash": "0x8437fd07e33ffaff9dc1b360cb8b0450847b15a164059b50736c65762e6629ad",
-            "transactionPosition": "0x0",
-            "type": "call_result"
+            "valid": true,
+            "epochHash": "0x20b2241f1c4ad1f64a1fbb677ebbf5a4f1e334120a8ee5e7e1c1d5cf96e286a7",
+            "epochNumber": "0x83f0b14",
+            "blockHash": "0x20b2241f1c4ad1f64a1fbb677ebbf5a4f1e334120a8ee5e7e1c1d5cf96e286a7",
+            "transactionPosition": "0x1",
+            "transactionHash": "0xb817af2240cccc0311419651bd7b563775c6701842a0ea42043a20ad02a1128e"
+        },
+        {
+            "type": "call_result",
+            "action": {
+                "outcome": "success",
+                "gasLeft": "0x30b6d",
+                "returnData": "0x"
+            },
+            "valid": true,
+            "epochHash": "0x20b2241f1c4ad1f64a1fbb677ebbf5a4f1e334120a8ee5e7e1c1d5cf96e286a7",
+            "epochNumber": "0x83f0b14",
+            "blockHash": "0x20b2241f1c4ad1f64a1fbb677ebbf5a4f1e334120a8ee5e7e1c1d5cf96e286a7",
+            "transactionPosition": "0x1",
+            "transactionHash": "0xb817af2240cccc0311419651bd7b563775c6701842a0ea42043a20ad02a1128e"
+        },
+        {
+            "type": "internal_transfer_action",
+            "action": {
+                "from": "CFX:TYPE.NULL:AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA0SFBNJM2",
+                "fromPocket": "gas_payment",
+                "fromSpace": "none",
+                "to": "CFX:TYPE.USER:AAR5P39N0JGA6GN2JB4Z93E46SU6BG7ARP8152HUR2",
+                "toPocket": "balance",
+                "toSpace": "native",
+                "value": "0x704fca5fc000"
+            },
+            "valid": true,
+            "epochHash": "0x20b2241f1c4ad1f64a1fbb677ebbf5a4f1e334120a8ee5e7e1c1d5cf96e286a7",
+            "epochNumber": "0x83f0b14",
+            "blockHash": "0x20b2241f1c4ad1f64a1fbb677ebbf5a4f1e334120a8ee5e7e1c1d5cf96e286a7",
+            "transactionPosition": "0x1",
+            "transactionHash": "0xb817af2240cccc0311419651bd7b563775c6701842a0ea42043a20ad02a1128e"
         }
     ],
     "id": "15922956697249514502"
@@ -395,7 +648,26 @@ Get whole epoch transaction's trace by it's number
 
 #### Returns
 
-TODO
+| Field | Type | Optional | Description |
+| ---| --- | --- | --- |
+| cfxTraces | Array of LocalizedTrace| | |
+| ethTraces | Array of eSpaceTraceObject| | |
+| mirrorAddressMap | Map<Address, Base32>| | hex address to base32 address |
+
+eSpaceTraceObject
+
+| Field | Type | Optional | Description |
+| ---| --- | --- | --- |
+| action | Call or Create or SelfDestruct| | |
+| result | CallResult or CreateResult Or None | | |
+| error | String | ✅| |
+| traceAddress | Array of Number | | [explanation](https://docs.erigon.tech/interacting-with-erigon/interacting-with-erigon/trace#traceaddress-field) |
+| subtraces | Number | | Count of subtraces |
+| transactionPosition | Number | | |
+| transactionHash | Hash | | |
+| blockNumber | Number | | |
+| blockHash | Hash | | |
+| valid | Boolean | | |
 
 ### trace_filter
 
@@ -403,25 +675,25 @@ Returns all traces matching the provided filter.
 
 #### Parameters
 
-1. `Object` - A trace filter object:
-    * `fromEpoch`: `QUANTITY|TAG` - (optional) the epoch number, or the string `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-default-epochnumber-parameter) Search will be applied from this epoch number.
-    * `toEpoch`: `QUANTITY|TAG` - (optional) the epoch number, or the string `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-default-epochnumber-parameter). Search will be applied up until (and including) this epoch number.
-    * `fromAddress`: `BASE32` - (optional).
-    * `toAddres`: `BASE32` - (optional).
-    * `blockHashes`: `Array` of `DATA` - (optional, default: `null`) Array of up to 128 block hashes that the search will be applied to. This will override from/to epoch fields if it's not `null`.
-    * `actionTypes`: `Array` of action type enum - (optional) If None, match all. If specified, trace must match one of these action types.
-    * `after`: `QUANTITY` - (optional) The offset trace number.
-    * `count`: `QUANTITY` - (optional) The number of traces to display in a batch.
+1. `Object` - A trace filter object
 
+| Field | Type | Optional | Description |
+| ---| --- | --- | --- |
+| fromEpoch |QUANTITY or TAG | ✅| the epoch number, or the string `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-default-epochnumber-parameter) Search will be applied from this epoch number.|
+| toEpoch |QUANTITY or TAG | ✅| the epoch number, or the string `"latest_state"`, `"latest_confirmed"`, `"latest_checkpoint"` or `"earliest"`, see the [epoch number parameter](#the-default-epochnumber-parameter). Search will be applied up until (and including) this epoch number.|
+| fromAddress |Base32 |✅ | |
+| toAddress |Base32 | ✅| |
+| blockHashes |Array of Hash | ✅| default: `null` Array of up to 128 block hashes that the search will be applied to. This will override from/to epoch fields if it's not `null`.|
+| actionTypes |Array of [ActionType Enum](./enums.md) | ✅|If None, match all. If specified, trace must match one of these action types. |
+| after |QUANTITY | ✅|The offset trace number. |
+| count |QUANTITY | ✅|The number of traces to display in a batch. |
 #### Returns
 
 Same as `trace_transaction`
 
 ## Note
 
-1. One `call` trace, will have one corresponding `call_result` trace. A `create` trace will also have one corresponding `create_result` trace
-2. `call` trace's `result` field have three possible value: `success`, `fail`, `revert`
-3. Only traces which's `callType` value is `call` and have `success` result status, that can indicate CFX transfer
+Only traces which's `callType` value is `call` and have `success` result status, that can indicate CFX transfer.
 
 ## V2.0 trace breaking change
 
@@ -537,7 +809,7 @@ Each time a contract is killed, it will produce such a trace,
         "from": <contract_address>,
         "fromPocket": "balance",
         "to": <zero_address>, 
-        "toPocket": "mint_burn",
+        "toPocket": "mint_or_burn",
         "value": ...,
         ...
     },
@@ -573,10 +845,10 @@ In Conflux, each account could have several pockets to store CFX.
 
 The fromPocket field and toPocket field could be one of them.
 
-Besides these five values, the "pocket" could be two special values `mint_burn` and `gas_payment`.
+Besides these five values, the "pocket" could be two special values `mint_or_burn` and `gas_payment`.
 
-* fromPocket = `mint_burn`: mint CFX, e.g., generate staking interest
-* toPocket = `mint_burn`: burn CFX, e.g., when a contract is killed, its staking balance will be burnt.
+* fromPocket = `mint_or_burn`: mint CFX, e.g., generate staking interest
+* toPocket = `mint_or_burn`: burn CFX, e.g., when a contract is killed, its staking balance will be burnt.
 * fromPocket = `gas_payment`: gas payment, usually equals to gas_price * gas_limit
 * toPocket = `gas_payment`: gas refund after transaction execution.
 
