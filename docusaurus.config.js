@@ -284,10 +284,6 @@ function getConfig() {
                   to: "https://t.me/ConfluxDevs",
                 },
                 {
-                  label: "Open Technical Grants",
-                  href: "https://forum.conflux.fun/t/open-technical-grants/14399",
-                },
-                {
                   label: "Contribute (Github)",
                   href: "https://github.com/Conflux-Chain/conflux-documentation",
                 },

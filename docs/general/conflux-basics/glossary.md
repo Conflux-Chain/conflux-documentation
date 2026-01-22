@@ -104,10 +104,10 @@ Links:
 
 - Mainnet
   - Core Space: https://confluxscan.org or https://confluxscan.net
-  - eSpace: https://evm.confluxscan.org or https://evm.confluxscan.net
+  - eSpace: https://evm.confluxscan.org
 - Testnet
   - Core Space: https://testnet.confluxscan.org or https://testnet.confluxscan.net
-  - eSpace: https://evmtestnet.confluxscan.org or https://evmtestnet.confluxscan.net
+  - eSpace: https://evmtestnet.confluxscan.org
 
 ### **Consensus Algorithm**
 A consensus algorithm is a process in computer science used to achieve agreement on a single data value among distributed processes or systems. In the context of blockchain, it's used to agree on the (total) order of transactions. Conflux uses a unique consensus algorithm based on a Tree-Graph structure, which allows for high throughput and low latency in large-scale decentralized networks.
