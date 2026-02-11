@@ -189,7 +189,7 @@ Alternatively, you can add Conflux eSpace to MetaMask manually under "Settings",
 - **New RPC URL**: https://evm.confluxrpc.com
 - **Chain ID**: 1030
 - **Currency Symbol**: CFX
-- **Block Explorer URL**: https://evm.confluxscan.net
+- **Block Explorer URL**: https://evm.confluxscan.org
 
 
 #### Connecting Your Ledger Device to MetaMask
@@ -246,7 +246,7 @@ The easiest way to check your CFX and ERC20 token balances held by your Ledger a
 
 ![conflux-app-in-ledger-live](./img/metamask-view-balance-9e558f0db402afa799f16d678e68c6e1.png)
 
-Alternatively, you can click on "View Account in Explorer", or navigate to https://evm.confluxscan.net and manually search for your address to see your token balances and transaction history.
+Alternatively, you can click on "View Account in Explorer", or navigate to https://evm.confluxscan.org and manually search for your address to see your token balances and transaction history.
 
 ![conflux-app-in-ledger-live](./img/scan-view-balance-bf5b143069670feb9634e0b31c13296c.png)
 
