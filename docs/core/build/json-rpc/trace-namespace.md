@@ -30,7 +30,7 @@ Note: An existing archive node need clear all blockchain data to open `executive
 
 A `Trace` trace object contain below field:
 
-* `type`: `STRING` - Type of trace. Avaliable value is `call`, `create`, `call_result`, `create_result`, `internal_transfer_action`
+* `type`: `STRING` - Type of trace. Available values are `call`, `create`, `call_result`, `create_result`, `internal_transfer_action`
 * `action`: `OBJECT` - Trace's action info，different type trace's action have different fields.
 
 Example:
@@ -212,7 +212,7 @@ Get transaction's trace by it's hash
 
 #### Returns
 
-* `type`: `string` - Avaliable value is `call`, `create`, `call_result`, `create_result`, `internal_transfer_action`
+* `type`: `string` - Available values are `call`, `create`, `call_result`, `create_result`, `internal_transfer_action`
 * `transactionPosition`: `QUANTITY` - Position of transaction in block
 * `transactionHash`: `HASH` - Hash of transaction
 * `epochNumber`: `QUANTITY` - Number of epoch
@@ -548,7 +548,7 @@ Each time a contract is killed, it will produce such a trace,
 
 ### New added `space` field
 
-The `call` and `create` type action will add a new field `space` indicate wich space the trace is occured, the possible value are:
+The `call` and `create` type action will add a new field `space` to indicate which space the trace occurred in, the possible values are:
 
 * `native`
 * `ethereum`
