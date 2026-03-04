@@ -158,7 +158,7 @@ const provider = new ethers.providers.JsonRpcProvider("https://evmtestnet.conflu
 [Scaffold Conflux](https://github.com/conflux-fans/conflux-scaffold) 是 [Scaffold-ETH-2](https://scaffoldeth.io/) 的一个修改版本。
 
 - 我们调整了模板，以便您可以在 Conflux eSpace 上部署合约。
-- Conflux Scaffold 使得用户能够快捷地利用前端 react 组件，这些组件通常用于构建 web3 应用。 这些组件包括预制的钱包，能够连接到 Conflux eSpace、Conflux eSpace 测试网、hardhat 等。 它还包括其他组件来显示余额，并接收地址/值输入。
+- Conflux Scaffold 使得用户能够快捷地利用前端 react 组件，这些组件通常用于构建 web3 应用。 这些组件包括预制的钱包，能够连接到 Conflux eSpace、Conflux eSpace 测试网、hardhat 等。 It also includes other components to display balance, and receive address/value inputs.
 - Scaffold Conflux 提供了与在 hardhat 上构建的智能合约进行交互的接口。 这简化了读取合约、写入合约和监控智能合约发出的事件的过程。
 - 您可以访问我们的 [教程](./tutorials/scaffoldCfx/scaffold.md) ，它更加深入地讨论了如何设置 Scaffold Conflux 并使用一些接口/组件。
 
