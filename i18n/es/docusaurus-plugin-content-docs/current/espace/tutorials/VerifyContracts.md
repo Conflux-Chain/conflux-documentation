@@ -109,7 +109,7 @@ Do not specify the chain ID.
 
 ## Verify on Web UI Manually
 
-Any contract deployed on eSpace can be verified on the [ConfluxScan](https://evm.confluxscan.net/) block explorer's contract detail page. If contract is not verified, the contract detail page will show a entry to verify page.
+Any contract deployed on eSpace can be verified on the [ConfluxScan](https://evm.confluxscan.org/) block explorer's contract detail page. If contract is not verified, the contract detail page will show a entry to verify page.
 
 ![](./img/contract-verify-submit.png)
 

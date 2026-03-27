@@ -109,7 +109,7 @@ forge verify-contract <contract address> <contract name> \
 
 ## 在 Web UI 上进行手动验证
 
-在 eSpace 上部署的任何合约都可以在 [ConfluxScan](https://evm.confluxscan.net/) 区块浏览器的合约详情页面上进行验证。 如果合约未被验证，合约详情页面将显示一个可以进入验证页面的入口。
+Any contract deployed on eSpace can be verified on the [ConfluxScan](https://evm.confluxscan.org/) block explorer's contract detail page. 如果合约未被验证，合约详情页面将显示一个可以进入验证页面的入口。
 
 ![](./img/contract-verify-submit.png)
 
