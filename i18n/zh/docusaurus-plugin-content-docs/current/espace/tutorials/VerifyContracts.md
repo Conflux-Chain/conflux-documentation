@@ -96,6 +96,7 @@ Note: If the above does not work, try verifying with the following instead: apiU
 
 ```bash
 forge verify-contract <contract address> <contract name> \
+  --verifier custom \
   --verifier-url https://evmapi-testnet.confluxscan.org/api/ \
   --etherscan-api-key <anything is ok> \
   --constructor-args <your constructor arguments>
