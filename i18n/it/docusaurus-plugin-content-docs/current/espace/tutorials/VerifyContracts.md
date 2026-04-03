@@ -96,6 +96,7 @@ Refer to the [Foundry documentation](https://book.getfoundry.sh/reference/forge/
 
 ```bash
 forge verify-contract <contract address> <contract name> \
+  --verifier custom \
   --verifier-url https://evmapi-testnet.confluxscan.org/api/ \
   --etherscan-api-key <anything is ok> \
   --constructor-args <your constructor arguments>
