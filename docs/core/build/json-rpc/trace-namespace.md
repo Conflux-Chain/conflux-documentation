@@ -11,7 +11,7 @@ keywords:
   - trace filter
   - debug
   - conflux
-tags: [transaction tracing, debugging]
+tags: ["transaction tracing", "debugging"]
 displayed_sidebar: coreSidebar
 ---
 
@@ -45,51 +45,51 @@ Among these, `call` and `call_result`, as well as `create` and `create_result`, 
 
 | Field | Type | Optional | Description |
 | ---| --- | --- | --- |
-| space | [Space Enum](./enums.md)| | |
+| space | [Space Enum](./enums.md#space)| | |
 | from| Address | | |
 | to |Address | | |
 | value | U256 | | |
 | gas |U256 | | |
 | input | Bytes | | |
-| callType | [CallType Enum](./enums.md) | | |
+| callType | [CallType Enum](./enums.md#call-type) | | |
 
 ### call_result
 
 | Field | Type | Optional | Description |
 | ---| --- | --- | --- |
-| outcome | [ActionStatus Enum](./enums.md)| | |
+| outcome | [ActionStatus Enum](./enums.md#action-status-type)| | |
 | gasLeft | U256| | |
-| returnData | Bytes | | |
+| returnData | Bytes | | When the outcome is success, returnData is the return value of the method call. When the outcome is revert, returnData is the ABI-encoded value of the revert string in the Solidity contract (Error(string)). When the outcome is failed, returnData is the string Error of the EVM contract execution failure. |
 
 ### create
 
 | Field | Type | Optional | Description |
 | ---| --- | --- | --- |
-| space | [Space Enum](./enums.md)| | |
+| space | [Space Enum](./enums.md#space)| | |
 | from| Address | | |
 | value | U256 | | |
 | gas |U256 | | |
 | init | Bytes | | |
-| createType | [CreateType Enum](./enums.md) | | |
+| createType | [CreateType Enum](./enums.md#create-type) | | |
 
 ### create_result
 
 | Field | Type | Optional | Description |
 | ---| --- | --- | --- |
-| outcome | [ActionStatus Enum](./enums.md)| | |
+| outcome | [ActionStatus Enum](./enums.md#action-status-type)| | |
 | addr | Address | | 
 | gasLeft | U256| | |
-| returnData | Bytes | | |
+| returnData | Bytes | | When the outcome is success, returnData is the return value of the method call. When the outcome is revert, returnData is the ABI-encoded value of the revert string in the Solidity contract (Error(string)). When the outcome is failed, returnData is the string Error of the EVM contract execution failure. |
 
 ### internal_transfer_action
 
 | Field | Type | Optional | Description |
 | ---| --- | --- | --- |
-| fromSpace | [Space Enum](./enums.md)| | |
-| fromPocket| [Pocket Enum](./enums.md) | | |
+| fromSpace | [Space Enum](./enums.md#space)| | |
+| fromPocket| [Pocket Enum](./enums.md#pocket-type) | | |
 | from |Address | | |
-| toSpace | [Space Enum](./enums.md)| | |
-| toPocket| [Pocket Enum](./enums.md) | | |
+| toSpace | [Space Enum](./enums.md#space)| | |
+| toPocket| [Pocket Enum](./enums.md#pocket-type) | | |
 | to |Address | | |
 | value | U256 | | |
 
@@ -97,11 +97,11 @@ Among these, `call` and `call_result`, as well as `create` and `create_result`, 
 
 | Field | Type | Optional | Description |
 | ---| --- | --- | --- |
-| space | [Space Enum](./enums.md)| | |
+| space | [Space Enum](./enums.md#space)| | |
 | address| Address | | Impl address |
 | chainId |Uint256 | | |
 | nonce | Uint256| | |
-| outcome| [SetAuthOutcome Enum](./enums.md) | | |
+| outcome| [SetAuthOutcome Enum](./enums.md#setauth-outcome-type) | | |
 | author |Address | ✅ | The authorizer address |
 
 Note: Core Space does not support this type of action, which means that traces from Core Space will not contain this action type.
@@ -110,7 +110,7 @@ Note: Core Space does not support this type of action, which means that traces f
 
 | Field | Type | Optional | Description |
 | ---| --- | --- | --- |
-| space | [Space Enum](./enums.md)| | |
+| space | [Space Enum](./enums.md#space)| | |
 | address| Address | | Contract address |
 | balance |Uint256 | | |
 | refundAddress | Address|  | Refund address |
@@ -652,7 +652,7 @@ Get whole epoch transaction's trace by it's number
 | ---| --- | --- | --- |
 | cfxTraces | Array of LocalizedTrace| | |
 | ethTraces | Array of eSpaceTraceObject| | |
-| mirrorAddressMap | Map<Address, Base32>| | hex address to base32 address |
+| mirrorAddressMap | Map(Address,Base32)| | hex address to base32 address |
 
 eSpaceTraceObject
 
