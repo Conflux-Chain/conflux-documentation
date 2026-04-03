@@ -122,7 +122,7 @@ A `Trace` trace object contain below field:
 | Field | Type | Optional | Description |
 | ---| --- | --- | --- |
 | type | [ActionType Enum](./enums.md)| | |
-| action | Action Object| | |
+| action | Action Object| | Trace's action info，different type trace's action have different fields. |
 | valid | Boolean| | |
 
 Example:
@@ -331,13 +331,13 @@ Get transaction's trace by it's hash
 | Field | Type | Optional | Description |
 | ---| --- | --- | --- |
 | type | [ActionType Enum](./enums.md) | | |
-| blockHash | Hash| | |
-| epochHash| Hash | | |
-| epochNumber | QUANTITY| | |
-| transactionHash | Hash| | |
-| transactionPosition| QUANTITY | | |
+| blockHash | Hash| | Hash of block |
+| epochHash| Hash | | Hash of epoch |
+| epochNumber | QUANTITY| | Number of epoch |
+| transactionHash | Hash| | Hash of transaction |
+| transactionPosition| QUANTITY | | Position of transaction in block |
 | valid | Boolean | | |
-| action | Action Object| | |
+| action | Action Object| | Trace info |
 
 
 ```json
@@ -820,7 +820,7 @@ Each time a contract is killed, it will produce such a trace,
 
 ### New added `space` field
 
-The `call` and `create` type action will add a new field `space` indicate wich space the trace is occured, the possible value are:
+The `call` and `create` type action will add a new field `space` to indicate which space the trace occurred in, the possible values are:
 
 * `native`
 * `ethereum`
