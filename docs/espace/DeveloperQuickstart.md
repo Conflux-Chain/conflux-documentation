@@ -25,6 +25,12 @@ Since eSpace is EVM-Compatible, you’ll just need to point your favorite builde
 
 If you are not familiar with Ethereum development, you can start by learning the basics and understanding its stack through [Ethereum's official documentation](https://ethereum.org/en/developers/)
 
+:::tip
+
+Looking for reusable prompts and agent workflows for Conflux eSpace development? Start with [Conflux Skills](../general/build/conflux-skills.md).
+
+:::
+
 ## Acquiring CFX
 
 eSpace also uses CFX as its native currency, which will be needed to pay transaction fees for deploying and interacting with the network.
