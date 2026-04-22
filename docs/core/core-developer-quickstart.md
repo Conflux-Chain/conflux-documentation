@@ -33,6 +33,12 @@ Ethereum SDKs (ethers.js, web3.js, web3,py, web3j) are not compatible with Confl
 
 :::
 
+:::tip
+
+Looking for reusable prompts and agent workflows for Conflux development? Start with [Conflux Skills](../general/build/conflux-skills.md).
+
+:::
+
 ## Introduction
 
 [**js-conflux-sdk**](https://github.com/conflux-chain/js-conflux-sdk) is a JavaScript SDK for Conflux Core Space. It is a collection of libraries that allow you to interact with a local or remote Conflux node using HTTP, WebSocket. You can use it to send transactions, deploy and interact with smart contracts, and so on.
