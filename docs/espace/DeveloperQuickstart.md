@@ -92,6 +92,18 @@ To deploy using the eSpace Testnet Public RPC, run:
 forge create ... --rpc-url=https://evmtestnet.confluxrpc.com
 ```
 
+:::caution
+
+When running `forge script` on Conflux eSpace, add `-g 250` to the command. Conflux eSpace gas accounting differs from Ethereum, and using the recommended multiplier helps avoid "insufficient gas fee" errors.
+
+Example:
+
+```bash
+forge script script/Counter.s.sol --rpc-url https://evmtestnet.confluxrpc.com --broadcast -g 250
+```
+
+:::
+
 A complete workflow for using foundry deploy contract is shown [here](./tutorials/deployContract/hardhatAndFoundry.md)
 
 ### Remix Web IDE

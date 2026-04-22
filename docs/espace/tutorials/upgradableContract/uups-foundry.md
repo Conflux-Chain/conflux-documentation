@@ -329,14 +329,20 @@ contract CounterTest is Test {
 
 ## Deployment and Upgrade Process
 
+:::caution
+
+When using `forge script` on Conflux eSpace, append `-g 250` to deployment and upgrade commands. This is the recommended value and helps avoid "insufficient gas fee" errors.
+
+:::
+
 1. Deploy the initial implementation and proxy:
 
 ```bash
 source .env
-forge script script/DeployCounter.s.sol --rpc-url $RPC_URL --broadcast -g 200
+forge script script/DeployCounter.s.sol --rpc-url $RPC_URL --broadcast -g 250
 ```
 
-> **Note:** The `-g` flag sets the gas price multiplier (in percentage). Using `-g 200` means the gas price will be 200% of the estimated price, which helps prevent "insufficient gas fee" errors during deployment.
+> **Note:** The `-g` flag sets the gas price multiplier. On Conflux eSpace, `-g 250` is the recommended value for `forge script` commands.
 
 Expected output:
 ```
@@ -355,7 +361,7 @@ PROXY_ADDRESS=<PROXY_ADDRESS>
 3. Upgrade to CounterV2:
 
 ```bash
-forge script script/UpgradeCounter.s.sol --rpc-url $RPC_URL --broadcast -g 200
+forge script script/UpgradeCounter.s.sol --rpc-url $RPC_URL --broadcast -g 250
 ```
 
 Expected output:
@@ -377,5 +383,4 @@ Count after reset: 0
 ```
 
 By following these steps, you can deploy and upgrade smart contracts using UUPS proxy pattern on Conflux eSpace with Foundry. This pattern provides a more gas-efficient alternative to the transparent proxy pattern while maintaining upgradeability. The UUPS pattern moves the upgrade logic to the implementation contract, making it more lightweight and cost-effective for users.
-
 
