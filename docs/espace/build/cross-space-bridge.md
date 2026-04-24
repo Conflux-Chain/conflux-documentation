@@ -40,7 +40,7 @@ interface CrossSpaceCall {
     function transferEVM(bytes20 to) external payable returns (bytes memory output);
     
     /**
-     * @dev Widthdraw CFX from eSpace mapped account's balance
+     * @dev Withdraw CFX from eSpace mapped account's balance
      * @param value uint256 - The amount of CFX to be withdrawn
      */ 
     function withdrawFromMapped(uint256 value) external;
