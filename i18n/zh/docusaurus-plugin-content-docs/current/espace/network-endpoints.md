@@ -33,6 +33,14 @@ tags:
 
 本页面列出了 Conflux eSpace 的公共 RPC 端点。 Public RPC endpoints for **Conflux Core Space** is provided [here](../core/core-endpoints.md).
 
+If you need alternatives to Confura, Conflux eSpace also has a dedicated [RPC Providers](./build/infrastructure/RPC-Provider.md) page covering other provider options, including:
+
+- Tenderly
+- Validation Cloud
+- NOWNodes
+- Unifra
+- BlockPi
+
 :::
 
 ## Confura
@@ -127,9 +135,17 @@ import ConfuraError from '../templates/confura-error.md'
 <summary>Confura Common Errors</summary>
 <ConfuraError basicUnitName="block" /> </details>
 
-## 商业 RPC 服务
+## Other RPC Provider Choices
 
-有许多商业性的 RPC 服务提供商, 您可以点击 [这里](./build/infrastructure/RPC-Provider.md) 查看
+If Confura is not the right fit for your workload, you can also evaluate the providers listed on the [RPC Providers](./build/infrastructure/RPC-Provider.md) page:
+
+- [Tenderly](./build/infrastructure/RPC-Provider.md#tenderly)
+- [Validation Cloud](./build/infrastructure/RPC-Provider.md#validation-cloud)
+- [NOWNodes](./build/infrastructure/RPC-Provider.md#nownodes)
+- [Unifra](./build/infrastructure/RPC-Provider.md#unifra)
+- [BlockPi](./build/infrastructure/RPC-Provider.md#blockpi)
+
+These options are useful when you want different pricing, service tiers, regional coverage, or provider-specific infrastructure features.
 
 ## 常见问题解答
 
