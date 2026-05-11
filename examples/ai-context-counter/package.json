@@ -1,0 +1,17 @@
+{
+  "name": "conflux-ai-context-counter",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Minimal Hardhat Counter demo for AI-assisted Conflux eSpace development.",
+  "scripts": {
+    "compile": "hardhat compile",
+    "deploy:espace-testnet": "hardhat run scripts/deploy.js --network eSpaceTestnet",
+    "increment:espace-testnet": "hardhat run scripts/increment.js --network eSpaceTestnet"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-ethers": "^3.0.8",
+    "dotenv": "^16.4.7",
+    "ethers": "^6.13.5",
+    "hardhat": "^2.22.18"
+  }
+}
