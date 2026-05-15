@@ -1,9 +1,9 @@
 ---
 sidebar_position: 9
-title: Gnosis Safe Wallet
+title: Safe Wallet
 displayed_sidebar: eSpaceSidebar
 keywords:
-  - Gnosis Safe
+  - Safe
   - Multisignature Wallet
   - eSpace
   - DeFi
@@ -23,17 +23,17 @@ keywords:
   - Testnet
   - Wallet Integration
   - Troubleshooting
-tags: [Gnosis Safe]
+tags: [Safe]
 
 ---
 
-[Gnosis Safe Wallet](https://safe.global/) is a renowned multisignature wallet service in the blockchain sector, offering secure fund management solutions. It is particularly popular among Ethereum and EVM (Ethereum Virtual Machine)-compatible blockchain ecosystems. The entire source code for Gnosis Safe, including its smart contracts and both the front-end and back-end code, is open source, ensuring transparency and community trust. In its commitment to innovation, Gnosis Safe has introduced features like account abstraction, further enhancing user experience and security.
+[Safe Wallet](https://safe.global/) is a renowned multisignature wallet service in the blockchain sector, offering secure fund management solutions. It is particularly popular among Ethereum and EVM (Ethereum Virtual Machine)-compatible blockchain ecosystems. The entire source code for Safe, including its smart contracts and both the front-end and back-end code, is open source, ensuring transparency and community trust. In its commitment to innovation, Safe has introduced features like account abstraction, further enhancing user experience and security.
 
-Gnosis Safe Wallet is the chosen fund management tool for numerous DeFi (Decentralized Finance) projects, such as Uniswap, Chainlink, and MakerDAO, among others, highlighting its reliability and wide adoption within the industry.
+Safe Wallet is the chosen fund management tool for numerous DeFi (Decentralized Finance) projects, such as Uniswap, Chainlink, and MakerDAO, among others, highlighting its reliability and wide adoption within the industry.
 
 ### Integration with eSpace
 
-To support developers and DeFi projects within the eSpace ecosystem, eSpace has incorporated the Gnosis Safe Wallet into its infrastructure. [Versions 1.3.0](https://github.com/safe-global/safe-smart-account/blob/main/CHANGELOG.md#version-130-libs0) and [1.4.1](https://github.com/safe-global/safe-smart-account/blob/main/CHANGELOG.md#version-141) of the Safe contract have been deployed on both the eSpace mainnet and testnet, with their address can be found in the changelog. For mainnet users, a dedicated [Safe-Wallet-Web frontend](https://safe.conflux123.xyz/) is available, enabling the creation and management of multisignature accounts for CFX and ERC20 tokens.
+To support developers and DeFi projects within the eSpace ecosystem, eSpace has incorporated the Safe Wallet into its infrastructure. [Versions 1.3.0](https://github.com/safe-global/safe-smart-account/blob/main/CHANGELOG.md#version-130-libs0) and [1.4.1](https://github.com/safe-global/safe-smart-account/blob/main/CHANGELOG.md#version-141) of the Safe contract have been deployed on both the eSpace mainnet and testnet, with their address can be found in the changelog. For mainnet users, a dedicated [Safe-Wallet-Web frontend](https://safe.conflux123.xyz/) is available, enabling the creation and management of multisignature accounts for CFX and ERC20 tokens.
 
 ![](./img/gnosis-safe-web-wallet.png)
 
