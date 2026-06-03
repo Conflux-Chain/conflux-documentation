@@ -52,8 +52,7 @@ Confura is compatible with standard Conflux JSON-RPC, but some high-traffic meth
 
 Key Confura-specific RPC features include:
 
-- `cfx_getLogs` / `eth_getLogs` with dynamic query bounds: wide historical queries may be accepted when the actual result set is small enough. If a query is too large, Confura may return a suggested block or epoch range for retry.
-- Internal contract event logs: some historical Conflux internal contract events can be reconstructed from trace data and returned through `cfx_getLogs` when using the `includeTraceLogs` endpoint option.
+- `eth_getLogs` with dynamic query bounds: wide historical queries may be accepted when the actual result set is small enough. If a query is too large, Confura may return a suggested block or epoch range for retry.
 
 For detailed behavior, examples, and client-side handling recommendations, see:
 [Confura Enhanced RPC Features](https://github.com/Conflux-Chain/confura/blob/main/doc/RPC_FEATURES.md)
