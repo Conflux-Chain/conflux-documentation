@@ -47,6 +47,16 @@ If you need alternatives to Confura, Conflux eSpace also has a dedicated [RPC Pr
 
 Confura 是由 Conflux 基金会提供的公共 RPC 服务，可以免费使用。
 
+### Enhanced RPC Features
+
+Confura is compatible with standard Conflux JSON-RPC, but some high-traffic methods include additional service-side optimizations compared with a plain full node.
+
+Key Confura-specific RPC features include:
+
+- `eth_getLogs` with dynamic query bounds: wide historical queries may be accepted when the actual result set is small enough. If a query is too large, Confura may return a suggested block or epoch range for retry.
+
+For detailed behavior, examples, and client-side handling recommendations, see: [Confura Enhanced RPC Features](https://github.com/Conflux-Chain/confura/blob/main/doc/RPC_FEATURES.md)
+
 ### 公共端点
 
 Confura 为主网和测试网提供了多个可用的 RPC 端点。 我们已根据选定的优先级对它们进行排序，并提供了简要描述。 如果您不确定选择哪一个，请选择列表顶部附近的 RPC 端点。
