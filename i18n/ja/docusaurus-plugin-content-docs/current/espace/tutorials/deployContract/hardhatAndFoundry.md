@@ -79,6 +79,12 @@ import TabItem from '@theme/TabItem';
 
 ## Deploying smart contracts with Foundry
 
+:::caution Important for Conflux eSpace
+
+When using `forge script` on Conflux eSpace, add `-g 250`. This is the recommended gas price multiplier for eSpace and helps avoid "insufficient gas fee" errors.
+
+:::
+
 1. Clone the repo:
 
    ```shell
@@ -120,10 +126,10 @@ import TabItem from '@theme/TabItem';
 
 ### forge script
 
-Because some opcodes in Conflux eSpace consume twice the amount of gas compared to Ethereum, when using the `forge script` command to execute a script, you need to pass an additional parameter (-g 200) to increase the gas limit. Otherwise, the transaction will fail after being sent to the chain due to Insufficient gas fee.
+Because some opcodes in Conflux eSpace consume more gas than on Ethereum, when using the `forge script` command to execute a script, you should pass the additional parameter `-g 250`. Otherwise, the transaction may fail after being sent to the chain due to insufficient gas fee.
 
 ```shell
-forge script script/Counter.s.sol --rpc-url https://evmtestnet.confluxrpc.com --private-key 0xabc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc1 --broadcast -g 200
+forge script script/Counter.s.sol --rpc-url https://evmtestnet.confluxrpc.com --private-key 0xabc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc1 --broadcast -g 250
 ```
 
 ## FAQs

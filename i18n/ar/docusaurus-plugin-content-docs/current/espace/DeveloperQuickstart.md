@@ -24,6 +24,12 @@ Since eSpace is EVM-Compatible, you’ll just need to point your favorite builde
 
 If you are not familiar with Ethereum development, you can start by learning the basics and understanding its stack through [Ethereum's official documentation](https://ethereum.org/en/developers/)
 
+:::tip
+
+Looking for reusable prompts and agent workflows for Conflux eSpace development? Start with [Conflux Skills](../general/build/conflux-skills.md).
+
+:::
+
 ## Acquiring CFX
 
 eSpace also uses CFX as its native currency, which will be needed to pay transaction fees for deploying and interacting with the network.
@@ -90,6 +96,18 @@ To deploy using the eSpace Testnet Public RPC, run:
 ```bash
 forge create ... --rpc-url=https://evmtestnet.confluxrpc.com
 ```
+
+:::caution
+
+When running `forge script` on Conflux eSpace, add `-g 250` to the command. Conflux eSpace gas accounting differs from Ethereum, and using the recommended multiplier helps avoid "insufficient gas fee" errors.
+
+Example:
+
+```bash
+forge script script/Counter.s.sol --rpc-url https://evmtestnet.confluxrpc.com --broadcast -g 250
+```
+
+:::
 
 A complete workflow for using foundry deploy contract is shown [here](./tutorials/deployContract/hardhatAndFoundry.md)
 
@@ -158,7 +176,7 @@ const provider = new ethers.providers.JsonRpcProvider("https://evmtestnet.conflu
 [Scaffold Conflux](https://github.com/conflux-fans/conflux-scaffold) is an adaptation of [Scaffold-ETH-2](https://scaffoldeth.io/).
 
 - We have adjusted the template to allow you to deploy the contract on Conflux eSpace.
-- Conflux Scaffold offers users the ability to quickly leverage front-end react components that are commonly used to build web3 apps. These include pre-fabricated wallets with the ability to connect to Conflux eSpace, Conflux eSpace testnet, hardhat, etc. It also includes other components to display balance, and recieve address/value inputs.
+- Conflux Scaffold offers users the ability to quickly leverage front-end react components that are commonly used to build web3 apps. These include pre-fabricated wallets with the ability to connect to Conflux eSpace, Conflux eSpace testnet, hardhat, etc. It also includes other components to display balance, and receive address/value inputs.
 - Hooks are available on Scaffold Conflux to interact with the smart contracts built on hardhat. This simplifies the process of reading contracts, writing contracts, and subscribe to events emitted by the smart contract.
 - You can visit our [tutorial](./tutorials/scaffoldCfx/scaffold.md) for more in-depth discussion how to set-up Scaffold Conflux and use some of the hooks/components.
 

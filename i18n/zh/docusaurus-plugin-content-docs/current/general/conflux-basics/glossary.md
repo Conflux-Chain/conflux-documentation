@@ -103,7 +103,7 @@ Links:
 
 - 主网
   - Core Space: https://confluxscan.org or https://confluxscan.net
-  - eSpace: https://evm.confluxscan.org or https://evm.confluxscan.net
+  - eSpace: https://evm.confluxscan.org or https://evm.confluxscan.org
 - 测试网
   - Core Space: https://testnet.confluxscan.org or https://testnet.confluxscan.net
   - eSpace: https://evmtestnet.confluxscan.org or https://evmtestnet.confluxscan.net

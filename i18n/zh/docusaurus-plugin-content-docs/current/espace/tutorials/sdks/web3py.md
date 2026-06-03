@@ -144,7 +144,7 @@ contract Incrementer {
 
 ### 编译合约
 
-This section will guide you through the process of building a script that leverages the Solidity compiler to produce the ABI and bytecode for the Incrementer.sol contract. 首先，生成一个compile.py文件，并填写如下内容：
+This section will guide you through the process of building a script that leverages the Solidity compiler to produce the ABI and bytecode for the Incrementer.sol contract. Start by generating a compile.py and fill it as below:
 
 ```python
 # Import the compiler library 

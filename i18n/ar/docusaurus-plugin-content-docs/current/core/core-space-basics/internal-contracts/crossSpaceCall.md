@@ -65,7 +65,7 @@ interface CrossSpaceCall {
     function staticCallEVM(bytes20 to, bytes calldata data) external view returns (bytes memory output);
 
     /**
-     * @dev Widthdraw CFX from eSpace mapped account's balance
+     * @dev Withdraw CFX from eSpace mapped account's balance
      * @param value uint256 - The amount of CFX to be withdrawn
      */ 
     function withdrawFromMapped(uint256 value) external;

@@ -7,13 +7,7 @@ keywords:
   - transparent proxy
   - Foundry
   - eSpace
-tags:
-  [
-    Tutorial,
-    Upgradeable Contracts,
-    Transparent Proxy,
-    Foundry
-  ]
+tags: [ Tutorial, Upgradeable Contracts, Transparent Proxy, Foundry ]
 ---
 
 # Deploying Upgradeable Contracts using Transparent Proxy with Foundry
@@ -249,14 +243,20 @@ RPC_URL=https://evmtestnet.confluxrpc.com
 
 ## Deployment Process
 
+:::caution
+
+When using `forge script` on Conflux eSpace, append `-g 250` to the command. This is the recommended value and helps avoid "insufficient gas fee" errors.
+
+:::
+
 1. Deploy the initial implementation and proxy:
 
 ```bash
 source .env
-forge script script/DeployBox.s.sol --rpc-url $RPC_URL --broadcast -g 200
+forge script script/DeployBox.s.sol --rpc-url $RPC_URL --broadcast -g 250
 ```
 
-> **Note:** The `-g` flag sets the gas price multiplier (in percentage). Using `-g 200` means the gas price will be 200% of the estimated price, which helps prevent "insufficient gas fee" errors during deployment.
+> **Note:** The `-g` flag sets the gas price multiplier. On Conflux eSpace, `-g 250` is the recommended value for `forge script` commands.
 
 Expected output:
 
@@ -277,7 +277,7 @@ ADMIN_ADDRESS=<ADMIN_ADDRESS>
 3. Upgrade to BoxV2:
 
 ```bash
-forge script script/UpgradeBox.s.sol --rpc-url $RPC_URL --broadcast -g 200
+forge script script/UpgradeBox.s.sol --rpc-url $RPC_URL --broadcast -g 250
 ```
 
 Expected output:
