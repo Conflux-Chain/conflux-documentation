@@ -61,6 +61,11 @@ function getConfig() {
       },
     ],
 
+    markdown: {
+      mermaid: true,
+    },
+    themes: ["@docusaurus/theme-mermaid"],
+
     plugins: [
       async function myPlugin(context, options) {
         return {
