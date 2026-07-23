@@ -40,7 +40,7 @@ The [basic indexer tutorial](./indexer.md) shows how to read logs with a hand-wr
 
 This tutorial follows a real, production-grade indexer running on Conflux eSpace:
 
-**[github.com/intrepidcanadian/indexerGinsengSwap](https://github.com/intrepidcanadian/indexerGinsengSwap)**
+**[github.com/intrepidcanadian/indexer-example-conflux](https://github.com/intrepidcanadian/indexer-example-conflux)**
 
 It indexes GinsengSwap — a Uniswap V3-style DEX on Conflux eSpace — covering:
 
@@ -53,8 +53,8 @@ It indexes GinsengSwap — a Uniswap V3-style DEX on Conflux eSpace — covering
 Clone it to follow along:
 
 ```bash
-git clone https://github.com/intrepidcanadian/indexerGinsengSwap
-cd indexerGinsengSwap
+git clone https://github.com/intrepidcanadian/indexer-example-conflux
+cd indexer-example-conflux
 ```
 
 ## Prerequisites
@@ -106,7 +106,7 @@ chains:
   - id: 1030 # Conflux eSpace mainnet
     start_block: 119639200 # deployment block of the factory — don't sync from genesis
     rpc:
-      url: https://evm.confluxrpc.com
+      url: ${ENVIO_CONFLUX_RPC_URL:-https://evm.confluxrpc.com}
       for: sync
     contracts:
       - name: UniswapV3Factory
@@ -118,6 +118,7 @@ Key points for Conflux:
 
 - **`id: 1030`** is Conflux eSpace mainnet (use `71` for testnet).
 - **`rpc` with `for: sync`** tells Envio to do historical sync over RPC. The public endpoint `https://evm.confluxrpc.com` (testnet: `https://evm-test.confluxrpc.com`) works; for a large historical backfill, a dedicated endpoint from an RPC provider will sync considerably faster and avoid public rate limits. You can tune batch sizes with the [advanced RPC parameters](https://docs.envio.dev/docs/HyperIndex/rpc-sync) (`initial_block_interval`, `interval_ceiling`, etc.) to match your provider's limits.
+- **`${ENVIO_CONFLUX_RPC_URL:-...}`** uses Envio's [environment variable interpolation](https://docs.envio.dev/docs/HyperIndex/environment-variables) — the indexer defaults to the public endpoint, and anyone can point it at their own keyed RPC URL via `.env` without committing the key to source control.
 - **`start_block`** should be your contract's deployment block, not 0.
 - **`rollback_on_reorg: true`** keeps the database consistent through reorgs — one line replaces logic that is very hard to hand-write.
 - **`field_selection`** adds transaction fields (hash, sender, gas price) to events where the handlers need them.
@@ -259,7 +260,7 @@ Envio's documentation is agent-friendly, which makes AI coding assistants very e
 
 ## Further reading
 
-- [GinsengSwap indexer source](https://github.com/intrepidcanadian/indexerGinsengSwap) — the complete reference project
+- [Conflux indexer example source](https://github.com/intrepidcanadian/indexer-example-conflux) — the complete reference project
 - [HyperIndex configuration reference](https://docs.envio.dev/docs/HyperIndex/configuration-file)
 - [Dynamic contracts / factories](https://docs.envio.dev/docs/HyperIndex/dynamic-contracts)
 - [Testing handlers without syncing](https://docs.envio.dev/docs/HyperIndex/testing)
