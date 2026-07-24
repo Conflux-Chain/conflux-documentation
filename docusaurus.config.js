@@ -264,7 +264,7 @@ function getConfig() {
               items: [
                 {
                   label: "Discord",
-                  to: "https://discord.gg/confluxnetwork",
+                  to: "https://discord.com/invite/conflux-network",
                 },
                 {
                   label: "Telegram",
