@@ -80,10 +80,10 @@ Chain ID for Conflux eSpace Testnet is `71(0x47)`. The corresponding blockchain 
 
 | RPC Endpoint | Type | Notes |
 | -------- | --- | --- |
+| https://evmtestnet.confluxrpc.com | HTTP ||
 | https://evmtest.confluxrpc.com | HTTP ||
-| https://evmtestnet.confluxrpc.com | HTTP | May be unreachable outside mainland China |
 | https://evmtestnet.confluxrpc.org | HTTP | Backup RPC Service |
-| wss://evmtestnet.confluxrpc.com/ws | Websocket | May be unreachable outside mainland China |
+| wss://evmtestnet.confluxrpc.com/ws | Websocket ||
 | wss://evmtestnet.confluxrpc.org/ws | Websocket ||
 
 ### Rate Limits
