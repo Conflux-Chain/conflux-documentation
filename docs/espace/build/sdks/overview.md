@@ -46,7 +46,7 @@ Here are the links to the documentation and GitHub repositories of the most popu
  
 ## Web3.js  
 Web3.js is a comprehensive set of libraries that provides seamless interactions with Ethereum nodes, whether local or remote, through various protocols such as HTTP, IPC, or WebSocket. It offers a wide range of functionalities for developers to interact with the Ethereum blockchain, making it a versatile tool for building decentralized applications (dApps) and working with Ethereum-based projects. 
-Documentation: https://web3js.readthedocs.io/en/v1.8.2/ 
+Documentation: https://docs.web3js.org/ 
  
 ## Web3.py 
 Web3.py is a widely used Python library that facilitates interactions with the Ethereum blockchain, particularly in decentralized applications (dApps). It provides functionalities for sending transactions, interacting with smart contracts, reading block data, and more. While its initial API was inspired by Web3.js, it has evolved to cater to the preferences and requirements of Python developers, offering a Pythonic way of interacting with Ethereum. 
