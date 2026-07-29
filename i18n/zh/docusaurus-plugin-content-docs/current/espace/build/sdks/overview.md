@@ -47,7 +47,7 @@ tags:
 ## Web3.js
 
 Web3.js是一套全面的库，提供与以太坊节点的无缝交互，无论是本地还是远程，通过HTTP、IPC或WebSocket等各种协议。 它为开发者提供了与以太坊区块链交互的广泛功能，使其成为构建去中心化应用程序（dApps）和处理基于以太坊的项目的多功能工具。
-文档：https://web3js.readthedocs.io/en/v1.8.2/
+Documentation: https://docs.web3js.org/
 
 ## Web3.py
 
