@@ -237,7 +237,7 @@ There are multiple ways of obtaining CFX and other tokens on Conflux eSpace.
 
 - You can obtain CFX and withdraw it to Conflux eSpace through a variety of centralized exchanges (e.g., [KuCoin](https://www.kucoin.com)).
 - You can also use a decentralized exchange like [Swappi](https://app.swappi.io/#/swap).
-- Finally, you can also transfer crypto assets from other chains to Conflux eSpace through cross-chain apps like [Multichain](https://app.multichain.org/#/router), [meson.fi](https://meson.fi/), [cBridge](https://cbridge.celer.network/#/transfer), or the [Conflux eSpace Bridge](https://confluxhub.io/espace-bridge).
+- Finally, you can also transfer crypto assets from other chains to Conflux eSpace through cross-chain apps like [meson.fi](https://meson.fi/), [cBridge](https://cbridge.celer.network/#/transfer), or the [Conflux eSpace Bridge](https://confluxhub.io/espace-bridge).
 
 
 #### 查看您的余额
