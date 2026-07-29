@@ -8,7 +8,11 @@ keywords:
 tags: [ Web3.js, 教程 ]
 ---
 
-Web3.py 和 Web3.js 是一组库，通过 HTTP、IPC 或 WebSocket 通信协议，分别使用 Python 和 JavaScript 编程语言，帮助开发者与 Conflux 节点进行交互。 本指南将为您提供使用[**Web3.js**](https://web3js.readthedocs.io/en/v1.8.2/)库传输交易和部署智能合约的专业知识。
+:::caution web3.js is no longer maintained
+The [web3.js repository](https://github.com/web3/web3.js) was archived by ChainSafe in March 2025 and no longer receives updates or security fixes. This tutorial targets **web3.js v4**, the last published major version. For new projects, consider [viem](https://viem.sh/) or [ethers.js](https://docs.ethers.org/) instead — both work with Conflux eSpace over the same JSON-RPC endpoints.
+:::
+
+Web3.py 和 Web3.js 是一组库，通过 HTTP、IPC 或 WebSocket 通信协议，分别使用 Python 和 JavaScript 编程语言，帮助开发者与 Conflux 节点进行交互。 This guide will provide you with the expertise to leverage the [**Web3.js**](https://docs.web3js.org/) library for transmitting transactions and deploying smart contracts.
 
 ## 初始化项目
 
@@ -34,7 +38,7 @@ Prepare your Web3 HTTP connection to align with any evm-powered network. 为了�
 ```javascript
 // Create a Web3 instance: 
 
-const Web3 = require('web3'); 
+const { Web3 } = require('web3'); 
  
 // Insert your RPC URL to establish an HTTP connection to your RPC endpoint:
 
@@ -65,7 +69,7 @@ vim balances.js
 ```javascript
 // Add the Web3 provider snippet 
 
-const Web3 = require('web3'); 
+const { Web3 } = require('web3'); 
 const web3 = new Web3('RPC-API-ENDPOINT-HERE'); 
 
 // Create address variables 
@@ -104,7 +108,7 @@ Create a .js file by "vim transaction.js" and fill it with the code below. By "n
 
 ```javascript
 // Add the Web3 provider snippet 
-const Web3 = require('web3'); 
+const { Web3 } = require('web3'); 
 const web3 = new Web3('RPC-API-ENDPOINT-HERE'); 
 
 
@@ -217,7 +221,7 @@ module.exports = contract;
 ```javascript
 const contractFile = require('./compile'); 
  
-const Web3 = require('web3'); 
+const { Web3 } = require('web3'); 
 const web3 = new Web3('RPC-API-ENDPOINT-HERE'); 
  
 const accountFrom = { 
@@ -265,7 +269,7 @@ Note that this is only for example purposes, and you should never store your pri
 
 ```javascript
 const { abi } = require('./compile'); 
-const Web3 = require('web3'); 
+const { Web3 } = require('web3'); 
 const web3 = new Web3('RPC-API-ENDPOINT-HERE'); 
  
 const contractAddress = 'CONTRACT-ADDRESS-HERE'; 
@@ -294,7 +298,7 @@ Finally, send the signed transaction using web3.eth.send_raw_transaction functio
 ```javascript
 const { abi } = require('./compile'); 
  
-const Web3 = require('web3'); 
+const { Web3 } = require('web3'); 
 const web3 = new Web3('RPC-API-ENDPOINT-HERE'); 
  
 const accountFrom = { 
@@ -343,4 +347,4 @@ import TabItem from '@theme/TabItem';
 
 ## 其他资源:
 
-- [**Web3.js Documentation**](https://web3js.readthedocs.io/en/v1.8.2/)
+- [**Web3.js Documentation**](https://docs.web3js.org/)
