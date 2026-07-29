@@ -3,6 +3,6 @@
     "position": 8,
     "link": {
       "type": "generated-index",
-      "description": "Tutorial on how to read logs and events emitted by blockchain and create your own indexer"
+      "description": "Tutorials on indexing blockchain events — from a simple hand-written log reader to a scalable GraphQL indexer built with Envio"
     }
   }
