@@ -20,6 +20,12 @@ tags: [Tutorial, WalletConnect]
 
 # Integrating WalletConnect with Your React App on Conflux Chain
 
+:::caution Web3Modal is now Reown AppKit
+The `@web3modal/wagmi` package used below is deprecated on npm — Web3Modal has been rebranded and superseded by **Reown AppKit** (`@reown/appkit`), and `cloud.walletconnect.com` now redirects to [cloud.reown.com](https://cloud.reown.com). The steps here still describe the older Web3Modal API.
+
+For a new integration, follow Reown's [upgrade guide](https://docs.reown.com/appkit/upgrade/from-w3m-to-reown). Your existing WalletConnect project ID continues to work.
+:::
+
 This tutorial will guide you how to seamlessly integrate WalletConnect into your React application to enable user interactions with Conflux eSpace, thereby providing your users with a secure and intuitive way to connect their wallets to your dApp on Conflux eSpace.
 
 [![React Demo](../img/walletconnect-react.png)](../img/walletconnect-react.png)
@@ -66,7 +72,7 @@ import { ReactNode } from "react";
 // 0. Setup queryClient
 const queryClient = new QueryClient();
 
-// 1. Get projectId at https://cloud.walletconnect.com
+// 1. Get projectId at https://cloud.reown.com
 const projectId = "YOUR_PROJECT_ID";
 
 // 2. Create wagmiConfig
