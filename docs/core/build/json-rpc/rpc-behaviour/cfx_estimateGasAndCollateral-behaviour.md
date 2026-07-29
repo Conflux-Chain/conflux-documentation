@@ -54,7 +54,7 @@ While the primary function of the `cfx_estimate` is to estimate gas and storage 
 
 #### Gas is Specified
 
-1. The transaction executes using the specified `gas`. This the only scenario for an `OutOfGas` error other than the gas consumption exceeds the 15 million limit.
+1. The transaction executes using the specified `gas`. This the only scenario for an `OutOfGas` error other than the gas consumption exceeding the per-transaction cap described below.
 2. If both `from` and `gas_price` are specified, transaction fees are deducted during the estimation. Otherwise, fees are rechecked post-execution.
 
 #### Storage Limit is Specified
