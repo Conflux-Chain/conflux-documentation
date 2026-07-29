@@ -143,7 +143,14 @@ For specific generation details, refer to [Transaction Encoding and Signature](.
 
 ### What's max value of transaction gas limit?
 
-It's half of the block gas limit, whereas 30 million gas * 0.5 (15000000).
+A single transaction may use at most **half of its own space's gas limit**, not half of the block gas limit. With the current 60,000,000 block gas limit that gives:
+
+| Space | Space gas limit | Max gas for one transaction |
+| --- | --- | --- |
+| Core Space | 54,000,000 (90% of block gas limit) | **27,000,000** |
+| eSpace | 30,000,000 (50% of block gas limit) | **15,000,000** |
+
+This cap is applied by a node when it accepts a transaction into its pool, not by consensus. Operators can raise it to the full space gas limit with the `tx_pool_allow_gas_over_half_block` setting, so a transaction above these values may still be accepted by some nodes.
 
 ### What's minimum value of Core Space transaction gasPrice?
 

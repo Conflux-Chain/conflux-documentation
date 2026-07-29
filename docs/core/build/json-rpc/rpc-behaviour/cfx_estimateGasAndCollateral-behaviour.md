@@ -98,7 +98,7 @@ If an error message is thrown during contract execution, the specific reason for
 }
 ```
 
-**Solution**: This error means `gas` is not enough for transaction execution and it typically means the gas exceeds the maximum amount for a single transaction, which is half of the block gas limit (15,000,000). There's a need to optimize the logic of your contract execution to reduce the gas consumption. Notably, if `gas` is specified in the estimation request, an `OutOfGas` error can still occur even though the required gas is less than 15 million.
+**Solution**: This error means `gas` is not enough for transaction execution. It typically means the gas exceeds the maximum a node will accept for a single Core Space transaction, which is half of the Core Space gas limit — **27,000,000** with the current 54,000,000 Core Space gas limit. There's a need to optimize the logic of your contract execution to reduce the gas consumption. Notably, if `gas` is specified in the estimation request, an `OutOfGas` error can still occur even though the required gas is below that cap.
 
 #### NotEnoughCash
 

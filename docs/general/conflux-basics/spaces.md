@@ -52,7 +52,9 @@ The graph above illustrates the relationship between the actual blocks in the le
 
 In the Conflux ledger, blocks are organized as a Directed Acyclic Graph (DAG) and divided into epochs. For blocks whose height is a multiple of 5, eSpace transactions can be included, utilizing the isolated block space.
 
-The parameter `block.gasLimit` represents the **expected** block size for overall Conflux blocks and is set to 60,000,000. This value can be retrieved using the [cfx_getBlockByHash](../../core/build/json-rpc/cfx-namespace.md) or similar RPC methods. The `coreSpace.gasLimit` is set to 90% of `block.gasLimit` (54,000,000), while the `eSpace.gasLimit` is 50% of `block.gasLimit` (30,000,000).
+The parameter `block.gasLimit` represents the **expected** block size for overall Conflux blocks and is set to 60,000,000. The `coreSpace.gasLimit` is set to 90% of `block.gasLimit` (54,000,000), while the `eSpace.gasLimit` is 50% of `block.gasLimit` (30,000,000).
+
+Note that the 60,000,000 figure is not what the RPCs return. [cfx_getBlockByHash](../../core/build/json-rpc/cfx-namespace.md) and similar Core Space methods report the already-derived `coreSpace.gasLimit` of 54,000,000, and `eth_getBlockByNumber` reports 30,000,000 — so the 90% and 50% factors have already been applied to those values and should not be applied again.
 
 Consequently, for blocks whose height is a multiple of 5, their size can reach up to `1.4 * block.gasLimit`, while for those that are not, their maximum size is `0.9 * block.gasLimit`.
 
