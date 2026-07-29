@@ -8,7 +8,11 @@ keywords:
 tags: [ Web3.js, Tutorial ]
 ---
 
-Web3.py and Web3.js are a set of libraries that facilitate the interaction of developers with Conflux nodes via the HTTP, IPC, or WebSocket communication protocols, using the Python and JavaScript programming languages respectively. This guide will provide you with the expertise to leverage the [**Web3.js**](https://web3js.readthedocs.io/en/v1.8.2/) library for transmitting transactions and deploying smart contracts.
+:::caution web3.js is no longer maintained
+The [web3.js repository](https://github.com/web3/web3.js) was archived by ChainSafe in March 2025 and no longer receives updates or security fixes. This tutorial targets **web3.js v4**, the last published major version. For new projects, consider [viem](https://viem.sh/) or [ethers.js](https://docs.ethers.org/) instead — both work with Conflux eSpace over the same JSON-RPC endpoints.
+:::
+
+Web3.py and Web3.js are a set of libraries that facilitate the interaction of developers with Conflux nodes via the HTTP, IPC, or WebSocket communication protocols, using the Python and JavaScript programming languages respectively. This guide will provide you with the expertise to leverage the [**Web3.js**](https://docs.web3js.org/) library for transmitting transactions and deploying smart contracts.
 
 ## Initiate a Project
 
@@ -34,7 +38,7 @@ Here's how you can get started:
 ```javascript
 // Create a Web3 instance: 
 
-const Web3 = require('web3'); 
+const { Web3 } = require('web3'); 
  
 // Insert your RPC URL to establish an HTTP connection to your RPC endpoint:
 
@@ -65,7 +69,7 @@ Here's the code for the script:
 ```javascript
 // Add the Web3 provider snippet 
 
-const Web3 = require('web3'); 
+const { Web3 } = require('web3'); 
 const web3 = new Web3('RPC-API-ENDPOINT-HERE'); 
 
 // Create address variables 
@@ -104,7 +108,7 @@ Create a .js file by "vim transaction.js" and fill it with the code below. By "n
 
 ```javascript
 // Add the Web3 provider snippet 
-const Web3 = require('web3'); 
+const { Web3 } = require('web3'); 
 const web3 = new Web3('RPC-API-ENDPOINT-HERE'); 
 
 
@@ -217,7 +221,7 @@ To deploy the Incrementer.sol contract, you need to first compile the contract u
 ```javascript
 const contractFile = require('./compile'); 
  
-const Web3 = require('web3'); 
+const { Web3 } = require('web3'); 
 const web3 = new Web3('RPC-API-ENDPOINT-HERE'); 
  
 const accountFrom = { 
@@ -265,7 +269,7 @@ Note that this is only for example purposes, and you should never store your pri
 
 ```javascript
 const { abi } = require('./compile'); 
-const Web3 = require('web3'); 
+const { Web3 } = require('web3'); 
 const web3 = new Web3('RPC-API-ENDPOINT-HERE'); 
  
 const contractAddress = 'CONTRACT-ADDRESS-HERE'; 
@@ -294,7 +298,7 @@ Finally, send the signed transaction using web3.eth.send_raw_transaction functio
 ```javascript
 const { abi } = require('./compile'); 
  
-const Web3 = require('web3'); 
+const { Web3 } = require('web3'); 
 const web3 = new Web3('RPC-API-ENDPOINT-HERE'); 
  
 const accountFrom = { 
@@ -343,4 +347,4 @@ import TabItem from '@theme/TabItem';
 
 ## Additional Resources:
 
-- [**Web3.js Documentation**](https://web3js.readthedocs.io/en/v1.8.2/)
+- [**Web3.js Documentation**](https://docs.web3js.org/)
