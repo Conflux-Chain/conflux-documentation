@@ -36,6 +36,10 @@ tags: [ Indexer, 教程 ]
 
 本教程将指导您创建一个Conflux合约的索引器。 我们将使用一个示例项目，演示如何读取区块链发出的日志和事件，并将其存储在数据库中以便快速检索。
 
+:::tip Production workloads
+This tutorial hand-rolls the sync loop to teach how event logs work. For a production-grade setup with automatic decoding, reorg handling, and a GraphQL API, see the advanced tutorial: [Scalable Indexing with Envio](./envio.md).
+:::
+
 ## 概览
 
 我们将使用的示例库可在此处找到：[https://github.com/intrepidcanadian/eventindex](https://github.com/intrepidcanadian/eventindex). 该项目展示了如何：
