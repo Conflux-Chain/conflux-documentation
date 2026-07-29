@@ -82,7 +82,7 @@ For example, this is how a smart contract that receives two uint parameters in t
 npx hardhat verify --network espaceTestnet 0xD9880690bd717189cC3Fbe7B9020F27fae7Ac76F 123 456
 ```
 
-Note: If the above does not work, try verifying with the following instead: apiURL: 'https://evmapi-testnet.confluxscan.net/api/', and browserURL: 'https://evmtestnet.confluxscan.net/'.
+Note: If the above does not work, try verifying with the following instead: apiURL: 'https://evmapi-testnet.confluxscan.org/api/', and browserURL: 'https://evmtestnet.confluxscan.org/'.
 
 ### Foundry
 
