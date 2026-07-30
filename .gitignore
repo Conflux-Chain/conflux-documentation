@@ -1,5 +1,6 @@
 # Dependencies
 node_modules
+.pnpm-store
 # Production
 /build
 
@@ -18,6 +19,7 @@ tmp.md
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+pnpm-debug.log*
 
 .vscode/
 .idea

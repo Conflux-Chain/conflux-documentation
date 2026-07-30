@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "@ant-design/icons": "^5.6.1",
+    "@ant-design/cssinjs": "^1.23.0",
     "@docusaurus/utils-validation": "^3.6.1",
     "@open-rpc/meta-schema": "^1.14.9",
     "@open-rpc/schema-utils-js": "^2.0.5",
@@ -32,5 +33,9 @@
     "dayjs": "^1.11.13",
     "json-schema-typed": "^8.0.1",
     "mustache": "^4.2.0"
+  },
+  "peerDependencies": {
+    "@docusaurus/theme-common": "^3.8.1",
+    "react": "^18.2.0"
   }
 }
