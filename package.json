@@ -5,19 +5,20 @@
   "scripts": {
     "docusaurus": "docusaurus",
     "front-matter": "node scripts/add-front-matter.js",
-    "start": "yarn front-matter && docusaurus start",
-    "build": "yarn front-matter && docusaurus build",
+    "start": "pnpm front-matter && docusaurus start",
+    "build": "pnpm front-matter && docusaurus build",
     "swizzle": "docusaurus swizzle",
-    "deploy": "yarn front-matter && docusaurus deploy",
+    "deploy": "pnpm front-matter && docusaurus deploy",
     "clear": "docusaurus clear",
-    "serve": "yarn front-matter && docusaurus serve",
-    "zh": "yarn start --locale zh-CN",
-    "es": "yarn start --locale es",
+    "serve": "pnpm front-matter && docusaurus serve",
+    "zh": "pnpm start --locale zh-CN",
+    "es": "pnpm start --locale es",
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids"
   },
   "dependencies": {
     "@docusaurus/core": "^3.8.1",
+    "@docusaurus/plugin-content-docs": "^3.8.1",
     "@docusaurus/plugin-ideal-image": "^3.8.1",
     "@docusaurus/preset-classic": "^3.8.1",
     "@docusaurus/theme-mermaid": "3.8.1",
@@ -33,7 +34,9 @@
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "^3.8.1",
-    "@docusaurus/types": "^3.8.1"
+    "@docusaurus/types": "^3.8.1",
+    "@types/react": "^18.3.12",
+    "gray-matter": "^4.0.3"
   },
   "browserslist": {
     "production": [
@@ -50,9 +53,5 @@
   "engines": {
     "node": ">=18.0"
   },
-  "workspaces": [
-    "./plugins/openrpc",
-    "./plugins/docusaurus-openrpc"
-  ],
-  "packageManager": "yarn@1.22.22+sha1.ac34549e6aa8e7ead463a7407e1c7390f61a6610"
+  "packageManager": "pnpm@10.34.5"
 }
