@@ -67,6 +67,7 @@ function getConfig() {
     themes: ["@docusaurus/theme-mermaid"],
 
     plugins: [
+      "@docsearch/docusaurus-adapter",
       async function myPlugin(context, options) {
         return {
           name: "docusaurus-tailwindcss",
@@ -316,7 +317,7 @@ function getConfig() {
           { name: 'algolia-site-verification', content: process.env.ALGOLIA_VERIFY || 'YOUR_ALGOLIA_VERIFY' },
         ],
 
-        algolia: {
+        docsearch: {
           // The application ID provided by Algolia
           appId: process.env.ALGOLIA_APP_ID || 'RZ5332ZSQO',
 
@@ -324,6 +325,12 @@ function getConfig() {
           apiKey: process.env.ALGOLIA_API_KEY || 'fdcf1238b42763c0e277a4d3eec74281',
 
           indexName: process.env.ALGOLIA_INDEX_NAME || 'Documentation crawler',
+
+          askAi: {
+            assistantId: process.env.ALGOLIA_AGENT_ID || '00c55e8f-c308-4da2-bc00-9dbc5978975c',
+            agentStudio: true,
+            sidePanel: true,
+          },
 
           // Optional: see doc section below
           contextualSearch: true,
