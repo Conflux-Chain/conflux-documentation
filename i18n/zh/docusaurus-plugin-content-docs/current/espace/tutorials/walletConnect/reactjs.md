@@ -19,6 +19,11 @@ tags: [ 教程, WalletConnect ]
 
 # 在Conflux链上将WalletConnect与您的React应用集成
 
+:::caution Web3Modal is now Reown AppKit
+
+For a new integration, follow Reown's [upgrade guide](https://docs.reown.com/appkit/upgrade/from-w3m-to-reown). Your existing WalletConnect project ID continues to work.
+:::
+
 本教程将指导你如何将WalletConnect无缝集成到您的React应用程序中，使用户能够与Conflux eSpace进行交互，从而为您的用户提供一种安全且直观的方式来，将他们的钱包连接到你在Conflux eSpace上的dApp上。
 
 [![React Demo](../img/walletconnect-react.png)](../img/walletconnect-react.png)
@@ -65,7 +70,7 @@ import { ReactNode } from "react";
 // 0. Setup queryClient
 const queryClient = new QueryClient();
 
-// 1. Get projectId at https://cloud.walletconnect.com
+// 1. Get projectId at https://cloud.reown.com
 const projectId = "YOUR_PROJECT_ID";
 
 // 2. Create wagmiConfig

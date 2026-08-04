@@ -33,9 +33,14 @@ There are already oracle services available on Conflux eSpace.
 
 ## [Pyth](https://pyth.network/)
 
+:::danger Pyth Network sunset — July 31, 2026
+
+A Conflux-maintained, Pyth-compatible price oracle is deployed as a drop-in read-side replacement — source at [conflux-fans/oracle-contracts](https://github.com/conflux-fans/oracle-contracts), deployed at `0x5286BD91e2C79fE066926a15193C7e531bBF6750` on eSpace mainnet and `0x838c40B3904FAfBc21b670c97b0dFeE7D8D0a016` on testnet. The spot price read functions and price feed IDs are unchanged for the major assets.
+:::
+
 Pyth is a renowned oracle service in the industry, offering **Smarter Data for Smarter Contracts**. It ensures the security of your smart contracts by providing reliable, low-latency market data sourced from institutional-grade providers. Developers can build applications utilizing high-fidelity oracle feeds, specifically designed for mission-critical systems.
 
-Pyth is already integrated in Conflux eSpace, you can use it directly. Check it's [documentation](https://docs.pyth.network/documentation/pythnet-price-feeds/evm#mainnets) for how to use it in your smart contracts.
+Pyth remains integrated in Conflux eSpace until the sunset date above. See its [documentation](https://docs.pyth.network/documentation/pythnet-price-feeds/evm#mainnets) for how to use it in your smart contracts.
 
 ## [Wit/Oracle](https://witnet.io/)
 

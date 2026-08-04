@@ -36,9 +36,9 @@ import TabItem from "@theme/TabItem";
 
 ## Hex地址 和 Base32 地址
 
-在 `Conflux-rust v1.1.1`发布之前，Conflux 地址完全以十六进制编码字符串形式呈现，例如 `0x1292d4955b47f5153b88c12c7a94048f09839` 此格式与Etherum和其他兼容的EVM区块链使用的地址非常相似。 然而，Conflux 采用了独特的方法来计算 EOA 地址，这意味着 **从相同的私钥生成的地址字符串在 Conflux 和 Ethereum 之间通常会有所不同。**这种外观上的相似性，加上计算上的差异，很容易让用户将 Conflux 地址与 Ethereum 地址混淆，可能导致资产的损失。
+在 `Conflux-rust v1.1.1`发布之前，Conflux 地址完全以十六进制编码字符串形式呈现，例如 `0x1292d4955bb47f5153b88ca12c7a9e4048f09839` 此格式与Etherum和其他兼容的EVM区块链使用的地址非常相似。 然而，Conflux 采用了独特的方法来计算 EOA 地址，这意味着 **从相同的私钥生成的地址字符串在 Conflux 和 Ethereum 之间通常会有所不同。**这种外观上的相似性，加上计算上的差异，很容易让用户将 Conflux 地址与 Ethereum 地址混淆，可能导致资产的损失。
 
-为了解决这个问题，Conflux在 [CIP-37](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-37.md) 中引入了一个新的基于 base32 编码地址格式。 新格式 **直接从原始的十六进制编码地址派生**，包括一个**独特的前缀**（如"cfx"）、一个可选的**地址类型**和一个**校验和**。 因此，上文提到的Hex编码地址可以转换成更容易识别的base32地址。例如 `cfx:aakkfzezns4h8ymx1cgmcnd4x3aev6e2hexz250ym5`, 可选的，也可以表示为详细格式地址，详细格式包含了非必须的地址类型信息, 例如 `CFX:TYPE .USER：AAKKFZEZNS4H8YMX1CGMCN4X3AEV6E2HEXZ250YM5`. 这种新格式最大限度地减少了Conflux 和 Etherum地址之间混淆的风险，提供了更安全和更方便的用户体验。
+为了解决这个问题，Conflux在 [CIP-37](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-37.md) 中引入了一个新的基于 base32 编码地址格式。 新格式 **直接从原始的十六进制编码地址派生**，包括一个**独特的前缀**（如"cfx"）、一个可选的**地址类型**和一个**校验和**。 因此，上文提到的Hex编码地址可以转换成更容易识别的base32地址。例如 `cfx:aakkfzezns4h8ymx1cgmcnd4x3aev6e2hexz250ym5`, 可选的，也可以表示为详细格式地址，详细格式包含了非必须的地址类型信息, 例如 `CFX:TYPE.USER:AAKKFZEZNS4H8YMX1CGMCND4X3AEV6E2HEXZ250YM5`. 这种新格式最大限度地减少了Conflux 和 Etherum地址之间混淆的风险，提供了更安全和更方便的用户体验。
 
 :::caution
 
@@ -62,7 +62,7 @@ Conflux 十六进制地址是一个20字节的十六进制值，以“0x”开�
 
 - `(0x)1`: 代表一个EOA 帐户的地址
 - `(0x)8`: 代表一个合约的地址
-- `(0x)0`: 表示一个在链上实现硬编码逻辑 [内置合约](../core-space-basics/internal-contracts/internal-contracts.mdx), 或一个空地址 (`0x0000000000000000000000000000000000000000000000000000`)。
+- `(0x)0`: 表示一个在链上实现硬编码逻辑 [内置合约](../core-space-basics/internal-contracts/internal-contracts.mdx), 或一个空地址 (`0x0000000000000000000000000000000000000000`)。
 
 #### EOA 十六进制地址计算
 
@@ -233,7 +233,7 @@ It should be noted that in Ethereum, the contract bytecode is not taken as the i
 
 ### Base32地址计算
 
-Conflux的 base32 地址指由 [CIP-37](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-37.md) 定义的具有网络前缀的Conflux Base32校验和地址。 该地址由表示该地址有效的网络的网络前缀、一个冒号(`":"`) 和一个 Base32 编码的载荷组成，并包含一个校验和，例如`cfx:aarc9abycue0hzgyr53m6cxedgccrmybjgh4xg`。 可选的，地址可以在网络前缀和载荷之间包含一组键值对，格式为`key.value`，以冒号分隔，例如`cfx:type.user:aarc9abycue0hhzgyrr53m6cxedgccrmmyybjgh4xg`。
+Conflux的 base32 地址指由 [CIP-37](https://github.com/Conflux-Chain/CIPs/blob/master/CIPs/cip-37.md) 定义的具有网络前缀的Conflux Base32校验和地址。 该地址由表示该地址有效的网络的网络前缀、一个冒号(`":"`) 和一个 Base32 编码的载荷组成，并包含一个校验和，例如`cfx:aarc9abycue0hhzgyrr53m6cxedgccrmmyybjgh4xg`。 可选的，地址可以在网络前缀和载荷之间包含一组键值对，格式为`key.value`，以冒号分隔，例如`cfx:type.user:aarc9abycue0hhzgyrr53m6cxedgccrmmyybjgh4xg`。
 
 #### 网络前缀（Network Prefix）
 
@@ -245,7 +245,7 @@ Conflux的 base32 地址指由 [CIP-37](https://github.com/Conflux-Chain/CIPs/bl
 
 #### 地址类型（Address Type）
 
-地址类型是一个可选字段，为地址类型提供可读的信息。 对于空地址 (`0x000000000000000000000000000000000000000000`), 地址类型必须是 `type. null`。 其他为：
+地址类型是一个可选字段，为地址类型提供可读的信息。 对于空地址 (`0x0000000000000000000000000000000000000000`), 地址类型必须是 `type.null`。 其他为：
 
 - `0x0`: `type.builtin`
 - `0x1`: `type.user`

@@ -97,7 +97,7 @@ Rust是开发像Conflux这样的分布式系统的优秀语言，但对于开发
 
 {
   "jsonrpc": "2.0",
-  "result": ["false", "invlaid nonce"],
+  "result": ["false", "invalid nonce"],
   "id": 1
 }
 ```

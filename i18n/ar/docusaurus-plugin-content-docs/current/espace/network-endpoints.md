@@ -33,11 +33,29 @@ tags:
 
 This page lists the public RPC endpoints for Conflux eSpace. Public RPC endpoints for **Conflux Core Space** is provided [here](../core/core-endpoints.md).
 
+If you need alternatives to Confura, Conflux eSpace also has a dedicated [RPC Providers](./build/infrastructure/RPC-Provider.md) page covering other provider options, including:
+
+- Tenderly
+- Validation Cloud
+- NOWNodes
+- Unifra
+- BlockPi
+
 :::
 
 ## Confura
 
 Confura, a public RPC service offered by the Conflux Foundation, is available for free use.
+
+### Enhanced RPC Features
+
+Confura is compatible with standard Conflux JSON-RPC, but some high-traffic methods include additional service-side optimizations compared with a plain full node.
+
+Key Confura-specific RPC features include:
+
+- `eth_getLogs` with dynamic query bounds: wide historical queries may be accepted when the actual result set is small enough. If a query is too large, Confura may return a suggested block or epoch range for retry.
+
+For detailed behavior, examples, and client-side handling recommendations, see: [Confura Enhanced RPC Features](https://github.com/Conflux-Chain/confura/blob/main/doc/RPC_FEATURES.md)
 
 ### Public Endpoints
 
@@ -127,9 +145,17 @@ import ConfuraError from '../templates/confura-error.md'
 <summary>Confura Common Errors</summary>
 <ConfuraError basicUnitName="block" /> </details>
 
-## Commercial RPC Service
+## Other RPC Provider Choices
 
-There are couple of commercial RPC service providers, you can check them [here](./build/infrastructure/RPC-Provider.md)
+If Confura is not the right fit for your workload, you can also evaluate the providers listed on the [RPC Providers](./build/infrastructure/RPC-Provider.md) page:
+
+- [Tenderly](./build/infrastructure/RPC-Provider.md#tenderly)
+- [Validation Cloud](./build/infrastructure/RPC-Provider.md#validation-cloud)
+- [NOWNodes](./build/infrastructure/RPC-Provider.md#nownodes)
+- [Unifra](./build/infrastructure/RPC-Provider.md#unifra)
+- [BlockPi](./build/infrastructure/RPC-Provider.md#blockpi)
+
+These options are useful when you want different pricing, service tiers, regional coverage, or provider-specific infrastructure features.
 
 ## FAQs
 

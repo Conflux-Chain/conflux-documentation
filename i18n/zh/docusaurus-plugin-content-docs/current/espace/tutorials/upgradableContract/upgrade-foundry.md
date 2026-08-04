@@ -220,6 +220,12 @@ contract TestAfterUpgradeScript is Script {
 
 ## 7. 部署和升级过程
 
+:::caution
+
+When using `forge script` on Conflux eSpace, append `-g 250` to deployment and upgrade commands. This is the recommended value and helps avoid "insufficient gas fee" errors.
+
+:::
+
 1. Set up environment variables:
 
 Create a `.env` file in the project root:
@@ -232,10 +238,10 @@ PROXY_ADDRESS=
 2. Deploy the initial contract:
 
 ```bash
-forge script script/Deploy.s.sol:DeployScript --rpc-url espaceTestnet --broadcast -g 200
+forge script script/Deploy.s.sol:DeployScript --rpc-url espaceTestnet --broadcast -g 250
 ```
 
-> **Note:** The `-g` flag sets the gas price multiplier (in percentage). Using `-g 200` means the gas price will be 200% of the estimated price, which helps prevent "insufficient gas fee" errors during deployment.
+> **Note:** The `-g` flag sets the gas price multiplier. On Conflux eSpace, `-g 250` is the recommended value for `forge script` commands.
 
 预期输出：
 
@@ -262,7 +268,7 @@ Current implementation address: 0x...(Logic1's address)
 5. Upgrade the contract:
 
 ```bash
-forge script script/Upgrade.s.sol:UpgradeScript --rpc-url espaceTestnet --broadcast -g 200
+forge script script/Upgrade.s.sol:UpgradeScript --rpc-url espaceTestnet --broadcast -g 250
 ```
 
 6. Run the post-upgrade test:

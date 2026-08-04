@@ -39,6 +39,17 @@ displayed_sidebar: coreSidebar
 
 Confura是Conflux网络上的一个类似于Ethereum Infura的公共JSON-RPC服务，由Conflux基金会开发和维护，并可免费使用。
 
+### Enhanced RPC Features
+
+Confura is compatible with standard Conflux JSON-RPC, but some high-traffic methods include additional service-side optimizations compared with a plain full node.
+
+Key Confura-specific RPC features include:
+
+- `cfx_getLogs` with dynamic query bounds: wide historical queries may be accepted when the actual result set is small enough. If a query is too large, Confura may return a suggested block or epoch range for retry.
+- Internal contract event logs: some historical Conflux internal contract events can be reconstructed from trace data and returned through `cfx_getLogs` when using the `includeTraceLogs` endpoint option.
+
+For detailed behavior, examples, and client-side handling recommendations, see: [Confura Enhanced RPC Features](https://github.com/Conflux-Chain/confura/blob/main/doc/RPC_FEATURES.md)
+
 ### 公共端点
 
 Confura为主网和测试网提供了多个可用的RPC端点。 我们按照“优先选择前者”的原则对它们进行了排序，并提供了简要描述。 如果您不确定选择哪一个，请优先选择列表顶部的 RPC 端点。

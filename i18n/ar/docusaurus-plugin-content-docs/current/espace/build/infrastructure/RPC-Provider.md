@@ -37,6 +37,23 @@ Conflux has partnered with select RPC Providers and also offers its own, similar
 
 Tenderly is a leading full-stack infrastructure platform for web3 Pros, it providing robust Ethereum-compatible RPC services, enabling developers to interact with the blockchain efficiently and reliably. Beyond basic RPC endpoints, Tenderly offers advanced features like real-time transaction simulation, debugging, and analytics, allowing developers to test, monitor, and optimize smart contract interactions with confidence. Its infrastructure is designed to ensure high availability, scalability, and detailed observability for decentralized applications.
 
+### Free tier limits
+
+Tenderly's free plan is sufficient for developing and testing against Conflux eSpace without a paid subscription. At the time of writing, the free tier includes:
+
+- **25 million Tenderly Units (TU) per month** — TUs are Tenderly's usage metric; each RPC request consumes TUs based on the method's computational cost
+- **2 nodes total** (for example, one eSpace mainnet and one eSpace testnet endpoint)
+- **API simulations**: 60 per minute, up to 120K per day and per month
+- **UI simulations**: 50 per month
+- **Monitoring**: 20 monitored addresses and 3 alert rules
+- **1 project**
+
+Create a Conflux eSpace node endpoint from the [Tenderly dashboard](https://dashboard.tenderly.co/), and see [Tenderly's pricing page](https://tenderly.co/pricing) for current plan details.
+
+:::caution
+Tenderly node endpoints embed your access key in the URL (e.g. `https://cfx-espace.gateway.tenderly.co/<your-key>`). Keep the URL in an environment variable rather than committing it to a public repository.
+:::
+
 ## [Validation Cloud](https://www.validationcloud.io/)
 
 Validation Cloud offers an enterprise-grade web3 infrastructure platform covering RPC, Staking, and Data for 50+ leading Web3 blockchains and networks. We are committed to delivering the best performance, reliability and compliance to our users and partners. Validation Cloud is SOC2 Type II certified.

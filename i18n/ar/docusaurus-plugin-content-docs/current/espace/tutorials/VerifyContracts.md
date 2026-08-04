@@ -82,7 +82,7 @@ For example, this is how a smart contract that receives two uint parameters in t
 npx hardhat verify --network espaceTestnet 0xD9880690bd717189cC3Fbe7B9020F27fae7Ac76F 123 456
 ```
 
-Note: If the above does not work, try verifying with the following instead: apiURL: 'https://evmapi-testnet.confluxscan.net/api/', and browserURL: 'https://evmtestnet.confluxscan.net/'.
+Note: If the above does not work, try verifying with the following instead: apiURL: 'https://evmapi-testnet.confluxscan.org/api/', and browserURL: 'https://evmtestnet.confluxscan.org/'.
 
 ### Foundry
 
@@ -96,6 +96,7 @@ Refer to the [Foundry documentation](https://book.getfoundry.sh/reference/forge/
 
 ```bash
 forge verify-contract <contract address> <contract name> \
+  --verifier custom \
   --verifier-url https://evmapi-testnet.confluxscan.org/api/ \
   --etherscan-api-key <anything is ok> \
   --constructor-args <your constructor arguments>
@@ -109,7 +110,7 @@ Do not specify the chain ID.
 
 ## Verify on Web UI Manually
 
-Any contract deployed on eSpace can be verified on the [ConfluxScan](https://evm.confluxscan.net/) block explorer's contract detail page. If contract is not verified, the contract detail page will show a entry to verify page.
+Any contract deployed on eSpace can be verified on the [ConfluxScan](https://evm.confluxscan.org/) block explorer's contract detail page. If contract is not verified, the contract detail page will show a entry to verify page.
 
 ![](./img/contract-verify-submit.png)
 
