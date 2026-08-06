@@ -329,7 +329,14 @@ function getConfig() {
           askAi: {
             assistantId: process.env.ALGOLIA_AGENT_ID || '00c55e8f-c308-4da2-bc00-9dbc5978975c',
             agentStudio: true,
-            sidePanel: true,
+            sidePanel: {
+              // 'inline' (the default) sets margin-right on #__docusaurus,
+              // shrinking the app container while the viewport stays wide.
+              // Docusaurus picks its mobile navbar from the viewport, not the
+              // container, so the desktop navbar ends up in a box too small
+              // for it and its items overlap. 'floating' overlays instead.
+              variant: 'floating',
+            },
           },
 
           // Optional: see doc section below
