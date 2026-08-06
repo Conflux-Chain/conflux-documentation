@@ -83,6 +83,19 @@ img{
   margin-right: 20px;
 }
 
+/* The desktop navbar fits its items with almost no slack, so a single
+   wrapped label (e.g. "Core Space") turns the bar into two cramped rows.
+   Keep labels on one line and let the row scroll instead of reflowing. */
+@media (min-width: 997px) {
+  .navbar__inner {
+    flex-wrap: nowrap;
+  }
+  .navbar__item.navbar__link,
+  .navbar__items--right .navbar__link {
+    white-space: nowrap;
+  }
+}
+
 /* .blog-wrapper{
   @apply max-w-[1920px] mx-auto
 }
@@ -161,7 +174,7 @@ img{
   --ifm-color-success-contrast-background: #E6EDFD;
   --ifm-bg-ingradient:linear-gradient(181.9deg, var(--ifm-color-primary-darkest) 1.6%, var(--ifm-color-primary-lightest) 98.06%);
   --ifm-git-bg-url:url(@site/static/img/VectorgitHub.svg);
-  --ifm-feedback-bg-url:url(@site/static/img/communication.svg);
+  --ifm-feedback-bg-url:url(@site/static/img/feedbackForm.svg);
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 }
 
@@ -183,7 +196,7 @@ img{
   --ifm-hover-overlay:#152748!important;
   --ifm-bg-ingradient:linear-gradient(181.9deg, var(--ifm-color-primary-darkest) 0%, var(--ifm-color-primary-lightest) 100%);
   --ifm-git-bg-url:url(@site/static/img/GitHubDark.svg);
-  --ifm-feedback-bg-url:url(@site/static/img/communicationDark.svg);
+  --ifm-feedback-bg-url:url(@site/static/img/feedbackFormDark.svg);
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
