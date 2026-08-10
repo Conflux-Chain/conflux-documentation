@@ -32,6 +32,7 @@ function getConfig() {
     }),
     url: process.env.DOCUSAURUS_URL || "https://doc.confluxnetwork.org/",
     baseUrl: "/",
+    trailingSlash: false,
     onBrokenLinks: "warn",
     onBrokenMarkdownLinks: "warn",
     favicon: "img/logo.svg",
