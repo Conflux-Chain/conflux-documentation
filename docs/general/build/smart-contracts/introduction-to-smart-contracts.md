@@ -352,7 +352,7 @@ Remember that when developing your smart contract and deploying it on the Conflu
 - Conflux Core
 - Conflux eSpace.
 
-Conflux eSpace is 100% compatible with the EVM ecosystem and you can use tools like [Remix](https://remix.ethereum.org/), [Hardat](https://hardhat.org/), [MetaMask](https://metamask.io/) and services like [Unifra](https://unifra.io/).
+Conflux eSpace is 100% compatible with the EVM ecosystem and you can use tools like [Remix](https://remix.ethereum.org/), [Hardat](https://hardhat.org/), and [MetaMask](https://metamask.io/).
 
 
 ## Video Content
