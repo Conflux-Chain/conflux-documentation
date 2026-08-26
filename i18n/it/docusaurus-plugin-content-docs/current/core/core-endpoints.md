@@ -10,7 +10,6 @@ keywords:
   - Mainnet
   - Testnet
   - Confura
-  - Unifra
   - Chain ID
   - HTTP Endpoints
   - WebSocket Endpoints
@@ -137,23 +136,3 @@ import ConfuraError from '../templates/confura-error.md'
 <details>
 <summary>Confura Common Errors</summary>
 <ConfuraError basicUnitName="epoch" /> </details>
-
-## 2. Unifra
-
-Unifra is a Web3 developer platform focused on simplifying blockchain development. It has built a suite of developer tools, enhanced APIs, and a superior node infrastructure to seamlessly build and run blockchain applications. Unifra provide API services for multiple chains including Ethereum, BNB Smart Chain, Polygon and Conflux.
-
-Unifra provides:
-
-- Open access to free public end-points
-- Real-time webhook alerts via Notify
-- Best-in-class support and reliability / stability
-- Unifra's NFT API
-- Dashboard with Request Explorer
-
-To use Unifra's service, developer need to register an account first and find the RPC endpoint in [Unifra console](https://console.unifra.io/). For detail information check [Unifra's documentation](https://docs.unifra.io/)
-
-### Public Endpoint
-
-| Network | Chain ID | Explorer                | Endpoint                              |
-| ------- | -------- | ----------------------- | ------------------------------------- |
-| Mainnet | 1029     | https://confluxscan.net | https://conflux-core-public.unifra.io |
