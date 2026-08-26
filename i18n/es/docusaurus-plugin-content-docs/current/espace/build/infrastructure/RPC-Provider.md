@@ -7,7 +7,6 @@ keywords:
   - RPC Providers
   - Conflux eSpace
   - NOWNodes
-  - Unifra
   - BlockPi
   - Blockchain-as-a-Service
   - API
@@ -77,19 +76,6 @@ NOWNodes currently supports the Conflux eSpace network, and the eSpace node url 
 NOWNodes offers both Shared Nodes and Dedicated Nodes solution, along with free basic services and paid plans. For service pricing details, please refer to [NOWNodes' pricing list](https://nownodes.io/pricing). NOWNodes supports payments in Euros and cryptocurrencies.
 
 For specific details and usage instructions, please visit the [NOWNodes official website](https://nownodes.io) and refer to the [documentation](https://documenter.getpostman.com/view/13630829/TVmFkLwy).
-
-## [Unifra](https://unifra.io/)
-
-[Unifra](https://unifra.io/) offers an open infrastructure accessible to everyone, providing reliable infrastructure services to all Web3 developers. Their node service already includes support for the Conflux eSpace network.
-They offer a stable and user-friendly RPC service, which can be utilized to connect to the Conflux eSpace network.
-
-Unifra also provides a free-to-use RPC endpoint:
-
-| Network             | Chain ID                        | RPC Endpoint URL                                                                        | Explorer                                                                    |
-| ------------------- | ------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
-| [Mainnet](#mainnet) | 1030 (0x406) | https://conflux-espace-public.unifra.io | https://evm.confluxscan.org |
-
-You can also buy **a higher tier RPC service** from Unifra at it [console dashboard](https://console.unifra.io/).
 
 ## [BlockPi](https://blockpi.io/conflux)
 
