@@ -7,7 +7,6 @@ keywords:
   - RPC 提供商
   - Conflux eSpace
   - NOWNodes
-  - Unifra
   - BlockPi
   - Blockchain-as-a-Service
   - API
@@ -78,26 +77,13 @@ NOWNodes 提供共享节点和专用节点解决方案，以及免费的基础�
 
 具体详情和使用说明，请访问 [NOWNodes官方网站](https://nownodes.io) 并参考 [文档](https://documenter.getpostman.com/view/13630829/TVmFkLwy)。
 
-## [Unifra](https://unifra.io/)
-
-[Unifra](https://unifra.io/) 提供对所有人开放的基础设施，为所有 Web3 开发者提供可靠的基础设施服务。 他们的节点服务已经支持Conflux eSpace 网络。
-他们提供了稳定且用户友好的 RPC 服务，可以用来连接 Conflux eSpace 网络。
-
-Unifra 还提供了一个免费使用的 RPC 端点：
-
-| 网络名称           | 链 ID                            | RPC 端点 URL                                                                              | 浏览器网址                                                                       |
-| -------------- | ------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
-| [主网](#mainnet) | 1030 (0x406) | https://conflux-espace-public.unifra.io | https://evm.confluxscan.org |
-
-您还可以从 Unifra 的[控制台面板](https://console.unifra.io/)中购买**更高级别的 RPC 服务**。
-
 ## [BlockPi](https://blockpi.io/conflux)
 
 BlockPi 是一个分布式多链加速层， 通过无限扩展性解决 RPC 请求拥堵问题。 他们的计划是建立一个完全可扩展的 RPC 服务网络。 他们的愿景是构建一个高效且强大的 Web3 基础设施。
 
-目前，BlockPi支持超过 30 条链，包括 Conflux eSpace 网络。 他们提供了稳定且用户友好的 RPC 服务，可以用来连接到 Conflux eSpace 网络。
+目前，BlockPi支持超过 30 条链，包括 Conflux eSpace 网络。 他们提供了稳定且用户友好的 RPC 服务，可以用来连接 Conflux eSpace 网络。
 
-| 网络             | 链 ID                            | RPC 端点 URL                                                                                           | 浏览器网址                                                                       |
+| 网络名称           | 链 ID                            | RPC 端点 URL                                                                                           | 浏览器网址                                                                       |
 | -------------- | ------------------------------- | ---------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
 | [主网](#mainnet) | 1030 (0x406) | https://conflux-espace.blockpi.network/v1/rpc/public | https://evm.confluxscan.org |
 
