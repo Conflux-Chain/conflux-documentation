@@ -351,7 +351,7 @@ purchase receipt {
 - Conflux Core
 - Conflux eSpace.
 
-Conflux eSpace是 100% 与 EVM 生态兼容的，您可以使用像 [Remix](https://remix.eferum)、[Hardat](https://hardhat.org/)、[MetaMask](https://metamask.io/) 这样的工具，以及像 [Unifra](https://unifra.io/) 这样的服务。
+Conflux eSpace is 100% compatible with the EVM ecosystem and you can use tools like [Remix](https://remix.ethereum.org/), [Hardat](https://hardhat.org/), and [MetaMask](https://metamask.io/).
 
 ## 视频内容
 
