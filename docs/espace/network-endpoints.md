@@ -37,7 +37,6 @@ If you need alternatives to Confura, Conflux eSpace also has a dedicated [RPC Pr
 - Tenderly
 - Validation Cloud
 - NOWNodes
-- Unifra
 - BlockPi
 
 :::
@@ -153,7 +152,6 @@ If Confura is not the right fit for your workload, you can also evaluate the pro
 - [Tenderly](./build/infrastructure/RPC-Provider.md#tenderly)
 - [Validation Cloud](./build/infrastructure/RPC-Provider.md#validation-cloud)
 - [NOWNodes](./build/infrastructure/RPC-Provider.md#nownodes)
-- [Unifra](./build/infrastructure/RPC-Provider.md#unifra)
 - [BlockPi](./build/infrastructure/RPC-Provider.md#blockpi)
 
 These options are useful when you want different pricing, service tiers, regional coverage, or provider-specific infrastructure features.

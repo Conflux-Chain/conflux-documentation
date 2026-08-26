@@ -22,7 +22,6 @@ keywords:
   - Ethereum Compatibility
   - dApps
   - MetaMask
-  - Unifra
   - ConfluxScan
   - Library Comparison
   - Web3 Development
@@ -37,7 +36,7 @@ To interact with the Conflux blockchain through a web app, it is necessary to co
 
 While it is possible to use vanilla JavaScript to connect with a Conflux node, there are convenient libraries within the Conflux ecosystem that simplify the process. These libraries allow developers to write intuitive, one-line methods to initialize JSON-RPC requests that interact with Conflux, abstracting away much of the complexity of directly interacting with a Conflux node and providing utility functions for easier development.
 
-Some of the features offered by these libraries include the ability to connect to Conflux nodes using providers, such as JSON-RPC, Unifra, ConfluxScan, or MetaMask, as well as wallet functionality for creating wallets, managing keys, and signing transactions. Additionally, these libraries enable interaction with smart contract functions by reading the Application Binary Interface (ABI) of a compiled contract. The ABI is a JSON format that explains the functions of the contract and allows developers to use it like a normal JavaScript object.
+Some of the features offered by these libraries include the ability to connect to Conflux nodes using providers, such as JSON-RPC or MetaMask, as well as wallet functionality for creating wallets, managing keys, and signing transactions. Additionally, these libraries enable interaction with smart contract functions by reading the Application Binary Interface (ABI) of a compiled contract. The ABI is a JSON format that explains the functions of the contract and allows developers to use it like a normal JavaScript object.
 
 Utility functions offered by these libraries also provide handy shortcuts for building with Conflux, such as converting CFX values to DRIP, as 1 CFX is equal to 1,000,000,000,000,000,000 DRIP, and working with numbers in this format can be challenging. For example, the web3.utils.toWei function can be used to convert CFX to DRIP.
 
@@ -67,7 +66,7 @@ Web3.js, developed by the Ethereum Foundation, has the distinction of being one 
 Despite its advantages, web3.js also has some setbacks. It may not be suitable for all new projects, as it may not be the best fit for different requirements or use cases. Additionally, web3.js relies on a license with restrictive limitations, such as the need to release modifications to the public, which may not be suitable for some projects. Another potential drawback is its larger size compared to other web3 libraries, which may impact the performance of a web3 site or app. 
   
 ### Advantages of ethers.js: 
-Ethers.js, on the other hand, offers several advantages for web3 development. It has a broader license that allows for free usage and modifications, with the requirement to release source code with implemented modifications. Ethers.js is also a lightweight library (only 77kb vs 4.5MB) that supports ENS domain names and has proven support for a large number of test cases, providing developers with flexibility and reliability. Ethers.js separates the roles of a "wallet" for key management and a "provider" for connecting to the Ethereum network. This allows developers to have more flexibility in managing keys and transactions, such as using a hardware device for wallet functions and Unifra as the provider. 
+Ethers.js, on the other hand, offers several advantages for web3 development. It has a broader license that allows for free usage and modifications, with the requirement to release source code with implemented modifications. Ethers.js is also a lightweight library (only 77kb vs 4.5MB) that supports ENS domain names and has proven support for a large number of test cases, providing developers with flexibility and reliability. Ethers.js separates the roles of a "wallet" for key management and a "provider" for connecting to the Ethereum network. This allows developers to have more flexibility in managing keys and transactions, such as using a hardware device for wallet functions and an RPC service as the provider.
  
 ### Setbacks of ethers.js: 
 While ethers.js presents noticeable improvements over the setbacks of web3.js, it also has some potential drawbacks. Being a comparatively new library, developers may encounter difficulties in using ethers.js for older companies or projects that may have been built using other libraries. However, no specific setbacks were mentioned in the provided text. 
@@ -91,5 +90,4 @@ import TabItem from '@theme/TabItem';
     </TabItem>
 
 </Tabs>
-
 
