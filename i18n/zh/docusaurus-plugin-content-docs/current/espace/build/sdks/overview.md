@@ -22,7 +22,6 @@ keywords:
   - Ethereum Compatibility
   - dApps
   - MetaMask
-  - Unifra
   - ConfluxScan
   - Library Comparison
   - Web3 Development
@@ -37,7 +36,7 @@ tags:
 
 虽然可以使用原生JavaScript连接到Conflux节点，但Conflux生态系统中有方便的库简化了这一过程。 这些库让开发者可以编写少量简单且直观的代码来初始化并与Conflux JSON-RPC进行请求，并且抽象了与Conflux交互的减少了复杂性，提供了许多使用功能以简化开发。
 
-这些库提供的一些功能包括使用提供者（如JSON-RPC、Unifra、ConfluxScan或MetaMask）连接到Conflux节点，以及钱包功能，用于创建钱包、管理密钥和签名交易。 此外，这些库通过读取编译合约的应用程序二进制接口（ABI）来启用与智能合约函数的交互。 ABI是一个JSON格式，解释了合约的函数，并允许开发者像使用普通JavaScript对象那样使用它。
+Some of the features offered by these libraries include the ability to connect to Conflux nodes using providers, such as JSON-RPC or MetaMask, as well as wallet functionality for creating wallets, managing keys, and signing transactions. 此外，这些库通过读取编译合约的应用程序二进制接口（ABI）来启用与智能合约函数的交互。 ABI是一个JSON格式，解释了合约的函数，并允许开发者像使用普通JavaScript对象那样使用它。
 
 这些库提供的实用函数还为在Conflux构建提供了便捷的快捷方式，例如将CFX值转换为DRIP，因为1 CFX等于1,000,000,000,000,000,000 DRIP，以这种格式处理数字可能会有挑战性。 例如，可以使用web3.utils.toWei函数将CFX转换为DRIP。
 
@@ -73,7 +72,7 @@ Ethers.js库旨在成为与以太坊区块链及其生态系统交互的全面�
 
 ### ethers.js的优势：
 
-另一方面，ethers.js为web3开发提供了几个优势。 它有一个更宽松的许可证，允许免费使用和修改，并要求发布实施修改的源代码。 Ethers.js还是一个轻量级库（仅77kb vs 4.5MB），支持ENS域名，并已经证实支持大量的测试用例，为开发者提供了灵活性和可靠性。 Ethers.js将用于密钥管理的"钱包"和用于连接到以太坊网络的"提供者"角色分离开。 这允许开发人员在管理密钥和交易方面有更多的灵活性，例如使用硬件设备进行钱包功能和使用Unifra作为提供者。
+另一方面，ethers.js为web3开发提供了几个优势。 它有一个更宽松的许可证，允许免费使用和修改，并要求发布实施修改的源代码。 Ethers.js还是一个轻量级库（仅77kb vs 4.5MB），支持ENS域名，并已经证实支持大量的测试用例，为开发者提供了灵活性和可靠性。 Ethers.js将用于密钥管理的"钱包"和用于连接到以太坊网络的"提供者"角色分离开。 This allows developers to have more flexibility in managing keys and transactions, such as using a hardware device for wallet functions and an RPC service as the provider.
 
 ### ethers.js的缺点：
 
@@ -95,5 +94,4 @@ import TabItem from '@theme/TabItem';
     </TabItem>
 
 </Tabs>
-
 
