@@ -32,6 +32,12 @@ tags: [ js-conflux-sdk ]
 
 :::
 
+:::tip
+
+Looking for reusable prompts and agent workflows for Conflux development? Start with [Conflux Skills](../general/build/conflux-skills.md).
+
+:::
+
 ## 简介
 
 [**js-conflux-sdk**](https://github.com/conflux-chain/js-conflux-sdk) 是一个基于 JavaScript 开发并用于 Conflux Core Space 的 SDK。 它是大量库的集合，允许您使用 HTTP、WebSocket 与本地或远程的 Conflux 节点进行交互。 您可以用它来发送交易、部署并与智能合约交互等等。

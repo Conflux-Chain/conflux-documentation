@@ -113,15 +113,15 @@ Refer to [Github's tutorial](https://docs.github.com/en/get-started/exploring-pr
 For more significant contributions like adding a new page or extensive revisions:
 
 1. Setting Up:
-   - Ensure you have [node.js](https://nodejs.org/en) (version `>= 18`) and [yarn](https://yarnpkg.com/getting-started/install) installed.
+   - Ensure you have [Node.js](https://nodejs.org/en) (version `>= 22`) and [pnpm](https://pnpm.io/installation) (version `11.17.0`) installed.
    - Fork and clone the [documentation repository](https://github.com/Conflux-Chain/conflux-documentation). Detailed instructions for forking and cloning are available on GitHub's help pages.
 
 2. Making Changes Locally:
-   - Run `yarn && yarn start` in your terminal to preview the site at `http://localhost:3000`.
+   - Run `pnpm install && pnpm start` in your terminal to preview the site at `http://localhost:3000`.
    - Navigate to the `docs/**` folder in your cloned repository to make changes. Refresh your local server to see updates.
 
 3. Submitting Your Changes:
-   - After making changes, run `yarn build` to ensure everything compiles correctly.
+   - After making changes, run `pnpm build` to ensure everything compiles correctly.
    - Commit your changes with a meaningful message, then push to your forked repository. Initiate a pull request on GitHub by comparing your branch to the original repository.
 
 ### Working on an Existing Issue

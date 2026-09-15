@@ -36,6 +36,10 @@ tags: [ Indexer, Tutorial ]
 
 This tutorial will guide you through the process of creating an indexer for Conflux contracts. We'll use a sample project that demonstrates how to read logs and events emitted by the blockchain and store them in a database for quick retrieval.
 
+:::tip Production workloads
+This tutorial hand-rolls the sync loop to teach how event logs work. For a production-grade setup with automatic decoding, reorg handling, and a GraphQL API, see the advanced tutorial: [Scalable Indexing with Envio](./envio.md).
+:::
+
 ## Overview
 
 The example repository we'll be using is available at [https://github.com/intrepidcanadian/eventindex](https://github.com/intrepidcanadian/eventindex). This project showcases how to:

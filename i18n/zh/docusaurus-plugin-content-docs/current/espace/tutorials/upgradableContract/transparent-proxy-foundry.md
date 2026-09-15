@@ -243,14 +243,20 @@ RPC_URL=https://evmtestnet.confluxrpc.com
 
 ## 部署流程
 
+:::caution
+
+When using `forge script` on Conflux eSpace, append `-g 250` to the command. This is the recommended value and helps avoid "insufficient gas fee" errors.
+
+:::
+
 1. 部署初始安装和代理：
 
 ```bash
 source .env
-forge script script/DeployBox.s.sol --rpc-url $RPC_URL --broadcast -g 200
+forge script script/DeployBox.s.sol --rpc-url $RPC_URL --broadcast -g 250
 ```
 
-> **注意:**`-g`标志设置燃气价格乘数(以百分比表示)。 使用`-g 200`意味着燃气价格将是估计价格的200%，这有助于阻止在部署过程中出现 "燃气费用不足"的错误。
+> **Note:** The `-g` flag sets the gas price multiplier. On Conflux eSpace, `-g 250` is the recommended value for `forge script` commands.
 
 预期输出：
 
@@ -271,7 +277,7 @@ ADMIN_ADDRESS=<ADMIN_ADDRESS>
 3. 升级到BoxV2：
 
 ```bash
-forge script script/UpgradeBox.s.sol --rpc-url $RPC_URL --broadcast -g 200
+forge script script/UpgradeBox.s.sol --rpc-url $RPC_URL --broadcast -g 250
 ```
 
 预期输出：

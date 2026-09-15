@@ -10,7 +10,6 @@ keywords:
   - 主网
   - 测试网
   - Confura
-  - Unifra
   - 链 ID
   - HTTP Endpoints
   - WebSocket Endpoints
@@ -38,6 +37,18 @@ displayed_sidebar: coreSidebar
 ## 1. Confura
 
 Confura是Conflux网络上的一个类似于Ethereum Infura的公共JSON-RPC服务，由Conflux基金会开发和维护，并可免费使用。
+
+### Enhanced RPC Features
+
+Confura is compatible with standard Conflux JSON-RPC, but some high-traffic methods include additional service-side optimizations compared with a plain full node.
+
+Key Confura-specific RPC features include:
+
+- `cfx_getLogs` with dynamic query bounds: wide historical queries may be accepted when the actual result set is small enough. If a query is too large, Confura may return a suggested block or epoch range for retry.
+- Cursor-paginated `cfx_scanLogs` API supports resumable forward or reverse event-log scans with exclusive cursors. The `WithPivotAssumption` variants add cross-page reorganization detection. See the [Paginated ScanLogs Guide](https://github.com/Conflux-Chain/confura/blob/main/doc/PAGINATED_SCAN_LOGS.md) for details.
+- Internal contract event logs: some historical Conflux internal contract events can be reconstructed from trace data and returned through `cfx_getLogs` when using the `includeTraceLogs` endpoint option.
+
+For detailed behavior, examples, and client-side handling recommendations, see: [Confura Enhanced RPC Features](https://github.com/Conflux-Chain/confura/blob/main/doc/RPC_FEATURES.md)
 
 ### 公共端点
 
@@ -126,23 +137,3 @@ import ConfuraError from '../templates/confura-error.md'
 <details>
 <summary>Confura Common Errors</summary>
 <ConfuraError basicUnitName="epoch" /> </details>
-
-## 2. Unifra
-
-Unifra是一个专注于简化区块链开发的Web3开发者平台。 它建立了一套开发者工具，增强了API，以及一个卓越的节点基础设施，以无缝构建和运行区块链应用程序。 Unifra 为多个链提供 API 服务，包括 以太坊、BNB 智能链、Polygon 和 Conflux。
-
-Unifra提供：
-
-- 开放访问免费的公共端点
-- 通过Notify提供实时的webhook提醒
-- 一流的支持和可靠性/稳定性
-- Unifra的NFT API
-- 带有请求浏览器的仪表板
-
-要使用Unifra的服务，开发者需要先注册一个账户，并在[Unifra 控制台](https://console.unifra.io/)中找到RPC端点。 详情请查看 [Unifra的文档](https://docs.unifra.io/)
-
-### 公共端点
-
-| 网络名称 | 链 ID | 浏览器网址                   | 端点                                    |
-| ---- | ---- | ----------------------- | ------------------------------------- |
-| 主网   | 1029 | https://confluxscan.net | https://conflux-core-public.unifra.io |
