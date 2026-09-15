@@ -82,7 +82,7 @@ If `gas` is set too low, it may result in an OutOfGas problem, causing the trans
 
 In this case, you can resolve the issue by increasing the gas.
 
-The `gas` value cannot be set too high either; the maximum allowed value is 15 million. Exceeding this value will result in an error like:
+The `gas` value cannot be set too high either; for Core Space the maximum a node accepts is 27 million, half of the Core Space gas limit. Exceeding this value will result in an error like:
 
 ```json
 "\"transaction gas 20000000 exceeds the maximum value 15000000, the half of pivot block gas limit\""
