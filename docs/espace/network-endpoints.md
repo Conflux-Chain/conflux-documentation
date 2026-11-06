@@ -74,6 +74,8 @@ Chain ID for Conflux eSpace Mainnet is `1030(0x406)`. The corresponding blockcha
 | wss://evm.confluxrpc.com/ws | Websocket |
 | wss://evm.confluxrpc.org/ws | Websocket | Backup RPC Service |
 
+To compare the live latency of the public eSpace Mainnet endpoints, see the [OpenChainBench Conflux eSpace RPC benchmark](https://openchainbench.com/benchmarks/conflux-rpc), which probes each one every 60 seconds from US-East, EU-West and Singapore, and publishes p50 / p90 / p99 latency and success rate.
+
 #### Testnet
 
 Chain ID for Conflux eSpace Testnet is `71(0x47)`. The corresponding blockchain explorer URL is https://evmtestnet.confluxscan.org.
