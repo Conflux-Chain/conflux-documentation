@@ -7,7 +7,6 @@ keywords:
   - RPC Providers
   - Conflux eSpace
   - NOWNodes
-  - Unifra
   - BlockPi
   - Blockchain-as-a-Service
   - API
@@ -37,6 +36,23 @@ Conflux has partnered with select RPC Providers and also offers its own, similar
 
 Tenderly is a leading full-stack infrastructure platform for web3 Pros, it providing robust Ethereum-compatible RPC services, enabling developers to interact with the blockchain efficiently and reliably. Beyond basic RPC endpoints, Tenderly offers advanced features like real-time transaction simulation, debugging, and analytics, allowing developers to test, monitor, and optimize smart contract interactions with confidence. Its infrastructure is designed to ensure high availability, scalability, and detailed observability for decentralized applications.
 
+### Free tier limits
+
+Tenderly's free plan is sufficient for developing and testing against Conflux eSpace without a paid subscription. At the time of writing, the free tier includes:
+
+- **25 million Tenderly Units (TU) per month** — TUs are Tenderly's usage metric; each RPC request consumes TUs based on the method's computational cost
+- **2 nodes total** (for example, one eSpace mainnet and one eSpace testnet endpoint)
+- **API simulations**: 60 per minute, up to 120K per day and per month
+- **UI simulations**: 50 per month
+- **Monitoring**: 20 monitored addresses and 3 alert rules
+- **1 project**
+
+Create a Conflux eSpace node endpoint from the [Tenderly dashboard](https://dashboard.tenderly.co/), and see [Tenderly's pricing page](https://tenderly.co/pricing) for current plan details.
+
+:::caution
+Tenderly node endpoints embed your access key in the URL (e.g. `https://cfx-espace.gateway.tenderly.co/<your-key>`). Keep the URL in an environment variable rather than committing it to a public repository.
+:::
+
 ## [Validation Cloud](https://www.validationcloud.io/)
 
 Validation Cloud offers an enterprise-grade web3 infrastructure platform covering RPC, Staking, and Data for 50+ leading Web3 blockchains and networks. We are committed to delivering the best performance, reliability and compliance to our users and partners. Validation Cloud is SOC2 Type II certified.
@@ -60,19 +76,6 @@ NOWNodes currently supports the Conflux eSpace network, and the eSpace node url 
 NOWNodes offers both Shared Nodes and Dedicated Nodes solution, along with free basic services and paid plans. For service pricing details, please refer to [NOWNodes' pricing list](https://nownodes.io/pricing). NOWNodes supports payments in Euros and cryptocurrencies.
 
 For specific details and usage instructions, please visit the [NOWNodes official website](https://nownodes.io) and refer to the [documentation](https://documenter.getpostman.com/view/13630829/TVmFkLwy).
-
-## [Unifra](https://unifra.io/)
-
-[Unifra](https://unifra.io/) offers an open infrastructure accessible to everyone, providing reliable infrastructure services to all Web3 developers. Their node service already includes support for the Conflux eSpace network.
-They offer a stable and user-friendly RPC service, which can be utilized to connect to the Conflux eSpace network.
-
-Unifra also provides a free-to-use RPC endpoint:
-
-| Network             | Chain ID                        | RPC Endpoint URL                                                                        | Explorer                                                                    |
-| ------------------- | ------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
-| [Mainnet](#mainnet) | 1030 (0x406) | https://conflux-espace-public.unifra.io | https://evm.confluxscan.org |
-
-You can also buy **a higher tier RPC service** from Unifra at it [console dashboard](https://console.unifra.io/).
 
 ## [BlockPi](https://blockpi.io/conflux)
 

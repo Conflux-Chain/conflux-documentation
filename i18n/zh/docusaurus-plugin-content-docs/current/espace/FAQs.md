@@ -46,7 +46,7 @@ eSpace 与以太坊兼容，您可以使用与以太坊相同的 SDK。 因此�
 ## eSpace 硬分叉的区块号是多少？
 
 - 主网：EpochNumber 36935000，BlockNumber 92060600。
-- 测试网： EpochNumber 61465000, BlockNumber 7734000
+- 测试网： EpochNumber 61465000, BlockNumber 77340000
 
 ## 在 eSpace 中执行一笔交易需要多长时间？
 

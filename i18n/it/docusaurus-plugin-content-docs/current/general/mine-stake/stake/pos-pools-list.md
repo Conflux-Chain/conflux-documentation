@@ -2,26 +2,7 @@
 sidebar_position: 2
 title: Staking Through a PoS Pool
 displayed_sidebar: generalSidebar
-keywords:
-  [
-    Conflux Network,
-    PoS pools,
-    staking,
-    CFX token,
-    node operation,
-    Conflux PoS Validators,
-    community-driven,
-    Core Space,
-    eSpace,
-    PHX V2,
-    Nucelon,
-    PHX V1,
-    ABC PoS Pool,
-    hydrasf Pool,
-    Lido-like pools,
-    staking risks,
-    rewards distribution
-  ]
+keywords: [ Conflux Network, PoS pools, staking, CFX token, node operation, Conflux PoS Validators, community-driven, Core Space, eSpace, PHX V2, Nucelon, PHX V1, ABC PoS Pool, Lido-like pools, staking risks, rewards distribution ]
 tags: [ Staking ]
 ---
 
@@ -56,7 +37,6 @@ The following pools are for both Core Space and eSpace users:
 
 - [PHX V1](https://pospool.phxverse.com/)
 - [ABC PoS Pool](https://confluxpos.cn/)
-- [hydrasf Pool](https://hydrasf.club/)
 
 ## Notes
 

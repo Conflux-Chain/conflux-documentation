@@ -10,7 +10,6 @@ keywords:
   - Mainnet
   - Testnet
   - Confura
-  - Unifra
   - Chain ID
   - HTTP Endpoints
   - WebSocket Endpoints
@@ -38,6 +37,18 @@ Public RPC endpoints for **Conflux eSpace** is provided [here](../espace/network
 ## 1. Confura
 
 Confura is an Ethereum Infura equivalent public JSON-RPC service on Conflux network, which is developed and maintained by Conflux foundation and is available for free use.
+
+### Enhanced RPC Features
+
+Confura is compatible with standard Conflux JSON-RPC, but some high-traffic methods include additional service-side optimizations compared with a plain full node.
+
+Key Confura-specific RPC features include:
+
+- `cfx_getLogs` with dynamic query bounds: wide historical queries may be accepted when the actual result set is small enough. If a query is too large, Confura may return a suggested block or epoch range for retry.
+- Cursor-paginated `cfx_scanLogs` API supports resumable forward or reverse event-log scans with exclusive cursors. The `WithPivotAssumption` variants add cross-page reorganization detection. See the [Paginated ScanLogs Guide](https://github.com/Conflux-Chain/confura/blob/main/doc/PAGINATED_SCAN_LOGS.md) for details.
+- Internal contract event logs: some historical Conflux internal contract events can be reconstructed from trace data and returned through `cfx_getLogs` when using the `includeTraceLogs` endpoint option.
+
+For detailed behavior, examples, and client-side handling recommendations, see: [Confura Enhanced RPC Features](https://github.com/Conflux-Chain/confura/blob/main/doc/RPC_FEATURES.md)
 
 ### Public Endpoint
 
@@ -126,23 +137,3 @@ import ConfuraError from '../templates/confura-error.md'
 <details>
 <summary>Confura Common Errors</summary>
 <ConfuraError basicUnitName="epoch" /> </details>
-
-## 2. Unifra
-
-Unifra is a Web3 developer platform focused on simplifying blockchain development. It has built a suite of developer tools, enhanced APIs, and a superior node infrastructure to seamlessly build and run blockchain applications. Unifra provide API services for multiple chains including Ethereum, BNB Smart Chain, Polygon and Conflux.
-
-Unifra provides:
-
-- Open access to free public end-points
-- Real-time webhook alerts via Notify
-- Best-in-class support and reliability / stability
-- Unifra's NFT API
-- Dashboard with Request Explorer
-
-To use Unifra's service, developer need to register an account first and find the RPC endpoint in [Unifra console](https://console.unifra.io/). For detail information check [Unifra's documentation](https://docs.unifra.io/)
-
-### Public Endpoint
-
-| Network | Chain ID | Explorer                | Endpoint                              |
-| ------- | -------- | ----------------------- | ------------------------------------- |
-| Mainnet | 1029     | https://confluxscan.net | https://conflux-core-public.unifra.io |

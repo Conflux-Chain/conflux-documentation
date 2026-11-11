@@ -113,15 +113,15 @@ For complex operations, you can also check the [closed pull requests](https://gi
 对于添加新页面或广泛的修订等更重大的贡献：
 
 1. 设置：
-   - 确保您安装了[node.js](https://nodejs.org/en)（版本 `>= 18`）和 [yarn](https://yarnpkg.com/getting-started/install)。
+   - Ensure you have [Node.js](https://nodejs.org/en) (version `>= 22`) and [pnpm](https://pnpm.io/installation) (version `11.17.0`) installed.
    - 分叉并克隆[文档仓库](https://github.com/Conflux-Chain/conflux-documentation)。 关于分叉和克隆的详细指南可在 GitHub 的帮助页面上找到。
 
 2. 在本地进行更改：
-   - 在您的终端运行 `yarn && yarn start` 以在 `http://localhost:3000` 预览站点。
+   - Run `pnpm install && pnpm start` in your terminal to preview the site at `http://localhost:3000`.
    - 导航到您克隆仓库中的 `docs/**` 文件夹进行更改。 刷新您的本地服务器以查看更新。
 
 3. 提交您的更改：
-   - 进行更改后，运行 `yarn build` 确保一切正确编译。
+   - After making changes, run `pnpm build` to ensure everything compiles correctly.
    - 确保您的更改是有价值的，然后将它推送到您的分叉仓库。 在 GitHub 上发起一个拉取请求，将您的分支与原始仓库进行比较。
 
 ### 处理现有问题

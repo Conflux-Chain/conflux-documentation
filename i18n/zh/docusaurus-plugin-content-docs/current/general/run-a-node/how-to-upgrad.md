@@ -2,23 +2,7 @@
 sidebar_position: 4
 title: 升级节点
 displayed_sidebar: generalSidebar
-keywords:
-  [
-    Conflux Network,
-    node upgrade,
-    software update,
-    node operation,
-    Conflux-Rust,
-    release version,
-    PoS node,
-    forced retirement,
-    node restart,
-    version check,
-    Docker upgrade,
-    block synchronization,
-    node migration,
-    Linux commands
-  ]
+keywords: [ Conflux Network, node upgrade, software update, node operation, Conflux-Rust, release version, PoS node, forced retirement, node restart, version check, Docker upgrade, block synchronization, node migration, Linux commands ]
 tags: [ node ]
 ---
 

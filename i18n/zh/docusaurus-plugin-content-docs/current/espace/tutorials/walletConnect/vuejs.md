@@ -14,6 +14,11 @@ tags: [ 教程, WalletConnect ]
 
 # 在Conflux eSpace的Vue.js项目中集成WalletConnect
 
+:::caution Web3Modal is now Reown AppKit
+
+For a new integration, follow Reown's [upgrade guide](https://docs.reown.com/appkit/upgrade/from-w3m-to-reown). Your existing WalletConnect project ID continues to work.
+:::
+
 本教程指导您在Vue.js项目中，如何使用Web3Modal集成WalletConnect，特别是针对Conflux eSpace网络。
 如需实践，请查看 GitHub 仓库[Web3modal-Conflux-Vue](https://github.com/ConfluxDAO/web3modal-conflux-vue)。
 

@@ -329,14 +329,20 @@ contract CounterTest is Test {
 
 ## 部署和升级过程
 
+:::caution
+
+When using `forge script` on Conflux eSpace, append `-g 250` to deployment and upgrade commands. This is the recommended value and helps avoid "insufficient gas fee" errors.
+
+:::
+
 1. 部署初始实现和代理：
 
 ```bash
 source .env
-forge script script/DeployCounter.s.sol --rpc-url $RPC_URL --broadcast -g 200
+forge script script/DeployCounter.s.sol --rpc-url $RPC_URL --broadcast -g 250
 ```
 
-> **注意:**`-g`标志设置燃气价格乘数(以百分比表示)。 使用`-g 200`意味着燃气价格将是估计价格的200%，这有助于阻止在部署过程中出现 "燃气费用不足"的错误。
+> **Note:** The `-g` flag sets the gas price multiplier. On Conflux eSpace, `-g 250` is the recommended value for `forge script` commands.
 
 预期输出：
 
@@ -356,7 +362,7 @@ PROXY_ADDRESS=<PROXY_ADDRESS>
 3. 升级到CounterV2：
 
 ```bash
-forge script script/UpgradeCounter.s.sol --rpc-url $RPC_URL --broadcast -g 200
+forge script script/UpgradeCounter.s.sol --rpc-url $RPC_URL --broadcast -g 250
 ```
 
 预期输出：
@@ -379,5 +385,4 @@ Count after reset: 0
 ```
 
 通过以下步骤，您可以在 Conflux eSpace 上使用 Foundry 部署和升级智能合约，采用 UUPS 代理模式。 与透明代理模式相比，该模式提供了更节省燃气的替代方案，同时保持合约的可升级性。 UUPS 模式将升级逻辑移到实现合约中，使其对用户来说更加轻量和具有成本效益。
-
 

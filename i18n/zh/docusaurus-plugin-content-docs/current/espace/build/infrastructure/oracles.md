@@ -33,15 +33,20 @@ Conflux eSpace 上已经有可用的预言机服务。
 
 ## [Pyth](https://pyth.network/)
 
+:::danger Pyth Network sunset — July 31, 2026
+
+A Conflux-maintained, Pyth-compatible price oracle is deployed as a drop-in read-side replacement — source at [conflux-fans/oracle-contracts](https://github.com/conflux-fans/oracle-contracts), deployed at `0x5286BD91e2C79fE066926a15193C7e531bBF6750` on eSpace mainnet and `0x838c40B3904FAfBc21b670c97b0dFeE7D8D0a016` on testnet. The spot price read functions and price feed IDs are unchanged for the major assets.
+:::
+
 Pyth 是业内知名的预言机服务，提供**更智能的数据用于更智能的合约**。 通过提供来自机构级供应商的可靠、低延迟市场数据，确保您智能合约的安全性。 开发者可以利用高保真度的预言机数据源构建应用程序，这些数据源专为关键任务系统设计。
 
-Pyth 已经集成在 Conflux eSpace 中，您可以直接使用。 请查看其[文档](https://docs.pyth.network/documentation/pythnet-price-feeds/evm#mainnets)了解如何在智能合约中使用它。
+Pyth remains integrated in Conflux eSpace until the sunset date above. See its [documentation](https://docs.pyth.network/documentation/pythnet-price-feeds/evm#mainnets) for how to use it in your smart contracts.
 
 ## [Wit/Oracle](https://witnet.io/)
 
 **[Wit/Oracle](https://witnet.io)** 是一个公开的、无需许可的、完全去中心化的 _权益证明（Proof-of-Stake）_ 区块链，由其原生加密货币 _$WIT_ 代币驱动。
 
-通过_**Wit/Oracle桥接框架**_（由[_Witnet基金会_](https://witnet.foundation)部署的已验证且具备反事实特性的智能合约组），任何可通过HTTP/GET、HTTP/POST或HTTP/HEAD请求在互联网公开获取的数据，均可被验证和聚合后直接写入智能合约，确保与数据源完全一致。
+通&#x8FC7;_**Wit/Oracle桥接框架**_（由[_Witnet基金会_](https://witnet.foundation)部署的已验证且具备反事实特性的智能合约组），任何可通过HTTP/GET、HTTP/POST或HTTP/HEAD请求在互联网公开获取的数据，均可被验证和聚合后直接写入智能合约，确保与数据源完全一致。
 
 为您的智能合约提供最通用、无缝且值得信赖的预言机解决方案：
 
