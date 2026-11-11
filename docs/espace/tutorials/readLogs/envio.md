@@ -27,7 +27,7 @@ tags: [Indexer, Envio, GraphQL, Tutorial]
 
 # Advanced: Scalable Indexing with Envio
 
-The [basic indexer tutorial](./indexer.md) shows how to read logs with a hand-written script and store them in a database. That approach is great for learning how event logs work, but it does not scale well to production:
+The [basic indexer tutorial](/docs/espace/tutorials/readLogs/indexer) shows how to read logs with a hand-written script and store them in a database. That approach is great for learning how event logs work, but it does not scale well to production:
 
 - **You manage the sync loop yourself** — batching `eth_getLogs` calls, respecting RPC block-range limits, resuming after crashes, and tracking which blocks you have already processed.
 - **No reorg handling** — if the chain reorganizes, your database silently keeps stale rows.
