@@ -14,3 +14,20 @@ trustPolicyExclude:
   - 'detect-port@1.6.1'
   - 'semver@6.3.1'
   - 'undici-types@6.20.0'
+
+overrides:
+  # 7.4.6 fails the existing no-downgrade publishing trust check.
+  'webpack-dev-middleware@^7.4.2': 7.4.5
+  # Keep the existing Node 22 types until undici-types passes the trust policy.
+  '@types/node@22': 22.10.2
+  # Docusaurus still requests 0.32; 0.35.5 fixes its native image libraries.
+  '@docusaurus/plugin-ideal-image>sharp': 0.35.5
+  '@docusaurus/lqip-loader>sharp': 0.35.5
+  # Keep Mermaid on the current major while accepting its security fixes.
+  '@docusaurus/theme-mermaid>mermaid': ^11.16.1
+  # v7 retains the serializer API and requires Node >=20 (this repo uses >=22).
+  'copy-webpack-plugin>serialize-javascript': 7.1.4
+  'css-minimizer-webpack-plugin>serialize-javascript': 7.1.4
+  # Refresh optional peers that otherwise retain vulnerable locked versions.
+  'postcss-load-config>yaml': ^2.8.3
+  'colord@2': ^2.9.4
