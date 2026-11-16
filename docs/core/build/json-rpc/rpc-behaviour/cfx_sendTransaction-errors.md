@@ -151,7 +151,7 @@ or
 }
 ```
 
-**Solution:** Change the `gas` field to a smaller one. The maximum value is 15 million.
+**Solution:** Change the `gas` field to a smaller one. For Core Space the maximum a node accepts is 27 million, half of the Core Space gas limit. The eSpace equivalent is 15 million.
 
 ## Invalid gasPrice
 
