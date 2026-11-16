@@ -10,6 +10,10 @@ tags: [ Pyth, Oracles, Tutorial ]
 
 # Retrieve Price
 
+:::danger Pyth Network sunset — July 31, 2026
+Pyth Network is **shutting down Conflux eSpace support on July 31, 2026**. After that date, the price feeds used in this tutorial will stop updating. A Conflux-maintained, Pyth-compatible replacement oracle is available — see [Conflux Price Oracle (Pyth-Compatible)](../conflux-oracle.md) for contract addresses and migration steps.
+:::
+
 This tutorial will guide you through building a project on Conflux eSpace using Hardhat and retrieving the CFX price through the Pyth oracle.
 
 ## Prerequisites

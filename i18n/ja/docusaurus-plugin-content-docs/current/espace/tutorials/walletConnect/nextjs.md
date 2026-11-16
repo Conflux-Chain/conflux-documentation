@@ -14,6 +14,11 @@ tags: [ Tutorial, WalletConnect ]
 
 # Integrating WalletConnect with Next.js Project on Conflux eSpace
 
+:::caution Web3Modal is now Reown AppKit
+
+For a new integration, follow Reown's [upgrade guide](https://docs.reown.com/appkit/upgrade/from-w3m-to-reown). Your existing WalletConnect project ID continues to work.
+:::
+
 This tutorial provides a comprehensive guide on how to integrate WalletConnect with Web3Modal in a Next.js project, specifically targeting the Conflux eSpace network. For a hands-on example, check out the GitHub repository [web3modal-conflux-nextjs](https://github.com/ConfluxDAO/web3modal-conflux-nextjs).
 
 ## Prerequisites
@@ -54,7 +59,7 @@ import { confluxESpace } from "wagmi/chains";
 import { http, createConfig, WagmiProvider } from "wagmi";
 import { walletConnect, injected, coinbaseWallet } from "wagmi/connectors";
 
-// Get projectId at https://cloud.walletconnect.com
+// Get projectId at https://cloud.reown.com
 export const projectId = process.env.NEXT_PUBLIC_PROJECT_ID;
 
 if (!projectId) throw new Error("Project ID is not defined");
@@ -95,7 +100,7 @@ Create a file named `.env.local` and add the following line:
 NEXT_PUBLIC_PROJECT_ID = your_project_id_here;
 ```
 
-Replace your_project_id_here with the actual project ID you get from https://cloud.walletconnect.com.
+Replace your_project_id_here with the actual project ID you get from https://cloud.reown.com.
 
 For details on how to obtain `ProjectId`, please refer to this [article](/docs/espace/tutorials/walletConnect/project-creation).
 

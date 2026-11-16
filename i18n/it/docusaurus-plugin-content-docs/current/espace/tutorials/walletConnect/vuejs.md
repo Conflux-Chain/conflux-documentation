@@ -14,6 +14,11 @@ tags: [ Tutorial, WalletConnect ]
 
 # Integrating WalletConnect with Vue.js Project on Conflux eSpace
 
+:::caution Web3Modal is now Reown AppKit
+
+For a new integration, follow Reown's [upgrade guide](https://docs.reown.com/appkit/upgrade/from-w3m-to-reown). Your existing WalletConnect project ID continues to work.
+:::
+
 This tutorial guides you through the process of integrating WalletConnect with Web3Modal in a Vue.js project, specifically targeting the Conflux eSpace network.
 For a hands-on example, check out the GitHub repository [Web3modal-Conflux-Vue](https://github.com/ConfluxDAO/web3modal-conflux-vue).
 

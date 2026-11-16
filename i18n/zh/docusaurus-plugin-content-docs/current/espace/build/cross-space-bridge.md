@@ -25,55 +25,56 @@ Conflux eSpace 和 Core Space 是两个独立的 space，您不能直接将 CFX 
 ```js
 interface CrossSpaceCall {
     /**
-     * @dev 在 eSpace 中部署一个合约
-     * @param init bytes - 合约初始化字节码
-     * @return bytes20 - 部署合约的十六进制地址
+     * @dev Deploy a contract in eSpace
+     * @param init bytes -  The contract init bytecode
+     * @return bytes20 - The hex address of the deployed contract
      */
     function createEVM(bytes calldata init) external payable returns (bytes20);
-    /* 跨空间 CFX 转移的方法 */
+    /* methods for cross-space CFX transfers */
 
     /**
-     * @dev 将 CFX 从 Core space 转移到 eSpace 指定地址。转移金额由交易值指定。
-     * @param to bytes20 - 接收方在 eSpace 的十六进制地址
-     * @return output bytes - 交易输出
+     * @dev Transfer CFX from Core space to eSpace specify address. Transfer amount is specified by transaction value.
+     * @param to bytes20 - The hex address of the receiver address in eSpace
+     * @return output bytes
      */
     function transferEVM(bytes20 to) external payable returns (bytes memory output);
     
     /**
-     * @dev 从 eSpace 映射账户余额中提取 CFX
-     * @param value uint256 - 需要提取的 CFX 数量
+     * @dev Withdraw CFX from eSpace mapped account's balance
+     * @param value uint256 - The amount of CFX to be withdrawn
      */ 
     function withdrawFromMapped(uint256 value) external;
 
     /**
-     * @dev 查询 eSpace 映射账户的 CFX 余额
-     * @param addr address - 需要查询的 core 地址
-     * @return uint256 - 余额
+     * @dev Query eSpace mapped account's CFX balance
+     * @param addr address - The core address to query
+     * @return uint256 - Balance
      */
     function mappedBalance(address addr) external view returns (uint256);
 
-    /**
-     * @dev 查询 eSpace 映射账户的 nonce
-     * @param addr address - 需要查询的 core 地址
-     * @return uint256 - Nonce 值
-     */ 
-    function mappedNonce(address addr) external view returns (uint256);
-    
-    /* 其他跨空间操作的方法 */
 
     /**
-     * @dev 从 Core space 调用 eSpace 合约方法
-     * @param to bytes20 - eSpace 中合约的十六进制地址
-     * @param data bytes - 合约方法调用数据
-     * @return output bytes - 方法调用结果
+     * @dev Query eSpace mapped account's nonce
+     * @param addr address - The core address to query
+     * @return uint256 - Balance
+     * */ 
+    function mappedNonce(address addr) external view returns (uint256);
+    
+    /* methods for other cross-space operations */
+
+    /**
+     * @dev Call eSpace contract method from Core space
+     * @param to bytes20 - The hex address of the contract in eSpace
+     * @param data bytes - The contract method call data
+     * @return output bytes - Method call result
      */ 
     function callEVM(bytes20 to, bytes calldata data) external payable returns (bytes memory output);
 
     /**
-     * @dev 从 Core space 静态调用 eSpace 合约方法
-     * @param to bytes20 - eSpace 中合约的十六进制地址
-     * @param data bytes - 合约方法调用数据
-     * @return output bytes - 方法调用结果
+     * @dev Static call eSpace contract method from Core space
+     * @param to bytes20 - The hex address of the contract in eSpace
+     * @param data bytes - The contract method call data
+     * @return output bytes - Method call result
      */ 
     function staticCallEVM(bytes20 to, bytes calldata data) external view returns (bytes memory output);
 }

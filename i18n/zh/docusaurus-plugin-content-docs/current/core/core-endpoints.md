@@ -10,7 +10,6 @@ keywords:
   - 主网
   - 测试网
   - Confura
-  - Unifra
   - 链 ID
   - HTTP Endpoints
   - WebSocket Endpoints
@@ -39,13 +38,25 @@ displayed_sidebar: coreSidebar
 
 Confura是Conflux网络上的一个类似于Ethereum Infura的公共JSON-RPC服务，由Conflux基金会开发和维护，并可免费使用。
 
+### Enhanced RPC Features
+
+Confura is compatible with standard Conflux JSON-RPC, but some high-traffic methods include additional service-side optimizations compared with a plain full node.
+
+Key Confura-specific RPC features include:
+
+- `cfx_getLogs` with dynamic query bounds: wide historical queries may be accepted when the actual result set is small enough. If a query is too large, Confura may return a suggested block or epoch range for retry.
+- Cursor-paginated `cfx_scanLogs` API supports resumable forward or reverse event-log scans with exclusive cursors. The `WithPivotAssumption` variants add cross-page reorganization detection. See the [Paginated ScanLogs Guide](https://github.com/Conflux-Chain/confura/blob/main/doc/PAGINATED_SCAN_LOGS.md) for details.
+- Internal contract event logs: some historical Conflux internal contract events can be reconstructed from trace data and returned through `cfx_getLogs` when using the `includeTraceLogs` endpoint option.
+
+For detailed behavior, examples, and client-side handling recommendations, see: [Confura Enhanced RPC Features](https://github.com/Conflux-Chain/confura/blob/main/doc/RPC_FEATURES.md)
+
 ### 公共端点
 
-Confura为主网和测试网提供了多个可用的RPC端点。 我们按照“优先选择前者”的原则对它们进行了排序，并提供了简要描述。 如果您不确定选择哪一个，请优先选择列表顶部的 RPC 端点。
+Confura为主网和测试网提供了多个可用的RPC端点。我们按照“优先选择前者”的原则对它们进行了排序，并提供了简要描述。如果您不确定选择哪一个，请优先选择列表顶部的 RPC 端点。
 
 #### 主网
 
-Conflux Core space 主网的链 ID 是 `1029(0x405)`。 相应的区块链浏览器 URL 是 https://confluxscan.org。
+Conflux Core space 主网的链 ID 是 `1029(0x405)`。相应的区块链浏览器 URL 是 https://confluxscan.org。
 
 | RPC 端点                                | 类型        | 说明             |
 | ------------------------------------- | --------- | -------------- |
@@ -58,7 +69,7 @@ Conflux Core space 主网的链 ID 是 `1029(0x405)`。 相应的区块链浏览
 
 #### 测试网
 
-Conflux Core Space 测试网的链 ID 是 `1(0x1)`。 相应的区块链浏览器 URL 是 https://testnet.confluxscan.org。
+Conflux Core Space 测试网的链 ID 是 `1(0x1)`。相应的区块链浏览器 URL 是 https://testnet.confluxscan.org。
 
 | RPC 端点                         | 类型        | 备注        |
 | ------------------------------ | --------- | --------- |
@@ -70,7 +81,7 @@ Conflux Core Space 测试网的链 ID 是 `1(0x1)`。 相应的区块链浏览�
 
 ### 速率限制
 
-为了保持服务的可用性，免费版本设有访问频率限制。 如果你需要更高级别的 RPC 服务，你可以通过 [Web3 Paywall](../general/build/tools/web3paywall.md) 进行购买，或者可以直接发送邮件到 [bd@confluxnetwork.org](mailto:bd@confluxnetwork.org) 向 Conflux 基金会申请。
+为了保持服务的可用性，免费版本设有访问频率限制。如果你需要更高级别的 RPC 服务，你可以通过 [Web3 Paywall](../general/build/tools/web3paywall.md) 进行购买，或者可以直接发送邮件到 [bd@confluxnetwork.org](mailto:bd@confluxnetwork.org) 向 Conflux 基金会申请。
 
 这里提供了各种费用等级及其访问速率限制的参考信息。
 
@@ -126,23 +137,3 @@ import ConfuraError from '../templates/confura-error.md'
 <details>
 <summary>Confura Common Errors</summary>
 <ConfuraError basicUnitName="epoch" /> </details>
-
-## 2. Unifra
-
-Unifra是一个专注于简化区块链开发的Web3开发者平台。 它建立了一套开发者工具，增强了API，以及一个卓越的节点基础设施，以无缝构建和运行区块链应用程序。 Unifra 为多个链提供 API 服务，包括 以太坊、BNB 智能链、Polygon 和 Conflux。
-
-Unifra提供：
-
-- 开放访问免费的公共端点
-- 通过Notify提供实时的webhook提醒
-- 一流的支持和可靠性/稳定性
-- Unifra的NFT API
-- 带有请求浏览器的仪表板
-
-要使用Unifra的服务，开发者需要先注册一个账户，并在[Unifra 控制台](https://console.unifra.io/)中找到RPC端点。 详情请查看 [Unifra的文档](https://docs.unifra.io/)
-
-### 公共端点
-
-| 网络名称 | 链 ID | 浏览器网址                   | 端点                                    |
-| ---- | ---- | ----------------------- | ------------------------------------- |
-| 主网   | 1029 | https://confluxscan.net | https://conflux-core-public.unifra.io |

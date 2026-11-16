@@ -57,7 +57,7 @@ if __name__ == '__main__':
 
 1. 调用`set_test_params`设置测试初始化参数。
 2. 根据`set_test_params`中设置的参数，设置测试目录和节点配置。 默认情况下，将创建一个临时目录，并将所有文件保存在临时目录中。 例如，设置`self.num_nodes = 2` 将为两个节点初始化目录。
-3. 调用`setup_network` 添加节点并连接它们。 `self.setup_nodes()`将通过在第2步设置的目录中运行预编译的Conflux可执行二进制文件来添加2个Conflux节点。 We do not connect them here because we want nodes seperated at the beginning.
+3. 调用`setup_network` 添加节点并连接它们。 Here `self.setup_nodes()` will add 2 Conflux nodes by running pre-compiled Conflux executable binary within the directory set up in step 2. We do not connect them here because we want nodes separated at the beginning.
 4. Call `run_test` to run the actual test codes.
 
 在运行了 `self.setup_nodes()`之后, `self.nodes` 是一个 `TestNode`列表，每个节点都可以用来与相应的Conflux节点进行交互。 例如, 要通过调用名为`getblockcount`的RPC获取字节0中的区块数量，你只需要调用`self.nodes[0].getblockcount` ，就会返回一个整数。
@@ -66,7 +66,7 @@ if __name__ == '__main__':
 
 ## 发送P2P消息
 
-在调用 `start_p2p_connection(self.nodes)` 之后，每个 `TestNode` 的 `p2p` 字段将用一个用 Python 编写的 Conflux 模拟节点进行初始化，这个模拟节点将连接到由相应 `TestNode` 控制的 Conflux 进程。 之后，你可以在 Python 代码中发送和接收 P2P 消息。 这里是一个关于如何使用 `p2p` 与 Conflux 节点进行交互的示例。
+After calling `start_p2p_connection(self.nodes)`, the field `p2p` of each `TestNode` will be initialized with a simulated Conflux node written in Python, and this simulated node will be connected to the Conflux process controlled by the corresponding `TestNode`. 之后，你可以在 Python 代码中发送和接收 P2P 消息。 这里是一个关于如何使用 `p2p` 与 Conflux 节点进行交互的示例。
 
 ```python
     def run_test(self):
@@ -85,12 +85,12 @@ This example tries to get the genesis block header from node 0 with P2P requests
 
 默认情况下，测试将使用 `cargo` 构建的发布版本可执行二进制文件。 如果你想使用另一个路径的文件（例如，一个调试版本的二进制文件），你可以在运行测试之前，将环境变量 `CONFLUX` 设置为所使用的二进制文件的完整路径。
 
-待实现
+TODO
 
 ## 实用函数列表
 
-待实现
+TODO
 
 ## 现有 Python测试介绍
 
-待实现
+TODO
