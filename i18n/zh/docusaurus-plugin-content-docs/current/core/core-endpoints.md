@@ -52,11 +52,11 @@ For detailed behavior, examples, and client-side handling recommendations, see: 
 
 ### 公共端点
 
-Confura为主网和测试网提供了多个可用的RPC端点。 我们按照“优先选择前者”的原则对它们进行了排序，并提供了简要描述。 如果您不确定选择哪一个，请优先选择列表顶部的 RPC 端点。
+Confura为主网和测试网提供了多个可用的RPC端点。我们按照“优先选择前者”的原则对它们进行了排序，并提供了简要描述。如果您不确定选择哪一个，请优先选择列表顶部的 RPC 端点。
 
 #### 主网
 
-Conflux Core space 主网的链 ID 是 `1029(0x405)`。 相应的区块链浏览器 URL 是 https://confluxscan.org。
+Conflux Core space 主网的链 ID 是 `1029(0x405)`。相应的区块链浏览器 URL 是 https://confluxscan.org。
 
 | RPC 端点                                | 类型        | 说明             |
 | ------------------------------------- | --------- | -------------- |
@@ -69,7 +69,7 @@ Conflux Core space 主网的链 ID 是 `1029(0x405)`。 相应的区块链浏览
 
 #### 测试网
 
-Conflux Core Space 测试网的链 ID 是 `1(0x1)`。 相应的区块链浏览器 URL 是 https://testnet.confluxscan.org。
+Conflux Core Space 测试网的链 ID 是 `1(0x1)`。相应的区块链浏览器 URL 是 https://testnet.confluxscan.org。
 
 | RPC 端点                         | 类型        | 备注        |
 | ------------------------------ | --------- | --------- |
@@ -81,7 +81,7 @@ Conflux Core Space 测试网的链 ID 是 `1(0x1)`。 相应的区块链浏览�
 
 ### 速率限制
 
-为了保持服务的可用性，免费版本设有访问频率限制。 如果你需要更高级别的 RPC 服务，你可以通过 [Web3 Paywall](../general/build/tools/web3paywall.md) 进行购买，或者可以直接发送邮件到 [bd@confluxnetwork.org](mailto:bd@confluxnetwork.org) 向 Conflux 基金会申请。
+为了保持服务的可用性，免费版本设有访问频率限制。如果你需要更高级别的 RPC 服务，你可以通过 [Web3 Paywall](../general/build/tools/web3paywall.md) 进行购买，或者可以直接发送邮件到 [bd@confluxnetwork.org](mailto:bd@confluxnetwork.org) 向 Conflux 基金会申请。
 
 这里提供了各种费用等级及其访问速率限制的参考信息。
 
