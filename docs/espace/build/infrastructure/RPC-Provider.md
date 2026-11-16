@@ -91,6 +91,20 @@ Network  | Chain ID                | RPC Endpoint URL | Explorer
 
 Check BlockPi's [documentation](https://docs.blockpi.io/) for more details on how to use their service.
 
+## Fail over between providers with [eRPC](https://github.com/erpc/erpc)
+
+eRPC is an open-source, self-hosted RPC proxy. It is not a provider; it sits in front of the providers above, retries a failed request on the next upstream, and caches responses. Point your app at eRPC instead of a single endpoint:
+
+```yaml
+projects:
+  - id: main
+    upstreams:
+      - endpoint: https://conflux-espace.blockpi.network/v1/rpc/public
+      - endpoint: https://evm.confluxrpc.com
+```
+
+Your app then uses `http://localhost:4000/main/evm/1030`. See the [eRPC docs](https://docs.erpc.cloud/) for setup.
+
 ## FAQs
 
 ### Does Infura, Alchemy, Quick, etc. support Conflux eSpace network?
