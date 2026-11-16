@@ -28,13 +28,13 @@ This guide will walk you through the process of setting up a solo validator.
 
 ## 1. 运行Conflux节点
 
-For the official Conflux implementation(conflux-rust), the PoS node and PoW node use the same client. A conflux node works as a PoS node and a PoW node at the same time. And the snapshot data of the PoS and PoW also share the same data. 你可以按照[运行节点指南](/docs/general/run-a-node/Overview)来操作。 运行全节点或归档节点都可以。
+For the official Conflux implementation(conflux-rust), the PoS node and PoW node use the same client. A conflux node works as a PoS node and a PoW node at the same time. And the snapshot data of the PoS and PoW also share the same data. 你可以按照[运行节点指南](/docs/general/run-a-node/Overview)来操作。运行全节点或归档节点都可以。
 
-节点的PoS配置文件位于下载的节点包中的 `pos_config` 目录。 此目录中的 `pos_config.yaml` 文件是PoS配置文件，通常不需要修改此文件中的设置。
+节点的PoS配置文件位于下载的节点包中的 `pos_config` 目录。此目录中的 `pos_config.yaml` 文件是PoS配置文件，通常不需要修改此文件中的设置。
 
-首次启动节点时，系统会提示您设置密码以保护节点的PoS私钥。 请务必记住这个密码，因为一旦忘记，您将无法找回密码。 稍后重新启动节点时，将需要输入此密码。 私钥存储在节点目录的 `pos_config/pos_key` 文件中，建议备份此文件。
+首次启动节点时，系统会提示您设置密码以保护节点的PoS私钥。请务必记住这个密码，因为一旦忘记，您将无法找回密码。稍后重新启动节点时，将需要输入此密码。私钥存储在节点目录的 `pos_config/pos_key` 文件中，建议备份此文件。
 
-首次启动节点时，建议使用区块链数据快照，因为它可以大大加快节点同步速度。 有关如何使用区块链数据快照的信息，请参阅[区块链数据快照](/docs/general/run-a-node/snapshot-tool) 。
+首次启动节点时，建议使用区块链数据快照，因为它可以大大加快节点同步速度。有关如何使用区块链数据快照的信息，请参阅[区块链数据快照](/docs/general/run-a-node/snapshot-tool) 。
 
 Once the node data is synchronized to the latest block (and the "Catch-up mode" in the node logs changes to false), you can proceed with PoS registration.
 
@@ -42,9 +42,9 @@ Once the node data is synchronized to the latest block (and the "Catch-up mode" 
 
 ### 前提条件
 
-要成为验证者，你需要在PoS中注册你的节点。 注册节点需要一个 **Conflux Core账户** 和节点的 **PoS注册数据** 。
+要成为验证者，你需要在PoS中注册你的节点。注册节点需要一个 **Conflux Core账户** 和节点的 **PoS注册数据** 。
 
-首先，你需要安装Fluent Wallet，并且账户中拥有至少 1000 CFX + gasFee。 因为每一个 PoS 投票需要1000 CFX。
+首先，你需要安装Fluent Wallet，并且账户中拥有至少 1000 CFX + gasFee。因为每一个 PoS 投票需要1000 CFX。
 
 然后，您可以在节点目录中运行以下命令来获取PoS注册数据：
 
@@ -65,7 +65,7 @@ Once the node data is synchronized to the latest block (and the "Catch-up mode" 
 
 ![](./img/pow-stake.jpg)
 
-这个工具非常容易使用，只需连接您的Fluent钱包，输入您想要质押的CFX数量，然后点击“质押”按钮。 这里我们可以选择质押1000 CFX。
+这个工具非常容易使用，只需连接您的Fluent钱包，输入您想要质押的CFX数量，然后点击“质押”按钮。这里我们可以选择质押1000 CFX。
 
 ### Register
 
@@ -94,15 +94,15 @@ Once the node data is synchronized to the latest block (and the "Catch-up mode" 
 
 ### 质押更多投票
 
-您可以随时向此验证者[**质押更多投票**](#stake-in-pow)，首先您需要在PoW中质押更多CFX，然后在“投票”输入框中输入您想要质押的投票数量，并点击“质押”按钮。 然后这些投票将在大约10分钟内同步到PoS链。
+您可以随时向此验证者[**质押更多投票**](#stake-in-pow)，首先您需要在PoW中质押更多CFX，然后在“投票”输入框中输入您想要质押的投票数量，并点击“质押”按钮。然后这些投票将在大约10分钟内同步到PoS链。
 
-通常新质押的投票将在13天内处于**锁定中**状态。 13天后，这些投票将处于**已锁定**状态。 **锁定中**状态的投票也将获得奖励。
+通常新质押的投票将在13天内处于**锁定中**状态。 13天后，这些投票将处于**已锁定**状态。**锁定中**状态的投票也将获得奖励。
 
 ### 撤销投票
 
-如果您想从这个验证者那里撤销一些投票，您可以在“投票”输入框中输入您想要撤销的投票数量，并点击“撤销”按钮。 然后这些投票将在大约10分钟内同步到PoS链。
+如果您想从这个验证者那里撤销一些投票，您可以在“投票”输入框中输入您想要撤销的投票数量，并点击“撤销”按钮。然后这些投票将在大约10分钟内同步到PoS链。
 
-通常撤销的投票将在1-14天内处于**解锁中**状态。 之后，这些投票将处于**已解锁**状态，并可以使用[ConfluxHub的PoW质押工具](#stake-in-pow)提现到您的账户。
+通常撤销的投票将在1-14天内处于**解锁中**状态。之后，这些投票将处于**已解锁**状态，并可以使用[ConfluxHub的PoW质押工具](#stake-in-pow)提现到您的账户。
 
 ## 在ConfluxScan中查看验证者的状态
 
@@ -143,7 +143,7 @@ You can also view validator's status in [ConfluxScan](https://confluxscan.org/).
 另一个原因可能是您的节点未正确运行。您可以检查节点状态：
 
 1. 节点是否与最新区块同步？
-2. 节点的 `pos_key` 和 `pos_db/secure_storage.json` 是否匹配？ 如果不确定，您可以删除 `pos_db/secure_storage.json` 文件并重启节点；节点将重新生成 `pos_db/secure_storage.json` 文件。
+2. 节点的 `pos_key` 和 `pos_db/secure_storage.json` 是否匹配？如果不确定，您可以删除 `pos_db/secure_storage.json` 文件并重启节点；节点将重新生成 `pos_db/secure_storage.json` 文件。
 
 ### 运行节点时需注意哪些风险？
 
@@ -159,8 +159,8 @@ Please check [Staking Lock-up Examples](/docs/general/conflux-basics/consensus-m
 
 ### 是否可以修改绑定到PoW账户的PoS节点？
 
-答：可以修改，但需要撤销与PoS节点关联的所有投票。 一旦完成撤销过程，就可以将节点直接绑定到另一个PoS节点。
+答：可以修改，但需要撤销与PoS节点关联的所有投票。一旦完成撤销过程，就可以将节点直接绑定到另一个PoS节点。
 
-### PoS节点是否可以绑定到PoW的合约账户（非EOA账户）？ 合约是否需要实现receive或fallback函数？
+### PoS节点是否可以绑定到PoW的合约账户（非EOA账户）？合约是否需要实现receive或fallback函数？
 
-答：可以将PoS节点绑定到合约账户，且无需实现receive或fallback函数。 这是因为奖励是由链直接挖给PoW账户，不涉及转账。
+答：可以将PoS节点绑定到合约账户，且无需实现receive或fallback函数。这是因为奖励是由链直接挖给PoW账户，不涉及转账。
