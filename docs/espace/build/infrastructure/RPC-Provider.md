@@ -91,6 +91,12 @@ Network  | Chain ID                | RPC Endpoint URL | Explorer
 
 Check BlockPi's [documentation](https://docs.blockpi.io/) for more details on how to use their service.
 
+## [Spectrum Nodes](https://spectrumnodes.com/networks/conflux-rpc)
+
+Spectrum Nodes provides RPC endpoints for Conflux eSpace mainnet (chain ID 1030) and Conflux Core Space mainnet, served from its self operated Tier III data centers in Malta, the Netherlands, and Canada, plus a bare metal deployment in Singapore. Spectrum Nodes is SOC 2 Type II attested.
+
+Create an account in the [Spectrum dashboard](https://dashboard.spectrumnodes.com/auth/signup) and select Conflux to get an endpoint.
+
 ## FAQs
 
 ### Does Infura, Alchemy, Quick, etc. support Conflux eSpace network?
